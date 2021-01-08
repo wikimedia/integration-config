@@ -7884,7 +7884,6 @@ projects:
       - name: extension-phan
       - name: commit-message-validator
     test:
-      - parsoidsvc-parsertests-docker
       - parsoidsvc-composer-package-php72-docker
       - parsoidsvc-composer-package-php73-docker
       - parsoidsvc-composer-package-php74-docker
@@ -7892,7 +7891,6 @@ projects:
       # Not passing until MW Core itself passes
       # - quibble-composer-mysql-php80-docker
     gate-and-submit:
-      - parsoidsvc-parsertests-docker
       - parsoidsvc-composer-package-php72-docker
       - parsoidsvc-composer-package-php73-docker
       - parsoidsvc-composer-package-php74-docker

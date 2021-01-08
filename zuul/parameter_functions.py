@@ -59,15 +59,6 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/cldr',
         ])
 
-    if job.name == 'parsoidsvc-parsertests-docker':
-        params['EXT_DEPENDENCIES'] = '\\n'.join([
-            'mediawiki/extensions/Cite',
-            'mediawiki/extensions/Disambiguator',
-            'mediawiki/extensions/Poem',
-            'mediawiki/extensions/TimedMediaHandler',
-            'mediawiki/extensions/ImageMap',
-        ])
-
     # Enable composer merge plugin in vendor and point it to mediawiki
     # composer.json. That let us easily merge autoload-dev section and thus
     # complete the autoloader in mw-fetch-composer-dev.js
