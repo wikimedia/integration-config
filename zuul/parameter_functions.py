@@ -389,10 +389,8 @@ dependencies = {
     'PageTriage': ['WikiLove', 'ORES', 'Echo'],
     'PageViewInfo': ['Graph'],
     'ParserFunctions': ['Scribunto'],
-    # These dependencies can't be added properly until T271863 is resolved
-    # in quibble.
-    # 'parsoid': ['Cite', 'Disambiguator', 'Poem', 'TimedMediaHandler',
-    #             'ImageMap'],
+    'parsoid': ['Cite', 'Disambiguator', 'Poem', 'TimedMediaHandler',
+                'ImageMap'],
     'PhpTagsFunctions': ['PhpTags'],
     'PhpTagsSPARQL': ['PhpTags'],
     'PhpTagsSMW': ['PhpTags'],
