@@ -800,6 +800,7 @@ gatedextensions = [
     'CirrusSearch',
     'cldr',
     'ContentTranslation',
+    'Disambiguator',
     'Echo',
     'Elastica',
     'EventBus',

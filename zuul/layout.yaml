@@ -3691,6 +3691,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-phan
+      - name: extension-gate
 
   - name: mediawiki/extensions/DiscussionTools
     template:
