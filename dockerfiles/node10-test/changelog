@@ -1,3 +1,10 @@
+node10-test (0.6.1-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image node10:
+   Re-build onto the wikimedia-buster image
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 22 Mar 2021 20:00:55 -0700
+
 node10-test (0.6.1-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:
