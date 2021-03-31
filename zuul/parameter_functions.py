@@ -77,6 +77,13 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/cldr',
         ])
 
+    if job.name.startswith('wikibase-selenium-'):
+        params['EXT_DEPENDENCIES'] = '\\n'.join([
+            'mediawiki/skins/MinervaNeue',
+            'mediawiki/extensions/MobileFrontend',
+            'mediawiki/extensions/UniversalLanguageSelector',
+        ])
+
     # Enable parallel PHPUnit runs for MW ecosystem, except:
     if (
         # ... temporarily exclude extensions that have issues

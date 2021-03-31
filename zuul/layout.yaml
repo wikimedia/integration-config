@@ -1863,6 +1863,19 @@ project-templates:
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
+  - name: wikibase-selenium-gate
+    test: &wikibase-selenium-gate_jobs
+      - wikibase-selenium
+    gate-and-submit: *wikibase-selenium-gate_jobs
+    test-1_43: *wikibase-selenium-gate_jobs
+    gate-and-submit-1_43: *wikibase-selenium-gate_jobs
+    test-1_44: *wikibase-selenium-gate_jobs
+    gate-and-submit-1_44: *wikibase-selenium-gate_jobs
+    test-1_45: *wikibase-selenium-gate_jobs
+    gate-and-submit-1_45: *wikibase-selenium-gate_jobs
+    test-wmf: *wikibase-selenium-gate_jobs
+    gate-and-submit-wmf: *wikibase-selenium-gate_jobs
+
   - name: extension-coverage
     postmerge:
       - mwext-phpunit-coverage-publish
@@ -2516,6 +2529,7 @@ projects:
   - name: mediawiki/core
     template:
       - name: extension-gate
+      - name: wikibase-selenium-gate
     test:
       - quibble-for-mediawiki-core-vendor-mysql-php83
       - quibble-for-mediawiki-core-composertest-only-php83
@@ -2646,6 +2660,7 @@ projects:
     template:
       - name: extension-gate
       - name: extension-apitests
+      - name: wikibase-selenium-gate
     test:
       - mediawiki-composer-php83
       - quibble-for-mediawiki-core-vendor-mysql-php83
@@ -2702,6 +2717,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-gate
+      - name: wikibase-selenium-gate
       - name: extension-javascript-documentation
       - name: extension-coverage
       - name: extension-codehealth
@@ -2747,6 +2763,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-gate
+      - name: wikibase-selenium-gate
       - name: extension-coverage
       - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
@@ -4385,6 +4402,7 @@ projects:
       - name: extension-codehealth
       - name: extension-javascript-documentation
       - name: extension-coverage
+      - name: wikibase-selenium-gate
     postmerge:
       - mwext-doxygen-publish
 
@@ -4901,6 +4919,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
+      - name: wikibase-selenium-gate
 
   - name: mediawiki/extensions/UploadsLink
     template:

@@ -871,24 +871,39 @@
     !!merge : *job_quibble
     name: wikibase-{kind}-{phpflavour}
 
+- job-template:
+    !!merge : *job_quibble
+    name: wikibase-selenium
+
 - project:
     name: wikibase
     entrypoint: quibble-with-supervisord
-    packages-source: composer
-    kind:
-        - client:
-            database: mysql
-            phpunit-params: '--group Wikibase,WikibaseClient,EntitySchemaClient'
-        - repo:
-            database: sqlite
-            phpunit-params: '--group Wikibase,WikibaseAPI,Purtle'
-    phpflavour:
-        - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.15.0
-        - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.15.0-s1
     jobs:
+        - wikibase-selenium:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.15.0-s1
+            database: mysql
+            packages-source: vendor
+            quibble_args: >
+                --command 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r repo'
+                --command 'cp --verbose $WORKSPACE/src/LocalSettings.php $LOG_DIR'
+                --command 'php maintenance/update.php --quick'
+                --command 'npm --prefix extensions/Wikibase ci'
+                --command 'npm --prefix extensions/Wikibase run --if-present @selenium-test'
+
         - wikibase-{kind}-{phpflavour}:
+            kind:
+                - client:
+                    database: mysql
+                    phpunit-params: '--group Wikibase,WikibaseClient,EntitySchemaClient'
+                - repo:
+                    database: sqlite
+                    phpunit-params: '--group Wikibase,WikibaseAPI,Purtle'
+            packages-source: composer
+            phpflavour:
+                - php81:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.15.0
+                - php83:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.15.0-s1
             quibble_args: >
                 --commands 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r {kind}'
                 'cp --verbose $WORKSPACE/src/LocalSettings.php $LOG_DIR'

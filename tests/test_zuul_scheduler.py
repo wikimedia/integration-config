@@ -19,6 +19,8 @@ import zuul.model
 from zuul.connection import BaseConnection
 from zuul.connection.gerrit import GerritConnection
 
+from fakes import FakeJob
+
 parameter_functions_py = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
     '../zuul/parameter_functions.py')
@@ -967,6 +969,43 @@ class TestZuulScheduler(unittest.TestCase):
             'In Zuul: apply the template extension-gate\n'
             'In JJB: add extension to "gatedextensions"')
 
+    def test_gated_extensions_for_wikibase_selenium(self):
+        self.longMessage = True
+
+        job = FakeJob('wikibase-selenium-xyz')
+        params = {
+            'ZUUL_PROJECT': 'mediawiki/extensions/Wikibase',
+            'ZUUL_BRANCH': 'master',
+        }
+        zuul_config.set_parameters(None, job, params)
+        injected_deps = set(params['EXT_DEPENDENCIES'].split('\\n'))
+        self.assertIn('mediawiki/extensions/UniversalLanguageSelector',
+                      injected_deps)
+
+        gated_in_zuul = set([
+            ext_name
+            # FIXME We could parse the Zuul layout looking up for
+            # wikibase-selenium job template.
+            for (ext_name, pipelines) in self.getProjectsDefs().iteritems()
+            if ext_name.startswith('mediawiki/')
+            and 'wikibase-selenium' in pipelines.get('test', {})
+        ])
+
+        # Cloned by Quibble regardless of injected dependencies
+        built_in_deps = (
+            'mediawiki/core',
+            'mediawiki/vendor',
+            'mediawiki/skins/Vector',
+        )
+
+        self.assertSetEqual(
+            gated_in_zuul, injected_deps.union(built_in_deps),
+            msg='Zuul projects triggering Wikibase Selenium jobs (first set) '
+                'and dependency list in zuul/parameter_functions.py (2nd set) '
+                'must be equals.\n'
+                'In Zuul layout: apply the template wikibase-selenium-gate\n'
+                'In Zuul parameter function add the missing repo')
+
     def test_pipelines_have_report_action_to_gerrit(self):
         not_reporting = ['post', 'publish', 'codehealth']
         required_actions = ['success', 'failure']
@@ -1129,6 +1168,7 @@ class TestZuulScheduler(unittest.TestCase):
             'quibble-for-mediawiki-core-composertest-only-php83': True,
             'quibble-apitests-only-vendor-php83': True,
             'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83': True,
+            'wikibase-selenium': True,
             'quibble-with-gated-extensions-vendor-mysql-php83': True,
             'quibble-with-gated-extensions-selenium-php83': True,
             'mediawiki-node20': True,
@@ -1145,6 +1185,7 @@ class TestZuulScheduler(unittest.TestCase):
             'quibble-for-mediawiki-core-vendor-sqlite-php83': True,
             'quibble-for-mediawiki-core-vendor-postgres-php83': True,
             'mediawiki-node20': True,
+            'wikibase-selenium': True,
             'quibble-vendor-mysql-php83-phpunit-standalone': True,
             'quibble-with-gated-extensions-vendor-mysql-php83': True,
             'quibble-with-gated-extensions-selenium-php83': True,
