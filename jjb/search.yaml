@@ -22,9 +22,24 @@
 - project:
     name: search-mjolnir
     jobs:
-        - '{name}-tox-docker':
+        - '{name}-tox-docker-with-sonar':
+            name: 'search-mjolnir-patch'
+            # branch analysis
+            branch: '$ZUUL_CHANGE-$ZUUL_PATCHSET'
             docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.7.0-s1
             build_timeout: 10 # minutes, xgboost takes a while to compile T184754
+            sonar_args: |
+                -Dsonar.branch.target="$ZUUL_BRANCH" \
+                -Dsonar.branch.name={branch} \
+                -Dsonar.verbose=true \
+
+        - '{name}-tox-docker-with-sonar':
+             # postmerge main branch analysis
+             name: 'search-mjolnir-main'
+             docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.7.0-s1
+             build_timeout: 10 # minutes, xgboost takes a while to compile T184754
+             sonar_args: -Dsonar.branch.name="$ZUUL_BRANCH" \
+
         # Sadly this does not test the python code with the jvm code, instead
         # using the last release of the jvm code, But it's a good start.
         - '{name}-maven-java8-docker':
@@ -49,7 +64,7 @@
                 -Dsonar.verbose=true \
 
         - '{name}-tox-docker-with-sonar':
-              # postmerge master analysis
-              name: 'wikimedia-discovery-analytics-master'
+              # postmerge main branch analysis
+              name: 'wikimedia-discovery-analytics-main'
               docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.7.0-s1
               sonar_args: -Dsonar.branch.name="$ZUUL_BRANCH" \

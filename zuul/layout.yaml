@@ -8926,10 +8926,10 @@ projects:
 
   - name: search/MjoLniR
     test:
-      - search-mjolnir-tox-docker
+      - search-mjolnir-patch-tox-docker-with-sonar
       - search-mjolnir-maven-java8-docker
     gate-and-submit:
-      - search-mjolnir-tox-docker
+      - search-mjolnir-main-tox-docker-with-sonar
       - search-mjolnir-maven-java8-docker
     postmerge:
       - search-mjolnir-maven-java8-docker-site-publish
@@ -9280,7 +9280,7 @@ projects:
     gate-and-submit:
       - wikimedia-discovery-analytics-patch-tox-docker-with-sonar
     postmerge:
-      - wikimedia-discovery-analytics-master-tox-docker-with-sonar
+      - wikimedia-discovery-analytics-main-tox-docker-with-sonar
   - name: wikimedia/fundraising/dash
     template:
       - name: node10-browser-docker
