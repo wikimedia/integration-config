@@ -283,3 +283,11 @@
       # shellbox-pipeline-test
       # shellbox-pipeline-publish
       - '{name}-pipeline-{pipeline}'
+
+- project:
+    name: metrics-platform
+    pipeline:
+      - test
+    jobs:
+      - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'
