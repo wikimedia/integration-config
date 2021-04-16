@@ -42,7 +42,7 @@
               - ABORTED
             build-steps:
               - docker-run:
-                 image: 'docker-registry.wikimedia.org/wikimedia-stretch:latest'
+                 image: 'docker-registry.wikimedia.org/wikimedia-buster:latest'
                  options: >-
                    --user=root
                    --volume "$WORKSPACE":/workspace
@@ -77,7 +77,7 @@
          set -eux
          mkdir -m 2777 -p "{dir}"
      - docker-run:
-        image: 'docker-registry.wikimedia.org/wikimedia-stretch:latest'
+        image: 'docker-registry.wikimedia.org/wikimedia-buster:latest'
         options: >-
           --user=nobody
           --volume "$WORKSPACE":/workspace
