@@ -656,7 +656,7 @@
         args: '--packages-source "{packages-source}" --git-parallel=8 {quibble_args}'
         logdir: '/workspace/log'
     - docker-run-with-log-and-workspace-cache:
-        image: 'docker-registry.wikimedia.org/releng/sonar-scanner:1.0.0'
+        image: 'docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-1'
         options: '--volume "$(pwd)"/src:/workspace/src'
         logdir: '/workspace/log'
         args: '{sonar_args}'
@@ -754,7 +754,7 @@
           sed -ie "s#/src/#/workspace/src/extensions/$EXT_NAME/#g" src/extensions/"$EXT_NAME"/coverage/lcov.info
         fi
     - docker-run-with-log-and-workspace-cache:
-        image: 'docker-registry.wikimedia.org/releng/sonar-scanner:1.0.0'
+        image: 'docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-1'
         options: '--volume "$(pwd)"/src:/workspace/src'
         logdir: '/workspace/log'
         args: '{sonar_args}'
