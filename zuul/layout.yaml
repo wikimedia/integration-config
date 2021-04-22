@@ -2207,6 +2207,8 @@ projects:
       - mwdumper-maven-java8-docker
     gate-and-submit:
       - mwdumper-maven-java8-docker
+    postmerge:
+      - mwdumper-maven-java8-docker-site-publish
 
   - name: mediawiki/tools/phpunit-patch-coverage
     template:
@@ -8010,6 +8012,8 @@ projects:
       - analytics-refinery-maven-java8-docker
     gate-and-submit:
       - analytics-refinery-maven-java8-docker
+    postmerge:
+      - analytics-refinery-maven-java8-docker-site-publish
 
   - name: analytics/reportupdater
     template:
@@ -8045,6 +8049,8 @@ projects:
       - analytics-wmde-toolkit-analyzer-maven-java8-docker
     gate-and-submit:
       - analytics-wmde-toolkit-analyzer-maven-java8-docker
+    postmerge:
+      - analytics-wmde-toolkit-analyzer-maven-java8-docker-site-publish
 
   - name: analytics/wmde/toolkit-analyzer-build
     gate-and-submit:
@@ -8102,6 +8108,8 @@ projects:
       - wikimedia-event-utilities-maven-java8-docker
     gate-and-submit:
       - wikimedia-event-utilities-maven-java8-docker
+    postmerge:
+      - wikimedia-event-utilities-maven-java8-docker-site-publish
 
 #### PHP Extensions ###################################################
 
@@ -8939,7 +8947,7 @@ projects:
     test:
       - search-xgboost-maven-java8-docker
     gate-and-submit:
-      - search-xgboost-maven-java8-docker
+      - search-xgboost-maven-java8-docker-site-publish
 
   - name: search/MjoLniR
     test:
@@ -8948,6 +8956,8 @@ projects:
     gate-and-submit:
       - search-mjolnir-tox-docker
       - search-mjolnir-maven-java8-docker
+    postmerge:
+      - search-mjolnir-maven-java8-docker-site-publish
 
   - name: wmf-jvm-utils
     test:

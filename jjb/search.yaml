@@ -17,8 +17,11 @@
     name: search-xgboost
     jobs:
         - '{name}-maven-java8-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/java8-xgboost:0.4.0
-            workdir: '/src/jvm-packages'
+              docker_image_var: docker-registry.wikimedia.org/releng/java8-xgboost:0.4.0
+              workdir: '/src/jvm-packages'
+        - '{name}-maven-java8-docker-site-publish':
+              docker_image_var: docker-registry.wikimedia.org/releng/java8-xgboost:0.4.0
+              workdir: '/src/jvm-packages'
 
 - project:
     name: wmf-jvm-utils
@@ -35,8 +38,11 @@
         # Sadly this does not test the python code with the jvm code, instead
         # using the last release of the jvm code, But it's a good start.
         - '{name}-maven-java8-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/java8-mjolnir:0.4.0
-            pom: jvm/pom.xml
+              docker_image_var: docker-registry.wikimedia.org/releng/java8-mjolnir:0.4.0
+              pom: jvm/pom.xml
+        - '{name}-maven-java8-docker-site-publish':
+              docker_image_var: docker-registry.wikimedia.org/releng/java8-mjolnir:0.4.0
+              pom: jvm/pom.xml
 
 - project:
     name: wikimedia-discovery-analytics

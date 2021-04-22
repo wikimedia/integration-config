@@ -107,6 +107,7 @@
      - '{name}-maven-release-docker'
      - '{name}-maven-java8-docker'
      - '{name}-update-jars-docker'
+     - '{name}-maven-java8-docker-site-publish'
 
 - job:
     name: 'analytics-wikistats'
@@ -147,3 +148,4 @@
     jobs:
      - '{name}-maven-release-docker'
      - '{name}-maven-java8-docker'
+     - '{name}-maven-java8-docker-site-publish'

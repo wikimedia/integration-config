@@ -32,7 +32,9 @@
     name: analytics-wmde-toolkit-analyzer
     jobs:
         - '{name}-maven-java8-docker':
-            pom: analyzer/pom.xml
+              pom: analyzer/pom.xml
+        - '{name}-maven-java8-docker-site-publish':
+              pom: analyzer/pom.xml
 
 - project:
     name: wikibase-daily-npm-audit
