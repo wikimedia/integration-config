@@ -313,7 +313,13 @@
                     # wdio-video-reporter 3.1.1 leaves screenshots behind after
                     # creating the video. Delete them to save space (T249268),
                     # they are transient files anyway.
-                    - shell: 'rm -fR log/rawSelenumVideoGrabs'
+                    - docker-run:
+                        image: docker-registry.wikimedia.org/wikimedia-buster:latest
+                        options: >-
+                            --volume "$(pwd)"/log:/log
+                            --entrypoint=/bin/rm
+                        args: '-fR /log/rawSeleniumVideoGrabs'
+
         - compress-mw-debug-logs
         - archive-log-allow-empty
         - castor-save-workspace-cache
