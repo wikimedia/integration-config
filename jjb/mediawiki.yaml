@@ -841,8 +841,6 @@
             name: php
             type: user-defined
             values:
-                - php70
-                - php71
                 - php72
                 - php73
                 - php74
@@ -868,10 +866,6 @@
         - postgres
         - sqlite
     php:
-        - php70:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-stretch-php70:0.0.47-s1
-        - php71:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-stretch-php71:0.0.47-s1
         - php72:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:0.0.47
         - php73:
