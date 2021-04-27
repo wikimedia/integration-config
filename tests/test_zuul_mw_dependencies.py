@@ -40,7 +40,7 @@ class TestMwDependencies(unittest.TestCase):
         params['ZUUL_BRANCH'] = branch
 
         job = FakeJob(job_name if job_name
-                      else 'mediawiki-quibble-composer-mysql-php70-docker')
+                      else 'mediawiki-quibble-composer-mysql-php74-docker')
         set_parameters(None, job, params)
         return params
 
@@ -85,12 +85,12 @@ class TestMwDependencies(unittest.TestCase):
 
     def test_job_name(self):
         self.assertHasDependencies(self.fetch_dependencies(
-            job_name='mediawiki-quibble-composer-mysql-php70-docker'))
+            job_name='mediawiki-quibble-composer-mysql-php74-docker'))
         self.assertHasDependencies(self.fetch_dependencies(
             job_name='mwselenium-quibble-docker'))
 
         self.assertHasDependencies(self.fetch_dependencies(
-            job_name='quibble-composer-mysql-php70-docker'))
+            job_name='quibble-composer-mysql-php74-docker'))
 
         self.assertMissingDependencies(self.fetch_dependencies(
             job_name='mediawiki-core-phplint'))
@@ -148,7 +148,7 @@ class TestMwDependencies(unittest.TestCase):
 
     def test_inject_skin_on_an_extension(self):
         deps = self.fetch_dependencies(
-            job_name='mediawiki-quibble-composer-mysql-php70-docker',
+            job_name='mediawiki-quibble-composer-mysql-php74-docker',
             project='mediawiki/extensions/CustomPage')
         self.assertDictContainsSubset(
             {
@@ -159,7 +159,7 @@ class TestMwDependencies(unittest.TestCase):
 
     def test_inject_extension_on_a_skin(self):
         deps = self.fetch_dependencies(
-            job_name='quibble-composer-mysql-php70-docker',
+            job_name='quibble-composer-mysql-php74-docker',
             project='mediawiki/skins/BlueSpiceSkin')
         self.assertDictContainsSubset(
             {
@@ -173,7 +173,7 @@ class TestMwDependencies(unittest.TestCase):
     def test_inject_dependencies_on_quibble_jobs(self):
         self.maxDiff = None
         deps = self.fetch_dependencies(
-            job_name='quibble-composer-mysql-php70-docker',
+            job_name='quibble-composer-mysql-php74-docker',
             project='mediawiki/extensions/PropertySuggester')
         self.assertIn('EXT_DEPENDENCIES', deps)
         self.assertIn('\\nmediawiki/extensions/Wikibase\\n',
@@ -181,7 +181,7 @@ class TestMwDependencies(unittest.TestCase):
 
     def test_bluespice_branch_exception(self):
         deps = self.fetch_dependencies(
-            job_name='quibble-composer-mysql-php70-docker',
+            job_name='quibble-composer-mysql-php74-docker',
             project='mediawiki/extensions/BlueSpiceFoundation')
         self.assertIn('EXT_DEPENDENCIES', deps)
         self.assertEqual('mediawiki/extensions/ExtJSBase',
