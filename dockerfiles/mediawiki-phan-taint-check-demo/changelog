@@ -1,3 +1,10 @@
+mediawiki-phan-taint-check-demo (0.1.4-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer to 2.1.8
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon,  4 Oct 2021 09:01:59 -0700
+
 mediawiki-phan-taint-check-demo (0.1.4) wikimedia; urgency=high
 
    Install php-zip (ext-zip) and unzip

@@ -1,3 +1,10 @@
+quibble-buster-php72 (1.0.1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer to 2.1.8
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon,  4 Oct 2021 09:01:58 -0700
+
 quibble-buster-php72 (1.0.1) wikimedia; urgency=medium
 
   * Bump Quibble to 1.0.1

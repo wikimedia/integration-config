@@ -1,3 +1,10 @@
+composer-package-php74 (0.3.0-s6) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer to 2.1.8
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon,  4 Oct 2021 09:01:59 -0700
+
 composer-package-php74 (0.3.0-s5) wikimedia; urgency=high
 
    Refresh for update in parent image ci-stretch:
