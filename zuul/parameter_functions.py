@@ -692,36 +692,6 @@ def set_mw_dependencies(item, job, params):
     skin_deps = {d for d in deps if d.startswith('skins/')}
     ext_deps = deps - skin_deps
 
-    # EventStreamConfig only requires MW >= REL1_35.
-    # Therefore remove it from REL1_31. T249514
-    if (
-        params['ZUUL_BRANCH'] == 'REL1_31'
-        and 'EventStreamConfig' in ext_deps
-    ):
-        ext_deps.remove('EventStreamConfig')
-
-    # WikibaseCirrusSearch doesn't exist in MW == REL1_31.
-    # Therefore remove it from REL1_31. T258715
-    if (
-        params['ZUUL_BRANCH'] == 'REL1_31'
-        and 'WikibaseCirrusSearch' in ext_deps
-    ):
-        ext_deps.remove('WikibaseCirrusSearch')
-
-    # Score in REL1_31 doesn't need Wikibase and stuff. Considering they're
-    # in somewhat of a mess, it's much easier to just remove them
-    if (
-        params['ZUUL_PROJECT'] == 'mediawiki/extensions/Score'
-        and params['ZUUL_BRANCH'] == 'REL1_31'
-    ):
-        ext_deps.remove('ArticlePlaceholder')
-        ext_deps.remove('PropertySuggester')
-        ext_deps.remove('Wikibase')
-        ext_deps.remove('WikibaseQualityConstraints')
-        ext_deps.remove('WikibaseMediaInfo')
-        ext_deps.remove('WikimediaBadges')
-        ext_deps.remove('WikibaseLexeme')
-
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
 
