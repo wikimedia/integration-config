@@ -1,3 +1,10 @@
+node10-test-browser-php72-composer (0.1.4-s8) wikimedia; urgency=high
+
+   Refresh for update in parent image sury-php:
+   Update GPG release key, T277742
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 27 Apr 2021 11:50:35 -0700
+
 node10-test-browser-php72-composer (0.1.4-s7) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

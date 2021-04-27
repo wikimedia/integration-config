@@ -1,3 +1,10 @@
+php73 (0.2.6-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image sury-php:
+   Update GPG release key, T277742
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 27 Apr 2021 11:50:35 -0700
+
 php73 (0.2.6-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:

@@ -1,3 +1,10 @@
+php80 (0.1.1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image sury-php:
+   Update GPG release key, T277742
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 27 Apr 2021 11:50:35 -0700
+
 php80 (0.1.1) wikimedia; urgency=medium
 
   * Move commented out packages which were causing some packages to not be

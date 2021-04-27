@@ -1,3 +1,10 @@
+mediawiki-phan (0.8.1-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image sury-php:
+   Update GPG release key, T277742
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 27 Apr 2021 11:50:34 -0700
+
 mediawiki-phan (0.8.1-s4) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
