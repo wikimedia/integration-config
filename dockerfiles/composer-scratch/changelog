@@ -1,3 +1,9 @@
+composer-scratch (1.10.22) wikimedia; urgency=high
+
+   Upgrade composer to 1.10.22
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 27 Apr 2021 09:15:05 -0700
+
 composer-scratch (0.1.1) wikimedia; urgency=high
 
    Update to 1.10.17
