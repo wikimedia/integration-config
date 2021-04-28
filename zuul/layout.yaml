@@ -8306,6 +8306,12 @@ projects:
       - doxygen-publish
       - phpunit-coverage-php72-docker-publish
 
+  - name: mediawiki/libs/metrics-platform
+    test:
+      - trigger-metrics-platform-pipeline-test
+    gate-and-submit:
+      - trigger-metrics-platform-pipeline-test
+
   - name: mediawiki/libs/Minify
     template:
       - name: composer-test-package-php72-or-later
