@@ -43,6 +43,7 @@
         - '{name}-maven-java8-docker-site-publish':
               docker_image_var: docker-registry.wikimedia.org/releng/java8-mjolnir:0.4.0
               pom: jvm/pom.xml
+              site_dir: src/jvm/target/staging
 
 - project:
     name: wikimedia-discovery-analytics
