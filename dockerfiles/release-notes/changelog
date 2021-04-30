@@ -1,3 +1,10 @@
+release-notes (0.0.6-s3) wikimedia; urgency=medium
+
+   Yak: Generate a VERSION file containing the new version
+   * For use by future tools
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Fri, 30 Apr 2021 12:56:29 -0700
+
 release-notes (0.0.6-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:

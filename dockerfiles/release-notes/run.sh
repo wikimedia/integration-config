@@ -35,6 +35,8 @@ fi
 OLD_VERSION="${VERSIONS[1]}"
 NEW_VERSION="${VERSIONS[0]}"
 
+echo "$NEW_VERSION" > "$LOG_DIR/VERSION"
+
 echo "Building Changelog for ${OLD_VERSION}..${NEW_VERSION}"
 
 # Update the mediawiki/tools/release repo, envvar set by dockerfile
