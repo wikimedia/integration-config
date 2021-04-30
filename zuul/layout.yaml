@@ -1201,8 +1201,6 @@ project-templates:
       # - mwext-php72-phan-docker
     gate-and-submit-1_31:
       - mwgate-node12-docker
-      - quibble-composer-mysql-php70-noselenium-docker
-      - quibble-composer-mysql-php71-noselenium-docker
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php72-selenium-docker
@@ -1399,8 +1397,6 @@ project-templates:
       # - mwext-php72-phan-docker
     gate-and-submit-1_31:
       - mwgate-node12-docker
-      - quibble-composer-mysql-php70-noselenium-docker
-      - quibble-composer-mysql-php71-noselenium-docker
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php72-selenium-docker
@@ -1547,8 +1543,6 @@ project-templates:
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php73-phan-docker
     gate-and-submit-1_31:
-      - quibble-composer-mysql-php70-noselenium-docker
-      - quibble-composer-mysql-php71-noselenium-docker
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - mwgate-node12-docker
@@ -1620,8 +1614,6 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php72-phan-docker
     gate-and-submit-1_31:
-      - quibble-composer-mysql-php70-noselenium-docker
-      - quibble-composer-mysql-php71-noselenium-docker
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - mwgate-node12-docker
@@ -1756,8 +1748,6 @@ project-templates:
       # - mwskin-php72-phan-docker
     gate-and-submit-1_31:
       - mwgate-node12-docker
-      - quibble-composer-mysql-php70-docker
-      - quibble-composer-mysql-php71-docker
       - quibble-composer-mysql-php72-docker
       - quibble-composer-mysql-php73-docker
       # (T231966 / T226945) Disabled on release branches
@@ -1828,8 +1818,6 @@ project-templates:
       # - mwskin-php72-phan-docker
     gate-and-submit-1_31:
       - mwgate-node12-docker
-      - quibble-composer-mysql-php70-docker
-      - quibble-composer-mysql-php71-docker
       - quibble-composer-mysql-php72-docker
       - quibble-composer-mysql-php73-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
@@ -2441,7 +2429,6 @@ projects:
       - mediawiki-quibble-composertest-php72-docker
       - mediawiki-quibble-selenium-composer-mysql-php72-docker
     gate-and-submit-1_31:
-      - mediawiki-quibble-composer-mysql-php70-docker
       - mediawiki-quibble-composer-mysql-php72-docker
       - mediawiki-quibble-composer-mysql-php73-docker
       # FIXME use a normal composer job, rather than a heavy-weight quibble one?
