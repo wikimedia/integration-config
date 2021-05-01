@@ -341,6 +341,7 @@ pipelines:
 
            # Pywikibot related
            - ^alexsh@mail2000\.com\.tw$  # Alex S.H. Lin
+           - ^atagar1@gmail\.com$  # atagar
            - ^dalba\.wiki@gmail\.com$
            - ^loic@dachary\.org$
            - ^dr\.trigon@surfeu\.ch$  # DrTrigon
