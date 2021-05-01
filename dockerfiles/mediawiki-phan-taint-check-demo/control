@@ -1,1 +1,1 @@
-Depends: ci-buster
+Depends: ci-buster, composer-scratch
