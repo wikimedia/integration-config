@@ -4,12 +4,11 @@ USER root
 
 # Fresnel needs firefox-esr in order for Headless Chromium to work.
 # There are numerous libs that Chromium only needs for headless mode
-# and these are not statically linked in the distribution provioded by Google,
+# and these are not statically linked in the distribution provided by Google,
 # and they also aren't specified by Debian as deps for 'chromium'.
 # The full list is documented at:
-#   https://github.com/GoogleChrome/puppeteer/blob/v1.12.2/docs/troubleshooting.md
-# We've installed Firefox and Chrome together since 2015, so keep doing
-# that for now.
+#   https://github.com/puppeteer/puppeteer/blob/v4.0.1/docs/troubleshooting.md
+# In WMF CI has installed Firefox and Chromium together since 2015, so keep doing that for now.
 # https://phabricator.wikimedia.org/T226078
 RUN {{ "firefox-esr" | apt_install }}
 
@@ -20,7 +19,7 @@ RUN mkdir -p /opt/npm-tmp /opt/fresnel \
     && chown nobody:nogroup /opt/npm-tmp /opt/fresnel
 USER nobody
 RUN cd /opt/fresnel \
-    && NPM_CONFIG_cache=/opt/npm-tmp NPM_CONFIG_update_notifier=false npm install fresnel@0.5.0 \
+    && NPM_CONFIG_cache=/opt/npm-tmp NPM_CONFIG_update_notifier=false npm install fresnel@1.0.0 \
     && find /opt/npm-tmp -mindepth 1 -delete
 USER root
 RUN rm -rf /opt/npm-tmp \

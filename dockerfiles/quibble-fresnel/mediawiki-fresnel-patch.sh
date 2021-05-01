@@ -1,9 +1,9 @@
 #!/bin/bash
 #
 # Create a Fresnel recording for the before and after state,
-# and produce a comparison.
+# and then print a comparison table in ASCII to stdout.
 #
-# Outputs: (TODO)
+# <https://wikitech.wikimedia.org/wiki/Performance/Fresnel>
 
 set -eux -o pipefail
 
