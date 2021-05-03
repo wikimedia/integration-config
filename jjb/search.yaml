@@ -14,16 +14,6 @@
         - '{name}-{project}-maven-java8-docker-site-publish'
 
 - project:
-    name: search-xgboost
-    jobs:
-        - '{name}-maven-java8-docker':
-              docker_image_var: docker-registry.wikimedia.org/releng/java8-xgboost:0.4.0
-              workdir: '/src/jvm-packages'
-        - '{name}-maven-java8-docker-site-publish':
-              docker_image_var: docker-registry.wikimedia.org/releng/java8-xgboost:0.4.0
-              workdir: '/src/jvm-packages'
-
-- project:
     name: wmf-jvm-utils
     jobs:
         - '{name}-maven-java8-docker'
