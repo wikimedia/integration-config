@@ -1,1 +1,1 @@
-Depends: bazelisk
+Depends: bazelisk, maven

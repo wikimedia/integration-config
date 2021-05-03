@@ -1,3 +1,9 @@
+gerrit (1.1.0) wikimedia; urgency=medium
+
+  * Point maven to XDG_CACHE_HOME, reusing logic from the maven image.
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 03 May 2021 17:20:20 +0200
+
 gerrit (1.0.0) wikimedia; urgency=medium
 
   * Switch from Bazel to Bazelisk

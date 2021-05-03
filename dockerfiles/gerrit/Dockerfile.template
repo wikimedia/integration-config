@@ -1,8 +1,16 @@
 # Docker image with gerrit
 
+FROM {{ "maven" | image_tag }} AS maven
+
 FROM {{ "bazelisk" | image_tag }}
 
 USER root
+
+# Gerrit plugins might rely on Maven to ship dependencies.
+ENV MAVEN_BIN=/opt/apache-maven/bin/mvn
+COPY --from=maven /opt/apache-maven /opt/apache-maven
+COPY --from=maven /usr/local/bin/mvn /usr/local/bin/mvn
+COPY --from=maven /settings.xml /settings.xml
 
 # We need both Java 8 and 11
 RUN echo "deb http://apt.wikimedia.org/wikimedia buster-wikimedia component/jdk8" \
