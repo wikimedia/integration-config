@@ -186,6 +186,10 @@
 - project:
     name: wdio-selenium-daily
     project:
+        - AdvancedSearch:
+            recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @WMDE-Fisch
+            repository: mediawiki/extensions/AdvancedSearch
+            site: en.wikipedia
         - CentralNotice:
             recipients: fr-tech@wikimedia.org jbolorinos-ctr@wikimedia.org qa-alerts@lists.wikimedia.org # fundraising-backlog @jbolorinos-ctr
             repository: mediawiki/extensions/CentralNotice
