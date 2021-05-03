@@ -20,28 +20,19 @@
       - docker-src-dir
       - docker-log-dir
       # .gitsubmodules uses relative url, we need to point to upstream gerrit
-      # repository to fetch them.
+      # repository to fetch them which is handled by the repo build script.
       - docker-ci-src-setup:
           submodules: false
+
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.4.2-s1
-          options: --entrypoint=git
-          args: >
-              -c remote.origin.url=https://gerrit.googlesource.com/gerrit
-              submodule update --init --recursive
-      - docker-run-with-log-cache-src:
-          image: 'docker-registry.wikimedia.org/releng/gerrit:1.0.0'
-          options: '--volume /srv/git:/srv/git:ro'
-          # Build various `.war` targets:
-          # - gerrit: only core
-          # - withdocs: core + doc
-          # - release: core + doc + plugins
-          args: gerrit withdocs release
+          image: 'docker-registry.wikimedia.org/releng/gerrit:1.1.3'
+          options: >-
+              --volume /srv/git:/srv/git:ro
+              --env LOG_DIR=/log
+              --entrypoint=/src/wmf-build.py
     publishers:
       - archive:
-         artifacts: >
-           log/execroot/*/bazel-out/k8-fastbuild/bin/*.war,
-           log/execroot/*/bazel-out/k8-fastbuild/bin/plugins/core.zip,
+         artifacts: 'log/*.war, log/*.jar'
       - castor-save-workspace-cache
       - docker-cleanup
 
