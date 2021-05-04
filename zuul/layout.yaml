@@ -97,6 +97,7 @@ pipelines:
            - ^christoph\.neuroth@gmail\.com$
            - ^hoo@online\.de$
            - ^mail@lucaswerkmeister\.de$
+           - ^mail@adamham\.dev$ # Adam Hammad; WMDE Contractor
 
           # Trusted users:
            - ^0freerunning@gmail\.com$ # Jayprakash12345
