@@ -879,9 +879,9 @@
         - sqlite
     php:
         - php70:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-stretch-php70:0.0.46
+            docker_image: docker-registry.wikimedia.org/releng/quibble-stretch-php70:0.0.47-s1
         - php71:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-stretch-php71:0.0.46
+            docker_image: docker-registry.wikimedia.org/releng/quibble-stretch-php71:0.0.47-s1
         - php72:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:0.0.46-s1
         - php73:
@@ -917,7 +917,7 @@
             packages-source:  composer
             database: mysql
         - mwselenium-quibble-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-stretch-bundle:0.0.46
+            docker_image: docker-registry.wikimedia.org/releng/quibble-stretch-bundle:0.0.47-s1
             packages-source: vendor
             database: mysql
         # Explicitly flag this ruby selenium job as a legacy one that should not be used
@@ -962,7 +962,7 @@
     name: mediawiki-selenium-integration
     jobs:
         - mediawiki-selenium-integration-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-stretch-bundle:0.0.46
+            docker_image: docker-registry.wikimedia.org/releng/quibble-stretch-bundle:0.0.47-s1
 
             packages-source: vendor
             database: mysql
