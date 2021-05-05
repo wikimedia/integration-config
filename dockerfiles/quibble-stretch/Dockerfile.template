@@ -1,6 +1,6 @@
 FROM {{ "composer-scratch" | image_tag }} as composer
 
-FROM {{ "node10" | image_tag }}
+FROM {{ "ci-stretch" | image_tag }}
 
 # Slight digression compared to node10
 ENV NPM_CONFIG_CACHE=/cache/npm
@@ -41,6 +41,14 @@ python3-pip
 python3-wheel
 {%- endset -%}
 
+# Install nodejs and npm
+RUN {{ "nodejs" | apt_install }}
+
+# Use Wikimedia's custom npm build instead of Debian's out-dated one (?)
+RUN git clone --depth 1 https://gerrit.wikimedia.org/r/p/integration/npm.git /srv/npm \
+    && rm -rf /srv/npm/.git \
+    && ln -s /srv/npm/bin/npm-cli.js /usr/bin/npm
+
 # Some Zuul dependencies from Debian, rest will be installed from PYPI
 # NOTE quibble embeds a copy of zuul cloner and does not rely on the whole
 # Debian package.
@@ -76,7 +84,7 @@ xauth
 {% set alldeps = quibble_deps + " " + zuul_deps + " " + mediawiki_deps + " " + browsers_deps -%}
 RUN {{ alldeps | apt_install }} \
     && pip3 install --upgrade 'setuptools<=41' \
-    && pip3 install git+https://gerrit.wikimedia.org/r/p/integration/quibble.git@"0.0.46"#egg=quibble \
+    && pip3 install git+https://gerrit.wikimedia.org/r/p/integration/quibble.git@"0.0.47"#egg=quibble \
     && rm -fR "$XDG_CACHE_HOME"/pip \
     && apt-get purge -y python3-pip python3-wheel \
     && apt-get autoremove -y --purge \

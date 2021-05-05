@@ -1,1 +1,1 @@
-Depends: composer-scratch, node10
+Depends: composer-scratch, ci-stretch
