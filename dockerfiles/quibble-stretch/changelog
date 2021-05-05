@@ -1,3 +1,9 @@
+quibble-stretch (0.0.47-s1) wikimedia; urgency=high
+
+   Use nodesource to install node so we get node10.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed,  5 May 2021 11:33:11 -0700
+
 quibble-stretch (0.0.47) wikimedia; urgency=high
 
    Update to quibble 0.0.47, based off ci-stretch with node pulled in manually

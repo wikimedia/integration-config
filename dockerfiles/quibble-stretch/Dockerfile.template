@@ -41,13 +41,19 @@ python3-pip
 python3-wheel
 {%- endset -%}
 
+# Install nodesource's node 10 backport, as wikimedia doesn't have it any more
+COPY nodesource.gpg /etc/apt/trusted.gpg.d/nodesource.gpg
+
+# Pin it higher so that we don't end up with node 6
+COPY nodesource.pin /etc/apt/preferences.d/nodesource
+
+# Allow HTTPS as an apt transport
+RUN {{ "apt-transport-https" | apt_install }} && \
+ echo "deb https://deb.nodesource.com/node_10.x stretch main" > /etc/apt/sources.list.d/nodesource.list
+
 # Install nodejs and npm
 RUN {{ "nodejs" | apt_install }}
 
-# Use Wikimedia's custom npm build instead of Debian's out-dated one (?)
-RUN git clone --depth 1 https://gerrit.wikimedia.org/r/p/integration/npm.git /srv/npm \
-    && rm -rf /srv/npm/.git \
-    && ln -s /srv/npm/bin/npm-cli.js /usr/bin/npm
 
 # Some Zuul dependencies from Debian, rest will be installed from PYPI
 # NOTE quibble embeds a copy of zuul cloner and does not rely on the whole
