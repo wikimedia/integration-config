@@ -1922,26 +1922,6 @@ project-templates:
     gate-and-submit-1_36:
       - mwgate-node10-docker
 
-  - name: mwgate-rake
-    test:
-      - mwgate-rake-docker
-    gate-and-submit:
-      - mwgate-rake-docker
-    test-1_31:
-      - mwgate-rake-docker
-    gate-and-submit-1_31:
-      - mwgate-rake-docker
-    test-1_35:
-      - mwgate-rake-docker
-    gate-and-submit-1_35:
-      - mwgate-rake-docker
-    test-1_36:
-      - mwgate-rake-docker
-    gate-and-submit-1_36:
-      - mwgate-rake-docker
-    experimental:
-      - mwgate-ruby2.5-rake-docker
-
   - name: puppet-module
     test:
       - puppet-{name}-rake-docker
@@ -4685,9 +4665,9 @@ projects:
       - name: extension-codehealth
       - name: extension-javascript-documentation
       - name: mwgate-npm
-      - name: mwgate-rake
     test:
       # TODO: Legacy ruby-based selenium job. To remove! (T220035)
+      - mwgate-rake-docker
       - mwselenium-quibble-docker
       - wikibase-client-docker
       - wikibase-repo-docker
@@ -4696,6 +4676,7 @@ projects:
       - wmf-quibble-apache-selenium-php72-docker
     gate-and-submit: &mediawiki-extensions-wikibase-gate-and-submit
       # TODO: Legacy ruby-based selenium job. To remove! (T220035)
+      - mwgate-rake-docker
       - mwselenium-quibble-docker
       - wikibase-client-docker
       - wikibase-repo-docker
@@ -4704,24 +4685,29 @@ projects:
       - wikibase-client-docker
       - wikibase-repo-docker
       - mwext-php72-phan-docker
+      - mwgate-rake-docker
     gate-and-submit-1_35:
       - wikibase-client-docker
       - wikibase-repo-docker
       - mwext-php72-phan-docker
+      - mwgate-rake-docker
     test-1_36:
       - wikibase-client-docker
       - wikibase-repo-docker
       - mwext-php72-phan-docker
+      - mwgate-rake-docker
     gate-and-submit-1_36:
       - wikibase-client-docker
       - wikibase-repo-docker
       - mwext-php72-phan-docker
+      - mwgate-rake-docker
     gate-and-submit-wmf: *mediawiki-extensions-wikibase-gate-and-submit
     postmerge:
       - mwext-doxygen-publish
     experimental:
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
+      - mwgate-ruby2.5-rake-docker
       - legacy-quibble-rubyselenium-docker
 
   - name: mediawiki/extensions/WikibaseCirrusSearch
