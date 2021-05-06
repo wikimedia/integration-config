@@ -3273,6 +3273,12 @@ projects:
     template:
       - name: tox-docker
 
+  - name: operations/software/mailman-templates
+    template:
+      - name: debian-glue
+    gate-and-submit-l10n:
+      - debian-glue
+
   - name: operations/software/netbox-extras
     test:
       - tox-docker
