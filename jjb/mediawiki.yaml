@@ -948,7 +948,7 @@
     name: mediawiki-selenium-integration
     jobs:
         - mediawiki-selenium-integration-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-stretch-bundle:0.0.47-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72-bundle:0.0.47
 
             packages-source: vendor
             database: mysql
