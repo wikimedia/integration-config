@@ -970,31 +970,6 @@
 
 - job-template:
     !!merge : *job_quibble
-    name: parsoidsvc-parsertests-docker
-    node: Docker
-    wrappers:
-        - timeout:
-            timeout: 10  # minutes
-            fail: true
-        - timestamps
-        - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-    triggers:
-        - zuul
-
-- project:
-    name: parsoidsvc-parsertests
-    jobs:
-        - parsoidsvc-parsertests-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:0.0.47
-            packages-source: composer
-            database: sqlite
-            quibble_args: '--commands=services/parsoid/tools/ci-mw-parsertests.sh'
-
-- job-template:
-    !!merge : *job_quibble
     parameters:
         # Hint about the job requiring dependencies. They MUST be set by Zuul.
         - string:
