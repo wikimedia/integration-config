@@ -1,3 +1,0 @@
-Package: rake
-Description: ruby on a stretch image
-Depends: ci-stretch
