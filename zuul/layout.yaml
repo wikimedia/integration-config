@@ -2507,13 +2507,7 @@ projects:
       - name: skin-phan
       - name: extension-gate
       - name: extension-javascript-documentation
-      - name: mwgate-rake
-    test:
-      # TODO: Legacy ruby-based selenium job. To remove! (T220035)
-      - mwselenium-quibble-docker
     postmerge:
-      # TODO: Legacy ruby-based selenium job. To remove! (T220035)
-      - mwselenium-quibble-docker
       - mwext-doxygen-publish
     experimental:
       - legacy-quibble-rubyselenium-docker
