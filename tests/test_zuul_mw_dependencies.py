@@ -86,8 +86,6 @@ class TestMwDependencies(unittest.TestCase):
     def test_job_name(self):
         self.assertHasDependencies(self.fetch_dependencies(
             job_name='mediawiki-quibble-composer-mysql-php74-docker'))
-        self.assertHasDependencies(self.fetch_dependencies(
-            job_name='mwselenium-quibble-docker'))
 
         self.assertHasDependencies(self.fetch_dependencies(
             job_name='quibble-composer-mysql-php74-docker'))
