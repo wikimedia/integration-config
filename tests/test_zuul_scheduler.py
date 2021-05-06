@@ -1099,6 +1099,10 @@ class TestZuulScheduler(unittest.TestCase):
         # https://review.openstack.org/#/c/361505/2
         mw_defined_jobs.discard('noop')
 
+        # The ruby2.5-rake-docker job is temporarily being used by Wikibase;
+        # not worth having a special version just for a short while.
+        mw_defined_jobs.discard('ruby2.5-rake-docker')
+
         errors = {}
         # Projects that are not supposed to be in the 'mediawiki' queue. Either
         # because they share a job with a mediawiki repository either directly
@@ -1115,7 +1119,7 @@ class TestZuulScheduler(unittest.TestCase):
         self.maxDiff = None
         self.longMessage = True
         self.assertDictEqual(
-            {}, errors, "\nNon MediaWiki projects must not have jobs "
+            {}, errors, "\nNon-MediaWiki projects must not have jobs "
                         "in common with the mediawiki queue.")
 
     def test_mwcore_switch_to_quibble(self):
