@@ -10,7 +10,7 @@ bazelisk version
 
 # Setting home dir for Gerrit tools/download_file.py which uses ~ for caching
 # downloaded artifacts
-export HOME="$XDG_CACHE_HOME"/gerrithome
+export GERRIT_CACHE_HOME="$XDG_CACHE_HOME"/gerrit
 
 bazelisk info
-bazelisk build "${@:-release}"
+bazelisk build --action_env=GERRIT_CACHE_HOME "${@:-release}"
