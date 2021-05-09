@@ -821,7 +821,7 @@ jobs:
 
   # Meta jobs come first
   #
-  # A job whose name starts with '^' is a meta job, is rules are applied on any
+  # A job whose name starts with '^' is a meta job, its rules are applied on any
   # matching job UNLESS a job already had a definition.  We thus want to list
   # meta jobs first.
   - name: ^.*$
