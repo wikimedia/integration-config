@@ -3972,6 +3972,7 @@ projects:
       - name: extension-phan
       - name: extension-codehealth
       - name: extension-coverage
+      - name: extension-gate
 
   - name: mediawiki/extensions/GuidedTour
     template:
