@@ -594,6 +594,7 @@ phan_dependencies = {
                                   'cldr'],
     'UserStatus': ['SocialProfile', 'SportsTeams'],
     'UploadWizard': ['EventLogging'],
+    'VoteNY': ['SocialProfile'],
     'WebAuthn': ['OATHAuth'],
     'WikiEditor': ['EventLogging', 'WikimediaEvents'],
     'WikiLove': ['Flow', 'LiquidThreads'],
