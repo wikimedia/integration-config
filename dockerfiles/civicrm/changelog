@@ -1,3 +1,9 @@
+civicrm (0.2.1) wikimedia; urgency=high
+
+   Don't provide the Wikimedia fork of civicrm-buildkit any more
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed, 12 May 2021 09:01:56 -0700
+
 civicrm (0.2.0-s3) wikimedia; urgency=high
 
    Refresh for update in parent image sury-php:
