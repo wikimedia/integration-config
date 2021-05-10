@@ -1,3 +1,9 @@
+gerrit (1.1.2) wikimedia; urgency=medium
+
+  * Move GERRIT_CACHE_HOME at image level.
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 10 May 2021 10:47:08 +0200
+
 gerrit (1.1.1) wikimedia; urgency=medium
 
   * Fix up download_file.py cache, the script now recognizes
