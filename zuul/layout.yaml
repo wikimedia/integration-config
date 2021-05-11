@@ -6496,6 +6496,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/NCBITaxonomyLookup
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/Negref
     template:
       - name: extension-quibble
