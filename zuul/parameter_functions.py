@@ -818,6 +818,7 @@ gatedextensions = [
     'MobileApp',
     'MobileFrontend',
     'NavigationTiming',
+    'PageImages',
     'SandboxLink',
     'Scribunto',
     'SiteMatrix',
