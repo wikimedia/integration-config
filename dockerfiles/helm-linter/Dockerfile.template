@@ -17,7 +17,8 @@ RUN {{ "helm helm3 rake kubeyaml envoyproxy helmfile helm-diff ruby-git" | apt_i
     helm repo add incubator $HELM_REPO_INCUBATOR && \
     helm3 repo add wmf-stable $HELM_REPO_WMFSTABLE && \
     helm3 repo add incubator $HELM_REPO_INCUBATOR && \
-    chown -R nobody $HELM_HOME
+    chown -R nobody $HELM_HOME /tmp/helm3 && \
+    chmod -R 777 /tmp/helm3 $HELM_HOME
 
 USER nobody
 

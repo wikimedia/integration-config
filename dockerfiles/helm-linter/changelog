@@ -1,3 +1,10 @@
+helm-linter (0.2.14) UNRELEASED; urgency=medium
+
+  * Change permissions of helm directories to allow running
+    as a different user
+
+ -- Giuseppe Lavagetto <glavagetto@wikimedia.org>  Mon, 10 May 2021 11:25:22 +0200
+
 helm-linter (0.2.13) wikimedia; urgency=medium
 
   * Added ruby-git
