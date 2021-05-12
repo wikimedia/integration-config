@@ -21,6 +21,9 @@ RUN echo "deb http://apt.wikimedia.org/wikimedia buster-wikimedia component/jdk8
 # downloaded artifacts
 ENV GERRIT_CACHE_HOME="$XDG_CACHE_HOME/gerrit"
 
+# Bower writes some stuff there:
+ENV XDG_DATA_HOME=/tmp/data
+
 RUN {{ "nodejs" | apt_install }} \
     && git clone --depth 1 https://gerrit.wikimedia.org/r/p/integration/npm.git /srv/npm \
     && rm -rf /srv/npm/.git \
