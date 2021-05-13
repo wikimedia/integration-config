@@ -4,7 +4,7 @@ mkdir log/
 
 # Fetch VM
 # See <https://www.mediawiki.org/wiki/Continuous_integration/Qemu#Snapshots>
-cp /srv/vm-images/qemu-debian10buster-2020_05_04b.img vm.img
+cp /srv/vm-images/qemu-debian10buster-2020_05_04c.img vm.img
 install -m 600 /srv/vm-images/sshkey_qemu_root_v1 root.key
 
 # Start VM
