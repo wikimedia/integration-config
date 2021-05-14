@@ -2729,6 +2729,14 @@ projects:
     template:
       - name: debian-glue-non-voting
 
+  - name: operations/container/miscweb
+    test:
+      - trigger-miscweb-pipeline-test
+    gate-and-submit:
+      - trigger-miscweb-pipeline-test
+    postmerge:
+      - trigger-miscweb-pipeline-publish
+
   - name: operations/cookbooks
     template:
       - name: tox-docker
