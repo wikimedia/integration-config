@@ -4598,7 +4598,6 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-phan
-      - name: extension-gate
       - name: extension-coverage
 
   - name: mediawiki/extensions/UniversalLanguageSelector
