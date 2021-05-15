@@ -6324,10 +6324,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/MediaWikiAuth
-    template:
-      - name: extension-quibble-noselenium
-
   - name: mediawiki/extensions/MediaWikiFarm
     template:
       - name: extension-quibble-composer
@@ -9857,6 +9853,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/MassAction
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/MediaWikiAuth
     template:
       - name: archived
 
