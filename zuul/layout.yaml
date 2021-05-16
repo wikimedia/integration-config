@@ -6931,10 +6931,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/RelatedLinks
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/RelMicroformat
     template:
       - name: extension-quibble
@@ -10033,6 +10029,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Reflect
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/RelatedLinks
     template:
       - name: archived
 
