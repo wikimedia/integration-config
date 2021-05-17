@@ -3267,6 +3267,8 @@ projects:
   - name: operations/software/netbox-extras
     test:
       - tox-docker
+    gate-and-submit:
+      - tox-docker
 
   - name: operations/software/netbox-reports
     test:
