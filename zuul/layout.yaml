@@ -7401,10 +7401,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/UploadLogo
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/UrlGetParameters
     template:
       - name: extension-quibble
@@ -10217,6 +10213,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/UserSnoop
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/UploadLogo
     template:
       - name: archived
 
