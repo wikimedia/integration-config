@@ -1,3 +1,9 @@
+tox-pyspark (0.7.0-s2) wikimedia; urgency=high
+
+   Actually disable maven central, as documented.
+
+ -- Erik Bernhardson <ebernhardson@wikimedia.org>  Tue, 18 May 2021 10:24:45 -0700
+
 tox-pyspark (0.7.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image tox:
