@@ -490,7 +490,7 @@ phan_dependencies = {
     'skins/MinervaNeue': ['Echo', 'MobileFrontend'],
     'skins/Nimbus': ['Echo', 'SocialProfile'],
     'skins/Refreshed': ['SocialProfile'],
-    'AbuseFilter': ['CheckUser', 'CentralAuth', 'Echo', 'Renameuser'
+    'AbuseFilter': ['CheckUser', 'CentralAuth', 'Echo', 'Renameuser',
                     'AntiSpoof', 'Scribunto', 'EventLogging'],
     'AdvancedSearch': ['BetaFeatures'],
     'ApiFeatureUsage': ['Elastica'],
