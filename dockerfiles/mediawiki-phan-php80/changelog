@@ -1,3 +1,9 @@
+mediawiki-phan-php80 (0.1.0) wikimedia; urgency=medium
+
+  * (T283097) Skip running if .phan/config is not present
+
+ -- Kunal Mehta <legoktm@debian.org>  Tue, 18 May 2021 18:16:39 -0700
+
 mediawiki-phan-php80 (0.0.3-s7) wikimedia; urgency=high
 
    Refresh for update in parent image sury-php:

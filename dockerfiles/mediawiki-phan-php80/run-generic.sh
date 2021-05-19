@@ -12,4 +12,9 @@ cd "$SOURCE_ROOT"
 # Bypass expensive Symfony\Component\Console\Terminal::getWidth() (T219114#5084302)
 export COLUMNS=80
 
+if [ ! -f ".phan/config.php" ]; then
+    echo ".phan/config.php not found, skipping\n"
+    exit 0
+fi
+
 exec vendor/bin/phan -d . --long-progress-bar "$@" --require-config-exists
