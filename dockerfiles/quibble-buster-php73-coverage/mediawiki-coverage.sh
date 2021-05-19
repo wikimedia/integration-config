@@ -14,8 +14,6 @@ function relay_signals() {
 set +e
 if [[ ! -v CODEHEALTH ]]; then
     php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$MW_INSTALL_PATH -d pcov.exclude='@(tests|vendor)@' \
-        -d pcov.initial.memory=4294967296 \
-        -d pcov.initial.files=3000 \
         tests/phpunit/phpunit.php \
             --exclude-group Dump,Broken,ParserFuzz,Stub \
             --coverage-clover "$LOG_DIR"/clover.xml \
@@ -23,8 +21,6 @@ if [[ ! -v CODEHEALTH ]]; then
 else
     phpunit-suite-edit "$MW_INSTALL_PATH/phpunit.xml.dist"
     php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$MW_INSTALL_PATH -d pcov.exclude='@(tests|vendor)@' \
-        -d pcov.initial.memory=4294967296 \
-        -d pcov.initial.files=3000 \
         vendor/bin/phpunit \
             --exclude-group Dump,Broken,ParserFuzz,Stub \
             --coverage-clover "$LOG_DIR"/clover.xml \
