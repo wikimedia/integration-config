@@ -8387,6 +8387,8 @@ projects:
   - name: labs/codesearch
     template:
       - name: tox-docker
+    postmerge:
+      - trigger-codesearch-pipeline-publish
     experimental:
       - rust-test
 

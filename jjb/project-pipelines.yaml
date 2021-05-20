@@ -300,3 +300,12 @@
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
       - '{name}-pipeline-{pipeline}'
+
+- project:
+    name: codesearch
+    pipeline:
+      # No test pipeline for now
+      - publish
+    jobs:
+      - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'
