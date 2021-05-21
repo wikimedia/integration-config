@@ -8401,6 +8401,12 @@ projects:
   - name: labs/libraryupgrader
     template:
       - name: tox-docker
+    test:
+      - trigger-libraryupgrader-pipeline-test
+    gate-and-submit:
+      - trigger-libraryupgrader-pipeline-test
+    postmerge:
+      - trigger-libraryupgrader-pipeline-publish
     experimental:
       - rust-test
 
