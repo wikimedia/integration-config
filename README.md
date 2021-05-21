@@ -14,17 +14,33 @@ For more about the Jenkins Job Builder software and how to use it, refer to the 
 
 ## Example Usage
 
-You should run Jenkins job builder using:
+Make sure you have tox and python 3 installed, you can then run Jenkins job builder using:
 
-    $ tox -e jenkin-jobs -- <arguments>
+    $ ./jenkin-jobs <arguments>
 
 Generate XML files for Jenkins jobs from YAML files:
 
-    $ tox -e jenkins-jobs -- test ./jjb/ --config-xml -o output/
+    $ ./jenkins-jobs test ./jjb/ --config-xml -o output/
 
 Update Jenkins jobs which name starts with "selenium":
 
-    $ tox -e jenkins-jobs -- --conf jenkins_jobs.ini update ./jjb/ selenium*
+    $ ./jenkins-jobs --conf jenkins_jobs.ini update ./jjb/ selenium*
+
+There are a few wrappers provided to easily test, update or delete jobs:
+
+Delete the job `build-project` or jobs matching fnmatch `*node6*`:
+
+    $ ./jjb-delete build-project
+    $ ./jjb-delete '*node6*'
+
+Generate a given job and print the generated XML:
+
+   $ ./jjb-test 'wip-job'
+
+Delete one or more jobs:
+
+   $ ./jjb-delete 'obsolete-job'
+   $ ./jjb-delete '*php5*'
 
 ## Running tests
 
