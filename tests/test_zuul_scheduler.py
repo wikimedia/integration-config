@@ -222,17 +222,6 @@ class TestZuulScheduler(unittest.TestCase):
             % (name, pipeline)
             )
 
-    def assertProjectHasExperimentalPhan(self, name, definition, pipeline):
-        if pipeline != 'experimental':
-            return
-        self.assertTrue(
-            any([job for job in definition
-                 if job.endswith('phan-docker')]),
-            'Project %s pipeline %s must have job '
-            'ending with phan-docker'
-            % (name, pipeline)
-            )
-
     def assertProjectHasNoExtensionTests(self, name, definition, pipeline):
         self.longMessage = True
         self.assertEqual(
@@ -283,7 +272,6 @@ class TestZuulScheduler(unittest.TestCase):
             r'mediawiki/extensions/\w+$': [
                 self.assertProjectHasComposerValidate,
                 self.assertProjectHasPhplint,
-                self.assertProjectHasExperimentalPhan,
                 self.assertProjectHasI18nChecker,
             ],
             r'mediawiki/skins/': [
@@ -291,7 +279,6 @@ class TestZuulScheduler(unittest.TestCase):
                 self.assertProjectHasPhplint,
                 self.assertProjectHasSkinTests,
                 self.assertProjectHasNoExtensionTests,
-                self.assertProjectHasExperimentalPhan,
                 self.assertProjectHasI18nChecker,
             ],
             r'mediawiki/vendor$': [

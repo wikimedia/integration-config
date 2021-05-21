@@ -1180,17 +1180,21 @@ project-templates:
       - quibble-vendor-mysql-php72-noselenium-docker
       - quibble-vendor-mysql-php72-selenium-docker
       - mwgate-node10-docker
+      - mwext-php72-phan-docker
     gate-and-submit:
       - quibble-vendor-mysql-php72-noselenium-docker
       - quibble-vendor-mysql-php73-noselenium-docker
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php72-selenium-docker
       - mwgate-node10-docker
+      - mwext-php72-phan-docker
 
     test-1_31:
       - mwgate-node10-docker
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php72-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php72-phan-docker
     gate-and-submit-1_31:
       - mwgate-node10-docker
       - quibble-composer-mysql-php70-noselenium-docker
@@ -1198,35 +1202,47 @@ project-templates:
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php72-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php72-phan-docker
 
     test-1_35:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
     gate-and-submit-1_35:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
 
     test-1_36:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
     gate-and-submit-1_36:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
 
     test-wmf:
       - quibble-vendor-mysql-php72-noselenium-docker
       - quibble-vendor-mysql-php72-selenium-docker
       - mwgate-node10-docker
+      - mwext-php72-phan-docker
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php72-noselenium-docker
       - quibble-vendor-mysql-php72-selenium-docker
       - mwgate-node10-docker
+      - mwext-php72-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1235,7 +1251,6 @@ project-templates:
       - quibble-vendor-mysql-php80-docker
       - quibble-vendor-sqlite-php72-noselenium-docker
       - quibble-vendor-postgres-php72-noselenium-docker
-      - mwext-php72-phan-docker
 
   - name: extension-quibble-php73-or-later
     php:
@@ -1244,40 +1259,54 @@ project-templates:
       - quibble-vendor-mysql-php73-noselenium-docker
       - quibble-vendor-mysql-php73-selenium-docker
       - mwgate-node10-docker
+      - mwext-php73-phan-docker
     gate-and-submit:
       - quibble-vendor-mysql-php73-noselenium-docker
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php73-selenium-docker
       - mwgate-node10-docker
+      - mwext-php73-phan-docker
 
     test-1_31:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
     gate-and-submit-1_31:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
 
     test-1_35:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
     gate-and-submit-1_35:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
 
     test-1_36:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
     gate-and-submit-1_36:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1286,17 +1315,18 @@ project-templates:
       - quibble-composer-mysql-php80-docker
       - quibble-vendor-sqlite-php73-noselenium-docker
       - quibble-vendor-postgres-php73-noselenium-docker
-      - mwext-php73-phan-docker
 
   - name: extension-quibble-php74-or-later
     test:
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php74-selenium-docker
       - mwgate-node10-docker
+      - mwext-php74-phan-docker
     gate-and-submit:
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php74-selenium-docker
       - mwgate-node10-docker
+      - mwext-php74-phan-docker
 
     # Branches before 1.35 weren't tested with php74
 
@@ -1304,19 +1334,27 @@ project-templates:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php74-phan-docker
     gate-and-submit-1_35:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php74-phan-docker
 
     test-1_36:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php74-phan-docker
     gate-and-submit-1_36:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php74-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1325,7 +1363,6 @@ project-templates:
       - quibble-vendor-mysql-php80-docker
       - quibble-vendor-sqlite-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
-      - mwext-php74-phan-docker
 
   # Special job template that runs composer rather than than relying
   # on mediawiki/vendor for quibble.
@@ -1339,17 +1376,23 @@ project-templates:
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php72-selenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php72-phan-docker
     gate-and-submit:
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php72-selenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php72-phan-docker
 
     test-1_31:
       - mwgate-node10-docker
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php72-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php72-phan-docker
     gate-and-submit-1_31:
       - mwgate-node10-docker
       - quibble-composer-mysql-php70-noselenium-docker
@@ -1357,35 +1400,49 @@ project-templates:
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php72-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php72-phan-docker
 
     test-1_35:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
     gate-and-submit-1_35:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
 
     test-1_36:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
     gate-and-submit-1_36:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
 
     test-wmf:
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php72-selenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php72-phan-docker
     gate-and-submit-wmf:
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php72-selenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php72-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1394,7 +1451,6 @@ project-templates:
       - quibble-composer-mysql-php80-docker
       - quibble-composer-sqlite-php72-noselenium-docker
       - quibble-composer-postgres-php72-noselenium-docker
-      - mwext-php72-phan-docker
 
   - name: extension-quibble-composer-php73-or-later
     php:
@@ -1403,40 +1459,56 @@ project-templates:
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
     gate-and-submit:
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
 
     test-1_31:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
     gate-and-submit-1_31:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
 
     test-1_35:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
     gate-and-submit-1_35:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
 
     test-1_36:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
     gate-and-submit-1_36:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1445,7 +1517,6 @@ project-templates:
       - quibble-composer-mysql-php80-docker
       - quibble-composer-sqlite-php73-noselenium-docker
       - quibble-composer-postgres-php73-noselenium-docker
-      - mwext-php73-phan-docker
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
@@ -1458,44 +1529,60 @@ project-templates:
     test:
       - quibble-vendor-mysql-php72-noselenium-docker
       - mwgate-node10-docker
+      - mwext-php72-phan-docker
     gate-and-submit:
       - quibble-vendor-mysql-php72-noselenium-docker
       - quibble-vendor-mysql-php73-noselenium-docker
       - quibble-vendor-mysql-php74-noselenium-docker
       - mwgate-node10-docker
+      - mwext-php72-phan-docker
 
     test-1_31:
       - quibble-composer-mysql-php72-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
     gate-and-submit-1_31:
       - quibble-composer-mysql-php70-noselenium-docker
       - quibble-composer-mysql-php71-noselenium-docker
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
 
     test-1_35:
       - quibble-composer-mysql-php73-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
     gate-and-submit-1_35:
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
 
     test-1_36:
       - quibble-composer-mysql-php73-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
     gate-and-submit-1_36:
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
 
     test-wmf:
       - quibble-vendor-mysql-php72-noselenium-docker
       - mwgate-node10-docker
+      - mwext-php72-phan-docker
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php72-noselenium-docker
       - mwgate-node10-docker
+      - mwext-php72-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1504,7 +1591,6 @@ project-templates:
       - quibble-composer-mysql-php80-noselenium-docker
       - quibble-vendor-sqlite-php72-noselenium-docker
       - quibble-vendor-postgres-php72-noselenium-docker
-      - mwext-php72-phan-docker
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
@@ -1514,44 +1600,64 @@ project-templates:
     test:
       - quibble-composer-mysql-php72-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
     gate-and-submit:
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
 
     test-1_31:
       - quibble-composer-mysql-php72-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php72-phan-docker
     gate-and-submit-1_31:
       - quibble-composer-mysql-php70-noselenium-docker
       - quibble-composer-mysql-php71-noselenium-docker
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php72-phan-docker
 
     test-1_35:
       - quibble-composer-mysql-php73-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
     gate-and-submit-1_35:
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
 
     test-1_36:
       - quibble-composer-mysql-php73-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
     gate-and-submit-1_36:
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
 
     test-wmf:
       - quibble-composer-mysql-php72-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
     gate-and-submit-wmf:
       - quibble-composer-mysql-php72-noselenium-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1609,65 +1715,6 @@ project-templates:
     experimental:
       - mwext-php72-phan-docker
 
-  - name: extension-phan
-    test:
-      - mwext-php72-phan-docker
-    gate-and-submit:
-      - mwext-php72-phan-docker
-
-    # Our phan job is broken on release branches for at least a couple reasons:
-    # - it uses php72 but some repositories have dependencies that are not
-    #   compatible/require php70
-    # - the job uses quibble --packages-source=vendor but vendor.git lacks
-    #   dependencies. So we should use composer update --no-dev instead.
-    #
-    # So stop running Phan entirely until we figure it out.
-    # See T231966 / T226945
-    #test-1_31:
-    # - mwext-php72-phan-docker
-    #gate-and-submit-1_31:
-    # - mwext-php72-phan-docker
-    #test-1_35:
-    # - mwext-php73-phan-docker
-    #gate-and-submit-1_35:
-    # - mwext-php73-phan-docker
-    #test-1_36:
-    # - mwext-php73-phan-docker
-    #gate-and-submit-1_36:
-    # - mwext-php73-phan-docker
-
-    # It is fine on wmf branches since vendor.git has all the dependencies
-    test-wmf:
-      - mwext-php72-phan-docker
-    gate-and-submit-wmf:
-      - mwext-php72-phan-docker
-
-  - name: skin-phan
-    test:
-      - mwskin-php72-phan-docker
-    gate-and-submit:
-      - mwskin-php72-phan-docker
-
-    # Skip Phan on release branches for now.
-    # See T231966 / T226945
-    #test-1_31:
-    # - mwskin-php72-phan-docker
-    #gate-and-submit-1_31:
-    # - mwskin-php72-phan-docker
-    #test-1_35:
-    # - mwskin-php73-phan-docker
-    #gate-and-submit-1_35:
-    # - mwskin-php73-phan-docker
-    #test-1_36:
-    # - mwskin-php73-phan-docker
-    #gate-and-submit-1_36:
-    # - mwskin-php73-phan-docker
-
-    test-wmf:
-      - mwskin-php72-phan-docker
-    gate-and-submit-wmf:
-      - mwskin-php72-phan-docker
-
   - name: extension-coverage
     postmerge:
       - mwext-phpunit-coverage-docker-publish
@@ -1689,45 +1736,61 @@ project-templates:
     test:
       - quibble-vendor-mysql-php72-docker
       - mwgate-node10-docker
+      - mwskin-php72-phan-docker
     gate-and-submit:
       - quibble-vendor-mysql-php72-docker
       - quibble-vendor-mysql-php73-docker
       - quibble-vendor-mysql-php74-docker
       - mwgate-node10-docker
+      - mwskin-php72-phan-docker
 
     # We use composer on release branches
     test-1_31:
       - mwgate-node10-docker
       - quibble-composer-mysql-php72-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php72-phan-docker
     gate-and-submit-1_31:
       - mwgate-node10-docker
       - quibble-composer-mysql-php70-docker
       - quibble-composer-mysql-php71-docker
       - quibble-composer-mysql-php72-docker
       - quibble-composer-mysql-php73-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php72-phan-docker
 
     test-1_35:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php73-phan-docker
     gate-and-submit-1_35:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-docker
       - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php73-phan-docker
 
     test-1_36:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php73-phan-docker
     gate-and-submit-1_36:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-docker
       - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php73-phan-docker
 
     test-wmf:
       - quibble-vendor-mysql-php72-docker
       - mwgate-node10-docker
+      - mwskin-php72-phan-docker
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php72-docker
       - mwgate-node10-docker
+      - mwskin-php72-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1736,7 +1799,6 @@ project-templates:
       - quibble-composer-mysql-php80-docker
       - quibble-vendor-sqlite-php72-docker
       - quibble-vendor-postgres-php72-docker
-      - mwskin-php72-phan-docker
 
   - name: skin-quibble-composer
     php:
@@ -1745,44 +1807,64 @@ project-templates:
     test:
       - quibble-composer-mysql-php72-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php72-phan-docker
     gate-and-submit:
       - quibble-composer-mysql-php72-docker
       - quibble-composer-mysql-php73-docker
       - quibble-composer-mysql-php74-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php72-phan-docker
 
     test-1_31:
       - mwgate-node10-docker
       - quibble-composer-mysql-php72-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php72-phan-docker
     gate-and-submit-1_31:
       - mwgate-node10-docker
       - quibble-composer-mysql-php70-docker
       - quibble-composer-mysql-php71-docker
       - quibble-composer-mysql-php72-docker
       - quibble-composer-mysql-php73-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php72-phan-docker
 
     test-1_35:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php73-phan-docker
     gate-and-submit-1_35:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-docker
       - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php73-phan-docker
 
     test-1_36:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php73-phan-docker
     gate-and-submit-1_36:
       - mwgate-node10-docker
       - quibble-composer-mysql-php73-docker
       - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php73-phan-docker
 
     test-wmf:
       - quibble-composer-mysql-php72-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php72-phan-docker
     gate-and-submit-wmf:
       - quibble-composer-mysql-php72-docker
       - mwgate-node10-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php72-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1791,7 +1873,6 @@ project-templates:
       - quibble-composer-mysql-php80-docker
       - quibble-composer-sqlite-php72-docker
       - quibble-composer-postgres-php72-docker
-      - mwskin-php72-phan-docker
 
   - name: extension-javascript-documentation
     test:
@@ -2484,13 +2565,11 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/MinervaNeue
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
-      - name: skin-phan
       - name: extension-gate
       - name: extension-javascript-documentation
     postmerge:
@@ -2501,37 +2580,31 @@ projects:
   - name: mediawiki/skins/Mirage
     template:
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/Modern
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/MonoBook
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/Nostalgia
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/Timeless
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/Vector
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
-      - name: skin-phan
       - name: extension-gate
       - name: extension-javascript-documentation
     experimental:
@@ -2543,7 +2616,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
-      - name: skin-phan
 
 #### Other MediaWiki skins #####################################
 
@@ -2554,7 +2626,6 @@ projects:
   - name: mediawiki/skins/Anisa
     template:
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/apex
     template:
@@ -2583,7 +2654,6 @@ projects:
   - name: mediawiki/skins/Cosmos
     template:
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/DeskMessMirrored
     template:
@@ -2608,12 +2678,10 @@ projects:
   - name: mediawiki/skins/Example
     template:
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/EUCopyrightCampaignSkin
     template:
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/Gamepress
     template:
@@ -2622,7 +2690,6 @@ projects:
   - name: mediawiki/skins/GreyStuff
     template:
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/GuMaxDD
     template:
@@ -2635,7 +2702,6 @@ projects:
   - name: mediawiki/skins/Mask
     template:
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/Material
     template:
@@ -2664,7 +2730,6 @@ projects:
   - name: mediawiki/skins/Refreshed
     template:
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/Schulenburg
     template:
@@ -2673,7 +2738,6 @@ projects:
   - name: mediawiki/skins/Splash
     template:
       - name: skin-quibble
-      - name: skin-phan
 
   - name: mediawiki/skins/Tempo
     template:
@@ -3399,13 +3463,11 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/AbuseFilter
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
@@ -3421,13 +3483,11 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/AdvancedSearch
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-coverage
 
@@ -3435,7 +3495,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -3443,27 +3502,23 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/ArticleCreationWorkflow
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/ArticlePlaceholder
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/Babel
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -3471,7 +3526,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
       - name: extension-coverage
 
@@ -3479,59 +3533,50 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/Calendar
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Campaigns
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Capiunto
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/CategoryTree
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/CentralAuth
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/CentralNotice
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/CharInsert
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/CheckUser
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -3540,7 +3585,6 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-quibble-only-standalone
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-coverage
@@ -3551,7 +3595,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-coverage
       - name: extension-gate
@@ -3560,21 +3603,18 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/Citoid
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/cldr
     template:
       - name: in-wikimedia-production
       - name: in-wikimedia-fundraising-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
     # Special extra jobs because Fundraising uses this on PHP73/REL1_35
@@ -3587,36 +3627,30 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/CodeMirror
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/CodeReview
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-     # FIXME: Missing phan
-     # - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/Cognate
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/CollaborationKit
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-javascript-documentation
     postmerge:
@@ -3626,21 +3660,18 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/CommonsMetadata
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/ConfirmEdit
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -3648,19 +3679,16 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/ContactPage
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/ContentTranslation
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -3668,32 +3696,27 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Dashiki
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Disambiguator
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/DiscussionTools
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/DismissableSiteNotice
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   # Special handling
   - name: mediawiki/extensions/DonationInterface
@@ -3711,26 +3734,21 @@ projects:
       - mwgate-composer-php73-docker
       - mwgate-node10-docker
       - quibble-donationinterface-REL1_35-php73-docker
-    experimental:
-      - mwext-php72-phan-docker
 
   - name: mediawiki/extensions/DoubleWiki
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/DynamicSidebar
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Echo
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-coverage
@@ -3739,20 +3757,17 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/ElectronPdfService
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/EntitySchema
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-coverage
 
@@ -3760,7 +3775,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
     test:
@@ -3772,7 +3786,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
       - name: extension-javascript-documentation
@@ -3781,7 +3794,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -3789,14 +3801,12 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/ExternalGuidance
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/ExternalLinkConfirm
@@ -3807,19 +3817,16 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/FileExporter
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/FileImporter
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -3827,14 +3834,12 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/Flow
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-javascript-documentation
@@ -3844,7 +3849,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/FundraisingEmailUnsubscribe
     template:
@@ -3853,27 +3857,21 @@ projects:
       # Using the -composer (rather than vendor) version because of FR-only use of twig etc.
       - name: extension-quibble-composer
       - name: mediawiki-i18n-check
-      # Not yet configured.
-      # - name: extension-phan
     # Special extra jobs because Fundraising uses this on PHP73/REL1_35
     test:
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_35-php73-docker
     gate-and-submit:
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_35-php73-docker
-    experimental:
-      - mwext-php72-phan-docker
 
   - name: mediawiki/extensions/FundraisingTranslateWorkflow
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Gadgets
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -3881,13 +3879,11 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/GeoData
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -3895,19 +3891,16 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/GlobalBlocking
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/GlobalCssJs
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -3915,7 +3908,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -3923,19 +3915,16 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/GlobalUserPage
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/GlobalWatchlist
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-javascript-documentation
@@ -3946,13 +3935,11 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Graph
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -3960,7 +3947,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-coverage
       - name: extension-gate
@@ -3969,7 +3955,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
       - name: extension-javascript-documentation
@@ -3978,72 +3963,61 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/ImageMap
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/InputBox
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/Insider
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/intersection
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Interwiki
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/InterwikiSorting
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/IPInfo
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Jade
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/Josa
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/JsonConfig
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -4051,7 +4025,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
       - name: extension-javascript-documentation
@@ -4062,77 +4035,65 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/LandingCheck
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/LdapAuthentication
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Linter
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/LiquidThreads
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Listings
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/LocalisationUpdate
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/LoginNotify
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/MachineVision
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
 
   - name: mediawiki/extensions/MapSources
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/MassMessage
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/Math
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
     test:
       - mediawiki-quibble-apitests-vendor-php72-docker
@@ -4143,7 +4104,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   # New extension destined for production -- JDF 2020-10-20 T265939
@@ -4151,20 +4111,17 @@ projects:
     template:
       # - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/MobileApp
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/MobileFrontend
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
       - name: extension-codehealth
       - name: extension-javascript-documentation
@@ -4176,52 +4133,44 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-javascript-documentation
 
   - name: mediawiki/extensions/NavigationTiming
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/Newsletter
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/NewUserMessage
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Nuke
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/OATHAuth
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/OAuth
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/OAuthRateLimiter
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/OpenStackManager
@@ -4229,13 +4178,11 @@ projects:
       - name: in-wikimedia-production
       # OSM changes login and so breaks selenium tests, and we haven't fixed it
       - name: extension-quibble-noselenium
-      - name: extension-phan
 
   - name: mediawiki/extensions/ORES
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-coverage
 
@@ -4243,19 +4190,16 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/PagedTiffHandler
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/PageImages
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -4263,13 +4207,11 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/PageTriage
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-coverage
 
@@ -4277,7 +4219,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -4286,7 +4227,6 @@ projects:
       - name: in-wikimedia-production
       - name: in-wikimedia-fundraising-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
     # Special extra jobs because Fundraising uses this on PHP73/REL1_35
@@ -4300,45 +4240,38 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/ParsoidBatchAPI
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/PdfHandler
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/PerformanceInspector
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Poem
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/PoolCounter
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Popups
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-javascript-documentation
       - name: extension-coverage
@@ -4349,79 +4282,67 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/PropertySuggester
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/QuickSurveys
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/Quiz
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/ReadingLists
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/RelatedArticles
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Renameuser
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   # Not on production, but in the MediaWiki release tarball
   - name: mediawiki/extensions/ReplaceText
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/RevisionSlider
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/RSS
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/SandboxLink
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/Score
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: mwgate-npm
 
   - name: mediawiki/extensions/Scribunto
@@ -4429,7 +4350,6 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-quibble-only-standalone
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -4437,39 +4357,33 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/SecureLinkFixer
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/SecurePoll
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/ShortUrl
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/SiteMatrix
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/SpamBlacklist
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -4477,32 +4391,27 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/SubPageList3
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/SubpageSortkey
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/SyntaxHighlight_GeSHi
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/TemplateData
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
       - name: extension-javascript-documentation
@@ -4511,79 +4420,67 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/TemplateStyles
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/TemplateWizard
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/TextExtracts
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/Thanks
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/TheWikipediaLibrary
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/TimedMediaHandler
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/timeline
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/TitleBlacklist
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/TocTree
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/TorBlock
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Translate
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
       - name: extension-codehealth
       - name: extension-coverage
@@ -4592,26 +4489,22 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/TrustedXFF
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/TwoColConflict
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/UniversalLanguageSelector
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-gate
 
@@ -4619,40 +4512,34 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/UploadWizard
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/UrlShortener
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/UserMerge
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/VipsScaler
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/VisualEditor
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
       - name: commit-message-validator
       - name: extension-javascript-documentation
@@ -4661,13 +4548,11 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Wikibase
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
       - name: extension-codehealth
       - name: extension-javascript-documentation
@@ -4717,14 +4602,12 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/WikibaseLexeme
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-coverage
 
@@ -4732,13 +4615,11 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/WikibaseManifest
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-coverage
       - name: mwgate-npm
@@ -4752,7 +4633,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
       - name: extension-codehealth
       - name: extension-coverage
@@ -4761,7 +4641,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-coverage
 
@@ -4769,27 +4648,23 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/WikidataPageBanner
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikiEditor
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/wikihiero
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   # NOTE: Not yet in Wikimedia production, but eventually headed
   # there. Added 2020-07-01, JDF.
@@ -4797,7 +4672,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
       - name: extension-codehealth
 
@@ -4805,33 +4679,28 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/WikimediaApiPortalOAuth
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikimediaBadges
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikimediaEditorTasks
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/WikimediaEvents
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikimediaIncubator
@@ -4839,32 +4708,27 @@ projects:
       - name: in-wikimedia-production
       # Incubator changes site links and so breaks selenium tests, and we haven't fixed it
       - name: extension-quibble-noselenium
-      - name: extension-phan
 
   - name: mediawiki/extensions/WikimediaMaintenance
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/WikimediaMessages
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-gate
 
   - name: mediawiki/extensions/Wikisource
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/XAnalytics
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
 
 #### Other MediaWiki extensions ################################
 
@@ -4915,7 +4779,6 @@ projects:
   - name: mediawiki/extensions/AdminLinks
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/AdvancedMeta
     template:
@@ -5457,7 +5320,6 @@ projects:
   - name: mediawiki/extensions/CentralLogging
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Challenge
     template:
@@ -5482,7 +5344,6 @@ projects:
   - name: mediawiki/extensions/ChessBrowser
     template:
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
     postmerge:
       - mwext-doxygen-publish
@@ -5494,7 +5355,6 @@ projects:
   - name: mediawiki/extensions/CleanChanges
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/CloneDiff
     template:
@@ -5507,7 +5367,6 @@ projects:
   - name: mediawiki/extensions/CognitiveProcessDesigner
     template:
       - name: extension-quibble-composer
-      - name: extension-phan
 
   - name: mediawiki/extensions/CollapsibleSections
     template:
@@ -5528,7 +5387,6 @@ projects:
   - name: mediawiki/extensions/CommentStreams
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/CommonMessages
     template:
@@ -5666,7 +5524,6 @@ projects:
   - name: mediawiki/extensions/DisableAccount
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Discourse
     template:
@@ -5700,7 +5557,6 @@ projects:
   - name: mediawiki/extensions/Drafts
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/DrawioEditor
     template:
@@ -5709,7 +5565,6 @@ projects:
   - name: mediawiki/extensions/DumpsOnDemand
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Duplicator
     template:
@@ -5783,7 +5638,6 @@ projects:
   - name: mediawiki/extensions/EUCopyrightCampaign
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/examples
     template:
@@ -5889,7 +5743,6 @@ projects:
     template:
       - name: extension-quibble
       - name: extension-coverage
-      - name: extension-phan
 
   - name: mediawiki/extensions/GeoGebra
     template:
@@ -5902,7 +5755,6 @@ projects:
   - name: mediawiki/extensions/GitGadgets
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Gitweb
     template:
@@ -6000,7 +5852,6 @@ projects:
   - name: mediawiki/extensions/Gravatar
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/GroupsSidebar
     template:
@@ -6099,7 +5950,6 @@ projects:
   - name: mediawiki/extensions/ImageRating
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/ImageTweaks
     template:
@@ -6305,7 +6155,6 @@ projects:
   - name: mediawiki/extensions/MassEditRegex
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/MassMessageEmail
     template:
@@ -6314,7 +6163,6 @@ projects:
   - name: mediawiki/extensions/MathSearch
     template:
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/MediaFunctions
@@ -6324,7 +6172,6 @@ projects:
   - name: mediawiki/extensions/MediaUploader
     template:
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/MediaWikiChat
@@ -6358,7 +6205,6 @@ projects:
   - name: mediawiki/extensions/MiniInvite
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/MinimumNameLength
     template:
@@ -6452,7 +6298,6 @@ projects:
   - name: mediawiki/extensions/MWVersionInfo
     template:
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/MyVariables
@@ -6482,7 +6327,6 @@ projects:
   - name: mediawiki/extensions/NativeSvgHandler
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/NaturalLanguageList
     template:
@@ -6499,7 +6343,6 @@ projects:
   - name: mediawiki/extensions/NearbyPages
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/NetworkAuth
     template:
@@ -6562,7 +6405,6 @@ projects:
   - name: mediawiki/extensions/NukeDPL
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/NumberFormat
     template:
@@ -6730,7 +6572,6 @@ projects:
   - name: mediawiki/extensions/Petition
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/PGFTikZ
     template:
@@ -6880,7 +6721,6 @@ projects:
   - name: mediawiki/extensions/QuizGame
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/RandomArea
     template:
@@ -6937,12 +6777,10 @@ projects:
   - name: mediawiki/extensions/RelMicroformat
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/RelatedSites
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/ReplaceSet
     template:
@@ -7071,13 +6909,11 @@ projects:
   - name: mediawiki/extensions/SendGrid
     template:
       - name: extension-quibble-composer
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/Sentry
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/SharedHelpPages
     template:
@@ -7090,7 +6926,6 @@ projects:
   - name: mediawiki/extensions/ShortDescription
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/ShoutWikiAds
     template:
@@ -7147,7 +6982,6 @@ projects:
   - name: mediawiki/extensions/SkinPerPage
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/SlimboxThumbs
     template:
@@ -7168,12 +7002,10 @@ projects:
   - name: mediawiki/extensions/Sofa
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/SoftRedirector
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/SoftwareVersion
     template:
@@ -7186,7 +7018,6 @@ projects:
   - name: mediawiki/extensions/SpamDiffTool
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/SpamRegex
     template:
@@ -7199,7 +7030,6 @@ projects:
   - name: mediawiki/extensions/SparkPost
     template:
       - name: extension-quibble-composer
-      - name: extension-phan
 
   - name: mediawiki/extensions/Special404
     template:
@@ -7276,7 +7106,6 @@ projects:
   - name: mediawiki/extensions/Sudo
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/Survey
     template:
@@ -7301,7 +7130,6 @@ projects:
   - name: mediawiki/extensions/TEI
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/TestLanguageNameGrammar
     template:
@@ -7322,7 +7150,6 @@ projects:
   - name: mediawiki/extensions/ThrottleOverride
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/TimelineTable
     template:
@@ -7419,7 +7246,6 @@ projects:
   - name: mediawiki/extensions/UseResource
     template:
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/UserExport
@@ -7461,7 +7287,6 @@ projects:
   - name: mediawiki/extensions/Variables
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/VEForAll
     template:
@@ -7502,7 +7327,6 @@ projects:
   - name: mediawiki/extensions/WatchSubpages
     template:
       - name: extension-quibble
-      - name: extension-phan
 
   - name: mediawiki/extensions/WebChat
     template:
@@ -7583,7 +7407,6 @@ projects:
   - name: mediawiki/extensions/WikiSEO
     template:
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikiShare
@@ -7593,14 +7416,12 @@ projects:
   - name: mediawiki/extensions/Wikispeech
     template:
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikiToLDAP
     template:
       - name: extension-quibble-composer
-      - name: extension-phan
 
   - name: mediawiki/extensions/WSOAuth
     template:
@@ -7649,7 +7470,6 @@ projects:
   - name: mediawiki/extensions/WikispeechSpeechDataCollector
     template:
       - name: extension-quibble
-      - name: extension-phan
       - name: extension-codehealth
       - name: extension-coverage
 
@@ -7855,7 +7675,6 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      - name: extension-phan
       - name: commit-message-validator
     test:
       - parsoidsvc-composer-package-php72-docker

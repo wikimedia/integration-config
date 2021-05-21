@@ -226,23 +226,6 @@ class TestZuulLayout(unittest.TestCase):
                 # Extract singular 'extension' or 'skin'
                 kind = project['name'].split('/')[1][:-1]
 
-                noPhan = [
-                    # Fix tracked in T250421
-                    'mediawiki/extensions/CodeReview',
-                    # Fix tracked in T202384 + T224763
-                    'mediawiki/extensions/DonationInterface',
-                    # Unconfigured.
-                    'mediawiki/extensions/FundraisingEmailUnsubscribe'
-                    ]
-
-                if project['name'] not in noPhan:
-                    self.assertIn(
-                        '%s-phan' % kind,
-                        templates,
-                        'Production %s %s must have "%s-phan"'
-                        % (kind, name, kind)
-                    )
-
                 if 'extension-quibble-only-selenium' in templates:
                     self.assertNotIn(
                         'extension-quibble',
