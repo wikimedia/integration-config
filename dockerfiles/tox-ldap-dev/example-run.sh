@@ -17,6 +17,6 @@ for project in "${projects[@]}"; do
         --env ZUUL_REF=master \
         --volume /"$(pwd)"/log://log \
         --volume /"$(pwd)"/cache://cache \
-        docker-registry.wikimedia.org/releng/tox-labs-striker:latest
+        docker-registry.wikimedia.org/releng/tox-ldap-dev:latest
 done;
 echo "Successfully ran examples."
