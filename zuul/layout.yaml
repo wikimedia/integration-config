@@ -2755,6 +2755,10 @@ projects:
     template:
       - name: skin-quibble
 
+  - name: mediawiki/skins/WMAU
+    template:
+        - name: skin-quibble
+
   - name: mediawiki/skins/WPtouch
     template:
       - name: skin-quibble
