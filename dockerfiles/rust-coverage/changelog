@@ -1,3 +1,9 @@
+rust-coverage (0.1.3-s8) wikimedia; urgency=medium
+
+  * Rebuild for Rust 1.52.1
+
+ -- Kunal Mehta <legoktm@debian.org>  Sun, 23 May 2021 23:22:14 -0700
+
 rust-coverage (0.1.3-s7) wikimedia; urgency=medium
 
   * Rebuild for Rust 1.50.0

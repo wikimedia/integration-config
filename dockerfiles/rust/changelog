@@ -1,3 +1,9 @@
+rust (1.52.1-1) wikimedia; urgency=medium
+
+  * New Rust version 1.52.1
+
+ -- Kunal Mehta <legoktm@debian.org>  Sun, 23 May 2021 23:21:49 -0700
+
 rust (1.50.0-1) wikimedia; urgency=medium
 
   * New Rust version 1.50.0
