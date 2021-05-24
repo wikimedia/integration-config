@@ -7,7 +7,7 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 USER root
 
-RUN {{ "build-essential pkg-config autoconf python3 php-cli wget" | apt_install }} \
+RUN {{ "build-essential pkg-config autoconf python3 php-cli php-mbstring php-intl php-xml wget" | apt_install }} \
     && install --directory --mode 777 /srv/demo /srv/emsdk
 
 USER nobody
