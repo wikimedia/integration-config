@@ -8661,6 +8661,10 @@ projects:
     postmerge:
       - mediawiki-selenium-ruby2.5-bundle-yard-publish
 
+  - name: wikimedia/irc/ircservserv
+    template:
+      - name: rust-test
+
   - name: wikimedia/security/deployer-audit
     template:
       - name: tox-docker
