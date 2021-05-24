@@ -125,7 +125,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/mediawiki-phan-taint-check-demo:0.1.1
+         image: docker-registry.wikimedia.org/releng/mediawiki-phan-taint-check-demo:0.1.4
      - doc-publish:
         docsrc: 'src/html'
         docdest: '$DOC_PROJECT/$DOC_SUBPATH/demos'
