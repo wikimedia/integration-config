@@ -13,6 +13,7 @@ php8.1-gd
 php8.1-gmp
 php8.1-intl
 php8.1-mbstring
+php8.1-pcov
 php8.1-redis
 php8.1-sqlite3
 php8.1-xdebug
@@ -26,6 +27,8 @@ RUN {{ packages | apt_install }}
 
 # Disable xdebug by default due to its performance impact
 RUN phpdismod xdebug
+# Same for pcov, although the performance overhead should be minimal
+RUN phpdismod pcov
 
 USER nobody
 

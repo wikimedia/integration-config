@@ -13,6 +13,7 @@ php7.3-gd
 php7.3-gmp
 php7.3-intl
 php7.3-mbstring
+php7.3-pcov
 php7.3-redis
 php7.3-sqlite3
 php7.3-xdebug
@@ -26,6 +27,8 @@ RUN {{ packages | apt_install }}
 
 # Disable xdebug by default due to its performance impact
 RUN phpdismod xdebug
+# Same for pcov, although the performance overhead should be minimal
+RUN phpdismod pcov
 
 USER nobody
 

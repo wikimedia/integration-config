@@ -1,3 +1,9 @@
+php80 (0.2.0) wikimedia; urgency=medium
+
+  * Install php-pcov T280170
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Fri, 15 Jul 2022 13:00:04 +0200
+
 php80 (0.1.3-s1) wikimedia; urgency=high
 
    Refresh for update in parent image sury-php:
