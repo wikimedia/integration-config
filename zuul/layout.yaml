@@ -3293,6 +3293,8 @@ projects:
       - gerrit-docker
     gate-and-submit:
       - gerrit-docker
+      # deploy/wmf/* branches do not have jobs running
+      - noop
 
   - name: operations/software/homer
     test:
