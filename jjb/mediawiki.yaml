@@ -311,7 +311,7 @@
                     # creating the video. Delete them to save space (T249268),
                     # they are transient files anyway.
                     - docker-run:
-                        image: docker-registry.wikimedia.org/wikimedia-buster:latest
+                        image: docker-registry.wikimedia.org/buster:latest
                         options: >-
                             --volume "$(pwd)"/log:/log
                             --entrypoint=/bin/rm
@@ -526,7 +526,7 @@
                   build-steps:
                       # Compress Fresnel performance reports - T249268
                       - docker-run:
-                          image: docker-registry.wikimedia.org/wikimedia-buster:latest
+                          image: docker-registry.wikimedia.org/buster:latest
                           options: >-
                               --volume "$(pwd)"/log:/log
                               --entrypoint=/usr/bin/find
