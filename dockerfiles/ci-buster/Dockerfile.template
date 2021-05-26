@@ -1,6 +1,6 @@
 FROM {{ "ci-common" | image_tag }} AS ci-common
 
-FROM docker-registry.wikimedia.org/wikimedia-buster:latest
+FROM docker-registry.wikimedia.org/buster:latest
 
 COPY --from=ci-common /utils /utils
 COPY --from=ci-common /utils/gitconfig /etc/gitconfig

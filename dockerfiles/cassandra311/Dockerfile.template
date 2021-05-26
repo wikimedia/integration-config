@@ -1,4 +1,4 @@
-FROM docker-registry.wikimedia.org/wikimedia-stretch:latest
+FROM docker-registry.wikimedia.org/stretch:latest
 
 COPY cassandra311.list /etc/apt/sources.list.d/cassandra311.list
 

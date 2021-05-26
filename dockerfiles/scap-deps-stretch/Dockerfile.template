@@ -1,4 +1,4 @@
-FROM docker-registry.wikimedia.org/wikimedia-stretch:latest
+FROM docker-registry.wikimedia.org/stretch:latest
 
 {% set dev_deps|replace('\n', ' ') -%}
 build-essential
@@ -18,7 +18,7 @@ python-six
 python-configparser
 python-psutil
 tox
-flake8 
+flake8
 {%- endset -%}
 
 RUN {{ dev_deps | apt_install }}
