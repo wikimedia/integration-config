@@ -7700,7 +7700,6 @@ projects:
       - parsoidsvc-doxygen-publish
       - phpunit-coverage-php72-docker-publish
     experimental:
-      - parsoidsvc-composer-package-php80-docker
       - mediawiki-quibble-apitests-vendor-php72-docker
 
   - name: mediawiki/services/parsoid/deploy
