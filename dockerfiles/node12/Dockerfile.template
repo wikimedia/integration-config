@@ -1,0 +1,12 @@
+# Docker image with plain nodejs and npm.
+
+FROM {{ "ci-bullseye" | image_tag }}
+
+USER root
+
+RUN {{ "nodejs npm" | apt_install }}
+
+USER nobody
+
+ENTRYPOINT ["npm"]
+CMD ["--help"]

@@ -1,0 +1,5 @@
+node12-test (0.0.1) wikimedia; urgency=high
+
+   Initial release, copied from node10-test, plus a few additions from other images for simplicity.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 26 May 2021 17:46:22 -0700
