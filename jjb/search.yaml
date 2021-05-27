@@ -25,22 +25,21 @@
         - '{name}-tox-docker-with-sonar':
             name: 'search-mjolnir-patch'
             # branch analysis
-            branch: '$ZUUL_CHANGE-$ZUUL_PATCHSET'
             docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.7.0-s2
             # xgboost takes a while to compile T184754
             # archiva.wikimedia.org is super slow
             build_timeout: 15 # minutes
-            sonar_args: |
-                -Dsonar.branch.target="$ZUUL_BRANCH" \
-                -Dsonar.branch.name={branch} \
-                -Dsonar.verbose=true \
+            sonar_args: >-
+                -Dsonar.branch.target="$ZUUL_BRANCH"
+                -Dsonar.branch.name="$ZUUL_CHANGE-$ZUUL_PATCHSET"
 
         - '{name}-tox-docker-with-sonar':
              # postmerge main branch analysis
              name: 'search-mjolnir-main'
              docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.7.0-s2
              build_timeout: 15 # minutes, maven deps take ~9 minutes with empty cache.
-             sonar_args: -Dsonar.branch.name="$ZUUL_BRANCH" \
+             sonar_args: >-
+                 -Dsonar.branch.name="$ZUUL_BRANCH"
 
         - '{name}-maven-java8-docker':
               docker_image_var: docker-registry.wikimedia.org/releng/java8-mjolnir:0.4.0
@@ -56,15 +55,14 @@
         - '{name}-tox-docker-with-sonar':
             name: 'wikimedia-discovery-analytics-patch'
             #branch analysis
-            branch: '$ZUUL_CHANGE-$ZUUL_PATCHSET'
             docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.7.0-s2
-            sonar_args: |
-                -Dsonar.branch.target="$ZUUL_BRANCH" \
-                -Dsonar.branch.name={branch} \
-                -Dsonar.verbose=true \
+            sonar_args: >-
+                -Dsonar.branch.target="$ZUUL_BRANCH"
+                -Dsonar.branch.name="$ZUUL_CHANGE-$ZUUL_PATCHSET"
 
         - '{name}-tox-docker-with-sonar':
               # postmerge main branch analysis
               name: 'wikimedia-discovery-analytics-main'
               docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.7.0-s2
-              sonar_args: -Dsonar.branch.name="$ZUUL_BRANCH" \
+              sonar_args: >-
+                  -Dsonar.branch.name="$ZUUL_BRANCH"

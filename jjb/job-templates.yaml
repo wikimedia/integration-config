@@ -79,7 +79,7 @@
         # The branch holding the patch is named $ZUUL_BRANCH
         #
         # For patch analysis, we need to match sonar.branch.name parameter
-        # which is set to {branch}which is the change number + the patchset.
+        # which is set to {branch} which is the change number + the patchset.
         - docker-run-with-log-cache-src:
               image: '{obj:docker_image_var}'
               options: '--entrypoint=git'

@@ -37,7 +37,7 @@
 - job-template:
     !!merge : *job_tox-docker
     name: '{name}-tox-docker-with-sonar'
-    branch: '$ZUUL_BRANCH'
+    sonar_args: ''
     triggers:
         - zuul
     builders:
@@ -50,11 +50,11 @@
         # The branch holding the patch is named $ZUUL_BRANCH
         #
         # For patch analysis, we need to match sonar.branch.name parameter
-        # which is set to {branch}which is the change number + the patchset.
+        # which is set to {branch} which is the change number + the patchset.
         - docker-run-with-log-cache-src:
               image: '{obj:docker_image_var}'
               options: '--entrypoint=git'
-              args: 'branch -m "{branch}"'
+              args: 'branch -m "$ZUUL_CHANGE-$ZUUL_PATCHSET"'
         # The comparison is done against sonar.branch.target which is
         # $ZUUL_BRANCH, make it point to the previous patchset.
         - docker-run-with-log-cache-src:
@@ -66,12 +66,13 @@
         - docker-run-with-log-cache-src:
               image: '{obj:docker_image_var}'
               options: '--entrypoint=git'
-              args: 'checkout "{branch}"'
+              args: 'checkout "$ZUUL_CHANGE-$ZUUL_PATCHSET"'
 
         - docker-run-with-log-cache-src:
               image: 'docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-1'
               options: '--workdir="/src" --entrypoint /run.sh'
               args: '{sonar_args}'
+
     wrappers:
     - timeout:
         timeout: '{obj:build_timeout|20}'  # minutes
