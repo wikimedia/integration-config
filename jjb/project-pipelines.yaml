@@ -325,3 +325,4 @@
       - test
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'
