@@ -8669,9 +8669,9 @@ projects:
 
   - name: wikimedia/irc/ircservserv-config
     test:
-      - trigger-libraryupgrader-pipeline-test
+      - trigger-ircservserv-config-pipeline-test
     gate-and-submit:
-      - trigger-libraryupgrader-pipeline-test
+      - trigger-ircservserv-config-pipeline-test
 
   - name: wikimedia/security/deployer-audit
     template:
