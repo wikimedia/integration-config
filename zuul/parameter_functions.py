@@ -471,7 +471,7 @@ dependencies = {
     'WikibaseManifest': ['Wikibase', 'OAuth'],
     'WikibaseMediaInfo': ['Wikibase', 'UniversalLanguageSelector',
                           'WikibaseCirrusSearch'],
-    'WikibaseQualityConstraints': ['Wikibase'],
+    'WikibaseQualityConstraints': ['Wikibase', 'WikibaseLexeme'],
     'Wikidata.org': ['Wikibase'],
     'WikidataPageBanner': ['Wikibase'],
     'WikiEditor': ['EventLogging', 'WikimediaEvents'],
