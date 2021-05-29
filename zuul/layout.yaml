@@ -6551,10 +6551,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/ParserFun
-    template:
-      - name: extension-quibble-composer
-
   - name: mediawiki/extensions/PasswordlessLogin
     template:
       - name: extension-quibble
@@ -9782,6 +9778,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/PageBlock
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/ParserFun
     template:
       - name: archived
 
