@@ -5584,6 +5584,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/EditAccount
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/Editcount
     template:
       - name: extension-quibble
@@ -9534,10 +9538,6 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/E3Experiments
-    template:
-      - name: archived
-
-  - name: mediawiki/extensions/EditAccount
     template:
       - name: archived
 
