@@ -6293,10 +6293,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/MultiUpload
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/MusicBrainzAuth
     template:
       - name: extension-quibble
@@ -9718,6 +9714,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/MSSQLBackCompat
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/MultiUpload
     template:
       - name: archived
 
