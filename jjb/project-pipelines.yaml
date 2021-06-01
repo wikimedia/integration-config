@@ -326,3 +326,12 @@
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
       - '{name}-pipeline-{pipeline}'
+
+- project:
+    name: image-suggestion-api
+    pipeline:
+      - test
+      - publish
+    jobs:
+      - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'

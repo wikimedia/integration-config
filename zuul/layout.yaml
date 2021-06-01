@@ -7617,9 +7617,12 @@ projects:
       - trigger-wikilambda-function-schemata-pipeline-test
 
   - name: mediawiki/services/image-suggestion-api
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-image-suggestion-api-pipeline-test
+    gate-and-submit:
+      - trigger-image-suggestion-api-pipeline-test
+    postmerge:
+      - trigger-image-suggestion-api-pipeline-publish
 
   - name: mediawiki/services/jobrunner
     template:
