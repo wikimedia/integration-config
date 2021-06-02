@@ -397,7 +397,7 @@ dependencies = {
     'Premoderation': ['skins/Vector'],
     'PronunciationRecording': ['UploadWizard'],
     'ProofreadPage': ['LabeledSectionTransclusion', 'VisualEditor'],
-    'PropertySuggester': ['Wikibase'],
+    'PropertySuggester': ['Wikibase', 'EventLogging'],
     'QuickSurveys': ['EventLogging'],
     'QuizGame': ['Renameuser', 'SocialProfile'],
     'RandomGameUnit': ['SocialProfile', 'PictureGame', 'PollNY', 'QuizGame'],
