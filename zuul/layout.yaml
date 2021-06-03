@@ -1121,6 +1121,32 @@ jobs:
     files:
       - '^includes/Defines\.php$'
 
+  # mediawiki/libs/metrics-platform
+
+  - name: trigger-metrics-platform-pipeline-test-php
+    files:
+      - '.pipeline/blubber/php.yaml'
+      - '.pipeline/config.yaml'
+      - 'php/.*'
+
+  - name: trigger-metrics-platform-pipeline-test-js
+    files:
+        - '.pipeline/blubber/js.yaml'
+        - '.pipeline/config.yaml'
+        - 'js/.*'
+
+  - name: trigger-metrics-platform-pipeline-test-java
+    files:
+        - '.pipeline/blubber/java.yaml'
+        - '.pipeline/config.yaml'
+        - 'java/.*'
+
+  - name: trigger-metrics-platform-pipeline-test-swift
+    files:
+        - '.pipeline/blubber/swift.yaml'
+        - '.pipeline/config.yaml'
+        - 'swift/.*'
+
 project-templates:
 
   - name: debian-glue
@@ -8149,9 +8175,15 @@ projects:
 
   - name: mediawiki/libs/metrics-platform
     test:
-      - trigger-metrics-platform-pipeline-test
+      - trigger-metrics-platform-pipeline-test-js
+      - trigger-metrics-platform-pipeline-test-php
+      - trigger-metrics-platform-pipeline-test-java
+      - trigger-metrics-platform-pipeline-test-swift
     gate-and-submit:
-      - trigger-metrics-platform-pipeline-test
+      - trigger-metrics-platform-pipeline-test-js
+      - trigger-metrics-platform-pipeline-test-php
+      - trigger-metrics-platform-pipeline-test-java
+      - trigger-metrics-platform-pipeline-test-swift
 
   - name: mediawiki/libs/Minify
     template:

@@ -304,7 +304,10 @@
 - project:
     name: metrics-platform
     pipeline:
-      - test
+      - test-js
+      - test-php
+      - test-java
+      - test-swift
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
       - '{name}-pipeline-{pipeline}'
