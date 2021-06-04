@@ -76,19 +76,16 @@
 - project:
     name: visualeditor
     jobs:
-        - '{name}-node10-browser-docker'
         - '{name}-node12-browser-docker'
 
 - project:
     name: unicodejs
     jobs:
-        - '{name}-node10-browser-docker'
         - '{name}-node12-browser-docker'
 
 - project:
     name: fresnel
     jobs:
-        - '{name}-node10-browser-docker'
         - '{name}-node12-browser-docker'
 
 - project:

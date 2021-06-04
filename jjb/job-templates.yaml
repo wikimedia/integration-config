@@ -369,27 +369,6 @@
     name: '{name}-{project}-maven-release-docker'
     !!merge : *job_template_maven-release-docker
 
-# Node.js 10 job for 'npm install-test'
-- job-template:
-    name: '{name}-node10-docker'
-    node: Docker
-    triggers:
-     - zuul
-    properties:
-        - build-discarder:
-            days-to-keep: 7
-    builders:
-     - docker-castor-load
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node10-test:0.6.1-s3'
-    publishers:
-     - archive-log-allow-empty
-     - castor-save-workspace-cache
-     - docker-cleanup
-
 # Node.js 12 job for 'npm install-test'
 - job-template:
     name: '{name}-node12-docker'
@@ -406,26 +385,6 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.1'
-    publishers:
-     - archive-log-allow-empty
-     - castor-save-workspace-cache
-     - docker-cleanup
-
-# Node.js 10 job for 'npm install & npm run {script}'
-- job-template:
-    name: '{name}-node10-run{script}-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-castor-load
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node10-test-browser:0.6.3-s3'
-        options: '--shm-size 1g'
-        args: '{script}'
     publishers:
      - archive-log-allow-empty
      - castor-save-workspace-cache
@@ -452,22 +411,6 @@
      - docker-cleanup
 
 - job-template:
-    name: '{name}-node10-npmaudit-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node10:0.6.0'
-        options: '--workdir="/src"'
-        args: 'audit'
-    publishers:
-     - docker-cleanup
-
-- job-template:
     name: '{name}-node12-npmaudit-docker'
     node: Docker
     triggers:
@@ -482,36 +425,6 @@
         args: 'audit'
     publishers:
      - docker-cleanup
-
-- job-template:
-    name: '{name}-daily-node10-npmaudit-docker'
-    node: Docker
-    triggers:
-    - timed: '@daily'
-    parameters:
-        - string:
-              name: 'ZUUL_PROJECT'
-              default: '{repository}'
-        - string:
-              name: 'ZUUL_REF'
-              default: 'master'
-        - string:
-              name: 'ZUUL_URL'
-              default: 'https://gerrit.wikimedia.org/r/p/'
-        - string:
-              name: 'NPM_CONFIG_cache'
-              default: '/cache'
-    builders:
-    - docker-cache-dir
-    - docker-src-dir
-    - docker-log-dir
-    - docker-ci-src-setup-simple
-    - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node10:0.6.0'
-        options: '--workdir="/src"'
-        args: 'audit'
-    publishers:
-    - docker-cleanup
 
 - job-template:
     name: '{name}-daily-node12-npmaudit-docker'
@@ -543,25 +456,6 @@
     publishers:
     - docker-cleanup
 
-# Node.js 10 job for 'npm install-test' (with browsers installed)
-- job-template:
-    name: '{name}-node10-browser-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-castor-load
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node10-test-browser:0.6.3-s3'
-        options: '--shm-size 1g'
-    publishers:
-     - archive-log-allow-empty
-     - castor-save-workspace-cache
-     - docker-cleanup
-
 # Node.js 12 job for 'npm install-test' (with browsers installed)
 - job-template:
     name: '{name}-node12-browser-docker'
@@ -576,25 +470,6 @@
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.1'
         options: '--shm-size 1g'
-    publishers:
-     - archive-log-allow-empty
-     - castor-save-workspace-cache
-     - docker-cleanup
-
-# Node.js 10 job for 'npm install-test' (with browsers installed) and webdriver running
-- job-template:
-    name: '{name}-node10-browser-webdriver-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-castor-load
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node10-test-browser:0.6.3-s3'
-        options: '--entrypoint=/run-with-xvfb.sh --shm-size 1g'
     publishers:
      - archive-log-allow-empty
      - castor-save-workspace-cache
@@ -619,27 +494,6 @@
      - castor-save-workspace-cache
      - docker-cleanup
 
-# Node.js 10 job for 'npm install-test' (with browser installed)
-# and publishing /coverage from workspace
-# to doc.wikimedia.org/cover/:DOC_PROJECT
-- job:
-    name: 'generic-node10-browser-coverage-docker-publish'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-castor-load
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node10-test-browser:0.6.3-s3'
-     - cover-publish:
-        src: 'src/coverage'
-        dest: '$DOC_PROJECT'
-    publishers:
-     - docker-cleanup
-
 # Node.js 12 job for 'npm install-test' (with browser installed)
 # and publishing /coverage from workspace
 # to doc.wikimedia.org/cover/:DOC_PROJECT
@@ -659,52 +513,6 @@
         src: 'src/coverage'
         dest: '$DOC_PROJECT'
     publishers:
-     - docker-cleanup
-
-# Node.js 10 jobs for 'npm install & npm run doc'
-# Publishing workspace/docs to doc.wikimedia.org/:DOC_PROJECT/:DOC_SUBPATH/
-# - DOC_PROJECT: determined in parameter_functions.py (repo name)
-# - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
-- job:
-    name: generic-node10-docs-docker-publish
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-castor-load
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node10-test:0.6.1-s3'
-        args: 'doc'
-     - doc-publish:
-        docsrc: 'src/docs'
-        docdest: '$DOC_PROJECT/$DOC_SUBPATH'
-    publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
-# Publishing workspace/docs to doc.wikimedia.org/:DOC_PROJECT/:DOC_SUBPATH/js/
-# - DOC_PROJECT: determined in parameter_functions.py (mw extension name)
-# - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
-- job:
-    name: mwext-node10-docs-docker-publish
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-castor-load
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node10-test:0.6.1-s3'
-        args: 'doc'
-     - doc-publish:
-        docsrc: 'src/docs'
-        docdest: '$DOC_PROJECT/$DOC_SUBPATH/js'
-    publishers:
-     - castor-save-workspace-cache
      - docker-cleanup
 
 # Node.js 12 jobs for 'npm install & npm run doc'
@@ -756,16 +564,10 @@
 - project:
     name: 'generic'
     jobs:
-        - '{name}-node10-docker'
         - '{name}-node12-docker'
-        - '{name}-node10-browser-docker'
         - '{name}-node12-browser-docker'
-        - '{name}-node10-browser-webdriver-docker'
         - '{name}-node12-browser-webdriver-docker'
-        - '{name}-node10-npmaudit-docker'
         - '{name}-node12-npmaudit-docker'
-        - '{name}-node10-run{script}-docker':
-           script: 'doc'
         - '{name}-node12-run{script}-docker':
            script: 'doc'
 
@@ -774,8 +576,6 @@
 - project:
     name: 'mwext'
     jobs:
-        - '{name}-node10-run{script}-docker':
-           script: 'doc'
         - '{name}-node12-run{script}-docker':
            script: 'doc'
 

@@ -73,13 +73,10 @@
 - project:
     name: oojs-core
     jobs:
-        - '{name}-node10-run{script}-docker':
-           script: 'jenkins'
         - '{name}-node12-run{script}-docker':
            script: 'jenkins'
 
 - project:
     name: oojs-router
     jobs:
-        - '{name}-node10-browser-docker'
         - '{name}-node12-browser-docker'
