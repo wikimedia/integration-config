@@ -2107,6 +2107,10 @@ projects:
     gate-and-submit:
       - trigger-toolforge-ingress-admission-controller-pipeline-test
 
+  - name: cloud/toolfoge/jobs-framework-api
+    template:
+      - name: tox-docker
+
   - name: labs/tools/registry-admission-webhook
     test:
       - trigger-toolforge-registry-admission-controller-pipeline-test
