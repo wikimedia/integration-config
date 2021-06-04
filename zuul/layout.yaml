@@ -1978,6 +1978,28 @@ project-templates:
     gate-and-submit-wmf:
       - generic-node10-rundoc-docker
 
+  - name: node12-rundoc-docker-for-MW-branches
+    test:
+      - generic-node12-rundoc-docker
+    gate-and-submit:
+      - generic-node12-rundoc-docker
+    test-1_31:
+      - generic-node12-rundoc-docker
+    gate-and-submit-1_31:
+      - generic-node12-rundoc-docker
+    test-1_35:
+      - generic-node12-rundoc-docker
+    gate-and-submit-1_35:
+      - generic-node12-rundoc-docker
+    test-1_36:
+      - generic-node12-rundoc-docker
+    gate-and-submit-1_36:
+      - generic-node12-rundoc-docker
+    test-wmf:
+      - generic-node12-rundoc-docker
+    gate-and-submit-wmf:
+      - generic-node12-rundoc-docker
+
   - name: service-pipeline-test
     test:
       - trigger-service-pipeline-test
@@ -8876,29 +8898,29 @@ projects:
   - name: VisualEditor/VisualEditor
     template:
       - name: mediawiki-i18n-check
-      - name: node10-rundoc-docker-for-MW-branches
+      - name: node12-rundoc-docker-for-MW-branches
     test:
-      - visualeditor-node10-browser-docker
+      - visualeditor-node12-browser-docker
     gate-and-submit:
-      - visualeditor-node10-browser-docker
+      - visualeditor-node12-browser-docker
     test-1_31:
-      - visualeditor-node10-browser-docker
+      - visualeditor-node12-browser-docker
     gate-and-submit-1_31:
-      - visualeditor-node10-browser-docker
+      - visualeditor-node12-browser-docker
     test-1_35:
-      - visualeditor-node10-browser-docker
+      - visualeditor-node12-browser-docker
     gate-and-submit-1_35:
-      - visualeditor-node10-browser-docker
+      - visualeditor-node12-browser-docker
     test-1_36:
-      - visualeditor-node10-browser-docker
+      - visualeditor-node12-browser-docker
     gate-and-submit-1_36:
-      - visualeditor-node10-browser-docker
+      - visualeditor-node12-browser-docker
     test-wmf:
-      - visualeditor-node10-browser-docker
+      - visualeditor-node12-browser-docker
     gate-and-submit-wmf:
-      - visualeditor-node10-browser-docker
+      - visualeditor-node12-browser-docker
     postmerge:
-      - generic-node10-browser-coverage-docker-publish
+      - generic-node12-browser-coverage-docker-publish
 
   - name: wikidata/query/flink-rdf-streaming-updater
     test:
