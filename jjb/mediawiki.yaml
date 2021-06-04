@@ -29,7 +29,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node10-test:0.6.1-s3'
+        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.1'
         args: 'doc'
      - doc-publish:
            docsrc: 'src/docs/js'
@@ -742,7 +742,7 @@
         args: '--packages-source "{packages-source}" --git-parallel=8 --skip-install --commands=mwext-phpunit-coverage'
         logdir: '/workspace/log'
     - docker-run-with-log-and-workspace-cache:
-        image: docker-registry.wikimedia.org/releng/node10-test:0.6.1-s3
+        image: docker-registry.wikimedia.org/releng/node12-test:0.0.1
         options: '--volume "$(pwd)"/src/extensions/"$EXT_NAME":/src'
         logdir: '/workspace/log'
         args: '--if-present test:unit'
