@@ -1128,7 +1128,7 @@ class TestZuulScheduler(unittest.TestCase):
             'wmf-quibble-vendor-mysql-php72-docker': False,
             'wmf-quibble-core-vendor-mysql-php72-docker': True,
             'wmf-quibble-selenium-php72-docker': True,
-            'mwgate-node10-docker': True,
+            'mwgate-node12-docker': True,
         }
         expected_gate = {
             'mediawiki-core-php72-phan-docker': True,
@@ -1144,7 +1144,7 @@ class TestZuulScheduler(unittest.TestCase):
             'wmf-quibble-vendor-mysql-php72-docker': False,
             'wmf-quibble-selenium-php72-docker': True,
             'wmf-quibble-core-vendor-mysql-php72-docker': True,
-            'mwgate-node10-docker': True,
+            'mwgate-node12-docker': True,
         }
 
         change = zuul.model.Change('mediawiki/core')
