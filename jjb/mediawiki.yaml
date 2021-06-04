@@ -155,6 +155,7 @@
                 - php80:
                     image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.0-s5
         - '{name}-node10-docker'
+        - '{name}-node12-docker'
 
 # Phan! (T132636)
 - job:
