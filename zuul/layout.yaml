@@ -7644,10 +7644,6 @@ projects:
   - name: mediawiki/services/kartotherian
     template:
       - name: service-pipeline-test
-    test:
-      - kartotherian-node10-browser-docker
-    gate-and-submit:
-      - kartotherian-node10-browser-docker
     postmerge:
       - trigger-kartotherian-pipeline-kartotherian
     publish:
