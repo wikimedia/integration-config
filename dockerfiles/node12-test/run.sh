@@ -23,6 +23,4 @@ else
     npm install --no-progress
 fi
 
-git submodule update --init --remote
-
 npm run-script "${@:-test}"

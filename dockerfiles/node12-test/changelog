@@ -1,3 +1,9 @@
+node12-test (0.0.2) wikimedia; urgency=high
+
+   Do not `git submodule update --init --remote` in the entry point (T284492)
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 07 Jun 2021 23:00:01 +0200
+
 node12-test (0.0.1) wikimedia; urgency=high
 
    Initial release, copied from node10-test, plus a few additions from other images for simplicity.
