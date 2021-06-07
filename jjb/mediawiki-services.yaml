@@ -1,20 +1,3 @@
-- job:
-    name: kartotherian-node10-browser-docker
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-castor-load
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node10-kartotherian:0.1.2-s4'
-    publishers:
-     - archive-log-allow-empty
-     - castor-save-workspace-cache
-     - docker-cleanup
-
 - project:
     name: 'mobileapps'
     jobs:
