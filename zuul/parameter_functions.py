@@ -568,7 +568,7 @@ phan_dependencies = {
     'PollNY': ['SocialProfile'],
     'Popups': ['BetaFeatures', 'EventLogging', 'Gadgets'],
     'ProofreadPage': ['Scribunto'],
-    'PropertySuggester': ['Wikibase'],
+    'PropertySuggester': ['Wikibase', 'EventLogging'],
     'QuizGame': ['Renameuser', 'SocialProfile'],
     # technically speaking PictureGame, PollNY & QuizGame are all dependencies,
     # but PollNY's the only PHP-level hard dependency needed to pass phan
