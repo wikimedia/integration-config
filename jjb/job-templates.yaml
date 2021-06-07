@@ -384,7 +384,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.1'
+        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.2'
     publishers:
      - archive-log-allow-empty
      - castor-save-workspace-cache
@@ -402,7 +402,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.1'
+        image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.2'
         options: '--shm-size 1g'
         args: '{script}'
     publishers:
@@ -468,7 +468,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.1'
+        image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.2'
         options: '--shm-size 1g'
     publishers:
      - archive-log-allow-empty
@@ -487,7 +487,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.1'
+        image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.2'
         options: '--entrypoint=/run-with-xvfb.sh --shm-size 1g'
     publishers:
      - archive-log-allow-empty
@@ -508,7 +508,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.1'
+        image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.2'
      - cover-publish:
         src: 'src/coverage'
         dest: '$DOC_PROJECT'
@@ -530,7 +530,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.1'
+        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.2'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -552,7 +552,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.1'
+        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.2'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -582,7 +582,7 @@
 - job-template:
     name: 'selenium-daily-{sitename}-{project}'
     node: Docker
-    docker_image_var: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.1'
+    docker_image_var: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.2'
     triggers:
      - timed: '@daily'
     parameters:
