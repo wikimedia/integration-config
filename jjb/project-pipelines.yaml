@@ -348,6 +348,7 @@
     name: image-suggestion-api
     pipeline:
       - test
+      - rehearse
       - publish
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
