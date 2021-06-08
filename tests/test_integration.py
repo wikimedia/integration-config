@@ -2,6 +2,7 @@
 
 import argparse
 from glob import glob
+import logging
 import os
 import shutil
 import tempfile
@@ -121,6 +122,11 @@ class IntegrationTests(unittest.TestCase):
             validate=jjb_jobs_file.name,
         )
         zuul_server.read_config()
+
+        # Mute almost all output from zuul, nosetest should reset the log level
+        # after the test has completed.
+        logging.getLogger().setLevel(logging.WARNING)
+
         zuul_server.config.set(
             'zuul', 'layout_config',
             os.path.join(this_dir, '../zuul/layout.yaml'))
