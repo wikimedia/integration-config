@@ -1,3 +1,9 @@
+operations-dnslint (0.0.10) wikimedia; urgency=high
+
+   * Upgrade gdnsd to 3.7.0-2~wmf1 package
+
+ -- Brandon Black <bblack@wikimedia.org>  Tue, 08 Jun 2021 14:54:34 +0000
+
 operations-dnslint (0.0.9) wikimedia; urgency=high
 
    * Upgrade gdnsd to 3.4.1-1~wmf1 package
