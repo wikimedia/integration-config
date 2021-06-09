@@ -1,3 +1,9 @@
+release-notes (0.0.7) wikimedia; urgency=medium
+
+   Re-platform from Stretch to Buster
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed,  9 Jun 2021 14:16:47 -0700
+
 release-notes (0.0.6-s3) wikimedia; urgency=medium
 
    Yak: Generate a VERSION file containing the new version

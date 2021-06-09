@@ -1,4 +1,4 @@
-FROM {{ "ci-stretch" | image_tag }}
+FROM {{ "ci-buster" | image_tag }}
 
 ENV RELEASE_TOOLS_DIR=/srv/workspace/release
 
