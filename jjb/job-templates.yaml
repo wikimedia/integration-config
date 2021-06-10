@@ -590,6 +590,9 @@
             name: 'MEDIAWIKI_USER'
             default: 'Selenium user'
         - string:
+            name: 'MW_SCRIPT_PATH'
+            default: '/w'
+        - string:
             name: 'MW_SERVER'
             default: '{mw_server}'
         - string:
