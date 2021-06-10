@@ -567,6 +567,7 @@ phan_dependencies = {
     'PictureGame': ['SocialProfile'],
     'PollNY': ['SocialProfile'],
     'Popups': ['BetaFeatures', 'EventLogging', 'Gadgets'],
+    'ProofreadPage': ['Scribunto'],
     'PropertySuggester': ['Wikibase'],
     'QuizGame': ['Renameuser', 'SocialProfile'],
     # technically speaking PictureGame, PollNY & QuizGame are all dependencies,
