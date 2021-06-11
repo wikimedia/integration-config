@@ -7908,7 +7908,7 @@ projects:
 
   - name: node-rdkafka-factory
     template:
-      - name: node10-docker
+      - name: service-pipeline-test
 
   - name: wikimedia-event-utilities
     test:
