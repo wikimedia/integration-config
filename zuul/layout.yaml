@@ -7904,7 +7904,7 @@ projects:
 
   - name: node-rdkafka-statsd
     template:
-      - name: node10-docker
+      - name: service-pipeline-test
 
   - name: node-rdkafka-factory
     template:
