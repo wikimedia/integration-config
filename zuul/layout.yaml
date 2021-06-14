@@ -2117,6 +2117,10 @@ projects:
     template:
       - name: tox-docker
 
+  - name: cloud/toolforge/jobs-framework-cli
+    template:
+      - name: tox-docker
+
   - name: labs/tools/registry-admission-webhook
     test:
       - trigger-toolforge-registry-admission-controller-pipeline-test
