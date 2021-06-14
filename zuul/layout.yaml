@@ -2239,15 +2239,15 @@ projects:
 
   - name: mediawiki/tools/api-testing
     template:
-    - name: node12-rundoc-docker
+      - name: node12-rundoc-docker
     test:
-    - mediawiki-quibble-api-testing-vendor-mysql-php72-docker
-    - mediawiki-quibble-api-testing-vendor-sqlite-php72-docker
+      - mediawiki-quibble-api-testing-vendor-mysql-php72-docker
+      - mediawiki-quibble-api-testing-vendor-sqlite-php72-docker
     gate-and-submit:
-    - mediawiki-quibble-api-testing-vendor-mysql-php72-docker
-    - mediawiki-quibble-api-testing-vendor-sqlite-php72-docker
-    publish:
-    - generic-node12-docs-docker-publish
+      - mediawiki-quibble-api-testing-vendor-mysql-php72-docker
+      - mediawiki-quibble-api-testing-vendor-sqlite-php72-docker
+    postmerge:
+      - generic-node12-docs-docker-publish
 
   - name: mediawiki/tools/cli
     template:
