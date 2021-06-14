@@ -1935,12 +1935,6 @@ project-templates:
     postmerge:
       - php74-compile-coverage-publish
 
-  - name: node10-docker
-    test:
-      - generic-node10-docker
-    gate-and-submit:
-      - generic-node10-docker
-
   - name: node12-docker
     test:
       - generic-node12-docker
