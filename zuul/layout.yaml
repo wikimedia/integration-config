@@ -8144,6 +8144,13 @@ projects:
       - doxygen-publish
       - phpunit-coverage-php72-docker-publish
 
+  - name: mediawiki/libs/NormalizedException
+    template:
+      - name: composer-test-package-php72-or-later
+    postmerge:
+      - doxygen-publish
+      - phpunit-coverage-php72-docker-publish
+
   - name: mediawiki/libs/ObjectFactory
     template:
       - name: composer-test-package-php72-or-later
