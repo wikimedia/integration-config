@@ -1941,6 +1941,12 @@ project-templates:
     gate-and-submit:
       - generic-node10-docker
 
+  - name: node10-browser-docker
+    test:
+      - generic-node10-browser-docker
+    gate-and-submit:
+      - generic-node10-browser-docker
+
   - name: node12-docker
     test:
       - generic-node12-docker
@@ -8742,7 +8748,7 @@ projects:
 
   - name: wikimedia/portals/deploy
     template:
-      - name: node12-browser-docker
+      - name: node10-browser-docker  # T285239
 
   - name: wikimedia/toolhub
     test:

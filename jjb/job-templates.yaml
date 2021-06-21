@@ -477,6 +477,25 @@
     publishers:
     - docker-cleanup
 
+# Node.js 10 job for 'npm install-test' (with browsers installed)
+- job-template:
+    name: '{name}-node10-browser-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node10-test-browser:0.6.3-s3'
+        options: '--shm-size 1g'
+    publishers:
+     - archive-log-allow-empty
+     - castor-save-workspace-cache
+     - docker-cleanup
+
 # Node.js 12 job for 'npm install-test' (with browsers installed)
 - job-template:
     name: '{name}-node12-browser-docker'
@@ -587,6 +606,7 @@
     jobs:
         - '{name}-node10-docker'
         - '{name}-node12-docker'
+        - '{name}-node10-browser-docker'
         - '{name}-node12-browser-docker'
         - '{name}-node12-browser-webdriver-docker'
         - '{name}-node12-npmaudit-docker'
