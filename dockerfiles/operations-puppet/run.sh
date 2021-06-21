@@ -3,6 +3,7 @@
 set -euxo pipefail
 
 RAKE_TARGET=${RAKE_TARGET:-test}
+RAKE_PID=""
 
 LOG_DIR="/srv/workspace/log"
 export LOG_DIR
@@ -20,6 +21,11 @@ local_cleanup() {
     rm -rf "$TMP_PUPPET_DIR"
 }
 
+kill_rake() {
+    if [ "$RAKE_PID" != "" ]; then
+        kill -SIGTERM "$RAKE_PID"
+    fi
+}
 
 execute() {
     # Update bundle if gemfile changed
@@ -31,8 +37,11 @@ execute() {
     export PY_COLORS=1
     export SPEC_OPTS='--tty'
 
-    # Run tests
-    bundle exec rake "${RAKE_TARGET}" "$@"
+    # Run tests, allow trapping signals
+    bundle exec rake "${RAKE_TARGET}" "$@" &
+    RAKE_PID=$!
+    trap kill_rake SIGINT SIGTERM SIGHUP
+    wait "$RAKE_PID"
 }
 
 execute_ci() {
