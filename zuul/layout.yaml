@@ -2119,6 +2119,10 @@ projects:
     gate-and-submit:
       - shellcheck
 
+  - name: cloud/toolforge/grid-webservices
+    template:
+      - name: tox-docker
+
   - name: cloud/toolforge/ingress-admission-controller
     test:
       - trigger-toolforge-ingress-admission-controller-pipeline-test
