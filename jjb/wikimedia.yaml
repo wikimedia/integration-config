@@ -1,3 +1,8 @@
+- project:
+    name: portals-deploy
+    jobs:
+        - '{name}-node12-browser-docker'
+
 - job:
     name: 'wikimedia-portals-build'
     node: Docker
