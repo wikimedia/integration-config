@@ -1118,9 +1118,6 @@ jobs:
     files:
       - '^includes/Defines\.php$'
 
-  - name: portals-deploy-node12-browser-docker
-    voting: false  # T285239
-
 project-templates:
 
   - name: debian-glue
@@ -1943,12 +1940,6 @@ project-templates:
       - generic-node10-docker
     gate-and-submit:
       - generic-node10-docker
-
-  - name: node10-browser-docker
-    test:
-      - generic-node10-browser-docker
-    gate-and-submit:
-      - generic-node10-browser-docker
 
   - name: node12-docker
     test:
@@ -8755,9 +8746,7 @@ projects:
 
   - name: wikimedia/portals/deploy
     template:
-      - name: node10-browser-docker  # T285239
-    test:
-      - portals-deploy-node12-browser-docker  # non voting, T285239
+      - name: node12-browser-docker
 
   - name: wikimedia/toolhub
     test:
