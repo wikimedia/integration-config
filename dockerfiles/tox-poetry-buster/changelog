@@ -1,0 +1,5 @@
+tox-poetry-buster (0.0.1) wikimedia; urgency=low
+
+    First release, base tox+poetry image.
+
+ -- David Caro <dcaro@wikimedia.org>  Wed, 23 Jun 2021 14:59:58 +0200
