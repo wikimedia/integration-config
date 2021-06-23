@@ -3982,6 +3982,8 @@ projects:
       - name: extension-codehealth
       - name: extension-coverage
       - name: extension-gate
+    experimental:
+      - wmf-quibble-apache-selenium-php72-docker
 
   - name: mediawiki/extensions/GuidedTour
     template:
@@ -4575,6 +4577,8 @@ projects:
       - name: extension-gate
       - name: commit-message-validator
       - name: extension-javascript-documentation
+    experimental:
+      - wmf-quibble-apache-selenium-php72-docker
 
   - name: mediawiki/extensions/WebAuthn
     template:
