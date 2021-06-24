@@ -490,7 +490,9 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.2'
-        options: '--shm-size 1g'
+        options: >-
+            --shm-size 1g
+            --env LOG_DIR=/log
     publishers:
      - archive-log-allow-empty
      - castor-save-workspace-cache
@@ -509,7 +511,10 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.2'
-        options: '--entrypoint=/run-with-xvfb.sh --shm-size 1g'
+        options: >-
+            --entrypoint=/run-with-xvfb.sh
+            --shm-size 1g'
+            --env LOG_DIR=/log
     publishers:
      - archive-log-allow-empty
      - castor-save-workspace-cache
