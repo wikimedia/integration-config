@@ -1,7 +1,5 @@
 FROM {{ "ci-buster" | image_tag }}
 
-ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
-
 ENV PUPPET_DIR='/srv/workspace/puppet'
 
 {% set pkgs_to_install = """build-essential bundler  rubygems-integration \
