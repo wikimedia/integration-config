@@ -3404,6 +3404,10 @@ projects:
     publish:
       - spicerack-tox-tag-publish
 
+  - name: operations/software/statograph
+    template:
+      - name: tox-docker
+
   - name: operations/software/pywmflib
     template:
       - name: tox-docker
