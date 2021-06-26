@@ -6599,6 +6599,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/PerPageLanguage
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/PerPageLicense
     template:
       - name: extension-quibble
