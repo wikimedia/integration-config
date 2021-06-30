@@ -198,6 +198,15 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: wikispeech-ahotts
+    pipeline:
+      - test
+      - publish
+    jobs:
+      - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: wikispeech-mishkal
     pipeline:
       - test

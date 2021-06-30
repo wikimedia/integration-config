@@ -7455,6 +7455,14 @@ projects:
     postmerge:
       - trigger-wikispeech-mary-tts-pipeline-publish
 
+  - name: mediawiki/services/wikispeech/ahotts
+    test:
+      - trigger-wikispeech-ahotts-pipeline-test
+    gate-and-submit:
+      - trigger-wikispeech-ahotts-pipeline-test
+    postmerge:
+      - trigger-wikispeech-ahotts-pipeline-publish
+
   - name: mediawiki/services/wikispeech/mishkal
     test:
       - trigger-wikispeech-mishkal-pipeline-test
