@@ -1,3 +1,9 @@
+php-ast (1.1.2) wikimedia; urgency=high
+
+   Stop creating versions for PHP 7.0 & 7.1, no longer needed
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed, 30 Jun 2021 14:28:20 +0100
+
 php-ast (1.1.1-s1) wikimedia; urgency=high
 
    Refresh for update in parent image sury-php:
