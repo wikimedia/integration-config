@@ -12,37 +12,45 @@ For more about the Jenkins Job Builder software and how to use it, refer to the 
 
   https://docs.openstack.org/infra/jenkins-job-builder/
 
-## Example Usage
+## Jenkins job local testing and deployment
 
 Make sure you have tox and python 3 installed, you can then run Jenkins job builder using:
 
     $ ./jenkin-jobs <arguments>
 
-Generate XML files for Jenkins jobs from YAML files:
+Generate from the YAML an XML file for each Jenkins job, in the `output/` directory:
 
     $ ./jenkins-jobs test ./jjb/ --config-xml -o output/
 
-Update Jenkins jobs which name starts with "selenium":
+Generate from the YAML an XML file for a single Jenkins job, and output it to stdout:
 
-    $ ./jenkins-jobs --conf jenkins_jobs.ini update ./jjb/ selenium*
+    $ ./jjb-test 'wip-job'
 
-There are a few wrappers provided to easily test, update or delete jobs:
+Update in production CI a single Jenkins job:
 
-Delete the job `build-project` or jobs matching fnmatch `*node6*`:
+    $ ./jenkins-jobs --conf jenkins_jobs.ini update ./jjb/ 'updated-job'
+    (or)
+    $ ./jjb-update 'updated-job'
 
-    $ ./jjb-delete build-project
-    $ ./jjb-delete '*node6*'
+    Note: push JJB updates to CI and verify them *before* merging the patch.
 
-Generate a given job and print the generated XML:
+Update in production CI all Jenkins jobs matching a filter:
 
-   $ ./jjb-test 'wip-job'
+    $ ./jenkins-jobs --conf jenkins_jobs.ini update ./jjb/ 'updated-jobs*'
+    (or)
+    $ ./jjb-update 'updated-jobs*'
 
-Delete one or more jobs:
+    Note: push JJB updates to CI and verify them *before* merging the patch.
 
-   $ ./jjb-delete 'obsolete-job'
-   $ ./jjb-delete '*php5*'
+Delete from production CI a single Jenkins job:
 
-## Running tests
+    $ ./jenkins-jobs --conf jenkins_jobs.ini delete ./jjb/ 'obsolete-job'
+    (or)
+    $ ./jjb-delete 'obsolete-job'
+
+# Zuul configuration
+
+## Running tests locally
 
 To test the configuration, we use tox and you need at least version 1.9+ ([bug T125705](https://phabricator.wikimedia.org/T125705))
 to run the test suite. Running `tox` in the main dir of your local clone runs the tests.
@@ -51,10 +59,34 @@ to run the test suite. Running `tox` in the main dir of your local clone runs th
 
 See https://www.mediawiki.org/wiki/Continuous_integration/Allow_list
 
-# Deployments
+## Deployment
 
-Use the `./fab` helper for deployment actions:
+Once the change is merged, use the `./fab` helper to deploy your CI config change to production CI:
 
     $ ./fab deploy_zuul
+
+# Docker image buiding and publishing
+
+To test that your changes build, run:
+
+    $ docker-pkg -c dockerfiles/config.yaml --info build dockerfiles/
+
+Once the image is built, you can use the debug-image tool to test it interactively:
+
+    $ ./dockerfiles/debug-image test-image
+
+If you are changing an image that is used by other images, you must cascade your changes so that you are the one to deal with issues, not a later user. Run:
+
+    $ docker-pkg -c dockerfiles/config.yaml --info update --reason "Reason to make this change" --version 1.2.3 updated-root-image dockerfiles/
+
+Once the change is merged, use the `./fab` helper to build and publish your image to Wikimedia's docker registry:
+
     $ ./fab deploy_docker
+
+In rare cases, you may need:
+
     $ ./fab docker_pull_image <imagename>
+
+To spot where the JJB definitions are using outdated docker images, use:
+
+    $ ./utils/docker-updates
