@@ -2109,6 +2109,7 @@ projects:
   - name: cloud/toolforge/jobs-framework-cli
     template:
       - name: tox-docker
+      - name: debian-glue
 
   - name: labs/tools/registry-admission-webhook
     test:
