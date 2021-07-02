@@ -8640,6 +8640,7 @@ projects:
       - pywikibot-core-tox-fasttest-py38-docker
       - pywikibot-core-tox-doctest-docker
       - pywikibot-core-tox-doc-docker
+      - pywikibot-core-tox-deeptest-py36-docker
     postmerge:
       - pywikibot-core-tox-publish
     experimental:
