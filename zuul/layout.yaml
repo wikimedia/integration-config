@@ -8650,6 +8650,10 @@ projects:
     template:
       - name: node12-docker
       - name: mediawiki-i18n-check
+    test:
+      - pywikibot-i18n-tox-docker
+    gate-and-submit:
+      - pywikibot-i18n-tox-docker
 
   - name: pywikibot/wikibase
     test:
