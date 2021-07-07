@@ -2086,6 +2086,10 @@ projects:
     postmerge:
       - trigger-calculator-service-pipeline-publish_pl
 
+  - name: cloud/metricsinfra/prometheus-configurator
+    template:
+      - name: tox-docker
+
   - name: cloud/toolforge/buildpacks
     test:
       - shellcheck
