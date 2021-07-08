@@ -347,6 +347,39 @@
     triggers:
         - zuul
 
+- job-template:
+    !!merge : *job_quibble
+    name: quibble-daily-{project}-{packages-source}-{database}-{php}-docker
+    triggers:
+        - timed: '@daily'
+    publishers:
+        - archive-log-allow-empty
+        - castor-save-workspace-cache
+        - junit:
+            results: 'log/junit*.xml,log/WDIO.xunit*.xml'
+            # We do not have any JUnit files when all tests pass
+            allow-empty-results: true
+        - email-ext:
+            recipients: wikidata-ci-status@wikimedia.de
+            body: '${{SCRIPT, template="wikimedia.template"}}'
+            failure: true
+            unstable: true
+        - docker-cleanup
+    parameters:
+        # Zuul parameters for Castor
+        - string:
+            name: 'ZUUL_BRANCH'
+            default: 'master'
+        - string:
+            name: 'ZUUL_PROJECT'
+            default: 'mediawiki/extensions/{project}'
+        - string:
+            name: 'ZUUL_URL'
+            default: 'https://gerrit.wikimedia.org/r/p'
+        - string:
+            name: 'ZUUL_REF'
+            default: 'master'
+
 # Special job that runs the "standalone" phpunit tests for a repo T225068
 - job-template:
     !!merge : *job_quibble

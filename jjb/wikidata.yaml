@@ -217,3 +217,22 @@
     publishers:
         - archive-log-allow-empty
         - docker-cleanup
+- project:
+    name: wikidata-quibble-daily-notgated
+    # Wikidata extensions that are not part of gate
+    project:
+        - ArticlePlaceholder
+        - Cognate
+        - InterwikiSorting
+        - WikibaseLexeme
+        - WikibaseManifest
+        - WikibaseQualityConstraints
+        - Wikidata.org
+        - WikidataPageBanner
+    jobs:
+        - quibble-daily-{project}-{packages-source}-{database}-{php}-docker:
+            database: mysql
+            php:
+                - php72:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:0.0.47
+            packages-source: vendor
