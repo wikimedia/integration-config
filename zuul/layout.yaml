@@ -8658,6 +8658,8 @@ projects:
       - pywikibot-i18n-tox-docker
     gate-and-submit:
       - pywikibot-i18n-tox-docker
+    gate-and-submit-l10n:
+      - pywikibot-i18n-tox-docker
 
   - name: pywikibot/wikibase
     test:
