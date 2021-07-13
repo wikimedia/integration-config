@@ -6812,6 +6812,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/Report
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/RevisionCommentSupplement
     template:
       - name: extension-broken  # T196529
