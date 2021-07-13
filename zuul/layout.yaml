@@ -4029,12 +4029,6 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Jade
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/Josa
     template:
       - name: in-wikimedia-production
@@ -9703,6 +9697,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/JADE
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Jade
     template:
       - name: archived
 
