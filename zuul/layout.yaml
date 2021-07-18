@@ -2093,6 +2093,10 @@ projects:
     template:
       - name: tox-docker
 
+  - name: cloud/metricsinfra/prometheus-manager
+    template:
+      - name: tox-docker
+
   - name: cloud/toolforge/buildpacks
     test:
       - shellcheck
