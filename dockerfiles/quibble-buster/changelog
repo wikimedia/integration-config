@@ -1,3 +1,9 @@
+quibble-buster (1.0.0) wikimedia; urgency=medium
+
+  * Bump Quibble to 1.0.0
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 20 Jul 2021 09:26:12 +0200
+
 quibble-buster (0.0.47) wikimedia; urgency=high
 
    Update to quibble 0.0.47
