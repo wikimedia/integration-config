@@ -375,7 +375,7 @@ dependencies = {
     'PageViewInfo': ['Graph'],
     'ParserFunctions': ['Scribunto'],
     'parsoid': ['Cite', 'Disambiguator', 'Poem', 'TimedMediaHandler',
-                'ImageMap'],
+                'ImageMap', 'Translate'],
     'PhpTagsFunctions': ['PhpTags'],
     'PhpTagsSPARQL': ['PhpTags'],
     'PhpTagsSMW': ['PhpTags'],
