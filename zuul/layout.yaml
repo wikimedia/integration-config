@@ -7762,6 +7762,11 @@ projects:
       - mediawiki-quibble-apitests-vendor-php72-docker
       # Not passing until MW Core itself passes
       # - quibble-composer-mysql-php80-docker
+    experimental:
+      # These are the jobs which would be added by the extension-gate template
+      - wmf-quibble-core-vendor-mysql-php72-docker
+      - wmf-quibble-vendor-mysql-php72-docker
+      - wmf-quibble-selenium-php72-docker
     postmerge:
       - parsoidsvc-doxygen-publish
       - phpunit-coverage-php72-docker-publish
