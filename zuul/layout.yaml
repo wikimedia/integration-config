@@ -3320,6 +3320,10 @@ projects:
     template:
         - name: tox-docker
 
+  - name: operations/docker-images/imagecatalog
+    template:
+      - name: tox-docker
+
   - name: operations/software/elasticsearch-tool
     template:
       - name: tox-docker
