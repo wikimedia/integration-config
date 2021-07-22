@@ -3384,7 +3384,7 @@ projects:
     template:
       - name: debian-glue
     gate-and-submit-l10n:
-      - debian-glue
+      - mediawiki-i18n-check-docker
 
   - name: operations/software/netbox-extras
     test:
