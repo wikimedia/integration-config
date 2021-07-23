@@ -5770,10 +5770,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/FlvHandler
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/ForcePreview
     template:
       - name: extension-quibble-noselenium
@@ -9663,6 +9659,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/FirstSteps
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/FlvHandler
     template:
       - name: archived
 
