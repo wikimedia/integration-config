@@ -184,6 +184,7 @@
     name: wikimedia-toolhub
     pipeline:
       - test
+      - publish
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
       - '{name}-pipeline-{pipeline}'

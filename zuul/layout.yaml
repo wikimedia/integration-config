@@ -8810,6 +8810,10 @@ projects:
       - trigger-wikimedia-toolhub-pipeline-test
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
+    postmerge:
+      - trigger-wikimedia-toolhub-pipeline-publish
+    publish:
+      - trigger-wikimedia-toolhub-pipeline-publish
 
   - name: fresh
     test:
