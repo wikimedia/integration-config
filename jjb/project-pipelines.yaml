@@ -357,3 +357,14 @@
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
       - '{name}-pipeline-{pipeline}'
+
+- project:
+    # machinelearning/liftwing/inference-services
+    name: inference-services
+    pipeline:
+        - editquality
+    jobs:
+        # trigger-inference-services-pipeline-editquality
+        - 'trigger-{name}-pipeline-{pipeline}'
+        # inference-services-pipeline-editquality
+        - '{name}-pipeline-{pipeline}'

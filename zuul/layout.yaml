@@ -2154,6 +2154,12 @@ projects:
     gate-and-submit:
       - trigger-toolforge-registry-admission-controller-pipeline-test
 
+  - name: machinelearning/liftwing/inference-services
+    test:
+      - trigger-inference-services-pipeline-editquality
+    gate-and-submit:
+      - noop
+
   - name: integration/config
     test:
       - integration-config-tox-docker
