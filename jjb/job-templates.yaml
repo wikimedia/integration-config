@@ -340,7 +340,7 @@
                 -   file-id: 'org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig.ArchivaCredentialsSettings'
                     target:  archiva-credentials.xml
         - timeout:
-            timeout: 45
+            timeout: '{timeout|45}'  # minutes
             fail:    true
         - timestamps
     builders:

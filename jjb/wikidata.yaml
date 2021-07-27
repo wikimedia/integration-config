@@ -57,7 +57,8 @@
     jobs:
      - '{name}-maven-java8-docker'
      - '{name}-maven-java8-docker-site-publish'
-     - '{name}-maven-release-docker'
+     - '{name}-maven-release-docker':
+         timeout: 60  # minutes
 
 - project:
       name: wikidata-query-flink-swift-plugin
