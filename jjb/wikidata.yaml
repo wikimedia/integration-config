@@ -51,6 +51,7 @@
     release-branch: master
     publishers:
         - email-wikimedia-discovery
+        - castor-save-workspace-cache
         - docker-cleanup
 
     jobs:
@@ -64,6 +65,7 @@
       release-branch: master
       publishers:
           - email-wikimedia-discovery
+          - castor-save-workspace-cache
           - docker-cleanup
 
       jobs:

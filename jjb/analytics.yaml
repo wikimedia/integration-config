@@ -101,6 +101,7 @@
     publishers:
         - email-wikimedia-analytics
         - irc-wikimedia-analytics
+        - castor-save-workspace-cache
         - docker-cleanup
 
     jobs:
@@ -143,6 +144,7 @@
     publishers:
         - email-wikimedia-analytics
         - irc-wikimedia-analytics
+        - castor-save-workspace-cache
         - docker-cleanup
 
     jobs:

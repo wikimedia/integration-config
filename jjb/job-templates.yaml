@@ -324,6 +324,10 @@
             name:        'ZUUL_BRANCH'
             default:     '{release-branch}'
             description: 'Name of the local branch to checkout to'
+        - string:
+            name:        'ZUUL_PIPELINE'
+            default:     'postmerge'
+            description: '"postmerge" triggers saving the Maven cache.'
     wrappers:
         # Credentials for Gerrit
         - credentials-binding:
