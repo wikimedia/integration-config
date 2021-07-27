@@ -2730,10 +2730,6 @@ projects:
     template:
       - name: skin-quibble
 
-  - name: mediawiki/skins/EUCopyrightCampaignSkin
-    template:
-      - name: skin-quibble
-
   - name: mediawiki/skins/Gamepress
     template:
       - name: skin-quibble
@@ -5697,10 +5693,6 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/EtherpadLite
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/EUCopyrightCampaign
     template:
       - name: extension-quibble
 
@@ -9656,6 +9648,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/EUCopyrightCampaign
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/ExpandTemplates
     template:
       - name: archived
@@ -10337,6 +10333,10 @@ projects:
       - name: archived
 
   - name: mediawiki/skins/DeepSea
+    template:
+      - name: archived
+
+  - name: mediawiki/skins/EUCopyrightCampaignSkin
     template:
       - name: archived
 
