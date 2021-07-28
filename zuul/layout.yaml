@@ -1148,6 +1148,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'swift/.*'
 
+  - name: trigger-inference-services-pipeline-editquality
+    files:
+        - '.pipeline/revscoring/editquality/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'revscoring/editquality/model-server/.*'
+
 project-templates:
 
   - name: debian-glue
