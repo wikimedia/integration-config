@@ -1,56 +1,44 @@
 - project:
-      name: phpmetrics
-      jobs:
-        - '{name}-phpmetrics-docker':
-            name: mediawiki-core
-            gitUrl: https://gerrit.wikimedia.org/r/p/mediawiki/core.git
+    name: phpmetrics
+
+    # Send to wikidata by default since most projects use that
+    emailRecipients: wikidata-ci-status@wikimedia.de
+
+    # basename: target under https://doc.wikimedia.org/
+    # repo: project name in Gerrit
+    basename:
+        - mediawiki-core:
+            repo: mediawiki/core
             emailRecipients: releng@lists.wikimedia.org qa-alerts@lists.wikimedia.org
-        - '{name}-phpmetrics-docker':
-            name: Wikibase
-            gitUrl: https://gerrit.wikimedia.org/r/p/mediawiki/extensions/Wikibase.git
-            emailRecipients: wikidata-ci-status@wikimedia.de
-        - '{name}-phpmetrics-docker':
-            name: WikibaseCirrusSearch
-            gitUrl: https://gerrit.wikimedia.org/r/p/mediawiki/extensions/WikibaseCirrusSearch.git
-            emailRecipients: wikidata-ci-status@wikimedia.de
-        - '{name}-phpmetrics-docker':
-            name: WikibaseLexemeCirrusSearch
-            gitUrl: https://gerrit.wikimedia.org/r/p/mediawiki/extensions/WikibaseLexemeCirrusSearch.git
-            emailRecipients: wikidata-ci-status@wikimedia.de
-        - '{name}-phpmetrics-docker':
-            name: WikibaseLexeme
-            gitUrl: https://gerrit.wikimedia.org/r/p/mediawiki/extensions/WikibaseLexeme.git
-            emailRecipients: wikidata-ci-status@wikimedia.de
-        - '{name}-phpmetrics-docker':
-            name: WikibaseManifest
-            gitUrl: https://gerrit.wikimedia.org/r/p/mediawiki/extensions/WikibaseManifest.git
-            emailRecipients: wikidata-ci-status@wikimedia.de
-        - '{name}-phpmetrics-docker':
-            name: WikibaseQualityConstraints
-            gitUrl: https://gerrit.wikimedia.org/r/p/mediawiki/extensions/WikibaseQualityConstraints.git
-            emailRecipients: wikidata-ci-status@wikimedia.de
-        - '{name}-phpmetrics-docker':
-            name: EntitySchema
-            gitUrl: https://gerrit.wikimedia.org/r/p/mediawiki/extensions/EntitySchema.git
-            emailRecipients: wikidata-ci-status@wikimedia.de
-        - '{name}-phpmetrics-docker':
-            name: PropertySuggester
-            gitUrl: https://gerrit.wikimedia.org/r/p/mediawiki/extensions/PropertySuggester.git
-            emailRecipients: wikidata-ci-status@wikimedia.de
-        - '{name}-phpmetrics-docker':
-            name: ArticlePlaceholder
-            gitUrl: https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ArticlePlaceholder.git
-            emailRecipients: wikidata-ci-status@wikimedia.de
-        - '{name}-phpmetrics-docker':
-            name: Cognate
-            gitUrl: https://gerrit.wikimedia.org/r/p/mediawiki/extensions/Cognate.git
-            emailRecipients: wikidata-ci-status@wikimedia.de
+
+        - ArticlePlaceholder:
+            repo: mediawiki/extensions/ArticlePlaceholder
+        - Cognate:
+            repo: mediawiki/extensions/Cognate
+        - EntitySchema:
+            repo: mediawiki/extensions/EntitySchema
+        - PropertySuggester:
+            repo: mediawiki/extensions/PropertySuggester
+        - Wikibase:
+            repo: mediawiki/extensions/Wikibase
+        - WikibaseCirrusSearch:
+            repo: mediawiki/extensions/WikibaseCirrusSearch
+        - WikibaseLexemeCirrusSearch:
+            repo: mediawiki/extensions/WikibaseLexemeCirrusSearch
+        - WikibaseLexeme:
+            repo: mediawiki/extensions/WikibaseLexeme
+        - WikibaseManifest:
+            repo: mediawiki/extensions/WikibaseManifest
+        - WikibaseQualityConstraints:
+            repo: mediawiki/extensions/WikibaseQualityConstraints
+    jobs:
+      - '{basename}-phpmetrics-docker'
 
 - job-template:
-      name: '{name}-phpmetrics-docker'
+      name: '{basename}-phpmetrics-docker'
       description: |
-          <p>Generate <a href="https://doc.wikimedia.org/{name}/master/phpmetrics/">
-          https://doc.wikimedia.org/{name}/master/phpmetrics/</a>.</p>
+          <p>Generate <a href="https://doc.wikimedia.org/{basename}/master/phpmetrics/">
+          https://doc.wikimedia.org/{basename}/master/phpmetrics/</a>.</p>
           <p>Job is managed by <a href="https://www.mediawiki.org/wiki/CI/JJB">Jenkins Job Builder</a>.</p>
       node: Docker
       concurrent: false
@@ -59,7 +47,7 @@
                 cron: '@daily'
       scm:
           - git:
-                url: '{gitUrl}'
+                url: 'https://gerrit.wikimedia.org/r/p/{repo}.git'
                 shallow-clone: true
                 branches:
                     - master
@@ -89,7 +77,7 @@
                 args: '--report-html=/phpmetrics-report --report-violations=/log/violations-phpmetrics.xml .'
           - doc-publish:
                 docsrc: phpmetrics-report
-                docdest: '{name}/master/phpmetrics'
+                docdest: '{basename}/master/phpmetrics'
       publishers:
           - archive-log-allow-empty
           - beta-irc # Spam #wikimedia-releng on failure
