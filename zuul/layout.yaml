@@ -3536,6 +3536,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/AbuseFilter
     template:
@@ -3556,6 +3557,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/AdvancedSearch
     template:
@@ -3575,6 +3577,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/ArticleCreationWorkflow
     template:
@@ -3612,11 +3615,13 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Campaigns
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Capiunto
     template:
@@ -3628,6 +3633,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/CentralAuth
     template:
@@ -3645,6 +3651,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/CheckUser
     template:
@@ -3676,12 +3683,14 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/Citoid
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/cldr
     template:
@@ -3700,6 +3709,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/CodeMirror
@@ -3752,11 +3762,13 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/ContactPage
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/ContentTranslation
     template:
@@ -3769,27 +3781,32 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Dashiki
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Disambiguator
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/DiscussionTools
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/DismissableSiteNotice
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   # Special handling
   - name: mediawiki/extensions/DonationInterface
@@ -3812,11 +3829,13 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/DynamicSidebar
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Echo
     template:
@@ -3830,12 +3849,14 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/ElectronPdfService
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/EntitySchema
     template:
@@ -3890,11 +3911,13 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/FileExporter
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/FileImporter
     template:
@@ -3922,6 +3945,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/FundraisingEmailUnsubscribe
     template:
@@ -3940,6 +3964,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Gadgets
     template:
@@ -3952,6 +3977,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/GeoData
     template:
@@ -3964,11 +3990,13 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/GlobalBlocking
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/GlobalCssJs
     template:
@@ -3988,11 +4016,13 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/GlobalUserPage
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/GlobalWatchlist
     template:
@@ -4008,6 +4038,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Graph
     template:
@@ -4044,44 +4075,52 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/InputBox
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/Insider
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/intersection
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Interwiki
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/InterwikiSorting
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/IPInfo
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Josa
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/JsonConfig
     template:
@@ -4104,16 +4143,19 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/LandingCheck
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/LdapAuthentication
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Linter
     template:
@@ -4125,16 +4167,19 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Listings
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/LocalisationUpdate
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/LoginNotify
     template:
@@ -4146,12 +4191,14 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
 
   - name: mediawiki/extensions/MapSources
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/MassMessage
     template:
@@ -4180,6 +4227,7 @@ projects:
     template:
       # - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/MobileApp
     template:
@@ -4202,33 +4250,39 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-javascript-documentation
 
   - name: mediawiki/extensions/NavigationTiming
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/Newsletter
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/NewUserMessage
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Nuke
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/OATHAuth
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/OAuth
     template:
@@ -4259,11 +4313,13 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/PagedTiffHandler
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/PageImages
     template:
@@ -4276,6 +4332,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/PageTriage
     template:
@@ -4309,33 +4366,39 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/ParsoidBatchAPI
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/PdfHandler
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/PerformanceInspector
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Poem
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/PoolCounter
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Popups
     template:
@@ -4357,6 +4420,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/QuickSurveys
     template:
@@ -4380,38 +4444,45 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Renameuser
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   # Not on production, but in the MediaWiki release tarball
   - name: mediawiki/extensions/ReplaceText
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/RevisionSlider
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/RSS
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/SandboxLink
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/Score
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: mwgate-npm
 
   - name: mediawiki/extensions/Scribunto
@@ -4426,6 +4497,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/SecureLinkFixer
     template:
@@ -4436,18 +4508,20 @@ projects:
   - name: mediawiki/extensions/SecurePoll
     template:
       - name: in-wikimedia-production
-      - name: extension-coverage
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/ShortUrl
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/SiteMatrix
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/SpamBlacklist
@@ -4467,16 +4541,19 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/SubpageSortkey
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/SyntaxHighlight_GeSHi
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/TemplateData
     template:
@@ -4490,6 +4567,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/TemplateStyles
     template:
@@ -4501,6 +4579,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/TextExtracts
     template:
@@ -4512,17 +4591,20 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/TheWikipediaLibrary
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/TimedMediaHandler
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/timeline
@@ -4541,11 +4623,13 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/TorBlock
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Translate
     template:
@@ -4559,11 +4643,13 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/TrustedXFF
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/TwoColConflict
     template:
@@ -4582,6 +4668,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/UploadWizard
     template:
@@ -4605,6 +4692,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/VisualEditor
     template:
@@ -4620,6 +4708,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Wikibase
     template:
@@ -4672,6 +4761,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/WikibaseLexeme
@@ -4685,6 +4775,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/WikibaseManifest
     template:
@@ -4718,6 +4809,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/WikidataPageBanner
     template:
@@ -4729,12 +4821,14 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/wikihiero
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   # NOTE: Not yet in Wikimedia production, but eventually headed
   # there. Added 2020-07-01, JDF.
@@ -4749,6 +4843,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/WikimediaApiPortalOAuth
     template:
@@ -4766,6 +4861,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/WikimediaEvents
     template:
@@ -4778,6 +4874,7 @@ projects:
       - name: in-wikimedia-production
       # Incubator changes site links and so breaks selenium tests, and we haven't fixed it
       - name: extension-quibble-noselenium
+      - name: extension-coverage
 
   - name: mediawiki/extensions/WikimediaMaintenance
     template:
@@ -4788,17 +4885,20 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
       - name: extension-gate
 
   - name: mediawiki/extensions/Wikisource
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/XAnalytics
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-coverage
 
 #### Other MediaWiki extensions ################################
 
