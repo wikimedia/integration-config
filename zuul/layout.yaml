@@ -3730,15 +3730,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/CollaborationKit
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-javascript-documentation
-    postmerge:
-      - mwext-doxygen-publish
-
   - name: mediawiki/extensions/Collection
     template:
       - name: in-wikimedia-production
@@ -5532,6 +5523,14 @@ projects:
   - name: mediawiki/extensions/CognitiveProcessDesigner
     template:
       - name: extension-quibble-composer
+
+  - name: mediawiki/extensions/CollaborationKit
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-javascript-documentation
+    postmerge:
+      - mwext-doxygen-publish
 
   - name: mediawiki/extensions/CollapsibleSections
     template:
