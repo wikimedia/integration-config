@@ -3940,6 +3940,7 @@ projects:
       - name: in-wikimedia-fundraising-production
       # Using the -composer (rather than vendor) version because of FR-only use of twig etc.
       - name: extension-quibble-composer
+      - name: extension-coverage
       - name: mediawiki-i18n-check
     # Special extra jobs because Fundraising uses this on PHP73/REL1_35
     test:
