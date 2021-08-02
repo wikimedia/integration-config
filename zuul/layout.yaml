@@ -3903,10 +3903,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/ExternalLinkConfirm
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/FeaturedFeeds
     template:
       - name: in-wikimedia-production
@@ -4222,10 +4218,9 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  # New extension destined for production -- JDF 2020-10-20 T265939
   - name: mediawiki/extensions/MediaSearch
     template:
-      # - name: in-wikimedia-production
+      - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
 
@@ -5826,6 +5821,10 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/Expressions
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/ExternalLinkConfirm
     template:
       - name: extension-quibble
 
