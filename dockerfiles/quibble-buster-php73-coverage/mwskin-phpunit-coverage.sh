@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Generate coverage for a MediaWiki extension
+# Generate coverage for a MediaWiki skin
 # Copyright (C) 2017-2018 Kunal Mehta <legoktm@member.fsf.org>
 # Copyright (C) 2018 Antoine Musso <hashar@free.fr>
 #
@@ -17,10 +17,10 @@
 
 set -eux -o pipefail
 
-EXT_NAME=$(basename "$ZUUL_PROJECT")
+SKIN_NAME=$(basename "$ZUUL_PROJECT")
 
 # Edit suite.xml to use the proper coverage paths
-phpunit-suite-edit "$MW_INSTALL_PATH/tests/phpunit/suite.xml" --cover-extension "$EXT_NAME"
+phpunit-suite-edit "$MW_INSTALL_PATH/tests/phpunit/suite.xml" --cover-skin "$SKIN_NAME"
 
 mkdir -p "$WORKSPACE"/cover
 find "$WORKSPACE"/cover -mindepth 1 -delete
@@ -35,23 +35,23 @@ function relay_signals() {
 # report for those that passed.
 set +e
 if [[ ! -v CODEHEALTH ]]; then
-    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$MW_INSTALL_PATH/extensions/$EXT_NAME -d pcov.exclude='@(tests|vendor)@' \
+    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$MW_INSTALL_PATH/skins/$SKIN_NAME -d pcov.exclude='@(tests|vendor)@' \
         "$MW_INSTALL_PATH"/tests/phpunit/phpunit.php \
-        --testsuite extensions \
+        --testsuite skins \
         --coverage-clover "$LOG_DIR"/clover.xml \
         --coverage-html "$WORKSPACE"/cover \
         --log-junit "$LOG_DIR"/junit.xml \
-        "$MW_INSTALL_PATH/extensions/$EXT_NAME/tests/phpunit" &
+        "$MW_INSTALL_PATH/skins/$SKIN_NAME/tests/phpunit" &
 else
-    # This runs unit tests for all extensions in the file system. We are doing this because:
-    # 1. in the CODEHEALTH env context only the extension we care about should be cloned
-    # 2. the phpunit-suite-edit ensures that coverage reports will only be for our extension
+    # This runs unit tests for all skins in the file system. We are doing this because:
+    # 1. in the CODEHEALTH env context only the skin we care about should be cloned
+    # 2. the phpunit-suite-edit ensures that coverage reports will only be for our skin
     # 3. the unit tests take just a few seconds to run
     # 4. Passing in the tests/phpunit/unit directory when it doesn't exist results in exit
     #    code 1.
-    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$MW_INSTALL_PATH/extensions/$EXT_NAME -d pcov.exclude='@(tests|vendor)@' \
+    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$MW_INSTALL_PATH/skins/$SKIN_NAME -d pcov.exclude='@(tests|vendor)@' \
         vendor/bin/phpunit \
-        --testsuite extensions:unit \
+        --testsuite skins:unit \
         --exclude-group Dump,Broken,ParserFuzz,Stub \
         --coverage-clover "$LOG_DIR"/clover.xml \
         --log-junit "$LOG_DIR"/junit.xml &
