@@ -1004,6 +1004,9 @@ jobs:
   - name: mwext-phpunit-coverage-docker-publish
     mutex: mwext-phpunit-coverage-docker-publish
 
+  - name: mwskin-phpunit-coverage-docker-publish
+    mutex: mwskin-phpunit-coverage-docker-publish
+
   # Zuul does not know whether a Jenkins job is marked as non concurrent and
   # would thus trigger the associated Gearman function multiple times.
   # The Gearman plugin assign each build to a node and each of its executors
@@ -1907,6 +1910,12 @@ project-templates:
       - quibble-composer-mysql-php80-docker
       - quibble-composer-sqlite-php72-docker
       - quibble-composer-postgres-php72-docker
+
+  - name: skin-coverage
+    postmerge:
+      - mwskin-phpunit-coverage-docker-publish
+    coverage:
+      - mwskin-phpunit-coverage-patch-docker
 
   - name: extension-javascript-documentation
     test:

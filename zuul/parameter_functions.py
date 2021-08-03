@@ -29,6 +29,7 @@ def set_parameters(item, job, params):
         'mwskin-php72-phan',
         'mwext-phpunit-coverage',
         'mwext-codehealth',
+        'mwskin-phpunit-coverage',
         'mediawiki-quibble',
         'quibble',
         )
