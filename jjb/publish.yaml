@@ -46,6 +46,14 @@
          docsrc: '{src}'
          docdest: 'cover-extensions/{dest}'
 
+# Variant of cover-publish that publishes to cover-skins/
+- builder:
+    name: cover-skins-publish
+    builders:
+     - doc-publish:
+         docsrc: '{src}'
+         docdest: 'cover-skins/{dest}'
+
 - job:
     name: publish-to-doc1001
     node: contint2001

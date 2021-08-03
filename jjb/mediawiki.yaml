@@ -593,6 +593,56 @@
                       dir: 'cover'
         - docker-cleanup
 
+# XXX copy pasted to pass --volume cover:/workspace/cover
+- job-template:
+    !!merge : *job_quibble
+    name: 'mwskin-phpunit-coverage-docker-publish'
+    quibble_args: '--commands=mwskin-phpunit-coverage'
+    triggers:
+        - zuul
+    builders:
+        - docker-castor-load
+        - docker-wipe-dir:
+            dir: 'cover'
+        - docker-log-dir
+        - docker-run-with-log-and-workspace-cache:
+            image: '{docker_image}'
+            options: '--volume /srv/git:/srv/git:ro --volume "$(pwd)"/cover:/workspace/cover --tmpfs /workspace/db:size=320M'
+            args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db {quibble_args}'
+            logdir: '/workspace/log'
+    publishers:
+        - archive-log-allow-empty
+        - castor-save-workspace-cache
+        - postbuildscript:
+            mark-unstable-if-failed: true
+            builders:
+              - build-on:
+                  - SUCCESS
+                build-steps:
+                  - cover-skins-publish:
+                      src: 'cover'
+                      # Should be equivalent to $EXT_NAME
+                      dest: '$DOC_BASENAME'
+        - postbuildscript:
+            mark-unstable-if-failed: false
+            builders:
+              - build-on:
+                  - SUCCESS
+                  - UNSTABLE
+                  - FAILURE
+                  - ABORTED
+                build-steps:
+                  - docker-wipe-dir:
+                      dir: 'cover'
+        - docker-cleanup
+
+- job-template:
+    !!merge : *job_quibble
+    name: 'mwskin-phpunit-coverage-patch-docker'
+    quibble_args: '--commands=mwskin-phpunit-coverage-patch'
+    triggers:
+        - zuul
+
 - project:
     name: mwcore-codehealth
     packages-source: composer
@@ -897,6 +947,14 @@
             packages-source:  composer
             database: mysql
         - mwext-phpunit-coverage-docker-publish:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.1.0
+            packages-source:  composer
+            database: mysql
+        - mwskin-phpunit-coverage-patch-docker:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.1.0
+            packages-source:  composer
+            database: mysql
+        - mwskin-phpunit-coverage-docker-publish:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.1.0
             packages-source:  composer
             database: mysql
