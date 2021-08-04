@@ -363,8 +363,11 @@
     name: inference-services
     pipeline:
         - editquality
+        - articlequality
     jobs:
         # trigger-inference-services-pipeline-editquality
+        # trigger-inference-services-pipeline-articlequality
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-editquality
+        # inference-services-pipeline-articlequality
         - '{name}-pipeline-{pipeline}'

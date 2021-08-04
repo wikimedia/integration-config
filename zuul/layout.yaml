@@ -1154,6 +1154,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'revscoring/editquality/model-server/.*'
 
+  - name: trigger-inference-services-pipeline-articlequality
+    files:
+        - '.pipeline/revscoring/articlequality/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'revscoring/articlequality/model-server/.*'
+
 project-templates:
 
   - name: debian-glue
@@ -2164,6 +2170,7 @@ projects:
   - name: machinelearning/liftwing/inference-services
     test:
       - trigger-inference-services-pipeline-editquality
+      - trigger-inference-services-pipeline-articlequality
     gate-and-submit:
       - noop
 
