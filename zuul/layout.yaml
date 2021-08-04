@@ -4883,6 +4883,11 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/Wikistories
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+
   - name: mediawiki/extensions/XAnalytics
     template:
       - name: in-wikimedia-production
