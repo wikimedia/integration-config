@@ -1,3 +1,9 @@
+helm-linter (0.2.15) UNRELEASED; urgency=medium
+
+  * Upgrade helm3 to 3.6.3
+
+ -- Luca Toscano <ltoscano@wikimedia.org>  Thu, 5 Aug 2021 14:56:22 +0000
+
 helm-linter (0.2.14) UNRELEASED; urgency=medium
 
   * Change permissions of helm directories to allow running
