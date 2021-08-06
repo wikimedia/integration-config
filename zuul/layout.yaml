@@ -2642,10 +2642,6 @@ projects:
     experimental:
       - legacy-quibble-rubyselenium-docker
 
-  - name: mediawiki/skins/Mirage
-    template:
-      - name: skin-quibble
-
   - name: mediawiki/skins/Modern
     template:
       - name: in-wikimedia-production
@@ -2773,6 +2769,10 @@ projects:
       - name: skin-quibble
 
   - name: mediawiki/skins/Metrolook
+    template:
+      - name: skin-quibble
+
+  - name: mediawiki/skins/Mirage
     template:
       - name: skin-quibble
 
