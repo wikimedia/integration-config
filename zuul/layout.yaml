@@ -2639,6 +2639,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
+      - name: skin-coverage
 
   - name: mediawiki/skins/MinervaNeue
     template:
@@ -2646,6 +2647,7 @@ projects:
       - name: skin-quibble
       - name: extension-gate
       - name: extension-javascript-documentation
+      - name: skin-coverage
     postmerge:
       - mwext-doxygen-publish
     experimental:
@@ -2655,21 +2657,25 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
+      - name: skin-coverage
 
   - name: mediawiki/skins/MonoBook
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
+      - name: skin-coverage
 
   - name: mediawiki/skins/Nostalgia
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
+      - name: skin-coverage
 
   - name: mediawiki/skins/Timeless
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
+      - name: skin-coverage
 
   - name: mediawiki/skins/Vector
     template:
@@ -2677,6 +2683,7 @@ projects:
       - name: skin-quibble
       - name: extension-gate
       - name: extension-javascript-documentation
+      - name: skin-coverage
     experimental:
       - quibble-composer-mysql-php72-docker
     postmerge:
@@ -2686,6 +2693,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: skin-quibble
+      - name: skin-coverage
 
 #### Other MediaWiki skins #####################################
 
