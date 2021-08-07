@@ -259,6 +259,22 @@ class TestZuulLayout(unittest.TestCase):
                             % (kind, name, kind)
                         )
 
+                # (T287918) Coverage publish job
+                noCoverage = [
+                    'mediawiki/extensions/DonationInterface',
+                    'mediawiki/extensions/OpenStackManager',
+                    'mediawiki/extensions/Wikibase',
+                    'mediawiki/extensions/WikimediaMaintenance'
+                ]
+
+                if project['name'] not in noCoverage:
+                    self.assertIn(
+                        '%s-coverage' % kind,
+                        templates,
+                        'Production %s %s must have "%s-coverage"'
+                        % (kind, name, kind)
+                    )
+
             except AssertionError, e:
                 errors.append(str(e))
 
