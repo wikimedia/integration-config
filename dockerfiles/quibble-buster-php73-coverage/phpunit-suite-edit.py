@@ -28,7 +28,7 @@ def main():
     parser.add_argument('--cover-extension',
                         help='Extension path to set for coverage')
     parser.add_argument('--cover-skin',
-                        help='Extension path to set for coverage')
+                        help='Skin path to set for coverage')
 
     args = parser.parse_args()
     tree = etree.parse(args.suite)
