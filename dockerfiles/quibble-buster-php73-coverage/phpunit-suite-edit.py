@@ -27,6 +27,8 @@ def main():
     parser.add_argument('suite', help='Path to suite.xml')
     parser.add_argument('--cover-extension',
                         help='Extension path to set for coverage')
+    parser.add_argument('--cover-skin',
+                        help='Extension path to set for coverage')
 
     args = parser.parse_args()
     tree = etree.parse(args.suite)
@@ -48,6 +50,18 @@ def main():
                     sub = etree.SubElement(whitelist, 'directory')
                     sub.text = '../../extensions/%s/%s' \
                         % (args.cover_extension, folder)
+                    sub.set('suffix', '.php')
+
+            if args.cover_skin:
+                # Remove the current directories that are there,
+                # we don't want to include any of them
+                for wchild in whitelist.getchildren():
+                    whitelist.remove(wchild)
+                # Add the three directories we care about
+                for folder in ['src', 'includes', 'maintenance']:
+                    sub = etree.SubElement(whitelist, 'directory')
+                    sub.text = '../../skins/%s/%s' \
+                        % (args.cover_skin, folder)
                     sub.set('suffix', '.php')
 
     # This produces a dirty diff, strips comments, ignores newlines,

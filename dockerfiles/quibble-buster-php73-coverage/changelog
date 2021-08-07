@@ -1,3 +1,9 @@
+quibble-buster-php73-coverage (1.1.1) wikimedia; urgency=high
+
+   Add cover-skin argument to phpunit-suit-edit.py
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri,  6 Aug 2021 17:40:32 -0700
+
 quibble-buster-php73-coverage (1.1.0) wikimedia; urgency=high
 
    Add scripts for cover-skins
