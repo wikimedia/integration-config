@@ -7151,6 +7151,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/SimpleCalendar
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/SimpleChanges
     template:
       - name: extension-quibble
