@@ -1154,15 +1154,21 @@ jobs:
 
   - name: trigger-inference-services-pipeline-editquality
     files:
-        - '.pipeline/revscoring/editquality/blubber.yaml'
+        - '.pipeline/editquality/blubber.yaml'
         - '.pipeline/config.yaml'
         - 'revscoring/editquality/model-server/.*'
 
   - name: trigger-inference-services-pipeline-articlequality
     files:
-        - '.pipeline/revscoring/articlequality/blubber.yaml'
+        - '.pipeline/articlequality/blubber.yaml'
         - '.pipeline/config.yaml'
         - 'revscoring/articlequality/model-server/.*'
+
+  - name: trigger-inference-services-pipeline-draftquality
+    files:
+        - '.pipeline/draftquality/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'revscoring/draftquality/model-server/.*'
 
 project-templates:
 
@@ -2181,6 +2187,7 @@ projects:
     test:
       - trigger-inference-services-pipeline-editquality
       - trigger-inference-services-pipeline-articlequality
+      - trigger-inference-services-pipeline-draftquality
     gate-and-submit:
       - noop
 

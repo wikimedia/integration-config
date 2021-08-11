@@ -364,10 +364,13 @@
     pipeline:
         - editquality
         - articlequality
+        - draftquality
     jobs:
         # trigger-inference-services-pipeline-editquality
         # trigger-inference-services-pipeline-articlequality
+        # trigger-inference-services-pipeline-draftquality
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-editquality
         # inference-services-pipeline-articlequality
+        # inference-services-pipeline-draftquality
         - '{name}-pipeline-{pipeline}'
