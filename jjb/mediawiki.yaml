@@ -795,7 +795,7 @@
         image: docker-registry.wikimedia.org/releng/node12-test:0.0.2
         options: '--volume "$(pwd)"/src/extensions/"$EXT_NAME":/src'
         logdir: '/workspace/log'
-        args: '--if-present test:unit'
+        args: '--if-present coverage'
     - shell: |
         if [ -f src/extensions/"$EXT_NAME"/coverage/lcov.info ]; then
           sed -ie "s#/src/#/workspace/src/extensions/$EXT_NAME/#g" src/extensions/"$EXT_NAME"/coverage/lcov.info
