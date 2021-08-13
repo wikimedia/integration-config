@@ -1,3 +1,9 @@
+operations-dnslint (0.0.12) wikimedia; urgency=high
+
+   * Upgrade gdnsd to 3.8.0-1~wmf1 package
+
+ -- Brandon Black <bblack@wikimedia.org>  Fri, 13 Aug 2021 18:45:53 +0000
+
 operations-dnslint (0.0.11) wikimedia; urgency=medium
 
   * Remove duplicate LANG/LANGUAGE/LC_ALL setting.
