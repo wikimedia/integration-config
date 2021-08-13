@@ -51,7 +51,7 @@
         - zuul
     builders:
         - docker-run:
-            image: docker-registry.wikimedia.org/releng/operations-dnslint:0.0.10
+            image: docker-registry.wikimedia.org/releng/operations-dnslint:0.0.12
     publishers:
         - docker-cleanup
 
