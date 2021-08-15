@@ -5537,6 +5537,10 @@ projects:
     postmerge:
       - mwext-doxygen-publish
 
+  - name: mediawiki/extensions/CIForms
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/CiteDrawer
     template:
       - name: extension-quibble
