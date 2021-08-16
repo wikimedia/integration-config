@@ -188,7 +188,7 @@
             mkdir -p ~/.ssh
             printf 'Host gerrit.wikimedia.org\n  StrictHostKeyChecking no\n  User wdqsguibuilder\n' >> ~/.ssh/config
 
-            git clone "ssh://wdqsguibuilder@gerrit.wikimedia.org:29418/wikidata/query-builder/deploy" ./src/dist-deploy
+            git clone -b production "ssh://wdqsguibuilder@gerrit.wikimedia.org:29418/wikidata/query-builder/deploy" ./src/dist-deploy
             scp -p -P 29418 wdqsguibuilder@gerrit.wikimedia.org:hooks/commit-msg "./src/dist-deploy/.git/hooks/"
             git -C ./src/dist-deploy config user.name "WDQSGuiBuilder"
             git -C ./src/dist-deploy config user.email "wdqs-gui-build@lists.wikimedia.org"
