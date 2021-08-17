@@ -1170,6 +1170,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'revscoring/draftquality/model-server/.*'
 
+  - name: trigger-inference-services-pipeline-topic
+    files:
+        - '.pipeline/topic/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'revscoring/topic/model-server/.*'
+
 project-templates:
 
   - name: debian-glue
@@ -2188,8 +2194,9 @@ projects:
       - trigger-inference-services-pipeline-editquality
       - trigger-inference-services-pipeline-articlequality
       - trigger-inference-services-pipeline-draftquality
+      - trigger-inference-services-pipeline-topic
     gate-and-submit:
-      - noop
+      - trigger-inference-services-pipeline-topic
 
   - name: integration/config
     test:

@@ -365,12 +365,15 @@
         - editquality
         - articlequality
         - draftquality
+        - topic
     jobs:
         # trigger-inference-services-pipeline-editquality
         # trigger-inference-services-pipeline-articlequality
         # trigger-inference-services-pipeline-draftquality
+        # trigger-inference-services-pipeline-topic
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-editquality
         # inference-services-pipeline-articlequality
         # inference-services-pipeline-draftquality
+        # inference-services-pipeline-topic
         - '{name}-pipeline-{pipeline}'
