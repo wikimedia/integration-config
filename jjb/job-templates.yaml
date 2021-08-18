@@ -630,7 +630,7 @@
         args: 'selenium-daily'
     wrappers:
       - timeout:
-          timeout: 30
+          timeout: 60
       - timestamps
       # Wiki usernames and passwords are hold in Jenkins credentials store
       # https://integration.wikimedia.org/ci/credential-store/domain/selenium/
