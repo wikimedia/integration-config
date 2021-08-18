@@ -3514,6 +3514,10 @@ projects:
     template:
       - name: tox-docker
 
+  - name: operations/software/bernard
+    template:
+      - name: tox-docker
+
   - name: operations/software/transferpy
     template:
       - name: tox-docker
