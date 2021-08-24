@@ -122,8 +122,13 @@
             git -C ./src/build config user.name "WDQSGuiBuilder"
             git -C ./src/build config user.email "wdqs-gui-build@lists.wikimedia.org"
 
-            # Empty the build dir (excluding config and .git), preparing for the new build
-            find ./src/build/ -maxdepth 1 ! -wholename "./src/build/" ! -wholename "./src/build/.git" ! -name "custom-config.json" -exec rm -r {} +
+            # Empty the build dir (excluding sites, .git, and BC for config), preparing for the new build
+            find ./src/build/ -maxdepth 1 \
+                ! -wholename "./src/build/" \
+                ! -wholename "./src/build/.git" \
+                ! -wholename "./src/build/sites" \
+                ! -name "custom-config.json"
+                -exec rm -r {} +
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/node12-test-browser:0.0.2
             args: 'grunt only_build'
