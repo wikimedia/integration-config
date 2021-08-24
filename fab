@@ -72,7 +72,7 @@ deploy_docker() {
     local host='contint.wikimedia.org'
     local git_dir='/etc/zuul/wikimedia'
     local diff_dir='dockerfiles/'
-    local log_msg='Updating docker-pkg files on contint primary for [url]'
+    local log_msg='!log Updating docker-pkg files on contint primary for [url]'
 
     _update_integration_config "$host" "$git_dir" "$diff_dir" "$log_msg"
 
