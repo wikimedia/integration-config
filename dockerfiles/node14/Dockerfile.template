@@ -1,0 +1,28 @@
+# Docker image with plain nodejs and npm.
+
+FROM {{ "ci-bullseye" | image_tag }}
+
+USER root
+
+ENV NODE_VERSION=v14.17.5-linux-x64
+
+RUN {{ "curl" | apt_install }} 
+
+COPY SHASUMS256.txt /tmp/SHASUMS256.txt
+RUN cd /tmp \ 
+    && curl -Lo node-${NODE_VERSION}.tar.gz https://nodejs.org/dist/v14.17.5/node-${NODE_VERSION}.tar.gz \
+    && grep node-${NODE_VERSION}.tar.gz SHASUMS256.txt | sha256sum -c - \
+    && tar -xzf node-${NODE_VERSION}.tar.gz \
+    && mv node-${NODE_VERSION}/bin/node /usr/bin/node \
+    && ln -s /usr/bin/node /usr/bin/nodejs \
+    && mv node-${NODE_VERSION}/share/ /usr/share/nodejs \
+    && mv node-${NODE_VERSION}/include/node /usr/include/node \
+    && mv node-${NODE_VERSION}/lib/node_modules /usr/lib/node_modules \
+    && ln -s /usr/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm \
+    && ln -s /usr/lib/node_modules/npm/bin/npx-cli.js /usr/bin/npx \
+    && rm -rf node-${NODE_VERSION} 
+
+USER nobody
+
+ENTRYPOINT ["npm"]
+CMD ["--help"]
