@@ -761,6 +761,8 @@ tarballextensions = [
     # Skipped, non-trivial (TODO)
     # 'LocalisationUpdate',
 
+    'Math',
+
     # Skipped, incompatible with other extensions (TODO)
     # 'MultimediaViewer',
 
