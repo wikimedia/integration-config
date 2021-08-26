@@ -6127,10 +6127,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/FormelApplet
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/FormWizard
     template:
       - name: extension-quibble
@@ -10036,6 +10032,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/FormatNum
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/FormelApplet
     template:
       - name: archived
 
