@@ -816,6 +816,7 @@ gatedextensions = [
     'GuidedTour',
     'JsonConfig',
     'Kartographer',
+    'Math',
     'MobileApp',
     'MobileFrontend',
     'NavigationTiming',

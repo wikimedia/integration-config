@@ -4400,6 +4400,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-apitests
+      - name: extension-gate
 
   - name: mediawiki/extensions/MediaModeration
     template:
