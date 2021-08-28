@@ -377,3 +377,16 @@
         # inference-services-pipeline-draftquality
         # inference-services-pipeline-topic
         - '{name}-pipeline-{pipeline}'
+
+- project:
+    name: apple-search
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-apple-search-pipeline-test
+      # trigger-apple-search-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # apple-search-pipeline-test
+      # apple-search-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
