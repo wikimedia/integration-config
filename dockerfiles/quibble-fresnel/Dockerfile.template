@@ -26,8 +26,7 @@ RUN rm -rf /opt/npm-tmp \
     && ln -s /opt/fresnel/node_modules/.bin/fresnel /usr/local/bin/fresnel
 COPY mediawiki-fresnel-patch.sh /usr/local/bin/mediawiki-fresnel-patch
 
-# TODO: Move to quibble-stretch base image
-#       and then remove from quibble-stretch-bundle/mwselenium.sh
+# TODO: Move to quibble base image and then remove from quibble-…-bundle/mwselenium.sh
 ENV CHROMIUM_FLAGS="--no-sandbox"
 
 # TODO: Fix Quibble to always export these, not just for qunit/wdio.
