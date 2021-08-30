@@ -1,0 +1,63 @@
+# Docker image with nodejs, jsduck, and browsers installed, plus composer.
+
+FROM {{ "composer-php72" | image_tag }} as composer
+
+FROM {{ "php72" | image_tag }} as php72
+
+FROM {{ "php-ast" | image_tag }} as php-ast
+
+FROM {{ "node12-test-browser" | image_tag }}
+
+## START: O, my kingdom for multiple inheritance!
+# Copied from the php72 image; keep this synchronised!
+
+USER root
+
+# Align with SRE provided packages
+COPY --from=php72 /etc/apt/sources.list.d/wikimedia-php72.list /etc/apt/sources.list.d/wikimedia-php72.list
+
+# zip is needed for composer to install things from dist
+# others are libraries/MediaWiki related
+{% set packages|replace('\n', ' ') -%}
+php7.2-cli
+php7.2-zip
+php-ast
+php7.2-bcmath
+php7.2-curl
+php7.2-dba
+php7.2-gd
+php7.2-gmp
+php7.2-mbstring
+php-redis
+php7.2-sqlite3
+php-xdebug
+php7.2-xml
+{%- endset -%}
+
+RUN {{ packages | apt_install }}
+
+# Disable xdebug by default due to its performance impact
+RUN phpdismod xdebug
+
+RUN {{ "jq" | apt_install }}
+
+# This will override the already-existing ast
+COPY --from=ast /usr/lib/php/20170718/ast.so /usr/lib/php/20170718/ast.so
+COPY --from=ast /srv/20-ast.ini /etc/php/7.2/cli/conf.d/20-ast.ini
+
+# phantomjs crashes when there is no DISPLAY
+ENV QT_QPA_PLATFORM=offscreen
+
+# HACK: We manually copy across composer, like all the other images that need it
+# Install composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+# Grab our composer helper scripts
+COPY --from=composer /srv/composer /srv/composer
+
+## END: O, my kingdom for multiple inheritance!
+
+USER nobody
+
+WORKDIR /src
+ENTRYPOINT "echo 'This image does not define an entrypoint, you have to define one yourself'; exit 1"
