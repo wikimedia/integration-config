@@ -7832,8 +7832,6 @@ projects:
       - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/services/apple-search
-    template:
-      - name: composer-test-package-php72-or-later
     test:
       - trigger-apple-search-pipeline-test
     gate-and-submit:
