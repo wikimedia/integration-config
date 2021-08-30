@@ -7836,6 +7836,8 @@ projects:
       - trigger-apple-search-pipeline-test
     gate-and-submit:
       - trigger-apple-search-pipeline-test
+    postmerge:
+      - trigger-apple-search-pipeline-publish
 
   - name: mediawiki/services/wikispeech/mary-tts
     test:
