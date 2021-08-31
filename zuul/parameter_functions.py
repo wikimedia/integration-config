@@ -544,6 +544,7 @@ phan_dependencies = {
                    'SocialProfile'],
     'LoginNotify': ['CentralAuth', 'Echo'],
     'MachineVision': ['Wikibase', 'WikibaseMediaInfo', 'Echo'],
+    'MassMessageEmail': ['MassMessage'],
     'Math': ['VisualEditor', 'Wikibase'],
     'MediaSearch': ['CirrusSearch', 'WikibaseCirrusSearch'],
     'MiniInvite': ['BlogPage'],
