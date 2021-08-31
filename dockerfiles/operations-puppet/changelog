@@ -1,3 +1,10 @@
+operations-puppet (0.8.5) wikimedia; urgency=medium
+
+  * Refresh to pick up Gemfile updates specifically
+  https://gerrit.wikimedia.org/r/c/operations/puppet/+/715751
+
+ -- John Bond <jbond@wikimedia.org>  Tue, 31 Aug 2021 17:25:43 +0200
+
 operations-puppet (0.8.4) wikimedia; urgency=medium
 
   * Remove duplicate LANG/LANGUAGE/LC_ALL setting.
