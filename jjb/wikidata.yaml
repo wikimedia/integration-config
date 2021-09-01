@@ -221,14 +221,14 @@
     name: wikidata-quibble-daily-notgated
     # Wikidata extensions that are not part of gate
     project:
-        - ArticlePlaceholder
+        # The commented out ones are because of T285049#7311916
+        # - ArticlePlaceholder
         - Cognate
         - InterwikiSorting
-        - WikibaseLexeme
-        - WikibaseManifest
-        - WikibaseQualityConstraints
-        - Wikidata.org
-        - WikidataPageBanner
+        # - WikibaseLexeme
+        # - WikibaseManifest
+        # - WikibaseQualityConstraints
+        # - Wikidata.org
     jobs:
         - quibble-daily-{project}-{packages-source}-{database}-{php}-docker:
             database: mysql
