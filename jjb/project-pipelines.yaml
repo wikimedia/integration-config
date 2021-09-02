@@ -59,6 +59,16 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: example-node-api
+    pipeline:
+      - test
+    jobs:
+      # trigger-example-node-api-pipeline-test
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # example-node-api-pipeline-test
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: mathoid
     pipeline:
       - test

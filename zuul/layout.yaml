@@ -8042,6 +8042,12 @@ projects:
     postmerge:
       - trigger-image-suggestion-api-pipeline-publish
 
+  - name: mediawiki/services/example-node-api
+    test:
+        - trigger-example-node-api-pipeline-test
+    gate-and-submit:
+        - trigger-example-node-api-pipeline-test
+
   - name: mediawiki/services/jobrunner
     template:
       - name: composer-test-package-php72-or-later
