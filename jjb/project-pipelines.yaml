@@ -400,3 +400,11 @@
       # apple-search-pipeline-test
       # apple-search-pipeline-publish
       - '{name}-pipeline-{pipeline}'
+
+- project:
+    name: toolforge-volume-admission-controller
+    pipeline:
+      - test
+    jobs:
+      - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'

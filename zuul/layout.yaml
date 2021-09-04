@@ -2335,6 +2335,12 @@ projects:
       - name: tox-docker
       - name: debian-glue
 
+  - name: cloud/toolforge/volume-admission-controller
+    test:
+      - trigger-toolforge-volume-admission-controller-pipeline-test
+    gate-and-submit:
+      - trigger-toolforge-volume-admission-controller-pipeline-test
+
   - name: labs/tools/registry-admission-webhook
     test:
       - trigger-toolforge-registry-admission-controller-pipeline-test
