@@ -167,7 +167,12 @@ dependencies = {
     'BlueSpiceCountThings': ['BlueSpiceFoundation', 'VisualEditor'],
     'BlueSpiceCustomMenu': ['BlueSpiceFoundation'],
     'BlueSpiceDashboards': ['BlueSpiceFoundation'],
-    'BlueSpiceDistributionConnector': ['BlueSpiceFoundation'],
+    'BlueSpiceDistributionConnector': [
+        'BlueSpiceFoundation',
+        'Echo',
+        'OOJSPlus',
+        'UserMerge'
+    ],
     'BlueSpiceEchoConnector': ['BlueSpiceFoundation', 'Echo'],
     'BlueSpiceEmoticons': ['BlueSpiceFoundation'],
     'BlueSpiceExpiry': ['BlueSpiceFoundation', 'BlueSpiceReminder'],
