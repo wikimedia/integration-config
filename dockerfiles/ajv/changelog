@@ -1,0 +1,6 @@
+ajv (0.1.0) wikimedia; urgency=medium
+
+  * Provide a ajv image for use in validating YAML/JSON pipelinelib
+    configuration
+
+ -- Dan Duvall <dduvall@wikimedia.org>  Tue, 07 Sep 2021 12:12:36 -0700
