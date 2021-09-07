@@ -8214,6 +8214,11 @@ projects:
       - name: tox-docker
 
   - name: analytics/quarry/web
+    test:
+      - trigger-analytics-quarry-web-pipeline-test
+    gate-and-submit:
+      - trigger-analytics-quarry-web-pipeline-test
+
     template:
       - name: tox-docker
       - name: node12-docker
