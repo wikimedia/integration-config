@@ -8220,7 +8220,6 @@ projects:
       - trigger-analytics-quarry-web-pipeline-test
 
     template:
-      - name: tox-docker
       - name: node12-docker
 
   - name: analytics/limn-mobile-data
