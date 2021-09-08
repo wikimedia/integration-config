@@ -1,10 +1,17 @@
-helm-linter (0.2.15) UNRELEASED; urgency=medium
+helm-linter (0.2.16) wikimedia; urgency=medium
+
+  * Add istioctl
+  * Fix distribution in changelog
+
+ -- Janis Meybohm <jmeybohm@wikimedia.org>  Wed, 08 Sep 2021 09:10:12 +0200
+
+helm-linter (0.2.15) wikimedia; urgency=medium
 
   * Upgrade helm3 to 3.6.3
 
  -- Luca Toscano <ltoscano@wikimedia.org>  Thu, 5 Aug 2021 14:56:22 +0000
 
-helm-linter (0.2.14) UNRELEASED; urgency=medium
+helm-linter (0.2.14) wikimedia; urgency=medium
 
   * Change permissions of helm directories to allow running
     as a different user
