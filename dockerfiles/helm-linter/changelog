@@ -1,3 +1,9 @@
+helm-linter (0.2.17) wikimedia; urgency=medium
+
+  * Add a helmfile_log_sal stub (as it is called by admin_ng helmfile)
+
+ -- Janis Meybohm <jmeybohm@wikimedia.org>  Wed, 08 Sep 2021 18:12:29 +0200
+
 helm-linter (0.2.16) wikimedia; urgency=medium
 
   * Add istioctl
