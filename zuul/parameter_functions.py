@@ -827,6 +827,7 @@ gatedextensions = [
     'NavigationTiming',
     'PageImages',
     'PageViewInfo',
+    'ProofreadPage',
     'SandboxLink',
     'Scribunto',
     'SiteMatrix',
