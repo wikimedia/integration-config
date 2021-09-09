@@ -1,3 +1,9 @@
+node10-test-browser-php80-composer (0.1.0) wikimedia; urgency=medium
+
+  * Fix sury component: stretch > bullseye T290651
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 09 Sep 2021 15:46:14 +0200
+
 node10-test-browser-php80-composer (0.0.1-s4) wikimedia; urgency=high
 
    Refresh for update in parent image php-ast:
