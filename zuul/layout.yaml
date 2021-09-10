@@ -9292,6 +9292,8 @@ projects:
     gate-and-submit:
       - ooui-special-node10-plus-php80-composer-docker
       - ooui-ruby2.5-rake-docker
+    experimental:
+      - ooui-special-node12-plus-php80-composer-docker
     postmerge:
       - oojs-ui-doxygen-publish
       - oojs-ui-docker-publish
