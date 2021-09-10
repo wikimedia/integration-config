@@ -1,23 +1,4 @@
 - job:
-    name: 'ooui-special-node10-plus-php80-composer-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node10-test-browser-php80-composer:0.1.0
-         # 'npm run jenkins' also runs composer
-         options: '--entrypoint /run-with-xvfb.sh'
-         args: 'jenkins'
-    publishers:
-     - archive-log-allow-empty
-     - docker-cleanup
-
-- job:
     name: 'ooui-special-node12-plus-php80-composer-docker'
     node: Docker
     triggers:
@@ -48,7 +29,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node10-test-browser-php80-composer:0.1.0
+         image: docker-registry.wikimedia.org/releng/node12-test-browser-php80-composer:0.2.0
          # npm run-script jenkins runs 'npm test' and 'npm run doc'
          options: '--entrypoint /run-with-xvfb.sh'
          args: 'jenkins'
