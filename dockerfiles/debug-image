@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 #
-# Usage: ./debug-image node10-test
+# Usage: ./debug-image node12-test-browser
 #
 # Trailing slash is optional, such as when autocompleting names
 # in your shell from within the dockerfiles/ directory.
