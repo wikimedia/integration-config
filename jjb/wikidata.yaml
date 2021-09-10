@@ -127,7 +127,7 @@
                 ! -wholename "./src/build/" \
                 ! -wholename "./src/build/.git" \
                 ! -wholename "./src/build/sites" \
-                ! -name "custom-config.json"
+                ! -name "custom-config.json" \
                 -exec rm -r {} +
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/node12-test-browser:0.0.2
