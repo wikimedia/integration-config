@@ -2330,6 +2330,10 @@ projects:
     template:
       - name: tox-docker
 
+  - name: cloud/toolforge/jobs-framework-emailer
+    template:
+      - name: tox-docker
+
   - name: cloud/toolforge/jobs-framework-cli
     template:
       - name: tox-docker
