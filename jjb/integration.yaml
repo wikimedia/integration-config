@@ -89,6 +89,8 @@
          command:
              - jjb-diff:
                  entrypoint: utils/jjb-diff.sh
+             - shellcheck:
+                 entrypoint: utils/shellcheck.sh
              - zuul-layout-diff:
                  timeout: 3  # minutes
                  entrypoint: utils/zuul-layout-diff.sh
