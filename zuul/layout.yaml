@@ -8460,6 +8460,8 @@ projects:
       - wikipeg-special-node10-plus-php80-composer-docker
     gate-and-submit:
       - wikipeg-special-node10-plus-php80-composer-docker
+    experimental:
+      - wikipeg-special-node12-plus-php80-composer-docker
 
   - name: WrappedString
     template:
