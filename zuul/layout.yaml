@@ -5671,6 +5671,10 @@ projects:
 
 ###### BlueSpice extensions: End
 
+  - name: mediawiki/extensions/BlockInactive
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/BoilerPlate
     template:
       - name: extension-quibble
