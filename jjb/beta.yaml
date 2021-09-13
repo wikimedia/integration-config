@@ -80,6 +80,7 @@
           export GIT_BRANCH=$GIT_COMMIT
           export SKIP_QUILT_CLEANUP=true
           export DBP_EXTRA_OPTS=--source-option=--auto-commit
+          export DEBEMAIL="jenkins-bot@wikimedia.org" # to avoid lintian bogus-mail-host errors
           cd "$WORKSPACE"
           /usr/bin/generate-git-snapshot
 
