@@ -9419,7 +9419,7 @@ projects:
     template:
       - name: node12-browser-docker
       - name: mediawiki-i18n-check
-    experimental:
+    test:
       - branchdeploy-wikidata-query-builder-node12-npm-docker
 
   - name: wikibase/javascript-api
