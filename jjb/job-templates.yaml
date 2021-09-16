@@ -448,11 +448,12 @@
               credential-id: BRANCHDEPLOY_SITE_ID_{key}
               variable: BRANCHDEPLOY_SITE_ID
     builders:
+     - docker-castor-load
      - docker-src-dir
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12:0.0.1'
+        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.2'
         options: '--workdir="/src"'
         args: 'branch-deploy'
     publishers:
