@@ -5705,6 +5705,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/CategoryLockdown
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/CategorySortHeaders
     template:
       - name: extension-quibble
