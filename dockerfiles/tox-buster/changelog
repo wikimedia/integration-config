@@ -1,3 +1,9 @@
+tox-buster (0.4.2) wikimedia; urgency=high
+
+   Install shellcheck from buster-backports
+
+ -- Erik Bernhardson <ebernhardson@wikimedia.org>  Fri, 17 Sep 2021 14:39:04 -0700
+
 tox-buster (0.4.1) wikimedia; urgency=high
 
    Install shellcheck
