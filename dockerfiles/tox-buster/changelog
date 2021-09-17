@@ -1,3 +1,14 @@
+tox-buster (0.5.0) wikimedia; urgency=high
+
+   Install various packages previously in sub-images:
+   * libpq-dev (tox-censorshipmonitoring)
+   * python-etcd, python-conftool, and etcd (tox-conftool)
+   * librdkafka-dev (tox-eventlogging)
+   * libffi-dev (tox-homer)
+   * libldap2-dev, libsasl2-dev, and libssl-dev (tox-ldap-dev)
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 17 Sep 2021 12:00:36 -0700
+
 tox-buster (0.4.2) wikimedia; urgency=high
 
    Install shellcheck from buster-backports
