@@ -1,3 +1,9 @@
+tox-buster (0.4.1) wikimedia; urgency=high
+
+   Install shellcheck
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 17 Sep 2021 11:54:59 -0700
+
 tox-buster (0.4.0) wikimedia; urgency=high
 
    * Install tox with python 3, making this the default version to run for

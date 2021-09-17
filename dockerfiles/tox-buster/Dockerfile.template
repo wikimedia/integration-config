@@ -20,6 +20,7 @@ default-libmysqlclient-dev
 libssl-dev
 libcurl4-openssl-dev
 gettext
+shellcheck
 {%- endset -%}
 
 ARG PIP_DISABLE_PIP_VERSION_CHECK=1
