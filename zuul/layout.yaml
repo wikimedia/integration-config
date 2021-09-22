@@ -7796,6 +7796,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/Wigo3
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/WikEdDiff
     template:
       - name: extension-quibble
@@ -10590,10 +10594,6 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/WebPlatformAuth
-    template:
-      - name: archived
-
-  - name: mediawiki/extensions/Wigo3
     template:
       - name: archived
 
