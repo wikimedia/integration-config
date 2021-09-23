@@ -2368,15 +2368,14 @@ projects:
     test:
       - integration-config-tox-docker
       - integration-config-jjb-diff-docker
+      - integration-config-shellcheck-docker
       - integration-config-zuul-layout-diff-docker
 
     gate-and-submit:
       - integration-config-tox-docker
       - integration-config-jjb-diff-docker
-      - integration-config-zuul-layout-validate-docker
-
-    experimental:
       - integration-config-shellcheck-docker
+      - integration-config-zuul-layout-validate-docker
 
   - name: integration/audit-resources
     template:
