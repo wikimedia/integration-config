@@ -15,7 +15,7 @@
             projects: >
                 integration/config
         - docker-run-with-log-cache-src:
-            image: 'docker-registry.wikimedia.org/releng/tox-buster:0.4.1'
+            image: 'docker-registry.wikimedia.org/releng/tox-buster:0.4.2'
             options: '--workdir=/src/integration/config --entrypoint=/src/integration/config/{entrypoint}'
     publishers:
         - castor-save-workspace-cache
