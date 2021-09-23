@@ -1,3 +1,10 @@
+node14-test-browser (0.0.2) wikimedia; urgency=medium
+
+   Refresh for update in parent image node14:
+   Update from officially bundled npm 6, to our own pinned npm 7.5.2.
+
+ -- Timo Tijhof <ttijhof@wikimedia.org>  Thu, 23 Sep 2021 17:00:00 +0100
+
 node14-test-browser (0.0.1) wikimedia; urgency=medium
 
    Initial release, copied from node12-test-browser.

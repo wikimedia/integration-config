@@ -1,3 +1,9 @@
+node12 (0.0.2) wikimedia; urgency=medium
+
+   Switch to pinned npm 7.5.2, same version as before.
+
+ -- Timo Tijhof <ttijhof@wikimedia.org>  Thu, 23 Sep 2021 17:00:00 +0100
+
 node12 (0.0.1) wikimedia; urgency=medium
 
    Initial release, copied from node10.

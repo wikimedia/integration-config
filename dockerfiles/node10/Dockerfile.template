@@ -6,8 +6,8 @@ USER root
 
 RUN {{ "nodejs" | apt_install }}
 
-# Use Wikimedia's custom npm build instead of Debian's out-dated one (?)
-RUN git clone --depth 1 https://gerrit.wikimedia.org/r/p/integration/npm.git /srv/npm \
+# Use npm 6.x for consistency with official Node.js 10 tarball
+RUN git clone --depth 1 https://gerrit.wikimedia.org/r/integration/npm.git -b npm-6.14.5 /srv/npm \
     && rm -rf /srv/npm/.git \
     && ln -s /srv/npm/bin/npm-cli.js /usr/bin/npm
 
