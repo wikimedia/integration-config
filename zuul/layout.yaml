@@ -4093,9 +4093,9 @@ projects:
       - name: extension-coverage
       - name: extension-gate
     test:
-    - mediawiki-quibble-apitests-vendor-php72-docker
+      - mediawiki-quibble-apitests-vendor-php72-docker
     gate-and-submit:
-    - mediawiki-quibble-apitests-vendor-php72-docker
+      - mediawiki-quibble-apitests-vendor-php72-docker
 
   - name: mediawiki/extensions/EventLogging
     template:
@@ -4148,6 +4148,10 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+    test:
+      - mediawiki-quibble-apitests-vendor-php72-docker
+    gate-and-submit:
+      - mediawiki-quibble-apitests-vendor-php72-docker
 
   - name: mediawiki/extensions/Flow
     template:
