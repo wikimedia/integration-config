@@ -1857,6 +1857,17 @@ project-templates:
     experimental:
       - quibble-vendor-mysql-php80-phpunit-standalone-docker
 
+  # Special job template that runs the "apitests" job for test and gate
+  - name: extension-apitests
+    test:
+      - mediawiki-quibble-apitests-vendor-php72-docker
+    gate-and-submit:
+      - mediawiki-quibble-apitests-vendor-php72-docker
+    test-wmf:
+      - mediawiki-quibble-apitests-vendor-php72-docker
+    gate-and-submit-wmf:
+      - mediawiki-quibble-apitests-vendor-php72-docker
+
   # Extensions tested together and intented for deployment to the Wikimedia Cluster
   - name: extension-gate
     test:
@@ -2793,17 +2804,15 @@ projects:
   - name: mediawiki/vendor
     template:
       - name: extension-gate
+      - name: extension-apitests
     test:
       - mwgate-composer-php72-docker
       - mediawiki-quibble-vendor-mysql-php72-docker
       - mediawiki-quibble-selenium-vendor-mysql-php72-docker
-      - mediawiki-quibble-apitests-vendor-php72-docker
     gate-and-submit:
       - mwgate-composer-php72-docker
       - mediawiki-quibble-vendor-mysql-php72-docker
       - mediawiki-quibble-selenium-vendor-mysql-php72-docker
-      - mediawiki-quibble-apitests-vendor-php72-docker
-
     gate-and-submit-wmf:
       - mwgate-composer-php72-docker
       - mediawiki-quibble-vendor-mysql-php72-docker
@@ -4092,10 +4101,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
-    test:
-      - mediawiki-quibble-apitests-vendor-php72-docker
-    gate-and-submit:
-      - mediawiki-quibble-apitests-vendor-php72-docker
+      - name: extension-apitests
 
   - name: mediawiki/extensions/EventLogging
     template:
@@ -4148,10 +4154,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
-    test:
-      - mediawiki-quibble-apitests-vendor-php72-docker
-    gate-and-submit:
-      - mediawiki-quibble-apitests-vendor-php72-docker
+      - name: extension-apitests
 
   - name: mediawiki/extensions/Flow
     template:
@@ -4433,10 +4436,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
-    test:
-      - mediawiki-quibble-apitests-vendor-php72-docker
-    gate-and-submit:
-      - mediawiki-quibble-apitests-vendor-php72-docker
+      - name: extension-apitests
 
   - name: mediawiki/extensions/MediaModeration
     template:
@@ -4942,13 +4942,13 @@ projects:
       - name: extension-codehealth
       - name: extension-javascript-documentation
       - name: mwgate-npm
+      - name: extension-apitests
     test:
       # TODO: Legacy ruby-based selenium job. To remove! (T220035)
       - ruby2.5-rake-docker
       - legacy-quibble-rubyselenium-docker
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mediawiki-quibble-apitests-vendor-php72-docker
       - wmf-quibble-apache-vendor-mysql-php72-docker
       - wmf-quibble-apache-selenium-php72-docker
     gate-and-submit: &mediawiki-extensions-wikibase-gate-and-submit
@@ -4957,7 +4957,6 @@ projects:
       - legacy-quibble-rubyselenium-docker
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mediawiki-quibble-apitests-vendor-php72-docker
     test-1_35:
       - wikibase-client-docker
       - wikibase-repo-docker
@@ -5016,11 +5015,7 @@ projects:
       - name: extension-codehealth
       - name: extension-coverage
       - name: mwgate-npm
-    test:
-      - mediawiki-quibble-apitests-vendor-php72-docker
-    gate-and-submit: &mediawiki-extensions-wikibase-manifest-gate-and-submit
-      - mediawiki-quibble-apitests-vendor-php72-docker
-    gate-and-submit-wmf: *mediawiki-extensions-wikibase-manifest-gate-and-submit
+      - name: extension-apitests
 
   - name: mediawiki/extensions/WikibaseMediaInfo
     template:
@@ -8127,13 +8122,13 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-apitests
       - name: commit-message-validator
     test:
       - parsoidsvc-composer-package-php72-docker
       - parsoidsvc-composer-package-php73-docker
       - parsoidsvc-composer-package-php74-docker
       - parsoidsvc-composer-package-php80-docker
-      - mediawiki-quibble-apitests-vendor-php72-docker
       # Not passing until MW Core itself passes
       # - quibble-composer-mysql-php80-docker
     gate-and-submit:
@@ -8141,7 +8136,6 @@ projects:
       - parsoidsvc-composer-package-php73-docker
       - parsoidsvc-composer-package-php74-docker
       - parsoidsvc-composer-package-php80-docker
-      - mediawiki-quibble-apitests-vendor-php72-docker
       # Not passing until MW Core itself passes
       # - quibble-composer-mysql-php80-docker
     experimental:
