@@ -42,6 +42,7 @@ python-minimal
 python
 python3-minimal
 python3
+python3-distutils
 {%- endset -%}
 RUN {{ gerrit_deps | apt_install }}
 
