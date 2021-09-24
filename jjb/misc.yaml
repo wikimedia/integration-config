@@ -70,8 +70,7 @@
 - project:
     name: eventlogging
     jobs:
-        - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-eventlogging:0.6.0
+        - '{name}-tox-docker'
 
 - project:
     name: visualeditor

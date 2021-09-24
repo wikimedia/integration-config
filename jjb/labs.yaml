@@ -10,8 +10,7 @@
 - project:
     name: 'labs-striker'
     jobs:
-        - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-ldap-dev:0.8.0
+        - '{name}-tox-docker'
 
 - project:
     name: 'labs-tools-wikibugs2'
@@ -40,9 +39,7 @@
 - project:
     name: 'labs-tools-ldap'
     jobs:
-        - '{name}-tox-docker':
-            # This project also needs the build dependencies for python-ldap
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-ldap-dev:0.8.0
+        - '{name}-tox-docker'
 
 - project:
     name: 'labs-tools-map-of-monuments'
