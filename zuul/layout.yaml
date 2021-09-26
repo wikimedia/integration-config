@@ -8728,11 +8728,11 @@ projects:
     test:
      # Single branch supporting multiple distributions T210780
       - debian-glue-unstable
-      - debian-glue-stretch
+      - debian-glue-stretch-backports
       - debian-glue-buster
     gate-and-submit:
       - debian-glue-unstable
-      - debian-glue-stretch
+      - debian-glue-stretch-backports
       - debian-glue-buster
 
   - name: labs/tools/apt-browser
