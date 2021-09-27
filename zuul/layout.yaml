@@ -2558,6 +2558,10 @@ projects:
     postmerge:
       - beta-build-scap-deb
 
+  - name: mediawiki/tools/train-dev
+    template:
+      - name: tox-docker
+
   - name: mediawiki/tools/phan
     template:
       - name: composer-test-package-php72-or-later
