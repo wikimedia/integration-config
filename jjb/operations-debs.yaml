@@ -130,11 +130,22 @@
             # _source.changes file.
             #
             # DEBEMAIL is to avoid lintian bogus-mail-host errors
+
+            if [[ ! "$distribution" =~ backports && -n "$BACKPORTS" ]]; then
+                # When the changelog targets a normal distribution but the job
+                # is set to force backports, we would change `git dch` to
+                # create a "bpo" and "non snapshot" version. That is to prevent
+                # the lintian error
+                # `backports-upload-has-incorrect-version-number`
+                FORCE_BACKPORT_VERSION=1
+            fi
+
             (
                 DIST="$distribution" \
                 distribution=${{distribution//-/+}} \
                 KEEP_SOURCE_CHANGES=1 \
                 DEBEMAIL="jenkins-bot@wikimedia.org" \
+                DCH_OPTS=${{FORCE_BACKPORT_VERSION:+--bpo --multimaint-merge --ignore-branch}} \
                     /usr/bin/generate-git-snapshot
             )
 
