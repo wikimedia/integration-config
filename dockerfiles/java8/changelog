@@ -3,6 +3,9 @@ java8 (1.0-s1) wikimedia; urgency=high
    Refresh for update in parent image ci-stretch:
    Rebuild for Let's Encrypt update - T291425
 
+   Create /usr/share/man/man1 to please update-alternatives when linking Java
+   man pages - T291425#7380213
+
  -- Antoine Musso <hashar@free.fr>  Mon, 27 Sep 2021 10:31:17 +0200
 
 java8 (1.0) wikimedia; urgency=medium
