@@ -2475,6 +2475,10 @@ projects:
     template:
       - name: rust-test
 
+  - name: integration/visualdiff
+    template:
+      - name: node12-docker
+
   - name: integration/zuul
     test:
       - debian-glue-nocheck
