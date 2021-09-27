@@ -45,7 +45,7 @@
         - wikipeg-special-node12-plus-{php}-composer-docker:
             php:
                 - php80:
-                    docker_image: docker-registry.wikimedia.org/releng/node12-test-browser-php80-composer:0.2.0
+                    docker_image: docker-registry.wikimedia.org/releng/node12-test-browser-php80-composer:0.2.0-s1
 
 - project:
     name: parsoidsvc
@@ -53,10 +53,10 @@
         - '{name}-composer-package-{phpflavor}-docker':
             phpflavor:
                 - php72:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php72:0.4.0-s4
+                    image: docker-registry.wikimedia.org/releng/composer-package-php72:0.4.0-s5
                 - php73:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php73:0.3.0-s4
+                    image: docker-registry.wikimedia.org/releng/composer-package-php73:0.3.0-s5
                 - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php74:0.3.0-s4
+                    image: docker-registry.wikimedia.org/releng/composer-package-php74:0.3.0-s5
                 - php80:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php80:0.0.4-s4
+                    image: docker-registry.wikimedia.org/releng/composer-package-php80:0.0.4-s5

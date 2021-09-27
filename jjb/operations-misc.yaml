@@ -18,7 +18,7 @@
     jobs:
         - '{name}-tox-docker':
             # FIXME: Can't use 0.2.0 due to T212395
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-cergen:0.5.0-s1
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-cergen:0.5.0-s2
 
 - project:
     name: acme-chief
@@ -30,7 +30,7 @@
     name: acme-chief-new-pebble
     jobs:
         - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-acme-chief:0.6.0-s1
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-acme-chief:0.6.0-s2
 
 - project:
     name: censorshipmonitoring
@@ -79,7 +79,7 @@
     name: 'operations-mw-config'
     phpflavor:
      - php72:
-         image: docker-registry.wikimedia.org/releng/composer-php72:0.5.0-s2
+         image: docker-registry.wikimedia.org/releng/composer-php72:0.5.0-s3
     jobs:
      - '{name}-typos-docker'
      - 'operations-mw-config-{phpflavor}-composer-{run-script}-docker':
@@ -169,7 +169,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/helm-linter:0.2.17
+         image: docker-registry.wikimedia.org/releng/helm-linter:0.2.17-s1
     publishers:
      - docker-cleanup
 

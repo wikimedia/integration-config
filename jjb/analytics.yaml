@@ -129,7 +129,7 @@
                 --volume "$(pwd)"/src:/src
                 --workdir /src/pageviews_reports
                 --entrypoint=/usr/bin/prove
-            image: 'docker-registry.wikimedia.org/releng/perl:5.24.1-s3'
+            image: 'docker-registry.wikimedia.org/releng/perl:5.24.1-s4'
             args: '-v -Ilib/ t/'
     publishers:
         - docker-cleanup
