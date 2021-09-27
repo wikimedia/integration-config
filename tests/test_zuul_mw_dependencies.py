@@ -162,9 +162,11 @@ class TestMwDependencies(unittest.TestCase):
         self.assertDictContainsSubset(
             {
                 'SKIN_NAME': 'BlueSpiceSkin',
-                'EXT_DEPENDENCIES': '%s\\n%s' % (
+                'EXT_DEPENDENCIES': '\\n'.join([
                     'mediawiki/extensions/BlueSpiceFoundation',
-                    'mediawiki/extensions/ExtJSBase')
+                    'mediawiki/extensions/ExtJSBase',
+                    'mediawiki/extensions/OOJSPlus',
+                    ])
             },
             deps)
 
@@ -182,5 +184,8 @@ class TestMwDependencies(unittest.TestCase):
             job_name='quibble-composer-mysql-php74-docker',
             project='mediawiki/extensions/BlueSpiceFoundation')
         self.assertIn('EXT_DEPENDENCIES', deps)
-        self.assertEqual('mediawiki/extensions/ExtJSBase',
+        self.assertEqual('\\n'.join([
+                         'mediawiki/extensions/ExtJSBase',
+                         'mediawiki/extensions/OOJSPlus',
+                         ]),
                          deps['EXT_DEPENDENCIES'])
