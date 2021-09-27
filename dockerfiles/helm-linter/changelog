@@ -1,3 +1,10 @@
+helm-linter (0.2.17-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-stretch:
+   Rebuild for Let's Encrypt update - T291425
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 27 Sep 2021 10:31:17 +0200
+
 helm-linter (0.2.17) wikimedia; urgency=medium
 
   * Add a helmfile_log_sal stub (as it is called by admin_ng helmfile)

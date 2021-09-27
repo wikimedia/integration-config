@@ -1,3 +1,9 @@
+ci-stretch (0.5.0-s1) wikimedia; urgency=high
+
+   Rebuild for Let's Encrypt update - T291425
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 27 Sep 2021 10:31:17 +0200
+
 ci-stretch (0.5.0) wikimedia; urgency=medium
 
   * Use upstream image LC_ALL=C.UTF-8 instead of en_US.UTF-8
