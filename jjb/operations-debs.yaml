@@ -101,6 +101,10 @@
             distribution="{distribution|}"
             if [ -n "$distribution" ]; then
                 echo '*** Jenkins job sets distribution={distribution|} thus not parsing debian/changelog ***'
+                if [[ "$distribution" =~ backports ]]; then
+                    echo '*** Job distribution explicitly set to backport. Force backport versionning***'
+                    FORCE_BACKPORT_VERSION=1
+                fi
             else
                 distribution=$(dpkg-parsechangelog --show-field distribution -lsource/debian/changelog)
                 if [ "$distribution" == "UNRELEASED" ]; then
@@ -109,8 +113,14 @@
                     distribution=$(dpkg-parsechangelog  --show-field distribution --count 1 --offset 1 -lsource/debian/changelog)
                 fi
                 echo "*** Distribution set from debian/changelog to $distribution ***"
+
+                if [[ ! "$distribution" =~ backports && -n "$BACKPORTS" ]]; then
+                    echo '*** Non backport distribution but CI has set \$BACKPORTS. Force backport versionning***'
+                    FORCE_BACKPORT_VERSION=1
+                fi
             fi
             export distribution
+
 
             # FIXME would be for postmerge pipeline later on?
             if [ "$ZUUL_PIPELINE" == "gate-and-submit" ]; then
@@ -130,16 +140,11 @@
             # _source.changes file.
             #
             # DEBEMAIL is to avoid lintian bogus-mail-host errors
-
-            if [[ ! "$distribution" =~ backports && -n "$BACKPORTS" ]]; then
-                # When the changelog targets a normal distribution but the job
-                # is set to force backports, we would change `git dch` to
-                # create a "bpo" and "non snapshot" version. That is to prevent
-                # the lintian error
-                # `backports-upload-has-incorrect-version-number`
-                FORCE_BACKPORT_VERSION=1
-            fi
-
+            #
+            # DCH_OPT is passed to `git dch`. FORCE_BACKPORT_VERSION change the
+            # default logic to craft a "bpo" and "non snapshot" version. That
+            # is to prevent the lintian error
+            # `backports-upload-has-incorrect-version-number`
             (
                 DIST="$distribution" \
                 distribution=${{distribution//-/+}} \
