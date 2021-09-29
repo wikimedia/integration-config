@@ -6,6 +6,7 @@ install --mode 777 --directory cache log src
 
 repos=(
     wikimedia/fundraising/crm
+    wikimedia/fundraising/crm/civicrm-buildkit
     wikimedia/fundraising/crm/civicrm
 )
 for repo in "${repos[@]}"; do

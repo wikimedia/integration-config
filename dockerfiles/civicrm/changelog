@@ -1,3 +1,9 @@
+civicrm (0.2.2) wikimedia; urgency=medium
+
+  * Revert 0.2.1 change and bring back civicrm-buildkit. T277500
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 29 Sep 2021 17:39:36 +0200
+
 civicrm (0.2.1-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-stretch:
@@ -7,7 +13,7 @@ civicrm (0.2.1-s1) wikimedia; urgency=high
 
 civicrm (0.2.1) wikimedia; urgency=high
 
-   Don't provide the Wikimedia fork of civicrm-buildkit any more
+   Don't provide the Wikimedia fork of civicrm-buildkit any more. T277500
 
  -- James D. Forrester <jforrester@wikimedia.org>  Wed, 12 May 2021 09:01:56 -0700
 

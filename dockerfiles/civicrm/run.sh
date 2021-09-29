@@ -17,5 +17,5 @@ set -x
 /src/wikimedia/fundraising/crm/bin/ci-populate-dbs.sh
 cd /src/wikimedia/fundraising/crm
 
-export PATH=$PATH:/src/civicrm/civicrm-buildkit/bin
+export PATH=$PATH:/src/wikimedia/fundraising/crm/civicrm-buildkit/bin
 /src/wikimedia/fundraising/crm/vendor/bin/phpunit --log-junit "${LOG_DIR}/junit-phpunit.xml"
