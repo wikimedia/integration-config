@@ -582,7 +582,7 @@ phan_dependencies = {
     'SocialProfile': ['Echo'],
     'SoftRedirector': ['VisualEditor'],
     'SpamBlacklist': ['CheckUser', 'EventLogging'],
-    'SportsTeams': ['SocialProfile', 'UserStatus'],
+    'SportsTeams': ['SocialProfile', 'UserStatus', 'BlogPage'],
     'StopForumSpam': ['AbuseFilter'],
     'TEI': ['Math'],
     'Thanks': ['CheckUser', 'Echo', 'Flow', 'MobileFrontend'],
