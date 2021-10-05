@@ -8909,6 +8909,10 @@ projects:
     template:
       - name: tox-docker
 
+  - name: labs/tools/commons-recon-service
+    template:
+      - name: tox-docker
+
 #### pywikibot #################################################
 
   - name: pywikibot/core
