@@ -2252,10 +2252,6 @@ projects:
       - integration-config-shellcheck-docker
       - integration-config-zuul-layout-validate-docker
 
-  - name: integration/audit-resources
-    template:
-      - name: tox-docker
-
   - name: integration/composer
     test:
       - integration-composer-check-php72-docker
@@ -9548,6 +9544,10 @@ projects:
       - name: archived
 
   - name: apps/ios/wikipedia
+    template:
+      - name: archived
+
+  - name: integration/audit-resources
     template:
       - name: archived
 
