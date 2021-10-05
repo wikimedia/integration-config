@@ -157,32 +157,6 @@
     jobs:
         - '{name}-tox-docker'
 
-
-- job:
-    name: 'audit-resources'
-    node: Docker
-    concurrent: false
-    wrappers:
-      - timeout:
-          timeout: 180 # 3 hours
-          fail: true
-      - timestamps
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-    builders:
-     - docker-log-dir
-     - docker-run-with-log:
-         image: docker-registry.wikimedia.org/releng/wikimedia-audit-resources:0.1.2-s4
-    publishers:
-     - archive:
-         artifacts: 'log/*.log'
-         allow-empty: true
-     - docker-cleanup
-    triggers:
-        - timed: "H 21 * * *"
-
 - job:
     name: 'shellcheck'
     node: Docker
