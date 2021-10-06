@@ -151,3 +151,18 @@
      - '{name}-maven-release-docker'
      - '{name}-maven-java8-docker'
      - '{name}-maven-java8-docker-site-publish'
+
+- project:
+      name: 'analytics-gobblin-wmf'
+      release-project: analytics-gobblin-wmf
+      release-branch: main
+      publishers:
+          - email-wikimedia-analytics
+          - irc-wikimedia-analytics
+          - castor-save-workspace-cache
+          - docker-cleanup
+
+      jobs:
+          - '{name}-maven-release-docker'
+          - '{name}-maven-java8-docker'
+          - '{name}-maven-java8-docker-site-publish'
