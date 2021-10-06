@@ -1,3 +1,9 @@
+quibble-buster-php73 (1.1.0) wikimedia; urgency=high
+
+  * Bump Quibble to 1.1.0
+
+ -- Kosta Harlan <kharlan@wikimedia.org>  Wed,  6 Oct 2021 11:16:00 +0200
+
 quibble-buster-php73 (1.0.1-s2) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
