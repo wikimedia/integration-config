@@ -599,6 +599,232 @@
      - castor-save-workspace-cache
      - docker-cleanup
 
+# Node.js 14 job for 'npm install-test'
+- job-template:
+    name: '{name}-node14-docker'
+    node: Docker
+    triggers:
+     - zuul
+    properties:
+        - build-discarder:
+            days-to-keep: 7
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2'
+    publishers:
+     - archive-log-allow-empty
+     - castor-save-workspace-cache
+     - docker-cleanup
+
+# Node.js 14 job for 'npm install & npm run {script}'
+- job-template:
+    name: '{name}-node14-run{script}-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node14-test-browser:0.0.2'
+        options: '--shm-size 1g'
+        args: '{script}'
+    publishers:
+     - archive-log-allow-empty
+     - castor-save-workspace-cache
+     - docker-cleanup
+
+- job-template:
+    name: '{name}-node14-npmaudit-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node14:0.0.2'
+        options: '--workdir="/src"'
+        args: 'audit'
+    publishers:
+     - docker-cleanup
+
+- job-template:
+    name: 'branchdeploy-{key}-node14-npm-docker'
+    node: Docker
+    triggers:
+     - zuul
+    wrappers:
+     - timeout:
+         timeout: 30
+         fail: true
+     - timestamps
+     - credentials-binding:
+          - text:
+              credential-id: BRANCHDEPLOY_AUTH_TOKEN_{key}
+              variable: BRANCHDEPLOY_AUTH_TOKEN
+          - text:
+              credential-id: BRANCHDEPLOY_SITE_ID_{key}
+              variable: BRANCHDEPLOY_SITE_ID
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2'
+        options: '--workdir="/src"'
+        args: 'branch-deploy'
+    publishers:
+     - docker-cleanup
+
+- job-template:
+    name: '{name}-daily-node14-npmaudit-docker'
+    node: Docker
+    triggers:
+    - timed: '@daily'
+    parameters:
+        - string:
+              name: 'ZUUL_PROJECT'
+              default: '{repository}'
+        - string:
+              name: 'ZUUL_REF'
+              default: 'master'
+        - string:
+              name: 'ZUUL_URL'
+              default: 'https://gerrit.wikimedia.org/r/'
+        - string:
+              name: 'NPM_CONFIG_cache'
+              default: '/cache'
+    builders:
+    - docker-cache-dir
+    - docker-src-dir
+    - docker-log-dir
+    - docker-ci-src-setup-simple
+    - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node14:0.0.2'
+        options: '--workdir="/src"'
+        args: 'audit'
+    publishers:
+    - docker-cleanup
+
+# Node.js 14 job for 'npm install-test' (with browsers installed)
+- job-template:
+    name: '{name}-node14-browser-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node14-test-browser:0.0.2'
+        options: >-
+            --shm-size 1g
+            --env LOG_DIR=/log
+    publishers:
+     - archive-log-allow-empty
+     - castor-save-workspace-cache
+     - docker-cleanup
+
+# Node.js 14 job for 'npm install-test' (with browsers installed) and webdriver running
+- job-template:
+    name: '{name}-node14-browser-webdriver-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node14-test-browser:0.0.2'
+        options: >-
+            --entrypoint=/run-with-xvfb.sh
+            --shm-size 1g
+            --env LOG_DIR=/log
+    publishers:
+     - archive-log-allow-empty
+     - castor-save-workspace-cache
+     - docker-cleanup
+
+# Node.js 14 job for 'npm install-test' (with browser installed)
+# and publishing /coverage from workspace
+# to doc.wikimedia.org/cover/:DOC_PROJECT
+- job:
+    name: 'generic-node14-browser-coverage-docker-publish'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node14-test-browser:0.0.2'
+     - cover-publish:
+        src: 'src/coverage'
+        dest: '$DOC_PROJECT'
+    publishers:
+     - docker-cleanup
+
+# Node.js 14 jobs for 'npm install & npm run doc'
+# Publishing workspace/docs to doc.wikimedia.org/:DOC_PROJECT/:DOC_SUBPATH/
+# - DOC_PROJECT: determined in parameter_functions.py (repo name)
+# - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
+- job:
+    name: generic-node14-docs-docker-publish
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2'
+        args: 'doc'
+     - doc-publish:
+        docsrc: 'src/docs'
+        docdest: '$DOC_PROJECT/$DOC_SUBPATH'
+    publishers:
+     - castor-save-workspace-cache
+     - docker-cleanup
+# Publishing workspace/docs to doc.wikimedia.org/:DOC_PROJECT/:DOC_SUBPATH/js/
+# - DOC_PROJECT: determined in parameter_functions.py (mw extension name)
+# - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
+- job:
+    name: mwext-node14-docs-docker-publish
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2'
+        args: 'doc'
+     - doc-publish:
+        docsrc: 'src/docs'
+        docdest: '$DOC_PROJECT/$DOC_SUBPATH/js'
+    publishers:
+     - castor-save-workspace-cache
+     - docker-cleanup
+
 - project:
     name: 'generic'
     jobs:
@@ -607,6 +833,12 @@
         - '{name}-node12-browser-webdriver-docker'
         - '{name}-node12-npmaudit-docker'
         - '{name}-node12-run{script}-docker':
+           script: 'doc'
+        - '{name}-node14-docker'
+        - '{name}-node14-browser-docker'
+        - '{name}-node14-browser-webdriver-docker'
+        - '{name}-node14-npmaudit-docker'
+        - '{name}-node14-run{script}-docker':
            script: 'doc'
 
 # Same as 'generic', but kept separate so that gate-and-submit jobs
