@@ -2061,6 +2061,18 @@ project-templates:
     gate-and-submit-wmf:
       - generic-node12-rundoc-docker
 
+  - name: node14-docker
+    test:
+      - generic-node14-docker
+    gate-and-submit:
+      - generic-node14-docker
+
+  - name: node14-browser-docker
+    test:
+      - generic-node14-browser-docker
+    gate-and-submit:
+      - generic-node14-browser-docker
+
   - name: service-pipeline-test
     test:
       - trigger-service-pipeline-test
@@ -9120,6 +9132,10 @@ projects:
       - gerrit-plugins-barricade-maven-java8-docker
 #    postmerge:
 #      - gerrit-plugins-barricade-maven-java8-docker-site-publish
+
+  - name: design/codex
+    template:
+      - name: node14-browser-docker
 
   - name: design/landing-page
     template:
