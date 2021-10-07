@@ -8213,7 +8213,7 @@ projects:
     postmerge:
       - wikimedia-event-utilities-maven-java8-docker-site-publish
 
-  - name: analytics-gobblin-wmf
+  - name: analytics/gobblin-wmf
     test:
       - analytics-gobblin-wmf-maven-java8-docker
     gate-and-submit:
