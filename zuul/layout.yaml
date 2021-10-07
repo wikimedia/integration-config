@@ -4444,12 +4444,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/ParsoidBatchAPI
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/PdfHandler
     template:
       - name: in-wikimedia-production
@@ -10149,6 +10143,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Parsoid
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/ParsoidBatchAPI
     template:
       - name: archived
 
