@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from glob import glob
+import re
 import os.path
 import subprocess
 import sys
@@ -12,6 +13,7 @@ IMAGE_GREP_PATTERN = (
     'docker-registry\\.wikimedia\\.org'
     '\\/releng\\/'
     '[\\w-]+?:[\\w\\.-]+\\b')
+COMMENT_RE = '\\s+#\\s+?(.+)'
 
 DOCKERFILES_DIR = os.path.join(
     os.path.dirname(__file__),
@@ -35,7 +37,9 @@ for changelog_file in glob(os.path.join(DOCKERFILES_DIR, '*', 'changelog')):
         latest_version[image_name] = version
 
 try:
-    grep_cmd = ['git', 'grep', '-n', '-o', '-P', IMAGE_GREP_PATTERN, JJB_DIR]
+    grep_cmd = ['git', 'grep', '-n', '-o', '-P',
+                IMAGE_GREP_PATTERN + '(%s)?' % COMMENT_RE,
+                JJB_DIR]
     print("Running: '%s'" % "' '".join(grep_cmd))
     jjb_defs = subprocess.check_output(
         grep_cmd, stderr=subprocess.STDOUT)
@@ -51,6 +55,12 @@ for jjb_def in jjb_defs.decode().split('\n'):
         continue
     try:
         (yaml_file, line, image_name, image_version) = jjb_def.split(':')
+        comment = None
+        m = re.search(COMMENT_RE, image_version)
+        if m:
+            image_version = image_version[:-len(m[0])]
+            comment = m[1]
+
     except ValueError:
         print('Failed to parse: %s' % jjb_def)
 
@@ -61,7 +71,8 @@ for jjb_def in jjb_defs.decode().split('\n'):
             yaml_file, line, image_name))
     elif found_image not in latest_images:
         print('%s:%s:%s > %s' % (
-            yaml_file, line, found_image, latest_version[image_name]))
+            yaml_file, line, found_image, latest_version[image_name])
+            + (' \033[33m# %s\033[0m' % comment if comment else ''))
 
 if errors:
     print('\n'.join(errors), file=sys.stderr)
