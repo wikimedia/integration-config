@@ -1,3 +1,9 @@
+quibble-buster-php80 (1.1.1) wikimedia; urgency=medium
+
+  * Bump Quibble to 1.1.1
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 08 Oct 2021 21:10:15 +0200
+
 quibble-buster-php80 (1.1.0) wikimedia; urgency=high
 
   * Bump Quibble to 1.1.0
