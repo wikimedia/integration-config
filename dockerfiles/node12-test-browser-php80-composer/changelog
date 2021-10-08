@@ -1,3 +1,10 @@
+node12-test-browser-php80-composer (0.2.0-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Rebuild to add security updates apt repositories
+
+ -- Antoine Musso <hashar@free.fr>  Fri,  8 Oct 2021 12:51:49 +0200
+
 node12-test-browser-php80-composer (0.2.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

@@ -1,3 +1,9 @@
+ci-bullseye (0.2.0-s1) wikimedia; urgency=high
+
+   Rebuild to add security updates apt repositories
+
+ -- Antoine Musso <hashar@free.fr>  Fri,  8 Oct 2021 12:51:49 +0200
+
 ci-bullseye (0.2.0) wikimedia; urgency=medium
 
   * Use upstream image LC_ALL=C.UTF-8 instead of en_US.UTF-8

@@ -1,3 +1,10 @@
+node14-test (0.0.2-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Rebuild to add security updates apt repositories
+
+ -- Antoine Musso <hashar@free.fr>  Fri,  8 Oct 2021 12:51:49 +0200
+
 node14-test (0.0.2) wikimedia; urgency=medium
 
    Refresh for update in parent image node14:
