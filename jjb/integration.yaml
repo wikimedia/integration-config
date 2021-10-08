@@ -118,7 +118,7 @@
       - docker-src-dir
       - docker-ci-src-setup-simple
       - docker-run-with-log-cache-src:
-          image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.1.0'
+          image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.1.1'
           options: >-
               -v /srv/git:/srv/git:ro
               -v "$(pwd)"/src:/src
@@ -143,7 +143,7 @@
       - docker-src-dir
       - docker-ci-src-setup-simple
       - docker-run-with-log-cache-src:
-          image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72-apache:1.1.0'
+          image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72-apache:1.1.1'
           options: >-
               -v /srv/git:/srv/git:ro
               -v "$(pwd)"/src:/src
