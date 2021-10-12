@@ -1,3 +1,10 @@
+ajv (0.1.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image node14:
+   Upgrade npm from 7.5.2 to 7.21.0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 12 Oct 2021 11:56:18 -0700
+
 ajv (0.1.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:
