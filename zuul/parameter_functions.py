@@ -315,7 +315,7 @@ dependencies = {
     'CustomPage': ['skins/CustomPage'],
     'Dashiki': ['JsonConfig'],
     'DiscussionTools': ['VisualEditor', 'Linter', 'Echo'],
-    'Disambiguator': ['VisualEditor', 'parsoid'],
+    'Disambiguator': ['VisualEditor'],
     'Echo': ['CentralAuth', 'EventLogging'],
     'ElectronPdfService': ['Collection'],
     'EmailAuthorization': ['PluggableAuth'],
