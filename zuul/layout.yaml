@@ -6416,7 +6416,7 @@ projects:
 
   - name: mediawiki/extensions/Mailgun
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-php73-or-later
 
   - name: mediawiki/extensions/Maintenance
     template:
