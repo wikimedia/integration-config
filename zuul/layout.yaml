@@ -4335,6 +4335,10 @@ projects:
     postmerge:
       - mwext-doxygen-publish
 
+  - name: mediawiki/extensions/MobileFrontendContentProvider
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/MultimediaViewer
     template:
       - name: in-wikimedia-production
