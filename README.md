@@ -67,13 +67,22 @@ Once the change is merged, use the `./fab` helper to deploy your CI config chang
 
 # Docker image buiding and publishing
 
-To test that your changes build, run:
+After making the relevant `Dockerfile.template` changes and adding the changelog entry, you can
+locally build and test the new version of the image by running:
+
+    $ docker-pkg -c dockerfiles/config.yaml build --select '*/my-image:*' dockerfiles/
+
+Where "my-image" is the name of the docker image. This will try to pull any parent images from the registry if missing locally, and will build them as-needed if not found.
+
+Or, to fetch or build all images:
 
     $ docker-pkg -c dockerfiles/config.yaml --info build dockerfiles/
 
 Once the image is built, you can use the debug-image tool to test it interactively:
 
-    $ ./dockerfiles/debug-image test-image
+    $ ./dockerfiles/debug-image my-image/
+
+(If you cd into dockerfiles you can tab-complete on the name of docker images.)
 
 If you are changing an image that is used by other images, you must cascade your changes so that you are the one to deal with issues, not a later user. Run:
 
