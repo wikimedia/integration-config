@@ -7514,10 +7514,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/URNames
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/UserAgreement
     template:
       - name: extension-quibble
@@ -10440,6 +10436,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/UploadLogo
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/URNames
     template:
       - name: archived
 
