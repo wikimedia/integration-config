@@ -7906,12 +7906,11 @@ projects:
     postmerge:
       - generic-node12-browser-coverage-docker-publish
 
-  # Not in production yet, but headed there
+  # Sub-module of production-bound code
   - name: mediawiki/services/function-schemata
-    test:
-      - trigger-wikilambda-function-schemata-pipeline-test
-    gate-and-submit:
-      - trigger-wikilambda-function-schemata-pipeline-test
+    template:
+      - name: node12-docker
+      - name: composer-test-package-php72-or-later
 
   - name: mediawiki/services/image-suggestion-api
     test:
