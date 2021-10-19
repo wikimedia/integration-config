@@ -254,14 +254,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: wikilambda-function-schemata
-    pipeline:
-      - test
-    jobs:
-      - 'trigger-{name}-pipeline-{pipeline}'
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: wikilambda-function-evaluator
     pipeline:
       - test
