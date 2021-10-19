@@ -28,7 +28,7 @@
             docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.7.0-s3
             # xgboost takes a while to compile T184754
             # archiva.wikimedia.org is super slow
-            build_timeout: 15 # minutes
+            build_timeout: 60 # minutes
             sonar_args: >-
                 -Dsonar.branch.target="$ZUUL_BRANCH"
                 -Dsonar.branch.name="$ZUUL_CHANGE-$ZUUL_PATCHSET"
