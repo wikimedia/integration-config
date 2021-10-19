@@ -217,7 +217,10 @@ dependencies = {
     'BlueSpiceRating': ['BlueSpiceFoundation'],
     'BlueSpiceRSSFeeder': ['BlueSpiceFoundation'],
     'BlueSpiceReaders': ['BlueSpiceFoundation'],
-    'BlueSpiceReadConfirmation': ['BlueSpiceFoundation'],
+    'BlueSpiceReadConfirmation': [
+        'BlueSpiceFoundation',
+        'BlueSpicePageAssignments'
+    ],
     'BlueSpiceReminder': ['BlueSpiceFoundation'],
     'BlueSpiceSMWConnector': ['BlueSpiceFoundation'],
     'BlueSpiceSocial': ['BlueSpiceFoundation', 'BlueSpiceExtendedSearch'],
