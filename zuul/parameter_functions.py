@@ -522,7 +522,7 @@ phan_dependencies = {
     'CreateAPage': ['ConfirmEdit'],
     'Dashiki': ['JsonConfig'],
     'Disambiguator': ['VisualEditor'],
-    'DiscussionTools': ['VisualEditor', 'Linter', 'Echo'],
+    'DiscussionTools': ['VisualEditor', 'Linter', 'Echo', 'EventLogging'],
     'Echo': ['CentralAuth', 'EventLogging'],
     'EventBus': ['CentralNotice', 'EventStreamConfig'],
     'FanBoxes': ['SocialProfile'],
