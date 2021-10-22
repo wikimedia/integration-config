@@ -7371,6 +7371,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/StickyTOC
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/StlHandler
     template:
       - name: extension-quibble
