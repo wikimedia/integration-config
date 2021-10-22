@@ -7207,10 +7207,6 @@ projects:
     template:
       - name: extension-quibble-noselenium
 
-  - name: mediawiki/extensions/ShortDescription
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/ShoutWikiAds
     template:
       - name: extension-quibble
@@ -10316,6 +10312,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/SharedCssJs
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/ShortDescription
     template:
       - name: archived
 
