@@ -708,6 +708,7 @@ def set_mw_dependencies(item, job, params):
         ext_deps.remove('ArticlePlaceholder')
         ext_deps.remove('PropertySuggester')
         ext_deps.remove('Wikibase')
+        ext_deps.remove('WikibaseCirrusSearch')
         ext_deps.remove('WikibaseQualityConstraints')
         ext_deps.remove('WikibaseMediaInfo')
         ext_deps.remove('WikimediaBadges')
