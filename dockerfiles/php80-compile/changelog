@@ -1,3 +1,10 @@
+php80-compile (0.0.4-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php80:
+   Enable apcu, ast, imagick, and redis PHP extensions which are now available
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 25 Oct 2021 13:00:19 -0700
+
 php80-compile (0.0.4) wikimedia; urgency=medium
 
   * Revert "Test pecl installation (T276417)"

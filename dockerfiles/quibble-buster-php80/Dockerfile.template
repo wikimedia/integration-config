@@ -7,11 +7,8 @@ USER root
 #############################
 #  Debian packages we need  #
 #############################
-######################
-# Not yet available
-# - php8.0-apcu
-######################
 {% set mediawiki_deps|replace('\n', ' ') -%}
+php8.0-apcu
 php8.0-bcmath
 php8.0-cli
 php8.0-curl

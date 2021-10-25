@@ -1,3 +1,10 @@
+composer-php80 (0.0.2-s6) wikimedia; urgency=high
+
+   Refresh for update in parent image php80:
+   Enable apcu, ast, imagick, and redis PHP extensions which are now available
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 25 Oct 2021 13:00:20 -0700
+
 composer-php80 (0.0.2-s5) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
