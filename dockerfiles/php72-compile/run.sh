@@ -13,7 +13,3 @@ autoreconf -i
 make
 REPORT_EXIT_STATUS=1 make test
 
-# Test pecl installation if a package.xml exists
-if [ -f "package.xml" ]; then
-    pecl install package.xml
-fi

@@ -7,7 +7,6 @@ USER root
 # lcov is coverage generation
 {% set packages|replace('\n', ' ') -%}
 php8.0-dev
-php-pear
 build-essential
 pkg-config
 libthai-dev
