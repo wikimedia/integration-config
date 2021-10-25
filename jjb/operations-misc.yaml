@@ -92,7 +92,7 @@
     name: 'cassandra-table-properties'
     jobs:
         - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:0.7.0
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:0.7.0-s2
             build_timeout: 20 # minutes
 
 - project:
