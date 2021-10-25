@@ -57,6 +57,6 @@
                 - php73:
                     image: docker-registry.wikimedia.org/releng/composer-package-php73:0.3.0-s6
                 - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php74:0.3.0-s6
+                    image: docker-registry.wikimedia.org/releng/composer-package-php74:0.3.0-s7
                 - php80:
                     image: docker-registry.wikimedia.org/releng/composer-package-php80:0.0.4-s6

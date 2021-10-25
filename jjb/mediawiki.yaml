@@ -151,7 +151,7 @@
                 - php73:
                     image: docker-registry.wikimedia.org/releng/composer-test-php73:0.2.0-s6
                 - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.0-s5
+                    image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.0-s6
                 - php80:
                     image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.0-s7
         - '{name}-node12-docker'
@@ -233,12 +233,12 @@
            mediawiki/core
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/composer-php74:0.2.0-s5'
+        image: 'docker-registry.wikimedia.org/releng/composer-php74:0.2.0-s6'
         options: '--volume "$(pwd)"/src:/mediawiki'
         args: '--working-dir=/mediawiki update --ansi --no-progress --prefer-dist --profile'
      - docker-run-with-log-cache-src:
         options: '-e PHAN_COLOR_SCHEME=light --volume "$(pwd)"/src:/mediawiki --entrypoint=/run-core.sh'
-        image: 'docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.0-s3'
+        image: 'docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.0-s4'
         args: '--color'
     publishers:
      - castor-save-workspace-cache
@@ -955,7 +955,7 @@
         - php73:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.1.1
         - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.1.1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.1.1-s1
         - php80:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.1.1
     jobs:
