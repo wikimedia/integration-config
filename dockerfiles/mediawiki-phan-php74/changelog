@@ -1,3 +1,9 @@
+mediawiki-phan-php74 (0.2.0-s5) wikimedia; urgency=high
+
+   Enable php7.4-imagick now it's available.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 25 Oct 2021 13:18:57 -0700
+
 mediawiki-phan-php74 (0.2.0-s4) wikimedia; urgency=high
 
    Refresh for update in parent image php74:
