@@ -25,11 +25,8 @@ def set_parameters(item, job, params):
     """
 
     mw_deps_jobs_starting_with = (
-        'mwext-php72-phan',
-        'mwskin-php72-phan',
-        'mwext-phpunit-coverage',
-        'mwext-codehealth',
-        'mwskin-phpunit-coverage',
+        'mwext-',
+        'mwskin-',
         'mediawiki-quibble',
         'quibble',
         )
