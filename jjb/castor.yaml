@@ -73,7 +73,7 @@
                  - shell: 'echo "Clearing $WORKSPACE/cache"'
                  - docker-run:
                     options: '--volume "$(pwd)"/cache:/cache'
-                    image: 'docker-registry.wikimedia.org/releng/castor:0.2.1'
+                    image: 'docker-registry.wikimedia.org/releng/castor:0.2.4'
                     args: 'clear || :'
 
 # Entry point to load cache from central cache
