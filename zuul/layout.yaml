@@ -1305,8 +1305,11 @@ project-templates:
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php72-noselenium-docker
       - quibble-vendor-mysql-php72-selenium-docker
+      - quibble-vendor-mysql-php74-noselenium-docker
+      - quibble-vendor-mysql-php74-selenium-docker
       - mwgate-node12-docker
       - mwext-php72-phan-docker
+      - mwext-php74-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1516,9 +1519,12 @@ project-templates:
     gate-and-submit-wmf:
       - quibble-composer-mysql-php72-noselenium-docker
       - quibble-composer-mysql-php72-selenium-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node12-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php72-phan-docker
+      # - mwext-php74-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1656,8 +1662,10 @@ project-templates:
       - mwext-php72-phan-docker
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php72-noselenium-docker
+      - quibble-vendor-mysql-php74-noselenium-docker
       - mwgate-node12-docker
       - mwext-php72-phan-docker
+      - mwext-php74-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1779,8 +1787,11 @@ project-templates:
       - mwgate-node12-docker
       # Only triggered on wmf/ branches
       - wmf-quibble-vendor-mysql-php72-docker
+      - wmf-quibble-vendor-mysql-php74-docker
       - wmf-quibble-core-vendor-mysql-php72-docker
+      - wmf-quibble-core-vendor-mysql-php74-docker
       - wmf-quibble-selenium-php72-docker
+      - wmf-quibble-selenium-php74-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1860,8 +1871,10 @@ project-templates:
       - mwskin-php72-phan-docker
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php72-docker
+      - quibble-vendor-mysql-php74-docker
       - mwgate-node12-docker
       - mwskin-php72-phan-docker
+      - mwskin-php74-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1931,9 +1944,11 @@ project-templates:
       # - mwskin-php72-phan-docker
     gate-and-submit-wmf:
       - quibble-composer-mysql-php72-docker
+      - quibble-composer-mysql-php74-docker
       - mwgate-node12-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php72-phan-docker
+      # - mwskin-php74-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -2620,11 +2635,16 @@ projects:
       - mediawiki-core-php72-phan-docker
     gate-and-submit-wmf:
       - mediawiki-quibble-vendor-mysql-php72-docker
+      - mediawiki-quibble-vendor-mysql-php74-docker
       # FIXME use a normal composer job, rather than a heavy-weight quibble one?
       - mediawiki-quibble-composertest-php72-docker
+      - mediawiki-quibble-composertest-php74-docker
       - mediawiki-quibble-selenium-vendor-mysql-php72-docker
+      - mediawiki-quibble-selenium-vendor-mysql-php74-docker
       - mediawiki-quibble-apitests-vendor-php72-docker
+      - mediawiki-quibble-apitests-vendor-php74-docker
       - mediawiki-core-php72-phan-docker
+      - mediawiki-core-php74-phan-docker
 
     test-fundraising:
       - mwgate-composer-php73-docker
@@ -2672,9 +2692,13 @@ projects:
       - mediawiki-quibble-selenium-vendor-mysql-php72-docker
     gate-and-submit-wmf:
       - mwgate-composer-php72-docker
+      - mwgate-composer-php74-docker
       - mediawiki-quibble-vendor-mysql-php72-docker
+      - mediawiki-quibble-vendor-mysql-php74-docker
       - mediawiki-quibble-selenium-vendor-mysql-php72-docker
+      - mediawiki-quibble-selenium-vendor-mysql-php74-docker
       - mediawiki-quibble-apitests-vendor-php72-docker
+      - mediawiki-quibble-apitests-vendor-php74-docker
 
     # CI no more supports mediawiki/vendor on release branches, folks should
     # use composer install instead. T189560
