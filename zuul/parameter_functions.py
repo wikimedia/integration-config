@@ -421,6 +421,7 @@ dependencies = {
     'SpamDiffTool': ['SpamBlacklist'],
     'SpellingDictionary': ['UniversalLanguageSelector'],
     'SportsTeams': ['SocialProfile', 'UserStatus'],
+    'StickyTOC': ['skins/Chameleon'],
     'StopForumSpam': ['AbuseFilter'],
     'SyntaxHighlight_GeSHi': ['VisualEditor'],
     'TEI': ['CodeMirror', 'Math', 'VisualEditor'],
