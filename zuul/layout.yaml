@@ -1721,17 +1721,6 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php73-phan-docker
 
-    test-wmf:
-      - quibble-composer-mysql-php72-noselenium-docker
-      - mwgate-node12-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-    gate-and-submit-wmf:
-      - quibble-composer-mysql-php72-noselenium-docker
-      - mwgate-node12-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
 
