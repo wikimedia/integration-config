@@ -1006,18 +1006,22 @@
     packages-source: vendor
     # We only use MariaDB/MySQL
     database: mysql
-    # And only php7.2
+    # And only php7.2 and php7.4
     php:
         - php72:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.1.1
+        - php74:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.1.1-s1
     jobs:
         - wmf-quibble-vendor-mysql-{php}-docker
         - wmf-quibble-core-vendor-mysql-{php}-docker
         - wmf-quibble-selenium-{php}-docker
+        # TODO, add a PHP 7.4 Apache image for these special jobs
         - wmf-quibble-apache-vendor-mysql-{php}-docker:
             php:
                 - php72:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72-apache:1.1.1
+        # TODO, add a PHP 7.4 Apache image for these special jobs
         - wmf-quibble-apache-selenium-{php}-docker:
             php:
                 - php72:
