@@ -4972,6 +4972,8 @@ projects:
       - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
+    postmerge:
+      - mwext-doxygen-publish
 
   - name: mediawiki/extensions/WikibaseLexemeCirrusSearch
     template:
