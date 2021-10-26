@@ -408,3 +408,17 @@
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
       - '{name}-pipeline-{pipeline}'
+
+- project:
+    # wikimedia/security/security-api
+    name: security-api
+    pipeline:
+      - test
+      # - publish
+    jobs:
+      # trigger-security-api-pipeline-test
+      # trigger-security-api-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # security-api-pipeline-test
+      # security-api-pipeline-publish
+      - '{name}-pipeline-{pipeline}'

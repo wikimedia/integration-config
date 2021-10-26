@@ -9013,6 +9013,12 @@ projects:
     template:
       - name: tox-docker
 
+  - name: wikimedia/security/security-api
+    test:
+      - trigger-security-api-pipeline-test
+    gate-and-submit:
+      - trigger-security-api-pipeline-test
+
   - name: wikimedia/security/tooling
     template:
       - name: tox-docker
