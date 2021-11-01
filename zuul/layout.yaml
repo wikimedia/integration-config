@@ -7822,7 +7822,7 @@ projects:
 
   - name: mapdata
     template:
-      - name: node12-browser-docker
+      - name: node12-docker
 
   # To archive, once service has migrated to the pipeline
   - name: maps/kartotherian/deploy
