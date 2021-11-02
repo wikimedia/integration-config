@@ -1,3 +1,10 @@
+quibble-buster-php72 (1.2.0) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-buster:
+   Update Quibble to 1.2.0
+
+ -- Antoine Musso <Antoine Musso <hashar@free.fr>>  Tue,  2 Nov 2021 15:19:57 +0100
+
 quibble-buster-php72 (1.1.1) wikimedia; urgency=medium
 
   * Bump Quibble to 1.1.1

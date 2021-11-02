@@ -1,3 +1,10 @@
+quibble-buster-php73-coverage (1.2.0) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-buster:
+   Update Quibble to 1.2.0
+
+ -- Antoine Musso <Antoine Musso <hashar@free.fr>>  Tue,  2 Nov 2021 15:19:57 +0100
+
 quibble-buster-php73-coverage (1.1.1-s3) wikimedia; urgency=high
 
    Re-upgrade composer from 1.10.5 to 2.1.8 as the versioning was broken.
