@@ -9129,6 +9129,10 @@ projects:
   - name: design/codex
     template:
       - name: node14-browser-docker
+    postmerge:
+      - codex-docker-doc-publish
+    publish:
+      - codex-docker-doc-publish
 
   - name: design/landing-page
     template:

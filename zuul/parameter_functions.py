@@ -876,6 +876,7 @@ doc_destination = {
     'performance/fresnel': 'fresnel',
     'VisualEditor/VisualEditor': 'visualeditor',
     'oojs/core': 'oojs',
+    'design/codex': 'codex'
 }
 
 
