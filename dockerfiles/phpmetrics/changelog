@@ -1,3 +1,9 @@
+phpmetrics (2.7.3) wikimedia; urgency=medium
+
+  * Update phpmetrics from 2.4.4 to 2.7.3
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 02 Nov 2021 11:34:17 +0100
+
 phpmetrics (2.4.4-s4) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
