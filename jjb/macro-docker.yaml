@@ -170,7 +170,7 @@
     name: docker-setup-mwext-for-phan-php72
     builders:
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.1.1
+         image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.2.0
          options: >-
              --volume "$(pwd)/src:/workspace/src"
              --volume /srv/git:/srv/git:ro
@@ -204,7 +204,7 @@
     name: docker-setup-mwext-for-phan-php73
     builders:
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.1.1
+         image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.2.0
          options: >-
              --volume "$(pwd)/src:/workspace/src"
              --volume /srv/git:/srv/git:ro
@@ -238,7 +238,7 @@
     name: docker-setup-mwext-for-phan-php74
     builders:
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.1.1-s1
+         image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.2.0
          options: >-
              --volume "$(pwd)/src:/workspace/src"
              --volume /srv/git:/srv/git:ro
@@ -272,7 +272,7 @@
     name: docker-setup-mwext-for-phan-php80
     builders:
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.1.1-s1
+         image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.2.0
          options: >-
              --volume "$(pwd)/src:/workspace/src"
              --volume /srv/git:/srv/git:ro

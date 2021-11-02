@@ -239,5 +239,5 @@
             database: mysql
             php:
                 - php72:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.1.1
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.2.0
             packages-source: vendor
