@@ -529,6 +529,17 @@
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
 
+# Per-patch phpbench report for MediaWiki core, skins and extensions.
+- job-template:
+    !!merge : *job_quibble
+    name: 'mediawiki-phpbench-patch-docker'
+    triggers:
+      - zuul
+    quibble_args: >
+        --phpbench-aggregate
+        -c "composer --working-dir=\"$THING_SUBNAME\" install --ansi --no-progress --prefer-dist"
+        -c "composer --working-dir=\"$THING_SUBNAME\" run -- phpbench"
+
 - job-template:
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage-patch-docker'
@@ -951,6 +962,10 @@
         - mediawiki-quibble-selenium-{packages-source}-{database}-{php}-docker
         - mediawiki-quibble-apitests-{packages-source}-{php}-docker:
             database: 'mysql'
+        - mediawiki-phpbench-patch-docker:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.3-s1
+            packages-source: vendor
+            database: mysql
         - mwcore-phpunit-coverage-patch:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.3-s2
             packages-source: vendor

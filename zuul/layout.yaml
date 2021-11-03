@@ -1169,6 +1169,9 @@ jobs:
     skip-if:
       - branch: ^wmf/.*$
 
+  - name: mediawiki-phpbench-patch-docker
+    voting: false
+
   # Job to ease reviews of MW-CS changes
   - name: mw-tools-codesniffer-mwcore-testrun
     voting: false
@@ -1941,6 +1944,10 @@ project-templates:
       - mwext-phpunit-coverage-docker-publish
     coverage:
       - mwext-phpunit-coverage-patch-docker
+
+  - name: extension-phpbench
+    test:
+        - mediawiki-phpbench-patch-docker
 
   - name: extension-codehealth
     postmerge:
@@ -4474,6 +4481,7 @@ projects:
 
   - name: mediawiki/extensions/GrowthExperiments
     template:
+      - name: extension-phpbench
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-codehealth
