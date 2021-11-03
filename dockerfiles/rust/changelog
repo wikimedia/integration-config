@@ -1,3 +1,11 @@
+rust (1.56.1-1) wikimedia; urgency=medium
+
+  * New Rust version 1.56.1 to mitigate CVE-2021-42574
+  * Upgrade rustup to 1.24.3
+  * Switch base to bullseye
+
+ -- Kunal Mehta <legoktm@debian.org>  Tue, 02 Nov 2021 22:36:24 -0700
+
 rust (1.52.1-1) wikimedia; urgency=medium
 
   * New Rust version 1.52.1

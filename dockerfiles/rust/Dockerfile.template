@@ -1,12 +1,12 @@
 # Based off of <https://github.com/rust-lang/docker-rust/blob/d237d8c30f57d55f70bbc019da2f24d371050947/1.45.2/buster/Dockerfile>
-FROM {{ "ci-buster" | image_tag }}
+FROM {{ "ci-bullseye" | image_tag }}
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
     PATH=/usr/local/cargo/bin:$PATH \
-    RUST_VERSION=1.52.1 \
-    RUSTUP_VERSION=1.22.1 \
-    RUSTUP_SHA256=49c96f3f74be82f4752b8bffcf81961dea5e6e94ce1ccba94435f12e871c3bdb \
+    RUST_VERSION=1.56.1 \
+    RUSTUP_VERSION=1.24.3 \
+    RUSTUP_SHA256=3dc5ef50861ee18657f9db2eeb7392f9c2a6c95c90ab41e45ab4ca71476b4338 \
     # Force all builds to be verbose
     CARGO_TERM_VERBOSE=true
 
