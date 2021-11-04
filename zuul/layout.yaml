@@ -7900,7 +7900,6 @@ projects:
   - name: mediawiki/services/function-schemata
     template:
       - name: node12-docker
-      - name: composer-test-package-php72-or-later
 
   - name: mediawiki/services/image-suggestion-api
     test:
