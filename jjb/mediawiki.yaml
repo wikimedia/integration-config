@@ -292,9 +292,6 @@
             logdir: '/workspace/log'
         - assert-no-mediawiki-errors
     publishers:
-        - junit:
-            allow-empty-results: true
-            results: 'log/junit*.xml'
         - postbuildscript:
             builders:
                 - build-on:
@@ -356,7 +353,7 @@
         - archive-log-allow-empty
         - castor-save-workspace-cache
         - junit:
-            results: 'log/junit*.xml,log/WDIO.xunit*.xml'
+            results: 'log/WDIO.xunit*.xml'
             # We do not have any JUnit files when all tests pass
             allow-empty-results: true
         - email-ext:
