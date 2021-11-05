@@ -1,20 +1,21 @@
+import imp
 import os
 import unittest
 
 from fakes import FakeItemChange
 
-set_doc_variables = None  # defined for flake8
-# Import function
-execfile(os.path.join(
+parameter_functions_py = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    '../zuul/parameter_functions.py'))
+    '../zuul/parameter_functions.py')
+imp.load_source('zuul_config', parameter_functions_py)
+import zuul_config
 
 
 class TestDocFunctions(unittest.TestCase):
 
     def assertDocSubpath(self, expected, item):
         params = {}
-        set_doc_variables(item, None, params)
+        zuul_config.set_doc_variables(item, None, params)
         self.assertIn(
             'DOC_SUBPATH', params,
             "Missing parameter: 'DOC_SUBPATH': %s" % expected)
@@ -22,7 +23,7 @@ class TestDocFunctions(unittest.TestCase):
 
     def assertNoDocSubpath(self, item):
         params = {}
-        set_doc_variables(item, None, params)
+        zuul_config.set_doc_variables(item, None, params)
         self.assertNotIn('DOC_SUBPATH', params,
                          'DOC_SUBPATH should not be set')
 
@@ -54,5 +55,9 @@ class TestDocFunctions(unittest.TestCase):
         }
         for project, expected in projects.items():
             params = {'ZUUL_PROJECT': project}
-            set_doc_variables(FakeItemChange('', ref='master'), None, params)
+            zuul_config.set_doc_variables(
+                FakeItemChange('', ref='master'),
+                None,
+                params,
+            )
             self.assertEqual(params['DOC_PROJECT'], expected)

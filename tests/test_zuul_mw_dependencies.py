@@ -1,29 +1,26 @@
+import imp
 import os
 import unittest
 
 from fakes import FakeJob
 
-dependencies = {}  # defined for flake8
-get_dependencies = None  # defined for flake8
-set_parameters = None  # defined for flake8
-remap_parsoid = None  # defined for flake8
-# Import function
-execfile(os.path.join(
+parameter_functions_py = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    '../zuul/parameter_functions.py'))
+    '../zuul/parameter_functions.py')
+imp.load_source('zuul_config', parameter_functions_py)
+import zuul_config
 
 
 class TestMwDependencies(unittest.TestCase):
 
     def setUp(self):
         # Let test mangle the 'dependencies' global
-        self._deps_copy = dependencies.copy()
+        self._deps_copy = zuul_config.dependencies.copy()
 
     def tearDown(self):
         # Restore the 'dependencies' global from the shallow clone
-        global dependencies
-        dependencies = self._deps_copy
-        self.assertIn('AbuseFilter', dependencies)
+        zuul_config.dependencies = self._deps_copy
+        self.assertIn('AbuseFilter', zuul_config.dependencies)
 
     def assertHasDependencies(self, params):
         self.assertIn('EXT_DEPENDENCIES', params)
@@ -41,7 +38,7 @@ class TestMwDependencies(unittest.TestCase):
 
         job = FakeJob(job_name if job_name
                       else 'mediawiki-quibble-composer-mysql-php74-docker')
-        set_parameters(None, job, params)
+        zuul_config.set_parameters(None, job, params)
         return params
 
     def test_ext_name(self):
@@ -63,22 +60,26 @@ class TestMwDependencies(unittest.TestCase):
 
         mapping = {'Foo': ['Bar'], 'Bar': ['Foo']}
 
-        self.assertEqual(get_dependencies('Foo', mapping), set(['Foo', 'Bar']))
+        self.assertEqual(
+            zuul_config.get_dependencies('Foo', mapping),
+            set(['Foo', 'Bar']),
+        )
 
     def test_cyclical_dependencies_with_skins(self):
         mapping = {'Foo': ['skins/Vector'], 'skins/Vector': ['Foo']}
         self.assertEqual(
-            get_dependencies('skins/Vector', mapping),
+            zuul_config.get_dependencies('skins/Vector', mapping),
             set(['Foo', 'skins/Vector'])
         )
 
     def test_resolvable_dependencies(self):
         """verifies that we can resolve all of the dependencies"""
-        for base_name in dependencies:
+        for base_name in zuul_config.dependencies:
             if base_name.startswith('skins/'):
                 project = 'mediawiki/' + base_name
             else:
-                project = remap_parsoid('mediawiki/extensions/' + base_name)
+                project = zuul_config.remap_parsoid(
+                    'mediawiki/extensions/' + base_name)
 
             self.assertHasDependencies(self.fetch_dependencies(
                 project=project))
@@ -109,28 +110,28 @@ class TestMwDependencies(unittest.TestCase):
     def test_resolve_skin_on_extension(self):
         mapping = {'Foo': ['skins/Vector']}
         self.assertEqual(
-            get_dependencies('Foo', mapping),
+            zuul_config.get_dependencies('Foo', mapping),
             set(['skins/Vector'])
             )
 
     def test_resolve_extension_on_skin(self):
         mapping = {'skins/Vector': ['Foo']}
         self.assertEqual(
-            get_dependencies('skins/Vector', mapping),
+            zuul_config.get_dependencies('skins/Vector', mapping),
             set(['Foo'])
             )
 
     def test_resolve_extension_on_extension(self):
         mapping = {'Foo': ['DepExtension']}
         self.assertEqual(
-            get_dependencies('Foo', mapping),
+            zuul_config.get_dependencies('Foo', mapping),
             set(['DepExtension'])
             )
 
     def test_resolve_skin_on_skin(self):
         mapping = {'skins/Child': ['skin/Common']}
         self.assertEqual(
-            get_dependencies('skins/Child', mapping),
+            zuul_config.get_dependencies('skins/Child', mapping),
             set(['skin/Common'])
             )
 
@@ -140,7 +141,7 @@ class TestMwDependencies(unittest.TestCase):
             'B': ['C'],
         }
         self.assertEqual(
-            get_dependencies('A', mapping, recurse=False),
+            zuul_config.get_dependencies('A', mapping, recurse=False),
             set(['B'])
         )
 

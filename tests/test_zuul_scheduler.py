@@ -7,6 +7,7 @@ import ConfigParser
 import re
 import shutil
 import tempfile
+import imp
 import os
 import unittest
 
@@ -18,13 +19,12 @@ import zuul.model
 from zuul.connection import BaseConnection
 from zuul.connection.gerrit import GerritConnection
 
-tarballextensions = None  # defined for flake8
-gatedextensions = None  # defined for flake8
-
-# Import function
-execfile(os.path.join(
+parameter_functions_py = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    '../zuul/parameter_functions.py'))
+    '../zuul/parameter_functions.py')
+imp.load_source('zuul_config', parameter_functions_py)
+import zuul_config
+
 
 MEDIAWIKI_VERSIONS = {
     'WMF': {
@@ -958,7 +958,8 @@ class TestZuulScheduler(unittest.TestCase):
         self.longMessage = True
 
         # Variables come from parameter_functions
-        allextensions = set(tarballextensions).union(set(gatedextensions))
+        allextensions = set(zuul_config.tarballextensions).union(
+            set(zuul_config.gatedextensions))
 
         # Grab projects having the gate job 'wmf-quibble-*'
         gated_in_zuul = set([
@@ -1226,3 +1227,9 @@ class TestZuulScheduler(unittest.TestCase):
             [], p,
             'test-wmf pipeline is only for MediaWiki core, vendor, '
             'extensions and skins')
+
+    def test_all_jobs_have_function_set_parameters(self):
+        for pipeline in self.sched.layout.pipelines.values():
+            for project in pipeline.getProjects():
+                for job in pipeline.getJobTree(project).getJobs():
+                    job.parameter_function.__name__

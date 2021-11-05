@@ -1,15 +1,14 @@
+import imp
 import os
 import unittest
 
 from nose.plugins.attrib import attr
 
-
-# Import function
-param_func_env = {}
-execfile(os.path.join(
+parameter_functions_py = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    '../zuul/parameter_functions.py'),
-    param_func_env)
+    '../zuul/parameter_functions.py')
+imp.load_source('zuul_config', parameter_functions_py)
+import zuul_config
 
 
 class GatedRepos(set):
@@ -21,10 +20,8 @@ class GatedRepos(set):
 
 
 gatedrepos = GatedRepos(
-    param_func_env['gatedextensions']
-    + ['skins/%s' % s for s in param_func_env['gatedskins']])
-get_dependencies = param_func_env['get_dependencies']
-all_dependencies = param_func_env['dependencies']
+    zuul_config.gatedextensions
+    + ['skins/%s' % s for s in zuul_config.gatedskins])
 
 test = unittest.TestCase('__init__')
 
@@ -32,7 +29,9 @@ test = unittest.TestCase('__init__')
 # that depends on it.
 gated_deps = {}
 for gated_project in gatedrepos:
-    deps = get_dependencies(gated_project, all_dependencies)
+    deps = zuul_config.get_dependencies(
+        gated_project,
+        zuul_config.dependencies)
     for dep in deps:
         if dep not in gated_deps:
             gated_deps[dep] = [gated_project]

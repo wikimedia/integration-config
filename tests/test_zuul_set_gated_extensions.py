@@ -1,15 +1,14 @@
-import os
+import imp
+import os.path
 import unittest
 
 from fakes import FakeJob
 
-gatedextensions = None
-set_gated_extensions = None
-
-# Import function
-execfile(os.path.join(
+parameter_functions_py = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    '../zuul/parameter_functions.py'))
+    '../zuul/parameter_functions.py')
+imp.load_source('zuul_config', parameter_functions_py)
+import zuul_config
 
 
 class TestSetGatedExtensions(unittest.TestCase):
@@ -21,7 +20,7 @@ class TestSetGatedExtensions(unittest.TestCase):
             'ZUUL_BRANCH': 'master',
         }
         gate_job = FakeJob('wmf-quibble-foo')
-        set_gated_extensions(None, gate_job, params)
+        zuul_config.set_gated_extensions(None, gate_job, params)
         self.assertIn('EXT_DEPENDENCIES', params)
 
     def test_experimental_injects_project(self):
@@ -31,7 +30,7 @@ class TestSetGatedExtensions(unittest.TestCase):
             'ZUUL_BRANCH': 'master',
         }
         gate_job = FakeJob('wmf-quibble-foo')
-        set_gated_extensions(None, gate_job, params)
+        zuul_config.set_gated_extensions(None, gate_job, params)
         self.assertIn('\\nmediawiki/extensions/SomeExt',
                       params['EXT_DEPENDENCIES'])
 
@@ -42,7 +41,7 @@ class TestSetGatedExtensions(unittest.TestCase):
             'ZUUL_BRANCH': 'master',
         }
         gate_job = FakeJob('wmf-quibble-foo')
-        set_gated_extensions(None, gate_job, params)
+        zuul_config.set_gated_extensions(None, gate_job, params)
         self.assertIn('\\nmediawiki/extensions/Wikibase',
                       params['EXT_DEPENDENCIES'])
         self.assertNotIn('\\nmediawiki/extensions/Wikidata',
@@ -55,6 +54,6 @@ class TestSetGatedExtensions(unittest.TestCase):
             'ZUUL_BRANCH': 'REL1_30',
         }
         gate_job = FakeJob('wmf-quibble-foo')
-        set_gated_extensions(None, gate_job, params)
+        zuul_config.set_gated_extensions(None, gate_job, params)
         self.assertNotIn('\\nmediawiki/extensions/Wikibase',
                          params['EXT_DEPENDENCIES'])

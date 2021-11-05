@@ -1,14 +1,14 @@
+import imp
 import os
 import unittest
 
 from fakes import FakeJob
 
-set_parameters = None  # defined for flake8
-
-# Import function
-execfile(os.path.join(
+parameter_functions_py = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    '../zuul/parameter_functions.py'))
+    '../zuul/parameter_functions.py')
+imp.load_source('zuul_config', parameter_functions_py)
+import zuul_config
 
 
 class TestZuulSetParameters(unittest.TestCase):
@@ -16,13 +16,13 @@ class TestZuulSetParameters(unittest.TestCase):
     def test_debian_glue_default_to_no_network(self):
         job = FakeJob('debian-glue')
         params = {'ZUUL_PROJECT': 'some/project'}
-        set_parameters(None, job, params)
+        zuul_config.set_parameters(None, job, params)
         self.assertNotIn('PBUILDER_USENETWORK', params)
 
     def test_zuul_debian_glue_with_network(self):
         job = FakeJob('debian-glue')
         params = {'ZUUL_PROJECT': 'integration/zuul'}
-        set_parameters(None, job, params)
+        zuul_config.set_parameters(None, job, params)
         self.assertIn('PBUILDER_USENETWORK', params)
 
     def test_debian_glue_backports(self):
@@ -33,7 +33,7 @@ class TestZuulSetParameters(unittest.TestCase):
                 ):
             job = FakeJob(job_name)
             params = {'ZUUL_PROJECT': 'fake_project'}
-            set_parameters(None, job, params)
+            zuul_config.set_parameters(None, job, params)
             self.assertIn('BACKPORTS', params)
             self.assertEquals('yes', params['BACKPORTS'])
 
@@ -44,7 +44,7 @@ class TestZuulSetParameters(unittest.TestCase):
             'ZUUL_PIPELINE': 'test',
             'ZUUL_BRANCH': 'master',
             }
-        set_parameters(None, job, params)
+        zuul_config.set_parameters(None, job, params)
 
         self.assertIn('EXT_DEPENDENCIES', params)
         self.assertIn('mediawiki/extensions/AbuseFilter\\n',

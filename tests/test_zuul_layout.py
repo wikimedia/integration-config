@@ -8,14 +8,6 @@ import unittest
 
 import yaml
 
-dependencies = None  # defined for flake8
-set_parameters = None  # defined for flake8
-
-# Import function
-execfile(os.path.join(
-    os.path.dirname(os.path.abspath(__file__)),
-    '../zuul/parameter_functions.py'))
-
 
 class TestZuulLayout(unittest.TestCase):
     """
