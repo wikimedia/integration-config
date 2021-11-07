@@ -1,3 +1,9 @@
+mediawiki-phan-taint-check-demo (0.1.5) wikimedia; urgency=high
+
+   Lock emscripten to 2.0.21
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Sun,  7 Nov 2021 18:27:55 +0100
+
 mediawiki-phan-taint-check-demo (0.1.4-s1) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
