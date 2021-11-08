@@ -7914,8 +7914,8 @@ projects:
         - trigger-example-node-api-pipeline-test
     gate-and-submit:
         - trigger-example-node-api-pipeline-rehearse
-    postmerge:
-        - trigger-example-node-api-pipeline-publish
+    # postmerge:
+    #     - trigger-example-node-api-pipeline-publish
 
   - name: mediawiki/services/jobrunner
     template:
