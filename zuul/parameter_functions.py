@@ -913,6 +913,3 @@ def set_doc_variables(item, job, params):
 
         # Normalize the project name by removing /'s
         params['DOC_PROJECT'] = raw_project.replace('/', '-')
-
-        # @todo Remove DOC_BASENAME once no older mwext- jobs use it.
-        params['DOC_BASENAME'] = params['ZUUL_PROJECT'].split('/')[-1]

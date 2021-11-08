@@ -611,8 +611,8 @@
                 build-steps:
                   - cover-extensions-publish:
                       src: 'cover'
-                      # Should be equivalent to $EXT_NAME
-                      dest: '$DOC_BASENAME'
+                      # https://doc.wikimedia.org/cover-extensions/$EXT_NAME
+                      dest: '$EXT_NAME'
         - postbuildscript:
             mark-unstable-if-failed: false
             builders:
@@ -654,8 +654,7 @@
                 build-steps:
                   - cover-skins-publish:
                       src: 'cover'
-                      # Should be equivalent to $EXT_NAME
-                      dest: '$DOC_BASENAME'
+                      dest: '$SKIN_NAME'
         - postbuildscript:
             mark-unstable-if-failed: false
             builders:
