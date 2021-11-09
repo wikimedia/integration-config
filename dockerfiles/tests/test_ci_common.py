@@ -30,7 +30,7 @@ class Test(unittest.TestCase):
                 'commit'] + list(args)
 
         git_cmds = [
-            ['git', 'init'],
+            ['git', '-c', 'init.defaultBranch=master', 'init'],
             git_commit('--allow-empty', '-m', 'first commit'),
             # Add submodule to itself
             ['git', 'submodule', '--quiet', 'add',
