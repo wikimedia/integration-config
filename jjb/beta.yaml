@@ -22,6 +22,7 @@
     name: beta
     description: |
       <p>Job is managed by <a href="https://www.mediawiki.org/wiki/CI/JJB">Jenkins Job Builder</a>.</p>
+      <p>Generated from template <code>{template-name}</code></p>
     project-type: freestyle
 
     wrappers:
