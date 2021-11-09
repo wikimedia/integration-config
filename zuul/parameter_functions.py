@@ -903,13 +903,16 @@ def set_doc_variables(item, job, params):
         params['DOC_SUBPATH'] = doc_subpath
 
     if 'ZUUL_PROJECT' in params:
-        raw_project = params['ZUUL_PROJECT']
-        if raw_project in doc_destination:
+        dest = ''
+        repo_name = params['ZUUL_PROJECT']
+        if repo_name in doc_destination:
             # custom names
-            raw_project = doc_destination[raw_project]
-        elif raw_project.startswith('mediawiki/extensions/'):
-            # For MediaWiki extension repos
-            raw_project = raw_project.split('/')[-1]
+            dest = doc_destination[repo_name]
+        elif repo_name.startswith('mediawiki/extensions/'):
+            # For MediaWiki extension repositories we use the basename
+            dest = repo_name.split('/')[-1]
+        else:
+            dest = repo_name
 
         # Normalize the project name by removing /'s
-        params['DOC_PROJECT'] = raw_project.replace('/', '-')
+        params['DOC_PROJECT'] = dest.replace('/', '-')

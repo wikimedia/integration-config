@@ -48,10 +48,17 @@ class TestDocFunctions(unittest.TestCase):
 
     def test_set_doc_project(self):
         projects = {
+            # Genreal case: normalizes / to -
             'oojs/ui': 'oojs-ui',
             'wikimedia/slimapp': 'wikimedia-slimapp',
+            # Special cases
             'performance/fresnel': 'fresnel',
-            'cdb': 'cdb'
+            # A "root" repository
+            'cdb': 'cdb',
+            # Extensions are send to /
+            'mediawiki/extensions/MobileFrontend': 'MobileFrontend',
+            # Skins are handled under the general case
+            'mediawiki/skins/Vector': 'mediawiki-skins-Vector',
         }
         for project, expected in projects.items():
             params = {'ZUUL_PROJECT': project}
