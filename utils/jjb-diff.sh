@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# jjb-diff: compare generated Jenkins jobs against HEAD^
+#
+# Optional arguments are jobs fnmatch patterns to restrict the jobs set that
+# will be generated. Example: ./jjb-diff.sh '*phan*'
+
 set -eu -o pipefail
 
 tox -e jenkins-jobs --notest
@@ -18,7 +24,8 @@ mkdir -p "$test_dir"/{output-parent,output-proposed}
 echo "Generating config for proposed patchset..."
 (cd "$base_dir"
  $JJB_BIN --version
- $JJB_TEST ./jjb --config-xml -o "$test_dir"/output-proposed)
+ set -x
+ $JJB_TEST --config-xml -o "$test_dir"/output-proposed ./jjb "$@")
 
 echo "Generating config for parent patchset..."
 parent_config=$(mktemp -d --tmpdir)
@@ -26,7 +33,7 @@ git archive HEAD^|tar -C "$parent_config" -x
 (cd "$parent_config"
  tox -e jenkins-jobs --notest
  $JJB_BIN --version
- $JJB_TEST "$parent_config"/jjb --config-xml -o "$test_dir"/output-parent
+ $JJB_TEST --config-xml -o "$test_dir"/output-parent "$parent_config"/jjb "$@"
 )
 
 echo "--------------------------------------------"
