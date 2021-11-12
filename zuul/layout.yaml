@@ -7500,6 +7500,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/UnifiedTaskOverview
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/UnusedRedirects
     template:
       - name: extension-quibble
