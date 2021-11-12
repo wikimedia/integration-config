@@ -6000,6 +6000,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/Forms
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/FormatDates
     template:
       - name: extension-quibble

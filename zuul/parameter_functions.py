@@ -329,6 +329,7 @@ dependencies = {
     'FileExporter': ['BetaFeatures'],
     'FileImporter': ['CentralAuth', 'WikiEditor'],
     'FlaggedRevs': ['Scribunto'],
+    'Forms': ['OOJSPlus'],
     'Flow': ['AbuseFilter', 'Echo', 'VisualEditor'],
     'FundraiserLandingPage': ['EventLogging'],
     'FundraisingTranslateWorkflow': ['Translate'],
