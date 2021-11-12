@@ -483,6 +483,7 @@ dependencies = {
     'Wikisource': ['Wikibase'],
     'WikiToLDAP': ['LDAPAuthentication2', 'Renameuser', 'UserMerge'],
     'wikihiero': ['VisualEditor'],
+    'Workflows': ['Forms', 'OOJSPlus'],
     'WSOAuth': ['PluggableAuth'],
 }
 
