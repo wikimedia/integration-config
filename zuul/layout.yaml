@@ -1168,6 +1168,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'revscoring/articlequality/model-server/.*'
 
+  - name: trigger-inference-services-pipeline-articlequality-transformer
+    files:
+        - '.pipeline/articlequality/transformer.yaml'
+        - '.pipeline/config.yaml'
+        - 'revscoring/articlequality/transformer/.*'
+
   - name: trigger-inference-services-pipeline-draftquality
     files:
         - '.pipeline/draftquality/blubber.yaml'
@@ -2234,11 +2240,13 @@ projects:
     test:
       - trigger-inference-services-pipeline-editquality
       - trigger-inference-services-pipeline-articlequality
+      - trigger-inference-services-pipeline-articlequality-transformer
       - trigger-inference-services-pipeline-draftquality
       - trigger-inference-services-pipeline-topic
     gate-and-submit:
       - trigger-inference-services-pipeline-editquality
       - trigger-inference-services-pipeline-articlequality
+      - trigger-inference-services-pipeline-articlequality-transformer
       - trigger-inference-services-pipeline-draftquality
       - trigger-inference-services-pipeline-topic
 
