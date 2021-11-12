@@ -6765,6 +6765,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/PageCheckout
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/PageCreationNotif
     template:
       - name: extension-quibble
