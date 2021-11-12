@@ -71,10 +71,41 @@
      - docker-castor-load
      - docker-log-dir
      - docker-src-dir
-     - docker-setup-mwext-for-phan-{php}
+
+     # Prepare the sources using Quibble.
+     # Notably run composer update in the thing to install mediawiki/phan-config.
+     - docker-run-with-log-cache-src:
+         image: '{setup_image}'
+         options: >-
+             --volume "$(pwd)/src:/workspace/src"
+             --volume /srv/git:/srv/git:ro
+             --tmpfs /workspace/db:size=320M
+         # Use vendor and skip-deps
+         # We do not want to bring in MediaWiki core dev dependencies (T223397)
+         #
+         # MediaWiki installation is skipped, we do not need it. Additionally
+         # we only inject the extension dependencies required by Phan, notably
+         # we do not install dependencies of dependencies which might end up
+         # breaking the installation due to a missing extension.json
+         # requirement. (T232413)
+         args: >
+             --git-parallel=8
+             --packages-source=vendor
+             --db=mysql --db-dir=/workspace/db
+             --skip-deps
+             --skip-install
+             --skip=all
+         logdir: '/workspace/log'
+     # Install the extension/skin composer dev dependencies to bring in phan config
+     - docker-run-with-log-cache-src:
+        options: '--volume "$(pwd)"/src:/mediawiki'
+        image: '{composer_image}'
+        args: '--working-dir=/src/"$THING_SUBNAME" update --ansi --no-progress --prefer-dist --profile'
+
+     # Now run Phan
      - docker-run-with-log-cache-src:
         options: '-e PHAN_COLOR_SCHEME=light --volume "$(pwd)"/src:/mediawiki'
-        image: '{image}'
+        image: '{phan_image}'
         args: '--color'
     publishers:
      - castor-save-workspace-cache
@@ -87,13 +118,21 @@
         - mwskin
     php:
         - php72:
-            image: docker-registry.wikimedia.org/releng/mediawiki-phan:0.9.0-s3
+            setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.2.0-s1
+            composer_image: docker-registry.wikimedia.org/releng/composer-php72:0.5.0-s4
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan:0.9.0-s3
         - php73:
-            image: docker-registry.wikimedia.org/releng/mediawiki-phan-php73:0.2.0-s3
+            setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.2.0-s1
+            composer_image: docker-registry.wikimedia.org/releng/composer-php73:0.3.0-s5
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php73:0.2.0-s3
         - php74:
-            image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.0-s5
+            setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.2.0-s1
+            composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.2.0-s6
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.0-s5
         - php80:
-            image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.1-s1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.2.0-s1
+            composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s6
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.1-s1
     jobs:
         - '{thing}-{php}-phan-docker'
 
