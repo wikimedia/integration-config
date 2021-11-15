@@ -85,7 +85,6 @@
      - docker-castor-load
      - docker-log-dir
      - docker-src-dir
-     - docker-cache-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: '{image}'
@@ -114,7 +113,6 @@
      - docker-castor-load
      - docker-log-dir
      - docker-src-dir
-     - docker-cache-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: '{image}'
@@ -136,7 +134,6 @@
     builders:
      - docker-log-dir
      - docker-src-dir
-     - docker-cache-dir
      - docker-castor-load
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:

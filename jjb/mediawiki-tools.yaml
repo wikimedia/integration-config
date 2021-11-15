@@ -100,7 +100,6 @@
     builders:
      - docker-log-dir
      - docker-src-dir
-     - docker-cache-dir
      - docker-castor-load
      - docker-zuul-cloner:
          projects: >
