@@ -2801,6 +2801,10 @@ projects:
     template:
       - name: skin-quibble-composer
 
+  - name: mediawiki/skins/BlueSpiceDiscovery
+    template:
+      - name: skin-quibble-composer
+
   - name: mediawiki/skins/Bouquet
     template:
       - name: skin-quibble

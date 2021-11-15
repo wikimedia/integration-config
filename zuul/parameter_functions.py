@@ -131,6 +131,7 @@ def set_parameters(item, job, params):
 dependencies = {
     # Skins are listed first to highlight the skin dependencies
     'skins/BlueSpiceCalumma': ['BlueSpiceFoundation'],
+    'skins/BlueSpiceDiscovery': ['BlueSpiceFoundation'],
     'skins/BlueSpiceSkin': ['BlueSpiceFoundation'],
     'skins/Cosmos': ['AdminLinks', 'CreateRedirect', 'DismissableSiteNotice',
                      'Echo', 'SocialProfile', 'Video', 'VisualEditor'],
