@@ -1,11 +1,3 @@
-# Create a log directory that will be
-# mounted into a container with --volume
-- builder:
-    name: docker-log-dir
-    builders:
-     - docker-wipe-dir:
-         dir: log
-
 # Stop and/or kill any containers still running for the build.
 - publisher:
     name: docker-reap-containers
@@ -61,6 +53,22 @@
       - docker-reap-containers
       - docker-wipe-workspace
 
+# Create a cache directory that will be
+# mounted into a container with --volume
+- builder:
+    name: docker-cache-dir
+    builders:
+     - shell: |
+        mkdir -m 2777 -p "cache"
+
+# Create a log directory that will be
+# mounted into a container with --volume
+- builder:
+    name: docker-log-dir
+    builders:
+     - docker-wipe-dir:
+         dir: log
+
 # Create a src directory that will be
 # mounted into a container with --volume
 - builder:
@@ -84,14 +92,6 @@
           --entrypoint=/usr/bin/find
         args: >-
           "/workspace/{dir}" -mindepth 1 -delete
-
-# Create a cache directory that will be
-# mounted into a container with --volume
-- builder:
-    name: docker-cache-dir
-    builders:
-     - shell: |
-        mkdir -m 2777 -p "cache"
 
 # Run a Docker container using `docker run`. This builder should be used
 # wherever possible to ensure the proper common arguments that allow for
