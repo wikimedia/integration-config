@@ -170,24 +170,17 @@
 # submodules (bool): whether or not to update/initialize repo submodules
 #
 - builder:
-    name: docker-ci-src-setup
-    builders:
-     - docker-run:
-        options: !j2: >-
-          --volume "$(pwd)"/src:/src
-          --volume "$(pwd)"/cache:/cache
-          --volume /srv/git:/srv/git:ro
-          {%- if not submodules %}
-          --env GIT_NO_SUBMODULES=yes
-          {%- endif %}
-        image: 'docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.4.2-s1'
-
-# Use a docker image to clone the repository into /src
-- builder:
     name: docker-ci-src-setup-simple
     builders:
-      - docker-ci-src-setup:
-          submodules: true
+     - docker-run: !j2-yaml: >-
+         options:
+           --volume "$(pwd)"/src:/src
+           --volume "$(pwd)"/cache:/cache
+           --volume /srv/git:/srv/git:ro
+           {%- if submodules is defined and not submodules %}
+           --env GIT_NO_SUBMODULES=yes
+           {%- endif %}
+         image: 'docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.4.2-s1'
 
 - builder:
     name: docker-zuul-cloner

@@ -21,7 +21,7 @@
       - docker-log-dir
       # .gitsubmodules uses relative url, we need to point to upstream gerrit
       # repository to fetch them which is handled by the repo build script.
-      - docker-ci-src-setup:
+      - docker-ci-src-setup-simple:
           submodules: false
 
       - docker-run-with-log-cache-src:
