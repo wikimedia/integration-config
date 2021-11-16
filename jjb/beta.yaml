@@ -121,7 +121,7 @@
       #         - junit:
       #             pattern: 'lintian-*.xml'
       - archive:
-          artifacts: 'HEAD,VERSION,*.gz,*.bz2,*.xz,*.deb,*.dsc,*.buildinfo,*.changes,debc.txt,*lintian.txt,*lintian.xml'
+          artifacts: 'HEAD,VERSION,*.gz,*.bz2,*.xz,*.deb,*.dsc,*.buildinfo,*.changes,debc.txt,lintian*.txt,lintian*.xml'
       - postbuildscript:
           builders:
             - build-on:
