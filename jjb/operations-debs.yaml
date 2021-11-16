@@ -27,7 +27,7 @@
             echo "Converting lintian file $x"
             # For human consumption when looking at the build console
             cat "$x"
-            /usr/bin/lintian-junit-report --skip-lintian --filename "$x" *.changes > "${x/$suffix/.lintian.xml}"
+            lintian-junit-report --skip-lintian --filename "$x" *.changes > "${x/$suffix/.lintian.xml}"
           done
 
 # Piuparts test installation / removal of a package

@@ -96,10 +96,10 @@
           # We might consider adding --warnings
           set -o pipefail
           # Source package:
-          /usr/bin/lintian-junit-report --filename lintian-binary.txt *.dsc | tee lintian-binary.xml
+          lintian-junit-report --filename lintian-binary.txt *.dsc | tee lintian-binary.xml
 
           # Binary package:
-          /usr/bin/lintian-junit-report --filename lintian-source.txt *.changes | tee lintian-source.xml
+          lintian-junit-report --filename lintian-source.txt *.changes | tee lintian-source.xml
 
           set +o pipefail
 
