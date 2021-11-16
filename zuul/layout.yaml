@@ -7002,6 +7002,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/QuickInstantCommons
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/QuickResponse
     template:
       - name: extension-quibble
