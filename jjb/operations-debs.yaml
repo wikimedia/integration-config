@@ -238,15 +238,15 @@
             set -o pipefail
             jdg-debc | tee debc.txt
     publishers:
-      #- xunit:
-      #    thresholdsmode: 'number'
-      #    thresholds:
-      #        - failed:
-      #            # Has to be set explicitly for "junit" type
-      #            failure: 0
-      #    types:
-      #        - junit:
-      #            pattern: '*lintian.xml'
+      - xunit:
+          thresholdsmode: 'number'
+          thresholds:
+              - failed:
+                  # Has to be set explicitly for "junit" type
+                  failure: 0
+          types:
+              - phpunit:
+                  pattern: '*lintian.xml'
       - archive:
           artifacts: '*.gz,*.bz2,*.xz,*.deb,*.dsc,*.buildinfo,*.changes,debc.txt,*lintian.txt,*lintian.xml,piuparts.txt,piuparts.tap'
 

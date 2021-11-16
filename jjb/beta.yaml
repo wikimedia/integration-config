@@ -111,15 +111,14 @@
 
           exit 0
     publishers:
-      # T295719: Temporarily disabled
-      # - xunit:
-      #     thresholdsmode: 'number'
-      #     thresholds:
-      #         - failed:
-      #             failure: 0
-      #     types:
-      #         - junit:
-      #             pattern: 'lintian-*.xml'
+      - xunit:
+          thresholdsmode: 'number'
+          thresholds:
+              - failed:
+                  failure: 0
+          types:
+              - phpunit:
+                  pattern: 'lintian-*.xml'
       - archive:
           artifacts: 'HEAD,VERSION,*.gz,*.bz2,*.xz,*.deb,*.dsc,*.buildinfo,*.changes,debc.txt,lintian*.txt,lintian*.xml'
       - postbuildscript:
