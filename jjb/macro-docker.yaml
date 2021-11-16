@@ -96,22 +96,76 @@
 # Run a Docker container using `docker run`. This builder should be used
 # wherever possible to ensure the proper common arguments that allow for
 # correct signal passing and cleanup are passed.
+#
+# Parameters:
+#
+# [options] space separated strings of arguments to pass to `docker run`
+#
+# Example:
+#
+#   options: >-
+#     --entrypoint=/usr/bin/git
+#     --env=MEDIAWIKI_TEST=1
+#
+# [volumes] a map of bind mounts.
+#
+#  Key is the path on the host relative to the current workspace, a key
+#  starting with '/' is an absolute path.
+#  Value is optional, when not set the key is reused. When set, the path in the
+#  container.
+#  Example:
+#
+#   volumes: { cache: }  => --volume "$(pwd)/cache:/cache"
+#
+#   volumes: { src: /bar }  => --volume "$(pwd)/src:/bar"
+#
+#   volumes: { /srv/git: /srv/git:ro }  => --volume "/srv/git:/srv/git:ro"
+#
+# [image] Docker image to run
+#
+# [args] Arguments passed to the container.
+#
+# Example:
+#
+#  args: '--print "hello world"'
+#
 - builder:
     name: docker-run
     builders:
-     - shell: |
+     # The macro has lot of funky moves with whitespaces :-)
+     - shell: !j2: |
+        {% block xxx_dummy_block_to_keep_trailing_newline -%}
         #!/bin/bash
         set -eux
         set -o pipefail
-        exec docker run {obj:options|} \
+        exec docker run
+          {%- if options is defined and options is not none -%}
+            {{ " " + options }}
+          {%- elif volumes is not defined -%}
+            {{ " " }}
+          {%- endif -%}
+          {%- if volumes is defined -%}
+              {{ " " }}
+              {%- for host_path, container_path in volumes.items() -%}
+                  {%- if host_path.startswith('/') -%}
+                  {%-   set base_dir = '' -%}
+                  {%- else -%}
+                  {%-   set base_dir = '"$(pwd)"/' -%}
+                  {%- endif -%}
+                  --volume {{ base_dir + host_path }}:{{ container_path or ("/" + host_path) }}{{" "}}
+              {%- endfor -%}
+          {%- else -%}
+            {{ " " }}
+          {%- endif -%}\
           --security-opt seccomp=unconfined \
           --init \
           --rm \
           --label "jenkins.job=$JOB_NAME" \
           --label "jenkins.build=$BUILD_NUMBER" \
           --env-file <(/usr/bin/env|egrep -v '^(HOME|SHELL|PATH|LOGNAME|MAIL)=') \
-          '{image}' {obj:args|}
+          '{{ image }}' {{ args | default }}
         # nothing else can be executed due to exec
+        {% endblock %}
 
 # Run a docker image with cache, log, and src directories
 #
@@ -129,9 +183,18 @@
      - docker-run:
         options: >-
           {obj:options|}
-          --volume "$(pwd)"/src:{obj:srcdir|/src}
-          --volume "$(pwd)"/cache:/cache
-          --volume "$(pwd)"/log:{obj:logdir|/log}
+        volumes:
+            !j2-yaml: |
+                src: '{srcdir|/src}'
+                cache:
+                log: '{logdir|/log}'
+                # extras
+                {% if volumes is defined %}
+                {% for (k, v) in volumes.items() %}
+                {{ k }}: {{ v }}
+                {% endfor %}
+                {% endif %}
+
         image: '{obj:image}'
         args: '{obj:args|}'
 
@@ -149,9 +212,10 @@
            {%- if submodules is defined and not submodules %}
            --env GIT_NO_SUBMODULES=yes
            {%- endif %}
-           --volume "$(pwd)"/src:/src
-           --volume "$(pwd)"/cache:/cache
-           --volume /srv/git:/srv/git:ro
+         volumes:
+             src:
+             cache:
+             /srv/git: /srv/git:ro
          image: 'docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.4.2-s1'
 
 - builder:
@@ -159,9 +223,9 @@
     builders:
      - docker-src-dir
      - docker-run:
-        options: >-
-          --volume "$(pwd)"/src:/src
-          --volume /srv/git:/srv/git:ro
+        volumes:
+            src:
+            /srv/git: /srv/git:ro
         image: 'docker-registry.wikimedia.org/releng/zuul-cloner:0.2.1-s5'
         args: >-
           --color --verbose
