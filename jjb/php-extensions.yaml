@@ -7,7 +7,8 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run:
-        options: '--volume "$(pwd)"/src:/src'
+        volumes:
+            src:
         image: '{image}'
     publishers:
       - archive:
@@ -54,7 +55,9 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run:
-        options: '--entrypoint=/run-coverage.sh --volume "$(pwd)"/src:/src'
+        options: '--entrypoint=/run-coverage.sh'
+        volumes:
+            src:
         image: 'docker-registry.wikimedia.org/releng/php74-compile:0.0.6-s1'
      - cover-publish:
         src: 'src/coverage'

@@ -27,9 +27,10 @@
       - docker-run-with-log-cache-src:
           image: 'docker-registry.wikimedia.org/releng/gerrit:1.1.4-s1'
           options: >-
-              --volume /srv/git:/srv/git:ro
               --env LOG_DIR=/log
               --entrypoint=/src/wmf-build.py
+          volumes:
+              /srv/git: /srv/git:ro
     publishers:
       - archive:
          artifacts: 'log/*.war, log/*.jar'

@@ -124,7 +124,8 @@
               --workdir=/src
               --tmpfs /workspace/db:size=320M
               --entrypoint=/src/utils/ci-fullrun.sh
-              --volume /srv/git:/srv/git:ro
+          volumes:
+              /srv/git: /srv/git:ro
           args: --color --db-dir /workspace/db
           logdir: '/workspace/log'
     publishers:
@@ -148,7 +149,8 @@
               --workdir=/src
               --tmpfs /workspace/db:size=320M
               --entrypoint=bash
-              --volume /srv/git:/srv/git:ro
+          volumes:
+              /srv/git: /srv/git:ro
           args: >-
               -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
               && /src/utils/ci-fullrun.sh

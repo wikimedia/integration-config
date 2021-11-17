@@ -77,8 +77,9 @@
      - docker-run-with-log-cache-src:
          image: '{setup_image}'
          options: >-
-             --volume /srv/git:/srv/git:ro
              --tmpfs /workspace/db:size=320M
+         volumes:
+             /srv/git: /srv/git:ro
          # Use vendor and skip-deps
          # We do not want to bring in MediaWiki core dev dependencies (T223397)
          #

@@ -58,7 +58,9 @@
         - docker-src-dir
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
-            options: '--tmpfs /workspace/db:size=320M --volume /srv/git:/srv/git:ro'
+            options: '--tmpfs /workspace/db:size=320M'
+            volumes:
+                /srv/git: /srv/git:ro
             # With composer to get dependencies from DonationInterface. However we also clone mediawiki/vendor
             args: >
                 --packages-source composer --db mysql --db-dir /workspace/db --run=phpunit
@@ -112,7 +114,9 @@
         - docker-src-dir
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
-            options: '--tmpfs /workspace/db:size=320M --volume /srv/git:/srv/git:ro'
+            options: '--tmpfs /workspace/db:size=320M'
+            volumes:
+                /srv/git: /srv/git:ro
             # With composer to get dependencies from DonationInterface. However we also clone mediawiki/vendor
             args: >
                 --packages-source composer --db mysql --db-dir /workspace/db --run=phpunit

@@ -72,9 +72,10 @@
              build-steps:
                  - shell: 'echo "Clearing $WORKSPACE/cache"'
                  - docker-run:
-                    options: '--volume "$(pwd)"/cache:/cache'
                     image: 'docker-registry.wikimedia.org/releng/castor:0.2.4'
                     args: 'clear || :'
+                    volumes:
+                        cache:
 
 # Entry point to load cache from central cache
 #
@@ -87,9 +88,10 @@
     builders:
         - docker-cache-dir
         - docker-run:
-            options: '--volume "$(pwd)"/cache:/cache'
             image: 'docker-registry.wikimedia.org/releng/castor:0.2.4'
             args: 'load'
+            volumes:
+                cache:
 
 # Job triggered on the central repository instance
 #

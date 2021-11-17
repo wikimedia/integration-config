@@ -191,7 +191,8 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run:
-        options: '--volume "$(pwd)"/src:/src'
+        volumes:
+            src:
         image: 'docker-registry.wikimedia.org/releng/commit-message-validator:0.6.1-s6'
     publishers:
      - docker-cleanup

@@ -14,7 +14,8 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run:
-        options: '--volume "$(pwd)"/src:/src'
+        volumes:
+            src:
         image: 'docker-registry.wikimedia.org/releng/composer-security-check:1.1-s7'
     publishers:
       - docker-cleanup
