@@ -16,8 +16,10 @@ DIFF_HIGHLIGHT_BIN="$base_dir"/.tox/jenkins-jobs/bin/diff-highlight
 JJB_CONF=tests/fixtures/jjb-disable-query-plugins.conf
 JJB_TEST="$JJB_BIN --conf $JJB_CONF -l warning test"
 
-test_dir=$(mktemp -d --tmpdir jjbdiff.XXXX)
-trap 'echo Deleting "$test_dir"; rm -R "$test_dir"' EXIT
+build_dir=$(mktemp -d --tmpdir jjbdiff.XXXX)
+trap 'echo Deleting build dir "$build_dir"; rm -R "$build_dir"' EXIT
+
+test_dir="$build_dir/test"
 
 mkdir -p "$test_dir"/{output-parent,output-proposed}
 
@@ -28,7 +30,8 @@ echo "Generating config for proposed patchset..."
  $JJB_TEST --config-xml -o "$test_dir"/output-proposed ./jjb "$@")
 
 echo "Generating config for parent patchset..."
-parent_config=$(mktemp -d --tmpdir)
+parent_config="$build_dir/parent"
+mkdir -p "$parent_config"
 git archive HEAD^|tar -C "$parent_config" -x
 (cd "$parent_config"
  tox -e jenkins-jobs --notest
