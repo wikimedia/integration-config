@@ -63,7 +63,8 @@
     builders:
      - docker-cache-dir
      - docker-log-dir
-     - docker-run-with-log-and-workspace-cache:
+     - docker-src-dir
+     - docker-run-with-log-cache-src:
         logdir: '/srv/workspace/log'
         image: '{image}'
     wrappers:

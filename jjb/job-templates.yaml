@@ -346,13 +346,14 @@
     builders:
         - docker-castor-load
         - docker-log-dir
+        - docker-src-dir
         # The config-file-provider has the file created by the jenkins-slave and
         # respecting umask. It is thus not readable by the nobody user in the
         # container. setfacl lets us grant an extra permission.
         # Credentials binding makes it readable solely by the jenkins-slave user.
         - shell: |
                  setfacl -m user:65534:r archiva-credentials.xml $NETRC_FILE
-        - docker-run-with-log-and-workspace-cache:
+        - docker-run-with-log-cache-src:
             options: >-
                      -v "$NETRC_FILE":/nonexistent/.netrc:ro
                      -v "$WORKSPACE/archiva-credentials.xml":/archiva-credentials.xml

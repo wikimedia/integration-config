@@ -69,7 +69,8 @@
     builders:
      - docker-cache-dir
      - docker-log-dir
-     - docker-run-with-log-and-workspace-cache:
+     - docker-src-dir
+     - docker-run-with-log-cache-src:
          image: 'docker-registry.wikimedia.org/releng/tox-buster:0.5.1'
          args: '-e qa -- --xunit-file=/log/junit-qa.xml'
     publishers:

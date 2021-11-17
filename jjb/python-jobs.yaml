@@ -13,7 +13,8 @@
     builders:
         - docker-castor-load
         - docker-log-dir
-        - docker-run-with-log-and-workspace-cache:
+        - docker-src-dir
+        - docker-run-with-log-cache-src:
             image: '{obj:docker_image_var}'
     wrappers:
       - timeout:
@@ -90,7 +91,8 @@
     builders:
         - docker-castor-load
         - docker-log-dir
-        - docker-run-with-log-and-workspace-cache:
+        - docker-src-dir
+        - docker-run-with-log-cache-src:
             image: '{obj:docker_image_var}'
             args: '-e "{toxenv}"'
 
