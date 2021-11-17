@@ -216,11 +216,13 @@
     builders:
         - docker-castor-load
         - docker-log-dir
-        - docker-run-with-log-and-workspace-cache:
+        - docker-src-dir
+        - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--volume /srv/git:/srv/git:ro --tmpfs /workspace/db:size=320M'
             args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db --git-parallel=8 {quibble_args}'
             logdir: '/workspace/log'
+            srcdir: '/workspace/src'
         - assert-no-mediawiki-errors
     publishers:
         - postbuildscript:
@@ -413,11 +415,13 @@
     builders:
         - docker-castor-load
         - docker-log-dir
-        - docker-run-with-log-and-workspace-cache:
+        - docker-src-dir
+        - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--volume /srv/git:/srv/git:ro'
             args: '--packages-source "vendor" --git-parallel=8 --skip-install --run composer-test'
             logdir: '/workspace/log'
+            srcdir: '/workspace/src'
     publishers:
         - archive-log-allow-empty
         - castor-save-workspace-cache
@@ -442,11 +446,13 @@
     builders:
         - docker-castor-load
         - docker-log-dir
-        - docker-run-with-log-and-workspace-cache:
+        - docker-src-dir
+        - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--volume /srv/git:/srv/git:ro --tmpfs /workspace/db:size=320M'
             args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --commands "phpunit-patch-coverage check --command \"php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=. tests/phpunit/phpunit.php\" --html /workspace/log/coverage.html"'
             logdir: '/workspace/log'
+            srcdir: '/workspace/src'
     publishers:
      - archive:
          artifacts: 'log/coverage.html'
@@ -471,11 +477,13 @@
     builders:
         - docker-cache-dir
         - docker-log-dir
-        - docker-run-with-log-and-workspace-cache:
+        - docker-src-dir
+        - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.2.0-s1
             options: '--volume /srv/git:/srv/git:ro --tmpfs /workspace/db:size=320M'
             args: '--packages-source vendor --db mysql --db-dir /workspace/db --skip-deps --commands "mediawiki-fresnel-patch"'
             logdir: '/workspace/log'
+            srcdir: '/workspace/src'
     publishers:
         - compress-mw-debug-logs
         - postbuildscript:
@@ -524,11 +532,13 @@
         - docker-wipe-dir:
             dir: 'cover'
         - docker-log-dir
-        - docker-run-with-log-and-workspace-cache:
+        - docker-src-dir
+        - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--volume /srv/git:/srv/git:ro --volume "$(pwd)"/cover:/workspace/cover --tmpfs /workspace/db:size=320M'
             args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db {quibble_args}'
             logdir: '/workspace/log'
+            srcdir: '/workspace/src'
     publishers:
         - archive-log-allow-empty
         - castor-save-workspace-cache
@@ -567,11 +577,13 @@
         - docker-wipe-dir:
             dir: 'cover'
         - docker-log-dir
-        - docker-run-with-log-and-workspace-cache:
+        - docker-src-dir
+        - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--volume /srv/git:/srv/git:ro --volume "$(pwd)"/cover:/workspace/cover --tmpfs /workspace/db:size=320M'
             args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db {quibble_args}'
             logdir: '/workspace/log'
+            srcdir: '/workspace/src'
     publishers:
         - archive-log-allow-empty
         - castor-save-workspace-cache
@@ -658,15 +670,17 @@
     - docker-log-dir
     - docker-src-dir
     - docker-castor-load
-    - docker-run-with-log-and-workspace-cache:
+    - docker-run-with-log-cache-src:
         image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.2.0-s1
         options: '-e CODEHEALTH=1 --volume "$(pwd)"/src:/workspace/src --volume "$(pwd)"/cover:/workspace/cover --volume /srv/git:/srv/git:ro --tmpfs /workspace/db:size=320M'
         args: '--packages-source "{packages-source}" --git-parallel=8 {quibble_args}'
         logdir: '/workspace/log'
-    - docker-run-with-log-and-workspace-cache:
+        srcdir: '/workspace/src'
+    - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-1'
         options: '--volume "$(pwd)"/src:/workspace/src'
         logdir: '/workspace/log'
+        srcdir: '/workspace/src'
         args: '{sonar_args}'
     publishers:
       - docker-cleanup
@@ -747,24 +761,27 @@
     - docker-castor-load
     - docker-wipe-dir:
         dir: 'cover'
-    - docker-run-with-log-and-workspace-cache:
+    - docker-run-with-log-cache-src:
         image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.2.0-s1
         options: '-e CODEHEALTH=1 --volume "$(pwd)"/src:/workspace/src --volume "$(pwd)"/cover:/workspace/cover --volume /srv/git:/srv/git:ro'
         args: '--packages-source "{packages-source}" --git-parallel=8 --skip-install --commands=mwext-phpunit-coverage'
         logdir: '/workspace/log'
-    - docker-run-with-log-and-workspace-cache:
+        srcdir: '/workspace/src'
+    - docker-run-with-log-cache-src:
         image: docker-registry.wikimedia.org/releng/node12-test:0.0.3-s2
         options: '--volume "$(pwd)"/src/extensions/"$EXT_NAME":/src'
         logdir: '/workspace/log'
+        srcdir: '/workspace/src'
         args: '--if-present coverage'
     - shell: |
         if [ -f src/extensions/"$EXT_NAME"/coverage/lcov.info ]; then
           sed -ie "s#/src/#/workspace/src/extensions/$EXT_NAME/#g" src/extensions/"$EXT_NAME"/coverage/lcov.info
         fi
-    - docker-run-with-log-and-workspace-cache:
+    - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-1'
         options: '--volume "$(pwd)"/src:/workspace/src'
         logdir: '/workspace/log'
+        srcdir: '/workspace/src'
         args: '{sonar_args}'
     publishers: '{publishers}'
 
@@ -790,11 +807,13 @@
         - docker-wipe-dir:
             dir: 'cover'
         - docker-log-dir
-        - docker-run-with-log-and-workspace-cache:
+        - docker-src-dir
+        - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--volume /srv/git:/srv/git:ro --volume "$(pwd)"/cover:/workspace/cover --tmpfs /workspace/db:size=320M'
             args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db {quibble_args}'
             logdir: '/workspace/log'
+            srcdir: '/workspace/src'
         - cover-publish:
             src: 'cover'
             dest: 'mediawiki-core'

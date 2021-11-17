@@ -146,7 +146,7 @@
      - docker-run:
         options: >-
           {obj:options|}
-          --volume "$(pwd)"/src:/src
+          --volume "$(pwd)"/src:{obj:srcdir|/src}
           --volume "$(pwd)"/cache:/cache
           --volume "$(pwd)"/log:{obj:logdir|/log}
         image: '{obj:image}'
