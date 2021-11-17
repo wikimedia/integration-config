@@ -77,7 +77,6 @@
      - docker-run-with-log-cache-src:
          image: '{setup_image}'
          options: >-
-             --volume "$(pwd)/src:/workspace/src"
              --volume /srv/git:/srv/git:ro
              --tmpfs /workspace/db:size=320M
          # Use vendor and skip-deps
@@ -96,17 +95,19 @@
              --skip-install
              --skip=all
          logdir: '/workspace/log'
+         srcdir: '/workspace/src'
      # Install the extension/skin composer dev dependencies to bring in phan config
      - docker-run-with-log-cache-src:
-        options: '--volume "$(pwd)"/src:/mediawiki'
         image: '{composer_image}'
         args: '--working-dir=/src/"$THING_SUBNAME" update --ansi --no-progress --prefer-dist --profile'
 
      # Now run Phan
      - docker-run-with-log-cache-src:
-        options: '-e PHAN_COLOR_SCHEME=light --volume "$(pwd)"/src:/mediawiki'
+        options: '-e PHAN_COLOR_SCHEME=light'
         image: '{phan_image}'
         args: '--color'
+        srcdir: '/mediawiki'
+
     publishers:
      - castor-save-workspace-cache
      - docker-cleanup
