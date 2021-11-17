@@ -113,23 +113,6 @@
           '{image}' {obj:args|}
         # nothing else can be executed due to exec
 
-# Run a docker image with .env and a log and cache directory
-#
-# Parameters:
-#
-# image: the Docker image to run (eg: releng/php)
-# args (optional): arguments passed to `docker run`.
-- builder:
-    name: docker-run-with-log-and-workspace-cache
-    builders:
-     - docker-run:
-        options: >-
-          {obj:options|}
-          --volume "$(pwd)"/cache:/cache
-          --volume "$(pwd)"/log:{obj:logdir|/log}
-        image: '{obj:image}'
-        args: '{obj:args|}'
-
 # Run a docker image with cache, log, and src directories
 #
 # Parameter:
