@@ -469,8 +469,9 @@
     triggers:
         - zuul
     builders:
+        - docker-cache-dir
         - docker-log-dir
-        - docker-run-with-log:
+        - docker-run-with-log-and-workspace-cache:
             image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.2.0-s1
             options: '--volume /srv/git:/srv/git:ro --tmpfs /workspace/db:size=320M'
             args: '--packages-source vendor --db mysql --db-dir /workspace/db --skip-deps --commands "mediawiki-fresnel-patch"'

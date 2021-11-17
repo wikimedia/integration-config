@@ -61,8 +61,9 @@
         - build-discarder:
             days-to-keep: 7
     builders:
+     - docker-cache-dir
      - docker-log-dir
-     - docker-run-with-log:
+     - docker-run-with-log-and-workspace-cache:
         logdir: '/srv/workspace/log'
         image: '{image}'
     wrappers:

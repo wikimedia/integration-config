@@ -5,8 +5,9 @@
     triggers:
      - zuul
     builders:
+     - docker-cache-dir
      - docker-log-dir
-     - docker-run-with-log:
+     - docker-run-with-log-and-workspace-cache:
         image: 'docker-registry.wikimedia.org/releng/lintr:0.2.1-s4'
     wrappers:
       - timeout:

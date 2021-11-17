@@ -113,18 +113,6 @@
           '{image}' {obj:args|}
         # nothing else can be executed due to exec
 
-
-# Run a docker image with .env and a log
-- builder:
-    name: docker-run-with-log
-    builders:
-     - docker-run:
-        options: >-
-          {obj:options|}
-          --volume "$(pwd)"/log:{obj:logdir|/log}
-        image: '{obj:image}'
-        args: '{obj:args|}'
-
 # Run a docker image with .env and a log and cache directory
 #
 # Parameters:
