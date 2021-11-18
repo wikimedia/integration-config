@@ -175,13 +175,12 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: '{composer_image}'
+        options: '--volume "$(pwd)"/src:/mediawiki'
         args: '--working-dir=/mediawiki update --ansi --no-progress --prefer-dist --profile'
-        srcdir: /mediawiki
      - docker-run-with-log-cache-src:
-        options: '-e PHAN_COLOR_SCHEME=light --entrypoint=/run-core.sh'
+        options: '-e PHAN_COLOR_SCHEME=light --volume "$(pwd)"/src:/mediawiki --entrypoint=/run-core.sh'
         image: '{phan_image}'
         args: '--color'
-        srcdir: /mediawiki
     publishers:
      - castor-save-workspace-cache
      - docker-cleanup
@@ -673,12 +672,13 @@
     - docker-castor-load
     - docker-run-with-log-cache-src:
         image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.2.0-s1
-        options: '-e CODEHEALTH=1 --volume "$(pwd)"/cover:/workspace/cover --volume /srv/git:/srv/git:ro --tmpfs /workspace/db:size=320M'
+        options: '-e CODEHEALTH=1 --volume "$(pwd)"/src:/workspace/src --volume "$(pwd)"/cover:/workspace/cover --volume /srv/git:/srv/git:ro --tmpfs /workspace/db:size=320M'
         args: '--packages-source "{packages-source}" --git-parallel=8 {quibble_args}'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
     - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-1'
+        options: '--volume "$(pwd)"/src:/workspace/src'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'
@@ -763,7 +763,7 @@
         dir: 'cover'
     - docker-run-with-log-cache-src:
         image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.2.0-s1
-        options: '-e CODEHEALTH=1 --volume "$(pwd)"/cover:/workspace/cover --volume /srv/git:/srv/git:ro'
+        options: '-e CODEHEALTH=1 --volume "$(pwd)"/src:/workspace/src --volume "$(pwd)"/cover:/workspace/cover --volume /srv/git:/srv/git:ro'
         args: '--packages-source "{packages-source}" --git-parallel=8 --skip-install --commands=mwext-phpunit-coverage'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
@@ -779,6 +779,7 @@
         fi
     - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-1'
+        options: '--volume "$(pwd)"/src:/workspace/src'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'

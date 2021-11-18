@@ -122,6 +122,7 @@
           image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.2.0-s1'
           options: >-
               -v /srv/git:/srv/git:ro
+              -v "$(pwd)"/src:/src
               --workdir=/src
               --tmpfs /workspace/db:size=320M
               --entrypoint=/src/utils/ci-fullrun.sh
@@ -146,6 +147,7 @@
           image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72-apache:1.2.0-s1'
           options: >-
               -v /srv/git:/srv/git:ro
+              -v "$(pwd)"/src:/src
               --workdir=/src
               --tmpfs /workspace/db:size=320M
               --entrypoint=bash
