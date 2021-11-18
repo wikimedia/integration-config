@@ -175,7 +175,7 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: '{composer_image}'
-        args: 'update --ansi --no-progress --prefer-dist --profile'
+        args: '--working-dir=/src update --ansi --no-progress --prefer-dist --profile'
      - docker-run-with-log-cache-src:
         options: '-e PHAN_COLOR_SCHEME=light --entrypoint=/run-core.sh'
         image: '{phan_image}'
