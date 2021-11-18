@@ -10,7 +10,7 @@
     parameters:
         - string:
             name: NUM_THREADS
-            default: 2
+            default: 4
             description: "Number of threads used on the labs instance to compile catalog. Don't use more than four!"
         - string:
             name: GERRIT_CHANGE_NUMBER
