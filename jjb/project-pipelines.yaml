@@ -431,3 +431,14 @@
       # security-api-pipeline-test
       # security-api-pipeline-publish
       - '{name}-pipeline-{pipeline}'
+
+- project:
+    # mediawiki/services/servicelib-node
+    name: servicelib-node
+    pipeline:
+        - spec
+    jobs:
+        # trigger-servicelib-node-services-pipeline-spec
+        - 'trigger-{name}-pipeline-{pipeline}'
+        # servicelib-node-pipeline-spec
+        - '{name}-pipeline-{pipeline}'

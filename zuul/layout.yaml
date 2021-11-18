@@ -1186,6 +1186,10 @@ jobs:
         - '.pipeline/config.yaml'
         - 'revscoring/topic/model-server/.*'
 
+  - name: trigger-servicelib-node-pipeline-spec
+    files:
+        - '.pipeline/spec/blubber.yaml'
+
 project-templates:
 
   - name: debian-glue
@@ -7986,6 +7990,12 @@ projects:
       - trigger-mathoid-pipeline-rehearse
     postmerge:
       - trigger-mathoid-pipeline-publish
+
+  - name: mediawiki/services/servicelib-node
+    test:
+      - trigger-servicelib-node-pipeline-spec
+    gate-and-submit:
+      - trigger-servicelib-node-pipeline-spec
 
   - name: mediawiki/services/texvcinfo
     template:
