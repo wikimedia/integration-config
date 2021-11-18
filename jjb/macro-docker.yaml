@@ -37,8 +37,8 @@
                  image: 'docker-registry.wikimedia.org/buster:latest'
                  options: >-
                    --user=root
-                   --volume "$WORKSPACE":/workspace
                    --entrypoint=/usr/bin/find
+                   --volume "$WORKSPACE":/workspace
                  args: >-
                    "/workspace" -mindepth 1 -delete
               - shell: |
@@ -88,8 +88,8 @@
         image: 'docker-registry.wikimedia.org/buster:latest'
         options: >-
           --user=nobody
-          --volume "$WORKSPACE":/workspace
           --entrypoint=/usr/bin/find
+          --volume "$WORKSPACE":/workspace
         args: >-
           "/workspace/{dir}" -mindepth 1 -delete
 

@@ -219,7 +219,7 @@
         - docker-src-dir
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
-            options: '--volume /srv/git:/srv/git:ro --tmpfs /workspace/db:size=320M'
+            options: '--tmpfs /workspace/db:size=320M --volume /srv/git:/srv/git:ro'
             args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db --git-parallel=8 {quibble_args}'
             logdir: '/workspace/log'
             #srcdir: '/workspace/src'
@@ -245,8 +245,8 @@
                     - docker-run:
                         image: docker-registry.wikimedia.org/buster:latest
                         options: >-
-                            --volume "$(pwd)"/log:/log
                             --entrypoint=/bin/rm
+                            --volume "$(pwd)"/log:/log
                         args: '-fR /log/rawSeleniumVideoGrabs'
 
         - compress-mw-debug-logs
@@ -453,7 +453,7 @@
         - docker-src-dir
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
-            options: '--volume /srv/git:/srv/git:ro --tmpfs /workspace/db:size=320M'
+            options: '--tmpfs /workspace/db:size=320M --volume /srv/git:/srv/git:ro'
             args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --commands "phpunit-patch-coverage check --command \"php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=. tests/phpunit/phpunit.php\" --html /workspace/log/coverage.html"'
             logdir: '/workspace/log'
             #srcdir: '/workspace/src'
@@ -486,7 +486,7 @@
         - docker-src-dir
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.2.0-s1
-            options: '--volume /srv/git:/srv/git:ro --tmpfs /workspace/db:size=320M'
+            options: '--tmpfs /workspace/db:size=320M --volume /srv/git:/srv/git:ro'
             args: '--packages-source vendor --db mysql --db-dir /workspace/db --skip-deps --commands "mediawiki-fresnel-patch"'
             logdir: '/workspace/log'
             #srcdir: '/workspace/src'
@@ -506,8 +506,8 @@
                       - docker-run:
                           image: docker-registry.wikimedia.org/buster:latest
                           options: >-
-                              --volume "$(pwd)"/log:/log
                               --entrypoint=/usr/bin/find
+                              --volume "$(pwd)"/log:/log
                           args: /log -name "*trace.json" -exec gzip {} \+
         - archive-log-allow-empty
         - docker-cleanup
@@ -543,7 +543,7 @@
         - docker-src-dir
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
-            options: '--volume /srv/git:/srv/git:ro --volume "$(pwd)"/cover:/workspace/cover --tmpfs /workspace/db:size=320M'
+            options: '--tmpfs /workspace/db:size=320M --volume /srv/git:/srv/git:ro --volume "$(pwd)"/cover:/workspace/cover'
             args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db {quibble_args}'
             logdir: '/workspace/log'
             #srcdir: '/workspace/src'
@@ -590,7 +590,7 @@
         - docker-src-dir
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
-            options: '--volume /srv/git:/srv/git:ro --volume "$(pwd)"/cover:/workspace/cover --tmpfs /workspace/db:size=320M'
+            options: '--tmpfs /workspace/db:size=320M --volume /srv/git:/srv/git:ro --volume "$(pwd)"/cover:/workspace/cover'
             args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db {quibble_args}'
             logdir: '/workspace/log'
             #srcdir: '/workspace/src'
@@ -684,7 +684,7 @@
     - docker-castor-load
     - docker-run-with-log-cache-src:
         image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.2.0-s1
-        options: '-e CODEHEALTH=1 --volume "$(pwd)"/cover:/workspace/cover --volume /srv/git:/srv/git:ro --tmpfs /workspace/db:size=320M'
+        options: '-e CODEHEALTH=1 --tmpfs /workspace/db:size=320M --volume "$(pwd)"/cover:/workspace/cover --volume /srv/git:/srv/git:ro'
         args: '--packages-source "{packages-source}" --git-parallel=8 {quibble_args}'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
@@ -820,7 +820,7 @@
         - docker-src-dir
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
-            options: '--volume /srv/git:/srv/git:ro --volume "$(pwd)"/cover:/workspace/cover --tmpfs /workspace/db:size=320M'
+            options: '--tmpfs /workspace/db:size=320M --volume /srv/git:/srv/git:ro --volume "$(pwd)"/cover:/workspace/cover'
             args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db {quibble_args}'
             logdir: '/workspace/log'
             #srcdir: '/workspace/src'
