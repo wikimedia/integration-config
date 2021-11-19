@@ -121,10 +121,10 @@
       - docker-run-with-log-cache-src:
           image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.2.0-s3'
           options: >-
-              -v /srv/git:/srv/git:ro
               --workdir=/src
               --tmpfs /workspace/db:size=320M
               --entrypoint=/src/utils/ci-fullrun.sh
+              --volume /srv/git:/srv/git:ro
           args: --color --db-dir /workspace/db
           logdir: '/workspace/log'
     publishers:
@@ -145,10 +145,10 @@
       - docker-run-with-log-cache-src:
           image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72-apache:1.2.0-s3'
           options: >-
-              -v /srv/git:/srv/git:ro
               --workdir=/src
               --tmpfs /workspace/db:size=320M
               --entrypoint=bash
+              --volume /srv/git:/srv/git:ro
           args: >-
               -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
               && /src/utils/ci-fullrun.sh
