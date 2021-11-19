@@ -146,12 +146,12 @@
     builders:
      - docker-run: !j2-yaml: >-
          options:
-           --volume "$(pwd)"/src:/src
-           --volume "$(pwd)"/cache:/cache
-           --volume /srv/git:/srv/git:ro
            {%- if submodules is defined and not submodules %}
            --env GIT_NO_SUBMODULES=yes
            {%- endif %}
+           --volume "$(pwd)"/src:/src
+           --volume "$(pwd)"/cache:/cache
+           --volume /srv/git:/srv/git:ro
          image: 'docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.4.2-s1'
 
 - builder:
