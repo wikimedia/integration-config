@@ -609,7 +609,7 @@ phan_dependencies = {
     'UploadWizard': ['EventLogging'],
     'VoteNY': ['SocialProfile'],
     'WebAuthn': ['OATHAuth'],
-    'WikiEditor': ['EventLogging', 'WikimediaEvents'],
+    'WikiEditor': ['ConfirmEdit', 'EventLogging', 'WikimediaEvents'],
     'WikiLove': ['Flow', 'LiquidThreads'],
     'WikiForum': ['ConfirmEdit', 'SocialProfile'],
     'WikibaseCirrusSearch': ['CirrusSearch', 'Wikibase'],
