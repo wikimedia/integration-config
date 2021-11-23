@@ -1,3 +1,10 @@
+quibble-buster-php74 (1.2.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image php74:
+   Install the php-yaml extension
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 29 Nov 2021 14:45:57 -0500
+
 quibble-buster-php74 (1.2.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-buster:

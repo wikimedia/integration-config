@@ -1,3 +1,9 @@
+php73 (0.2.7) wikimedia; urgency=high
+
+   Install the php-yaml extension
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 29 Nov 2021 14:45:43 -0500
+
 php73 (0.2.6-s4) wikimedia; urgency=high
 
    Refresh for update in parent image ci-stretch:

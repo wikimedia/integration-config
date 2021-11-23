@@ -1,3 +1,10 @@
+composer-php80 (0.0.2-s7) wikimedia; urgency=high
+
+   Refresh for update in parent image php80:
+   Install the php-yaml extension
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 29 Nov 2021 14:46:15 -0500
+
 composer-php80 (0.0.2-s6) wikimedia; urgency=high
 
    Refresh for update in parent image php80:

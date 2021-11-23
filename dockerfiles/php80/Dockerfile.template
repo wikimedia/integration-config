@@ -17,6 +17,7 @@ php8.0-redis
 php8.0-sqlite3
 php8.0-xdebug
 php8.0-xml
+php8.0-yaml
 zip
 unzip
 {%- endset -%}

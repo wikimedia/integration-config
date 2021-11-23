@@ -1,3 +1,10 @@
+composer-package-php72 (0.4.0-s7) wikimedia; urgency=high
+
+   Refresh for update in parent image php72:
+   Install the php-yaml extension
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 29 Nov 2021 14:45:26 -0500
+
 composer-package-php72 (0.4.0-s6) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

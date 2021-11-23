@@ -20,6 +20,7 @@ php-redis
 php7.2-sqlite3
 php-xdebug
 php7.2-xml
+php-yaml
 zip
 unzip
 {%- endset -%}

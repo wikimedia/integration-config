@@ -1,3 +1,10 @@
+mediawiki-phan-php74 (0.2.0-s6) wikimedia; urgency=high
+
+   Refresh for update in parent image php74:
+   Install the php-yaml extension
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 29 Nov 2021 14:45:57 -0500
+
 mediawiki-phan-php74 (0.2.0-s5) wikimedia; urgency=high
 
    Enable php7.4-imagick now it's available.
