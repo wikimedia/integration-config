@@ -1189,6 +1189,8 @@ jobs:
   - name: trigger-servicelib-node-pipeline-spec
     files:
         - '.pipeline/spec/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'spec/.*'
 
 project-templates:
 
