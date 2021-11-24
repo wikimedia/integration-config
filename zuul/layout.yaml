@@ -8843,6 +8843,10 @@ projects:
     template:
       - name: tox-docker
 
+  - name: labs/tools/rust-hello-world
+    template:
+      - name: rust-test
+
   - name: labs/tools/scotus-recordings
     template:
       - name: tox-docker
