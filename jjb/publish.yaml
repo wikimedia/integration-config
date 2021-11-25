@@ -1,5 +1,5 @@
 # Sync files from a Jenkins agent in Cloud Services on the contint2001 agent which is
-# also the CI master. Then rsync to doc1001.eqiad.wmnet, which hosts
+# also the CI master. Then rsync to doc.discovery.wmnet, which hosts
 # https://doc.wikimedia.org/ .
 #
 # Parameters:
@@ -11,7 +11,7 @@
     name: doc-publish
     builders:
      - trigger-builds:
-       - project: publish-to-doc1001
+       - project: publish-to-doc
          block: true
          current-parameters: true  # Pass Zuul parameters
          predefined-parameters: |
@@ -55,7 +55,7 @@
          docdest: 'cover-skins/{dest}'
 
 - job:
-    name: publish-to-doc1001
+    name: publish-to-doc
     node: contint2001
     concurrent: false
     properties:
@@ -119,7 +119,7 @@
             # We do not --archive which preserves date, time or permissions.
             # The base directory (such as ./cover) might have been populated by
             # puppet and thus owned by a different user than rsyncd.
-            rsync --recursive --relative "${WMF_CI_PUB_DEST}" rsync://doc1001.eqiad.wmnet/doc/
+            rsync --recursive --relative "${WMF_CI_PUB_DEST}" rsync://doc.discovery.wmnet/doc/
          )
          rm -R "$tmpdir"
 
@@ -130,6 +130,6 @@
             --compress \
             --delete-after \
             . \
-            "rsync://doc1001.eqiad.wmnet/doc/${WMF_CI_PUB_DEST}"
+            "rsync://doc.discovery.wmnet/doc/${WMF_CI_PUB_DEST}"
          )
          echo -e "\nPublished at ${DOC_URL}\nDone."
