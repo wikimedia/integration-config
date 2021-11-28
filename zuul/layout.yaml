@@ -2207,6 +2207,12 @@ projects:
     gate-and-submit:
       - shellcheck
 
+  - name: cloud/toolforge/delete-crashing-pods
+    test:
+      - trigger-toolforge-delete-crashing-pods-pipeline-test
+    gate-and-submit:
+      - trigger-toolforge-delete-crashing-pods-pipeline-test
+
   - name: cloud/toolforge/grid-webservices
     template:
       - name: tox-docker
