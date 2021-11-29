@@ -60,11 +60,11 @@ pipelines:
           email: &email_allowlist
            - .*?@wikimedia\.(org|de|se)$
            - .*?@hallowelt\.(biz|com)$
+           - .*?@jedipedia\.fi$ # Jedipedia, the Finnish-language Star Wars encyclopedia, hosted by ShoutWiki
            - .*?@microsoft\.com$
            - .*?@shoutwiki\.com$
            - .*?@speedandfunction\.com$ # Speed & Function, contractors for multiple Foundation teams
            - .*?@thisdot\.co$ # This Dot, contractors for multiple Foundation teams
-           - .*?@jedipedia\.fi$ # Jedipedia, the Finnish-language Star Wars encyclopedia, hosted by ShoutWiki
            - .*?@uncyclomedia\.co$
 
           # WMF staff & contractors:
@@ -73,6 +73,7 @@ pipelines:
            - ^andrew\.green\.df@gmail\.com$ # Andrew Green; Fundraising Technology Team
            - ^ayg@aryeh\.name$ # Aryeh Gregor (simetrical); Core Platform Team
            - ^david@troi\.org$ # David Chan; Editing Team
+           - ^ejegg@ejegg\.com$ # Elliott Eggleston; Fundraising Tech Team
            - ^git@samsmith\.io$ # Sam Smith; Reading Web Team
            - ^hashar@free\.fr$ # Antoine Musso; Release Engineering Team
            - ^kartik\.mistry@gmail\.com$ # Kartik Mistry; Language Engineering Team
@@ -81,7 +82,6 @@ pipelines:
            - ^marielle\.volz@gmail\.com$ # Marielle Volz; Editing Team
            - ^moriel@gmail\.com$ # Moriel Schottlender; Community Tech Team
            - ^mtraceur@member\.fsf\.org$ # Mark Holmquist; Multimedia Team
-           - ^ejegg@ejegg\.com$ # Elliott Eggleston; Fundraising Tech Team
            - ^musikanimal@gmail\.com$ # Leon Ziemba; Community Tech Team
            - ^niharikakohli29@gmail\.com$ # Niharika Kohli; Anti-Harrassment Tools Team
            - ^niklas\.laxstrom@gmail\.com$ # Niklas Laxström (nikerabbit); Language Engineering Team
@@ -96,39 +96,46 @@ pipelines:
            - ^aude\.wiki@gmail\.com$
            - ^christoph\.neuroth@gmail\.com$
            - ^hoo@online\.de$
-           - ^mail@lucaswerkmeister\.de$
            - ^mail@adamham\.dev$ # Adam Hammad; WMDE Contractor
+           - ^mail@lucaswerkmeister\.de$
            - ^marta\.jansone99@gmail\.com$ # Marta; Student working on new PropertySuggester (2021)
            - ^michaelcochez@gmail\.com$ # Michael Cochez; Working on new PropertySuggester (2021)
 
           # Trusted users:
+           - ^01tonythomas@gmail\.com$
            - ^0freerunning@gmail\.com$ # Jayprakash12345
            - ^1010delta1010@gmail\.com$ # Universal Omega
            - ^1994constant@gmail\.com$ # QEDK
+           - ^4nn1l2\.wiki@gmail\.com$ # 4nn1l2
            - ^6020peaks@gmail\.com$ # Hackathon 2017
+           - ^CommodoreFabianus@gmx\.de$ # XZise, Pywikibot maintainer
+           - ^Funcer@outlook\.com$ # Func
+           - ^JJMC89\.Wikimedia@gmail\.com$ # JJMC89
+           - ^Megadev44s\.mail@gmail\.com$ # Zppix
+           - ^Simon\.Legner@gmail\.com$
+           - ^[Tt]ulsibhagat50@gmail\.com$ # Tulsi Bhagat
+           - ^[lL]adsgroup@gmail\.com$
            - ^aarcos\.wiki@gmail\.com$
            - ^abhisandy47@gmail\.com$ # Sandeep Kumar Patel
            - ^adamr_carter@btinternet\.com$ # UltrasonicNXT
            - ^admin@glados\.cc$ # Unicodesnowman
-           - ^sarhan\.alaa@protonmail\.com$ # Alaa Sarhan
+           - ^agboreugene@gmail\.com$
            - ^alangiderick@gmail\.com$ # D3r1ck01, will remove soon
-           - ^alexander\.vorwerk@stud\.uni-goettingen\.de$ # Zabe
            - ^alex\.mashin@gmail\.com$ # Alex Mashin
+           - ^alexander\.vorwerk@stud\.uni-goettingen\.de$ # Zabe
            - ^alistair31494322@gmail\.com$ # Alistair3149
            - ^alphisation@gmail\.com$ # Nardog
            - ^ammarpad@yahoo\.com$
            - ^andre\.greiner-petter@t-online\.de$ # AndreG-P
+           - ^anirudh24seven@gmail\.com$ # Anirudh S
            - ^anjali041kumari@gmail\.com$ # Anjali_Kumari_41
            - ^anomie\.wikipedia@gmail\.com$ # Brad Jorsh (anomie)
-           - ^any\.site\.n\.site@gmail\.com$ # Anysite
-           - ^arthurpsmith@gmail\.com$
-           - ^lorenzi\.arthur@gmail\.com$
-           - ^agboreugene@gmail\.com$
-           - ^cblair91@gmail\.com$ # Cblair91 -- mw/ext/ImportArticles
-           - ^anirudh24seven@gmail\.com$ # Anirudh S
            - ^anticompositenumber\+wmcs@gmail\.com$ # AntiCompositeNumber
            - ^antonin@delpeuch\.eu$ # Pintoch
+           - ^any\.site\.n\.site@gmail\.com$ # Anysite
+           - ^arthurpsmith@gmail\.com$
            - ^asthana\.sumit23@gmail\.com$ # Sumit
+           - ^at\.light@live\.com\.au$ # This, that and the other
            - ^base-w@yandex\.(ru|ua)$ # Base
            - ^bawolff\+wn@gmail\.com$ # Brian Wolff
            - ^beauleetienne0@gmail\.com$ # Ebe123
@@ -136,13 +143,13 @@ pipelines:
            - ^benestar\.wikimedia@gmail\.com$
            - ^bharatkhatri351@gmail\.com$ # Bharatkhatri
            - ^bryan\.tongminh@gmail\.com$
+           - ^cblair91@gmail\.com$ # Cblair91 -- mw/ext/ImportArticles
            - ^cenarium\.sysop@gmail\.com$ # Cenarium
            - ^chicocvenancio@gmail\.com$ # Chico Venancio
            - ^chihonglee777@gmail\.com$
            - ^christian@quelltextlich\.at$
            - ^cindom@gmail\.com$
            - ^codereview@emsenhuber\.ch$
-           - ^CommodoreFabianus@gmx\.de$ # XZise, Pywikibot maintainer
            - ^curtis@mashedkeyboard\.me$ # Naypta, extension-CatTalk creator/maintainer
            - ^d_entous@yahoo\.com$
            - ^daimona\.wiki@gmail\.com$ # Daimona Eaytoy
@@ -166,7 +173,6 @@ pipelines:
            - ^fomafix@googlemail\.com$
            - ^fossati@spaziodati\.eu$ # Hjfocs
            - ^framawiki@tools\.wmflabs\.org$
-           - ^Funcer@outlook\.com$ # Func
            - ^geofbot@gmail\.com$
            - ^geoffreytrang@gmail\.com$
            - ^gifti@tools\.wmflabs\.org$
@@ -181,16 +187,16 @@ pipelines:
            - ^huangxuanyuxiplus@gmail\.com$ # A2093064
            - ^huji\.huji@gmail\.com$
            - ^hydriz@jorked\.com$ # Hydriz
+           - ^i\.leturia@elhuyar\.eus$
            - ^igorkim78@gmail\.com$ # Igor Kim
            - ^inductiveload@gmail\.com$ # inductiveload
-           - ^info@gno\.de$ # Xqt, Pywikibot maintainer
-           - ^i\.leturia@elhuyar\.eus$
+           - ^jackmcbarn@gmail\.com$ # Jackmcbarn
+           - ^jamesin\.hongkong\.1@gmail\.com$ # Mwjames
            - ^jamesmhare@gmail\.com$ # James Hare (harej)
            - ^jamesmontalvo3@gmail\.com$ # jamesmontalvo3
-           - ^jamesin\.hongkong\.1@gmail\.com$ # Mwjames
-           - ^jackmcbarn@gmail\.com$ # Jackmcbarn
            - ^jan@berkel\.fr$ # Jberkel
            - ^jan\.wikimedia@zerebecki\.de$ # Jan Zerebecki
+           - ^jaredgblumer@gmail\.com$ # Jared G. Blumer
            - ^jarry1250@gmail\.com$
            - ^jay\.cisa2k@gmail\.com$ # Jay (CIS-A2K)
            - ^jayvdb@gmail\.com$
@@ -200,18 +206,18 @@ pipelines:
            - ^jeroendedauw@gmail\.com$
            - ^jhobbs14@msudenver\.edu$
            - ^jhsoby@gmail\.com$
-           - ^JJMC89\.Wikimedia@gmail\.com$ # JJMC89
            - ^johanna\.m\.mayr@gmail\.com$
            - ^jorgekasa@gmail\.com$
            - ^jp64902@gmail\.com$ # Juan90264
            - ^julien\.inbox\.wiki@gmail\.com$ # JGirault
            - ^juniorsys_wikimedia@outlook\.com$
+           - ^k\.s\.werf@hotmail\.com$
            - ^kaarticsivaraam91196@gmail\.com$
            - ^karsten@hoffmeyer\.info$ # Kghbln
            - ^krenair@gmail\.com$
-           - ^k\.s\.werf@hotmail\.com$
            - ^kumariankita002@gmail\.com$
-           - ^[lL]adsgroup@gmail\.com$
+           - ^l\.verhovskij@gmail\.com$ # Ljonka
+           - ^lacrymarum\.valle@gmail\.com$ # Candalua
            - ^ladsgroup\+gerritbot@gmail\.com$ # Gerrit maintenance bot, see T253439
            - ^lautgesetz@gmail\.com$ # David Kamholz
            - ^lewis@lewiscawte\.me$
@@ -219,11 +225,11 @@ pipelines:
            - ^liangent@gmail\.com$
            - ^lokal\.profil@gmail\.com$
            - ^lorentz0021@gmail\.com$
+           - ^lorenzi\.arthur@gmail\.com$
            - ^luca\.mauri@gmail\.com$ # T281675
            - ^lucie\.kaffee@gmail\.com$
-           - ^luke@faraone\.cc$
            - ^luke081515@web\.de$
-           - ^l\.verhovskij@gmail\.com$ # Ljonka
+           - ^luke@faraone\.cc$
            - ^mah@nichework\.com$
            - ^mail@wikinaut\.de$
            - ^majorjohn1@mail\.com$ # TheSandDoctor
@@ -236,15 +242,14 @@ pipelines:
            - ^martin@urbanec\.cz$ # Urbanecm
            - ^martin\.urbanec@wikimedia\.cz$
            - ^martineznovo@gmail\.com$ # Ciencia Al Poder
-           - ^matanya\.moses@gmail\.com$
            - ^matanya@foss\.co\.il$
+           - ^matanya\.moses@gmail\.com$
            - ^matejsuchanek97@gmail\.com$
            - ^matma\.rex@gmail\.com$
            - ^maurelio@tools\.wmflabs\.org$ # MarcoAurelio
            - ^maxsem\.wiki@gmail\.com$ # Max Seminik
            - ^mbch331\.wikipedia@gmail\.com$ # Mbch331
            - ^mediawiki@kghoffmeyer\.de$ # Kghbln
-           - ^Megadev44s\.mail@gmail\.com$ # Zppix
            - ^misino\.arturo@gmail\.com$ # Artrix
            - ^misterstrad@gmail\.com$ # Mr. Stradivarius
            - ^mjbmri@gmail\.com$
@@ -253,6 +258,7 @@ pipelines:
            - ^morris\.mukau\+wikitech@gmail\.com$ # MtMNC
            - ^mr7060@mail\.com$
            - ^mszabo@wikia-inc\.com$
+           - ^mwalker@khaosdev\.com$ # Matt Walker
            - ^mxn@1ec5\.org$ # Minh Nguyen T139345
            - ^nikitarana360@gmail\.com$ # Nikitrain
            - ^nilesh@nileshc\.com$
@@ -268,6 +274,7 @@ pipelines:
            - ^pleasestand@live\.com$
            - ^pragun06@gmail\.com$
            - ^priyanshuvarshney6@gmail\.com$
+           - ^proci\.wiki@gmail\.com$ # proc
            - ^prodigion@hotmail\.com$
            - ^purodha@blissenbach\.org$
            - ^radman\.siddiki@gmail\.com$ # R4356th
@@ -277,49 +284,45 @@ pipelines:
            - ^rillke@wikipedia\.de$
            - ^robinp\.1273@gmail\.com$
            - ^rubin\.happy@gmail\.com$ # Rubin
+           - ^s7eph4n@protonmail\.com$ # Foxtrott
            - ^sahilgrewalhere2001@outlook\.com$ # Sahilgrewalhere
-           - ^yashagrawal9265@gmail\.com$ #Yash9265
-           - ^saper@saper\.info$
            - ^sam@theresnotime\.co\.uk$ # samtar
-           - ^se4598@gmx\.de$
-           - ^seb35@seb35\.fr$
-           - ^samanthanguyen1116@gmail\.com$ # SamanthaNguyen
            - ^sam\.t\.nguyenn@gmail\.com$ # SamanthaNguyen
+           - ^samanthanguyen1116@gmail\.com$ # SamanthaNguyen
            - ^samrhilson@gmail\.com$ # ValeryanM
            - ^samuelguebo@gmail\.com$ # awmd-stats maintainer
+           - ^saper@saper\.info$
+           - ^sarhan\.alaa@protonmail\.com$ # Alaa Sarhan
            - ^schenonef@gmail\.com$  # Sophivorus
+           - ^se4598@gmx\.de$
+           - ^seb35@seb35\.fr$
            - ^shahyar@gmail\.com$
            - ^shirayuking@gmail\.com$ # Shirayuki
-           - ^sm-git@riseup\.net$ # Shreyas Minocha / shreyasminocha
            - ^siddharthvp@gmail\.com$ # SD0001
            - ^siebrand@kitano\.nl$
-           - ^Simon\.Legner@gmail\.com$
            - ^sjoerddebruin@me\.com$
            - ^skizzerz@skizzerz\.net$
+           - ^sm-git@riseup\.net$ # Shreyas Minocha / shreyasminocha
            - ^sorawee\.pwase@gmail\.com$ # Nullzero
            - ^southparkfan223@hotmail\.com$
            - ^strayblues@gmail\.com$ # Hagar Shilo
            - ^strigiwm@gmail\.com$ # MarcoAurelio
            - ^sucheta\.ghoshal@gmail\.com$
-           - ^s7eph4n@protonmail\.com$ # Foxtrott
            - ^tacsipacsi@jnet\.hu$
            - ^tasneem\.lo\.31@gmail\.com$
-           - ^thomasmulhall410@yahoo\.com$ # Paladox T114528
-           - ^thomaspt@hotmail\.fr$
-           - ^three060@gmail\.com$ # Lindsay Wardell
-           - ^tks4fish@gmail\.com$
-           - ^[Tt]ulsibhagat50@gmail\.com$ # Tulsi Bhagat
-           - ^at\.light@live\.com\.au$ # This, that and the other
            - ^terppa05@gmail\.com$ # pjht
            - ^terracodes@outlook\.com$ # TerraCodes
            - ^terracodes@tools\.wmflabs\.org$ # Secondary mail of user TerraCodes
-           - ^tomasz@twkozlowski\.com$
-           - ^trevorparscal@gmail\.com$
-           - ^01tonythomas@gmail\.com$
+           - ^thomasmulhall410@yahoo\.com$ # Paladox T114528
+           - ^thomaspt@hotmail\.fr$
+           - ^three060@gmail\.com$ # Lindsay Wardell
            - ^tim@tim-landscheidt\.de$
            - ^tinajohnson\.1234@gmail\.com$
+           - ^tks4fish@gmail\.com$
+           - ^tomasz@twkozlowski\.com$
            - ^tools\.slf@tools\.wmflabs\.org$ # SLF Bot script for extension-SecureLinkFixer
            - ^tosfos@yahoo\.com$ # tosfos
+           - ^trevorparscal@gmail\.com$
            - ^tur\.neslihan@gmail\.com$ # Nes / Neslihan
            - ^tylerromeo@gmail\.com$
            - ^umherirrender_de\.wp@web\.de$
@@ -335,38 +338,35 @@ pipelines:
            - ^w@mzmcbride\.com$
            - ^washuu@gmail\.com$ # Alexia
            - ^wctaiwan@gmail\.com$
+           - ^webmelos@gmail\.com$ # Melos
            - ^wiki@physikerwelt\.de$
            - ^wiki@revi\.dev$ # revi
            - ^wikimedia\.org@eddie-sh\.de$ # EddieGP
+           - ^wikitech\.rxy@rxy\.jp$ # Rxy
            - ^wugapodes@aol\.com$
            - ^xsavitar\.wiki@aol\.com$ # D3r1ck01
+           - ^yagizhan49@protonmail\.com$ # Evrifaessa
            - ^yaron57@gmail\.com$
            - ^yash\.girdhar@gmail\.com$ # yash / yashasvi
+           - ^yashagrawal9265@gmail\.com$ #Yash9265
            - ^yuriastrakhan@gmail\.com$
            - ^yuvipanda@gmail\.com$
            - ^zhorishna@gmail\.com$ # Isarra
            - ^zhuyifei1999@gmail\.com$
            - ^zivkovica006@gmail\.com$ # Aca
            - ^zorandori4444@gmail\.com$ # Zoranzoki21
-           - ^mwalker@khaosdev\.com$ # Matt Walker
-           - ^webmelos@gmail\.com$ # Melos
-           - ^wikitech\.rxy@rxy\.jp$ # Rxy
-           - ^lacrymarum\.valle@gmail\.com$ # Candalua
-           - ^jaredgblumer@gmail\.com$ # Jared G. Blumer
-           - ^proci\.wiki@gmail\.com$ # proc
-           - ^yagizhan49@protonmail\.com$ # Evrifaessa
-           - ^4nn1l2\.wiki@gmail\.com$ # 4nn1l2
 
            # Pywikibot related
            - ^alexsh@mail2000\.com\.tw$  # Alex S.H. Lin
            - ^atagar1@gmail\.com$  # atagar
            - ^dalba\.wiki@gmail\.com$
-           - ^loic@dachary\.org$
            - ^dr\.trigon@surfeu\.ch$  # DrTrigon
            - ^happy5214@gmail\.com$
+           - ^info@gno\.de$ # Xqt, Pywikibot maintainer
+           - ^loic@dachary\.org$
            - ^maarten@mdammers\.nl$  # Multichill
-           - ^malafaya@clix\.pt$
            - ^mahveotm@gmail\.com$
+           - ^malafaya@clix\.pt$
            - ^meno25mail@gmail\.com$  # Meno25
            - ^mpaa\.wiki@gmail\.com$
            - ^nullzero\.free@gmail\.com$
@@ -383,30 +383,29 @@ pipelines:
            - ^maria\.pacana@gmail\.com$
 
           # GSoC students!
-           - ^hardikjuneja\.hj@gmail\.com$
-           - ^xietaoecho@gmail\.com$ # Lethexie
-           - ^hbhyrava@gmail\.com$ # Darthbhyrava
+           - ^aekhatean@gmail\.com$ # Adham Khatean
+           - ^ajupazhamayil@gmail\.com$ # Privacybatm
            - ^amrit\.sreekumar@gmail\.com$ # amritsreekumar
+           - ^hardikjuneja\.hj@gmail\.com$
+           - ^hbhyrava@gmail\.com$ # Darthbhyrava
+           - ^hk\.ontheweb@gmail\.com$ # H.krishna123
            - ^prssud@gmail\.com$ # Prssanna
            - ^shivanshbindal603@gmail\.com$ # Shivanshbindal9
-           - ^ajupazhamayil@gmail\.com$ # Privacybatm
-           - ^sohom\.datta@learner\.manipal\.edu$ # User:Sohom_data
-           - ^aekhatean@gmail\.com$ # Adham Khatean
            - ^soham\.parekh1998@gmail\.com$ # Soham Parekh
+           - ^sohom\.datta@learner\.manipal\.edu$ # User:Sohom_data
            - ^vidhimody6@gmail\.com$ # Vidhi Mody
-           - ^hk\.ontheweb@gmail\.com$ # H.krishna123
+           - ^xietaoecho@gmail\.com$ # Lethexie
 
           # GCI students!
           # Note that Google rules strongly advise against giving personal information such as your name.
+           - ^CharmindYT@gmail\.com$ # Flutterish
            - ^arcaynnnnnn@gmail\.com$ # arcayn/arcaynia
            - ^bennixerus@gmail\.com$ # IAmNetx
            - ^bmp2558@gmail\.com$ # Georggi
            - ^brandfowl@gmail\.com$ # BrandonXLF
-           - ^CharmindYT@gmail\.com$ # Flutterish
            - ^crazy4sb@gmail\.com$ # unicornisaurous
            - ^divad\.nnamtdeis@gmail\.com$ # Divadsn
            - ^eflyjason@gmail\.com$ # Yifei He
-           - ^rj23@protonmail\.com$ # Filip
            - ^gianiskido@gmail\.com$ # IoannisKydonis
            - ^i@ananayarora\.com$
            - ^juliusalphonso\.09@gmail\.com$ # JadeMaveric
@@ -414,15 +413,18 @@ pipelines:
            - ^kohpirong@gmail\.com$ # Pipix
            - ^krzysiek\.witucki55@gmail\.com$ # n3rsti
            - ^luk\.bukkit@gmail\.com$ # LukBukkit
+           - ^manuelalcarazzam@gmail\.com$ # alcarazzam
            - ^mdabusiyam009@gmail\.com$ # TechneSiyam
            - ^mhutti1@gmail\.com$
            - ^minhducsun2002@gmail\.com$ # minhducsun2002
            - ^nathanklumpenaar10@outlook\.com$
            - ^nguyen\.jeremyt@gmail\.com$ # JeremyNguyen
+           - ^nicholasgregory@live\.co\.uk$ # NicholasG04
            - ^nikitav30@gmail\.com$ # Phantom42
            - ^nils\.andre\.chang@gmail\.com$ #zD/Zd1LqRH
            - ^pranavmk98@gmail\.com$ # PranavK
            - ^rafidteam@gmail\.com$ # Rafidaslam
+           - ^rj23@protonmail\.com$ # Filip
            - ^rj23@protonmail\.com$ # Filip / rlot
            - ^safan25641@gmail\.com$ # Safan41
            - ^samohasmoha07@gmail\.com$ # Mogmog123
@@ -431,25 +433,23 @@ pipelines:
            - ^takidelfin@gmail\.com$ # takidelfin
            - ^terppa05@gmail\.com$ # pjht
            - ^victorbarbu08@gmail\.com$ # Victorbarbu
-           - ^wikimedia@bjorn\.ml$ # Bjornskjald
            - ^w\.albert221@gmail\.com$ # Albert221
-           - ^manuelalcarazzam@gmail\.com$ # alcarazzam
-           - ^nicholasgregory@live\.co\.uk$ # NicholasG04
+           - ^wikimedia@bjorn\.ml$ # Bjornskjald
            - ^wikimedia@ptrcnull\.me$ # ptrcnull
            - ^wikimedia@retrocraft\.ca$ # RetroCraft
 
           # Outreachy interns/applicants
+           - ^abbasi\.daniyal98@gmail\.com$ # Abbasidaniyal (Round 20)
+           - ^clerryha@gmail\.com$ # Harriet Ayugi (Round 21)
            - ^elaarad@gmail\.com$ # Foxy brown
-           - ^smarita\.sharma2015@vit\.ac\.in$
            - ^gneha21@yahoo\.in$
+           - ^nj4710@gmail\.com$  # Neha Jha (Round 15)
+           - ^osamaahmedtahir17@gmail\.com$ # @Osamaahmed17 Osama Ahmed Tahir (Round 23)
            - ^samikshya\.chand\.ece15@iitbhu\.ac\.in$
+           - ^smarita\.sharma2015@vit\.ac\.in$
            - ^tekenoella94@gmail\.com$
            - ^thinkcolorful@thinkcolorful\.org$
            - ^vinithacse@gmail\.com$ # Groovier1
-           - ^nj4710@gmail\.com$  # Neha Jha (Round 15)
-           - ^abbasi\.daniyal98@gmail\.com$ # Abbasidaniyal (Round 20)
-           - ^clerryha@gmail\.com$ # Harriet Ayugi (Round 21)
-           - ^osamaahmedtahir17@gmail\.com$ # @Osamaahmed17 Osama Ahmed Tahir (Round 23)
 
           # Hackathon participants
            - ^edlira\.dushku@gmail\.com$
