@@ -381,6 +381,7 @@ pipelines:
            - ^wikimedia@retrocraft\.ca$ # RetroCraft, former GCI student
            - ^wikimedia\.org@eddie-sh\.de$ # EddieGP
            - ^wikitech\.rxy@rxy\.jp$ # Rxy
+           - ^winston21\.sung@gmail\.com$ # Winston Sung from Fandom ZH community
            - ^wugapodes@aol\.com$
            - ^xsavitar\.wiki@aol\.com$ # D3r1ck01
            - ^yagizhan49@protonmail\.com$ # Evrifaessa
