@@ -1183,6 +1183,18 @@ jobs:
         - '.pipeline/config.yaml'
         - 'revscoring/topic/model-server/.*'
 
+  - name: trigger-inference-services-pipeline-outlink
+    files:
+        - '.pipeline/outlink/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'outlink-topic-model/model-server/.*'
+
+  - name: trigger-inference-services-pipeline-outlink-transformer
+    files:
+        - '.pipeline/outlink/transformer.yaml'
+        - '.pipeline/config.yaml'
+        - 'outlink-topic-model/transformer/.*'
+
   - name: trigger-servicelib-node-pipeline-spec
     files:
         - '.pipeline/spec/blubber.yaml'
@@ -2252,12 +2264,16 @@ projects:
       - trigger-inference-services-pipeline-articlequality-transformer
       - trigger-inference-services-pipeline-draftquality
       - trigger-inference-services-pipeline-topic
+      - trigger-inference-services-pipeline-outlink
+      - trigger-inference-services-pipeline-outlink-transformer
     gate-and-submit:
       - trigger-inference-services-pipeline-editquality
       - trigger-inference-services-pipeline-articlequality
       - trigger-inference-services-pipeline-articlequality-transformer
       - trigger-inference-services-pipeline-draftquality
       - trigger-inference-services-pipeline-topic
+      - trigger-inference-services-pipeline-outlink
+      - trigger-inference-services-pipeline-outlink-transformer
 
   - name: integration/config
     test:

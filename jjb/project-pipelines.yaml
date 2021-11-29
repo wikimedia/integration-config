@@ -383,18 +383,24 @@
         - articlequality-transformer
         - draftquality
         - topic
+        - outlink
+        - outlink-transformer
     jobs:
         # trigger-inference-services-pipeline-editquality
         # trigger-inference-services-pipeline-articlequality
         # trigger-inference-services-pipeline-articlequality-transformer
         # trigger-inference-services-pipeline-draftquality
         # trigger-inference-services-pipeline-topic
+        # trigger-inference-services-pipeline-outlink
+        # trigger-inference-services-pipeline-outlink-transformer
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-editquality
         # inference-services-pipeline-articlequality
         # inference-services-pipeline-articlequality-transformer
         # inference-services-pipeline-draftquality
         # inference-services-pipeline-topic
+        # inference-services-pipeline-outlink
+        # inference-services-pipeline-outlink-transformer
         - '{name}-pipeline-{pipeline}'
 
 - project:
