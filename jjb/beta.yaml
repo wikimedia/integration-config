@@ -64,7 +64,7 @@
 
           git clone https://gerrit.wikimedia.org/r/"$ZUUL_PROJECT" source
           cd source
-          
+
           git fetch "$ZUUL_URL"/"$ZUUL_PROJECT" "+$ZUUL_REF:$ZUUL_REF"
           git -c advice.detachedHead=false checkout FETCH_HEAD
 
@@ -136,7 +136,7 @@
     name: beta-publish-deb
     defaults: beta
     description: |
-      Publishes a scap deb (from an upstream build) into the aptly repo(s) on deployment-deploy01.
+      Publishes a scap deb (from an upstream build) into the aptly repo(s) on deployment-deploy03.
     node: BetaClusterBastion
     builders:
       - copyartifact:
@@ -213,7 +213,7 @@
     defaults: beta
     description: |
       Updates the operations/mediawiki-config.git checkout in
-      /srv/mediawiki-staging on deployment-deploy01.  This job is triggered
+      /srv/mediawiki-staging on deployment-deploy03.  This job is triggered
       after a commit is merged into operations/mediawiki-config.
     node: BetaClusterBastion
 
@@ -253,7 +253,7 @@
     description: |
       This job runs automatically every ten minutes and updates
       mediawiki core, extensions, skins, etc from master in
-      /srv/mediawiki-staging/php-master on deployment-deploy01.  Then
+      /srv/mediawiki-staging/php-master on deployment-deploy03.  Then
       it triggers the beta-scap-sync-world job to cause "scap sync-world" to
       run.
     node: BetaClusterBastion
@@ -290,7 +290,7 @@
     name: beta-scap-sync-world
     defaults: beta
     description: |
-      Runs "/usr/bin/scap sync-world" as jenkins-deploy on deployment-deploy01
+      Runs "/usr/bin/scap sync-world" as jenkins-deploy on deployment-deploy03
     node: BetaClusterBastion
 
     # Do not run concurrently with upstream jobs
