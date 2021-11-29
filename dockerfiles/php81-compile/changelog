@@ -1,0 +1,5 @@
+php81-compile (0.0.1) wikimedia; urgency=medium
+
+  * Initial fork from php81-compile.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 29 Nov 2021 14:66:15 -0500

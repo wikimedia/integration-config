@@ -1,0 +1,1 @@
+Depends: php81, composer-scratch, php-ast
