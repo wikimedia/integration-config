@@ -1,3 +1,10 @@
+mediawiki-phan-testrun (0.2.0-s10) wikimedia; urgency=high
+
+   Refresh for update in parent image php72:
+   Migrate from stretch to buster
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 30 Nov 2021 15:14:10 -0500
+
 mediawiki-phan-testrun (0.2.0-s9) wikimedia; urgency=high
 
    Refresh for update in parent image php72:

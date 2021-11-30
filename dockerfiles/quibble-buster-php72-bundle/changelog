@@ -1,3 +1,10 @@
+quibble-buster-php72-bundle (1.2.0-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image php72:
+   Migrate from stretch to buster
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 30 Nov 2021 15:14:10 -0500
+
 quibble-buster-php72-bundle (1.2.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image php72:
