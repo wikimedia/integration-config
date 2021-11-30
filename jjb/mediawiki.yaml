@@ -154,6 +154,8 @@
                     image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.0-s7
                 - php80:
                     image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.0-s9
+                - php81:
+                    image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.1
         - '{name}-node12-docker'
 
 # Phan! (T132636)
@@ -200,6 +202,9 @@
         - php80:
             composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s7
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.1-s2
+        - php81:
+            composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.1
 
     jobs:
         - mediawiki-core-{php}-phan-docker
@@ -888,6 +893,7 @@
                 - php73
                 - php74
                 - php80
+                - php81
     builders:
         - trigger-builds:
             - project: 'mediawiki-quibble-${packagessource}-${database}-${php}-docker'
@@ -917,6 +923,8 @@
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.2.0-s2
         - php80:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.2.0-s2
+        - php81:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.2.0
     jobs:
         - quibble-{packages-source}-{database}-{php}-docker
         - quibble-{packages-source}-{database}-{php}-noselenium-docker

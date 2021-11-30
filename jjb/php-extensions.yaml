@@ -39,6 +39,12 @@
       - 'php-compile-{name}-docker':
           image: docker-registry.wikimedia.org/releng/php80-compile:0.0.4-s2
 
+- project:
+    name: php81
+    jobs:
+      - 'php-compile-{name}-docker':
+          image: docker-registry.wikimedia.org/releng/php81-compile:0.0.1
+
 - job:
     name: 'php74-compile-coverage-publish'
     node: Docker

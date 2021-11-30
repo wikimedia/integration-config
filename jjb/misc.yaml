@@ -64,6 +64,8 @@
             docker_image: docker-registry.wikimedia.org/releng/composer-php74:0.2.0-s7
         - php80:
             docker_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s7
+        - php81:
+            docker_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1
     jobs:
         - phpunit-coverage-{php}-docker-publish
 
