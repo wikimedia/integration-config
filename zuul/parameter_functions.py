@@ -342,7 +342,7 @@ dependencies = {
     'GraphViz': ['ImageMap'],
     'GrowthExperiments': ['skins/MinervaNeue', 'PageViewInfo', 'PageImages',
                           'EventLogging', 'Flow', 'MobileFrontend', 'Echo',
-                          'CirrusSearch'],
+                          'CirrusSearch', 'parsoid', 'VisualEditor'],
     'GuidedTour': ['EventLogging'],
     'GWToolset': ['SyntaxHighlight_GeSHi', 'Scribunto', 'TemplateData'],
     'HierarchyBuilder': ['PageForms'],
