@@ -1987,6 +1987,7 @@ project-templates:
       - composer-php74-docker
     experimental:
       - composer-php80-docker
+      - composer-php81-docker
 
   - name: composer-test-php73-or-later
     test:
@@ -1998,6 +1999,8 @@ project-templates:
       - composer-php73-docker
       - composer-php74-docker
       - composer-php80-docker
+    experimental:
+      - composer-php81-docker
 
   - name: composer-test-package-php72-or-later
     test:
@@ -2011,6 +2014,8 @@ project-templates:
       - composer-package-php73-docker
       - composer-package-php74-docker
       - composer-package-php80-docker
+    experimental:
+      - composer-package-php81-docker
 
   - name: php-compile-php72-or-later
     test:
@@ -2026,6 +2031,8 @@ project-templates:
       - php-compile-php80-docker
     postmerge:
       - php74-compile-coverage-publish
+    experimental:
+      - php-compile-php81-docker
 
   - name: node12-docker
     test:
