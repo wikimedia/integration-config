@@ -22,23 +22,14 @@
 
                 Leave blank to have the software select nodes for you (by
                 parsing site.pp and matches that with the node list it had).
-        - choice:
-            name: COMPILER_MODE
-            choices:
-                - change
-                - future
-                - change,future
-            description: |
-                Sets the way the compiler will run
-                <ul>
-                    <li>"change" is the standard way the compiler works</li>
-                    <li>"future" checks if the change compiles with the two</li>
-                      parsers, and if there are differences</li>
-                    <li>"change,future" runs both modes.</li>
-                </ul>
+        - string:
+            name: FAIL_FAST
+            default: ""
+            description: "If set to anything, will stop the compilation when the first failure is found and abort."
+
     builders:
         - shell: |
-            NUM_THREADS="${NUM_THREADS}" MODE="${COMPILER_MODE}" CHANGE="${GERRIT_CHANGE_NUMBER}" NODES="${LIST_OF_NODES}" puppet-compiler
+            FAIL_FAST="${FAIL_FAST}" NUM_THREADS="${NUM_THREADS}" CHANGE="${GERRIT_CHANGE_NUMBER}" NODES="${LIST_OF_NODES}" puppet-compiler
     wrappers:
     - timeout:
         timeout: 180
@@ -55,7 +46,7 @@
         PATCH=$(curl "https://gerrit.wikimedia.org/r/changes/${ZUUL_CHANGE}/revisions/current/patch");
         NODES=$(echo $PATCH | base64 -d | sed -En 's/Hosts: ([^#]+)(\s+#.*)?/\1/p' | paste -s -d ',');
         echo $NODES;
-        NUM_THREADS=4 MODE="change" CHANGE="${ZUUL_CHANGE}" NODES="${NODES}" puppet-compiler
+        NUM_THREADS=4 CHANGE="${ZUUL_CHANGE}" NODES="${NODES}" puppet-compiler
     properties:
     - build-discarder:
         artifact-days-to-keep: -1
