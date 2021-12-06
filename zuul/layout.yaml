@@ -2218,7 +2218,6 @@ project-templates:
       - composer-php72-docker
       - composer-php73-docker
       - composer-php74-docker
-    experimental:
       - composer-php80-docker
       - composer-php81-docker
 
@@ -2227,12 +2226,11 @@ project-templates:
       - composer-php73-docker
     php:
       - composer-php74-docker
-      - composer-php80-docker
+      - composer-php81-docker
     gate-and-submit:
       - composer-php73-docker
       - composer-php74-docker
       - composer-php80-docker
-    experimental:
       - composer-php81-docker
 
   - name: composer-test-package-php72-or-later
@@ -2242,12 +2240,12 @@ project-templates:
       - composer-package-php73-docker
       - composer-package-php74-docker
       - composer-package-php80-docker
+      - composer-package-php81-docker
     gate-and-submit:
       - composer-package-php72-docker
       - composer-package-php73-docker
       - composer-package-php74-docker
       - composer-package-php80-docker
-    experimental:
       - composer-package-php81-docker
 
   - name: php-compile-php72-or-later
@@ -2257,15 +2255,15 @@ project-templates:
       - php-compile-php73-docker
       - php-compile-php74-docker
       - php-compile-php80-docker
+      - php-compile-php81-docker
     gate-and-submit:
       - php-compile-php72-docker
       - php-compile-php73-docker
       - php-compile-php74-docker
       - php-compile-php80-docker
+      - php-compile-php81-docker
     postmerge:
       - php74-compile-coverage-publish
-    experimental:
-      - php-compile-php81-docker
 
   # Legacy node12 job only for use in Services which are still running that.
   - name: node12-docker
