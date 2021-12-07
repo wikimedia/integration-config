@@ -4633,6 +4633,13 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/SecurityApi
+    template:
+      # Not yet in production, but headed there. -- JDF 2021-12-08
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+
   - name: mediawiki/extensions/ShortUrl
     template:
       - name: in-wikimedia-production
