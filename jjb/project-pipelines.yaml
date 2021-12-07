@@ -205,6 +205,15 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: wikimedia-developer-portal
+    pipeline:
+      - test
+      - publish
+    jobs:
+      - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: wikimedia-toolhub
     pipeline:
       - test

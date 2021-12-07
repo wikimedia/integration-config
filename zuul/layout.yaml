@@ -9525,6 +9525,17 @@ projects:
     template:
       - name: node12-docker
 
+  - name: wikimedia/developer-portal
+    test:
+      - commit-message-validator
+      - trigger-wikimedia-developer-portal-pipeline-test
+    gate-and-submit:
+      - trigger-wikimedia-developer-portal-pipeline-test
+    postmerge:
+      - trigger-wikimedia-developer-portal-pipeline-publish
+    publish:
+      - trigger-wikimedia-developer-portal-pipeline-publish
+
   - name: wikimedia/discovery/discovery-parent-pom
     test:
       - discovery-parent-pom-maven-java8-docker
