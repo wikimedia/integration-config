@@ -348,6 +348,7 @@ dependencies = {
     'HierarchyBuilder': ['PageForms'],
     'ImageMetrics': ['EventLogging'],
     'ImageRating': ['VoteNY'],
+    'InputBox': ['parsoid'],
     'Jade': ['AbuseFilter', 'SpamBlacklist'],
     'JsonConfig': ['Scribunto', 'Kartographer'],
     'Kartographer': ['JsonConfig', 'ParserFunctions', 'VisualEditor',
