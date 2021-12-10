@@ -5604,6 +5604,12 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/CampaignEvents
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
   - name: mediawiki/extensions/Cargo
     template:
       - name: extension-quibble
