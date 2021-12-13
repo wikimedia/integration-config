@@ -3619,6 +3619,10 @@ projects:
     template:
       - name: tox-docker
 
+  - name: operations/software/wmfdb
+    template:
+      - name: tox-docker
+
   - name: operations/software/bernard
     template:
       - name: tox-docker
