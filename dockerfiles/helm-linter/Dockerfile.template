@@ -7,11 +7,9 @@ ENV HELM_HOME=/tmp/helm \
 
 USER root
 
-RUN {{ "helm helm3 rake kubeyaml envoyproxy helmfile helm-diff ruby-git istioctl" | apt_install }} && \
+RUN {{ "helm3 rake kubeyaml envoyproxy helmfile helm-diff ruby-git istioctl" | apt_install }} && \
     mkdir -p /etc/envoy/ssl $HELM_HOME $HELM_CONFIG_HOME $HELM_DATA_HOME $HELM_CACHE_HOME && \
     chmod -R 777 /etc/envoy && \
-    helm init --client-only && \
-    helm2 repo list | tail -n +2 | awk '{print $1}' | xargs --no-run-if-empty helm2 repo remove && \
     helm3 repo list | tail -n +2 | awk '{print $1}' | xargs --no-run-if-empty helm3 repo remove && \
     chown -R nobody $HELM_HOME /tmp/helm3 && \
     chmod -R 777 /tmp/helm3 $HELM_HOME && \

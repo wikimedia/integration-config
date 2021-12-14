@@ -1,3 +1,12 @@
+
+helm-linter (0.3.0) wikimedia; urgency=medium
+
+  * helm2 binary is removed from helm-linter image. helm3 is supported   
+    only to reduce edge cases and version check from CI and integration
+    tools.
+
+ -- Jelto Wodstrcil <jwodstrcil@wikimedia.org>  Tue, 14 Dec 2021 15:50:38 +0100
+
 helm-linter (0.2.18) wikimedia; urgency=medium
 
   * Helm repositories are now added on the fly by CI. Ensure no repositories
