@@ -1,2 +1,5 @@
 registry: docker-registry.wikimedia.org
 namespace: releng
+# We do not use any seed image but docker-pkg 3.0.1 requires it to
+# be set.
+seed_image: docker-registry.wikimedia.org/bullseye:latest
