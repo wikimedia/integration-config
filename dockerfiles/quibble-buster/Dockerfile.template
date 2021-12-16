@@ -12,7 +12,7 @@ ENV NODE_VERSION=v14.17.5-linux-x64
 
 RUN {{ "curl" | apt_install }}
 
-COPY SHASUMS256.txt /tmp/SHASUMS256.txt
+COPY SHASUMS256.txt /tmp/nodeinstall/SHASUMS256.txt
 RUN cd /tmp/nodeinstall \
     && curl -Lo node-${NODE_VERSION}.tar.gz https://nodejs.org/dist/v14.17.5/node-${NODE_VERSION}.tar.gz \
     && grep node-${NODE_VERSION}.tar.gz SHASUMS256.txt | sha256sum -c - \
