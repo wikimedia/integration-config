@@ -8,8 +8,8 @@ ENV NODE_VERSION=v14.17.5-linux-x64
 
 RUN {{ "curl" | apt_install }}
 
-COPY SHASUMS256.txt /tmp/SHASUMS256.txt
-RUN cd /tmp \
+COPY SHASUMS256.txt /tmp/nodeinstall/SHASUMS256.txt
+RUN cd /tmp/nodeinstall \
     && curl -Lo node-${NODE_VERSION}.tar.gz https://nodejs.org/dist/v14.17.5/node-${NODE_VERSION}.tar.gz \
     && grep node-${NODE_VERSION}.tar.gz SHASUMS256.txt | sha256sum -c - \
     && tar -xzf node-${NODE_VERSION}.tar.gz \
@@ -23,7 +23,7 @@ RUN cd /tmp \
     # && mv node-${NODE_VERSION}/lib/node_modules /usr/lib/node_modules \
     # && ln -s /usr/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm \
     # && ln -s /usr/lib/node_modules/npm/bin/npx-cli.js /usr/bin/npx \
-    && rm -rf node-${NODE_VERSION}
+    && rm -rf /tmp/nodeinstall
 
 # Pin our Node 14 image to npm 7.x. Official Node.js 14 tarballs come with npm 6,
 # but, we upgraded npm and we're sticking to it.
