@@ -987,12 +987,12 @@
         - wmf-quibble-apache-vendor-mysql-{php}-docker:
             php:
                 - php72:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72-apache:1.2.0-s3
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72-apache:1.2.0-s5
         # TODO, add a PHP 7.4 Apache image for these special jobs
         - wmf-quibble-apache-selenium-{php}-docker:
             php:
                 - php72:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72-apache:1.2.0-s3
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72-apache:1.2.0-s5
 
 # General MW-Selenium job used to dogfood the builder against MW core.
 - job-template:
