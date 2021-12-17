@@ -112,6 +112,41 @@ RUN {{ alldeps | apt_install }} \
 
 COPY mariadb.cnf /etc/mysql/mariadb.conf.d/80-mediawiki.cnf
 
+#############################################################
+# Install Apache/supervisord/php-fpm config                 #
+#############################################################
+#
+# Note: php version varies and is installed in child images
+# A php 7.2 child image would then have to set:
+#
+#    ENV PHP_VERSION=7.2
+#
+{% set apache_deps|replace('\n', ' ') -%}
+apache2
+supervisor
+{%- endset -%}
+
+RUN {{ apache_deps | apt_install }}
+
+# Tell Apache how to process PHP files.
+RUN a2enmod proxy_fcgi \
+  && a2enmod mpm_event \
+  && a2enmod rewrite \
+  && a2enmod http2 \
+  && a2enmod cache
+COPY ./apache/ports.conf /etc/apache2/ports.conf
+COPY ./apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY ./apache/apache2.conf /etc/apache2/apache2.conf
+COPY ./apache/envvars /etc/apache2/envvars
+
+RUN install --directory -o nobody -g nogroup /tmp/php \
+  && touch /tmp/fpm-php.www.log /tmp/php/php-fpm.pid \
+  && chown nobody:nogroup /tmp/fpm-php.www.log /tmp/php/php-fpm.pid
+COPY ./quibble-with-apache.sh /usr/local/bin/quibble-with-apache
+COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY ./php-fpm /php-fpm
+COPY ./install-php-fpm-conf.sh /install-php-fpm-conf.sh
+
 # Unprivileged
 RUN install --directory /workspace --owner=nobody --group=nogroup
 USER nobody

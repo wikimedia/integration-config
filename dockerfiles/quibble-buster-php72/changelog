@@ -1,3 +1,13 @@
+quibble-buster-php72 (1.2.0-s5) wikimedia; urgency=medium
+
+  * Refresh for update in parent image quibble-buster:
+    Incorporate Apache configuration from quibble-buster-php72-apache
+  * Add php-fpm and its configuration
+  * Can now be run with Apache using `quibble-with-apache` entrypoint
+  T285649
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 17 Dec 2021 16:25:35 +0100
+
 quibble-buster-php72 (1.2.0-s4) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-buster:

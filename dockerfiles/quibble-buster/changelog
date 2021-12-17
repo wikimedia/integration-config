@@ -1,3 +1,10 @@
+quibble-buster (1.2.0-s3) wikimedia; urgency=medium
+
+  * Incorporate Apache configuration from quibble-buster-php72-apache
+    T285649
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 17 Dec 2021 15:00:34 +0100
+
 quibble-buster (1.2.0-s2) wikimedia; urgency=high
 
    Ensure node14 install materials are entirely removed

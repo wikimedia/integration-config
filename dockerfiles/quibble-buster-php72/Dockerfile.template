@@ -1,5 +1,7 @@
 FROM {{ "quibble-buster" | image_tag }}
 
+ENV PHP_VERSION=7.2
+
 USER root
 
 # Align with SRE provided packages
@@ -13,6 +15,7 @@ php-apcu
 php7.2-bcmath
 php7.2-cli
 php7.2-curl
+php7.2-fpm
 php7.2-gd
 php7.2-gmp
 php7.2-intl
@@ -29,7 +32,8 @@ php-wikidiff2
 # See T236333 for wikidiff2 rationale; may need ported forward to
 # quibble-buster-php73 at some point in future.
 
-RUN {{ mediawiki_deps | apt_install }}
+RUN {{ mediawiki_deps | apt_install }} \
+    && /install-php-fpm-conf.sh
 
 # Install XDebug but disables it by default due to its performance impact
 RUN {{ "php-xdebug" | apt_install }} \

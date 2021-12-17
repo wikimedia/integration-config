@@ -2,6 +2,8 @@ FROM {{ "sury-php" | image_tag }} AS sury-php
 
 FROM {{ "quibble-buster" | image_tag }}
 
+ENV PHP_VERSION=7.4
+
 USER root
 
 #############################
@@ -12,6 +14,7 @@ php-apcu
 php7.4-bcmath
 php7.4-cli
 php7.4-curl
+php7.4-fpm
 php7.4-gd
 php7.4-gmp
 php7.4-intl
@@ -33,7 +36,8 @@ RUN {{ "apt-transport-https" | apt_install }} && \
 
 # Pin sury's repo higher for the packages that exist in both buster and sury
 COPY sury.pin /etc/apt/preferences.d/sury
-RUN {{ mediawiki_deps | apt_install }}
+RUN {{ mediawiki_deps | apt_install }} \
+    && /install-php-fpm-conf.sh
 
 # Install XDebug but disables it by default due to its performance impact
 RUN {{ "php-xdebug" | apt_install }} \
