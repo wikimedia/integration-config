@@ -1,3 +1,9 @@
+quibble-buster-php74 (1.4.5-s3) wikimedia; urgency=medium
+
+  * Add php-excimer (T225730).
+
+ -- Amir Sarabadani <ladsgroup@gmail.com>  Tue, 23 Aug 2022 13:14:15 +0200
+
 quibble-buster-php74 (1.4.5-s2) wikimedia; urgency=high
 
    Migrate from sury-php to Wikimedia PHP
