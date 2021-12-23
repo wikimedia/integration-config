@@ -6153,6 +6153,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/GoogleDocCreator
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/GoogleDocs4MW
     template:
       - name: extension-quibble
