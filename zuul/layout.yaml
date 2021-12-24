@@ -2233,6 +2233,10 @@ projects:
     gate-and-submit:
       - trigger-toolforge-delete-crashing-pods-pipeline-test
 
+  - name: cloud/toolforge/disable-tool
+    template:
+      - name: tox-docker
+
   - name: cloud/toolforge/grid-webservices
     template:
       - name: tox-docker
