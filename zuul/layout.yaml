@@ -416,6 +416,7 @@ pipelines:
            - ^whym@whym\.org$
            - ^wiki@strainu\.ro$  # Strainu
            - ^wikiposta@gmail\.com$  # Bináris
+           - ^sanjayipscoc@gmail\.com$  # Sanjay
 
           # Parsoid Outreachy interns
            - ^bebirchall@gmail\.com$
