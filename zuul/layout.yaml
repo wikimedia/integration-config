@@ -7191,6 +7191,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/SearchThumbs
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/SectionDisqus
     template:
       - name: extension-quibble
