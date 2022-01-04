@@ -545,7 +545,7 @@ phan_dependencies = {
     'GlobalPreferences': ['BetaFeatures', 'skins/Vector'],
     'GrowthExperiments': ['EventLogging', 'PageImages', 'PageViewInfo',
                           'skins/MinervaNeue', 'Flow', 'MobileFrontend',
-                          'Echo', 'CirrusSearch'],
+                          'Echo', 'CirrusSearch', 'CentralAuth'],
     'HAWelcome': ['SocialProfile'],
     'ImageRating': ['SocialProfile', 'VoteNY'],
     'intersection': ['PageImages'],
