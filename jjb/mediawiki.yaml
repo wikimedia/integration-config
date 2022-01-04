@@ -225,6 +225,7 @@
         - docker-src-dir
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
+            entrypoint: '{entrypoint|}'
             options: '--tmpfs /workspace/db:size=320M'
             volumes:
                 /srv/git: /srv/git:ro
