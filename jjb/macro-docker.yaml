@@ -139,6 +139,9 @@
         set -eux
         set -o pipefail
         exec docker run
+          {%- if entrypoint is defined and entrypoint|length -%}
+            {{ " --entrypoint=" + entrypoint }}
+          {%- endif -%}
           {%- if options is defined and options is not none -%}
             {{ " " + options }}
           {%- elif volumes is not defined -%}
@@ -181,6 +184,8 @@
         set -x
         chmod 2777 src
      - docker-run:
+        entrypoint: >-
+          {obj:entrypoint|}
         options: >-
           {obj:options|}
         volumes:
