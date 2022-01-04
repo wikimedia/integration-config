@@ -398,7 +398,7 @@
 # Testing for API testing framework repo.
 - job-template:
     !!merge : *job_quibble
-    name: 'mediawiki-quibble-api-testing-vendor-{database}-{php}-docker'
+    name: 'api-testing-{database}-{php}-docker'
     quibble_args: '-c "mediawiki/tools/api-testing/ci.sh" mediawiki/tools/api-testing'
     triggers:
         - zuul
@@ -406,7 +406,7 @@
 - project:
     name: mediawiki-api-testing
     jobs:
-        - mediawiki-quibble-api-testing-vendor-{database}-{php}-docker:
+        - api-testing-{database}-{php}-docker:
             php:
                 - php72:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.2.0-s4

@@ -2405,11 +2405,11 @@ projects:
     template:
       - name: node12-rundoc-docker
     test:
-      - mediawiki-quibble-api-testing-vendor-mysql-php72-docker
-      - mediawiki-quibble-api-testing-vendor-sqlite-php72-docker
+      - api-testing-mysql-php72-docker
+      - api-testing-sqlite-php72-docker
     gate-and-submit:
-      - mediawiki-quibble-api-testing-vendor-mysql-php72-docker
-      - mediawiki-quibble-api-testing-vendor-sqlite-php72-docker
+      - api-testing-mysql-php72-docker
+      - api-testing-sqlite-php72-docker
     postmerge:
       - generic-node12-docs-docker-publish
 
