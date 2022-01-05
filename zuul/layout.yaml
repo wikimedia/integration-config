@@ -875,9 +875,6 @@ jobs:
   - name: ^wmf-quibble-apache
     voting: false
     branch: (?!^REL)
-    skip-if:
-      - project: ^mediawiki/core$
-      - project: ^mediawiki/vendor$
 
   - name: ^wmf-quibble-core-vendor
     # Gated extensions are only for master and Wikimedia deployment. We do not
@@ -887,11 +884,6 @@ jobs:
       - project: ^mediawiki/extensions/.*$
 
   - name: ^wmf-quibble-selenium
-    # Gated extensions are only for master and Wikimedia deployment. We do not
-    # run them on REL branches.
-    branch: (?!^REL)
-
-  - name: ^wmf-quibble-apache-selenium
     # Gated extensions are only for master and Wikimedia deployment. We do not
     # run them on REL branches.
     branch: (?!^REL)
