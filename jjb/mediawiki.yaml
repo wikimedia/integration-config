@@ -394,6 +394,7 @@
 - job-template:
     !!merge : *job_quibble
     name: mediawiki-quibble-apitests-{packages-source}-{php}-docker
+    entrypoint: quibble-with-apache
     quibble_args: '--run api-testing'
     triggers:
         - zuul
