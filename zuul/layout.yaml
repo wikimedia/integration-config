@@ -2705,6 +2705,7 @@ projects:
       - mediawiki-quibble-composertest-php80-docker
       - mwgate-composer-php72-docker
       - trigger-mediawiki-pipeline-wmf-publish
+      - wmf-quibble-apache-selenium-php72-docker
 
   - name: mediawiki/vendor
     template:
