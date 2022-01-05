@@ -891,6 +891,11 @@ jobs:
     # run them on REL branches.
     branch: (?!^REL)
 
+  - name: ^wmf-quibble-apache-selenium
+    # Gated extensions are only for master and Wikimedia deployment. We do not
+    # run them on REL branches.
+    branch: (?!^REL)
+
   - name: ^quibble-donationinterface-REL1_35-php73-docker$
     skip-if:
       - project: ^mediawiki/extensions/DonationInterface$
