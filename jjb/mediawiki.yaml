@@ -285,6 +285,7 @@
 - job-template:
     !!merge : *job_quibble
     name: quibble-{packages-source}-{database}-{php}-selenium-docker
+    entrypoint: quibble-with-apache
     quibble_args: '--run selenium'
     triggers:
         - zuul
@@ -339,13 +340,6 @@
     quibble_args: '--phpunit-testsuite=extensions --skip selenium,npm-test,phpunit-standalone,api-testing,phpbench'
     triggers:
         - zuul
-# Same but using Apache!
-- job-template:
-    !!merge : *job_wmf_quibble
-    name: wmf-quibble-apache-vendor-mysql-{php}-docker
-    entrypoint: quibble-with-apache
-    triggers:
-        - zuul
 
 # HACK: Don't run composer test for mediawiki/core, it's
 # already run in a separate job
@@ -361,13 +355,6 @@
 - job-template:
     !!merge : *job_quibble
     name: wmf-quibble-selenium-{php}-docker
-    quibble_args: '--run selenium'
-    triggers:
-        - zuul
-
-- job-template:
-    !!merge : *job_quibble
-    name: wmf-quibble-apache-selenium-{php}-docker
     entrypoint: quibble-with-apache
     quibble_args: '--run selenium'
     triggers:
@@ -386,6 +373,7 @@
 - job-template:
     !!merge : *job_quibble
     name: mediawiki-quibble-selenium-{packages-source}-{database}-{php}-docker
+    entrypoint: quibble-with-apache
     quibble_args: '--run selenium'
     triggers:
         - zuul
@@ -1014,16 +1002,6 @@
         - wmf-quibble-vendor-mysql-{php}-docker
         - wmf-quibble-core-vendor-mysql-{php}-docker
         - wmf-quibble-selenium-{php}-docker
-        # TODO, add a PHP 7.4 Apache image for these special jobs
-        - wmf-quibble-apache-vendor-mysql-{php}-docker:
-            php:
-                - php72:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.2.0-s5
-        # TODO, add a PHP 7.4 Apache image for these special jobs
-        - wmf-quibble-apache-selenium-{php}-docker:
-            php:
-                - php72:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.2.0-s5
 
 # General MW-Selenium job used to dogfood the builder against MW core.
 - job-template:

@@ -872,10 +872,6 @@ jobs:
       - project: ^mediawiki/core$
       - project: ^mediawiki/vendor$
 
-  - name: ^wmf-quibble-apache
-    voting: false
-    branch: (?!^REL)
-
   - name: ^wmf-quibble-core-vendor
     # Gated extensions are only for master and Wikimedia deployment. We do not
     # run them on REL branches.
@@ -2702,7 +2698,6 @@ projects:
       - mediawiki-quibble-composertest-php80-docker
       - mwgate-composer-php72-docker
       - trigger-mediawiki-pipeline-wmf-publish
-      - wmf-quibble-apache-selenium-php72-docker
 
   - name: mediawiki/vendor
     template:
@@ -4190,8 +4185,6 @@ projects:
       - name: extension-codehealth
       - name: extension-coverage
       - name: extension-gate
-    experimental:
-      - wmf-quibble-apache-selenium-php72-docker
 
   - name: mediawiki/extensions/GuidedTour
     template:
@@ -4845,8 +4838,6 @@ projects:
       - name: extension-gate
       - name: commit-message-validator
       - name: extension-javascript-documentation
-    experimental:
-      - wmf-quibble-apache-selenium-php72-docker
 
   - name: mediawiki/extensions/WebAuthn
     template:
@@ -4869,8 +4860,6 @@ projects:
       - legacy-quibble-rubyselenium-docker
       - wikibase-client-docker
       - wikibase-repo-docker
-      - wmf-quibble-apache-vendor-mysql-php72-docker
-      - wmf-quibble-apache-selenium-php72-docker
     gate-and-submit: &mediawiki-extensions-wikibase-gate-and-submit
       # TODO: Legacy ruby-based selenium job. To remove! (T220035)
       - ruby2.5-rake-docker
