@@ -2954,6 +2954,12 @@ projects:
     template:
       - name: skin-quibble
 
+#### OpenStack related repositories
+
+  - name: openstack/horizon/wmf-proxy-dashboard
+    template:
+      - name: tox-docker
+
 #### Site Reliability Engineering ("Operations") tools #########
 
   - name: cergen
