@@ -142,7 +142,7 @@
           {%- if entrypoint is defined and entrypoint|length -%}
             {{ " --entrypoint=" + entrypoint }}
           {%- endif -%}
-          {%- if options is defined and options is not none -%}
+          {%- if options is defined and options|length -%}
             {{ " " + options }}
           {%- elif volumes is not defined -%}
             {{ " " }}
@@ -216,6 +216,8 @@
          options:
            {%- if submodules is defined and not submodules %}
            --env GIT_NO_SUBMODULES=yes
+           {%- else %}
+           ''
            {%- endif %}
          volumes:
              src:
