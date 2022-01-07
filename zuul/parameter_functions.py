@@ -485,7 +485,7 @@ dependencies = {
     'WikimediaEvents': ['EventLogging'],
     'Wikisource': ['Wikibase'],
     'WikiToLDAP': ['LDAPAuthentication2', 'Renameuser', 'UserMerge'],
-    'wikihiero': ['VisualEditor'],
+    'wikihiero': ['VisualEditor', 'parsoid'],
     'Workflows': ['Forms', 'OOJSPlus'],
     'WSOAuth': ['PluggableAuth'],
 }
