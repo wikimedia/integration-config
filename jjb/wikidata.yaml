@@ -104,8 +104,7 @@
             dir: src/build
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/node12-test-browser:0.0.3-s2
-            options: >-
-                --entrypoint=/run-with-xvfb.sh
+            entrypoint: /run-with-xvfb.sh
             args: 'test'
         - shell: |
             export GIT_AUTHOR_NAME=WDQSGuiBuilder
@@ -180,8 +179,7 @@
             dir: dist
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/node12-test-browser:0.0.3-s2
-            options: >-
-                --entrypoint=/run-with-xvfb.sh
+            entrypoint: /run-with-xvfb.sh
             args: 'test'
         - shell: |
             export GIT_AUTHOR_NAME=WDQSGuiBuilder

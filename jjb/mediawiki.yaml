@@ -253,8 +253,7 @@
                     # they are transient files anyway.
                     - docker-run:
                         image: docker-registry.wikimedia.org/buster:latest
-                        options: >-
-                            --entrypoint=/bin/rm
+                        entrypoint: /bin/rm
                         volumes:
                             log:
                         args: '-fR /log/rawSeleniumVideoGrabs'
@@ -513,8 +512,7 @@
                       # Compress Fresnel performance reports - T249268
                       - docker-run:
                           image: docker-registry.wikimedia.org/buster:latest
-                          options: >-
-                              --entrypoint=/usr/bin/find
+                          entrypoint: /usr/bin/find
                           volumes:
                               log:
                           args: /log -name "*trace.json" -exec gzip {} \+

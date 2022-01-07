@@ -27,7 +27,7 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/rust:1.56.1-1
-         options: '--entrypoint=/run-doc.sh'
+         entrypoint: /run-doc.sh
      - doc-publish:
         docsrc: 'src/target/doc'
         docdest: '$DOC_PROJECT/$DOC_SUBPATH'

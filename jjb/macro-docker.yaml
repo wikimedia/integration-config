@@ -35,8 +35,8 @@
             build-steps:
               - docker-run:
                  image: 'docker-registry.wikimedia.org/buster:latest'
+                 entrypoint: /usr/bin/find
                  options: >-
-                   --entrypoint=/usr/bin/find
                    --user=root
                    --volume "$WORKSPACE":/workspace
                  args: >-
@@ -86,8 +86,8 @@
          mkdir -m 2777 -p "{dir}"
      - docker-run:
         image: 'docker-registry.wikimedia.org/buster:latest'
+        entrypoint: /usr/bin/find
         options: >-
-          --entrypoint=/usr/bin/find
           --user=nobody
           --volume "$WORKSPACE":/workspace
         args: >-
@@ -104,7 +104,7 @@
 # Example:
 #
 #   options: >-
-#     --entrypoint=/usr/bin/git
+#     --workdir /src
 #     --env=MEDIAWIKI_TEST=1
 #
 # [volumes] a map of bind mounts.

@@ -54,19 +54,19 @@
         # which is set to {branch} which is the change number + the patchset.
         - docker-run-with-log-cache-src:
               image: '{obj:docker_image_var}'
-              options: '--entrypoint=git'
+              entrypoint: git
               args: 'branch -m "$ZUUL_CHANGE-$ZUUL_PATCHSET"'
         # The comparison is done against sonar.branch.target which is
         # $ZUUL_BRANCH, make it point to the previous patchset.
         - docker-run-with-log-cache-src:
               image: '{obj:docker_image_var}'
-              options: '--entrypoint=git'
+              entrypoint: git
               args: 'checkout -B $ZUUL_BRANCH FETCH_HEAD^'
 
         # Set working copy back to branch holding the patch
         - docker-run-with-log-cache-src:
               image: '{obj:docker_image_var}'
-              options: '--entrypoint=git'
+              entrypoint: git
               args: 'checkout "$ZUUL_CHANGE-$ZUUL_PATCHSET"'
 
         - docker-run-with-log-cache-src:
@@ -165,7 +165,7 @@
          args: '-e py27 -- --cover-html --cover-html-dir=coverage/ --cover-xml --cover-xml-file=/log/coverage.xml'
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/tox-buster:0.5.1
-         options: '--entrypoint=/usr/bin/cobertura-clover-transform'
+         entrypoint: /usr/bin/cobertura-clover-transform
          args: '/log/coverage.xml -o /log/clover.xml'
      - shell: |
          cp log/clover.xml src/coverage/clover.xml

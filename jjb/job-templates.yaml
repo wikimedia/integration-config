@@ -73,7 +73,8 @@
         - docker-ci-src-setup-simple
         - docker-run-with-log-cache-src:
             # run Maven Wrapper directly from the project
-            options: '--entrypoint={maven_path} --workdir={workdir}'
+            entrypoint: '{maven_path}'
+            options: '--workdir={workdir}'
             image: '{obj:docker_image_var}'
             args: '-gs /settings.xml --batch-mode --file {pom} {maven_args}'
 
@@ -83,18 +84,18 @@
         # which is set to {branch} which is the change number + the patchset.
         - docker-run-with-log-cache-src:
               image: '{obj:docker_image_var}'
-              options: '--entrypoint=git'
+              entrypoint: git
               args: 'branch -m "$ZUUL_CHANGE-$ZUUL_PATCHSET"'
         # The comparison is done against sonar.branch.target which is
         # $ZUUL_BRANCH, make it point to the previous patchset.
         - docker-run-with-log-cache-src:
               image: '{obj:docker_image_var}'
-              options: '--entrypoint=git'
+              entrypoint: git
               args: 'checkout -B $ZUUL_BRANCH FETCH_HEAD^'
         # Set working copy back to branch holding the patch
         - docker-run-with-log-cache-src:
               image: '{obj:docker_image_var}'
-              options: '--entrypoint=git'
+              entrypoint: git
               args: 'checkout "$ZUUL_CHANGE-$ZUUL_PATCHSET"'
 
         - docker-run-with-log-cache-src:
@@ -125,7 +126,8 @@
             #
             # Note that Sonar must be running on Java 11, but can analyze code
             # built on Java 8.
-            options: '--entrypoint=/src/mvnw --workdir={workdir}'
+            entrypoint: /src/mvnw
+            options: '--workdir={workdir}'
             image: 'docker-registry.wikimedia.org/releng/maven-java11:1.0.0'
             args: >
                 -gs /settings.xml --batch-mode --file {pom} -X
@@ -243,12 +245,14 @@
         # reused for the later steps (site and sonar analysis).
         - docker-run-with-log-cache-src:
             image: '{obj:docker_image_var}'
-            options: '--entrypoint={maven_path} --workdir={workdir}'
+            entrypoint: '{maven_path}'
+            options: '--workdir={workdir}'
             args: '-gs /settings.xml --batch-mode --file {pom} {maven_args}'
         # Sonar analysis (see '{name}-maven-java8-docker' for details)
         - docker-run-with-log-cache-src:
             image: 'docker-registry.wikimedia.org/releng/maven-java11:1.0.0'
-            options: '--entrypoint=/src/mvnw --workdir={workdir}'
+            entrypoint: '{maven_path}'
+            options: '--workdir={workdir}'
             args: >
                 -gs /settings.xml --batch-mode --file {pom}
                 sonar:sonar
@@ -259,7 +263,8 @@
         # step below.
         - docker-run-with-log-cache-src:
             image: '{obj:docker_image_var}'
-            options: '--entrypoint={maven_path} --workdir={workdir}'
+            entrypoint: '{maven_path}'
+            options: '--workdir={workdir}'
             args: '-gs /settings.xml --batch-mode --file {pom} site site:stage'
     wrappers:
       - timeout:
@@ -525,8 +530,8 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.3-s2'
+        entrypoint: /run-with-xvfb.sh
         options: >-
-            --entrypoint=/run-with-xvfb.sh
             --shm-size 1g
             --env LOG_DIR=/log
     publishers:
@@ -751,8 +756,8 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node14-test-browser:0.0.2-s3'
+        entrypoint: /run-with-xvfb.sh
         options: >-
-            --entrypoint=/run-with-xvfb.sh
             --shm-size 1g
             --env LOG_DIR=/log
     publishers:

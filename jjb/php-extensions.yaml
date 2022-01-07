@@ -55,7 +55,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run:
-        options: '--entrypoint=/run-coverage.sh'
+        entrypoint: /run-coverage.sh
         volumes:
             src:
         image: 'docker-registry.wikimedia.org/releng/php74-compile:0.0.6-s1'
