@@ -184,7 +184,8 @@
      - docker-run-with-log-cache-src:
         image: '{phan_image}'
         entrypoint: /run-core.sh
-        options: '-e PHAN_COLOR_SCHEME=light'
+        environment:
+            PHAN_COLOR_SCHEME: light
         args: '--color'
         srcdir: /mediawiki
     publishers:
@@ -700,7 +701,9 @@
     - docker-castor-load
     - docker-run-with-log-cache-src:
         image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.2.0-s3
-        options: '-e CODEHEALTH=1 --tmpfs /workspace/db:size=320M'
+        environment:
+            CODEHEALTH: 1
+        options: '--tmpfs /workspace/db:size=320M'
         volumes:
             cover: /workspace/cover
             /srv/git: /srv/git:ro
@@ -793,7 +796,8 @@
         dir: 'cover'
     - docker-run-with-log-cache-src:
         image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.2.0-s3
-        options: '-e CODEHEALTH=1'
+        environment:
+            CODEHEALTH: 1
         volumes:
             cover: /workspace/cover
             /srv/git: /srv/git:ro

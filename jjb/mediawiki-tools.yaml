@@ -110,7 +110,9 @@
              mediawiki/tools/phan
      - docker-run-with-log-cache-src:
          image: 'docker-registry.wikimedia.org/releng/mediawiki-phan-testrun:0.2.0-s10'
-         options: "-e PHAN_COLOR_SCHEME=light --workdir /src"
+         environment:
+             PHAN_COLOR_SCHEME: light
+         options: "--workdir /src"
          args: '--color'
     publishers:
      - castor-save-workspace-cache

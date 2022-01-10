@@ -104,7 +104,8 @@
 
      # Now run Phan
      - docker-run-with-log-cache-src:
-        options: '-e PHAN_COLOR_SCHEME=light'
+        environment:
+            PHAN_COLOR_SCHEME: light
         image: '{phan_image}'
         args: '--color'
         srcdir: '/mediawiki'

@@ -107,6 +107,18 @@
 #     --workdir /src
 #     --env=MEDIAWIKI_TEST=1
 #
+# [environment] a map of environment variables to set.
+#
+# When the value contains a space, it is single quoted. Otherwise it is passed
+# as is.
+#
+# Example:
+#
+#   environment:
+#       GIT_USERNAME: sonar
+#       CODE_HEALTH: 1
+#       GIT_AUTHOR_NAME: 'John Doe'
+#
 # [volumes] a map of bind mounts.
 #
 #  Key is the path on the host relative to the current workspace, a key
@@ -145,6 +157,16 @@
           {%- if options is defined and options|length -%}
             {{ " " + options }}
           {%- endif -%}
+          {%- if environment is defined and environment|length -%}
+              {%- for name, value in environment.items() -%}
+                  {{ " " }}-e {{ name + '=' }}
+                  {%- if ' ' in value|string() -%}
+                      {{ "'" + value|string() + "'" }}
+                  {%- else -%}
+                      {{ value|string() }}
+                  {%- endif -%}
+              {%- endfor -%}
+          {%- endif -%}
           {%- if volumes is defined -%}
               {%- for host_path, container_path in volumes.items() -%}
                   {%- if host_path.startswith('/') -%}
@@ -181,6 +203,8 @@
      - docker-run:
         entrypoint: >-
           {obj:entrypoint|}
+        environment: >-
+          {obj:environment|}
         options: >-
           {obj:options|}
         volumes:

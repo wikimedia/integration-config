@@ -360,12 +360,13 @@
         - shell: |
                  setfacl -m user:65534:r archiva-credentials.xml $NETRC_FILE
         - docker-run-with-log-cache-src:
+            environment:
+                GIT_AUTHOR_NAME: maven-release-user
+                GIT_COMMITTER_NAME: maven-release-user
+                EMAIL: maven-release-user@wikimedia.org
             options: >-
                      -v "$NETRC_FILE":/nonexistent/.netrc:ro
                      -v "$WORKSPACE/archiva-credentials.xml":/archiva-credentials.xml
-                     -e GIT_AUTHOR_NAME=maven-release-user
-                     -e GIT_COMMITTER_NAME=maven-release-user
-                     -e EMAIL=maven-release-user@wikimedia.org
             image:   docker-registry.wikimedia.org/releng/maven-java8:1.0.0-s1
             args:    >-
                      -Dresume=false

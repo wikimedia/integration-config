@@ -144,7 +144,8 @@
      - docker-run-with-log-cache-src:
          image: '{phan_image}'
          entrypoint: /run-libraries.sh
-         options: '-e PHAN_COLOR_SCHEME=light'
+         environment:
+             PHAN_COLOR_SCHEME: light
          args: '--color'
     publishers:
      - castor-save-workspace-cache
