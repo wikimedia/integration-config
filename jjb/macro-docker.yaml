@@ -36,8 +36,8 @@
               - docker-run:
                  image: 'docker-registry.wikimedia.org/buster:latest'
                  options: >-
-                   --user=root
                    --entrypoint=/usr/bin/find
+                   --user=root
                    --volume "$WORKSPACE":/workspace
                  args: >-
                    "/workspace" -mindepth 1 -delete
@@ -87,8 +87,8 @@
      - docker-run:
         image: 'docker-registry.wikimedia.org/buster:latest'
         options: >-
-          --user=nobody
           --entrypoint=/usr/bin/find
+          --user=nobody
           --volume "$WORKSPACE":/workspace
         args: >-
           "/workspace/{dir}" -mindepth 1 -delete

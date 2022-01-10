@@ -27,8 +27,8 @@
       - docker-run-with-log-cache-src:
           image: 'docker-registry.wikimedia.org/releng/gerrit:1.1.4-s1'
           options: >-
-              --env LOG_DIR=/log
               --entrypoint=/src/wmf-build.py
+              --env LOG_DIR=/log
           volumes:
               /srv/git: /srv/git:ro
     publishers:
@@ -895,7 +895,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        options: '--env LOG_DIR=/log --entrypoint=/run-with-xvfb.sh'
+        options: '--entrypoint=/run-with-xvfb.sh --env LOG_DIR=/log'
         image: '{obj:docker_image_var}'
         args: 'selenium-daily'
     wrappers:

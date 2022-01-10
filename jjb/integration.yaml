@@ -16,7 +16,7 @@
                 integration/config
         - docker-run-with-log-cache-src:
             image: 'docker-registry.wikimedia.org/releng/tox-buster:0.5.1'
-            options: '--workdir=/src/integration/config --entrypoint=/src/integration/config/{entrypoint}'
+            options: '--entrypoint=/src/integration/config/{entrypoint} --workdir=/src/integration/config'
     publishers:
         - castor-save-workspace-cache
         - docker-cleanup
@@ -121,9 +121,9 @@
       - docker-run-with-log-cache-src:
           image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.2.0-s5'
           options: >-
+              --entrypoint=/src/utils/ci-fullrun.sh
               --workdir=/src
               --tmpfs /workspace/db:size=320M
-              --entrypoint=/src/utils/ci-fullrun.sh
           volumes:
               /srv/git: /srv/git:ro
           args: --color --db-dir /workspace/db
@@ -146,9 +146,9 @@
       - docker-run-with-log-cache-src:
           image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.2.0-s5'
           options: >-
+              --entrypoint=bash
               --workdir=/src
               --tmpfs /workspace/db:size=320M
-              --entrypoint=bash
           volumes:
               /srv/git: /srv/git:ro
           args: >-

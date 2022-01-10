@@ -54,7 +54,7 @@
             echo -e '<?php\n$wgServer = "http://127.0.0.1";\n' > src/LocalSettings.php
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/doxygen:0.9.1
-            options: '--workdir /src --entrypoint=/usr/bin/php'
+            options: '--entrypoint=/usr/bin/php --workdir /src'
             args: |
                 maintenance/mwdocgen.php \
                     --output /src/docs \
@@ -105,7 +105,7 @@
             echo -e '<?php\n$wgServer = "http://127.0.0.1";\n' > src/LocalSettings.php
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/doxygen:0.9.1
-            options: '--workdir /src --entrypoint=/usr/bin/php'
+            options: '--entrypoint=/usr/bin/php --workdir /src'
             args: |
                 maintenance/mwdocgen.php \
                     --output /log/build \
@@ -180,7 +180,7 @@
         args: '--working-dir=/src update --ansi --no-progress --prefer-dist --profile'
 
      - docker-run-with-log-cache-src:
-        options: '-e PHAN_COLOR_SCHEME=light --entrypoint=/run-core.sh'
+        options: '--entrypoint=/run-core.sh -e PHAN_COLOR_SCHEME=light'
         image: '{phan_image}'
         args: '--color'
         srcdir: /mediawiki
