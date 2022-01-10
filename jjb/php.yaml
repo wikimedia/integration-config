@@ -143,7 +143,8 @@
          args: 'update --ansi --no-progress --prefer-dist --profile'
      - docker-run-with-log-cache-src:
          image: '{phan_image}'
-         options: '--entrypoint=/run-libraries.sh -e PHAN_COLOR_SCHEME=light'
+         entrypoint: /run-libraries.sh
+         options: '-e PHAN_COLOR_SCHEME=light'
          args: '--color'
     publishers:
      - castor-save-workspace-cache

@@ -28,11 +28,13 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
          image: '{docker_image}'
-         options: '--entrypoint=composer --workdir /src'
+         entrypoint: composer
+         options: '--workdir /src'
          args: 'install'
      - docker-run-with-log-cache-src:
          image: '{docker_image}'
-         options: '--entrypoint npm --workdir /src'
+         entrypoint: npm
+         options: '--workdir /src'
          args: 'cit'
     publishers:
      - archive-log-allow-empty

@@ -40,7 +40,8 @@
      # phpunit coverage
      - docker-run-with-log-cache-src:
          image: '{docker_image}'
-         options: '--entrypoint php --workdir /src'
+         entrypoint: php
+         options: '--workdir /src'
          args: |
              -d zend_extension=xdebug.so \
              ./vendor/bin/phpunit \
