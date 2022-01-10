@@ -8828,6 +8828,8 @@ projects:
       - labs-tools-Isa-tox-docker
     gate-and-submit:
       - labs-tools-Isa-tox-docker
+    gate-and-submit-l10n:
+      - mediawiki-i18n-check-docker
 
   - name: labs/tools/ldap
     test:
