@@ -37,6 +37,13 @@
 
 - job-template:
     !!merge : *job_tox-docker
+    name: 'tox-poetry-docker'
+    docker_image_var: 'docker-registry.wikimedia.org/releng/tox-poetry-buster:0.0.1'
+    triggers:
+        - zuul
+
+- job-template:
+    !!merge : *job_tox-docker
     name: '{name}-tox-docker-with-sonar'
     sonar_args: ''
     triggers:
@@ -181,7 +188,8 @@
 - project:
     name: common-tox-jobs
     jobs:
-     - 'tox-docker'
+     - tox-docker
+     - tox-poetry-docker
 
 - job:
     name: 'commit-message-validator'
