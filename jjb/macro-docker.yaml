@@ -146,18 +146,15 @@
             {{ " " + options }}
           {%- endif -%}
           {%- if volumes is defined -%}
-              {{ " " }}
               {%- for host_path, container_path in volumes.items() -%}
                   {%- if host_path.startswith('/') -%}
                   {%-   set base_dir = '' -%}
                   {%- else -%}
                   {%-   set base_dir = '"$(pwd)"/' -%}
                   {%- endif -%}
-                  --volume {{ base_dir + host_path }}:{{ container_path or ("/" + host_path) }}{{" "}}
+                  {{ " " }}--volume {{ base_dir + host_path }}:{{ container_path or ("/" + host_path) }}
               {%- endfor -%}
-          {%- else -%}
-            {{ " " }}
-          {%- endif -%}\
+          {%- endif %} \
           --security-opt seccomp=unconfined \
           --init \
           --rm \
