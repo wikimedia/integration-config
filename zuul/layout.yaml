@@ -902,6 +902,54 @@ jobs:
   - name: ^.*-coverage-(docker-)?publish$
     branch: master
 
+  # machinelearning/liftwing/inference-services holds several projects each
+  # having at least two pipelines. We thus need files based filtering and a
+  # meta job to cover all the pipelines variants.
+  - name: ^trigger-inference-services-pipeline-editquality
+    files:
+        - '.pipeline/editquality/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'revscoring/editquality/model-server/.*'
+
+  - name: ^trigger-inference-services-pipeline-articlequality
+    files:
+        - '.pipeline/articlequality/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'revscoring/articlequality/model-server/.*'
+
+  - name: ^trigger-inference-services-pipeline-articlequality-transformer
+    files:
+        - '.pipeline/articlequality/transformer.yaml'
+        - '.pipeline/config.yaml'
+        - 'revscoring/articlequality/transformer/.*'
+
+  - name: ^trigger-inference-services-pipeline-draftquality
+    files:
+        - '.pipeline/draftquality/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'revscoring/draftquality/model-server/.*'
+
+  - name: ^trigger-inference-services-pipeline-topic
+    files:
+        - '.pipeline/topic/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'revscoring/topic/model-server/.*'
+
+  - name: ^trigger-inference-services-pipeline-outlink
+    files:
+        - '.pipeline/outlink/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'outlink-topic-model/model-server/.*'
+
+  - name: ^trigger-inference-services-pipeline-outlink-transformer
+    files:
+        - '.pipeline/outlink/transformer.yaml'
+        - '.pipeline/config.yaml'
+        - 'outlink-topic-model/transformer/.*'
+
+  # End of meta jobs (the ones starting with ^)
+
+
   - name: trigger-mediawiki-pipeline-publish
     branch: master
     voting: false
@@ -1151,48 +1199,6 @@ jobs:
         - '.pipeline/blubber/swift.yaml'
         - '.pipeline/config.yaml'
         - 'swift/.*'
-
-  - name: trigger-inference-services-pipeline-editquality
-    files:
-        - '.pipeline/editquality/blubber.yaml'
-        - '.pipeline/config.yaml'
-        - 'revscoring/editquality/model-server/.*'
-
-  - name: trigger-inference-services-pipeline-articlequality
-    files:
-        - '.pipeline/articlequality/blubber.yaml'
-        - '.pipeline/config.yaml'
-        - 'revscoring/articlequality/model-server/.*'
-
-  - name: trigger-inference-services-pipeline-articlequality-transformer
-    files:
-        - '.pipeline/articlequality/transformer.yaml'
-        - '.pipeline/config.yaml'
-        - 'revscoring/articlequality/transformer/.*'
-
-  - name: trigger-inference-services-pipeline-draftquality
-    files:
-        - '.pipeline/draftquality/blubber.yaml'
-        - '.pipeline/config.yaml'
-        - 'revscoring/draftquality/model-server/.*'
-
-  - name: trigger-inference-services-pipeline-topic
-    files:
-        - '.pipeline/topic/blubber.yaml'
-        - '.pipeline/config.yaml'
-        - 'revscoring/topic/model-server/.*'
-
-  - name: trigger-inference-services-pipeline-outlink
-    files:
-        - '.pipeline/outlink/blubber.yaml'
-        - '.pipeline/config.yaml'
-        - 'outlink-topic-model/model-server/.*'
-
-  - name: trigger-inference-services-pipeline-outlink-transformer
-    files:
-        - '.pipeline/outlink/transformer.yaml'
-        - '.pipeline/config.yaml'
-        - 'outlink-topic-model/transformer/.*'
 
   - name: trigger-servicelib-node-pipeline-spec
     files:
@@ -2277,6 +2283,9 @@ projects:
     gate-and-submit:
       - trigger-toolforge-registry-admission-controller-pipeline-test
 
+  # When adding a new sub project, make sure to add a job filter above in the
+  # job section to have the job only trigger for the directory holding the
+  # project in the repository.
   - name: machinelearning/liftwing/inference-services
     test:
       - trigger-inference-services-pipeline-editquality
@@ -2294,6 +2303,14 @@ projects:
       - trigger-inference-services-pipeline-topic
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
+    postmerge:
+      - trigger-inference-services-pipeline-editquality-publish
+      - trigger-inference-services-pipeline-articlequality-publish
+      - trigger-inference-services-pipeline-articlequality-transformer-publish
+      - trigger-inference-services-pipeline-draftquality-publish
+      - trigger-inference-services-pipeline-topic-publish
+      - trigger-inference-services-pipeline-outlink-publish
+      - trigger-inference-services-pipeline-outlink-transformer-publish
 
   - name: integration/config
     test:
