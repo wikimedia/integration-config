@@ -144,8 +144,6 @@
           {%- endif -%}
           {%- if options is defined and options|length -%}
             {{ " " + options }}
-          {%- elif volumes is not defined -%}
-            {{ " " }}
           {%- endif -%}
           {%- if volumes is defined -%}
               {{ " " }}
