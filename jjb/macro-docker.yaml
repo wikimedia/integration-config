@@ -99,6 +99,8 @@
 #
 # Parameters:
 #
+# [entrypoint] string to override the container entrypoint.
+#
 # [options] space separated strings of arguments to pass to `docker run`
 #
 # Example:
