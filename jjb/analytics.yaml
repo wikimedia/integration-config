@@ -128,7 +128,7 @@
         - docker-run:
             entrypoint: /usr/bin/prove
             options:
-                --workdir /src/pageviews_reports
+                --workdir=/src/pageviews_reports
             volumes:
                 src:
             image: 'docker-registry.wikimedia.org/releng/perl:5.24.1-s4'

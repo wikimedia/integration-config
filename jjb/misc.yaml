@@ -34,14 +34,14 @@
      # composer install
      - docker-run-with-log-cache-src:
          image: '{docker_image}'
-         options: '--workdir /src'
+         options: '--workdir=/src'
          # prefer-dist to get cacheable content
          args: 'install --no-progress --prefer-dist'
      # phpunit coverage
      - docker-run-with-log-cache-src:
          image: '{docker_image}'
          entrypoint: php
-         options: '--workdir /src'
+         options: '--workdir=/src'
          args: |
              -d zend_extension=xdebug.so \
              ./vendor/bin/phpunit \

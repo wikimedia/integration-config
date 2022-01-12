@@ -55,7 +55,7 @@
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/doxygen:0.9.1
             entrypoint: /usr/bin/php
-            options: '--workdir /src'
+            options: '--workdir=/src'
             args: |
                 maintenance/mwdocgen.php \
                     --output /src/docs \
@@ -107,7 +107,7 @@
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/doxygen:0.9.1
             entrypoint: /usr/bin/php
-            options: '--workdir /src'
+            options: '--workdir=/src'
             args: |
                 maintenance/mwdocgen.php \
                     --output /log/build \

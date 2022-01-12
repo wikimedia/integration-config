@@ -79,7 +79,7 @@
         - docker-run-with-log-cache-src:
               image: 'docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-1'
               entrypoint: /run.sh
-              options: '--workdir="/src"'
+              options: '--workdir=/src'
               args: '{sonar_args}'
 
     wrappers:
