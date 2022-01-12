@@ -74,7 +74,7 @@
         - docker-run-with-log-cache-src:
             # run Maven Wrapper directly from the project
             entrypoint: '{maven_path}'
-            options: '--workdir={workdir}'
+            workdir: '{workdir}'
             image: '{obj:docker_image_var}'
             args: '-gs /settings.xml --batch-mode --file {pom} {maven_args}'
 
@@ -127,7 +127,7 @@
             # Note that Sonar must be running on Java 11, but can analyze code
             # built on Java 8.
             entrypoint: /src/mvnw
-            options: '--workdir={workdir}'
+            workdir: '{workdir}'
             image: 'docker-registry.wikimedia.org/releng/maven-java11:1.0.0'
             args: >
                 -gs /settings.xml --batch-mode --file {pom} -X
@@ -193,9 +193,8 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
          image: '{image}'
+         workdir: /src
          args: '{obj:args|}'
-         options: >-
-           --workdir=/src
      - doc-publish:
         docsrc: '{docsrc}'
         docdest: '{docdest}'
@@ -246,13 +245,13 @@
         - docker-run-with-log-cache-src:
             image: '{obj:docker_image_var}'
             entrypoint: '{maven_path}'
-            options: '--workdir={workdir}'
+            workdir: '{workdir}'
             args: '-gs /settings.xml --batch-mode --file {pom} {maven_args}'
         # Sonar analysis (see '{name}-maven-java8-docker' for details)
         - docker-run-with-log-cache-src:
             image: 'docker-registry.wikimedia.org/releng/maven-java11:1.0.0'
             entrypoint: '{maven_path}'
-            options: '--workdir={workdir}'
+            workdir: '{workdir}'
             args: >
                 -gs /settings.xml --batch-mode --file {pom}
                 sonar:sonar
@@ -264,7 +263,7 @@
         - docker-run-with-log-cache-src:
             image: '{obj:docker_image_var}'
             entrypoint: '{maven_path}'
-            options: '--workdir={workdir}'
+            workdir: '{workdir}'
             args: '-gs /settings.xml --batch-mode --file {pom} site site:stage'
     wrappers:
       - timeout:
@@ -433,7 +432,7 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node12:0.0.3'
-        options: '--workdir=/src'
+        workdir: /src
         args: 'audit'
     publishers:
      - docker-cleanup
@@ -462,7 +461,7 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.3-s2'
-        options: '--workdir=/src'
+        workdir: /src
         args: 'branch-deploy'
     publishers:
      - docker-cleanup
@@ -492,7 +491,7 @@
     - docker-ci-src-setup-simple
     - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node12:0.0.3'
-        options: '--workdir=/src'
+        workdir: /src
         args: 'audit'
     publishers:
     - docker-cleanup
@@ -659,7 +658,7 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node14:0.0.3-s1'
-        options: '--workdir=/src'
+        workdir: /src
         args: 'audit'
     publishers:
      - docker-cleanup
@@ -688,7 +687,7 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2-s3'
-        options: '--workdir=/src'
+        workdir: /src
         args: 'branch-deploy'
     publishers:
      - docker-cleanup
@@ -718,7 +717,7 @@
     - docker-ci-src-setup-simple
     - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node14:0.0.3-s1'
-        options: '--workdir=/src'
+        workdir: /src
         args: 'audit'
     publishers:
     - docker-cleanup

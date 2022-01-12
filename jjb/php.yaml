@@ -139,7 +139,7 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
          image: '{composer_image}'
-         options: '--workdir=/src'
+         workdir: /src
          args: 'update --ansi --no-progress --prefer-dist --profile'
      - docker-run-with-log-cache-src:
          image: '{phan_image}'

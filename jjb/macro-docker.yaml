@@ -101,12 +101,13 @@
 #
 # [entrypoint] string to override the container entrypoint.
 #
+# [workdir] string working directory inside the container.
+#
 # [options] space separated strings of arguments to pass to `docker run`
 #
 # Example:
 #
 #   options: >-
-#     --workdir /src
 #     --env=MEDIAWIKI_TEST=1
 #
 # [environment] a map of environment variables to set.
@@ -155,6 +156,9 @@
         exec docker run
           {%- if entrypoint is defined and entrypoint|length -%}
             {{ " --entrypoint=" + entrypoint }}
+          {%- endif -%}
+          {%- if workdir is defined and workdir|length -%}
+            {{ " --workdir=" + workdir }}
           {%- endif -%}
           {%- if options is defined and options|length -%}
             {{ " " + options }}
@@ -205,6 +209,8 @@
      - docker-run:
         entrypoint: >-
           {obj:entrypoint|}
+        workdir: >-
+           {obj:workdir|}
         environment: >-
           {obj:environment|}
         options: >-

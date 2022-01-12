@@ -29,12 +29,12 @@
      - docker-run-with-log-cache-src:
          image: '{docker_image}'
          entrypoint: composer
-         options: '--workdir=/src'
+         workdir: /src
          args: 'install'
      - docker-run-with-log-cache-src:
          image: '{docker_image}'
          entrypoint: npm
-         options: '--workdir=/src'
+         workdir: /src
          args: 'cit'
     publishers:
      - archive-log-allow-empty

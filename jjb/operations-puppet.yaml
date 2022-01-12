@@ -116,8 +116,7 @@
                 src/modules/profile/files/logstash/filter_scripts: /etc/logstash/filter_scripts
                 src/modules/profile/files/logstash/templates: /etc/logstash/templates
             entrypoint: make
-            options: >-
-                --workdir=/src/modules/profile/files/logstash
+            workdir: /src/modules/profile/files/logstash
     publishers:
         - archive-log-allow-empty
         - docker-cleanup
