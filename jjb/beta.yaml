@@ -253,9 +253,9 @@
     name: beta-code-update-eqiad
     defaults: beta
     description: |
-      This job runs automatically every ten minutes and updates
+      This job runs "scap prep auto" every ten minutes to update mediawiki config,
       mediawiki core, extensions, skins, etc from master in
-      /srv/mediawiki-staging/php-master on deployment-deploy03.  Then
+      /srv/mediawiki-staging on deployment-deploy03.  Then
       it triggers the beta-scap-sync-world job to cause "scap sync-world" to
       run.
     node: BetaClusterBastion
@@ -272,9 +272,7 @@
      - timed: 'H/10 * * * *'
 
     builders:
-      # xref: operations/puppet/modules/beta/templates/wmf-beta-autoupdate.py.erb
-      - shell: |
-          /usr/local/bin/wmf-beta-autoupdate.py --verbose
+      - shell: /usr/bin/scap prep auto
 
     publishers:
       - beta-irc
