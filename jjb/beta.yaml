@@ -202,6 +202,49 @@
      - build-discarder:
          days-to-keep: 15
 
+# Job to deploy the Wikimedia MediaWiki configuration files
+#
+# The configuration files are hosted in operations/mediawiki-config.git which
+# is deployed manually on the production cluster.  On beta, we cant really keep
+# up with all the changes, so we deploy them on sight.
+#
+# We simply update the repository on the beta host and do a git reset hard.
+#
+- job-template:
+    name: beta-mediawiki-config-update-eqiad
+    defaults: beta
+    description: |
+      Updates the operations/mediawiki-config.git checkout in
+      /srv/mediawiki-staging on deployment-deploy03.  This job is triggered
+      after a commit is merged into operations/mediawiki-config.
+    node: BetaClusterBastion
+
+    # Do not run concurrently with the downstream job
+    block-downstream: true
+
+    triggers:
+     - zuul
+
+    builders:
+     # xref: operations/puppet/modules/beta/files/wmf-beta-mwconfig-update
+     - shell: /usr/local/bin/wmf-beta-mwconfig-update
+
+    properties:
+     - build-discarder:
+         days-to-keep: 15
+
+    publishers:
+      - beta-irc
+      - email-ext:
+          recipients: qa-alerts@lists.wikimedia.org betacluster-alerts@lists.wikimedia.org
+          attach-build-log: true
+          first-failure: true
+          aborted: true
+          failure: false
+          fixed: true
+      - trigger:
+          project: beta-scap-sync-world
+
 # Job updating MediaWiki core+extensions code and refreshing the message
 #
 # This is the poor man auto updating script. We should probably split the
@@ -317,6 +360,7 @@
     name: beta
     jobs:
      - beta-code-update-eqiad
+     - beta-mediawiki-config-update-eqiad
      - beta-scap-sync-world
      - beta-update-databases-eqiad
      - beta-build-scap-deb
