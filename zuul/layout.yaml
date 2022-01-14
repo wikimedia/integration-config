@@ -1092,6 +1092,11 @@ jobs:
   # Individual adjustments
   #
 
+  - name: beta-mediawiki-config-update-eqiad
+    branch: ^master$
+    success-message: 'SUCCESS Change has been deployed on the EQIAD beta cluster'
+    failure-message: 'FAILURE Failed deployment on the EQIAD beta cluster :-/ Please contact a member of the beta project to fixup the working directory on the destination server.'
+
   - name: deployment-charts-tox-update_version-docker
     files:
       - '^tox.ini$'
@@ -3398,7 +3403,7 @@ projects:
       # - operations-mw-config-php72-composer-diffConfig-docker
       - operations-mw-config-typos-docker
     postmerge:
-      - beta-code-update-eqiad
+      - beta-mediawiki-config-update-eqiad
 
   - name: operations/puppet
     test-prio:
