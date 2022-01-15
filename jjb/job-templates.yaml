@@ -27,8 +27,8 @@
       - docker-run-with-log-cache-src:
           image: 'docker-registry.wikimedia.org/releng/gerrit:1.1.4-s1'
           entrypoint: /src/wmf-build.py
-          options: >-
-              --env LOG_DIR=/log
+          environment:
+              LOG_DIR: /log
           volumes:
               /srv/git: /srv/git:ro
     publishers:
@@ -509,9 +509,10 @@
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.3-s2'
+        environment:
+            LOG_DIR: /log
         options: >-
             --shm-size 1g
-            --env LOG_DIR=/log
     publishers:
      - archive-log-allow-empty
      - castor-save-workspace-cache
@@ -531,9 +532,10 @@
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node12-test-browser:0.0.3-s2'
         entrypoint: /run-with-xvfb.sh
+        environment:
+            LOG_DIR: /log
         options: >-
             --shm-size 1g
-            --env LOG_DIR=/log
     publishers:
      - archive-log-allow-empty
      - castor-save-workspace-cache
