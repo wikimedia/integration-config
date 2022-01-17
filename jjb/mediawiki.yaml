@@ -289,7 +289,7 @@
     !!merge : *job_quibble
     name: quibble-{packages-source}-{database}-{php}-selenium-docker
     entrypoint: quibble-with-apache
-    quibble_args: '--run selenium'
+    quibble_args: '--run selenium --parallel-npm-install'
     triggers:
         - zuul
 
@@ -359,7 +359,7 @@
     !!merge : *job_quibble
     name: wmf-quibble-selenium-{php}-docker
     entrypoint: quibble-with-apache
-    quibble_args: '--run selenium'
+    quibble_args: '--run selenium --parallel-npm-install'
     triggers:
         - zuul
 
@@ -377,7 +377,7 @@
     !!merge : *job_quibble
     name: mediawiki-quibble-selenium-{packages-source}-{database}-{php}-docker
     entrypoint: quibble-with-apache
-    quibble_args: '--run selenium'
+    quibble_args: '--run selenium --parallel-npm-install'
     triggers:
         - zuul
 
