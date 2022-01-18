@@ -1,3 +1,10 @@
+composer-package-php73 (0.4.0) wikimedia; urgency=high
+
+   Refresh for update in parent image php73:
+   Use soname php packages to prevent php8.1 taking over. T299389
+
+ -- Antoine Musso <Antoine Musso <hashar@free.fr>>  Tue, 18 Jan 2022 14:57:37 +0100
+
 composer-package-php73 (0.3.0-s7) wikimedia; urgency=high
 
    Refresh for update in parent image php73:

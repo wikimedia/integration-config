@@ -4,8 +4,8 @@ USER root
 
 # TODO: Should these be installed in a more base dockerfile?
 {% set mediawiki_deps|replace('\n', ' ') -%}
-php-apcu
-php-imagick
+php7.3-apcu
+php7.3-imagick
 php7.3-ldap
 php7.3-mysql
 php7.3-pgsql
