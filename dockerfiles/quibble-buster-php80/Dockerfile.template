@@ -40,7 +40,7 @@ RUN {{ mediawiki_deps | apt_install }} \
     && /install-php-fpm-conf.sh
 
 # Install XDebug but disables it by default due to its performance impact
-RUN {{ "php-xdebug" | apt_install }} \
+RUN {{ "php8.0-xdebug" | apt_install }} \
     && phpdismod xdebug
 # Same for pcov, although the performance overheade should be minimal
 RUN {{ "php8.0-pcov" | apt_install }} \

@@ -10,7 +10,7 @@ USER root
 #  Debian packages we need  #
 #############################
 {% set mediawiki_deps|replace('\n', ' ') -%}
-php-apcu
+php7.3-apcu
 php7.3-bcmath
 php7.3-cli
 php7.3-curl
@@ -40,7 +40,7 @@ RUN {{ mediawiki_deps | apt_install }} \
     && /install-php-fpm-conf.sh
 
 # Install XDebug but disables it by default due to its performance impact
-RUN {{ "php-xdebug" | apt_install }} \
+RUN {{ "php7.3-xdebug" | apt_install }} \
     && phpdismod xdebug
 # Same for pcov, although the performance overheade should be minimal
 RUN {{ "php7.3-pcov" | apt_install }} \
