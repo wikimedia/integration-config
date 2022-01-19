@@ -996,6 +996,9 @@ jobs:
     success-pattern: 'https://integration.wikimedia.org/ci/job/{job.name}/{build.number}/'
     branch: ^wmf/.*$
 
+  - name: gerrit-git-fat-pull
+    branch: ^deploy/wmf.*$
+
   - name: cumin-tox-publish
     branch: ^master$
 
@@ -3526,10 +3529,12 @@ projects:
   - name: operations/software/gerrit
     test:
       - gerrit-docker
+      # for deploy/wmf/* branch
+      - gerrit-git-fat-pull
     gate-and-submit:
       - gerrit-docker
-      # deploy/wmf/* branches do not have jobs running
-      - noop
+      # for deploy/wmf/* branch
+      - gerrit-git-fat-pull
 
   - name: operations/software/homer
     test:
