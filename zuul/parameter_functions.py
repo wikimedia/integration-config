@@ -352,7 +352,7 @@ dependencies = {
     'Jade': ['AbuseFilter', 'SpamBlacklist'],
     'JsonConfig': ['Scribunto', 'Kartographer'],
     'Kartographer': ['JsonConfig', 'ParserFunctions', 'VisualEditor',
-                     'WikimediaMessages'],
+                     'WikimediaMessages', 'parsoid'],
     'LanguageTool': ['VisualEditor'],
     'LDAPAuthentication2': ['LDAPProvider', 'PluggableAuth'],
     'LDAPAuthorization': ['LDAPProvider', 'PluggableAuth'],
