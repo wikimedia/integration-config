@@ -235,9 +235,7 @@
                 /srv/git: /srv/git:ro
             args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db --git-parallel=8 {quibble_args}'
             logdir: '/workspace/log'
-            #srcdir: '/workspace/src'
-            # Host /srv/.../src partition is too small. Keep source in Docker T292729
-            srcdir: '/unused'
+            srcdir: '/workspace/src'
         - assert-no-mediawiki-errors
     publishers:
         - postbuildscript:
@@ -430,9 +428,7 @@
                 /srv/git: /srv/git:ro
             args: '--packages-source "vendor" --git-parallel=8 --skip-install --run composer-test'
             logdir: '/workspace/log'
-            #srcdir: '/workspace/src'
-            # Host /srv/.../src partition is too small. Keep source in Docker T292729
-            srcdir: '/unused'
+            srcdir: '/workspace/src'
     publishers:
         - archive-log-allow-empty
         - castor-save-workspace-cache
@@ -465,9 +461,7 @@
                 /srv/git: /srv/git:ro
             args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --commands "phpunit-patch-coverage check --command \"php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=. tests/phpunit/phpunit.php\" --html /workspace/log/coverage.html"'
             logdir: '/workspace/log'
-            #srcdir: '/workspace/src'
-            # Host /srv/.../src partition is too small. Keep source in Docker T292729
-            srcdir: '/unused'
+            srcdir: '/workspace/src'
     publishers:
      - archive:
          artifacts: 'log/coverage.html'
@@ -500,9 +494,7 @@
                 /srv/git: /srv/git:ro
             args: '--packages-source vendor --db mysql --db-dir /workspace/db --skip-deps --commands "mediawiki-fresnel-patch"'
             logdir: '/workspace/log'
-            #srcdir: '/workspace/src'
-            # Host /srv/.../src partition is too small. Keep source in Docker T292729
-            srcdir: '/unused'
+            srcdir: '/workspace/src'
     publishers:
         - compress-mw-debug-logs
         - postbuildscript:
@@ -560,9 +552,7 @@
                 cover: /workspace/cover
             args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db {quibble_args}'
             logdir: '/workspace/log'
-            #srcdir: '/workspace/src'
-            # Host /srv/.../src partition is too small. Keep source in Docker T292729
-            srcdir: '/unused'
+            srcdir: '/workspace/src'
     publishers:
         - archive-log-allow-empty
         - castor-save-workspace-cache
@@ -610,9 +600,7 @@
                 cover: /workspace/cover
             args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db {quibble_args}'
             logdir: '/workspace/log'
-            #srcdir: '/workspace/src'
-            # Host /srv/.../src partition is too small. Keep source in Docker T292729
-            srcdir: '/unused'
+            srcdir: '/workspace/src'
     publishers:
         - archive-log-allow-empty
         - castor-save-workspace-cache
@@ -852,9 +840,7 @@
                 cover: /workspace/cover
             args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db {quibble_args}'
             logdir: '/workspace/log'
-            #srcdir: '/workspace/src'
-            # Host /srv/.../src partition is too small. Keep source in Docker T292729
-            srcdir: '/unused'
+            srcdir: '/workspace/src'
         - cover-publish:
             src: 'cover'
             dest: 'mediawiki-core'
