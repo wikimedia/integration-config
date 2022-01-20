@@ -5472,6 +5472,10 @@ projects:
     template:
       - name: extension-quibble-composer-noselenium
 
+  - name: mediawiki/extensions/BlueSpiceProDistributionConnector
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/BlueSpiceQrCode
     template:
       - name: extension-quibble-composer

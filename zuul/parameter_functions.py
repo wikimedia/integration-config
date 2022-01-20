@@ -211,6 +211,10 @@ dependencies = {
     'BlueSpicePlayer': ['BlueSpiceFoundation'],
     'BlueSpicePermissionManager': ['BlueSpiceFoundation'],
     'BlueSpicePrivacy': ['BlueSpiceFoundation'],
+    'BlueSpiceProDistributionConnector': [
+        'BlueSpiceFoundation',
+        'Math',
+    ],
     'BlueSpiceQrCode': ['BlueSpiceFoundation'],
     'BlueSpiceRating': ['BlueSpiceFoundation'],
     'BlueSpiceRSSFeeder': ['BlueSpiceFoundation'],
