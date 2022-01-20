@@ -1,3 +1,10 @@
+logstash-filter-verifier (0.0.2) wikimedia; urgency=medium
+
+  * Use OpenSearch repo.
+  * Upgrade logstash-oss to 7.16.
+
+ -- Cole White <cwhite@wikimedia.org>  Thu, 20 Jan 2022 22:58:00 +0000
+
 logstash-filter-verifier (0.0.1-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:
