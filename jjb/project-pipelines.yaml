@@ -395,6 +395,8 @@
         - articlequality-transformer-publish
         - draftquality
         - draftquality-publish
+        - draftquality-transformer
+        - draftquality-transformer-publish
         - topic
         - topic-publish
         - outlink
@@ -410,6 +412,8 @@
         # trigger-inference-services-pipeline-articlequality-transformer-publish
         # trigger-inference-services-pipeline-draftquality
         # trigger-inference-services-pipeline-draftquality-publish
+        # trigger-inference-services-pipeline-draftquality-transformer
+        # trigger-inference-services-pipeline-draftquality-transformer-publish
         # trigger-inference-services-pipeline-topic
         # trigger-inference-services-pipeline-topic-publish
         # trigger-inference-services-pipeline-outlink
@@ -425,6 +429,8 @@
         # inference-services-pipeline-articlequality-transformer-publish
         # inference-services-pipeline-draftquality
         # inference-services-pipeline-draftquality-publish
+        # inference-services-pipeline-draftquality-transformer
+        # inference-services-pipeline-draftquality-transformer-publish
         # inference-services-pipeline-topic
         # inference-services-pipeline-topic-publish
         # inference-services-pipeline-outlink
