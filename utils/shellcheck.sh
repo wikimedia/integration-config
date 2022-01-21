@@ -2,8 +2,11 @@
 set -eu -o pipefail
 
 tox -e jenkins-jobs --notest
+tox -e shellcheck --notest
 
 base_dir=$(realpath "$(dirname "$0")"/../)
+
+shellcheck="$base_dir/.tox/shellcheck/bin/shellcheck"
 
 JJB_BIN=.tox/jenkins-jobs/bin/jenkins-jobs
 JJB_CONF=tests/fixtures/jjb-disable-query-plugins.conf
@@ -13,6 +16,8 @@ test_dir=$(mktemp -d --tmpdir jjbshellcheck.XXXX)
 trap 'echo Deleting "$test_dir"; rm -R "$test_dir"' EXIT
 
 mkdir -p "$test_dir"
+
+$shellcheck --version
 
 echo "Generating config for proposed patchset..."
 (
@@ -26,4 +31,4 @@ find "$test_dir" -type f -name \*.xml -exec ./utils/extract-shell-scripts.py '{}
 
 echo "Running shellcheck..."
 # Use xargs, instead of -exec, to propagate shellcheck return code
-find "$test_dir" -type f -name \*.sh -print0 | xargs -0 shellcheck --severity=error -W 0
+find "$test_dir" -type f -name \*.sh -print0 | xargs -0 "$shellcheck" --severity=error -W 0
