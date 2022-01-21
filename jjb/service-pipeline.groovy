@@ -34,7 +34,8 @@ node(nodeLabel) {
     }
 
     stage('Run test image') {
-      runner.run(testImageID)
+      runner.run(imageID: testImageID,
+                   removeContainer: true) // T290608
     }
 
     if (testProductionImage || pushProductionImage) {
