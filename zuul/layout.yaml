@@ -9517,6 +9517,7 @@ projects:
 
   - name: wikimedia/toolhub
     test:
+      - commit-message-validator
       - trigger-wikimedia-toolhub-pipeline-test
     gate-and-submit:
       - trigger-wikimedia-toolhub-pipeline-test
