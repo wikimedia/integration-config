@@ -32,7 +32,7 @@ php7.3-zip
 COPY --from=sury-php /etc/apt/trusted.gpg.d/php.gpg /etc/apt/trusted.gpg.d/php.gpg
 
 RUN {{ "apt-transport-https" | apt_install }} && \
- echo "deb https://packages.sury.org/php/ buster main" > /etc/apt/sources.list.d/php.list
+    echo "deb https://packages.sury.org/php/ buster main" > /etc/apt/sources.list.d/php.list
 
 # Pin sury's repo higher for the packages that exist in both buster and sury
 COPY sury.pin /etc/apt/preferences.d/sury

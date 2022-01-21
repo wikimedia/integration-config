@@ -3,10 +3,10 @@ FROM {{ "ci-stretch" | image_tag }}
 USER root
 RUN {{ "python3 python3-pip" | apt_install }} \
     && install --owner=nobody --group=nogroup \
-          --directory /opt/commit-message-validator \
+        --directory /opt/commit-message-validator \
     && ln -s \
-          /opt/commit-message-validator/bin/commit-message-validator \
-          /usr/local/bin/commit-message-validator
+        /opt/commit-message-validator/bin/commit-message-validator \
+        /usr/local/bin/commit-message-validator
 
 USER nobody
 RUN pip3 install --no-cache-dir --system --prefix /opt/commit-message-validator commit-message-validator

@@ -28,7 +28,7 @@ qemu-system-x86_64 \
     "$image" >/dev/null 2>log/qemu_err &
 VM_PID="$!"
 kill_vm() {
-  kill -9 $VM_PID
+    kill -9 $VM_PID
 }
 trap kill_vm EXIT
 
@@ -47,8 +47,8 @@ SCP_OPTS='-P 4293 -i ./root.key -F /dev/null -o BatchMode=yes -o UserKnownHostsF
 
 # Wait for VM to initialise
 while ! ssh $SSH_OPTS $VM_TARGET 'true'; do
-  echo "... waiting for Qemu VM"
-  sleep 2
+    echo "... waiting for Qemu VM"
+    sleep 2
 done
 echo 'Connected!'
 

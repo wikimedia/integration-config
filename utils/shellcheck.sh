@@ -15,9 +15,11 @@ trap 'echo Deleting "$test_dir"; rm -R "$test_dir"' EXIT
 mkdir -p "$test_dir"
 
 echo "Generating config for proposed patchset..."
-(cd "$base_dir"
- $JJB_BIN --version
- $JJB_TEST ./jjb --config-xml -o "$test_dir")
+(
+    cd "$base_dir"
+    $JJB_BIN --version
+    $JJB_TEST ./jjb --config-xml -o "$test_dir"
+)
 
 echo "Extracting shell scripts..."
 find "$test_dir" -type f -name \*.xml -exec ./utils/extract-shell-scripts.py '{}' ';'

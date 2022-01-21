@@ -38,12 +38,12 @@ set -e
 # If we're not operating the in the codehealth pipeline context, check to see
 # if the HTML coverage report was generated. If it was not, exit with a failure.
 if [[ ! -v CODEHEALTH ]]; then
-  test -f "$WORKSPACE"/cover/index.html
+    test -f "$WORKSPACE"/cover/index.html
 fi
 
 # In codehealth pipeline context, make necessary modifications to junit.xml
 if [[ -v CODEHEALTH ]] && [ -f "$LOG_DIR/junit.xml" ]; then
-  phpunit-junit-edit "$LOG_DIR/junit.xml"
+    phpunit-junit-edit "$LOG_DIR/junit.xml"
 fi
 
 if [ -s "$LOG_DIR"/clover.xml ] && [[ ! -v CODEHEALTH ]] ; then
