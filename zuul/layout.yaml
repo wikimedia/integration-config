@@ -912,6 +912,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'revscoring/editquality/model-server/.*'
 
+  - name: ^trigger-inference-services-pipeline-editquality-transformer
+    files:
+        - '.pipeline/editquality/transformer.yaml'
+        - '.pipeline/config.yaml'
+        - 'revscoring/editquality/transformer/.*'
+
   - name: ^trigger-inference-services-pipeline-articlequality
     files:
         - '.pipeline/articlequality/blubber.yaml'
@@ -2299,6 +2305,7 @@ projects:
   - name: machinelearning/liftwing/inference-services
     test:
       - trigger-inference-services-pipeline-editquality
+      - trigger-inference-services-pipeline-editquality-transformer
       - trigger-inference-services-pipeline-articlequality
       - trigger-inference-services-pipeline-articlequality-transformer
       - trigger-inference-services-pipeline-draftquality
@@ -2308,6 +2315,7 @@ projects:
       - trigger-inference-services-pipeline-outlink-transformer
     gate-and-submit:
       - trigger-inference-services-pipeline-editquality
+      - trigger-inference-services-pipeline-editquality-transformer
       - trigger-inference-services-pipeline-articlequality
       - trigger-inference-services-pipeline-articlequality-transformer
       - trigger-inference-services-pipeline-draftquality
@@ -2317,6 +2325,7 @@ projects:
       - trigger-inference-services-pipeline-outlink-transformer
     postmerge:
       - trigger-inference-services-pipeline-editquality-publish
+      - trigger-inference-services-pipeline-editquality-transformer-publish
       - trigger-inference-services-pipeline-articlequality-publish
       - trigger-inference-services-pipeline-articlequality-transformer-publish
       - trigger-inference-services-pipeline-draftquality-publish
