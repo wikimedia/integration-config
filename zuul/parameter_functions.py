@@ -509,7 +509,7 @@ phan_dependencies = {
     'Capiunto': ['Scribunto'],
     'CentralAuth': ['AbuseFilter', 'AntiSpoof', 'EventLogging', 'MassMessage',
                     'MobileFrontend', 'Renameuser', 'TitleBlacklist',
-                    'UserMerge', 'Echo', 'SecurePoll'],
+                    'Echo', 'SecurePoll'],
     'CentralNotice': ['CentralAuth', 'MobileFrontend', 'Translate', 'cldr'],
     'Challenge': ['Echo', 'SocialProfile'],
     'CheckUser': ['CentralAuth', 'EventLogging', 'GuidedTour', 'Renameuser'],
