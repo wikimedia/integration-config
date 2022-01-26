@@ -627,7 +627,6 @@ phan_dependencies = {
     'WikimediaBadges': ['Wikibase'],
     'WikimediaEvents': ['AbuseFilter', 'BetaFeatures', 'CentralAuth',
                         'EventLogging', 'GrowthExperiments', 'MobileFrontend'],
-    'WikimediaIncubator': ['CentralAuth'],
     'WikimediaMaintenance': ['CentralAuth', 'CirrusSearch', 'cldr', 'Cognate',
                              'MassMessage', 'Wikibase'],
     'WikimediaMessages': ['GuidedTour', 'ORES', 'skins/MinervaNeue'],
