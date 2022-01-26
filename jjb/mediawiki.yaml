@@ -278,6 +278,7 @@
 - job-template:
     !!merge : *job_quibble
     name: quibble-{packages-source}-{database}-{php}-noselenium-docker
+    entrypoint: quibble-with-apache
     quibble_args: '--skip selenium,npm-test,phpunit-standalone,api-testing'
     triggers:
         - zuul
@@ -336,6 +337,7 @@
 - job-template: &job_wmf_quibble
     !!merge : *job_quibble
     name: wmf-quibble-vendor-mysql-{php}-docker
+    entrypoint: quibble-with-apache
     # We do not run mediawiki/core tests with extensions installed
     # https://phabricator.wikimedia.org/T197469#4293142
     quibble_args: '--phpunit-testsuite=extensions --skip selenium,npm-test,phpunit-standalone,api-testing,phpbench'
@@ -347,6 +349,7 @@
 - job-template:
     !!merge : *job_quibble
     name: wmf-quibble-core-vendor-mysql-{php}-docker
+    entrypoint: quibble-with-apache
     # We do not run mediawiki/core tests with extensions installed
     # https://phabricator.wikimedia.org/T197469#4293142
     quibble_args: '--phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
@@ -365,6 +368,7 @@
 - job-template:
     !!merge : *job_quibble
     name: mediawiki-quibble-{packages-source}-{database}-{php}-docker
+    entrypoint: quibble-with-apache
     quibble_args: '--skip selenium,composer-test,npm-test,phpunit-standalone,api-testing'
     triggers:
         - zuul
