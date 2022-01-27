@@ -2,6 +2,10 @@ FROM {{ "ci-buster" | image_tag }}
 
 USER root
 
+# Work around problem installing ca-certificates-java
+# [docker-pkg-build] INFO - update-alternatives: error: error creating symbolic link '/usr/share/man/man1/java.1.gz.dpkg-tmp': No such file or directory (image.py:210)
+RUN mkdir -p /usr/share/man/man1
+
 # Install the JRE first, else Logstash fails at install time when java isn't
 # found or hasn't been configured by dpg yet.
 # See also https://github.com/elastic/logstash/issues/6394
