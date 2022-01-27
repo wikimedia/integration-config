@@ -4244,6 +4244,7 @@ projects:
       - name: extension-codehealth
       - name: extension-coverage
       - name: extension-gate
+      - name: extension-apitests
 
   - name: mediawiki/extensions/GuidedTour
     template:
