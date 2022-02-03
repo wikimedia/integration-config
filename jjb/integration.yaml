@@ -120,7 +120,7 @@
       - docker-src-dir
       - docker-ci-src-setup-simple
       - docker-run-with-log-cache-src:
-          image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.3.0'
+          image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.0'
           entrypoint: /src/utils/ci-fullrun.sh
           workdir: /src
           options: --tmpfs /workspace/db:size=320M
@@ -134,7 +134,7 @@
       - docker-cleanup
 
 - job:
-    name: integration-quibble-apache-fullrun
+    name: integration-quibble-fullrun-extensions
     node: Docker
     triggers:
       - zuul
@@ -144,19 +144,12 @@
       - docker-src-dir
       - docker-ci-src-setup-simple
       - docker-run-with-log-cache-src:
-          image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.3.0'
-          entrypoint: bash
+          image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.0'
+          entrypoint: /src/utils/ci-fullrun-extensions.sh
           workdir: /src
           options: --tmpfs /workspace/db:size=320M
           volumes:
               /srv/git: /srv/git:ro
-          args: >-
-              -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
-              && /src/utils/ci-fullrun.sh
-              --color
-              --db-dir /workspace/db
-              --web-backend=external --web-url=http://127.0.0.1:9413
-              --run=qunit,selenium,api-testing'
           logdir: '/workspace/log'
     publishers:
       - archive-log-allow-empty
