@@ -145,7 +145,13 @@
       - docker-ci-src-setup-simple
       - docker-run-with-log-cache-src:
           image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.0'
-          entrypoint: /src/utils/ci-fullrun-extensions.sh
+          entrypoint: bash
+          args: >-
+              -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+              && /src/utils/ci-fullrun-extensions.sh
+              --color
+              --db-dir /workspace/db
+              --web-backend=external --web-url=http://127.0.0.1:9413'
           workdir: /src
           options: --tmpfs /workspace/db:size=320M
           volumes:
