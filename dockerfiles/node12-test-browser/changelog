@@ -1,3 +1,10 @@
+node12-test-browser (0.0.3-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image node12:
+   Add npx command (T300930).
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Thu,  3 Feb 2022 22:19:59 +0000
+
 node12-test-browser (0.0.3-s2) wikimedia; urgency=high
 
    Refresh for update in parent image node12:

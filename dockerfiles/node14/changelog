@@ -1,3 +1,9 @@
+node14 (0.0.4) wikimedia; urgency=high
+
+   Add npx command (T300930).
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Thu,  3 Feb 2022 22:20:09 +0000
+
 node14 (0.0.3-s1) wikimedia; urgency=high
 
    Ensure node14 install materials are entirely removed

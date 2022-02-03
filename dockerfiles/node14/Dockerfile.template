@@ -29,7 +29,8 @@ RUN cd /tmp/nodeinstall \
 # but, we upgraded npm and we're sticking to it.
 RUN git clone --depth 1 https://gerrit.wikimedia.org/r/integration/npm.git -b npm-7.21.0 /srv/npm \
     && rm -rf /srv/npm/.git \
-    && ln -s /srv/npm/bin/npm-cli.js /usr/bin/npm
+    && ln -s /srv/npm/bin/npm-cli.js /usr/bin/npm \
+    && ln -s /srv/npm/bin/npx-cli.js /usr/bin/npx
 
 USER nobody
 
