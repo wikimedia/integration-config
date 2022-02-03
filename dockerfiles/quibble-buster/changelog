@@ -1,3 +1,9 @@
+quibble-buster (1.4.0) wikimedia; urgency=high
+
+   Bump quibble to 1.4.0
+
+ -- Kosta Harlan <kharlan@wikimedia.org>  Thu,  3 Feb 2022 15:08:16 +0100
+
 quibble-buster (1.3.0) wikimedia; urgency=high
 
    Update Quibble to 1.3.0
