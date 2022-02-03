@@ -4,7 +4,7 @@ mkdir log/
 
 # See <https://www.mediawiki.org/wiki/Continuous_integration/Qemu#Snapshots>
 # The image is not written to thanks to the `-snapshot` option passed to Qemu.
-image=/srv/vm-images/qemu-debian10buster-2020_05_04c.img
+image=/srv/vm-images/debian-11-ci.qcow2
 
 host_cpus=$(grep -c ^processor /proc/cpuinfo)
 # At least one cpu for the guest and one extra on the host
