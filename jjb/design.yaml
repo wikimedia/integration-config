@@ -5,5 +5,5 @@
      - '{name}-docker-doc-publish':
          image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2-s3'
          args: 'doc'
-         docsrc: 'src/packages/vitepress/docs/.vitepress/dist'
+         docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
          docdest: '$DOC_PROJECT/$DOC_SUBPATH'
