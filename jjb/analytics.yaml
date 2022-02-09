@@ -155,7 +155,7 @@
 
 - project:
       name: 'analytics-gobblin-wmf'
-      release-project: analytics-gobblin-wmf
+      release-project: analytics/gobblin-wmf
       release-branch: main
       publishers:
           - email-wikimedia-analytics
