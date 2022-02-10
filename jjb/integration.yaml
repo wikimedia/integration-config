@@ -157,6 +157,10 @@
           volumes:
               /srv/git: /srv/git:ro
           logdir: '/workspace/log'
+    wrappers:
+      - timeout:
+          timeout: 45
+          fail: true
     publishers:
       - archive-log-allow-empty
       - castor-save-workspace-cache
