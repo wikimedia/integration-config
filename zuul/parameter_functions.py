@@ -213,6 +213,8 @@ dependencies = {
     'BlueSpicePrivacy': ['BlueSpiceFoundation'],
     'BlueSpiceProDistributionConnector': [
         'BlueSpiceFoundation',
+        'BlueSpiceUEModulePDF',
+        'BlueSpiceUniversalExport',
         'Math',
     ],
     'BlueSpiceQrCode': ['BlueSpiceFoundation'],
