@@ -389,8 +389,6 @@
     pipeline:
         - editquality
         - editquality-publish
-        - editquality-transformer
-        - editquality-transformer-publish
         - articlequality
         - articlequality-publish
         - articlequality-transformer
@@ -408,8 +406,6 @@
     jobs:
         # trigger-inference-services-pipeline-editquality
         # trigger-inference-services-pipeline-editquality-publish
-        # trigger-inference-services-pipeline-editquality-transformer
-        # trigger-inference-services-pipeline-editquality-transformer-publish
         # trigger-inference-services-pipeline-articlequality
         # trigger-inference-services-pipeline-articlequality-publish
         # trigger-inference-services-pipeline-articlequality-transformer
@@ -427,8 +423,6 @@
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-editquality
         # inference-services-pipeline-editquality-publish
-        # inference-services-pipeline-editquality-transformer
-        # inference-services-pipeline-editquality-transformer-publish
         # inference-services-pipeline-articlequality
         # inference-services-pipeline-articlequality-publish
         # inference-services-pipeline-articlequality-transformer
