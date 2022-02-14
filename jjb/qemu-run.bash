@@ -10,7 +10,12 @@ install -m 600 /srv/vm-images/sshkey_qemu_root_v1 root.key
 # Start VM
 # - Make the VM's ssh port visible to the Jenkins agent (22 -> 4293)
 # - Run qemu in the background so we can run ssh meanwhile.
-qemu-system-x86_64 -device virtio-net,netdev=user.0 -netdev user,id=user.0,hostfwd=tcp::4293-:22 -m 4096 -nographic vm.img >/dev/null 2>log/qemu_err &
+qemu-system-x86_64 \
+    -device virtio-net,netdev=user.0 \
+    -netdev user,id=user.0,hostfwd=tcp::4293-:22 \
+    -m 4096 \
+    -nographic \
+    vm.img >/dev/null 2>log/qemu_err &
 VM_PID="$!"
 kill_vm() {
   kill -9 $VM_PID
