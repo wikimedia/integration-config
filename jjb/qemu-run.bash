@@ -2,9 +2,10 @@
 set -eu -o pipefail
 mkdir log/
 
-# Fetch VM
 # See <https://www.mediawiki.org/wiki/Continuous_integration/Qemu#Snapshots>
-cp /srv/vm-images/qemu-debian10buster-2020_05_04c.img vm.img
+# The image is not written to thanks to the `-snapshot` option passed to Qemu.
+image=/srv/vm-images/qemu-debian10buster-2020_05_04c.img
+
 install -m 600 /srv/vm-images/sshkey_qemu_root_v1 root.key
 
 # Start VM
@@ -15,7 +16,8 @@ qemu-system-x86_64 \
     -netdev user,id=user.0,hostfwd=tcp::4293-:22 \
     -m 4096 \
     -nographic \
-    vm.img >/dev/null 2>log/qemu_err &
+    -snapshot \
+    "$image" >/dev/null 2>log/qemu_err &
 VM_PID="$!"
 kill_vm() {
   kill -9 $VM_PID
