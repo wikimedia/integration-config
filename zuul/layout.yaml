@@ -3614,6 +3614,10 @@ projects:
     template:
       - name: tox-docker
 
+  - name: operations/software/schema-changes
+    template:
+      - name: tox-docker
+
   - name: operations/software/service-checker
     template:
       - name: debian-glue-non-voting
