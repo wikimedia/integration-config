@@ -6,7 +6,14 @@ mkdir log/
 # The image is not written to thanks to the `-snapshot` option passed to Qemu.
 image=/srv/vm-images/qemu-debian10buster-2020_05_04c.img
 
+host_cpus=$(grep -c ^processor /proc/cpuinfo)
+# At least one cpu for the guest and one extra on the host
+guest_cpus=$((host_cpus < 2 ? 1 : host_cpus -1))
+
 install -m 600 /srv/vm-images/sshkey_qemu_root_v1 root.key
+
+printf "Host has %s cpus, using %s for the guest\n" "$host_cpus" "$guest_cpus"
+printf "Booting VM in the background...\n"
 
 # Start VM
 # - Make the VM's ssh port visible to the Jenkins agent (22 -> 4293)
@@ -15,6 +22,7 @@ qemu-system-x86_64 \
     -device virtio-net,netdev=user.0 \
     -netdev user,id=user.0,hostfwd=tcp::4293-:22 \
     -m 4096 \
+    -smp cores="$guest_cpus" \
     -nographic \
     -snapshot \
     "$image" >/dev/null 2>log/qemu_err &
