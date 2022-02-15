@@ -492,3 +492,11 @@
         - 'trigger-{name}-pipeline-{pipeline}'
         # servicelib-node-pipeline-spec
         - '{name}-pipeline-{pipeline}'
+
+- project:
+    name: service-scaffold-node
+    pipeline:
+      - test
+    jobs:
+      - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'

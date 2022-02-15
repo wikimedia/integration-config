@@ -8109,6 +8109,12 @@ projects:
     gate-and-submit:
       - trigger-servicelib-node-pipeline-spec
 
+  - name: mediawiki/services/service-scaffold-node
+    test:
+        - trigger-service-scaffold-node-pipeline-test
+    gate-and-submit:
+        - trigger-service-scaffold-node-pipeline-test
+
   - name: mediawiki/services/texvcinfo
     template:
       - name: node12-docker
