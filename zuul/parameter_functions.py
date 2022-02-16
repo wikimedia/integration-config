@@ -382,6 +382,7 @@ dependencies = {
     'NavigationTiming': ['EventLogging'],
     'NSFileRepo': ['Lockdown'],
     'Newsletter': ['Echo'],
+    'OATHAuth': ['Echo'],
     'OAuth': ['AbuseFilter', 'Echo'],
     'OAuthRateLimiter': ['OAuth'],
     'OpenIDConnect': ['PluggableAuth'],
