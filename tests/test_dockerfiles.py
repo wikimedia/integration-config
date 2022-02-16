@@ -1,4 +1,5 @@
 import os
+import re
 
 from debian.changelog import Changelog
 from debian.deb822 import Deb822
@@ -88,3 +89,36 @@ def test_control_files():
         control_filename = os.path.join(image_dir, 'control')
         if os.path.isfile(control_filename):
             yield assertControlFile, control_filename
+
+
+def test_quibble_images_version_is_in_sync():
+
+    # Get Quibble version installed by pip
+    base_dockerfile = os.path.join(
+        DOCKERFILES_DIR, 'quibble-buster/Dockerfile.template')
+    pip_re = re.compile(
+        r'.*integration/quibble.git@"([\.\d]+)"#egg=quibble')
+
+    quibble_version = None
+    with open(base_dockerfile) as f:
+        for line in f.readlines():
+            match = re.match(pip_re, line)
+            if match:
+                quibble_version = match.group(1)
+                break
+
+    if not quibble_version:
+        raise AssertionError(
+            'Could not find Quibble version looking at pip install command '
+            'line in the Quibble base image')
+
+    changelog_files = [
+        os.path.join(d, 'changelog')
+        for d in IMAGES_DIR
+        if 'quibble' in d]
+    for chg_file in changelog_files:
+        with open(chg_file) as f:
+            image_main_version = Changelog(f).get_version().upstream_version
+            assert quibble_version == image_main_version, \
+                'Expect Quibble image version %s, got %s in %s' % (
+                    quibble_version, image_main_version, chg_file)
