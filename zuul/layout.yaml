@@ -8235,6 +8235,18 @@ projects:
     experimental:
       - generic-node12-docker
 
+  - name: analytics/datahub
+    test:
+      - trigger-datahub-pipeline-datahub-gms
+      - trigger-datahub-pipeline-datahub-frontend
+      - trigger-datahub-pipeline-datahub-mce-consumer
+      - trigger-datahub-pipeline-datahub-mae-consumer
+    gate-and-submit:
+      - trigger-datahub-pipeline-datahub-gms
+      - trigger-datahub-pipeline-datahub-frontend
+      - trigger-datahub-pipeline-datahub-mce-consumer
+      - trigger-datahub-pipeline-datahub-mae-consumer
+
   - name: analytics/geowiki
     template:
       - name: tox-docker

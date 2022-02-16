@@ -500,3 +500,14 @@
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
       - '{name}-pipeline-{pipeline}'
+
+- project:
+    name: datahub
+    pipeline:
+      - datahub-gms
+      - datahub-frontend
+      - datahub-mce-consumer
+      - datahub-mae-consumer
+    jobs:
+      - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'
