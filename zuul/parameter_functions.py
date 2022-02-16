@@ -510,6 +510,7 @@ phan_dependencies = {
     'ArticlePlaceholder': ['Scribunto', 'Wikibase'],
     'BlogPage': ['Comments', 'RandomGameUnit', 'SocialProfile', 'Video',
                  'VoteNY'],
+    'BlueSpiceAvatars': ['BlueSpiceFoundation', 'BlueSpicePrivacy'],
     'BounceHandler': ['CentralAuth', 'Echo'],
     'Campaigns': ['EventLogging', 'MobileFrontend'],
     'Capiunto': ['Scribunto'],
