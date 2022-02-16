@@ -1,4 +1,4 @@
-quibble-buster (1.4.1) wikimedia; urgency=high
+quibble-buster (1.4.0-s1) wikimedia; urgency=high
 
    Add npx command (T300930).
 
