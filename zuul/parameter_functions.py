@@ -573,6 +573,7 @@ phan_dependencies = {
     'MobileFrontendContentProvider': ['MobileFrontend'],
     'Newsletter': ['Echo'],
     'NewSignupPage': ['SocialProfile'],
+    'OATHAuth': ['Echo'],
     'OAuth': ['AbuseFilter', 'Echo'],
     'OAuthRateLimiter': ['OAuth'],
     'OpenStackManager': ['LdapAuthentication', 'Echo', 'TitleBlacklist'],
