@@ -404,7 +404,7 @@
         - api-testing-{database}-{php}-docker:
             php:
                 - php72:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.3.0
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.0
             packages-source: vendor
             database:
                 - mysql
@@ -488,7 +488,7 @@
         - docker-log-dir
         - docker-src-dir
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.3.0
+            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.4.0
             options: '--tmpfs /workspace/db:size=320M'
             volumes:
                 /srv/git: /srv/git:ro
@@ -688,7 +688,7 @@
     - docker-src-dir
     - docker-castor-load
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.3.0-s1
+        image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.0
         environment:
             CODEHEALTH: 1
         options: '--tmpfs /workspace/db:size=320M'
@@ -783,7 +783,7 @@
     - docker-wipe-dir:
         dir: 'cover'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.3.0-s1
+        image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.0
         environment:
             CODEHEALTH: 1
         volumes:
@@ -926,15 +926,15 @@
         - sqlite
     php:
         - php72:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.3.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.0
         - php73:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.3.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.4.0
         - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.3.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.0
         - php80:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.3.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.4.0
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.3.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.4.0
     jobs:
         - quibble-{packages-source}-{database}-{php}-docker
         - quibble-{packages-source}-{database}-{php}-noselenium-docker
@@ -946,32 +946,32 @@
         - mediawiki-quibble-apitests-{packages-source}-{php}-docker:
             database: 'mysql'
         - mwcore-phpunit-coverage-patch:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.3.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.0
             packages-source: vendor
             database: sqlite
         - mwcore-phpunit-coverage-master:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.3.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.0
             packages-source: vendor
             database: sqlite
         - mwext-phpunit-coverage-patch-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.3.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.0
             packages-source:  composer
             database: mysql
         - mwext-phpunit-coverage-docker-publish:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.3.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.0
             packages-source:  composer
             database: mysql
         - mwskin-phpunit-coverage-patch-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.3.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.0
             packages-source:  composer
             database: mysql
         - mwskin-phpunit-coverage-docker-publish:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.3.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.0
             packages-source:  composer
             database: mysql
         # Explicitly flag this ruby selenium job as a legacy one that should not be used
         - legacy-quibble-rubyselenium-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72-bundle:1.3.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72-bundle:1.4.0
             packages-source: vendor
             database: mysql
 
@@ -986,9 +986,9 @@
     # And only php7.2 and php7.4
     php:
         - php72:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.3.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.0
         - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.3.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.0
     jobs:
         - wmf-quibble-vendor-mysql-{php}-docker
         - wmf-quibble-core-vendor-mysql-{php}-docker
@@ -1005,7 +1005,7 @@
     name: mediawiki-selenium-integration
     jobs:
         - mediawiki-selenium-integration-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72-bundle:1.3.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72-bundle:1.4.0
 
             packages-source: vendor
             database: mysql
@@ -1024,7 +1024,7 @@
 
 - project:
     name: wikibase
-    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.3.0-s1
+    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.4.0
     packages-source: composer
     kind:
         - client:
