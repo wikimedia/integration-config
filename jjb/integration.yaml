@@ -129,6 +129,7 @@
           args: --color --db-dir /workspace/db
           logdir: '/workspace/log'
     publishers:
+      - compress-mw-debug-logs
       - archive-log-allow-empty
       - castor-save-workspace-cache
       - docker-cleanup
@@ -162,6 +163,7 @@
           timeout: 45
           fail: true
     publishers:
+      - compress-mw-debug-logs
       - archive-log-allow-empty
       - castor-save-workspace-cache
       - docker-cleanup
