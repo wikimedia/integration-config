@@ -1217,6 +1217,9 @@ jobs:
         - '.pipeline/config.yaml'
         - 'spec/.*'
 
+  - name: ^trigger-datahub-pipeline-.*-publish
+    branch: wmf
+
 project-templates:
 
   - name: debian-glue
@@ -8237,16 +8240,20 @@ projects:
 
   - name: analytics/datahub
     test:
-      - trigger-datahub-pipeline-datahub-gms
-      - trigger-datahub-pipeline-datahub-frontend
-      - trigger-datahub-pipeline-datahub-mce-consumer
-      - trigger-datahub-pipeline-datahub-mae-consumer
+      - trigger-datahub-pipeline-gms-build
+      - trigger-datahub-pipeline-frontend-build
+      - trigger-datahub-pipeline-mce-consumer-build
+      - trigger-datahub-pipeline-mae-consumer-build
     gate-and-submit:
-      - trigger-datahub-pipeline-datahub-gms
-      - trigger-datahub-pipeline-datahub-frontend
-      - trigger-datahub-pipeline-datahub-mce-consumer
-      - trigger-datahub-pipeline-datahub-mae-consumer
-
+      - trigger-datahub-pipeline-gms-build
+      - trigger-datahub-pipeline-frontend-build
+      - trigger-datahub-pipeline-mce-consumer-build
+      - trigger-datahub-pipeline-mae-consumer-build
+    postmerge:
+      - trigger-datahub-pipeline-gms-publish
+      - trigger-datahub-pipeline-frontend-publish
+      - trigger-datahub-pipeline-mce-consumer-publish
+      - trigger-datahub-pipeline-mae-consumer-publish
   - name: analytics/geowiki
     template:
       - name: tox-docker

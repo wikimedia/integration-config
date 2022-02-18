@@ -504,10 +504,14 @@
 - project:
     name: datahub
     pipeline:
-      - datahub-gms
-      - datahub-frontend
-      - datahub-mce-consumer
-      - datahub-mae-consumer
+      - gms-build
+      - gms-publish
+      - frontend-build
+      - frontend-publish
+      - mce-consumer-build
+      - mce-consumer-publish
+      - mae-consumer-build
+      - mae-consumer-publish
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
       - '{name}-pipeline-{pipeline}'
