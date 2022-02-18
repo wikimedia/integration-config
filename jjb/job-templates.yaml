@@ -889,6 +889,9 @@
         - 'branchdeploy-{key}-node12-npm-docker':
             key:
                 - wikidata-query-builder
+        - 'branchdeploy-{key}-node14-npm-docker':
+            key:
+                - codex
 
 - job-template:
     name: 'selenium-daily-{sitename}-{project}'
