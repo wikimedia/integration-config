@@ -220,6 +220,7 @@
          image: '{image}'
          workdir: /src
          args: '{obj:args|}'
+         environment: '{obj:environment|}'
      - doc-publish:
         docsrc: '{docsrc}'
         docdest: '{docdest}'
