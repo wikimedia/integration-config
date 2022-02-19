@@ -9318,12 +9318,12 @@ projects:
   - name: design/codex
     template:
       - name: node14-browser-docker
+    test:
+      - branchdeploy-codex-node14-npm-docker
     postmerge:
       - codex-docker-doc-publish
     publish:
       - codex-docker-doc-publish
-    experimental:
-      - branchdeploy-codex-node14-npm-docker
 
   - name: design/landing-page
     template:
