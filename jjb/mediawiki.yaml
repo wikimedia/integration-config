@@ -29,7 +29,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.3-s2'
+        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.3-s3'
         args: 'doc'
      - doc-publish:
            docsrc: 'src/docs/js'
@@ -793,7 +793,7 @@
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/node12-test:0.0.3-s2
+        image: docker-registry.wikimedia.org/releng/node12-test:0.0.3-s3
         options: '--volume "$(pwd)"/src/extensions/"$EXT_NAME":/src'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'

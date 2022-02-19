@@ -3,7 +3,7 @@
     name: 'codex'
     jobs:
      - '{name}-docker-doc-publish':
-         image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2-s3'
+         image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2-s4'
          args: 'doc'
          environment:
              CODEX_DOC_ROOT: '$DOC_PROJECT/$DOC_SUBPATH'

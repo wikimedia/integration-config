@@ -47,7 +47,7 @@
         - wikipeg-special-node12-plus-{php}-composer-docker:
             php:
                 - php80:
-                    docker_image: docker-registry.wikimedia.org/releng/node12-test-browser-php80-composer:0.2.0-s4
+                    docker_image: docker-registry.wikimedia.org/releng/node12-test-browser-php80-composer:0.2.0-s5
 
 - project:
     name: parsoidsvc
