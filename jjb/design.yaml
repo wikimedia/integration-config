@@ -6,6 +6,6 @@
          image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2-s4'
          args: 'doc'
          environment:
-             CODEX_DOC_ROOT: '$DOC_PROJECT/$DOC_SUBPATH'
+             CODEX_DOC_ROOT: '/$DOC_PROJECT/$DOC_SUBPATH/'
          docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
          docdest: '$DOC_PROJECT/$DOC_SUBPATH'
