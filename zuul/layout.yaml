@@ -7170,6 +7170,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/RedirectManager
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/RefreshSpecial
     template:
       - name: extension-quibble
