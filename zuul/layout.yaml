@@ -2291,6 +2291,10 @@ projects:
     template:
       - name: tox-poetry-docker
 
+  - name: cloud/toolforge/toolforge-cli
+    template:
+      - name: tox-poetry-docker
+
   - name: labs/tools/registry-admission-webhook
     test:
       - trigger-toolforge-registry-admission-controller-pipeline-test
