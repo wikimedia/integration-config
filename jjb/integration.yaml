@@ -179,11 +179,11 @@
         - '{name}-maven-java8-docker':
             docker_image_var: docker-registry.wikimedia.org/releng/gearman-java8:1.0.0-s1
             maven_path: '/run-with-gearmand.sh'
-            timeout: 10  # minutes
+            timeout: 15  # minutes
         - '{name}-maven-java11-docker':
             docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0
             maven_path: '/run-with-gearmand.sh'
-            timeout: 10  # minutes
+            timeout: 15  # minutes
 
 - project:
     name: 'integration-quibble'
