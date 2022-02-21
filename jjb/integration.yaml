@@ -135,6 +135,31 @@
       - docker-cleanup
 
 - job:
+    name: integration-quibble-fullrun-sqlite
+    node: Docker
+    triggers:
+      - zuul
+    builders:
+      - docker-castor-load
+      - docker-log-dir
+      - docker-src-dir
+      - docker-ci-src-setup-simple
+      - docker-run-with-log-cache-src:
+          image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.0'
+          entrypoint: /src/utils/ci-fullrun.sh
+          workdir: /src
+          options: --tmpfs /workspace/db:size=320M
+          volumes:
+              /srv/git: /srv/git:ro
+          args: --color --db-dir /workspace/db --db sqlite
+          logdir: '/workspace/log'
+    publishers:
+      - compress-mw-debug-logs
+      - archive-log-allow-empty
+      - castor-save-workspace-cache
+      - docker-cleanup
+
+- job:
     name: integration-quibble-fullrun-extensions
     node: Docker
     triggers:

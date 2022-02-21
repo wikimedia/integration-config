@@ -2399,10 +2399,12 @@ projects:
     test:
       - integration-quibble-tox-docker:
         - integration-quibble-fullrun
+        - integration-quibble-fullrun-sqlite
         - integration-quibble-fullrun-extensions
     gate-and-submit:
       - integration-quibble-tox-docker:
         - integration-quibble-fullrun
+        - integration-quibble-fullrun-sqlite
         - integration-quibble-fullrun-extensions
     postmerge:
       - integration-quibble-tox-publish
