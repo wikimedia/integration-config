@@ -1,3 +1,10 @@
+shellcheck (0.1.1) wikimedia; urgency=medium
+
+  * In entry point, explicitly separate globbed files from options so that
+    names with dashes won't become options (SC2035).
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 22 Feb 2022 16:40:26 +0100
+
 shellcheck (0.1.0) wikimedia; urgency=medium
 
   * Initial release
