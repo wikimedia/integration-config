@@ -35,7 +35,7 @@ function relay_signals() {
 # report for those that passed.
 set +e
 if [[ ! -v CODEHEALTH ]]; then
-    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$MW_INSTALL_PATH/skins/$SKIN_NAME -d pcov.exclude='@(tests|vendor)@' \
+    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH/skins/$SKIN_NAME" -d pcov.exclude='@(tests|vendor)@' \
         "$MW_INSTALL_PATH"/tests/phpunit/phpunit.php \
         --testsuite skins \
         --coverage-clover "$LOG_DIR"/clover.xml \
@@ -49,7 +49,7 @@ else
     # 3. the unit tests take just a few seconds to run
     # 4. Passing in the tests/phpunit/unit directory when it doesn't exist results in exit
     #    code 1.
-    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$MW_INSTALL_PATH/skins/$SKIN_NAME -d pcov.exclude='@(tests|vendor)@' \
+    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH/skins/$SKIN_NAME" -d pcov.exclude='@(tests|vendor)@' \
         vendor/bin/phpunit \
         --testsuite skins:unit \
         --exclude-group Dump,Broken,ParserFuzz,Stub \
