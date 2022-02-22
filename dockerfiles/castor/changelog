@@ -1,3 +1,9 @@
+castor (0.2.5) wikimedia; urgency=medium
+
+  * Fix some shellcheck warnings.
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 24 Feb 2022 11:53:13 +0100
+
 castor (0.2.4) wikimedia; urgency=medium
 
   * Allow ZUUL_BRANCH to be unset, to make it possible to re-use

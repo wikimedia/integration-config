@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck source-path=SCRIPTDIR/../
 set -e
 
 case ${1:-missing} in
