@@ -1,3 +1,9 @@
+mediawiki-phan-php74 (0.2.1) wikimedia; urgency=medium
+
+  * Remove '\n' in message indicating `.phan/config.php` is not found.
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 22 Feb 2022 21:52:15 +0100
+
 mediawiki-phan-php74 (0.2.0-s6) wikimedia; urgency=high
 
    Refresh for update in parent image php74:

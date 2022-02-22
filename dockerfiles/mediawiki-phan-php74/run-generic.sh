@@ -13,7 +13,7 @@ cd "$SOURCE_ROOT"
 export COLUMNS=80
 
 if [ ! -f ".phan/config.php" ]; then
-    echo ".phan/config.php not found, skipping\n"
+    echo ".phan/config.php not found, skipping"
     exit 0
 fi
 

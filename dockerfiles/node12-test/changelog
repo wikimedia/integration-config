@@ -1,3 +1,9 @@
+node12-test (0.0.4) wikimedia; urgency=medium
+
+  * Remove '\n' in message indicating `package.json` is not found.
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 22 Feb 2022 21:52:15 +0100
+
 node12-test (0.0.3-s3) wikimedia; urgency=high
 
    Refresh for update in parent image node12:
