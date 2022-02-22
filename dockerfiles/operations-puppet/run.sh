@@ -66,7 +66,7 @@ execute_local() {
     # Copy the tox dir, the bundle dir and Gemfile.lock
     # from the container's puppet directory.
     for what in ".tox" ".bundle" "Gemfile.lock"; do
-        rm -rf "${TMP_PUPPET_DIR}/${what}"
+        rm -rf "${TMP_PUPPET_DIR:?}/${what}"
         cp -ax "${PUPPET_DIR}/${what}" "${TMP_PUPPET_DIR}/";
     done
     # Reproduce the docker-head tag

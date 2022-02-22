@@ -1,3 +1,9 @@
+operations-puppet (0.8.6) wikimedia; urgency=medium
+
+  * Fix shellcheck warning when doing `rm -rf "${TMP_PUPPET_DIR}/"`
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 22 Feb 2022 21:56:59 +0100
+
 operations-puppet (0.8.5-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-stretch:
