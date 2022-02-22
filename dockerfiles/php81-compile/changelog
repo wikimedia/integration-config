@@ -1,3 +1,9 @@
+php81-compile (0.0.2) wikimedia; urgency=medium
+
+  * Fix ambiguous passing of CFLAGS/CXXFLAGS to configure script.
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 22 Feb 2022 16:45:19 +0100
+
 php81-compile (0.0.1) wikimedia; urgency=medium
 
   * Initial fork from php81-compile.

@@ -1,3 +1,9 @@
+php80-compile (0.0.5) wikimedia; urgency=medium
+
+  * Fix ambiguous passing of CFLAGS/CXXFLAGS to configure script.
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 22 Feb 2022 16:45:19 +0100
+
 php80-compile (0.0.4-s2) wikimedia; urgency=high
 
    Refresh for update in parent image php80:

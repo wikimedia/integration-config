@@ -7,13 +7,14 @@ umask 002
 REPORT_PATH=/src/coverage
 INFO_FILE=php-extension.info
 CFLAGS="-g -O0 --coverage -fprofile-arcs -ftest-coverage"
+CXXFLAGS="$CFLAGS"
 LDFLAGS="-lgcov"
 EXTRA_LDFLAGS="-precious-files-regex \.gcno$"
 
 cd src/
 phpize --version
 phpize
-CFLAGS="$CFLAGS" CXXFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS" EXTRA_LDFLAGS="$EXTRA_LDFLAGS" ./configure
+CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" EXTRA_LDFLAGS="$EXTRA_LDFLAGS" ./configure
 
 lcov --directory . --zerocounters
 
