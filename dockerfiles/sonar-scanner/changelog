@@ -1,3 +1,9 @@
+sonar-scanner (4.6.0.2311-2) wikimedia; urgency=medium
+
+  * Simplify sonar-project.properties generation.
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 24 Feb 2022 11:51:08 +0100
+
 sonar-scanner (4.6.0.2311-1) wikimedia; urgency=medium
 
   * Updated sonar scanner version from 4.0.0.1744 to 4.6.0.2311
