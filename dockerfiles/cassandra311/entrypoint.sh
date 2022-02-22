@@ -1,5 +1,8 @@
 #!/bin/bash
-#copied from https://raw.githubusercontent.com/docker-library/cassandra/master/3.11/docker-entrypoint.sh
+# shellcheck disable=SC2223
+# SC2223: This default assignment may cause DoS due to globbing. Quote it.
+#
+# Copied from https://raw.githubusercontent.com/docker-library/cassandra/master/3.11/docker-entrypoint.sh
 set -e
 
 # first arg is `-f` or `--some-option`
