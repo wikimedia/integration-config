@@ -1,3 +1,10 @@
+mediawiki-phan-testrun (0.2.1) wikimedia; urgency=medium
+
+  * Fix shellcheck warning in entry point: `export VAR="$(cmd)"` shallows
+    `cmd` exit code.
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 22 Feb 2022 21:43:14 +0100
+
 mediawiki-phan-testrun (0.2.0-s10) wikimedia; urgency=high
 
    Refresh for update in parent image php72:
