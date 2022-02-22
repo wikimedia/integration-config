@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
+# Upstream script
+# shellcheck disable=SC1091
 source /srv/emsdk/emsdk_env.sh
 
 # TODO: move this to Gerrit?
