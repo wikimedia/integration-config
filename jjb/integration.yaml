@@ -126,7 +126,12 @@
           options: --tmpfs /workspace/db:size=320M
           volumes:
               /srv/git: /srv/git:ro
-          args: --color --db-dir /workspace/db
+          args: >-
+              -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+              && /src/utils/ci-fullrun.sh
+              --color
+              --db-dir /workspace/db
+              --web-backend=external --web-url=http://127.0.0.1:9413'
           logdir: '/workspace/log'
     publishers:
       - compress-mw-debug-logs
@@ -151,7 +156,13 @@
           options: --tmpfs /workspace/db:size=320M
           volumes:
               /srv/git: /srv/git:ro
-          args: --color --db-dir /workspace/db --db sqlite
+          args: >-
+              -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+              && /src/utils/ci-fullrun.sh
+              --color
+              --db-dir /workspace/db
+              --db sqlite
+              --web-backend=external --web-url=http://127.0.0.1:9413'
           logdir: '/workspace/log'
     publishers:
       - compress-mw-debug-logs
