@@ -1,3 +1,9 @@
+logstash-filter-verifier (0.0.3) wikimedia; urgency=medium
+
+  * Install logstash-plugins for testing custom filters
+
+ -- Cole White <cwhite@wikimedia.org>  Wed, 23 Feb 2022 16:17:22 +0000
+
 logstash-filter-verifier (0.0.2) wikimedia; urgency=medium
 
   * Use OpenSearch repo.
