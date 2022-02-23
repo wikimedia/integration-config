@@ -2990,6 +2990,10 @@ projects:
     template:
       - name: skin-quibble
 
+  - name: mediawiki/skins/TuleapSkin
+    template:
+      - name: skin-quibble
+
   - name: mediawiki/skins/webplatform
     template:
       - name: skin-quibble
@@ -7610,6 +7614,14 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/TranslateSvg
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/TuleapIntegration
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/TuleapWikiFarm
     template:
       - name: extension-quibble
 
