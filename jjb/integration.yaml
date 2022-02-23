@@ -121,7 +121,7 @@
       - docker-ci-src-setup-simple
       - docker-run-with-log-cache-src:
           image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.0'
-          entrypoint: /src/utils/ci-fullrun.sh
+          entrypoint: bash
           workdir: /src
           options: --tmpfs /workspace/db:size=320M
           volumes:
@@ -151,7 +151,7 @@
       - docker-ci-src-setup-simple
       - docker-run-with-log-cache-src:
           image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.0'
-          entrypoint: /src/utils/ci-fullrun.sh
+          entrypoint: bash
           workdir: /src
           options: --tmpfs /workspace/db:size=320M
           volumes:
