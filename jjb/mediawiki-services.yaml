@@ -33,7 +33,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.3-s3'
+        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.4'
         args: 'periodic'
     publishers:
      - irc-wikimedia-infrastructure

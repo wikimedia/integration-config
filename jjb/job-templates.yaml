@@ -421,7 +421,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.3-s3'
+        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.4'
     publishers:
      - archive-log-allow-empty
      - castor-save-workspace-cache
@@ -486,7 +486,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.3-s3'
+        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.4'
         workdir: /src
         args: 'branch-deploy'
     publishers:
@@ -603,7 +603,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.3-s3'
+        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.4'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -625,7 +625,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.3-s3'
+        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.4'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -649,7 +649,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2-s4'
+        image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.3'
     publishers:
      - archive-log-allow-empty
      - castor-save-workspace-cache
@@ -714,7 +714,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2-s4'
+        image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.3'
         workdir: /src
         args: 'branch-deploy'
     publishers:
@@ -829,7 +829,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2-s4'
+        image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.3'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -851,7 +851,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.2-s4'
+        image: 'docker-registry.wikimedia.org/releng/node14-test:0.0.3'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
