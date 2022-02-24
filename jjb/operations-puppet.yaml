@@ -128,7 +128,7 @@
      - operations-puppet-tests-{os}-docker:
          os:
            - buster:
-               image: docker-registry.wikimedia.org/releng/operations-puppet:0.8.5-s1
+               image: docker-registry.wikimedia.org/releng/operations-puppet:0.8.6
 
 - project:
     name: puppet-wmf-styleguide
