@@ -3015,6 +3015,9 @@ projects:
   - name: openstack/horizon/wmf-proxy-dashboard
     template:
       - name: tox-docker
+  - name: openstack/horizon/wmf-puppet-dashboard
+    template:
+      - name: tox-docker
 
 #### Site Reliability Engineering ("Operations") tools #########
 
