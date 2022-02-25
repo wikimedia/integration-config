@@ -131,6 +131,13 @@
                       - project: beta-publish-deb
                         predefined-parameters: 'COPY_FROM=${JOB_NAME}'
                         block: true
+      - beta-irc
+      - email-ext:
+          recipients: releng@lists.wikimedia.org
+          first-failure: true
+          aborted: true
+          failure: false
+          fixed: true
 
 - job:
     name: beta-publish-deb
