@@ -5057,6 +5057,10 @@ projects:
       - name: extension-quibble-only-standalone
       - name: extension-coverage
       - name: extension-codehealth
+    postmerge:
+      # NOTE: This is the 'wrong' publisher, but there's no JS extension
+      # publish step yet. Let's go with this for now. 2022-02-25 JDF.
+      - generic-node12-browser-coverage-docker-publish
 
   - name: mediawiki/extensions/WikiLove
     template:
