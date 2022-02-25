@@ -8091,6 +8091,8 @@ projects:
   - name: mediawiki/services/function-schemata
     template:
       - name: node12-docker
+    postmerge:
+      - generic-node12-browser-coverage-docker-publish
 
   - name: mediawiki/services/image-suggestion-api
     test:
