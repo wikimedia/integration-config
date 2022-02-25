@@ -8078,6 +8078,8 @@ projects:
       - trigger-wikilambda-function-evaluator-pipeline-test
     gate-and-submit:
       - trigger-wikilambda-function-evaluator-pipeline-test
+    postmerge:
+      - generic-node12-browser-coverage-docker-publish
 
   # Not in production yet, but headed there
   - name: mediawiki/services/function-orchestrator
