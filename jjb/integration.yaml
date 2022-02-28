@@ -188,6 +188,7 @@
               && /src/utils/ci-fullrun-extensions.sh
               --color
               --db-dir /workspace/db
+              --skip qunit
               --web-backend=external --web-url=http://127.0.0.1:9413'
           workdir: /src
           options: --tmpfs /workspace/db:size=320M
