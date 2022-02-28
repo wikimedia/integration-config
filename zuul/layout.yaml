@@ -1795,7 +1795,7 @@ project-templates:
     gate-and-submit-wmf:
       - mediawiki-quibble-apitests-vendor-php72-docker
 
-  # Extensions tested together and intented for deployment to the Wikimedia Cluster
+  # Extensions tested together and intended for deployment to the Wikimedia Cluster
   - name: extension-gate
     test:
       # For master
@@ -4275,6 +4275,12 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+
+  - name: mediawiki/extensions/ImageSuggestions
+    template:
+      - name: extension-quibble
+      - name: extension-codehealth
+      - name: extension-coverage
 
   - name: mediawiki/extensions/InputBox
     template:
