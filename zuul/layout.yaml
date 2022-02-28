@@ -4383,6 +4383,7 @@ projects:
 
   - name: mediawiki/extensions/ImageSuggestions
     template:
+      - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
