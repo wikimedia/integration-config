@@ -162,6 +162,7 @@
               --color
               --db-dir /workspace/db
               --db sqlite
+              --skip api-testing
               --web-backend=external --web-url=http://127.0.0.1:9413'
           logdir: '/workspace/log'
     publishers:
