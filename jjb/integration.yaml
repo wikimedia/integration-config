@@ -198,6 +198,11 @@
       - timeout:
           timeout: 45
           fail: true
+      - timestamps
+      - credentials-binding:
+          - text:
+              credential-id: composer-github-oauthtoken
+              variable: COMPOSER_GITHUB_OAUTHTOKEN
     publishers:
       - compress-mw-debug-logs
       - archive-log-allow-empty
