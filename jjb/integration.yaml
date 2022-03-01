@@ -188,6 +188,7 @@
               && /src/utils/ci-fullrun-extensions.sh
               --color
               --db-dir /workspace/db
+              --skip phpunit
               --web-backend=external --web-url=http://127.0.0.1:9413'
           workdir: /src
           options: --tmpfs /workspace/db:size=320M
@@ -208,6 +209,47 @@
       - archive-log-allow-empty
       - castor-save-workspace-cache
       - docker-cleanup
+
+- job:
+    name: integration-quibble-fullrun-extensions-phpunit
+    node: Docker
+    triggers:
+      - zuul
+    builders:
+      - docker-castor-load
+      - docker-log-dir
+      - docker-src-dir
+      - docker-ci-src-setup-simple
+      - docker-run-with-log-cache-src:
+          image: 'docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.0'
+          entrypoint: bash
+          args: >-
+              -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+              && /src/utils/ci-fullrun-extensions.sh
+              --color
+              --db-dir /workspace/db
+              --run phpunit
+              --web-backend=external --web-url=http://127.0.0.1:9413'
+          workdir: /src
+          options: --tmpfs /workspace/db:size=320M
+          volumes:
+              /srv/git: /srv/git:ro
+          logdir: '/workspace/log'
+    wrappers:
+      - timeout:
+          timeout: 45
+          fail: true
+      - timestamps
+      - credentials-binding:
+          - text:
+              credential-id: composer-github-oauthtoken
+              variable: COMPOSER_GITHUB_OAUTHTOKEN
+    publishers:
+      - compress-mw-debug-logs
+      - archive-log-allow-empty
+      - castor-save-workspace-cache
+      - docker-cleanup
+
 
 - project:
     name: 'integration-gear'
