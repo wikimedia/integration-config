@@ -1,4 +1,4 @@
-FROM {{ "tox" | image_tag }} AS build
+FROM {{ "tox-buster" | image_tag }} AS build
 
 USER root
 RUN install --owner=nobody --group=nogroup --directory /opt/zuul
@@ -8,7 +8,7 @@ RUN virtualenv --python=python2.7 --always-copy /opt/zuul \
     && /opt/zuul/bin/pip install git+https://gerrit.wikimedia.org/r/integration/zuul.git#egg=zuul \
     && /opt/zuul/bin/zuul-cloner --version
 
-FROM {{ "ci-stretch" | image_tag }}
+FROM {{ "ci-buster" | image_tag }}
 RUN {{ "python2.7" | apt_install }}
 
 RUN mkdir -p /opt/zuul

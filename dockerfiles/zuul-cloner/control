@@ -1,4 +1,4 @@
 Package: zuul-cloner
-Description: Zuul-cloner as used on Wikimedia Jessie
+Description: Zuul-cloner
 Maintainer: Addshore <addshorewiki@gmail.com>
-Depends: ci-stretch, tox
+Depends: ci-buster, tox-buster

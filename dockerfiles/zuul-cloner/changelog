@@ -1,3 +1,9 @@
+zuul-cloner (0.3.0) wikimedia; urgency=high
+
+   Migrate from stretch to buster - T278203
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 01 Sep 2023 16:17:40 +0200
+
 zuul-cloner (0.2.1-s5) wikimedia; urgency=high
 
    Refresh for update in parent image ci-stretch:
