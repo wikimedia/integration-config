@@ -1,3 +1,9 @@
+quibble-buster (1.4.3) wikimedia; urgency=medium
+
+  * Bump Quibble to 1.4.3
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 03 Mar 2022 10:37:36 +0100
+
 quibble-buster (1.4.2) wikimedia; urgency=medium
 
   * Bump Quibble to 1.4.2
