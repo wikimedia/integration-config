@@ -8465,16 +8465,25 @@ projects:
       - trigger-datahub-pipeline-frontend-build
       - trigger-datahub-pipeline-mce-consumer-build
       - trigger-datahub-pipeline-mae-consumer-build
+      - trigger-datahub-pipeline-mysql-setup-build
+      - trigger-datahub-pipeline-elasticsearch-setup-build
+      - trigger-datahub-pipeline-kafka-setup-build
     gate-and-submit:
       - trigger-datahub-pipeline-gms-build
       - trigger-datahub-pipeline-frontend-build
       - trigger-datahub-pipeline-mce-consumer-build
       - trigger-datahub-pipeline-mae-consumer-build
+      - trigger-datahub-pipeline-mysql-setup-build
+      - trigger-datahub-pipeline-elasticsearch-setup-build
+      - trigger-datahub-pipeline-kafka-setup-build
     postmerge:
       - trigger-datahub-pipeline-gms-publish
       - trigger-datahub-pipeline-frontend-publish
       - trigger-datahub-pipeline-mce-consumer-publish
       - trigger-datahub-pipeline-mae-consumer-publish
+      - trigger-datahub-pipeline-mysql-setup-publish
+      - trigger-datahub-pipeline-elasticsearch-setup-publish
+      - trigger-datahub-pipeline-kafka-setup-publish
   - name: analytics/geowiki
     template:
       - name: tox-docker

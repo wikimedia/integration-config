@@ -512,6 +512,12 @@
       - mce-consumer-publish
       - mae-consumer-build
       - mae-consumer-publish
+      - mysql-setup-build
+      - mysql-setup-publish
+      - elasticsearch-setup-build
+      - elasticsearch-setup-publish
+      - kafka-setup-build
+      - kafka-setup-publish
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
       - '{name}-pipeline-{pipeline}'
