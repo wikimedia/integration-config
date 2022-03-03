@@ -1,3 +1,9 @@
+quibble-buster-php74 (1.4.5-s2) wikimedia; urgency=high
+
+   Migrate from sury-php to Wikimedia PHP
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  3 Mar 2022 13:27:35 -0500
+
 quibble-buster-php74 (1.4.5-s1) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
