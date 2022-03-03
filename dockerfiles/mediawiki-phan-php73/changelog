@@ -1,3 +1,10 @@
+mediawiki-phan-php73 (0.3.1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image sury-php:
+   Migrate from stretch to bullseye
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  3 Mar 2022 09:24:00 -0500
+
 mediawiki-phan-php73 (0.3.1) wikimedia; urgency=medium
 
   * Remove '\n' in message indicating `.phan/config.php` is not found.

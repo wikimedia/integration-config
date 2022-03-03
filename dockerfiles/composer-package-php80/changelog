@@ -1,3 +1,10 @@
+composer-package-php80 (0.0.4-s9) wikimedia; urgency=high
+
+   Refresh for update in parent image sury-php:
+   Migrate from stretch to bullseye
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  3 Mar 2022 09:23:59 -0500
+
 composer-package-php80 (0.0.4-s8) wikimedia; urgency=high
 
    Refresh for update in parent image php80:

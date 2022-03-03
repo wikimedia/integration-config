@@ -1,3 +1,10 @@
+php81-compile (0.0.2-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image sury-php:
+   Migrate from stretch to bullseye
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  3 Mar 2022 09:24:01 -0500
+
 php81-compile (0.0.2) wikimedia; urgency=medium
 
   * Fix ambiguous passing of CFLAGS/CXXFLAGS to configure script.
