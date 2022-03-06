@@ -6153,10 +6153,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/DownloadCounter
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/DPLforum
     template:
       - name: extension-quibble
@@ -10318,6 +10314,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/DjangoAnalytics
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/DownloadCounter
     template:
       - name: archived
 
