@@ -953,12 +953,6 @@ jobs:
         - '.pipeline/config.yaml'
         - 'revscoring/draftquality/model-server/.*'
 
-  - name: ^trigger-inference-services-pipeline-draftquality-transformer
-    files:
-        - '.pipeline/draftquality/transformer.yaml'
-        - '.pipeline/config.yaml'
-        - 'revscoring/draftquality/transformer/.*'
-
   - name: ^trigger-inference-services-pipeline-topic
     files:
         - '.pipeline/topic/blubber.yaml'
@@ -2464,7 +2458,6 @@ projects:
       - trigger-inference-services-pipeline-articlequality
       - trigger-inference-services-pipeline-articlequality-transformer
       - trigger-inference-services-pipeline-draftquality
-      - trigger-inference-services-pipeline-draftquality-transformer
       - trigger-inference-services-pipeline-topic
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
@@ -2473,7 +2466,6 @@ projects:
       - trigger-inference-services-pipeline-articlequality
       - trigger-inference-services-pipeline-articlequality-transformer
       - trigger-inference-services-pipeline-draftquality
-      - trigger-inference-services-pipeline-draftquality-transformer
       - trigger-inference-services-pipeline-topic
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
@@ -2482,7 +2474,6 @@ projects:
       - trigger-inference-services-pipeline-articlequality-publish
       - trigger-inference-services-pipeline-articlequality-transformer-publish
       - trigger-inference-services-pipeline-draftquality-publish
-      - trigger-inference-services-pipeline-draftquality-transformer-publish
       - trigger-inference-services-pipeline-topic-publish
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-outlink-transformer-publish
