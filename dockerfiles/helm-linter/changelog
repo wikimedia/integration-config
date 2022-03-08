@@ -1,3 +1,8 @@
+helm-linter (0.3.1) wikimedia; urgency=medium
+
+  * Update envoyproxy to 1.18.3
+
+ -- Reuven Lazarus <rlazarus@wikimedia.org>  Tue, 08 Mar 2022 13:11:52 -0800
 
 helm-linter (0.3.0) wikimedia; urgency=medium
 
