@@ -1,11 +1,9 @@
-FROM {{ "ci-buster" | image_tag }}
+FROM {{ "ci-bullseye" | image_tag }}
 
 USER root
 
-# php packages are for mediawiki/core and maintenance/mwdocgen.php
-# Doxygen got backported
-RUN echo "deb http://apt.wikimedia.org/wikimedia buster-wikimedia component/ci" > /etc/apt/sources.list.d/component-ci.list \
-    && {{ "doxygen graphviz php-cli php-intl php-mbstring php-xml" | apt_install }}
+# PHP is needed for the mediawiki-core job, which runs maintenance/mwdocgen.php
+RUN {{ "doxygen graphviz php-cli php-intl php-mbstring php-xml" | apt_install }}
 
 COPY run.sh /run.sh
 
