@@ -1,3 +1,9 @@
+helm-linter (0.3.2) wikimedia; urgency=medium
+
+  * Set permissions for /var/log/envoy
+
+ -- Reuven Lazarus <rlazarus@wikimedia.org>  Wed, 09 Mar 2022 09:23:13 -0800
+
 helm-linter (0.3.1) wikimedia; urgency=medium
 
   * Update envoyproxy to 1.18.3

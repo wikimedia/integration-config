@@ -9,7 +9,7 @@ USER root
 
 RUN {{ "helm3 rake kubeyaml envoyproxy helmfile helm-diff ruby-git istioctl" | apt_install }} && \
     mkdir -p /etc/envoy/ssl $HELM_HOME $HELM_CONFIG_HOME $HELM_DATA_HOME $HELM_CACHE_HOME && \
-    chmod -R 777 /etc/envoy && \
+    chmod -R 777 /etc/envoy /var/log/envoy && \
     helm3 repo list | tail -n +2 | awk '{print $1}' | xargs --no-run-if-empty helm3 repo remove && \
     chown -R nobody $HELM_HOME /tmp/helm3 && \
     chmod -R 777 /tmp/helm3 $HELM_HOME && \
