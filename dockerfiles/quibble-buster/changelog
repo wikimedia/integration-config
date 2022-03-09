@@ -1,3 +1,9 @@
+quibble-buster (1.4.3-s1) wikimedia; urgency=medium
+
+  * Add unzip Debian package for composer. T303417
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 09 Mar 2022 21:38:26 +0100
+
 quibble-buster (1.4.3) wikimedia; urgency=medium
 
   * Bump Quibble to 1.4.3

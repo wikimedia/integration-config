@@ -49,8 +49,9 @@ USER root
 
 #########################################
 # node-gyp requires python2.7 / gcc ... #
+# composer expects unzip                #
 #########################################
-RUN {{ "build-essential python" | apt_install }}
+RUN {{ "build-essential unzip python" | apt_install }}
 
 ##########################
 # JSDuck is still needed #
