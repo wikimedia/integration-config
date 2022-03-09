@@ -138,6 +138,7 @@ dependencies = {
     'skins/Empty': ['PhpTags'],
     'skins/MinervaNeue': ['MobileFrontend'],
     'skins/Refreshed': ['SocialProfile'],
+    'skins/TuleapSkin': ['TuleapIntegration', 'TuleapWikiFarm'],
 
     # Extensions
     # One can add a skin by using: 'skin/XXXXX'
@@ -443,6 +444,8 @@ dependencies = {
     'TranslationNotifications': ['MassMessage', 'Translate'],
     'TopTenPages': ['HitCounters'],
     'TorBlock': ['AbuseFilter'],
+    'TuleapIntegration': ['TuleapWikiFarm'],
+    'TuleapWikiFarm': ['TuleapIntegration'],
     'TwitterCards': ['TextExtracts'],
     'TwnMainPage': ['Translate'],
     'TwoColConflict': ['BetaFeatures', 'EventLogging', 'WikiEditor'],

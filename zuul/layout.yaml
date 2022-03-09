@@ -3229,7 +3229,7 @@ projects:
 
   - name: mediawiki/skins/TuleapSkin
     template:
-      - name: skin-quibble
+      - name: skin-quibble-php74-or-later
 
   - name: mediawiki/skins/webplatform
     template:
@@ -7871,11 +7871,11 @@ projects:
 
   - name: mediawiki/extensions/TuleapIntegration
     template:
-      - name: extension-quibble
+      - name: extension-quibble-php74-or-later
 
   - name: mediawiki/extensions/TuleapWikiFarm
     template:
-      - name: extension-quibble
+      - name: extension-quibble-php74-or-later
 
   - name: mediawiki/extensions/TweetANew
     template:
