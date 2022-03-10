@@ -8014,6 +8014,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/VueTest
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/WantedPagesFromNS
     template:
       - name: extension-quibble
