@@ -2039,6 +2039,78 @@ project-templates:
       - quibble-vendor-sqlite-php72-docker
       - quibble-vendor-postgres-php72-docker
 
+  - name: skin-quibble-php74-or-later
+    test:
+      - quibble-vendor-mysql-php74-docker
+      - mwgate-node12-docker
+      - mwskin-php74-phan-docker
+    gate-and-submit:
+      - quibble-vendor-mysql-php74-docker
+      - mwgate-node12-docker
+      - mwskin-php74-phan-docker
+
+    # We use composer on release branches
+    test-1_35:
+      - mwgate-node12-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php74-phan-docker
+    gate-and-submit-1_35:
+      - mwgate-node12-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php74-phan-docker
+
+    test-1_36:
+      - mwgate-node12-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php74-phan-docker
+    gate-and-submit-1_36:
+      - mwgate-node12-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php74-phan-docker
+
+    test-1_37:
+      - mwgate-node12-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php74-phan-docker
+    gate-and-submit-1_37:
+      - mwgate-node12-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php74-phan-docker
+
+    test-1_38:
+      - mwgate-node12-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php74-phan-docker
+    gate-and-submit-1_38:
+      - mwgate-node12-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php74-phan-docker
+
+    test-wmf:
+      - quibble-vendor-mysql-php74-docker
+      - mwgate-node12-docker
+      - mwskin-php74-phan-docker
+    gate-and-submit-wmf:
+      - quibble-vendor-mysql-php74-docker
+      - mwgate-node12-docker
+      - mwskin-php74-phan-docker
+
+    gate-and-submit-l10n:
+      - mediawiki-i18n-check-docker
+
+    experimental:
+      - quibble-composer-mysql-php80-docker
+      - quibble-vendor-sqlite-php74-docker
+      - quibble-vendor-postgres-php74-docker
+
   - name: skin-quibble-composer
     php:
       - quibble-composer-mysql-php73-docker
