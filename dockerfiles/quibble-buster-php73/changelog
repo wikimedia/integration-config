@@ -1,3 +1,10 @@
+quibble-buster-php73 (1.4.3-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-buster:
+   Install memcached and php-memcached (T300340)
+
+ -- Kosta Harlan <kharlan@wikimedia.org>  Mon, 14 Mar 2022 10:32:18 +0100
+
 quibble-buster-php73 (1.4.3-s2) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-buster:

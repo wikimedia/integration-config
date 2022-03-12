@@ -88,6 +88,7 @@ djvulibre-bin
 imagemagick
 libimage-exiftool-perl
 mariadb-server
+memcached
 postgresql
 postgresql-client
 procps
