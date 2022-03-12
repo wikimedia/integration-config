@@ -3107,10 +3107,6 @@ projects:
     template:
       - name: skin-quibble
 
-  - name: mediawiki/skins/Athena
-    template:
-      - name: skin-quibble
-
   - name: mediawiki/skins/BlueSky
     template:
       - name: skin-quibble
@@ -11101,6 +11097,10 @@ projects:
       - name: archived
 
   - name: mediawiki/services/trending-edits/deploy
+    template:
+      - name: archived
+
+  - name: mediawiki/skins/Athena
     template:
       - name: archived
 
