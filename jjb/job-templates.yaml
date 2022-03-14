@@ -444,35 +444,6 @@
      - docker-cleanup
 
 - job-template:
-    name: 'branchdeploy-{key}-node12-npm-docker'
-    node: Docker
-    triggers:
-     - zuul
-    wrappers:
-     - timeout:
-         timeout: 30
-         fail: true
-     - timestamps
-     - credentials-binding:
-          - text:
-              credential-id: BRANCHDEPLOY_AUTH_TOKEN_{key}
-              variable: BRANCHDEPLOY_AUTH_TOKEN
-          - text:
-              credential-id: BRANCHDEPLOY_SITE_ID_{key}
-              variable: BRANCHDEPLOY_SITE_ID
-    builders:
-     - docker-castor-load
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.4'
-        workdir: /src
-        args: 'branch-deploy'
-    publishers:
-     - docker-cleanup
-
-- job-template:
     name: '{name}-daily-node12-npmaudit-docker'
     node: Docker
     triggers:
@@ -797,9 +768,6 @@
 - project:
     name: 'branchdeploy'
     jobs:
-        - 'branchdeploy-{key}-node12-npm-docker':
-            key:
-                - wikidata-query-builder
         - 'branchdeploy-{key}-node14-npm-docker':
             key:
                 - wikidata-query-builder
