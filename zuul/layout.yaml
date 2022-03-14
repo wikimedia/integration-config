@@ -9755,7 +9755,7 @@ projects:
       - name: node14-browser-docker
       - name: mediawiki-i18n-check
     test:
-      - branchdeploy-wikidata-query-builder-node12-npm-docker
+      - branchdeploy-wikidata-query-builder-node14-npm-docker
 
   - name: wikibase/javascript-api
     template:
