@@ -75,8 +75,3 @@
     jobs:
         - '{name}-node14-run{script}-docker':
            script: 'jenkins'
-
-- project:
-    name: oojs-router
-    jobs:
-        - '{name}-node12-browser-docker'
