@@ -2285,32 +2285,6 @@ project-templates:
     gate-and-submit:
       - generic-node12-rundoc-docker
 
-  - name: node12-rundoc-docker-for-MW-branches
-    test:
-      - generic-node12-rundoc-docker
-    gate-and-submit:
-      - generic-node12-rundoc-docker
-    test-1_35:
-      - generic-node12-rundoc-docker
-    gate-and-submit-1_35:
-      - generic-node12-rundoc-docker
-    test-1_36:
-      - generic-node12-rundoc-docker
-    gate-and-submit-1_36:
-      - generic-node12-rundoc-docker
-    test-1_37:
-      - generic-node12-rundoc-docker
-    gate-and-submit-1_37:
-      - generic-node12-rundoc-docker
-    test-1_38:
-      - generic-node12-rundoc-docker
-    gate-and-submit-1_38:
-      - generic-node12-rundoc-docker
-    test-wmf:
-      - generic-node12-rundoc-docker
-    gate-and-submit-wmf:
-      - generic-node12-rundoc-docker
-
   - name: node14-docker
     test:
       - generic-node14-docker
@@ -2333,6 +2307,32 @@ project-templates:
     test:
       - generic-node14-rundoc-docker
     gate-and-submit:
+      - generic-node14-rundoc-docker
+
+  - name: node14-rundoc-docker-for-MW-branches
+    test:
+      - generic-node14-rundoc-docker
+    gate-and-submit:
+      - generic-node14-rundoc-docker
+    test-1_35:
+      - generic-node14-rundoc-docker
+    gate-and-submit-1_35:
+      - generic-node14-rundoc-docker
+    test-1_36:
+      - generic-node14-rundoc-docker
+    gate-and-submit-1_36:
+      - generic-node14-rundoc-docker
+    test-1_37:
+      - generic-node14-rundoc-docker
+    gate-and-submit-1_37:
+      - generic-node14-rundoc-docker
+    test-1_38:
+      - generic-node14-rundoc-docker
+    gate-and-submit-1_38:
+      - generic-node14-rundoc-docker
+    test-wmf:
+      - generic-node14-rundoc-docker
+    gate-and-submit-wmf:
       - generic-node14-rundoc-docker
 
   - name: service-pipeline-test
@@ -9700,33 +9700,33 @@ projects:
   - name: VisualEditor/VisualEditor
     template:
       - name: mediawiki-i18n-check
-      - name: node12-rundoc-docker-for-MW-branches
+      - name: node14-rundoc-docker-for-MW-branches
     test:
-      - visualeditor-node12-browser-docker
+      - visualeditor-node14-browser-docker
     gate-and-submit:
-      - visualeditor-node12-browser-docker
+      - visualeditor-node14-browser-docker
     test-1_35:
-      - visualeditor-node12-browser-docker
+      - visualeditor-node14-browser-docker
     gate-and-submit-1_35:
-      - visualeditor-node12-browser-docker
+      - visualeditor-node14-browser-docker
     test-1_36:
-      - visualeditor-node12-browser-docker
+      - visualeditor-node14-browser-docker
     gate-and-submit-1_36:
-      - visualeditor-node12-browser-docker
+      - visualeditor-node14-browser-docker
     test-1_37:
-      - visualeditor-node12-browser-docker
+      - visualeditor-node14-browser-docker
     gate-and-submit-1_37:
-      - visualeditor-node12-browser-docker
+      - visualeditor-node14-browser-docker
     test-1_38:
-      - visualeditor-node12-browser-docker
+      - visualeditor-node14-browser-docker
     gate-and-submit-1_38:
-      - visualeditor-node12-browser-docker
+      - visualeditor-node14-browser-docker
     test-wmf:
-      - visualeditor-node12-browser-docker
+      - visualeditor-node14-browser-docker
     gate-and-submit-wmf:
-      - visualeditor-node12-browser-docker
+      - visualeditor-node14-browser-docker
     postmerge:
-      - generic-node12-browser-coverage-docker-publish
+      - generic-node14-browser-coverage-docker-publish
 
   - name: wikidata/query/flink-rdf-streaming-updater
     test:
