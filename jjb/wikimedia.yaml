@@ -28,7 +28,7 @@
         - docker-cache-dir
         - docker-ci-src-setup-simple
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node12-test:0.0.4
+            image: docker-registry.wikimedia.org/releng/node14-test:0.0.3
             args: 'build-all-portals'
         - shell: |
             ## now create and publish a gerrit patch
