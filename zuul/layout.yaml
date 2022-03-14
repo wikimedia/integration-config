@@ -9634,14 +9634,14 @@ projects:
 
   - name: oojs/core
     test:
-      - oojs-core-node12-runjenkins-docker
+      - oojs-core-node14-runjenkins-docker
     gate-and-submit:
-      - oojs-core-node12-runjenkins-docker
+      - oojs-core-node14-runjenkins-docker
     postmerge:
-      - generic-node12-docs-docker-publish
-      - generic-node12-browser-coverage-docker-publish
+      - generic-node14-docs-docker-publish
+      - generic-node14-browser-coverage-docker-publish
     publish:
-      - generic-node12-docs-docker-publish
+      - generic-node14-docs-docker-publish
 
   - name: oojs/router
     test:
