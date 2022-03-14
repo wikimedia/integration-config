@@ -883,6 +883,8 @@
     jobs:
         - '{name}-node12-run{script}-docker':
            script: 'doc'
+        - '{name}-node14-run{script}-docker':
+           script: 'doc'
 
 - project:
     name: 'branchdeploy'
