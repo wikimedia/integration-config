@@ -797,7 +797,7 @@
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/node12-test:0.0.4
+        image: docker-registry.wikimedia.org/releng/node14-test:0.0.3
         options: '--volume "$(pwd)"/src/extensions/"$EXT_NAME":/src'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
