@@ -9673,16 +9673,16 @@ projects:
 
   - name: unicodejs
     template:
-      - name: node12-rundoc-docker
+      - name: node14-rundoc-docker
     test:
-      - unicodejs-node12-browser-docker
+      - unicodejs-node14-browser-docker
     gate-and-submit:
-      - unicodejs-node12-browser-docker
+      - unicodejs-node14-browser-docker
     postmerge:
-      - generic-node12-browser-coverage-docker-publish
-      - generic-node12-docs-docker-publish
+      - generic-node14-browser-coverage-docker-publish
+      - generic-node14-docs-docker-publish
     publish:
-      - generic-node12-docs-docker-publish
+      - generic-node14-docs-docker-publish
 
   - name: jquery-client
     template:
