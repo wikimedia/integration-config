@@ -1154,7 +1154,7 @@ jobs:
   - name: 'integration-config-zuul-layout-validate-docker'
     branch: (?!labs)
 
-  - name: 'mwext-node12-docs-docker-publish'
+  - name: 'mwext-node14-docs-docker-publish'
     branch: ^master$
 
   - name: 'mwext-doxygen-publish'
@@ -2199,11 +2199,11 @@ project-templates:
 
   - name: extension-javascript-documentation
     test:
-      - mwext-node12-rundoc-docker
+      - mwext-node14-rundoc-docker
     gate-and-submit:
-      - mwext-node12-rundoc-docker
+      - mwext-node14-rundoc-docker
     postmerge:
-      - mwext-node12-docs-docker-publish
+      - mwext-node14-docs-docker-publish
 
   - name: composer-test-php72-or-later
     test:
