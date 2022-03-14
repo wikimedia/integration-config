@@ -991,6 +991,8 @@ jobs:
     queue-name: mediawiki
   - name: mwgate-node12-docker
     queue-name: mediawiki
+  - name: mwgate-node14-docker
+    queue-name: mediawiki
 
   - name: lintr-docker
     files:
