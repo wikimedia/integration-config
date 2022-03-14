@@ -41,6 +41,31 @@
      - castor-save-workspace-cache
      - docker-cleanup
 
+- job-template:
+    name: 'wikipeg-special-node14-plus-{php}-composer-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+         image: '{docker_image}'
+         entrypoint: composer
+         workdir: /src
+         args: 'install'
+     - docker-run-with-log-cache-src:
+         image: '{docker_image}'
+         entrypoint: npm
+         workdir: /src
+         args: 'cit'
+    publishers:
+     - archive-log-allow-empty
+     - castor-save-workspace-cache
+     - docker-cleanup
+
 - project:
     name: wikipeg
     jobs:
@@ -48,6 +73,10 @@
             php:
                 - php80:
                     docker_image: docker-registry.wikimedia.org/releng/node12-test-browser-php80-composer:0.2.0-s6
+        - wikipeg-special-node14-plus-{php}-composer-docker:
+            php:
+                - php80:
+                    docker_image: docker-registry.wikimedia.org/releng/node14-test-browser-php80-composer:0.1.0
 
 - project:
     name: parsoidsvc
