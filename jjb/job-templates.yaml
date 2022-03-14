@@ -802,6 +802,7 @@
                 - wikidata-query-builder
         - 'branchdeploy-{key}-node14-npm-docker':
             key:
+                - wikidata-query-builder
                 - codex
 
 - job-template:
