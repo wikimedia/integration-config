@@ -8785,9 +8785,9 @@ projects:
     template:
       - name: composer-test-package-php72-or-later
     test:
-      - wikipeg-special-node12-plus-php80-composer-docker
+      - wikipeg-special-node14-plus-php80-composer-docker
     gate-and-submit:
-      - wikipeg-special-node12-plus-php80-composer-docker
+      - wikipeg-special-node14-plus-php80-composer-docker
 
   - name: WrappedString
     template:
