@@ -73,8 +73,6 @@
 - project:
     name: oojs-core
     jobs:
-        - '{name}-node12-run{script}-docker':
-           script: 'jenkins'
         - '{name}-node14-run{script}-docker':
            script: 'jenkins'
 
