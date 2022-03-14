@@ -982,10 +982,6 @@ jobs:
     branch: ^wmf/.*$
     voting: false
 
-  # New letsencrypt/pebble version T257456
-  - name: acme-chief-new-pebble-tox-docker
-    voting: false
-
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
   # queue-name can not be applied based on a regex, apply the name on most used
   # jobs.
@@ -3690,7 +3686,6 @@ projects:
       - name: debian-glue-non-voting
     test:
       - acme-chief-tox-docker
-      - acme-chief-new-pebble-tox-docker
     gate-and-submit:
       - acme-chief-tox-docker
     postmerge:

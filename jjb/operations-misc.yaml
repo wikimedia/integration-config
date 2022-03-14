@@ -24,12 +24,6 @@
     name: acme-chief
     jobs:
         - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-acme-chief:0.3.4  # pinned see below
-
-- project:
-    name: acme-chief-new-pebble
-    jobs:
-        - '{name}-tox-docker':
             docker_image_var: docker-registry.wikimedia.org/releng/tox-acme-chief:0.6.0-s2
 
 - project:
