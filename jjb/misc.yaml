@@ -84,6 +84,7 @@
     name: unicodejs
     jobs:
         - '{name}-node12-browser-docker'
+        - '{name}-node14-browser-docker'
 
 - project:
     name: fresnel
