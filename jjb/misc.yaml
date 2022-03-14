@@ -79,6 +79,7 @@
     name: visualeditor
     jobs:
         - '{name}-node12-browser-docker'
+        - '{name}-node14-browser-docker'
 
 - project:
     name: unicodejs
