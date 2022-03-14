@@ -989,8 +989,6 @@ jobs:
     queue-name: mediawiki
   - name: mediawiki-quibble-vendor-mysql-php72-docker
     queue-name: mediawiki
-  - name: mwgate-node12-docker
-    queue-name: mediawiki
   - name: mwgate-node14-docker
     queue-name: mediawiki
 
