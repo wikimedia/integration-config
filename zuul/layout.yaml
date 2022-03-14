@@ -2323,6 +2323,18 @@ project-templates:
     gate-and-submit:
       - generic-node14-browser-docker
 
+  - name: node14-browser-webdriver-docker
+    test:
+      - generic-node14-browser-webdriver-docker
+    gate-and-submit:
+      - generic-node14-browser-webdriver-docker
+
+  - name: node14-rundoc-docker
+    test:
+      - generic-node14-rundoc-docker
+    gate-and-submit:
+      - generic-node14-rundoc-docker
+
   - name: service-pipeline-test
     test:
       - trigger-service-pipeline-test
@@ -2575,7 +2587,7 @@ projects:
 
   - name: integration/docroot
     template:
-      - name: node12-docker
+      - name: node14-docker
       - name: composer-test-php73-or-later
 
   - name: integration/gear
@@ -2648,7 +2660,7 @@ projects:
 
   - name: integration/visualdiff
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: integration/zuul
     test:
@@ -2663,7 +2675,7 @@ projects:
 
   - name: mediawiki/tools/api-testing
     template:
-      - name: node12-rundoc-docker
+      - name: node14-rundoc-docker
     test:
       - api-testing-mysql-php72-docker
       - api-testing-sqlite-php72-docker
@@ -2671,7 +2683,7 @@ projects:
       - api-testing-mysql-php72-docker
       - api-testing-sqlite-php72-docker
     postmerge:
-      - generic-node12-docs-docker-publish
+      - generic-node14-docs-docker-publish
 
   - name: mediawiki/tools/cli
     template:
@@ -2771,15 +2783,15 @@ projects:
 
   - name: performance/bttostatsv
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: performance/synthetic-monitoring-tests
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: performance/mobile-synthetic-monitoring-tests
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: performance/coal
     template:
@@ -2787,15 +2799,15 @@ projects:
 
   - name: performance/docroot
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: performance/fresnel
     test:
-      - fresnel-node12-browser-docker
+      - fresnel-node14-browser-docker
     gate-and-submit:
-      - fresnel-node12-browser-docker
+      - fresnel-node14-browser-docker
     postmerge:
-      - generic-node12-browser-coverage-docker-publish
+      - generic-node14-browser-coverage-docker-publish
 
   - name: performance/navtiming
     template:
@@ -2803,11 +2815,11 @@ projects:
 
   - name: performance/perfromance
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: performance/WikimediaDebug
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: releng/local-charts
     experimental:
@@ -3628,7 +3640,7 @@ projects:
   - name: operations/dumps/dcat
     template:
       - name: composer-test-php72-or-later
-      - name: node12-docker
+      - name: node14-docker
       - name: mediawiki-i18n-check
 
   - name: operations/dumps/import-tools
@@ -5293,7 +5305,7 @@ projects:
     postmerge:
       # NOTE: This is the 'wrong' publisher, but there's no JS extension
       # publish step yet. Let's go with this for now. 2022-02-25 JDF.
-      - generic-node12-browser-coverage-docker-publish
+      - generic-node14-browser-coverage-docker-publish
 
   - name: mediawiki/extensions/WikiLove
     template:
@@ -8238,15 +8250,15 @@ projects:
 
   - name: schemas/event/primary
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: schemas/event/secondary
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: mapdata
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   # To archive, once service has migrated to the pipeline
   - name: maps/kartotherian/deploy
@@ -8266,7 +8278,7 @@ projects:
   # https://phabricator.wikimedia.org/T240985
   - name: mediawiki/event-schemas
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: mediawiki/services/change-propagation
     template:
@@ -8440,7 +8452,7 @@ projects:
     gate-and-submit:
       - noop
     experimental:
-      - generic-node12-docker
+      - generic-node14-docker
 
   - name: mediawiki/services/poolcounter
     template:
@@ -8501,7 +8513,7 @@ projects:
 
   - name: analytics/aqs
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: analytics/blog
     template:
@@ -8509,7 +8521,7 @@ projects:
 
   - name: analytics/dashiki
     experimental:
-      - generic-node12-docker
+      - generic-node14-docker
 
   - name: analytics/datahub
     test:
@@ -8541,13 +8553,12 @@ projects:
       - name: tox-docker
 
   - name: analytics/quarry/web
+    template:
+      - name: node14-docker
     test:
       - trigger-analytics-quarry-web-pipeline-test
     gate-and-submit:
       - trigger-analytics-quarry-web-pipeline-test
-
-    template:
-      - name: node12-docker
 
   - name: analytics/limn-mobile-data
     template:
@@ -8561,7 +8572,7 @@ projects:
 
   - name: analytics/mediawiki-storage
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
 
   - name: analytics/multimedia
     template:
@@ -8593,7 +8604,7 @@ projects:
 
   - name: analytics/wikistats2
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
       - name: mediawiki-i18n-check
 
   - name: analytics/wikimetrics
@@ -8875,7 +8886,7 @@ projects:
   - name: mediawiki/libs/LangConv
     template:
       - name: composer-test-package-php72-or-later
-      - name: node12-docker
+      - name: node14-docker
     postmerge:
       - doxygen-publish
       - phpunit-coverage-php72-docker-publish
@@ -9065,7 +9076,7 @@ projects:
 
   - name: labs/tools/bodh
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: labs/tools/bodh-backend
     template:
@@ -9146,7 +9157,7 @@ projects:
 
   - name: labs/tools/heritage
     template:
-      - name: node12-docker
+      - name: node14-docker
       - name: composer-test-php72-or-later
       - name: mediawiki-i18n-check
     test:
@@ -9232,7 +9243,7 @@ projects:
   - name: labs/tools/meetingtimes
     template:
       - name: composer-test-php72-or-later
-      - name: node12-docker
+      - name: node14-docker
 
   - name: labs/tools/mwpackages
     template:
@@ -9299,16 +9310,16 @@ projects:
 
   - name: labs/tools/VideoCutTool
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
       - name: mediawiki-i18n-check
 
   - name: labs/tools/video-cut-tool-back-end
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
 
   - name: labs/tools/video-cut-tool-worker
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
 
   - name: labs/tools/watch-translations
     template:
@@ -9342,7 +9353,7 @@ projects:
 
   - name: labs/tools/wikidata-slicer
     template:
-      - name: node12-docker
+      - name: node14-docker
       - name: tox-docker
 
   - name: labs/tools/wikinity
@@ -9371,7 +9382,7 @@ projects:
 
   - name: labs/tools/graphql
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: wikimedia/meet-accountmanager
     template:
@@ -9406,7 +9417,7 @@ projects:
 
   - name: pywikibot/i18n
     template:
-      - name: node12-docker
+      - name: node14-docker
       - name: mediawiki-i18n-check
     test:
       - pywikibot-i18n-tox-docker
@@ -9512,14 +9523,14 @@ projects:
 
   - name: wikimedia/portals
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
       - name: service-pipeline-test
       - name: service-pipeline-test-and-publish
       - name: mediawiki-i18n-check
 
   - name: wikimedia/portals/deploy
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
 
   - name: wikimedia/toolhub
     test:
@@ -9609,7 +9620,7 @@ projects:
 
   - name: design/landing-page
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: research/landing-page
     test:
@@ -9619,7 +9630,7 @@ projects:
 
   - name: wikimedia/security/landing-page
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: oojs/core
     test:
@@ -9658,7 +9669,7 @@ projects:
 
   - name: jsdoc/wmf-theme
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: unicodejs
     template:
@@ -9675,16 +9686,16 @@ projects:
 
   - name: jquery-client
     template:
-      - name: node12-rundoc-docker
+      - name: node14-rundoc-docker
     test:
-      - generic-node12-browser-docker
+      - generic-node14-browser-docker
     gate-and-submit:
-      - generic-node12-browser-docker
+      - generic-node14-browser-docker
     postmerge:
-      - generic-node12-browser-coverage-docker-publish
-      - generic-node12-docs-docker-publish
+      - generic-node14-browser-coverage-docker-publish
+      - generic-node14-docs-docker-publish
     publish:
-      - generic-node12-docs-docker-publish
+      - generic-node14-docs-docker-publish
 
   - name: VisualEditor/VisualEditor
     template:
@@ -9749,7 +9760,7 @@ projects:
 
   - name: wikidata/query/gui
     template:
-      - name: node12-browser-webdriver-docker
+      - name: node14-browser-webdriver-docker
       - name: mediawiki-i18n-check
     # TODO enable if we decide we want this on postmerge
     # postmerge:
@@ -9760,14 +9771,14 @@ projects:
 
   - name: wikidata/query-builder
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
       - name: mediawiki-i18n-check
     test:
       - branchdeploy-wikidata-query-builder-node12-npm-docker
 
   - name: wikibase/javascript-api
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
 
   - name: wikibase/termbox
     test:
@@ -9776,15 +9787,15 @@ projects:
       - trigger-termbox-pipeline-rehearse
     postmerge:
       - trigger-termbox-pipeline-publish
-      - generic-node12-docs-docker-publish
+      - generic-node14-docs-docker-publish
 
   - name: wikibase/vuejs-components
     template:
         - name: service-pipeline-test
     postmerge:
-      - generic-node12-docs-docker-publish
+      - generic-node14-docs-docker-publish
     publish:
-      - generic-node12-docs-docker-publish
+      - generic-node14-docs-docker-publish
 
   - name: wikibase/property-suggester-scripts
     template:
@@ -9808,7 +9819,7 @@ projects:
 
   - name: data-values/value-view
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
       - name: mediawiki-i18n-check
 
   - name: testing-access-wrapper
@@ -9850,18 +9861,18 @@ projects:
 
   - name: wikipedia/gadgets/ProveIt
     template:
-      - name: node12-docker
+      - name: node14-docker
       - name: mediawiki-i18n-check
     gate-and-submit:
       - noop
 
   - name: react.i18n
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: react.ooui
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: research/recommendation-api
     template:
@@ -9878,7 +9889,7 @@ projects:
 
   - name: wikimedia-cz/tracker
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
       - name: mediawiki-i18n-check
     test:
       - wikimedia-cz-tracker-tox-docker
@@ -9915,7 +9926,7 @@ projects:
 
   - name: wikimedia-ui-base
     template:
-      - name: node12-docker
+      - name: node14-docker
 
   - name: wikimedia/developer-portal
     test:
@@ -9957,7 +9968,7 @@ projects:
       - wikimedia-discovery-analytics-main-tox-docker-with-sonar
   - name: wikimedia/fundraising/dash
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
 
   - name: wikimedia/fundraising/tools/DjangoBannerStats
     template:
@@ -10015,7 +10026,7 @@ projects:
 
   - name: wikimedia/wikimania-scholarships
     template:
-      - name: node12-browser-docker
+      - name: node14-browser-docker
       - name: composer-test-php72-or-later
       - name: mediawiki-i18n-check
 
@@ -10033,7 +10044,7 @@ projects:
     gate-and-submit:
       - trigger-wvui-pipeline-test
     postmerge:
-      - generic-node12-docs-docker-publish
+      - generic-node14-docs-docker-publish
       - trigger-wvui-pipeline-release
 
 #### Archive repositories ######################################
