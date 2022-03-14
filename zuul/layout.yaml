@@ -9639,10 +9639,10 @@ projects:
       - name: composer-test-package-php72-or-later
       - name: mediawiki-i18n-check
     test:
-      - ooui-special-node12-plus-php80-composer-docker
+      - ooui-special-node14-plus-php80-composer-docker
       - ooui-ruby2.5-rake-docker
     gate-and-submit:
-      - ooui-special-node12-plus-php80-composer-docker
+      - ooui-special-node14-plus-php80-composer-docker
       - ooui-ruby2.5-rake-docker
     postmerge:
       - oojs-ui-doxygen-publish
