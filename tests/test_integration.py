@@ -16,7 +16,7 @@ import zuul.cmd.server
 JENKINS_ACCEPTABLE_LABELS = [
     'BetaClusterBastion',  # deployment-prep
     'blubber',  # dummy job for Zuul/Gearman which trigger a pipeline job
-    'integration-castor03',  # Central cache
+    'castor',  # Central cache
     'contint2001',  # Publishing
     'puppet',
     'puppet-compiler-node',

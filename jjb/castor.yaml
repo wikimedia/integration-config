@@ -100,7 +100,7 @@
 #
 - job:
     name: castor-save-workspace-cache
-    node: integration-castor03
+    node: castor
     properties:
      - build-discarder:
          days-to-keep: 5
