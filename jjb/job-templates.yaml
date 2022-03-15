@@ -448,30 +448,6 @@
     publishers:
      - docker-cleanup
 
-# Node.js 12 jobs for 'npm install & npm run doc'
-# Publishing workspace/docs to doc.wikimedia.org/:DOC_PROJECT/:DOC_SUBPATH/
-# - DOC_PROJECT: determined in parameter_functions.py (repo name)
-# - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
-- job:
-    name: generic-node12-docs-docker-publish
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-castor-load
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.4'
-        args: 'doc'
-     - doc-publish:
-        docsrc: 'src/docs'
-        docdest: '$DOC_PROJECT/$DOC_SUBPATH'
-    publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
-
 # Node.js 14 job for 'npm install-test'
 - job-template:
     name: '{name}-node14-docker'
