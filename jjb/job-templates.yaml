@@ -428,22 +428,6 @@
      - docker-cleanup
 
 - job-template:
-    name: '{name}-node12-npmaudit-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12:0.0.4'
-        workdir: /src
-        args: 'audit'
-    publishers:
-     - docker-cleanup
-
-- job-template:
     name: '{name}-daily-node12-npmaudit-docker'
     node: Docker
     triggers:
@@ -557,22 +541,6 @@
     publishers:
      - archive-log-allow-empty
      - castor-save-workspace-cache
-     - docker-cleanup
-
-- job-template:
-    name: '{name}-node14-npmaudit-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node14:0.0.4'
-        workdir: /src
-        args: 'audit'
-    publishers:
      - docker-cleanup
 
 - job-template:
@@ -748,12 +716,10 @@
     name: 'generic'
     jobs:
         - '{name}-node12-docker'
-        - '{name}-node12-npmaudit-docker'
 
         - '{name}-node14-docker'
         - '{name}-node14-browser-docker'
         - '{name}-node14-browser-webdriver-docker'
-        - '{name}-node14-npmaudit-docker'
         - '{name}-node14-run{script}-docker':
            script: 'doc'
 
