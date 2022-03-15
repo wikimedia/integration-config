@@ -427,36 +427,6 @@
      - castor-save-workspace-cache
      - docker-cleanup
 
-- job-template:
-    name: '{name}-daily-node12-npmaudit-docker'
-    node: Docker
-    triggers:
-    - timed: '@daily'
-    parameters:
-        - string:
-              name: 'ZUUL_PROJECT'
-              default: '{repository}'
-        - string:
-              name: 'ZUUL_REF'
-              default: 'master'
-        - string:
-              name: 'ZUUL_URL'
-              default: 'https://gerrit.wikimedia.org/r/'
-        - string:
-              name: 'NPM_CONFIG_cache'
-              default: '/cache'
-    builders:
-    - docker-cache-dir
-    - docker-src-dir
-    - docker-log-dir
-    - docker-ci-src-setup-simple
-    - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12:0.0.4'
-        workdir: /src
-        args: 'audit'
-    publishers:
-    - docker-cleanup
-
 # Node.js 12 job for 'npm install-test' (with browser installed)
 # and publishing /coverage from workspace
 # to doc.wikimedia.org/cover/:DOC_PROJECT
