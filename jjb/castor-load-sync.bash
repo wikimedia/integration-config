@@ -16,12 +16,14 @@ else
     # /home/jenkins/workspace!
 fi
 
+CASTOR_HOST="${CASTOR_HOST:-integration-castor03.integration.eqiad.wmflabs}"
+
 echo "Syncing..."
 rsync \
     --archive \
     ${rsync_delete:-} \
     --delay-updates \
     --contimeout 3 \
-    rsync://integration-castor03.integration.eqiad.wmflabs:/caches/"$CASTOR_NAMESPACE"/ "$DEST" \
+    rsync://"$CASTOR_HOST":/caches/"$CASTOR_NAMESPACE"/ "$DEST" \
     || :
 echo -e "\nDone"
