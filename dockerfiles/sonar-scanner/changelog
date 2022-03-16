@@ -1,3 +1,9 @@
+sonar-scanner (4.6.0.2311-3) wikimedia; urgency=high
+
+   Install node14 on sonar-scanner (T303958)
+
+ -- Kosta Harlan <kharlan@wikimedia.org>  Wed, 16 Mar 2022 21:56:18 +0100
+
 sonar-scanner (4.6.0.2311-2) wikimedia; urgency=medium
 
   * Simplify sonar-project.properties generation.
