@@ -8307,7 +8307,7 @@ projects:
     gate-and-submit:
       - trigger-wikilambda-function-evaluator-pipeline-test
     postmerge:
-      - generic-node14-browser-coverage-docker-publish
+      - generic-node14-browser-direct-coverage-docker-publish
 
   # Not in production yet, but headed there
   - name: mediawiki/services/function-orchestrator
@@ -8315,7 +8315,7 @@ projects:
       - name: service-pipeline-test
       - name: service-pipeline-test-and-publish
     postmerge:
-      - generic-node14-browser-coverage-docker-publish
+      - generic-node14-browser-direct-coverage-docker-publish
 
   # Sub-module of production-bound code
   - name: mediawiki/services/function-schemata
