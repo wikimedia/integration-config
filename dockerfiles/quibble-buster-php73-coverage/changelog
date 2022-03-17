@@ -1,3 +1,9 @@
+quibble-buster-php73-coverage (1.4.4) wikimedia; urgency=medium
+
+  * Bump to Quibble 1.4.4
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 17 Mar 2022 17:37:50 +0100
+
 quibble-buster-php73-coverage (1.4.3-s3) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-buster:
