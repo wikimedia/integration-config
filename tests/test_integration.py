@@ -65,7 +65,7 @@ class IntegrationTests(unittest.TestCase):
             # Can not handle pipeline jobs
             # They should wrap using timeout(X) {}
             root = ET.parse(job_file).getroot()
-            if root.tag == 'flow-definition':
+            if root.tag in ['flow-definition', 'hudson.model.ListView']:
                 continue
 
             with open(job_file) as f:
