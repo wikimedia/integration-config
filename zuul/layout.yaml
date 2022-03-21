@@ -9605,6 +9605,7 @@ projects:
       - branchdeploy-codex-node14-npm-docker
     postmerge:
       - codex-docker-doc-publish
+      - generic-node14-browser-direct-coverage-docker-publish
     publish:
       - codex-docker-doc-publish
 
