@@ -145,7 +145,7 @@ COPY ./apache/envvars /etc/apache2/envvars
 RUN install --directory -o nobody -g nogroup /tmp/php \
     && touch /tmp/fpm-php.www.log /tmp/php/php-fpm.pid \
     && chown nobody:nogroup /tmp/fpm-php.www.log /tmp/php/php-fpm.pid
-COPY ./quibble-with-apache.sh /usr/local/bin/quibble-with-apache
+COPY ./quibble-with-supervisord.sh /usr/local/bin/quibble-with-supervisord
 COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY ./php-fpm /php-fpm
 COPY ./install-php-fpm-conf.sh /install-php-fpm-conf.sh
