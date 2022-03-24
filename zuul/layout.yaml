@@ -6135,10 +6135,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/DebateTree
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/DebugMode
     template:
       - name: extension-quibble
@@ -10360,6 +10356,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/DataTypes
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/DebateTree
     template:
       - name: archived
 
