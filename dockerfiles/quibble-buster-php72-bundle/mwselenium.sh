@@ -55,9 +55,13 @@ export HEADLESS_DISPLAY=94
 export HEADLESS_CAPTURE_PATH="$LOG_DIR"
 
 export MEDIAWIKI_ENVIRONMENT=integration
-# Copied from Quibble
-export MEDIAWIKI_URL=http://127.0.0.1:9412/index.php/
-export MEDIAWIKI_API_URL=http://127.0.0.1:9412/api.php
+
+# Injected by Quibble
+MEDIAWIKI_URL="${MW_SERVER}${MW_SCRIPT_PATH}"index.php/
+export MEDIAWIKI_URL
+
+MEDIAWIKI_API_URL="${MW_SERVER}${MW_SCRIPT_PATH}"api.php
+export MEDIAWIKI_API_URL
 
 export SCREENSHOT_FAILURES=true
 export SCREENSHOT_FAILURES_PATH="$LOG_DIR"
