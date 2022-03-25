@@ -963,9 +963,8 @@
             packages-source: vendor
             database: mysql
             quibble_args: >
+                --run=phpbench
                 --phpbench-aggregate
-                -c "composer --working-dir=\"${{ZUUL_PROJECT#mediawiki/}}\" install --ansi --no-progress --prefer-dist"
-                -c "composer --working-dir=\"${{ZUUL_PROJECT#mediawiki/}}\" run -- phpbench"
 
         - mwcore-phpunit-coverage-patch:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.3-s2
