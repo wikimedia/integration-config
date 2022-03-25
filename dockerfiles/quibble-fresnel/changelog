@@ -1,3 +1,10 @@
+quibble-fresnel (1.4.4-s2) wikimedia; urgency=medium
+
+  * Stop hardcoding MW_SERVER and MW_SCRIPT_PATH in the image. Since Quibble
+    0.0.47 they are also set for user commands.
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 25 Mar 2022 12:26:24 +0100
+
 quibble-fresnel (1.4.4-s1) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-buster:
