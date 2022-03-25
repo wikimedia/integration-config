@@ -2807,6 +2807,10 @@ projects:
     template:
       - name: node14-docker
 
+  - name: releng/phatality
+    experimental:
+      - generic-node14-docker
+
   - name: releng/local-charts
     experimental:
       - helm-lint
