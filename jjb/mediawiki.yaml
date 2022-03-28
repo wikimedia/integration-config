@@ -960,6 +960,7 @@
             database: 'mysql'
         - mediawiki-phpbench-patch-docker:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5
+            entrypoint: quibble-with-supervisord
             packages-source: vendor
             database: mysql
             quibble_args: >
