@@ -1,3 +1,9 @@
+quibble-fresnel (1.4.5) wikimedia; urgency=medium
+
+  * Bump to Quibble 1.4.5
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 28 Mar 2022 11:24:02 +0200
+
 quibble-fresnel (1.4.4-s2) wikimedia; urgency=medium
 
   * Stop hardcoding MW_SERVER and MW_SCRIPT_PATH in the image. Since Quibble
