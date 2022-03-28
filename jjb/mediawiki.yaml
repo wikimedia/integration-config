@@ -959,7 +959,7 @@
         - mediawiki-quibble-apitests-{packages-source}-{php}-docker:
             database: 'mysql'
         - mediawiki-phpbench-patch-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.3-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5
             packages-source: vendor
             database: mysql
             quibble_args: >
