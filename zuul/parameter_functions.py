@@ -561,6 +561,7 @@ phan_dependencies = {
     'HAWelcome': ['SocialProfile'],
     'ImageRating': ['SocialProfile', 'VoteNY'],
     'ImageSuggestions': ['Echo'],
+    'IPInfo': ['EventLogging'],
     'intersection': ['PageImages'],
     'JsonConfig': ['Scribunto', 'Kartographer'],
     'Kartographer': ['GeoData', 'JsonConfig'],
