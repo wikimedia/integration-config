@@ -559,7 +559,7 @@ phan_dependencies = {
     'GrowthExperiments': ['EventLogging', 'PageImages', 'PageViewInfo',
                           'skins/MinervaNeue', 'Flow', 'MobileFrontend',
                           'Echo', 'CirrusSearch', 'CentralAuth',
-                          'TimedMediaHandler'],
+                          'TimedMediaHandler', 'VisualEditor', 'EventBus'],
     'HAWelcome': ['SocialProfile'],
     'ImageRating': ['SocialProfile', 'VoteNY'],
     'ImageSuggestions': ['Echo'],
