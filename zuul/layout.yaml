@@ -2720,6 +2720,10 @@ projects:
       - trigger-scap-pipeline-test
     gate-and-submit:
       - trigger-scap-pipeline-test
+    experimental:
+      - trigger-scap-pipeline-stretch   # T308020
+      - trigger-scap-pipeline-buster    # T308020
+      - trigger-scap-pipeline-bullseye  # T308020
     postmerge:
       - beta-build-scap-deb
 
