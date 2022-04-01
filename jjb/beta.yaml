@@ -207,17 +207,14 @@
      - build-discarder:
          days-to-keep: 15
 
-# Job updating MediaWiki core+extensions code and configuration files
+# Job updating MediaWiki core+extensions code
 - job:
     name: beta-code-update-eqiad
     defaults: beta
     description: |
-      This job updates deployment-deploy03 automatically every ten minutes.
-      It is also triggered by merges into operations/mediawiki-config. It
-      updates the mediawiki config and mediawiki core/extensions/skins from
-      master in /srv/mediawiki-staging/ and /srv/mediawiki-staging/php-master
-      respectively. Then it triggers the beta-scap-sync-world job to cause
-      "scap sync-world" to run.
+      This job updates deployment-deploy03 automatically every ten minutes. It updates mediawiki
+      core/extensions/skins from master in /srv/mediawiki-staging/php-master. Then it triggers the
+      beta-scap-sync-world job to run "scap sync-world".
     node: BetaClusterBastion
 
     # Do not run concurrently with the downstream job
@@ -233,6 +230,43 @@
 
     builders:
       - shell: /usr/bin/scap prep auto
+
+    publishers:
+      - beta-irc
+      - email-ext:
+          recipients: qa-alerts@lists.wikimedia.org betacluster-alerts@lists.wikimedia.org
+          attach-build-log: false
+          first-failure: true
+          aborted: true
+          failure: false
+          fixed: true
+      - trigger:
+          project: beta-scap-sync-world
+
+# Job to deploy the Wikimedia MediaWiki configuration files
+- job:
+    name: beta-mediawiki-config-update-eqiad
+    defaults: beta
+    description: |
+      Updates the operations/mediawiki-config.git checkout in /srv/mediawiki-staging on
+      deployment-deploy03. This job is triggered after a commit is merged into
+      operations/mediawiki-config. Then it triggers the beta-scap-sync-world job to run
+      "scap sync-world". DO NOT MERGE WITH beta-code-update-eqiad, the following bug will cause
+      deadlocks: https://phabricator.wikimedia.org/T72597
+    node: BetaClusterBastion
+
+    # Do not run concurrently with the downstream job
+    block-downstream: true
+
+    triggers:
+     - zuul
+
+    builders:
+     - shell: /usr/bin/scap prep auto
+
+    properties:
+     - build-discarder:
+         days-to-keep: 15
 
     publishers:
       - beta-irc
@@ -323,6 +357,7 @@
     job-name:
         - beta-build-scap-deb
         - beta-code-update-eqiad
+        - beta-mediawiki-config-update-eqiad
         - beta-publish-deb
         - beta-scap-sync-world
         - beta-update-databases-eqiad
