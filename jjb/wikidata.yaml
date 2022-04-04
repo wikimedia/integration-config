@@ -103,7 +103,7 @@
         - docker-wipe-dir:
             dir: src/build
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node14-test-browser:0.0.3-s3
+            image: docker-registry.wikimedia.org/releng/node14-test-browser:0.0.2-s4
             entrypoint: /run-with-xvfb.sh
             args: 'test'
         - shell: |
@@ -129,7 +129,7 @@
                 ! -wholename "./src/build/.git*" \
                 -exec rm -r {} +
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node14-test-browser:0.0.3-s3
+            image: docker-registry.wikimedia.org/releng/node14-test-browser:0.0.2-s4
             args: 'grunt only_build'
         - shell: |
             # Make and push a commit to the repo on Gerrit
@@ -178,7 +178,7 @@
         - docker-wipe-dir:
             dir: dist
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node14-test-browser:0.0.3-s3
+            image: docker-registry.wikimedia.org/releng/node14-test-browser:0.0.2-s4
             entrypoint: /run-with-xvfb.sh
             args: 'test'
         - shell: |
@@ -199,7 +199,7 @@
             # Empty the build dir (excluding .git), preparing for the new build
             find ./src/dist-deploy/ -maxdepth 1 ! -wholename "./src/dist-deploy/" ! -wholename "./src/dist-deploy/.git" -exec rm -r {} +
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node14-test-browser:0.0.3-s3
+            image: docker-registry.wikimedia.org/releng/node14-test-browser:0.0.2-s4
             args: 'build'
         - shell: |
             # Copy the build result
