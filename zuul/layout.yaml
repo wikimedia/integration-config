@@ -2728,14 +2728,7 @@ projects:
       # XXX probably needs a job per supported distribution like labs/toollabs
       # See also T210780
       - name: debian-glue-non-voting
-    test:
-      - trigger-scap-pipeline-stretch
-      - trigger-scap-pipeline-buster
-      - trigger-scap-pipeline-bullseye
-    gate-and-submit:
-      - trigger-scap-pipeline-stretch
-      - trigger-scap-pipeline-buster
-      - trigger-scap-pipeline-bullseye
+      - name: service-pipeline-test
     postmerge:
       - beta-build-scap-deb
 
