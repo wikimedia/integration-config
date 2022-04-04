@@ -168,9 +168,11 @@ dependencies = {
     'BlueSpiceDashboards': ['BlueSpiceFoundation'],
     'BlueSpiceDistributionConnector': [
         'BlueSpiceFoundation',
+        'BlueSpiceSMWConnector',
         'Echo',
         'OOJSPlus',
-        'UserMerge'
+        'UserMerge',
+        'Workflows'
     ],
     'BlueSpiceEchoConnector': ['BlueSpiceFoundation', 'Echo'],
     'BlueSpiceEmoticons': ['BlueSpiceFoundation'],
