@@ -1,3 +1,10 @@
+composer-php80 (0.0.2-s9) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer from 2.1.8 to 2.3.3
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon,  4 Apr 2022 23:33:54 +0100
+
 composer-php80 (0.0.2-s8) wikimedia; urgency=high
 
    Refresh for update in parent image sury-php:
