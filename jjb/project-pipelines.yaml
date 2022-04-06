@@ -515,3 +515,19 @@
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
       - '{name}-pipeline-{pipeline}'
+
+- project:
+    name: image-suggestions
+    pipeline:
+      - test
+      - rehearse
+      - publish
+    jobs:
+      # trigger-image-suggestions-pipeline-test
+      # trigger-image-suggestions-pipeline-rehearse
+      # trigger-image-suggestions-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # image-suggestions-pipeline-test
+      # image-suggestions-pipeline-rehearse
+      # image-suggestions-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
