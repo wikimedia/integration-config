@@ -190,6 +190,10 @@
             recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @awight TCB-Team
             repository: mediawiki/extensions/TwoColConflict
             site: en.wikipedia
+        - Vector:
+            recipients: qa-alerts@lists.wikimedia.org # @Edtadros
+            repository: mediawiki/skins/Vector
+            site: en.wikipedia
         - VisualEditor:
             recipients: eakinloose@wikimedia.org qa-alerts@lists.wikimedia.org # @EAkinloose
             repository: mediawiki/extensions/VisualEditor
