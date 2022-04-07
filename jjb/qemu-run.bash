@@ -42,11 +42,11 @@ trap kill_vm EXIT
 # - 'UserKnownHostsFile=/dev/null StrictHostKeyChecking=no'
 #   Avoid interactive prompt for adding the VM to a ssh/known_hosts file.
 VM_TARGET='root@localhost'
-SSH_OPTS='-p 4293 -i ./root.key -F /dev/null -o BatchMode=yes -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -E log/ssh_err'
-SCP_OPTS='-P 4293 -i ./root.key -F /dev/null -o BatchMode=yes -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+SSH_OPTS=(-p 4293 -i ./root.key -F /dev/null -o BatchMode=yes -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -E log/ssh_err)
+SCP_OPTS=(-P 4293 -i ./root.key -F /dev/null -o BatchMode=yes -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no)
 
 # Wait for VM to initialise
-while ! ssh "$SSH_OPTS" "$VM_TARGET" 'true'; do
+while ! ssh "${SSH_OPTS[@]}" "$VM_TARGET" 'true'; do
     echo "... waiting for Qemu VM"
     sleep 2
 done
@@ -70,10 +70,10 @@ git submodule --quiet update --init --recursive
 
 %q
 ' "${ZUUL_URL}/${ZUUL_PROJECT}" "+${ZUUL_REF}:${ZUUL_REF}" "${ZUUL_BRANCH}" "${QEMU_RUN_COMMAND}" > test_command.sh
-scp "$SCP_OPTS" test_command.sh $VM_TARGET:/tmp/test_command.sh 2>log/scp_err
+scp "${SCP_OPTS[@]}" test_command.sh $VM_TARGET:/tmp/test_command.sh 2>log/scp_err
 
 # Run test command
-ssh "$SSH_OPTS" "$VM_TARGET" 'bash /tmp/test_command.sh'
+ssh "${SSH_OPTS[@]}" "$VM_TARGET" 'bash /tmp/test_command.sh'
 VM_CMD_EXIT="$?"
 
 # End
