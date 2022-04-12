@@ -8506,6 +8506,17 @@ projects:
       - name: service-pipeline-test
       - name: service-pipeline-test-and-publish
 
+#### Generated data platform datasets ##########################
+  - name: generated-data-platform/datasets/image-suggestions
+    test:
+      - trigger-image-suggestions-pipeline-test
+    gate-and-submit:
+      - trigger-image-suggestions-pipeline-rehearse
+    postmerge:
+      - trigger-image-suggestions-pipeline-publish
+    publish:
+      - trigger-image-suggestions-pipeline-publish
+
 #### Wikimedia analytics tools #################################
 
   - name: analytics/aggregator
