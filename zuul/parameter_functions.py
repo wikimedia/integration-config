@@ -495,6 +495,7 @@ dependencies = {
     'WikiEditor': ['EventLogging', 'WikimediaEvents'],
     'WikimediaBadges': ['Wikibase'],
     'WikimediaEvents': ['EventLogging'],
+    'WikiSEO': ['PageImages', 'Scribunto'],
     'Wikisource': ['Wikibase'],
     'WikiToLDAP': ['LDAPAuthentication2', 'Renameuser', 'UserMerge'],
     'wikihiero': ['VisualEditor', 'parsoid'],
