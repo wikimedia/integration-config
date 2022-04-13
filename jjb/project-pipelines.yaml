@@ -467,7 +467,7 @@
     name: security-api
     pipeline:
       - test
-      # - publish
+      - publish
     jobs:
       # trigger-security-api-pipeline-test
       # trigger-security-api-pipeline-publish

@@ -9501,6 +9501,10 @@ projects:
       - trigger-security-api-pipeline-test
     gate-and-submit:
       - trigger-security-api-pipeline-test
+    postmerge:
+      - trigger-security-api-pipeline-publish
+    publish:
+      - trigger-security-api-pipeline-publish
 
   - name: wikimedia/security/tooling
     template:
