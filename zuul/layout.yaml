@@ -5945,6 +5945,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
+      - name: extension-apitests
 
   - name: mediawiki/extensions/Cargo
     template:
