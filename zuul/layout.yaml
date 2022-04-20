@@ -7452,6 +7452,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/RegularTooltips
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/RelMicroformat
     template:
       - name: extension-quibble
