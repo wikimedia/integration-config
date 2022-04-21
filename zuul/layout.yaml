@@ -9043,9 +9043,14 @@ projects:
 
   - name: labs/striker
     test:
-      - labs-striker-tox-docker
+      - commit-message-validator
+      - trigger-striker-pipeline-test
     gate-and-submit:
-      - labs-striker-tox-docker
+      - trigger-striker-pipeline-test
+    postmerge:
+      - trigger-striker-pipeline-publish
+    publish:
+      - trigger-striker-pipeline-publish
 
   - name: labs/striker/deploy
     test:

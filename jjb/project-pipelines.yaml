@@ -531,3 +531,12 @@
       # image-suggestions-pipeline-rehearse
       # image-suggestions-pipeline-publish
       - '{name}-pipeline-{pipeline}'
+
+- project:
+    name: striker
+    pipeline:
+      - test
+      - publish
+    jobs:
+      - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'

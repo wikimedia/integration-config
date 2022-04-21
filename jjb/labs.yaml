@@ -8,11 +8,6 @@
             build_timeout: 6  # T206913
 
 - project:
-    name: 'labs-striker'
-    jobs:
-        - '{name}-tox-docker'
-
-- project:
     name: 'labs-tools-wikibugs2'
     jobs:
      - 'labs-tools-wikibugs2-autopull'
