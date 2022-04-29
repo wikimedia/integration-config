@@ -423,6 +423,7 @@ dependencies = {
     'Scribunto': ['SyntaxHighlight_GeSHi'],
     'SemanticLinks': ['VisualEditor'],
     'Shibboleth': ['PluggableAuth'],
+    'SimilarEditors': ['QuickSurveys'],
     'SiteMetrics': ['SocialProfile'],
     'SiteScout': ['Comments', 'SocialProfile', 'VoteNY'],
     'SimpleSAMLphp': ['PluggableAuth'],
