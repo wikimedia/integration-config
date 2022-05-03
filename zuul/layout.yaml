@@ -7193,6 +7193,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/PageProperties
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/PageSchemas
     template:
       - name: extension-quibble
