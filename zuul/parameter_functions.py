@@ -428,6 +428,7 @@ dependencies = {
     'SiteScout': ['Comments', 'SocialProfile', 'VoteNY'],
     'SimpleSAMLphp': ['PluggableAuth'],
     'SimpleSurvey': ['PrefSwitch'],
+    'Sofa': ['Scribunto'],
     'SoftRedirector': ['VisualEditor'],
     'SpamBlacklist': ['AbuseFilter', 'CheckUser', 'EventLogging'],
     'SpamDiffTool': ['SpamBlacklist'],
