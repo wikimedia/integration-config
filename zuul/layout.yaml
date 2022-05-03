@@ -8338,11 +8338,15 @@ projects:
 
   # Not in production yet, but headed there
   - name: mediawiki/services/function-orchestrator
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-function-orchestrator-pipeline-test
+    gate-and-submit:
+      - trigger-function-orchestrator-pipeline-test
     postmerge:
+      - trigger-function-orchestrator-pipeline-publish
       - generic-node14-browser-direct-coverage-docker-publish
+    publish:
+      - trigger-function-orchestrator-pipeline-publish
 
   # Sub-module of production-bound code
   - name: mediawiki/services/function-schemata
