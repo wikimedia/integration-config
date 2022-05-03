@@ -608,6 +608,7 @@ phan_dependencies = {
     'Scribunto': ['SyntaxHighlight_GeSHi'],
     'SecurePoll': ['CentralAuth'],
     'SocialProfile': ['Echo'],
+    'Sofa': ['Scribunto'],
     'SoftRedirector': ['VisualEditor'],
     'SpamBlacklist': ['CheckUser', 'EventLogging'],
     'SportsTeams': ['SocialProfile', 'UserStatus', 'BlogPage'],
