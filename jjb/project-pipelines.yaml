@@ -1,4 +1,12 @@
 - project:
+    name: pipelinelib
+    pipeline:
+      - test
+    jobs:
+      - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     # blubber-doc/examples/helloworldoid
     name: helloworldoid
     pipeline:
