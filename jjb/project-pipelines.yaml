@@ -254,10 +254,13 @@
 - project:
     name: kartotherian
     pipeline:
+      - test
       - kartotherian
     jobs:
+      # trigger-kartotherian-pipeline-test
       # trigger-kartotherian-pipeline-kartotherian
       - 'trigger-{name}-pipeline-{pipeline}'
+      # kartotherian-pipeline-test
       # kartotherian-pipeline-kartotherian
       - '{name}-pipeline-{pipeline}'
 
