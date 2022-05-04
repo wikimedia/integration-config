@@ -8265,13 +8265,13 @@ projects:
   # dependency.
   - name: eventgate-wikimedia
     test:
-      - trigger-apertium-pipeline-test
+      - trigger-eventgate-wikimedia-pipeline-test
     gate-and-submit:
-      - trigger-apertium-pipeline-test
+      - trigger-eventgate-wikimedia-pipeline-test
     postmerge:
-      - trigger-apertium-pipeline-publish
+      - trigger-eventgate-wikimedia-pipeline-publish
     publish:
-      - trigger-apertium-pipeline-publish
+      - trigger-eventgate-wikimedia-pipeline-publish
 
   - name: mediawiki/services/eventstreams
     template:
