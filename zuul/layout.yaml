@@ -8349,9 +8349,14 @@ projects:
       - trigger-citoid-pipeline-publish
 
   - name: mediawiki/services/cxserver
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-cxserver-pipeline-test
+    gate-and-submit:
+      - trigger-cxserver-pipeline-test
+    postmerge:
+      - trigger-cxserver-pipeline-publish
+    publish:
+      - trigger-cxserver-pipeline-publish
 
   - name: eventlogging
     test:
