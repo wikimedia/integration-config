@@ -8274,9 +8274,14 @@ projects:
       - trigger-eventgate-wikimedia-pipeline-publish
 
   - name: mediawiki/services/eventstreams
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-eventstreams-pipeline-test
+    gate-and-submit:
+      - trigger-eventstreams-pipeline-test
+    postmerge:
+      - trigger-eventstreams-pipeline-publish
+    publish:
+      - trigger-eventstreams-pipeline-publish
 
   - name: schemas/event/primary
     template:
