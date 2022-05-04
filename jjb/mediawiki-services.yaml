@@ -1,9 +1,4 @@
 - project:
-    name: 'mobileapps'
-    jobs:
-     - 'mobileapps-periodic-test'
-
-- project:
     name: poolcounter
     jobs:
         - '{name}-tox-docker':

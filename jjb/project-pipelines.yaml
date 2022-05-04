@@ -225,6 +225,21 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: mobileapps
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-mobileapps-pipeline-test
+      # trigger-mobileapps-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # mobileapps-pipeline-test
+      # mobileapps-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
+      # (see mediawiki-services.yaml)
+      - 'mobileapps-periodic-test'
+
+- project:
     name: wikimedia-production
     pipeline:
       # We don't yet have a test entry point, nor a chart for deployment.
