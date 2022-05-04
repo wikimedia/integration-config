@@ -35,6 +35,19 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: apertium
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-apertium-pipeline-test
+      # trigger-apertium-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # apertium-pipeline-test
+      # apertium-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: blubber
     pipeline:
       - test
