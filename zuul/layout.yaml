@@ -8264,9 +8264,14 @@ projects:
   # https://github.com/wikimedia/eventgate is an npm
   # dependency.
   - name: eventgate-wikimedia
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-apertium-pipeline-test
+    gate-and-submit:
+      - trigger-apertium-pipeline-test
+    postmerge:
+      - trigger-apertium-pipeline-publish
+    publish:
+      - trigger-apertium-pipeline-publish
 
   - name: mediawiki/services/eventstreams
     template:
