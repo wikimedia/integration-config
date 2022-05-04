@@ -194,6 +194,17 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: tegola
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-tegola-pipeline-test
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # tegola-pipeline-test
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: termbox
     pipeline:
       - test
