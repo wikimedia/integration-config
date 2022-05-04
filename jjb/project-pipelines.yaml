@@ -137,6 +137,16 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: mediawiki-cli
+    pipeline:
+      - test
+    jobs:
+      # trigger-mediawiki-cli-pipeline-test
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # mediawiki-cli-pipeline-test
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: wikimedia-production
     pipeline:
       # We don't yet have a test entry point, nor a chart for deployment.
