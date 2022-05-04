@@ -8326,15 +8326,15 @@ projects:
 
   # Not in production yet, but headed there
   - name: mediawiki/services/function-evaluator
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
     test:
-      - trigger-wikilambda-function-evaluator-pipeline-test
+      - trigger-function-evaluator-pipeline-test
     gate-and-submit:
-      - trigger-wikilambda-function-evaluator-pipeline-test
+      - trigger-function-evaluator-pipeline-test
     postmerge:
+      - trigger-function-evaluator-pipeline-publish
       - generic-node14-browser-direct-coverage-docker-publish
+    publish:
+      - trigger-function-evaluator-pipeline-publish
 
   # Not in production yet, but headed there
   - name: mediawiki/services/function-orchestrator
