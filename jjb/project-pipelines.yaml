@@ -184,6 +184,16 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: scap
+    pipeline:
+      - test
+    jobs:
+      # trigger-scap-pipeline-test
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # scap-pipeline-test
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: termbox
     pipeline:
       - test
