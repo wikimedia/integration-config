@@ -2671,8 +2671,10 @@ projects:
       - generic-node14-docs-docker-publish
 
   - name: mediawiki/tools/cli
-    template:
-      - name: service-pipeline-test
+    test:
+      - trigger-mediawiki-cli-pipeline-test
+    gate-and-submit:
+      - trigger-mediawiki-cli-pipeline-test
     experimental:
       - mw-cli-test
 
