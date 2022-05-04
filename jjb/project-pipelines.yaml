@@ -311,14 +311,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: wikilambda-function-evaluator
-    pipeline:
-      - test
-    jobs:
-      - 'trigger-{name}-pipeline-{pipeline}'
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: research-mwaddlink
     pipeline:
       - test
