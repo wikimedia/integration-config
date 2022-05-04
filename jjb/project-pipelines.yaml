@@ -96,6 +96,19 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: eventgate-wikimedia
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-eventgate-wikimedia-pipeline-test
+      # trigger-eventgate-wikimedia-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # eventgate-wikimedia-pipeline-test
+      # eventgate-wikimedia-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: function-orchestrator
     pipeline:
       - test
