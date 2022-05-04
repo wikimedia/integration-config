@@ -8316,9 +8316,14 @@ projects:
       - name: node14-docker
 
   - name: mediawiki/services/change-propagation
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-change-propagation-pipeline-test
+    gate-and-submit:
+      - trigger-change-propagation-pipeline-test
+    postmerge:
+      - trigger-change-propagation-pipeline-publish
+    publish:
+      - trigger-change-propagation-pipeline-publish
 
   - name: mediawiki/services/change-propagation/deploy
     # Though the main repo is tested via the pipeline, it's still manually deployed without CI.
