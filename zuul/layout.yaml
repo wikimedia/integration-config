@@ -8331,9 +8331,14 @@ projects:
     #  - name: archived
 
   - name: mediawiki/services/chromium-render
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-chromium-render-pipeline-test
+    gate-and-submit:
+      - trigger-chromium-render-pipeline-test
+    postmerge:
+      - trigger-chromium-render-pipeline-publish
+    publish:
+      - trigger-chromium-render-pipeline-publish
 
   - name: mediawiki/services/citoid
     test:
