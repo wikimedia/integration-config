@@ -148,6 +148,19 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: cxserver
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-cxserver-pipeline-test
+      # trigger-cxserver-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # cxserver-pipeline-test
+      # cxserver-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: function-orchestrator
     pipeline:
       - test
