@@ -8250,9 +8250,14 @@ projects:
 
     # apertium
   - name: mediawiki/services/apertium
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-apertium-pipeline-test
+    gate-and-submit:
+      - trigger-apertium-pipeline-test
+    postmerge:
+      - trigger-apertium-pipeline-publish
+    publish:
+      - trigger-apertium-pipeline-publish
 
   # eventgate-wikimedia contains the wikimedia specific
   # eventgate factory code and config.
