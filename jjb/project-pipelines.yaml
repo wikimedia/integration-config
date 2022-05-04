@@ -109,6 +109,19 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: eventstreams
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-eventstreams-pipeline-test
+      # trigger-eventstreams-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # eventstreams-pipeline-test
+      # eventstreams-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: function-orchestrator
     pipeline:
       - test
