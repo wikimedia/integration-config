@@ -8469,9 +8469,15 @@ projects:
 
   - name: mediawiki/services/mobileapps
     template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
       - name: mediawiki-i18n-check
+    test:
+      - trigger-mobileapps-pipeline-test
+    gate-and-submit:
+      - trigger-mobileapps-pipeline-test
+    postmerge:
+      - trigger-mobileapps-pipeline-publish
+    publish:
+      - trigger-mobileapps-pipeline-publish
 
   - name: mediawiki/services/parsoid
     template:
