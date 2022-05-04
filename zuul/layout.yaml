@@ -8420,8 +8420,10 @@ projects:
       - name: tox-docker
 
   - name: mediawiki/services/kartotherian
-    template:
-      - name: service-pipeline-test
+    test:
+      - trigger-kartotherian-pipeline-test
+    gate-and-submit:
+      - trigger-kartotherian-pipeline-test
     postmerge:
       - trigger-kartotherian-pipeline-kartotherian
     publish:
