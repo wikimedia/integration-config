@@ -135,6 +135,19 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: chromium-render
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-chromium-render-pipeline-test
+      # trigger-chromium-render-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # chromium-render-pipeline-test
+      # chromium-render-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: function-orchestrator
     pipeline:
       - test
