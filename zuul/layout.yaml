@@ -3898,9 +3898,14 @@ projects:
       - pywmflib-tox-tag-publish
 
   - name: operations/software/tegola
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-tegola-pipeline-test
+    gate-and-submit:
+      - trigger-tegola-pipeline-test
+    postmerge:
+      - trigger-tegola-pipeline-publish
+    publish:
+      - trigger-tegola-pipeline-publish
 
   - name: operations/software/thumbor-plugins
     template:
