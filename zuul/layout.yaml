@@ -8773,8 +8773,10 @@ projects:
       - trigger-node-rdkafka-statsd-pipeline-test
 
   - name: node-rdkafka-factory
-    template:
-      - name: service-pipeline-test
+    test:
+      - trigger-node-rdkafka-factory-pipeline-test
+    gate-and-submit:
+      - trigger-node-rdkafka-factory-pipeline-test
 
   - name: wikimedia-event-utilities
     test:
