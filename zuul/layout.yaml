@@ -9641,9 +9641,15 @@ projects:
   - name: wikimedia/portals
     template:
       - name: node14-browser-docker
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
       - name: mediawiki-i18n-check
+    test:
+      - trigger-wikimedia-portals-pipeline-test
+    gate-and-submit:
+      - trigger-wikimedia-portals-pipeline-test
+    postmerge:
+      - trigger-wikimedia-portals-pipeline-publish
+    publish:
+      - trigger-wikimedia-portals-pipeline-publish
 
   - name: wikimedia/portals/deploy
     template:
