@@ -386,6 +386,16 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: wikibase-vuejs-components
+    pipeline:
+      - test
+    jobs:
+      # trigger-wikibase-vuejs-components-pipeline-test
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # wikibase-vuejs-components-pipeline-test
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: wikifeeds
     pipeline:
       - test
