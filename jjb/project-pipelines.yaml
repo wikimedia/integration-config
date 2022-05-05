@@ -312,6 +312,17 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: similar-users
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-similar-users-pipeline-test
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # similar-users-pipeline-test
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: tegola
     pipeline:
       - test
