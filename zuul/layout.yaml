@@ -8546,13 +8546,13 @@ projects:
     # The changes are manually pushed to gerrit.
   - name: mediawiki/services/restbase
     test:
-      - trigger-tegola-pipeline-test
+      - trigger-restbase-pipeline-test
     gate-and-submit:
-      - trigger-tegola-pipeline-test
+      - trigger-restbase-pipeline-test
     postmerge:
-      - trigger-tegola-pipeline-publish
+      - trigger-restbase-pipeline-publish
     publish:
-      - trigger-tegola-pipeline-publish
+      - trigger-restbase-pipeline-publish
 
   - name: mediawiki/services/recommendation-api
     template:
