@@ -366,6 +366,17 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: wikifeeds
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-wikifeeds-pipeline-test
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # wikifeeds-pipeline-test
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: toolforge-delete-crashing-pods
     pipeline:
       - test
