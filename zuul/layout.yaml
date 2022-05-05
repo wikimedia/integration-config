@@ -8585,9 +8585,14 @@ projects:
       - trigger-wikifeeds-pipeline-publish
 
   - name: mediawiki/services/zotero
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-zotero-pipeline-test
+    gate-and-submit:
+      - trigger-zotero-pipeline-test
+    postmerge:
+      - trigger-zotero-pipeline-publish
+    publish:
+      - trigger-zotero-pipeline-publish
 
 #### Generated data platform datasets ##########################
   - name: generated-data-platform/datasets/image-suggestions
