@@ -9913,8 +9913,10 @@ projects:
       - generic-node14-docs-docker-publish
 
   - name: wikibase/vuejs-components
-    template:
-        - name: service-pipeline-test
+    test:
+      - trigger-wikibase-vuejs-components-pipeline-test
+    gate-and-submit:
+      - trigger-wikibase-vuejs-components-pipeline-test
     postmerge:
       - generic-node14-docs-docker-publish
     publish:
