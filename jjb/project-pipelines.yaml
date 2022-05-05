@@ -397,6 +397,19 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: wikimedia-portals
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-wikimedia-portals-pipeline-test
+      # trigger-wikimedia-portals-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # wikimedia-portals-pipeline-test
+      # wikimedia-portals-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: toolforge-delete-crashing-pods
     pipeline:
       - test
