@@ -8555,9 +8555,14 @@ projects:
       - trigger-restbase-pipeline-publish
 
   - name: mediawiki/services/recommendation-api
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-recommendation-api-pipeline-test
+    gate-and-submit:
+      - trigger-recommendation-api-pipeline-test
+    postmerge:
+      - trigger-recommendation-api-pipeline-publish
+    publish:
+      - trigger-recommendation-api-pipeline-publish
 
   - name: mediawiki/services/similar-users
     template:
