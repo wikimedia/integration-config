@@ -290,6 +290,16 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: node-rdkafka-factory
+    pipeline:
+      - test
+    jobs:
+      # trigger-node-rdkafka-factory-pipeline-test
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # node-rdkafka-factory-pipeline-test
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: recommendation-api
     pipeline:
       - test
