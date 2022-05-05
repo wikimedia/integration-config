@@ -8575,9 +8575,14 @@ projects:
       - trigger-similar-users-pipeline-publish
 
   - name: mediawiki/services/wikifeeds
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-wikifeeds-pipeline-test
+    gate-and-submit:
+      - trigger-wikifeeds-pipeline-test
+    postmerge:
+      - trigger-wikifeeds-pipeline-publish
+    publish:
+      - trigger-wikifeeds-pipeline-publish
 
   - name: mediawiki/services/zotero
     template:
