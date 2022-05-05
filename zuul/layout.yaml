@@ -8545,9 +8545,14 @@ projects:
     # Primarily developed on GitHub.
     # The changes are manually pushed to gerrit.
   - name: mediawiki/services/restbase
-    template:
-      - name: service-pipeline-test
-      - name: service-pipeline-test-and-publish
+    test:
+      - trigger-tegola-pipeline-test
+    gate-and-submit:
+      - trigger-tegola-pipeline-test
+    postmerge:
+      - trigger-tegola-pipeline-publish
+    publish:
+      - trigger-tegola-pipeline-publish
 
   - name: mediawiki/services/recommendation-api
     template:
