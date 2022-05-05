@@ -8767,8 +8767,10 @@ projects:
       - noop
 
   - name: node-rdkafka-statsd
-    template:
-      - name: service-pipeline-test
+    test:
+      - trigger-node-rdkafka-statsd-pipeline-test
+    gate-and-submit:
+      - trigger-node-rdkafka-statsd-pipeline-test
 
   - name: node-rdkafka-factory
     template:
