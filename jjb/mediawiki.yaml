@@ -396,7 +396,7 @@
 - job-template:
     !!merge : *job_quibble
     name: 'api-testing-{database}-{php}-docker'
-    entrypoint: quibble-with-apache
+    entrypoint: quibble-with-supervisord
     # Quibble 1.2.0 does not have QUIBBLE_APACHE set yet
     quibble_args: '-c "/usr/bin/env QUIBBLE_APACHE=1 mediawiki/tools/api-testing/ci.sh" mediawiki/tools/api-testing'
     triggers:
@@ -408,7 +408,7 @@
         - api-testing-{database}-{php}-docker:
             php:
                 - php72:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.3-s1
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5
             packages-source: vendor
             database:
                 - mysql
