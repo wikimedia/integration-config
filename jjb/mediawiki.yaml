@@ -461,6 +461,7 @@
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--tmpfs /workspace/db:size=320M'
+            entrypoint: '{entrypoint|}'
             volumes:
                 /srv/git: /srv/git:ro
             args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --commands "phpunit-patch-coverage check --command \"php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=. tests/phpunit/phpunit.php\" --html /workspace/log/coverage.html"'
@@ -559,6 +560,7 @@
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--tmpfs /workspace/db:size=320M'
+            entrypoint: '{entrypoint|}'
             volumes:
                 /srv/git: /srv/git:ro
                 cover: /workspace/cover
@@ -607,6 +609,7 @@
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--tmpfs /workspace/db:size=320M'
+            entrypoint: '{entrypoint|}'
             volumes:
                 /srv/git: /srv/git:ro
                 cover: /workspace/cover
@@ -849,6 +852,7 @@
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--tmpfs /workspace/db:size=320M'
+            entrypoint: '{entrypoint|}'
             volumes:
                 /srv/git: /srv/git:ro
                 cover: /workspace/cover
@@ -970,29 +974,35 @@
                 --phpbench-aggregate
 
         - mwcore-phpunit-coverage-patch:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.3-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5
             packages-source: vendor
             database: sqlite
+            entrypoint: quibble-with-supervisord
         - mwcore-phpunit-coverage-master:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.3-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5
             packages-source: vendor
             database: sqlite
+            entrypoint: quibble-with-supervisord
         - mwext-phpunit-coverage-patch-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.3-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5
             packages-source:  composer
             database: mysql
+            entrypoint: quibble-with-supervisord
         - mwext-phpunit-coverage-docker-publish:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.3-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5
             packages-source:  composer
             database: mysql
+            entrypoint: quibble-with-supervisord
         - mwskin-phpunit-coverage-patch-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.3-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5
             packages-source:  composer
             database: mysql
+            entrypoint: quibble-with-supervisord
         - mwskin-phpunit-coverage-docker-publish:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.3-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5
             packages-source:  composer
             database: mysql
+            entrypoint: quibble-with-supervisord
         # Explicitly flag this ruby selenium job as a legacy one that should not be used
         - legacy-quibble-rubyselenium-docker:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72-bundle:1.4.4-s3
