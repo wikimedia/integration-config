@@ -217,6 +217,7 @@
 - job-template: &job_quibble
     name: quibble-{packages-source}-{database}-{php}-docker
     node: Docker
+    entrypoint: quibble-with-supervisord
     quibble_args: '--skip npm-test,phpunit-standalone,api-testing'
     triggers:
         - zuul
@@ -278,7 +279,7 @@
 - job-template:
     !!merge : *job_quibble
     name: quibble-{packages-source}-{database}-{php}-noselenium-docker
-    entrypoint: quibble-with-apache
+    entrypoint: quibble-with-supervisord
     quibble_args: '--skip selenium,npm-test,phpunit-standalone,api-testing'
     triggers:
         - zuul
@@ -287,7 +288,7 @@
 - job-template:
     !!merge : *job_quibble
     name: quibble-{packages-source}-{database}-{php}-selenium-docker
-    entrypoint: quibble-with-apache
+    entrypoint: quibble-with-supervisord
     quibble_args: '--run selenium'
     triggers:
         - zuul
@@ -329,6 +330,7 @@
 - job-template:
     !!merge : *job_quibble
     name: quibble-{packages-source}-{database}-{php}-phpunit-standalone-docker
+    entrypoint: quibble-with-supervisord
     quibble_args: '--run phpunit-standalone'
     triggers:
         - zuul
@@ -337,7 +339,7 @@
 - job-template: &job_wmf_quibble
     !!merge : *job_quibble
     name: wmf-quibble-vendor-mysql-{php}-docker
-    entrypoint: quibble-with-apache
+    entrypoint: quibble-with-supervisord
     # We do not run mediawiki/core tests with extensions installed
     # https://phabricator.wikimedia.org/T197469#4293142
     quibble_args: '--phpunit-testsuite=extensions --skip selenium,npm-test,phpunit-standalone,api-testing,phpbench'
@@ -349,7 +351,7 @@
 - job-template:
     !!merge : *job_quibble
     name: wmf-quibble-core-vendor-mysql-{php}-docker
-    entrypoint: quibble-with-apache
+    entrypoint: quibble-with-supervisord
     # We do not run mediawiki/core tests with extensions installed
     # https://phabricator.wikimedia.org/T197469#4293142
     quibble_args: '--phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
@@ -359,7 +361,7 @@
 - job-template:
     !!merge : *job_quibble
     name: wmf-quibble-selenium-{php}-docker
-    entrypoint: quibble-with-apache
+    entrypoint: quibble-with-supervisord
     quibble_args: '--run selenium'
     triggers:
         - zuul
@@ -368,7 +370,7 @@
 - job-template:
     !!merge : *job_quibble
     name: mediawiki-quibble-{packages-source}-{database}-{php}-docker
-    entrypoint: quibble-with-apache
+    entrypoint: quibble-with-supervisord
     quibble_args: '--skip selenium,composer-test,npm-test,phpunit-standalone,api-testing'
     triggers:
         - zuul
@@ -378,7 +380,7 @@
 - job-template:
     !!merge : *job_quibble
     name: mediawiki-quibble-selenium-{packages-source}-{database}-{php}-docker
-    entrypoint: quibble-with-apache
+    entrypoint: quibble-with-supervisord
     quibble_args: '--run selenium'
     triggers:
         - zuul
@@ -387,7 +389,7 @@
 - job-template:
     !!merge : *job_quibble
     name: mediawiki-quibble-apitests-{packages-source}-{php}-docker
-    entrypoint: quibble-with-apache
+    entrypoint: quibble-with-supervisord
     quibble_args: '--run api-testing'
     triggers:
         - zuul
@@ -945,15 +947,15 @@
         - sqlite
     php:
         - php72:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.3-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5
         - php73:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.4.3-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.4.5
         - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.3-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.5
         - php80:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.4.3-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.4.5
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.4.3-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.4.5
     jobs:
         - quibble-{packages-source}-{database}-{php}-docker
         - quibble-{packages-source}-{database}-{php}-noselenium-docker
