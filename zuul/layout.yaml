@@ -2719,13 +2719,13 @@ projects:
       # See also T210780
       - name: debian-glue-non-voting
     test:
-      - trigger-scap-pipeline-test
+      - trigger-scap-pipeline-stretch
+      - trigger-scap-pipeline-buster
+      - trigger-scap-pipeline-bullseye
     gate-and-submit:
-      - trigger-scap-pipeline-test
-    experimental:
-      - trigger-scap-pipeline-stretch   # T308020
-      - trigger-scap-pipeline-buster    # T308020
-      - trigger-scap-pipeline-bullseye  # T308020
+      - trigger-scap-pipeline-stretch
+      - trigger-scap-pipeline-buster
+      - trigger-scap-pipeline-bullseye
     postmerge:
       - beta-build-scap-deb
 

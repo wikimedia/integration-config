@@ -324,17 +324,14 @@
 - project:
     name: scap
     pipeline:
-      - test
       - stretch
       - buster
       - bullseye
     jobs:
-      # trigger-scap-pipeline-test
       # trigger-scap-pipeline-stretch
       # trigger-scap-pipeline-buster
       # trigger-scap-pipeline-bullseye
       - 'trigger-{name}-pipeline-{pipeline}'
-      # scap-pipeline-test
       # scap-pipeline-stretch
       # scap-pipeline-buster
       # scap-pipeline-bullseye
