@@ -4627,12 +4627,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/LocalisationUpdate
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/LoginNotify
     template:
       - name: in-wikimedia-production
@@ -6777,6 +6771,11 @@ projects:
   - name: mediawiki/extensions/LiveStreaming
     template:
       - name: extension-quibble
+
+  - name: mediawiki/extensions/LocalisationUpdate
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/LockAuthor
     template:
