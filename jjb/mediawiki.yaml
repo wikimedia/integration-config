@@ -1057,7 +1057,8 @@
 
 - project:
     name: wikibase
-    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.4.3-s2
+    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.4.5
+    entrypoint: quibble-with-supervisord
     packages-source: composer
     kind:
         - client:
