@@ -2385,7 +2385,14 @@ project-templates:
   - name: in-wikimedia-fundraising-production
 
   # Track all extensions and skins in the MediaWiki tarball
-  # - name: in-mediawiki-tarball
+  - name: in-mediawiki-tarball
+    test:
+      - quibble-vendor-postgres-php72-noselenium-docker
+      - quibble-vendor-sqlite-php72-noselenium-docker
+    gate-and-submit:
+      - quibble-vendor-postgres-php72-noselenium-docker
+      - quibble-vendor-sqlite-php72-noselenium-docker
+
   # Not used yet.
 
   - name: commit-message-validator
@@ -3048,6 +3055,8 @@ projects:
       - name: extension-gate
       - name: extension-javascript-documentation
       - name: skin-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
     postmerge:
       - mwext-doxygen-publish
     experimental:
@@ -3064,6 +3073,8 @@ projects:
       - name: in-wikimedia-production
       - name: skin-quibble
       - name: skin-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/skins/Nostalgia
     template:
@@ -3076,6 +3087,8 @@ projects:
       - name: in-wikimedia-production
       - name: skin-quibble
       - name: skin-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/skins/Vector
     template:
@@ -3084,6 +3097,8 @@ projects:
       - name: extension-gate
       - name: extension-javascript-documentation
       - name: skin-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
     experimental:
       - quibble-composer-mysql-php72-docker
     postmerge:
@@ -4015,13 +4030,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-    # T251967: AbuseFilter now passes on SQLite (but not PostGres yet, T199544)
-    # TODO: Once PG support lands, this should really be a standard template
-    # for all tarball repos.
-    test:
-      - quibble-vendor-sqlite-php72-noselenium-docker
-    gate-and-submit:
-      - quibble-vendor-sqlite-php72-noselenium-docker
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/ActiveAbstract
     template:
@@ -4104,6 +4113,8 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/CentralAuth
     template:
@@ -4148,6 +4159,8 @@ projects:
       - name: extension-codehealth
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/CiteThisPage
     template:
@@ -4155,6 +4168,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/Citoid
     template:
@@ -4181,6 +4196,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/CodeMirror
     template:
@@ -4218,6 +4235,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/CongressLookup
     template:
@@ -4428,6 +4447,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/GeoCrumbs
     template:
@@ -4533,6 +4554,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/ImageSuggestions
     template:
@@ -4546,6 +4569,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/Insider
     template:
@@ -4565,6 +4590,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/InterwikiSorting
     template:
@@ -4669,6 +4696,8 @@ projects:
       - name: extension-coverage
       - name: extension-apitests
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/MediaModeration
     template:
@@ -4710,6 +4739,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-javascript-documentation
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/NavigationTiming
     template:
@@ -4735,12 +4766,16 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/OATHAuth
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/OAuth
     template:
@@ -4785,6 +4820,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/PageNotice
     template:
@@ -4813,6 +4850,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
     # Special extra jobs because Fundraising uses this on PHP73/REL1_35
     test:
       - quibble-fundraising-ParserFunctions-REL1_35-php73-docker
@@ -4832,6 +4871,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/PerformanceInspector
     template:
@@ -4845,6 +4886,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/PoolCounter
     template:
@@ -4904,6 +4947,8 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   # Not on production, but in the MediaWiki release tarball
   - name: mediawiki/extensions/ReplaceText
@@ -4911,6 +4956,8 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/RevisionSlider
     template:
@@ -4945,6 +4992,8 @@ projects:
       - name: extension-quibble-only-standalone
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/SearchExtraNS
     template:
@@ -4957,6 +5006,8 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/SecurePoll
     template:
@@ -4997,6 +5048,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/StandardDialogs
     template:
@@ -5025,6 +5078,8 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/TemplateData
     template:
@@ -5033,6 +5088,8 @@ projects:
       - name: extension-coverage
       - name: extension-gate
       - name: extension-javascript-documentation
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/TemplateSandbox
     template:
@@ -5057,6 +5114,8 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/Thanks
     template:
@@ -5089,6 +5148,8 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/TocTree
     template:
@@ -5173,6 +5234,8 @@ projects:
       - name: extension-gate
       - name: commit-message-validator
       - name: extension-javascript-documentation
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/WebAuthn
     template:
@@ -5304,6 +5367,8 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/wikihiero
     template:
