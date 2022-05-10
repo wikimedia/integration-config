@@ -1020,9 +1020,11 @@
     # And only php7.2 and php7.4
     php:
         - php72:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.3-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5
+            entrypoint: quibble-with-supervisord
         - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.3-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.5
+            entrypoint: quibble-with-supervisord
     jobs:
         - wmf-quibble-vendor-mysql-{php}-docker
         - wmf-quibble-core-vendor-mysql-{php}-docker
