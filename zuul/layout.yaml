@@ -1108,6 +1108,8 @@ jobs:
 
   - name: wikimedia-fundraising-civicrm-docker
     branch: (?!.*deployment.*|^contrib$)
+  - name: wikimedia-fundraising-civicrm-bullseye-docker
+    branch: (?!.*deployment.*|^contrib$)
 
   # Still being tested
   #
@@ -10111,6 +10113,8 @@ projects:
       - wikimedia-fundraising-civicrm-docker
     gate-and-submit:
       - wikimedia-fundraising-civicrm-docker
+    experimental:
+      - wikimedia-fundraising-civicrm-bullseye-docker  # T307178
 
   - name: wikimedia/fundraising/crm/civicrm
     test:

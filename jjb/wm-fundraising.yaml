@@ -33,6 +33,34 @@
         - castor-save-workspace-cache
         - docker-cleanup
 
+# Transient copy paste using a Bullseye based image T307178
+- job:
+    name: wikimedia-fundraising-civicrm-bullseye-docker
+    node: Docker
+    triggers:
+        - zuul
+    builders:
+        - docker-castor-load
+        - docker-log-dir
+        - docker-src-dir
+        - docker-zuul-cloner:
+            projects: >
+                wikimedia/fundraising/crm
+                wikimedia/fundraising/crm/civicrm
+        - docker-run-with-log-cache-src:
+            image: docker-registry.wikimedia.org/releng/civicrm:0.3.0-s1  # Bullseye based T307178
+            environment:
+                # $WORKSPACE is leaked from the host environment
+                WORKSPACE: "''"
+    publishers:
+        - xunit:
+           types:
+            - phpunit:
+               pattern: 'log/junit-phpunit.xml'
+        - archive-log-allow-empty
+        - castor-save-workspace-cache
+        - docker-cleanup
+
 
 - project:
     name: donationinterface-fundraising-branches
