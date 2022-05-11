@@ -635,7 +635,7 @@ phan_dependencies = {
                    'BetaFeatures'],
     'WikiLove': ['Flow', 'LiquidThreads'],
     'WikiForum': ['ConfirmEdit', 'SocialProfile'],
-    'WikibaseCirrusSearch': ['CirrusSearch', 'Wikibase'],
+    'WikibaseCirrusSearch': ['Elastica', 'CirrusSearch', 'Wikibase'],
     'WikibaseLexeme': ['Wikibase'],
     'WikibaseLexemeCirrusSearch': ['CirrusSearch', 'Wikibase',
                                    'WikibaseCirrusSearch', 'WikibaseLexeme'],
