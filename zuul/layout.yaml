@@ -9409,6 +9409,10 @@ projects:
       - name: composer-test-package-php72-or-later
       - name: tox-docker
 
+  - name: labs/tools/stewardbots-ui
+    template:
+      - name: tox-docker
+
   - name: labs/tools/suggestor
     template:
       - name: rust-test
