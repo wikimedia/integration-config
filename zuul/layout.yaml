@@ -3791,6 +3791,12 @@ projects:
       # for deploy/wmf/* branch
       - gerrit-git-fat-pull
 
+  - name: operations/software/gerrit/jsonschemagenerator
+    test:
+      - gerrit-jsonschemagenerator-maven-java11-docker
+    gate-and-submit:
+      - gerrit-jsonschemagenerator-maven-java11-docker
+
   - name: operations/software/homer
     test:
       - homer-tox-docker
