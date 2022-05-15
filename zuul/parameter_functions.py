@@ -559,6 +559,7 @@ phan_dependencies = {
     'GettingStarted': ['CentralAuth', 'CirrusSearch', 'MobileFrontend',
                        'VisualEditor'],
     'GeoData': ['CirrusSearch', 'Elastica'],
+    'GlobalBlocking': ['Renamuser'],
     'GlobalPreferences': ['BetaFeatures', 'skins/Vector'],
     'GrowthExperiments': ['EventLogging', 'PageImages', 'PageViewInfo',
                           'skins/MinervaNeue', 'Flow', 'MobileFrontend',
