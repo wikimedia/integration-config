@@ -7271,6 +7271,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/Phonos
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/PhpHighlight
     template:
       - name: extension-quibble
