@@ -3365,6 +3365,11 @@ projects:
   - { name: operations/debs/jvm-tools,                        test: ['debian-glue-non-voting'] }
   - { name: operations/debs/kafka,                            test: ['debian-glue-non-voting'] }
   - { name: operations/debs/kafkacat,                         test: ['debian-glue-non-voting'] }
+  - name: operations/debs/kubeconform
+    test:
+      - debian-glue-backports
+    gate-and-submit:
+      - debian-glue-backports
   - { name: operations/debs/kubernetes,                       test: ['debian-glue-non-voting'] }
   - name: operations/debs/kubeyaml
     template:
