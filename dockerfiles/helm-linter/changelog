@@ -1,3 +1,10 @@
+helm-linter (0.4.0) wikimedia; urgency=medium
+
+  * Add kubeconform for kuberntes spec validation
+  * python3-minimal, python3-yaml added for openapi2jsonschema.py
+
+ -- Janis Meybohm <jmeybohm@wikimedia.org>  Tue, 17 May 2022 10:26:04 +0200
+
 helm-linter (0.3.2) wikimedia; urgency=medium
 
   * Set permissions for /var/log/envoy
