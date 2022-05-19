@@ -10073,6 +10073,8 @@ projects:
       - trigger-wikimedia-developer-portal-pipeline-test
     gate-and-submit:
       - trigger-wikimedia-developer-portal-pipeline-test
+    gate-and-submit-l10n:
+      - mediawiki-i18n-check-docker
     postmerge:
       - trigger-wikimedia-developer-portal-pipeline-publish
     publish:
