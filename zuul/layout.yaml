@@ -484,6 +484,8 @@ pipelines:
           reject-approval:
             # hasn't been tested yet
             - verified: [-1, 2]
+            # isn't going through code merge already
+            - code-review: +2
           email: *email_allowlist
           approval:
             - code-review: +1
