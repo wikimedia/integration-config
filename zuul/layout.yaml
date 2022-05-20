@@ -6879,6 +6879,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/MenuEditor
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/MergeArticles
     template:
       - name: extension-quibble-composer
