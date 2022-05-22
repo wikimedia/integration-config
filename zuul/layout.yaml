@@ -9239,7 +9239,7 @@ projects:
 
   - name: labs/tools/coverme
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php73-or-later
 
   - name: labs/tools/dump-torrents
     template:
