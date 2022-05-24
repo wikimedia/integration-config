@@ -2681,6 +2681,10 @@ projects:
     experimental:
       - mw-cli-test
 
+  - name: mediawiki/tools/code-utils
+    template:
+      - name: composer-test-php72-or-later
+
   - name: mediawiki/tools/codesniffer
     template:
       - name: composer-test-package-php72-or-later
