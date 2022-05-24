@@ -291,7 +291,7 @@ dependencies = {
     'BlueSpiceUsageTracker': ['BlueSpiceFoundation'],
     'BlueSpiceUserInfo': ['BlueSpiceFoundation'],
     'BlueSpiceUserManager': ['BlueSpiceFoundation'],
-    'BlueSpiceUserSidebar': ['BlueSpiceFoundation'],
+    'BlueSpiceUserSidebar': ['BlueSpiceFoundation', 'MenuEditor'],
     'BlueSpiceVisualDiff': ['BlueSpiceFoundation'],
     'BlueSpiceVisualEditorConnector': [
         'BlueSpiceFoundation',
