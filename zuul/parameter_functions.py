@@ -228,7 +228,7 @@ dependencies = {
         'BlueSpiceFoundation',
         'BlueSpicePageAssignments'
     ],
-    'BlueSpiceReminder': ['BlueSpiceFoundation'],
+    'BlueSpiceReminder': ['BlueSpiceFoundation', 'Workflows'],
     'BlueSpiceSMWConnector': ['BlueSpiceFoundation'],
     'BlueSpiceSocial': ['BlueSpiceFoundation', 'BlueSpiceExtendedSearch'],
     'BlueSpiceSocialArticleActions': ['BlueSpiceFoundation', 'BlueSpiceSocial',
