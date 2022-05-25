@@ -330,7 +330,7 @@ dependencies = {
     'ElectronPdfService': ['Collection'],
     'EmailAuthorization': ['PluggableAuth'],
     'EncryptedUploads': ['UploadWizard'],
-    'EnhancedUpload': ['VisualEditor'],
+    'EnhancedUpload': ['OOJSPlus', 'VisualEditor'],
     'EventBus': ['EventStreamConfig'],
     'EventLogging': ['EventStreamConfig', 'EventBus'],
     'ExternalGuidance': ['MobileFrontend', 'UniversalLanguageSelector'],
