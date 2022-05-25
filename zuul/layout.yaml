@@ -4034,7 +4034,8 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      - name: in-mediawiki-tarball
+      # Not yet enabled -- JDF 2022-05-23
+      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/ActiveAbstract
     template:
