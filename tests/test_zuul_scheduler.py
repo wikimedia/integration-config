@@ -39,10 +39,6 @@ MEDIAWIKI_VERSIONS = {
         'branch': 'REL1_35',
         'pipeline-suffix': '1_35',
     },
-    'Release 1.36': {
-        'branch': 'REL1_36',
-        'pipeline-suffix': '1_36',
-    },
     'Release 1.37': {
         'branch': 'REL1_37',
         'pipeline-suffix': '1_37',
