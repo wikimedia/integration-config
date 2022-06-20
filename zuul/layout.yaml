@@ -9221,7 +9221,7 @@ projects:
 
   - name: labs/tools/guc
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php73-or-later
       - name: mediawiki-i18n-check
 
   - name: labs/tools/nagf
