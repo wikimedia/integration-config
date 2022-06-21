@@ -1,3 +1,10 @@
+operations-puppet (0.8.7) wikimedia; urgency=medium
+
+  * Refresh to pick up Gemfile updates specifically
+  https://gerrit.wikimedia.org/r/c/operations/puppet/+/799982
+
+ -- John Bond <jbond@wikimedia.org>  Tue, 21 Jun 2022 17:25:43 +0200
+
 operations-puppet (0.8.6) wikimedia; urgency=medium
 
   * Fix shellcheck warning when doing `rm -rf "${TMP_PUPPET_DIR}/"`
