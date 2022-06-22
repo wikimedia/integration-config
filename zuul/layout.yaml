@@ -3644,9 +3644,9 @@ projects:
 
   - name: operations/software/gerrit/jsonschemagenerator
     test:
-      - gerrit-jsonschemagenerator-maven-java11-docker
+      - gerrit-jsonschemagenerator-bazel-docker
     gate-and-submit:
-      - gerrit-jsonschemagenerator-maven-java11-docker
+      - gerrit-jsonschemagenerator-bazel-docker
 
   - name: operations/software/homer
     test:

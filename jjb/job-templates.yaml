@@ -62,6 +62,22 @@
     publishers:
         - docker-cleanup
 
+- job-template:
+    name: '{name}-bazel-docker'
+    node: Docker
+    triggers:
+      - zuul
+    builders:
+      - docker-castor-load
+      - docker-src-dir
+      - docker-log-dir
+      - docker-ci-src-setup-simple
+      - docker-run-with-log-cache-src:
+          image: docker-registry.wikimedia.org/releng/gerrit:1.1.4-s1
+          args: '{build_target}'
+          volumes:
+              /srv/git: /srv/git:ro
+
 - job-template: &job_template_maven-java8-docker
     name: '{name}-maven-java8-docker'
     node: Docker

@@ -201,4 +201,5 @@
 - project:
     name: gerrit-jsonschemagenerator
     jobs:
-        - '{name}-maven-java11-docker'
+        - '{name}-bazel-docker':
+            build_target: events-wikimedia
