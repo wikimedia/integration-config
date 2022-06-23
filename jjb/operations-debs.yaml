@@ -280,9 +280,6 @@
     name: debian-glue-jobs-by-distributions
     distribution:
         # Debian
-        - stretch
-        - stretch-backports
-        - stretch-wikimedia
         - buster
         - unstable
     jobs:
