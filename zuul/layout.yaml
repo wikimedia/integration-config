@@ -306,6 +306,7 @@ pipelines:
            - ^p4.wikipedia@gmail\.com$ # WhitePhosphorus
            - ^pastakhov@yandex\.ru$ # PhpTags maintainer
            - ^paulfkeffer@gmail\.com$ # MacFan4000
+           - ^perry@frasers\.org$ # Perryprog
            - ^platonides@gmail\.com$
            - ^pleasestand@live\.com$
            - ^pmx42@live\.cn$ # Stang
