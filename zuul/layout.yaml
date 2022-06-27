@@ -910,10 +910,11 @@ jobs:
       - project: ^mediawiki/extensions/DonationInterface$
         branch: ^deployment$
 
-  # T307504 css-sanitizer PHP 8.1 fails with phan error
+  # T307504 Phan related failures on PHP 8.1
   - name: ^composer-package-php81-docker$
     skip-if:
       - project: ^css-sanitizer
+      - project: ^mediawiki/libs/RemexHtml$
 
   # Only run patch coverage if a PHP file was
   # changed on master.
