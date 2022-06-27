@@ -910,11 +910,13 @@ jobs:
       - project: ^mediawiki/extensions/DonationInterface$
         branch: ^deployment$
 
-  # T307504 Phan related failures on PHP 8.1
+  # T307504 Libraries currently fail on PHP 8.1
   - name: ^composer-package-php81-docker$
     skip-if:
-      - project: ^css-sanitizer
+      - project: ^css-sanitizer$
+      - project: ^mediawiki/libs/Dodo$
       - project: ^mediawiki/libs/RemexHtml$
+      - project: ^mediawiki/libs/Zest$
 
   # Only run patch coverage if a PHP file was
   # changed on master.
