@@ -203,3 +203,4 @@
     jobs:
         - '{name}-bazel-docker':
             build_target: events-wikimedia
+            test_target: events-wikimedia_tests

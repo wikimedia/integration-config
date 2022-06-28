@@ -77,6 +77,12 @@
           args: '{build_target}'
           volumes:
               /srv/git: /srv/git:ro
+      - docker-run-with-log-cache-src:
+          image: docker-registry.wikimedia.org/releng/gerrit:1.1.4-s1
+          entrypoint: bazelisk
+          args: 'test {test_target}'
+          volumes:
+              /srv/git: /srv/git:ro
 
 - job-template: &job_template_maven-java8-docker
     name: '{name}-maven-java8-docker'
