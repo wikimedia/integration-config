@@ -1,3 +1,5 @@
+common --color=yes
+
 startup --output_user_root=/var/local/bazel
 startup --output_base=/log
 
