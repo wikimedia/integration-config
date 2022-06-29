@@ -1,3 +1,10 @@
+gerrit (1.1.4-s3) wikimedia; urgency=medium
+
+  * Refresh for update in parent image bazel:
+    Update Bazel gpg key.
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 29 Jun 2022 12:42:19 +0200
+
 gerrit (1.1.4-s2) wikimedia; urgency=medium
 
   * Refresh for update in parent image bazel:
