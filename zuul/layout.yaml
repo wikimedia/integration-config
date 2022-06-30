@@ -751,7 +751,7 @@ pipelines:
   - !!merge : *gate_and_submit_pipeline
     name: gate-and-submit-wmf
     description: >
-      Same as gate-and-submit but dedicated to wmf/ branches.
+      Variation of the "gate-and-submit" pipeline reserved for wmf/* branches.
     trigger:
       gerrit:
         - event: comment-added
@@ -765,6 +765,8 @@ pipelines:
   # Saves us from having to set the branch filter on jobs
   - !!merge : *gate_and_submit_pipeline
     name: gate-and-submit-fundraising
+    description: >
+      Variation of the "gate-and-submit" pipeline reserved for fundraising/REL* branches.
     trigger:
       gerrit:
         - !!merge : *gate-and-submit-comment-added
@@ -772,6 +774,8 @@ pipelines:
 
   - !!merge : *gate_and_submit_pipeline
     name: gate-and-submit-1_35
+    description: >
+      Variation of the "gate-and-submit" pipeline reserved for MediaWiki 1.35.
     trigger:
       gerrit:
         - !!merge : *gate-and-submit-comment-added
@@ -779,6 +783,8 @@ pipelines:
 
   - !!merge : *gate_and_submit_pipeline
     name: gate-and-submit-1_37
+    description: >
+      Variation of the "gate-and-submit" pipeline reserved for MediaWiki 1.37.
     trigger:
       gerrit:
         - !!merge : *gate-and-submit-comment-added
@@ -786,6 +792,8 @@ pipelines:
 
   - !!merge : *gate_and_submit_pipeline
     name: gate-and-submit-1_38
+    description: >
+      Variation of the "gate-and-submit" pipeline reserved for MediaWiki 1.38.
     trigger:
       gerrit:
         - !!merge : *gate-and-submit-comment-added
