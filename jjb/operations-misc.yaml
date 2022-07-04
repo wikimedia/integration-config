@@ -94,12 +94,12 @@
     jobs:
         - '{name}-tox-docker':
             build_timeout: 20 # minutes
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.5.2
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.5.3
         - tox-publish-jobs:
             docenv: 'py37-sphinx'
             docsrc: 'doc/build/html'
             docdest: 'cumin/$DOC_SUBPATH'
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.5.2
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.5.3
 
 - project:
     name: deployment-charts
@@ -126,12 +126,12 @@
     name: 'homer-public'
     jobs:
         - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.5.2
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.5.3
         - tox-publish-jobs:
             docenv: 'py3-docs'
             docsrc: 'doc/build'
             docdest: 'homer-public/$DOC_SUBPATH'
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.5.2
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.5.3
 
 - project:
     name: netbox-reports
