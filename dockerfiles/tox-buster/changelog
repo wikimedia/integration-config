@@ -1,3 +1,9 @@
+tox-buster (0.5.2) wikimedia; urgency=medium
+
+  * Add libexiv2-dev for thumbor-plugins. T252719.
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 04 Jul 2022 12:48:30 +0200
+
 tox-buster (0.5.1) wikimedia; urgency=medium
 
   * T295002: Actually install libldap2-dev and libsasl2-dev for python-ldap.
