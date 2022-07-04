@@ -30,6 +30,7 @@ etcd
 libldap2-dev
 libsasl2-dev
 libexiv2-dev
+libboost-python-dev
 {%- endset -%}
 
 ARG PIP_DISABLE_PIP_VERSION_CHECK=1
