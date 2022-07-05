@@ -8028,6 +8028,7 @@ projects:
   - name: mediawiki/extensions/VueTest
     template:
       - name: extension-quibble
+      - name: extension-codehealth
 
   - name: mediawiki/extensions/WantedPagesFromNS
     template:
