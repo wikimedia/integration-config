@@ -913,6 +913,12 @@ jobs:
     # Gated extensions are only for master and Wikimedia deployment. We do not
     # run them on REL branches.
     branch: (?!^REL)
+    # Wikibase has a standalone project which does not require to run Selenium
+    # tests when a change solely affects that embedded project. T307090
+    skip-if:
+      - project: ^mediawiki/extensions/Wikibase$
+        all-files-match-any:
+          - ^repo/rest-api/.*$
 
   - name: ^quibble-donationinterface-REL1_35-php73-docker$
     skip-if:
