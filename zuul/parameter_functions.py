@@ -205,7 +205,10 @@ dependencies = {
     'BlueSpicePageAccess': ['BlueSpiceFoundation'],
     'BlueSpicePageAssignments': ['BlueSpiceFoundation'],
     'BlueSpicePageFormsConnector': ['BlueSpiceFoundation', 'PageForms'],
-    'BlueSpicePageTemplates': ['BlueSpiceFoundation'],
+    'BlueSpicePageTemplates': [
+        'BlueSpiceFoundation',
+        'BlueSpiceDistributionConnector'
+    ],
     'BlueSpicePageVersion': ['BlueSpiceFoundation'],
     'BlueSpicePagesVisited': [
         'BlueSpiceFoundation',
