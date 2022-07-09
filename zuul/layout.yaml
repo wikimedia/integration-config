@@ -5521,10 +5521,6 @@ projects:
     template:
       - name: extension-quibble-composer
 
-  - name: mediawiki/extensions/BlueSpiceBookshelfUI
-    template:
-      - name: extension-quibble-composer
-
   - name: mediawiki/extensions/BlueSpiceCategoryCheck
     template:
       - name: extension-quibble-composer
@@ -10315,6 +10311,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/BlameMaps
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/BlueSpiceBookshelfUI
     template:
       - name: archived
 

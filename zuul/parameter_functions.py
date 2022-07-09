@@ -158,7 +158,6 @@ dependencies = {
     'BlueSpiceAuthors': ['BlueSpiceFoundation'],
     'BlueSpiceAvatars': ['BlueSpiceFoundation'],
     'BlueSpiceBookshelf': ['BlueSpiceFoundation'],
-    'BlueSpiceBookshelfUI': ['BlueSpiceFoundation', 'BlueSpiceBookshelf'],
     'BlueSpiceCategoryCheck': ['BlueSpiceFoundation'],
     'BlueSpiceCategoryManager': ['BlueSpiceFoundation'],
     'BlueSpiceChecklist': ['BlueSpiceFoundation', 'VisualEditor'],

@@ -125,6 +125,7 @@ class TestZuulLayout(unittest.TestCase):
         bsrepos = [r for r in self.getExtSkinRepos()
                    if '/BlueSpice' in r['name']]
         archivedRepos = [
+            'mediawiki/extensions/BlueSpiceBookshelfUI',
             'mediawiki/extensions/BlueSpiceEditNotifyConnector',
             'mediawiki/extensions/BlueSpiceMenues'
         ]
