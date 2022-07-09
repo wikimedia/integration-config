@@ -7553,6 +7553,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/SemanticRESTAPI
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/SemanticSifter
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
