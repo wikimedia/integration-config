@@ -132,7 +132,6 @@ dependencies = {
     # Skins are listed first to highlight the skin dependencies
     'skins/BlueSpiceCalumma': ['BlueSpiceFoundation'],
     'skins/BlueSpiceDiscovery': ['BlueSpiceFoundation'],
-    'skins/BlueSpiceSkin': ['BlueSpiceFoundation'],
     'skins/Cosmos': ['AdminLinks', 'CookieWarning', 'CreateRedirect',
                      'DismissableSiteNotice', 'Echo', 'SocialProfile',
                      'Video', 'VisualEditor'],

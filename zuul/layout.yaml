@@ -2976,10 +2976,6 @@ projects:
     template:
       - name: skin-quibble
 
-  - name: mediawiki/skins/BlueSpiceSkin
-    template:
-      - name: skin-quibble-composer
-
   - name: mediawiki/skins/BlueSpiceCalumma
     template:
       - name: skin-quibble-composer
@@ -11188,6 +11184,10 @@ projects:
       - name: archived
 
   - name: mediawiki/skins/Athena
+    template:
+      - name: archived
+
+  - name: mediawiki/skins/BlueSpiceSkin
     template:
       - name: archived
 

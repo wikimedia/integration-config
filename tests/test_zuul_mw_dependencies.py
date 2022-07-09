@@ -156,21 +156,6 @@ class TestMwDependencies(unittest.TestCase):
             },
             deps)
 
-    def test_inject_extension_on_a_skin(self):
-        deps = self.fetch_dependencies(
-            job_name='quibble-composer-mysql-php74-docker',
-            project='mediawiki/skins/BlueSpiceSkin')
-        self.assertDictContainsSubset(
-            {
-                'SKIN_NAME': 'BlueSpiceSkin',
-                'EXT_DEPENDENCIES': '\\n'.join([
-                    'mediawiki/extensions/BlueSpiceFoundation',
-                    'mediawiki/extensions/ExtJSBase',
-                    'mediawiki/extensions/OOJSPlus',
-                    ])
-            },
-            deps)
-
     def test_inject_dependencies_on_quibble_jobs(self):
         self.maxDiff = None
         deps = self.fetch_dependencies(

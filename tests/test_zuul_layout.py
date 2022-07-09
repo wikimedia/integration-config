@@ -128,7 +128,8 @@ class TestZuulLayout(unittest.TestCase):
             'mediawiki/extensions/BlueSpiceBookshelfUI',
             'mediawiki/extensions/BlueSpiceEditNotifyConnector',
             'mediawiki/extensions/BlueSpiceExtensions',
-            'mediawiki/extensions/BlueSpiceMenues'
+            'mediawiki/extensions/BlueSpiceMenues',
+            'mediawiki/skins/BlueSpiceSkin'
         ]
         for project in bsrepos:
             if project['name'] in archivedRepos:
