@@ -5590,17 +5590,6 @@ projects:
     template:
       - name: extension-broken
 
-  # meta repo containing a bunch of extensions. Would need one day a proper job
-  # that loads all of them and run test suite.
-  - name: mediawiki/extensions/BlueSpiceExtensions
-    template:
-      - name: extension-broken
-      - name: mwgate-npm
-    test:
-      - mwgate-composer-php72-docker
-    gate-and-submit:
-      - mwgate-composer-php72-docker
-
   - name: mediawiki/extensions/BlueSpiceFilterableTables
     template:
       - name: extension-quibble-composer
@@ -10319,6 +10308,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/BlueSpiceEditNotifyConnector
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/BlueSpiceExtensions
     template:
       - name: archived
 

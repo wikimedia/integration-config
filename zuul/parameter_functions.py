@@ -183,7 +183,6 @@ dependencies = {
     'BlueSpiceExtendedSearch': ['BlueSpiceFoundation', 'VisualEditor'],
     'BlueSpiceExtendedStatistics': ['BlueSpiceFoundation',
                                     'BlueSpiceExtendedSearch'],
-    'BlueSpiceExtensions': ['BlueSpiceFoundation'],
     'BlueSpiceFilterableTables': ['BlueSpiceFoundation'],
     'BlueSpiceFlaggedRevsConnector': ['BlueSpiceFoundation', 'FlaggedRevs'],
     'BlueSpiceGroupManager': ['BlueSpiceFoundation'],

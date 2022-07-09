@@ -127,6 +127,7 @@ class TestZuulLayout(unittest.TestCase):
         archivedRepos = [
             'mediawiki/extensions/BlueSpiceBookshelfUI',
             'mediawiki/extensions/BlueSpiceEditNotifyConnector',
+            'mediawiki/extensions/BlueSpiceExtensions',
             'mediawiki/extensions/BlueSpiceMenues'
         ]
         for project in bsrepos:
