@@ -3941,6 +3941,14 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/CampaignEvents
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+      - name: extension-apitests
+
   - name: mediawiki/extensions/Campaigns
     template:
       - name: in-wikimedia-production
@@ -5870,13 +5878,6 @@ projects:
   - name: mediawiki/extensions/Buggy
     template:
       - name: extension-quibble
-
-  - name: mediawiki/extensions/CampaignEvents
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-codehealth
-      - name: extension-apitests
 
   - name: mediawiki/extensions/Cargo
     template:
