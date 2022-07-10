@@ -3851,6 +3851,9 @@ projects:
 
   - name: operations/software/varnish/vhtcpd
     test: [ 'debian-glue' ]
+
+  - name: operations/software/varnish/libvmod-querysort
+    test: [ 'debian-glue' ]
   # End Varnish related
 
   - name: operations/switchdc
