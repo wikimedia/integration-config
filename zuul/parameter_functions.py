@@ -503,6 +503,7 @@ dependencies = {
     'WikimediaEvents': ['EventLogging'],
     'WikiSEO': ['PageImages', 'Scribunto'],
     'Wikisource': ['Wikibase'],
+    'Wikistories': ['EventLogging'],
     'WikiToLDAP': ['LDAPAuthentication2', 'Renameuser', 'UserMerge'],
     'wikihiero': ['VisualEditor'],
     'Workflows': ['Forms', 'OOJSPlus'],
