@@ -583,7 +583,7 @@ phan_dependencies = {
     'LoginNotify': ['CentralAuth', 'Echo'],
     'MachineVision': ['Wikibase', 'WikibaseMediaInfo', 'Echo'],
     'MassMessageEmail': ['MassMessage'],
-    'Math': ['VisualEditor', 'Wikibase'],
+    'Math': ['VisualEditor', 'Wikibase', 'Popups'],
     'MediaSearch': ['CirrusSearch', 'WikibaseCirrusSearch'],
     'MiniInvite': ['BlogPage'],
     'MobileApp': ['AbuseFilter'],
