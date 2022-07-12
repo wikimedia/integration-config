@@ -133,8 +133,9 @@ dependencies = {
     'skins/BlueSpiceCalumma': ['BlueSpiceFoundation'],
     'skins/BlueSpiceDiscovery': ['BlueSpiceFoundation'],
     'skins/BlueSpiceSkin': ['BlueSpiceFoundation'],
-    'skins/Cosmos': ['AdminLinks', 'CreateRedirect', 'DismissableSiteNotice',
-                     'Echo', 'SocialProfile', 'Video', 'VisualEditor'],
+    'skins/Cosmos': ['AdminLinks', 'CookieWarning', 'CreateRedirect',
+                     'DismissableSiteNotice', 'Echo', 'SocialProfile',
+                     'Video', 'VisualEditor'],
     'skins/Empty': ['PhpTags'],
     'skins/MinervaNeue': ['MobileFrontend'],
     'skins/Refreshed': ['SocialProfile'],
@@ -513,7 +514,7 @@ dependencies = {
 # Dependencies used in phan jobs.
 # This list is *not* recursively processed.
 phan_dependencies = {
-    'skins/Cosmos': ['AdminLinks', 'SocialProfile'],
+    'skins/Cosmos': ['AdminLinks', 'CookieWarning', 'SocialProfile'],
     'skins/MinervaNeue': ['Echo', 'MobileFrontend'],
     'skins/Nimbus': ['Echo', 'RandomGameUnit', 'SocialProfile', 'Video'],
     'skins/Refreshed': ['SocialProfile'],
