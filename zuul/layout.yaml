@@ -5021,6 +5021,11 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/Toolhub
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+
   - name: mediawiki/extensions/TorBlock
     template:
       - name: in-wikimedia-production
