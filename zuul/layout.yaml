@@ -2728,7 +2728,7 @@ projects:
 
   - name: mediawiki/tools/wikilambda-cli
     template:
-      - name: node14-docker
+      - name: node16-docker
 
   - name: releng/phatality
     template:
