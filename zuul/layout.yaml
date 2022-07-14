@@ -4142,7 +4142,6 @@ projects:
 
   - name: mediawiki/extensions/CongressLookup
     template:
-      - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
 
