@@ -682,6 +682,90 @@
      - castor-save-workspace-cache
      - docker-cleanup
 
+# Node.js 16 job for 'npm install-test'
+- job-template:
+    name: '{name}-node16-docker'
+    node: Docker
+    triggers:
+     - zuul
+    properties:
+        - build-discarder:
+            days-to-keep: 7
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node16-test:0.0.1'
+    publishers:
+     - archive-log-allow-empty
+     - castor-save-workspace-cache
+     - docker-cleanup
+
+# Node.js 16 job for 'npm install & npm run {script}'
+- job-template:
+    name: '{name}-node16-run{script}-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.0.1'
+        options: '--shm-size 1g'
+        args: '{script}'
+    publishers:
+     - archive-log-allow-empty
+     - castor-save-workspace-cache
+     - docker-cleanup
+
+# Node.js 16 job for 'npm install-test' (with browsers installed) and webdriver running
+- job-template:
+    name: '{name}-node16-browser-webdriver-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.0.1'
+        entrypoint: /run-with-xvfb.sh
+        options: >-
+            --shm-size 1g
+            --env LOG_DIR=/log
+    publishers:
+     - archive-log-allow-empty
+     - castor-save-workspace-cache
+     - docker-cleanup
+
+# Node.js 16 job for 'npm install-test' (with browsers installed)
+- job-template:
+    name: '{name}-node16-browser-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.0.1'
+        options: >-
+            --shm-size 1g
+            --env LOG_DIR=/log
+    publishers:
+     - archive-log-allow-empty
+     - castor-save-workspace-cache
+     - docker-cleanup
+
 - project:
     name: 'generic'
     jobs:
@@ -691,6 +775,12 @@
         - '{name}-node14-browser-docker'
         - '{name}-node14-browser-webdriver-docker'
         - '{name}-node14-run{script}-docker':
+           script: 'doc'
+
+        - '{name}-node16-docker'
+        - '{name}-node16-browser-docker'
+        - '{name}-node16-browser-webdriver-docker'
+        - '{name}-node16-run{script}-docker':
            script: 'doc'
 
 # Same as 'generic', but kept separate so that gate-and-submit jobs
