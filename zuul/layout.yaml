@@ -2193,6 +2193,52 @@ project-templates:
     gate-and-submit-wmf:
       - generic-node14-rundoc-docker
 
+  - name: node16-docker
+    test:
+      - generic-node16-docker
+    gate-and-submit:
+      - generic-node16-docker
+
+  - name: node16-browser-docker
+    test:
+      - generic-node16-browser-docker
+    gate-and-submit:
+      - generic-node16-browser-docker
+
+  - name: node16-browser-webdriver-docker
+    test:
+      - generic-node16-browser-webdriver-docker
+    gate-and-submit:
+      - generic-node16-browser-webdriver-docker
+
+  - name: node16-rundoc-docker
+    test:
+      - generic-node16-rundoc-docker
+    gate-and-submit:
+      - generic-node16-rundoc-docker
+
+  - name: node16-rundoc-docker-for-MW-branches
+    test:
+      - generic-node16-rundoc-docker
+    gate-and-submit:
+      - generic-node16-rundoc-docker
+    test-1_35:
+      - generic-node16-rundoc-docker
+    gate-and-submit-1_35:
+      - generic-node16-rundoc-docker
+    test-1_37:
+      - generic-node16-rundoc-docker
+    gate-and-submit-1_37:
+      - generic-node16-rundoc-docker
+    test-1_38:
+      - generic-node16-rundoc-docker
+    gate-and-submit-1_38:
+      - generic-node16-rundoc-docker
+    test-wmf:
+      - generic-node16-rundoc-docker
+    gate-and-submit-wmf:
+      - generic-node16-rundoc-docker
+
   - name: mwgate-npm
     test:
       - mwgate-node14-docker
@@ -4851,7 +4897,7 @@ projects:
       - name: extension-gate
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
-  
+
   # Not yet in production. To be added as part of T310367
   - name: mediawiki/extensions/SearchVue
     template:
