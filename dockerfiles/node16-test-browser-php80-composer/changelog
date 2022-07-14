@@ -1,0 +1,5 @@
+node16-test-browser-php80-composer (0.0.1) wikimedia; urgency=medium
+
+   Initial release, copied from node14-test-browser-php80-composer.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 14 Aug 2021 11:03:53 -0400
