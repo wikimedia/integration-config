@@ -1,3 +1,10 @@
+php74-compile (0.0.7-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php74:
+   Install php-pcov T280170
+
+ -- Antoine Musso <Antoine Musso <hashar@free.fr>>  Fri, 15 Jul 2022 13:18:49 +0200
+
 php74-compile (0.0.7) wikimedia; urgency=medium
 
   * Fix ambiguous passing of CFLAGS/CXXFLAGS to configure script.

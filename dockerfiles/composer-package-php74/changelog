@@ -1,3 +1,10 @@
+composer-package-php74 (0.3.0-s11) wikimedia; urgency=high
+
+   Refresh for update in parent image php74:
+   Install php-pcov T280170
+
+ -- Antoine Musso <Antoine Musso <hashar@free.fr>>  Fri, 15 Jul 2022 13:18:49 +0200
+
 composer-package-php74 (0.3.0-s10) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

@@ -1,3 +1,9 @@
+php80 (0.2.0-s1) wikimedia; urgency=high
+
+   Install php-pcov T280170
+
+ -- Antoine Musso <Antoine Musso <hashar@free.fr>>  Fri, 15 Jul 2022 13:19:00 +0200
+
 php80 (0.2.0) wikimedia; urgency=medium
 
   * Install php-pcov T280170

@@ -1,3 +1,10 @@
+mediawiki-phan-php73 (0.3.1-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image php73:
+   Install php-pcov T280170
+
+ -- Antoine Musso <Antoine Musso <hashar@free.fr>>  Fri, 15 Jul 2022 13:18:31 +0200
+
 mediawiki-phan-php73 (0.3.1-s2) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

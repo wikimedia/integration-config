@@ -1,3 +1,10 @@
+composer-test-php80 (0.1.0-s12) wikimedia; urgency=high
+
+   Refresh for update in parent image php80:
+   Install php-pcov T280170
+
+ -- Antoine Musso <Antoine Musso <hashar@free.fr>>  Fri, 15 Jul 2022 13:19:00 +0200
+
 composer-test-php80 (0.1.0-s11) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
