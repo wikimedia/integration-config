@@ -4140,11 +4140,6 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
 
-  - name: mediawiki/extensions/CongressLookup
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/ContactPage
     template:
       - name: in-wikimedia-production
@@ -4631,10 +4626,6 @@ projects:
     postmerge:
       - mwext-doxygen-publish
 
-  - name: mediawiki/extensions/MobileFrontendContentProvider
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/MultimediaViewer
     template:
       - name: in-wikimedia-production
@@ -4960,10 +4951,6 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
 
-  - name: mediawiki/extensions/StandardDialogs
-    template:
-      - name: extension-quibble-composer
-
   - name: mediawiki/extensions/StopForumSpam
     template:
       - name: in-wikimedia-production
@@ -5066,6 +5053,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  # Not yet in production but maybe headed there -- JDF 2022-07-15
   - name: mediawiki/extensions/Toolhub
     template:
       - name: extension-quibble
@@ -5355,6 +5343,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  # Not yet in production but maybe headed there -- JDF 2022-07-15
   - name: mediawiki/extensions/Wikistories
     template:
       - name: extension-quibble
@@ -6044,6 +6033,11 @@ projects:
   - name: mediawiki/extensions/ConfirmAccount
     template:
       - name: extension-quibble-noselenium
+
+  - name: mediawiki/extensions/CongressLookup
+    template:
+    - name: extension-quibble
+    - name: extension-coverage
 
   - name: mediawiki/extensions/ContentTransfer
     template:
@@ -6881,6 +6875,10 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/MobileDetect
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/MobileFrontendContentProvider
     template:
       - name: extension-quibble
 
@@ -7768,6 +7766,10 @@ projects:
   - name: mediawiki/extensions/StalkerLog
     template:
       - name: extension-quibble
+
+  - name: mediawiki/extensions/StandardDialogs
+    template:
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/StarterWiki
     template:
