@@ -1,3 +1,9 @@
+composer-package-php74 (0.4.0) wikimedia; urgency=high
+
+   Stop enabling xdebug by default
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Wed,  5 Oct 2022 19:14:16 +0200
+
 composer-package-php74 (0.3.0-s11) wikimedia; urgency=high
 
    Refresh for update in parent image php74:

@@ -18,9 +18,6 @@ COPY --from=ast /usr/lib/php/20190902/ast.so /usr/lib/php/20190902/ast.so
 # … and this will make the ast extension actually be loaded
 COPY --from=ast /srv/20-ast.ini /etc/php/7.4/cli/conf.d/
 
-# Enable xdebug for PHPUnit coverage reports
-RUN phpenmod xdebug
-
 USER nobody
 COPY run.sh /run.sh
 ENTRYPOINT ["/run.sh"]

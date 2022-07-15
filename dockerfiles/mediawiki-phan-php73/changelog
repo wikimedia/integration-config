@@ -1,3 +1,10 @@
+mediawiki-phan-php73 (0.3.1-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-package-php73:
+   Stop enabling xdebug by default
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Wed,  5 Oct 2022 19:13:28 +0200
+
 mediawiki-phan-php73 (0.3.1-s3) wikimedia; urgency=high
 
    Refresh for update in parent image php73:
