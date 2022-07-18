@@ -410,7 +410,7 @@
         - api-testing-{database}-{php}-docker:
             php:
                 - php72:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s1
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s2
             packages-source: vendor
             database:
                 - mysql
@@ -946,7 +946,7 @@
         - sqlite
     php:
         - php72:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s2
         - php73:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.4.5-s1
         - php74:
@@ -966,7 +966,7 @@
         - mediawiki-quibble-apitests-{packages-source}-{php}-docker:
             database: 'mysql'
         - mediawiki-phpbench-patch-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s2
             entrypoint: quibble-with-supervisord
             packages-source: vendor
             database: mysql
@@ -1021,7 +1021,7 @@
     # And only php7.2 and php7.4
     php:
         - php72:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s2
             entrypoint: quibble-with-supervisord
         - php74:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.5-s1

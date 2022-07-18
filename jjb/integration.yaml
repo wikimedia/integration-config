@@ -120,7 +120,7 @@
       - docker-src-dir
       - docker-ci-src-setup-simple
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s1
+          image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s2
           entrypoint: bash
           workdir: /src
           options: --tmpfs /workspace/db:size=320M
@@ -150,7 +150,7 @@
       - docker-src-dir
       - docker-ci-src-setup-simple
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s1
+          image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s2
           entrypoint: bash
           workdir: /src
           options: --tmpfs /workspace/db:size=320M
@@ -181,7 +181,7 @@
       - docker-src-dir
       - docker-ci-src-setup-simple
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s1
+          image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s2
           entrypoint: bash
           args: >-
               -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
@@ -221,7 +221,7 @@
       - docker-src-dir
       - docker-ci-src-setup-simple
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s1
+          image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.5-s2
           entrypoint: bash
           args: >-
               -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
