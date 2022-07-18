@@ -26,25 +26,25 @@
     name: php73
     jobs:
       - 'php-compile-{name}-docker':
-          image: docker-registry.wikimedia.org/releng/php73-compile:0.3.0-s1
+          image: docker-registry.wikimedia.org/releng/php73-compile:0.3.0-s2
 
 - project:
     name: php74
     jobs:
       - 'php-compile-{name}-docker':
-          image: docker-registry.wikimedia.org/releng/php74-compile:0.0.7
+          image: docker-registry.wikimedia.org/releng/php74-compile:0.0.7-s1
 
 - project:
     name: php80
     jobs:
       - 'php-compile-{name}-docker':
-          image: docker-registry.wikimedia.org/releng/php80-compile:0.0.5-s1
+          image: docker-registry.wikimedia.org/releng/php80-compile:0.0.5-s2
 
 - project:
     name: php81
     jobs:
       - 'php-compile-{name}-docker':
-          image: docker-registry.wikimedia.org/releng/php81-compile:0.0.2-s1
+          image: docker-registry.wikimedia.org/releng/php81-compile:0.0.2-s2
 
 - job:
     name: 'php74-compile-coverage-publish'
@@ -58,7 +58,7 @@
         entrypoint: /run-coverage.sh
         volumes:
             src:
-        image: docker-registry.wikimedia.org/releng/php74-compile:0.0.7
+        image: docker-registry.wikimedia.org/releng/php74-compile:0.0.7-s1
      - cover-publish:
         src: 'src/coverage'
         dest: '$DOC_PROJECT'

@@ -57,10 +57,10 @@
                 - php72:
                     image: docker-registry.wikimedia.org/releng/composer-package-php72:0.4.0-s10
                 - php73:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php73:0.4.0-s2
+                    image: docker-registry.wikimedia.org/releng/composer-package-php73:0.4.0-s3
                 - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php74:0.3.0-s10
+                    image: docker-registry.wikimedia.org/releng/composer-package-php74:0.3.0-s11
                 - php80:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php80:0.0.4-s10
+                    image: docker-registry.wikimedia.org/releng/composer-package-php80:0.0.4-s11
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php81:0.0.1-s2
+                    image: docker-registry.wikimedia.org/releng/composer-package-php81:0.0.1-s3
