@@ -3708,11 +3708,11 @@ projects:
       # for deploy/wmf/* branch
       - gerrit-git-fat-pull
 
-  - name: operations/software/gerrit/jsonschemagenerator
+  - name: operations/software/gerrit/plugins/events-wikimedia
     test:
-      - gerrit-jsonschemagenerator-bazel-docker
+      - gerrit-events-wikimedia-bazel-docker
     gate-and-submit:
-      - gerrit-jsonschemagenerator-bazel-docker
+      - gerrit-events-wikimedia-bazel-docker
 
   - name: operations/software/homer
     test:

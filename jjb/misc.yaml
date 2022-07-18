@@ -199,7 +199,7 @@
 #        - '{name}-{project}-maven-java8-docker-site-publish'
 
 - project:
-    name: gerrit-jsonschemagenerator
+    name: gerrit-events-wikimedia
     jobs:
         - '{name}-bazel-docker':
             build_target: events-wikimedia
