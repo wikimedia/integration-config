@@ -1138,6 +1138,7 @@ class TestZuulScheduler(unittest.TestCase):
         expected_gate = {
             'mediawiki-core-php72-phan-docker': True,
             'mediawiki-quibble-composer-mysql-php72-docker': True,
+            'mediawiki-quibble-composer-mysql-php80-docker': True,
             'mediawiki-quibble-vendor-mysql-php74-docker': True,
             'mediawiki-quibble-vendor-mysql-php73-docker': True,
             'mediawiki-quibble-vendor-mysql-php72-docker': True,
