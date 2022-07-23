@@ -2889,6 +2889,9 @@ projects:
       - mediawiki-quibble-vendor-mysql-php80-docker
       - mediawiki-quibble-composer-mysql-php80-docker
       - mediawiki-quibble-composertest-php80-docker
+      - mediawiki-quibble-vendor-mysql-php81-docker
+      - mediawiki-quibble-composer-mysql-php81-docker
+      - mediawiki-quibble-composertest-php81-docker
       - mwgate-composer-php72-docker
       - trigger-mediawiki-pipeline-wmf-publish
 
