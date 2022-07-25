@@ -378,6 +378,7 @@ dependencies = {
     'MathSearch': ['Math'],
     'MediaSearch': ['CirrusSearch', 'WikibaseCirrusSearch'],
     'MediaUploader': ['AbuseFilter', 'SpamBlacklist'],
+    'MenuEditor': ['BlueSpiceDiscovery', 'OOJSPlus'],
     'MobileApp': ['Echo', 'MobileFrontend', 'VisualEditor', 'AbuseFilter'],
     'MobileFrontend': ['Echo', 'VisualEditor', 'MobileApp',
                        'skins/MinervaNeue'],
