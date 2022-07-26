@@ -487,7 +487,7 @@ dependencies = {
         'MobileFrontend',
     ],
     'WikibaseCirrusSearch': ['Wikibase', 'CirrusSearch'],
-    'WikibaseLexeme': ['Wikibase'],
+    'WikibaseLexeme': ['Wikibase', 'WikibaseLexemeCirrusSearch'],
     'WikibaseLexemeCirrusSearch': ['Wikibase', 'WikibaseLexeme',
                                    'CirrusSearch',
                                    'WikibaseCirrusSearch'],
