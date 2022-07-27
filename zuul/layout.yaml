@@ -7106,10 +7106,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/OfflineImportLexicon
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/OnionsPorFavor
     template:
       - name: extension-quibble
@@ -10773,6 +10769,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Offline
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/OfflineImportLexicon
     template:
       - name: archived
 
