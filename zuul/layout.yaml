@@ -591,6 +591,19 @@ pipelines:
         - !!merge : *test-event-plus-one
           branch: ^REL1_38$
 
+  - !!merge : *test_pipeline
+    name: test-1_39
+    description: >
+      Variation of the "test" pipeline reserved for MediaWiki 1.39
+    trigger:
+      gerrit:
+        - !!merge : *test-event-patchset-created
+          branch: ^REL1_39$
+        - !!merge : *test-event-comment-recheck
+          branch: ^REL1_39$
+        - !!merge : *test-event-plus-one
+          branch: ^REL1_39$
+
   # Dedicated pipeline for per-patch coverage report (non-voting)
   - name: coverage
     description: >
@@ -799,6 +812,15 @@ pipelines:
       gerrit:
         - !!merge : *gate-and-submit-comment-added
           branch: ^REL1_38
+
+  - !!merge : *gate_and_submit_pipeline
+    name: gate-and-submit-1_39
+    description: >
+      Variation of the "gate-and-submit" pipeline reserved for MediaWiki 1.39.
+    trigger:
+      gerrit:
+        - !!merge : *gate-and-submit-comment-added
+          branch: ^REL1_39
 
   # Separate gate for commits authored by l10n-bot, which run different tests.
   # It also has a lower priority, and improved concurrency (no DependentPipelineManager).
@@ -1291,6 +1313,13 @@ project-templates:
       - mwgate-composer-php73-docker
       - mwgate-node14-docker
 
+    test-1_39:
+      - mwgate-composer-php74-docker
+      - mwgate-node14-docker
+    gate-and-submit-1_39:
+      - mwgate-composer-php74-docker
+      - mwgate-node14-docker
+
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
     experimental:
@@ -1360,6 +1389,19 @@ project-templates:
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
+
+    test-1_39:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
+    gate-and-submit-1_39:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php73-phan-docker
 
@@ -1440,6 +1482,19 @@ project-templates:
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php73-phan-docker
 
+    test-1_39:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
+    gate-and-submit-1_39:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
+
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
 
@@ -1496,6 +1551,19 @@ project-templates:
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
     gate-and-submit-1_38:
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
+      - mwgate-node14-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php74-phan-docker
+
+    test-1_39:
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
+      - mwgate-node14-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php74-phan-docker
+    gate-and-submit-1_39:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node14-docker
@@ -1573,6 +1641,19 @@ project-templates:
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php73-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
+
+    test-1_39:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
+    gate-and-submit-1_39:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php73-phan-docker
 
@@ -1657,6 +1738,19 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php73-phan-docker
 
+    test-1_39:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
+    gate-and-submit-1_39:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
+
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
 
@@ -1716,6 +1810,17 @@ project-templates:
       # - mwext-php73-phan-docker
     gate-and-submit-1_38:
       - quibble-composer-mysql-php73-noselenium-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - mwgate-node14-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
+
+    test-1_39:
+      - quibble-composer-mysql-php74-noselenium-docker
+      - mwgate-node14-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php73-phan-docker
+    gate-and-submit-1_39:
       - quibble-composer-mysql-php74-noselenium-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled on release branches
@@ -1788,6 +1893,17 @@ project-templates:
       # - mwext-php73-phan-docker
     gate-and-submit-1_38:
       - quibble-composer-mysql-php73-noselenium-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - mwgate-node14-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
+
+    test-1_39:
+      - quibble-composer-mysql-php74-noselenium-docker
+      - mwgate-node14-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php73-phan-docker
+    gate-and-submit-1_39:
       - quibble-composer-mysql-php74-noselenium-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
@@ -1932,6 +2048,17 @@ project-templates:
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php73-phan-docker
 
+    test-1_39:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php73-phan-docker
+    gate-and-submit-1_39:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php73-phan-docker
+
     test-wmf:
       - quibble-vendor-mysql-php72-docker
       - mwgate-node14-docker
@@ -1989,6 +2116,17 @@ project-templates:
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
     gate-and-submit-1_38:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php74-phan-docker
+
+    test-1_39:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwskin-php74-phan-docker
+    gate-and-submit-1_39:
       - mwgate-node14-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
@@ -2061,6 +2199,17 @@ project-templates:
     gate-and-submit-1_38:
       - mwgate-node14-docker
       - quibble-composer-mysql-php73-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php73-phan-docker
+
+    test-1_39:
+      - mwgate-node14-docker
+      - quibble-composer-mysql-php74-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php73-phan-docker
+    gate-and-submit-1_39:
+      - mwgate-node14-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php73-phan-docker
@@ -2201,6 +2350,10 @@ project-templates:
       - generic-node14-rundoc-docker
     gate-and-submit-1_38:
       - generic-node14-rundoc-docker
+    test-1_39:
+      - generic-node14-rundoc-docker
+    gate-and-submit-1_39:
+      - generic-node14-rundoc-docker
     test-wmf:
       - generic-node14-rundoc-docker
     gate-and-submit-wmf:
@@ -2247,6 +2400,10 @@ project-templates:
       - generic-node16-rundoc-docker
     gate-and-submit-1_38:
       - generic-node16-rundoc-docker
+    test-1_39:
+      - generic-node16-rundoc-docker
+    gate-and-submit-1_39:
+      - generic-node16-rundoc-docker
     test-wmf:
       - generic-node16-rundoc-docker
     gate-and-submit-wmf:
@@ -2268,6 +2425,10 @@ project-templates:
     test-1_38:
       - mwgate-node14-docker
     gate-and-submit-1_38:
+      - mwgate-node14-docker
+    test-1_39:
+      - mwgate-node14-docker
+    gate-and-submit-1_39:
       - mwgate-node14-docker
 
   - name: puppet-module
@@ -2856,6 +3017,22 @@ projects:
       - mediawiki-quibble-composer-sqlite-php73-docker
       - mediawiki-quibble-composer-postgres-php73-docker
       - mediawiki-core-php73-phan-docker
+
+    test-1_39:
+      - mediawiki-quibble-composer-mysql-php74-docker
+      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      - mediawiki-quibble-composertest-php74-docker
+      - mediawiki-quibble-selenium-composer-mysql-php74-docker
+      - mediawiki-core-php74-phan-docker
+    gate-and-submit-1_39:
+      - mediawiki-quibble-composer-mysql-php74-docker
+      - mediawiki-quibble-composer-mysql-php80-docker
+      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      - mediawiki-quibble-composertest-php74-docker
+      - mediawiki-quibble-selenium-composer-mysql-php74-docker
+      - mediawiki-quibble-composer-sqlite-php74-docker
+      - mediawiki-quibble-composer-postgres-php74-docker
+      - mediawiki-core-php74-phan-docker
 
     test-wmf:
       - mediawiki-quibble-composer-mysql-php72-docker
@@ -5211,7 +5388,15 @@ projects:
     gate-and-submit-1_38:
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mwext-php72-phan-docker
+      - mwext-php73-phan-docker
+    test-1_39:
+      - wikibase-client-docker
+      - wikibase-repo-docker
+      - mwext-php74-phan-docker
+    gate-and-submit-1_39:
+      - wikibase-client-docker
+      - wikibase-repo-docker
+      - mwext-php74-phan-docker
     gate-and-submit-wmf: *mediawiki-extensions-wikibase-gate-and-submit
     postmerge:
       - mwext-doxygen-publish
@@ -9844,6 +10029,10 @@ projects:
     test-1_38:
       - visualeditor-node14-browser-docker
     gate-and-submit-1_38:
+      - visualeditor-node14-browser-docker
+    test-1_39:
+      - visualeditor-node14-browser-docker
+    gate-and-submit-1_39:
       - visualeditor-node14-browser-docker
     test-wmf:
       - visualeditor-node14-browser-docker
