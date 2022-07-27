@@ -1299,6 +1299,7 @@ project-templates:
       - quibble-composer-mysql-php73-docker
       - quibble-composer-mysql-php74-docker
       - quibble-composer-mysql-php80-docker
+      - quibble-composer-mysql-php81-docker
     # Surely they are never going to be elected for wmf/ branching or SWAT
 
   # Runs quibble, and includes experimental jobs
@@ -1378,6 +1379,7 @@ project-templates:
 
     experimental:
       - quibble-vendor-mysql-php80-docker
+      - quibble-vendor-mysql-php81-docker
       - quibble-vendor-sqlite-php72-noselenium-docker
       - quibble-vendor-postgres-php72-noselenium-docker
 
@@ -1443,6 +1445,7 @@ project-templates:
 
     experimental:
       - quibble-composer-mysql-php80-docker
+      - quibble-composer-mysql-php81-docker
       - quibble-vendor-sqlite-php73-noselenium-docker
       - quibble-vendor-postgres-php73-noselenium-docker
 
@@ -1504,6 +1507,7 @@ project-templates:
 
     experimental:
       - quibble-vendor-mysql-php80-docker
+      - quibble-vendor-mysql-php81-docker
       - quibble-vendor-sqlite-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
 
@@ -1590,6 +1594,7 @@ project-templates:
 
     experimental:
       - quibble-composer-mysql-php80-docker
+      - quibble-composer-mysql-php81-docker
       - quibble-composer-sqlite-php72-noselenium-docker
       - quibble-composer-postgres-php72-noselenium-docker
 
@@ -1657,6 +1662,7 @@ project-templates:
 
     experimental:
       - quibble-composer-mysql-php80-docker
+      - quibble-composer-mysql-php81-docker
       - quibble-composer-sqlite-php73-noselenium-docker
       - quibble-composer-postgres-php73-noselenium-docker
 
@@ -1729,6 +1735,7 @@ project-templates:
 
     experimental:
       - quibble-composer-mysql-php80-noselenium-docker
+      - quibble-composer-mysql-php81-noselenium-docker
       - quibble-vendor-sqlite-php72-noselenium-docker
       - quibble-vendor-postgres-php72-noselenium-docker
 
@@ -1791,6 +1798,7 @@ project-templates:
 
     experimental:
       - quibble-composer-mysql-php80-noselenium-docker
+      - quibble-composer-mysql-php81-noselenium-docker
       - quibble-composer-sqlite-php72-noselenium-docker
       - quibble-composer-postgres-php72-noselenium-docker
       - mwext-php72-phan-docker
@@ -1808,6 +1816,7 @@ project-templates:
       - quibble-vendor-mysql-php74-phpunit-standalone-docker
     experimental:
       - quibble-vendor-mysql-php80-phpunit-standalone-docker
+      - quibble-vendor-mysql-php81-phpunit-standalone-docker
 
   # Special job template that runs the "apitests" job for test and gate
   - name: extension-apitests
@@ -1937,6 +1946,7 @@ project-templates:
 
     experimental:
       - quibble-composer-mysql-php80-docker
+      - quibble-composer-mysql-php81-docker
       - quibble-vendor-sqlite-php72-docker
       - quibble-vendor-postgres-php72-docker
 
@@ -1998,6 +2008,7 @@ project-templates:
 
     experimental:
       - quibble-composer-mysql-php80-docker
+      - quibble-composer-mysql-php81-docker
       - quibble-vendor-sqlite-php74-docker
       - quibble-vendor-postgres-php74-docker
 
@@ -2070,6 +2081,7 @@ project-templates:
 
     experimental:
       - quibble-composer-mysql-php80-docker
+      - quibble-composer-mysql-php81-docker
       - quibble-composer-sqlite-php72-docker
       - quibble-composer-postgres-php72-docker
 
@@ -2926,6 +2938,8 @@ projects:
     experimental:
       - mwgate-composer-php80-docker
       - mediawiki-quibble-vendor-mysql-php80-docker
+      - mwgate-composer-php81-docker
+      - mediawiki-quibble-vendor-mysql-php81-docker
 
   # VERY EXPERIMENTAL WIKIMEDIA PRODUCTION BUILD WITH NO TESTS YET
   - name: wikimedia/production
@@ -8492,6 +8506,7 @@ projects:
       # Not passing until MW Core itself passes
       # - quibble-composer-mysql-php80-docker
     experimental:
+      - parsoidsvc-composer-package-php81-docker
       # These are the jobs which would be added by the extension-gate template
       - wmf-quibble-core-vendor-mysql-php72-docker
       - wmf-quibble-vendor-mysql-php72-docker
