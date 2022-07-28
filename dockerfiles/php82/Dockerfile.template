@@ -1,0 +1,88 @@
+FROM {{ "php-ast" | image_tag }} as ast
+FROM {{ "sury-php" | image_tag }}
+
+USER root
+
+# zip is needed for composer to install things from dist
+# others are libraries/MediaWiki related
+{% set packages|replace('\n', ' ') -%}
+php8.2-cli
+php8.2-zip
+php8.2-bcmath
+php8.2-curl
+php8.2-dba
+php8.2-gd
+php8.2-gmp
+php8.2-intl
+php8.2-mbstring
+php8.2-sqlite3
+php8.2-xml
+zip
+unzip
+{%- endset -%}
+
+RUN {{ packages | apt_install }}
+
+# ------------------------------
+# Not yet available upstream, so we're building locally: pcov, redis, xdebug, yaml -- JDF 2022-11-03
+RUN {{ "build-essential php8.2-dev libyaml-dev" | apt_install }}
+
+RUN install --owner=nobody --group=nogroup --directory /srv/php-pcov
+RUN install --owner=nobody --group=nogroup --directory /srv/php-redis
+RUN install --owner=nobody --group=nogroup --directory /srv/php-xdebug
+RUN install --owner=nobody --group=nogroup --directory /srv/php-yaml
+RUN install --owner=nobody --group=nogroup --directory /srv/modules
+
+USER nobody
+RUN git clone https://github.com/krakjoe/pcov /srv/php-pcov && \
+    cd /srv/php-pcov && \
+    git checkout v1.0.11 && \
+    phpize8.2 && ./configure --with-php-config=php-config8.2 && make && \
+    cp modules/pcov.so /srv/modules/pcov.so
+
+RUN git clone https://github.com/phpredis/phpredis /srv/php-redis && \
+    cd /srv/php-redis && \
+    git checkout 5.3.7 && \
+    phpize8.2 && ./configure --with-php-config=php-config8.2 && make && \
+    cp modules/redis.so /srv/modules/redis.so
+
+RUN git clone https://github.com/xdebug/xdebug /srv/php-xdebug && \
+    cd /srv/php-xdebug && \
+    git checkout 3.2.0RC1 && \
+    phpize8.2 && ./configure --with-php-config=php-config8.2 && make && \
+    cp modules/xdebug.so /srv/modules/xdebug.so
+
+RUN git clone https://github.com/php/pecl-file_formats-yaml /srv/php-yaml && \
+    cd /srv/php-yaml && \
+    git checkout 2.2.2 && \
+    phpize8.2 && ./configure --with-php-config=php-config8.2 && make && \
+    cp modules/yaml.so /srv/modules/yaml.so
+
+USER root
+RUN cp /srv/modules/pcov.so /usr/lib/php/20220829/pcov.so && \
+    echo "extension=pcov.so" > /etc/php/8.2/cli/conf.d/20-pcov.ini
+
+RUN cp /srv/modules/redis.so /usr/lib/php/20220829/redis.so && \
+    echo "extension=redis.so" > /etc/php/8.2/cli/conf.d/20-redis.ini
+
+RUN cp /srv/modules/xdebug.so /usr/lib/php/20220829/xdebug.so && \
+    echo "extension=xdebug.so" > /etc/php/8.2/cli/conf.d/20-xdebug.ini
+
+RUN cp /srv/modules/yaml.so /usr/lib/php/20220829/yaml.so && \
+    echo "extension=yaml.so" > /etc/php/8.2/cli/conf.d/20-yaml.ini
+# ------------------------------
+# Back to our normal model of work.
+
+# Set a standard, new version of php-ast rather than using Debian's older one
+COPY --from=ast /usr/lib/php/20220829/ast.so /usr/lib/php/20220829/ast.so
+COPY --from=ast /srv/20-ast.ini /etc/php/8.2/cli/conf.d/20-ast.ini
+
+# Disable xdebug by default due to its performance impact
+RUN phpdismod xdebug
+# Same for pcov, although the performance overhead should be minimal
+RUN phpdismod pcov
+
+USER nobody
+
+ENTRYPOINT ["php"]
+CMD ["--help"]

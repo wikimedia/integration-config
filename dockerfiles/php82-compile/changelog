@@ -1,0 +1,5 @@
+php82-compile (0.0.1) wikimedia; urgency=medium
+
+  * Initial fork from php81-compile; pre-release (RC.5) PHP, not intended for full use.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  3 Nov 2022 12:42:25 -0400
