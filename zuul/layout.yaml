@@ -7448,6 +7448,8 @@ projects:
 
   - name: mediawiki/extensions/Phonos
     template:
+      - name: in-wikimedia-production
+      - name: extension-coverage
       - name: extension-quibble
 
   - name: mediawiki/extensions/PhpHighlight
