@@ -9927,12 +9927,12 @@ projects:
 
   - name: design/codex
     template:
-      - name: node14-browser-docker
+      - name: node16-browser-docker
     test:
-      - branchdeploy-codex-node14-npm-docker
+      - branchdeploy-codex-node16-npm-docker
     postmerge:
       - codex-docker-doc-publish
-      - generic-node14-browser-coverage-docker-publish
+      - generic-node16-browser-coverage-docker-publish
     publish:
       - codex-docker-doc-publish
 
