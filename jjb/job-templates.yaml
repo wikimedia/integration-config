@@ -946,7 +946,6 @@
         - 'branchdeploy-{key}-node14-npm-docker':
             key:
                 - wikidata-query-builder
-                - codex
         - 'branchdeploy-{key}-node16-npm-docker':
             key:
                 - codex
