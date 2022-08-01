@@ -7448,6 +7448,7 @@ projects:
 
   - name: mediawiki/extensions/Phonos
     template:
+      # Extension not yet in production - T314294
       - name: in-wikimedia-production
       - name: extension-coverage
       - name: extension-quibble
