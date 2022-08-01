@@ -8564,7 +8564,7 @@ projects:
       - trigger-function-evaluator-pipeline-test
     postmerge:
       - trigger-function-evaluator-pipeline-publish
-      - generic-node14-browser-direct-coverage-docker-publish
+      - generic-node14-browser-coverage-docker-publish
     publish:
       - trigger-function-evaluator-pipeline-publish
 
@@ -8576,7 +8576,7 @@ projects:
       - trigger-function-orchestrator-pipeline-test
     postmerge:
       - trigger-function-orchestrator-pipeline-publish
-      - generic-node14-browser-direct-coverage-docker-publish
+      - generic-node14-browser-coverage-docker-publish
     publish:
       - trigger-function-orchestrator-pipeline-publish
 
@@ -9932,7 +9932,7 @@ projects:
       - branchdeploy-codex-node14-npm-docker
     postmerge:
       - codex-docker-doc-publish
-      - generic-node14-browser-direct-coverage-docker-publish
+      - generic-node14-browser-coverage-docker-publish
     publish:
       - codex-docker-doc-publish
 
