@@ -2809,10 +2809,6 @@ projects:
       - mw-tools-releng-tox-publish
 
   - name: mediawiki/tools/scap
-    template:
-      # XXX probably needs a job per supported distribution like labs/toollabs
-      # See also T210780
-      - name: debian-glue-non-voting
     test:
       - trigger-scap-pipeline-stretch
       - trigger-scap-pipeline-buster
@@ -2821,8 +2817,6 @@ projects:
       - trigger-scap-pipeline-stretch
       - trigger-scap-pipeline-buster
       - trigger-scap-pipeline-bullseye
-    postmerge:
-      - beta-build-scap-deb
 
   - name: mediawiki/tools/train-dev
     template:
