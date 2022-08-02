@@ -2655,7 +2655,7 @@ projects:
       - trigger-inference-services-pipeline-nsfw-publish
 
   - name: integration/config
-    test:
+    test-prio:
       - integration-config-tox-docker
       - integration-config-jjb-diff-docker
       - integration-config-shellcheck-docker
