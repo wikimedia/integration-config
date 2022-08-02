@@ -9926,7 +9926,8 @@ projects:
       - branchdeploy-codex-node16-npm-docker
     postmerge:
       - codex-docker-doc-publish
-      - generic-node16-browser-coverage-docker-publish
+      # We want to use the special `npm run coverage` job for Codex
+      - generic-node16-browser-direct-coverage-docker-publish
     publish:
       - codex-docker-doc-publish
 
