@@ -10101,16 +10101,6 @@ projects:
       - trigger-termbox-pipeline-publish
       - generic-node14-docs-docker-publish
 
-  - name: wikibase/vuejs-components
-    test:
-      - trigger-wikibase-vuejs-components-pipeline-test
-    gate-and-submit:
-      - trigger-wikibase-vuejs-components-pipeline-test
-    postmerge:
-      - generic-node14-docs-docker-publish
-    publish:
-      - generic-node14-docs-docker-publish
-
   - name: wikibase/property-suggester-scripts
     template:
       - name: tox-docker
@@ -11569,6 +11559,10 @@ projects:
       - name: archived
 
   - name: sink_nova_ldap
+    template:
+      - name: archived
+
+  - name: wikibase/vuejs-components
     template:
       - name: archived
 
