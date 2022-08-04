@@ -575,6 +575,11 @@
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
       - '{name}-pipeline-{pipeline}'
+      - '{name}-maven-java8-docker':
+            pom: java/pom.xml
+      - '{name}-maven-java8-docker-site-publish':
+            pom: java/pom.xml
+            site_dir: java/target/staging
 
 - project:
     name: miscweb
