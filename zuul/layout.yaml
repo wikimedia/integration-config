@@ -3771,8 +3771,6 @@ projects:
       # Not allowed whilst non-voting:
       # - operations-mw-config-php72-composer-diffConfig-docker
       - operations-mw-config-typos-docker
-    postmerge:
-      - beta-mediawiki-config-update-eqiad
 
   - name: operations/puppet
     test-prio:
