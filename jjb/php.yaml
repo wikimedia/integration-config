@@ -16,7 +16,7 @@
      - docker-run:
         volumes:
             src:
-        image: 'docker-registry.wikimedia.org/releng/composer-security-check:1.1-s8'
+        image: 'docker-registry.wikimedia.org/releng/composer-security-check:1.1.1'
     publishers:
       - docker-cleanup
 
