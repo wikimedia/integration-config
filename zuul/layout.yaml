@@ -8568,7 +8568,7 @@ projects:
       - trigger-function-evaluator-pipeline-test
     postmerge:
       - trigger-function-evaluator-pipeline-publish
-      - generic-node14-browser-coverage-docker-publish
+      - generic-node16-browser-coverage-docker-publish
     publish:
       - trigger-function-evaluator-pipeline-publish
 
@@ -8580,7 +8580,7 @@ projects:
       - trigger-function-orchestrator-pipeline-test
     postmerge:
       - trigger-function-orchestrator-pipeline-publish
-      - generic-node14-browser-coverage-docker-publish
+      - generic-node16-browser-coverage-docker-publish
     publish:
       - trigger-function-orchestrator-pipeline-publish
 
@@ -8589,7 +8589,7 @@ projects:
     template:
       - name: node12-docker
     postmerge:
-      - generic-node14-browser-coverage-docker-publish
+      - generic-node16-browser-coverage-docker-publish
 
   - name: mediawiki/services/image-suggestion-api
     test:
