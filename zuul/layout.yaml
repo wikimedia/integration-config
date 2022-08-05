@@ -1256,6 +1256,14 @@ jobs:
         - '.pipeline/config.yaml'
         - 'java/.*'
 
+  - name: metrics-platform-maven-java8-docker
+    files:
+        - 'java/.*'
+
+  - name: metrics-platform-maven-java8-docker-site-publish
+    files:
+        - 'java/.*'
+
   - name: trigger-metrics-platform-pipeline-test-swift
     files:
         - '.pipeline/blubber/swift.yaml'
@@ -9193,6 +9201,9 @@ projects:
       - trigger-metrics-platform-pipeline-test-php
       - trigger-metrics-platform-pipeline-test-java
       - trigger-metrics-platform-pipeline-test-swift
+    experimental:
+      - metrics-platform-maven-java8-docker
+      - metrics-platform-maven-java8-docker-site-publish
 
   - name: mediawiki/libs/Minify
     template:
