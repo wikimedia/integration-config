@@ -978,36 +978,42 @@ jobs:
         - '.pipeline/editquality/blubber.yaml'
         - '.pipeline/config.yaml'
         - 'revscoring/editquality/model-server/.*'
+        - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-articlequality
     files:
         - '.pipeline/articlequality/blubber.yaml'
         - '.pipeline/config.yaml'
         - 'revscoring/articlequality/model-server/.*'
+        - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-draftquality
     files:
         - '.pipeline/draftquality/blubber.yaml'
         - '.pipeline/config.yaml'
         - 'revscoring/draftquality/model-server/.*'
+        - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-topic
     files:
         - '.pipeline/topic/blubber.yaml'
         - '.pipeline/config.yaml'
         - 'revscoring/topic/model-server/.*'
+        - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-outlink
     files:
         - '.pipeline/outlink/blubber.yaml'
         - '.pipeline/config.yaml'
         - 'outlink-topic-model/model-server/.*'
+        - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-outlink-transformer
     files:
         - '.pipeline/outlink/transformer.yaml'
         - '.pipeline/config.yaml'
         - 'outlink-topic-model/transformer/.*'
+        - 'python/.*\.py$'
 
   # End of meta jobs (the ones starting with ^)
 
