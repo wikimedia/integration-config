@@ -1261,14 +1261,23 @@ jobs:
         - '.pipeline/blubber/java.yaml'
         - '.pipeline/config.yaml'
         - 'java/.*'
+        - 'mvnw.*'
+        - 'Maven.*'
+        - 'maven.*'
 
   - name: metrics-platform-maven-java8-docker
     files:
         - 'java/.*'
+        - 'mvnw.*'
+        - 'Maven.*'
+        - 'maven.*'
 
   - name: metrics-platform-maven-java8-docker-site-publish
     files:
         - 'java/.*'
+        - 'mvnw.*'
+        - 'Maven.*'
+        - 'maven.*'
 
   - name: trigger-metrics-platform-pipeline-test-swift
     files:
