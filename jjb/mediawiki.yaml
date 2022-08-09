@@ -701,7 +701,7 @@
     - docker-src-dir
     - docker-castor-load
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5-s1
+        image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.4.5
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -797,7 +797,7 @@
     - docker-wipe-dir:
         dir: 'cover'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5-s1
+        image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.4.5
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -972,32 +972,32 @@
                 --phpbench-aggregate
 
         - mwcore-phpunit-coverage-patch:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.4.5
             packages-source: vendor
             database: sqlite
             entrypoint: quibble-with-supervisord
         - mwcore-phpunit-coverage-master:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.4.5
             packages-source: vendor
             database: sqlite
             entrypoint: quibble-with-supervisord
         - mwext-phpunit-coverage-patch-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.4.5
             packages-source:  composer
             database: mysql
             entrypoint: quibble-with-supervisord
         - mwext-phpunit-coverage-docker-publish:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.4.5
             packages-source:  composer
             database: mysql
             entrypoint: quibble-with-supervisord
         - mwskin-phpunit-coverage-patch-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.4.5
             packages-source:  composer
             database: mysql
             entrypoint: quibble-with-supervisord
         - mwskin-phpunit-coverage-docker-publish:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73-coverage:1.4.5-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.4.5
             packages-source:  composer
             database: mysql
             entrypoint: quibble-with-supervisord
