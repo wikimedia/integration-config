@@ -1015,6 +1015,12 @@ jobs:
         - 'outlink-topic-model/transformer/.*'
         - 'python/.*\.py$'
 
+  - name: ^trigger-inference-services-pipeline-nsfw
+    files:
+        - '.pipeline/nsfw/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'nsfw-model/model-server/.*'
+
   # End of meta jobs (the ones starting with ^)
 
 
@@ -2636,6 +2642,7 @@ projects:
       - trigger-inference-services-pipeline-topic
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
+      - trigger-inference-services-pipeline-nsfw
     gate-and-submit:
       - trigger-inference-services-pipeline-editquality
       - trigger-inference-services-pipeline-articlequality
@@ -2643,6 +2650,7 @@ projects:
       - trigger-inference-services-pipeline-topic
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
+      - trigger-inference-services-pipeline-nsfw
     postmerge:
       - trigger-inference-services-pipeline-editquality-publish
       - trigger-inference-services-pipeline-articlequality-publish
@@ -2650,6 +2658,7 @@ projects:
       - trigger-inference-services-pipeline-topic-publish
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-outlink-transformer-publish
+      - trigger-inference-services-pipeline-nsfw-publish
 
   - name: integration/config
     test:

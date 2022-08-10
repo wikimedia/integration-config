@@ -642,6 +642,8 @@
         - outlink-publish
         - outlink-transformer
         - outlink-transformer-publish
+        - nsfw
+        - nsfw-publish
     jobs:
         # trigger-inference-services-pipeline-editquality
         # trigger-inference-services-pipeline-editquality-publish
@@ -655,6 +657,8 @@
         # trigger-inference-services-pipeline-outlink-publish
         # trigger-inference-services-pipeline-outlink-transformer
         # trigger-inference-services-pipeline-outlink-transformer-publish
+        # trigger-inference-services-pipeline-nsfw
+        # trigger-inference-services-pipeline-nsfw-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-editquality
         # inference-services-pipeline-editquality-publish
@@ -668,6 +672,8 @@
         # inference-services-pipeline-outlink-publish
         # inference-services-pipeline-outlink-transformer
         # inference-services-pipeline-outlink-transformer-publish
+        # inference-services-pipeline-nsfw
+        # inference-services-pipeline-nsfw-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:
