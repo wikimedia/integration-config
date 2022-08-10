@@ -226,7 +226,7 @@
      - zuul
 
 # Generate project documentation using docker and publish it
-- job-template:
+- job-template: &job_template_docker-doc-publish
     name: '{name}-docker-doc-publish'
     node: Docker
     concurrent: false
@@ -248,6 +248,12 @@
     publishers:
      - archive-log-allow-empty
      - docker-cleanup
+
+- job-template:
+    !!merge : *job_template_docker-doc-publish
+    name: '{name}-docker-doc-tag-publish'
+    triggers:
+        - zuul-post
 
 # Same as '{name}-maven-java8-docker' but src is bindmounted so we can later
 # retrieve the site from /src/target/ and push it to doc.wikimedia.org. This

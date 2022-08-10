@@ -9811,7 +9811,8 @@ projects:
       # We want to use the special `npm run coverage` job for Codex
       - generic-node16-browser-direct-coverage-docker-publish
     publish:
-      - codex-docker-doc-publish
+      # Use `npm run doc-release` when publishing docs for a release tag
+      - codex-docker-doc-tag-publish
 
   - name: design/landing-page
     template:
