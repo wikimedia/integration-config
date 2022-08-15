@@ -130,10 +130,18 @@ def isFailure = { build ->
     return build.resultIsWorseOrEqualTo('FAILURE')
 }
 
-def shouldOperate = { computerName ->
+def shouldOperate = { computer ->
+    def computerName = computer.getName()
+
     // If we got a specific target node,
     if (targetNode) {
       return computerName == targetNode
+    }
+
+    if (computer.isOffline() && !computer.getOfflineCauseReason().startsWith(env.JOB_NAME)) {
+      // The node is offline for some reason unrelated to this maintenance script.
+      // Don't try to talk to it.
+      return false
     }
 
     // Fire for nodes named like integration-agents or master:
@@ -148,7 +156,7 @@ def checkAgents = {
         def computerName = computer.getName()
         def isMaster = computerName == masterName
 
-        if (! shouldOperate(computerName)) {
+        if (! shouldOperate(computer)) {
             continue
         }
 
