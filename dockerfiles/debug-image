@@ -1,13 +1,27 @@
 #!/bin/bash -eu
 #
-# Usage: ./debug-image node12-test-browser
+# Usage:
+#
+#  debug-image IMAGE [TAG]
+#
+# Examples:
+#
+# Run "latest" version of the "node12-test-browser" image:
+#
+#  ./debug-image node12-test-browser
+#
+# To use a specific version rather than "latest", pass the image version as a
+# second argument:
+#
+#   ./debug-image node12-test-brower 0.0.4
 #
 # Trailing slash is optional, such as when autocompleting names
 # in your shell from within the dockerfiles/ directory.
 
 image=$(basename "$1")
+tag=${2:-latest}
 
 exec docker run \
     --rm --tty \
     --interactive --entrypoint /bin/bash \
-    docker-registry.wikimedia.org/releng/"$image":latest
+    docker-registry.wikimedia.org/releng/"$image":"$tag"
