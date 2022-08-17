@@ -202,6 +202,6 @@
      - docker-run:
         volumes:
             src:
-        image: 'docker-registry.wikimedia.org/releng/commit-message-validator:0.6.1-s6'
+        image: docker-registry.wikimedia.org/releng/commit-message-validator:1.0.0
     publishers:
      - docker-cleanup
