@@ -337,6 +337,10 @@
       # scap-pipeline-bullseye
       - '{name}-pipeline-{pipeline}'
       # Documentation is not using the pipeline T315541
+      # scap-tox-doc-docker
+      - '{name}-tox-{toxenv}-docker':
+          toxenv: doc
+      # scap-tox-publish
       - '{name}-tox-publish':
           docsrc: 'docs/_build/html'
           docdest: 'mw-tools-scap'

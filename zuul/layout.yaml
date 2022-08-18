@@ -2850,10 +2850,12 @@ projects:
       - trigger-scap-pipeline-stretch
       - trigger-scap-pipeline-buster
       - trigger-scap-pipeline-bullseye
+      - scap-tox-doc-docker
     gate-and-submit:
       - trigger-scap-pipeline-stretch
       - trigger-scap-pipeline-buster
       - trigger-scap-pipeline-bullseye
+      - scap-tox-doc-docker
     postmerge:
       - scap-tox-publish
 
