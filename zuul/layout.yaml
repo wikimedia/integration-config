@@ -1072,6 +1072,9 @@ jobs:
   - name: ecs-publish
     branch: ^master$
 
+  - name: scap-tox-publish
+    branch: ^master$
+
   - name: spicerack-tox-publish
     branch: ^master$
 
@@ -2851,6 +2854,8 @@ projects:
       - trigger-scap-pipeline-stretch
       - trigger-scap-pipeline-buster
       - trigger-scap-pipeline-bullseye
+    postmerge:
+      - scap-tox-publish
 
   - name: mediawiki/tools/train-dev
     template:

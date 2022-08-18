@@ -5,54 +5,6 @@
         docsrc: 'html'
         docdest: 'mw-tools-releng'
 
-- job:
-    name: 'mw-tools-scap-tox-doc-publish'
-    node: Docker
-    concurrent: false
-    parameters:
-      # Trigger castor
-      - string:
-          name: 'ZUUL_PIPELINE'
-          default: 'postmerge'
-      - string:
-          name: 'ZUUL_URL'
-          default: 'https://gerrit.wikimedia.org/r'
-      - string:
-          name: 'ZUUL_PROJECT'
-          default: 'mediawiki/tools/scap'
-      - string:
-          name: 'ZUUL_BRANCH'
-          default: 'master'
-      - string:
-          name: 'ZUUL_REF'
-          default: 'master'
-    triggers:
-      - pollscm:
-          cron: '@hourly'
-    scm:
-      - git:
-          url: 'https://gerrit.wikimedia.org/r/mediawiki/tools/scap'
-          branches:
-            - 'origin/master'
-          # A different directory, the Docker container fetch the repo by
-          # itself. So that is solely used by the Jenkins git plugin for
-          # polling purposes.
-          basedir: 'gitpolling'
-    builders:
-      - docker-castor-load
-      - docker-log-dir
-      - docker-src-dir
-      - docker-run-with-log-cache-src:
-          image: 'docker-registry.wikimedia.org/releng/tox-buster:0.5.3'
-          args: '-e doc'
-      - doc-publish:
-          docsrc: 'src/docs/_build/html'
-          docdest: 'mw-tools-scap'
-    publishers:
-      - castor-save-workspace-cache
-      - archive-log-dir
-      - docker-cleanup
-
 # Job to run MW-CS patchsets against
 # mediwiki/core's includes/ directory for easier
 # testing against a large sample of code.

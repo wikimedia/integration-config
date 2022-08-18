@@ -338,6 +338,11 @@
       - '{name}-pipeline-{pipeline}'
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
+      # Documentation is not using the pipeline T315541
+      - '{name}-tox-publish':
+          docsrc: 'docs/_build/html'
+          docdest: 'mw-tools-scap'
+
 
 - project:
     name: similar-users
