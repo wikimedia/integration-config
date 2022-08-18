@@ -343,7 +343,7 @@
       # scap-tox-publish
       - '{name}-tox-publish':
           docsrc: 'docs/_build/html'
-          docdest: 'mw-tools-scap'
+          docdest: 'scap'
 
 
 - project:
