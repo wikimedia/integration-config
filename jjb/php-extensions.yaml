@@ -38,7 +38,7 @@
     name: php80
     jobs:
       - 'php-compile-{name}-docker':
-          image: docker-registry.wikimedia.org/releng/php80-compile:0.0.5-s2
+          image: docker-registry.wikimedia.org/releng/php80-compile:0.0.5-s3
 
 - project:
     name: php81

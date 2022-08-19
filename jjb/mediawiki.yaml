@@ -155,7 +155,7 @@
                 - php74:
                     image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.0-s9
                 - php80:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.0-s12
+                    image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.0-s13
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.1-s3
         - '{name}-node14-docker'
@@ -205,8 +205,8 @@
             composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.2.0-s9
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.1-s3
         - php80:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s10
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.2-s3
+            composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s11
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.2-s4
         - php81:
             composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1-s3
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.2-s3
@@ -949,7 +949,7 @@
         - php74:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.5-s2
         - php80:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.4.5-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.4.5-s2
         - php81:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.4.5-s1
     jobs:
