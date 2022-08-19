@@ -1,3 +1,9 @@
+php80 (0.2.1) wikimedia; urgency=high
+
+   Update PHP from 8.0.20 to 8.0.22
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 19 Aug 2022 10:59:02 -0400
+
 php80 (0.2.0-s1) wikimedia; urgency=high
 
    Install php-pcov T280170
