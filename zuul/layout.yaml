@@ -4422,6 +4422,7 @@ projects:
       - name: in-wikimedia-production
       - name: in-wikimedia-fundraising-production
       - name: mediawiki-i18n-check
+      - name: extension-coverage
     test:
       - mwgate-composer-php73-docker
       - mwgate-node14-docker
