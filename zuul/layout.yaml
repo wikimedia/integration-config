@@ -3046,6 +3046,7 @@ projects:
       - mediawiki-quibble-composer-mysql-php73-docker
       - mediawiki-quibble-composer-mysql-php74-docker
       - mediawiki-quibble-composer-mysql-php80-docker
+      - mediawiki-quibble-composer-mysql-php81-docker
       # FIXME use a normal composer job, rather than a heavy-weight quibble one?
       - mediawiki-quibble-composertest-php73-docker
       - mediawiki-quibble-selenium-composer-mysql-php73-docker
@@ -3062,6 +3063,7 @@ projects:
     gate-and-submit-1_39:
       - mediawiki-quibble-composer-mysql-php74-docker
       - mediawiki-quibble-composer-mysql-php80-docker
+      - mediawiki-quibble-composer-mysql-php81-docker
       # FIXME use a normal composer job, rather than a heavy-weight quibble one?
       - mediawiki-quibble-composertest-php74-docker
       - mediawiki-quibble-selenium-composer-mysql-php74-docker
