@@ -3015,6 +3015,8 @@ projects:
       - mediawiki-quibble-vendor-mysql-php74-docker
       # FIXME As this is master, should be a 'real' vendor job, when it works T300463
       - mediawiki-quibble-composer-mysql-php80-docker
+      # FIXME As this is master, should be a 'real' vendor job, when it works T316078
+      - mediawiki-quibble-composer-mysql-php81-docker
       # FIXME use a normal composer job, rather than a heavy-weight quibble one?
       - mediawiki-quibble-composertest-php72-docker
       - mediawiki-quibble-selenium-vendor-mysql-php72-docker
