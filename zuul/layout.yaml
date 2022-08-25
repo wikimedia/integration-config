@@ -4054,8 +4054,14 @@ projects:
       - trigger-tegola-pipeline-publish
 
   - name: operations/software/thumbor-plugins
-    template:
-      - name: tox-docker
+    test:
+      - trigger-thumbor-plugins-pipeline-test
+    gate-and-submit:
+      - trigger-thumbor-plugins-pipeline-test
+    postmerge:
+      - trigger-thumbor-plugins-pipeline-publish
+    publish:
+      - trigger-thumbor-plugins-pipeline-publish
 
   - name: operations/software/tools-manifest
     template:

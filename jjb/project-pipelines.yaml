@@ -801,3 +801,16 @@
       - 'trigger-{name}-pipeline-{pipeline}'
       # zotero-pipeline-test
       - '{name}-pipeline-{pipeline}'
+
+- project:
+    name: thumbor-plugins
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-thumbor-plugins-pipeline-test
+      # trigger-thumbor-plugins-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # thumbor-plugins-pipeline-test
+      # thumbor-plugins-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
