@@ -14,6 +14,19 @@
         - '{name}-{project}-maven-java8-docker-site-publish'
 
 - project:
+    name: cirrus-streaming-updater
+    release-project: search/cirrus-streaming-updater
+    release-branch: master
+    publishers:
+        - email-wikimedia-discovery
+        - castor-save-workspace-cache
+        - docker-cleanup
+    jobs:
+        - '{name}-maven-java8-docker'
+        - '{name}-maven-java8-docker-site-publish'
+        - '{name}-maven-release-docker'
+
+- project:
     name: wmf-jvm-utils
     jobs:
         - '{name}-maven-java8-docker'
