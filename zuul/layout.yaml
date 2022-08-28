@@ -2293,6 +2293,14 @@ project-templates:
     postmerge:
       - mwext-node14-docs-docker-publish
 
+  - name: composer-test-php72-or-later-but-not-php8
+    test:
+      - composer-php72-docker
+    gate-and-submit:
+      - composer-php72-docker
+      - composer-php73-docker
+      - composer-php74-docker
+
   - name: composer-test-php72-or-later
     test:
       - composer-php72-docker
@@ -9536,7 +9544,7 @@ projects:
   - name: labs/tools/heritage
     template:
       - name: node14-docker
-      - name: composer-test-php72-or-later
+      - name: composer-test-php72-or-later-but-not-php8
       - name: mediawiki-i18n-check
     test:
       - labs-tools-heritage-tox-docker
