@@ -614,7 +614,7 @@ phan_dependencies = {
     'ReplaceText': ['AdminLinks'],
     'Score': ['TimedMediaHandler', 'Wikibase'],
     'Scribunto': ['SyntaxHighlight_GeSHi'],
-    'SecurePoll': ['CentralAuth'],
+    'SecurePoll': ['CentralAuth', 'Flow'],
     'SocialProfile': ['Echo'],
     'Sofa': ['Scribunto'],
     'SoftRedirector': ['VisualEditor'],
