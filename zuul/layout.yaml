@@ -9953,11 +9953,11 @@ projects:
 
   - name: search/cirrus-streaming-updater
     test:
-      - cirrus-streaming-updater-maven-java8-docker
+      - cirrus-streaming-updater-maven-java11-docker
     gate-and-submit:
-      - cirrus-streaming-updater-maven-java8-docker
+      - cirrus-streaming-updater-maven-java11-docker
     postmerge:
-      - cirrus-streaming-updater-maven-java8-docker-site-publish
+      - cirrus-streaming-updater-maven-java11-docker-site-publish
 
   - name: search/extra
     test:

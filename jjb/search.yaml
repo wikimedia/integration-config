@@ -22,8 +22,8 @@
         - castor-save-workspace-cache
         - docker-cleanup
     jobs:
-        - '{name}-maven-java8-docker'
-        - '{name}-maven-java8-docker-site-publish'
+        - '{name}-maven-java11-docker'
+        - '{name}-maven-java11-docker-site-publish'
         - '{name}-maven-release-docker'
 
 - project:

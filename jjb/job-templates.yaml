@@ -257,6 +257,9 @@
     name: '{name}-maven-java8-docker-site-publish'
     node: Docker
     concurrent: false
+    # Projects are by default built on Java 8. To build on Java 11, use the
+    # {name}-maven-java11-docker-site-publish job template, which will replace
+    # this docker image with the java 11 version.
     docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.0.0-s1
     # The project is expected to provide a maven wrapper at the root of the
     # project. If another entry point is required for a project (for example
@@ -353,6 +356,21 @@
         - archive-log-allow-empty
         - castor-save-workspace-cache
         - docker-cleanup
+
+- job-template: &job_template_maven-java11-docker-site-publish
+    !!merge : *job_template_maven-java8-docker-site-publish
+    name: '{name}-maven-java11-docker-site-publish'
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.0
+    # Reinject Zuul parameters since JJB strip for some reason
+    triggers:
+     - zuul
+
+- job-template:
+    !!merge : *job_template_maven-java11-docker-site-publish
+    name: '{name}-{project}-maven-java11-docker-site-publish'
+    # Reinject Zuul parameters since JJB strip for some reason
+    triggers:
+     - zuul
 
 - job-template: &job_template_maven-release-docker
     name:       '{name}-maven-release-docker'
