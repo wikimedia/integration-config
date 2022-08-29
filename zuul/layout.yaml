@@ -1031,7 +1031,7 @@ jobs:
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
   # queue-name can not be applied based on a regex, apply the name on most used
   # jobs.
-  - name: mediawiki-quibble-composer-mysql-php72-docker
+  - name: mediawiki-quibble-composer-mysql-php74-docker
     queue-name: mediawiki
   - name: mediawiki-quibble-vendor-mysql-php74-docker
     queue-name: mediawiki
@@ -1990,30 +1990,27 @@ project-templates:
   - name: extension-gate
     test:
       # For master
-      - wmf-quibble-core-vendor-mysql-php72-docker
-      - wmf-quibble-vendor-mysql-php72-docker
-      - wmf-quibble-selenium-php72-docker
+      - wmf-quibble-core-vendor-mysql-php74-docker
+      - wmf-quibble-vendor-mysql-php74-docker
+      - wmf-quibble-selenium-php74-docker
       - mwgate-node14-docker
     gate-and-submit:
       - mwgate-node14-docker
       # Only triggered on master
-      - wmf-quibble-vendor-mysql-php72-docker
-      - wmf-quibble-core-vendor-mysql-php72-docker
-      - wmf-quibble-selenium-php72-docker
+      - wmf-quibble-vendor-mysql-php74-docker
+      - wmf-quibble-core-vendor-mysql-php74-docker
+      - wmf-quibble-selenium-php74-docker
     test-wmf:
       # For wmf branches
       - mwgate-node14-docker
-      - wmf-quibble-vendor-mysql-php72-docker
-      - wmf-quibble-core-vendor-mysql-php72-docker
-      - wmf-quibble-selenium-php72-docker
+      - wmf-quibble-vendor-mysql-php74-docker
+      - wmf-quibble-core-vendor-mysql-php74-docker
+      - wmf-quibble-selenium-php74-docker
     gate-and-submit-wmf:
       - mwgate-node14-docker
       # Only triggered on wmf/ branches
-      - wmf-quibble-vendor-mysql-php72-docker
       - wmf-quibble-vendor-mysql-php74-docker
-      - wmf-quibble-core-vendor-mysql-php72-docker
       - wmf-quibble-core-vendor-mysql-php74-docker
-      - wmf-quibble-selenium-php72-docker
       - wmf-quibble-selenium-php74-docker
 
     gate-and-submit-l10n:
@@ -3001,46 +2998,41 @@ projects:
     template:
       - name: extension-gate
     test:
-      - mediawiki-quibble-vendor-mysql-php72-docker
+      - mediawiki-quibble-vendor-mysql-php74-docker
       # FIXME Use a normal composer job for composertest, rather than quibble? T318093
-      - mediawiki-quibble-composertest-php72-docker
-      - mediawiki-quibble-selenium-vendor-mysql-php72-docker
-      - mediawiki-quibble-apitests-vendor-php72-docker
-      - mediawiki-core-php72-phan-docker
+      - mediawiki-quibble-composertest-php74-docker
+      - mediawiki-quibble-selenium-vendor-mysql-php74-docker
+      - mediawiki-quibble-apitests-vendor-php74-docker
+      - mediawiki-core-php74-phan-docker
     php:
       # This is the diff between the optimised test-pipeline and the gate.
       #
       # The main quibble job that runs PHPUnit tests is:
-      #   mediawiki-quibble-vendor-mysql-php72-docker
+      #   mediawiki-quibble-vendor-mysql-php74-docker
       #
       # Alternate deps (composer instead of vendor)
-      - mediawiki-quibble-composer-mysql-php72-docker
+      - mediawiki-quibble-composer-mysql-php74-docker
       # Alternate db backends
-      - mediawiki-quibble-vendor-sqlite-php72-docker
-      - mediawiki-quibble-vendor-postgres-php72-docker
+      - mediawiki-quibble-vendor-sqlite-php74-docker
+      - mediawiki-quibble-vendor-postgres-php74-docker
       # Alternate php versions
-      - mediawiki-quibble-vendor-mysql-php73-docker
-      - mediawiki-quibble-vendor-mysql-php74-docker
       # FIXME As this is master, should be a 'real' vendor job, when it works T300463
       - mediawiki-quibble-composer-mysql-php80-docker
       # FIXME As this is master, should be a 'real' vendor job, when it works T316078
       - mediawiki-quibble-composer-mysql-php81-docker
     gate-and-submit:
-      - mediawiki-quibble-composer-mysql-php72-docker
-      - mediawiki-quibble-vendor-mysql-php72-docker
-      - mediawiki-quibble-vendor-mysql-php73-docker
+      - mediawiki-quibble-composer-mysql-php74-docker
       - mediawiki-quibble-vendor-mysql-php74-docker
       # FIXME As this is master, should be a 'real' vendor job, when it works T300463
       - mediawiki-quibble-composer-mysql-php80-docker
       # FIXME As this is master, should be a 'real' vendor job, when it works T316078
       - mediawiki-quibble-composer-mysql-php81-docker
       # FIXME Use a normal composer job for composertest, rather than quibble? T318093
-      - mediawiki-quibble-composertest-php72-docker
-      - mediawiki-quibble-selenium-vendor-mysql-php72-docker
-      - mediawiki-quibble-apitests-vendor-php72-docker
-      - mediawiki-quibble-vendor-sqlite-php72-docker
-      - mediawiki-quibble-vendor-postgres-php72-docker
-      - mediawiki-core-php72-phan-docker
+      - mediawiki-quibble-composertest-php74-docker
+      - mediawiki-quibble-selenium-vendor-mysql-php74-docker
+      - mediawiki-quibble-apitests-vendor-php74-docker
+      - mediawiki-quibble-vendor-sqlite-php74-docker
+      - mediawiki-quibble-vendor-postgres-php74-docker
       - mediawiki-core-php74-phan-docker
 
     test-1_35:
@@ -3115,24 +3107,20 @@ projects:
       - mediawiki-core-php74-phan-docker
 
     test-wmf:
-      - mediawiki-quibble-composer-mysql-php72-docker
-      - mediawiki-quibble-vendor-mysql-php72-docker
-      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
-      - mediawiki-quibble-composertest-php72-docker
-      - mediawiki-quibble-selenium-vendor-mysql-php72-docker
-      - mediawiki-quibble-apitests-vendor-php72-docker
-      - mediawiki-core-php72-phan-docker
-    gate-and-submit-wmf:
-      - mediawiki-quibble-vendor-mysql-php72-docker
+      - mediawiki-quibble-composer-mysql-php74-docker
       - mediawiki-quibble-vendor-mysql-php74-docker
       # FIXME Use a normal composer job for composertest, rather than quibble? T318093
-      - mediawiki-quibble-composertest-php72-docker
       - mediawiki-quibble-composertest-php74-docker
-      - mediawiki-quibble-selenium-vendor-mysql-php72-docker
       - mediawiki-quibble-selenium-vendor-mysql-php74-docker
-      - mediawiki-quibble-apitests-vendor-php72-docker
       - mediawiki-quibble-apitests-vendor-php74-docker
-      - mediawiki-core-php72-phan-docker
+      - mediawiki-core-php74-phan-docker
+    gate-and-submit-wmf:
+      - mediawiki-quibble-composer-mysql-php74-docker
+      - mediawiki-quibble-vendor-mysql-php74-docker
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
+      - mediawiki-quibble-composertest-php74-docker
+      - mediawiki-quibble-selenium-vendor-mysql-php74-docker
+      - mediawiki-quibble-apitests-vendor-php74-docker
       - mediawiki-core-php74-phan-docker
 
     test-fundraising:
@@ -3168,7 +3156,7 @@ projects:
       - mediawiki-quibble-vendor-mysql-php81-docker
       - mediawiki-quibble-composer-mysql-php81-docker
       - mediawiki-quibble-composertest-php81-docker
-      - mwgate-composer-php72-docker
+      - mwgate-composer-php74-docker
       - trigger-mediawiki-pipeline-wmf-publish
       - mediawiki-core-php80-phan-docker
       - mediawiki-core-php81-phan-docker
@@ -8804,9 +8792,9 @@ projects:
     experimental:
       - parsoidsvc-composer-package-php81-docker
       # These are the jobs which would be added by the extension-gate template
-      - wmf-quibble-core-vendor-mysql-php72-docker
-      - wmf-quibble-vendor-mysql-php72-docker
-      - wmf-quibble-selenium-php72-docker
+      - wmf-quibble-core-vendor-mysql-php74-docker
+      - wmf-quibble-vendor-mysql-php74-docker
+      - wmf-quibble-selenium-php74-docker
     postmerge:
       - parsoidsvc-doxygen-publish
       - phpunit-coverage-php72-docker-publish
