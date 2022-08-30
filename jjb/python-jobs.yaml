@@ -159,7 +159,7 @@
         - '{name}-tox-tag-publish'
 
 - job:
-    name: 'tox-py27-coverage-publish'
+    name: 'tox-py37-coverage-publish'
     node: Docker
     concurrent: false
     triggers:
@@ -170,7 +170,7 @@
      - docker-src-dir
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/tox-buster:0.5.3
-         args: '-e py27 -- --cover-html --cover-html-dir=coverage/ --cover-xml --cover-xml-file=/log/coverage.xml'
+         args: '-e py37 -- --cover-html --cover-html-dir=coverage/ --cover-xml --cover-xml-file=/log/coverage.xml'
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/tox-buster:0.5.3
          entrypoint: /usr/bin/cobertura-clover-transform

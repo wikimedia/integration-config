@@ -9551,7 +9551,7 @@ projects:
     gate-and-submit:
       - labs-tools-heritage-tox-docker
     postmerge:
-      - tox-py27-coverage-publish
+      - tox-py37-coverage-publish
 
   - name: labs/tools/indic-wscontest
     template:
