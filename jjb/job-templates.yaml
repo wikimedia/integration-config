@@ -179,7 +179,6 @@
             args: >
                 -gs /settings.xml --batch-mode --file {pom} -X
                 sonar:sonar
-                -Dsonar.verbose=true
                 -Dsonar.analysis.allowCommentOnMaster="1"
                 -Dsonar.analysis.gerritProjectName="$ZUUL_PROJECT"
                 -Dsonar.branch.target="$ZUUL_BRANCH"
