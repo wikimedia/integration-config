@@ -5480,6 +5480,7 @@ projects:
     experimental:
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
+      - mediawiki-quibble-apitests-composer-php72-docker
 
   - name: mediawiki/extensions/WikibaseCirrusSearch
     template:
