@@ -1,3 +1,10 @@
+quibble-buster (1.4.6) wikimedia; urgency=medium
+
+  * Introduce `ARG QUIBBLE_VERSION` to easily set the new version.
+  * Bump to Quibble 1.4.6
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 31 Aug 2022 17:51:15 +0200
+
 quibble-buster (1.4.5-s1) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

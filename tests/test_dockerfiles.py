@@ -96,13 +96,13 @@ def test_quibble_images_version_is_in_sync():
     # Get Quibble version installed by pip
     base_dockerfile = os.path.join(
         DOCKERFILES_DIR, 'quibble-buster/Dockerfile.template')
-    pip_re = re.compile(
-        r'.*integration/quibble.git@"([\.\d]+)"#egg=quibble')
+    quibble_version_re = re.compile(
+        r'^ARG QUIBBLE_VERSION=([\.\d]+)$')
 
     quibble_version = None
     with open(base_dockerfile) as f:
         for line in f.readlines():
-            match = re.match(pip_re, line)
+            match = re.match(quibble_version_re, line)
             if match:
                 quibble_version = match.group(1)
                 break
