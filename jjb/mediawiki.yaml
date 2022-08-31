@@ -491,7 +491,7 @@
         - docker-log-dir
         - docker-src-dir
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.4.5-s1
+            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.4.5-s2
             entrypoint: quibble-with-supervisord
             options: '--tmpfs /workspace/db:size=320M'
             volumes:
