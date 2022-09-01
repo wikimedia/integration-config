@@ -162,7 +162,10 @@ dependencies = {
     'BlueSpiceChecklist': ['BlueSpiceFoundation', 'VisualEditor'],
     'BlueSpiceConfigManager': ['BlueSpiceFoundation'],
     'BlueSpiceContextMenu': ['BlueSpiceFoundation'],
-    'BlueSpiceCountThings': ['BlueSpiceFoundation', 'VisualEditor'],
+    'BlueSpiceCountThings': [
+        'BlueSpiceFoundation',
+        'BlueSpiceVisualVisualEditorConnector'
+    ],
     'BlueSpiceCustomMenu': ['BlueSpiceFoundation', 'MenuEditor'],
     'BlueSpiceDashboards': ['BlueSpiceFoundation'],
     'BlueSpiceDistributionConnector': [
