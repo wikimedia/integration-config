@@ -3024,6 +3024,7 @@ projects:
       - mediawiki-quibble-vendor-sqlite-php72-docker
       - mediawiki-quibble-vendor-postgres-php72-docker
       - mediawiki-core-php72-phan-docker
+      - mediawiki-core-php74-phan-docker
 
     test-1_35:
       - mediawiki-quibble-composer-mysql-php73-docker
@@ -3115,8 +3116,7 @@ projects:
       - mediawiki-quibble-apitests-vendor-php72-docker
       - mediawiki-quibble-apitests-vendor-php74-docker
       - mediawiki-core-php72-phan-docker
-      # FIXME: Our code doesn't pass phan on PHP74 (T316518)
-      # - mediawiki-core-php74-phan-docker
+      - mediawiki-core-php74-phan-docker
 
     test-fundraising:
       - mwgate-composer-php73-docker
@@ -3153,8 +3153,6 @@ projects:
       - mediawiki-quibble-composertest-php81-docker
       - mwgate-composer-php72-docker
       - trigger-mediawiki-pipeline-wmf-publish
-      # FIXME: Our code doesn't pass phan on PHP74 (T316518)
-      - mediawiki-core-php74-phan-docker
 
   - name: mediawiki/vendor
     template:
