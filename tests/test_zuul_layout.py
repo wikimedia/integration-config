@@ -258,6 +258,7 @@ class TestZuulLayout(unittest.TestCase):
                 noCoverage = [
                     'mediawiki/extensions/DonationInterface',
                     'mediawiki/extensions/OpenStackManager',
+                    'mediawiki/extensions/SearchVue',  # JS only
                     'mediawiki/extensions/Wikibase',
                     'mediawiki/extensions/WikimediaMaintenance'
                 ]

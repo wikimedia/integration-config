@@ -4962,11 +4962,15 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
 
-  # Not yet in production. To be added as part of T310367
   - name: mediawiki/extensions/SearchVue
     template:
+      - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-codehealth
+      # There is no PHPUnit code coverage since that extension is JavaScript
+      # only. There is an exception for it in
+      # test_wikimedia_production_repos_have_requirements
+      # - name: extension-coverage
 
   - name: mediawiki/extensions/SearchExtraNS
     template:
