@@ -1,0 +1,6 @@
+buildctl (0.10.4-1) wikimedia; urgency=high
+
+  * Provide a basic buildctl image for bootstrapping new GitLab helper
+    projects
+
+ -- Dan Duvall <dduvall@wikimedia.org>  Thu, 8 Sep 2022 11:32:12 -0700

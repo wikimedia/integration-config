@@ -1,0 +1,35 @@
+FROM docker-registry.wikimedia.org/bullseye:latest AS install
+# The client version should be kept more or less in sync with that of
+# buildkitd in operations/docker-images/production-images
+ARG BUILDKIT_VERSION=0.10.4
+
+RUN {{ "ca-certificates curl" | apt_install }}
+
+WORKDIR /src
+COPY SHA256SUMS ./
+
+RUN set -o pipefail && \
+    curl --silent --fail --show-error --location \
+    https://github.com/moby/buildkit/releases/download/v$BUILDKIT_VERSION/buildkit-v$BUILDKIT_VERSION.linux-amd64.tar.gz \
+    | tar -zxf - bin/buildctl
+
+RUN sha256sum -c SHA256SUMS
+
+FROM docker-registry.wikimedia.org/bullseye:latest
+ARG BUILDKIT_HOME=/var/lib/buildkit
+ARG BUILDKIT_UID=1000
+
+# Note that providing jq allows for easier provisioning of the JSON docker
+# auth config
+RUN {{ "ca-certificates jq" | apt_install }}
+COPY --from=install /src/bin/* /usr/local/bin/
+
+# Create a basic user for buildctl as it looks for docker registry credentials
+# in the user's home directory and the nobody user does not have one.
+RUN groupadd -g $BUILDKIT_UID buildkit \
+    && useradd -u $BUILDKIT_UID -g $BUILDKIT_UID -d $BUILDKIT_HOME buildkit
+
+USER $BUILDKIT_UID:$BUILDKIT_UID
+ENV HOME $BUILDKIT_HOME
+ENV USER buildkit
+WORKDIR $BUILDKIT_HOME
