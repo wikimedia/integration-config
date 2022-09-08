@@ -2,14 +2,14 @@ FROM docker-registry.wikimedia.org/bullseye:latest AS install
 # The client version should be kept more or less in sync with that of
 # buildkitd in operations/docker-images/production-images
 ARG BUILDKIT_VERSION=0.10.4
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN {{ "ca-certificates curl" | apt_install }}
 
 WORKDIR /src
 COPY SHA256SUMS ./
 
-RUN set -o pipefail && \
-    curl --silent --fail --show-error --location \
+RUN curl --silent --fail --show-error --location \
     https://github.com/moby/buildkit/releases/download/v$BUILDKIT_VERSION/buildkit-v$BUILDKIT_VERSION.linux-amd64.tar.gz \
     | tar -zxf - bin/buildctl
 
