@@ -3331,6 +3331,10 @@ projects:
     template:
       - name: skin-quibble
 
+  - name: mediawiki/skins/Foreground
+    template:
+      - name: skin-quibble
+
   - name: mediawiki/skins/Gamepress
     template:
       - name: skin-quibble
