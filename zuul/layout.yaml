@@ -7709,6 +7709,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/Realnames
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/ReassignEdits
     template:
       - name: extension-quibble
