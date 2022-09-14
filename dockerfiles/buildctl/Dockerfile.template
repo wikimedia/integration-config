@@ -27,7 +27,7 @@ COPY --from=install /src/bin/* /usr/local/bin/
 # Create a basic user for buildctl as it looks for docker registry credentials
 # in the user's home directory and the nobody user does not have one.
 RUN groupadd -g $BUILDKIT_UID buildkit \
-    && useradd -u $BUILDKIT_UID -g $BUILDKIT_UID -d $BUILDKIT_HOME buildkit
+    && useradd -u $BUILDKIT_UID -g $BUILDKIT_UID -m -d "$BUILDKIT_HOME" buildkit
 
 USER $BUILDKIT_UID:$BUILDKIT_UID
 ENV HOME $BUILDKIT_HOME

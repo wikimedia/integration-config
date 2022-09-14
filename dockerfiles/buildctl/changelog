@@ -1,3 +1,9 @@
+buildctl (0.10.4-2) wikimedia; urgency=high
+
+  * Create the buildkit user home directory
+
+ -- Dan Duvall <dduvall@wikimedia.org>  Wed, 14 Sep 2022 15:44:35 -0700
+
 buildctl (0.10.4-1) wikimedia; urgency=high
 
   * Provide a basic buildctl image for bootstrapping new GitLab helper
