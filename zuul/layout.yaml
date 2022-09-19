@@ -1033,7 +1033,7 @@ jobs:
   # jobs.
   - name: mediawiki-quibble-composer-mysql-php72-docker
     queue-name: mediawiki
-  - name: mediawiki-quibble-vendor-mysql-php72-docker
+  - name: mediawiki-quibble-vendor-mysql-php74-docker
     queue-name: mediawiki
   - name: mwgate-node14-docker
     queue-name: mediawiki
@@ -3178,21 +3178,17 @@ projects:
       - name: extension-gate
       - name: extension-apitests
     test:
-      - mwgate-composer-php72-docker
-      - mediawiki-quibble-vendor-mysql-php72-docker
-      - mediawiki-quibble-selenium-vendor-mysql-php72-docker
-    gate-and-submit:
-      - mwgate-composer-php72-docker
-      - mediawiki-quibble-vendor-mysql-php72-docker
-      - mediawiki-quibble-selenium-vendor-mysql-php72-docker
-    gate-and-submit-wmf:
-      - mwgate-composer-php72-docker
       - mwgate-composer-php74-docker
-      - mediawiki-quibble-vendor-mysql-php72-docker
       - mediawiki-quibble-vendor-mysql-php74-docker
-      - mediawiki-quibble-selenium-vendor-mysql-php72-docker
       - mediawiki-quibble-selenium-vendor-mysql-php74-docker
-      - mediawiki-quibble-apitests-vendor-php72-docker
+    gate-and-submit:
+      - mwgate-composer-php74-docker
+      - mediawiki-quibble-vendor-mysql-php74-docker
+      - mediawiki-quibble-selenium-vendor-mysql-php74-docker
+    gate-and-submit-wmf:
+      - mwgate-composer-php74-docker
+      - mediawiki-quibble-vendor-mysql-php74-docker
+      - mediawiki-quibble-selenium-vendor-mysql-php74-docker
       - mediawiki-quibble-apitests-vendor-php74-docker
 
     # CI no more supports mediawiki/vendor on release branches, folks should
