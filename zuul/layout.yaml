@@ -3008,6 +3008,10 @@ projects:
       # Alternate php versions
       - mediawiki-quibble-vendor-mysql-php73-docker
       - mediawiki-quibble-vendor-mysql-php74-docker
+      # FIXME As this is master, should be a 'real' vendor job, when it works T300463
+      - mediawiki-quibble-composer-mysql-php80-docker
+      # FIXME As this is master, should be a 'real' vendor job, when it works T316078
+      - mediawiki-quibble-composer-mysql-php81-docker
     gate-and-submit:
       - mediawiki-quibble-composer-mysql-php72-docker
       - mediawiki-quibble-vendor-mysql-php72-docker
