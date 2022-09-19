@@ -2989,7 +2989,7 @@ projects:
       - name: extension-gate
     test:
       - mediawiki-quibble-vendor-mysql-php72-docker
-      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
       - mediawiki-quibble-composertest-php72-docker
       - mediawiki-quibble-selenium-vendor-mysql-php72-docker
       - mediawiki-quibble-apitests-vendor-php72-docker
@@ -3017,7 +3017,7 @@ projects:
       - mediawiki-quibble-composer-mysql-php80-docker
       # FIXME As this is master, should be a 'real' vendor job, when it works T316078
       - mediawiki-quibble-composer-mysql-php81-docker
-      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
       - mediawiki-quibble-composertest-php72-docker
       - mediawiki-quibble-selenium-vendor-mysql-php72-docker
       - mediawiki-quibble-apitests-vendor-php72-docker
@@ -3028,14 +3028,14 @@ projects:
 
     test-1_35:
       - mediawiki-quibble-composer-mysql-php73-docker
-      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
       - mediawiki-quibble-composertest-php73-docker
       - mediawiki-quibble-selenium-composer-mysql-php73-docker
       - mediawiki-core-php73-phan-docker
     gate-and-submit-1_35:
       - mediawiki-quibble-composer-mysql-php73-docker
       - mediawiki-quibble-composer-mysql-php74-docker
-      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
       - mediawiki-quibble-composertest-php73-docker
       # FIXME Placeholder job ahead of things being fully tested on PHP 8.0
       - mediawiki-quibble-composertest-php80-docker
@@ -3046,14 +3046,14 @@ projects:
 
     test-1_37:
       - mediawiki-quibble-composer-mysql-php73-docker
-      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
       - mediawiki-quibble-composertest-php73-docker
       - mediawiki-quibble-selenium-composer-mysql-php73-docker
       - mediawiki-core-php73-phan-docker
     gate-and-submit-1_37:
       - mediawiki-quibble-composer-mysql-php73-docker
       - mediawiki-quibble-composer-mysql-php74-docker
-      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
       - mediawiki-quibble-composertest-php73-docker
       # FIXME Placeholder job ahead of things being fully tested on PHP 8.0
       - mediawiki-quibble-composertest-php80-docker
@@ -3064,7 +3064,7 @@ projects:
 
     test-1_38:
       - mediawiki-quibble-composer-mysql-php73-docker
-      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
       - mediawiki-quibble-composertest-php73-docker
       - mediawiki-quibble-selenium-composer-mysql-php73-docker
       - mediawiki-core-php73-phan-docker
@@ -3073,7 +3073,7 @@ projects:
       - mediawiki-quibble-composer-mysql-php74-docker
       - mediawiki-quibble-composer-mysql-php80-docker
       - mediawiki-quibble-composer-mysql-php81-docker
-      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
       - mediawiki-quibble-composertest-php73-docker
       - mediawiki-quibble-selenium-composer-mysql-php73-docker
       - mediawiki-quibble-composer-sqlite-php73-docker
@@ -3082,7 +3082,7 @@ projects:
 
     test-1_39:
       - mediawiki-quibble-composer-mysql-php74-docker
-      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
       - mediawiki-quibble-composertest-php74-docker
       - mediawiki-quibble-selenium-composer-mysql-php74-docker
       - mediawiki-core-php74-phan-docker
@@ -3090,7 +3090,7 @@ projects:
       - mediawiki-quibble-composer-mysql-php74-docker
       - mediawiki-quibble-composer-mysql-php80-docker
       - mediawiki-quibble-composer-mysql-php81-docker
-      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
       - mediawiki-quibble-composertest-php74-docker
       - mediawiki-quibble-selenium-composer-mysql-php74-docker
       - mediawiki-quibble-composer-sqlite-php74-docker
@@ -3100,7 +3100,7 @@ projects:
     test-wmf:
       - mediawiki-quibble-composer-mysql-php72-docker
       - mediawiki-quibble-vendor-mysql-php72-docker
-      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
       - mediawiki-quibble-composertest-php72-docker
       - mediawiki-quibble-selenium-vendor-mysql-php72-docker
       - mediawiki-quibble-apitests-vendor-php72-docker
@@ -3108,7 +3108,7 @@ projects:
     gate-and-submit-wmf:
       - mediawiki-quibble-vendor-mysql-php72-docker
       - mediawiki-quibble-vendor-mysql-php74-docker
-      # FIXME use a normal composer job, rather than a heavy-weight quibble one?
+      # FIXME Use a normal composer job for composertest, rather than quibble? T318093
       - mediawiki-quibble-composertest-php72-docker
       - mediawiki-quibble-composertest-php74-docker
       - mediawiki-quibble-selenium-vendor-mysql-php72-docker
