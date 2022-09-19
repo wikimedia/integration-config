@@ -1180,7 +1180,7 @@ jobs:
       - '^jjb/.*'
       - '^tox.ini$'
 
-  - name: operations-mw-config-php72-composer-diffConfig-docker
+  - name: operations-mw-config-php74-composer-diffConfig-docker
     voting: false
     # Note that the results are the other way around because we're using `git diff --exit-code`.
     success-message: 'FAILURE No change detected against the current configuration.'
@@ -3844,15 +3844,15 @@ projects:
 
   - name: operations/mediawiki-config
     test-prio:
-      - operations-mw-config-php72-composer-lint-docker
-      - operations-mw-config-php72-composer-test-docker
-      - operations-mw-config-php72-composer-diffConfig-docker
+      - operations-mw-config-php74-composer-lint-docker
+      - operations-mw-config-php74-composer-test-docker
+      - operations-mw-config-php74-composer-diffConfig-docker
       - operations-mw-config-typos-docker
     gate-and-submit:
-      - operations-mw-config-php72-composer-lint-docker
-      - operations-mw-config-php72-composer-test-docker
+      - operations-mw-config-php74-composer-lint-docker
+      - operations-mw-config-php74-composer-test-docker
       # Not allowed whilst non-voting:
-      # - operations-mw-config-php72-composer-diffConfig-docker
+      # - operations-mw-config-php74-composer-diffConfig-docker
       - operations-mw-config-typos-docker
 
   - name: operations/puppet
