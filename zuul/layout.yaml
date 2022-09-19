@@ -1380,6 +1380,7 @@ project-templates:
       - quibble-vendor-mysql-php72-selenium-docker
       - mwgate-node14-docker
       - mwext-php72-phan-docker
+      - mwext-php74-phan-docker
 
     test-1_35:
       - mwgate-node14-docker
@@ -2052,6 +2053,7 @@ project-templates:
       - quibble-vendor-mysql-php74-docker
       - mwgate-node14-docker
       - mwskin-php72-phan-docker
+      - mwskin-php74-phan-docker
 
     # We use composer on release branches
     test-1_35:
