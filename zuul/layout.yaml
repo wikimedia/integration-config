@@ -1318,10 +1318,10 @@ project-templates:
   #
   - name: extension-broken
     test:
-      - mwgate-composer-php72-docker
+      - mwgate-composer-php74-docker
       - mwgate-node14-docker
     gate-and-submit:
-      - mwgate-composer-php72-docker
+      - mwgate-composer-php74-docker
       - mwgate-node14-docker
 
     test-1_35:
@@ -1355,9 +1355,7 @@ project-templates:
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
     experimental:
-      - mwext-php72-phan-docker
-      - quibble-composer-mysql-php72-docker
-      - quibble-composer-mysql-php73-docker
+      - mwext-php74-phan-docker
       - quibble-composer-mysql-php74-docker
       - quibble-composer-mysql-php80-docker
       - quibble-composer-mysql-php81-docker
@@ -1366,21 +1364,15 @@ project-templates:
   # Runs quibble, and includes experimental jobs
   # that are for extensions.
   - name: extension-quibble
-    php:
-      - quibble-vendor-mysql-php73-noselenium-docker
-      - quibble-vendor-mysql-php74-noselenium-docker
     test:
-      - quibble-vendor-mysql-php72-noselenium-docker
-      - quibble-vendor-mysql-php72-selenium-docker
-      - mwgate-node14-docker
-      - mwext-php72-phan-docker
-    gate-and-submit:
-      - quibble-vendor-mysql-php72-noselenium-docker
-      - quibble-vendor-mysql-php73-noselenium-docker
       - quibble-vendor-mysql-php74-noselenium-docker
-      - quibble-vendor-mysql-php72-selenium-docker
+      - quibble-vendor-mysql-php74-selenium-docker
       - mwgate-node14-docker
-      - mwext-php72-phan-docker
+      - mwext-php74-phan-docker
+    gate-and-submit:
+      - quibble-vendor-mysql-php74-noselenium-docker
+      - quibble-vendor-mysql-php74-selenium-docker
+      - mwgate-node14-docker
       - mwext-php74-phan-docker
 
     test-1_35:
@@ -1430,26 +1422,23 @@ project-templates:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php73-phan-docker
+      # - mwext-php74-phan-docker
     gate-and-submit-1_39:
       - mwgate-node14-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php73-phan-docker
+      # - mwext-php74-phan-docker
 
     test-wmf:
-      - quibble-vendor-mysql-php72-noselenium-docker
-      - quibble-vendor-mysql-php72-selenium-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node14-docker
-      - mwext-php72-phan-docker
+      - mwext-php74-phan-docker
     gate-and-submit-wmf:
-      - quibble-vendor-mysql-php72-noselenium-docker
-      - quibble-vendor-mysql-php72-selenium-docker
-      - quibble-vendor-mysql-php74-noselenium-docker
-      - quibble-vendor-mysql-php74-selenium-docker
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node14-docker
-      - mwext-php72-phan-docker
       - mwext-php74-phan-docker
 
     gate-and-submit-l10n:
@@ -1458,8 +1447,8 @@ project-templates:
     experimental:
       - quibble-vendor-mysql-php80-docker
       - quibble-vendor-mysql-php81-docker
-      - quibble-vendor-sqlite-php72-noselenium-docker
-      - quibble-vendor-postgres-php72-noselenium-docker
+      - quibble-vendor-sqlite-php74-noselenium-docker
+      - quibble-vendor-postgres-php74-noselenium-docker
 
   - name: extension-quibble-php74-or-later
     test:
@@ -1539,23 +1528,18 @@ project-templates:
   #
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer
-    php:
-      - quibble-composer-mysql-php73-noselenium-docker
-      - quibble-composer-mysql-php74-noselenium-docker
     test:
-      - quibble-composer-mysql-php72-noselenium-docker
-      - quibble-composer-mysql-php72-selenium-docker
-      - mwgate-node14-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php72-phan-docker
-    gate-and-submit:
-      - quibble-composer-mysql-php72-noselenium-docker
-      - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php72-selenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php72-phan-docker
+      # - mwext-php74-phan-docker
+    gate-and-submit:
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
+      - mwgate-node14-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php74-phan-docker
 
     test-1_35:
       - mwgate-node14-docker
@@ -1604,28 +1588,25 @@ project-templates:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
+      # - mwext-php74-phan-docker
     gate-and-submit-1_39:
       - mwgate-node14-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
+      # - mwext-php74-phan-docker
 
     test-wmf:
-      - quibble-composer-mysql-php72-noselenium-docker
-      - quibble-composer-mysql-php72-selenium-docker
-      - mwgate-node14-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php72-phan-docker
-    gate-and-submit-wmf:
-      - quibble-composer-mysql-php72-noselenium-docker
-      - quibble-composer-mysql-php72-selenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php72-phan-docker
+      # - mwext-php74-phan-docker
+    gate-and-submit-wmf:
+      - quibble-composer-mysql-php74-noselenium-docker
+      - quibble-composer-mysql-php74-selenium-docker
+      - mwgate-node14-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
 
     gate-and-submit-l10n:
@@ -1634,108 +1615,22 @@ project-templates:
     experimental:
       - quibble-composer-mysql-php80-docker
       - quibble-composer-mysql-php81-docker
-      - quibble-composer-sqlite-php72-noselenium-docker
-      - quibble-composer-postgres-php72-noselenium-docker
-
-  - name: extension-quibble-composer-php73-or-later
-    php:
-      - quibble-composer-mysql-php74-noselenium-docker
-    test:
-      - quibble-composer-mysql-php73-noselenium-docker
-      - quibble-composer-mysql-php73-selenium-docker
-      - mwgate-node14-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-    gate-and-submit:
-      - quibble-composer-mysql-php73-noselenium-docker
-      - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php73-selenium-docker
-      - mwgate-node14-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-
-    test-1_35:
-      - mwgate-node14-docker
-      - quibble-composer-mysql-php73-noselenium-docker
-      - quibble-composer-mysql-php73-selenium-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-    gate-and-submit-1_35:
-      - mwgate-node14-docker
-      - quibble-composer-mysql-php73-noselenium-docker
-      - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php73-selenium-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-
-    test-1_37:
-      - mwgate-node14-docker
-      - quibble-composer-mysql-php73-noselenium-docker
-      - quibble-composer-mysql-php73-selenium-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-    gate-and-submit-1_37:
-      - mwgate-node14-docker
-      - quibble-composer-mysql-php73-noselenium-docker
-      - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php73-selenium-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-
-    test-1_38:
-      - mwgate-node14-docker
-      - quibble-composer-mysql-php73-noselenium-docker
-      - quibble-composer-mysql-php73-selenium-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-    gate-and-submit-1_38:
-      - mwgate-node14-docker
-      - quibble-composer-mysql-php73-noselenium-docker
-      - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php73-selenium-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-
-    test-1_39:
-      - mwgate-node14-docker
-      - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php74-selenium-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-    gate-and-submit-1_39:
-      - mwgate-node14-docker
-      - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php74-selenium-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-
-    gate-and-submit-l10n:
-      - mediawiki-i18n-check-docker
-
-    experimental:
-      - quibble-composer-mysql-php80-docker
-      - quibble-composer-mysql-php81-docker
-      - quibble-composer-sqlite-php73-noselenium-docker
-      - quibble-composer-postgres-php73-noselenium-docker
+      - quibble-composer-sqlite-php74-noselenium-docker
+      - quibble-composer-postgres-php74-noselenium-docker
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
   #
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-noselenium
-    php:
-      - quibble-vendor-mysql-php73-noselenium-docker
-      - quibble-vendor-mysql-php74-noselenium-docker
     test:
-      - quibble-vendor-mysql-php72-noselenium-docker
-      - mwgate-node14-docker
-      - mwext-php72-phan-docker
-    gate-and-submit:
-      - quibble-vendor-mysql-php72-noselenium-docker
-      - quibble-vendor-mysql-php73-noselenium-docker
       - quibble-vendor-mysql-php74-noselenium-docker
       - mwgate-node14-docker
-      - mwext-php72-phan-docker
+      - mwext-php74-phan-docker
+    gate-and-submit:
+      - quibble-vendor-mysql-php74-noselenium-docker
+      - mwgate-node14-docker
+      - mwext-php74-phan-docker
 
     test-1_35:
       - quibble-composer-mysql-php73-noselenium-docker
@@ -1777,22 +1672,20 @@ project-templates:
       - quibble-composer-mysql-php74-noselenium-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php73-phan-docker
+      # - mwext-php74-phan-docker
     gate-and-submit-1_39:
       - quibble-composer-mysql-php74-noselenium-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php73-phan-docker
+      # - mwext-php74-phan-docker
 
     test-wmf:
-      - quibble-vendor-mysql-php72-noselenium-docker
-      - mwgate-node14-docker
-      - mwext-php72-phan-docker
-    gate-and-submit-wmf:
-      - quibble-vendor-mysql-php72-noselenium-docker
       - quibble-vendor-mysql-php74-noselenium-docker
       - mwgate-node14-docker
-      - mwext-php72-phan-docker
+      - mwext-php74-phan-docker
+    gate-and-submit-wmf:
+      - quibble-vendor-mysql-php74-noselenium-docker
+      - mwgate-node14-docker
       - mwext-php74-phan-docker
 
     gate-and-submit-l10n:
@@ -1801,26 +1694,21 @@ project-templates:
     experimental:
       - quibble-composer-mysql-php80-noselenium-docker
       - quibble-composer-mysql-php81-noselenium-docker
-      - quibble-vendor-sqlite-php72-noselenium-docker
-      - quibble-vendor-postgres-php72-noselenium-docker
+      - quibble-vendor-sqlite-php74-noselenium-docker
+      - quibble-vendor-postgres-php74-noselenium-docker
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
-    php:
-      - quibble-composer-mysql-php73-noselenium-docker
-      - quibble-composer-mysql-php74-noselenium-docker
     test:
-      - quibble-composer-mysql-php72-noselenium-docker
-      - mwgate-node14-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
-    gate-and-submit:
-      - quibble-composer-mysql-php72-noselenium-docker
-      - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
+      # - mwext-php74-phan-docker
+    gate-and-submit:
+      - quibble-composer-mysql-php74-noselenium-docker
+      - mwgate-node14-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php74-phan-docker
 
     test-1_35:
       - quibble-composer-mysql-php73-noselenium-docker
@@ -1862,12 +1750,12 @@ project-templates:
       - quibble-composer-mysql-php74-noselenium-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
+      # - mwext-php74-phan-docker
     gate-and-submit-1_39:
       - quibble-composer-mysql-php74-noselenium-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php73-phan-docker
+      # - mwext-php74-phan-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1875,20 +1763,15 @@ project-templates:
     experimental:
       - quibble-composer-mysql-php80-noselenium-docker
       - quibble-composer-mysql-php81-noselenium-docker
-      - quibble-composer-sqlite-php72-noselenium-docker
-      - quibble-composer-postgres-php72-noselenium-docker
-      - mwext-php72-phan-docker
+      - quibble-composer-sqlite-php74-noselenium-docker
+      - quibble-composer-postgres-php74-noselenium-docker
+      - mwext-php74-phan-docker
 
   # Special job template that runs the "standalone" jobs - T225068
   - name: extension-quibble-only-standalone
-    php:
-      - quibble-vendor-mysql-php73-phpunit-standalone-docker
-      - quibble-vendor-mysql-php74-phpunit-standalone-docker
     test:
-      - quibble-vendor-mysql-php72-phpunit-standalone-docker
+      - quibble-vendor-mysql-php74-phpunit-standalone-docker
     gate-and-submit:
-      - quibble-vendor-mysql-php72-phpunit-standalone-docker
-      - quibble-vendor-mysql-php73-phpunit-standalone-docker
       - quibble-vendor-mysql-php74-phpunit-standalone-docker
     experimental:
       - quibble-vendor-mysql-php80-phpunit-standalone-docker
@@ -1897,13 +1780,13 @@ project-templates:
   # Special job template that runs the "apitests" job for test and gate
   - name: extension-apitests
     test:
-      - mediawiki-quibble-apitests-vendor-php72-docker
+      - mediawiki-quibble-apitests-vendor-php74-docker
     gate-and-submit:
-      - mediawiki-quibble-apitests-vendor-php72-docker
+      - mediawiki-quibble-apitests-vendor-php74-docker
     test-wmf:
-      - mediawiki-quibble-apitests-vendor-php72-docker
+      - mediawiki-quibble-apitests-vendor-php74-docker
     gate-and-submit-wmf:
-      - mediawiki-quibble-apitests-vendor-php72-docker
+      - mediawiki-quibble-apitests-vendor-php74-docker
 
   # Extensions tested together and intended for deployment to the Wikimedia Cluster
   - name: extension-gate
@@ -1936,7 +1819,7 @@ project-templates:
       - mediawiki-i18n-check-docker
 
     experimental:
-      - mwext-php72-phan-docker
+      - mwext-php74-phan-docker
 
   - name: extension-coverage
     postmerge:
@@ -1957,19 +1840,13 @@ project-templates:
   # Runs quibble, and includes experimental jobs
   # that are for skins.
   - name: skin-quibble
-    php:
-      - quibble-vendor-mysql-php73-docker
-      - quibble-vendor-mysql-php74-docker
     test:
-      - quibble-vendor-mysql-php72-docker
-      - mwgate-node14-docker
-      - mwskin-php72-phan-docker
-    gate-and-submit:
-      - quibble-vendor-mysql-php72-docker
-      - quibble-vendor-mysql-php73-docker
       - quibble-vendor-mysql-php74-docker
       - mwgate-node14-docker
-      - mwskin-php72-phan-docker
+      - mwskin-php74-phan-docker
+    gate-and-submit:
+      - quibble-vendor-mysql-php74-docker
+      - mwgate-node14-docker
       - mwskin-php74-phan-docker
 
     # We use composer on release branches
@@ -2013,22 +1890,20 @@ project-templates:
       - mwgate-node14-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
-      # - mwskin-php73-phan-docker
+      # - mwskin-php74-phan-docker
     gate-and-submit-1_39:
       - mwgate-node14-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
-      # - mwskin-php73-phan-docker
+      # - mwskin-php74-phan-docker
 
     test-wmf:
-      - quibble-vendor-mysql-php72-docker
-      - mwgate-node14-docker
-      - mwskin-php72-phan-docker
-    gate-and-submit-wmf:
-      - quibble-vendor-mysql-php72-docker
       - quibble-vendor-mysql-php74-docker
       - mwgate-node14-docker
-      - mwskin-php72-phan-docker
+      - mwskin-php74-phan-docker
+    gate-and-submit-wmf:
+      - quibble-vendor-mysql-php74-docker
+      - mwgate-node14-docker
       - mwskin-php74-phan-docker
 
     gate-and-submit-l10n:
@@ -2037,8 +1912,8 @@ project-templates:
     experimental:
       - quibble-composer-mysql-php80-docker
       - quibble-composer-mysql-php81-docker
-      - quibble-vendor-sqlite-php72-docker
-      - quibble-vendor-postgres-php72-docker
+      - quibble-vendor-sqlite-php74-docker
+      - quibble-vendor-postgres-php74-docker
 
   - name: skin-quibble-php74-or-later
     test:
@@ -2114,21 +1989,16 @@ project-templates:
       - quibble-vendor-postgres-php74-docker
 
   - name: skin-quibble-composer
-    php:
-      - quibble-composer-mysql-php73-docker
-      - quibble-composer-mysql-php74-docker
     test:
-      - quibble-composer-mysql-php72-docker
-      - mwgate-node14-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php72-phan-docker
-    gate-and-submit:
-      - quibble-composer-mysql-php72-docker
-      - quibble-composer-mysql-php73-docker
       - quibble-composer-mysql-php74-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php72-phan-docker
+      # - mwskin-php74-phan-docker
+    gate-and-submit:
+      - quibble-composer-mysql-php74-docker
+      - mwgate-node14-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwskin-php74-phan-docker
 
     test-1_35:
       - mwgate-node14-docker
@@ -2170,24 +2040,22 @@ project-templates:
       - mwgate-node14-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php73-phan-docker
+      # - mwskin-php74-phan-docker
     gate-and-submit-1_39:
       - mwgate-node14-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php73-phan-docker
+      # - mwskin-php74-phan-docker
 
     test-wmf:
-      - quibble-composer-mysql-php72-docker
-      - mwgate-node14-docker
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php72-phan-docker
-    gate-and-submit-wmf:
-      - quibble-composer-mysql-php72-docker
       - quibble-composer-mysql-php74-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php72-phan-docker
+      # - mwskin-php74-phan-docker
+    gate-and-submit-wmf:
+      - quibble-composer-mysql-php74-docker
+      - mwgate-node14-docker
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan-docker
 
     gate-and-submit-l10n:
@@ -2196,8 +2064,8 @@ project-templates:
     experimental:
       - quibble-composer-mysql-php80-docker
       - quibble-composer-mysql-php81-docker
-      - quibble-composer-sqlite-php72-docker
-      - quibble-composer-postgres-php72-docker
+      - quibble-composer-sqlite-php74-docker
+      - quibble-composer-postgres-php74-docker
 
   - name: skin-coverage
     postmerge:
@@ -2212,24 +2080,6 @@ project-templates:
       - mwext-node14-rundoc-docker
     postmerge:
       - mwext-node14-docs-docker-publish
-
-  - name: composer-test-php72-or-later-but-not-php8
-    test:
-      - composer-php72-docker
-    gate-and-submit:
-      - composer-php72-docker
-      - composer-php73-docker
-      - composer-php74-docker
-
-  - name: composer-test-php72-or-later
-    test:
-      - composer-php72-docker
-    gate-and-submit:
-      - composer-php72-docker
-      - composer-php73-docker
-      - composer-php74-docker
-      - composer-php80-docker
-      - composer-php81-docker
 
   - name: composer-test-php73-or-later
     test:
@@ -2254,32 +2104,35 @@ project-templates:
       - composer-php80-docker
       - composer-php81-docker
 
-  - name: composer-test-package-php72-or-later
+  - name: composer-test-php74-only
+    test:
+      - composer-php74-docker
+    experimental:
+      - composer-php80-docker
+      - composer-php81-docker
+    gate-and-submit:
+      - composer-php74-docker
+      - composer-php80-docker
+      - composer-php81-docker
+
+  - name: composer-test-package-php74-or-later
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php72-docker
-      - composer-package-php73-docker
       - composer-package-php74-docker
       - composer-package-php80-docker
       - composer-package-php81-docker
     gate-and-submit:
-      - composer-package-php72-docker
-      - composer-package-php73-docker
       - composer-package-php74-docker
       - composer-package-php80-docker
       - composer-package-php81-docker
 
-  - name: php-compile-php72-or-later
+  - name: php-compile-php74-or-later
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - php-compile-php72-docker
-      - php-compile-php73-docker
       - php-compile-php74-docker
       - php-compile-php80-docker
       - php-compile-php81-docker
     gate-and-submit:
-      - php-compile-php72-docker
-      - php-compile-php73-docker
       - php-compile-php74-docker
       - php-compile-php80-docker
       - php-compile-php81-docker
@@ -2449,11 +2302,11 @@ project-templates:
   # Track all extensions and skins in the MediaWiki tarball
   - name: in-mediawiki-tarball
     test:
-      - quibble-vendor-postgres-php72-noselenium-docker
-      - quibble-vendor-sqlite-php72-noselenium-docker
+      - quibble-vendor-postgres-php74-noselenium-docker
+      - quibble-vendor-sqlite-php74-noselenium-docker
     gate-and-submit:
-      - quibble-vendor-postgres-php72-noselenium-docker
-      - quibble-vendor-sqlite-php72-noselenium-docker
+      - quibble-vendor-postgres-php74-noselenium-docker
+      - quibble-vendor-sqlite-php74-noselenium-docker
 
   # Not used yet.
 
@@ -2626,9 +2479,9 @@ projects:
 
   - name: integration/composer
     test:
-      - integration-composer-check-php72-docker
+      - integration-composer-check-php74-docker
     gate-and-submit:
-      - integration-composer-check-php72-docker
+      - integration-composer-check-php74-docker
 
   - name: integration/commit-message-validator
     template:
@@ -2730,11 +2583,11 @@ projects:
     template:
       - name: node14-rundoc-docker
     test:
-      - api-testing-mysql-php72-docker
-      - api-testing-sqlite-php72-docker
+      - api-testing-mysql-php74-docker
+      - api-testing-sqlite-php74-docker
     gate-and-submit:
-      - api-testing-mysql-php72-docker
-      - api-testing-sqlite-php72-docker
+      - api-testing-mysql-php74-docker
+      - api-testing-sqlite-php74-docker
     postmerge:
       - generic-node14-docs-docker-publish
 
@@ -2748,7 +2601,7 @@ projects:
 
   - name: mediawiki/tools/code-utils
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
     test:
       - shellcheck
     gate-and-submit:
@@ -2756,11 +2609,11 @@ projects:
 
   - name: mediawiki/tools/codesniffer
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     test:
       - mw-tools-codesniffer-mwcore-testrun
     postmerge:
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/tools/cookiecutter-library
     template:
@@ -2768,11 +2621,11 @@ projects:
 
   - name: mediawiki/tools/dependency-analysis
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
 
   - name: mediawiki/tools/minus-x
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
 
   - name: mediawiki/tools/mwdumper
     test:
@@ -2784,13 +2637,13 @@ projects:
 
   - name: mediawiki/tools/phpunit-patch-coverage
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/tools/release
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
       - name: tox-docker
 
   - name: mediawiki/tools/releng
@@ -2817,17 +2670,17 @@ projects:
 
   - name: mediawiki/tools/phan
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     test:
       - mw-tools-phan-mwcore-testrun
 
   - name: mediawiki/tools/phan/PerfCheckPlugin
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
 
   - name: mediawiki/tools/phan/SecurityCheckPlugin
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - mw-tools-phan-demos-publish
 
@@ -2841,7 +2694,7 @@ projects:
 
   - name: performance/arc-lamp
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
 
   - name: performance/asoranking
     template:
@@ -2909,7 +2762,7 @@ projects:
 
   - name: labs/tools/sonarqubebot
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
 
 #### MediaWiki itself ##########################################
 
@@ -3185,7 +3038,7 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
     experimental:
-      - quibble-composer-mysql-php72-docker
+      - quibble-composer-mysql-php74-docker
     postmerge:
       - mwext-doxygen-publish
 
@@ -3738,7 +3591,7 @@ projects:
 
   - name: operations/dumps/dcat
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
       - name: node14-docker
       - name: mediawiki-i18n-check
 
@@ -5362,34 +5215,34 @@ projects:
       - legacy-quibble-rubyselenium-docker
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mediawiki-quibble-apitests-composer-php72-docker
+      - mediawiki-quibble-apitests-composer-php74-docker
     gate-and-submit: &mediawiki-extensions-wikibase-gate-and-submit
       # TODO: Legacy ruby-based selenium job. To remove! (T220035)
       - ruby2.5-rake-docker
       - legacy-quibble-rubyselenium-docker
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mediawiki-quibble-apitests-composer-php72-docker
+      - mediawiki-quibble-apitests-composer-php74-docker
     test-1_35:
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mwext-php72-phan-docker
+      - mwext-php73-phan-docker
     gate-and-submit-1_35:
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mwext-php72-phan-docker
+      - mwext-php73-phan-docker
     test-1_37:
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mwext-php72-phan-docker
+      - mwext-php73-phan-docker
     gate-and-submit-1_37:
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mwext-php72-phan-docker
+      - mwext-php73-phan-docker
     test-1_38:
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mwext-php72-phan-docker
+      - mwext-php73-phan-docker
     gate-and-submit-1_38:
       - wikibase-client-docker
       - wikibase-repo-docker
@@ -8622,7 +8475,7 @@ projects:
 
   - name: mediawiki/services/jobrunner
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
 
   - name: mediawiki/services/kafka-watcher
     template:
@@ -8695,15 +8548,11 @@ projects:
       - name: extension-apitests
       - name: commit-message-validator
     test:
-      - parsoidsvc-composer-package-php72-docker
-      - parsoidsvc-composer-package-php73-docker
       - parsoidsvc-composer-package-php74-docker
       - parsoidsvc-composer-package-php80-docker
       # Not passing until MW Core itself passes
       # - quibble-composer-mysql-php80-docker
     gate-and-submit:
-      - parsoidsvc-composer-package-php72-docker
-      - parsoidsvc-composer-package-php73-docker
       - parsoidsvc-composer-package-php74-docker
       - parsoidsvc-composer-package-php80-docker
       # Not passing until MW Core itself passes
@@ -8714,9 +8563,11 @@ projects:
       - wmf-quibble-core-vendor-mysql-php74-docker
       - wmf-quibble-vendor-mysql-php74-docker
       - wmf-quibble-selenium-php74-docker
+      - quibble-composer-mysql-php80-docker
+      - quibble-composer-mysql-php81-docker
     postmerge:
       - parsoidsvc-doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/services/parsoid/deploy
     test:
@@ -8921,7 +8772,7 @@ projects:
 
   - name: analytics/wmde/scripts
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
 
   - name: analytics/wmde/toolkit-analyzer
     test:
@@ -9006,11 +8857,11 @@ projects:
 
   - name: mediawiki/php/excimer
     template:
-      - name: php-compile-php72-or-later
+      - name: php-compile-php74-or-later
 
   - name: mediawiki/php/luasandbox
     template:
-      - name: php-compile-php72-or-later
+      - name: php-compile-php74-or-later
     postmerge:
       - doxygen-publish
     publish:
@@ -9018,101 +8869,101 @@ projects:
 
   - name: mediawiki/php/wikidiff2
     template:
-      - name: php-compile-php72-or-later
+      - name: php-compile-php74-or-later
 
   - name: mediawiki/php/wmerrors
     template:
-      - name: php-compile-php72-or-later
+      - name: php-compile-php74-or-later
 
   - name: mediawiki/oauthclient-php
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
 #### MediaWiki libraries #######################################
 
   - name: cdb
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: purtle
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: utfnormal
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: at-ease
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: base-convert
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: css-sanitizer
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: php-session-serializer
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: AhoCorasick
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: RunningStat
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: IPSet
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: RelPath
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: wikipeg
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     test:
       - wikipeg-special-node14-plus-php80-composer-docker
     gate-and-submit:
@@ -9120,88 +8971,88 @@ projects:
 
   - name: WrappedString
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: CLDRPluralRuleParser
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: HtmlFormatter
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/alea
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/Assert
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/CommonPasswords
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/Dodo
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/Equivset
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/etcd
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/IDLeDOM
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/IPUtils
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/LangConv
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
       - name: node14-docker
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/metrics-platform
     test:
@@ -9220,49 +9071,49 @@ projects:
 
   - name: mediawiki/libs/Minify
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/NormalizedException
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/ObjectFactory
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/RemexHtml
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/RequestTimeout
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/ScopedCallback
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/Shellbox
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     test:
       - trigger-shellbox-pipeline-test
     gate-and-submit:
@@ -9270,49 +9121,49 @@ projects:
     postmerge:
       - trigger-shellbox-pipeline-publish
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/Services
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/Timestamp
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/WaitConditionLoop
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/WebIDL
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/XMPReader
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/Zest
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
 #### Tools deployed on Wikimedia Cloud Services (aka "Labs") ###
 
@@ -9445,7 +9296,7 @@ projects:
 
   - name: labs/tools/extjsonuploader
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
 
   - name: labs/tools/extreg-wos
     template:
@@ -9457,7 +9308,7 @@ projects:
 
   - name: labs/tools/force-rebase
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
 
   - name: labs/tools/forrestbot
     template:
@@ -9480,7 +9331,7 @@ projects:
   - name: labs/tools/heritage
     template:
       - name: node14-docker
-      - name: composer-test-php72-or-later-but-not-php8
+      - name: composer-test-php74-only
       - name: mediawiki-i18n-check
     test:
       - labs-tools-heritage-tox-docker
@@ -9495,7 +9346,7 @@ projects:
 
   - name: labs/tools/ipchanges
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
 
   - name: labs/tools/ipwatcher
     template:
@@ -9518,7 +9369,7 @@ projects:
 
   - name: labs/tools/nagf
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
 
   - name: labs/tools/Isa
     test:
@@ -9564,7 +9415,7 @@ projects:
 
   - name: labs/tools/meetingtimes
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
       - name: node14-docker
 
   - name: labs/tools/mwpackages
@@ -9617,7 +9468,7 @@ projects:
 
   - name: labs/tools/stewardbots
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
       - name: tox-docker
 
   - name: labs/tools/stewardbots-ui
@@ -9846,10 +9697,10 @@ projects:
 
   - name: wikimedia/slimapp
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: wikimedia/portals
     template:
@@ -10000,7 +9851,7 @@ projects:
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
       - name: mediawiki-i18n-check
     test:
       - ooui-special-node14-plus-php80-composer-docker
@@ -10152,7 +10003,7 @@ projects:
 
   - name: avro-php
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
 
   - name: data-values/value-view
     template:
@@ -10161,10 +10012,10 @@ projects:
 
   - name: testing-access-wrapper
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php72-docker-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: research/ores/wheels
     test:
@@ -10218,7 +10069,7 @@ projects:
 
   - name: translatewiki
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
     test:
       - translatewiki-ruby2.5-rake-docker
     gate-and-submit:
@@ -10247,7 +10098,7 @@ projects:
 
   - name: wikimedia-cz/mediawiki-config
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
 
   - name: wikimedia-cz/web-theme
     template:
@@ -10362,22 +10213,22 @@ projects:
 
   - name: wikimedia/iegreview
     template:
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
       - name: mediawiki-i18n-check
 
   - name: wikimedia/wikimania-scholarships
     template:
       - name: node14-browser-docker
-      - name: composer-test-php72-or-later
+      - name: composer-test-php74-or-later
       - name: mediawiki-i18n-check
 
   - name: wikimedia/textcat
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
 
   - name: wikimedia/lucene-explain-parser
     template:
-      - name: composer-test-package-php72-or-later
+      - name: composer-test-package-php74-or-later
 
   - name: wvui
     test:
