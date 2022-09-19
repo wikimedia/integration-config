@@ -1,3 +1,9 @@
+buildctl (0.10.4-3) wikimedia; urgency=high
+
+   * Add wmf-certificates package for registry CA
+
+ -- Dan Duvall <dduvall@wikimedia.org>  Mon, 19 Sep 2022 10:50:39 -0700
+
 buildctl (0.10.4-2) wikimedia; urgency=high
 
   * Create the buildkit user home directory

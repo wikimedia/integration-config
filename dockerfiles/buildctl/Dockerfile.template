@@ -21,7 +21,7 @@ ARG BUILDKIT_UID=1000
 
 # Note that providing jq allows for easier provisioning of the JSON docker
 # auth config
-RUN {{ "ca-certificates jq" | apt_install }}
+RUN {{ "ca-certificates wmf-certificates jq" | apt_install }}
 COPY --from=install /src/bin/* /usr/local/bin/
 
 # Create a basic user for buildctl as it looks for docker registry credentials
