@@ -148,8 +148,6 @@
     jobs:
         - '{name}-composer-{phpflavor}-docker':
             phpflavor:
-                - php72:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php72:0.4.0-s8
                 - php73:
                     image: docker-registry.wikimedia.org/releng/composer-test-php73:0.3.0-s3
                 - php74:
@@ -195,9 +193,6 @@
 - project:
     name: mediawiki-core_phan_jobs
     php:
-        - php72:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php72:0.5.0-s7
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan:0.9.0-s7
         - php73:
             composer_image: docker-registry.wikimedia.org/releng/composer-php73:0.4.0-s3
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php73:0.3.1-s3
@@ -405,8 +400,6 @@
     jobs:
         - api-testing-{database}-{php}-docker:
             php:
-                - php72:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.6
                 - php74:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.6
             packages-source: vendor
@@ -1017,11 +1010,8 @@
     packages-source: vendor
     # We only use MariaDB/MySQL
     database: mysql
-    # And only php7.2 and php7.4
+    # And only php7.4
     php:
-        - php72:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.6
-            entrypoint: quibble-with-supervisord
         - php74:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.6
             entrypoint: quibble-with-supervisord

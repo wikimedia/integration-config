@@ -17,18 +17,6 @@
       - docker-cleanup
 
 - project:
-    name: php72
-    jobs:
-      - 'php-compile-{name}-docker':
-          image: docker-registry.wikimedia.org/releng/php72-compile:0.2.3-s2
-
-- project:
-    name: php73
-    jobs:
-      - 'php-compile-{name}-docker':
-          image: docker-registry.wikimedia.org/releng/php73-compile:0.3.0-s2
-
-- project:
     name: php74
     jobs:
       - 'php-compile-{name}-docker':

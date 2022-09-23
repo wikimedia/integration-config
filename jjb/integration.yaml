@@ -31,21 +31,7 @@
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
 
-# Super basic sanity check for integration/composer repo
-- job:
-    name: 'integration-composer-check-php72-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-src-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-         image: 'docker-registry.wikimedia.org/releng/php72:0.3.0'
-         args: '/src/vendor/bin/composer --version'
-    publishers:
-     - docker-cleanup
-
+# Super basic sense check for integration/composer repo
 - job:
     name: 'integration-composer-check-php74-docker'
     node: Docker
