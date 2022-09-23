@@ -47,6 +47,20 @@
      - docker-cleanup
 
 - job:
+    name: 'integration-composer-check-php74-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-src-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+         image: 'docker-registry.wikimedia.org/releng/php74:0.3.0-s1'
+         args: '/src/vendor/bin/composer --version'
+    publishers:
+     - docker-cleanup
+
+- job:
     name: integration-config-qa
     node: Docker
     concurrent: false
