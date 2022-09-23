@@ -1,3 +1,9 @@
+phpmetrics (2.7.3-s4) wikimedia; urgency=high
+
+   RMigrate parent image from php72 to php74
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 23 Sep 2022 10:23:06 -0400
+
 phpmetrics (2.7.3-s3) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
