@@ -6565,6 +6565,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/EventSimulator
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/examples
     template:
       - name: extension-quibble
