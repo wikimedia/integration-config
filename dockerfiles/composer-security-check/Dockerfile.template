@@ -1,4 +1,4 @@
-FROM {{ "composer-php72" | image_tag }}
+FROM {{ "composer-php74" | image_tag }}
 
 # Script to check with https://php-security-checker.wmcloud.org after
 # `composer install` for issues.
