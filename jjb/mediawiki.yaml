@@ -407,6 +407,8 @@
             php:
                 - php72:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72:1.4.6
+                - php74:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.6
             packages-source: vendor
             database:
                 - mysql
