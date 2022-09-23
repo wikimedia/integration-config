@@ -2081,18 +2081,6 @@ project-templates:
     postmerge:
       - mwext-node14-docs-docker-publish
 
-  - name: composer-test-php73-or-later
-    test:
-      - composer-php73-docker
-    php:
-      - composer-php74-docker
-      - composer-php81-docker
-    gate-and-submit:
-      - composer-php73-docker
-      - composer-php74-docker
-      - composer-php80-docker
-      - composer-php81-docker
-
   - name: composer-test-php74-or-later
     test:
       - composer-php74-docker
@@ -2492,9 +2480,13 @@ projects:
       - name: tox-docker
 
   - name: integration/docroot
+    test:
+      - composer-php73-docker
+    gate-and-submit:
+      - composer-php73-docker
     template:
       - name: node14-docker
-      - name: composer-test-php73-or-later
+      - name: composer-test-php74-or-later
 
   - name: integration/gear
     test:
