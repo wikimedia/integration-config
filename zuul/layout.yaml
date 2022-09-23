@@ -2326,6 +2326,17 @@ project-templates:
       - composer-php80-docker
       - composer-php81-docker
 
+  - name: composer-test-php74-or-later
+    test:
+      - composer-php74-docker
+    php:
+      - composer-php80-docker
+      - composer-php81-docker
+    gate-and-submit:
+      - composer-php74-docker
+      - composer-php80-docker
+      - composer-php81-docker
+
   - name: composer-test-package-php72-or-later
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
