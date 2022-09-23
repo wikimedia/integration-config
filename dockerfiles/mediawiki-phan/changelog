@@ -1,3 +1,9 @@
+mediawiki-phan (0.10.0) wikimedia; urgency=high
+
+   Migrate parent image from php72 to php74
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 23 Sep 2022 10:23:06 -0400
+
 mediawiki-phan (0.9.0-s7) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

@@ -1,4 +1,4 @@
-FROM {{ "composer-package-php72" | image_tag }}
+FROM {{ "composer-package-php74" | image_tag }}
 
 USER root
 
@@ -6,11 +6,11 @@ USER root
 {% set mediawiki_deps|replace('\n', ' ') -%}
 php-apcu
 php-imagick
-php7.2-ldap
-php7.2-mysql
-php7.2-pgsql
-php7.2-sqlite3
-php7.2-tidy
+php7.4-ldap
+php7.4-mysql
+php7.4-pgsql
+php7.4-sqlite3
+php7.4-tidy
 {%- endset -%}
 
 RUN {{ mediawiki_deps | apt_install }}
