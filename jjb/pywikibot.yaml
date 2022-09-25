@@ -12,7 +12,7 @@
          toxenv:
              - doc
              - doctest
-             - fasttest-py35
+             - fasttest-py36
              - fasttest-py37
              - fasttest-py38
              - deeptest-py36:

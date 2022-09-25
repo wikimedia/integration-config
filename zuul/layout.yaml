@@ -9817,14 +9817,14 @@ projects:
   - name: pywikibot/core
     test:
       - pywikibot-core-tox-docker
-      - pywikibot-core-tox-fasttest-py35-docker
+      - pywikibot-core-tox-fasttest-py36-docker
       - pywikibot-core-tox-fasttest-py37-docker
       - pywikibot-core-tox-fasttest-py38-docker
       - pywikibot-core-tox-doctest-docker
       - pywikibot-core-tox-doc-docker
     gate-and-submit:
       - pywikibot-core-tox-docker
-      - pywikibot-core-tox-fasttest-py35-docker
+      - pywikibot-core-tox-fasttest-py36-docker
       - pywikibot-core-tox-fasttest-py37-docker
       - pywikibot-core-tox-fasttest-py38-docker
       - pywikibot-core-tox-doctest-docker
