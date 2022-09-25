@@ -3170,6 +3170,8 @@ projects:
       - mediawiki-quibble-composertest-php81-docker
       - mwgate-composer-php72-docker
       - trigger-mediawiki-pipeline-wmf-publish
+      - mediawiki-core-php80-phan-docker
+      - mediawiki-core-php81-phan-docker
 
   - name: mediawiki/vendor
     template:
