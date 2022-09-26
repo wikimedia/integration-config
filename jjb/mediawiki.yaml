@@ -1005,7 +1005,7 @@
             entrypoint: quibble-with-supervisord
         # Explicitly flag this ruby selenium job as a legacy one that should not be used
         - legacy-quibble-rubyselenium-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-bundle:1.4.6
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php72-bundle:1.4.6
             packages-source: vendor
             database: mysql
 
