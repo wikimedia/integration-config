@@ -14,5 +14,20 @@ def pipelineAllowedCredentials = parseJson('''{{ allowedCredentials | default({}
 
 def allowedCredentials = globalAllowedCredentials + pipelineAllowedCredentials
 
-def builder = new PipelineBuilder([allowedCredentials: allowedCredentials], ".pipeline/config.yaml")
+// Restrict use of certain pipeline stage actions for builds coming from Zuul
+// pipelines that don't require +2 voting or tag/branch creation in Gerrit.
+// Note that builds triggered by processes/people other than Zuul are allowed
+// to use all actions as build invocation is already restricted by Jenkins.
+def allowedActions = ["build", "copy", "exports", "notify", "run"]
+
+if (params.ZUUL_PIPELINE =~ /^(gate-and-submit.*|postmerge|post|publish)$/) {
+  allowedActions += ["deploy", "promote", "publish", "trigger"]
+}
+
+def builder = new PipelineBuilder(
+  [allowedCredentials: allowedCredentials],
+  ".pipeline/config.yaml",
+  allowedActions
+)
+
 builder.build(this, params.PLIB_PIPELINE)
