@@ -1,5 +1,5 @@
 #!/bin/sh
-base_dir=$(dirname "$(realpath "$0")")
+base_dir=$(dirname "$0")
 exec "$base_dir/jenkins-jobs" \
     --conf "$base_dir/jenkins_jobs.ini" \
     update \
