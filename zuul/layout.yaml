@@ -312,6 +312,7 @@ pipelines:
            - ^pastakhov@yandex\.ru$ # PhpTags maintainer
            - ^paulfkeffer@gmail\.com$ # MacFan4000
            - ^perry@frasers\.org$ # Perryprog
+           - ^pikne@online\.ee$ # Pikne
            - ^platonides@gmail\.com$
            - ^pleasestand@live\.com$
            - ^pmx42@live\.cn$ # Stang
