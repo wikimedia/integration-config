@@ -1,0 +1,5 @@
+quibble-buster-php74-bundle (1.4.6) wikimedia; urgency=medium
+
+  Initial fork from quibble-buster-php72-bundle.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 26 Sep 2022 07:34:15 -0400
