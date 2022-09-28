@@ -8691,7 +8691,7 @@ projects:
       - trigger-function-orchestrator-pipeline-test
     postmerge:
       - trigger-function-orchestrator-pipeline-publish
-      - generic-node16-browser-coverage-docker-publish
+      - generic-node16-browser-direct-coverage-docker-publish
     publish:
       - trigger-function-orchestrator-pipeline-publish
 
