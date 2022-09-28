@@ -8679,7 +8679,7 @@ projects:
       - trigger-function-evaluator-pipeline-test
     postmerge:
       - trigger-function-evaluator-pipeline-publish
-      - generic-node16-browser-coverage-docker-publish
+      - generic-node16-browser-direct-coverage-docker-publish
     publish:
       - trigger-function-evaluator-pipeline-publish
 
