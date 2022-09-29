@@ -5190,7 +5190,6 @@ projects:
     template:
       - name: extension-quibble
       - name: extension-codehealth
-      - name: extension-coverage
 
   - name: mediawiki/extensions/SearchExtraNS
     template:
