@@ -1,3 +1,10 @@
+operations-puppet (0.8.8) wikimedia; urgency=medium
+
+  * Refresh to pick up Gemfile updates specifically puppet-strings
+    https://gerrit.wikimedia.org/r/c/operations/puppet/+/832272
+
+ -- John Bond <jbond@wikimedia.org>  Thu, 29 Sep 2022 12:04:01 +0200
+
 operations-puppet (0.8.7) wikimedia; urgency=medium
 
   * Refresh to pick up Gemfile updates specifically
