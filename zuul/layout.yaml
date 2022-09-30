@@ -2779,17 +2779,13 @@ projects:
       - mediawiki-quibble-vendor-sqlite-php74-docker
       - mediawiki-quibble-vendor-postgres-php74-docker
       # Alternate php versions
-      # FIXME As this is master, should be a 'real' vendor job, when it works T300463
-      - mediawiki-quibble-composer-mysql-php80-docker
-      # FIXME As this is master, should be a 'real' vendor job, when it works T316078
-      - mediawiki-quibble-composer-mysql-php81-docker
+      - mediawiki-quibble-vendor-mysql-php80-docker
+      - mediawiki-quibble-vendor-mysql-php81-docker
     gate-and-submit:
       - mediawiki-quibble-composer-mysql-php74-docker
       - mediawiki-quibble-vendor-mysql-php74-docker
-      # FIXME As this is master, should be a 'real' vendor job, when it works T300463
-      - mediawiki-quibble-composer-mysql-php80-docker
-      # FIXME As this is master, should be a 'real' vendor job, when it works T316078
-      - mediawiki-quibble-composer-mysql-php81-docker
+      - mediawiki-quibble-vendor-mysql-php80-docker
+      - mediawiki-quibble-vendor-mysql-php81-docker
       - mediawiki-quibble-composertest-php74-docker
       - mediawiki-quibble-selenium-vendor-mysql-php74-docker
       - mediawiki-quibble-apitests-vendor-php74-docker
