@@ -1371,11 +1371,9 @@ project-templates:
       - mwext-php74-phan-docker
     php:
       - quibble-vendor-mysql-php80-noselenium-docker
-      - quibble-vendor-mysql-php81-noselenium-docker
     gate-and-submit:
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php80-noselenium-docker
-      - quibble-vendor-mysql-php81-noselenium-docker
       - quibble-vendor-mysql-php74-selenium-docker
       - mwgate-node14-docker
       - mwext-php74-phan-docker
@@ -1452,6 +1450,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
+      - quibble-vendor-mysql-php81-noselenium-docker
 
   - name: extension-quibble-php74-or-later
     test:
@@ -1461,11 +1460,9 @@ project-templates:
       - mwext-php74-phan-docker
     php:
       - quibble-vendor-mysql-php80-noselenium-docker
-      - quibble-vendor-mysql-php81-noselenium-docker
     gate-and-submit:
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php80-noselenium-docker
-      - quibble-vendor-mysql-php81-noselenium-docker
       - quibble-vendor-mysql-php74-selenium-docker
       - mwgate-node14-docker
       - mwext-php74-phan-docker
@@ -1528,6 +1525,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
+      - quibble-vendor-mysql-php81-noselenium-docker
 
   # Special job template that runs composer rather than than relying
   # on mediawiki/vendor for quibble.
@@ -1542,11 +1540,9 @@ project-templates:
       # - mwext-php74-phan-docker
     php:
       - quibble-composer-mysql-php80-noselenium-docker
-      - quibble-composer-mysql-php81-noselenium-docker
     gate-and-submit:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php80-noselenium-docker
-      - quibble-composer-mysql-php81-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
@@ -1624,8 +1620,7 @@ project-templates:
       - mediawiki-i18n-check-docker
 
     experimental:
-      - quibble-composer-mysql-php80-docker
-      - quibble-composer-mysql-php81-docker
+      - quibble-composer-mysql-php81-noselenium-docker
       - quibble-composer-sqlite-php74-noselenium-docker
       - quibble-composer-postgres-php74-noselenium-docker
 
@@ -1640,11 +1635,9 @@ project-templates:
       - mwext-php74-phan-docker
     php:
       - quibble-vendor-mysql-php80-noselenium-docker
-      - quibble-vendor-mysql-php81-noselenium-docker
     gate-and-submit:
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php80-noselenium-docker
-      - quibble-vendor-mysql-php81-noselenium-docker
       - mwgate-node14-docker
       - mwext-php74-phan-docker
 
@@ -1710,6 +1703,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
+      - quibble-vendor-mysql-php81-noselenium-docker
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
@@ -1720,11 +1714,9 @@ project-templates:
       # - mwext-php74-phan-docker
     php:
       - quibble-composer-mysql-php80-noselenium-docker
-      - quibble-composer-mysql-php81-noselenium-docker
     gate-and-submit:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php80-noselenium-docker
-      - quibble-composer-mysql-php81-noselenium-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
@@ -1782,6 +1774,7 @@ project-templates:
     experimental:
       - quibble-composer-sqlite-php74-noselenium-docker
       - quibble-composer-postgres-php74-noselenium-docker
+      - quibble-composer-mysql-php81-noselenium-docker
       - mwext-php74-phan-docker
 
   # Special job template that runs the "standalone" jobs - T225068
@@ -1790,10 +1783,10 @@ project-templates:
       - quibble-vendor-mysql-php74-phpunit-standalone-docker
     php:
       - quibble-vendor-mysql-php80-phpunit-standalone-docker
-      - quibble-vendor-mysql-php81-phpunit-standalone-docker
     gate-and-submit:
       - quibble-vendor-mysql-php74-phpunit-standalone-docker
       - quibble-vendor-mysql-php80-phpunit-standalone-docker
+    experimental:
       - quibble-vendor-mysql-php81-phpunit-standalone-docker
 
   # Special job template that runs the "apitests" job for test and gate
@@ -1867,11 +1860,9 @@ project-templates:
       - mwskin-php74-phan-docker
     php:
       - quibble-vendor-mysql-php80-docker
-      - quibble-vendor-mysql-php81-docker
     gate-and-submit:
       - quibble-vendor-mysql-php74-docker
       - quibble-vendor-mysql-php80-docker
-      - quibble-vendor-mysql-php81-docker
       - mwgate-node14-docker
       - mwskin-php74-phan-docker
 
@@ -1938,6 +1929,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74-docker
       - quibble-vendor-postgres-php74-docker
+      - quibble-vendor-mysql-php81-docker
 
   - name: skin-quibble-php74-or-later
     test:
@@ -1946,11 +1938,9 @@ project-templates:
       - mwskin-php74-phan-docker
     php:
       - quibble-vendor-mysql-php80-docker
-      - quibble-vendor-mysql-php81-docker
     gate-and-submit:
       - quibble-vendor-mysql-php74-docker
       - quibble-vendor-mysql-php80-docker
-      - quibble-vendor-mysql-php81-docker
       - mwgate-node14-docker
       - mwskin-php74-phan-docker
 
@@ -2014,6 +2004,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74-docker
       - quibble-vendor-postgres-php74-docker
+      - quibble-vendor-mysql-php81-docker
 
   - name: skin-quibble-composer
     test:
@@ -2023,11 +2014,9 @@ project-templates:
       # - mwskin-php74-phan-docker
     php:
       - quibble-composer-mysql-php80-docker
-      - quibble-composer-mysql-php81-docker
     gate-and-submit:
       - quibble-composer-mysql-php74-docker
       - quibble-composer-mysql-php80-docker
-      - quibble-composer-mysql-php81-docker
       - mwgate-node14-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan-docker
@@ -2096,6 +2085,7 @@ project-templates:
     experimental:
       - quibble-composer-sqlite-php74-docker
       - quibble-composer-postgres-php74-docker
+      - quibble-composer-mysql-php81-docker
 
   - name: skin-coverage
     postmerge:
