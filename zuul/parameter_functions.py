@@ -537,7 +537,7 @@ phan_dependencies = {
     'CentralNotice': ['CentralAuth', 'MobileFrontend', 'Translate', 'cldr'],
     'Challenge': ['Echo', 'SocialProfile'],
     'CheckUser': ['CentralAuth', 'EventLogging', 'GuidedTour', 'Renameuser',
-                  'FlaggedRevs'],
+                  'FlaggedRevs', 'GlobalBlocking'],
     'CirrusSearch': ['BetaFeatures', 'Elastica', 'SiteMatrix', 'GeoData'],
     'Citoid': ['Cite', 'VisualEditor'],
     'CleanChanges': ['cldr'],
