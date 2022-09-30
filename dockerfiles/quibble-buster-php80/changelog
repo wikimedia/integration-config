@@ -1,3 +1,10 @@
+quibble-buster-php80 (1.4.6-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php80:
+   Update PHP from 8.0.22 to 8.0.24
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 30 Sep 2022 11:06:36 -0400
+
 quibble-buster-php80 (1.4.6) wikimedia; urgency=medium
 
   * Introduce `ARG QUIBBLE_VERSION` to easily set the new version.
