@@ -2802,8 +2802,10 @@ projects:
       - mediawiki-quibble-composer-mysql-php73-docker
       - mediawiki-quibble-composer-mysql-php74-docker
       - mediawiki-quibble-composertest-php73-docker
-      # FIXME Placeholder job ahead of things being fully tested on PHP 8.0
+      # FIXME Placeholder job ahead of things being fully tested on PHP 8.0 (T274965)
       - mediawiki-quibble-composertest-php80-docker
+      # FIXME Placeholder job ahead of things being fully tested on PHP 8.1 (T316080)
+      - mediawiki-quibble-composertest-php81-docker
       - mediawiki-quibble-selenium-composer-mysql-php73-docker
       - mediawiki-quibble-composer-sqlite-php73-docker
       - mediawiki-quibble-composer-postgres-php73-docker
@@ -2818,8 +2820,10 @@ projects:
       - mediawiki-quibble-composer-mysql-php73-docker
       - mediawiki-quibble-composer-mysql-php74-docker
       - mediawiki-quibble-composertest-php73-docker
-      # FIXME Placeholder job ahead of things being fully tested on PHP 8.0
+      # FIXME Placeholder job ahead of things being fully tested on PHP 8.0 (T274965)
       - mediawiki-quibble-composertest-php80-docker
+      # FIXME Placeholder job ahead of things being fully tested on PHP 8.1 (T316080)
+      - mediawiki-quibble-composertest-php81-docker
       - mediawiki-quibble-selenium-composer-mysql-php73-docker
       - mediawiki-quibble-composer-sqlite-php73-docker
       - mediawiki-quibble-composer-postgres-php73-docker
@@ -2889,7 +2893,7 @@ projects:
     postmerge:
       - mediawiki-core-javascript-docker-publish
       - mwcore-codehealth-master-non-voting
-      # Temporarily disable publishing for SRE T242775
+      # Temporarily disable publishing for SRE (T242775)
       # - trigger-mediawiki-pipeline-publish
       - train-deploy-notes
     publish:
@@ -2897,13 +2901,10 @@ projects:
       - mediawiki-core-javascript-docker-publish
       - mediawiki-core-doxygen-docker-publish
     experimental:
-      - mediawiki-quibble-vendor-mysql-php80-docker
-      # Experimental for testing REL1_35 and REL1_37 branches, T274965
+      # Experimental for testing 8.0 on REL1_35 and REL1_37 branches (T274965)
       - mediawiki-quibble-composer-mysql-php80-docker
-      - mediawiki-quibble-composertest-php80-docker
-      - mediawiki-quibble-vendor-mysql-php81-docker
+      # Experimental for testing 8.1 on REL1_35 and REL1_37 branches (T316080)
       - mediawiki-quibble-composer-mysql-php81-docker
-      - mediawiki-quibble-composertest-php81-docker
       - mwgate-composer-php74-docker
       - trigger-mediawiki-pipeline-wmf-publish
       - mediawiki-core-php80-phan-docker
