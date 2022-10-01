@@ -5612,7 +5612,7 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceBookshelf
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceCategoryCheck
     template:
@@ -5637,7 +5637,7 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceCountThings
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceCustomMenu
     template:
@@ -5669,7 +5669,7 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceExportTables
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceExtendedFilelist
     template:
@@ -5757,7 +5757,7 @@ projects:
 
   - name: mediawiki/extensions/BlueSpicePagesVisited
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpicePermissionManager
     template:
@@ -5773,7 +5773,7 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceProDistributionConnector
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceQrCode
     template:
@@ -5877,35 +5877,35 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceUEModuleBookPDF
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceUEModuleDOCX
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceUEModulePDF
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceUEModulePDFRecursive
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceUEModulePDFSubpages
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceUEModuleHTML
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceUEModuleTable2Excel
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceUniversalExport
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceUsageTracker
     template:

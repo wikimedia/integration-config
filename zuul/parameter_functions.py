@@ -156,7 +156,10 @@ dependencies = {
     'BlueSpiceArticlePreviewCapture': ['BlueSpiceFoundation'],
     'BlueSpiceAuthors': ['BlueSpiceFoundation'],
     'BlueSpiceAvatars': ['BlueSpiceFoundation'],
-    'BlueSpiceBookshelf': ['BlueSpiceFoundation'],
+    'BlueSpiceBookshelf': [
+        'BlueSpiceFoundation',
+        'BlueSpiceVisualEditorConnector'
+    ],
     'BlueSpiceCategoryCheck': ['BlueSpiceFoundation'],
     'BlueSpiceCategoryManager': ['BlueSpiceFoundation'],
     'BlueSpiceChecklist': ['BlueSpiceFoundation', 'VisualEditor'],
@@ -179,8 +182,11 @@ dependencies = {
     'BlueSpiceEchoConnector': ['BlueSpiceFoundation', 'Echo'],
     'BlueSpiceEmoticons': ['BlueSpiceFoundation'],
     'BlueSpiceExpiry': ['BlueSpiceFoundation', 'BlueSpiceReminder'],
-    'BlueSpiceExportTables': ['BlueSpiceFoundation',
-                              'BlueSpiceUEModuleTable2Excel'],
+    'BlueSpiceExportTables': [
+        'BlueSpiceFoundation',
+        'BlueSpiceUEModuleTable2Excel',
+        'BlueSpiceVisualEditorConnector'
+    ],
     'BlueSpiceExtendedFilelist': ['BlueSpiceFoundation'],
     'BlueSpiceExtendedSearch': ['BlueSpiceFoundation', 'VisualEditor'],
     'BlueSpiceExtendedStatistics': ['BlueSpiceFoundation',
@@ -193,7 +199,7 @@ dependencies = {
     'BlueSpiceInsertFile': ['BlueSpiceFoundation'],
     'BlueSpiceInsertLink': [
         'BlueSpiceFoundation',
-        'BlueSpiceVisualEditorConnector',
+        'BlueSpiceVisualEditorConnector'
     ],
     'BlueSpiceInsertMagic': ['BlueSpiceFoundation', 'VisualEditor'],
     'BlueSpiceFoundation': ['ExtJSBase', 'OOJSPlus'],
@@ -213,6 +219,7 @@ dependencies = {
     'BlueSpicePageVersion': ['BlueSpiceFoundation'],
     'BlueSpicePagesVisited': [
         'BlueSpiceFoundation',
+        'BlueSpiceVisualEditorConnector',
         'BlueSpiceWhoIsOnline',
     ],
     'BlueSpicePlayer': ['BlueSpiceFoundation'],
@@ -222,6 +229,7 @@ dependencies = {
         'BlueSpiceFoundation',
         'BlueSpiceUEModulePDF',
         'BlueSpiceUniversalExport',
+        'BlueSpiceVisualEditorConnector',
         'Math',
     ],
     'BlueSpiceQrCode': ['BlueSpiceFoundation'],
@@ -291,7 +299,10 @@ dependencies = {
     ],
     'BlueSpiceUEModuleTable2Excel': ['BlueSpiceFoundation',
                                      'BlueSpiceUniversalExport'],
-    'BlueSpiceUniversalExport': ['BlueSpiceFoundation'],
+    'BlueSpiceUniversalExport': [
+        'BlueSpiceFoundation',
+        'BlueSpiceVisualEditorConnector'
+    ],
     'BlueSpiceUsageTracker': ['BlueSpiceFoundation'],
     'BlueSpiceUserInfo': ['BlueSpiceFoundation'],
     'BlueSpiceUserManager': ['BlueSpiceFoundation'],
