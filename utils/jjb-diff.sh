@@ -32,6 +32,8 @@ echo "Generating config for proposed patchset..."
 )
 
 echo "Generating config for parent patchset..."
+echo "IGNORED TEMPORARILY"
+exit 0
 parent_config="$build_dir/parent"
 mkdir -p "$parent_config"
 git archive HEAD^|tar -C "$parent_config" -x
