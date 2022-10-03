@@ -2115,13 +2115,8 @@ project-templates:
   - name: composer-test-php74-only
     test:
       - composer-php74-docker
-    experimental:
-      - composer-php80-docker
-      - composer-php81-docker
     gate-and-submit:
       - composer-php74-docker
-      - composer-php80-docker
-      - composer-php81-docker
 
   - name: composer-test-package-php74-or-later
     test:
