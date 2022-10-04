@@ -1,3 +1,10 @@
+buildctl (0.10.4-4) wikimedia; urgency=high
+
+   * Temporarily install buildctl from upstream master for registrytoken
+     auth config support
+
+ -- Dan Duvall <dduvall@wikimedia.org>  Tue,  4 Oct 2022 12:01:41 -0700
+
 buildctl (0.10.4-3) wikimedia; urgency=high
 
    * Add wmf-certificates package for registry CA

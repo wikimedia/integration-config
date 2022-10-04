@@ -1,20 +1,3 @@
-FROM docker-registry.wikimedia.org/bullseye:latest AS install
-# The client version should be kept more or less in sync with that of
-# buildkitd in operations/docker-images/production-images
-ARG BUILDKIT_VERSION=0.10.4
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
-RUN {{ "ca-certificates curl" | apt_install }}
-
-WORKDIR /src
-COPY SHA256SUMS ./
-
-RUN curl --silent --fail --show-error --location \
-    https://github.com/moby/buildkit/releases/download/v$BUILDKIT_VERSION/buildkit-v$BUILDKIT_VERSION.linux-amd64.tar.gz \
-    | tar -zxf - bin/buildctl
-
-RUN sha256sum -c SHA256SUMS
-
 FROM docker-registry.wikimedia.org/bullseye:latest
 ARG BUILDKIT_HOME=/var/lib/buildkit
 ARG BUILDKIT_UID=1000
@@ -22,7 +5,12 @@ ARG BUILDKIT_UID=1000
 # Note that providing jq allows for easier provisioning of the JSON docker
 # auth config
 RUN {{ "ca-certificates wmf-certificates jq" | apt_install }}
-COPY --from=install /src/bin/* /usr/local/bin/
+
+# NOTE We can't yet use a 0.10 release as it won't contain support for the
+# registrytoken auth field. We'll instead source the buildctl binary from the
+# latest moby/buildkit:master image (but pin it via the sha256 digest)
+#
+COPY --from=moby/buildkit@sha256:cf4bce09da1cd0bbe7ce7f3033011d3db44bcbdee8efc58671440a5d64444f8f /usr/bin/buildctl /usr/bin/buildctl
 
 # Create a basic user for buildctl as it looks for docker registry credentials
 # in the user's home directory and the nobody user does not have one.
