@@ -43,7 +43,8 @@
          entrypoint: php
          workdir: /src
          args: |
-             -d zend_extension=xdebug.so \
+             -d zend_extension=pcov.so \
+             -d pcov.enable=1 \
              ./vendor/bin/phpunit \
                  --coverage-clover /log/coverage/clover.xml \
                  --coverage-html /log/coverage
