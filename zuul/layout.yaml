@@ -2693,6 +2693,7 @@ projects:
       - name: composer-test-package-php74-or-later
     postmerge:
       - mw-tools-phan-demos-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/vagrant
     test:
