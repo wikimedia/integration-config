@@ -1,3 +1,9 @@
+php-ast (1.2.1) wikimedia; urgency=high
+
+   Add support for PHP 8.2
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed,  5 Oct 2022 23:10:23 -0400
+
 php-ast (1.2.0) wikimedia; urgency=high
 
    Drop support for PHP 7.2/7.3, add 8.1
