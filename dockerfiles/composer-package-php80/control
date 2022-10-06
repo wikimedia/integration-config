@@ -1,1 +1,1 @@
-Depends: php80, composer-scratch, php-ast
+Depends: php80, composer-scratch

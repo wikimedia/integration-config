@@ -1,1 +1,1 @@
-Depends: sury-php
+Depends: sury-php, php-ast

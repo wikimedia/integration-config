@@ -1,3 +1,9 @@
+php80 (0.2.3) wikimedia; urgency=high
+
+   Install newer v1.0.14 of php-ast extension
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed,  5 Oct 2022 20:19:39 -0400
+
 php80 (0.2.2) wikimedia; urgency=high
 
    Update PHP from 8.0.22 to 8.0.24
