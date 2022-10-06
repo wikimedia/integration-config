@@ -73,7 +73,7 @@
     name: 'operations-mw-config'
     phpflavor:
      - php74:
-         image: docker-registry.wikimedia.org/releng/composer-php74:0.2.0-s9
+         image: docker-registry.wikimedia.org/releng/composer-php74:0.2.0-s10
     jobs:
      - '{name}-typos-docker'
      - 'operations-mw-config-{phpflavor}-composer-{run-script}-docker':
