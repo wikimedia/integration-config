@@ -76,7 +76,7 @@
                     phpmetrics-report: /phpmetrics-report
                     log:
                     src:
-                image: docker-registry.wikimedia.org/releng/phpmetrics:2.7.3-s6
+                image: docker-registry.wikimedia.org/releng/phpmetrics:2.7.3-s7
                 args: '--report-html=/phpmetrics-report --report-violations=/log/violations-phpmetrics.xml .'
           - doc-publish:
                 docsrc: phpmetrics-report

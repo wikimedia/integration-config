@@ -20,7 +20,7 @@
     name: php74
     jobs:
       - 'php-compile-{name}-docker':
-          image: docker-registry.wikimedia.org/releng/php74-compile:0.0.7-s3
+          image: docker-registry.wikimedia.org/releng/php74-compile:0.0.7-s4
 
 - project:
     name: php80
@@ -46,7 +46,7 @@
         entrypoint: /run-coverage.sh
         volumes:
             src:
-        image: docker-registry.wikimedia.org/releng/php74-compile:0.0.7-s3
+        image: docker-registry.wikimedia.org/releng/php74-compile:0.0.7-s4
      - cover-publish:
         src: 'src/coverage'
         dest: '$DOC_PROJECT'
