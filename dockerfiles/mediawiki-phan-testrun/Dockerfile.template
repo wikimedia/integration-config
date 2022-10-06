@@ -1,5 +1,7 @@
 FROM {{ "composer-php74" | image_tag }}
 
+USER root
+
 # We'll need various dependencies. mysqli seems to be the only relevant dependency for core,
 # but as per mediawiki-phan dockerfile, these deps should maybe be installed in a more base dockerfile
 RUN {{ "php7.4-mysql" | apt_install }}
