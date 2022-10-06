@@ -26,7 +26,7 @@ unzip
 RUN {{ packages | apt_install }}
 
 # Set a standard, new version of php-ast rather than using Debian's older one
-COPY --from=ast /usr/lib/php/20200930/ast.so /usr/lib/php/20200930/ast.so
+COPY --from=ast /usr/lib/php/20210902/ast.so /usr/lib/php/20210902/ast.so
 COPY --from=ast /srv/20-ast.ini /etc/php/8.1/cli/conf.d/20-ast.ini
 
 # Disable xdebug by default due to its performance impact
