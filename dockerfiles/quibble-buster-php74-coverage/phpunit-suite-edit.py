@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Edit MediaWiki's PHPUnit suite.xml file
-Copyright (C) 2018 Kunal Mehta <legoktm@member.fsf.org>
+Copyright (C) 2018, 2022 Kunal Mehta <legoktm@debian.org>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -33,21 +33,31 @@ def main():
     args = parser.parse_args()
     tree = etree.parse(args.suite)
     root = tree.getroot()
-    for child in root.getchildren():
-        if child.tag == 'filter':
-            whitelist = child.getchildren()[0]
-            assert whitelist.tag == 'whitelist'
-            # Ensure that this property is true for CI.
-            whitelist.set('addUncoveredFilesFromWhitelist', 'true')
+    for child in list(root):
+        # Switched to <coverage> in PHPUnit 9
+        if child.tag in ['filter', 'coverage']:
+            include = list(child)[0]
+            if include.tag == "include":
+                # Ensure that this property is true for CI.
+                child.set("includeUncoveredFiles", "true")
+            elif include.tag == "whitelist":
+                # Pre-PHPUnit 9
+                include.set('addUncoveredFilesFromWhitelist', 'true')
+            else:
+                raise ValueError(
+                    "Unexpected tag, looking for include, found {}".format(
+                        include.tag
+                    )
+                )
 
             if args.cover_extension:
                 # Remove the current directories that are there,
                 # we don't want to include any of them
-                for wchild in whitelist.getchildren():
-                    whitelist.remove(wchild)
+                for ichild in list(include):
+                    include.remove(ichild)
                 # Add the three directories we care about
                 for folder in ['src', 'includes', 'maintenance']:
-                    sub = etree.SubElement(whitelist, 'directory')
+                    sub = etree.SubElement(include, 'directory')
                     sub.text = '../../extensions/%s/%s' \
                         % (args.cover_extension, folder)
                     sub.set('suffix', '.php')
@@ -55,11 +65,11 @@ def main():
             if args.cover_skin:
                 # Remove the current directories that are there,
                 # we don't want to include any of them
-                for wchild in whitelist.getchildren():
-                    whitelist.remove(wchild)
+                for ichild in list(include):
+                    include.remove(ichild)
                 # Add the three directories we care about
                 for folder in ['src', 'includes', 'maintenance']:
-                    sub = etree.SubElement(whitelist, 'directory')
+                    sub = etree.SubElement(include, 'directory')
                     sub.text = '../../skins/%s/%s' \
                         % (args.cover_skin, folder)
                     sub.set('suffix', '.php')
