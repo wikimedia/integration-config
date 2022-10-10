@@ -1,3 +1,9 @@
+helm-linter (0.4.1) wikimedia; urgency=medium
+
+  * Update helm3 to 3.9.4
+
+ -- Clement Goubert <cgoubert@wikimedia.org>  Mon, 10 Oct 2022 11:49:32 +0200
+
 helm-linter (0.4.0) wikimedia; urgency=medium
 
   * Add kubeconform for kuberntes spec validation
