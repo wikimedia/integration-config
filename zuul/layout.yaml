@@ -7685,6 +7685,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/Share
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/SharedHelpPages
     template:
       - name: extension-quibble
