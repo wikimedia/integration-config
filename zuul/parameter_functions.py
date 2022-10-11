@@ -570,6 +570,7 @@ phan_dependencies = {
     'Echo': ['CentralAuth', 'EventLogging'],
     'EventBus': ['CentralNotice', 'EventStreamConfig'],
     'FanBoxes': ['SocialProfile'],
+    'FileImporter': ['GlobalBlocking'],
     'FlaggedRevs': ['Scribunto', 'Echo', 'GoogleNewsSitemap', 'MobileFrontend',
                     'skins/Vector'],
     'Flow': ['AbuseFilter', 'BetaFeatures', 'CentralAuth', 'CheckUser',
