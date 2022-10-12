@@ -53,6 +53,7 @@
       - test
       - rehearse
       - publish
+      - publish-buildkit
     jobs:
       # trigger-blubber-pipeline-test
       # trigger-blubber-pipeline-rehearse
