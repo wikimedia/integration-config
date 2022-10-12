@@ -2356,6 +2356,8 @@ projects:
       - trigger-blubber-pipeline-rehearse
     postmerge:
       - trigger-blubber-pipeline-publish
+    publish:
+      - trigger-blubber-pipeline-publish-buildkit
 
   - name: blubber-doc/example/helloworldoid
     test:
