@@ -952,7 +952,6 @@ jobs:
   # T307504 Libraries currently fail on PHP 8.1
   - name: ^composer-package-php81-docker$
     skip-if:
-      - project: ^css-sanitizer$
       - project: ^mediawiki/libs/Dodo$
       - project: ^mediawiki/libs/RemexHtml$
       - project: ^mediawiki/libs/Zest$
