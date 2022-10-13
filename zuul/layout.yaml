@@ -5640,8 +5640,7 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceChecklist
     template:
-      - name: extension-broken
-      - name: mwgate-npm
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceConfigManager
     template:
@@ -5733,7 +5732,7 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceInsertMagic
     template:
-      - name: extension-broken
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceInsertTemplate
     template:
@@ -5825,7 +5824,7 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceSmartList
     template:
-      - name: extension-broken
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/BlueSpiceSMWConnector
     template:

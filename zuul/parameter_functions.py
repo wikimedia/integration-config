@@ -162,7 +162,10 @@ dependencies = {
     ],
     'BlueSpiceCategoryCheck': ['BlueSpiceFoundation'],
     'BlueSpiceCategoryManager': ['BlueSpiceFoundation'],
-    'BlueSpiceChecklist': ['BlueSpiceFoundation', 'VisualEditor'],
+    'BlueSpiceChecklist': [
+        'BlueSpiceFoundation',
+        'BlueSpiceVisualEditorConnector'
+    ],
     'BlueSpiceConfigManager': ['BlueSpiceFoundation'],
     'BlueSpiceContextMenu': ['BlueSpiceFoundation'],
     'BlueSpiceCountThings': [
@@ -188,7 +191,10 @@ dependencies = {
         'BlueSpiceVisualEditorConnector'
     ],
     'BlueSpiceExtendedFilelist': ['BlueSpiceFoundation'],
-    'BlueSpiceExtendedSearch': ['BlueSpiceFoundation', 'VisualEditor'],
+    'BlueSpiceExtendedSearch': [
+        'BlueSpiceFoundation',
+        'BlueSpiceVisualEditorConnector'
+    ],
     'BlueSpiceExtendedStatistics': ['BlueSpiceFoundation',
                                     'BlueSpiceExtendedSearch'],
     'BlueSpiceFilterableTables': ['BlueSpiceFoundation'],
@@ -201,7 +207,10 @@ dependencies = {
         'BlueSpiceFoundation',
         'BlueSpiceVisualEditorConnector'
     ],
-    'BlueSpiceInsertMagic': ['BlueSpiceFoundation', 'VisualEditor'],
+    'BlueSpiceInsertMagic': [
+        'BlueSpiceFoundation',
+        'BlueSpiceVisualEditorConnector'
+    ],
     'BlueSpiceFoundation': ['ExtJSBase', 'OOJSPlus'],
     'BlueSpiceInsertTemplate': ['BlueSpiceFoundation'],
     'BlueSpiceInterWikiLinks': ['BlueSpiceFoundation'],
@@ -270,7 +279,10 @@ dependencies = {
                                 'BlueSpiceMultiUpload'],
     'BlueSpiceSaferEdit': ['BlueSpiceFoundation'],
     'BlueSpiceSignHere': ['BlueSpiceFoundation'],
-    'BlueSpiceSmartList': ['BlueSpiceFoundation', 'VisualEditor'],
+    'BlueSpiceSmartList': [
+        'BlueSpiceFoundation',
+        'BlueSpiceVisualEditorConnector'
+    ],
     'BlueSpiceSubPageTree': ['BlueSpiceFoundation'],
     'BlueSpiceTagCloud': ['BlueSpiceFoundation'],
     'BlueSpiceUEModuleBookPDF': ['BlueSpiceFoundation',
