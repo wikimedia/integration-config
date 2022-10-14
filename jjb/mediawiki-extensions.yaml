@@ -126,16 +126,16 @@
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php73:0.3.1-s4
         - php74:
             setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.6-s2
-            composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.2.0-s12
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.1-s7
+            composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.2.0-s13
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.1-s8
         - php80:
             setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.4.6-s2
-            composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s14
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.2-s7
+            composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s15
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.2-s8
         - php81:
             setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.4.6-s2
-            composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1-s6
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.2-s6
+            composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1-s7
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.2-s7
     jobs:
         - '{thing}-{php}-phan-docker'
 
