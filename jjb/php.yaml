@@ -240,3 +240,33 @@
         || (ZUUL_PROJECT=="mediawiki/extensions/DonationInterface" && ZUUL_BRANCH=="master")
     jobs:
      - '{repogroup}-php-security'
+
+- job-template:
+    name: 'composer-{php}-assert-lock-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-log-dir
+     - docker-src-dir
+     - docker-castor-load
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+         image: '{image}'
+         workdir: /src
+         args: 'install --no-dev --ignore-platform-reqs && git diff --exit-code'
+    publishers:
+     - castor-save-workspace-cache
+     - docker-cleanup
+
+- project:
+    name: generic-composer-assert-lock-jobs
+    php:
+     - php74:
+         image: docker-registry.wikimedia.org/releng/composer-php74:0.2.0-s12
+     - php80:
+         image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s14
+     - php81:
+         image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1-s6
+    jobs:
+      - 'composer-{php}-assert-lock-docker'
