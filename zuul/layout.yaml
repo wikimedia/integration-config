@@ -2960,9 +2960,6 @@ projects:
       - mediawiki-quibble-vendor-mysql-php74-docker
       - mediawiki-quibble-selenium-vendor-mysql-php74-docker
       - mediawiki-quibble-apitests-vendor-php74-docker
-    experimental:
-      # New job in testing T74952 -- JDF 2022-10-14
-      - composer-php74-assert-lock-docker
 
     # CI no more supports mediawiki/vendor on release branches, folks should
     # use composer install instead. T189560
@@ -2979,6 +2976,8 @@ projects:
       - mediawiki-quibble-vendor-mysql-php80-docker
       - mwgate-composer-php81-docker
       - mediawiki-quibble-vendor-mysql-php81-docker
+      # New job in testing T74952 -- JDF 2022-10-14
+      - composer-php74-assert-lock-docker
 
   # VERY EXPERIMENTAL WIKIMEDIA PRODUCTION BUILD WITH NO TESTS YET
   - name: wikimedia/production
