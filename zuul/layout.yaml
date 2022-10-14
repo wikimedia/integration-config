@@ -9181,7 +9181,7 @@ projects:
 
   - name: mediawiki/libs/Zest
     template:
-      - name: composer-test-package-php74-or-later-not-php81
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
       - phpunit-coverage-php74-docker-publish
