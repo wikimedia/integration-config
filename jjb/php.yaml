@@ -254,7 +254,9 @@
      - docker-run-with-log-cache-src:
          image: '{image}'
          workdir: /src
-         args: 'install --no-dev --ignore-platform-reqs && git diff --exit-code'
+         args: >-
+             install --no-dev
+             && git diff --exit-code -- . '!composer'
     publishers:
      - castor-save-workspace-cache
      - docker-cleanup
