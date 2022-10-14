@@ -1,3 +1,9 @@
+helm-linter (0.4.2) wikimedia; urgency=high
+
+   Remove kubeyaml T316348
+
+ -- Clement Goubert <cgoubert@wikimedia.org>  Fri, 14 Oct 2022 15:22:59 +0200
+
 helm-linter (0.4.1) wikimedia; urgency=medium
 
   * Update helm3 to 3.9.4
