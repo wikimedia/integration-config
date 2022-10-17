@@ -392,8 +392,7 @@
     !!merge : *job_quibble
     name: 'api-testing-{database}-{php}-docker'
     entrypoint: quibble-with-supervisord
-    # Quibble 1.2.0 does not have QUIBBLE_APACHE set yet
-    quibble_args: '-c "/usr/bin/env QUIBBLE_APACHE=1 mediawiki/tools/api-testing/ci.sh" mediawiki/tools/api-testing'
+    quibble_args: '-c mediawiki/tools/api-testing/ci.sh mediawiki/tools/api-testing'
     triggers:
         - zuul
 
