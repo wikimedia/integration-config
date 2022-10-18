@@ -10235,6 +10235,10 @@ projects:
       - composer-php73-docker
     gate-and-submit:
       - composer-php73-docker
+    experimental:
+      - composer-php74-docker
+      - composer-php80-docker
+      - composer-php81-docker
 
   - name: wikimedia/iegreview
     template:
