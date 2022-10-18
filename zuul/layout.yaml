@@ -10231,14 +10231,12 @@ projects:
       - name: tox-docker
 
   - name: wikimedia/fundraising/SmashPig
+    template:
+      - name: composer-test-php74-only
     test:
       - composer-php73-docker
     gate-and-submit:
       - composer-php73-docker
-    experimental:
-      - composer-php74-docker
-      - composer-php80-docker
-      - composer-php81-docker
 
   - name: wikimedia/iegreview
     template:
