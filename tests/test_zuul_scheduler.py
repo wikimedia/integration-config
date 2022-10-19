@@ -851,17 +851,19 @@ class TestZuulScheduler(unittest.TestCase):
         self.assertListEqual([], errors)
 
     def test_debian_glue_triggers_for_debian_directory_changes(self):
-        job = self.getJob('blubber', 'test', 'debian-glue')
+        job = self.getJob('operations/debs/jenkins-debian-glue',
+                          'test', 'debian-glue')
 
-        change = zuul.model.Change('blubber')
+        change = zuul.model.Change('operations/debs/jenkins-debian-glue')
         change.files.extend(['debian/changelog'])
 
         self.assertTrue(job.changeMatches(change))
 
     def test_debian_glue_filtered_for_non_debian_changes(self):
-        job = self.getJob('blubber', 'test', 'debian-glue')
+        job = self.getJob('operations/debs/jenkins-debian-glue',
+                          'test', 'debian-glue')
 
-        change = zuul.model.Change('blubber')
+        change = zuul.model.Change('operations/debs/jenkins-debian-glue')
         change.files.extend(['README'])
 
         self.assertFalse(job.changeMatches(change))

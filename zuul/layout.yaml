@@ -2356,18 +2356,6 @@ projects:
 
 #### Continuous integration and other developer services #######
 
-  - name: blubber
-    template:
-      - name: debian-glue
-    test:
-      - trigger-blubber-pipeline-test
-    gate-and-submit:
-      - trigger-blubber-pipeline-rehearse
-    postmerge:
-      - trigger-blubber-pipeline-publish
-    publish:
-      - trigger-blubber-pipeline-publish-buildkit
-
   - name: blubber-doc/example/helloworldoid
     test:
       - trigger-helloworldoid-pipeline-test
