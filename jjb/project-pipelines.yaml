@@ -48,23 +48,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: blubber
-    pipeline:
-      - test
-      - rehearse
-      - publish
-      - publish-buildkit
-    jobs:
-      # trigger-blubber-pipeline-test
-      # trigger-blubber-pipeline-rehearse
-      # trigger-blubber-pipeline-publish
-      - 'trigger-{name}-pipeline-{pipeline}'
-      # blubber-pipeline-test
-      # blubber-pipeline-rehearse
-      # blubber-pipeline-publish
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: citoid
     pipeline:
       - test
