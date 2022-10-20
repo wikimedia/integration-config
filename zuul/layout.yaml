@@ -7272,6 +7272,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/PageOwnership
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/PageTools
     template:
       - name: extension-quibble
