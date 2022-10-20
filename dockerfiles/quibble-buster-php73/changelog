@@ -1,3 +1,10 @@
+quibble-buster-php73 (1.4.6-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-buster:
+   Set `AllowEncodedSlashes On` in Apache - T321278
+
+ -- Antoine Musso <Antoine Musso <hashar@free.fr>>  Thu, 20 Oct 2022 12:45:18 +0200
+
 quibble-buster-php73 (1.4.6) wikimedia; urgency=medium
 
   * Introduce `ARG QUIBBLE_VERSION` to easily set the new version.
