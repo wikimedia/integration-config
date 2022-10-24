@@ -9226,24 +9226,6 @@ projects:
     publish:
       - trigger-striker-pipeline-publish
 
-  - name: labs/striker/deploy
-    test:
-      - noop
-    gate-and-submit:
-      - noop
-
-  - name: labs/striker/staticfiles
-    test:
-      - noop
-    gate-and-submit:
-      - noop
-
-  - name: labs/striker/wheels
-    test:
-      - noop
-    gate-and-submit:
-      - noop
-
   - name: labs/toollabs
     template:
       - name: tox-docker
@@ -10337,6 +10319,18 @@ projects:
       - name: archived
 
   - name: labs/tools/Wikimedia-Emoji-Bot
+    template:
+      - name: archived
+
+  - name: labs/striker/deploy
+    template:
+      - name: archived
+
+  - name: labs/striker/staticfiles
+    template:
+      - name: archived
+
+  - name: labs/striker/wheels
     template:
       - name: archived
 
