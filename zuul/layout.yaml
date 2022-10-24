@@ -1812,29 +1812,28 @@ project-templates:
       - wmf-quibble-vendor-mysql-php74-docker
       - wmf-quibble-core-vendor-mysql-php74-docker
       - wmf-quibble-selenium-php74-docker
+
+    # For wmf branches
     test-wmf:
-      # For wmf branches
       - mwgate-node14-docker
       - wmf-quibble-vendor-mysql-php74-docker
       - wmf-quibble-core-vendor-mysql-php74-docker
       - wmf-quibble-selenium-php74-docker
     gate-and-submit-wmf:
       - mwgate-node14-docker
-      # Only triggered on wmf/ branches
       - wmf-quibble-vendor-mysql-php74-docker
       - wmf-quibble-core-vendor-mysql-php74-docker
       - wmf-quibble-selenium-php74-docker
-    experimental:
-      # Experimental jobs for tracking ability to deploy to php81 (T319432)
-      - wmf-quibble-core-vendor-mysql-php81-docker
-      - wmf-quibble-vendor-mysql-php81-docker
-      - wmf-quibble-selenium-php81-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
 
     experimental:
       - mwext-php74-phan-docker
+      # Experimental PHP 8.1 jobs for tracking ability to deploy to php81 (T319432)
+      - wmf-quibble-core-vendor-mysql-php81-docker
+      - wmf-quibble-vendor-mysql-php81-docker
+      - wmf-quibble-selenium-php81-docker
 
   - name: extension-coverage
     postmerge:
