@@ -98,6 +98,7 @@ pipelines:
            - ^hoo@online\.de$
            - ^mail@adamham\.dev$ # Adam Hammad; WMDE Contractor
            - ^mail@lucaswerkmeister\.de$
+           - ^mail@mariushoch\.de$
            - ^marta\.jansone99@gmail\.com$ # Marta; Student working on new PropertySuggester (2021)
            - ^michaelcochez@gmail\.com$ # Michael Cochez; Working on new PropertySuggester (2021)
 
