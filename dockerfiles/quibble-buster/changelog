@@ -1,3 +1,9 @@
+quibble-buster (1.4.7) wikimedia; urgency=high
+
+   Bump to Quibble 1.4.7
+
+ -- Antoine Musso <Antoine Musso <hashar@free.fr>>  Tue, 25 Oct 2022 17:39:03 +0200
+
 quibble-buster (1.4.6-s1) wikimedia; urgency=high
 
    Set `AllowEncodedSlashes On` in Apache - T321278
