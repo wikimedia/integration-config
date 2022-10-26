@@ -1014,6 +1014,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'nsfw-model/model-server/.*'
 
+  - name: ^trigger-inference-services-pipeline-revertrisk
+    files:
+        - '.pipeline/revertrisk/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'revert-risk-model/model-server/.*'
+
   # End of meta jobs (the ones starting with ^)
 
 
@@ -2530,6 +2536,7 @@ projects:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
       - trigger-inference-services-pipeline-nsfw
+      - trigger-inference-services-pipeline-revertrisk
     gate-and-submit:
       - trigger-inference-services-pipeline-editquality
       - trigger-inference-services-pipeline-articlequality
@@ -2538,6 +2545,7 @@ projects:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
       - trigger-inference-services-pipeline-nsfw
+      - trigger-inference-services-pipeline-revertrisk
     postmerge:
       - trigger-inference-services-pipeline-editquality-publish
       - trigger-inference-services-pipeline-articlequality-publish
@@ -2546,6 +2554,7 @@ projects:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-outlink-transformer-publish
       - trigger-inference-services-pipeline-nsfw-publish
+      - trigger-inference-services-pipeline-revertrisk-publish
 
   - name: integration/config
     test-prio:
