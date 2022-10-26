@@ -1,7 +1,8 @@
 tox-poetry-buster (0.0.1-s1) wikimedia; urgency=high
 
-   Refresh for update in parent image tox-buster:
-   Add python 3.9 support
+   * Run `get-poetry.py` under Python 3 - 321724
+   * Refresh for update in parent image tox-buster:
+     Add python 3.9 support
 
  -- John Bond <jbond@wikimedia.org>  Wed, 26 Oct 2022 20:15:23 +0200
 
