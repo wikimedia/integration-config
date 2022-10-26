@@ -442,6 +442,7 @@ pipelines:
            - ^mpaa\.wiki@gmail\.com$
            - ^nullzero\.free@gmail\.com$
            - ^pyfisch@gmail\.com$
+           - ^qdinar@gmail\.com$  # Dinar Qurbanov, Tatar LanguageConverter
            - ^ricordisamoa@disroot\.org$
            - ^russblau@imapmail\.org$  # Russell Blau
            - ^whym@whym\.org$
