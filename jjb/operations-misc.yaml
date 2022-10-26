@@ -86,7 +86,7 @@
     name: 'cassandra-table-properties'
     jobs:
         - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:0.7.0-s2
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:0.7.0-s3
             build_timeout: 20 # minutes
 
 - project:
@@ -94,12 +94,12 @@
     jobs:
         - '{name}-tox-docker':
             build_timeout: 20 # minutes
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.5.3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.6.0
         - tox-publish-jobs:
             docenv: 'py37-sphinx'
             docsrc: 'doc/build/html'
             docdest: 'cumin/$DOC_SUBPATH'
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.5.3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.6.0
 
 - project:
     name: deployment-charts
@@ -126,12 +126,12 @@
     name: 'homer-public'
     jobs:
         - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.5.3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.6.0
         - tox-publish-jobs:
             docenv: 'py3-docs'
             docsrc: 'doc/build'
             docdest: 'homer-public/$DOC_SUBPATH'
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.5.3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.6.0
 
 - project:
     name: netbox-reports
