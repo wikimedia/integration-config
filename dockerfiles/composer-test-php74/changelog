@@ -1,3 +1,10 @@
+composer-test-php74 (0.1.0-s14) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-php74:
+   Add curl for security-check - T321753
+
+ -- Antoine Musso <Antoine Musso <hashar@free.fr>>  Thu, 27 Oct 2022 10:31:26 +0200
+
 composer-test-php74 (0.1.0-s13) wikimedia; urgency=high
 
    Refresh for update in parent image php-ast:

@@ -1,3 +1,10 @@
+composer-security-check (1.2.0-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-php74:
+   Add curl for security-check - T321753
+
+ -- Dallas Wisehaupt <dwisehaupt@wikimedia.org>  Wed, 26 Oct 2022 16:03:32 -0700
+
 composer-security-check (1.2.0-s4) wikimedia; urgency=high
 
    Refresh for update in parent image php-ast:
