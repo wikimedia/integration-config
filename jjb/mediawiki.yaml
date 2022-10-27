@@ -151,7 +151,7 @@
                 - php73:
                     image: docker-registry.wikimedia.org/releng/composer-test-php73:0.3.0-s3
                 - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.0-s13
+                    image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.0-s14
                 - php80:
                     image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.0-s17
                 - php81:
@@ -197,7 +197,7 @@
             composer_image: docker-registry.wikimedia.org/releng/composer-php73:0.4.0-s3
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php73:0.3.1-s4
         - php74:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.2.0-s13
+            composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.0
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.1-s8
         - php80:
             composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s15
