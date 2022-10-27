@@ -1156,6 +1156,7 @@ class TestZuulScheduler(unittest.TestCase):
             'wmf-quibble-selenium-php74-docker': True,
             'wmf-quibble-core-vendor-mysql-php74-docker': True,
             'mwgate-node14-docker': True,
+            'quibble-vendor-mysql-php74-phpunit-standalone-docker': True,
         }
 
         change = zuul.model.Change('mediawiki/core')

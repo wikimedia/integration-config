@@ -2887,6 +2887,8 @@ projects:
       # Alternate php versions
       - mediawiki-quibble-vendor-mysql-php80-docker
       - mediawiki-quibble-vendor-mysql-php81-docker
+      # Standalone run for core-only changes
+      - quibble-vendor-mysql-php74-phpunit-standalone-docker
     gate-and-submit:
       - mediawiki-quibble-composer-mysql-php74-docker
       - mediawiki-quibble-vendor-mysql-php74-docker
@@ -2898,6 +2900,8 @@ projects:
       - mediawiki-quibble-vendor-sqlite-php74-docker
       - mediawiki-quibble-vendor-postgres-php74-docker
       - mediawiki-core-php74-phan-docker
+      # Standalone run for core-only changes
+      - quibble-vendor-mysql-php74-phpunit-standalone-docker
 
     test-1_35:
       - mediawiki-quibble-composer-mysql-php73-docker
