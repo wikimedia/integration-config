@@ -1,3 +1,10 @@
+tox-poetry-buster (0.0.2) wikimedia; urgency=medium
+
+  * Refresh for update in parent image tox-buster:
+    Add python39-distutils
+
+ -- John Bond <jbond@wikimedia.org>  Thu, 27 Oct 2022 10:44:47 +0200
+
 tox-poetry-buster (0.0.1-s1) wikimedia; urgency=high
 
    * Run `get-poetry.py` under Python 3 - 321724
