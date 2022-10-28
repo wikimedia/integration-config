@@ -7156,6 +7156,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/NaylorAMS
+    template:
+      - name: extension-quibble-noselenium
+
   - name: mediawiki/extensions/NCBITaxonomyLookup
     template:
       - name: extension-quibble

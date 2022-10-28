@@ -413,6 +413,7 @@ dependencies = {
     'MultimediaViewer': ['BetaFeatures'],
     'NamespacePopups': ['PagePopups'],
     'NavigationTiming': ['EventLogging'],
+    'NaylorAMS': ['PluggableAuth'],
     'NSFileRepo': ['Lockdown'],
     'Newsletter': ['Echo'],
     'OATHAuth': ['CheckUser', 'Echo', 'WebAuthn'],
