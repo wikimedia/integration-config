@@ -9213,7 +9213,7 @@ projects:
 
   - name: mediawiki/libs/RemexHtml
     template:
-      - name: composer-test-package-php74-or-later-not-php81
+      - name: composer-test-package-php74-or-later
     postmerge:
       - doxygen-publish
       - phpunit-coverage-php74-docker-publish
