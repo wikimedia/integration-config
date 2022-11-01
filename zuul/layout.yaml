@@ -7436,6 +7436,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/PhotoSwipe
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/PhpTags
     template:
       - name: extension-quibble
