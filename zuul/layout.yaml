@@ -9699,6 +9699,7 @@ projects:
       - pywikibot-core-tox-fasttest-py36-docker
       - pywikibot-core-tox-fasttest-py37-docker
       - pywikibot-core-tox-fasttest-py38-docker
+      - pywikibot-core-tox-fasttest-py39-docker
       - pywikibot-core-tox-doctest-docker
       - pywikibot-core-tox-doc-docker
     gate-and-submit:
@@ -9706,6 +9707,7 @@ projects:
       - pywikibot-core-tox-fasttest-py36-docker
       - pywikibot-core-tox-fasttest-py37-docker
       - pywikibot-core-tox-fasttest-py38-docker
+      - pywikibot-core-tox-fasttest-py39-docker
       - pywikibot-core-tox-doctest-docker
       - pywikibot-core-tox-doc-docker
       - pywikibot-core-tox-deeptest-py36-docker
