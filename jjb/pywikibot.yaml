@@ -17,6 +17,8 @@
              - fasttest-py38
              - deeptest-py36:
                  build_timeout: 30 # minutes
+             - deeptest-py39:
+                 build_timeout: 30 # minutes
 
 - job-group:
     name: pywikibot-tox-jobs
