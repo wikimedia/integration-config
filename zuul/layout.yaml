@@ -1078,9 +1078,6 @@ jobs:
   - name: ecs-publish
     branch: ^master$
 
-  - name: scap-tox-publish
-    branch: ^master$
-
   - name: spicerack-tox-publish
     branch: ^master$
 
@@ -2748,18 +2745,6 @@ projects:
       - name: tox-docker
     postmerge:
       - mw-tools-releng-tox-publish
-
-  - name: mediawiki/tools/scap
-    test:
-      - trigger-scap-pipeline-buster
-      - trigger-scap-pipeline-bullseye
-      - scap-tox-doc-docker
-    gate-and-submit:
-      - trigger-scap-pipeline-buster
-      - trigger-scap-pipeline-bullseye
-      - scap-tox-doc-docker
-    postmerge:
-      - scap-tox-publish
 
   - name: mediawiki/tools/train-dev
     template:
@@ -11479,6 +11464,10 @@ projects:
       - name: archived
 
   - name: operations/debs/hhvm
+    template:
+      - name: archived
+
+  - name: mediawiki/tools/scap
     template:
       - name: archived
 
