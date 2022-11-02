@@ -38,7 +38,7 @@
 - job-template:
     !!merge : *job_tox-docker
     name: 'tox-poetry-docker'
-    docker_image_var: docker-registry.wikimedia.org/releng/tox-poetry-buster:0.0.2
+    docker_image_var: docker-registry.wikimedia.org/releng/tox-poetry-buster:0.0.3
     triggers:
         - zuul
 
