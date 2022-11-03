@@ -60,16 +60,21 @@ RUN git clone https://github.com/php/pecl-file_formats-yaml /srv/php-yaml && \
 
 USER root
 RUN cp /srv/modules/pcov.so /usr/lib/php/20220829/pcov.so && \
-    echo "extension=pcov.so" > /etc/php/8.2/cli/conf.d/20-pcov.ini
+    echo "zend_extension=pcov.so" > /etc/php/8.2/mods-available/pcov.ini && \
+    ln -s /etc/php/8.2/mods-available/pcov.ini /etc/php/8.2/cli/conf.d/20-pcov.ini
 
 RUN cp /srv/modules/redis.so /usr/lib/php/20220829/redis.so && \
-    echo "extension=redis.so" > /etc/php/8.2/cli/conf.d/20-redis.ini
+    echo "extension=redis.so" > /etc/php/8.2/mods-available/redis.ini && \
+    ln -s /etc/php/8.2/mods-available/redis.ini /etc/php/8.2/cli/conf.d/20-redis.ini
 
 RUN cp /srv/modules/xdebug.so /usr/lib/php/20220829/xdebug.so && \
-    echo "extension=xdebug.so" > /etc/php/8.2/cli/conf.d/20-xdebug.ini
+    echo "zend_extension=xdebug.so" > /etc/php/8.2/mods-available/xdebug.ini && \
+    ln -s /etc/php/8.2/mods-available/xdebug.ini /etc/php/8.2/cli/conf.d/20-xdebug.ini
 
 RUN cp /srv/modules/yaml.so /usr/lib/php/20220829/yaml.so && \
-    echo "extension=yaml.so" > /etc/php/8.2/cli/conf.d/20-yaml.ini
+    echo "extension=yaml.so" > /etc/php/8.2/mods-available/yaml.ini && \
+    ln -s /etc/php/8.2/mods-available/yaml.ini /etc/php/8.2/cli/conf.d/20-yaml.ini
+
 # ------------------------------
 # Back to our normal model of work.
 

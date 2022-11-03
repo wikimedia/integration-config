@@ -1,3 +1,9 @@
+php82 (0.0.2) wikimedia; urgency=high
+
+   Correct fake packaging for extensions
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  3 Nov 2022 14:09:44 -0400
+
 php82 (0.0.1) wikimedia; urgency=medium
 
   * Initial fork from php81; pre-release (RC.5) PHP, not intended for full use.

@@ -1,3 +1,10 @@
+composer-package-php82 (0.0.1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Correct fake packaging for extensions
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  3 Nov 2022 14:09:43 -0400
+
 composer-package-php82 (0.0.1) wikimedia; urgency=medium
 
   * Initial fork from composer-package-php81.
