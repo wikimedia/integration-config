@@ -6405,6 +6405,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/EmailDeletedPages
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/EmailDiff
     template:
       - name: extension-quibble
