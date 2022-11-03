@@ -1,5 +1,5 @@
 - job-template:
-    name: 'php-compile-{name}-docker'
+    name: 'php-compile-{php}-docker'
     node: Docker
     triggers:
      - zuul
@@ -17,28 +17,18 @@
       - docker-cleanup
 
 - project:
-    name: php74
-    jobs:
-      - 'php-compile-{name}-docker':
+    name: php-compile-jobs
+    php:
+     - php74:
           image: docker-registry.wikimedia.org/releng/php74-compile:0.0.7-s5
-
-- project:
-    name: php80
-    jobs:
-      - 'php-compile-{name}-docker':
+     - php80:
           image: docker-registry.wikimedia.org/releng/php80-compile:0.0.5-s7
-
-- project:
-    name: php81
-    jobs:
-      - 'php-compile-{name}-docker':
+     - php81:
           image: docker-registry.wikimedia.org/releng/php81-compile:0.0.2-s6
-
-- project:
-    name: php82
-    jobs:
-      - 'php-compile-{name}-docker':
+     - php82:
           image: docker-registry.wikimedia.org/releng/php82-compile:0.0.1
+    jobs:
+      - 'php-compile-{php}-docker'
 
 - job:
     name: 'php74-compile-coverage-publish'
