@@ -1,0 +1,5 @@
+composer-php82 (0.0.1) wikimedia; urgency=medium
+
+  * Initial fork from composer-php81.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon,  3 Nov 2022 13:28:04 -0500
