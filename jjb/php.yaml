@@ -183,6 +183,8 @@
                     image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.0-s17
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.1-s7
+                - php82:
+                    image: docker-registry.wikimedia.org/releng/composer-test-php82:0.0.1
         - 'composer-package-{phpflavor}-docker':
             phpflavor:
                 - php74:
@@ -191,6 +193,8 @@
                     image: docker-registry.wikimedia.org/releng/composer-package-php80:0.0.4-s16
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-package-php81:0.0.1-s7
+                - php82:
+                    image: docker-registry.wikimedia.org/releng/composer-package-php81:0.0.1
 
 - project:
     name: 'wikimedia-apps-php-security'
@@ -270,5 +274,7 @@
          image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s15
      - php81:
          image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1-s7
+     - php82:
+         image: docker-registry.wikimedia.org/releng/composer-php82:0.0.1
     jobs:
       - 'composer-{php}-assert-lock-docker'

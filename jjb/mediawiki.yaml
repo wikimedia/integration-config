@@ -156,6 +156,8 @@
                     image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.0-s17
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.1-s7
+                - php82:
+                    image: docker-registry.wikimedia.org/releng/composer-test-php82:0.0.1
         - '{name}-node14-docker'
 
 # Phan! (T132636)

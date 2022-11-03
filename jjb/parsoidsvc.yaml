@@ -60,3 +60,5 @@
                     image: docker-registry.wikimedia.org/releng/composer-package-php80:0.0.4-s16
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-package-php81:0.0.1-s7
+                - php82:
+                    image: docker-registry.wikimedia.org/releng/composer-package-php82:0.0.1
