@@ -2190,6 +2190,8 @@ project-templates:
       - composer-php74-docker
       - composer-php80-docker
       - composer-php81-docker
+    experimental:
+      - composer-php82-docker
 
   - name: composer-test-php74-only
     test:
@@ -2199,6 +2201,7 @@ project-templates:
     experimental:
       - composer-php80-docker
       - composer-php81-docker
+      - composer-php82-docker
 
   - name: composer-test-package-php74-or-later
     test:
@@ -2210,6 +2213,8 @@ project-templates:
       - composer-package-php74-docker
       - composer-package-php80-docker
       - composer-package-php81-docker
+    experimental:
+      - composer-package-php82-docker
 
   # Temporary template for libraries that fail on PHP 8.1 T307504
   - name: composer-test-package-php74-or-later-not-php81
@@ -2222,6 +2227,7 @@ project-templates:
       - composer-package-php80-docker
     experimental:
       - composer-package-php81-docker
+      - composer-package-php82-docker
 
   - name: php-compile-php74-or-later
     test:
@@ -3045,6 +3051,7 @@ projects:
       - mediawiki-quibble-vendor-mysql-php80-docker
       - mwgate-composer-php81-docker
       - mediawiki-quibble-vendor-mysql-php81-docker
+      - mwgate-composer-php82-docker
       # New job in testing T74952 -- JDF 2022-10-14
       - composer-php74-assert-lock-docker
 
@@ -8691,6 +8698,7 @@ projects:
       # - quibble-composer-mysql-php80-docker
     experimental:
       - parsoidsvc-composer-package-php81-docker
+      - parsoidsvc-composer-package-php82-docker
       # These are the jobs which would be added by the extension-gate template
       - wmf-quibble-core-vendor-mysql-php74-docker
       - wmf-quibble-vendor-mysql-php74-docker
