@@ -6066,6 +6066,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/CategoryExplorer
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/CategoryLockdown
     template:
       - name: extension-quibble
