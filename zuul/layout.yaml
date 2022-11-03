@@ -3239,6 +3239,10 @@ projects:
     template:
       - name: skin-quibble
 
+  - name: mediawiki/skins/Pivot
+    template:
+      - name: skin-quibble
+
   - name: mediawiki/skins/Poncho
     template:
       - name: skin-quibble
