@@ -190,6 +190,10 @@
         - '{name}-tox-docker'
 
 - project:
+    name: gerrit
+    jobs:
+        - '{name}-node14-docker'
+- project:
     name: gerrit-plugins
     project:
         - barricade
