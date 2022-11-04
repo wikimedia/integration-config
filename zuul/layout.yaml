@@ -66,6 +66,7 @@ pipelines:
            - .*?@speedandfunction\.com$ # Speed & Function, contractors for multiple Foundation teams
            - .*?@thisdot\.co$ # This Dot, contractors for multiple Foundation teams
            - .*?@uncyclomedia\.co$
+           - .*?@deni\.dk$ # Denis Smajlović (@deni), and company
 
           # WMF staff & contractors:
            - ^abijeetpatro@gmail\.com$ # Abijeet Patro; Language Engineering Team
