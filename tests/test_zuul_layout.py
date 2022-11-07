@@ -3,10 +3,13 @@
 # Copyright (c) 2016 - Antoine "hashar" Musso
 # Copyright (c) 2016 - Wikimedia Foundation Inc.
 
+from copy import deepcopy
 import os
 import unittest
 
 import yaml
+
+from test_zuul_scheduler import MEDIAWIKI_VERSIONS
 
 
 class TestZuulLayout(unittest.TestCase):
@@ -44,7 +47,12 @@ class TestZuulLayout(unittest.TestCase):
         templates = {}
         for project_template in self.layout['project-templates']:
             name = project_template['name']
-            del(project_template['name'])
+
+            # Delete the template name to only retain pipelines, it is done on
+            # a copy to prevent alteration to the original self.layout
+            pipes = deepcopy(project_template)
+            del(pipes['name'])
+
             templates[name] = project_template
         return templates
 
@@ -317,3 +325,48 @@ class TestZuulLayout(unittest.TestCase):
 
         self.maxDiff = None
         self.assertListEqual([], errors)
+
+    def test_mediawiki_templates_have_all_rel_pipelines(self):
+        errors = []
+        rel_suffixes = [
+            version['pipeline-suffix']
+            for version in MEDIAWIKI_VERSIONS.values()
+            if version['branch'].startswith('REL')
+        ]
+        expected_pipelines = set()
+        for rel_suffix in rel_suffixes:
+            expected_pipelines.add('test-' + rel_suffix)
+            expected_pipelines.add('gate-and-submit-' + rel_suffix)
+
+        templates = self.getProjectTemplates()
+        for template_name in templates:
+            if not template_name.startswith(('extension-', 'skin-')):
+                continue
+            # Exclude some from REL branches
+            if template_name.endswith((
+                    '-apitests',
+                    '-codehealth',
+                    '-coverage',
+                    '-gate',
+                    '-javascript-documentation',
+                    '-phpbench',
+                    )):
+                continue
+
+            try:
+                actual_pipelines = set(templates[template_name].keys())
+                self.assertGreaterEqual(
+                    actual_pipelines,
+                    expected_pipelines,
+                    '%s template misses release pipelines: %s' % (
+                        template_name,
+                        ', '.join(
+                            sorted(expected_pipelines - actual_pipelines)
+                        )
+                    )
+                )
+            except AssertionError, e:
+                errors.append(str(e))
+
+        self.maxDiff = None
+        self.assertListEqual([], sorted(errors))
