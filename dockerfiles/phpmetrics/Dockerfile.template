@@ -1,12 +1,18 @@
 FROM {{ "composer-php74" | image_tag }}
 
+# Version to install. You can check new releases at:
+#
+#   https://github.com/phpmetrics/PhpMetrics/releases
+#
+ARG PHPMETRICS_VERSION=2.8.1
+
 USER root
 RUN mkdir -p /opt/composer-tmp /opt/phpmetrics \
     && chown nobody:nogroup /opt/composer-tmp /opt/phpmetrics
 
 USER nobody
 RUN cd /opt/phpmetrics \
-    && COMPOSER_HOME=/opt/composer-tmp composer require -- phpmetrics/phpmetrics 2.7.3 \
+    && COMPOSER_HOME=/opt/composer-tmp composer require -- phpmetrics/phpmetrics "$PHPMETRICS_VERSION" \
     && find /opt/composer-tmp -mindepth 1 -delete
 
 USER root
