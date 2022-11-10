@@ -1927,7 +1927,6 @@ project-templates:
       - mediawiki-i18n-check-docker
 
     experimental:
-      - mwext-php74-phan-docker
       # Experimental PHP 8.1 jobs for tracking ability to deploy to php81 (T319432)
       - wmf-quibble-core-vendor-mysql-php81-docker
       - wmf-quibble-vendor-mysql-php81-docker
