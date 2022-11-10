@@ -1154,8 +1154,11 @@ class TestZuulScheduler(unittest.TestCase):
             'mediawiki-quibble-vendor-sqlite-php74-docker': True,
             'mediawiki-quibble-vendor-postgres-php74-docker': True,
             'wmf-quibble-vendor-mysql-php74-docker': False,
+            'wmf-quibble-vendor-mysql-php81-docker': False,
             'wmf-quibble-selenium-php74-docker': True,
+            'wmf-quibble-selenium-php81-docker': True,
             'wmf-quibble-core-vendor-mysql-php74-docker': True,
+            'wmf-quibble-core-vendor-mysql-php81-docker': True,
             'mwgate-node14-docker': True,
             'quibble-vendor-mysql-php74-phpunit-standalone-docker': True,
         }
