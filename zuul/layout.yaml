@@ -5685,10 +5685,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/AutoProxyBlock
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/Awesomeness
     template:
       - name: extension-quibble
@@ -6602,10 +6598,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Gitweb
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/GlobalCheckUser
     template:
       - name: extension-quibble
@@ -6679,10 +6671,6 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/GoogleSiteSearch
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/GoToShell
     template:
       - name: extension-quibble
 
@@ -10584,6 +10572,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/AutoProxyBlock
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/AWS
     template:
       - name: archived
@@ -10848,6 +10840,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/Gitweb
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/GoogleAPIClient
     template:
       - name: archived
@@ -10861,6 +10857,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/GooglePlusOne
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/GoToShell
     template:
       - name: archived
 
