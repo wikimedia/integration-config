@@ -9722,7 +9722,8 @@ projects:
       - pywikibot-core-tox-fasttest-py38-docker
       - pywikibot-core-tox-fasttest-py39-docker
       - pywikibot-core-tox-doctest-docker
-      - pywikibot-core-tox-doc-docker
+      - pywikibot-core-tox-rstcheck-docker
+      - pywikibot-core-tox-sphinx-docker
     gate-and-submit:
       - pywikibot-core-tox-docker
       - pywikibot-core-tox-fasttest-py36-docker
@@ -9730,12 +9731,14 @@ projects:
       - pywikibot-core-tox-fasttest-py38-docker
       - pywikibot-core-tox-fasttest-py39-docker
       - pywikibot-core-tox-doctest-docker
+      - pywikibot-core-tox-rstcheck-docker
       - pywikibot-core-tox-doc-docker
       - pywikibot-core-tox-deeptest-py36-docker
       - pywikibot-core-tox-deeptest-py39-docker
     postmerge:
       - pywikibot-core-tox-publish
     experimental:
+      - pywikibot-core-tox-doc-docker
       - pywikibot-core-tox-deeptest-py36-docker
       - pywikibot-core-tox-deeptest-py39-docker
 

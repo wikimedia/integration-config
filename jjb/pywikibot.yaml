@@ -1,6 +1,5 @@
 - project:
     name: pywikibot-core
-    build_timeout: 15 # minutes
     jobs:
      - '{name}-tox-docker':
          docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:0.7.1
@@ -10,7 +9,10 @@
      - '{name}-tox-{toxenv}-docker':
          docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:0.7.1
          toxenv:
-             - doc
+             - doc:
+                 build_timeout: 30 # minutes
+             - rstcheck
+             - sphinx
              - doctest
              - fasttest-py36
              - fasttest-py37
