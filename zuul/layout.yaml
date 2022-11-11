@@ -3621,6 +3621,7 @@ projects:
   - { name: operations/debs/trafficserver,                    test: ['debian-glue'] }
   - { name: operations/debs/superior-cache-analyzer,          test: ['debian-glue-non-voting'] }
   - { name: operations/software/fifo-log-demux,               test: ['debian-glue'] }
+  - { name: operations/debs/varnish-modules,                  test: ['debian-glue'] }
   - { name: operations/software/atskafka,                     test: ['debian-glue-backports'] }
   - { name: operations/software/purged,                       test: ['debian-glue-backports'] }
   - { name: operations/software/prometheus-rdkafka-exporter,  test: ['debian-glue-backports'] }
