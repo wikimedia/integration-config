@@ -6821,10 +6821,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/IndexFunction
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/InlineCategorizer
     template:
       - name: extension-quibble
@@ -10865,6 +10861,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/IfTemplates
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/IndexFunction
     template:
       - name: archived
 
