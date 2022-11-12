@@ -27,6 +27,15 @@
         - docker-src-dir
         - docker-cache-dir
         - docker-ci-src-setup-simple
+        - shell: |
+            cd src/
+            git submodule update --init
+            git submodule foreach git fetch --all
+            git submodule foreach git reset --hard origin/master
+            # clean up whatever left from previous builds.
+            cd prod/
+            rm -rf urls-to-purge.txt wik*
+            cd ../..
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/node14-test:0.0.3
             args: 'build-all-portals'
