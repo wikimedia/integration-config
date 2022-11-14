@@ -1022,7 +1022,7 @@
           timeout: 60
       - timestamps
       # Wiki usernames and passwords are hold in Jenkins credentials store
-      # https://integration.wikimedia.org/ci/credential-store/domain/selenium/
+      # https://integration.wikimedia.org/ci/credentials/store/system/domain/selenium/
       - credentials-binding:
           - text:
               credential-id: '{mw_credential_id}'
