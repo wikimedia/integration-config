@@ -145,59 +145,45 @@
         - AdvancedSearch:
             recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @WMDE-Fisch
             repository: mediawiki/extensions/AdvancedSearch
-            site: en.wikipedia
         - CentralNotice:
             recipients: fr-tech@wikimedia.org jbolorinos-ctr@wikimedia.org qa-alerts@lists.wikimedia.org # fundraising-backlog @jbolorinos-ctr
             repository: mediawiki/extensions/CentralNotice
-            site: en.wikipedia
         - CirrusSearch:
             recipients: discovery-alerts@lists.wikimedia.org qa-alerts@lists.wikimedia.org # @dcausse @EBernhardson
             repository: mediawiki/extensions/CirrusSearch
-            site: en.wikipedia
         - Echo:
             recipients: etonkovidova@wikimedia.org qa-alerts@lists.wikimedia.org thinkcolorful@thinkcolorful.org # @Etonkovidova @Ephemeralwaves
             repository: mediawiki/extensions/Echo
-            site: en.wikipedia
         - Math:
             recipients: qa-alerts@lists.wikimedia.org wiki@physikerwelt.de # @Physikerwelt
             repository: mediawiki/extensions/Math
-            site: en.wikipedia
         - Minerva:
             recipients: proticom-ctr@wikimedia.org qa-alerts@lists.wikimedia.org # @Edtadros
             repository: mediawiki/skins/MinervaNeue
-            site: en.wikipedia
         - MobileFrontend:
             recipients: jrobson@wikimedia.org qa-alerts@lists.wikimedia.org # @Jdlrobson
             repository: mediawiki/extensions/MobileFrontend
-            site: en.wikipedia
         - Newsletter:
             recipients: qa-alerts@lists.wikimedia.org 01tonythomas@gmail.com # @01tonythomas
             repository: mediawiki/extensions/Newsletter
-            site: en.wikipedia
         - Popups:
             recipients: jrobson@wikimedia.org qa-alerts@lists.wikimedia.org samsmith@wikimedia.org # @Jdlrobson @phuedx
             repository: mediawiki/extensions/Popups
-            site: en.wikipedia
         - RelatedArticles:
             recipients: qa-alerts@lists.wikimedia.org samsmith@wikimedia.org discovery-alerts@lists.wikimedia.org # @phuedx
             repository: mediawiki/extensions/RelatedArticles
-            site: en.wikipedia
         - TwoColConflict:
             recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @awight TCB-Team
             repository: mediawiki/extensions/TwoColConflict
-            site: en.wikipedia
         - Vector:
             recipients: qa-alerts@lists.wikimedia.org # @Edtadros
             repository: mediawiki/skins/Vector
-            site: en.wikipedia
         - VisualEditor:
             recipients: eakinloose@wikimedia.org qa-alerts@lists.wikimedia.org # @EAkinloose
             repository: mediawiki/extensions/VisualEditor
-            site: en.wikipedia
         - WikibaseLexeme:
             recipients: qa-alerts@lists.wikimedia.org wikidata-ci-status@wikimedia.de # wikidata
             repository: mediawiki/extensions/WikibaseLexeme
-            site: wikidata
     jobs:
         - 'selenium-daily-{sitename}-{project}':
             sitename:
