@@ -8613,7 +8613,7 @@ projects:
   # Sub-module of production-bound code
   - name: mediawiki/services/function-schemata
     template:
-      - name: node12-docker
+      - name: node16-docker
     postmerge:
       - generic-node16-browser-coverage-docker-publish
 
