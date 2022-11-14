@@ -1074,6 +1074,10 @@
                     mw_server: 'https://commons.wikimedia.beta.wmflabs.org'
                     mw_user: 'Selenium user'
                     mw_credential_id: 'selenium-user-beta'
+                - test2:
+                    mw_server: 'https://test2.wikipedia.org'
+                    mw_user: 'QTE-SeleniumTest1'
+                    mw_credential_id: 'selenium-user-production'
 
 - project:
     name: 'mediawiki-php-security'
