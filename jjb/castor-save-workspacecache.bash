@@ -10,7 +10,7 @@ ssh_config=($TRIGGERED_SSH_CONNECTION)
 REMOTE_INSTANCE="${ssh_config[2]}"
 
 # Destination in the central cache
-DEST="/srv/jenkins-workspace/caches/${CASTOR_NAMESPACE}"
+DEST="/srv/castor/${CASTOR_NAMESPACE}"
 
 echo "Creating directory holding cache:"
 mkdir -v -p "${DEST}"
