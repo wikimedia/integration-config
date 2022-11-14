@@ -246,12 +246,16 @@ class TestZuulLayout(unittest.TestCase):
                     noQuibble = [
                         # Fix tracked in T249576
                         'mediawiki/extensions/DonationInterface',
+                        # Uses special composer libraries; being replaced
+                        'mediawiki/extensions/FundraisingEmailUnsubscribe',
                         # Fix tracked in T250420
                         'mediawiki/extensions/OpenStackManager',
+                        # Selenium tests need extra services that cannot be
+                        # run in quibble; we're exploring running them in
+                        # Helm/GitLab (T321942)
+                        'mediawiki/extensions/WikiLambda',
                         # Fix tracked in T250418
-                        'mediawiki/extensions/WikimediaIncubator',
-                        # Uses special composer libraries; being replaced
-                        'mediawiki/extensions/FundraisingEmailUnsubscribe'
+                        'mediawiki/extensions/WikimediaIncubator'
                         ]
 
                     if project['name'] not in noQuibble:
