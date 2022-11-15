@@ -556,6 +556,7 @@ phan_dependencies = {
                  'VoteNY'],
     'BlueSpiceAvatars': ['BlueSpiceFoundation', 'BlueSpicePrivacy'],
     'BounceHandler': ['CentralAuth', 'Echo'],
+    'CampaignEvents': ['Echo'],
     'Campaigns': ['EventLogging', 'MobileFrontend'],
     'Capiunto': ['Scribunto'],
     'CentralAuth': ['AbuseFilter', 'AntiSpoof', 'EventLogging', 'MassMessage',
