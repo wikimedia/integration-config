@@ -203,3 +203,5 @@
             sitename:
                 - beta:
                     mw_server: 'https://en.wikipedia.beta.wmflabs.org'
+                    mw_user: 'Selenium user'
+                    mw_credential_id: 'selenium-user-beta'

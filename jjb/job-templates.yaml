@@ -985,7 +985,7 @@
             default: 'https://meta.wikimedia.org/beacon/statsv/?'
         - string:
             name: 'MEDIAWIKI_USER'
-            default: 'Selenium user'
+            default: '{mw_user}'
         - string:
             name: 'MW_SCRIPT_PATH'
             default: '/w'
@@ -1025,7 +1025,7 @@
       # https://integration.wikimedia.org/ci/credential-store/domain/selenium/
       - credentials-binding:
           - text:
-              credential-id: selenium-user-beta
+              credential-id: '{mw_credential_id}'
               variable: MEDIAWIKI_PASSWORD
           - text:
               credential-id: composer-github-oauthtoken
