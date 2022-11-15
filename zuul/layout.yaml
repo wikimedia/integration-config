@@ -8705,23 +8705,22 @@ projects:
       - name: commit-message-validator
     test:
       - parsoidsvc-composer-package-php74-docker
-      - parsoidsvc-composer-package-php80-docker
-      # Not passing until MW Core itself passes
-      # - quibble-composer-mysql-php80-docker
+      - quibble-composer-mysql-php74-docker
+      - parsoidsvc-composer-package-php81-docker
+      - quibble-composer-mysql-php81-docker
     gate-and-submit:
       - parsoidsvc-composer-package-php74-docker
+      - quibble-composer-mysql-php74-docker
       - parsoidsvc-composer-package-php80-docker
-      # Not passing until MW Core itself passes
-      # - quibble-composer-mysql-php80-docker
-    experimental:
+      - quibble-composer-mysql-php80-docker
       - parsoidsvc-composer-package-php81-docker
+      - quibble-composer-mysql-php81-docker
+    experimental:
       - parsoidsvc-composer-package-php82-docker
       # These are the jobs which would be added by the extension-gate template
       - wmf-quibble-core-vendor-mysql-php74-docker
       - wmf-quibble-vendor-mysql-php74-docker
       - wmf-quibble-selenium-php74-docker
-      - quibble-composer-mysql-php80-docker
-      - quibble-composer-mysql-php81-docker
     postmerge:
       - parsoidsvc-doxygen-publish
       - phpunit-coverage-php74-docker-publish
