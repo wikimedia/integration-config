@@ -8731,7 +8731,7 @@ projects:
     gate-and-submit:
       - noop
     experimental:
-      - generic-node14-docker
+      - generic-node16-docker
 
   - name: mediawiki/services/poolcounter
     template:
