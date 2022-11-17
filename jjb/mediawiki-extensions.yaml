@@ -191,3 +191,17 @@
                     mw_server: 'https://en.wikipedia.beta.wmflabs.org'
                     mw_user: 'Selenium user'
                     mw_credential_id: 'selenium-user-beta'
+
+- project:
+    name: wdio-selenium-daily-wikifunctions
+    project:
+        - WikiLambda:
+            recipients: sdunlap@wikimedia.org aw-alerts-aaaahdftahushqrqpyfzzvrm3q@wikimedia.org.slack.com #Abstract Wikipedia
+            repository: mediawiki/extensions/WikiLambda
+    jobs:
+        - 'selenium-daily-{sitename}-{project}':
+            sitename:
+                - betawikifunctions:
+                    mw_server: 'https://wikifunctions.beta.wmflabs.org'
+                    mw_user: 'Selenium user'
+                    mw_credential_id: 'selenium-user-beta'
