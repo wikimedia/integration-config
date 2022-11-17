@@ -713,8 +713,9 @@ pipelines:
 
   - name: php
     description: >
-      Slower PHPUnit jobs excluded from the "test" pipeline. These also run as part of the "gate-and-submit" pipeline.
-      To run them earlier, submit the comment "check php".
+      Slower variants of PHPUnit jobs excluded from the "test" pipeline, such as additional PHP
+      versions and sqlite/postgres database types. These also run as part of the "gate-and-submit" pipeline.
+      To run them ad hoc, submit the comment "check php".
     manager: IndependentPipelineManager
     source: gerrit
     trigger:
