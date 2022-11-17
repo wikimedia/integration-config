@@ -9196,6 +9196,10 @@ projects:
       - doxygen-publish
       - phpunit-coverage-php74-docker-publish
 
+  - name: mediawiki/libs/IPAValidator
+    template:
+      - name: composer-test-package-php74-or-later
+
   - name: mediawiki/libs/IPUtils
     template:
       - name: composer-test-package-php74-or-later
