@@ -95,7 +95,7 @@
         - '{name}-tox-docker':
             build_timeout: 20 # minutes
         - tox-publish-jobs:
-            docenv: 'py37-sphinx'
+            docenv: 'py39-sphinx'
             docsrc: 'doc/build/html'
             docdest: 'cumin/$DOC_SUBPATH'
 
@@ -116,7 +116,7 @@
     jobs:
         - '{name}-tox-docker'
         - tox-publish-jobs:
-            docenv: 'py37-sphinx'
+            docenv: 'py39-sphinx'
             docsrc: 'doc/build/html'
             docdest: 'homer/$DOC_SUBPATH'
 
@@ -138,7 +138,7 @@
     name: 'spicerack'
     jobs:
         - tox-publish-jobs:
-            docenv: 'py37-sphinx'
+            docenv: 'py39-sphinx'
             docsrc: 'doc/build/html'
             docdest: 'spicerack/$DOC_SUBPATH'
 
@@ -146,7 +146,7 @@
     name: 'pywmflib'
     jobs:
         - tox-publish-jobs:
-            docenv: 'py37-sphinx'
+            docenv: 'py39-sphinx'
             docsrc: 'doc/build/html'
             docdest: 'wmflib/$DOC_SUBPATH'
 
