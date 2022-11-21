@@ -93,7 +93,6 @@
 - job-template:
     !!merge : *job_tox-docker
     name: '{name}-tox-{toxenv}-docker'
-    docker_image_varimage: docker-registry.wikimedia.org/releng/tox-buster:0.6.1
     triggers:
         - zuul
     builders:
