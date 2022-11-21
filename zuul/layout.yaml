@@ -7673,6 +7673,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/RelMe
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/RelMicroformat
     template:
       - name: extension-quibble
