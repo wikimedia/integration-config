@@ -255,6 +255,12 @@
     triggers:
         - zuul-post
 
+- job-template:
+    !!merge : *job_template_docker-doc-publish
+    name: '{name}-docker-doc-latest-publish'
+    triggers:
+        - zuul-post
+
 # Same as '{name}-maven-java8-docker' but src is bindmounted so we can later
 # retrieve the site from /src/target/ and push it to doc.wikimedia.org. This
 # job template is meant to be run as a post merge step.

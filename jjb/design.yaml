@@ -16,3 +16,10 @@
              CODEX_DOC_ROOT: '/$DOC_PROJECT/$DOC_SUBPATH/'
          docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
          docdest: '$DOC_PROJECT/$DOC_SUBPATH'
+     - '{name}-docker-doc-latest-publish':
+         image: 'docker-registry.wikimedia.org/releng/node16-test:0.0.1'
+         args: 'doc-release'
+         environment:
+             CODEX_DOC_ROOT: '/$DOC_PROJECT/latest/'
+         docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
+         docdest: '$DOC_PROJECT/latest'
