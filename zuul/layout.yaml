@@ -9203,6 +9203,9 @@ projects:
   - name: mediawiki/libs/IPAValidator
     template:
       - name: composer-test-package-php74-or-later
+    postmerge:
+      - doxygen-publish
+      - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/libs/IPUtils
     template:
