@@ -9970,6 +9970,8 @@ projects:
     publish:
       # Use `npm run doc-release` when publishing docs for a release tag
       - codex-docker-doc-tag-publish
+      # … and also over-write the version at /latest/ for a stable link
+      - codex-docker-doc-latest-publish
 
   - name: design/landing-page
     template:
