@@ -2772,11 +2772,8 @@ projects:
       - mwdumper-maven-java8-docker-site-publish
 
   - name: mediawiki/tools/phpunit-patch-coverage
-    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
-      - name: composer-test-package-php74-to-php81
-    postmerge:
-      - phpunit-coverage-php74-docker-publish
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/tools/releng
     template:
