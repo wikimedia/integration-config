@@ -8730,9 +8730,8 @@ projects:
     #     - trigger-example-node-api-pipeline-publish
 
   - name: mediawiki/services/jobrunner
-    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
-      - name: composer-test-package-php74-to-php81
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/services/kafka-watcher
     template:
