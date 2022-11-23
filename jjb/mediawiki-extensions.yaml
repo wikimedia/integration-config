@@ -160,9 +160,6 @@
         - Minerva:
             recipients: proticom-ctr@wikimedia.org qa-alerts@lists.wikimedia.org # @Edtadros
             repository: mediawiki/skins/MinervaNeue
-        - MobileFrontend:
-            recipients: jrobson@wikimedia.org qa-alerts@lists.wikimedia.org # @Jdlrobson
-            repository: mediawiki/extensions/MobileFrontend
         - Newsletter:
             recipients: qa-alerts@lists.wikimedia.org 01tonythomas@gmail.com # @01tonythomas
             repository: mediawiki/extensions/Newsletter
