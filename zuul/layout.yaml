@@ -2760,9 +2760,8 @@ projects:
       - name: composer-test-php74-to-php81
 
   - name: mediawiki/tools/minus-x
-    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: mediawiki-php-library
 
   - name: mediawiki/tools/mwdumper
     test:
