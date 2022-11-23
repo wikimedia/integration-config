@@ -9959,11 +9959,6 @@ projects:
     template:
       - name: tox-docker
 
-  - name: avro-php
-    # FIXME: Use mediawiki-php-library-php74-to-php81?
-    template:
-      - name: composer-test-package-php74-to-php81
-
   - name: data-values/value-view
     template:
       - name: node14-browser-docker
@@ -10202,6 +10197,10 @@ projects:
       - name: archived
 
   - name: apps/ios/wikipedia
+    template:
+      - name: archived
+
+  - name: avro-php
     template:
       - name: archived
 
