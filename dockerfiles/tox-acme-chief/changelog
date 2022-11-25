@@ -1,3 +1,9 @@
+tox-acme-chief (0.7.0) wikimedia; urgency=high
+
+   Switch parent image to tox-buster (T321309)
+
+ -- Valentin Gutierrez <vgutierrez@wikimedia.org>  Fri, 25 Nov 2022 11:09:53 +0100
+
 tox-acme-chief (0.6.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-stretch:

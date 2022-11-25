@@ -10,7 +10,7 @@ RUN go mod init . && \
 
 USER nobody
 
-FROM {{ "tox" | image_tag }}
+FROM {{ "tox-buster" | image_tag }}
 
 USER root
 COPY --from=pebble-builder /root/pebble /usr/local/bin/pebble
