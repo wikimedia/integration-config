@@ -10194,7 +10194,7 @@ projects:
 
   - name: wikimedia-cz/web-plugin
     template:
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-or-later
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
 
