@@ -2210,6 +2210,19 @@ project-templates:
     php:
       - composer-php80-docker
       - composer-php81-docker
+      - composer-php82-docker
+    gate-and-submit:
+      - composer-php74-docker
+      - composer-php80-docker
+      - composer-php81-docker
+      - composer-php82-docker
+
+  - name: composer-test-php74-to-php81
+    test:
+      - composer-php74-docker
+    php:
+      - composer-php80-docker
+      - composer-php81-docker
     gate-and-submit:
       - composer-php74-docker
       - composer-php80-docker
@@ -2642,7 +2655,7 @@ projects:
       - composer-php73-docker
     template:
       - name: node14-docker
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
 
   - name: integration/gear
     test:
@@ -2749,7 +2762,7 @@ projects:
 
   - name: mediawiki/tools/code-utils
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
     test:
       - shellcheck
     gate-and-submit:
@@ -2770,7 +2783,7 @@ projects:
 
   - name: mediawiki/tools/dependency-analysis
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
 
   - name: mediawiki/tools/minus-x
     # FIXME: Use mediawiki-php-library?
@@ -2907,7 +2920,7 @@ projects:
 
   - name: labs/tools/sonarqubebot
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
 
 #### MediaWiki itself ##########################################
 
@@ -3744,7 +3757,7 @@ projects:
 
   - name: operations/dumps/dcat
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
       - name: node14-docker
       - name: mediawiki-i18n-check
 
@@ -8959,7 +8972,7 @@ projects:
 
   - name: analytics/wmde/scripts
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
 
   - name: analytics/wmde/toolkit-analyzer
     test:
@@ -9352,7 +9365,7 @@ projects:
 
   - name: labs/tools/coverme
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
 
   - name: labs/tools/dump-torrents
     template:
@@ -9364,7 +9377,7 @@ projects:
 
   - name: labs/tools/extjsonuploader
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
 
   - name: labs/tools/extreg-wos
     template:
@@ -9376,7 +9389,7 @@ projects:
 
   - name: labs/tools/force-rebase
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
 
   - name: labs/tools/forrestbot
     template:
@@ -9414,7 +9427,7 @@ projects:
 
   - name: labs/tools/ipchanges
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
 
   - name: labs/tools/ipwatcher
     template:
@@ -9432,12 +9445,12 @@ projects:
 
   - name: labs/tools/guc
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
       - name: mediawiki-i18n-check
 
   - name: labs/tools/nagf
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
 
   - name: labs/tools/Isa
     test:
@@ -9483,7 +9496,7 @@ projects:
 
   - name: labs/tools/meetingtimes
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
       - name: node14-docker
 
   - name: labs/tools/mwpackages
@@ -10142,7 +10155,7 @@ projects:
 
   - name: translatewiki
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
     test:
       - translatewiki-ruby2.5-rake-docker
     gate-and-submit:
@@ -10171,17 +10184,17 @@ projects:
 
   - name: wikimedia-cz/mediawiki-config
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
 
   - name: wikimedia-cz/web-theme
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
 
   - name: wikimedia-cz/web-plugin
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
 
@@ -10288,13 +10301,13 @@ projects:
 
   - name: wikimedia/iegreview
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
       - name: mediawiki-i18n-check
 
   - name: wikimedia/wikimania-scholarships
     template:
       - name: node14-browser-docker
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
       - name: mediawiki-i18n-check
 
   - name: wikimedia/textcat
