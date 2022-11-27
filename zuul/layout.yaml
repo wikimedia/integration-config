@@ -9377,7 +9377,7 @@ projects:
 
   - name: labs/tools/extjsonuploader
     template:
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-or-later
 
   - name: labs/tools/extreg-wos
     template:
