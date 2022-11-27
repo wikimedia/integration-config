@@ -8972,7 +8972,7 @@ projects:
 
   - name: analytics/wmde/scripts
     template:
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-or-later
 
   - name: analytics/wmde/toolkit-analyzer
     test:
