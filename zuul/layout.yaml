@@ -10184,7 +10184,7 @@ projects:
 
   - name: wikimedia-cz/mediawiki-config
     template:
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-or-later
 
   - name: wikimedia-cz/web-theme
     template:
