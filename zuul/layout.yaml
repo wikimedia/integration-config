@@ -2217,6 +2217,7 @@ project-templates:
       - composer-php81-docker
       - composer-php82-docker
 
+  # Temporary template for repos that fail on PHP 8.2
   - name: composer-test-php74-to-php81
     test:
       - composer-php74-docker
@@ -2246,6 +2247,20 @@ project-templates:
       - composer-package-php74-docker
       - composer-package-php80-docker
       - composer-package-php81-docker
+      - composer-package-php82-docker
+    gate-and-submit:
+      - composer-package-php74-docker
+      - composer-package-php80-docker
+      - composer-package-php81-docker
+      - composer-package-php82-docker
+
+  # Temporary template for repos that fail on PHP 8.2
+  - name: composer-test-package-php74-to-php81
+    test:
+      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
+      - composer-package-php74-docker
+      - composer-package-php80-docker
+      - composer-package-php81-docker
     gate-and-submit:
       - composer-package-php74-docker
       - composer-package-php80-docker
@@ -2254,7 +2269,7 @@ project-templates:
       - composer-package-php82-docker
 
   # Temporary template for libraries that fail on PHP 8.1 T307504
-  - name: composer-test-package-php74-or-later-not-php81
+  - name: composer-test-package-php74-to-php80
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
       - composer-package-php74-docker
@@ -2771,7 +2786,7 @@ projects:
   - name: mediawiki/tools/codesniffer
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
     test:
       - mw-tools-codesniffer-mwcore-testrun
     postmerge:
@@ -2788,7 +2803,7 @@ projects:
   - name: mediawiki/tools/minus-x
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
 
   - name: mediawiki/tools/mwdumper
     test:
@@ -2801,14 +2816,14 @@ projects:
   - name: mediawiki/tools/phpunit-patch-coverage
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
     postmerge:
       - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/tools/release
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
       - name: tox-docker
 
   - name: mediawiki/tools/releng
@@ -2824,19 +2839,19 @@ projects:
   - name: mediawiki/tools/phan
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
     test:
       - mw-tools-phan-mwcore-testrun
 
   - name: mediawiki/tools/phan/PerfCheckPlugin
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
 
   - name: mediawiki/tools/phan/SecurityCheckPlugin
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
     postmerge:
       - mw-tools-phan-demos-publish
       - phpunit-coverage-php74-docker-publish
@@ -2852,7 +2867,7 @@ projects:
   - name: performance/arc-lamp
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
 
   - name: performance/asoranking
     template:
@@ -8675,7 +8690,7 @@ projects:
   - name: mediawiki/services/jobrunner
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
 
   - name: mediawiki/services/kafka-watcher
     template:
@@ -9128,7 +9143,7 @@ projects:
   - name: wikipeg
     # FIXME: Use mediawiki-php-library ?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
     test:
       - wikipeg-special-node14-plus-php80-composer-docker
     gate-and-submit:
@@ -9161,7 +9176,7 @@ projects:
   - name: mediawiki/libs/Dodo
     # FIXME: Use mediawiki-php-library once PHP 8.1+ supported
     template:
-      - name: composer-test-package-php74-or-later-not-php81
+      - name: composer-test-package-php74-to-php80
     postmerge:
       - doxygen-publish
       - phpunit-coverage-php74-docker-publish
@@ -9549,7 +9564,7 @@ projects:
 
   - name: labs/tools/stewardbots
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
       - name: tox-docker
 
   - name: labs/tools/stewardbots-ui
@@ -9939,7 +9954,7 @@ projects:
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
       - name: mediawiki-i18n-check
     test:
       - ooui-special-node14-plus-php80-composer-docker
@@ -10092,7 +10107,7 @@ projects:
   - name: avro-php
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
 
   - name: data-values/value-view
     template:
@@ -10312,11 +10327,11 @@ projects:
 
   - name: wikimedia/textcat
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
 
   - name: wikimedia/lucene-explain-parser
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php81
 
   - name: wvui
     test:
