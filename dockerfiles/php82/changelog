@@ -1,3 +1,9 @@
+php82 (0.0.3) wikimedia; urgency=high
+
+   Upgrade PHP to 8.2.0-rc.7
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Sun, 27 Nov 2022 16:02:21 -0500
+
 php82 (0.0.2) wikimedia; urgency=high
 
    Correct fake packaging for extensions
