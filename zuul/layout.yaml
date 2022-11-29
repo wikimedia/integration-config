@@ -2337,6 +2337,22 @@ project-templates:
       - composer-package-php74-docker
       - composer-package-php80-docker
       - composer-package-php81-docker
+      - composer-package-php82-docker
+    gate-and-submit:
+      - composer-package-php74-docker
+      - composer-package-php80-docker
+      - composer-package-php81-docker
+      - composer-package-php82-docker
+    postmerge:
+      - doxygen-publish
+      - phpunit-coverage-php74-docker-publish
+
+  - name: mediawiki-php-library-php74-to-php81
+    test:
+      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
+      - composer-package-php74-docker
+      - composer-package-php80-docker
+      - composer-package-php81-docker
     gate-and-submit:
       - composer-package-php74-docker
       - composer-package-php80-docker
@@ -2626,7 +2642,7 @@ projects:
       - shellcheck
 
   - name: mediawiki/tools/codesniffer
-    # FIXME: Use mediawiki-php-library?
+    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
       - name: composer-test-package-php74-to-php81
     test:
@@ -2643,7 +2659,7 @@ projects:
       - name: composer-test-php74-to-php81
 
   - name: mediawiki/tools/minus-x
-    # FIXME: Use mediawiki-php-library?
+    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
       - name: composer-test-package-php74-or-later
 
@@ -2656,14 +2672,14 @@ projects:
       - mwdumper-maven-java8-docker-site-publish
 
   - name: mediawiki/tools/phpunit-patch-coverage
-    # FIXME: Use mediawiki-php-library?
+    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
       - name: composer-test-package-php74-to-php81
     postmerge:
       - phpunit-coverage-php74-docker-publish
 
   - name: mediawiki/tools/release
-    # FIXME: Use mediawiki-php-library?
+    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
       - name: composer-test-package-php74-to-php81
       - name: tox-docker
@@ -2679,19 +2695,19 @@ projects:
       - name: tox-docker
 
   - name: mediawiki/tools/phan
-    # FIXME: Use mediawiki-php-library?
+    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
       - name: composer-test-package-php74-to-php81
     test:
       - mw-tools-phan-mwcore-testrun
 
   - name: mediawiki/tools/phan/PerfCheckPlugin
-    # FIXME: Use mediawiki-php-library?
+    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
       - name: composer-test-package-php74-to-php81
 
   - name: mediawiki/tools/phan/SecurityCheckPlugin
-    # FIXME: Use mediawiki-php-library?
+    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
       - name: composer-test-package-php74-to-php81
     postmerge:
@@ -2707,7 +2723,7 @@ projects:
       - mediawiki-vagrant-puppet-doc-publish
 
   - name: performance/arc-lamp
-    # FIXME: Use mediawiki-php-library?
+    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
       - name: composer-test-package-php74-to-php81
 
@@ -8516,7 +8532,7 @@ projects:
     #     - trigger-example-node-api-pipeline-publish
 
   - name: mediawiki/services/jobrunner
-    # FIXME: Use mediawiki-php-library?
+    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
       - name: composer-test-package-php74-to-php81
 
@@ -8920,29 +8936,29 @@ projects:
 
   - name: mediawiki/oauthclient-php
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
 #### MediaWiki libraries #######################################
 
   - name: cdb
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: purtle
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: utfnormal
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: at-ease
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: base-convert
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   # TODO: Switch to mediawiki-php-library once T324207/T311451 are fixed
   - name: css-sanitizer
@@ -8961,26 +8977,26 @@ projects:
 
   - name: php-session-serializer
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: AhoCorasick
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: RunningStat
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: IPSet
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: RelPath
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: wikipeg
-    # FIXME: Use mediawiki-php-library ?
+    # FIXME: Use mediawiki-php-library-php74-to-php81 ?
     template:
       - name: composer-test-package-php74-to-php81
     test:
@@ -8990,34 +9006,34 @@ projects:
 
   - name: WrappedString
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: CLDRPluralRuleParser
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: HtmlFormatter
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/alea
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/Assert
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/Bcp47Code
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/CommonPasswords
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/Dodo
-    # FIXME: Use mediawiki-php-library once PHP 8.1+ supported
+    # FIXME: Use mediawiki-php-library-php74-to-php81 once PHP 8.1+ supported
     template:
       - name: composer-test-package-php74-to-php80
     postmerge:
@@ -9026,27 +9042,27 @@ projects:
 
   - name: mediawiki/libs/Equivset
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/etcd
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/IDLeDOM
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/IPAValidator
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/IPUtils
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/LangConv
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
       - name: node14-docker
 
   - name: mediawiki/libs/metrics-platform
@@ -9066,31 +9082,31 @@ projects:
 
   - name: mediawiki/libs/Minify
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/NormalizedException
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/ObjectFactory
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/RemexHtml
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/RequestTimeout
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/ScopedCallback
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/Shellbox
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
     test:
       - trigger-shellbox-pipeline-test
     gate-and-submit:
@@ -9100,27 +9116,27 @@ projects:
 
   - name: mediawiki/libs/Services
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/Timestamp
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/WaitConditionLoop
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/WebIDL
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/XMPReader
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/Zest
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
 #### Tools deployed on Wikimedia Cloud Services (aka "Labs") ###
 
@@ -9643,7 +9659,7 @@ projects:
 
   - name: wikimedia/slimapp
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: wikimedia/portals
     template:
@@ -9944,7 +9960,7 @@ projects:
       - name: tox-docker
 
   - name: avro-php
-    # FIXME: Use mediawiki-php-library?
+    # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
       - name: composer-test-package-php74-to-php81
 
@@ -9955,7 +9971,7 @@ projects:
 
   - name: testing-access-wrapper
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: research/ores/wheels
     test:
