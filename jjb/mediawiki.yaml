@@ -892,7 +892,6 @@
             values: &mediawiki_supported_branches
                 - master
                 - REL1_35
-                - REL1_37
                 - REL1_38
                 - REL1_39
         - axis:
