@@ -604,7 +604,7 @@ phan_dependencies = {
                           'TimedMediaHandler', 'VisualEditor', 'EventBus'],
     'HAWelcome': ['SocialProfile'],
     'ImageRating': ['SocialProfile', 'VoteNY'],
-    'ImageSuggestions': ['Echo'],
+    'ImageSuggestions': ['Echo', 'CirrusSearch', 'Elastica'],
     'IPInfo': ['EventLogging'],
     'intersection': ['PageImages'],
     'JsonConfig': ['Scribunto', 'Kartographer'],
