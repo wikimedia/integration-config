@@ -531,7 +531,7 @@ dependencies = {
     'WikimediaBadges': ['Wikibase'],
     'WikimediaEvents': ['EventLogging'],
     'WikiSEO': ['PageImages', 'Scribunto'],
-    'Wikisource': ['Wikibase'],
+    'Wikisource': ['Wikibase', 'ProofreadPage'],
     'Wikistories': ['BetaFeatures', 'EventLogging', 'MobileFrontend',
                     'skins/MinervaNeue'],
     'WikiToLDAP': ['LDAPAuthentication2', 'Renameuser', 'UserMerge'],
@@ -699,7 +699,7 @@ phan_dependencies = {
     'WikiSEO': ['PageImages', 'Scribunto'],
     'WikiToLDAP': ['LDAPAuthentication2', 'LDAPProvider', 'PluggableAuth',
                    'Renameuser', 'UserMerge'],
-    'Wikisource': ['Wikibase']
+    'Wikisource': ['Wikibase', 'ProofreadPage']
 }
 
 
