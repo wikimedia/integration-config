@@ -8133,6 +8133,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/WatchAnalyics
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/WatchSubpages
     template:
       - name: extension-quibble
