@@ -3660,6 +3660,10 @@ projects:
     postmerge:
       - acme-chief-tox-docker
 
+  - name: operations/software/bitu-ldap
+    template:
+      - name: tox-docker
+
   - name: operations/software/cassandra-table-properties
     template:
       - name: debian-glue-non-voting
