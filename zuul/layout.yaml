@@ -9004,6 +9004,10 @@ projects:
     template:
       - name: mediawiki-php-library
 
+  - name: mediawiki/libs/Bcp47Code
+    template:
+      - name: mediawiki-php-library
+
   - name: mediawiki/libs/CommonPasswords
     template:
       - name: mediawiki-php-library
