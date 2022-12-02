@@ -7258,6 +7258,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/PagePermissions
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/PagePopups
     template:
       - name: extension-quibble
