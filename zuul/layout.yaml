@@ -6745,7 +6745,7 @@ projects:
 
   - name: mediawiki/extensions/LDAPAuthentication2
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/LDAPAuthorization
     # Auth-related project breaks core selenium tests
