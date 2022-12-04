@@ -345,6 +345,8 @@ class TestZuulScheduler(unittest.TestCase):
                 # Weird edge cases:
                 or project in [
                     'integration/zuul',
+                    # Only touched by l10n-bot T321350
+                    'phabricator/translations',
                     ]
                 # Some repos just have experimental:
                 or pipelines == ['experimental']

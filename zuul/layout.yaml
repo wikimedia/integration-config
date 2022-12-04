@@ -9524,6 +9524,10 @@ projects:
     template:
       - name: tox-docker
 
+  - name: phabricator/translations
+    template:
+      - name: mediawiki-i18n-check
+
 #### pywikibot #################################################
 
   - name: pywikibot/core
