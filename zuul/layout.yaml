@@ -7550,7 +7550,7 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/RelMe
+  - name: mediawiki/extensions/RealMe
     template:
       - name: extension-quibble
 
