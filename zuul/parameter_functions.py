@@ -414,7 +414,7 @@ dependencies = {
     'NamespacePopups': ['PagePopups'],
     'NavigationTiming': ['EventLogging'],
     'NaylorAMS': ['PluggableAuth'],
-    'NSFileRepo': ['Lockdown'],
+    'NSFileRepo': ['EnhancedUpload', 'Lockdown'],
     'Newsletter': ['Echo'],
     'OATHAuth': ['CheckUser', 'Echo', 'WebAuthn'],
     'OAuth': ['AbuseFilter', 'Echo'],
