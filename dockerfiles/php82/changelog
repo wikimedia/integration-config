@@ -1,3 +1,9 @@
+php82 (0.1.0) wikimedia; urgency=high
+
+   Upgrade PHP to 8.2.0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  8 Dec 2022 09:35:24 -0500
+
 php82 (0.0.4) wikimedia; urgency=high
 
    Drop xdebug extension, no longer used
