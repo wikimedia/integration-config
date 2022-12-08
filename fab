@@ -1,9 +1,9 @@
 #!/bin/bash
 set -eu -o pipefail
 
-# Configure your .ssh/config so it can access the following hosts with proper username and key:
-# - contint1001.wikimedia.org
-# - contint2001.wikimedia.org
+# Configure your .ssh/config so it can access the following hosts with proper
+# username and key:
+# - contint.wikimedia.org (service alias to the actual server)
 # - integration-cumin.integration.eqiad.wmflabs
 
 _ssh_command_sudo() {
