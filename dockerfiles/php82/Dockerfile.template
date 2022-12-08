@@ -24,12 +24,11 @@ unzip
 RUN {{ packages | apt_install }}
 
 # ------------------------------
-# Not yet available upstream, so we're building locally: pcov, redis, xdebug, yaml -- JDF 2022-11-03
+# Not yet available upstream, so we're building locally: pcov, redis, yaml -- JDF 2022-11-03
 RUN {{ "build-essential php8.2-dev libyaml-dev" | apt_install }}
 
 RUN install --owner=nobody --group=nogroup --directory /srv/php-pcov
 RUN install --owner=nobody --group=nogroup --directory /srv/php-redis
-RUN install --owner=nobody --group=nogroup --directory /srv/php-xdebug
 RUN install --owner=nobody --group=nogroup --directory /srv/php-yaml
 RUN install --owner=nobody --group=nogroup --directory /srv/modules
 
@@ -46,12 +45,6 @@ RUN git clone https://github.com/phpredis/phpredis /srv/php-redis && \
     phpize8.2 && ./configure --with-php-config=php-config8.2 && make && \
     cp modules/redis.so /srv/modules/redis.so
 
-RUN git clone https://github.com/xdebug/xdebug /srv/php-xdebug && \
-    cd /srv/php-xdebug && \
-    git checkout 3.2.0RC1 && \
-    phpize8.2 && ./configure --with-php-config=php-config8.2 && make && \
-    cp modules/xdebug.so /srv/modules/xdebug.so
-
 RUN git clone https://github.com/php/pecl-file_formats-yaml /srv/php-yaml && \
     cd /srv/php-yaml && \
     git checkout 2.2.2 && \
@@ -67,10 +60,6 @@ RUN cp /srv/modules/redis.so /usr/lib/php/20220829/redis.so && \
     echo "extension=redis.so" > /etc/php/8.2/mods-available/redis.ini && \
     ln -s /etc/php/8.2/mods-available/redis.ini /etc/php/8.2/cli/conf.d/20-redis.ini
 
-RUN cp /srv/modules/xdebug.so /usr/lib/php/20220829/xdebug.so && \
-    echo "zend_extension=xdebug.so" > /etc/php/8.2/mods-available/xdebug.ini && \
-    ln -s /etc/php/8.2/mods-available/xdebug.ini /etc/php/8.2/cli/conf.d/20-xdebug.ini
-
 RUN cp /srv/modules/yaml.so /usr/lib/php/20220829/yaml.so && \
     echo "extension=yaml.so" > /etc/php/8.2/mods-available/yaml.ini && \
     ln -s /etc/php/8.2/mods-available/yaml.ini /etc/php/8.2/cli/conf.d/20-yaml.ini
@@ -82,9 +71,7 @@ RUN cp /srv/modules/yaml.so /usr/lib/php/20220829/yaml.so && \
 COPY --from=ast /usr/lib/php/20220829/ast.so /usr/lib/php/20220829/ast.so
 COPY --from=ast /srv/20-ast.ini /etc/php/8.2/cli/conf.d/20-ast.ini
 
-# Disable xdebug by default due to its performance impact
-RUN phpdismod xdebug
-# Same for pcov, although the performance overhead should be minimal
+# Disable pcov by default, although the performance overhead should be minimal
 RUN phpdismod pcov
 
 USER nobody

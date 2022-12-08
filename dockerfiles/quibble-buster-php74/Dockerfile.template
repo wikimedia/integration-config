@@ -37,10 +37,7 @@ php7.4-wikidiff2
 RUN {{ mediawiki_deps | apt_install }} \
     && /install-php-fpm-conf.sh
 
-# Install XDebug, but disable it by default due to its performance impact
-RUN {{ "php7.4-xdebug" | apt_install }} \
-    && phpdismod xdebug
-# Same for pcov, although the performance overheade should be minimal
+# Disable pcov by default, although the performance overhead should be minimal
 RUN {{ "php7.4-pcov" | apt_install }} \
     && phpdismod pcov
 

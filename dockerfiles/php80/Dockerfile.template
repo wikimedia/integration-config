@@ -15,7 +15,6 @@ php8.0-mbstring
 php8.0-pcov
 php8.0-redis
 php8.0-sqlite3
-php8.0-xdebug
 php8.0-xml
 php8.0-yaml
 php8.0-zip
@@ -29,9 +28,7 @@ RUN {{ packages | apt_install }}
 COPY --from=ast /usr/lib/php/20200930/ast.so /usr/lib/php/20200930/ast.so
 COPY --from=ast /srv/20-ast.ini /etc/php/8.0/cli/conf.d/20-ast.ini
 
-# Disable xdebug by default due to its performance impact
-RUN phpdismod xdebug
-# Same for pcov, although the performance overhead should be minimal
+# Disable pcov by default, although the performance overhead should be minimal
 RUN phpdismod pcov
 
 USER nobody

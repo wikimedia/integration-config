@@ -1,3 +1,10 @@
+quibble-buster-php81 (1.4.7-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Drop xdebug extension, no longer used
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  8 Dec 2022 09:53:08 -0500
+
 quibble-buster-php81 (1.4.7) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-buster:

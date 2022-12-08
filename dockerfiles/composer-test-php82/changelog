@@ -1,3 +1,10 @@
+composer-test-php82 (0.0.1-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Drop xdebug extension, no longer used
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  8 Dec 2022 09:53:18 -0500
+
 composer-test-php82 (0.0.1-s2) wikimedia; urgency=high
 
    Refresh for update in parent image php82:

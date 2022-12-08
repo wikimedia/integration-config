@@ -1,3 +1,10 @@
+mediawiki-phan-php73 (0.3.1-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image php73:
+   Drop xdebug extension, no longer used
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  8 Dec 2022 09:51:29 -0500
+
 mediawiki-phan-php73 (0.3.1-s4) wikimedia; urgency=high
 
    Refresh for update in parent image composer-package-php73:

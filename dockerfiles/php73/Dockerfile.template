@@ -16,7 +16,6 @@ php7.3-mbstring
 php7.3-pcov
 php7.3-redis
 php7.3-sqlite3
-php7.3-xdebug
 php7.3-xml
 php7.3-yaml
 zip
@@ -25,9 +24,7 @@ unzip
 
 RUN {{ packages | apt_install }}
 
-# Disable xdebug by default due to its performance impact
-RUN phpdismod xdebug
-# Same for pcov, although the performance overhead should be minimal
+# Disable pcov by default, although the performance overhead should be minimal
 RUN phpdismod pcov
 
 USER nobody

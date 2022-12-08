@@ -18,7 +18,6 @@ php7.4-mbstring
 php7.4-pcov
 php7.4-redis
 php7.4-sqlite3
-php7.4-xdebug
 php7.4-xml
 php7.4-yaml
 php7.4-zip
@@ -32,9 +31,7 @@ RUN {{ packages | apt_install }}
 COPY --from=ast /usr/lib/php/20190902/ast.so /usr/lib/php/20190902/ast.so
 COPY --from=ast /srv/20-ast.ini /etc/php/7.4/cli/conf.d/
 
-# Disable xdebug by default due to its performance impact
-RUN phpdismod xdebug
-# Same for pcov, although the performance overhead should be minimal
+# Disable pcov by default, although the performance overhead should be minimal
 RUN phpdismod pcov
 
 USER nobody

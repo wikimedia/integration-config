@@ -1,3 +1,10 @@
+composer-security-check (1.2.0-s6) wikimedia; urgency=high
+
+   Refresh for update in parent image php74:
+   Drop xdebug extension, no longer used
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  8 Dec 2022 09:52:34 -0500
+
 composer-security-check (1.2.0-s5) wikimedia; urgency=high
 
    Refresh for update in parent image composer-php74:

@@ -1,3 +1,9 @@
+php74 (0.4.0) wikimedia; urgency=high
+
+   Drop xdebug extension, no longer used
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  8 Dec 2022 09:52:34 -0500
+
 php74 (0.3.2-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php-ast:
