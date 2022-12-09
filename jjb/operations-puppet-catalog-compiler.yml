@@ -16,6 +16,9 @@
             name: GERRIT_CHANGE_NUMBER
             description: "The Gerrit change number (without patchset number) that will be fetched from Gerrit to compile the catalogs"
         - string:
+            name: GERRIT_PRIVATE_CHANGE_NUMBER
+            description: "The Gerrit change number (without patchset number) of the private repo that will be fetched from Gerrit to compile the change catalog"
+        - string:
             name: LIST_OF_NODES
             description: |
                 List of nodes (comma separated) to compile catalogs against.
@@ -29,7 +32,7 @@
 
     builders:
         - shell: |
-            FAIL_FAST="${FAIL_FAST}" NUM_THREADS="${NUM_THREADS}" CHANGE="${GERRIT_CHANGE_NUMBER}" NODES="${LIST_OF_NODES}" puppet-compiler
+            CHANGE_PRIVATE="${GERRIT_PRIVATE_CHANGE_NUMBER}" FAIL_FAST="${FAIL_FAST}" NUM_THREADS="${NUM_THREADS}" CHANGE="${GERRIT_CHANGE_NUMBER}" NODES="${LIST_OF_NODES}" puppet-compiler
     wrappers:
     - timeout:
         timeout: 180
