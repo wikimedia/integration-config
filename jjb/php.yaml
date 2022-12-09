@@ -16,7 +16,7 @@
      - docker-run:
         volumes:
             src:
-        image: docker-registry.wikimedia.org/releng/composer-security-check:1.2.0-s5
+        image: docker-registry.wikimedia.org/releng/composer-security-check:1.2.0-s6
     publishers:
       - docker-cleanup
 
@@ -155,17 +155,17 @@
     name: generic-phan-jobs
     php:
      - php73:
-         composer_image: docker-registry.wikimedia.org/releng/composer-php73:0.4.0-s3
-         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php73:0.3.1-s4
+         composer_image: docker-registry.wikimedia.org/releng/composer-php73:0.4.0-s4
+         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php73:0.3.1-s5
      - php74:
-         composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.0
-         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.1-s8
+         composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.0-s1
+         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.1-s9
      - php80:
-         composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s15
-         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.2-s8
+         composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s16
+         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.2-s9
      - php81:
-         composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1-s7
-         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.2-s7
+         composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1-s8
+         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.2-s8
     jobs:
       - 'phan-{php}-docker'
 
@@ -176,25 +176,25 @@
             phpflavor:
                 # Still used by wikimedia/fundraising/SmashPig
                 - php73:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php73:0.3.0-s3
+                    image: docker-registry.wikimedia.org/releng/composer-test-php73:0.3.0-s4
                 - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.0-s14
+                    image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.0-s15
                 - php80:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.0-s17
+                    image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.0-s18
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.1-s7
+                    image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.1-s8
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php82:0.0.1
+                    image: docker-registry.wikimedia.org/releng/composer-test-php82:0.0.1-s3
         - 'composer-package-{phpflavor}-docker':
             phpflavor:
                 - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php74:0.4.0-s4
+                    image: docker-registry.wikimedia.org/releng/composer-package-php74:0.4.0-s5
                 - php80:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php80:0.0.4-s16
+                    image: docker-registry.wikimedia.org/releng/composer-package-php80:0.0.4-s17
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php81:0.0.1-s7
+                    image: docker-registry.wikimedia.org/releng/composer-package-php81:0.0.1-s8
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php82:0.0.1
+                    image: docker-registry.wikimedia.org/releng/composer-package-php82:0.0.1-s3
 
 - project:
     name: 'wikimedia-apps-php-security'
@@ -269,12 +269,12 @@
     name: generic-composer-assert-lock-jobs
     php:
      - php74:
-         image: docker-registry.wikimedia.org/releng/composer-php74:0.3.0
+         image: docker-registry.wikimedia.org/releng/composer-php74:0.3.0-s1
      - php80:
-         image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s15
+         image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s16
      - php81:
-         image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1-s7
+         image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1-s8
      - php82:
-         image: docker-registry.wikimedia.org/releng/composer-php82:0.0.1
+         image: docker-registry.wikimedia.org/releng/composer-php82:0.0.1-s3
     jobs:
       - 'composer-{php}-assert-lock-docker'
