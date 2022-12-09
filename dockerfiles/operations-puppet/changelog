@@ -1,3 +1,10 @@
+operations-puppet (0.8.9) wikimedia; urgency=medium
+
+  * Refresh to pick up sorted_set for ruby 3
+    https://gerrit.wikimedia.org/r/c/operations/puppet/+/863331
+
+ -- John Bond <jbond@wikimedia.org>  Fri, 09 Dec 2022 13:53:56 +0100
+
 operations-puppet (0.8.8) wikimedia; urgency=medium
 
   * Refresh to pick up Gemfile updates specifically puppet-strings
