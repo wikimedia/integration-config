@@ -620,6 +620,8 @@
         - nsfw-publish
         - revertrisk
         - revertrisk-publish
+        - revscoring
+        - revscoring-publish
     jobs:
         # trigger-inference-services-pipeline-editquality
         # trigger-inference-services-pipeline-editquality-publish
@@ -637,6 +639,8 @@
         # trigger-inference-services-pipeline-nsfw-publish
         # trigger-inference-services-pipeline-revertrisk
         # trigger-inference-services-pipeline-revertrisk-publish
+        # trigger-inference-services-pipeline-revscoring
+        # trigger-inference-services-pipeline-revscoring-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-editquality
         # inference-services-pipeline-editquality-publish
@@ -654,6 +658,8 @@
         # inference-services-pipeline-nsfw-publish
         # inference-services-pipeline-revertrisk
         # inference-services-pipeline-revertrisk-publish
+        # inference-services-pipeline-revscoring
+        # inference-services-pipeline-revscoring-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:
