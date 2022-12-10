@@ -8586,7 +8586,9 @@ projects:
 
   - name: mediawiki/services/texvcjs
     template:
-      - name: node12-docker
+      - name: node14-docker
+    experimental:
+      - generic-node16-docker
 
   - name: mediawiki/services/mobileapps
     template:
