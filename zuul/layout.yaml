@@ -8580,10 +8580,6 @@ projects:
     gate-and-submit:
         - trigger-service-scaffold-node-pipeline-test
 
-  - name: mediawiki/services/texvcinfo
-    template:
-      - name: node12-docker
-
   - name: mediawiki/services/texvcjs
     template:
       - name: node14-docker
@@ -11290,6 +11286,10 @@ projects:
   - name: mediawiki/services/recommendation-api/deploy
     template:
       - name: archived
+
+  - name: mediawiki/services/texvcinfo
+    template:
+        - name: archived
 
   - name: mediawiki/services/trending-edits
     template:
