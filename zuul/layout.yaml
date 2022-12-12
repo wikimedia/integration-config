@@ -7243,6 +7243,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/OurWorldInData
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/PageAuthors
     template:
       - name: extension-quibble
