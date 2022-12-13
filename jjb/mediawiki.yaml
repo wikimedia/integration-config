@@ -968,6 +968,8 @@
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.4.7-s1
         - php81:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.4.7-s1
+        - php82:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php82:1.4.7
     jobs:
         - quibble-{packages-source}-{database}-{php}-docker
         - quibble-{packages-source}-{database}-{php}-noselenium-docker
