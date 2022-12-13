@@ -1,0 +1,5 @@
+mediawiki-phan-php82 (0.0.1) wikimedia; urgency=medium
+
+  * Initial fork from mediawiki-phan-php81.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 13 Dec 2022 11:00:08 -0500
