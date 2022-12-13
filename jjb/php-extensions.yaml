@@ -26,7 +26,7 @@
      - php81:
           image: docker-registry.wikimedia.org/releng/php81-compile:0.0.2-s7
      - php82:
-          image: docker-registry.wikimedia.org/releng/php82-compile:0.0.1-s3
+          image: docker-registry.wikimedia.org/releng/php82-compile:0.1.0
     jobs:
       - 'php-compile-{php}-docker'
 

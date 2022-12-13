@@ -61,4 +61,4 @@
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-package-php81:0.0.1-s8
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php82:0.0.1-s3
+                    image: docker-registry.wikimedia.org/releng/composer-package-php82:0.1.0
