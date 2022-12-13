@@ -136,6 +136,10 @@
             setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.4.7-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1-s8
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.2-s8
+        - php82:
+            setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php82:1.4.7
+            composer_image: docker-registry.wikimedia.org/releng/composer-php82:0.1.0
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php82:0.1.0
     jobs:
         - '{thing}-{php}-phan-docker'
 
