@@ -1421,6 +1421,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
+      - quibble-vendor-mysql-php82-noselenium-docker
 
   - name: extension-quibble-php74-or-later
     test:
@@ -1484,6 +1485,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
+      - quibble-vendor-mysql-php82-noselenium-docker
 
   - name: extension-quibble-php81-or-later
     test:
@@ -1544,6 +1546,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php81-noselenium-docker
       - quibble-vendor-postgres-php81-noselenium-docker
+      - quibble-vendor-mysql-php82-noselenium-docker
 
   # Special job template that runs composer rather than than relying
   # on mediawiki/vendor for quibble.
@@ -1628,6 +1631,7 @@ project-templates:
     experimental:
       - quibble-composer-sqlite-php74-noselenium-docker
       - quibble-composer-postgres-php74-noselenium-docker
+      - quibble-composer-mysql-php82-noselenium-docker
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
@@ -1698,6 +1702,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
+      - quibble-vendor-mysql-php82-noselenium-docker
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
@@ -1759,6 +1764,7 @@ project-templates:
       - quibble-composer-sqlite-php74-noselenium-docker
       - quibble-composer-postgres-php74-noselenium-docker
       - mwext-php74-phan-docker
+      - quibble-composer-mysql-php82-noselenium-docker
 
   # Special job template that runs the "standalone" jobs - T225068
   - name: extension-quibble-only-standalone
@@ -1783,6 +1789,8 @@ project-templates:
       - quibble-vendor-mysql-php74-phpunit-standalone-docker
     gate-and-submit-1_39:
       - quibble-vendor-mysql-php74-phpunit-standalone-docker
+    experimental:
+      - quibble-vendor-mysql-php82-phpunit-standalone-docker
 
   # Special job template that runs the "apitests" job for test and gate
   - name: extension-apitests
@@ -1915,6 +1923,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74-docker
       - quibble-vendor-postgres-php74-docker
+      - quibble-vendor-mysql-php82-docker
 
   - name: skin-quibble-php74-or-later
     test:
@@ -1980,6 +1989,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74-docker
       - quibble-vendor-postgres-php74-docker
+      - quibble-vendor-mysql-php82-docker
 
   - name: skin-quibble-composer
     test:
@@ -2050,6 +2060,7 @@ project-templates:
     experimental:
       - quibble-composer-sqlite-php74-docker
       - quibble-composer-postgres-php74-docker
+      - quibble-composer-mysql-php82-docker
 
   - name: skin-coverage
     postmerge:
@@ -2939,13 +2950,15 @@ projects:
       - mediawiki-core-javascript-docker-publish
       - mediawiki-core-doxygen-docker-publish
     experimental:
-      # Experimental for testing 8.0 on REL1_35 branch (T274965)
+      # Experimental only for testing 8.0 on REL1_35 branch (T274965)
       - mediawiki-quibble-composer-mysql-php80-docker
-      # Experimental for testing 8.1 on REL1_35 branch (T316080)
+      # Experimental only for testing 8.1 on REL1_35 branch (T316080)
       - mediawiki-quibble-composer-mysql-php81-docker
       - mwgate-composer-php74-docker
       - trigger-mediawiki-pipeline-wmf-publish
       - mediawiki-core-php80-phan-docker
+      # Experimental for testing 8.2 (T314093)
+      - quibble-vendor-mysql-php82-docker
 
   - name: mediawiki/vendor
     template:
@@ -2988,6 +3001,8 @@ projects:
       - mwgate-composer-php82-docker
       # New job in testing T74952 -- JDF 2022-10-14
       - composer-php74-assert-lock-docker
+      # Experimental for testing 8.2 (T314093)
+      - mediawiki-quibble-vendor-mysql-php82-docker
 
   # VERY EXPERIMENTAL WIKIMEDIA PRODUCTION BUILD WITH NO TESTS YET
   - name: wikimedia/production
