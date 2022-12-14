@@ -1,3 +1,9 @@
+php73-compile (0.3.1) wikimedia; urgency=medium
+
+  * Compile PHP extensions with -Wall -Werror
+
+ -- Tim Starling <tstarling@wikimedia.org>  Wed, 14 Dec 2022 13:06:39 +1100
+
 php73-compile (0.3.0-s3) wikimedia; urgency=high
 
    Refresh for update in parent image php73:

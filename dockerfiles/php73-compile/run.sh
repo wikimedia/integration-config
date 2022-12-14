@@ -9,7 +9,7 @@ phpize --version
 phpize
 # Work around libtool version mismatch
 autoreconf -i
-./configure
+./configure 'CFLAGS=-Wall -Werror'
 make
 REPORT_EXIT_STATUS=1 make test
 

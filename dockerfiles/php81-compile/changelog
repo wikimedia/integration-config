@@ -1,3 +1,9 @@
+php81-compile (0.0.3) wikimedia; urgency=medium
+
+  * Compile PHP extensions with -Wall -Werror
+
+ -- Tim Starling <tstarling@wikimedia.org>  Wed, 14 Dec 2022 13:06:39 +1100
+
 php81-compile (0.0.2-s7) wikimedia; urgency=high
 
    Refresh for update in parent image php81:
