@@ -2471,6 +2471,10 @@ projects:
     template:
       - name: tox-poetry-docker
 
+  - name: cloud/wmcs-cookbooks
+    template:
+      - name: tox-docker
+
   - name: cloud/toolforge/toolforge-cli
     template:
       - name: tox-poetry-docker
