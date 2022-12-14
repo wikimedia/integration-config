@@ -2676,10 +2676,6 @@ projects:
     postmerge:
       - mw-tools-releng-tox-publish
 
-  - name: mediawiki/tools/train-dev
-    template:
-      - name: tox-docker
-
   - name: mediawiki/tools/phan
     # FIXME: Use mediawiki-php-library-php74-to-php81?
     template:
@@ -11334,6 +11330,10 @@ projects:
       - name: archived
 
   - name: mediawiki/tools/scap
+    template:
+      - name: archived
+
+  - name: mediawiki/tools/train-dev
     template:
       - name: archived
 
