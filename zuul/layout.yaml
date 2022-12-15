@@ -8108,7 +8108,7 @@ projects:
 
   - name: mediawiki/extensions/Variables
     template:
-      - name: extension-quibble
+      - name: extension-broken # T250963
 
   - name: mediawiki/extensions/VEForAll
     template:

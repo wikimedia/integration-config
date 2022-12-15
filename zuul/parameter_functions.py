@@ -148,7 +148,7 @@ dependencies = {
                     'EventLogging'],
     'AdvancedSearch': ['Translate'],
     'ApiFeatureUsage': ['Elastica'],
-    'Arrays': ['Loops', 'ParserFunctions', 'Variables'],
+    'Arrays': ['Loops', 'ParserFunctions'],
     'ArticlePlaceholder': ['Wikibase', 'Scribunto'],
     'BlogPage': ['Comments', 'SocialProfile', 'VoteNY'],
     'BlueSpiceAbout': ['BlueSpiceFoundation'],
