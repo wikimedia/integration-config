@@ -604,14 +604,6 @@
     # machinelearning/liftwing/inference-services
     name: inference-services
     pipeline:
-        - editquality
-        - editquality-publish
-        - articlequality
-        - articlequality-publish
-        - draftquality
-        - draftquality-publish
-        - topic
-        - topic-publish
         - outlink
         - outlink-publish
         - outlink-transformer
@@ -623,14 +615,6 @@
         - revscoring
         - revscoring-publish
     jobs:
-        # trigger-inference-services-pipeline-editquality
-        # trigger-inference-services-pipeline-editquality-publish
-        # trigger-inference-services-pipeline-articlequality
-        # trigger-inference-services-pipeline-articlequality-publish
-        # trigger-inference-services-pipeline-draftquality
-        # trigger-inference-services-pipeline-draftquality-publish
-        # trigger-inference-services-pipeline-topic
-        # trigger-inference-services-pipeline-topic-publish
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
         # trigger-inference-services-pipeline-outlink-transformer
@@ -642,14 +626,6 @@
         # trigger-inference-services-pipeline-revscoring
         # trigger-inference-services-pipeline-revscoring-publish
         - 'trigger-{name}-pipeline-{pipeline}'
-        # inference-services-pipeline-editquality
-        # inference-services-pipeline-editquality-publish
-        # inference-services-pipeline-articlequality
-        # inference-services-pipeline-articlequality-publish
-        # inference-services-pipeline-draftquality
-        # inference-services-pipeline-draftquality-publish
-        # inference-services-pipeline-topic
-        # inference-services-pipeline-topic-publish
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
         # inference-services-pipeline-outlink-transformer
