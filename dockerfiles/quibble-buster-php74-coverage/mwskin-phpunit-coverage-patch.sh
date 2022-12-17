@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Verify coverage has improve for a MediaWiki skin patch
+# Verify coverage has improved for a MediaWiki skin patch
 # Copyright (C) 2017-2018 Kunal Mehta <legoktm@member.fsf.org>
 # Copyright (C) 2018 Antoine Musso <hashar@free.fr>
 #
