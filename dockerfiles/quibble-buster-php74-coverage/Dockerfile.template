@@ -9,7 +9,7 @@ RUN mkdir -p /opt/composer-tmp /opt/phpunit-patch-coverage \
     && chown nobody:nogroup /opt/composer-tmp /opt/phpunit-patch-coverage
 USER nobody
 RUN cd /opt/phpunit-patch-coverage \
-    && COMPOSER_HOME=/opt/composer-tmp composer require -- mediawiki/phpunit-patch-coverage 0.0.11 \
+    && COMPOSER_HOME=/opt/composer-tmp composer require -- mediawiki/phpunit-patch-coverage 0.0.12 \
     && find /opt/composer-tmp -mindepth 1 -delete
 USER root
 RUN rmdir /opt/composer-tmp \
