@@ -9020,6 +9020,10 @@ projects:
     template:
       - name: mediawiki-php-library-php74-to-php81
 
+  - name: mediawiki/libs/CloverDiff
+    template:
+      - name: mediawiki-php-library-php74-to-php81
+
   - name: mediawiki/libs/Dodo
     # FIXME: Use mediawiki-php-library-php74-to-php81 once PHP 8.1+ supported
     template:
