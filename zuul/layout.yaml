@@ -5794,7 +5794,7 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceRSSFeeder
     template:
-      - name: extension-broken
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/BlueSpiceReadConfirmation
     template:
