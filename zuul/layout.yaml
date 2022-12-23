@@ -5666,7 +5666,7 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceEchoConnector
     template:
-      - name: extension-broken
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/BlueSpiceEmoticons
     template:
