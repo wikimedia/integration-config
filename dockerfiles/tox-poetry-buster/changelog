@@ -1,3 +1,10 @@
+tox-poetry-buster (0.0.3-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image tox-buster:
+   Added bats package for functional testing
+
+ -- David Caro <dcaro@wikimedia.org>  Fri, 23 Dec 2022 16:30:23 +0100
+
 tox-poetry-buster (0.0.3) wikimedia; urgency=medium
 
     Update the get-poetry.py script to install-poetry (https://install.python-poetry.org/)
