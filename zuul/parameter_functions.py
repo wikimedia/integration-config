@@ -333,7 +333,7 @@ dependencies = {
     'Capiunto': ['Scribunto'],
     'CentralNotice': ['EventLogging'],
     'Challenge': ['SocialProfile'],
-    'CheckUser': ['CentralAuth', 'GuidedTour', 'Renameuser'],
+    'CheckUser': ['CentralAuth', 'FlaggedRevs', 'GuidedTour', 'Renameuser'],
     'Cite': ['ParserFunctions', 'VisualEditor'],
     'Citoid': ['Cite', 'VisualEditor'],
     'CirrusSearch': ['TimedMediaHandler', 'PdfHandler', 'Cite', 'Elastica',
