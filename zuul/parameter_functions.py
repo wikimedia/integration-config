@@ -426,6 +426,7 @@ dependencies = {
     'ParserFunctions': ['Scribunto'],
     'parsoid': ['Cite', 'Disambiguator', 'Poem', 'TimedMediaHandler',
                 'ImageMap'],
+    'Phonos': ['TimedMediaHandler'],
     'PhpTagsFunctions': ['PhpTags'],
     'PhpTagsSPARQL': ['PhpTags'],
     'PhpTagsSMW': ['PhpTags'],
