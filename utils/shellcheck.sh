@@ -27,8 +27,8 @@ echo "Generating config for proposed patchset..."
 )
 
 echo "Extracting shell scripts..."
-find "$test_dir" -type f -name \*.xml -exec ./utils/extract-shell-scripts.py '{}' ';'
+find "$test_dir" -type f -name \*.xml -print0 | xargs -0 --max-procs=4 -n20 ./utils/extract-shell-scripts.py
 
 echo "Running shellcheck..."
 # Use xargs, instead of -exec, to propagate shellcheck return code
-find "$test_dir" -type f -name \*.sh -print0 | xargs -0 "$shellcheck" --severity=error -W 0
+find "$test_dir" -type f -name \*.sh -print0 | xargs -0 --max-procs=4 "$shellcheck" --severity=error -W 0

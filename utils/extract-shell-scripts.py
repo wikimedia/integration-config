@@ -9,7 +9,8 @@ import os
 from xml.etree import ElementTree
 
 
-def extract_shell_scripts(input_file, output_dir):
+def extract_shell_scripts(input_file):
+    output_dir = os.path.dirname(input_file)
     try:
         tree = ElementTree.parse(input_file)
     except ElementTree.ParseError:
@@ -25,11 +26,7 @@ def extract_shell_scripts(input_file, output_dir):
 
 if __name__ == "__main__":
     parser = ArgumentParser()
-    parser.add_argument('input')
-    parser.add_argument('--output_dir')
+    parser.add_argument('input', nargs='+')
     args = parser.parse_args()
-    if args.output_dir is None:
-        output_dir = os.path.dirname(args.input)
-    else:
-        output_dir = args.output_dir
-    extract_shell_scripts(args.input, output_dir)
+    for input_file in args.input:
+        extract_shell_scripts(input_file)
