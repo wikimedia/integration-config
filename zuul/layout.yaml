@@ -9705,8 +9705,10 @@ projects:
   - name: search/cirrus-streaming-updater
     test:
       - cirrus-streaming-updater-maven-java11-docker
+      - cirrus-streaming-updater-maven-java8-docker
     gate-and-submit:
       - cirrus-streaming-updater-maven-java11-docker
+      - cirrus-streaming-updater-maven-java8-docker
     postmerge:
       - cirrus-streaming-updater-maven-java11-docker-site-publish
 
