@@ -9131,6 +9131,14 @@ projects:
     template:
       - name: mediawiki-php-library-php74-to-php81
 
+  - name: performance/excimer-ui-client
+    template:
+      - name: mediawiki-php-library-php74-to-php81
+
+  - name: performance/excimer-ui-server
+    template:
+      - name: mediawiki-php-library-php74-to-php81
+
 #### Tools deployed on Wikimedia Cloud Services (aka "Labs") ###
 
   - name: labs/codesearch
