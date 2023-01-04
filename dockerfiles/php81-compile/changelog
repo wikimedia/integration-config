@@ -1,3 +1,10 @@
+php81-compile (0.0.3-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Add excimer for performance/excimer-ui-client
+
+ -- Tim Starling <tstarling@wikimedia.org>  Thu,  5 Jan 2023 13:00:02 +1100
+
 php81-compile (0.0.3) wikimedia; urgency=medium
 
   * Compile PHP extensions with -Wall -Werror

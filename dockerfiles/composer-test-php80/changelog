@@ -1,3 +1,10 @@
+composer-test-php80 (0.1.0-s19) wikimedia; urgency=high
+
+   Refresh for update in parent image php80:
+   Add excimer for performance/excimer-ui-client
+
+ -- Tim Starling <tstarling@wikimedia.org>  Thu,  5 Jan 2023 12:49:51 +1100
+
 composer-test-php80 (0.1.0-s18) wikimedia; urgency=high
 
    Refresh for update in parent image php80:

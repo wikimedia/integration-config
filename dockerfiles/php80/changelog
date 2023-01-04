@@ -1,3 +1,9 @@
+php80 (0.4.0) wikimedia; urgency=high
+
+   Add excimer for performance/excimer-ui-client
+
+ -- Tim Starling <tstarling@wikimedia.org>  Thu,  5 Jan 2023 12:49:51 +1100
+
 php80 (0.3.0) wikimedia; urgency=high
 
    Drop xdebug extension, no longer used

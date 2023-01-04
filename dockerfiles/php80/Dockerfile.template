@@ -8,6 +8,7 @@ php8.0-bcmath
 php8.0-cli
 php8.0-curl
 php8.0-dba
+php8.0-excimer
 php8.0-gd
 php8.0-gmp
 php8.0-intl

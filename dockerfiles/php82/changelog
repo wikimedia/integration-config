@@ -1,3 +1,9 @@
+php82 (0.2.0) wikimedia; urgency=high
+
+   Add excimer for performance/excimer-ui-client
+
+ -- Tim Starling <tstarling@wikimedia.org>  Thu,  5 Jan 2023 13:00:36 +1100
+
 php82 (0.1.0) wikimedia; urgency=high
 
    Upgrade PHP to 8.2.0

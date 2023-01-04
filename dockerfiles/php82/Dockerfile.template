@@ -11,6 +11,7 @@ php8.2-zip
 php8.2-bcmath
 php8.2-curl
 php8.2-dba
+php8.2-excimer
 php8.2-gd
 php8.2-gmp
 php8.2-intl

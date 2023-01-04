@@ -1,3 +1,10 @@
+composer-test-php74 (0.1.0-s16) wikimedia; urgency=high
+
+   Refresh for update in parent image php74:
+   Add excimer for performance/excimer-ui-client
+
+ -- Tim Starling <tstarling@wikimedia.org>  Thu,  5 Jan 2023 12:22:45 +1100
+
 composer-test-php74 (0.1.0-s15) wikimedia; urgency=high
 
    Refresh for update in parent image php74:

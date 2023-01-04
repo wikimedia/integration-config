@@ -1,3 +1,10 @@
+phpmetrics (2.8.1-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image php74:
+   Add excimer for performance/excimer-ui-client
+
+ -- Tim Starling <tstarling@wikimedia.org>  Thu,  5 Jan 2023 12:22:45 +1100
+
 phpmetrics (2.8.1-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php74:
