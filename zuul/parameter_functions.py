@@ -635,6 +635,7 @@ phan_dependencies = {
     'PageTriage': ['Echo', 'ORES'],
     'ParserFunctions': ['Scribunto'],
     'Petition': ['CheckUser', 'cldr'],
+    'Phonos': ['TimedMediaHandler'],
     'PictureGame': ['SocialProfile'],
     'PollNY': ['SocialProfile'],
     'Popups': ['BetaFeatures', 'EventLogging', 'Gadgets'],
