@@ -236,11 +236,13 @@
      - deploy
      - deployment
      - fundraising/REL1_35
+     - fundraising/REL1_39
      - master
     filter: >
         (ZUUL_PROJECT=="wikimedia/fundraising/crm" && ZUUL_BRANCH=="deployment")
         || (ZUUL_PROJECT=="wikimedia/fundraising/SmashPig" && ZUUL_BRANCH=="deployment")
         || (ZUUL_PROJECT=="mediawiki/core" && ZUUL_BRANCH=="fundraising/REL1_35")
+        || (ZUUL_PROJECT=="mediawiki/core" && ZUUL_BRANCH=="fundraising/REL1_39")
         || (ZUUL_PROJECT=="mediawiki/extensions/DonationInterface" && ZUUL_BRANCH=="master")
     jobs:
      - '{repogroup}-php-security'
