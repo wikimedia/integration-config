@@ -22,7 +22,7 @@
              mediawiki/core
              mediawiki/tools/codesniffer
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/composer-php74:0.3.0-s2
+         image: docker-registry.wikimedia.org/releng/composer-php74:0.3.1
          workdir: /src/mediawiki/tools/codesniffer
          args: 'install --ansi --no-progress --prefer-dist --profile --no-dev'
      - docker-run-with-log-cache-src:
@@ -36,7 +36,7 @@
          options: '--user=nobody'
          args: '/src/mediawiki/tools/codesniffer /src/vendor/mediawiki/mediawiki-codesniffer'
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/composer-php74:0.3.0-s2
+         image: docker-registry.wikimedia.org/releng/composer-php74:0.3.1
          entrypoint: /src/vendor/mediawiki/mediawiki-codesniffer/vendor/bin/phpcs
          workdir: /src
          args: '-s -p'
@@ -61,7 +61,7 @@
              mediawiki/core
              mediawiki/tools/phan
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/mediawiki-phan-testrun:0.3.0-s7
+         image: docker-registry.wikimedia.org/releng/mediawiki-phan-testrun:0.3.1
          environment:
              PHAN_COLOR_SCHEME: light
          workdir: /src
@@ -81,7 +81,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/mediawiki-phan-taint-check-demo:0.1.5-s1
+         image: docker-registry.wikimedia.org/releng/mediawiki-phan-taint-check-demo:0.1.6
      - doc-publish:
         docsrc: 'src/html'
         docdest: '$DOC_PROJECT/$DOC_SUBPATH/demos'
