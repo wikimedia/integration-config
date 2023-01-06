@@ -1,3 +1,10 @@
+composer-package-php82 (0.1.1) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer from 2.3.3 to 2.5.1
+
+ -- Sam Reed <reedy@wikimedia.org>  Fri,  6 Jan 2023 11:45:29 -0500
+
 composer-package-php82 (0.1.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php82:

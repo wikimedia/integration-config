@@ -1,3 +1,9 @@
+composer-scratch (2.5.1) wikimedia; urgency=high
+
+   Upgrade composer from 2.3.3 to 2.5.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri,  6 Jan 2023 11:45:30 -0500
+
 composer-scratch (2.3.3) wikimedia; urgency=high
 
    Upgrade composer from 2.1.8 to 2.3.3

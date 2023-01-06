@@ -1,3 +1,10 @@
+mediawiki-phan-php80 (0.1.2-s11) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer from 2.3.3 to 2.5.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri,  6 Jan 2023 11:45:30 -0500
+
 mediawiki-phan-php80 (0.1.2-s10) wikimedia; urgency=high
 
    Refresh for update in parent image php80:
