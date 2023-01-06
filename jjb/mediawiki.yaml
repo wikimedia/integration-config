@@ -151,13 +151,13 @@
                 - php73:
                     image: docker-registry.wikimedia.org/releng/composer-test-php73:0.3.0-s4
                 - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.0-s15
+                    image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.0-s16
                 - php80:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.0-s18
+                    image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.0-s19
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.1-s8
+                    image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.1-s9
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php82:0.1.0
+                    image: docker-registry.wikimedia.org/releng/composer-test-php82:0.1.0-s1
         - '{name}-node14-docker'
 
 # Phan! (T132636)
@@ -199,14 +199,14 @@
             composer_image: docker-registry.wikimedia.org/releng/composer-php73:0.4.0-s4
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php73:0.3.1-s5
         - php74:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.0-s1
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.1-s9
+            composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.0-s2
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.1-s10
         - php80:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s16
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.2-s9
+            composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s17
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.2-s10
         - php81:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1-s8
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.2-s8
+            composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.1-s9
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.2-s9
 
     jobs:
         - mediawiki-core-{php}-phan-docker
