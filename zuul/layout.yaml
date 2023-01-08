@@ -2830,11 +2830,8 @@ projects:
     gate-and-submit-1_35:
       - mediawiki-quibble-composer-mysql-php73-docker
       - mediawiki-quibble-composer-mysql-php74-docker
+      - mediawiki-quibble-composer-mysql-php80-docker
       - mediawiki-quibble-composertest-php73-docker
-      # FIXME Placeholder job ahead of things being fully tested on PHP 8.0 (T274965)
-      - mediawiki-quibble-composertest-php80-docker
-      # FIXME Placeholder job ahead of things being fully tested on PHP 8.1 (T316080)
-      - mediawiki-quibble-composertest-php81-docker
       - mediawiki-quibble-selenium-composer-mysql-php73-docker
       - mediawiki-quibble-composer-sqlite-php73-docker
       - mediawiki-quibble-composer-postgres-php73-docker
