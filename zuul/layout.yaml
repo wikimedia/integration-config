@@ -2918,6 +2918,7 @@ projects:
       - mediawiki-core-php80-phan-docker
       # Experimental for testing 8.2 (T314093)
       - quibble-vendor-mysql-php82-docker
+      - quibble-donationinterface-REL1_39-php74-docker
 
   - name: mediawiki/vendor
     template:
@@ -4154,6 +4155,8 @@ projects:
       - quibble-fundraising-cldr-REL1_35-php73-docker
     gate-and-submit:
       - quibble-fundraising-cldr-REL1_35-php73-docker
+    experimental:
+      - quibble-fundraising-cldr-REL1_39-php74-docker
 
   - name: mediawiki/extensions/CodeEditor
     template:
@@ -4394,6 +4397,8 @@ projects:
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_35-php73-docker
     gate-and-submit:
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_35-php73-docker
+    experimental:
+      - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_39-php74-docker
 
   - name: mediawiki/extensions/FundraisingTranslateWorkflow
     template:
@@ -4818,6 +4823,8 @@ projects:
       - quibble-fundraising-ParserFunctions-REL1_35-php73-docker
     gate-and-submit:
       - quibble-fundraising-ParserFunctions-REL1_35-php73-docker
+    experimental:
+      - quibble-fundraising-ParserFunctions-REL1_39-php74-docker
 
   # Not currently in production, but will be brought back for the Parsoid migration
   - name: mediawiki/extensions/ParserMigration
