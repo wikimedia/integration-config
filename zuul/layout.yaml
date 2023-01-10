@@ -4272,6 +4272,8 @@ projects:
       - mwgate-composer-php73-docker
       - mwgate-node14-docker
       - quibble-donationinterface-REL1_35-php73-docker
+    experimental:
+      - quibble-donationinterface-REL1_39-php74-docker
 
   - name: mediawiki/extensions/DoubleWiki
     template:
