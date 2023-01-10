@@ -934,6 +934,11 @@ jobs:
       - project: ^mediawiki/extensions/DonationInterface$
         branch: ^deployment$
 
+  - name: ^quibble-donationinterface-REL1_39-php74-docker$
+    skip-if:
+      - project: ^mediawiki/extensions/DonationInterface$
+        branch: ^deployment$
+
   # Only run patch coverage if a PHP file was
   # changed on master.
   - name: ^.*-phpunit-coverage-patch
