@@ -2890,10 +2890,12 @@ projects:
       - mwgate-composer-php73-docker
       - mwgate-node14-docker
       - quibble-donationinterface-REL1_35-php73-docker
+      - quibble-donationinterface-REL1_39-php74-docker
     gate-and-submit-fundraising:
       - mwgate-composer-php73-docker
       - mwgate-node14-docker
       - quibble-donationinterface-REL1_35-php73-docker
+      - quibble-donationinterface-REL1_39-php74-docker
 
     coverage:
       - mwcore-phpunit-coverage-patch
@@ -2921,7 +2923,6 @@ projects:
       - mediawiki-core-php80-phan-docker
       # Experimental for testing 8.2 (T314093)
       - quibble-vendor-mysql-php82-docker
-      - quibble-donationinterface-REL1_39-php74-docker
 
   - name: mediawiki/vendor
     template:
@@ -4154,12 +4155,12 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
-    # Special extra jobs because Fundraising uses this on PHP73/REL1_35
+    # Special extra jobs because Fundraising uses this on PHP73/REL1_35 and PHP74/REL1_39
     test:
       - quibble-fundraising-cldr-REL1_35-php73-docker
+      - quibble-fundraising-cldr-REL1_39-php74-docker
     gate-and-submit:
       - quibble-fundraising-cldr-REL1_35-php73-docker
-    experimental:
       - quibble-fundraising-cldr-REL1_39-php74-docker
 
   - name: mediawiki/extensions/CodeEditor
@@ -4267,11 +4268,11 @@ projects:
       - mwgate-composer-php73-docker
       - mwgate-node14-docker
       - quibble-donationinterface-REL1_35-php73-docker
+      - quibble-donationinterface-REL1_39-php74-docker
     gate-and-submit:
       - mwgate-composer-php73-docker
       - mwgate-node14-docker
       - quibble-donationinterface-REL1_35-php73-docker
-    experimental:
       - quibble-donationinterface-REL1_39-php74-docker
 
   - name: mediawiki/extensions/DoubleWiki
@@ -4398,12 +4399,12 @@ projects:
       - name: extension-quibble-composer
       - name: extension-coverage
       - name: mediawiki-i18n-check
-    # Special extra jobs because Fundraising uses this on PHP73/REL1_35
+    # Special extra jobs because Fundraising uses this on PHP73/REL1_35 and PHP74/REL1_39
     test:
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_35-php73-docker
+      - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_39-php74-docker
     gate-and-submit:
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_35-php73-docker
-    experimental:
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_39-php74-docker
 
   - name: mediawiki/extensions/FundraisingTranslateWorkflow
@@ -4824,12 +4825,12 @@ projects:
       - name: extension-gate
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
-    # Special extra jobs because Fundraising uses this on PHP73/REL1_35
+    # Special extra jobs because Fundraising uses this on PHP73/REL1_35 and PHP74/REL1_39
     test:
       - quibble-fundraising-ParserFunctions-REL1_35-php73-docker
+      - quibble-fundraising-ParserFunctions-REL1_39-php74-docker
     gate-and-submit:
       - quibble-fundraising-ParserFunctions-REL1_35-php73-docker
-    experimental:
       - quibble-fundraising-ParserFunctions-REL1_39-php74-docker
 
   # Not currently in production, but will be brought back for the Parsoid migration
