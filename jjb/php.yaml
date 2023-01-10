@@ -193,7 +193,7 @@
             composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.2
         - 'composer-{phpflavor}-docker':
             phpflavor:
-                # Still used by wikimedia/fundraising/SmashPig
+                # Still used by integration/docroot
                 - php73:
                     image: docker-registry.wikimedia.org/releng/composer-test-php73:0.3.1
                 - php74:
