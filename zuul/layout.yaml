@@ -1384,13 +1384,13 @@ project-templates:
       # - mwext-php74-phan-docker
 
     test-wmf:
-      - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php74-selenium-docker
+      - quibble-vendor-mysql-php74-noselenium-docker
+      - quibble-vendor-mysql-php74-selenium-docker
       - mwgate-node14-docker
       - mwext-php74-phan-docker
     gate-and-submit-wmf:
-      - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php74-selenium-docker
+      - quibble-vendor-mysql-php74-noselenium-docker
+      - quibble-vendor-mysql-php74-selenium-docker
       - mwgate-node14-docker
       - mwext-php74-phan-docker
 
