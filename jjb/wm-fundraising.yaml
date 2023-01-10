@@ -63,15 +63,6 @@
 - project:
     name: donationinterface-fundraising-branches
     branch:
-     - REL1_35:
-         phpflavor: php73
-         docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.4.7-s2
-         entrypoint: quibble-with-supervisord
-         # fundraising/REL_35 branch of core is used to test the master branch of
-         # DonationInterface. When the next core LTS version comes out, a new
-         # branch section can modify this line to point to the transitional
-         # DonationInterface branch until it is merged to master
-         donation_interface_branch: master
      - REL1_39:
          phpflavor: php74
          docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.7-s3
@@ -133,10 +124,6 @@
      - ParserFunctions
      - cldr
     branch:
-     - REL1_35:
-         phpflavor: php73
-         docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.4.7-s2
-         entrypoint: quibble-with-supervisord
      - REL1_39:
          phpflavor: php74
          docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.4.7-s3
