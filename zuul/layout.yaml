@@ -1526,6 +1526,7 @@ project-templates:
       - quibble-vendor-sqlite-php81-noselenium-docker
       - quibble-vendor-postgres-php81-noselenium-docker
       - quibble-vendor-mysql-php82-noselenium-docker
+      - mwext-php81-phan-docker
 
   # Special job template that runs composer rather than than relying
   # on mediawiki/vendor for quibble.
