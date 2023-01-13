@@ -9085,6 +9085,10 @@ projects:
       - metrics-platform-maven-java8-docker
       - metrics-platform-maven-java8-docker-site-publish
 
+  - name: mediawiki/libs/less.php
+    template:
+      - name: mediawiki-php-library
+
   - name: mediawiki/libs/Minify
     template:
       - name: mediawiki-php-library-php74-to-php81
