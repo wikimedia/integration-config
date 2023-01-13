@@ -5526,6 +5526,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/ArrayFunctions
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/Arrays
     template:
       - name: extension-quibble
