@@ -2673,12 +2673,6 @@ projects:
     postmerge:
       - phpunit-coverage-php74-docker-publish
 
-  - name: mediawiki/tools/release
-    # FIXME: Use mediawiki-php-library-php74-to-php81?
-    template:
-      - name: composer-test-package-php74-to-php81
-      - name: tox-docker
-
   - name: mediawiki/tools/releng
     template:
       - name: tox-docker
@@ -11395,6 +11389,10 @@ projects:
       - name: archived
 
   - name: mediawiki/tools/train-dev
+    template:
+      - name: archived
+
+  - name: mediawiki/tools/release
     template:
       - name: archived
 
