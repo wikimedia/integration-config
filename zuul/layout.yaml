@@ -9189,6 +9189,10 @@ projects:
     experimental:
       - rust-test
 
+  - name: labs/countervandalism/cvn-api
+    template:
+      - name: composer-test-php74-or-later
+
   - name: labs/libraryupgrader/config
     template:
       - name: tox-docker
