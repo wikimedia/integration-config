@@ -8610,6 +8610,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-codehealth
       - name: extension-apitests
       - name: commit-message-validator
     test:
