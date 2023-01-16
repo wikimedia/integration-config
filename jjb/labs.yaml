@@ -26,6 +26,22 @@
     publishers:
      - docker-cleanup
 
+- job:
+    name: 'cvnbot-dotnet-test'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-src-dir
+     - docker-log-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+         image: docker-registry.wikimedia.org/releng/dotnet-mono612:0.1.0
+         entrypoint: /usr/bin/msbuild
+         args: src/CVNBot.sln /p:Configuration=Debug
+    publishers:
+     - docker-cleanup
+
 - project:
     name: 'labs-tools-Isa'
     jobs:

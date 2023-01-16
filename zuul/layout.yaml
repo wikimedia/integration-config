@@ -9201,6 +9201,12 @@ projects:
     template:
       - name: composer-test-php74-or-later
 
+  - name: labs/countervandalism/CVNBot
+    test:
+      - cvnbot-dotnet-test
+    gate-and-submit:
+      - cvnbot-dotnet-test
+
   - name: labs/libraryupgrader/config
     template:
       - name: tox-docker
