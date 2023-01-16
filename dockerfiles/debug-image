@@ -23,5 +23,6 @@ tag=${2:-latest}
 
 exec docker run \
     --rm --tty \
+    --volume "$(pwd)":/src \
     --interactive --entrypoint /bin/bash \
     docker-registry.wikimedia.org/releng/"$image":"$tag"

@@ -1,0 +1,28 @@
+FROM {{ "ci-bullseye" | image_tag }}
+
+USER root
+
+# The upstream instructions rely on deprecated apt-key. Use fixed gpg key instead.
+# Ref <https://www.mono-project.com/download/stable/#download-lin-debian>
+#
+# you$ ./dockerfiles/debug-image ci-bullseye
+#
+# root$ apt-get update && apt-get install -y gnupg
+# root$ cd /tmp
+# root:src$ HOME=/tmp gpg --keyserver hkps://keyserver.ubuntu.com --receive-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+# root:src$ HOME=/tmp gpg --export 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF > xamarin.gpg
+COPY xamarin.gpg /etc/apt/trusted.gpg.d/xamarin.gpg
+
+# As of Jan 2023, mono does not yet have a dedicated repo for Debian 11 Bullseye,
+# but the packages from the Debian 10 repo work fine for now.
+#
+# Ref <https://www.mono-project.com/download/stable/#download-lin-debian>
+RUN {{ "apt-transport-https dirmngr gnupg ca-certificates" | apt_install }} && \
+    echo "deb https://download.mono-project.com/repo/debian stable-buster main" > /etc/apt/sources.list.d/mono-official-stable.list
+
+RUN {{ "mono-complete" | apt_install }}
+
+USER nobody
+WORKDIR /src
+ENTRYPOINT ["mono"]
+CMD ["--help"]
