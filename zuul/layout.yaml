@@ -3263,6 +3263,7 @@ projects:
   - { name: operations/debs/bdsync,                           test: ['debian-glue-non-voting'] }
   - { name: operations/debs/bloomd,                           test: ['debian-glue-non-voting'] }
   - { name: operations/debs/burrow,                           test: ['debian-glue-non-voting'] }
+  - { name: operations/debs/cadvisor,                         test: ['debian-glue-unstable'] }
   - { name: operations/debs/carbon-c-relay,                   test: ['debian-glue-non-voting'] }
   - { name: operations/debs/carbonate,                        test: ['debian-glue-non-voting'] }
   - { name: operations/debs/cassandra-tools-wmf,              test: ['debian-glue-non-voting'] }
