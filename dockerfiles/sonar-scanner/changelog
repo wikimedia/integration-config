@@ -1,3 +1,9 @@
+sonar-scanner (4.6.0.2311-4) wikimedia; urgency=medium
+
+  * Add support for mediawiki/services/Parsoid and MediaWiki skins (T321837)
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 17 Jan 2023 10:21:04 +0100
+
 sonar-scanner (4.6.0.2311-3) wikimedia; urgency=high
 
    Install node14 on sonar-scanner (T303958)
