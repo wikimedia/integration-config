@@ -803,15 +803,19 @@
         args: '--packages-source "{packages-source}" --git-parallel=8 --skip-install --commands=mwext-phpunit-coverage'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
+    #
+    # We use $THING_SUBNAME rather than $EXT_NAME in order to support
+    # mediawiki/services/parsoid (T321837)
+    #
     - docker-run-with-log-cache-src:
         image: docker-registry.wikimedia.org/releng/node14-test:0.0.3
-        options: '--volume "$(pwd)"/src/extensions/"$EXT_NAME":/src'
+        options: '--volume "$(pwd)"/src/"$THING_SUBNAME":/src'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '--if-present coverage'
     - shell: |
-        if [ -f src/extensions/"$EXT_NAME"/coverage/lcov.info ]; then
-          sed -ie "s#/src/#/workspace/src/extensions/$EXT_NAME/#g" src/extensions/"$EXT_NAME"/coverage/lcov.info
+        if [ -f src/"$THING_SUBNAME"/coverage/lcov.info ]; then
+          sed -ie "s#/src/#/workspace/src/$THING_SUBNAME/#g" src/"$THING_SUBNAME"/coverage/lcov.info
         fi
     - docker-run-with-log-cache-src:
         image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-4
