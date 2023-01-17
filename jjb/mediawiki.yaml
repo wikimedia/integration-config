@@ -709,7 +709,7 @@
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-3
+        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-4
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'
@@ -814,7 +814,7 @@
           sed -ie "s#/src/#/workspace/src/extensions/$EXT_NAME/#g" src/extensions/"$EXT_NAME"/coverage/lcov.info
         fi
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-3
+        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-4
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'
