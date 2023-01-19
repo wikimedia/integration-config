@@ -1223,14 +1223,14 @@ jobs:
       - '.pipeline/blubber/php.yaml'
       - '.pipeline/config.yaml'
       - 'composer.json'
-      - '.*/php/.*'
+      - '(.*/)?php/.*'
       - 'tests/.*\.json'
 
   - name: trigger-metrics-platform-pipeline-test-js
     files:
         - '.pipeline/blubber/js.yaml'
         - '.pipeline/config.yaml'
-        - '.*/js/.*'
+        - '(.*/)?js/.*'
         - 'tests/.*\.json'
 
   - name: trigger-metrics-platform-pipeline-test-java
