@@ -9364,6 +9364,10 @@ projects:
       - name: composer-test-php74-to-php81
       - name: mediawiki-i18n-check
 
+  - name: labs/tools/fileprotectionsync
+    template:
+      - name: tox-docker
+
   - name: labs/tools/nagf
     template:
       - name: composer-test-php74-to-php81
