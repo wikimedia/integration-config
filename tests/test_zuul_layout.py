@@ -271,6 +271,7 @@ class TestZuulLayout(unittest.TestCase):
                     'mediawiki/extensions/DonationInterface',
                     'mediawiki/extensions/OpenStackManager',
                     'mediawiki/extensions/SearchVue',  # JS only
+                    'mediawiki/extensions/VueTest',  # JS only
                     'mediawiki/extensions/Wikibase',
                     'mediawiki/extensions/WikimediaMaintenance'
                 ]

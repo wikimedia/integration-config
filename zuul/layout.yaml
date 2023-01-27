@@ -8142,8 +8142,13 @@ projects:
 
   - name: mediawiki/extensions/VueTest
     template:
+      - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-codehealth
+      # There is no PHPUnit code coverage since that extension is JavaScript
+      # only. There is an exception for it in
+      # test_wikimedia_production_repos_have_requirements
+      # - name: extension-coverage
 
   - name: mediawiki/extensions/WantedPagesFromNS
     template:
