@@ -17,7 +17,7 @@ RUN {{ packages | apt_install }} \
     && install --owner=nobody --group=nogroup --directory /srv/workspace
 
 USER nobody
-RUN git clone https://gerrit.wikimedia.org/r/mediawiki/tools/release "${RELEASE_TOOLS_DIR}" \
+RUN git clone https://gitlab.wikimedia.org/repos/releng/release "${RELEASE_TOOLS_DIR}" \
     && cd "${RELEASE_TOOLS_DIR}" \
     && git tag -f 'docker-head' && git gc --prune=now
 
