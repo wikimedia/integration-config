@@ -7462,6 +7462,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/PushAll
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/PushToWatch
     template:
       - name: extension-quibble
