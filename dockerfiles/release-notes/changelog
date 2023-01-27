@@ -1,3 +1,9 @@
+release-notes (0.0.8) wikimedia; urgency=medium
+
+   Move release repo remote to GitLab
+
+ -- Tyler Cipriani <tcipriani@wikimedia.org>  Fri, 27 Jan 2023 12:48:00 -0700
+
 release-notes (0.0.7) wikimedia; urgency=medium
 
    Re-platform from Stretch to Buster
