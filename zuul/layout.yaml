@@ -9928,14 +9928,6 @@ projects:
     postmerge:
       - trigger-rdf-streaming-updater-pipeline-publish
 
-  - name: wikidata/query/flink-swift-plugin
-    test:
-      - wikidata-query-flink-swift-plugin-maven-java8-docker
-    gate-and-submit:
-      - wikidata-query-flink-swift-plugin-maven-java8-docker
-    postmerge:
-      - wikidata-query-flink-swift-plugin-maven-java8-docker-site-publish
-
   - name: wikidata/query/rdf
     test:
       - wikidata-query-rdf-maven-java8-docker
@@ -11491,6 +11483,10 @@ projects:
     template:
       - name: archived
 
+  - name: wikidata/query/flink-swift-plugin
+    template:
+      - name: archived
+
   - name: wikimedia/fundraising/crm/drupal
     template:
      - name: archived
@@ -11498,4 +11494,3 @@ projects:
   - name: wikimedia/wikimania-scholarships
     template:
       - name: archived
-
