@@ -27,6 +27,8 @@ def main():
     parser.add_argument('suite', help='Path to suite.xml')
     parser.add_argument('--cover-extension',
                         help='Extension path to set for coverage')
+    parser.add_argument('--cover-service',
+                        help='Service path to set for coverage')
     parser.add_argument('--cover-skin',
                         help='Skin path to set for coverage')
 
@@ -60,6 +62,18 @@ def main():
                     sub = etree.SubElement(include, 'directory')
                     sub.text = '../../extensions/%s/%s' \
                         % (args.cover_extension, folder)
+                    sub.set('suffix', '.php')
+
+            if args.cover_service:
+                # Remove the current directories that are there,
+                # we don't want to include any of them
+                for ichild in list(include):
+                    include.remove(ichild)
+                # Add the three directories we care about
+                for folder in ['src', 'includes', 'maintenance']:
+                    sub = etree.SubElement(include, 'directory')
+                    sub.text = '../../service/%s/%s' \
+                        % (args.cover_service, folder)
                     sub.set('suffix', '.php')
 
             if args.cover_skin:
