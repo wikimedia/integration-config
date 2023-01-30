@@ -254,13 +254,13 @@
     name: kartotherian
     pipeline:
       - test
-      - kartotherian
+      - publish
     jobs:
       # trigger-kartotherian-pipeline-test
-      # trigger-kartotherian-pipeline-kartotherian
+      # trigger-kartotherian-pipeline-publish
       - 'trigger-{name}-pipeline-{pipeline}'
       # kartotherian-pipeline-test
-      # kartotherian-pipeline-kartotherian
+      # kartotherian-pipeline-publish
       - '{name}-pipeline-{pipeline}'
 
 - project:

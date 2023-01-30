@@ -8548,9 +8548,9 @@ projects:
     gate-and-submit:
       - trigger-kartotherian-pipeline-test
     postmerge:
-      - trigger-kartotherian-pipeline-kartotherian
+      - trigger-kartotherian-pipeline-publish
     publish:
-      - trigger-kartotherian-pipeline-kartotherian
+      - trigger-kartotherian-pipeline-publish
 
   - name: mediawiki/services/kask
     test:
