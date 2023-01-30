@@ -34,28 +34,11 @@ function relay_signals() {
 # Some tests might fail, we still want to be able to publish the coverage
 # report for those that passed.
 set +e
-if [[ ! -v CODEHEALTH ]]; then
-    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH/services/$SERVICE_NAME" -d pcov.exclude='@(tests|vendor)@' \
-        "$MW_INSTALL_PATH"/tests/phpunit/phpunit.php \
-        --testsuite extensions \
-        --coverage-clover "$LOG_DIR"/clover.xml \
-        --coverage-html "$WORKSPACE"/cover \
-        --log-junit "$LOG_DIR"/junit.xml \
-        "$MW_INSTALL_PATH/services/$SERVICE_NAME/tests/phpunit" &
-else
-    # This runs unit tests for all extensions in the file system. We are doing this because:
-    # 1. in the CODEHEALTH env context only the extension we care about should be cloned
-    # 2. the phpunit-suite-edit ensures that coverage reports will only be for our extension
-    # 3. the unit tests take just a few seconds to run
-    # 4. Passing in the tests/phpunit/unit directory when it doesn't exist results in exit
-    #    code 1.
-    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH/services/$SERVICE_NAME" -d pcov.exclude='@(tests|vendor)@' \
-        vendor/bin/phpunit \
-        --testsuite extensions:unit \
-        --exclude-group Dump,Broken,ParserFuzz,Stub \
-        --coverage-clover "$LOG_DIR"/clover.xml \
-        --log-junit "$LOG_DIR"/junit.xml &
-fi
+php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH/services/$SERVICE_NAME" -d pcov.exclude='@(tests|vendor)@' \
+    "$MW_INSTALL_PATH/services/$SERVICE_NAME/vendor/bin/phpunit" \
+    --coverage-clover "$LOG_DIR"/clover.xml \
+    --coverage-html "$WORKSPACE"/cover \
+    --log-junit "$LOG_DIR"/junit.xml &
 cover_pid=$!
 relay_signals SIGINT SIGTERM
 wait "$cover_pid"
@@ -65,11 +48,9 @@ if [ -f "$LOG_DIR/junit.xml" ]; then
     phpunit-junit-edit "$LOG_DIR/junit.xml"
 fi
 
-# If we're not operating the in the codehealth pipeline context, check to see
-# if the HTML coverage report was generated. If it was not, exit with a failure.
-if [[ ! -v CODEHEALTH ]]; then
-    test -f "$WORKSPACE"/cover/index.html
-fi
+# Check to see if the HTML coverage report was generated. If it was not, exit
+# with a failure.
+test -f "$WORKSPACE"/cover/index.html
 
 if [ -s "$LOG_DIR"/clover.xml ]; then
     cp "$LOG_DIR"/clover.xml "$WORKSPACE"/cover/clover.xml

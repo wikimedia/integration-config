@@ -23,5 +23,5 @@ cd "$MW_INSTALL_PATH/services/$SERVICE_NAME"
 phpunit-suite-edit "$MW_INSTALL_PATH/tests/phpunit/suite.xml" --cover-service "$SERVICE_NAME"
 
 exec phpunit-patch-coverage check \
-    --command "php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$PWD -d pcov.exclude='@(tests|vendor)@' -d pcov.initial.files=3000 \"\$MW_INSTALL_PATH\"/tests/phpunit/phpunit.php" \
+    --command "php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$PWD -d pcov.exclude='@(tests|vendor)@' -d pcov.initial.files=3000 vendor/bin/phpunit" \
     --html "$LOG_DIR"/coverage.html

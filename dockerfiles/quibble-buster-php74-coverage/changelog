@@ -1,3 +1,10 @@
+quibble-buster-php74-coverage (1.4.7-s8) wikimedia; urgency=medium
+
+  * For MediaWiki services, run their phpunit rather than MediaWiki core
+    phpunit.php wrapper. T321837
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 30 Jan 2023 22:13:39 +0100
+
 quibble-buster-php74-coverage (1.4.7-s7) wikimedia; urgency=medium
 
   * Fix coverage filter for MediaWiki services: service > services.
