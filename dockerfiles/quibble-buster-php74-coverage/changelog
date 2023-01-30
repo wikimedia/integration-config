@@ -1,3 +1,9 @@
+quibble-buster-php74-coverage (1.4.7-s7) wikimedia; urgency=medium
+
+  * Fix coverage filter for MediaWiki services: service > services.
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 30 Jan 2023 15:21:40 +0100
+
 quibble-buster-php74-coverage (1.4.7-s6) wikimedia; urgency=medium
 
   * Add support for MediaWiki services such as Parsoid. T321837

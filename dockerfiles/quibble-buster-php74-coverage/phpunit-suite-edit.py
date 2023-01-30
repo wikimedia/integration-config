@@ -72,7 +72,7 @@ def main():
                 # Add the three directories we care about
                 for folder in ['src', 'includes', 'maintenance']:
                     sub = etree.SubElement(include, 'directory')
-                    sub.text = '../../service/%s/%s' \
+                    sub.text = '../../services/%s/%s' \
                         % (args.cover_service, folder)
                     sub.set('suffix', '.php')
 
