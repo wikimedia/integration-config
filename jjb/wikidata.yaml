@@ -132,6 +132,8 @@
             image: docker-registry.wikimedia.org/releng/node14-test-browser:0.0.2-s4
             args: 'grunt only_build'
         - shell: |
+            # Mark our directory as safe (see T328441)
+            git config --global --add safe.directory "$(realpath ./src)"
             # Make and push a commit to the repo on Gerrit
             lastrev=$(git -C ./src rev-parse HEAD)
             message=$(git -C ./src log -1 --pretty=%B | grep -v Change-Id)
@@ -204,6 +206,8 @@
         - shell: |
             # Copy the build result
             cp -R ./src/dist/* ./src/dist-deploy/
+            # Mark our directory as safe (see T328441)
+            git config --global --add safe.directory "$(realpath ./src)"
             # Make and push a commit to the repo on Gerrit
             lastrev=$(git -C ./src rev-parse HEAD)
             message=$(git -C ./src log -1 --pretty=%B | grep -v Change-Id)
