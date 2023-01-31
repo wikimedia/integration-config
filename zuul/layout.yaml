@@ -10173,6 +10173,8 @@ projects:
       - fundraising-tools-tox-docker
 
   - name: wikimedia/fundraising/crm
+    template:
+      - name: composer-test-php74-only
     test:
       - composer-php73-docker
       - wikimedia-fundraising-civicrm-docker
@@ -10180,7 +10182,6 @@ projects:
       - wikimedia-fundraising-civicrm-docker
     experimental:
       - wikimedia-fundraising-civicrm-bullseye-docker  # T307178
-      - composer-php74-docker
 
   - name: wikimedia/fundraising/crm/civicrm
     test:
