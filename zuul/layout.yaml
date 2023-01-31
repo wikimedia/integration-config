@@ -2884,11 +2884,11 @@ projects:
       - mediawiki-core-php74-phan-docker
 
     test-fundraising:
-      - mwgate-composer-php73-docker
+      - mwgate-composer-php74-docker
       - mwgate-node14-docker
       - quibble-donationinterface-REL1_39-php74-docker
     gate-and-submit-fundraising:
-      - mwgate-composer-php73-docker
+      - mwgate-composer-php74-docker
       - mwgate-node14-docker
       - quibble-donationinterface-REL1_39-php74-docker
 
@@ -2946,10 +2946,10 @@ projects:
     # use composer install instead. T189560
 
     test-fundraising:
-      - mwgate-composer-php73-docker
+      - mwgate-composer-php74-docker
       - mwgate-node14-docker
     gate-and-submit-fundraising:
-      - mwgate-composer-php73-docker
+      - mwgate-composer-php74-docker
       - mwgate-node14-docker
 
     experimental:
@@ -4258,11 +4258,11 @@ projects:
       - name: mediawiki-i18n-check
       - name: extension-coverage
     test:
-      - mwgate-composer-php73-docker
+      - mwgate-composer-php74-docker
       - mwgate-node14-docker
       - quibble-donationinterface-REL1_39-php74-docker
     gate-and-submit:
-      - mwgate-composer-php73-docker
+      - mwgate-composer-php74-docker
       - mwgate-node14-docker
       - quibble-donationinterface-REL1_39-php74-docker
 
