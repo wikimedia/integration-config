@@ -10174,12 +10174,13 @@ projects:
 
   - name: wikimedia/fundraising/crm
     test:
-      - wikimedia-fundraising-crm-composer-php73-docker
+      - composer-php73-docker
       - wikimedia-fundraising-civicrm-docker
     gate-and-submit:
       - wikimedia-fundraising-civicrm-docker
     experimental:
       - wikimedia-fundraising-civicrm-bullseye-docker  # T307178
+      - composer-php74-docker
 
   - name: wikimedia/fundraising/crm/civicrm
     test:
