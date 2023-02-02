@@ -3290,6 +3290,7 @@ projects:
   - { name: operations/debs/flannel,                          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/flask-login,                      test: ['debian-glue-non-voting'] }
   - { name: operations/debs/ganglia,                          test: ['debian-glue-non-voting'] }
+  - { name: operations/debs/gdnsd,                            test: ['debian-glue'] }
   - { name: operations/debs/geckodriver,                      test: ['debian-glue-non-voting'] }
   - { name: operations/debs/git-deploy,                       test: ['debian-glue-non-voting'] }
   - { name: operations/debs/git-fat,                          test: ['debian-glue-non-voting'] }
