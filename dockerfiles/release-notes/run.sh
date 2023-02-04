@@ -39,7 +39,7 @@ echo "$NEW_VERSION" > "$LOG_DIR/VERSION"
 
 echo "Building Changelog for ${OLD_VERSION}..${NEW_VERSION}"
 
-# Update the mediawiki/tools/release repo, envvar set by dockerfile
+# Update the releng/release repo, envvar set by dockerfile
 git -C "$RELEASE_TOOLS_DIR" pull --quiet origin master
 git -C "$RELEASE_TOOLS_DIR" submodule --quiet update --init --recursive
 
