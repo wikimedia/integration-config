@@ -1750,12 +1750,6 @@ project-templates:
   - name: extension-quibble-only-standalone
     test:
       - quibble-vendor-mysql-php74-phpunit-standalone-docker
-    test-1_35:
-      - quibble-composer-mysql-php74-phpunit-standalone-docker
-    test-1_38:
-      - quibble-composer-mysql-php74-phpunit-standalone-docker
-    test-1_39:
-      - quibble-composer-mysql-php74-phpunit-standalone-docker
     php:
       - quibble-vendor-mysql-php80-phpunit-standalone-docker
       - quibble-vendor-mysql-php81-phpunit-standalone-docker
@@ -1763,9 +1757,15 @@ project-templates:
       - quibble-vendor-mysql-php74-phpunit-standalone-docker
       - quibble-vendor-mysql-php80-phpunit-standalone-docker
       - quibble-vendor-mysql-php81-phpunit-standalone-docker
+    test-1_35:
+      - quibble-composer-mysql-php74-phpunit-standalone-docker
     gate-and-submit-1_35:
       - quibble-composer-mysql-php74-phpunit-standalone-docker
+    test-1_38:
+      - quibble-composer-mysql-php74-phpunit-standalone-docker
     gate-and-submit-1_38:
+      - quibble-composer-mysql-php74-phpunit-standalone-docker
+    test-1_39:
       - quibble-composer-mysql-php74-phpunit-standalone-docker
     gate-and-submit-1_39:
       - quibble-composer-mysql-php74-phpunit-standalone-docker
