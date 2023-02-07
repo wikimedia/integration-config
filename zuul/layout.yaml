@@ -5403,14 +5403,12 @@ projects:
       - legacy-quibble-rubyselenium-docker
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mediawiki-quibble-apitests-composer-php74-docker
     gate-and-submit: &mediawiki-extensions-wikibase-gate-and-submit
       # TODO: Legacy ruby-based selenium job. To remove! (T220035)
       - ruby2.5-rake-docker
       - legacy-quibble-rubyselenium-docker
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mediawiki-quibble-apitests-composer-php74-docker
     test-1_35:
       - wikibase-client-docker
       - wikibase-repo-docker
