@@ -3799,6 +3799,8 @@ projects:
       # Not allowed whilst non-voting:
       # - operations-mw-config-php74-composer-diffConfig-docker
       - operations-mw-config-typos-docker
+    experimental:
+      - operations-mw-config-tox-docker
 
   - name: operations/puppet
     test-prio:
