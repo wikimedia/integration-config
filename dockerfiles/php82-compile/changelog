@@ -1,3 +1,9 @@
+php82-compile (0.1.2) wikimedia; urgency=medium
+
+  * Fix typo CLFAGS > CFLAGS
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 08 Feb 2023 07:51:20 +0100
+
 php82-compile (0.1.1-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php82:

@@ -1,3 +1,9 @@
+php74-compile (0.0.9) wikimedia; urgency=medium
+
+  * Fix typo CLFAGS > CFLAGS
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 08 Feb 2023 07:51:20 +0100
+
 php74-compile (0.0.8-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php74:

@@ -7,7 +7,7 @@ umask 002
 REPORT_PATH=/src/coverage
 INFO_FILE=php-extension.info
 CFLAGS="-g -O0 --coverage -fprofile-arcs -ftest-coverage"
-CXXFLAGS="$CLFAGS"
+CXXFLAGS="$CFLAGS"
 LDFLAGS="-lgcov"
 EXTRA_LDFLAGS="-precious-files-regex \.gcno$"
 
