@@ -4683,6 +4683,7 @@ projects:
     template:
       - name: extension-phpbench
       - name: in-wikimedia-production
+      - name: extension-javascript-documentation
       - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
