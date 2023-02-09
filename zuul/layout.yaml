@@ -966,6 +966,10 @@ jobs:
     branch: master
     files:
       - '^.*\.php$'
+  - name: ^composer-coverage-patch-docker$
+    branch: master
+    files:
+      - '^.*\.php$'
 
   # Only generate coverage information for 'master' or 'main' branches
   - name: ^.*-coverage-(docker-)?publish$
@@ -8804,6 +8808,8 @@ projects:
       - wmf-quibble-core-vendor-mysql-php74-docker
       - wmf-quibble-vendor-mysql-php74-docker
       - wmf-quibble-selenium-php74-docker
+    coverage:
+      - composer-coverage-patch-docker
     postmerge:
       - parsoidsvc-doxygen-publish
       - phpunit-coverage-php74-docker-publish

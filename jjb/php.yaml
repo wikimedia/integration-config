@@ -128,6 +128,37 @@
      - zuul
 
 - job-template:
+    !!merge : *composer-phpflavor-docker
+    name: 'composer-coverage-patch-docker'
+    triggers:
+      - zuul
+    builders:
+     - docker-castor-load
+     - docker-log-dir
+     - docker-src-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+        image: '{composer_image}'
+        workdir: /src
+        args: 'install --ansi --no-progress --prefer-dist --profile'
+     - docker-run-with-log-cache-src:
+        image: '{composer_image}'
+        workdir: /src
+        args: >-
+            require --ansi --no-progress --prefer-dist --profile --
+            mediawiki/phpunit-patch-coverage 0.0.12
+     - docker-run-with-log-cache-src:
+        image: '{composer_image}'
+        workdir: /src
+        # Allocate a pseudo tty to enable color output from Symphony console
+        options: --tty
+        args: >-
+            exec --ansi --
+            phpunit-patch-coverage check
+            --command "php -d extension=pcov.so -d pcov.enabled=1 -d pcov.exclude='@(tests|vendor)@' vendor/bin/phpunit --colors=always"
+            --html /log/coverage.html
+
+- job-template:
     name: 'phan-{php}-docker'
     node: Docker
     triggers:
@@ -172,6 +203,8 @@
 - project:
     name: 'composer-flavored-on-docker'
     jobs:
+        - 'composer-coverage-patch-docker':
+            composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.1
         - 'composer-{phpflavor}-docker':
             phpflavor:
                 # Still used by wikimedia/fundraising/SmashPig
