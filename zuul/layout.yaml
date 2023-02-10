@@ -10372,12 +10372,6 @@ projects:
     experimental:
       - wikimedia-fundraising-civicrm-bullseye-docker  # T307178
 
-  - name: wikimedia/fundraising/crm/civicrm
-    test:
-      - wikimedia-fundraising-civicrm-docker
-    gate-and-submit:
-      - wikimedia-fundraising-civicrm-docker
-
   - name: wikimedia/fundraising/crm/vendor
     test:
       - wikimedia-fundraising-civicrm-docker
@@ -11688,6 +11682,10 @@ projects:
   - name: wikidata/query/flink-swift-plugin
     template:
       - name: archived
+
+  - name: wikimedia/fundraising/crm/civicrm
+    template:
+     - name: archived
 
   - name: wikimedia/fundraising/crm/drupal
     template:
