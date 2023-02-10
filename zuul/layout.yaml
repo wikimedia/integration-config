@@ -3993,6 +3993,10 @@ projects:
     gate-and-submit:
       - tox-docker
 
+  - name: operations/software/homer/deploy
+    test:
+      - tox-docker
+
   - name: operations/software/netbox-reports
     test:
       - debian-glue-backports-non-voting
