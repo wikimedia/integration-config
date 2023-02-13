@@ -7808,10 +7808,6 @@ projects:
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
 
-  - name: mediawiki/extensions/SemanticDrilldown
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/SemanticGenealogy
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
@@ -11152,6 +11148,10 @@ projects:
   - name: mediawiki/extensions/SemanticComments
     template:
       - name: archived
+
+  - name: mediawiki/extensions/SemanticDrilldown
+    template:
+      - name: archived # Extension now on Github
 
   - name: mediawiki/extensions/SemanticExpressiveness
     template:
