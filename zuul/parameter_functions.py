@@ -453,6 +453,7 @@ dependencies = {
     'RevisionSlider': ['MobileFrontend'],
     'Score': ['VisualEditor', 'TimedMediaHandler', 'Wikibase'],
     'Scribunto': ['SyntaxHighlight_GeSHi'],
+    'SearchVue': ['WikimediaMessages'],
     'SemanticLinks': ['VisualEditor'],
     'Shibboleth': ['PluggableAuth'],
     'SimilarEditors': ['QuickSurveys'],
