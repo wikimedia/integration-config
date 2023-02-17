@@ -612,6 +612,8 @@
         - nsfw-publish
         - revertrisk
         - revertrisk-publish
+        - revertrisk-multilingual
+        - revertrisk-multilingual-publish
         - revscoring
         - revscoring-publish
     jobs:
@@ -623,6 +625,8 @@
         # trigger-inference-services-pipeline-nsfw-publish
         # trigger-inference-services-pipeline-revertrisk
         # trigger-inference-services-pipeline-revertrisk-publish
+        # trigger-inference-services-pipeline-revertrisk-multilingual
+        # trigger-inference-services-pipeline-revertrisk-multilingual-publish
         # trigger-inference-services-pipeline-revscoring
         # trigger-inference-services-pipeline-revscoring-publish
         - 'trigger-{name}-pipeline-{pipeline}'
@@ -634,6 +638,8 @@
         # inference-services-pipeline-nsfw-publish
         # inference-services-pipeline-revertrisk
         # inference-services-pipeline-revertrisk-publish
+        # inference-services-pipeline-revertrisk-multilingual
+        # inference-services-pipeline-revertrisk-multilingual-publish
         # inference-services-pipeline-revscoring
         # inference-services-pipeline-revscoring-publish
         - '{name}-pipeline-{pipeline}'
