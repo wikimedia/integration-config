@@ -9,7 +9,7 @@ FROM {{ "ci-buster" | image_tag }}
 USER root
 
 ENV NODE_VERSION=v14.17.5-linux-x64
-ARG QUIBBLE_VERSION=1.4.7
+ARG QUIBBLE_VERSION=1.5.0
 
 RUN {{ "curl" | apt_install }}
 
