@@ -840,6 +840,10 @@
          timeout: 360
          fail: true
      - timestamps
+     - credentials-binding:
+         - text:
+             credential-id: composer-github-oauthtoken
+             variable: COMPOSER_GITHUB_OAUTHTOKEN
     builders:
         - docker-wipe-dir:
             dir: 'cache'
