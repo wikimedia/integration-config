@@ -1067,7 +1067,7 @@ jobs:
 
   - name: gerrit-git-fat-pull
     branch: ^deploy/wmf.*$
-  - name: gerrit-node14-docker
+  - name: gerrit-node16-docker
     branch: ^deploy/wmf.*$
 
   - name: cumin-tox-publish
@@ -3937,12 +3937,12 @@ projects:
       - gerrit-docker
       # for deploy/wmf/* branch
       - gerrit-git-fat-pull
-      - gerrit-node14-docker
+      - gerrit-node16-docker
     gate-and-submit:
       - gerrit-docker
       # for deploy/wmf/* branch
       - gerrit-git-fat-pull
-      - gerrit-node14-docker
+      - gerrit-node16-docker
 
   - name: operations/software/gerrit/plugins/events-wikimedia
     test:
