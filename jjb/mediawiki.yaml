@@ -191,6 +191,15 @@
     publishers:
      - castor-save-workspace-cache
      - docker-cleanup
+    wrappers:
+      - timeout:
+          timeout: 30
+          fail: true
+      - timestamps
+      - credentials-binding:
+          - text:
+              credential-id: composer-github-oauthtoken
+              variable: COMPOSER_GITHUB_OAUTHTOKEN
 
 - project:
     name: mediawiki-core_phan_jobs
@@ -267,6 +276,9 @@
           - text:
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
 
 # Skipping selenium tests - T196960
 - job-template:
@@ -440,6 +452,9 @@
           - text:
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
 
 # Per-patch coverage for MediaWiki core.
 - job-template:
@@ -475,6 +490,9 @@
           - text:
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
 
 # Per-patch performance report for MediaWiki core.
 - job:
@@ -523,6 +541,9 @@
           - text:
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
 
 # Per-patch phpbench report for MediaWiki core, skins and extensions.
 - job-template:
@@ -692,6 +713,9 @@
           - text:
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
     builders:
     - docker-log-dir
     - docker-src-dir
@@ -785,6 +809,9 @@
           - text:
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
 
     builders:
     - docker-log-dir
@@ -844,6 +871,9 @@
          - text:
              credential-id: composer-github-oauthtoken
              variable: COMPOSER_GITHUB_OAUTHTOKEN
+         - text:
+             credential-id: quibble-earlywarningbot-api-key
+             variable: QUIBBLE_API_KEY
     builders:
         - docker-wipe-dir:
             dir: 'cache'

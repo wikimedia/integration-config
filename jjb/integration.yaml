@@ -30,6 +30,9 @@
           - text:
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
 
 # Super basic sense check for integration/composer repo
 - job:
@@ -133,6 +136,18 @@
               --db-dir /workspace/db
               --web-backend=external --web-url=http://127.0.0.1:9413'
           logdir: '/workspace/log'
+    wrappers:
+      - timeout:
+          timeout: 45
+          fail: true
+      - timestamps
+      - credentials-binding:
+          - text:
+              credential-id: composer-github-oauthtoken
+              variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
     publishers:
       - compress-mw-debug-logs
       - archive-log-allow-empty
@@ -165,6 +180,18 @@
               --skip api-testing
               --web-backend=external --web-url=http://127.0.0.1:9413'
           logdir: '/workspace/log'
+    wrappers:
+      - timeout:
+          timeout: 45
+          fail: true
+      - timestamps
+      - credentials-binding:
+          - text:
+              credential-id: composer-github-oauthtoken
+              variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
     publishers:
       - compress-mw-debug-logs
       - archive-log-allow-empty
@@ -205,6 +232,9 @@
           - text:
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
     publishers:
       - compress-mw-debug-logs
       - archive-log-allow-empty
@@ -245,6 +275,9 @@
           - text:
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
     publishers:
       - compress-mw-debug-logs
       - archive-log-allow-empty

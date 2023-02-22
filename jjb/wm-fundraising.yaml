@@ -106,6 +106,9 @@
           - text:
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
 
 # Special job for Fundraising-specific extensions where master must maintain
 # compatibility with a release branch and a specific php version.
@@ -161,6 +164,9 @@
           - text:
               credential-id: composer-github-oauthtoken
               variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
 
 - project:
     name: fundraising-tools

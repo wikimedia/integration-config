@@ -129,6 +129,18 @@
     publishers:
      - castor-save-workspace-cache
      - docker-cleanup
+    wrappers:
+      - timeout:
+          timeout: 30
+          fail: true
+      - timestamps
+      - credentials-binding:
+          - text:
+              credential-id: composer-github-oauthtoken
+              variable: COMPOSER_GITHUB_OAUTHTOKEN
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
 
 - project:
     name: phan-jobs
