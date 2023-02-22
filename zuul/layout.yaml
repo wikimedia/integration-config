@@ -3752,13 +3752,13 @@ projects:
       - operations-mw-config-php74-composer-test-docker
       - operations-mw-config-php74-composer-diffConfig-docker
       - operations-mw-config-typos-docker
+      - operations-mw-config-tox-docker
     gate-and-submit:
       - operations-mw-config-php74-composer-lint-docker
       - operations-mw-config-php74-composer-test-docker
       # Not allowed whilst non-voting:
       # - operations-mw-config-php74-composer-diffConfig-docker
       - operations-mw-config-typos-docker
-    experimental:
       - operations-mw-config-tox-docker
 
   - name: operations/puppet
