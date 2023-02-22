@@ -968,6 +968,7 @@
                 - wikidata-query-builder
         - 'branchdeploy-{key}-node16-npm-docker':
             key:
+                - wikidata-query-builder
                 - codex
 
 - job-template:
