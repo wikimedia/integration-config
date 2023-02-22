@@ -8770,14 +8770,6 @@ projects:
       - parsoidsvc-doxygen-publish
       - phpunit-coverage-php74-docker-publish
 
-  - name: mediawiki/services/parsoid/deploy
-    test:
-      - noop
-    gate-and-submit:
-      - noop
-    experimental:
-      - generic-node16-docker
-
   - name: mediawiki/services/poolcounter
     template:
       - name: debian-glue-non-voting
@@ -11465,6 +11457,10 @@ projects:
       - name: archived
 
   - name: mediawiki/services/mobileapps/deploy
+    template:
+      - name: archived
+
+  - name: mediawiki/services/parsoid/deploy
     template:
       - name: archived
 
