@@ -2779,7 +2779,7 @@ projects:
       - api-testing-mysql-php74-docker
       - api-testing-sqlite-php74-docker
     postmerge:
-      - generic-node14-docs-docker-publish
+      - generic-node16-docs-docker-publish
 
   - name: mediawiki/tools/cli
     test:
@@ -2899,11 +2899,11 @@ projects:
 
   - name: performance/fresnel
     test:
-      - fresnel-node14-browser-docker
+      - fresnel-node16-browser-docker
     gate-and-submit:
-      - fresnel-node14-browser-docker
+      - fresnel-node16-browser-docker
     postmerge:
-      - generic-node14-browser-coverage-docker-publish
+      - generic-node16-browser-coverage-docker-publish
 
   - name: performance/navtiming
     template:
@@ -5553,7 +5553,7 @@ projects:
       - mwext-doxygen-publish
       # NOTE: This is the 'wrong' publisher, but there's no JS extension
       # publish step yet. Let's go with this for now. 2022-02-25 JDF.
-      - generic-node14-browser-coverage-docker-publish
+      - generic-node16-browser-coverage-docker-publish
 
   - name: mediawiki/extensions/WikiLove
     template:
@@ -9194,9 +9194,9 @@ projects:
     template:
       - name: composer-test-package-php74-to-php81
     test:
-      - wikipeg-special-node14-plus-php80-composer-docker
+      - wikipeg-special-node16-plus-php80-composer-docker
     gate-and-submit:
-      - wikipeg-special-node14-plus-php80-composer-docker
+      - wikipeg-special-node16-plus-php80-composer-docker
 
   - name: WrappedString
     template:
@@ -10036,21 +10036,21 @@ projects:
 
   - name: oojs/core
     test:
-      - oojs-core-node14-runjenkins-docker
+      - oojs-core-node16-runjenkins-docker
     gate-and-submit:
-      - oojs-core-node14-runjenkins-docker
+      - oojs-core-node16-runjenkins-docker
     postmerge:
-      - generic-node14-docs-docker-publish
-      - generic-node14-browser-coverage-docker-publish
+      - generic-node16-docs-docker-publish
+      - generic-node16-browser-coverage-docker-publish
     publish:
-      - generic-node14-docs-docker-publish
+      - generic-node16-docs-docker-publish
 
   - name: oojs/router
     template:
       - name: node16-browser-docker
     postmerge:
-      - generic-node14-docs-docker-publish
-      - generic-node14-browser-coverage-docker-publish
+      - generic-node16-docs-docker-publish
+      - generic-node16-browser-coverage-docker-publish
 
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
@@ -10058,10 +10058,10 @@ projects:
       - name: composer-test-package-php74-to-php81
       - name: mediawiki-i18n-check
     test:
-      - ooui-special-node14-plus-php80-composer-docker
+      - ooui-special-node16-plus-php80-composer-docker
       - ooui-ruby2.5-rake-docker
     gate-and-submit:
-      - ooui-special-node14-plus-php80-composer-docker
+      - ooui-special-node16-plus-php80-composer-docker
       - ooui-ruby2.5-rake-docker
     postmerge:
       - oojs-ui-doxygen-publish
@@ -10075,58 +10075,58 @@ projects:
     template:
       - name: node16-rundoc-docker
     test:
-      - unicodejs-node14-browser-docker
+      - unicodejs-node16-browser-docker
     gate-and-submit:
-      - unicodejs-node14-browser-docker
+      - unicodejs-node16-browser-docker
     postmerge:
-      - generic-node14-browser-coverage-docker-publish
-      - generic-node14-docs-docker-publish
+      - generic-node16-browser-coverage-docker-publish
+      - generic-node16-docs-docker-publish
     publish:
-      - generic-node14-docs-docker-publish
+      - generic-node16-docs-docker-publish
 
   - name: jquery-client
     template:
       - name: node16-rundoc-docker
     test:
-      - generic-node14-browser-docker
+      - generic-node16-browser-docker
     gate-and-submit:
-      - generic-node14-browser-docker
+      - generic-node16-browser-docker
     postmerge:
-      - generic-node14-browser-coverage-docker-publish
-      - generic-node14-docs-docker-publish
+      - generic-node16-browser-coverage-docker-publish
+      - generic-node16-docs-docker-publish
     publish:
-      - generic-node14-docs-docker-publish
+      - generic-node16-docs-docker-publish
 
   - name: VisualEditor/VisualEditor
     template:
       - name: mediawiki-i18n-check
       - name: node16-rundoc-docker-for-MW-branches
     test:
-      - visualeditor-node14-browser-docker
+      - visualeditor-node16-browser-docker
     gate-and-submit:
-      - visualeditor-node14-browser-docker
+      - visualeditor-node16-browser-docker
     test-1_35:
-      - visualeditor-node14-browser-docker
+      - visualeditor-node16-browser-docker
     gate-and-submit-1_35:
-      - visualeditor-node14-browser-docker
+      - visualeditor-node16-browser-docker
     test-1_38:
-      - visualeditor-node14-browser-docker
+      - visualeditor-node16-browser-docker
     gate-and-submit-1_38:
-      - visualeditor-node14-browser-docker
+      - visualeditor-node16-browser-docker
     test-1_39:
-      - visualeditor-node14-browser-docker
+      - visualeditor-node16-browser-docker
     gate-and-submit-1_39:
-      - visualeditor-node14-browser-docker
+      - visualeditor-node16-browser-docker
     test-1_40:
-      - visualeditor-node14-browser-docker
+      - visualeditor-node16-browser-docker
     gate-and-submit-1_40:
-      - visualeditor-node14-browser-docker
+      - visualeditor-node16-browser-docker
     test-wmf:
-      - visualeditor-node14-browser-docker
+      - visualeditor-node16-browser-docker
     gate-and-submit-wmf:
-      - visualeditor-node14-browser-docker
+      - visualeditor-node16-browser-docker
     postmerge:
-      - generic-node14-browser-coverage-docker-publish
+      - generic-node16-browser-coverage-docker-publish
 
   - name: wikidata/query/flink-rdf-streaming-updater
     test:
@@ -10179,7 +10179,7 @@ projects:
       - trigger-termbox-pipeline-rehearse
     postmerge:
       - trigger-termbox-pipeline-publish
-      - generic-node14-docs-docker-publish
+      - generic-node16-docs-docker-publish
 
   - name: wikibase/property-suggester-scripts
     template:
@@ -10418,7 +10418,7 @@ projects:
     gate-and-submit:
       - trigger-wvui-pipeline-test
     postmerge:
-      - generic-node14-docs-docker-publish
+      - generic-node16-docs-docker-publish
       - trigger-wvui-pipeline-release
 
 #### Archive repositories ######################################
