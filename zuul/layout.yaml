@@ -1038,8 +1038,6 @@ jobs:
     queue-name: mediawiki
   - name: mediawiki-quibble-vendor-mysql-php74-docker
     queue-name: mediawiki
-  - name: mwgate-node14-docker
-    queue-name: mediawiki
   - name: mwgate-node16-docker
     queue-name: mediawiki
 
@@ -2302,56 +2300,6 @@ project-templates:
       - php-compile-php82-docker
     postmerge:
       - php74-compile-coverage-publish
-
-  - name: node14-docker
-    test:
-      - generic-node14-docker
-    gate-and-submit:
-      - generic-node14-docker
-
-  - name: node14-browser-docker
-    test:
-      - generic-node14-browser-docker
-    gate-and-submit:
-      - generic-node14-browser-docker
-
-  - name: node14-browser-webdriver-docker
-    test:
-      - generic-node14-browser-webdriver-docker
-    gate-and-submit:
-      - generic-node14-browser-webdriver-docker
-
-  - name: node14-rundoc-docker
-    test:
-      - generic-node14-rundoc-docker
-    gate-and-submit:
-      - generic-node14-rundoc-docker
-
-  - name: node14-rundoc-docker-for-MW-branches
-    test:
-      - generic-node14-rundoc-docker
-    gate-and-submit:
-      - generic-node14-rundoc-docker
-    test-1_35:
-      - generic-node14-rundoc-docker
-    gate-and-submit-1_35:
-      - generic-node14-rundoc-docker
-    test-1_38:
-      - generic-node14-rundoc-docker
-    gate-and-submit-1_38:
-      - generic-node14-rundoc-docker
-    test-1_39:
-      - generic-node14-rundoc-docker
-    gate-and-submit-1_39:
-      - generic-node14-rundoc-docker
-    test-1_40:
-      - generic-node14-rundoc-docker
-    gate-and-submit-1_40:
-      - generic-node14-rundoc-docker
-    test-wmf:
-      - generic-node14-rundoc-docker
-    gate-and-submit-wmf:
-      - generic-node14-rundoc-docker
 
   - name: node16-docker
     test:
