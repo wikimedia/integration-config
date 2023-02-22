@@ -193,6 +193,8 @@
     name: gerrit
     jobs:
         - '{name}-node14-docker'
+        - '{name}-node16-docker'
+
 - project:
     name: gerrit-plugins
     project:
