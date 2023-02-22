@@ -4287,8 +4287,8 @@ projects:
     # Special extra jobs because Fundraising uses this on PHP74/REL1_39
     test:
       - quibble-fundraising-cldr-REL1_39-php74-docker
-    gate-and-submit:
-      - quibble-fundraising-cldr-REL1_39-php74-docker
+    #gate-and-submit:
+    #  - quibble-fundraising-cldr-REL1_39-php74-docker
 
   - name: mediawiki/extensions/CodeEditor
     template:
