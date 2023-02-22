@@ -48,7 +48,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node14-test-browser-php80-composer:0.2.0-s1
+         image: docker-registry.wikimedia.org/releng/node16-test-browser-php80-composer:0.1.1
          # npm run-script jenkins runs 'npm test' and 'npm run doc'
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
