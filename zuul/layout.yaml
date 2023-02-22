@@ -2301,13 +2301,6 @@ project-templates:
     postmerge:
       - php74-compile-coverage-publish
 
-  # Legacy node12 job only for use in Services which are still running that.
-  - name: node12-docker
-    test:
-      - generic-node12-docker
-    gate-and-submit:
-      - generic-node12-docker
-
   - name: node14-docker
     test:
       - generic-node14-docker
