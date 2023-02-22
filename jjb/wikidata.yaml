@@ -41,7 +41,7 @@
     name: wikibase-daily-npm-audit
     repository: mediawiki/extensions/Wikibase
     jobs:
-     - '{name}-daily-node14-npmaudit-docker':
+     - '{name}-daily-node16-npmaudit-docker':
 #        recipients:
 #         - email-wikidata-ci-status
 

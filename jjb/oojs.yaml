@@ -18,6 +18,25 @@
      - docker-cleanup
 
 - job:
+    name: 'ooui-special-node16-plus-php80-composer-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-log-dir
+     - docker-src-dir
+     - docker-ci-src-setup-simple
+     - docker-run-with-log-cache-src:
+         image: docker-registry.wikimedia.org/releng/node16-test-browser-php80-composer:0.1.1
+         # 'npm run jenkins' also runs composer
+         entrypoint: /run-with-xvfb.sh
+         args: 'jenkins'
+    publishers:
+     - archive-log-allow-empty
+     - docker-cleanup
+
+- job:
     name: 'oojs-ui-docker-publish'
     node: Docker
     concurrent: false
@@ -74,4 +93,6 @@
     name: oojs-core
     jobs:
         - '{name}-node14-run{script}-docker':
+           script: 'jenkins'
+        - '{name}-node16-run{script}-docker':
            script: 'jenkins'

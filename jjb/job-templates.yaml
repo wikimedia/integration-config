@@ -957,6 +957,8 @@
     jobs:
         - '{name}-node14-run{script}-docker':
            script: 'doc'
+        - '{name}-node16-run{script}-docker':
+           script: 'doc'
 
 - project:
     name: 'branchdeploy'

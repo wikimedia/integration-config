@@ -78,16 +78,19 @@
     name: visualeditor
     jobs:
         - '{name}-node14-browser-docker'
+        - '{name}-node16-browser-docker'
 
 - project:
     name: unicodejs
     jobs:
         - '{name}-node14-browser-docker'
+        - '{name}-node16-browser-docker'
 
 - project:
     name: fresnel
     jobs:
         - '{name}-node14-browser-docker'
+        - '{name}-node16-browser-docker'
 
 - project:
     name: 'translatewiki'
