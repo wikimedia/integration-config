@@ -469,27 +469,6 @@
     name: '{name}-{project}-maven-release-docker'
     !!merge : *job_template_maven-release-docker
 
-# Node.js 12 job for 'npm install-test'
-- job-template:
-    name: '{name}-node12-docker'
-    node: Docker
-    triggers:
-     - zuul
-    properties:
-        - build-discarder:
-            days-to-keep: 7
-    builders:
-     - docker-castor-load
-     - docker-src-dir
-     - docker-log-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node12-test:0.0.4'
-    publishers:
-     - archive-log-allow-empty
-     - castor-save-workspace-cache
-     - docker-cleanup
-
 # Node.js 14 job for 'npm install-test'
 - job-template:
     name: '{name}-node14-docker'
@@ -959,8 +938,6 @@
 - project:
     name: 'generic'
     jobs:
-        - '{name}-node12-docker'
-
         - '{name}-node14-docker'
         - '{name}-node14-browser-docker'
         - '{name}-node14-browser-webdriver-docker'
