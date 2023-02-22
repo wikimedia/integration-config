@@ -1,2 +1,2 @@
 #!/bin/bash -e
-exec tox -e jenkins-jobs -- "${@}"
+exec python -m tox -e jenkins-jobs -- "${@}"
