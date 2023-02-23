@@ -11,14 +11,15 @@ ARG QUIBBLE_VERSION=1.5.5
 
 USER root
 
-# Install node/npm/npx
+# Keep in sync with node Dockerfile.template
 COPY --from=node /usr/bin/node /usr/bin/node
 RUN ln -s /usr/bin/node /usr/bin/nodejs
 COPY --from=node /usr/share/nodejs /usr/share/nodejs
 COPY --from=node /usr/include/node /usr/include/node
-COPY --from=node /srv/npm/ /srv/npm/
-RUN ln -s /srv/npm/bin/npm-cli.js /usr/bin/npm
-RUN ln -s /srv/npm/bin/npx-cli.js /usr/bin/npx
+COPY --from=node /usr/lib/node_modules /usr/lib/node_modules
+RUN ln -s /usr/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
+RUN ln -s /usr/lib/node_modules/npm/bin/npx-cli.js /usr/bin/npx
+
 USER nobody
 
 # Slight digression compared to node10

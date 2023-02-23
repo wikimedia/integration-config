@@ -1,3 +1,9 @@
+node16 (0.2.0) wikimedia; urgency=high
+
+   Switch from npm 7.21.0 (pinned) to npm 8.19.3 (upstream).
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Tue,  8 Aug 2023 02:00:00 +0100
+
 node16 (0.1.0) wikimedia; urgency=high
 
    Upgrade node from v16.16.0 to v16.19.1

@@ -1,3 +1,10 @@
+quibble-buster-php80 (1.5.5-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image node16:
+   Switch from npm 7.21.0 (pinned) to npm 8.19.3 (upstream).
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Tue,  8 Aug 2023 02:00:00 +0100
+
 quibble-buster-php80 (1.5.5-s1) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-buster:

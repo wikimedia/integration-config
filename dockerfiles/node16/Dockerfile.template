@@ -18,17 +18,10 @@ RUN cd /tmp/nodeinstall \
     && ln -s /usr/bin/node /usr/bin/nodejs \
     && mv node-${NODE_VERSION}/share/ /usr/share/nodejs \
     && mv node-${NODE_VERSION}/include/node /usr/include/node \
-    # FIXME: Using the proper npm/npx is nice in theory, but they don't work.
-    # && mv node-${NODE_VERSION}/lib/node_modules /usr/lib/node_modules \
-    # && ln -s /usr/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm \
-    # && ln -s /usr/lib/node_modules/npm/bin/npx-cli.js /usr/bin/npx \
+    && mv node-${NODE_VERSION}/lib/node_modules /usr/lib/node_modules \
+    && ln -s /usr/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm \
+    && ln -s /usr/lib/node_modules/npm/bin/npx-cli.js /usr/bin/npx \
     && rm -rf /tmp/nodeinstall
-
-# Pin our Node 16 image to npm 7.x for consistency.
-RUN git clone --depth 1 https://gerrit.wikimedia.org/r/integration/npm.git -b npm-7.21.0 /srv/npm \
-    && rm -rf /srv/npm/.git \
-    && ln -s /srv/npm/bin/npm-cli.js /usr/bin/npm \
-    && ln -s /srv/npm/bin/npx-cli.js /usr/bin/npx
 
 USER nobody
 
