@@ -29,7 +29,7 @@
      - docker-log-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.0.1'
+        image: 'docker-registry.wikimedia.org/releng/node16-test:0.1.0'
         args: 'doc'
      - doc-publish:
            docsrc: 'src/docs/js'
@@ -835,7 +835,7 @@
     # mediawiki/services/parsoid (T321837)
     #
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/node16-test:0.0.1
+        image: docker-registry.wikimedia.org/releng/node16-test:0.1.0
         options: '--volume "$(pwd)"/src/"$THING_SUBNAME":/src'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
