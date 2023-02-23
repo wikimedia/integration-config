@@ -29,7 +29,7 @@
         - docker-ci-src-setup-simple
         - shell: |
             cd src/
-            git config --global --add safe.directory "$(realpath .)"
+            git config --global --add safe.directory '*'
             git submodule update --init
             git submodule foreach git fetch --all
             git submodule foreach git reset --hard origin/master
