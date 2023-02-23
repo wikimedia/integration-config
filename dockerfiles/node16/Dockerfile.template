@@ -4,14 +4,14 @@ FROM {{ "ci-bullseye" | image_tag }}
 
 USER root
 
-ENV NODE_VERSION=v16.16.0-linux-x64
+ENV NODE_VERSION=v16.19.1-linux-x64
 
 RUN {{ "curl" | apt_install }}
 
 COPY SHASUMS256.txt /tmp/nodeinstall/SHASUMS256.txt
 RUN cd /tmp/nodeinstall \
     # Download, verify, and expand the version of Node we want
-    && curl -Lo node-${NODE_VERSION}.tar.gz https://nodejs.org/dist/v16.16.0/node-${NODE_VERSION}.tar.gz \
+    && curl -Lo node-${NODE_VERSION}.tar.gz https://nodejs.org/download/release/v16.19.1/node-${NODE_VERSION}.tar.gz \
     && grep node-${NODE_VERSION}.tar.gz SHASUMS256.txt | sha256sum -c - \
     && tar -xzf node-${NODE_VERSION}.tar.gz \
     && mv node-${NODE_VERSION}/bin/node /usr/bin/node \
@@ -24,8 +24,7 @@ RUN cd /tmp/nodeinstall \
     # && ln -s /usr/lib/node_modules/npm/bin/npx-cli.js /usr/bin/npx \
     && rm -rf /tmp/nodeinstall
 
-# Pin our Node 14 image to npm 7.x. Official Node.js 14 tarballs come with npm 6,
-# but, we upgraded npm and we're sticking to it.
+# Pin our Node 16 image to npm 7.x for consistency.
 RUN git clone --depth 1 https://gerrit.wikimedia.org/r/integration/npm.git -b npm-7.21.0 /srv/npm \
     && rm -rf /srv/npm/.git \
     && ln -s /srv/npm/bin/npm-cli.js /usr/bin/npm \
@@ -35,5 +34,3 @@ USER nobody
 
 ENTRYPOINT ["npm"]
 CMD ["--help"]
-
-

@@ -1,3 +1,9 @@
+node16 (0.1.0) wikimedia; urgency=high
+
+   Upgrade node from v16.16.0 to v16.19.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 23 Feb 2023 15:57:54 -0500
+
 node16 (0.0.1) wikimedia; urgency=medium
 
   * Initial image, with node v16.16.0 and npm v7.21.0.
