@@ -285,7 +285,7 @@
     !!merge : *job_quibble
     name: quibble-{packages-source}-{database}-{php}-noselenium-docker
     entrypoint: quibble-with-supervisord
-    quibble_args: '--skip selenium,npm-test,phpunit-standalone,api-testing'
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --skip selenium,npm-test,phpunit-standalone,api-testing'
     triggers:
         - zuul
 
@@ -294,7 +294,7 @@
     !!merge : *job_quibble
     name: quibble-{packages-source}-{database}-{php}-selenium-docker
     entrypoint: quibble-with-supervisord
-    quibble_args: '--run selenium'
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
     triggers:
         - zuul
 
@@ -336,7 +336,7 @@
     !!merge : *job_quibble
     name: quibble-{packages-source}-{database}-{php}-phpunit-standalone-docker
     entrypoint: quibble-with-supervisord
-    quibble_args: '--run phpunit-standalone'
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run phpunit-standalone'
     triggers:
         - zuul
 
@@ -347,7 +347,7 @@
     entrypoint: quibble-with-supervisord
     # We do not run mediawiki/core tests with extensions installed
     # https://phabricator.wikimedia.org/T197469#4293142
-    quibble_args: '--phpunit-testsuite=extensions --skip selenium,npm-test,phpunit-standalone,api-testing,phpbench'
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,npm-test,phpunit-standalone,api-testing,phpbench'
     triggers:
         - zuul
 
@@ -359,7 +359,7 @@
     entrypoint: quibble-with-supervisord
     # We do not run mediawiki/core tests with extensions installed
     # https://phabricator.wikimedia.org/T197469#4293142
-    quibble_args: '--phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
     triggers:
         - zuul
 
@@ -367,7 +367,7 @@
     !!merge : *job_quibble
     name: wmf-quibble-selenium-{php}-docker
     entrypoint: quibble-with-supervisord
-    quibble_args: '--run selenium'
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
     triggers:
         - zuul
 
@@ -376,7 +376,7 @@
     !!merge : *job_quibble
     name: mediawiki-quibble-{packages-source}-{database}-{php}-docker
     entrypoint: quibble-with-supervisord
-    quibble_args: '--skip selenium,composer-test,npm-test,phpunit-standalone,api-testing'
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing'
     triggers:
         - zuul
 
@@ -386,7 +386,7 @@
     !!merge : *job_quibble
     name: mediawiki-quibble-selenium-{packages-source}-{database}-{php}-docker
     entrypoint: quibble-with-supervisord
-    quibble_args: '--run selenium'
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
     triggers:
         - zuul
 
@@ -395,7 +395,7 @@
     !!merge : *job_quibble
     name: mediawiki-quibble-apitests-{packages-source}-{php}-docker
     entrypoint: quibble-with-supervisord
-    quibble_args: '--run api-testing'
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run api-testing'
     triggers:
         - zuul
 
@@ -436,7 +436,7 @@
             image: '{docker_image}'
             volumes:
                 /srv/git: /srv/git:ro
-            args: '--packages-source "vendor" --git-parallel=8 --skip-install --run composer-test'
+            args: '--reporting-url="https://earlywarningbot.toolforge.org" --packages-source "vendor" --git-parallel=8 --skip-install --run composer-test'
             logdir: '/workspace/log'
             srcdir: '/workspace/src'
     publishers:
