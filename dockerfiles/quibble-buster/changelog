@@ -1,3 +1,9 @@
+quibble-buster (1.5.0-s2) wikimedia; urgency=high
+
+   Re-use node14, not node16
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 23 Feb 2023 18:53:49 -0500
+
 quibble-buster (1.5.0-s1) wikimedia; urgency=high
 
    Re-use node from the node image rather than our own
