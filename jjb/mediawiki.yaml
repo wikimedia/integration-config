@@ -240,7 +240,7 @@
             options: '--tmpfs /workspace/db:size=320M'
             volumes:
                 /srv/git: /srv/git:ro
-            args: '--reporting-url="https://earlywarningbot.toolforge.org" --packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db --git-parallel=8 {quibble_args}'
+            args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db --git-parallel=8 {quibble_args}'
             logdir: '/workspace/log'
             srcdir: '/workspace/src'
         - assert-no-mediawiki-errors
