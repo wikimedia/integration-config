@@ -2793,9 +2793,9 @@ projects:
       - mw-tools-phan-mwcore-testrun
 
   - name: mediawiki/tools/phan/PerfCheckPlugin
-    # FIXME: Use mediawiki-php-library-php74-to-php81?
+    # FIXME: Use mediawiki-php-library-php74-to-php81 once PHP 8.1+ supported
     template:
-      - name: composer-test-package-php74-to-php81
+      - name: composer-test-package-php74-to-php80
 
   - name: mediawiki/tools/phan/SecurityCheckPlugin
     # FIXME: Use mediawiki-php-library-php74-to-php81?
