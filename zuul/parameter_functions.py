@@ -547,6 +547,7 @@ dependencies = {
 # This list is *not* recursively processed.
 phan_dependencies = {
     'skins/Cosmos': ['AdminLinks', 'CookieWarning', 'SocialProfile'],
+    'skins/Metrolook': ['SocialProfile'],
     'skins/MinervaNeue': ['Echo', 'MobileFrontend'],
     'skins/Nimbus': ['Echo', 'RandomGameUnit', 'SocialProfile', 'Video'],
     'skins/Refreshed': ['SocialProfile'],
