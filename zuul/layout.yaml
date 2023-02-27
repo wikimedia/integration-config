@@ -162,7 +162,7 @@ pipelines:
            - ^cindom@gmail\.com$
            - ^codereview@emsenhuber\.ch$
            - ^crazy4sb@gmail\.com$ # unicornisaurous, former GCI student
-           - ^curtis@mashedkeyboard\.me$ # Naypta, extension-CatTalk creator/maintainer
+           - ^curtis@mashedkeyboard\.me$ # Naypta
            - ^d_entous@yahoo\.com$
            - ^daimona\.wiki@gmail\.com$ # Daimona Eaytoy
            - ^daniel@nadir-seen-fire\.com$
@@ -6146,10 +6146,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/CatTalk
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/CentralLogging
     template:
       - name: extension-quibble
@@ -10582,6 +10578,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/CategorySlideShow
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/CatTalk
     template:
       - name: archived
 
