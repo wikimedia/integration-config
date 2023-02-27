@@ -7089,10 +7089,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/MolHandler
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/MontserratFont
     template:
       - name: extension-quibble
@@ -8018,10 +8014,6 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/StickyTOC
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/StlHandler
     template:
       - name: extension-quibble
 
@@ -10929,6 +10921,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/MolHandler
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/MSSQLBackCompat
     template:
       - name: archived
@@ -11230,6 +11226,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Spreadsheet
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/StlHandler
     template:
       - name: archived
 
