@@ -6118,10 +6118,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/Carp
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/CategoryExplorer
     template:
       - name: extension-quibble
@@ -10574,6 +10570,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/BookManagerv2
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Carp
     template:
       - name: archived
 
