@@ -7780,10 +7780,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/SecureSessions
-    template:
-      - name: extension-broken  # T110465
-
   - name: mediawiki/extensions/SelectCategory
     template:
       - name: extension-quibble
@@ -11138,6 +11134,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/SecurePasswords
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/SecureSessions
     template:
       - name: archived
 
