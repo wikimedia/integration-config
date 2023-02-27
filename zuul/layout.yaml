@@ -2273,19 +2273,6 @@ project-templates:
     experimental:
       - composer-package-php82-docker
 
-  # Temporary template for libraries that fail on PHP 8.1 T307504
-  - name: composer-test-package-php74-to-php80
-    test:
-      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php74-docker
-      - composer-package-php80-docker
-    gate-and-submit:
-      - composer-package-php74-docker
-      - composer-package-php80-docker
-    experimental:
-      - composer-package-php81-docker
-      - composer-package-php82-docker
-
   - name: php-compile-php74-or-later
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
@@ -2789,9 +2776,16 @@ projects:
       - mw-tools-phan-mwcore-testrun
 
   - name: mediawiki/tools/phan/PerfCheckPlugin
-    # FIXME: Use mediawiki-php-library-php74-to-php81 once PHP 8.1+ supported
-    template:
-      - name: composer-test-package-php74-to-php80
+    # FIXME: Use mediawiki-php-library-php74-to-php81 once PHP 8.1+ supported (T307504)
+    test:
+      - composer-package-php74-docker
+      - composer-package-php80-docker
+    gate-and-submit:
+      - composer-package-php74-docker
+      - composer-package-php80-docker
+    experimental:
+      - composer-package-php81-docker
+      - composer-package-php82-docker
 
   - name: mediawiki/tools/phan/SecurityCheckPlugin
     # FIXME: Use mediawiki-php-library-php74-to-php81?
