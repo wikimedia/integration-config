@@ -9134,9 +9134,9 @@ projects:
       - name: mediawiki-php-library-php74-to-php81
 
   - name: mediawiki/libs/Dodo
-    # FIXME: Use mediawiki-php-library-php74-to-php81 once PHP 8.1+ supported
+    # FIXME: Use mediawiki-php-library-php74-to-php81
     template:
-      - name: composer-test-package-php74-to-php80
+      - name: composer-test-package-php74-to-php81
     postmerge:
       - doxygen-publish
       - phpunit-coverage-php74-docker-publish
