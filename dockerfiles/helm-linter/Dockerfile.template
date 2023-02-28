@@ -1,3 +1,6 @@
+FROM docker-registry.wikimedia.org/golang1.19 as build
+RUN CGO_ENABLED=0 go install github.com/davidrjonas/semver-cli@1.1.1
+
 FROM {{ "ci-buster" | image_tag }}
 
 ENV HELM_HOME=/tmp/helm \
@@ -6,6 +9,8 @@ ENV HELM_HOME=/tmp/helm \
     HELM_CACHE_HOME=/tmp/helm3/cache
 
 USER root
+
+COPY --from=build /go/bin/semver-cli /usr/bin/
 
 RUN {{ "helm3 rake envoyproxy helmfile helm-diff ruby-git istioctl python3-minimal python3-yaml kubeconform python3-pip" | apt_install }} && \
     mkdir -p /etc/envoy/ssl $HELM_HOME $HELM_CONFIG_HOME $HELM_DATA_HOME $HELM_CACHE_HOME && \

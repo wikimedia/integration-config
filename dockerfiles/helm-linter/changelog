@@ -1,3 +1,12 @@
+helm-linter (0.4.4) wikimedia; urgency=medium
+
+  * add semver-cli, so we can compare helm versions and avoid running running
+    kubeconform for all versions, see
+    https://gerrit.wikimedia.org/r/c/operations/deployment-charts/+/893075 for the
+    patch to operations/deployment-charts
+
+ -- Jesse Hathaway <jhathaway@wikimedia.org>  Tue, 28 Feb 2023 14:17:54 -0600
+
 helm-linter (0.4.3) wikimedia; urgency=medium
 
   * Add sextant (T292818)
