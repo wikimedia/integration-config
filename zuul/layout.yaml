@@ -6777,10 +6777,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Ids
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/IframePage
     template:
       - name: extension-quibble
@@ -10814,6 +10810,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/GoToShell
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Ids
     template:
       - name: archived
 
