@@ -5721,10 +5721,6 @@ projects:
     template:
       - name: extension-quibble-noselenium
 
-  - name: mediawiki/extensions/BlockAndNuke
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/BlogPage
     template:
       - name: extension-quibble
@@ -10538,6 +10534,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/BlameMaps
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/BlockAndNuke
     template:
       - name: archived
 
