@@ -8035,10 +8035,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Tabber
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/Tabs
     template:
       - name: extension-quibble
@@ -11246,6 +11242,10 @@ projects:
   - name: mediawiki/extensions/SwiftCloudFiles
     template:
       - name: archived
+
+  - name: mediawiki/extensions/Tabber
+    template:
+      - name: extension-quibble
 
   - name: mediawiki/extensions/TagContent
     template:
