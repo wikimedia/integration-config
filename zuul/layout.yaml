@@ -7207,10 +7207,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/News
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/NewsBox
     template:
       - name: extension-quibble
@@ -10938,6 +10934,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/MWSearch
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/News
     template:
       - name: archived
 
