@@ -775,3 +775,19 @@
       # thumbor-plugins-pipeline-test
       # thumbor-plugins-pipeline-publish
       - '{name}-pipeline-{pipeline}'
+
+- project:
+    name: device-analytics
+    pipeline:
+      - test
+      - rehearse
+      - publish
+    jobs:
+      # trigger-device-analytics-pipeline-test
+      # trigger-device-analytics-pipeline-rehearse
+      # trigger-device-analytics-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # device-analytics-pipeline-test
+      # device-analytics-pipeline-rehearse
+      # device-analytics-pipeline-publish
+      - '{name}-pipeline-{pipeline}'

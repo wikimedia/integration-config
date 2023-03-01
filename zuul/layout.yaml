@@ -8810,6 +8810,16 @@ projects:
     publish:
       - trigger-image-suggestions-pipeline-publish
 
+  - name: generated-data-platform/aqs/device-analytics
+    test:
+      - trigger-device-analytics-pipeline-test
+    gate-and-submit:
+      - trigger-device-analytics-pipeline-rehearse
+    postmerge:
+      - trigger-device-analytics-pipeline-publish
+    publish:
+      - trigger-device-analytics-pipeline-publish
+
 #### Wikimedia analytics tools #################################
 
   - name: analytics/aggregator
