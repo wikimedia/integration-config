@@ -3,7 +3,7 @@ FROM {{ "node14" | image_tag }} as node
 
 FROM {{ "ci-buster" | image_tag }}
 
-ARG QUIBBLE_VERSION=1.5.0
+ARG QUIBBLE_VERSION=1.5.1
 
 ######################
 #  Install node/npm  #

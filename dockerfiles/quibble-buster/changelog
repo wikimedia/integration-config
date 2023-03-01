@@ -1,3 +1,9 @@
+quibble-buster (1.5.1) wikimedia; urgency=medium
+
+  * Bump to Quibble 1.5.1
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 01 Mar 2023 20:18:12 +0100
+
 quibble-buster (1.5.0-s2) wikimedia; urgency=high
 
    Re-use node14, not node16
