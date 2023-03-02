@@ -52,8 +52,8 @@
                 branches:
                     - master
                 clean:
-                    before: true
-                    after: true
+                    before: {}
+                    after: {}
                 basedir: src
                 # Checkout to a local branch with 'origin/' stripped. That also set
                 # GIT_LOCAL_BRANCH which we use later to publish the documentation.
