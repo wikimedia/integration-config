@@ -40,6 +40,7 @@
     name: beta-update-databases-eqiad
     defaults: beta
     node: BetaClusterBastion
+    disabled: true  # T331019
 
     builders:
       - shell: |
