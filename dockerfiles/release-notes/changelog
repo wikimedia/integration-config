@@ -1,3 +1,9 @@
+release-notes (0.0.9) wikimedia; urgency=medium
+
+  * Change pull branch for Gitlab releng/release repository. T329770
+
+ -- Jeena Huneidi <jhuneidi@wikimedia.org>  Thu, 02 Mar 2023 14:46:33 -0800
+
 release-notes (0.0.8) wikimedia; urgency=medium
 
    Move release repo remote to GitLab
