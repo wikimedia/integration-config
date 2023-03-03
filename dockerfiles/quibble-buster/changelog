@@ -1,3 +1,9 @@
+quibble-buster (1.5.5-s1) wikimedia; urgency=high
+
+   Update from Node 14 to Node 16
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Tue,  8 Aug 2023 01:50:31 +0100
+
 quibble-buster (1.5.5) wikimedia; urgency=high
 
    Update Quibble from 1.5.4 to 1.5.5

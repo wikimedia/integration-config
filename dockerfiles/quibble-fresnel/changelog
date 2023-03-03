@@ -1,3 +1,10 @@
+quibble-fresnel (1.5.5-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-buster:
+   Update from Node 14 to Node 16
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Tue,  8 Aug 2023 01:50:31 +0100
+
 quibble-fresnel (1.5.5) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-buster:
