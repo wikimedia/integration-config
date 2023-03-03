@@ -1,7 +1,7 @@
 # Docker image with nodejs and jsduck installed.
 # Executes 'npm run {cmd:test}' in /src.
 
-FROM {{ "node16" | image_tag }}
+FROM {{ "node18" | image_tag }}
 
 USER root
 
@@ -47,7 +47,7 @@ ENV SPAWN_WRAP_SHIM_ROOT=$XDG_CONFIG_HOME
 ENV NPM_CONFIG_update_notifier=false
 
 # Headless Chrome requires --no-sandbox in order to work in a Docker environment.
-# This is here rather than node*-test-browser, because this should also apply
+# This is here rather than node16-test-browser, because this should also apply
 # to tools that have an embedded Chromium build.
 # https://docs.travis-ci.com/user/chrome#sandboxing
 # https://github.com/GoogleChrome/puppeteer/blob/v1.11.0/docs/troubleshooting.md

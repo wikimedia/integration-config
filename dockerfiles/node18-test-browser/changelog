@@ -1,0 +1,5 @@
+node18-test-browser (0.0.1) wikimedia; urgency=medium
+
+   Initial release, copied from node16-test-browser.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 8 Aug 2023 12:00:00 -0400
