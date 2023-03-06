@@ -1,3 +1,9 @@
+quibble-buster-php74 (1.5.2) wikimedia; urgency=medium
+
+  * Bump to Quibble 1.5.2
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 06 Mar 2023 13:16:02 +0100
+
 quibble-buster-php74 (1.5.1) wikimedia; urgency=medium
 
   * Bump to Quibble 1.5.1
