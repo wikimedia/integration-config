@@ -616,6 +616,8 @@
         - revertrisk-multilingual-publish
         - revscoring
         - revscoring-publish
+        - ores-migration
+        - ores-migration-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -629,6 +631,8 @@
         # trigger-inference-services-pipeline-revertrisk-multilingual-publish
         # trigger-inference-services-pipeline-revscoring
         # trigger-inference-services-pipeline-revscoring-publish
+        # trigger-inference-services-pipeline-ores-migration
+        # trigger-inference-services-pipeline-ores-migration-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -642,6 +646,8 @@
         # inference-services-pipeline-revertrisk-multilingual-publish
         # inference-services-pipeline-revscoring
         # inference-services-pipeline-revscoring-publish
+        # inference-services-pipeline-ores-migration
+        # inference-services-pipeline-ores-migration-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:

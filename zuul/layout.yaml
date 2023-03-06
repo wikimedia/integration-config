@@ -1020,6 +1020,12 @@ jobs:
         - 'revscoring/.*'
         - 'python/.*\.py$'
 
+  - name: ^trigger-inference-services-pipeline-ores-migration
+    files:
+        - '.pipeline/ores-migration/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'ores-migration/.*'
+
   # End of meta jobs (the ones starting with ^)
 
 
@@ -2570,6 +2576,7 @@ projects:
       - trigger-inference-services-pipeline-revertrisk
       - trigger-inference-services-pipeline-revertrisk-multilingual
       - trigger-inference-services-pipeline-revscoring
+      - trigger-inference-services-pipeline-ores-migration
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
@@ -2577,6 +2584,7 @@ projects:
       - trigger-inference-services-pipeline-revertrisk
       - trigger-inference-services-pipeline-revertrisk-multilingual
       - trigger-inference-services-pipeline-revscoring
+      - trigger-inference-services-pipeline-ores-migration
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-outlink-transformer-publish
@@ -2584,6 +2592,7 @@ projects:
       - trigger-inference-services-pipeline-revertrisk-publish
       - trigger-inference-services-pipeline-revertrisk-multilingual-publish
       - trigger-inference-services-pipeline-revscoring-publish
+      - trigger-inference-services-pipeline-ores-migration-publish
 
   - name: integration/config
     test-prio:
