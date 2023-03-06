@@ -8013,6 +8013,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/SubpageWatchlist
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/Sudo
     template:
       - name: extension-quibble
