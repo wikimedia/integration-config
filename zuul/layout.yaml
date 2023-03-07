@@ -5561,6 +5561,7 @@ projects:
     template:
       - name: extension-quibble
       - name: extension-coverage
+      - name: extension-codehealth
 
   - name: mediawiki/extensions/XAnalytics
     template:
