@@ -9453,7 +9453,7 @@ projects:
   - name: labs/tools/intuition-web
     template:
       - name: composer-test-php74-or-later
-      - name: node16-docker
+      - name: node16-browser-docker
 
   - name: labs/tools/ipchanges
     template:
