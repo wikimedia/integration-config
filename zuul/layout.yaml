@@ -5038,14 +5038,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/Renameuser
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
-
   # Not on production, but in the MediaWiki release tarball
   - name: mediawiki/extensions/ReplaceText
     template:
@@ -7650,6 +7642,10 @@ projects:
     template:
       - name: extension-quibble-composer
 
+  - name: mediawiki/extensions/RealMe
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/ReassignEdits
     template:
       - name: extension-quibble
@@ -7682,10 +7678,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/RealMe
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/RelMicroformat
     template:
       - name: extension-quibble
@@ -7693,6 +7685,11 @@ projects:
   - name: mediawiki/extensions/RelatedSites
     template:
       - name: extension-quibble
+
+  - name: mediawiki/extensions/Renameuser
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/ReplaceSet
     template:
