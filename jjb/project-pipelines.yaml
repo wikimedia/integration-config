@@ -171,6 +171,19 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: machinetranslation
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-machinetranslation-pipeline-test
+      # trigger-machinetranslation-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # machinetranslation-pipeline-test
+      # machinetranslation-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: mathoid
     pipeline:
       - test

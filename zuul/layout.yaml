@@ -8588,6 +8588,16 @@ projects:
     publish:
       - trigger-cxserver-pipeline-publish
 
+  - name: mediawiki/services/machinetranslation
+    test:
+      - trigger-machinetranslation-pipeline-test
+    gate-and-submit:
+      - trigger-machinetranslation-pipeline-test
+    postmerge:
+      - trigger-machinetranslation-pipeline-publish
+    publish:
+      - trigger-machinetranslation-pipeline-publish
+
   - name: eventlogging
     test:
       - eventlogging-tox-docker
