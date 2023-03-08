@@ -537,7 +537,7 @@ dependencies = {
     'WikiSEO': ['PageImages', 'Scribunto'],
     'Wikisource': ['Wikibase', 'ProofreadPage'],
     'Wikistories': ['BetaFeatures', 'EventLogging', 'MobileFrontend',
-                    'skins/MinervaNeue'],
+                    'skins/MinervaNeue', 'Echo'],
     'WikiToLDAP': ['LDAPAuthentication2', 'Renameuser', 'UserMerge'],
     'wikihiero': ['VisualEditor'],
     'Workflows': ['Forms', 'OOJSPlus'],
@@ -706,6 +706,7 @@ phan_dependencies = {
     'WikimediaMessages': ['CampaignEvents', 'GuidedTour', 'ORES',
                           'skins/MinervaNeue'],
     'WikiSEO': ['PageImages', 'Scribunto'],
+    'Wikistories': ['Echo'],
     'WikiToLDAP': ['LDAPAuthentication2', 'LDAPProvider', 'PluggableAuth',
                    'Renameuser', 'UserMerge'],
     'Wikisource': ['Wikibase', 'ProofreadPage']
