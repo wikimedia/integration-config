@@ -9459,6 +9459,7 @@ projects:
     template:
       - name: composer-test-php74-or-later
       - name: node16-docker
+      - name: mediawiki-i18n-check
     postmerge:
       - phpunit-coverage-php74-docker-publish
 
@@ -9466,6 +9467,7 @@ projects:
     template:
       - name: composer-test-php74-or-later
       - name: node16-browser-docker
+      - name: mediawiki-i18n-check
 
   - name: labs/tools/ipchanges
     template:
