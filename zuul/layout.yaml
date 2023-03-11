@@ -11307,7 +11307,7 @@ projects:
 
   - name: mediawiki/extensions/Tabber
     template:
-      - name: extension-quibble
+      - name: archived
 
   - name: mediawiki/extensions/TagContent
     template:
