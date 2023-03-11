@@ -24,10 +24,7 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test:0.1.0'
         args: 'doc'
@@ -35,8 +32,7 @@
            docsrc: 'src/docs/js'
            docdest: 'mediawiki-core/$DOC_SUBPATH/js'
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 - job:
     name: 'mediawiki-core-doxygen-docker-publish'
@@ -265,8 +261,7 @@
 
         - compress-mw-debug-logs
         - archive-log-allow-empty
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
     wrappers:
         - timeout:
             timeout: 60 # Quibble jobs for Wikibase 'stack' can take ~45 mins
@@ -616,6 +611,7 @@
     triggers:
         - zuul
     builders:
+        # FIXME reorder and use `- setup`
         - docker-castor-load
         - docker-wipe-dir:
             dir: 'cover'
@@ -633,6 +629,7 @@
             srcdir: '/workspace/src'
     publishers:
         - archive-log-allow-empty
+        # FIXME reorder and use `- teardown`
         - castor-save-workspace-cache
         - postbuildscript:
             mark-unstable-if-failed: true

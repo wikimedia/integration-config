@@ -118,10 +118,7 @@
     triggers:
       - zuul
     builders:
-      - docker-castor-load
-      - docker-log-dir
-      - docker-src-dir
-      - docker-ci-src-setup-simple
+      - setup
       - docker-run-with-log-cache-src:
           image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.5.2
           entrypoint: bash
@@ -146,9 +143,7 @@
     publishers:
       - compress-mw-debug-logs
       - archive-log-allow-empty
-      - castor-save-workspace-cache
-      - docker-cleanup
-
+      - teardown
 
 - project:
     name: 'integration-gear'

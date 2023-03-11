@@ -126,10 +126,7 @@
     # in that case, it might be necessary to adapt the "pom" argument as well.
     workdir: '/src'
     builders:
-        - docker-castor-load
-        - docker-log-dir
-        - docker-src-dir
-        - docker-ci-src-setup-simple
+        - setup
         - docker-run-with-log-cache-src:
             # run Maven Wrapper directly from the project
             entrypoint: '{maven_path}'
@@ -197,8 +194,7 @@
                 -Dsonar.branch.name="$ZUUL_CHANGE-$ZUUL_PATCHSET"
     publishers:
         - archive-log-allow-empty
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
     wrappers:
       - timeout:
           timeout: '{timeout|30}'
@@ -310,10 +306,7 @@
     triggers:
         - zuul
     builders:
-        - docker-castor-load
-        - docker-log-dir
-        - docker-src-dir
-        - docker-ci-src-setup-simple
+        - setup
         # Build the maven project, runs the validation. The artifacts are
         # reused for the later steps (site and sonar analysis).
         - docker-run-with-log-cache-src:
@@ -361,8 +354,7 @@
                         docsrc: '{site_dir}'
                         docdest: '{name}'
         - archive-log-allow-empty
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
 
 - job-template:
     name: '{name}-{project}-maven-java8-docker-site-publish'
@@ -377,8 +369,7 @@
                         docsrc: 'src/target/staging'
                         docdest: '{name}-{project}'
         - archive-log-allow-empty
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
 
 - job-template: &job_template_maven-java11-docker-site-publish
     !!merge : *job_template_maven-java8-docker-site-publish
@@ -479,16 +470,12 @@
         - build-discarder:
             days-to-keep: 7
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test:0.1.0'
     publishers:
      - archive-log-allow-empty
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 # Node.js 16 job for 'npm install & npm run {script}'
 - job-template:
@@ -497,18 +484,14 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.1.0'
         options: '--shm-size 1g'
         args: '{script}'
     publishers:
      - archive-log-allow-empty
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 - job-template:
     name: 'branchdeploy-{key}-node16-npm-docker'
@@ -528,15 +511,13 @@
               credential-id: BRANCHDEPLOY_SITE_ID_{key}
               variable: BRANCHDEPLOY_SITE_ID
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test:0.1.0'
         workdir: /src
         args: 'branch-deploy'
     publishers:
+     # FIXME: use `- teardown` to save cache?
      - docker-cleanup
 
 - job-template:
@@ -567,6 +548,7 @@
         workdir: /src
         args: 'audit'
     publishers:
+    # FIXME: use `- teardown` to save cache?
     - docker-cleanup
 
 # Node.js 16 job for 'npm install-test' (with browsers installed)
@@ -576,10 +558,7 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.1.0'
         options: >-
@@ -587,8 +566,7 @@
             --env LOG_DIR=/log
     publishers:
      - archive-log-allow-empty
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 # Node.js 16 job for 'npm install-test' (with browsers installed) and webdriver running
 - job-template:
@@ -597,10 +575,7 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.1.0'
         entrypoint: /run-with-xvfb.sh
@@ -609,8 +584,7 @@
             --env LOG_DIR=/log
     publishers:
      - archive-log-allow-empty
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 # Node.js 16 job for 'npm cit' (with browser installed)
 # and publishing /coverage from workspace
@@ -621,16 +595,14 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.1.0'
      - cover-publish:
         src: 'src/coverage'
         dest: '$DOC_PROJECT'
     publishers:
+     # FIXME: use `- teardown` to save cache?
      - docker-cleanup
 
 
@@ -643,10 +615,7 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.1.0'
         args: 'coverage'
@@ -654,6 +623,7 @@
         src: 'src/coverage'
         dest: '$DOC_PROJECT'
     publishers:
+     # FIXME: use `- teardown` to save cache?
      - docker-cleanup
 
 # Node.js 16 jobs for 'npm install && npm run doc'
@@ -666,10 +636,7 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test:0.1.0'
         args: 'doc'
@@ -677,8 +644,7 @@
         docsrc: 'src/docs'
         docdest: '$DOC_PROJECT/$DOC_SUBPATH'
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 # Publishing workspace/docs to doc.wikimedia.org/:DOC_PROJECT/:DOC_SUBPATH/js/
 # - DOC_PROJECT: determined in parameter_functions.py (mw extension name)
 # - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
@@ -688,10 +654,7 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test:0.1.0'
         args: 'doc'
@@ -699,8 +662,7 @@
         docsrc: 'src/docs'
         docdest: '$DOC_PROJECT/$DOC_SUBPATH/js'
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 - project:
     name: 'generic'
@@ -762,10 +724,7 @@
             name: 'ZUUL_URL'
             default: 'https://gerrit.wikimedia.org/r/p/'
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: '{obj:docker_image_var}'
         entrypoint: /run-with-xvfb.sh
@@ -786,6 +745,7 @@
               variable: COMPOSER_GITHUB_OAUTHTOKEN
     publishers:
      - archive-log-allow-empty
+     # FIXME remove and replace by `- teardown`
      - castor-save-workspace-cache
      - junit:
          results: 'log/junit*.xml,log/WDIO.xunit*.xml'

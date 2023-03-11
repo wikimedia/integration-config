@@ -83,15 +83,11 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: '{image}'
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 - job-template:
     !!merge : *composer-package-phpflavor-docker
@@ -111,15 +107,11 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: '{image}'
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 - job-template:
     !!merge : *composer-phpflavor-docker
@@ -133,10 +125,7 @@
     triggers:
       - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: '{composer_image}'
         workdir: /src
@@ -164,10 +153,7 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
          image: '{composer_image}'
          workdir: /src
@@ -179,8 +165,7 @@
              PHAN_COLOR_SCHEME: light
          args: '--color'
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 - project:
     name: generic-phan-jobs
@@ -284,10 +269,7 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
          image: '{image}'
          workdir: /src
@@ -295,8 +277,7 @@
              install --no-dev
              && git diff --exit-code -- . '!composer'
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 - project:
     name: generic-composer-assert-lock-jobs

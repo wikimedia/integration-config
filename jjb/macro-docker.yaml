@@ -253,6 +253,20 @@
          image: 'docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.4.2-s1'
 
 - builder:
+    name: setup
+    builders:
+     - docker-castor-load
+     - docker-log-dir
+     - docker-src-dir
+     - docker-ci-src-setup-simple
+
+- publisher:
+    name: teardown
+    publishers:
+     - castor-save-workspace-cache
+     - docker-cleanup
+
+- builder:
     name: docker-zuul-cloner
     builders:
      - docker-src-dir

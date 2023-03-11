@@ -53,10 +53,7 @@
     triggers:
         - zuul
     builders:
-        - docker-castor-load
-        - docker-log-dir
-        - docker-src-dir
-        - docker-ci-src-setup-simple
+        - setup
         - docker-run-with-log-cache-src:
             image: '{image}'
             args: 'install --working-dir=/src --no-progress --prefer-dist'
@@ -66,8 +63,7 @@
             args: '--ansi --working-dir=/src {run-script}'
     publishers:
         - archive-log-allow-empty
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
 
 - project:
     name: 'operations-mw-config'

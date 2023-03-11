@@ -23,15 +23,13 @@
          name: 'ZUUL_BRANCH'
          default: 'master'
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test:0.1.0'
         args: 'periodic'
     publishers:
      - irc-wikimedia-infrastructure
+     # FIXME replace by `- teardown` to save Castor cache
      - docker-cleanup
 
 - publisher:

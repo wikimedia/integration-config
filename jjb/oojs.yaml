@@ -4,10 +4,7 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/node16-test-browser-php80-composer:0.2.0
          # 'npm run jenkins' also runs composer
@@ -15,6 +12,7 @@
          args: 'jenkins'
     publishers:
      - archive-log-allow-empty
+     # FIXME use `- teardown` to save castor cache
      - docker-cleanup
 
 - job:
@@ -24,10 +22,7 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/node16-test-browser-php80-composer:0.2.0
          # npm run-script jenkins runs 'npm test' and 'npm run doc'
@@ -44,8 +39,7 @@
         docsrc: 'src/docs'
         docdest: 'oojs-ui/$DOC_SUBPATH/js'
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 - job:
     name: 'oojs-ui-doxygen-publish'

@@ -21,8 +21,7 @@
             - phpunit:
                pattern: 'log/junit-phpunit.xml'
         - archive-log-allow-empty
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
 
 # Transient copy paste using a Bullseye based image T307178
 - job:
@@ -48,9 +47,7 @@
             - phpunit:
                pattern: 'log/junit-phpunit.xml'
         - archive-log-allow-empty
-        - castor-save-workspace-cache
-        - docker-cleanup
-
+        - teardown
 
 - project:
     name: donationinterface-fundraising-branches
@@ -95,8 +92,7 @@
             logdir: '/workspace/log'
     publishers:
         - archive-log-allow-empty
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
     wrappers:
       - timeout:
           timeout: 30
@@ -153,8 +149,7 @@
             logdir: '/workspace/log'
     publishers:
         - archive-log-allow-empty
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
     wrappers:
       - timeout:
           timeout: 30

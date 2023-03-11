@@ -4,15 +4,11 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/rust:1.56.1-1
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 - job:
     name: 'rust-doc-publish'
@@ -21,10 +17,7 @@
     triggers:
      - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/rust:1.56.1-1
          entrypoint: /run-doc.sh
@@ -32,8 +25,7 @@
         docsrc: 'src/target/doc'
         docdest: '$DOC_PROJECT/$DOC_SUBPATH'
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 - job:
     name: 'rust-coverage-publish'
@@ -42,15 +34,11 @@
     triggers:
         - zuul
     builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
+     - setup
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/rust-coverage:0.2.0
      - cover-publish:
         src: 'src/coverage'
         dest: '$DOC_PROJECT'
     publishers:
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
