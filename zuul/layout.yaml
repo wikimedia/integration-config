@@ -6445,6 +6445,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/EImage
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/EmailAuth
     template:
       - name: extension-quibble
@@ -7745,6 +7749,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/SearchParserFunction
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/SearchStats
     template:
       - name: extension-quibble
@@ -7997,6 +8005,10 @@ projects:
   - name: mediawiki/extensions/StandardDialogs
     template:
       - name: extension-quibble-composer
+
+  - name: mediawiki/extensions/StandardWikitext
+    template:
+      - name: extension-quibble
 
   - name: mediawiki/extensions/StarterWiki
     template:
