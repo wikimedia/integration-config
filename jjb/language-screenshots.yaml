@@ -64,8 +64,8 @@
           filename: build/screenshots.yml
     builders:
         # TODO: enable caching
-        - docker-src-dir
         - docker-log-dir
+        - docker-src-dir
         # Create a dummy cache dir
         - docker-wipe-dir:
             dir: cache

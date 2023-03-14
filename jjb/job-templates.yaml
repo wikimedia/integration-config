@@ -17,8 +17,8 @@
      - zuul
     builders:
       - docker-castor-load
-      - docker-src-dir
       - docker-log-dir
+      - docker-src-dir
       # .gitsubmodules uses relative url, we need to point to upstream gerrit
       # repository to fetch them which is handled by the repo build script.
       - docker-ci-src-setup-simple:
@@ -480,8 +480,8 @@
             days-to-keep: 7
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test:0.1.0'
@@ -498,8 +498,8 @@
      - zuul
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.1.0'
@@ -529,8 +529,8 @@
               variable: BRANCHDEPLOY_SITE_ID
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test:0.1.0'
@@ -559,8 +559,8 @@
               default: '/cache'
     builders:
     - docker-cache-dir
-    - docker-src-dir
     - docker-log-dir
+    - docker-src-dir
     - docker-ci-src-setup-simple
     - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16:0.1.0'
@@ -577,8 +577,8 @@
      - zuul
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.1.0'
@@ -598,8 +598,8 @@
      - zuul
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.1.0'
@@ -622,8 +622,8 @@
      - zuul
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.1.0'
@@ -644,8 +644,8 @@
      - zuul
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.1.0'
@@ -667,8 +667,8 @@
      - zuul
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test:0.1.0'
@@ -689,8 +689,8 @@
      - zuul
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test:0.1.0'
@@ -763,8 +763,8 @@
             default: 'https://gerrit.wikimedia.org/r/p/'
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
         image: '{obj:docker_image_var}'

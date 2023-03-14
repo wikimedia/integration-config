@@ -164,9 +164,9 @@
     triggers:
      - zuul
     builders:
+     - docker-castor-load
      - docker-log-dir
      - docker-src-dir
-     - docker-castor-load
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
          image: '{composer_image}'
@@ -284,9 +284,9 @@
     triggers:
      - zuul
     builders:
+     - docker-castor-load
      - docker-log-dir
      - docker-src-dir
-     - docker-castor-load
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
          image: '{image}'

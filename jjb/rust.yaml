@@ -5,8 +5,8 @@
      - zuul
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/rust:1.56.1-1
@@ -22,8 +22,8 @@
      - zuul
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/rust:1.56.1-1

@@ -25,8 +25,8 @@
      - zuul
     builders:
      - docker-castor-load
-     - docker-src-dir
      - docker-log-dir
+     - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/node16-test-browser-php80-composer:0.2.0

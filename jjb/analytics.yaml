@@ -60,8 +60,8 @@
           fail: true
       - timestamps
     builders:
-      - docker-src-dir
       - docker-log-dir
+      - docker-src-dir
       - docker-ci-src-setup-simple
       # Create a git remote since ci-src-setup-simple only fetches
       - docker-run-with-log-cache-src:
