@@ -7699,10 +7699,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/RT
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/S5SlideShow
     template:
       - name: extension-quibble
@@ -11172,6 +11168,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/RevealEmail
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/RT
     template:
       - name: archived
 
