@@ -5703,10 +5703,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/BaseHooks
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/BatchUserRights
     template:
       - name: extension-quibble
@@ -10566,6 +10562,10 @@ projects:
   - name: mediawiki/extensions/AzharAuth
     template:
       - name: archived  # T110291 / T198601
+
+  - name: mediawiki/extensions/BaseHooks
+    template:
+      - name: archived
 
   - name: mediawiki/extensions/BayesianFilter
     template:
