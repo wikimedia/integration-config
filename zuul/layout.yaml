@@ -6152,10 +6152,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/ChangeUserPasswords
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/CharRangeSpan
     template:
       - name: extension-quibble
@@ -10616,6 +10612,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/CatTalk
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/ChangeUserPasswords
     template:
       - name: archived
 
