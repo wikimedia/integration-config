@@ -1,3 +1,10 @@
+gradle (4.4.1) wikimedia; urgency=medium
+
+  * Update base image from Stretch to Bullseye
+  * Upgrade Gradle from 3.2.1 to 4.4.1
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 14 Mar 2023 16:43:50 +0100
+
 gradle (0.3.0-s4) wikimedia; urgency=high
 
    Refresh for update in parent image ci-stretch:
