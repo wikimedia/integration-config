@@ -44,7 +44,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: 'docker-registry.wikimedia.org/releng/php74:0.5.0'
+         image: 'docker-registry.wikimedia.org/releng/php74:0.5.1'
          args: '/src/vendor/bin/composer --version'
     publishers:
      - docker-cleanup
