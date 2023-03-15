@@ -6087,10 +6087,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/BreadCrumbs
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/BreadCrumbs2
     template:
       - name: extension-quibble
@@ -10592,6 +10588,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/BookManagerv2
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/BreadCrumbs
     template:
       - name: archived
 
