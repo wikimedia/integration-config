@@ -71,7 +71,6 @@
      - php74:
          image: docker-registry.wikimedia.org/releng/composer-php74:0.3.2
     jobs:
-     - '{name}-typos-docker'
      - '{name}-tox-docker'
      - 'operations-mw-config-{phpflavor}-composer-{run-script}-docker':
          run-script:

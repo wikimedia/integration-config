@@ -90,17 +90,6 @@
     jobs:
      - '{name}-ruby2.5-rake-docker'
 
-- job-template:
-    name: '{name}-typos-docker'
-    node: Docker
-    triggers:
-        - zuul
-    builders:
-        - docker-run:
-            image: docker-registry.wikimedia.org/releng/typos:0.0.3-s4
-    publishers:
-        - docker-cleanup
-
 - job:
     name: mw-cli-test
     node: Qemu
