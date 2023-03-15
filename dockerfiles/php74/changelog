@@ -1,3 +1,9 @@
+php74 (0.5.1) wikimedia; urgency=high
+
+   Re-build to use PHP 7.4.33-1+0~20221108.73+debian10~1.gbpa00350a+wmf10u2
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed, 15 Mar 2023 09:12:27 -0400
+
 php74 (0.5.0) wikimedia; urgency=high
 
    Add excimer for performance/excimer-ui-client
