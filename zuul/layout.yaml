@@ -6144,10 +6144,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/CharRangeSpan
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/Checkpoint
     template:
       - name: extension-quibble
@@ -10612,6 +10608,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ChangeUserPasswords
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/CharRangeSpan
     template:
       - name: archived
 
