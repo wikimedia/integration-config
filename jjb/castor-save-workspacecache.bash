@@ -25,7 +25,7 @@ set -x
 rsync \
     --archive \
     --rsh="/usr/bin/ssh -a -T -o ConnectTimeout=6 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
-    --rsync-path="docker run --rm -i --volume ${remote_cache_dir}:${cache_dir} --entrypoint=/usr/bin/rsync docker-registry.wikimedia.org/releng/castor:0.2.6" \
+    --rsync-path="docker run --rm -i --volume ${remote_cache_dir}:${cache_dir} --entrypoint=/usr/bin/rsync docker-registry.wikimedia.org/releng/castor:0.3.0" \
     --delete-delay \
     --delay-updates \
     jenkins-deploy@"${REMOTE_INSTANCE}:${cache_dir}/" "${DEST}"
