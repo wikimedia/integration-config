@@ -464,9 +464,6 @@ pipelines:
            - ^ecokpo@gmail\.com$
            - ^maria\.pacana@gmail\.com$
 
-          # WMF Internship Program
-           - ^jameelkaisarkhan@gmail\.com$ # Jameel Kaisar Khan (SRE Infrastructure Foundations Team)
-
           # GSoC students!
            - ^aekhatean@gmail\.com$ # Adham Khatean
            - ^ajupazhamayil@gmail\.com$ # Privacybatm
