@@ -1,3 +1,9 @@
+node14 (0.0.5) wikimedia; urgency=high
+
+   Update node from 14.17.5 to 14.21.3 (T332387)
+
+ -- Kosta Harlan <kharlan@wikimedia.org>  Wed, 22 Mar 2023 15:45:26 +0100
+
 node14 (0.0.4) wikimedia; urgency=high
 
    Add npx command (T300930).

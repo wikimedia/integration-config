@@ -1,3 +1,10 @@
+quibble-buster-php81 (1.5.4-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image node14:
+   Update node from 14.17.5 to 14.21.3 (T332387)
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 30 Jun 2023 14:46:50 -0400
+
 quibble-buster-php81 (1.5.4) wikimedia; urgency=medium
 
   * Bump to Quibble 1.5.4
