@@ -193,7 +193,7 @@
                         && /src/utils/ci-fullrun-extensions.sh
                         --color
                         --db-dir /workspace/db
-                        --skip phpunit
+                        --skip phpunit,selenium,npm-test,qunit,api-testing
                         --web-backend=external --web-url=http://127.0.0.1:9413'
                 - extensions-phpunit:
                     quibble_args: >-
@@ -202,6 +202,7 @@
                         --color
                         --db-dir /workspace/db
                         --run phpunit
+                        --skip selenium,npm-test,qunit,api-testing
                         --web-backend=external --web-url=http://127.0.0.1:9413'
 
 - project:
