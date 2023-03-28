@@ -9207,6 +9207,12 @@ projects:
     template:
       - name: mediawiki-php-library-php74-to-php81
 
+  - name: mediawiki/libs/node-cssjanus
+    template:
+      - name: node16-docker
+    postmerge:
+      - generic-node16-browser-direct-coverage-docker-publish
+
   - name: mediawiki/libs/php-cssjanus
     template:
       - name: mediawiki-php-library-php74-to-php81
