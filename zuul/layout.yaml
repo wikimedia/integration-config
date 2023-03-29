@@ -9211,6 +9211,7 @@ projects:
     template:
       - name: node16-docker
     postmerge:
+      - generic-node16-docs-docker-publish
       - generic-node16-browser-direct-coverage-docker-publish
 
   - name: mediawiki/libs/php-cssjanus

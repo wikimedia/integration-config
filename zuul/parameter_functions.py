@@ -959,6 +959,7 @@ doc_destination = {
     'performance/fresnel': 'fresnel',
     'VisualEditor/VisualEditor': 'visualeditor',
     'oojs/core': 'oojs',
+    'mediawiki/libs/node-cssjanus': 'cssjanus',
     'design/codex': 'codex'
 }
 
