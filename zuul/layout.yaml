@@ -8371,14 +8371,6 @@ projects:
     template:
       - name: extension-quibble-composer-noselenium
 
-  - name: mediawiki/services/apple-search
-    test:
-      - trigger-apple-search-pipeline-test
-    gate-and-submit:
-      - trigger-apple-search-pipeline-test
-    postmerge:
-      - trigger-apple-search-pipeline-publish
-
   - name: mediawiki/services/wikispeech/mary-tts
     test:
       - trigger-wikispeech-mary-tts-pipeline-test
@@ -11496,6 +11488,10 @@ projects:
       - name: archived
 
   - name: mediawiki/php/FastStringSearch
+    template:
+      - name: archived
+
+  - name: mediawiki/services/apple-search
     template:
       - name: archived
 
