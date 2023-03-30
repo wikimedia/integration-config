@@ -1074,8 +1074,6 @@ jobs:
     success-pattern: 'https://integration.wikimedia.org/ci/job/{job.name}/{build.number}/'
     branch: ^wmf/.*$
 
-  - name: gerrit-git-fat-pull
-    branch: ^deploy/wmf.*$
   - name: gerrit-node16-docker
     branch: ^deploy/wmf.*$
 
@@ -3888,13 +3886,9 @@ projects:
   - name: operations/software/gerrit
     test:
       - gerrit-docker
-      # for deploy/wmf/* branch
-      - gerrit-git-fat-pull
       - gerrit-node16-docker
     gate-and-submit:
       - gerrit-docker
-      # for deploy/wmf/* branch
-      - gerrit-git-fat-pull
       - gerrit-node16-docker
 
   - name: operations/software/gerrit/plugins/events-wikimedia

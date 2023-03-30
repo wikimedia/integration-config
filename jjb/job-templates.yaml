@@ -37,31 +37,6 @@
       - castor-save-workspace-cache
       - docker-cleanup
 
-# `git fat pull` to verify the wmf/deploy/* branch status
-- job:
-    name: 'gerrit-git-fat-pull'
-    node: Docker
-    triggers:
-        - zuul
-    builders:
-      - docker-src-dir
-      - docker-ci-src-setup-simple:
-          submodules: false
-      - docker-run:
-          image: docker-registry.wikimedia.org/releng/jar-updater:0.0.7-s1
-          volumes:
-              src: /src
-          entrypoint: git-fat
-          args: init
-      - docker-run:
-          image: docker-registry.wikimedia.org/releng/jar-updater:0.0.7-s1
-          volumes:
-              src: /src
-          entrypoint: git-fat
-          args: pull
-    publishers:
-        - docker-cleanup
-
 - job-template:
     name: '{name}-bazel-docker'
     node: Docker
