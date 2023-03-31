@@ -344,6 +344,7 @@ dependencies = {
     'CognitiveProcessDesigner': ['PageForms'],
     'CollaborationKit': ['EventLogging', 'VisualEditor'],
     'ConfigManager': ['BlueSpiceFoundation'],
+    'ContentDroplets': ['VisualEditor'],
     'ContentTranslation': ['AbuseFilter', 'Echo', 'EventLogging',
                            'UniversalLanguageSelector', 'VisualEditor'],
     'ContributorsAddon': ['Contributors'],
