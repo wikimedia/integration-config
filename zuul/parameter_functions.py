@@ -213,6 +213,7 @@ dependencies = {
     ],
     'BlueSpiceFoundation': ['ExtJSBase', 'OOJSPlus'],
     'BlueSpiceInsertTemplate': ['BlueSpiceFoundation'],
+    'BlueSpiceInstanceStatus': ['BlueSpiceFoundation'],
     'BlueSpiceInterWikiLinks': ['BlueSpiceFoundation'],
     'BlueSpiceMultiUpload': ['BlueSpiceFoundation'],
     'BlueSpiceNamespaceCSS': ['BlueSpiceFoundation'],

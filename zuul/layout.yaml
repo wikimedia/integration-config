@@ -5856,6 +5856,10 @@ projects:
     template:
       - name: extension-quibble-composer
 
+  - name: mediawiki/extensions/BlueSpiceInstanceStatus
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/BlueSpiceInterWikiLinks
     template:
       - name: extension-quibble-composer
