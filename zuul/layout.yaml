@@ -5031,6 +5031,12 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/RealMe
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+
   - name: mediawiki/extensions/RelatedArticles
     template:
       - name: in-wikimedia-production
@@ -7632,10 +7638,6 @@ projects:
   - name: mediawiki/extensions/Realnames
     template:
       - name: extension-quibble-composer
-
-  - name: mediawiki/extensions/RealMe
-    template:
-      - name: extension-quibble
 
   - name: mediawiki/extensions/ReassignEdits
     template:
