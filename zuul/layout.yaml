@@ -6223,6 +6223,10 @@ projects:
     template:
       - name: extension-quibble-composer
 
+  - name: mediawiki/extensions/ContentStabilization
+    template:
+    - name: extension-quibble-composer
+
   - name: mediawiki/extensions/ContentTransfer
     template:
       - name: extension-quibble-composer

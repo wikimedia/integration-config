@@ -345,6 +345,8 @@ dependencies = {
     'CollaborationKit': ['EventLogging', 'VisualEditor'],
     'ConfigManager': ['BlueSpiceFoundation'],
     'ContentDroplets': ['VisualEditor'],
+    'ContentStabilization': ['BlueSpiceFoundation', 'BlueSpiceSMWConnector',
+                             'OOJSPlus', 'Workflows'],
     'ContentTranslation': ['AbuseFilter', 'Echo', 'EventLogging',
                            'UniversalLanguageSelector', 'VisualEditor'],
     'ContributorsAddon': ['Contributors'],
