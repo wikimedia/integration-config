@@ -1,0 +1,39 @@
+node14-test-browser-php80-composer (0.2.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer from 2.3.3 to 2.5.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri,  6 Jan 2023 11:45:30 -0500
+
+node14-test-browser-php80-composer (0.2.0) wikimedia; urgency=high
+
+   Drop xdebug extension, no longer used
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  8 Dec 2022 09:59:39 -0500
+
+node14-test-browser-php80-composer (0.1.0-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image php-ast:
+   Upgrade psp-ast from v1.0.14 to v1.1.0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 14 Oct 2022 16:02:33 -0400
+
+node14-test-browser-php80-composer (0.1.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image php-ast:
+   Drop support for PHP 7.2/7.3, add 8.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed,  5 Oct 2022 22:05:07 -0400
+
+node14-test-browser-php80-composer (0.1.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer from 2.1.8 to 2.3.3
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon,  4 Apr 2022 23:33:55 +0100
+
+node14-test-browser-php80-composer (0.1.0) wikimedia; urgency=high
+
+   Fork from node12-test-browser-php80-composer, switching to Node14
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 14 Mar 2022 19:34:39 -0400
