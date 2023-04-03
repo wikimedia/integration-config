@@ -359,6 +359,7 @@ dependencies = {
     'Disambiguator': ['VisualEditor'],
     'DrawioEditor': ['VisualEditor'],
     'Echo': ['CentralAuth', 'EventLogging', 'MobileFrontend'],
+    'EditNotify': ['Echo'],
     'ElectronPdfService': ['Collection'],
     'EmailAuthorization': ['PluggableAuth'],
     'EncryptedUploads': ['UploadWizard'],
