@@ -5132,13 +5132,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/SimilarEditors
-    template:
-      # Not yet in production, but headed there. -- JDF 2022-04-26
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/SiteMatrix
     template:
       - name: in-wikimedia-production
@@ -7861,6 +7854,11 @@ projects:
   - name: mediawiki/extensions/SignWritingMediaWikiPlugin
     template:
       - name: extension-quibble
+
+  - name: mediawiki/extensions/SimilarEditors
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/SimpleCalendar
     template:
