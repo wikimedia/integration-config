@@ -67,6 +67,8 @@ pipelines:
            - .*?@thisdot\.co$ # This Dot, contractors for multiple Foundation teams
            - .*?@uncyclomedia\.co$
            - .*?@deni\.dk$ # Denis Smajlović (@deni), and company
+           - .*?@fandom\.com
+           - .*?@wikia-inc\.com
 
           # WMF staff & contractors:
            - ^abijeetpatro@gmail\.com$ # Abijeet Patro; Language Engineering Team
@@ -301,7 +303,6 @@ pipelines:
            - ^morris\.mukau\+wikitech@gmail\.com$ # MtMNC
            - ^mpguy2824@gmail\.com$ # MPGuy2824
            - ^mr7060@mail\.com$
-           - ^mszabo@wikia-inc\.com$
            - ^mwalker@khaosdev\.com$ # Matt Walker
            - ^mxn@1ec5\.org$ # Minh Nguyen T139345
            - ^na13072017@hotmail\.com$ # Bluehill395
