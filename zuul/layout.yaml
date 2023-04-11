@@ -7529,6 +7529,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/PreToClip
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/Prezi
     template:
       - name: extension-quibble
