@@ -6224,6 +6224,10 @@ projects:
     - name: extension-quibble
     - name: extension-coverage
 
+  - name: mediawiki/extensions/ContainerFilter
+    template:
+    - name: extension-quibble-composer
+
   - name: mediawiki/extensions/ContentDroplets
     template:
       - name: extension-quibble-composer
