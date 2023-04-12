@@ -67,8 +67,8 @@ pipelines:
            - .*?@thisdot\.co$ # This Dot, contractors for multiple Foundation teams
            - .*?@uncyclomedia\.co$
            - .*?@deni\.dk$ # Denis Smajlović (@deni), and company
-           - .*?@fandom\.com
-           - .*?@wikia-inc\.com
+           - .*?@fandom\.com$
+           - .*?@wikia-inc\.com$
 
           # WMF staff & contractors:
            - ^abijeetpatro@gmail\.com$ # Abijeet Patro; Language Engineering Team
