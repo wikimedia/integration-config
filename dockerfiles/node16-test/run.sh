@@ -4,8 +4,6 @@ umask 002
 
 set -euxo pipefail
 
-cd /src
-
 if [ ! -f "package.json" ]; then
     echo "package.json not found, skipping"
     exit 0
