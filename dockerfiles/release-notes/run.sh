@@ -24,6 +24,7 @@ fi
 # Get current sorted upstream mediawiki versions
 mapfile -t VERSIONS < <(git ls-remote -h "$MW_CORE" | \
     awk '/wmf\// {gsub("refs/heads/wmf/", ""); print $2}' | \
+    grep -P '^\d+\.\d+\.\d+-wmf\.\d+$' | \
     sort --version-sort --reverse)
 
 if [[ "${VERSIONS[0]}" != "$BRANCH" ]]; then
