@@ -7745,6 +7745,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/SectionAnchors
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/SectionDisqus
     template:
       - name: extension-quibble
