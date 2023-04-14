@@ -8627,13 +8627,6 @@ projects:
     publish:
       - trigger-function-orchestrator-pipeline-publish
 
-  # Sub-module of production-bound code
-  - name: mediawiki/services/function-schemata
-    template:
-      - name: node16-docker
-    postmerge:
-      - generic-node16-browser-coverage-docker-publish
-
   - name: mediawiki/services/image-suggestion-api
     test:
       - trigger-image-suggestion-api-pipeline-test
@@ -11527,6 +11520,10 @@ projects:
       - name: archived
 
   - name: mediawiki/services/cxserver/deploy
+    template:
+      - name: archived
+
+  - name: mediawiki/services/function-schemata
     template:
       - name: archived
 
