@@ -4939,6 +4939,11 @@ projects:
       - name: extension-coverage
       - name: extension-gate
 
+  - name: mediawiki/extensions/PageViewInfoGA
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+
   - name: mediawiki/extensions/ParserFunctions
     template:
       - name: in-wikimedia-production
