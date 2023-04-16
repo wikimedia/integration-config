@@ -9492,6 +9492,11 @@ projects:
       - name: composer-test-php74-or-later
       - name: mediawiki-i18n-check
 
+  - name: labs/tools/usage
+    template:
+      - name: composer-test-php74-or-later
+      - name: mediawiki-i18n-check
+
   - name: labs/tools/urbanecmbot
     test:
       - labs-tools-urbanecmbot-tox-docker
