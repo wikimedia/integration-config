@@ -2648,10 +2648,6 @@ projects:
       - name: tox-docker
 
   - name: integration/docroot
-    test:
-      - composer-php73-docker
-    gate-and-submit:
-      - composer-php73-docker
     template:
       - name: node16-docker
       - name: composer-test-php74-to-php81
