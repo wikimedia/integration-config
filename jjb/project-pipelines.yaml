@@ -145,19 +145,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: function-orchestrator
-    pipeline:
-      - test
-      - publish
-    jobs:
-      # trigger-function-orchestrator-pipeline-test
-      # trigger-function-orchestrator-pipeline-publish
-      - 'trigger-{name}-pipeline-{pipeline}'
-      # function-orchestrator-pipeline-test
-      # function-orchestrator-pipeline-publish
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: function-evaluator
     pipeline:
       - test

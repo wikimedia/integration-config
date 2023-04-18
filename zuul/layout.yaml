@@ -8615,18 +8615,6 @@ projects:
     publish:
       - trigger-function-evaluator-pipeline-publish
 
-  # Not in production yet, but headed there
-  - name: mediawiki/services/function-orchestrator
-    test:
-      - trigger-function-orchestrator-pipeline-test
-    gate-and-submit:
-      - trigger-function-orchestrator-pipeline-test
-    postmerge:
-      - trigger-function-orchestrator-pipeline-publish
-      - generic-node16-browser-direct-coverage-docker-publish
-    publish:
-      - trigger-function-orchestrator-pipeline-publish
-
   - name: mediawiki/services/image-suggestion-api
     test:
       - trigger-image-suggestion-api-pipeline-test
@@ -11520,6 +11508,10 @@ projects:
       - name: archived
 
   - name: mediawiki/services/cxserver/deploy
+    template:
+      - name: archived
+
+  - name: mediawiki/services/function-orchestrator
     template:
       - name: archived
 
