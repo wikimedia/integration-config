@@ -1,3 +1,9 @@
+helm-linter (0.4.6) wikimedia; urgency=medium
+
+  * Move to bullseye as base distro
+
+ -- Giuseppe Lavagetto <glavagetto@wikimedia.org>  Wed, 19 Apr 2023 13:05:37 +0200
+
 helm-linter (0.4.5) wikimedia; urgency=medium
 
   * Bump version to update sextant to 0.3.0, needed for scaffolding

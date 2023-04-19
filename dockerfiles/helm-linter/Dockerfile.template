@@ -1,7 +1,7 @@
 FROM docker-registry.wikimedia.org/golang1.19 as build
 RUN CGO_ENABLED=0 go install github.com/davidrjonas/semver-cli@1.1.1
 
-FROM {{ "ci-buster" | image_tag }}
+FROM {{ "ci-bullseye" | image_tag }}
 
 ENV HELM_HOME=/tmp/helm \
     HELM_CONFIG_HOME=/tmp/helm3/config \
