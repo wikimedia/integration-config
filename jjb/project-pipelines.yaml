@@ -145,19 +145,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: function-evaluator
-    pipeline:
-      - test
-      - publish
-    jobs:
-      # trigger-function-evaluator-pipeline-test
-      # trigger-function-evaluator-pipeline-publish
-      - 'trigger-{name}-pipeline-{pipeline}'
-      # function-evaluator-pipeline-test
-      # function-evaluator-pipeline-publish
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: machinetranslation
     pipeline:
       - test

@@ -8603,18 +8603,6 @@ projects:
     gate-and-submit:
       - eventlogging-tox-docker
 
-  # Not in production yet, but headed there
-  - name: mediawiki/services/function-evaluator
-    test:
-      - trigger-function-evaluator-pipeline-test
-    gate-and-submit:
-      - trigger-function-evaluator-pipeline-test
-    postmerge:
-      - trigger-function-evaluator-pipeline-publish
-      - generic-node16-browser-direct-coverage-docker-publish
-    publish:
-      - trigger-function-evaluator-pipeline-publish
-
   - name: mediawiki/services/image-suggestion-api
     test:
       - trigger-image-suggestion-api-pipeline-test
@@ -11508,6 +11496,10 @@ projects:
       - name: archived
 
   - name: mediawiki/services/cxserver/deploy
+    template:
+      - name: archived
+
+  - name: mediawiki/services/function-evaluator
     template:
       - name: archived
 
