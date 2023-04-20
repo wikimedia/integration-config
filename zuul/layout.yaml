@@ -2868,10 +2868,6 @@ projects:
     template:
       - name: node16-docker
 
-  - name: mediawiki/tools/wikilambda-cli
-    template:
-      - name: node16-docker
-
   - name: releng/phatality
     template:
       - name: node16-docker
@@ -11583,6 +11579,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/tools/release
+    template:
+      - name: archived
+
   - name: mediawiki/tools/scap
     template:
       - name: archived
@@ -11591,7 +11591,7 @@ projects:
     template:
       - name: archived
 
-  - name: mediawiki/tools/release
+  - name: mediawiki/tools/wikilambda-cli
     template:
       - name: archived
 
