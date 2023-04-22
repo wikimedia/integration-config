@@ -9246,6 +9246,10 @@ projects:
   - name: performance/excimer-ui-server
     template:
       - name: mediawiki-php-library-php74-to-php81
+    test:
+      - composer-php73-docker
+    gate-and-submit:
+      - composer-php73-docker
 
 #### Tools deployed on Wikimedia Cloud Services (aka "Labs") ###
 
