@@ -416,6 +416,7 @@ pipelines:
            - ^webmelos@gmail\.com$ # Melos
            - ^wiki@physikerwelt\.de$
            - ^wiki@revi\.dev$ # revi
+           - ^wikimedia@5bn\.wiki$ # Kevin Wilke
            - ^wikimedia@bjorn\.ml$ # Bjornskjald, former GCI student
            - ^wikimedia@ptrcnull\.me$ # ptrcnull, former GCI student
            - ^wikimedia@retrocraft\.ca$ # RetroCraft, former GCI student
