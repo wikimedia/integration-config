@@ -493,17 +493,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: wvui
-    pipeline:
-      - test
-      - release:
-          allowedCredentials:
-            WVUI_NPM_TOKEN: "StringBinding"
-    jobs:
-      - 'trigger-{name}-pipeline-{pipeline}'
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: rdf-streaming-updater
     pipeline:
       - test

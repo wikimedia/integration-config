@@ -10341,15 +10341,6 @@ projects:
     template:
       - name: composer-test-package-php74-to-php81
 
-  - name: wvui
-    test:
-      - trigger-wvui-pipeline-test
-    gate-and-submit:
-      - trigger-wvui-pipeline-test
-    postmerge:
-      - generic-node16-docs-docker-publish
-      - trigger-wvui-pipeline-release
-
 #### Archive repositories ######################################
 
   - name: apps/android/java-mwapi
@@ -11722,5 +11713,9 @@ projects:
      - name: archived
 
   - name: wikimedia/wikimania-scholarships
+    template:
+      - name: archived
+
+  - name: wvui
     template:
       - name: archived
