@@ -670,6 +670,7 @@ phan_dependencies = {
     'SoftRedirector': ['VisualEditor'],
     'SpamBlacklist': ['CheckUser', 'EventLogging'],
     'SportsTeams': ['SocialProfile', 'UserStatus', 'BlogPage'],
+    'StandardDialogs': ['OOJSPlus'],
     'StopForumSpam': ['AbuseFilter'],
     'TEI': ['Math'],
     'Thanks': ['CheckUser', 'Echo', 'Flow', 'MobileFrontend'],
