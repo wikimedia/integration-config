@@ -6098,6 +6098,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/BulkBlock
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/Cargo
     template:
       - name: extension-quibble
