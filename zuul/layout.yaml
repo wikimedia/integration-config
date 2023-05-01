@@ -7403,7 +7403,7 @@ projects:
 
   - name: mediawiki/extensions/PageViewInfoGA
     template:
-      - name: extension-quibble
+      - name: extension-quibble-composer
       - name: extension-coverage
 
   - name: mediawiki/extensions/PaginateText
