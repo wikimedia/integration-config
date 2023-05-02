@@ -1,3 +1,3 @@
-Depends: ci-stretch
+Depends: ci-bullseye
 Description: Image for running tests on helm repositories
 Maintainer: Giuseppe Lavagetto <glavagetto@wikimedia.org>
