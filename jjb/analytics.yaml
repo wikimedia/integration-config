@@ -111,31 +111,6 @@
      - '{name}-update-jars-docker'
      - '{name}-maven-java8-docker-site-publish'
 
-- job:
-    name: 'analytics-wikistats'
-    node: Docker
-    triggers:
-        - zuul
-    builders:
-        - docker-src-dir
-        - docker-ci-src-setup-simple
-        #--- squids directory has been replaced with an older version that
-        # does not come with tests. So we cannot run tests it the squids
-        # folder for now.
-        #                                    (qchris@2014-04-16)
-        #
-        #(cd squids && prove -v -Iperl/ t/)
-        - docker-run:
-            entrypoint: /usr/bin/prove
-            workdir: /src/pageviews_reports
-            volumes:
-                src:
-            image: 'docker-registry.wikimedia.org/releng/perl:5.24.1-s4'
-            args: '-v -Ilib/ t/'
-    publishers:
-        - docker-cleanup
-
-
 # wikimedia-event-utilities is a standalone Java library
 # for working with event streams in WMF production.
 - project:

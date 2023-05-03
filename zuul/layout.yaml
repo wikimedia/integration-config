@@ -8910,14 +8910,6 @@ projects:
     template:
       - name: debian-glue
 
-  - name: analytics/wikistats
-    test:
-      - analytics-wikistats
-    gate-and-submit:
-      - analytics-wikistats
-    postmerge:
-      - analytics-wikistats
-
   - name: analytics/wikistats2
     template:
       - name: node16-browser-docker
@@ -10348,6 +10340,10 @@ projects:
       - name: composer-test-package-php74-to-php81
 
 #### Archive repositories ######################################
+
+  - name: analytics/wikistats
+    template:
+      - name: archived
 
   - name: apps/android/java-mwapi
     template:
