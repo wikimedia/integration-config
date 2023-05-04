@@ -1,3 +1,10 @@
+helm-linter (0.4.7) wikimedia; urgency=medium
+
+  * Add wmf-certificates to pass envoy config validation
+  * Bug: T300324
+
+ -- Janis Meybohm <jmeybohm@wikimedia.org>  Thu, 04 May 2023 14:00:18 +0200
+
 helm-linter (0.4.6) wikimedia; urgency=medium
 
   * Move to bullseye as base distro
