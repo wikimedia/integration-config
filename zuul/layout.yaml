@@ -10163,7 +10163,7 @@ projects:
     gate-and-submit:
       - wmf-utils-tox-docker
 
-  - name: wikipedia/gadgets/ProveIt
+  - name: mediawiki/gadgets/ProveIt
     template:
       - name: node16-docker
       - name: mediawiki-i18n-check
