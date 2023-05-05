@@ -482,6 +482,8 @@ pipelines:
            - ^sohomdatta1@gmail\.com$ # User:Sohom_data
            - ^vidhimody6@gmail\.com$ # Vidhi Mody
            - ^xietaoecho@gmail\.com$ # Lethexie
+           - ^npunith125@gmail\.com$ # Punith Nayak
+           - ^varuns20@cse\.iiitp\.ac\.in$ # Varun Shrivastava
 
           # Outreachy interns/applicants
            - ^abbasi\.daniyal98@gmail\.com$ # Abbasidaniyal (Round 20)
