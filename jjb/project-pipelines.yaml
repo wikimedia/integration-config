@@ -692,6 +692,8 @@
       - elasticsearch-setup-publish
       - kafka-setup-build
       - kafka-setup-publish
+      - upgrade-build
+      - upgrade-publish
     jobs:
       - 'trigger-{name}-pipeline-{pipeline}'
       - '{name}-pipeline-{pipeline}'
