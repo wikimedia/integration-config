@@ -590,6 +590,8 @@
         - revertrisk-publish
         - revertrisk-multilingual
         - revertrisk-multilingual-publish
+        - revertrisk-wikidata
+        - revertrisk-wikidata-publish
         - revscoring
         - revscoring-publish
         - ores-migration
@@ -605,6 +607,8 @@
         # trigger-inference-services-pipeline-revertrisk-publish
         # trigger-inference-services-pipeline-revertrisk-multilingual
         # trigger-inference-services-pipeline-revertrisk-multilingual-publish
+        # trigger-inference-services-pipeline-revertrisk-wikidata
+        # trigger-inference-services-pipeline-revertrisk-wikidata-publish
         # trigger-inference-services-pipeline-revscoring
         # trigger-inference-services-pipeline-revscoring-publish
         # trigger-inference-services-pipeline-ores-migration
@@ -620,6 +624,8 @@
         # inference-services-pipeline-revertrisk-publish
         # inference-services-pipeline-revertrisk-multilingual
         # inference-services-pipeline-revertrisk-multilingual-publish
+        # inference-services-pipeline-revertrisk-wikidata
+        # inference-services-pipeline-revertrisk-wikidata-publish
         # inference-services-pipeline-revscoring
         # inference-services-pipeline-revscoring-publish
         # inference-services-pipeline-ores-migration

@@ -1022,6 +1022,13 @@ jobs:
         - 'revert-risk-model/model-server/.*'
         - 'python/.*\.py$'
 
+  - name: ^trigger-inference-services-pipeline-revertrisk-wikidata
+    files:
+        - '.pipeline/revertrisk/wikidata.yaml'
+        - '.pipeline/config.yaml'
+        - 'revert-risk-model/model-server/.*'
+        - 'python/.*\.py$'
+
   - name: ^trigger-inference-services-pipeline-revscoring
     files:
         - '.pipeline/revscoring/blubber.yaml'
