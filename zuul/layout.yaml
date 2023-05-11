@@ -2589,6 +2589,7 @@ projects:
       - trigger-inference-services-pipeline-nsfw
       - trigger-inference-services-pipeline-revertrisk
       - trigger-inference-services-pipeline-revertrisk-multilingual
+      - trigger-inference-services-pipeline-revertrisk-wikidata
       - trigger-inference-services-pipeline-revscoring
       - trigger-inference-services-pipeline-ores-migration
     gate-and-submit:
@@ -2597,6 +2598,7 @@ projects:
       - trigger-inference-services-pipeline-nsfw
       - trigger-inference-services-pipeline-revertrisk
       - trigger-inference-services-pipeline-revertrisk-multilingual
+      - trigger-inference-services-pipeline-revertrisk-wikidata
       - trigger-inference-services-pipeline-revscoring
       - trigger-inference-services-pipeline-ores-migration
     postmerge:
@@ -2605,6 +2607,7 @@ projects:
       - trigger-inference-services-pipeline-nsfw-publish
       - trigger-inference-services-pipeline-revertrisk-publish
       - trigger-inference-services-pipeline-revertrisk-multilingual-publish
+      - trigger-inference-services-pipeline-revertrisk-wikidata-publish
       - trigger-inference-services-pipeline-revscoring-publish
       - trigger-inference-services-pipeline-ores-migration-publish
 
