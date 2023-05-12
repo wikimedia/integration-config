@@ -596,6 +596,8 @@
         - revscoring-publish
         - ores-migration
         - ores-migration-publish
+        - bloom
+        - bloom-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -613,6 +615,8 @@
         # trigger-inference-services-pipeline-revscoring-publish
         # trigger-inference-services-pipeline-ores-migration
         # trigger-inference-services-pipeline-ores-migration-publish
+        # trigger-inference-services-pipeline-bloom
+        # trigger-inference-services-pipeline-bloom-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -630,6 +634,8 @@
         # inference-services-pipeline-revscoring-publish
         # inference-services-pipeline-ores-migration
         # inference-services-pipeline-ores-migration-publish
+        # inference-services-pipeline-bloom
+        # inference-services-pipeline-bloom-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:
