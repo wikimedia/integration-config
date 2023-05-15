@@ -9831,15 +9831,15 @@ projects:
     template:
       - name: tox-docker
 
-  - name: wikimedia/security/security-api
+  - name: mediawiki/services/ipoid
     test:
-      - trigger-security-api-pipeline-test
+      - trigger-ipoid-pipeline-test
     gate-and-submit:
-      - trigger-security-api-pipeline-test
+      - trigger-ipoid-pipeline-test
     postmerge:
-      - trigger-security-api-pipeline-publish
+      - trigger-ipoid-pipeline-publish
     publish:
-      - trigger-security-api-pipeline-publish
+      - trigger-ipoid-pipeline-publish
 
   - name: wikimedia/security/tooling
     template:

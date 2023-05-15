@@ -655,17 +655,17 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    # wikimedia/security/security-api
-    name: security-api
+    # mediawiki/services/ipoid
+    name: ipoid
     pipeline:
       - test
       - publish
     jobs:
-      # trigger-security-api-pipeline-test
-      # trigger-security-api-pipeline-publish
+      # trigger-ipoid-pipeline-test
+      # trigger-ipoid-pipeline-publish
       - 'trigger-{name}-pipeline-{pipeline}'
-      # security-api-pipeline-test
-      # security-api-pipeline-publish
+      # ipoid-pipeline-test
+      # ipoid-pipeline-publish
       - '{name}-pipeline-{pipeline}'
 
 - project:
