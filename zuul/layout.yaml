@@ -4529,6 +4529,7 @@ projects:
       - name: extension-gate
       - name: extension-javascript-documentation
       - name: extension-coverage
+      - name: extension-apitests
 
   - name: mediawiki/extensions/FundraiserLandingPage
     template:
