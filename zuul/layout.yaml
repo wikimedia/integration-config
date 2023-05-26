@@ -5003,6 +5003,12 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/Pirs
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+
   - name: mediawiki/extensions/Poem
     template:
       - name: in-wikimedia-production
