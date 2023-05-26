@@ -376,7 +376,7 @@ dependencies = {
     'FileImporter': ['CentralAuth', 'WikiEditor'],
     'FlaggedRevs': ['Scribunto'],
     'Forms': ['OOJSPlus'],
-    'Flow': ['AbuseFilter', 'BetaFeatures', 'Echo', 'VisualEditor'],
+    'Flow': ['AbuseFilter', 'BetaFeatures', 'Echo', 'VisualEditor', 'parsoid'],
     'FundraiserLandingPage': ['EventLogging'],
     'FundraisingTranslateWorkflow': ['Translate'],
     'GeoData': ['CirrusSearch'],
