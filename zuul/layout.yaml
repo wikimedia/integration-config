@@ -1036,11 +1036,11 @@ jobs:
         - 'revscoring/.*'
         - 'python/.*\.py$'
 
-  - name: ^trigger-inference-services-pipeline-ores-migration
+  - name: ^trigger-inference-services-pipeline-ores-legacy
     files:
-        - '.pipeline/ores-migration/blubber.yaml'
+        - '.pipeline/ores-legacy/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'ores-migration/.*'
+        - 'ores-legacy/.*'
 
   - name: ^trigger-inference-services-pipeline-bloom
     files:
@@ -2597,7 +2597,7 @@ projects:
       - trigger-inference-services-pipeline-revertrisk-multilingual
       - trigger-inference-services-pipeline-revertrisk-wikidata
       - trigger-inference-services-pipeline-revscoring
-      - trigger-inference-services-pipeline-ores-migration
+      - trigger-inference-services-pipeline-ores-legacy
       - trigger-inference-services-pipeline-bloom
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
@@ -2607,7 +2607,7 @@ projects:
       - trigger-inference-services-pipeline-revertrisk-multilingual
       - trigger-inference-services-pipeline-revertrisk-wikidata
       - trigger-inference-services-pipeline-revscoring
-      - trigger-inference-services-pipeline-ores-migration
+      - trigger-inference-services-pipeline-ores-legacy
       - trigger-inference-services-pipeline-bloom
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
@@ -2617,7 +2617,7 @@ projects:
       - trigger-inference-services-pipeline-revertrisk-multilingual-publish
       - trigger-inference-services-pipeline-revertrisk-wikidata-publish
       - trigger-inference-services-pipeline-revscoring-publish
-      - trigger-inference-services-pipeline-ores-migration-publish
+      - trigger-inference-services-pipeline-ores-legacy-publish
       - trigger-inference-services-pipeline-bloom-publish
 
   - name: integration/config
