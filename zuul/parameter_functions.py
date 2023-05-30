@@ -346,6 +346,7 @@ dependencies = {
                                  'BlueSpiceVisualEditorConnector'],
     'CollaborationKit': ['EventLogging', 'VisualEditor'],
     'ConfigManager': ['BlueSpiceFoundation'],
+    'ContainerFilter': ['VisualEditor'],
     'ContentDroplets': ['VisualEditor'],
     'ContentStabilization': ['BlueSpiceBookshelf', 'BlueSpiceFoundation',
                              'BlueSpiceSMWConnector', 'OOJSPlus', 'Workflows'],
