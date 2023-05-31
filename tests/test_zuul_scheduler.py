@@ -75,6 +75,7 @@ class TestZuulScheduler(unittest.TestCase):
         wmf_zuul_layout = os.path.join(
             os.path.dirname(os.path.abspath(__file__)),
             '../zuul/layout.yaml')
+
         cfg = ConfigParser.ConfigParser()
         cfg.add_section('zuul')
         cfg.set('zuul', 'layout_config', wmf_zuul_layout)
@@ -86,7 +87,8 @@ class TestZuulScheduler(unittest.TestCase):
         # Scheduler class:
         cls.sched = zuul.scheduler.Scheduler(cfg)
         cls.sched.registerConnections({
-            'gerrit': FakeConnection('gerrit', {})
+            'gerrit': FakeConnection('gerrit', {}),
+            'gerrit-reporter': FakeConnection('gerrit', {}),
         })
         cls.sched._doReconfigureEvent(ReconfigureEvent(cfg))
 

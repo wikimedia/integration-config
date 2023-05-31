@@ -375,3 +375,25 @@ class TestZuulLayout(unittest.TestCase):
 
         self.maxDiff = None
         self.assertListEqual([], sorted(errors))
+
+    # We need to split the source and reporter to different GerritConnection to
+    # avoid a race condition when both tries to establish a connection at the
+    # same time. T309376
+    def test_source_and_reporter_use_different_connections(self):
+        reporters = set()
+        sources = set()
+        for pipeline in self.layout['pipelines']:
+            sources.add(pipeline['source'])
+            for kind in ['success', 'failure']:
+                map(reporters.add, pipeline.get(kind, {}).keys())
+
+        self.assertEqual(
+            set(),
+            reporters.intersection(sources),
+            (
+                'Source and reporter connections must have different name.\n'
+                'Got:\n'
+                'sources: %s\n'
+                'reporters: %s\n'
+            ) % (sources, reporters)
+        )
