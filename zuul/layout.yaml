@@ -10091,14 +10091,6 @@ projects:
     postmerge:
       - generic-node16-browser-coverage-docker-publish
 
-  - name: wikidata/query/flink-rdf-streaming-updater
-    test:
-      - trigger-rdf-streaming-updater-pipeline-test
-    gate-and-submit:
-      - trigger-rdf-streaming-updater-pipeline-rehearse
-    postmerge:
-      - trigger-rdf-streaming-updater-pipeline-publish
-
   - name: wikidata/query/rdf
     test:
       - wikidata-query-rdf-maven-java8-docker
@@ -11735,6 +11727,10 @@ projects:
       - name: archived
 
   - name: wikidata/build-resources
+    template:
+      - name: archived
+
+  - name: wikidata/query/flink-rdf-streaming-updater
     template:
       - name: archived
 
