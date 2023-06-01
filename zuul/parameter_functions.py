@@ -388,7 +388,6 @@ dependencies = {
                           'EventLogging', 'Flow', 'MobileFrontend', 'Echo',
                           'CirrusSearch', 'VisualEditor', 'Thanks'],
     'GuidedTour': ['EventLogging'],
-    'GWToolset': ['SyntaxHighlight_GeSHi', 'Scribunto', 'TemplateData'],
     'HierarchyBuilder': ['PageForms'],
     'ImageMetrics': ['EventLogging'],
     'ImageRating': ['VoteNY'],

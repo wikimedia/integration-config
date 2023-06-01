@@ -4660,12 +4660,6 @@ projects:
       - name: extension-gate
       - name: extension-javascript-documentation
 
-  - name: mediawiki/extensions/GWToolset
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/ImageMap
     template:
       - name: in-wikimedia-production
@@ -10883,6 +10877,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/GoToShell
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/GWToolset
     template:
       - name: archived
 
