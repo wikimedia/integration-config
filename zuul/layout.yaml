@@ -4997,12 +4997,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/Pirs
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/Poem
     template:
       - name: in-wikimedia-production
@@ -6842,6 +6836,12 @@ projects:
   - name: mediawiki/extensions/Inbox
     template:
       - name: extension-quibble
+
+  - name: mediawiki/extensions/IncidentReporting
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/InlineCategorizer
     template:
