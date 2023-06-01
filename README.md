@@ -5,12 +5,10 @@ jobs. It is meant to be used with a python script written by the OpenStack
 Foundation: Jenkins Job Builder.
 
 When you tweak or add jobs, follow the documentation maintained on mediawiki.org:
-
-    https://www.mediawiki.org/wiki/CI/JJB
+https://www.mediawiki.org/wiki/CI/JJB
 
 For more about the Jenkins Job Builder software and how to use it, refer to the upstream documentation:
-
-    https://docs.openstack.org/infra/jenkins-job-builder/
+https://docs.openstack.org/infra/jenkins-job-builder/
 
 ## Jenkins job local testing and deployment
 
