@@ -10361,6 +10361,10 @@ projects:
     template:
       - name: composer-test-package-php74-to-php81
 
+  - name: performance/slack-bot
+    template:
+      - name: tox-docker
+
 #### Archive repositories ######################################
 
   - name: analytics/wikistats
