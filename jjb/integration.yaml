@@ -154,7 +154,7 @@
     name: gearman-java
     jobs:
         - '{name}-maven-java8-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java8:1.0.0-s1
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java8:1.0.0-s2
             maven_path: '/run-with-gearmand.sh'
             timeout: 15  # minutes
         - '{name}-maven-java11-docker':
