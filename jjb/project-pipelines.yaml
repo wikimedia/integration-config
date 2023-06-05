@@ -645,20 +645,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    # mediawiki/services/ipoid
-    name: ipoid
-    pipeline:
-      - test
-      - publish
-    jobs:
-      # trigger-ipoid-pipeline-test
-      # trigger-ipoid-pipeline-publish
-      - 'trigger-{name}-pipeline-{pipeline}'
-      # ipoid-pipeline-test
-      # ipoid-pipeline-publish
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     # mediawiki/services/servicelib-node
     name: servicelib-node
     pipeline:

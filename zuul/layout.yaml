@@ -9832,16 +9832,6 @@ projects:
     template:
       - name: tox-docker
 
-  - name: mediawiki/services/ipoid
-    test:
-      - trigger-ipoid-pipeline-test
-    gate-and-submit:
-      - trigger-ipoid-pipeline-test
-    postmerge:
-      - trigger-ipoid-pipeline-publish
-    publish:
-      - trigger-ipoid-pipeline-publish
-
   - name: wikimedia/security/tooling
     template:
       - name: tox-docker
@@ -11551,6 +11541,10 @@ projects:
       - name: archived
 
   - name: mediawiki/services/graphoid/deploy
+    template:
+      - name: archived
+
+  - name: mediawiki/services/ipoid
     template:
       - name: archived
 
