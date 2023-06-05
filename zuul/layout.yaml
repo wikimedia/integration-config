@@ -5551,6 +5551,7 @@ projects:
       # Incubator changes site links and so breaks selenium tests, and we haven't fixed it
       - name: extension-quibble-noselenium
       - name: extension-coverage
+      - name: extension-codehealth
 
   - name: mediawiki/extensions/WikimediaMaintenance
     template:
