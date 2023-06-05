@@ -1,3 +1,10 @@
+gearman-java8 (1.0.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image maven-java8:
+   Update gerrit.wikimedia.org IP in gerrit_ssh_host_key
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon,  5 Jun 2023 17:14:06 -0400
+
 gearman-java8 (1.0.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-stretch:
