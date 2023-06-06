@@ -4206,6 +4206,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-apitests
+      - name: commit-message-validator
 
   - name: mediawiki/extensions/Campaigns
     template:
