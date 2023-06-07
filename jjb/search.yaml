@@ -56,10 +56,10 @@
                  -Dsonar.branch.name="$ZUUL_BRANCH"
 
         - '{name}-maven-java8-docker':
-              docker_image_var: docker-registry.wikimedia.org/releng/java8-mjolnir:0.4.0-s2
+              docker_image_var: docker-registry.wikimedia.org/releng/java8-mjolnir:0.4.0-s1
               pom: jvm/pom.xml
         - '{name}-maven-java8-docker-site-publish':
-              docker_image_var: docker-registry.wikimedia.org/releng/java8-mjolnir:0.4.0-s2
+              docker_image_var: docker-registry.wikimedia.org/releng/java8-mjolnir:0.4.0-s1
               pom: jvm/pom.xml
               site_dir: src/jvm/target/staging
 

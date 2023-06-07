@@ -77,7 +77,7 @@
     # Projects are by default built on Java 8. To build on Java 11, use the
     # {name}-maven-java11-docker job template, which will replace this docker
     # image with the java 11 version.
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.0.1
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.0.0-s1
     triggers:
         - zuul
     # The project is expected to provide a maven wrapper at the root of the
@@ -254,7 +254,7 @@
     # Projects are by default built on Java 8. To build on Java 11, use the
     # {name}-maven-java11-docker-site-publish job template, which will replace
     # this docker image with the java 11 version.
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.0.1
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.0.0-s1
     # The project is expected to provide a maven wrapper at the root of the
     # project. If another entry point is required for a project (for example
     # to setup some build prerequisites) 'maven_path' variables can be
@@ -421,7 +421,7 @@
             options: >-
                      -v "$NETRC_FILE":/nonexistent/.netrc:ro
                      -v "$WORKSPACE/archiva-credentials.xml":/archiva-credentials.xml
-            image:   docker-registry.wikimedia.org/releng/maven-java8:1.0.1
+            image:   docker-registry.wikimedia.org/releng/maven-java8:1.0.0-s1
             args:    >-
                      -Dresume=false
                      -Djdk.net.URLClassPath.disableClassPathURLCheck=true
