@@ -586,8 +586,8 @@
         - revscoring-publish
         - ores-legacy
         - ores-legacy-publish
-        - bloom
-        - bloom-publish
+        - llm
+        - llm-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -605,8 +605,8 @@
         # trigger-inference-services-pipeline-revscoring-publish
         # trigger-inference-services-pipeline-ores-legacy
         # trigger-inference-services-pipeline-ores-legacy-publish
-        # trigger-inference-services-pipeline-bloom
-        # trigger-inference-services-pipeline-bloom-publish
+        # trigger-inference-services-pipeline-llm
+        # trigger-inference-services-pipeline-llm-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -624,8 +624,8 @@
         # inference-services-pipeline-revscoring-publish
         # inference-services-pipeline-ores-legacy
         # inference-services-pipeline-ores-legacy-publish
-        # inference-services-pipeline-bloom
-        # inference-services-pipeline-bloom-publish
+        # inference-services-pipeline-llm
+        # inference-services-pipeline-llm-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:

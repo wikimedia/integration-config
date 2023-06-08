@@ -1042,11 +1042,11 @@ jobs:
         - '.pipeline/config.yaml'
         - 'ores-legacy/.*'
 
-  - name: ^trigger-inference-services-pipeline-bloom
+  - name: ^trigger-inference-services-pipeline-llm
     files:
-        - '.pipeline/bloom/blubber.yaml'
+        - '.pipeline/llm/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'bloom/.*'
+        - 'llm/.*'
 
   # End of meta jobs (the ones starting with ^)
 
@@ -2598,7 +2598,7 @@ projects:
       - trigger-inference-services-pipeline-revertrisk-wikidata
       - trigger-inference-services-pipeline-revscoring
       - trigger-inference-services-pipeline-ores-legacy
-      - trigger-inference-services-pipeline-bloom
+      - trigger-inference-services-pipeline-llm
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
@@ -2608,7 +2608,7 @@ projects:
       - trigger-inference-services-pipeline-revertrisk-wikidata
       - trigger-inference-services-pipeline-revscoring
       - trigger-inference-services-pipeline-ores-legacy
-      - trigger-inference-services-pipeline-bloom
+      - trigger-inference-services-pipeline-llm
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-outlink-transformer-publish
@@ -2618,7 +2618,7 @@ projects:
       - trigger-inference-services-pipeline-revertrisk-wikidata-publish
       - trigger-inference-services-pipeline-revscoring-publish
       - trigger-inference-services-pipeline-ores-legacy-publish
-      - trigger-inference-services-pipeline-bloom-publish
+      - trigger-inference-services-pipeline-llm-publish
 
   - name: integration/config
     test-prio:
