@@ -19,15 +19,8 @@
 # slave nodes which is in labs.
 - defaults:
     name: beta
-    disabled: true  # Disable them all due to T338495
     description: |
       <p>Job is managed by <a href="https://www.mediawiki.org/wiki/CI/JJB">Jenkins Job Builder</a>.</p>
-      <p>
-      <big>
-      All beta cluster Jenkins jobs are disabled due to an issue with the PKI issueing
-      TLS certificates, <a href="https://phabricator.wikimedia.org/T338495">T338495</a>.
-      </big>
-      </p>
     project-type: freestyle
 
     wrappers:
