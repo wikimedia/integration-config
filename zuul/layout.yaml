@@ -2639,10 +2639,6 @@ projects:
     gate-and-submit:
       - integration-composer-check-php74-docker
 
-  - name: integration/commit-message-validator
-    template:
-      - name: tox-docker
-
   - name: integration/dashboard
     template:
       - name: tox-docker
@@ -10389,6 +10385,10 @@ projects:
       - name: archived
 
   - name: integration/audit-resources
+    template:
+      - name: archived
+
+  - name: integration/commit-message-validator
     template:
       - name: archived
 
