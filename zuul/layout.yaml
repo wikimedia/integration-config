@@ -2516,12 +2516,6 @@ projects:
     template:
       - name: tox-docker
 
-  - name: cloud/toolforge/buildpacks
-    test:
-      - shellcheck
-    gate-and-submit:
-      - shellcheck
-
   - name: cloud/toolforge/delete-crashing-pods
     test:
       - trigger-toolforge-delete-crashing-pods-pipeline-test
@@ -10381,6 +10375,10 @@ projects:
       - name: archived
 
   - name: avro-php
+    template:
+      - name: archived
+
+  - name: cloud/toolforge/buildpacks
     template:
       - name: archived
 
