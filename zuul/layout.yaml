@@ -5236,6 +5236,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      - name: extension-javascript-documentation
 
   - name: mediawiki/extensions/timeline
     template:
