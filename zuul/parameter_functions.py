@@ -895,7 +895,6 @@ gatedextensions = [
     'EventLogging',
     'EventStreamConfig',
     'FileImporter',
-    'Flow',
     'GeoData',
     'GlobalCssJs',
     'GlobalPreferences',

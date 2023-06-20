@@ -4366,7 +4366,6 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-codehealth
-      - name: extension-gate
       - name: extension-javascript-documentation
       - name: extension-coverage
       - name: extension-apitests
