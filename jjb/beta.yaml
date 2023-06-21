@@ -19,8 +19,12 @@
 # slave nodes which is in labs.
 - defaults:
     name: beta
+    disabled: true  # Disable due to T340030
     description: |
       <p>Job is managed by <a href="https://www.mediawiki.org/wiki/CI/JJB">Jenkins Job Builder</a>.</p>
+      <p><big>
+        Beta updates are disabled due to <a href="https://phabricator.wikimedia.org/T340030">T340030</a>
+      </big></p>
     project-type: freestyle
 
     wrappers:
