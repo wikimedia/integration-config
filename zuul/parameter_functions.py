@@ -336,7 +336,7 @@ dependencies = {
     'CentralNotice': ['EventLogging'],
     'Challenge': ['SocialProfile'],
     'CheckUser': ['CentralAuth', 'FlaggedRevs', 'GuidedTour', 'Renameuser'],
-    'Cite': ['ParserFunctions', 'VisualEditor'],
+    'Cite': ['ParserFunctions', 'VisualEditor', 'WikiEditor'],
     'Citoid': ['Cite', 'VisualEditor'],
     'CirrusSearch': ['TimedMediaHandler', 'PdfHandler', 'Cite', 'Elastica',
                      'GeoData', 'BetaFeatures', 'SiteMatrix',
