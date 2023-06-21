@@ -590,6 +590,8 @@
         - llm-publish
         - langid
         - langid-publish
+        - readability
+        - readability-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -611,6 +613,8 @@
         # trigger-inference-services-pipeline-llm-publish
         # trigger-inference-services-pipeline-langid
         # trigger-inference-services-pipeline-langid-publish
+        # trigger-inference-services-pipeline-readability
+        # trigger-inference-services-pipeline-readability-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -632,6 +636,8 @@
         # inference-services-pipeline-llm-publish
         # inference-services-pipeline-langid
         # inference-services-pipeline-langid-publish
+        # inference-services-pipeline-readability
+        # inference-services-pipeline-readability-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:
