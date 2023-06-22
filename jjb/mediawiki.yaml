@@ -261,6 +261,20 @@
 
         - compress-mw-debug-logs
         - archive-log-allow-empty
+        # Garbage collect npm cache
+        #
+        # We save to castor via teardown macro when the build is a success and
+        # got triggered from gate-and-submit or postmerge. In such a case,
+        # invoke "npm cache verify" to shrink the cache before saving T340092.
+        - postbuildscript:
+            builders:
+                - build-on:
+                    - SUCCESS
+                  build-steps:
+                    - docker-run-with-log-cache-src:
+                        image: '{docker_image}'
+                        entrypoint: 'bash'
+                        args: -c '([[ "$ZUUL_PIPELINE" =~ ^(gate-and-submit|postmerge) ]] && npm cache verify) || :'
         - teardown
     wrappers:
         - timeout:
