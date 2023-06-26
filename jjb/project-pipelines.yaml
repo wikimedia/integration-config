@@ -588,6 +588,8 @@
         - ores-legacy-publish
         - llm
         - llm-publish
+        - langid
+        - langid-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -607,6 +609,8 @@
         # trigger-inference-services-pipeline-ores-legacy-publish
         # trigger-inference-services-pipeline-llm
         # trigger-inference-services-pipeline-llm-publish
+        # trigger-inference-services-pipeline-langid
+        # trigger-inference-services-pipeline-langid-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -626,6 +630,8 @@
         # inference-services-pipeline-ores-legacy-publish
         # inference-services-pipeline-llm
         # inference-services-pipeline-llm-publish
+        # inference-services-pipeline-langid
+        # inference-services-pipeline-langid-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:

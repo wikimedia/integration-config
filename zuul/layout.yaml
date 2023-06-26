@@ -1048,6 +1048,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'llm/.*'
 
+  - name: ^trigger-inference-services-pipeline-langid
+    files:
+        - '.pipeline/langid/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'langid/.*'
+
   # End of meta jobs (the ones starting with ^)
 
 
@@ -2593,6 +2599,7 @@ projects:
       - trigger-inference-services-pipeline-revscoring
       - trigger-inference-services-pipeline-ores-legacy
       - trigger-inference-services-pipeline-llm
+      - trigger-inference-services-pipeline-langid
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
@@ -2603,6 +2610,7 @@ projects:
       - trigger-inference-services-pipeline-revscoring
       - trigger-inference-services-pipeline-ores-legacy
       - trigger-inference-services-pipeline-llm
+      - trigger-inference-services-pipeline-langid
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-outlink-transformer-publish
@@ -2613,6 +2621,7 @@ projects:
       - trigger-inference-services-pipeline-revscoring-publish
       - trigger-inference-services-pipeline-ores-legacy-publish
       - trigger-inference-services-pipeline-llm-publish
+      - trigger-inference-services-pipeline-langid-publish
 
   - name: integration/config
     test-prio:
