@@ -1,3 +1,9 @@
+operations-puppet (0.8.11) wikimedia; urgency=medium
+
+  * Install curl and jq to allow simple api functional tests for replica_cnf_api
+
+ -- David Caro <dcaro@wikimedia.org>  Wed, 28 Jun 2023 11:04:32 +0200
+
 operations-puppet (0.8.10) wikimedia; urgency=medium
 
   * Install envoyproxy to validate generated (fixture) config in CI
