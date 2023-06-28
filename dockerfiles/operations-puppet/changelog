@@ -1,3 +1,9 @@
+operations-puppet (0.8.11-s1) wikimedia; urgency=high
+
+   Rebuild
+
+ -- Reedy <reedy@wikimedia.org>  Wed, 28 Jun 2023 11:36:38 +0100
+
 operations-puppet (0.8.11) wikimedia; urgency=medium
 
   * Install curl and jq to allow simple api functional tests for replica_cnf_api
