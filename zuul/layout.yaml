@@ -6690,6 +6690,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/InlineComments
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/InteractiveBlockMessage
     template:
       - name: extension-quibble
