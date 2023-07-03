@@ -6679,11 +6679,12 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/IncidentReporting
+  - name: mediawiki/extensions/ReportIncident
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: extension-codehealth
 
   - name: mediawiki/extensions/InlineCategorizer
     template:
