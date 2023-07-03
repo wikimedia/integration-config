@@ -2743,6 +2743,10 @@ projects:
     template:
       - name: node16-docker
 
+  - name: performance/xhgui-vendor
+    template:
+      - name: composer-test-php74-to-php81
+
   - name: releng/phatality
     template:
       - name: node16-docker
