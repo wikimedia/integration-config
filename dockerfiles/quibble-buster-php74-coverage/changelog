@@ -1,3 +1,10 @@
+quibble-buster-php74-coverage (1.5.4-s2) wikimedia; urgency=medium
+
+  * Remove `tests/phpunit` suffix from PHPUnit path argument. Wikibase tests
+    are in different directories. T288396
+
+ -- Tim Starling <tstarling@wikimedia.org>  Tue, 04 Jul 2023 22:20:24 +1000
+
 quibble-buster-php74-coverage (1.5.4-s1) wikimedia; urgency=high
 
    Refresh for update in parent image node14:

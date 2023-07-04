@@ -41,7 +41,7 @@ if [[ ! -v CODEHEALTH ]]; then
         --coverage-clover "$LOG_DIR"/clover.xml \
         --coverage-html "$WORKSPACE"/cover \
         --log-junit "$LOG_DIR"/junit.xml \
-        "$MW_INSTALL_PATH/skins/$SKIN_NAME/tests/phpunit" &
+        "$MW_INSTALL_PATH/skins/$SKIN_NAME" &
 else
     # This runs unit tests for all skins in the file system. We are doing this because:
     # 1. in the CODEHEALTH env context only the skin we care about should be cloned
