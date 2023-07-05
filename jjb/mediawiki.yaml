@@ -708,7 +708,7 @@
     branch: '$ZUUL_BRANCH'
     properties:
      - build-discarder:
-         days-to-keep: 15
+         days-to-keep: 7
     triggers:
      - zuul
 
@@ -802,7 +802,7 @@
     branch: '$ZUUL_BRANCH'
     properties:
      - build-discarder:
-         days-to-keep: 15
+         days-to-keep: 7
     triggers:
      - zuul
 
