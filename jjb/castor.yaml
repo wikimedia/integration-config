@@ -103,7 +103,7 @@
     node: castor
     properties:
      - build-discarder:
-         days-to-keep: 5
+         days-to-keep: 3
     parameters:
         - string:
             name: TRIGGERED_SSH_CONNECTION
