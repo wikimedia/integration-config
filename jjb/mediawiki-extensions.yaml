@@ -23,6 +23,9 @@
     name: 'mediawiki-i18n-check-docker'
     node: Docker
     concurrent: true
+    properties:
+     - build-discarder:
+         days-to-keep: 7
     triggers:
      - zuul
     builders:
