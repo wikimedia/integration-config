@@ -906,6 +906,7 @@
             src: 'cover'
             dest: 'mediawiki-core'
     publishers:
+        - compress-mw-debug-logs
         - archive-log-allow-empty
         - cloverphp:
             xml-location: 'log/clover.xml'
