@@ -3284,6 +3284,7 @@ projects:
   - { name: operations/debs/git-fat,                          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/golang-burrow,                    test: ['debian-glue-non-voting'] }
   - { name: operations/debs/golang-github-howeyc-fsnotify,    test: ['debian-glue-non-voting'] }
+  - { name: operations/debs/pdns-recursor,                    test: ['debian-glue'] }
   - name: operations/debs/helm
     test:
       - debian-glue-backports
