@@ -282,6 +282,19 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: recommendation-api-ng
+    pipeline:
+      - test
+      - publish
+    jobs:
+      # trigger-recommendation-api-ng-pipeline-test
+      # trigger-recommendation-api-ng-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # recommendation-api-ng-pipeline-test
+      # recommendation-api-ng-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: restbase
     pipeline:
       - test

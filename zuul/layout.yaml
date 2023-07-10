@@ -10043,9 +10043,14 @@ projects:
       - name: node16-docker
 
   - name: research/recommendation-api
-    template:
-      - name: tox-docker
-      - name: mediawiki-i18n-check
+    test:
+      - trigger-recommendation-api-ng-pipeline-test
+    gate-and-submit:
+      - trigger-recommendation-api-ng-pipeline-test
+    postmerge:
+      - trigger-recommendation-api-ng-pipeline-publish
+    publish:
+      - trigger-recommendation-api-ng-pipeline-publish
 
   - name: translatewiki
     template:
