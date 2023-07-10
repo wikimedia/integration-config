@@ -5264,6 +5264,7 @@ projects:
     postmerge:
       - mwext-doxygen-publish
     experimental:
+      - mwext-phpunit-coverage-docker
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
 

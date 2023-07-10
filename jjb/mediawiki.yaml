@@ -568,6 +568,11 @@
     triggers:
         - zuul
 
+- job-template:
+    !!merge : *job_quibble
+    name: 'mwext-phpunit-coverage-docker'
+    quibble_args: '--commands=mwext-phpunit-coverage'
+
 # XXX copy pasted to pass --volume cover:/workspace/cover
 - job-template:
     !!merge : *job_quibble
@@ -987,6 +992,10 @@
             packages-source: vendor
             database: sqlite
         - mwext-phpunit-coverage-patch-docker:
+            packages-source:  composer
+            database: mysql
+        - mwext-phpunit-coverage-docker:
+            docker_image: docker-registry.discovery.wmnet/releng/quibble-buster-php74-coverage:1.5.4-s2  # T288396
             packages-source:  composer
             database: mysql
         - mwext-phpunit-coverage-docker-publish:
