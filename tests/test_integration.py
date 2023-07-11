@@ -17,7 +17,7 @@ JENKINS_ACCEPTABLE_LABELS = [
     'BetaClusterBastion',  # deployment-prep
     'blubber',  # dummy job for Zuul/Gearman which trigger a pipeline job
     'castor',  # Central cache
-    'contint2001',  # Publishing
+    'contint2002',  # Publishing
     'puppet',
     'puppet-compiler-node',
     'train',
