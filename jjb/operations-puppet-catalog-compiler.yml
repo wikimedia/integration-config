@@ -39,7 +39,7 @@
         type: absolute
 
 # Triggered from the Zuul experimental pipeline
-- job:
+- job: &job_operations-puppet-catalog-compiler-test
     name: operations-puppet-catalog-compiler-test
     node: puppet-compiler-node
     triggers:
@@ -60,3 +60,10 @@
     - timeout:
         timeout: 180
         type: absolute
+- job:
+    !!merge : *job_operations-puppet-catalog-compiler-test
+    name: operations-puppet-catalog-compiler-puppet7-test
+    node: puppet7-compiler-node
+    # Reinject Zuul parameters since JJB strip for some reason
+    triggers:
+        - zuul

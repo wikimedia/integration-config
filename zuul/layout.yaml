@@ -3749,6 +3749,7 @@ projects:
       - operations-puppet-logstash-filter-verifier
     experimental:
       - operations-puppet-catalog-compiler-test
+      - operations-puppet-catalog-compiler-puppet7-test
 
   - name: operations/puppet-lint/wmf_styleguide-check
     test:
