@@ -2,12 +2,26 @@
 - job:
     name: operations-puppet-catalog-compiler
     description: 'The Puppet compiler. Use it to check your changes :)'
+    project-type: matrix
+    # Run the parent jobs on contint* machines
+    # The builds run on agents based on the label-expression below
+    node: productionAgents
     concurrent: true
-    node: puppet-compiler-node
     properties:
         - build-discarder:
             days-to-keep: 60
+    axes:
+        - axis:
+            type: label-expression
+            name: label
+            values:
+                - puppet5-compiler-node
+                - puppet7-compiler-node
     parameters:
+        - matrix-combinations:
+            name: Puppet workers to use
+            # Set the default selection:
+            filter: (label =="puppet5-compiler-node")
         - string:
             name: NUM_THREADS
             default: 4
