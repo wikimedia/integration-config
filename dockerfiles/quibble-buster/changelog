@@ -1,3 +1,9 @@
+quibble-buster (1.5.5) wikimedia; urgency=high
+
+   Update Quibble from 1.5.4 to 1.5.5
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 14 Jul 2023 14:47:29 -0400
+
 quibble-buster (1.5.4-s1) wikimedia; urgency=high
 
    Refresh for update in parent image node14:
