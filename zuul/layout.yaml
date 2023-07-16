@@ -6642,6 +6642,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/HTMLTemplates
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/I18nTags
     template:
       - name: extension-quibble
