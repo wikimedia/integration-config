@@ -8171,6 +8171,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/WarnNotRecentlyUpdated
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/WatchAnalytics
     template:
       - name: extension-quibble
