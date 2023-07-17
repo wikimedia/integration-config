@@ -4976,6 +4976,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
 
