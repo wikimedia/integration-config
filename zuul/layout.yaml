@@ -4950,6 +4950,7 @@ projects:
       - name: extension-quibble
       - name: extension-quibble-only-standalone
       - name: extension-coverage
+      - name: extension-codehealth
       - name: extension-gate
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
