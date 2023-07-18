@@ -923,6 +923,7 @@ gatedextensions = [
     'Wikibase',
     'WikibaseCirrusSearch',
     'WikibaseMediaInfo',
+    'WikiLove',
     'WikimediaMessages',
 ]
 gatedskins = [

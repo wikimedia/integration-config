@@ -5369,6 +5369,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: extension-gate
 
   - name: mediawiki/extensions/WikimediaApiPortalOAuth
     template:
