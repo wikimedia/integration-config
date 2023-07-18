@@ -909,6 +909,7 @@ gatedextensions = [
     'MobileFrontend',
     'NavigationTiming',
     'PageImages',
+    'PageTriage',
     'PageViewInfo',
     'ProofreadPage',
     'SandboxLink',
