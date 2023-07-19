@@ -81,7 +81,7 @@
      - archive-log-dir
      - xunit:
          types:
-             - junit:
+             - phpunit:
                  pattern: 'log/junit*.xml'
      - docker-cleanup
 
