@@ -160,6 +160,7 @@
          args: 'update --ansi --no-progress --prefer-dist --profile'
      - docker-run-with-log-cache-src:
          image: '{phan_image}'
+         memory: 7G  # Instances have 24G of RAM and 3 executors
          entrypoint: /run-libraries.sh
          environment:
              PHAN_COLOR_SCHEME: light

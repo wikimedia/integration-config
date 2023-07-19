@@ -173,6 +173,9 @@
                   {%- endif -%}
               {%- endfor -%}
           {%- endif -%}
+          {%- if memory is defined and memory|length -%}
+                {{ " " }}--memory {{ memory }}
+          {%- endif -%}
           {%- if volumes is defined -%}
               {%- for host_path, container_path in volumes.items() -%}
                   {%- if host_path.startswith('/') -%}
@@ -215,6 +218,14 @@
           {obj:environment|}
         options: >-
           {obj:options|}
+        # FIXME the following works:
+        #
+        #   memory: '{memory|}'
+        #
+        # But we are using obj for consistency with other parameters. Maybe
+        # that was a hack which is no more needed with recent jjb versions.
+        memory: >-
+            {obj:memory|}
         volumes:
             !j2-yaml: |
                 src: '{srcdir|/src}'

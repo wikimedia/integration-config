@@ -126,6 +126,7 @@
         environment:
             PHAN_COLOR_SCHEME: light
         image: '{phan_image}'
+        memory: 7G  # Instances have 24G of RAM and 3 executors
         args: '--color'
         srcdir: '/mediawiki'
 
