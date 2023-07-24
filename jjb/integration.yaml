@@ -218,3 +218,93 @@
     jobs:
      - '{name}-tox-docker':
          build_timeout: 5
+
+- job-template:
+    name: 'integration-zuul-deploy-{python}-{distribution}'
+    node: Docker
+    triggers:
+        - zuul
+    builders:
+        - docker-wipe-dir:
+            dir: wheels-cache
+        - docker-log-dir
+        - docker-src-dir
+        - docker-ci-src-setup-simple
+        - shell: 'tar --directory wheels-cache -xzvf src/artifacts/artifacts.{distribution}.tar.gz'
+        - shell: |
+            set -euxo pipefail
+            tar -tzf src/artifacts/artifacts.{distribution}.tar.gz|sort > log/{distribution}-old.txt
+        - shell: 'docker pull {image}'  # update latest tag
+
+        # python-pbr inspects the git directory to forge the application
+        # version (based on `git describe`).
+        #
+        # `src` is a git submodule, `.git` is a file which contains a relative
+        # link to the submodule git directory in the parent (deploy)
+        # repository. It is thus not accessible and pbr is unable to determine
+        # the git repository which leads to a failure.
+        #
+        # The following does the opposite of `git submodule absorbgitdirs`
+        # moving the git directory from the deploy repo back to the submodule
+        # src. The python-build images would have to use a similar trick or act
+        # on the whole deploy repo rather than just the source one.
+        - docker-run:
+            image: '{image}'
+            options: --user=nobody
+            entrypoint: rm
+            args: /deploy/src/.git
+            volumes:
+                src: /deploy
+        - docker-run:
+            image: '{image}'
+            options: --user=nobody
+            entrypoint: git
+            args: -C /deploy/src --work-tree=/deploy/src config --unset core.worktree
+            volumes:
+                src: /deploy
+                src/.git/modules/src: /deploy/src/.git
+
+        # Invoke the python build image
+        - docker-run:
+            image: '{image}'
+            options: --user=nobody
+            entrypoint: /bin/bash
+            args: -x /bin/run.sh
+            volumes:
+                src: /deploy
+                src/.git/modules/src: /deploy/src/.git
+                log: /wheels
+                wheels-cache: /wheels-cache
+            environment:
+                PIP_FIND_LINKS: /wheels-cache
+                PYTHON_SUFFIX: '{python-suffix}'
+        # Show diffs of artifacts content. Based on integration/zuul/deploy Makefile
+        - shell: |
+            set -euxo pipefail
+            tar -tzf log/artifacts.tar.gz \
+                |sort > log/{distribution}-new.txt
+            diff --unified=0 --color=always \
+                log/{distribution}-old.txt \
+                log/{distribution}-new.txt \
+                || ([ $? -le 1 ] && exit 0) || exit $?
+        # No need to collect the tarball
+        - shell: rm -f artifacts.tar.gz
+    publishers:
+        - castor-save-workspace-cache
+        - archive-log-dir
+        - docker-cleanup
+
+- project:
+    name: 'integration-zuul-deploy'
+    # Images are set to latest and maintained by SRE
+    python:
+        - python3:
+            python-suffix: 3
+        - python2:
+            python-suffix: 2
+    distribution:
+        - bullseye
+        - buster
+    jobs:
+        - 'integration-zuul-deploy-{python}-{distribution}':
+            image: 'docker-registry.wikimedia.org/{python}-build-{distribution}:latest'

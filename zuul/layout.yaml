@@ -2592,6 +2592,15 @@ projects:
       # For the patch-queue branches - T222952
       - integration-zuul-tox-docker
 
+  - name: integration/zuul/deploy
+    test:
+      - integration-zuul-deploy-python2-buster
+    gate-and-submit:
+      - integration-zuul-deploy-python2-buster
+    experimental:
+      # For adding Bullseye artifacts - T342346
+      - integration-zuul-deploy-python2-bullseye
+
   - name: mediawiki/tools/api-testing
     template:
       - name: node16-rundoc-docker
