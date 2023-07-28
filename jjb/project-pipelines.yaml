@@ -689,29 +689,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: datahub
-    pipeline:
-      - gms-build
-      - gms-publish
-      - frontend-build
-      - frontend-publish
-      - mce-consumer-build
-      - mce-consumer-publish
-      - mae-consumer-build
-      - mae-consumer-publish
-      - mysql-setup-build
-      - mysql-setup-publish
-      - elasticsearch-setup-build
-      - elasticsearch-setup-publish
-      - kafka-setup-build
-      - kafka-setup-publish
-      - upgrade-build
-      - upgrade-publish
-    jobs:
-      - 'trigger-{name}-pipeline-{pipeline}'
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: image-suggestions
     pipeline:
       - test
