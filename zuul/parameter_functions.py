@@ -219,7 +219,10 @@ dependencies = {
     'BlueSpiceNamespaceCSS': ['BlueSpiceFoundation'],
     'BlueSpiceNamespaceManager': ['BlueSpiceFoundation'],
     'BlueSpiceNSFileRepoConnector': ['BlueSpiceFoundation', 'NSFileRepo'],
-    'BlueSpicePageAccess': ['BlueSpiceFoundation'],
+    'BlueSpicePageAccess': [
+        'BlueSpiceFoundation',
+        'BlueSpiceVisualEditorConnector'
+    ],
     'BlueSpicePageAssignments': ['BlueSpiceFoundation'],
     'BlueSpicePageFormsConnector': ['BlueSpiceFoundation', 'PageForms'],
     'BlueSpicePageTemplates': [
