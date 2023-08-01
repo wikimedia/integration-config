@@ -3027,6 +3027,7 @@ projects:
       - name: extension-gate
       - name: extension-javascript-documentation
       - name: skin-coverage
+      - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
     experimental:
