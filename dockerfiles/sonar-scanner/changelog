@@ -1,3 +1,10 @@
+sonar-scanner (4.6.0.2311-4-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image java11:
+   Refresh java11 image for T338952. No config changes.
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Mon,  7 Aug 2023 08:42:18 -0700
+
 sonar-scanner (4.6.0.2311-4) wikimedia; urgency=medium
 
   * Add support for mediawiki/services/Parsoid and MediaWiki skins (T321837)

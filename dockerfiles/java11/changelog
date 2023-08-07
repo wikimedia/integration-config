@@ -1,3 +1,9 @@
+java11 (0.2) wikimedia; urgency=high
+
+   Refresh java11 image for T338952. No config changes.
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Mon,  7 Aug 2023 08:42:18 -0700
+
 java11 (0.1) wikimedia; urgency=medium
 
   * Initial release based on Buster.
