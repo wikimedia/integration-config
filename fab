@@ -86,14 +86,7 @@ deploy_docker() {
     local docker_pkg='/srv/deployment/docker-pkg/venv/bin/docker-pkg'
     local docker_pkg_config='/etc/docker-pkg/integration.yaml'
     local dockerfiles='/etc/zuul/wikimedia/dockerfiles'
-    _ssh_command_self "$host" "
-    cd /tmp
-    $docker_pkg -c $docker_pkg_config --info build $dockerfiles
-    cat /tmp/docker-pkg-build.log
-    "
-
-    _confirm "Delete build log?"
-    _ssh_command_self "$host" 'rm /tmp/docker-pkg-build.log'
+    _ssh_command_self "$host" "$docker_pkg -c $docker_pkg_config --info build $dockerfiles"
 }
 
 # Pull a docker image onto the WMCS-hosted CI agents.
