@@ -5240,15 +5240,9 @@ projects:
       - name: mwgate-npm
       - name: extension-apitests
     test:
-      # TODO: Legacy ruby-based selenium job. To remove! (T220035)
-      - ruby2.5-rake-docker
-      - legacy-quibble-rubyselenium-docker
       - wikibase-client-docker
       - wikibase-repo-docker
     gate-and-submit: &mediawiki-extensions-wikibase-gate-and-submit
-      # TODO: Legacy ruby-based selenium job. To remove! (T220035)
-      - ruby2.5-rake-docker
-      - legacy-quibble-rubyselenium-docker
       - wikibase-client-docker
       - wikibase-repo-docker
     test-1_35:
