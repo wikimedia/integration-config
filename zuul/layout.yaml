@@ -2995,8 +2995,6 @@ projects:
       # - name: in-mediawiki-tarball
     postmerge:
       - mwext-doxygen-publish
-    experimental:
-      - legacy-quibble-rubyselenium-docker
 
   - name: mediawiki/skins/Modern
     template:
