@@ -242,5 +242,5 @@
             packages-source: vendor
             php:
                 - php74:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.5.5
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.5.5-s1
                     entrypoint: quibble-with-supervisord
