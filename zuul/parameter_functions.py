@@ -540,7 +540,7 @@ dependencies = {
     'Wikidata.org': ['Wikibase'],
     'WikidataPageBanner': ['Wikibase'],
     'WikiEditor': ['EventLogging', 'WikimediaEvents'],
-    'WikiLambda': ['WikimediaMessages'],
+    'WikiLambda': ['WikimediaMessages', 'EventLogging'],
     'WikimediaBadges': ['Wikibase'],
     'WikimediaEvents': ['EventLogging'],
     'WikiSEO': ['PageImages', 'Scribunto'],
