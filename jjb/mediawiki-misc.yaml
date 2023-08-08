@@ -25,11 +25,6 @@
      - '{name}-ruby2.5-bundle-yard-publish'
 
 - project:
-    name: 'mediawiki-selenium'
-    jobs:
-     - '{name}-ruby2.5-bundle-yard-publish'
-
-- project:
     name: 'mediawiki-vagrant'
     jobs:
      - '{name}-ruby2.5-rake-docker':

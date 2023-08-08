@@ -916,13 +916,6 @@
         - beta-irc  # Spam #wikimedia-releng on failure
         - docker-cleanup
 
-- job-template:
-    !!merge : *job_quibble
-    name: 'legacy-quibble-rubyselenium-docker'
-    quibble_args: '--skip-deps --commands=mwselenium'
-    triggers:
-        - zuul
-
 - job:
     name: 'quibble-integration'
     project-type: matrix
@@ -1066,24 +1059,6 @@
         - wmf-quibble-vendor-mysql-{php}-docker
         - wmf-quibble-core-vendor-mysql-{php}-docker
         - wmf-quibble-selenium-{php}-docker
-
-# General MW-Selenium job used to dogfood the builder against MW core.
-- job-template:
-    !!merge : *job_quibble
-    name: 'mediawiki-selenium-integration-docker'
-    triggers:
-        - zuul
-
-- project:
-    name: quibble-mediawiki-selenium
-    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-bundle:1.5.5-s2
-    packages-source: vendor
-    database: mysql
-    jobs:
-        # Explicitly prefix this ruby selenium job as a legacy one that should not be used
-        - legacy-quibble-rubyselenium-docker:
-        - mediawiki-selenium-integration-docker:
-            quibble_args: '--skip-deps --commands=mwselenium -- mediawiki/selenium'
 
 - job-template:
     !!merge : *job_quibble
