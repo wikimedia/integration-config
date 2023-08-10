@@ -752,3 +752,18 @@
       # device-analytics-pipeline-rehearse
       # device-analytics-pipeline-publish
       - '{name}-pipeline-{pipeline}'
+- project:
+    name: geo-analytics
+    pipeline:
+      - test
+      - rehearse
+      - publish
+    jobs:
+      # trigger-geo-analytics-pipeline-test
+      # trigger-geo-analytics-pipeline-rehearse
+      # trigger-geo-analytics-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # geo-analytics-pipeline-test
+      # geo-analytics-pipeline-rehearse
+      # geo-analytics-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
