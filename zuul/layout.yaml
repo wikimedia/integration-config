@@ -8720,6 +8720,16 @@ projects:
     publish:
       - trigger-device-analytics-pipeline-publish
 
+  - name: generated-data-platform/aqs/geo-analytics
+    test:
+      - trigger-geo-analytics-pipeline-test
+    gate-and-submit:
+      - trigger-geo-analytics-pipeline-rehearse
+    postmerge:
+      - trigger-geo-analytics-pipeline-publish
+    publish:
+      - trigger-geo-analytics-pipeline-publish
+
 #### Wikimedia analytics tools #################################
 
   - name: analytics/aggregator
