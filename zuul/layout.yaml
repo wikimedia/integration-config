@@ -9520,6 +9520,10 @@ projects:
       - name: node16-docker
       - name: tox-docker
 
+  - name: labs/tools/wikiinfo
+    template:
+      - name: composer-test-php74-to-php81
+
   - name: labs/tools/wikinity
     template:
       - name: mediawiki-i18n-check
