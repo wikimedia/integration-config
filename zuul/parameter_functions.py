@@ -597,7 +597,7 @@ phan_dependencies = {
     'Dashiki': ['JsonConfig'],
     'Disambiguator': ['VisualEditor'],
     'DiscussionTools': ['VisualEditor', 'Linter', 'Echo', 'EventLogging',
-                        'Gadgets'],
+                        'Gadgets', 'BetaFeatures'],
     'Echo': ['CentralAuth', 'EventLogging'],
     'EntitySchema': ['Wikibase'],
     'EventBus': ['CentralNotice', 'EventStreamConfig'],
