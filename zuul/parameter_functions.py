@@ -691,6 +691,7 @@ phan_dependencies = {
     'UnlinkedWikibase': ['Scribunto'],
     'UserStatus': ['SocialProfile', 'SportsTeams'],
     'UploadWizard': ['EventLogging'],
+    'VisualEditor': ['BetaFeatures'],
     'VoteNY': ['SocialProfile'],
     'WebAuthn': ['OATHAuth'],
     'WikiEditor': ['ConfirmEdit', 'EventLogging', 'WikimediaEvents',
