@@ -648,6 +648,7 @@ phan_dependencies = {
     'OAuthRateLimiter': ['OAuth'],
     'OpenStackManager': ['LdapAuthentication', 'Echo', 'TitleBlacklist'],
     'PageForms': ['AdminLinks', 'Cargo', 'PageSchemas'],
+    'PageImage': ['MobileFrontend'],
     'PageTriage': ['Echo', 'ORES'],
     'PageViewInfoGA': ['PageViewInfo'],
     'ParserFunctions': ['Scribunto'],
