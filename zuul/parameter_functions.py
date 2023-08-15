@@ -598,7 +598,7 @@ phan_dependencies = {
     'Disambiguator': ['VisualEditor'],
     'DiscussionTools': ['VisualEditor', 'Linter', 'Echo', 'EventLogging',
                         'Gadgets', 'BetaFeatures'],
-    'Echo': ['CentralAuth', 'EventLogging'],
+    'Echo': ['CentralAuth', 'EventLogging', 'UserMerge'],
     'EntitySchema': ['Wikibase'],
     'EventBus': ['CentralNotice', 'EventStreamConfig'],
     'FanBoxes': ['SocialProfile'],
