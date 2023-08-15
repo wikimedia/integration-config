@@ -667,7 +667,7 @@ phan_dependencies = {
     'RelatedArticles': ['Disambiguator'],
     'ReplaceText': ['AdminLinks'],
     'Score': ['TimedMediaHandler', 'Wikibase'],
-    'Scribunto': ['SyntaxHighlight_GeSHi'],
+    'Scribunto': ['SyntaxHighlight_GeSHi', 'CodeEditor'],
     'SecurePoll': ['CentralAuth', 'Flow'],
     'SocialProfile': ['Echo'],
     'Sofa': ['Scribunto'],
