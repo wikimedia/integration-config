@@ -9477,14 +9477,6 @@ projects:
       - name: node16-browser-docker
       - name: mediawiki-i18n-check
 
-  - name: labs/tools/video-cut-tool-back-end
-    template:
-      - name: node16-browser-docker
-
-  - name: labs/tools/video-cut-tool-worker
-    template:
-      - name: node16-browser-docker
-
   - name: labs/tools/watch-translations
     template:
       - name: mediawiki-i18n-check
@@ -10322,6 +10314,14 @@ projects:
       - name: archived
 
   - name: labs/tools/signpost
+    template:
+      - name: archived
+
+  - name: labs/tools/video-cut-tool-back-end
+    template:
+      - name: archived
+
+  - name: labs/tools/video-cut-tool-worker
     template:
       - name: archived
 
