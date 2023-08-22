@@ -767,3 +767,18 @@
       # geo-analytics-pipeline-rehearse
       # geo-analytics-pipeline-publish
       - '{name}-pipeline-{pipeline}'
+- project:
+    name: media-analytics
+    pipeline:
+      - test
+      - rehearse
+      - publish
+    jobs:
+      # trigger-media-analytics-pipeline-test
+      # trigger-media-analytics-pipeline-rehearse
+      # trigger-media-analytics-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # media-analytics-pipeline-test
+      # media-analytics-pipeline-rehearse
+      # media-analytics-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
