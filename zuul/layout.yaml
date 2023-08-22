@@ -8730,6 +8730,16 @@ projects:
     publish:
       - trigger-geo-analytics-pipeline-publish
 
+  - name: generated-data-platform/aqs/media-analytics
+    test:
+      - trigger-media-analytics-pipeline-test
+    gate-and-submit:
+      - trigger-media-analytics-pipeline-rehearse
+    postmerge:
+      - trigger-media-analytics-pipeline-publish
+    publish:
+      - trigger-media-analytics-pipeline-publish
+
 #### Wikimedia analytics tools #################################
 
   - name: analytics/aggregator
