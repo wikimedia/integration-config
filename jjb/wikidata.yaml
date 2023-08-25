@@ -103,17 +103,17 @@
         - docker-wipe-dir:
             dir: src/build
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.2.0
+            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
             entrypoint: /run-with-xvfb.sh
             args: 'test'
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.2.0
+            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
             entrypoint: /src/scripts/set-up-git.sh
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.2.0
+            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
             args: 'grunt only_build'
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.2.0
+            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
             entrypoint: /src/scripts/commit-to-gerrit.sh
             options: "-v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent"
     wrappers:
