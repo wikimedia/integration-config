@@ -12,6 +12,7 @@ USER root
 # * ruby: for jsduck.
 # * curl: for use by repo-local bash scripts and npm-run commands (T239246).
 # * libpng, libfreetype6, and libfreetype6: for the Wikimedia Portals job
+# * openssh-client for git push (T328543)
 {% set packages|replace('\n', ' ') -%}
 build-essential
 python
@@ -23,6 +24,7 @@ curl
 libpng-dev
 libfreetype6-dev
 libfontconfig
+openssh-client
 {%- endset -%}
 
 RUN {{ packages | apt_install }} \
