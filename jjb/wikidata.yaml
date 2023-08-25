@@ -114,8 +114,11 @@
             args: 'grunt only_build'
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
-            entrypoint: /src/scripts/commit-to-gerrit.sh
-            options: "-v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent"
+            entrypoint: /src/scripts/commit-build.sh
+        # The push is done as the jenkins-agent so we can use the credential
+        # exposed by the SSH agent which are not viewable by the `nobody` user.
+        - shell: |
+            git -C ./src/build push origin HEAD:refs/for/production%ready
     wrappers:
       - timeout:
           timeout: 15 # minutes
