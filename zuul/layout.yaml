@@ -4253,6 +4253,7 @@ projects:
       - name: in-wikimedia-fundraising-production
       - name: mediawiki-i18n-check
       - name: extension-coverage
+      - name: extension-codehealth
     test:
       - mwgate-composer-php74-docker
       - mwgate-node16-docker
