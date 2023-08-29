@@ -9988,10 +9988,6 @@ projects:
     postmerge:
       - trigger-wikibase-release-prototype-pipeline-publish
 
-  - name: wikimedia/bots/jouncebot
-    template:
-      - name: tox-docker
-
   - name: data-values/value-view
     template:
       - name: node16-browser-docker
@@ -11648,6 +11644,10 @@ projects:
       - name: archived
 
   - name: wikidata/query/flink-swift-plugin
+    template:
+      - name: archived
+
+  - name: wikimedia/bots/jouncebot
     template:
       - name: archived
 
