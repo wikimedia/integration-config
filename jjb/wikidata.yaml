@@ -162,44 +162,26 @@
             image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
             entrypoint: /run-with-xvfb.sh
             args: 'test'
-        - shell: |
-            export GIT_AUTHOR_NAME=WDQSGuiBuilder
-            export GIT_COMMITTER_NAME=WDQSGuiBuilder
-            export GIT_AUTHOR_EMAIL=wdqs-gui-build@lists.wikimedia.org
-            export GIT_COMMITTER_EMAIL=wdqs-gui-build@lists.wikimedia.org
-
-            # We do not know Gerrit SSH host fingerprint
-            mkdir -p ~/.ssh
-            printf 'Host gerrit.wikimedia.org\n  StrictHostKeyChecking no\n  User wdqsguibuilder\n' >> ~/.ssh/config
-
-            git clone -b production "ssh://wdqsguibuilder@gerrit.wikimedia.org:29418/wikidata/query-builder/deploy" ./src/dist-deploy
-            scp -p -P 29418 wdqsguibuilder@gerrit.wikimedia.org:hooks/commit-msg "./src/dist-deploy/.git/hooks/"
-            git -C ./src/dist-deploy config user.name "WDQSGuiBuilder"
-            git -C ./src/dist-deploy config user.email "wdqs-gui-build@lists.wikimedia.org"
-
-            # Empty the build dir (excluding .git), preparing for the new build
-            find ./src/dist-deploy/ -maxdepth 1 ! -wholename "./src/dist-deploy/" ! -wholename "./src/dist-deploy/.git" -exec rm -r {} +
+        - docker-run-with-log-cache-src:
+            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
+            entrypoint: /src/scripts/set-up-git.sh
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
             args: 'build'
+        - docker-run-with-log-cache-src:
+            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
+            entrypoint: /src/scripts/commit-build.sh
+        # The push is done as the jenkins-agent so we can use the credential
+        # exposed by the SSH agent which are not viewable by the `nobody` user.
         - shell: |
-            # Copy the build result
-            cp -R ./src/dist/* ./src/dist-deploy/
-            # Mark our directory as safe (see T328441)
-            git config --global --add safe.directory "$(realpath ./src)"
-            # Make and push a commit to the repo on Gerrit
-            lastrev=$(git -C ./src rev-parse HEAD)
-            message=$(git -C ./src log -1 --pretty=%B | grep -v Change-Id)
-            git -C ./src/dist-deploy add -A
-            git -C ./src/dist-deploy commit -m "Merging from ${lastrev}" -m "${message}"
-            git -C ./src/dist-deploy push origin HEAD:refs/for/production%ready
+            git -C ./src/build push origin HEAD:refs/for/production%ready
     wrappers:
         - timeout:
             timeout: 15 # minutes
         - timestamps
         - ssh-agent-credentials:
             users:
-            - 'wdqsguibuilder'
+            - 'wdquerybuilder'
     publishers:
         - archive-log-allow-empty
         - docker-cleanup
