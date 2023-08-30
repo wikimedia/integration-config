@@ -1,3 +1,11 @@
+operations-puppet (0.9.0) wikimedia; urgency=medium
+
+  * Install tox from pip and upgrade it from 3.7.0 to 4.8.0 - T345152
+  * Install virtualenv 20.21.1 since 20.22.0 no more recognizes python2
+    interpreter and we still have python2 scripts in operations/puppet.
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 30 Aug 2023 10:35:11 +0200
+
 operations-puppet (0.8.12) wikimedia; urgency=medium
 
   * Rebuild to grab, puppet-lint-wmf_styleguide-check (1.1.3)
