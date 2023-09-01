@@ -1,3 +1,10 @@
+bazelisk (1.6.1-2) wikimedia; urgency=high
+
+   Refresh for update in parent image java8:
+   Switch from Stretch to Bullseye - T278203
+
+ -- Antoine Musso <hashar@free.fr>  Fri,  1 Sep 2023 19:03:04 +0200
+
 bazelisk (1.6.1-1-s3) wikimedia; urgency=medium
 
   * Refresh for update in parent image bazel:
