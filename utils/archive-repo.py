@@ -19,7 +19,7 @@ def search_for(search, f, out, Print=True):
         if line == "":
             raise Exception("Unexpected EOF")
         if Print:
-            print(line, end="", file=out)
+            out.write(line)
         if line == search:
             return
 
@@ -29,10 +29,12 @@ def remove_pipeline_def(repo_name, f, out):
         line = f.readline()  # Newline is included
 
         if line == "":
-            raise Exception("Unexpected EOF")
+            raise SystemExit("Did not find a pipeline definition for {}"
+                             "in zuul/layout.yaml".format(
+                                 repo_name))
 
         if repo_name not in line:
-            print(line, end="", file=out)
+            out.write(line)
             continue
 
         if line != "  - name: {}\n".format(repo_name):
@@ -40,8 +42,9 @@ def remove_pipeline_def(repo_name, f, out):
 
         break
 
-    # We've reached the first line of the pipeline definition.
-    # Skip it, including the terminating blank line.
+    # We've reached the first line of the pipeline definition.  Skip
+    # the rest of the pipeline definition, including the terminating
+    # blank line.
     search_for("", f, out, Print=False)
 
 
