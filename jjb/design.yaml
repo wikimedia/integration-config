@@ -3,21 +3,21 @@
     name: 'codex'
     jobs:
      - '{name}-docker-doc-publish':
-         image: 'docker-registry.wikimedia.org/releng/node16-test:0.2.0'
+         image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
          args: 'doc'
          environment:
              CODEX_DOC_ROOT: '/$DOC_PROJECT/$DOC_SUBPATH/'
          docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
          docdest: '$DOC_PROJECT/$DOC_SUBPATH'
      - '{name}-docker-doc-tag-publish':
-         image: 'docker-registry.wikimedia.org/releng/node16-test:0.2.0'
+         image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
          args: 'doc-release'
          environment:
              CODEX_DOC_ROOT: '/$DOC_PROJECT/$DOC_SUBPATH/'
          docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
          docdest: '$DOC_PROJECT/$DOC_SUBPATH'
      - '{name}-docker-doc-latest-publish':
-         image: 'docker-registry.wikimedia.org/releng/node16-test:0.2.0'
+         image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
          args: 'doc-release'
          environment:
              CODEX_DOC_ROOT: '/$DOC_PROJECT/latest/'

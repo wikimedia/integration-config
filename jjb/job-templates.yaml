@@ -447,7 +447,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.2.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
     publishers:
      - archive-log-allow-empty
      - teardown
@@ -493,7 +493,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.2.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0'
         options: '--shm-size 1g'
         args: '{script}'
     publishers:
@@ -550,7 +550,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.2.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
         workdir: /src
         args: 'branch-deploy'
     publishers:
@@ -581,7 +581,7 @@
     - docker-src-dir
     - docker-ci-src-setup-simple
     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16:0.1.0'
+        image: 'docker-registry.wikimedia.org/releng/node16:0.2.0'
         workdir: /src
         args: 'audit'
     publishers:
@@ -659,7 +659,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.2.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0'
         options: >-
             --shm-size 1g
             --env LOG_DIR=/log
@@ -708,7 +708,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.2.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0'
         entrypoint: /run-with-xvfb.sh
         options: >-
             --shm-size 1g
@@ -762,7 +762,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.2.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0'
      - cover-publish:
         src: 'src/coverage'
         dest: '$DOC_PROJECT'
@@ -814,7 +814,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.2.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0'
         args: 'coverage'
      - cover-publish:
         src: 'src/coverage'
@@ -869,7 +869,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.2.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -917,7 +917,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.2.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -963,7 +963,7 @@
 - job-template:
     name: 'selenium-daily-{sitename}-{project}'
     node: Docker
-    docker_image_var: 'docker-registry.wikimedia.org/releng/node14-test-browser:0.0.2-s5'
+    docker_image_var: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0'
     triggers:
      - timed: '@daily'
     parameters:
