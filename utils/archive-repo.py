@@ -117,14 +117,19 @@ def select_archive_section_insert_point(archives, repo_name):
     return best_index
 
 
-def process_archive_section(repo_name, f, out):
+def process_archive_section(repo_name, f, out, comment):
+    if comment:
+        comment = " # {}".format(comment)
+    else:
+        comment = ""
+
     new_archive = ArchivedRepo(
         repo_name,
         """
   - name: {}
     template:
-      - name: archived
-""".format(repo_name))
+      - name: archived{}
+""".format(repo_name, comment))
 
     search_for(
         "#### Archive repositories ######################################",
@@ -137,11 +142,11 @@ def process_archive_section(repo_name, f, out):
         out.write(r.text)
 
 
-def archive(repo_name):
+def archive(repo_name, comment):
     with tempfile.NamedTemporaryFile("w+") as out:
         with open("zuul/layout.yaml") as f:
             remove_pipeline_def(repo_name, f, out)
-            process_archive_section(repo_name, f, out)
+            process_archive_section(repo_name, f, out, comment)
 
         out.flush()
 
@@ -162,8 +167,9 @@ def main():
     parser = argparse.ArgumentParser(
         description='Archives a repo in zuul/layout.yaml')
     parser.add_argument('repo')
+    parser.add_argument('comment', nargs='+')
     args = parser.parse_args()
-    archive(args.repo)
+    archive(args.repo, " ".join(args.comment))
 
 
 if __name__ == "__main__":
