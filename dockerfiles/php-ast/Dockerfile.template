@@ -1,7 +1,7 @@
 FROM {{ "sury-php" | image_tag }}
 
 USER root
-RUN {{ "build-essential php7.4-dev php8.0-dev php8.1-dev php8.2-dev" | apt_install }}
+RUN {{ "build-essential php7.4-dev php8.0-dev php8.1-dev php8.2-dev php8.3-dev" | apt_install }}
 RUN install --owner=nobody --group=nogroup --directory /srv/php-ast
 RUN install --owner=nobody --group=nogroup --directory /srv/modules
 
@@ -20,11 +20,15 @@ RUN git clone https://github.com/nikic/php-ast /srv/php-ast && \
     cp modules/ast.so /srv/modules/ast_81.so && \
     git clean -fdx && \
     phpize8.2 && ./configure --with-php-config=php-config8.2 && make && \
-    cp modules/ast.so /srv/modules/ast_82.so
+    cp modules/ast.so /srv/modules/ast_82.so && \
+    git clean -fdx && \
+    phpize8.3 && ./configure --with-php-config=php-config8.3 && make && \
+    cp modules/ast.so /srv/modules/ast_83.so
 
 USER root
 RUN cp /srv/modules/ast_74.so /usr/lib/php/20190902/ast.so && \
     cp /srv/modules/ast_80.so /usr/lib/php/20200930/ast.so && \
     cp /srv/modules/ast_81.so /usr/lib/php/20210902/ast.so && \
     cp /srv/modules/ast_82.so /usr/lib/php/20220829/ast.so && \
+    cp /srv/modules/ast_83.so /usr/lib/php/20230831/ast.so && \
     echo "extension=ast.so" > /srv/20-ast.ini
