@@ -435,7 +435,7 @@
     name: '{name}-{project}-maven-release-docker'
     !!merge : *job_template_maven-release-docker
 
-# Node.js 16 job for 'npm install-test'
+# Node job for 'npm install-test'
 - job-template:
     name: '{name}-node16-docker'
     node: Docker
@@ -452,7 +452,39 @@
      - archive-log-allow-empty
      - teardown
 
-# Node.js 16 job for 'npm install & npm run {script}'
+- job-template:
+    name: '{name}-node18-docker'
+    node: Docker
+    triggers:
+     - zuul
+    properties:
+        - build-discarder:
+            days-to-keep: 7
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node18-test:0.1.0'
+    publishers:
+     - archive-log-allow-empty
+     - teardown
+
+- job-template:
+    name: '{name}-node20-docker'
+    node: Docker
+    triggers:
+     - zuul
+    properties:
+        - build-discarder:
+            days-to-keep: 7
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node20-test:0.1.0'
+    publishers:
+     - archive-log-allow-empty
+     - teardown
+
+# Job for 'npm install & npm run {script}'
 - job-template:
     name: '{name}-node16-run{script}-docker'
     node: Docker
@@ -462,6 +494,36 @@
      - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.2.0'
+        options: '--shm-size 1g'
+        args: '{script}'
+    publishers:
+     - archive-log-allow-empty
+     - teardown
+
+- job-template:
+    name: '{name}-node18-run{script}-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0'
+        options: '--shm-size 1g'
+        args: '{script}'
+    publishers:
+     - archive-log-allow-empty
+     - teardown
+
+- job-template:
+    name: '{name}-node20-run{script}-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0'
         options: '--shm-size 1g'
         args: '{script}'
     publishers:
@@ -526,7 +588,69 @@
     # FIXME: use `- teardown` to save cache?
     - docker-cleanup
 
-# Node.js 16 job for 'npm install-test' (with browsers installed)
+- job-template:
+    name: '{name}-daily-node18-npmaudit-docker'
+    node: Docker
+    triggers:
+    - timed: '@daily'
+    parameters:
+        - string:
+              name: 'ZUUL_PROJECT'
+              default: '{repository}'
+        - string:
+              name: 'ZUUL_REF'
+              default: 'master'
+        - string:
+              name: 'ZUUL_URL'
+              default: 'https://gerrit.wikimedia.org/r/'
+        - string:
+              name: 'NPM_CONFIG_cache'
+              default: '/cache'
+    builders:
+    - docker-cache-dir
+    - docker-log-dir
+    - docker-src-dir
+    - docker-ci-src-setup-simple
+    - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node18:0.0.1'
+        workdir: /src
+        args: 'audit'
+    publishers:
+    # FIXME: use `- teardown` to save cache?
+    - docker-cleanup
+
+- job-template:
+    name: '{name}-daily-node20-npmaudit-docker'
+    node: Docker
+    triggers:
+    - timed: '@daily'
+    parameters:
+        - string:
+              name: 'ZUUL_PROJECT'
+              default: '{repository}'
+        - string:
+              name: 'ZUUL_REF'
+              default: 'master'
+        - string:
+              name: 'ZUUL_URL'
+              default: 'https://gerrit.wikimedia.org/r/'
+        - string:
+              name: 'NPM_CONFIG_cache'
+              default: '/cache'
+    builders:
+    - docker-cache-dir
+    - docker-log-dir
+    - docker-src-dir
+    - docker-ci-src-setup-simple
+    - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node20:0.0.1'
+        workdir: /src
+        args: 'audit'
+    publishers:
+    # FIXME: use `- teardown` to save cache?
+    - docker-cleanup
+
+# Node job for 'npm install-test' (with browsers installed)
 - job-template:
     name: '{name}-node16-browser-docker'
     node: Docker
@@ -543,7 +667,39 @@
      - archive-log-allow-empty
      - teardown
 
-# Node.js 16 job for 'npm install-test' (with browsers installed) and webdriver running
+- job-template:
+    name: '{name}-node18-browser-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0'
+        options: >-
+            --shm-size 1g
+            --env LOG_DIR=/log
+    publishers:
+     - archive-log-allow-empty
+     - teardown
+
+- job-template:
+    name: '{name}-node20-browser-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0'
+        options: >-
+            --shm-size 1g
+            --env LOG_DIR=/log
+    publishers:
+     - archive-log-allow-empty
+     - teardown
+
+# Node job for 'npm install-test' (with browsers installed) and webdriver running
 - job-template:
     name: '{name}-node16-browser-webdriver-docker'
     node: Docker
@@ -561,7 +717,41 @@
      - archive-log-allow-empty
      - teardown
 
-# Node.js 16 job for 'npm cit' (with browser installed)
+- job-template:
+    name: '{name}-node18-browser-webdriver-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0'
+        entrypoint: /run-with-xvfb.sh
+        options: >-
+            --shm-size 1g
+            --env LOG_DIR=/log
+    publishers:
+     - archive-log-allow-empty
+     - teardown
+
+- job-template:
+    name: '{name}-node20-browser-webdriver-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0'
+        entrypoint: /run-with-xvfb.sh
+        options: >-
+            --shm-size 1g
+            --env LOG_DIR=/log
+    publishers:
+     - archive-log-allow-empty
+     - teardown
+
+# Node job for 'npm cit' (with browser installed)
 # and publishing /coverage from workspace
 # to doc.wikimedia.org/cover/:DOC_PROJECT
 - job:
@@ -580,8 +770,40 @@
      # FIXME: use `- teardown` to save cache?
      - docker-cleanup
 
+- job:
+    name: 'generic-node18-browser-coverage-docker-publish'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0'
+     - cover-publish:
+        src: 'src/coverage'
+        dest: '$DOC_PROJECT'
+    publishers:
+     # FIXME: use `- teardown` to save cache?
+     - docker-cleanup
 
-# Node.js 16 job for 'npm ci && npm coverage' (with browser installed)
+- job:
+    name: 'generic-node20-browser-coverage-docker-publish'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0'
+     - cover-publish:
+        src: 'src/coverage'
+        dest: '$DOC_PROJECT'
+    publishers:
+     # FIXME: use `- teardown` to save cache?
+     - docker-cleanup
+
+
+# Node job for 'npm ci && npm coverage' (with browser installed)
 # and publishing /coverage from workspace
 # to doc.wikimedia.org/cover/:DOC_PROJECT
 - job:
@@ -601,7 +823,41 @@
      # FIXME: use `- teardown` to save cache?
      - docker-cleanup
 
-# Node.js 16 jobs for 'npm install && npm run doc'
+- job:
+    name: 'generic-node18-browser-direct-coverage-docker-publish'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0'
+        args: 'coverage'
+     - cover-publish:
+        src: 'src/coverage'
+        dest: '$DOC_PROJECT'
+    publishers:
+     # FIXME: use `- teardown` to save cache?
+     - docker-cleanup
+
+- job:
+    name: 'generic-node20-browser-direct-coverage-docker-publish'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0'
+        args: 'coverage'
+     - cover-publish:
+        src: 'src/coverage'
+        dest: '$DOC_PROJECT'
+    publishers:
+     # FIXME: use `- teardown` to save cache?
+     - docker-cleanup
+
+# Node jobs for 'npm install && npm run doc'
 # Publishing workspace/docs to doc.wikimedia.org/:DOC_PROJECT/:DOC_SUBPATH/
 # - DOC_PROJECT: determined in parameter_functions.py (repo name)
 # - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
@@ -614,6 +870,36 @@
      - setup
      - docker-run-with-log-cache-src:
         image: 'docker-registry.wikimedia.org/releng/node16-test:0.2.0'
+        args: 'doc'
+     - doc-publish:
+        docsrc: 'src/docs'
+        docdest: '$DOC_PROJECT/$DOC_SUBPATH'
+    publishers:
+     - teardown
+- job:
+    name: generic-node18-docs-docker-publish
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node18-test:0.1.0'
+        args: 'doc'
+     - doc-publish:
+        docsrc: 'src/docs'
+        docdest: '$DOC_PROJECT/$DOC_SUBPATH'
+    publishers:
+     - teardown
+- job:
+    name: generic-node20-docs-docker-publish
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node20-test:0.1.0'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -646,6 +932,16 @@
         - '{name}-node16-browser-docker'
         - '{name}-node16-browser-webdriver-docker'
         - '{name}-node16-run{script}-docker':
+           script: 'doc'
+        - '{name}-node18-docker'
+        - '{name}-node18-browser-docker'
+        - '{name}-node18-browser-webdriver-docker'
+        - '{name}-node18-run{script}-docker':
+           script: 'doc'
+        - '{name}-node20-docker'
+        - '{name}-node20-browser-docker'
+        - '{name}-node20-browser-webdriver-docker'
+        - '{name}-node20-run{script}-docker':
            script: 'doc'
 
 # Same as 'generic', but kept separate so that gate-and-submit jobs
