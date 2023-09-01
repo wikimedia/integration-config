@@ -6391,10 +6391,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Farmer
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/Favorites
     template:
       - name: extension-quibble
@@ -10715,6 +10711,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ExtTab
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Farmer
     template:
       - name: archived
 
