@@ -1,0 +1,15 @@
+FROM {{ "composer-scratch" | image_tag }} as composer
+
+FROM {{ "php83" | image_tag }}
+
+USER root
+
+# Install composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+# Grab our composer helper scripts
+COPY --from=composer /srv/composer /srv/composer
+
+USER nobody
+COPY run.sh /run.sh
+ENTRYPOINT ["/run.sh"]
