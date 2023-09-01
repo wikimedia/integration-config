@@ -12,6 +12,17 @@ https://docs.openstack.org/infra/jenkins-job-builder/
 
 ## Jenkins job local testing and deployment
 
+First create a jenkins_jobs.ini file e.g.
+
+    [job_builder]
+    allow_duplicates=True
+
+    [jenkins]
+    user=USERNAME
+    password=API_TOKEN
+    url=https://integration.wikimedia.org/ci/
+    query_plugins_info=False
+
 Make sure you have tox and python 3 installed, you can then run Jenkins job builder using:
 
     $ ./jenkin-jobs <arguments>
