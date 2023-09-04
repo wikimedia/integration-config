@@ -1,9 +1,5 @@
 # This file holds the configuration for all MediaWiki core related jobs.
 
-# Note that mediawiki/core branches may have a lot of submodules, we thus
-# usually need to NOT process submodules (eg: zuul-cloner).
-# See https://phabricator.wikimedia.org/T44455
-
 - publisher:
     name: compress-mw-debug-logs
     publishers:
@@ -169,10 +165,11 @@
      - docker-log-dir
      - docker-src-dir
      - docker-castor-load
-     - docker-zuul-cloner:
-         projects: >
-           mediawiki/core
-     - docker-ci-src-setup-simple
+     - docker-ci-src-setup-simple:
+          # Note that mediawiki/core branches may have a lot of submodules, we
+          # thus usually need to NOT process submodules.
+          # See https://phabricator.wikimedia.org/T44455
+         submodules: false
      - docker-run-with-log-cache-src:
         image: '{composer_image}'
         args: '--working-dir=/src update --ansi --no-progress --prefer-dist --profile'
