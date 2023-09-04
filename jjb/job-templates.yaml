@@ -159,7 +159,7 @@
             # built on Java 8.
             entrypoint: /src/mvnw
             workdir: '{workdir}'
-            image: 'docker-registry.wikimedia.org/releng/maven-java11:1.0.0'
+            image: docker-registry.wikimedia.org/releng/maven-java11:1.0.0-s1
             args: >
                 -gs /settings.xml --batch-mode --file {pom} -X
                 sonar:sonar
@@ -196,7 +196,7 @@
 - job-template: &job_template_maven-java11-docker
     !!merge : *job_template_maven-java8-docker
     name: '{name}-maven-java11-docker'
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.0
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.0-s1
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
@@ -291,7 +291,7 @@
             args: '-gs /settings.xml --batch-mode --file {pom} {maven_args}'
         # Sonar analysis (see '{name}-maven-java8-docker' for details)
         - docker-run-with-log-cache-src:
-            image: 'docker-registry.wikimedia.org/releng/maven-java11:1.0.0'
+            image: docker-registry.wikimedia.org/releng/maven-java11:1.0.0-s1
             entrypoint: '{maven_path}'
             workdir: '{workdir}'
             args: >
@@ -349,7 +349,7 @@
 - job-template: &job_template_maven-java11-docker-site-publish
     !!merge : *job_template_maven-java8-docker-site-publish
     name: '{name}-maven-java11-docker-site-publish'
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.0
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.0-s1
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
