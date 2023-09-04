@@ -78,7 +78,6 @@ deploy_docker() {
 
     # docker-pkg does not attempt to pull images - T219398
     _ssh_command_self "$host" '
-    docker pull docker-registry.wikimedia.org/stretch
     docker pull docker-registry.wikimedia.org/buster
     docker pull docker-registry.wikimedia.org/bullseye
     '
