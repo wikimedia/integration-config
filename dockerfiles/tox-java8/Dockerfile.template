@@ -1,0 +1,10 @@
+FROM {{ "tox-buster" | image_tag }}
+
+USER root
+
+COPY wikimedia-jdk8.list /etc/apt/sources.list.d/wikimedia-jdk8.list
+
+RUN mkdir -p /usr/share/man/man1 \
+    && {{ "openjdk-8-jre-headless" | apt_install }}
+
+USER nobody
