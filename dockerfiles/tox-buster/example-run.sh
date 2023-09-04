@@ -11,7 +11,7 @@ for project in analytics/quarry/web labs/tools/crosswatch; do
         --env ZUUL_COMMIT=master \
         --env ZUUL_REF=master \
         --volume /"$(pwd)"/log://log \
-        docker-registry.wikimedia.org/releng/tox:latest
+        docker-registry.wikimedia.org/releng/tox-buster:latest
     err+=$?
 done
 
