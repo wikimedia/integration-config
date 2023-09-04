@@ -1,6 +1,7 @@
 tox-mysqld (0.8.0) wikimedia; urgency=medium
 
   * Migrate from stretch to buster - T278203
+  * Change package from `mysql-server` to `mariadb-server`
 
  -- Antoine Musso <hashar@free.fr>  Mon, 04 Sep 2023 17:56:03 +0200
 
