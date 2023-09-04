@@ -6,7 +6,7 @@ def executionTimeout = params.EXECUTION_TIMEOUT_SECONDS.toInteger()
 def targetNode = params.TARGET_NODE
 
 def computerNamePrefix = 'integration-agent-docker-'
-def image = 'docker-registry.wikimedia.org/releng/ci-stretch'
+def image = 'docker-registry.wikimedia.org/releng/ci-bullseye'
 def metricsServer = 'graphite-in.eqiad.wmnet'
 
 String executeOn(computer, cmd) {
