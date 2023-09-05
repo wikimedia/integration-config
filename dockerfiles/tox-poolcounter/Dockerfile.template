@@ -1,4 +1,4 @@
-FROM {{ "tox" | image_tag }}
+FROM {{ "tox-buster" | image_tag }}
 
 USER root
 RUN {{ "build-essential libevent-dev" | apt_install }}
