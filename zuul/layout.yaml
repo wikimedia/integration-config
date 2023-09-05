@@ -305,6 +305,7 @@ pipelines:
            - ^mitar\.wikitech@tnode\.com$ # Mitar
            - ^mjbmri@gmail\.com$
            - ^mlazowik@gmail\.com$
+           - ^mormegil@centrum\.cz$
            - ^morris\.mukau@gmail\.com$ # MtMNC
            - ^morris\.mukau\+wikitech@gmail\.com$ # MtMNC
            - ^mpguy2824@gmail\.com$ # MPGuy2824
