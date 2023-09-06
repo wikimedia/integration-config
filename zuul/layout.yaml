@@ -2560,6 +2560,10 @@ projects:
     gate-and-submit:
       - noop
 
+  - name: integration/tox-jenkins-override
+    template:
+      - name: tox-docker
+
   - name: integration/tox-wikimedia
     template:
       - name: tox-docker
