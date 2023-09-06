@@ -1,3 +1,11 @@
+tox-pyspark (4.8.0-1) wikimedia; urgency=high
+
+   Refresh for update in parent image tox-buster:
+   * BREAKING CHANGE: Upgrade tox from 3.7.0 to 4.8.0 - T345152
+   * Align Docker image version with tox version
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 11 Sep 2023 15:53:15 +0200
+
 tox-pyspark (0.8.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image tox-buster:

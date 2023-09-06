@@ -1,3 +1,9 @@
+zuul-cloner (0.3.0-s3) wikimedia; urgency=high
+
+   * Upgrade tox from 3.7.0 to 4.8.0 - T345152
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 11 Sep 2023 15:53:15 +0200
+
 zuul-cloner (0.3.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image tox-buster:

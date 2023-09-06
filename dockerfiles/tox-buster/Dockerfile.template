@@ -41,14 +41,22 @@ ARG PIP2_VERSION=20.3.4
 # Also explicitly pin the version for Python 3
 ARG PIP3_VERSION=23.2.1
 
+# This image is based on Debian Buster which provides python 3.7 and tox 4.8.0
+# is the last version still supporting it - T345152
+ARG TOX_VERSION=4.8.0
+
+# Tox plugin to support [tox:jenkins] configuration - T345607
+# See https://gerrit.wikimedia.org/g/integration/tox-jenkins-override
+ARG TOX_JENKINS_OVERRIDE_SHA1=4ea7ab8845a3ed40c8a769a694f1037b68c455cf
+
 # Virtualenv 20.22.0 dropped support for python2 but we still need it at least
 # for:
 # - operations/puppet has python2 script and rake_modules/task_gen.rb considers
 #   `#!/usr/bin/python` scripts to be python 2 - T345152
 # - integration/config for Zuul tests
 #
-# Since tox might requires a later version, we use a second pip installation to
-# force the version we want. pip might triggers a non fatal error about the
+# Since tox 4.80 requires virtualenv>=20.24.1, we use a second pip installation
+# to force the version we want. pip might triggers a non fatal error about the
 # dependency conflict but still proceeds with the installation.
 ARG VIRTUALENV_VERSION=20.21.1
 
@@ -64,9 +72,12 @@ RUN {{ packages | apt_install }} \
     && pip3 install pip==${PIP3_VERSION} \
     && apt -y purge python-pip python3-pip \
     && hash pip2 pip3 \
-    && pip3 install setuptools \
-    && pip3 install tox==3.21.4 \
-    && pip3 install virtualenv==${VIRTUALENV_VERSION} \
+    && pip3 install \
+        setuptools \
+        tox==${TOX_VERSION} \
+        git+https://gerrit.wikimedia.org/r/integration/tox-jenkins-override.git\@${TOX_JENKINS_OVERRIDE_SHA1}\#egg=tox-jenkins-override \
+    && pip3 install \
+        virtualenv==${VIRTUALENV_VERSION} \
     && virtualenv -p python2.7 py27-venv \
     && rm -fR py27-venv \
     && rm -fR "$XDG_CACHE_HOME/pip"
