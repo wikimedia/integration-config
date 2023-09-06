@@ -8544,16 +8544,6 @@ projects:
     publish:
       - trigger-kartotherian-pipeline-publish
 
-  - name: mediawiki/services/kask
-    test:
-      - trigger-kask-pipeline-test
-    gate-and-submit:
-      - trigger-kask-pipeline-rehearse
-    postmerge:
-      - trigger-kask-pipeline-publish
-    publish:
-      - trigger-kask-pipeline-publish
-
   - name: mediawiki/services/mathoid
     test:
       - trigger-mathoid-pipeline-test
@@ -11458,6 +11448,10 @@ projects:
   - name: mediawiki/services/ipoid
     template:
       - name: archived
+
+  - name: mediawiki/services/kask
+    template:
+      - name: archived # T335691
 
   - name: mediawiki/services/mobileapps/deploy
     template:
