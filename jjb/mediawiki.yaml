@@ -1057,11 +1057,10 @@
     # And only php7.4 and php8.1
     php:
         - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.5.5-s1 # T345660
-
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.5.5-s2
             entrypoint: quibble-with-supervisord
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.5.5-s1 # T345660
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.5.5-s2
             entrypoint: quibble-with-supervisord
     jobs:
         - wmf-quibble-vendor-mysql-{php}-docker
