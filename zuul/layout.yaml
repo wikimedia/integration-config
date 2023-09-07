@@ -6549,6 +6549,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/GoogleTranslate
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/GPGMail
     template:
       - name: extension-quibble
