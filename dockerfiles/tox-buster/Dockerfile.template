@@ -36,6 +36,11 @@ libboost-python-dev
 bats
 {%- endset -%}
 
+# Latest pip version supporting Python 2.7
+ARG PIP2_VERSION=20.3.4
+# Also explicitly pin the version for Python 3
+ARG PIP3_VERSION=23.2.1
+
 ARG PIP_DISABLE_PIP_VERSION_CHECK=1
 
 ADD pyall.list /etc/apt/sources.list.d/pyall.list
@@ -44,6 +49,10 @@ ADD cobertura-clover-transform.xslt /usr/bin/cobertura-clover-transform.xslt
 ADD apt.pref /etc/apt/preferences.d/pinning.pref
 
 RUN {{ packages | apt_install }} \
+    && pip2 install pip==${PIP2_VERSION} \
+    && pip3 install pip==${PIP3_VERSION} \
+    && apt -y purge python-pip python3-pip \
+    && hash pip2 pip3 \
     && pip3 install setuptools \
     && pip3 install tox==3.21.4 \
     && rm -fR "$XDG_CACHE_HOME/pip"

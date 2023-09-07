@@ -1,3 +1,10 @@
+tox-java8 (1.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image tox-buster:
+   Install python3 pip from source and upgrade to 23.2.1
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 07 Sep 2023 17:19:58 +0200
+
 tox-java8 (1.0) wikimedia; urgency=medium
 
   * Initial image based on Buster using Wikimedia OpenJDK 8.
