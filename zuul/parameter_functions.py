@@ -854,7 +854,9 @@ def get_dependencies(key, mapping, recurse=True):
 
 
 tarballextensions = [
-    # 'AbuseFilter',
+    'AbuseFilter',
+
+    # Skipped, non-trivial (TODO)
     # 'CategoryTree',
 
     'Cite',
@@ -862,15 +864,19 @@ tarballextensions = [
     'CodeEditor',
     'ConfirmEdit',
 
+    # Skipped, non-trivial (TODO)
     # 'DiscussionTools',
-    # 'Echo',
 
+    'Echo',
     'Gadgets',
     'ImageMap',
     'InputBox',
     'Interwiki',
 
+    # Skipped, non-trivial (TODO)
     # 'Linter',
+
+    # Skipped, non-trivial (TODO)
     # 'LoginNotify',
 
     'Math',
@@ -884,25 +890,31 @@ tarballextensions = [
     # Skipped, non-trivial (TODO)
     # 'OATHAuth',
 
-    # 'PageImages',
-
+    'PageImages',
     'ParserFunctions',
     'PdfHandler',
     'Poem',
 
     # Skipped, non-trivial (TODO)
     # 'ReplaceText',
+
+    # Skipped, non-trivial (TODO)
     # 'Scribunto',
+
+    # Skipped, non-trivial (TODO)
     # 'SecureLinkFixer',
 
     'SpamBlacklist',
 
+    # Skipped, non-trivial (TODO)
     # 'SyntaxHighlight_GeSHi',
 
     'TemplateData',
 
+    # Skipped, non-trivial (TODO)
     # 'TextExtracts',
-    # 'Thanks',
+
+    'Thanks',
 
     # Skipped, non-trivial (TODO)
     # 'TitleBlacklist',
