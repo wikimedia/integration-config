@@ -8733,6 +8733,16 @@ projects:
     publish:
       - trigger-media-analytics-pipeline-publish
 
+  - name: generated-data-platform/aqs/editor-analytics
+    test:
+      - trigger-editor-analytics-pipeline-test
+    gate-and-submit:
+      - trigger-editor-analytics-pipeline-rehearse
+    postmerge:
+      - trigger-editor-analytics-pipeline-publish
+    publish:
+      - trigger-editor-analytics-pipeline-publish
+
 #### Wikimedia analytics tools #################################
 
   - name: analytics/aggregator
