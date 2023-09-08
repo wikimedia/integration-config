@@ -35,6 +35,14 @@ Generate from the YAML an XML file for a single Jenkins job, and output it to st
 
     $ ./jjb-test 'wip-job'
 
+Once happy with your changes to the Jenkins Job Builder definition, commit them
+and review the difference:
+
+    $ ./utils/jjb-diff.sh
+
+A CHANGELOG output will be emitted which you can copy paste to the commit
+message (`git commit --amend`).
+
 Update in production CI a single Jenkins job:
 
     $ ./jenkins-jobs --conf jenkins_jobs.ini update ./jjb/ 'updated-job'

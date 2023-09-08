@@ -15,6 +15,7 @@ JJB_BIN=.tox/jenkins-jobs/bin/jenkins-jobs
 DIFF_HIGHLIGHT_BIN="$base_dir"/.tox/jenkins-jobs/bin/diff-highlight
 JJB_CONF=tests/fixtures/jjb-disable-query-plugins.conf
 JJB_TEST="$JJB_BIN --conf $JJB_CONF -l warning test"
+CHANGELOG_BIN="$base_dir"/utils/diff2changelog
 
 build_dir=$(mktemp -d --tmpdir jjbdiff.XXXX)
 trap 'echo Deleting build dir "$build_dir"; rm -R "$build_dir"' EXIT
@@ -52,4 +53,10 @@ echo "--------------------------------------------"
 echo " Full diff"
 echo "--------------------------------------------"
 (cd "$test_dir"; diff --recursive --new-file -u ./output-parent ./output-proposed || : ) | $DIFF_HIGHLIGHT_BIN
+
+echo "--------------------------------------------"
+echo " Changelog"
+echo "--------------------------------------------"
+(cd "$test_dir"; diff --recursive --brief ./output-parent ./output-proposed || : ) | $CHANGELOG_BIN
+
 echo "Done."

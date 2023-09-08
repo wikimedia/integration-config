@@ -1,0 +1,55 @@
+#!/bin/bash
+#
+# diffrecursive2changelog: generate a changelog from a diff
+#
+# Reads from stdin the output of `diff --recursive --quiet` and processes it to
+# show a changelog suitable for changes made to JJB jobs.
+#
+# Example
+#
+#  $ diff --recursive --brief ./output-parent ./output-proposed \
+#    | ./utils/diff2changelog
+#  Affected jobs:
+#   - beta-scap-sync-world
+#  Deleted jobs:
+#   - beta-code-update-eqiad
+#   - beta-update-databases-eqiad
+#  New jobs:
+#   - beta-code-update
+#  $
+#
+
+set -eu -o pipefail
+
+pgm="$(basename "$0")"
+
+sort | while IFS= read -r line
+do
+    if [[ "$line" =~ ^Files\ \./output-parent/([^/]+)/config.xml\ and\ .* ]]; then
+        if [[ ! -v affected_header_written ]]; then
+            printf "\e[0;1mAffected jobs:\e[0;0m\n"
+            affected_header_written=1
+        fi
+        printf " - \e[33m%s\e[0;0m\n" "${BASH_REMATCH[1]}"
+
+    elif [[ "$line" =~ ^Only\ in\ ./output-parent:\ (.+) ]]; then
+        if [[ ! -v deleted_header_written ]]; then
+            printf "\e[0;1mDeleted jobs:\e[0;0m\n"
+            deleted_header_written=1
+        fi
+        printf " - \e[35m%s\e[0;0m\n" "${BASH_REMATCH[1]}"
+
+    elif [[ "$line" =~ ^Only\ in\ \./output-proposed:\ (.*) ]]; then
+        if [[ ! -v new_header_written ]]; then
+            printf "\e[0;1mNew jobs:\e[0;0m\n"
+            new_header_written=1
+        fi
+        printf " - \e[36m%s\e[0;0m\n" "${BASH_REMATCH[1]}"
+    else
+        >&2 printf "%s: unrecognized line: %s\n" "$pgm" "$line"
+        if [ "$line" == "---" ]; then
+            >&2 printf "%s: must invoke 'diff --recursive' with '--brief'\n" "$pgm"
+        fi
+        exit 2
+    fi
+done
