@@ -766,3 +766,18 @@
       # media-analytics-pipeline-rehearse
       # media-analytics-pipeline-publish
       - '{name}-pipeline-{pipeline}'
+- project:
+    name: editor-analytics
+    pipeline:
+      - test
+      - rehearse
+      - publish
+    jobs:
+      # trigger-editor-analytics-pipeline-test
+      # trigger-editor-analytics-pipeline-rehearse
+      # trigger-editor-analytics-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # editor-analytics-pipeline-test
+      # editor-analytics-pipeline-rehearse
+      # editor-analytics-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
