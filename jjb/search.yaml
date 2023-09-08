@@ -39,7 +39,7 @@
         - '{name}-tox-docker-with-sonar':
             name: 'search-mjolnir-patch'
             # branch analysis
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.8.0
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.8.0-s2
             # xgboost takes a while to compile T184754
             # archiva.wikimedia.org is super slow
             build_timeout: 60 # minutes
@@ -50,7 +50,7 @@
         - '{name}-tox-docker-with-sonar':
              # postmerge main branch analysis
              name: 'search-mjolnir-main'
-             docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.8.0
+             docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.8.0-s2
              build_timeout: 15 # minutes, maven deps take ~9 minutes with empty cache.
              sonar_args: >-
                  -Dsonar.branch.name="$ZUUL_BRANCH"
@@ -69,7 +69,7 @@
         - '{name}-tox-docker-with-sonar':
             name: 'wikimedia-discovery-analytics-patch'
             #branch analysis
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.8.0
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.8.0-s2
             sonar_args: >-
                 -Dsonar.branch.target="$ZUUL_BRANCH"
                 -Dsonar.branch.name="$ZUUL_CHANGE-$ZUUL_PATCHSET"
@@ -77,6 +77,6 @@
         - '{name}-tox-docker-with-sonar':
               # postmerge main branch analysis
               name: 'wikimedia-discovery-analytics-main'
-              docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.8.0
+              docker_image_var: docker-registry.wikimedia.org/releng/tox-pyspark:0.8.0-s2
               sonar_args: >-
                   -Dsonar.branch.name="$ZUUL_BRANCH"

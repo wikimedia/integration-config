@@ -17,13 +17,13 @@
     name: cergen
     jobs:
         - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-java8:1.0
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-java8:1.0-s2
 
 - project:
     name: acme-chief
     jobs:
         - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-acme-chief:0.7.0-s1
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-acme-chief:0.7.0-s3
 
 - project:
     name: censorshipmonitoring
@@ -81,7 +81,7 @@
     name: 'cassandra-table-properties'
     jobs:
         - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:0.7.1-s1
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:0.7.1-s3
             build_timeout: 20 # minutes
 
 - project:
