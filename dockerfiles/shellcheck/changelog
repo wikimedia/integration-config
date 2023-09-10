@@ -1,3 +1,11 @@
+shellcheck (0.8.0-1) wikimedia; urgency=medium
+
+  * Migrate image from Buster to Bullseye
+  * Install shellcheck from bullseye-backport upgrading shellcheck from
+    version 0.5.0 to 0.8.0.
+
+ -- Antoine Musso <hashar@free.fr>  Sun, 10 Sep 2023 19:16:01 +0200
+
 shellcheck (0.5.0-1) wikimedia; urgency=medium
 
   * Align image version with shellcheck version.

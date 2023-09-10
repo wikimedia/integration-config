@@ -1,6 +1,8 @@
-FROM {{ "ci-buster" | image_tag }}
+FROM {{ "ci-bullseye" | image_tag }}
 
 USER root
+
+ADD shellcheck-backport.pref /etc/apt/preferences.d/shellcheck-backport.pref
 
 RUN {{ "shellcheck" | apt_install }}
 
