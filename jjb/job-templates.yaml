@@ -968,9 +968,6 @@
      - timed: '@daily'
     parameters:
         - string:
-            name: 'WMF_JENKINS_BEACON_URL' # Used by a11y tests in Vector.
-            default: 'https://meta.wikimedia.org/beacon/statsv/?'
-        - string:
             name: 'MEDIAWIKI_USER'
             default: '{mw_user}'
         - string:

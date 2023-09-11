@@ -208,9 +208,6 @@
         - TwoColConflict:
             recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @awight TCB-Team
             repository: mediawiki/extensions/TwoColConflict
-        - Vector:
-            recipients: qa-alerts@lists.wikimedia.org # @Edtadros
-            repository: mediawiki/skins/Vector
         - VisualEditor:
             recipients: eakinloose@wikimedia.org qa-alerts@lists.wikimedia.org # @EAkinloose
             repository: mediawiki/extensions/VisualEditor
