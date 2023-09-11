@@ -15,7 +15,7 @@
             projects: >
                 integration/config
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/tox-buster:0.7.1
+            image: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-1
             entrypoint: '/src/integration/config/{entrypoint}'
             workdir: /src/integration/config
     publishers:
@@ -75,7 +75,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/tox-buster:0.7.1
+         image: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-1
          args: '-e qa -- --xunit-file=/log/junit-qa.xml'
     publishers:
      - archive-log-dir
