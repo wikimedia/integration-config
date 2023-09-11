@@ -8543,14 +8543,6 @@ projects:
     publish:
       - trigger-kartotherian-pipeline-publish
 
-  - name: mediawiki/services/mathoid
-    test:
-      - trigger-mathoid-pipeline-test
-    gate-and-submit:
-      - trigger-mathoid-pipeline-rehearse
-    postmerge:
-      - trigger-mathoid-pipeline-publish
-
   - name: mediawiki/services/servicelib-node
     test:
       - trigger-servicelib-node-pipeline-spec
@@ -11443,6 +11435,10 @@ projects:
   - name: mediawiki/services/graphoid
     template:
       - name: archived
+
+  - name: mediawiki/services/mathoid
+    template:
+      - name: archived # T344747
 
   - name: mediawiki/services/graphoid/deploy
     template:
