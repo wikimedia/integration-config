@@ -1,3 +1,10 @@
+tox-mysqld (0.8.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image tox-buster:
+   Install virtualenv 20.21.1 (last supporting python2.7) - T345695
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 11 Sep 2023 14:50:10 +0200
+
 tox-mysqld (0.8.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image tox-buster:

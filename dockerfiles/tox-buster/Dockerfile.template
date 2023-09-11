@@ -41,6 +41,17 @@ ARG PIP2_VERSION=20.3.4
 # Also explicitly pin the version for Python 3
 ARG PIP3_VERSION=23.2.1
 
+# Virtualenv 20.22.0 dropped support for python2 but we still need it at least
+# for:
+# - operations/puppet has python2 script and rake_modules/task_gen.rb considers
+#   `#!/usr/bin/python` scripts to be python 2 - T345152
+# - integration/config for Zuul tests
+#
+# Since tox might requires a later version, we use a second pip installation to
+# force the version we want. pip might triggers a non fatal error about the
+# dependency conflict but still proceeds with the installation.
+ARG VIRTUALENV_VERSION=20.21.1
+
 ARG PIP_DISABLE_PIP_VERSION_CHECK=1
 
 ADD pyall.list /etc/apt/sources.list.d/pyall.list
@@ -55,6 +66,9 @@ RUN {{ packages | apt_install }} \
     && hash pip2 pip3 \
     && pip3 install setuptools \
     && pip3 install tox==3.21.4 \
+    && pip3 install virtualenv==${VIRTUALENV_VERSION} \
+    && virtualenv -p python2.7 py27-venv \
+    && rm -fR py27-venv \
     && rm -fR "$XDG_CACHE_HOME/pip"
 
 USER nobody
