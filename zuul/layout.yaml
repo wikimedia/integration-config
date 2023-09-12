@@ -10097,14 +10097,6 @@ projects:
     template:
       - name: tox-docker
 
-  - name: wikimedia/discovery/analytics
-    test:
-      - wikimedia-discovery-analytics-patch-tox-docker-with-sonar
-    gate-and-submit:
-      - wikimedia-discovery-analytics-patch-tox-docker-with-sonar
-    postmerge:
-      - wikimedia-discovery-analytics-main-tox-docker-with-sonar
-
   - name: wikimedia/fundraising/dash
     template:
       - name: node16-browser-docker
@@ -11632,6 +11624,10 @@ projects:
       - name: archived
 
   - name: wikimedia/bots/jouncebot
+    template:
+      - name: archived
+
+  - name: wikimedia/discovery/analytics
     template:
       - name: archived
 
