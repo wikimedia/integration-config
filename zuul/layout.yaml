@@ -9767,16 +9767,6 @@ projects:
     postmerge:
       - search-highlighter-maven-java8-docker-site-publish
 
-  - name: search/MjoLniR
-    test:
-      - search-mjolnir-patch-tox-docker-with-sonar
-      - search-mjolnir-maven-java8-docker
-    gate-and-submit:
-      - search-mjolnir-main-tox-docker-with-sonar
-      - search-mjolnir-maven-java8-docker
-    postmerge:
-      - search-mjolnir-maven-java8-docker-site-publish
-
   - name: wmf-jvm-utils
     test:
       - wmf-jvm-utils-maven-java8-docker
@@ -11605,6 +11595,10 @@ projects:
       - name: archived
 
   - name: search/ltr
+    template:
+      - name: archived
+
+  - name: search/MjoLniR
     template:
       - name: archived
 
