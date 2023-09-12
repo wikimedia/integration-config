@@ -78,13 +78,6 @@
              - diffConfig
 
 - project:
-    name: 'cassandra-table-properties'
-    jobs:
-        - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:0.7.1-s3
-            build_timeout: 20 # minutes
-
-- project:
     name: 'cumin'
     jobs:
         - '{name}-tox-docker':
