@@ -56,7 +56,7 @@
     name: 'labs-tools-map-of-monuments'
     jobs:
        - '{name}-tox-docker':
-           docker_image_var: docker-registry.wikimedia.org/releng/tox-mysqld:0.8.0-s2
+           docker_image_var: docker-registry.wikimedia.org/releng/tox-mysqld:4.8.0-1
 
 - project:
     name: 'labs-tools-commons-mass-description'
