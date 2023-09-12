@@ -17,7 +17,7 @@
     name: cergen
     jobs:
         - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-java8:1.0-s2
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-java8:4.8.0-1
 
 - project:
     name: acme-chief
