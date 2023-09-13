@@ -1173,8 +1173,6 @@ jobs:
   - name: mediawiki-core-doxygen-docker-publish
     mutex: mediawiki-core-doxygen-docker-publish
 
-  - name: wikimedia-fundraising-civicrm-docker
-    branch: (?!.*deployment.*|^contrib$)
   - name: wikimedia-fundraising-civicrm-bullseye-docker
     branch: (?!.*deployment.*|^contrib$)
 
@@ -10108,17 +10106,15 @@ projects:
       - name: composer-test-php74-only
     test:
       - composer-php73-docker
-      - wikimedia-fundraising-civicrm-docker
+      - wikimedia-fundraising-civicrm-bullseye-docker
     gate-and-submit:
-      - wikimedia-fundraising-civicrm-docker
-    experimental:
-      - wikimedia-fundraising-civicrm-bullseye-docker  # T307178
+      - wikimedia-fundraising-civicrm-bullseye-docker
 
   - name: wikimedia/fundraising/crm/vendor
     test:
-      - wikimedia-fundraising-civicrm-docker
+      - wikimedia-fundraising-civicrm-bullseye-docker
     gate-and-submit:
-      - wikimedia-fundraising-civicrm-docker
+      - wikimedia-fundraising-civicrm-bullseye-docker
 
   - name: wikimedia/fundraising/slander
     template:
