@@ -1,3 +1,13 @@
+civicrm (0.3.0-s6) wikimedia; urgency=medium
+
+  * This essentially revert 0.3.0-s5:
+  * Bring back installation of MariaDB data directory in the image since Civi
+    CRM works with Debian Bullseye default. T307178
+  * Remove the call to `bin/ci-create.db.sh` since we no more need to tweak
+    innodb settings. T307178
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 13 Sep 2023 15:31:52 +0200
+
 civicrm (0.3.0-s5) wikimedia; urgency=medium
 
   * Delegate MariaDB data initialization to the source repository by invoking

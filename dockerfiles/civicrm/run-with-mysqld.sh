@@ -1,14 +1,11 @@
 #!/bin/bash
 set -euxo pipefail
 
-if [ ! -d /src/wikimedia/fundraising/crm ]; then
-    echo "Civi CRM not found at /src/wikimedia/fundraising/crm"
-    echo "You must first clone the git repositories and volume mount"
-    echo "them to /src."
-    exit 1
-fi
-
-/src/wikimedia/fundraising/crm/bin/ci-create-dbs.sh
+mkdir -p /tmp/mysqld/datadir
+/usr/bin/mysql_install_db \
+    --user=nobody \
+    --auth-root-authentication-method=normal \
+    --datadir=/tmp/mysqld/datadir
 
 MYSQL_SOCKET=/var/run/mysqld/mysqld.sock
 
