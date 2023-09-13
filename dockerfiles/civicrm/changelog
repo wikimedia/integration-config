@@ -1,3 +1,9 @@
+civicrm (0.4.0) wikimedia; urgency=medium
+
+  * Upgrade from php7.3 (sury.org) to php7.4 (Debian stock package).
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 13 Sep 2023 16:28:38 +0200
+
 civicrm (0.3.0-s6) wikimedia; urgency=medium
 
   * This essentially revert 0.3.0-s5:
