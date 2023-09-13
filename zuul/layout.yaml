@@ -9599,29 +9599,11 @@ projects:
     gate-and-submit-l10n:
       - pywikibot-i18n-tox-docker
 
-  - name: pywikibot/wikibase
-    test:
-      - pywikibot-wikibase-tox-docker
-    gate-and-submit:
-      - pywikibot-wikibase-tox-docker
-
-  - name: pywikibot/bots/CommonsDelinker
-    test:
-      - pywikibot-CommonsDelinker-tox-docker
-    gate-and-submit:
-      - pywikibot-CommonsDelinker-tox-docker
-
   - name: pywikibot/bots/xqbot
     test:
       - pywikibot-xqbot-tox-docker
     gate-and-submit:
       - pywikibot-xqbot-tox-docker
-
-  - name: pywikibot/bots/FLOSSbot
-    test:
-      - pywikibot-FLOSSbot-tox-docker
-    gate-and-submit:
-      - pywikibot-FLOSSbot-tox-docker
 
 #### Other tools ###############################################
 
@@ -11575,7 +11557,27 @@ projects:
     template:
       - name: archived
 
+  - name: pywikibot/bots/CommonsDelinker
+    template:
+      - name: archived
+
+  - name: pywikibot/bots/drtrigonbot
+    template:
+      - name: archived
+
+  - name: pywikibot/bots/FLOSSbot
+    template:
+      - name: archived
+
+  - name: pywikibot/bots/rageossbot
+    template:
+      - name: archived
+
   - name: pywikibot/compat
+    template:
+      - name: archived
+
+  - name: pywikibot/wikibase
     template:
       - name: archived
 
