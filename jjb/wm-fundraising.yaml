@@ -11,7 +11,7 @@
             projects: >
                 wikimedia/fundraising/crm
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/civicrm:0.3.0-s6
+            image: docker-registry.wikimedia.org/releng/civicrm:0.4.2
             environment:
                 # $WORKSPACE is leaked from the host environment
                 WORKSPACE: "''"

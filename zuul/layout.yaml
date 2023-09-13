@@ -10105,7 +10105,6 @@ projects:
     template:
       - name: composer-test-php74-only
     test:
-      - composer-php73-docker
       - wikimedia-fundraising-civicrm-bullseye-docker
     gate-and-submit:
       - wikimedia-fundraising-civicrm-bullseye-docker
