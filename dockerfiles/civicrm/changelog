@@ -1,3 +1,11 @@
+civicrm (0.3.0-s4) wikimedia; urgency=medium
+
+  * Install the MySQL database with the legacy authentication method (normal)
+    which creates an initial root user without password. That broke the build
+    when migrating from Stretch to Bullseye.  T307178
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 13 Sep 2023 09:24:07 +0200
+
 civicrm (0.3.0-s3) wikimedia; urgency=high
 
    Refresh for update in parent image php73:

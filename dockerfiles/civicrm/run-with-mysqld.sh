@@ -2,7 +2,10 @@
 set -euxo pipefail
 
 mkdir -p /tmp/mysqld/datadir
-/usr/bin/mysql_install_db --user=nobody --datadir=/tmp/mysqld/datadir
+/usr/bin/mysql_install_db \
+    --user=nobody \
+    --auth-root-authentication-method=normal \
+    --datadir=/tmp/mysqld/datadir
 
 MYSQL_SOCKET=/var/run/mysqld/mysqld.sock
 
