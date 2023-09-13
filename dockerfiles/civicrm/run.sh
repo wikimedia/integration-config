@@ -13,7 +13,6 @@ if [ ! -d /src/wikimedia/fundraising/crm ]; then
 fi
 
 set -x
-/src/wikimedia/fundraising/crm/bin/ci-create-dbs.sh
 /src/wikimedia/fundraising/crm/bin/ci-populate-dbs.sh
 cd /src/wikimedia/fundraising/crm
 

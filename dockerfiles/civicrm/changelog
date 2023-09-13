@@ -1,3 +1,11 @@
+civicrm (0.3.0-s5) wikimedia; urgency=medium
+
+  * Delegate MariaDB data initialization to the source repository by invoking
+    CiviCRM `bin/ci-create-dbs.sh`. This way developers can tweak the database
+    creation as needed such as changing the InnoDB file format. T307178
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 13 Sep 2023 10:26:04 +0200
+
 civicrm (0.3.0-s4) wikimedia; urgency=medium
 
   * Install the MySQL database with the legacy authentication method (normal)
