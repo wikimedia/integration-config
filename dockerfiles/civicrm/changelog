@@ -1,3 +1,9 @@
+civicrm (0.4.2) wikimedia; urgency=medium
+
+  * Add sqlite3 php extension.
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 13 Sep 2023 17:05:11 +0200
+
 civicrm (0.4.1) wikimedia; urgency=medium
 
   * Add gd, imap, zip php extensions. Lack of gd causes Drupal installation to

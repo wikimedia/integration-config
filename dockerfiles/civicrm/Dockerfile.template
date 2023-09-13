@@ -21,6 +21,7 @@ php-imap
 php-intl
 php-mbstring
 php-mysql
+php-sqlite3
 php-xml
 php-zip
 unzip
