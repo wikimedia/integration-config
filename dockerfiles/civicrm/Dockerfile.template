@@ -4,6 +4,9 @@ USER root
 
 # CiviCRM uses the PHP version from Debian rather than the Wikimedia php
 # packages used to run MediaWiki.
+#
+# Some of the required PHP extensions come from Drupal which lists its
+# requirements on https://drupal.org/requirements
 {% set packages|replace('\n', ' ') -%}
 bzip2
 curl
@@ -12,11 +15,14 @@ php-bcmath
 php-cli
 php-curl
 php-dba
+php-gd
 php-gmp
+php-imap
 php-intl
 php-mbstring
 php-mysql
 php-xml
+php-zip
 unzip
 zip
 {%- endset -%}

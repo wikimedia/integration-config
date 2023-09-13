@@ -1,3 +1,10 @@
+civicrm (0.4.1) wikimedia; urgency=medium
+
+  * Add gd, imap, zip php extensions. Lack of gd causes Drupal installation to
+    fail and the installer mentions imap and zip.
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 13 Sep 2023 16:42:30 +0200
+
 civicrm (0.4.0) wikimedia; urgency=medium
 
   * Upgrade from php7.3 (sury.org) to php7.4 (Debian stock package).
