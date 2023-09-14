@@ -4801,6 +4801,7 @@ projects:
       - name: in-wikimedia-fundraising-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: extension-codehealth
       - name: extension-gate
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
