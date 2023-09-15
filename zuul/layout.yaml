@@ -7869,10 +7869,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/SSLClientAuthentication
-    template:
-      - name: extension-broken  # T110468
-
   - name: mediawiki/extensions/StaffEdits
     template:
       - name: extension-quibble
@@ -11145,6 +11141,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Spreadsheet
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/SSLClientAuthentication
     template:
       - name: archived
 
