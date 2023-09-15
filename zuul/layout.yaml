@@ -7889,10 +7889,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/StarterWiki
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/StatCounter
     template:
       - name: extension-quibble
@@ -11145,6 +11141,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Spreadsheet
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/StarterWiki
     template:
       - name: archived
 
