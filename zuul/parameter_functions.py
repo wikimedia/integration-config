@@ -570,6 +570,7 @@ phan_dependencies = {
                     'AntiSpoof', 'Scribunto', 'EventLogging', 'UserMerge'],
     'AdvancedSearch': ['BetaFeatures'],
     'ApiFeatureUsage': ['Elastica'],
+    'ArticleFeedbackv5': ['AbuseFilter', 'Echo', 'SpamBlacklist'],
     'ArticlePlaceholder': ['Scribunto', 'Wikibase'],
     'BlogPage': ['Comments', 'RandomGameUnit', 'SocialProfile', 'Video',
                  'VoteNY'],
