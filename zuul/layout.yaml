@@ -11492,6 +11492,10 @@ projects:
     template:
       - name: archived
 
+  - name: operations/software/schema-changes
+    template:
+      - name: archived
+
   - name: operations/puppet/cdh
     template:
       - name: archived
