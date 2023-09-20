@@ -5,10 +5,19 @@ from __future__ import print_function
 import argparse
 import re
 import subprocess
+import sys
 import tempfile
 
-# From https://pypi.org/project/python-Levenshtein/
-import Levenshtein
+
+# From https://pypi.org/project/Levenshtein/
+try:
+    import Levenshtein
+except ModuleNotFoundError as e:  # noqa:F821
+    print(e, file=sys.stderr)
+    print("Install python Levenshtein module or alternatively try:",
+          file=sys.stderr)
+    print("tox -e archive-repo -- --help", file=sys.stderr)
+    sys.exit(1)
 
 
 def search_for(search, f, out, Print=True):
