@@ -1,3 +1,10 @@
+quibble-buster-php73 (1.5.6) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-buster:
+   Update Quibble from 1.5.5 to 1.5.6
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 21 Sep 2023 18:09:14 +0200
+
 quibble-buster-php73 (1.5.5-s2) wikimedia; urgency=high
 
    Refresh for update in parent image node16:
