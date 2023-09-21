@@ -6695,6 +6695,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/GoogleTagManager
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/GoogleTranslate
     template:
       - name: extension-quibble
