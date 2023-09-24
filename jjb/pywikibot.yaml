@@ -22,6 +22,7 @@
                  build_timeout: 30 # minutes
              - deeptest-py39:
                  build_timeout: 30 # minutes
+             - typing
 
 - job-group:
     name: pywikibot-tox-jobs

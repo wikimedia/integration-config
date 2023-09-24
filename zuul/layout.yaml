@@ -1276,6 +1276,9 @@ jobs:
     queue-name: archived-repos
     failure-message: 'This repository has been archived and new patches are not being accepted. If you want to maintain it follow https://www.mediawiki.org/wiki/Gerrit/Privilege_policy#Requesting_Gerrit_privileges and then change which jobs get run.'
 
+  - name: pywikibot-core-tox-typing-docker
+    voting: false
+
   - name: train-deploy-notes
     voting: false
     # Only fails if someone edits includes/Defines.php on a wmf branch that is NOT the most recent
@@ -9728,6 +9731,7 @@ projects:
   - name: pywikibot/core
     test:
       - pywikibot-core-tox-docker
+      - pywikibot-core-tox-typing-docker
       - pywikibot-core-tox-fasttest-py36-docker
       - pywikibot-core-tox-fasttest-py37-docker
       - pywikibot-core-tox-fasttest-py38-docker
