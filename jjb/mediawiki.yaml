@@ -986,7 +986,6 @@
             packages-source:  composer
             database: mysql
         - mwext-phpunit-coverage-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.5.5-s2  # T288396
             packages-source:  composer
             database: mysql
         - mwext-phpunit-coverage-docker-publish:
