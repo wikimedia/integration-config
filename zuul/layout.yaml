@@ -1423,14 +1423,16 @@ project-templates:
     test-1_35:
       - mwgate-node16-docker
       - quibble-composer-mysql-php73-noselenium-docker
-      - quibble-composer-mysql-php73-selenium-docker
+      # Disabled broken, browser tests for REL1_35; low-value for release branches -- JDF 2023-09-26
+      # - quibble-composer-mysql-php73-selenium-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php73-phan-docker
     gate-and-submit-1_35:
       - mwgate-node16-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php73-selenium-docker
+      # Disabled broken, browser tests for REL1_35; low-value for release branches -- JDF 2023-09-26
+      # - quibble-composer-mysql-php73-selenium-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php73-phan-docker
 
@@ -1511,13 +1513,15 @@ project-templates:
 
     test-1_35:
       - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php74-selenium-docker
+      # Disabled broken, browser tests for REL1_35; low-value for release branches -- JDF 2023-09-26
+      # - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node16-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
     gate-and-submit-1_35:
       - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php74-selenium-docker
+      # Disabled broken, browser tests for REL1_35; low-value for release branches -- JDF 2023-09-26
+      # - quibble-composer-mysql-php74-selenium-docker
       - mwgate-node16-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
@@ -1585,13 +1589,15 @@ project-templates:
 
     test-1_35:
       - quibble-composer-mysql-php81-noselenium-docker
-      - quibble-composer-mysql-php81-selenium-docker
+      # Disabled broken, browser tests for REL1_35; low-value for release branches -- JDF 2023-09-26
+      # - quibble-composer-mysql-php81-selenium-docker
       - mwgate-node16-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan-docker
     gate-and-submit-1_35:
       - quibble-composer-mysql-php81-noselenium-docker
-      - quibble-composer-mysql-php81-selenium-docker
+      # Disabled broken, browser tests for REL1_35; low-value for release branches -- JDF 2023-09-26
+      # - quibble-composer-mysql-php81-selenium-docker
       - mwgate-node16-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan-docker
@@ -1670,14 +1676,16 @@ project-templates:
     test-1_35:
       - mwgate-node16-docker
       - quibble-composer-mysql-php73-noselenium-docker
-      - quibble-composer-mysql-php73-selenium-docker
+      # Disabled broken, browser tests for REL1_35; low-value for release branches -- JDF 2023-09-26
+      # - quibble-composer-mysql-php73-selenium-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php73-phan-docker
     gate-and-submit-1_35:
       - mwgate-node16-docker
       - quibble-composer-mysql-php73-noselenium-docker
       - quibble-composer-mysql-php74-noselenium-docker
-      - quibble-composer-mysql-php73-selenium-docker
+      # Disabled broken, browser tests for REL1_35; low-value for release branches -- JDF 2023-09-26
+      # - quibble-composer-mysql-php73-selenium-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php73-phan-docker
 
@@ -2957,14 +2965,16 @@ projects:
     test-1_35:
       - mediawiki-quibble-composer-mysql-php73-docker
       - mediawiki-quibble-composertest-php73-docker
-      - mediawiki-quibble-selenium-composer-mysql-php73-docker
+      # Disabled broken, browser tests for REL1_35; low-value for release branches -- JDF 2023-09-26
+      # - mediawiki-quibble-selenium-composer-mysql-php73-docker
       - mediawiki-core-php73-phan-docker
     gate-and-submit-1_35:
       - mediawiki-quibble-composer-mysql-php73-docker
       - mediawiki-quibble-composer-mysql-php74-docker
       - mediawiki-quibble-composer-mysql-php80-docker
       - mediawiki-quibble-composertest-php73-docker
-      - mediawiki-quibble-selenium-composer-mysql-php73-docker
+      # Disabled broken, browser tests for REL1_35; low-value for release branches -- JDF 2023-09-26
+      # - mediawiki-quibble-selenium-composer-mysql-php73-docker
       - mediawiki-quibble-composer-sqlite-php73-docker
       - mediawiki-quibble-composer-postgres-php73-docker
       - mediawiki-core-php73-phan-docker
