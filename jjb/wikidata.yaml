@@ -181,7 +181,9 @@
         - timestamps
         - ssh-agent-credentials:
             users:
-            - 'wdquerybuilder'
+            # The user/credentials are shared with the wikidata-query-gui-build
+            # job for now.
+            - 'wdqsguibuilder'
     publishers:
         - archive-log-allow-empty
         - docker-cleanup
