@@ -437,7 +437,7 @@
 
 # Node job for 'npm install-test'
 - job-template:
-    name: '{name}-node16-docker'
+    name: '{name}-{node_version}-docker'
     node: Docker
     triggers:
      - zuul
@@ -447,83 +447,21 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
-    publishers:
-     - archive-log-allow-empty
-     - teardown
-
-- job-template:
-    name: '{name}-node18-docker'
-    node: Docker
-    triggers:
-     - zuul
-    properties:
-        - build-discarder:
-            days-to-keep: 7
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node18-test:0.1.0'
-    publishers:
-     - archive-log-allow-empty
-     - teardown
-
-- job-template:
-    name: '{name}-node20-docker'
-    node: Docker
-    triggers:
-     - zuul
-    properties:
-        - build-discarder:
-            days-to-keep: 7
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test:0.1.0'
+        image: '{image}'
     publishers:
      - archive-log-allow-empty
      - teardown
 
 # Job for 'npm install & npm run {script}'
 - job-template:
-    name: '{name}-node16-run{script}-docker'
+    name: '{name}-{node_version}-run{script}-docker'
     node: Docker
     triggers:
      - zuul
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0'
-        options: '--shm-size 1g'
-        args: '{script}'
-    publishers:
-     - archive-log-allow-empty
-     - teardown
-
-- job-template:
-    name: '{name}-node18-run{script}-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0'
-        options: '--shm-size 1g'
-        args: '{script}'
-    publishers:
-     - archive-log-allow-empty
-     - teardown
-
-- job-template:
-    name: '{name}-node20-run{script}-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0'
+        image: '{image}'
         options: '--shm-size 1g'
         args: '{script}'
     publishers:
@@ -652,46 +590,14 @@
 
 # Node job for 'npm install-test' (with browsers installed)
 - job-template:
-    name: '{name}-node16-browser-docker'
+    name: '{name}-{node_version}-browser-docker'
     node: Docker
     triggers:
      - zuul
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0'
-        options: >-
-            --shm-size 1g
-            --env LOG_DIR=/log
-    publishers:
-     - archive-log-allow-empty
-     - teardown
-
-- job-template:
-    name: '{name}-node18-browser-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0'
-        options: >-
-            --shm-size 1g
-            --env LOG_DIR=/log
-    publishers:
-     - archive-log-allow-empty
-     - teardown
-
-- job-template:
-    name: '{name}-node20-browser-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0'
+        image: '{image}'
         options: >-
             --shm-size 1g
             --env LOG_DIR=/log
@@ -701,48 +607,14 @@
 
 # Node job for 'npm install-test' (with browsers installed) and webdriver running
 - job-template:
-    name: '{name}-node16-browser-webdriver-docker'
+    name: '{name}-{node_version}-browser-webdriver-docker'
     node: Docker
     triggers:
      - zuul
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0'
-        entrypoint: /run-with-xvfb.sh
-        options: >-
-            --shm-size 1g
-            --env LOG_DIR=/log
-    publishers:
-     - archive-log-allow-empty
-     - teardown
-
-- job-template:
-    name: '{name}-node18-browser-webdriver-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0'
-        entrypoint: /run-with-xvfb.sh
-        options: >-
-            --shm-size 1g
-            --env LOG_DIR=/log
-    publishers:
-     - archive-log-allow-empty
-     - teardown
-
-- job-template:
-    name: '{name}-node20-browser-webdriver-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0'
+        image: '{image}'
         entrypoint: /run-with-xvfb.sh
         options: >-
             --shm-size 1g
@@ -754,47 +626,15 @@
 # Node job for 'npm cit' (with browser installed)
 # and publishing /coverage from workspace
 # to doc.wikimedia.org/cover/:DOC_PROJECT
-- job:
-    name: 'generic-node16-browser-coverage-docker-publish'
+- job-template:
+    name: 'generic-{node_version}-browser-coverage-docker-publish'
     node: Docker
     triggers:
      - zuul
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0'
-     - cover-publish:
-        src: 'src/coverage'
-        dest: '$DOC_PROJECT'
-    publishers:
-     # FIXME: use `- teardown` to save cache?
-     - docker-cleanup
-
-- job:
-    name: 'generic-node18-browser-coverage-docker-publish'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0'
-     - cover-publish:
-        src: 'src/coverage'
-        dest: '$DOC_PROJECT'
-    publishers:
-     # FIXME: use `- teardown` to save cache?
-     - docker-cleanup
-
-- job:
-    name: 'generic-node20-browser-coverage-docker-publish'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0'
+        image: '{image}'
      - cover-publish:
         src: 'src/coverage'
         dest: '$DOC_PROJECT'
@@ -806,49 +646,15 @@
 # Node job for 'npm ci && npm coverage' (with browser installed)
 # and publishing /coverage from workspace
 # to doc.wikimedia.org/cover/:DOC_PROJECT
-- job:
-    name: 'generic-node16-browser-direct-coverage-docker-publish'
+- job-template:
+    name: 'generic-{node_version}-browser-direct-coverage-docker-publish'
     node: Docker
     triggers:
      - zuul
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0'
-        args: 'coverage'
-     - cover-publish:
-        src: 'src/coverage'
-        dest: '$DOC_PROJECT'
-    publishers:
-     # FIXME: use `- teardown` to save cache?
-     - docker-cleanup
-
-- job:
-    name: 'generic-node18-browser-direct-coverage-docker-publish'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0'
-        args: 'coverage'
-     - cover-publish:
-        src: 'src/coverage'
-        dest: '$DOC_PROJECT'
-    publishers:
-     # FIXME: use `- teardown` to save cache?
-     - docker-cleanup
-
-- job:
-    name: 'generic-node20-browser-direct-coverage-docker-publish'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0'
+        image: '{image}'
         args: 'coverage'
      - cover-publish:
         src: 'src/coverage'
@@ -861,51 +667,23 @@
 # Publishing workspace/docs to doc.wikimedia.org/:DOC_PROJECT/:DOC_SUBPATH/
 # - DOC_PROJECT: determined in parameter_functions.py (repo name)
 # - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
-- job:
-    name: generic-node16-docs-docker-publish
+- job-template:
+    name: generic-{node_version}-docs-docker-publish
     node: Docker
     triggers:
      - zuul
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
+        image: '{image}'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
         docdest: '$DOC_PROJECT/$DOC_SUBPATH'
     publishers:
      - teardown
-- job:
-    name: generic-node18-docs-docker-publish
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node18-test:0.1.0'
-        args: 'doc'
-     - doc-publish:
-        docsrc: 'src/docs'
-        docdest: '$DOC_PROJECT/$DOC_SUBPATH'
-    publishers:
-     - teardown
-- job:
-    name: generic-node20-docs-docker-publish
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test:0.1.0'
-        args: 'doc'
-     - doc-publish:
-        docsrc: 'src/docs'
-        docdest: '$DOC_PROJECT/$DOC_SUBPATH'
-    publishers:
-     - teardown
+
+
 # Publishing workspace/docs to doc.wikimedia.org/:DOC_PROJECT/:DOC_SUBPATH/js/
 # - DOC_PROJECT: determined in parameter_functions.py (mw extension name)
 # - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
@@ -927,30 +705,43 @@
 
 - project:
     name: 'generic'
+    node_version:
+        - node16:
+            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
+        - node18:
+            image: docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0
+        - node20:
+            image: docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0
     jobs:
-        - '{name}-node16-docker'
-        - '{name}-node16-browser-docker'
-        - '{name}-node16-browser-webdriver-docker'
-        - '{name}-node16-run{script}-docker':
+        - 'generic-{node_version}-browser-coverage-docker-publish'
+        - 'generic-{node_version}-browser-direct-coverage-docker-publish'
+        - '{name}-{node_version}-browser-docker'
+        - '{name}-{node_version}-browser-webdriver-docker'
+        - '{name}-{node_version}-run{script}-docker':
            script: 'doc'
-        - '{name}-node18-docker'
-        - '{name}-node18-browser-docker'
-        - '{name}-node18-browser-webdriver-docker'
-        - '{name}-node18-run{script}-docker':
-           script: 'doc'
-        - '{name}-node20-docker'
-        - '{name}-node20-browser-docker'
-        - '{name}-node20-browser-webdriver-docker'
-        - '{name}-node20-run{script}-docker':
-           script: 'doc'
+
+       # The basic jobs images do not have web browsers:
+        - '{name}-{node_version}-docker':
+            node_version: &node_without_browsers
+                - node16:
+                    image: docker-registry.wikimedia.org/releng/node16-test:0.3.0
+                - node18:
+                    image: docker-registry.wikimedia.org/releng/node18-test:0.1.0
+                - node20:
+                    image: docker-registry.wikimedia.org/releng/node20-test:0.1.0
+        - 'generic-{node_version}-docs-docker-publish':
+            node_version: *node_without_browsers
 
 # Same as 'generic', but kept separate so that gate-and-submit jobs
 # don't cross-block between mediawiki/* and non-mediawiki changes.
 - project:
     name: 'mwext'
     jobs:
-        - '{name}-node16-run{script}-docker':
+        - '{name}-{node_version}-run{script}-docker':
            script: 'doc'
+           node_version:
+               - node16:
+                   image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
 
 - project:
     name: 'branchdeploy'

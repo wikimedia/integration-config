@@ -67,5 +67,8 @@
 - project:
     name: oojs-core
     jobs:
-        - '{name}-node16-run{script}-docker':
+        - '{name}-{node_version}-run{script}-docker':
            script: 'jenkins'
+           node_version:
+               - node16:
+                   image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0

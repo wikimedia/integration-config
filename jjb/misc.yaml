@@ -70,20 +70,24 @@
     jobs:
         - '{name}-tox-docker'
 
-- project:
-    name: visualeditor
-    jobs:
-        - '{name}-node16-browser-docker'
 
 - project:
-    name: unicodejs
+    name: node-more-specific-jobs
     jobs:
-        - '{name}-node16-browser-docker'
-
-- project:
-    name: fresnel
-    jobs:
-        - '{name}-node16-browser-docker'
+        - '{name}-{node_version}-browser-docker':
+           node_version:
+               - node16:
+                   image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
+           name:
+               - fresnel
+               - unicodejs
+               - visualeditor
+        - '{name}-{node_version}-docker':
+            node_version:
+                - node16:
+                    image: docker-registry.wikimedia.org/releng/node16-test:0.3.0
+            name:
+               - gerrit
 
 - project:
     name: 'translatewiki'
@@ -173,11 +177,6 @@
     name: 'wikimedia-cz-events'
     jobs:
         - '{name}-tox-docker'
-
-- project:
-    name: gerrit
-    jobs:
-        - '{name}-node16-docker'
 
 - project:
     name: gerrit-plugins

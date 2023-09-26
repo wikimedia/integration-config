@@ -150,7 +150,10 @@
                     image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.2
                 - php82:
                     image: docker-registry.wikimedia.org/releng/composer-test-php82:0.1.1
-        - '{name}-node16-docker'
+        - '{name}-{node_version}-docker':
+           node_version:
+               - node16:
+                   image: docker-registry.wikimedia.org/releng/node16-test:0.3.0
 
 # Phan! (T132636)
 - job-template:
