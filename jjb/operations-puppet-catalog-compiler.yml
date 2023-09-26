@@ -46,11 +46,10 @@
         - zuul
     builders:
     - shell: |
-        PATCH=$(curl "https://gerrit.wikimedia.org/r/changes/${ZUUL_CHANGE}/revisions/current/patch" | base64 -d);
-        NODES=$(echo $PATCH | sed -En 's/Hosts: ([^#]+)(\s+#.*)?/\1/p' | paste -s -d ',');
-        CHANGE_PRIVATE=$(echo $PATH | sed -En 's/Change-Private: (\d+)/\1/p');
-        printf "Nodes: %s\nChange-Private: %s" "$NODES" "$CHANGE_PRIVATE";
-        CHANGE_PRIVATE="${CHANGE_PRIVATE}" NUM_THREADS=4 CHANGE="${ZUUL_CHANGE}" NODES="${NODES}" puppet-compiler
+        PATCH=$(curl "https://gerrit.wikimedia.org/r/changes/${ZUUL_CHANGE}/revisions/current/patch");
+        NODES=$(echo $PATCH | base64 -d | sed -En 's/Hosts: ([^#]+)(\s+#.*)?/\1/p' | paste -s -d ',');
+        echo $NODES;
+        NUM_THREADS=4 CHANGE="${ZUUL_CHANGE}" NODES="${NODES}" puppet-compiler
     properties:
     - build-discarder:
         artifact-days-to-keep: -1
