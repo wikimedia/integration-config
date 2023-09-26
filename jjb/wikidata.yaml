@@ -174,7 +174,7 @@
         # The push is done as the jenkins-agent so we can use the credential
         # exposed by the SSH agent which are not viewable by the `nobody` user.
         - shell: |
-            git -C ./src/build push origin HEAD:refs/for/production%ready
+            git -C ./src/dist-deploy push origin HEAD:refs/for/production%ready
     wrappers:
         - timeout:
             timeout: 15 # minutes
