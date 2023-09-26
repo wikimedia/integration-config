@@ -74,8 +74,8 @@
           - '{name}-maven-java8-docker-site-publish'
           - '{name}-maven-release-docker'
 
-- job:
-    name: wikidata-query-gui-build
+- job-template:
+    name: wikidata-query-{project}-build
     node: Docker
     concurrent: false
     parameters:
@@ -85,7 +85,7 @@
           default: 'master'
       - string:
           name: 'ZUUL_PROJECT'
-          default: 'wikidata/query/gui'
+          default: '{ZUUL_PROJECT}'
       - string:
           name: 'ZUUL_PIPELINE'
           default: 'postmerge'
@@ -101,92 +101,56 @@
         - docker-cache-dir
         - docker-ci-src-setup-simple
         - docker-wipe-dir:
-            dir: src/build
+            dir: '{wipe_dir}'
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
+            image: '{docker_image}'
             entrypoint: /run-with-xvfb.sh
             args: 'test'
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
+            image: '{docker_image}'
             entrypoint: /src/scripts/set-up-git.sh
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
-            args: 'grunt only_build'
+            image: '{docker_image}'
+            args: '{npm_build_script}'
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
+            image: '{docker_image}'
             entrypoint: /src/scripts/commit-build.sh
         # The push is done as the jenkins-agent so we can use the credential
         # exposed by the SSH agent which are not viewable by the `nobody` user.
         - shell: |
-            git -C ./src/build push origin HEAD:refs/for/production%ready
+            git -C {push_from} push origin HEAD:refs/for/production%ready
     wrappers:
       - timeout:
           timeout: 15 # minutes
       - timestamps
       - ssh-agent-credentials:
           users:
-            - 'wdqsguibuilder'
+            - '{ssh_agent_credentials_user}'
     publishers:
         - archive-log-allow-empty
         - docker-cleanup
 
-- job:
-    name: wikidata-query-builder-build
-    node: Docker
-    concurrent: false
-    parameters:
-        # Zuul parameters for Castor
-        - string:
-            name: 'ZUUL_BRANCH'
-            default: 'master'
-        - string:
-            name: 'ZUUL_PROJECT'
-            default: 'wikidata/query-builder'
-        - string:
-            name: 'ZUUL_PIPELINE'
-            default: 'postmerge'
-        - string:
-            name: 'ZUUL_URL'
-            default: 'https://gerrit.wikimedia.org/r'
-        - string:
-            name: 'ZUUL_REF'
-            default: 'master'
-    builders:
-        - docker-log-dir
-        - docker-src-dir
-        - docker-cache-dir
-        - docker-ci-src-setup-simple
-        - docker-wipe-dir:
-            dir: dist
-        - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
-            entrypoint: /run-with-xvfb.sh
-            args: 'test'
-        - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
-            entrypoint: /src/scripts/set-up-git.sh
-        - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
-            args: 'build'
-        - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
-            entrypoint: /src/scripts/commit-build.sh
-        # The push is done as the jenkins-agent so we can use the credential
-        # exposed by the SSH agent which are not viewable by the `nobody` user.
-        - shell: |
-            git -C ./src/dist-deploy push origin HEAD:refs/for/production%ready
-    wrappers:
-        - timeout:
-            timeout: 15 # minutes
-        - timestamps
-        - ssh-agent-credentials:
-            users:
-            # The user/credentials are shared with the wikidata-query-gui-build
-            # job for now.
-            - 'wdqsguibuilder'
-    publishers:
-        - archive-log-allow-empty
-        - docker-cleanup
+- project:
+    name: wikidata-query-builds
+    jobs:
+        - wikidata-query-{project}-build:
+            docker_image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
+            project:
+                - gui:
+                    ZUUL_PROJECT: wikidata/query/gui
+                    wipe_dir: src/build
+                    npm_build_script: grunt only_build
+                    push_from: ./src/build
+                    ssh_agent_credentials_user: wdqsguibuilder
+                - builder:
+                    ZUUL_PROJECT: wikidata/query-builder
+                    wipe_dir: dist
+                    npm_build_script: build
+                    push_from: ./src/dist-deploy
+                    # The user credentials are shared with the
+                    # wikidata/query/gui job for now.
+                    ssh_agent_credentials_user: wdqsguibuilder
+
 - project:
     name: wikidata-quibble-daily-notgated
     # Wikidata extensions that are not part of gate
