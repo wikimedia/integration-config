@@ -100,7 +100,7 @@
 #
 - job:
     name: castor-save-workspace-cache
-    node: castor
+    node: productionAgents
     properties:
      - build-discarder:
          days-to-keep: 3
@@ -128,7 +128,5 @@
           users:
              - 'ae711ff4-813e-4462-9a27-21bdbd4fdcb9'  # jenkins-deploy
     builders:
-        - shell:
-            !include-raw:
-                - castor-define-namespace.bash
-                - castor-save-workspacecache.bash
+        - shell: |
+            echo "Disabled due to https://phabricator.wikimedia.org/T345924"
