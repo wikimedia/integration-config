@@ -8900,6 +8900,26 @@ projects:
     publish:
       - trigger-editor-analytics-pipeline-publish
 
+  - name: generated-data-platform/aqs/edit-analytics
+    test:
+      - trigger-edit-analytics-pipeline-test
+    gate-and-submit:
+      - trigger-edit-analytics-pipeline-rehearse
+    postmerge:
+      - trigger-edit-analytics-pipeline-publish
+    publish:
+      - trigger-edit-analytics-pipeline-publish
+
+  - name: generated-data-platform/aqs/page-analytics
+    test:
+      - trigger-page-analytics-pipeline-test
+    gate-and-submit:
+      - trigger-page-analytics-pipeline-rehearse
+    postmerge:
+      - trigger-page-analytics-pipeline-publish
+    publish:
+      - trigger-page-analytics-pipeline-publish
+
 #### Wikimedia analytics tools #################################
 
   - name: analytics/aggregator
