@@ -673,6 +673,7 @@ phan_dependencies = {
     'ReadingLists': ['SiteMatrix'],
     'RelatedArticles': ['Disambiguator'],
     'ReplaceText': ['AdminLinks'],
+    'ReportIncident': ['DiscussionTools'],
     'Score': ['TimedMediaHandler', 'Wikibase'],
     'Scribunto': ['SyntaxHighlight_GeSHi', 'CodeEditor'],
     'SecurePoll': ['CentralAuth', 'Flow'],
