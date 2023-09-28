@@ -462,6 +462,7 @@ dependencies = {
     'RegexFun': ['ParserFunctions', 'Arrays'],
     'RelatedArticles': ['BetaFeatures', 'MobileFrontend'],
     'ReplaceText': ['AdminLinks'],
+    'ReportIncident': ['DiscussionTools'],
     'RevisionSlider': ['MobileFrontend'],
     'Score': ['VisualEditor', 'TimedMediaHandler', 'Wikibase'],
     'Scribunto': ['SyntaxHighlight_GeSHi'],
