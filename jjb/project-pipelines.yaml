@@ -765,3 +765,33 @@
       # editor-analytics-pipeline-rehearse
       # editor-analytics-pipeline-publish
       - '{name}-pipeline-{pipeline}'
+- project:
+    name: edit-analytics
+    pipeline:
+      - test
+      - rehearse
+      - publish
+    jobs:
+      # trigger-edit-analytics-pipeline-test
+      # trigger-edit-analytics-pipeline-rehearse
+      # trigger-edit-analytics-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # edit-analytics-pipeline-test
+      # edit-analytics-pipeline-rehearse
+      # edit-analytics-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
+- project:
+    name: page-analytics
+    pipeline:
+      - test
+      - rehearse
+      - publish
+    jobs:
+      # trigger-page-analytics-pipeline-test
+      # trigger-page-analytics-pipeline-rehearse
+      # trigger-page-analytics-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # page-analytics-pipeline-test
+      # page-analytics-pipeline-rehearse
+      # page-analytics-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
