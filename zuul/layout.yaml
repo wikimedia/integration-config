@@ -9224,6 +9224,10 @@ projects:
     template:
       - name: mediawiki-php-library-php74-to-php81
 
+  - name: mediawiki/libs/JsonCodec
+    template:
+      - name: mediawiki-php-library-php74-to-php81
+
   - name: mediawiki/libs/LangConv
     template:
       - name: mediawiki-php-library-php74-to-php81
