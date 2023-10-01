@@ -1,3 +1,9 @@
+composer-scratch (2.6.4) wikimedia; urgency=high
+
+   Upgrade composer from 2.5.1 to 2.6.4
+
+ -- Reedy <reedy@wikimedia.org>  Sun,  1 Oct 2023 15:03:27 +0100
+
 composer-scratch (2.5.1) wikimedia; urgency=high
 
    Upgrade composer from 2.3.3 to 2.5.1

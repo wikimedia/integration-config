@@ -1,3 +1,10 @@
+phpmetrics (2.8.1-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer from 2.5.1 to 2.6.4
+
+ -- Reedy <reedy@wikimedia.org>  Sun,  1 Oct 2023 15:03:27 +0100
+
 phpmetrics (2.8.1-s4) wikimedia; urgency=high
 
    Refresh for update in parent image php74:

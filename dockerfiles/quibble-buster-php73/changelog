@@ -1,3 +1,10 @@
+quibble-buster-php73 (1.5.6-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer from 2.5.1 to 2.6.4
+
+ -- Reedy <reedy@wikimedia.org>  Sun,  1 Oct 2023 15:03:27 +0100
+
 quibble-buster-php73 (1.5.6) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-buster:
