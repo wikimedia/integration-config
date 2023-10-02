@@ -8433,6 +8433,13 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/WikimediaCampaignEvents
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+      - name: commit-message-validator
+
   - name: mediawiki/extensions/WikiSEO
     template:
       - name: extension-quibble
