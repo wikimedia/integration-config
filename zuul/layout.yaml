@@ -10197,12 +10197,6 @@ projects:
     gate-and-submit:
       - wmf-utils-tox-docker
 
-  - name: mediawiki/gadgets/WikiEdit
-    template:
-      - name: mediawiki-i18n-check
-    gate-and-submit:
-      - noop
-
   - name: mediawiki/gadgets/ProveIt
     template:
       - name: node16-docker
@@ -11602,6 +11596,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ZeroRatedMobileAccess
+    template:
+      - name: archived
+
+  - name: mediawiki/gadgets/WikiEdit
     template:
       - name: archived
 
