@@ -11405,6 +11405,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/SubnetCalc
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/Suhosin
     template:
       - name: archived
