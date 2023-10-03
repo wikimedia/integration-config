@@ -5906,6 +5906,10 @@ projects:
     template:
       - name: extension-quibble-composer
 
+  - name: mediawiki/extensions/BlueSpiceInterwikiSearch
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/BlueSpiceMultiUpload
     template:
       - name: extension-quibble-composer

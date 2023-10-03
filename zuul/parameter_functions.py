@@ -216,6 +216,7 @@ dependencies = {
     'BlueSpiceInsertTemplate': ['BlueSpiceFoundation'],
     'BlueSpiceInstanceStatus': ['BlueSpiceFoundation'],
     'BlueSpiceInterWikiLinks': ['BlueSpiceFoundation'],
+    'BlueSpiceInterwikiSearch': ['BlueSpiceFoundation'],
     'BlueSpiceMultiUpload': ['BlueSpiceFoundation'],
     'BlueSpiceNamespaceCSS': ['BlueSpiceFoundation'],
     'BlueSpiceNamespaceManager': ['BlueSpiceFoundation'],
