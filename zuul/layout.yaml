@@ -10097,6 +10097,10 @@ projects:
     postmerge:
       - generic-node16-browser-coverage-docker-publish
 
+  - name: mediawiki/extensions/VisualEditorPlus
+    template:
+      - name: extension-quibble-composer
+
   - name: wikidata/query/rdf
     test:
       - wikidata-query-rdf-maven-java8-docker
