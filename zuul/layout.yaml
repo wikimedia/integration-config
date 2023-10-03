@@ -10821,6 +10821,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/DateTimeTools
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/DebateTree
     template:
       - name: archived
