@@ -3,6 +3,7 @@ import re
 
 from debian.changelog import Changelog
 from debian.deb822 import Deb822
+from nose.tools import assert_equals
 
 DOCKERFILES_DIR = os.path.relpath(os.path.join(
     os.path.dirname(__file__),
@@ -68,18 +69,22 @@ def test_changelog_has_no_warning():
         yield assertChangelogHasNoWarning, image_dir
 
 
-def assertControlFile(control_filename):
-    control = None
+def getDepends(control_filename):
     with open(control_filename) as f:
         control = Deb822(f)
 
     defined_deps = str(
-        control.get('Depends', '') + control.get('Build-Depends', '')
+        control.get('Depends', '') + ',' + control.get('Build-Depends', '')
         )
-    if defined_deps == '':
-        return
-
     deps = set(d.strip() for d in defined_deps.split(','))
+    deps.discard('')
+    return deps
+
+
+def assertControlFile(control_filename):
+    deps = getDepends(control_filename)
+    if not deps:
+        return
 
     assert deps.issubset(IMAGES_NAME), 'control dependencies must exist'
 
@@ -89,6 +94,35 @@ def test_control_files():
         control_filename = os.path.join(image_dir, 'control')
         if os.path.isfile(control_filename):
             yield assertControlFile, control_filename
+
+
+def assertDockerfileFromsMatchesControlDepends(image_dir):
+    DOCKER_FROM_RE = re.compile('FROM (?:{{ "(.*?)" \\| image_tag }}|"(.*?"))')
+    control_deps = getDepends(os.path.join(image_dir, 'control'))
+    with open(os.path.join(image_dir, 'Dockerfile.template')) as f:
+        froms = set()
+        for matches in DOCKER_FROM_RE.findall(f.read()):
+            for m in matches:
+                if m != '':
+                    froms.add(m)
+        # unitestTestCase.longMessage defaults to false in python 2.7
+        assert_equals.__self__.longMessage = True
+        assert_equals(
+            control_deps,
+            froms,
+            "\n%s: mismatch between control Depends/Build-Depends fields "
+            "and FROM statements in Dockerfile.template\nControl: "
+            "%s\nDockerfile.template: %s\n" % (
+                image_dir,
+                ", ".join(control_deps),
+                ", ".join(froms)
+            )
+        )
+
+
+def test_dockerfile_froms_and_control_depends_matches():
+    for image_dir in IMAGES_DIR:
+        yield assertDockerfileFromsMatchesControlDepends, image_dir
 
 
 def test_quibble_images_version_is_in_sync():

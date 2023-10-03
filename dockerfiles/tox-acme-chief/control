@@ -1,1 +1,2 @@
+Build-Depends: ci-buster
 Depends: tox-buster
