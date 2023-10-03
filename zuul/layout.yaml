@@ -10605,6 +10605,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/AtMentions
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/AuthenticatedKeyValueStore
     template:
       - name: archived
