@@ -11357,6 +11357,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/SimpleTasks
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/SiteScout
     template:
       - name: archived
