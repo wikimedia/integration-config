@@ -9422,6 +9422,10 @@ projects:
     template:
       - name: tox-docker
 
+  - name: labs/tools/blankpages
+    template:
+      - name: composer-test-php74-or-later
+
   - name: labs/tools/bodh
     template:
       - name: node16-docker
