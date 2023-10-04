@@ -9223,10 +9223,6 @@ projects:
     template:
       - name: mediawiki-php-library-php74-to-php81
 
-  - name: mediawiki/libs/etcd
-    template:
-      - name: mediawiki-php-library-php74-to-php81
-
   - name: mediawiki/libs/IDLeDOM
     template:
       - name: mediawiki-php-library-php74-to-php81
@@ -11606,6 +11602,10 @@ projects:
       - name: archived
 
   - name: mediawiki/gadgets/WikiEdit
+    template:
+      - name: archived
+
+  - name: mediawiki/libs/etcd
     template:
       - name: archived
 
