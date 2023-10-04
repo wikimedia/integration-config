@@ -10197,6 +10197,12 @@ projects:
     gate-and-submit:
       - wmf-utils-tox-docker
 
+  - name: mediawiki/gadgets/MiniEdit
+    template:
+      - name: mediawiki-i18n-check
+    gate-and-submit:
+      - noop
+
   - name: mediawiki/gadgets/ProveIt
     template:
       - name: node16-docker
