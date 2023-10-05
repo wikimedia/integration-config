@@ -1,3 +1,10 @@
+quibble-buster-php74-coverage (1.5.6-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-buster:
+   Keep python-pip and python-wheel for Quibble end to end tests
+
+ -- Antoine Musso <hashar@free.fr>  Thu,  5 Oct 2023 15:42:03 +0200
+
 quibble-buster-php74-coverage (1.5.6-s1) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
