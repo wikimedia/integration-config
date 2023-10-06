@@ -29,7 +29,7 @@ function relay_signals() {
 # pretty restrictive.
 # tox is backgrounded in bash job control to let bash handles traps (eg
 # SIGTERM) immediately. That is merely to capture the testenv log files.
-TOX_TESTENV_PASSENV="*" PY_COLORS=1 tox -v "${@}" &
+TOX_TESTENV_PASSENV="*" PY_COLORS=1 tox "${@}" &
 tox_pid=$!
 relay_signals SIGINT SIGTERM
 wait "$tox_pid"

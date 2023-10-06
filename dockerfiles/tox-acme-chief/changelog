@@ -1,3 +1,10 @@
+tox-acme-chief (4.8.0-2) wikimedia; urgency=high
+
+   Refresh for update in parent image tox-buster:
+   Lower tox verbosity - T347241
+
+ -- Antoine Musso <hashar@free.fr>  Fri,  6 Oct 2023 12:55:44 +0200
+
 tox-acme-chief (4.8.0-1) wikimedia; urgency=high
 
    Refresh for update in parent image tox-buster:
