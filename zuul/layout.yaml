@@ -9571,7 +9571,7 @@ projects:
 
   - name: labs/tools/guc
     template:
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-or-later
       - name: mediawiki-i18n-check
 
   - name: labs/tools/fileprotectionsync
