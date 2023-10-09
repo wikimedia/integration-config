@@ -6799,6 +6799,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/HotCat
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/HoverGallery
     template:
       - name: extension-quibble
