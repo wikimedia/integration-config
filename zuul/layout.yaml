@@ -10215,6 +10215,10 @@ projects:
     gate-and-submit:
       - noop
 
+  - name: mediawiki/gadgets/CVNSimpleOverlay
+    template:
+      - name: node16-docker
+
   - name: react.i18n
     template:
       - name: node16-docker
