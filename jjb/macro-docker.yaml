@@ -42,6 +42,9 @@
                  args: >-
                    "/workspace" -mindepth 1 -delete
               - shell: |
+                  echo "Listing potentially remaining files in workspace for T282893"
+                  ls -laF --color=always
+              - shell: |
                  set -u
                  rmdir "$WORKSPACE"
 
