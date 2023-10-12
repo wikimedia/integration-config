@@ -1,3 +1,10 @@
+sonar-scanner (4.6.0.2311-5) wikimedia; urgency=high
+
+   Update node version to v16 as v14 is now deprecated
+   Change sonar.login property to sonar.token
+
+ -- Peter Wangai <pwangai@wikimedia.org>  Thu, 12 Oct 2023 13:30:43 +0300
+
 sonar-scanner (4.6.0.2311-4-s1) wikimedia; urgency=high
 
    Refresh for update in parent image java11:

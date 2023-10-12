@@ -8,4 +8,4 @@ umask 002
 set +x
 
 # Initialize analysis, send data to SonarQube
-/opt/sonar-scanner/bin/sonar-scanner -Dsonar.login="$SONAR_API_KEY" "$@"
+/opt/sonar-scanner/bin/sonar-scanner -Dsonar.token="$SONAR_API_KEY" "$@"
