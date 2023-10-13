@@ -128,7 +128,7 @@
      - operations-puppet-tests-{os}-docker:
          os:
            - buster:
-               image: docker-registry.wikimedia.org/releng/operations-puppet:0.8.12
+               image: docker-registry.wikimedia.org/releng/operations-puppet:0.8.12 # Pinned due to tox v4 T345695
 
 - project:
     name: puppet-wmf-styleguide
