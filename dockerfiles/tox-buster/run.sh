@@ -25,11 +25,16 @@ function relay_signals() {
 }
 
 # Run tests.
-# Pass all environment variables to tox since the environment here is already
-# pretty restrictive.
+#
+# tox v4 does not pass environment variable beside a built-in list, they have
+# to be passed or set via TOX_OVERRIDE.
+#
+# Pass XDG_CACHE_HOME and set PY_COLORS=1 to force ANSI coloring in some
+# software (eg pytest)
+#
 # tox is backgrounded in bash job control to let bash handles traps (eg
 # SIGTERM) immediately. That is merely to capture the testenv log files.
-TOX_TESTENV_PASSENV="*" PY_COLORS=1 tox "${@}" &
+TOX_OVERRIDE=testenv.pass_env=XDG_CACHE_HOME,testenv.set_env=PY_COLORS=1 tox "${@}" &
 tox_pid=$!
 relay_signals SIGINT SIGTERM
 wait "$tox_pid"

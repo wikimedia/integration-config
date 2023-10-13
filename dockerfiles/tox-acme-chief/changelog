@@ -1,3 +1,11 @@
+tox-acme-chief (4.8.0-3) wikimedia; urgency=high
+
+   Refresh for update in parent image tox-buster:
+   tox v4 no more supports TOX_TESTENV_PASSENV. Pass XDG_CACHE_HOME and set
+   PY_COLORS using TOX_OVERRIDE - T348871
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 13 Oct 2023 18:17:11 +0200
+
 tox-acme-chief (4.8.0-2) wikimedia; urgency=high
 
    Refresh for update in parent image tox-buster:
