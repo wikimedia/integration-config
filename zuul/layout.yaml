@@ -1289,52 +1289,6 @@ jobs:
     files:
       - '^includes/Defines\.php$'
 
-  # mediawiki/libs/metrics-platform
-
-  - name: trigger-metrics-platform-pipeline-test-php
-    files:
-      - '.pipeline/blubber/php.yaml'
-      - '.pipeline/config.yaml'
-      - 'composer.json'
-      - '(.*/)?php/.*'
-      - 'tests/.*\.json'
-
-  - name: trigger-metrics-platform-pipeline-test-js
-    files:
-        - '.pipeline/blubber/js.yaml'
-        - '.pipeline/config.yaml'
-        - '(.*/)?js/.*'
-        - 'tests/.*\.json'
-
-  - name: trigger-metrics-platform-pipeline-test-java
-    files:
-        - '.pipeline/blubber/java.yaml'
-        - '.pipeline/config.yaml'
-        - 'java/.*'
-        - 'mvnw.*'
-        - 'Maven.*'
-        - 'maven.*'
-
-  - name: metrics-platform-maven-java8-docker
-    files:
-        - 'java/.*'
-        - 'mvnw.*'
-        - 'Maven.*'
-        - 'maven.*'
-
-  - name: metrics-platform-maven-java8-docker-site-publish
-    files:
-        - 'java/.*'
-        - 'mvnw.*'
-        - 'Maven.*'
-        - 'maven.*'
-
-  - name: trigger-metrics-platform-pipeline-test-swift
-    files:
-        - '.pipeline/blubber/swift.yaml'
-        - '.pipeline/config.yaml'
-        - 'swift/.*'
-
   - name: trigger-servicelib-node-pipeline-spec
     files:
         - '.pipeline/spec/blubber.yaml'
@@ -9249,21 +9203,6 @@ projects:
       - name: mediawiki-php-library-php74-to-php81
       - name: node16-docker
 
-  - name: mediawiki/libs/metrics-platform
-    test:
-      - trigger-metrics-platform-pipeline-test-js
-      - trigger-metrics-platform-pipeline-test-php
-      - trigger-metrics-platform-pipeline-test-java
-      - trigger-metrics-platform-pipeline-test-swift
-    gate-and-submit:
-      - trigger-metrics-platform-pipeline-test-js
-      - trigger-metrics-platform-pipeline-test-php
-      - trigger-metrics-platform-pipeline-test-java
-      - trigger-metrics-platform-pipeline-test-swift
-    experimental:
-      - metrics-platform-maven-java8-docker
-      - metrics-platform-maven-java8-docker-site-publish
-
   - name: mediawiki/libs/less.php
     template:
       - name: mediawiki-php-library
@@ -11665,6 +11604,10 @@ projects:
   - name: mediawiki/services/graphoid
     template:
       - name: archived
+
+  - name: mediawiki/libs/metrics-platform
+    template:
+      - name: archived # T344733
 
   - name: mediawiki/services/mathoid
     template:
