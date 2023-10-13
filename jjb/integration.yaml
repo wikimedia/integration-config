@@ -166,9 +166,9 @@
     name: 'integration-quibble'
     jobs:
         - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-2
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3
         - '{name}-tox-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-2
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3
             docsrc: 'doc/build/html'
             docdest: 'quibble'
         - 'integration-quibble-fullrun-{type}':
