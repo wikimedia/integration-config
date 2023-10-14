@@ -7589,6 +7589,10 @@ projects:
     template:
       - name: extension-quibble-noselenium
 
+  - name: mediawiki/extensions/PrivatePageProtection
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/PronunciationRecording
     template:
       - name: extension-quibble
