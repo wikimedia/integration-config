@@ -9104,7 +9104,7 @@ projects:
 
   - name: css-sanitizer
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php81
 
   - name: php-session-serializer
     template:
