@@ -9098,20 +9098,9 @@ projects:
     template:
       - name: mediawiki-php-library-php74-to-php81
 
-  # TODO: Switch to mediawiki-php-library once T324207/T311451 are fixed
   - name: css-sanitizer
-    test:
-      - composer-package-php74-docker
-      - composer-package-php80-docker
-    gate-and-submit:
-      - composer-package-php74-docker
-      - composer-package-php80-docker
-    postmerge:
-      - doxygen-publish
-      - phpunit-coverage-php74-docker-publish
-    experimental:
-      - composer-package-php81-docker
-      - composer-package-php82-docker
+    template:
+      - name: mediawiki-php-library
 
   - name: php-session-serializer
     template:
