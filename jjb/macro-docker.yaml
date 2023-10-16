@@ -62,6 +62,7 @@
     name: docker-cache-dir
     builders:
      - shell: |
+        ls -laF --color=always
         mkdir -m 2777 -p "cache"
 
 # Create a log directory that will be
@@ -86,6 +87,7 @@
     builders:
      - shell: |
          set -eux
+         ls -laF --color=always
          mkdir -m 2777 -p "{dir}"
      - docker-run:
         image: 'docker-registry.wikimedia.org/buster:latest'
