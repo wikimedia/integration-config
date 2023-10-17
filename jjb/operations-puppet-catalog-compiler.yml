@@ -55,7 +55,7 @@
 # Triggered from the Zuul experimental pipeline
 - job: &job_operations-puppet-catalog-compiler-test
     name: operations-puppet-catalog-compiler-test
-    node: puppet-compiler-node
+    node: puppet5-compiler-node
     triggers:
         - zuul
     builders:

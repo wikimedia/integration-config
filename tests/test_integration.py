@@ -19,7 +19,8 @@ JENKINS_ACCEPTABLE_LABELS = [
     'castor',  # Central cache
     'contint2002',  # Publishing
     'puppet',
-    'puppet-compiler-node',
+    'puppet5-compiler-node',
+    'puppet7-compiler-node',
     'train',
     'trigger',
     # The Docker agents:
