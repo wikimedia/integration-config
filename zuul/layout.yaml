@@ -7519,10 +7519,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/PhpTagsMaps
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/PhpTagsSMW
     template:
       - name: extension-quibble-composer
@@ -11129,6 +11125,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/PHPExcel
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/PhpTagsMaps
     template:
       - name: archived
 
