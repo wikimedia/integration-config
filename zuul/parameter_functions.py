@@ -734,7 +734,7 @@ phan_dependencies = {
     'WikimediaMessages': ['CampaignEvents', 'GuidedTour', 'ORES',
                           'skins/MinervaNeue'],
     'WikiSEO': ['PageImages', 'Scribunto'],
-    'Wikistories': ['Echo'],
+    'Wikistories': ['Echo', 'BetaFeatures', 'MobileFrontend'],
     'WikiToLDAP': ['LDAPAuthentication2', 'LDAPProvider', 'PluggableAuth',
                    'Renameuser', 'UserMerge'],
     'Wikisource': ['Wikibase', 'ProofreadPage']
