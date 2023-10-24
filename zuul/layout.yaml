@@ -6477,6 +6477,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/EnhancedStandardUIs
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/EnhancedUpload
     template:
       - name: extension-quibble-composer
