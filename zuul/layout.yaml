@@ -7837,10 +7837,6 @@ projects:
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
 
-  - name: mediawiki/extensions/SemanticImageAnnotator
-    template:
-      - name: extension-broken  # Semantic MediaWiki is on GitHub
-
   - name: mediawiki/extensions/SemanticImageInput
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
@@ -11261,6 +11257,10 @@ projects:
       - name: archived # Extension now on Github
 
   - name: mediawiki/extensions/SemanticExpressiveness
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/SemanticImageAnnotator
     template:
       - name: archived
 
