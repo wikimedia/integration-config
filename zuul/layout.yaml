@@ -3164,6 +3164,7 @@ projects:
       - name: in-wikimedia-production
       - name: skin-quibble
       - name: skin-coverage
+      - name: extension-codehealth
 
 #### Other MediaWiki skins #####################################
 
