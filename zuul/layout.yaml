@@ -7348,10 +7348,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/OpenID
-    template:
-      - name: extension-quibble-composer
-
   - name: mediawiki/extensions/OpenIDConnect
     template:
       - name: extension-quibble-noselenium
@@ -11068,6 +11064,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/OggHandler
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/OpenID
     template:
       - name: archived
 
