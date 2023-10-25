@@ -8260,10 +8260,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/UserThrottle
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/Variables
     template:
       - name: extension-broken # T250963
@@ -11437,6 +11433,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/UserSnoop
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/UserThrottle
     template:
       - name: archived
 
