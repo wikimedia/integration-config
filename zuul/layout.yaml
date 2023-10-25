@@ -8163,10 +8163,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/TwitterLogin
-    template:
-      - name: extension-broken  # T110470
-
   - name: mediawiki/extensions/TwitterTag
     template:
       - name: extension-quibble-composer
@@ -11413,6 +11409,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Transliterator
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/TwitterLogin
     template:
       - name: archived
 
