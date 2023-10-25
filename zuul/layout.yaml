@@ -6694,11 +6694,6 @@ projects:
     template:
       - name: extension-quibble-composer
 
-  - name: mediawiki/extensions/GraphViz
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/Gravatar
     template:
       - name: extension-quibble
@@ -10897,6 +10892,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/GoToShell
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/GraphViz
     template:
       - name: archived
 

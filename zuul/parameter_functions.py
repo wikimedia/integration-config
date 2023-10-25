@@ -390,7 +390,6 @@ dependencies = {
     'GettingStarted': ['CentralAuth', 'EventLogging', 'GuidedTour'],
     'GlobalContribs': ['Editcount'],
     'Graph': ['CodeEditor', 'JsonConfig', 'VisualEditor'],
-    'GraphViz': ['ImageMap'],
     'GrowthExperiments': ['skins/MinervaNeue', 'PageViewInfo', 'PageImages',
                           'EventLogging', 'Flow', 'MobileFrontend', 'Echo',
                           'CirrusSearch', 'VisualEditor', 'Thanks'],
