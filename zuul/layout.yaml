@@ -6404,10 +6404,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Duplicator
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/DynamicPageList
     template:
       - name: extension-quibble
@@ -10789,6 +10785,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/DumpHTML
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Duplicator
     template:
       - name: archived
 
