@@ -8374,10 +8374,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/WikiArticleFeeds
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/WikibaseStatementUpdater
     template:
       - name: extension-quibble-composer
@@ -11473,6 +11469,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/WebPlatformAuth
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/WikiArticleFeeds
     template:
       - name: archived
 
