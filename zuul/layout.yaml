@@ -5213,6 +5213,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      - name: extension-codehealth
 
   - name: mediawiki/extensions/TheWikipediaLibrary
     template:
