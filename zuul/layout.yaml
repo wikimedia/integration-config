@@ -5605,10 +5605,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/AddThis
-    template:
-      - name: extension-quibble-noselenium
-
   - name: mediawiki/extensions/AdManager
     template:
       - name: extension-quibble
@@ -10505,6 +10501,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ActivityMonitor
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/AddThis
     template:
       - name: archived
 
