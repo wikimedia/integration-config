@@ -7741,10 +7741,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/RevisionCommentSupplement
-    template:
-      - name: extension-broken  # T196529
-
   - name: mediawiki/extensions/RightFunctions
     template:
       - name: extension-quibble
@@ -11213,6 +11209,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/RevealEmail
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/RevisionCommentSupplement
     template:
       - name: archived
 
