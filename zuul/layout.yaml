@@ -8378,10 +8378,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/WikiLexicalData
-    template:
-      - name: extension-broken  # T198089
-
   - name: mediawiki/extensions/WikiLovesMonuments
     template:
       - name: extension-quibble
@@ -11517,6 +11513,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/WikiLabels
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/WikiLexicalData
     template:
       - name: archived
 
