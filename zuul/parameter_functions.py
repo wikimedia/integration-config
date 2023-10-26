@@ -150,7 +150,7 @@ dependencies = {
     'ApiFeatureUsage': ['Elastica'],
     'Arrays': ['Loops', 'ParserFunctions'],
     'ArticlePlaceholder': ['Wikibase', 'Scribunto'],
-    'AtMentions': ['OOJSPlus'],
+    'AtMentions': ['OOJSPlus', 'VisualEditor'],
     'BlogPage': ['Comments', 'SocialProfile', 'VoteNY'],
     'BlueSpiceAbout': ['BlueSpiceFoundation'],
     'BlueSpiceArticleInfo': ['BlueSpiceFoundation'],
