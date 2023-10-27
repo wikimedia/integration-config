@@ -6178,6 +6178,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/CloudflarePurge
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/CloneDiff
     template:
       - name: extension-quibble
