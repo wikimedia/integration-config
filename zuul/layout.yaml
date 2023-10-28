@@ -7468,6 +7468,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/PDFEmbed
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/PerPageLanguage
     template:
       - name: extension-quibble
