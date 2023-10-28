@@ -7320,10 +7320,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/OnlineStatus
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/OnlineStatusBar
     template:
       - name: extension-quibble
@@ -11065,6 +11061,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/OggHandler
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/OnlineStatus
     template:
       - name: archived
 
