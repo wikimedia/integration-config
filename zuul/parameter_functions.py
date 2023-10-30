@@ -365,6 +365,7 @@ dependencies = {
     'CreateAPage': ['WikiEditor'],
     'CustomPage': ['skins/CustomPage'],
     'Dashiki': ['JsonConfig'],
+    'DateTimeTools': ['VisualEditor'],
     'DiscussionTools': ['VisualEditor', 'Linter', 'Echo'],
     'Disambiguator': ['VisualEditor'],
     'DrawioEditor': ['VisualEditor'],
