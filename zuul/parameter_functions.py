@@ -340,6 +340,7 @@ dependencies = {
     'CentralAuth': ['AbuseFilter', 'AntiSpoof', 'SecurePoll'],
     'CentralNotice': ['EventLogging'],
     'Challenge': ['SocialProfile'],
+    'Checklists': ['VisualEditor'],
     'CheckUser': ['CentralAuth', 'FlaggedRevs', 'GuidedTour', 'Renameuser',
                   'UserMerge'],
     'Cite': ['ParserFunctions', 'VisualEditor', 'WikiEditor'],
