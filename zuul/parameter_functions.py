@@ -230,7 +230,8 @@ dependencies = {
     'BlueSpicePageFormsConnector': ['BlueSpiceFoundation', 'PageForms'],
     'BlueSpicePageTemplates': [
         'BlueSpiceFoundation',
-        'BlueSpiceDistributionConnector'
+        'BlueSpiceDistributionConnector',
+        'ContentDroplets'
     ],
     'BlueSpicePageVersion': ['BlueSpiceFoundation'],
     'BlueSpicePagesVisited': [
