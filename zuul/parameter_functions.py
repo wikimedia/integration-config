@@ -691,6 +691,7 @@ phan_dependencies = {
     'SportsTeams': ['SocialProfile', 'UserStatus', 'BlogPage'],
     'StopForumSpam': ['AbuseFilter'],
     'TEI': ['Math'],
+    'TemplateStyles': ['CodeEditor'],
     'Thanks': ['CheckUser', 'Echo', 'Flow', 'MobileFrontend'],
     'TheWikipediaLibrary': ['Echo', 'CentralAuth', 'GlobalPreferences'],
     'TimedMediaHandler': ['BetaFeatures'],
