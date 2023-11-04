@@ -706,7 +706,7 @@ phan_dependencies = {
                                   'cldr'],
     'UnlinkedWikibase': ['Scribunto'],
     'UserStatus': ['SocialProfile', 'SportsTeams'],
-    'UploadWizard': ['EventLogging'],
+    'UploadWizard': ['EventLogging', 'CodeEditor'],
     'VisualEditor': ['BetaFeatures'],
     'VoteNY': ['SocialProfile'],
     'WebAuthn': ['OATHAuth'],
