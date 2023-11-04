@@ -1,3 +1,10 @@
+doxygen (1.9.8) wikimedia; urgency=high
+
+   * Upgrade Doxygen to 1.9.8.
+   * Upgrade PHP from 7.4.28-deb11 to 7.4.33-1+deb11u4.
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Sat,  3 Nov 2022 22:00:00 +0000
+
 doxygen (1.0.0) wikimedia; urgency=high
 
    Switch from Debian 10 Buster to Debian 11 Bullseye.

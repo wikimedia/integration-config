@@ -2,8 +2,25 @@ FROM {{ "ci-bullseye" | image_tag }}
 
 USER root
 
-# PHP is needed for the mediawiki-core job, which runs maintenance/mwdocgen.php
-RUN {{ "doxygen graphviz php-cli php-intl php-mbstring php-xml" | apt_install }}
+# * graphviz: dependency for Doxygen
+# * php: needed for the mediawiki-core job, which runs maintenance/mwdocgen.php
+#   This installs PHP 7.4 https://packages.debian.org/bullseye/php
+# * curl: to install doxygen
+RUN {{ "graphviz php-cli php-intl php-mbstring php-xml curl" | apt_install }}
+
+# Install recent Doxygen because Bullseye would provide Doxygen 1.9.1
+# https://packages.debian.org/bullseye/doxygen
+# https://doxygen.nl/download.html#srcbin
+ENV DOXYGEN_RELEASE_NAME=doxygen-1.9.8
+ENV DOXYGEN_RELEASE_SIG=aec78d9c9e6668258d17de94520a63a7
+
+RUN mkdir /tmp/doxyinstall \
+    && cd /tmp/doxyinstall \
+    && curl -Lo doxygen.tar.gz https://www.doxygen.nl/files/${DOXYGEN_RELEASE_NAME}.linux.bin.tar.gz \
+    && echo "${DOXYGEN_RELEASE_SIG}  doxygen.tar.gz" | md5sum -c \
+    && tar -xzf doxygen.tar.gz \
+    && mv ${DOXYGEN_RELEASE_NAME}/bin/doxygen /usr/bin/doxygen \
+    && rm -rf /tmp/doxyinstall
 
 COPY run.sh /run.sh
 
