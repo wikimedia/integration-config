@@ -5682,6 +5682,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/AtMentions
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/Auth_remoteuser
     template:
       - name: extension-quibble
@@ -6155,6 +6159,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/Checklists
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/Checkpoint
     template:
       - name: extension-quibble
@@ -6327,6 +6335,10 @@ projects:
   - name: mediawiki/extensions/DateDiff
     template:
       - name: extension-quibble
+
+  - name: mediawiki/extensions/DateTimeTools
+    template:
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/DebugMode
     template:
@@ -7923,6 +7935,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/SimpleTasks
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/SiteMetrics
     template:
       - name: extension-quibble
@@ -8054,6 +8070,10 @@ projects:
   - name: mediawiki/extensions/StructuredNavigation
     template:
       - name: extension-quibble-php74-or-later
+
+  - name: mediawiki/extensions/SubnetCalc
+    template:
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/SubpageFun
     template:
@@ -10532,10 +10552,6 @@ projects:
     template:
       - name: archived
 
-  - name: mediawiki/extensions/AtMentions
-    template:
-      - name: extension-quibble-composer
-
   - name: mediawiki/extensions/AuthenticatedKeyValueStore
     template:
       - name: archived
@@ -10623,10 +10639,6 @@ projects:
   - name: mediawiki/extensions/CharRangeSpan
     template:
       - name: archived
-
-  - name: mediawiki/extensions/Checklists
-    template:
-      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/ClickTracking
     template:
@@ -10747,10 +10759,6 @@ projects:
   - name: mediawiki/extensions/DataTypes
     template:
       - name: archived
-
-  - name: mediawiki/extensions/DateTimeTools
-    template:
-      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/DebateTree
     template:
@@ -11312,10 +11320,6 @@ projects:
     template:
       - name: archived
 
-  - name: mediawiki/extensions/SimpleTasks
-    template:
-      - name: extension-quibble-composer
-
   - name: mediawiki/extensions/SiteScout
     template:
       - name: archived
@@ -11359,10 +11363,6 @@ projects:
   - name: mediawiki/extensions/StrategyWiki
     template:
       - name: archived
-
-  - name: mediawiki/extensions/SubnetCalc
-    template:
-      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/Suhosin
     template:
