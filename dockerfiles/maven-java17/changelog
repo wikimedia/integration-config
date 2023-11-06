@@ -1,0 +1,5 @@
+maven-java17 (1.0.0) wikimedia; urgency=medium
+
+  * Maven with OpenJDK 17 based on Debian Bullseye - T350569
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 06 Nov 2023 10:17:17 +0100
