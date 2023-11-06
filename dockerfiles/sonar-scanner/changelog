@@ -1,3 +1,9 @@
+sonar-scanner (4.6.0.2311-7) wikimedia; urgency=medium
+
+  * Upgrade from Java 11 to Java 17 (still based on Bullseye) - T349983
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 06 Nov 2023 10:38:32 +0100
+
 sonar-scanner (4.6.0.2311-6) wikimedia; urgency=high
 
    Re-build to use standard RelEng node v16 images

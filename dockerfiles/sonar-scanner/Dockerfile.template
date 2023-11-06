@@ -1,6 +1,6 @@
 FROM {{ "node16" | image_tag }} as node
 
-FROM {{ "maven-java11" | image_tag }}
+FROM {{ "maven-java17" | image_tag }}
 
 USER root
 COPY KEYS /tmp/KEYS
