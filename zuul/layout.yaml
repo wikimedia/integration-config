@@ -6898,6 +6898,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/JWTAuth
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/LanguageSelector
     template:
       - name: extension-quibble
