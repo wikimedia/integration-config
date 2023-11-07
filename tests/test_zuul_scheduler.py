@@ -788,29 +788,6 @@ class TestZuulScheduler(unittest.TestCase):
         trusted_event.branch = change.branch
         self.assertTrue(test_manager.eventMatches(trusted_event, change))
 
-    def test_donationinterface_deployment_branch_filters(self):
-        test_manager = self.getPipeline('test').manager
-
-        change = zuul.model.Change('mediawiki/extensions/DonationInterface')
-        change.branch = 'deployment'
-
-        event = zuul.model.TriggerEvent()
-        event.type = 'patchset-created'
-        event.branch = change.branch
-
-        jobs_tree = [t for (p, t) in
-                     self.getPipeline('test').job_trees.iteritems()
-                     if p.name == 'mediawiki/extensions/DonationInterface'][0]
-        for job in jobs_tree.getJobs():
-            if job.name.startswith('mwext-'):
-                self.assertFalse(
-                    job.changeMatches(change),
-                    msg='%s should not trigger for branch %s' % (
-                        job.name, change.branch)
-                )
-
-        self.assertTrue(test_manager.eventMatches(event, change))
-
     def test_rake_docker_files_filters(self):
         # FIXME: should be more generic
         jobs_tree = [t for (p, t) in

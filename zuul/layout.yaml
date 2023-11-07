@@ -4380,12 +4380,18 @@ projects:
       - mwgate-composer-php74-docker
       - mwgate-node16-docker
       - quibble-donationinterface-REL1_39-php74-docker
+      - mwext-php74-phan-docker
     gate-and-submit:
       - mwgate-composer-php74-docker
       - mwgate-node16-docker
       - quibble-donationinterface-REL1_39-php74-docker
-    experimental:
       - mwext-php74-phan-docker
+    experimental:
+      # These are the remaining parts of extension-quibble
+      - quibble-vendor-mysql-php74-noselenium-docker
+      - quibble-vendor-mysql-php80-noselenium-docker
+      - quibble-vendor-mysql-php81-noselenium-docker
+      - quibble-vendor-mysql-php74-selenium-docker
 
   - name: mediawiki/extensions/DoubleWiki
     template:
