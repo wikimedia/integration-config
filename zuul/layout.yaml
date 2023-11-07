@@ -6899,8 +6899,9 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/JWTAuth
+    # Auth-related project breaks core selenium tests
     template:
-      - name: extension-quibble
+      - name: extension-quibble-noselenium
 
   - name: mediawiki/extensions/LanguageSelector
     template:
