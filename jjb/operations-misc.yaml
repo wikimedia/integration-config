@@ -20,12 +20,6 @@
             docker_image_var: docker-registry.wikimedia.org/releng/tox-java8:4.8.0-3
 
 - project:
-    name: acme-chief
-    jobs:
-        - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-acme-chief:4.8.0-3
-
-- project:
     name: censorshipmonitoring
     jobs:
         - '{name}-tox-docker'

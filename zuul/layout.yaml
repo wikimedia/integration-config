@@ -3779,16 +3779,6 @@ projects:
     template:
       - name: tox-docker
 
-  - name: operations/software/acme-chief
-    template:
-      - name: debian-glue-non-voting
-    test:
-      - acme-chief-tox-docker
-    gate-and-submit:
-      - acme-chief-tox-docker
-    postmerge:
-      - acme-chief-tox-docker
-
   - name: operations/software/bitu-ldap
     template:
       - name: tox-docker
@@ -3818,16 +3808,6 @@ projects:
       - cumin-tox-publish
     publish:
       - cumin-tox-tag-publish
-
-  - name: operations/software/certcentral
-    template:
-      - name: debian-glue-non-voting
-    test:
-      - acme-chief-tox-docker
-    gate-and-submit:
-      - acme-chief-tox-docker
-    postmerge:
-      - acme-chief-tox-docker
 
   - name: operations/software/debmonitor
     template:
@@ -11746,6 +11726,14 @@ projects:
       - name: archived
 
   - name: mediawiki/tools/wikilambda-cli
+    template:
+      - name: archived
+
+  - name: operations/software/acme-chief
+    template:
+      - name: archived
+
+  - name: operations/software/certcentral
     template:
       - name: archived
 
