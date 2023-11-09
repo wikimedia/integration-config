@@ -9883,32 +9883,40 @@ projects:
   - name: search/extra
     test:
       - search-extra-maven-java8-docker
+      - search-extra-maven-java11-docker
     gate-and-submit:
       - search-extra-maven-java8-docker
+      - search-extra-maven-java11-docker
     postmerge:
       - search-extra-maven-java8-docker-site-publish
 
   - name: search/extra-analysis
     test:
       - search-extra-analysis-maven-java8-docker
+      - search-extra-analysis-maven-java11-docker
     gate-and-submit:
       - search-extra-analysis-maven-java8-docker
+      - search-extra-analysis-maven-java11-docker
     postmerge:
       - search-extra-analysis-maven-java8-docker-site-publish
 
   - name: search/glent
     test:
         - search-glent-maven-java8-docker
+        - search-glent-maven-java11-docker
     gate-and-submit:
         - search-glent-maven-java8-docker
+        - search-glent-maven-java11-docker
     postmerge:
         - search-glent-maven-java8-docker-site-publish
 
   - name: search/highlighter
     test:
       - search-highlighter-maven-java8-docker
+      - search-highlighter-maven-java11-docker
     gate-and-submit:
       - search-highlighter-maven-java8-docker
+      - search-highlighter-maven-java11-docker
     postmerge:
       - search-highlighter-maven-java8-docker-site-publish
 
