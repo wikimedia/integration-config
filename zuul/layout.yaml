@@ -3914,10 +3914,6 @@ projects:
     template:
       - name: tox-docker
 
-  - name: operations/software/knead-wikidough
-    template:
-      - name: tox-docker
-
   - name: operations/software/labsdb-auditor
     template:
       - name: tox-docker
@@ -11757,6 +11753,10 @@ projects:
       - name: archived
 
   - name: operations/debs/wikimedia-job-runner
+    template:
+      - name: archived
+
+  - name: operations/software/knead-wikidough
     template:
       - name: archived
 
