@@ -10056,6 +10056,7 @@ projects:
       - name: extension-quibble-composer
 
   - name: wikidata/query/rdf
+    # Blazegraph is not running on Java 11 and unlikely to ever be - T350587
     test:
       - wikidata-query-rdf-maven-java8-docker
     gate-and-submit:
@@ -10064,6 +10065,7 @@ projects:
       - wikidata-query-rdf-maven-java8-docker-site-publish
 
   - name: wikidata/query/blazegraph
+    # Blazegraph is not running on Java 11 and unlikely to ever be - T350587
     test:
       - wikidata-query-blazegraph-maven-java8-docker
     gate-and-submit:
