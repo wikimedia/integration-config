@@ -8959,6 +8959,7 @@ projects:
       - name: tox-docker
 
   - name: analytics/refinery/source
+    # No plans to upgrade to Java 11 - T350587
     test:
       - analytics-refinery-maven-java8-docker
     gate-and-submit:
