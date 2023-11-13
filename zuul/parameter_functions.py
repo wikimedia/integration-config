@@ -159,7 +159,8 @@ dependencies = {
     'BlueSpiceAvatars': ['BlueSpiceFoundation'],
     'BlueSpiceBookshelf': [
         'BlueSpiceFoundation',
-        'BlueSpiceVisualEditorConnector'
+        'BlueSpiceVisualEditorConnector',
+        'OOJSPlus'
     ],
     'BlueSpiceCategoryCheck': ['BlueSpiceFoundation'],
     'BlueSpiceCategoryManager': ['BlueSpiceFoundation'],
