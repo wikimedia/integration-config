@@ -179,6 +179,7 @@ dependencies = {
     'BlueSpiceDistributionConnector': [
         'BlueSpiceFoundation',
         'BlueSpiceSMWConnector',
+        'ContentDroplets'
         'Echo',
         'OOJSPlus',
         'UserMerge',
