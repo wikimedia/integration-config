@@ -2632,14 +2632,6 @@ projects:
       - gearman-java-maven-java8-docker
       - gearman-java-maven-java11-docker
 
-  - name: integration/jenkinsci/gearman-plugin
-    test:
-      - jenkins-plugin-gearman-maven-java8-docker
-      - jenkins-plugin-gearman-maven-java11-docker
-    gate-and-submit:
-      - jenkins-plugin-gearman-maven-java8-docker
-      - jenkins-plugin-gearman-maven-java11-docker
-
   - name: integration/pipelinelib
     test:
       - trigger-pipelinelib-pipeline-test
@@ -10384,6 +10376,10 @@ projects:
       - name: archived
 
   - name: integration/jenkins
+    template:
+      - name: archived
+
+  - name: integration/jenkinsci/gearman-plugin
     template:
       - name: archived
 

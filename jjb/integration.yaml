@@ -208,14 +208,6 @@
                         --web-backend=external --web-url=http://127.0.0.1:9413'
 
 - project:
-    name: jenkins-plugin
-    project:
-        - gearman
-    jobs:
-        - '{name}-{project}-maven-java8-docker'
-        - '{name}-{project}-maven-java11-docker'
-
-- project:
     name: 'integration-zuul'
     jobs:
      - '{name}-tox-docker':
