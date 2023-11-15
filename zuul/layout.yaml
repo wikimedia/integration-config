@@ -11725,6 +11725,10 @@ projects:
     template:
       - name: archived
 
+  - name: operations/debs/prometheus-varnishkafka-exporter
+    template:
+      - name: archived
+
   - name: operations/debs/wikimedia-job-runner
     template:
       - name: archived
@@ -11746,6 +11750,10 @@ projects:
       - name: archived
 
   - name: operations/software/varnishkafka
+    template:
+      - name: archived
+
+  - name: operations/software/varnishkafka/testing
     template:
       - name: archived
 
