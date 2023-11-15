@@ -10212,19 +10212,19 @@ projects:
 
   - name: wikimedia/discovery/discovery-parent-pom
     test:
-      - discovery-parent-pom-maven-java8-docker
+      - discovery-parent-pom-maven-java11-docker
     gate-and-submit:
-      - discovery-parent-pom-maven-java8-docker
+      - discovery-parent-pom-maven-java11-docker
     postmerge:
-      - discovery-parent-pom-maven-java8-docker-site-publish
+      - discovery-parent-pom-maven-java11-docker-site-publish
 
   - name: wikimedia/discovery/discovery-maven-tool-configs
     test:
-      - discovery-maven-tool-configs-maven-java8-docker
+      - discovery-maven-tool-configs-maven-java11-docker
     gate-and-submit:
-      - discovery-maven-tool-configs-maven-java8-docker
+      - discovery-maven-tool-configs-maven-java11-docker
     postmerge:
-      - discovery-maven-tool-configs-maven-java8-docker-site-publish
+      - discovery-maven-tool-configs-maven-java11-docker-site-publish
 
   - name: wikimedia/discovery/relevanceForge
     template:
