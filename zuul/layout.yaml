@@ -3527,7 +3527,6 @@ projects:
   - { name: operations/debs/prometheus-snmp-exporter,          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/prometheus-statsd-exporter,        test: ['debian-glue-non-voting'] }
   - { name: operations/debs/prometheus-swagger-exporter,       test: ['debian-glue-non-voting'] }
-  - { name: operations/debs/prometheus-varnishkafka-exporter,  test: ['debian-glue-non-voting'] }
   - { name: operations/debs/prometheus-wdqs-updater-exporter,  test: ['debian-glue-non-voting'] }
 
   - { name: operations/debs/puppet,                           test: ['debian-glue-non-voting'] }
@@ -4035,12 +4034,6 @@ projects:
       - name: debian-glue-non-voting
   - name: operations/software/varnish/libvmod-re2
     test: [ 'debian-glue' ]
-
-  - name: operations/software/varnish/varnishkafka
-    test: [ 'debian-glue' ]
-  - name: operations/software/varnish/varnishkafka/testing
-    template:
-      - name: debian-glue-non-voting
 
   - name: operations/software/varnish/vhtcpd
     test: [ 'debian-glue' ]
@@ -11749,6 +11742,10 @@ projects:
       - name: archived
 
   - name: operations/software/schema-changes
+    template:
+      - name: archived
+
+  - name: operations/software/varnishkafka
     template:
       - name: archived
 
