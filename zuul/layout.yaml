@@ -10384,6 +10384,10 @@ projects:
     template:
       - name: archived
 
+  - name: integration/junitdiff
+    template:
+      - name: archived
+
   - name: integration/phpunit
     template:
       - name: archived
