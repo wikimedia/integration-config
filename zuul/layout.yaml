@@ -9883,8 +9883,10 @@ projects:
   - name: wmf-jvm-utils
     test:
       - wmf-jvm-utils-maven-java8-docker
+      - wmf-jvm-utils-maven-java11-docker
     gate-and-submit:
       - wmf-jvm-utils-maven-java8-docker
+      - wmf-jvm-utils-maven-java11-docker
     postmerge:
       - wmf-jvm-utils-maven-java8-docker-site-publish
 
