@@ -3532,10 +3532,6 @@ projects:
 
   - { name: operations/debs/puppet,                           test: ['debian-glue-non-voting'] }
   - { name: operations/debs/puppetdb,                         test: ['debian-glue-non-voting'] }
-  - name: operations/debs/pybal
-    template:
-      - name: debian-glue-non-voting
-      - name: tox-docker
   - { name: operations/debs/pykube,                           test: ['debian-glue-non-voting'] }
   - { name: operations/debs/pynetbox,                         test: ['debian-glue-non-voting'] }
   - { name: operations/debs/python-aiokafka,                  test: ['debian-glue-non-voting'] }
@@ -11734,6 +11730,10 @@ projects:
       - name: archived
 
   - name: operations/debs/prometheus-varnishkafka-exporter
+    template:
+      - name: archived
+
+  - name: operations/debs/pybal
     template:
       - name: archived
 
