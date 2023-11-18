@@ -6710,7 +6710,7 @@ projects:
 
   - name: mediawiki/extensions/HeaderFooter
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble
 
   - name: mediawiki/extensions/HeaderTabs
     template:
