@@ -7452,7 +7452,7 @@ projects:
 
   - name: mediawiki/extensions/PasswordlessLogin
     template:
-      - name: extension-quibble
+      - name: extension-quibble-php81-or-later
 
   - name: mediawiki/extensions/Patroller
     template:
