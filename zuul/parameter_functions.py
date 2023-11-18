@@ -484,7 +484,7 @@ dependencies = {
     'SpamBlacklist': ['AbuseFilter', 'CheckUser', 'EventLogging'],
     'SpamDiffTool': ['SpamBlacklist'],
     'SpellingDictionary': ['UniversalLanguageSelector'],
-    'SportsTeams': ['SocialProfile', 'UserStatus'],
+    'SportsTeams': ['SocialProfile', 'UserStatus', 'BlogPage'],
     'StandardDialogs': ['OOJSPlus'],
     'StickyTOC': ['skins/chameleon'],
     'StopForumSpam': ['AbuseFilter'],
