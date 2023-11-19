@@ -630,7 +630,7 @@ phan_dependencies = {
     'GettingStarted': ['CentralAuth', 'CirrusSearch', 'MobileFrontend',
                        'VisualEditor'],
     'GeoData': ['CirrusSearch', 'Elastica'],
-    'GlobalBlocking': ['Renameuser'],
+    'GlobalBlocking': ['Renameuser', 'UserMerge'],
     'GlobalPreferences': ['BetaFeatures', 'skins/Vector'],
     'GrowthExperiments': ['EventLogging', 'PageImages', 'PageViewInfo',
                           'skins/MinervaNeue', 'Flow', 'MobileFrontend',
