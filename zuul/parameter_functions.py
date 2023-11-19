@@ -718,7 +718,7 @@ phan_dependencies = {
     'WebAuthn': ['OATHAuth'],
     'WikiEditor': ['ConfirmEdit', 'EventLogging', 'WikimediaEvents',
                    'BetaFeatures'],
-    'WikiLove': ['Flow', 'LiquidThreads'],
+    'WikiLove': ['Flow', 'LiquidThreads', 'UserMerge'],
     'WikiForum': ['ConfirmEdit', 'SocialProfile'],
     'Wikibase': ['Babel', 'CirrusSearch', 'Echo', 'GeoData',
                  'Math', 'MobileFrontend', 'PageImages', 'Scribunto'],
