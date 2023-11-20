@@ -9029,6 +9029,7 @@ projects:
       - analytics-gobblin-wmf-maven-java8-docker
       - analytics-gobblin-wmf-maven-java11-docker
     gate-and-submit:
+      - analytics-gobblin-wmf-maven-java8-docker
       - analytics-gobblin-wmf-maven-java11-docker
     postmerge:
       - analytics-gobblin-wmf-maven-java8-docker-site-publish
