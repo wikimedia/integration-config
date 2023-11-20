@@ -9017,9 +9017,10 @@ projects:
 
   - name: wikimedia-event-utilities
     test:
-      - wikimedia-event-utilities-maven-java8-docker
+      - wikimedia-event-utilities-maven-java11-docker
     gate-and-submit:
       - wikimedia-event-utilities-maven-java8-docker
+      - wikimedia-event-utilities-maven-java11-docker
     postmerge:
       - wikimedia-event-utilities-maven-java8-docker-site-publish
 

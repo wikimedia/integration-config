@@ -127,6 +127,7 @@
      - '{name}-maven-release-docker'
      - '{name}-maven-java8-docker'
      - '{name}-maven-java8-docker-site-publish'
+     - '{name}-maven-java11-docker'
 
 - project:
       name: 'analytics-gobblin-wmf'
