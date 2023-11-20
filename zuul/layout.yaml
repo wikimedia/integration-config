@@ -9831,16 +9831,6 @@ projects:
     gate-and-submit:
       - fresh-test
 
-  - name: search/cirrus-streaming-updater
-    test:
-      - cirrus-streaming-updater-maven-java11-docker
-      - cirrus-streaming-updater-maven-java8-docker
-    gate-and-submit:
-      - cirrus-streaming-updater-maven-java11-docker
-      - cirrus-streaming-updater-maven-java8-docker
-    postmerge:
-      - cirrus-streaming-updater-maven-java11-docker-site-publish
-
   - name: search/extra
     test:
       - search-extra-maven-java8-docker
@@ -11861,6 +11851,10 @@ projects:
       - name: archived
 
   - name: search/xgboost
+    template:
+      - name: archived
+
+  - name: search/cirrus-streaming-updater
     template:
       - name: archived
 
