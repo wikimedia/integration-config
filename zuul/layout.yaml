@@ -2756,14 +2756,6 @@ projects:
     template:
       - name: mediawiki-php-library
 
-  - name: mediawiki/tools/mwdumper
-    test:
-      - mwdumper-maven-java8-docker
-    gate-and-submit:
-      - mwdumper-maven-java8-docker
-    postmerge:
-      - mwdumper-maven-java8-docker-site-publish
-
   - name: mediawiki/tools/phpunit-patch-coverage
     template:
       - name: mediawiki-php-library-php74-to-php81
@@ -11691,6 +11683,10 @@ projects:
   - name: operations/debs/hhvm
     template:
       - name: archived
+
+  - name: mediawiki/tools/mwdumper
+    template:
+      - name: archived # T351228
 
   - name: mediawiki/tools/release
     template:

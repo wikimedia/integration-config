@@ -90,9 +90,3 @@
     publishers:
      - archive-log-allow-empty
      - docker-cleanup
-
-- project:
-    name: mwdumper
-    jobs:
-        - '{name}-maven-java8-docker'
-        - '{name}-maven-java8-docker-site-publish'
