@@ -4352,12 +4352,6 @@ projects:
       - quibble-vendor-mysql-php81-noselenium-docker
       - quibble-vendor-mysql-php74-selenium-docker
 
-  - name: mediawiki/extensions/DoubleWiki
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/DynamicSidebar
     template:
       - name: in-wikimedia-production
@@ -6373,6 +6367,11 @@ projects:
   - name: mediawiki/extensions/DocBookExport
     template:
       - name: extension-quibble
+
+  - name: mediawiki/extensions/DoubleWiki
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/DPLforum
     template:
