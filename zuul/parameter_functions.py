@@ -574,7 +574,6 @@ phan_dependencies = {
     'skins/Vector': ['CentralAuth'],
     'AbuseFilter': ['CheckUser', 'CentralAuth', 'Echo', 'Renameuser',
                     'AntiSpoof', 'Scribunto', 'EventLogging', 'UserMerge'],
-    'AdvancedSearch': ['BetaFeatures'],
     'AntiSpoof': ['UserMerge'],
     'ApiFeatureUsage': ['Elastica'],
     'ArticleFeedbackv5': ['AbuseFilter', 'Echo', 'SpamBlacklist'],
