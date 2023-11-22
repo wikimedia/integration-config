@@ -156,11 +156,11 @@
         - '{name}-maven-java8-docker':
             docker_image_var: docker-registry.wikimedia.org/releng/gearman-java8:1.1.0
             maven_path: '/run-with-gearmand.sh'
-            timeout: 15  # minutes
+            timeout: 25  # minutes, Archiva is slow T273086
         - '{name}-maven-java11-docker':
             docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s1
             maven_path: '/run-with-gearmand.sh'
-            timeout: 15  # minutes
+            timeout: 25  # minutes, Archiva is slow T273086
 
 - project:
     name: 'integration-quibble'
