@@ -216,19 +216,6 @@
                     image: docker-registry.wikimedia.org/releng/composer-package-php82:0.1.1-s1
 
 - project:
-    name: 'wikimedia-apps-php-security'
-    repogroup: 'wikimedia-apps'
-    host: 'https://gerrit.wikimedia.org/r/p'
-    projects:
-     - wikimedia/wikimania-scholarships
-     - wikimedia/iegreview
-     - wikimedia/slimapp
-    branches:
-     - master
-    jobs:
-     - '{repogroup}-php-security'
-
-- project:
     name: 'github-php-security'
     repogroup: 'github'
     host: 'https://github.com'
