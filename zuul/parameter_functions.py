@@ -156,7 +156,7 @@ dependencies = {
     'BlueSpiceBookshelf': [
         'BlueSpiceFoundation',
         'BlueSpiceVisualEditorConnector',
-        'OOJSPlus'
+        'ContentDroplets'
     ],
     'BlueSpiceCategoryCheck': ['BlueSpiceFoundation'],
     'BlueSpiceCategoryManager': ['BlueSpiceFoundation'],
