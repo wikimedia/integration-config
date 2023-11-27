@@ -2304,12 +2304,12 @@ project-templates:
       - php-compile-php80-docker
       - php-compile-php81-docker
       - php-compile-php82-docker
+      - php-compile-php83-docker
     gate-and-submit:
       - php-compile-php74-docker
       - php-compile-php80-docker
       - php-compile-php81-docker
       - php-compile-php82-docker
-    experimental:
       - php-compile-php83-docker
     postmerge:
       - php74-compile-coverage-publish
