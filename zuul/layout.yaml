@@ -1368,6 +1368,8 @@ project-templates:
       - quibble-composer-mysql-php74-docker
       - quibble-composer-mysql-php80-docker
       - quibble-composer-mysql-php81-docker
+      - quibble-composer-mysql-php82-docker
+      - quibble-composer-mysql-php83-docker
     # Surely they are never going to be elected for wmf/ branching or SWAT
 
   # Runs quibble, and includes experimental jobs
@@ -2233,12 +2235,12 @@ project-templates:
       - composer-php80-docker
       - composer-php81-docker
       - composer-php82-docker
+      - composer-php83-docker
     gate-and-submit:
       - composer-php74-docker
       - composer-php80-docker
       - composer-php81-docker
       - composer-php82-docker
-    experimental:
       - composer-php83-docker
 
   # Temporary template for repos that fail on PHP 8.2
