@@ -1,0 +1,5 @@
+quibble-buster-php83 (1.5.6) wikimedia; urgency=medium
+
+  * Initial fork from quibble-buster-php82, using PHP 8.3.0 as released last week.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 27 Nov 2023 08:50:05 -0500
