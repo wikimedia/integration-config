@@ -1462,6 +1462,7 @@ project-templates:
       - quibble-vendor-sqlite-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
       - quibble-vendor-mysql-php82-noselenium-docker
+      - quibble-vendor-mysql-php83-noselenium-docker
 
   - name: extension-quibble-php74-or-later
     test:
@@ -1541,6 +1542,7 @@ project-templates:
       - quibble-vendor-sqlite-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
       - quibble-vendor-mysql-php82-noselenium-docker
+      - quibble-vendor-mysql-php83-noselenium-docker
 
   - name: extension-quibble-php81-or-later
     test:
@@ -1617,6 +1619,7 @@ project-templates:
       - quibble-vendor-sqlite-php81-noselenium-docker
       - quibble-vendor-postgres-php81-noselenium-docker
       - quibble-vendor-mysql-php82-noselenium-docker
+      - quibble-vendor-mysql-php83-noselenium-docker
       - mwext-php81-phan-docker
 
   # Special job template that runs composer rather than than relying
@@ -1717,6 +1720,7 @@ project-templates:
       - quibble-composer-sqlite-php74-noselenium-docker
       - quibble-composer-postgres-php74-noselenium-docker
       - quibble-composer-mysql-php82-noselenium-docker
+      - quibble-composer-mysql-php83-noselenium-docker
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
@@ -1798,6 +1802,7 @@ project-templates:
       - quibble-vendor-sqlite-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
       - quibble-vendor-mysql-php82-noselenium-docker
+      - quibble-vendor-mysql-php83-noselenium-docker
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
@@ -1870,6 +1875,7 @@ project-templates:
       - quibble-composer-postgres-php74-noselenium-docker
       - mwext-php74-phan-docker
       - quibble-composer-mysql-php82-noselenium-docker
+      - quibble-composer-mysql-php83-noselenium-docker
 
   # Special job template that runs the "standalone" jobs - T225068
   - name: extension-quibble-only-standalone
@@ -1900,6 +1906,7 @@ project-templates:
       - quibble-composer-mysql-php74-phpunit-standalone-docker
     experimental:
       - quibble-vendor-mysql-php82-phpunit-standalone-docker
+      - quibble-vendor-mysql-php83-phpunit-standalone-docker
 
   # Special job template that runs the "apitests" job for test and gate
   - name: extension-apitests
@@ -2043,6 +2050,7 @@ project-templates:
       - quibble-vendor-sqlite-php74-docker
       - quibble-vendor-postgres-php74-docker
       - quibble-vendor-mysql-php82-docker
+      - quibble-vendor-mysql-php83-docker
 
   - name: skin-quibble-php74-or-later
     test:
@@ -2120,6 +2128,7 @@ project-templates:
       - quibble-vendor-sqlite-php74-docker
       - quibble-vendor-postgres-php74-docker
       - quibble-vendor-mysql-php82-docker
+      - quibble-vendor-mysql-php83-docker
 
   - name: skin-quibble-composer
     test:
@@ -2201,6 +2210,7 @@ project-templates:
       - quibble-composer-sqlite-php74-docker
       - quibble-composer-postgres-php74-docker
       - quibble-composer-mysql-php82-docker
+      - quibble-composer-mysql-php83-docker
 
   - name: skin-coverage
     postmerge:
@@ -2228,6 +2238,8 @@ project-templates:
       - composer-php80-docker
       - composer-php81-docker
       - composer-php82-docker
+    experimental:
+      - composer-php83-docker
 
   # Temporary template for repos that fail on PHP 8.2
   - name: composer-test-php74-to-php81
@@ -2242,6 +2254,7 @@ project-templates:
       - composer-php81-docker
     experimental:
       - composer-php82-docker
+      - composer-php83-docker
 
   - name: composer-test-php74-only
     test:
@@ -2252,6 +2265,7 @@ project-templates:
       - composer-php80-docker
       - composer-php81-docker
       - composer-php82-docker
+      - composer-php83-docker
 
   - name: composer-test-package-php74-or-later
     test:
@@ -2265,6 +2279,8 @@ project-templates:
       - composer-package-php80-docker
       - composer-package-php81-docker
       - composer-package-php82-docker
+    experimental:
+      - composer-package-php83-docker
 
   # Temporary template for repos that fail on PHP 8.2
   - name: composer-test-package-php74-to-php81
@@ -2279,6 +2295,7 @@ project-templates:
       - composer-package-php81-docker
     experimental:
       - composer-package-php82-docker
+      - composer-package-php83-docker
 
   - name: php-compile-php74-or-later
     test:
@@ -2292,6 +2309,8 @@ project-templates:
       - php-compile-php80-docker
       - php-compile-php81-docker
       - php-compile-php82-docker
+    experimental:
+      - php-compile-php83-docker
     postmerge:
       - php74-compile-coverage-publish
 
@@ -2437,6 +2456,8 @@ project-templates:
       - composer-package-php80-docker
       - composer-package-php81-docker
       - composer-package-php82-docker
+    experimental:
+      - composer-package-php83-docker
     postmerge:
       - doxygen-publish
       - phpunit-coverage-php74-docker-publish
@@ -2456,6 +2477,7 @@ project-templates:
       - phpunit-coverage-php74-docker-publish
     experimental:
       - composer-package-php82-docker
+      - composer-package-php83-docker
 
 # Register the Gerrit project name, apply them pipelines that in turn trigger
 # a set of jobs.
@@ -2784,6 +2806,7 @@ projects:
     experimental:
       - composer-package-php81-docker
       - composer-package-php82-docker
+      - composer-package-php83-docker
 
   - name: mediawiki/tools/phan/SecurityCheckPlugin
     # FIXME: Use mediawiki-php-library-php74-to-php81?
@@ -3030,6 +3053,8 @@ projects:
       - mediawiki-core-php80-phan-docker
       # Experimental for testing 8.2 (T314093)
       - quibble-vendor-mysql-php82-docker
+      # Experimental for testing 8.3 (T339349)
+      - quibble-vendor-mysql-php83-docker
 
   - name: mediawiki/vendor
     template:
@@ -3070,10 +3095,13 @@ projects:
       - mwgate-composer-php81-docker
       - mediawiki-quibble-vendor-mysql-php81-docker
       - mwgate-composer-php82-docker
+      - mwgate-composer-php83-docker
       # New job in testing T74952 -- JDF 2022-10-14
       - composer-php74-assert-lock-docker
       # Experimental for testing 8.2 (T314093)
       - mediawiki-quibble-vendor-mysql-php82-docker
+      # Experimental for testing 8.3 (T339349)
+      - mediawiki-quibble-vendor-mysql-php83-docker
 
   # VERY EXPERIMENTAL WIKIMEDIA PRODUCTION BUILD WITH NO TESTS YET
   - name: wikimedia/production
@@ -8708,6 +8736,7 @@ projects:
       - quibble-composer-mysql-php81-docker
     experimental:
       - parsoidsvc-composer-package-php82-docker
+      - parsoidsvc-composer-package-php83-docker
       # These are the jobs which would be added by the extension-gate template
       - wmf-quibble-core-vendor-mysql-php74-docker
       - wmf-quibble-vendor-mysql-php74-docker
