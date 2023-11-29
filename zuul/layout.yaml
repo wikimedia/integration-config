@@ -1071,9 +1071,9 @@ jobs:
 
   - name: ^trigger-inference-services-pipeline-article-descriptions
     files:
-        - '.pipeline/article-descriptions/blubber.yaml'
+        - '.pipeline/article_descriptions/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'article-descriptions/.*'
+        - 'article_descriptions/.*'
 
   # End of meta jobs (the ones starting with ^)
 
