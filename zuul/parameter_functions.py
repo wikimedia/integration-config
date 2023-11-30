@@ -604,7 +604,7 @@ phan_dependencies = {
     'Dashiki': ['JsonConfig'],
     'Disambiguator': ['VisualEditor'],
     'DiscussionTools': ['VisualEditor', 'Linter', 'Echo', 'EventLogging',
-                        'Gadgets', 'BetaFeatures'],
+                        'Gadgets', 'BetaFeatures', 'Thanks'],
     'DonationInterface': ['cldr', 'CodeEditor', 'FundraisingEmailUnsubscribe',
                           'ParserFunctions', 'SyntaxHighlight_GeSHi',
                           'WikiEditor'],
