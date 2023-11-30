@@ -359,7 +359,7 @@ dependencies = {
     'CustomPage': ['skins/CustomPage'],
     'Dashiki': ['JsonConfig'],
     'DateTimeTools': ['VisualEditor'],
-    'DiscussionTools': ['VisualEditor', 'Linter', 'Echo'],
+    'DiscussionTools': ['VisualEditor', 'Linter', 'Echo', 'Thanks'],
     'Disambiguator': ['VisualEditor'],
     'DrawioEditor': ['VisualEditor'],
     'Echo': ['CentralAuth', 'EventLogging', 'MobileFrontend'],
