@@ -2655,6 +2655,8 @@ projects:
     gate-and-submit:
       - gearman-java-maven-java8-docker
       - gearman-java-maven-java11-docker
+    postmerge:
+      - gearman-java-maven-java11-docker-site-publish
 
   - name: integration/pipelinelib
     test:
