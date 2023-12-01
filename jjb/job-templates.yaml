@@ -255,6 +255,9 @@
     # {name}-maven-java11-docker-site-publish job template, which will replace
     # this docker image with the java 11 version.
     docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.1.0
+    # The Sonar analysis runs under Java 11 though
+    sonar_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.0-s1
+
     # The project is expected to provide a maven wrapper at the root of the
     # project. If another entry point is required for a project (for example
     # to setup some build prerequisites) 'maven_path' variables can be
@@ -291,7 +294,7 @@
             args: '-gs /settings.xml --batch-mode --file {pom} {maven_args}'
         # Sonar analysis (see '{name}-maven-java8-docker' for details)
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/maven-java11:1.0.0-s1
+            image: '{obj:sonar_image_var}'
             entrypoint: '{maven_path}'
             workdir: '{workdir}'
             args: >
