@@ -4041,8 +4041,6 @@ projects:
   - name: operations/software/varnish/libvmod-header
     template:
       - name: debian-glue-non-voting
-  - name: operations/software/varnish/libvmod-netmapper
-    test: [ 'debian-glue' ]
   - name: operations/software/varnish/libvmod-tbf
     template:
       - name: debian-glue-non-voting
@@ -11843,6 +11841,10 @@ projects:
       - name: archived
 
   - name: operations/software/brrd
+    template:
+      - name: archived
+
+  - name: operations/software/varnish/libvmod-netmapper
     template:
       - name: archived
 
