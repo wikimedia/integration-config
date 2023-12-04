@@ -1021,21 +1021,21 @@ jobs:
     files:
         - '.pipeline/revertrisk/revertrisk.yaml'
         - '.pipeline/config.yaml'
-        - 'revert-risk-model/model-server/.*'
+        - 'revert_risk_model/model_server/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-revertrisk-multilingual
     files:
         - '.pipeline/revertrisk/multilingual.yaml'
         - '.pipeline/config.yaml'
-        - 'revert-risk-model/model-server/.*'
+        - 'revert_risk_model/model_server/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-revertrisk-wikidata
     files:
         - '.pipeline/revertrisk/wikidata.yaml'
         - '.pipeline/config.yaml'
-        - 'revert-risk-model/model-server/.*'
+        - 'revert_risk_model/model_server/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-revscoring
