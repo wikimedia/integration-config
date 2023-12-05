@@ -28,7 +28,7 @@
     branch:
      - REL1_39:
          phpflavor: php74
-         docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.5.6-s1
+         docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.5.6-s3
          entrypoint: quibble-with-supervisord
          # Looks like the 1_35 -> 1_39 transition might be much smoother than the
          # last one, so we might be able to keep testing against master
@@ -91,7 +91,7 @@
     branch:
      - REL1_39:
          phpflavor: php74
-         docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.5.6-s1
+         docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.5.6-s3
          entrypoint: quibble-with-supervisord
     jobs:
      - quibble-fundraising-{ext}-{branch}-{phpflavor}-docker
