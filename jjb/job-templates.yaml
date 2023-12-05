@@ -499,6 +499,33 @@
      - docker-cleanup
 
 - job-template:
+    name: 'branchdeploy-{key}-node18-npm-docker'
+    node: Docker
+    triggers:
+     - zuul
+    wrappers:
+     - timeout:
+         timeout: 30
+         fail: true
+     - timestamps
+     - credentials-binding:
+          - text:
+              credential-id: BRANCHDEPLOY_AUTH_TOKEN_{key}
+              variable: BRANCHDEPLOY_AUTH_TOKEN
+          - text:
+              credential-id: BRANCHDEPLOY_SITE_ID_{key}
+              variable: BRANCHDEPLOY_SITE_ID
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node18-test:0.1.0'
+        workdir: /src
+        args: 'branch-deploy'
+    publishers:
+     # FIXME: use `- teardown` to save cache?
+     - docker-cleanup
+
+- job-template:
     name: '{name}-daily-node16-npmaudit-docker'
     node: Docker
     triggers:
@@ -752,6 +779,9 @@
         - 'branchdeploy-{key}-node16-npm-docker':
             key:
                 - wikidata-query-builder
+                - codex
+        - 'branchdeploy-{key}-node18-npm-docker':
+            key:
                 - codex
 
 - job-template:
