@@ -16,6 +16,40 @@
      - docker-cleanup
 
 - job:
+    name: 'ooui-special-node18-plus-php80-composer-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+         image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.4.0-s1
+         # 'npm run jenkins' also runs composer
+         entrypoint: /run-with-xvfb.sh
+         args: 'jenkins'
+    publishers:
+     - archive-log-allow-empty
+     # FIXME use `- teardown` to save castor cache
+     - docker-cleanup
+
+- job:
+    name: 'ooui-special-node20-plus-php80-composer-docker'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+         image: docker-registry.wikimedia.org/releng/node20-test-browser-php80-composer:0.4.0-s1
+         # 'npm run jenkins' also runs composer
+         entrypoint: /run-with-xvfb.sh
+         args: 'jenkins'
+    publishers:
+     - archive-log-allow-empty
+     # FIXME use `- teardown` to save castor cache
+     - docker-cleanup
+
+- job:
     name: 'oojs-ui-docker-publish'
     node: Docker
     concurrent: false
@@ -72,3 +106,7 @@
            node_version:
                - node16:
                    image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
+               - node18:
+                   image: docker-registry.wikimedia.org/releng/node18-test-browser:0.13.0
+               - node20:
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0
