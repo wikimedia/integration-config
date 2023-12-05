@@ -1465,6 +1465,8 @@ project-templates:
       - quibble-vendor-postgres-php74-noselenium-docker
       - quibble-vendor-mysql-php82-noselenium-docker
       - quibble-vendor-mysql-php83-noselenium-docker
+      - mwgate-node18-docker
+      - mwgate-node20-docker
 
   - name: extension-quibble-php74-or-later
     test:
@@ -1545,6 +1547,8 @@ project-templates:
       - quibble-vendor-postgres-php74-noselenium-docker
       - quibble-vendor-mysql-php82-noselenium-docker
       - quibble-vendor-mysql-php83-noselenium-docker
+      - mwgate-node18-docker
+      - mwgate-node20-docker
 
   - name: extension-quibble-php81-or-later
     test:
@@ -1623,6 +1627,8 @@ project-templates:
       - quibble-vendor-mysql-php82-noselenium-docker
       - quibble-vendor-mysql-php83-noselenium-docker
       - mwext-php81-phan-docker
+      - mwgate-node18-docker
+      - mwgate-node20-docker
 
   # Special job template that runs composer rather than than relying
   # on mediawiki/vendor for quibble.
@@ -1723,6 +1729,8 @@ project-templates:
       - quibble-composer-postgres-php74-noselenium-docker
       - quibble-composer-mysql-php82-noselenium-docker
       - quibble-composer-mysql-php83-noselenium-docker
+      - mwgate-node18-docker
+      - mwgate-node20-docker
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
@@ -1805,6 +1813,8 @@ project-templates:
       - quibble-vendor-postgres-php74-noselenium-docker
       - quibble-vendor-mysql-php82-noselenium-docker
       - quibble-vendor-mysql-php83-noselenium-docker
+      - mwgate-node18-docker
+      - mwgate-node20-docker
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
@@ -1878,6 +1888,8 @@ project-templates:
       - mwext-php74-phan-docker
       - quibble-composer-mysql-php82-noselenium-docker
       - quibble-composer-mysql-php83-noselenium-docker
+      - mwgate-node18-docker
+      - mwgate-node20-docker
 
   # Special job template that runs the "standalone" jobs - T225068
   - name: extension-quibble-only-standalone
@@ -2053,6 +2065,8 @@ project-templates:
       - quibble-vendor-postgres-php74-docker
       - quibble-vendor-mysql-php82-docker
       - quibble-vendor-mysql-php83-docker
+      - mwgate-node18-docker
+      - mwgate-node20-docker
 
   - name: skin-quibble-php74-or-later
     test:
@@ -2131,6 +2145,8 @@ project-templates:
       - quibble-vendor-postgres-php74-docker
       - quibble-vendor-mysql-php82-docker
       - quibble-vendor-mysql-php83-docker
+      - mwgate-node18-docker
+      - mwgate-node20-docker
 
   - name: skin-quibble-composer
     test:
@@ -2213,6 +2229,8 @@ project-templates:
       - quibble-composer-postgres-php74-docker
       - quibble-composer-mysql-php82-docker
       - quibble-composer-mysql-php83-docker
+      - mwgate-node18-docker
+      - mwgate-node20-docker
 
   - name: skin-coverage
     postmerge:
@@ -2227,6 +2245,9 @@ project-templates:
       - mwext-node16-rundoc-docker
     postmerge:
       - mwext-node16-docs-docker-publish
+    experimental:
+      - mwext-node18-rundoc-docker
+      - mwext-node20-rundoc-docker
 
   - name: composer-test-php74-or-later
     test:
@@ -2321,48 +2342,92 @@ project-templates:
       - generic-node16-docker
     gate-and-submit:
       - generic-node16-docker
+    experimental:
+      - generic-node18-docker
+      - generic-node20-docker
 
   - name: node18-docker
     test:
       - generic-node18-docker
     gate-and-submit:
       - generic-node18-docker
+    experimental:
+      - generic-node20-docker
+
+  - name: node20-docker
+    test:
+      - generic-node20-docker
+    gate-and-submit:
+      - generic-node20-docker
 
   - name: node16-browser-docker
     test:
       - generic-node16-browser-docker
     gate-and-submit:
       - generic-node16-browser-docker
+    experimental:
+      - generic-node18-browser-docker
+      - generic-node20-browser-docker
 
   - name: node18-browser-docker
     test:
       - generic-node18-browser-docker
     gate-and-submit:
       - generic-node18-browser-docker
+    experimental:
+      - generic-node20-browser-docker
+
+  - name: node20-browser-docker
+    test:
+      - generic-node20-browser-docker
+    gate-and-submit:
+      - generic-node20-browser-docker
 
   - name: node16-browser-webdriver-docker
     test:
       - generic-node16-browser-webdriver-docker
     gate-and-submit:
       - generic-node16-browser-webdriver-docker
+    experimental:
+      - generic-node18-browser-webdriver-docker
+      - generic-node20-browser-webdriver-docker
 
   - name: node18-browser-webdriver-docker
     test:
       - generic-node18-browser-webdriver-docker
     gate-and-submit:
       - generic-node18-browser-webdriver-docker
+    experimental:
+      - generic-node20-browser-webdriver-docker
+
+  - name: node20-browser-webdriver-docker
+    test:
+      - generic-node20-browser-webdriver-docker
+    gate-and-submit:
+      - generic-node20-browser-webdriver-docker
 
   - name: node16-rundoc-docker
     test:
       - generic-node16-rundoc-docker
     gate-and-submit:
       - generic-node16-rundoc-docker
+    experimental:
+      - generic-node18-rundoc-docker
+      - generic-node20-rundoc-docker
 
   - name: node18-rundoc-docker
     test:
       - generic-node18-rundoc-docker
     gate-and-submit:
       - generic-node18-rundoc-docker
+    experimental:
+      - generic-node20-rundoc-docker
+
+  - name: node20-rundoc-docker
+    test:
+      - generic-node20-rundoc-docker
+    gate-and-submit:
+      - generic-node20-rundoc-docker
 
   - name: node16-rundoc-docker-for-MW-branches
     test:
@@ -2389,6 +2454,9 @@ project-templates:
       - generic-node16-rundoc-docker
     gate-and-submit-wmf:
       - generic-node16-rundoc-docker
+    experimental:
+      - generic-node18-rundoc-docker
+      - generic-node20-rundoc-docker
 
   - name: node18-rundoc-docker-for-MW-branches
     test:
@@ -2415,6 +2483,34 @@ project-templates:
       - generic-node18-rundoc-docker
     gate-and-submit-wmf:
       - generic-node18-rundoc-docker
+    experimental:
+      - generic-node20-rundoc-docker
+
+  - name: node20-rundoc-docker-for-MW-branches
+    test:
+      - generic-node20-rundoc-docker
+    gate-and-submit:
+      - generic-node20-rundoc-docker
+    test-1_35:
+      - generic-node20-rundoc-docker
+    gate-and-submit-1_35:
+      - generic-node20-rundoc-docker
+    test-1_39:
+      - generic-node20-rundoc-docker
+    gate-and-submit-1_39:
+      - generic-node20-rundoc-docker
+    test-1_40:
+      - generic-node20-rundoc-docker
+    gate-and-submit-1_40:
+      - generic-node20-rundoc-docker
+    test-1_41:
+      - generic-node20-rundoc-docker
+    gate-and-submit-1_41:
+      - generic-node20-rundoc-docker
+    test-wmf:
+      - generic-node20-rundoc-docker
+    gate-and-submit-wmf:
+      - generic-node20-rundoc-docker
 
   - name: mwgate-npm
     test:
@@ -2437,6 +2533,9 @@ project-templates:
       - mwgate-node16-docker
     gate-and-submit-1_41:
       - mwgate-node16-docker
+    experimental:
+      - mwgate-node18-docker
+      - mwgate-node20-docker
 
   - name: puppet-module
     test:
@@ -2914,6 +3013,9 @@ projects:
       - fresnel-node16-browser-docker
     postmerge:
       - generic-node16-browser-coverage-docker-publish
+    experimental:
+      - fresnel-node18-browser-docker
+      - fresnel-node20-browser-docker
 
   - name: performance/navtiming
     template:
@@ -3109,6 +3211,8 @@ projects:
       - quibble-vendor-mysql-php82-docker
       # Experimental for testing 8.3 (T339349)
       - quibble-vendor-mysql-php83-docker
+      - mwgate-node18-docker
+      - mwgate-node20-docker
 
   - name: mediawiki/vendor
     template:
@@ -3920,6 +4024,9 @@ projects:
     gate-and-submit:
       - gerrit-docker
       - gerrit-node16-docker
+    experimental:
+      - gerrit-node18-docker
+      - gerrit-node20-docker
 
   - name: operations/software/gerrit/plugins/events-wikimedia
     test:
@@ -4425,6 +4532,8 @@ projects:
       - quibble-donationinterface-REL1_39-php74-docker
       - mwext-php74-phan-docker
     experimental:
+      - mwgate-node18-docker
+      - mwgate-node20-docker
       # These are the remaining parts of extension-quibble
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php80-noselenium-docker
@@ -5528,8 +5637,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  # NOTE: Not yet in Wikimedia production, but eventually headed
-  # there. Added 2020-07-01, JDF.
   - name: mediawiki/extensions/WikiLambda
     template:
       - name: in-wikimedia-production
@@ -8756,6 +8863,8 @@ projects:
       - name: node16-docker
     experimental:
       - generic-node16-docker
+      - generic-node18-docker
+      - generic-node20-docker
 
   - name: mediawiki/services/mobileapps
     template:
@@ -8965,6 +9074,8 @@ projects:
   - name: analytics/dashiki
     experimental:
       - generic-node16-docker
+      - generic-node18-docker
+      - generic-node20-docker
 
   - name: analytics/geowiki
     template:
@@ -9996,6 +10107,9 @@ projects:
       - generic-node16-browser-coverage-docker-publish
     publish:
       - generic-node16-docs-docker-publish
+    experimental:
+      - oojs-core-node18-runjenkins-docker
+      - oojs-core-node20-runjenkins-docker
 
   - name: oojs/router
     template:
@@ -10018,6 +10132,9 @@ projects:
     postmerge:
       - oojs-ui-doxygen-publish
       - oojs-ui-docker-publish
+    experimental:
+      - ooui-special-node18-plus-php80-composer-docker
+      - ooui-special-node20-plus-php80-composer-docker
 
   - name: jsdoc/wmf-theme
     template:
@@ -10035,14 +10152,14 @@ projects:
       - generic-node16-docs-docker-publish
     publish:
       - generic-node16-docs-docker-publish
+    experimental:
+      - unicodejs-node18-browser-docker
+      - unicodejs-node20-browser-docker
 
   - name: jquery-client
     template:
+      - name: node16-browser-docker
       - name: node16-rundoc-docker
-    test:
-      - generic-node16-browser-docker
-    gate-and-submit:
-      - generic-node16-browser-docker
     postmerge:
       - generic-node16-browser-coverage-docker-publish
       - generic-node16-docs-docker-publish
@@ -10079,6 +10196,9 @@ projects:
       - visualeditor-node16-browser-docker
     postmerge:
       - generic-node16-browser-coverage-docker-publish
+    experimental:
+      - visualeditor-node18-browser-docker
+      - visualeditor-node20-browser-docker
 
   - name: mediawiki/extensions/VisualEditorPlus
     template:
