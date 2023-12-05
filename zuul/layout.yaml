@@ -10055,13 +10055,13 @@ projects:
 
   - name: design/codex
     template:
-      - name: node16-browser-docker
+      - name: node18-browser-docker
     test:
-      - branchdeploy-codex-node16-npm-docker
+      - branchdeploy-codex-node18-npm-docker
     postmerge:
       - codex-docker-doc-publish
       # We want to use the special `npm run coverage` job for Codex
-      - generic-node16-browser-direct-coverage-docker-publish
+      - generic-node18-browser-direct-coverage-docker-publish
     publish:
       # Use `npm run doc-release` when publishing docs for a release tag
       - codex-docker-doc-tag-publish
