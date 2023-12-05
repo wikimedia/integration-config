@@ -157,9 +157,9 @@
                - node16:
                    image: docker-registry.wikimedia.org/releng/node16-test:0.3.0
                - node18:
-                   image: docker-registry.wikimedia.org/releng/node18-test:0.3.0
+                   image: docker-registry.wikimedia.org/releng/node18-test:0.1.0
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test:0.3.0
+                   image: docker-registry.wikimedia.org/releng/node20-test:0.1.0
 
 # Phan! (T132636)
 - job-template:
