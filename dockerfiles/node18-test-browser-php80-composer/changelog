@@ -1,3 +1,10 @@
+node18-test-browser-php80-composer (0.1.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image node18-test:
+   Don't cd /src
+
+ -- Antoine Musso <hashar@free.fr>  Thu,  7 Dec 2023 05:50:38 -0800
+
 node18-test-browser-php80-composer (0.1.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
