@@ -4212,9 +4212,6 @@ projects:
   - name: operations/software/varnish/libvmod-re2
     test: [ 'debian-glue' ]
 
-  - name: operations/software/varnish/vhtcpd
-    test: [ 'debian-glue' ]
-
   - name: operations/software/varnish/libvmod-querysort
     test: [ 'debian-glue' ]
   # End Varnish related
@@ -12031,6 +12028,10 @@ projects:
       - name: archived
 
   - name: operations/software/varnish/libvmod-netmapper
+    template:
+      - name: archived
+
+  - name: operations/software/varnish/vhtcpd
     template:
       - name: archived
 
