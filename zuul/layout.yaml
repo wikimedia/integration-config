@@ -3598,7 +3598,6 @@ projects:
   - { name: operations/debs/git-fat,                          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/golang-burrow,                    test: ['debian-glue-non-voting'] }
   - { name: operations/debs/golang-github-howeyc-fsnotify,    test: ['debian-glue-non-voting'] }
-  - { name: operations/debs/pdns-recursor,                    test: ['debian-glue'] }
   - name: operations/debs/helm
     test:
       - debian-glue-backports
@@ -3697,8 +3696,6 @@ projects:
   - { name: operations/debs/prometheus-nutcracker-exporter,    test: ['debian-glue-non-voting'] }
   - { name: operations/debs/prometheus-openldap-exporter,      test: ['debian-glue-non-voting'] }
   - { name: operations/debs/prometheus-openstack-exporter,     test: ['debian-glue-non-voting'] }
-  - { name: operations/debs/prometheus-pdns-exporter,          test: ['debian-glue-non-voting'] }
-  - { name: operations/debs/prometheus-pdns-rec-exporter,      test: ['debian-glue-non-voting'] }
   - { name: operations/debs/prometheus-php-fpm-exporter,       test: ['debian-glue-non-voting'] }
   - { name: operations/debs/prometheus-rabbitmq-exporter,      test: ['debian-glue-non-voting'] }
   - { name: operations/debs/prometheus-redis-exporter,         test: ['debian-glue-non-voting'] }
@@ -11926,6 +11923,18 @@ projects:
       - name: archived
 
   - name: operations/debs/nodepool
+    template:
+      - name: archived
+
+  - name: operations/debs/pdns-recursor
+    template:
+      - name: archived
+
+  - name: operations/debs/prometheus-pdns-exporter
+    template:
+      - name: archived
+
+  - name: operations/debs/prometheus-pdns-rec-exporter
     template:
       - name: archived
 
