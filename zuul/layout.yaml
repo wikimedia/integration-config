@@ -4196,21 +4196,6 @@ projects:
       - name: tox-docker
 
   # Varnish related - T180329
-  - name: operations/software/varnish/libvmod-header
-    template:
-      - name: debian-glue-non-voting
-  - name: operations/software/varnish/libvmod-tbf
-    template:
-      - name: debian-glue-non-voting
-  - name: operations/software/varnish/libvmod-uuid
-    template:
-      - name: debian-glue-non-voting
-  - name: operations/software/varnish/libvmod-vslp
-    template:
-      - name: debian-glue-non-voting
-  - name: operations/software/varnish/libvmod-re2
-    test: [ 'debian-glue' ]
-
   - name: operations/software/varnish/libvmod-querysort
     test: [ 'debian-glue' ]
   # End Varnish related
@@ -12030,7 +12015,27 @@ projects:
     template:
       - name: archived
 
+  - name: operations/software/varnish/libvmod-header
+    template:
+      - name: archived
+
   - name: operations/software/varnish/libvmod-netmapper
+    template:
+      - name: archived
+
+  - name: operations/software/varnish/libvmod-re2
+    template:
+      - name: archived
+
+  - name: operations/software/varnish/libvmod-tbf
+    template:
+      - name: archived
+
+  - name: operations/software/varnish/libvmod-uuid
+    template:
+      - name: archived
+
+  - name: operations/software/varnish/libvmod-vslp
     template:
       - name: archived
 
