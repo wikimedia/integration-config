@@ -3571,7 +3571,6 @@ projects:
       - debian-glue-backports
   - { name: operations/debs/cni,                              test: ['debian-glue-non-voting'] }
   - { name: operations/debs/confd,                            test: ['debian-glue-non-voting'] }
-  - { name: operations/debs/coredns,                          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/debdeploy,                        test: ['debian-glue-non-voting'] }
   - { name: operations/debs/docker-distribution,              test: ['debian-glue-non-voting'] }
   - name: operations/debs/doxygen
@@ -11916,6 +11915,10 @@ projects:
       - name: archived
 
   - name: operations/software/gerrit/plugins/barricade
+    template:
+      - name: archived
+
+  - name: operations/debs/coredns
     template:
       - name: archived
 
