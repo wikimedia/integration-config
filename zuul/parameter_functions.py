@@ -347,6 +347,7 @@ dependencies = {
                                  'BlueSpiceVisualEditorConnector'],
     'CollaborationKit': ['EventLogging', 'VisualEditor'],
     'ConfigManager': ['BlueSpiceFoundation'],
+    'ContactManager': ['PageProperties'],
     'ContainerFilter': ['VisualEditor'],
     'ContentDroplets': ['VisualEditor'],
     'ContentStabilization': ['BlueSpiceBookshelf', 'BlueSpiceFoundation',

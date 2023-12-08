@@ -6396,12 +6396,16 @@ projects:
 
   - name: mediawiki/extensions/CongressLookup
     template:
-    - name: extension-quibble
-    - name: extension-coverage
+      - name: extension-quibble
+      - name: extension-coverage
+
+  - name: mediawiki/extensions/ContactManager
+    template:
+      - name: extension-quibble
 
   - name: mediawiki/extensions/ContainerFilter
     template:
-    - name: extension-quibble-composer
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/ContentDroplets
     template:
@@ -6409,7 +6413,7 @@ projects:
 
   - name: mediawiki/extensions/ContentStabilization
     template:
-    - name: extension-quibble-composer
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/ContentTransfer
     template:
