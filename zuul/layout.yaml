@@ -3978,6 +3978,11 @@ projects:
       - name: debian-glue-non-voting
       - name: tox-docker
 
+  - name: operations/software/debmonitor-client
+    template:
+      - name: debian-glue-non-voting
+      - name: tox-docker
+
   - name: operations/software/ecs
     test:
       - ecs
