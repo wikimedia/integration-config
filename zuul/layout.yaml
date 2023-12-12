@@ -7212,6 +7212,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/MediaSpoiler
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/MediaUploader
     template:
       - name: extension-quibble
