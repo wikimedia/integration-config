@@ -2789,7 +2789,7 @@ projects:
   - name: integration/docroot
     template:
       - name: node16-docker
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-or-later
 
   - name: integration/gear
     test:
@@ -2921,6 +2921,7 @@ projects:
 
   - name: mediawiki/tools/dependency-analysis
     template:
+      # TODO: This code is likely to be archived (T350258)
       - name: composer-test-php74-to-php81
 
   - name: mediawiki/tools/grunt-cssjanus
@@ -3031,7 +3032,7 @@ projects:
 
   - name: performance/xhgui-vendor
     template:
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-or-later
 
   - name: releng/phatality
     template:
@@ -3051,7 +3052,7 @@ projects:
 
   - name: labs/tools/sonarqubebot
     template:
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-or-later
 
 #### MediaWiki itself ##########################################
 
@@ -3884,6 +3885,7 @@ projects:
 
   - name: operations/dumps/dcat
     template:
+    # Task filed requesting this been fixed (T353397)
       - name: composer-test-php74-to-php81
       - name: node16-docker
       - name: mediawiki-i18n-check
@@ -9637,6 +9639,7 @@ projects:
 
   - name: labs/tools/ipchanges
     template:
+    # Task filed requesting this been fixed (T353396)
       - name: composer-test-php74-to-php81
 
   - name: labs/tools/ipwatcher
@@ -9674,6 +9677,7 @@ projects:
 
   - name: labs/tools/nagf
     template:
+    # Task filed requesting this been fixed (T353395)
       - name: composer-test-php74-to-php81
 
   - name: labs/tools/Isa
@@ -9720,6 +9724,7 @@ projects:
 
   - name: labs/tools/meetingtimes
     template:
+    # Task filed requesting this been fixed (T353394)
       - name: composer-test-php74-to-php81
       - name: node16-docker
 
@@ -9832,7 +9837,7 @@ projects:
 
   - name: labs/tools/wikiinfo
     template:
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-or-later
 
   - name: labs/tools/wikinity
     template:
@@ -10457,6 +10462,7 @@ projects:
 
   - name: wikimedia/iegreview
     template:
+      # TODO: This code is likely to be archived (T351889)
       - name: composer-test-php74-to-php81
       - name: mediawiki-i18n-check
 
