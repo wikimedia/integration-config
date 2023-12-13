@@ -1,3 +1,9 @@
+quibble-buster (1.6.0) wikimedia; urgency=high
+
+   Update Quibble to 1.6.0
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 13 Dec 2023 16:18:10 +0100
+
 quibble-buster (1.5.6-s3) wikimedia; urgency=high
 
    Restore the removal of python-pip and python-wheel. Add python3-venv instead.
