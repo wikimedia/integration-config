@@ -3078,6 +3078,8 @@ projects:
       # Alternate php versions
       - mediawiki-quibble-vendor-mysql-php80-docker
       - mediawiki-quibble-vendor-mysql-php81-docker
+      - mediawiki-quibble-vendor-mysql-php82-docker
+      - mediawiki-quibble-vendor-mysql-php83-docker
       # Standalone run for core-only changes
       - quibble-vendor-mysql-php74-phpunit-standalone-docker
       # Phan for future version of PHP in Wikimedia production
@@ -3087,6 +3089,8 @@ projects:
       - mediawiki-quibble-vendor-mysql-php74-docker
       - mediawiki-quibble-vendor-mysql-php80-docker
       - mediawiki-quibble-vendor-mysql-php81-docker
+      - mediawiki-quibble-vendor-mysql-php82-docker
+      - mediawiki-quibble-vendor-mysql-php83-docker
       - mediawiki-quibble-composertest-php74-docker
       - mediawiki-quibble-selenium-vendor-mysql-php74-docker
       - mediawiki-quibble-apitests-vendor-php74-docker
@@ -3256,10 +3260,6 @@ projects:
       - mwgate-composer-php83-docker
       # New job in testing T74952 -- JDF 2022-10-14
       - composer-php74-assert-lock-docker
-      # Experimental for testing 8.2 (T314093)
-      - mediawiki-quibble-vendor-mysql-php82-docker
-      # Experimental for testing 8.3 (T339349)
-      - mediawiki-quibble-vendor-mysql-php83-docker
 
   # VERY EXPERIMENTAL WIKIMEDIA PRODUCTION BUILD WITH NO TESTS YET
   - name: wikimedia/production
