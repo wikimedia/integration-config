@@ -2602,12 +2602,12 @@ project-templates:
       - composer-package-php80-docker
       - composer-package-php81-docker
       - composer-package-php82-docker
+      - composer-package-php83-docker
     gate-and-submit:
       - composer-package-php74-docker
       - composer-package-php80-docker
       - composer-package-php81-docker
       - composer-package-php82-docker
-    experimental:
       - composer-package-php83-docker
     postmerge:
       - doxygen-publish
