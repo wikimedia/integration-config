@@ -1,0 +1,5 @@
+ci-bookworm (1.0.0) wikimedia; urgency=medium
+
+  * Initial release.
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 14 Dec 2023 15:33:27 +0100
