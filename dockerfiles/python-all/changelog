@@ -1,0 +1,5 @@
+python-all (0.1) wikimedia; urgency=medium
+
+  * Initial release with pyenv
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 14 Dec 2023 15:39:43 +0100

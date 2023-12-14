@@ -55,9 +55,9 @@ ARG TOX_JENKINS_OVERRIDE_SHA1=4ea7ab8845a3ed40c8a769a694f1037b68c455cf
 #   `#!/usr/bin/python` scripts to be python 2 - T345152
 # - integration/config for Zuul tests
 #
-# Since tox 4.80 requires virtualenv>=20.24.1, we use a second pip installation
-# to force the version we want. pip might triggers a non fatal error about the
-# dependency conflict but still proceeds with the installation.
+# Since tox 4.8.0 requires virtualenv>=20.24.1, we use a second pip
+# installation to force the version we want. pip might triggers a non fatal
+# error about the dependency conflict but still proceeds with the installation.
 ARG VIRTUALENV_VERSION=20.21.1
 
 ARG PIP_DISABLE_PIP_VERSION_CHECK=1

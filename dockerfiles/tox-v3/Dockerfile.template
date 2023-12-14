@@ -1,0 +1,28 @@
+FROM {{ "python-all" | image_tag }}
+
+ARG TOX_VERSION=3.21.4
+
+# Virtualenv 20.22.0 dropped support for python2 but we still need it at least
+# for:
+# - operations/puppet has python2 script and rake_modules/task_gen.rb considers
+#   `#!/usr/bin/python` scripts to be python 2 - T345152
+# - integration/config for Zuul tests
+#
+# Since tox 4.8.0 requires virtualenv>=20.24.1, we use a second pip
+# installation to force the version we want. pip might triggers a non fatal
+# error about the dependency conflict but still proceeds with the installation.
+ARG VIRTUALENV_VERSION=20.21.1
+
+USER nobody
+
+RUN pip3 install --no-cache-dir \
+        tox==${TOX_VERSION} \
+    && pip3 install --no-cache-dir \
+        virtualenv==${VIRTUALENV_VERSION} \
+    && echo "Ensuring python2.7 is usable..." \
+    && virtualenv -p python2.7 /tmp/py27-venv \
+    && rm -fR /tmp/py27-venv \
+    && rm -fR "$XDG_CACHE_HOME/pip"
+
+ENTRYPOINT ["/run.sh"]
+COPY run.sh /run.sh

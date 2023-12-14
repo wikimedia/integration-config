@@ -1,0 +1,95 @@
+##############################
+# Build pythons using pyenv  #
+##############################
+FROM {{ "ci-bookworm" | image_tag }} as build
+
+ARG TARGET_PYENV_VERSION=2.3.35
+ENV PYENV_ROOT=/opt/pyenv
+
+RUN install --owner=nobody --group=nogroup -d $PYENV_ROOT
+RUN ln -s /opt/pyenv/pyenv-$TARGET_PYENV_VERSION/bin/pyenv /usr/local/bin/pyenv
+
+# See prerequisites at
+# https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+{% set python_build_deps -%}
+curl
+gcc
+libbz2-dev
+libc6-dev
+libffi-dev
+liblzma-dev
+libncursesw5-dev
+libreadline-dev
+libsqlite3-dev
+libssl-dev
+libxml2-dev
+libxmlsec1-dev
+make
+patch
+unzip
+xz-utils
+zlib1g-dev
+{%- endset -%}
+RUN {{ python_build_deps | apt_install }}
+
+USER nobody
+# Releases page: https://github.com/pyenv/pyenv/releases
+RUN curl --silent --fail --location \
+        --output /tmp/pyenv.zip \
+        https://github.com/pyenv/pyenv/archive/refs/tags/v${TARGET_PYENV_VERSION}.zip \
+    && unzip -q /tmp/pyenv.zip -d $PYENV_ROOT \
+    && rm /tmp/pyenv.zip
+
+RUN pyenv install   2.7 3.7 3.8 3.9 3.10 3.11 3.12 \
+    && pyenv global 2.7 3.7 3.8 3.9 3.10 3.11 3.12 \
+    && pyenv versions
+# NOTE: pypy is installed from the Debian package
+
+#####################
+# Run image         #
+#####################
+FROM {{ "ci-bookworm" | image_tag }}
+
+ARG PIP_DISABLE_PIP_VERSION_CHECK=1
+ENV PYENV_ROOT=/opt/pyenv
+
+{% set python_run_deps -%}
+libbz2-1.0
+libc6
+libffi8
+liblzma5
+libncursesw5
+libreadline8
+libsqlite3-0
+libssl3
+libxml2
+libxmlsec1
+zlib1g
+{% endset %}
+{% set misc_deps -%}
+pypy3
+gcc
+g++
+libc-dev
+make
+default-libmysqlclient-dev
+libssl-dev
+libcurl4-openssl-dev
+gettext
+shellcheck
+libffi-dev
+libpq-dev
+librdkafka-dev
+libldap2-dev
+libsasl2-dev
+libexiv2-dev
+libboost-python-dev
+bats
+{% endset %}
+RUN {{ (python_run_deps + misc_deps) | apt_install }}
+
+COPY --from=build /opt/pyenv /opt/pyenv
+ENV PATH "$PYENV_ROOT/shims:$PATH"
+
+USER nobody
+WORKDIR /src

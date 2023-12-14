@@ -1,0 +1,7 @@
+tox-v3 (0.1) wikimedia; urgency=medium
+
+  * Initial release based on python-all image to provide multiple python3
+    versions.
+  * Use the same entry point as the old tox-buster image.
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 10 Jan 2024 14:37:18 +0100
