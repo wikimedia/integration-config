@@ -2840,6 +2840,8 @@ projects:
   - name: integration/tox-jenkins-override
     template:
       - name: tox-docker
+    postmerge:
+      - integration-tox-jenkins-override-tox-publish
 
   - name: integration/tox-wikimedia
     template:

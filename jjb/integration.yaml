@@ -168,6 +168,14 @@
             timeout: 50  # minutes, Archiva is slow T273086
 
 - project:
+    name: integration-tox-jenkins-override
+    jobs:
+        - '{name}-tox-publish':
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3
+            docsrc: 'doc/build/html'
+            docdest: tox-jenkins-override
+
+- project:
     name: 'integration-quibble'
     jobs:
         - '{name}-tox-docker':
