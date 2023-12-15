@@ -2789,7 +2789,7 @@ projects:
   - name: integration/docroot
     template:
       - name: node16-docker
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php81
 
   - name: integration/gear
     test:
