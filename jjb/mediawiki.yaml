@@ -689,7 +689,7 @@
 - project:
     name: mwcore-codehealth
     packages-source: composer
-    quibble_args: '--skip-install --commands=mediawiki-coverage'
+    quibble_args: '--commands=mediawiki-coverage'
     database: mysql
     jobs:
       - mwcore-codehealth-{name}:
@@ -850,7 +850,7 @@
         volumes:
             cover: /workspace/cover
             /srv/git: /srv/git:ro
-        args: '--packages-source "{packages-source}" --git-parallel=8 --skip-install --commands=mwext-phpunit-coverage'
+        args: '--packages-source "{packages-source}" --git-parallel=8 --commands=mwext-phpunit-coverage'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
     #
