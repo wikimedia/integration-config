@@ -10314,11 +10314,11 @@ projects:
 
   - name: mediawiki/gadgets/CVNSimpleOverlay
     template:
-      - name: node16-docker
+      - name: node20-docker
 
   - name: mediawiki/gadgets/WhatLeavesHere
     template:
-      - name: node16-docker
+      - name: node20-docker
 
   - name: react.i18n
     template:
