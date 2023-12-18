@@ -3397,7 +3397,6 @@ projects:
       - debian-glue-backports
     gate-and-submit:
       - debian-glue-backports
-  - { name: operations/debs/dnsdist,                          test: ['debian-glue'] }
   - { name: operations/debs/druid,                            test: ['debian-glue-non-voting'] }
   - { name: operations/debs/dynomite,                         test: ['debian-glue-non-voting'] }
   - { name: operations/debs/envoyproxy,                       test: ['debian-glue-non-voting'] }
@@ -11730,6 +11729,10 @@ projects:
       - name: archived
 
   - name: operations/debs/coredns
+    template:
+      - name: archived
+
+  - name: operations/debs/dnsdist
     template:
       - name: archived
 
