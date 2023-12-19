@@ -5305,27 +5305,33 @@ projects:
     test-1_39:
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mwext-php74-phan-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php74-phan-docker
     gate-and-submit-1_39:
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mwext-php74-phan-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php74-phan-docker
     test-1_40:
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mwext-php74-phan-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php74-phan-docker
     gate-and-submit-1_40:
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mwext-php74-phan-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php74-phan-docker
     test-1_41:
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mwext-php74-phan-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php74-phan-docker
     gate-and-submit-1_41:
       - wikibase-client-docker
       - wikibase-repo-docker
-      - mwext-php74-phan-docker
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php74-phan-docker
     gate-and-submit-wmf: *mediawiki-extensions-wikibase-gate-and-submit
     postmerge:
       - mwext-doxygen-publish
