@@ -1,3 +1,9 @@
+ci-bookworm (1.1.0) wikimedia; urgency=high
+
+   Add rsync to ci-bookworm image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:02 -0800
+
 ci-bookworm (1.0.0) wikimedia; urgency=medium
 
   * Initial release.

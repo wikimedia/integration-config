@@ -1,3 +1,10 @@
+composer-scratch (2.6.4-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-buster:
+   Add rsync to ci-buster image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:00 -0800
+
 composer-scratch (2.6.4) wikimedia; urgency=high
 
    Upgrade composer from 2.5.1 to 2.6.4

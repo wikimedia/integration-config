@@ -1,3 +1,10 @@
+java17 (0.1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Add rsync to ci-bullseye image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:01 -0800
+
 java17 (0.1) wikimedia; urgency=medium
 
   * OpenJDK 17 based on Debian Bullseye - T350569

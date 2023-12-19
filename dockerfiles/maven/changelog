@@ -1,3 +1,10 @@
+maven (3.5.2-1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-buster:
+   Add rsync to ci-buster image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:00 -0800
+
 maven (3.5.2-1) wikimedia; urgency=medium
 
   * Scratch image containing Apache Maven 3.5.2 as well as helpers. Borowed

@@ -1,3 +1,10 @@
+zuul-cloner (0.3.0-s6) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-buster:
+   Add rsync to ci-buster image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:00 -0800
+
 zuul-cloner (0.3.0-s5) wikimedia; urgency=high
 
    Refresh for update in parent image tox-buster:

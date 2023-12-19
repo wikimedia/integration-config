@@ -1,3 +1,10 @@
+civicrm (0.4.2-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Add rsync to ci-bullseye image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:02 -0800
+
 civicrm (0.4.2) wikimedia; urgency=medium
 
   * Add sqlite3 php extension.

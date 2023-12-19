@@ -1,3 +1,10 @@
+quibble-buster-php73 (1.6.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-buster + ci-bullseye:
+   Add rsync to ci-buster image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:00 -0800
+
 quibble-buster-php73 (1.6.0) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-buster:

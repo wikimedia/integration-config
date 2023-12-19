@@ -1,3 +1,10 @@
+commit-message-validator (2.0.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Add rsync to ci-bullseye image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:01 -0800
+
 commit-message-validator (2.0.0) wikimedia; urgency=high
 
    Use commit-message-validator==2.0.0

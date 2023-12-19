@@ -1,3 +1,10 @@
+sonar-scanner (4.6.0.2311-7-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-buster + ci-bullseye:
+   Add rsync to ci-buster image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:00 -0800
+
 sonar-scanner (4.6.0.2311-7) wikimedia; urgency=medium
 
   * Upgrade from Java 11 to Java 17 (still based on Bullseye) - T349983

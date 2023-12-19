@@ -1,3 +1,10 @@
+node20-test-browser-php80-composer (0.1.0-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-buster + ci-bullseye:
+   Add rsync to ci-buster image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:22:59 -0800
+
 node20-test-browser-php80-composer (0.1.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image node20-test:

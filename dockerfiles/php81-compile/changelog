@@ -1,3 +1,10 @@
+php81-compile (0.0.4-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Add rsync to ci-bullseye image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:02 -0800
+
 php81-compile (0.0.4) wikimedia; urgency=medium
 
   * Fix typo CLFAGS > CFLAGS

@@ -1,3 +1,9 @@
+ci-bullseye (0.3.0) wikimedia; urgency=high
+
+   Add rsync to ci-bullseye image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:02 -0800
+
 ci-bullseye (0.2.0-s1) wikimedia; urgency=high
 
    Rebuild to add security updates apt repositories

@@ -1,3 +1,10 @@
+doxygen (1.9.8-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Add rsync to ci-bullseye image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:02 -0800
+
 doxygen (1.9.8) wikimedia; urgency=high
 
    * Upgrade Doxygen to 1.9.8.
