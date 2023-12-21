@@ -8234,6 +8234,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/SubpageNavigation
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/SubpageWatchlist
     template:
       - name: extension-quibble
