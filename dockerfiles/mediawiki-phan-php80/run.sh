@@ -2,4 +2,9 @@
 
 set -euxo pipefail
 
-/run-generic.sh "/mediawiki/$THING_SUBNAME" "$@"
+SOURCE_ROOT=/mediawiki
+if [ "${GITLAB_CI:-}" ]; then
+    SOURCE_ROOT=/src
+fi
+
+/run-generic.sh "$SOURCE_ROOT/$THING_SUBNAME" "$@"
