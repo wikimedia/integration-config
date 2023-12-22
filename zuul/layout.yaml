@@ -4165,10 +4165,6 @@ projects:
       - name: debian-glue
       - name: tox-docker
 
-  - name: operations/software/hhvm_exporter
-    template:
-      - name: tox-docker
-
   - name: operations/software/wmfmariadbpy
     template:
       - name: tox-docker
@@ -11911,6 +11907,10 @@ projects:
   - name: operations/software/acme-chief
     template:
       - name: archived
+
+  - name: operations/software/hhvm_exporter
+    template:
+      - name: archived # T343707
 
   - name: operations/software/certcentral
     template:
