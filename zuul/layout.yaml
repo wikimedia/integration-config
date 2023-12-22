@@ -1002,6 +1002,7 @@ jobs:
         - '.pipeline/config.yaml'
         - 'revert_risk_model/model_server/.*'
         - 'python/.*\.py$'
+        - 'python/.*\.yaml$'
 
   - name: ^trigger-inference-services-pipeline-revertrisk-multilingual
     files:
@@ -1009,6 +1010,7 @@ jobs:
         - '.pipeline/config.yaml'
         - 'revert_risk_model/model_server/.*'
         - 'python/.*\.py$'
+        - 'python/.*\.yaml$'
 
   - name: ^trigger-inference-services-pipeline-revertrisk-wikidata
     files:
@@ -1016,6 +1018,7 @@ jobs:
         - '.pipeline/config.yaml'
         - 'revert_risk_model/model_server/.*'
         - 'python/.*\.py$'
+        - 'python/.*\.yaml$'
 
   - name: ^trigger-inference-services-pipeline-revscoring
     files:
