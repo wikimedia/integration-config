@@ -5751,6 +5751,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/Adiutor
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/AdminLinks
     template:
       - name: extension-quibble
