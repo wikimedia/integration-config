@@ -50,17 +50,6 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/cldr',
         ])
 
-    # Enable composer merge plugin in vendor and point it to mediawiki
-    # composer.json. That let us easily merge autoload-dev section and thus
-    # complete the autoloader in mw-fetch-composer-dev.js
-    #
-    # T158674
-    if (
-        'composer' not in job.name
-        and params['ZUUL_PROJECT'].startswith('mediawiki/')
-    ):
-        params['MW_COMPOSER_MERGE_MW_IN_VENDOR'] = 1
-
     # parallel-lint can be slow
     if params['ZUUL_PROJECT'].startswith('mediawiki/vendor'):
         params['COMPOSER_PROCESS_TIMEOUT'] = 600
