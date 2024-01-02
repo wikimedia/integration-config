@@ -1,3 +1,10 @@
+quibble-buster-php80 (1.6.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-buster:
+   Add firefox-esr (match node20-test-browser)
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Tue,  2 Jan 2024 23:59:22 +0000
+
 quibble-buster-php80 (1.6.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster + ci-bullseye:

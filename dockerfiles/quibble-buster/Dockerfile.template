@@ -89,6 +89,7 @@ tidy
 {% set browsers_deps|replace('\n', ' ') -%}
 chromium-driver
 chromium
+firefox-esr
 ffmpeg
 libgtk-3-0
 xvfb
