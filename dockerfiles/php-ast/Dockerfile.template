@@ -8,8 +8,8 @@ RUN install --owner=nobody --group=nogroup --directory /srv/modules
 USER nobody
 RUN git clone https://github.com/nikic/php-ast /srv/php-ast && \
     cd /srv/php-ast && \
-    # v1.1.0, use sha1 for immutability
-    git checkout 26880c1ec604b6bdf4e06563305d3bbc224a2756 && \
+    # v1.1.1, use sha1 for immutability
+    git checkout a64955106f155788e1c2ac3cbbf1d9c71281dd9c && \
     phpize7.4 && ./configure --with-php-config=php-config7.4 && make && \
     cp modules/ast.so /srv/modules/ast_74.so && \
     git clean -fdx && \
