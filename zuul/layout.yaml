@@ -3977,14 +3977,6 @@ projects:
       - name: debian-glue
       - name: tox-docker
 
-  - name: operations/software/wmfmariadbpy
-    template:
-      - name: tox-docker
-
-  - name: operations/software/wmfdb
-    template:
-      - name: tox-docker
-
   - name: operations/software/bernard
     template:
       - name: tox-docker
@@ -3998,10 +3990,6 @@ projects:
       - transferpy-tox-publish
     publish:
       - transferpy-tox-tag-publish
-
-  - name: operations/software/wmfbackups
-    template:
-      - name: tox-docker
 
   - name: operations/software/mediabackups
     template:
@@ -11842,6 +11830,18 @@ projects:
   - name: operations/software/brrd
     template:
       - name: archived
+
+  - name: operations/software/wmfbackups
+    template:
+      - name: archived # T343707
+
+  - name: operations/software/wmfmariadbpy
+    template:
+      - name: archived # T343707
+
+  - name: operations/software/wmfdb
+    template:
+      - name: archived # T343707
 
   - name: operations/software/varnish/libvmod-header
     template:
