@@ -1,3 +1,9 @@
+operations-puppet (0.9.1) wikimedia; urgency=medium
+
+  * Rebuild to grab, puppet-lint-wmf_styleguide-check (1.1.4)
+
+ -- Jesse Hathaway <jesse@mbuki-mvuki.org>  Fri, 05 Jan 2024 11:46:03 -0600
+
 operations-puppet (0.9.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:
