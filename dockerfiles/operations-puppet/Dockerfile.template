@@ -1,11 +1,11 @@
-FROM {{ "ci-buster" | image_tag }}
+FROM {{ "ci-bullseye" | image_tag }}
 
 ENV PUPPET_DIR='/srv/workspace/puppet'
 
 {% set pkgs_to_install = """build-essential bundler curl jq rubygems-integration \
-rake ruby ruby-dev ca-certificates default-libmysqlclient-dev mtail=3.0.0~rc35-3+wmf3 \
-isc-dhcp-server unzip lua-busted file python3-dev python3-pip python-dev python-pip \
-python3-wheel python-wheel python3-ldap systemd shellcheck envoyproxy"""
+rake ruby ruby-dev ca-certificates default-libmysqlclient-dev mtail \
+isc-dhcp-server unzip lua-busted file python3-dev python3-pip python3-dev python3-pip \
+python3-wheel python3-ldap systemd shellcheck envoyproxy"""
 %}
 
 ARG PIP_DISABLE_PIP_VERSION_CHECK=1
@@ -17,14 +17,17 @@ ARG TOX_VERSION=4.8.0
 # Virtualenv 20.22.0 dropped support for python2 but operations/puppet still
 # has python2 script and rake_modules/task_gen.rb considers `#!/usr/bin/python`
 # scripts to be python 2 - T345152
+# run `git grep -P '^#.*bin/python(2|$)'` to find remaining scripts
 ARG VIRTUALENV_VERSION=20.21.1
 
 USER root
 RUN {{ pkgs_to_install | apt_install }} \
     && pip3 install --no-cache-dir \
         setuptools \
-        virtualenv==${VIRTUALENV_VERSION} \
         tox==${TOX_VERSION} \
+    && pip3 install --no-cache-dir \
+        # TODO: Remove once we no longer need to pin virtualenv and tox
+        virtualenv==${VIRTUALENV_VERSION} \
     && rm -fR "$XDG_CACHE_HOME/pip" \
     && install --owner=nobody --group=nogroup --directory /srv/workspace
 
