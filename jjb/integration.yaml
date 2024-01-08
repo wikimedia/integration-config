@@ -120,7 +120,7 @@
     builders:
       - setup
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0
+          image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0-s3
           entrypoint: bash
           args: '{quibble_args}'
           workdir: /src

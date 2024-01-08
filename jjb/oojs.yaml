@@ -6,7 +6,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node16-test-browser-php80-composer:0.4.0-s1
+         image: docker-registry.wikimedia.org/releng/node16-test-browser-php80-composer:0.4.0-s4
          # 'npm run jenkins' also runs composer
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
@@ -23,7 +23,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.1.0-s1
+         image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.1.0-s5
          # 'npm run jenkins' also runs composer
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
@@ -40,7 +40,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node20-test-browser-php80-composer:0.1.0-s1
+         image: docker-registry.wikimedia.org/releng/node20-test-browser-php80-composer:0.1.0-s5
          # 'npm run jenkins' also runs composer
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
@@ -58,7 +58,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node16-test-browser-php80-composer:0.4.0-s1
+         image: docker-registry.wikimedia.org/releng/node16-test-browser-php80-composer:0.4.0-s4
          # npm run-script jenkins runs 'npm test' and 'npm run doc'
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
@@ -105,7 +105,7 @@
            script: 'jenkins'
            node_version:
                - node16:
-                   image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
+                   image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0-s2
                - node18:
                    image: docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0
                - node20:

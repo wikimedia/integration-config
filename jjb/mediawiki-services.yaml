@@ -25,7 +25,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2'
         args: 'periodic'
     publishers:
      - irc-wikimedia-infrastructure

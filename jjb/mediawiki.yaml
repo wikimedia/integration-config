@@ -22,7 +22,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2'
         args: 'doc'
      - doc-publish:
            docsrc: 'src/docs/js'
@@ -141,21 +141,21 @@
         - '{name}-composer-{phpflavor}-docker':
             phpflavor:
                 - php73:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php73:0.3.1-s1
+                    image: docker-registry.wikimedia.org/releng/composer-test-php73:0.3.1-s3
                 - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.2-s1
+                    image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.2-s4
                 - php80:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.1-s1
+                    image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.1-s4
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.2-s1
+                    image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.2-s4
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php82:0.1.1-s1
+                    image: docker-registry.wikimedia.org/releng/composer-test-php82:0.1.1-s4
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php83:0.0.1
+                    image: docker-registry.wikimedia.org/releng/composer-test-php83:0.0.1-s3
         - '{name}-{node_version}-docker':
            node_version:
                - node16:
-                   image: docker-registry.wikimedia.org/releng/node16-test:0.3.0
+                   image: docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2
                - node18:
                    image: docker-registry.wikimedia.org/releng/node18-test:0.1.0
                - node20:
@@ -208,17 +208,17 @@
     name: mediawiki-core_phan_jobs
     php:
         - php73:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php73:0.4.1-s1
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php73:0.3.2-s1
+            composer_image: docker-registry.wikimedia.org/releng/composer-php73:0.4.1-s3
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php73:0.3.2-s4
         - php74:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.2-s1
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.2-s1
+            composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.2-s4
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.2-s5
         - php80:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s19
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.2-s12
+            composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.2-s22
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.2-s16
         - php81:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.2-s1
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.3-s1
+            composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.2-s4
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.3-s5
 
     jobs:
         - mediawiki-core-{php}-phan-docker
@@ -430,7 +430,7 @@
         - api-testing-{database}-{php}-docker:
             php:
                 - php74:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0-s3
             packages-source: vendor
             database:
                 - mysql
@@ -521,7 +521,7 @@
         - docker-log-dir
         - docker-src-dir
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.6.0
+            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.6.0-s3
             entrypoint: quibble-with-supervisord
             options: '--tmpfs /workspace/db:size=320M'
             volumes:
@@ -744,7 +744,7 @@
     - docker-src-dir
     - docker-castor-load
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.6.0
+        image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.6.0-s3
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -843,7 +843,7 @@
     - docker-wipe-dir:
         dir: 'cover'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.6.0
+        image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.6.0-s3
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -858,7 +858,7 @@
     # mediawiki/services/parsoid (T321837)
     #
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/node16-test:0.3.0
+        image: docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2
         options: '--volume "$(pwd)"/src/"$THING_SUBNAME":/src'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
@@ -981,7 +981,7 @@
 
 - job-group:
     name: mediawiki-coverage-jobs
-    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.6.0
+    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.6.0-s3
     entrypoint: quibble-with-supervisord
     jobs:
         - mwcore-phpunit-coverage-patch:
@@ -1017,17 +1017,17 @@
         - sqlite
     php:
         - php73:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.6.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php73:1.6.0-s3
         - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0-s3
         - php80:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.6.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.6.0-s3
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.6.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.6.0-s3
         - php82:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php82:1.6.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php82:1.6.0-s3
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php83:1.6.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php83:1.6.0-s3
     jobs:
         - quibble-{packages-source}-{database}-{php}-docker
         - quibble-{packages-source}-{database}-{php}-noselenium-docker
@@ -1040,7 +1040,7 @@
         - mediawiki-quibble-apitests-{packages-source}-{php}-docker:
             database: 'mysql'
         - mediawiki-phpbench-patch-docker:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0-s3
             entrypoint: quibble-with-supervisord
             packages-source: vendor
             database: mysql
@@ -1059,10 +1059,10 @@
     # And only php7.4 and php8.1
     php:
         - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0-s3
             entrypoint: quibble-with-supervisord
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.6.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.6.0-s3
             entrypoint: quibble-with-supervisord
     jobs:
         - wmf-quibble-vendor-mysql-{php}-docker
@@ -1082,7 +1082,7 @@
 
 - project:
     name: wikibase
-    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0
+    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0-s3
     entrypoint: quibble-with-supervisord
     packages-source: composer
     kind:

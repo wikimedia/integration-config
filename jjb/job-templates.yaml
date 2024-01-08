@@ -491,7 +491,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2'
         workdir: /src
         args: 'branch-deploy'
     publishers:
@@ -752,7 +752,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0'
+        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -796,7 +796,7 @@
     name: 'generic'
     node_version:
         - node16:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
+            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0-s2
         - node18:
             image: docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0
         - node20:
@@ -813,7 +813,7 @@
         - '{name}-{node_version}-docker':
             node_version: &node_without_browsers
                 - node16:
-                    image: docker-registry.wikimedia.org/releng/node16-test:0.3.0
+                    image: docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2
                 - node18:
                     image: docker-registry.wikimedia.org/releng/node18-test:0.1.0
                 - node20:
@@ -830,7 +830,7 @@
            script: 'doc'
            node_version:
                - node16:
-                   image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0
+                   image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0-s2
                - node18:
                    image: docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0
                - node20:
@@ -852,7 +852,7 @@
 - job-template:
     name: 'selenium-daily-{sitename}-{project}'
     node: Docker
-    docker_image_var: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0'
+    docker_image_var: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0-s2'
     triggers:
      - timed: '@daily'
     parameters:
