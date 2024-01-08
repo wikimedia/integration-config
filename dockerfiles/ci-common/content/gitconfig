@@ -1,4 +1,6 @@
 [protocol]
     version = 2
+[safe]
+    directory = *
 [submodule]
     fetchJobs = 4

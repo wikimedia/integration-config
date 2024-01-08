@@ -1,3 +1,10 @@
+tox-pywikibot (4.8.0-3-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-common:
+   Disable git safe.directory - T354409
+
+ -- Antoine Musso <hashar@free.fr>  Mon,  8 Jan 2024 10:13:31 +0100
+
 tox-pywikibot (4.8.0-3-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster:

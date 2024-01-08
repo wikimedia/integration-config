@@ -1,3 +1,10 @@
+mediawiki-phan-taint-check-demo (0.2.0-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-common:
+   Disable git safe.directory - T354409
+
+ -- Antoine Musso <hashar@free.fr>  Mon,  8 Jan 2024 10:13:31 +0100
+
 mediawiki-phan-taint-check-demo (0.2.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster + ci-bullseye:

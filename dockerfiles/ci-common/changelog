@@ -1,3 +1,9 @@
+ci-common (0.5) wikimedia; urgency=high
+
+   Disable git safe.directory - T354409
+
+ -- Antoine Musso <hashar@free.fr>  Mon,  8 Jan 2024 10:13:31 +0100
+
 ci-common (0.4) wikimedia; urgency=high
 
    Add a bypass for the ci-src-setup script (T274347)
