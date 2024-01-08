@@ -1078,10 +1078,6 @@ jobs:
   - name: mwgate-node16-docker
     queue-name: mediawiki
 
-  - name: lintr-docker
-    files:
-      - '^.*\.R$'
-
   # Some rake jobs should trigger regardless of affected files:
   - name: mediawiki-vagrant-ruby2.5-rake-docker
     files:
@@ -8940,45 +8936,6 @@ projects:
     gate-and-submit:
       - noop
 
-  - name: analytics/wmde/WDCM
-    test:
-      - noop
-      - lintr-docker-non-voting
-    gate-and-submit:
-      - noop
-    experimental:
-      - lintr-docker
-
-  - name: analytics/wmde/WDCM-packages
-    test:
-      - noop
-    gate-and-submit:
-      - noop
-
-  - name: analytics/wmde/WDCM-Overview-Dashboard
-    test:
-      - noop
-    gate-and-submit:
-      - noop
-
-  - name: analytics/wmde/WDCM-Semantics-Dashboard
-    test:
-      - noop
-    gate-and-submit:
-      - noop
-
-  - name: analytics/wmde/WDCM-Usage-Dashboard
-    test:
-      - noop
-    gate-and-submit:
-      - noop
-
-  - name: analytics/wmde/WDCM-ShinyServerFrontPage
-    test:
-      - noop
-    gate-and-submit:
-      - noop
-
   - name: node-rdkafka-statsd
     test:
       - trigger-node-rdkafka-statsd-pipeline-test
@@ -10310,6 +10267,58 @@ projects:
   - name: analytics/datahub
     template:
       - name: archived
+
+  - name: analytics/wmde/WDCM
+    template:
+      - name: archived # T354534
+
+  - name: analytics/wmde/WDCM-Biases-Dashboard
+    template:
+      - name: archived # T354534
+
+  - name: analytics/wmde/WDCM-GeoDashboard
+    template:
+      - name: archived # T354534
+
+  - name: analytics/wmde/WDCM-Journal
+    template:
+      - name: archived # T354534
+
+  - name: analytics/wmde/WDCM-Overview-Dashboard
+    template:
+      - name: archived # T354534
+
+  - name: analytics/wmde/WDCM-packages
+    template:
+      - name: archived # T354534
+
+  - name: analytics/wmde/WDCM-Semantics-Dashboard
+    template:
+      - name: archived # T354534
+
+  - name: analytics/wmde/WDCM-ShinyServerFrontPage
+    template:
+      - name: archived # T354534
+
+  - name: analytics/wmde/WDCM-SiteLinks-Dashboard
+    template:
+      - name: archived # T354534
+
+  - name: analytics/wmde/WDCM-Structure-Dashboard
+    template:
+      - name: archived # T354534
+
+  - name: analytics/wmde/WDCM-Titles-Dashboard
+    template:
+      - name: archived # T354534
+
+  - name: analytics/wmde/WDCM-Usage-Dashboard
+    template:
+      - name: archived # T354534
+
+  - name: analytics/wmde/WDCM-WikipediaSemantics-Dashboard
+    template:
+      - name: archived # T354534
 
   - name: analytics/wikistats
     template:
