@@ -11,7 +11,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/doxygen:1.9.8
+         image: docker-registry.wikimedia.org/releng/doxygen:1.9.8-s2
      - doc-publish:
         docsrc: 'src/doc/html'
         docdest: '$DOC_PROJECT/$DOC_SUBPATH'
@@ -81,9 +81,9 @@
                - node16:
                    image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0-s2
                - node18:
-                   image: docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0
+                   image: docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0-s3
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0-s3
            name:
                - fresnel
                - unicodejs
@@ -93,9 +93,9 @@
                 - node16:
                     image: docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2
                 - node18:
-                    image: docker-registry.wikimedia.org/releng/node18-test:0.1.0
+                    image: docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2
                 - node20:
-                    image: docker-registry.wikimedia.org/releng/node20-test:0.1.0
+                    image: docker-registry.wikimedia.org/releng/node20-test:0.2.0-s2
             name:
                - gerrit
 
@@ -168,7 +168,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/shellcheck:0.8.0-1
+         image: docker-registry.wikimedia.org/releng/shellcheck:0.8.0-1-s2
     publishers:
      - docker-cleanup
 

@@ -21,7 +21,7 @@
          days-to-keep: 15
     builders:
      - docker-run:
-         image: docker-registry.wikimedia.org/releng/curl:0.1.1
+         image: docker-registry.wikimedia.org/releng/curl:0.1.1-s2
          args: '--fail --silent --show-error --max-time 10 https://wikibugs.toolforge.org/pull.php'
     publishers:
      - docker-cleanup
@@ -36,7 +36,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/dotnet-mono612:0.1.0
+         image: docker-registry.wikimedia.org/releng/dotnet-mono612:0.1.0-s2
          entrypoint: /usr/bin/msbuild
          args: src/CVNBot.sln /p:Configuration=Debug
     publishers:

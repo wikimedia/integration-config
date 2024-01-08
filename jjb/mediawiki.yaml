@@ -45,7 +45,7 @@
         - shell: |
             echo -e '<?php\n$wgServer = "http://127.0.0.1";\n' > src/LocalSettings.php
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/doxygen:1.9.8
+            image: docker-registry.wikimedia.org/releng/doxygen:1.9.8-s2
             entrypoint: /usr/bin/php
             workdir: /src
             args: |
@@ -97,7 +97,7 @@
         - shell: |
             echo -e '<?php\n$wgServer = "http://127.0.0.1";\n' > src/LocalSettings.php
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/doxygen:1.9.8
+            image: docker-registry.wikimedia.org/releng/doxygen:1.9.8-s2
             entrypoint: /usr/bin/php
             workdir: /src
             args: |
@@ -157,9 +157,9 @@
                - node16:
                    image: docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2
                - node18:
-                   image: docker-registry.wikimedia.org/releng/node18-test:0.1.0
+                   image: docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test:0.1.0
+                   image: docker-registry.wikimedia.org/releng/node20-test:0.2.0-s2
 
 # Phan! (T132636)
 - job-template:
@@ -756,7 +756,7 @@
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-7
+        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-7-s2
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'
@@ -868,7 +868,7 @@
           sed -ie "s#/src/#/workspace/src/$THING_SUBNAME/#g" src/"$THING_SUBNAME"/coverage/lcov.info
         fi
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-7
+        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-7-s2
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'

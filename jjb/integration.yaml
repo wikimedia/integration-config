@@ -44,7 +44,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: 'docker-registry.wikimedia.org/releng/php74:0.5.1'
+         image: 'docker-registry.wikimedia.org/releng/php74:0.5.1-s3'
          args: '/src/vendor/bin/composer --version'
     publishers:
      - docker-cleanup
@@ -154,16 +154,16 @@
     name: gearman-java
     jobs:
         - '{name}-maven-java8-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java8:1.1.0
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java8:1.1.0-s2
             maven_path: '/run-with-gearmand.sh'
             timeout: 25  # minutes, Archiva is slow T273086
         - '{name}-maven-java11-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s1
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s3
             maven_path: '/run-with-gearmand.sh'
             timeout: 25  # minutes, Archiva is slow T273086
         - '{name}-maven-java11-docker-site-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s1
-            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s1
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s3
+            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s3
             maven_path: '/run-with-gearmand.sh'
             timeout: 50  # minutes, Archiva is slow T273086
 

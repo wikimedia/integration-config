@@ -65,7 +65,7 @@
       - docker-ci-src-setup-simple
       # Create a git remote since ci-src-setup-simple only fetches
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/jar-updater:0.0.7-s1
+          image: docker-registry.wikimedia.org/releng/jar-updater:0.0.7-s3
           entrypoint: git
           args: remote add origin "https://gerrit.wikimedia.org/r/$ZUUL_PROJECT"
       # The config-file-provider has the file created by the jenkins-slave and
@@ -81,7 +81,7 @@
               EMAIL: maven-release-user@wikimedia.org
           options: >-
               -v "$NETRC_FILE":/nonexistent/.netrc:ro
-          image: docker-registry.wikimedia.org/releng/jar-updater:0.0.7-s1
+          image: docker-registry.wikimedia.org/releng/jar-updater:0.0.7-s3
           args: >-
               -v "$RELEASE_VERSION"
               -u 'maven-release-user'
