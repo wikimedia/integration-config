@@ -15,7 +15,7 @@
             projects: >
                 integration/config
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3
+            image: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s2
             entrypoint: '/src/integration/config/{entrypoint}'
             workdir: /src/integration/config
     publishers:
@@ -75,7 +75,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3
+         image: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s2
          args: '-e qa -- --xunit-file=/log/junit-qa.xml'
     publishers:
      - archive-log-dir
@@ -107,7 +107,7 @@
     name: 'integration-pipelinelib'
     jobs:
      - '{name}-docker-doc-publish':
-         image: docker-registry.wikimedia.org/releng/gradle:4.4.1
+         image: docker-registry.wikimedia.org/releng/gradle:4.4.1-s2
          args: 'groovydoc'
          docsrc: 'src/build/docs/groovydoc'
          docdest: 'pipelinelib'
@@ -171,7 +171,7 @@
     name: integration-tox-jenkins-override
     jobs:
         - '{name}-tox-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s2
             docsrc: 'doc/build/html'
             docdest: tox-jenkins-override
 
@@ -179,9 +179,9 @@
     name: 'integration-quibble'
     jobs:
         - '{name}-tox-docker':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s2
         - '{name}-tox-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s2
             docsrc: 'doc/build/html'
             docdest: 'quibble'
         - 'integration-quibble-fullrun-{type}':
