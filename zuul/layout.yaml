@@ -5446,6 +5446,14 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/WikimediaCampaignEvents
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+      - name: commit-message-validator
+
   - name: mediawiki/extensions/WikimediaEditorTasks
     template:
       - name: in-wikimedia-production
@@ -8351,13 +8359,6 @@ projects:
   - name: mediawiki/extensions/WikiLovesMonuments
     template:
       - name: extension-quibble
-
-  - name: mediawiki/extensions/WikimediaCampaignEvents
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-codehealth
-      - name: commit-message-validator
 
   - name: mediawiki/extensions/WikiSEO
     template:
