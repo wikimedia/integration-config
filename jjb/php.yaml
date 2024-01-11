@@ -171,9 +171,6 @@
 - project:
     name: generic-phan-jobs
     php:
-     - php73:
-         composer_image: docker-registry.wikimedia.org/releng/composer-php73:0.4.1-s3
-         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php73:0.3.2-s4
      - php74:
          composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.2-s4
          phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.2-s5
@@ -193,9 +190,6 @@
             composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.2-s4
         - 'composer-{phpflavor}-docker':
             phpflavor:
-                # Still used by integration/docroot
-                - php73:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php73:0.3.1-s3
                 - php74:
                     image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.2-s4
                 - php80:
