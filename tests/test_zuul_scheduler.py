@@ -1129,7 +1129,7 @@ class TestZuulScheduler(unittest.TestCase):
             'wmf-quibble-vendor-mysql-php74-docker': False,
             'wmf-quibble-core-vendor-mysql-php74-docker': True,
             'wmf-quibble-selenium-php74-docker': True,
-            'mwgate-node16-docker': True,
+            'mwgate-node18-docker': True,
         }
         expected_gate = {
             'mediawiki-core-php74-phan-docker': True,
@@ -1151,7 +1151,7 @@ class TestZuulScheduler(unittest.TestCase):
             'wmf-quibble-selenium-php81-docker': True,
             'wmf-quibble-core-vendor-mysql-php74-docker': True,
             'wmf-quibble-core-vendor-mysql-php81-docker': True,
-            'mwgate-node16-docker': True,
+            'mwgate-node18-docker': True,
             'quibble-vendor-mysql-php74-phpunit-standalone-docker': True,
         }
 

@@ -1076,7 +1076,7 @@ jobs:
     queue-name: mediawiki
   - name: mediawiki-quibble-vendor-mysql-php74-docker
     queue-name: mediawiki
-  - name: mwgate-node16-docker
+  - name: mwgate-node18-docker
     queue-name: mediawiki
 
   # Some rake jobs should trigger regardless of affected files:
@@ -1104,7 +1104,7 @@ jobs:
     success-pattern: 'https://integration.wikimedia.org/ci/job/{job.name}/{build.number}/'
     branch: ^wmf/.*$
 
-  - name: gerrit-node16-docker
+  - name: gerrit-node18-docker
     branch: ^deploy/wmf.*$
 
   - name: cumin-tox-publish
@@ -1237,7 +1237,7 @@ jobs:
   - name: 'integration-config-zuul-layout-validate-docker'
     branch: (?!labs)
 
-  - name: 'mwext-node16-docs-docker-publish'
+  - name: 'mwext-node18-docs-docker-publish'
     branch: ^master$
 
   - name: 'mwext-doxygen-publish'
@@ -1307,31 +1307,31 @@ project-templates:
   - name: extension-broken
     test:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
     gate-and-submit:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
 
     test-1_39:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
     gate-and-submit-1_39:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
 
     test-1_40:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
     gate-and-submit-1_40:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
 
     test-1_41:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
     gate-and-submit-1_41:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check-docker
@@ -1350,7 +1350,7 @@ project-templates:
     test:
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwext-php74-phan-docker
     php:
       - quibble-vendor-mysql-php80-noselenium-docker
@@ -1360,43 +1360,43 @@ project-templates:
       - quibble-vendor-mysql-php80-noselenium-docker
       - quibble-vendor-mysql-php81-noselenium-docker
       - quibble-vendor-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwext-php74-phan-docker
 
     test-1_39:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
     gate-and-submit-1_39:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
 
     test-1_40:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
     gate-and-submit-1_40:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
 
     test-1_41:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
     gate-and-submit-1_41:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled on release branches
@@ -1405,12 +1405,12 @@ project-templates:
     test-wmf:
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwext-php74-phan-docker
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwext-php74-phan-docker
 
     gate-and-submit-l10n:
@@ -1421,14 +1421,13 @@ project-templates:
       - quibble-vendor-postgres-php74-noselenium-docker
       - quibble-vendor-mysql-php82-noselenium-docker
       - quibble-vendor-mysql-php83-noselenium-docker
-      - mwgate-node18-docker
       - mwgate-node20-docker
 
   - name: extension-quibble-php74-or-later
     test:
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwext-php74-phan-docker
     php:
       - quibble-vendor-mysql-php80-noselenium-docker
@@ -1438,45 +1437,45 @@ project-templates:
       - quibble-vendor-mysql-php80-noselenium-docker
       - quibble-vendor-mysql-php81-noselenium-docker
       - quibble-vendor-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwext-php74-phan-docker
 
     test-1_39:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
     gate-and-submit-1_39:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
 
     test-1_40:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
     gate-and-submit-1_40:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
 
     test-1_41:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
     gate-and-submit-1_41:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
 
@@ -1488,59 +1487,58 @@ project-templates:
       - quibble-vendor-postgres-php74-noselenium-docker
       - quibble-vendor-mysql-php82-noselenium-docker
       - quibble-vendor-mysql-php83-noselenium-docker
-      - mwgate-node18-docker
       - mwgate-node20-docker
 
   - name: extension-quibble-php81-or-later
     test:
       - quibble-vendor-mysql-php81-noselenium-docker
       - quibble-vendor-mysql-php81-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwext-php81-phan-docker
     php:
       - quibble-vendor-mysql-php81-noselenium-docker
     gate-and-submit:
       - quibble-vendor-mysql-php81-noselenium-docker
       - quibble-vendor-mysql-php81-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwext-php81-phan-docker
 
     test-1_39:
       - quibble-composer-mysql-php81-noselenium-docker
       - quibble-composer-mysql-php81-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan-docker
     gate-and-submit-1_39:
       - quibble-composer-mysql-php81-noselenium-docker
       - quibble-composer-mysql-php81-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan-docker
 
     test-1_40:
       - quibble-composer-mysql-php81-noselenium-docker
       - quibble-composer-mysql-php81-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan-docker
     gate-and-submit-1_40:
       - quibble-composer-mysql-php81-noselenium-docker
       - quibble-composer-mysql-php81-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan-docker
 
     test-1_41:
       - quibble-composer-mysql-php81-noselenium-docker
       - quibble-composer-mysql-php81-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan-docker
     gate-and-submit-1_41:
       - quibble-composer-mysql-php81-noselenium-docker
       - quibble-composer-mysql-php81-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan-docker
 
@@ -1553,7 +1551,6 @@ project-templates:
       - quibble-vendor-mysql-php82-noselenium-docker
       - quibble-vendor-mysql-php83-noselenium-docker
       - mwext-php81-phan-docker
-      - mwgate-node18-docker
       - mwgate-node20-docker
 
   # Special job template that runs composer rather than than relying
@@ -1564,7 +1561,7 @@ project-templates:
     test:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
     php:
@@ -1575,44 +1572,44 @@ project-templates:
       - quibble-composer-mysql-php80-noselenium-docker
       - quibble-composer-mysql-php81-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
 
     test-1_39:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
     gate-and-submit-1_39:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
 
     test-1_40:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
     gate-and-submit-1_40:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
 
     test-1_41:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
     gate-and-submit-1_41:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
@@ -1621,13 +1618,13 @@ project-templates:
     test-wmf:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
     gate-and-submit-wmf:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php74-selenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
 
@@ -1639,7 +1636,6 @@ project-templates:
       - quibble-composer-postgres-php74-noselenium-docker
       - quibble-composer-mysql-php82-noselenium-docker
       - quibble-composer-mysql-php83-noselenium-docker
-      - mwgate-node18-docker
       - mwgate-node20-docker
 
   # Special job template that runs the quibble jobs but skips the
@@ -1649,7 +1645,7 @@ project-templates:
   - name: extension-quibble-noselenium
     test:
       - quibble-vendor-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwext-php74-phan-docker
     php:
       - quibble-vendor-mysql-php80-noselenium-docker
@@ -1658,49 +1654,49 @@ project-templates:
       - quibble-vendor-mysql-php74-noselenium-docker
       - quibble-vendor-mysql-php80-noselenium-docker
       - quibble-vendor-mysql-php81-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwext-php74-phan-docker
 
     test-1_39:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
     gate-and-submit-1_39:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
 
     test-1_40:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
     gate-and-submit-1_40:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
 
     test-1_41:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
     gate-and-submit-1_41:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan-docker
 
     test-wmf:
       - quibble-vendor-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwext-php74-phan-docker
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwext-php74-phan-docker
 
     gate-and-submit-l10n:
@@ -1711,14 +1707,13 @@ project-templates:
       - quibble-vendor-postgres-php74-noselenium-docker
       - quibble-vendor-mysql-php82-noselenium-docker
       - quibble-vendor-mysql-php83-noselenium-docker
-      - mwgate-node18-docker
       - mwgate-node20-docker
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
     test:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
     php:
@@ -1728,40 +1723,40 @@ project-templates:
       - quibble-composer-mysql-php74-noselenium-docker
       - quibble-composer-mysql-php80-noselenium-docker
       - quibble-composer-mysql-php81-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
 
     test-1_39:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
     gate-and-submit-1_39:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
 
     test-1_40:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
     gate-and-submit-1_40:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
 
     test-1_41:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
     gate-and-submit-1_41:
       - quibble-composer-mysql-php74-noselenium-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan-docker
 
@@ -1774,7 +1769,6 @@ project-templates:
       - mwext-php74-phan-docker
       - quibble-composer-mysql-php82-noselenium-docker
       - quibble-composer-mysql-php83-noselenium-docker
-      - mwgate-node18-docker
       - mwgate-node20-docker
 
   # Special job template that runs the "standalone" jobs - T225068
@@ -1824,9 +1818,9 @@ project-templates:
       - wmf-quibble-core-vendor-mysql-php74-docker
       - wmf-quibble-vendor-mysql-php74-docker
       - wmf-quibble-selenium-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
     gate-and-submit:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # Only triggered on master; jobs to track Wikimedia production on PHP 7.4
       - wmf-quibble-vendor-mysql-php74-docker
       - wmf-quibble-core-vendor-mysql-php74-docker
@@ -1838,12 +1832,12 @@ project-templates:
 
     # For wmf branches
     test-wmf:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - wmf-quibble-vendor-mysql-php74-docker
       - wmf-quibble-core-vendor-mysql-php74-docker
       - wmf-quibble-selenium-php74-docker
     gate-and-submit-wmf:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - wmf-quibble-vendor-mysql-php74-docker
       - wmf-quibble-core-vendor-mysql-php74-docker
       - wmf-quibble-selenium-php74-docker
@@ -1872,7 +1866,7 @@ project-templates:
   - name: skin-quibble
     test:
       - quibble-vendor-mysql-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwskin-php74-phan-docker
     php:
       - quibble-vendor-mysql-php80-docker
@@ -1881,50 +1875,50 @@ project-templates:
       - quibble-vendor-mysql-php74-docker
       - quibble-vendor-mysql-php80-docker
       - quibble-vendor-mysql-php81-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwskin-php74-phan-docker
 
     # We use composer on release branches
     test-1_39:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
     gate-and-submit-1_39:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
 
     test-1_40:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
     gate-and-submit-1_40:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
 
     test-1_41:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
     gate-and-submit-1_41:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
 
     test-wmf:
       - quibble-vendor-mysql-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwskin-php74-phan-docker
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwskin-php74-phan-docker
 
     gate-and-submit-l10n:
@@ -1935,13 +1929,12 @@ project-templates:
       - quibble-vendor-postgres-php74-docker
       - quibble-vendor-mysql-php82-docker
       - quibble-vendor-mysql-php83-docker
-      - mwgate-node18-docker
       - mwgate-node20-docker
 
   - name: skin-quibble-php74-or-later
     test:
       - quibble-vendor-mysql-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwskin-php74-phan-docker
     php:
       - quibble-vendor-mysql-php80-docker
@@ -1950,50 +1943,50 @@ project-templates:
       - quibble-vendor-mysql-php74-docker
       - quibble-vendor-mysql-php80-docker
       - quibble-vendor-mysql-php81-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwskin-php74-phan-docker
 
     # We use composer on release branches
     test-1_39:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
     gate-and-submit-1_39:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
 
     test-1_40:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
     gate-and-submit-1_40:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
 
     test-1_41:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
     gate-and-submit-1_41:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan-docker
 
     test-wmf:
       - quibble-vendor-mysql-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwskin-php74-phan-docker
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - mwskin-php74-phan-docker
 
     gate-and-submit-l10n:
@@ -2004,13 +1997,12 @@ project-templates:
       - quibble-vendor-postgres-php74-docker
       - quibble-vendor-mysql-php82-docker
       - quibble-vendor-mysql-php83-docker
-      - mwgate-node18-docker
       - mwgate-node20-docker
 
   - name: skin-quibble-composer
     test:
       - quibble-composer-mysql-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan-docker
     php:
@@ -2020,51 +2012,51 @@ project-templates:
       - quibble-composer-mysql-php74-docker
       - quibble-composer-mysql-php80-docker
       - quibble-composer-mysql-php81-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan-docker
 
     test-1_39:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan-docker
     gate-and-submit-1_39:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan-docker
 
     test-1_40:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan-docker
     gate-and-submit-1_40:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan-docker
 
     test-1_41:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan-docker
     gate-and-submit-1_41:
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-composer-mysql-php74-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan-docker
 
     test-wmf:
       - quibble-composer-mysql-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan-docker
     gate-and-submit-wmf:
       - quibble-composer-mysql-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan-docker
 
@@ -2076,7 +2068,6 @@ project-templates:
       - quibble-composer-postgres-php74-docker
       - quibble-composer-mysql-php82-docker
       - quibble-composer-mysql-php83-docker
-      - mwgate-node18-docker
       - mwgate-node20-docker
 
   - name: skin-coverage
@@ -2087,13 +2078,12 @@ project-templates:
 
   - name: extension-javascript-documentation
     test:
-      - mwext-node16-rundoc-docker
-    gate-and-submit:
-      - mwext-node16-rundoc-docker
-    postmerge:
-      - mwext-node16-docs-docker-publish
-    experimental:
       - mwext-node18-rundoc-docker
+    gate-and-submit:
+      - mwext-node18-rundoc-docker
+    postmerge:
+      - mwext-node18-docs-docker-publish
+    experimental:
       - mwext-node20-rundoc-docker
 
   - name: composer-test-php74-or-later
@@ -2184,15 +2174,6 @@ project-templates:
     postmerge:
       - php74-compile-coverage-publish
 
-  - name: node16-docker
-    test:
-      - generic-node16-docker
-    gate-and-submit:
-      - generic-node16-docker
-    experimental:
-      - generic-node18-docker
-      - generic-node20-docker
-
   - name: node18-docker
     test:
       - generic-node18-docker
@@ -2206,15 +2187,6 @@ project-templates:
       - generic-node20-docker
     gate-and-submit:
       - generic-node20-docker
-
-  - name: node16-browser-docker
-    test:
-      - generic-node16-browser-docker
-    gate-and-submit:
-      - generic-node16-browser-docker
-    experimental:
-      - generic-node18-browser-docker
-      - generic-node20-browser-docker
 
   - name: node18-browser-docker
     test:
@@ -2230,15 +2202,6 @@ project-templates:
     gate-and-submit:
       - generic-node20-browser-docker
 
-  - name: node16-browser-webdriver-docker
-    test:
-      - generic-node16-browser-webdriver-docker
-    gate-and-submit:
-      - generic-node16-browser-webdriver-docker
-    experimental:
-      - generic-node18-browser-webdriver-docker
-      - generic-node20-browser-webdriver-docker
-
   - name: node18-browser-webdriver-docker
     test:
       - generic-node18-browser-webdriver-docker
@@ -2253,15 +2216,6 @@ project-templates:
     gate-and-submit:
       - generic-node20-browser-webdriver-docker
 
-  - name: node16-rundoc-docker
-    test:
-      - generic-node16-rundoc-docker
-    gate-and-submit:
-      - generic-node16-rundoc-docker
-    experimental:
-      - generic-node18-rundoc-docker
-      - generic-node20-rundoc-docker
-
   - name: node18-rundoc-docker
     test:
       - generic-node18-rundoc-docker
@@ -2274,31 +2228,6 @@ project-templates:
     test:
       - generic-node20-rundoc-docker
     gate-and-submit:
-      - generic-node20-rundoc-docker
-
-  - name: node16-rundoc-docker-for-MW-branches
-    test:
-      - generic-node16-rundoc-docker
-    gate-and-submit:
-      - generic-node16-rundoc-docker
-    test-1_39:
-      - generic-node16-rundoc-docker
-    gate-and-submit-1_39:
-      - generic-node16-rundoc-docker
-    test-1_40:
-      - generic-node16-rundoc-docker
-    gate-and-submit-1_40:
-      - generic-node16-rundoc-docker
-    test-1_41:
-      - generic-node16-rundoc-docker
-    gate-and-submit-1_41:
-      - generic-node16-rundoc-docker
-    test-wmf:
-      - generic-node16-rundoc-docker
-    gate-and-submit-wmf:
-      - generic-node16-rundoc-docker
-    experimental:
-      - generic-node18-rundoc-docker
       - generic-node20-rundoc-docker
 
   - name: node18-rundoc-docker-for-MW-branches
@@ -2349,23 +2278,22 @@ project-templates:
 
   - name: mwgate-npm
     test:
-      - mwgate-node16-docker
-    gate-and-submit:
-      - mwgate-node16-docker
-    test-1_39:
-      - mwgate-node16-docker
-    gate-and-submit-1_39:
-      - mwgate-node16-docker
-    test-1_40:
-      - mwgate-node16-docker
-    gate-and-submit-1_40:
-      - mwgate-node16-docker
-    test-1_41:
-      - mwgate-node16-docker
-    gate-and-submit-1_41:
-      - mwgate-node16-docker
-    experimental:
       - mwgate-node18-docker
+    gate-and-submit:
+      - mwgate-node18-docker
+    test-1_39:
+      - mwgate-node18-docker
+    gate-and-submit-1_39:
+      - mwgate-node18-docker
+    test-1_40:
+      - mwgate-node18-docker
+    gate-and-submit-1_40:
+      - mwgate-node18-docker
+    test-1_41:
+      - mwgate-node18-docker
+    gate-and-submit-1_41:
+      - mwgate-node18-docker
+    experimental:
       - mwgate-node20-docker
 
   - name: puppet-module
@@ -2619,7 +2547,7 @@ projects:
 
   - name: integration/docroot
     template:
-      - name: node16-docker
+      - name: node18-docker
       - name: composer-test-php74-to-php81
 
   - name: integration/gear
@@ -2692,7 +2620,7 @@ projects:
 
   - name: integration/visualdiff
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: integration/zuul
     test:
@@ -2716,7 +2644,7 @@ projects:
 
   - name: mediawiki/tools/api-testing
     template:
-      - name: node16-rundoc-docker
+      - name: node18-rundoc-docker
     test:
       - api-testing-mysql-php74-docker
       - api-testing-sqlite-php74-docker
@@ -2724,7 +2652,7 @@ projects:
       - api-testing-mysql-php74-docker
       - api-testing-sqlite-php74-docker
     postmerge:
-      - generic-node16-docs-docker-publish
+      - generic-node18-docs-docker-publish
 
   - name: mediawiki/tools/cli
     test:
@@ -2759,7 +2687,7 @@ projects:
 
   - name: mediawiki/tools/grunt-cssjanus
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: mediawiki/tools/minus-x
     template:
@@ -2822,15 +2750,15 @@ projects:
 
   - name: performance/bttostatsv
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: performance/synthetic-monitoring-tests
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: performance/mobile-synthetic-monitoring-tests
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: performance/coal
     template:
@@ -2838,17 +2766,16 @@ projects:
 
   - name: performance/docroot
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: performance/fresnel
     test:
-      - fresnel-node16-browser-docker
-    gate-and-submit:
-      - fresnel-node16-browser-docker
-    postmerge:
-      - generic-node16-browser-coverage-docker-publish
-    experimental:
       - fresnel-node18-browser-docker
+    gate-and-submit:
+      - fresnel-node18-browser-docker
+    postmerge:
+      - generic-node18-browser-coverage-docker-publish
+    experimental:
       - fresnel-node20-browser-docker
 
   - name: performance/navtiming
@@ -2857,11 +2784,11 @@ projects:
 
   - name: performance/perfromance
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: performance/WikimediaDebug
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: performance/xhgui-vendor
     template:
@@ -2869,7 +2796,7 @@ projects:
 
   - name: releng/phatality
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: releng/local-charts
     experimental:
@@ -2997,11 +2924,11 @@ projects:
 
     test-fundraising:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-donationinterface-REL1_39-php74-docker
     gate-and-submit-fundraising:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-donationinterface-REL1_39-php74-docker
 
     coverage:
@@ -3028,7 +2955,6 @@ projects:
       - quibble-vendor-mysql-php82-docker
       # Experimental for testing 8.3 (T339349)
       - quibble-vendor-mysql-php83-docker
-      - mwgate-node18-docker
       - mwgate-node20-docker
 
   - name: mediawiki/vendor
@@ -3059,10 +2985,10 @@ projects:
 
     test-fundraising:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
     gate-and-submit-fundraising:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
 
     experimental:
       - mwgate-composer-php80-docker
@@ -3697,7 +3623,7 @@ projects:
     template:
     # Task filed requesting this been fixed (T353397)
       - name: composer-test-php74-to-php81
-      - name: node16-docker
+      - name: node18-docker
       - name: mediawiki-i18n-check
 
   - name: operations/dumps/import-tools
@@ -3833,10 +3759,10 @@ projects:
   - name: operations/software/gerrit
     test:
       - gerrit-docker
-      - gerrit-node16-docker
+      - gerrit-node18-docker
     gate-and-submit:
       - gerrit-docker
-      - gerrit-node16-docker
+      - gerrit-node18-docker
     experimental:
       - gerrit-node18-docker
       - gerrit-node20-docker
@@ -4302,16 +4228,15 @@ projects:
       - name: extension-codehealth
     test:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-donationinterface-REL1_39-php74-docker
       - mwext-php74-phan-docker
     gate-and-submit:
       - mwgate-composer-php74-docker
-      - mwgate-node16-docker
+      - mwgate-node18-docker
       - quibble-donationinterface-REL1_39-php74-docker
       - mwext-php74-phan-docker
     experimental:
-      - mwgate-node18-docker
       - mwgate-node20-docker
       # These are the remaining parts of extension-quibble
       - quibble-vendor-mysql-php74-noselenium-docker
@@ -5426,7 +5351,7 @@ projects:
       - mwext-doxygen-publish
       # NOTE: This is the 'wrong' publisher, but there's no JS extension
       # publish step yet. Let's go with this for now. 2022-02-25 JDF.
-      - generic-node16-browser-coverage-docker-publish
+      - generic-node18-browser-coverage-docker-publish
 
   - name: mediawiki/extensions/WikiLove
     template:
@@ -8517,15 +8442,15 @@ projects:
 
   - name: schemas/event/primary
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: schemas/event/secondary
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: mapdata
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   # To archive, once service has migrated to the pipeline
   - name: maps/kartotherian/deploy
@@ -8545,7 +8470,7 @@ projects:
   # https://phabricator.wikimedia.org/T240985
   - name: mediawiki/event-schemas
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: mediawiki/services/change-propagation
     test:
@@ -8654,10 +8579,8 @@ projects:
 
   - name: mediawiki/services/texvcjs
     template:
-      - name: node16-docker
+      - name: node18-docker
     experimental:
-      - generic-node16-docker
-      - generic-node18-docker
       - generic-node20-docker
 
   - name: mediawiki/services/mobileapps
@@ -8859,7 +8782,7 @@ projects:
 
   - name: analytics/aqs
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: analytics/blog
     template:
@@ -8867,7 +8790,6 @@ projects:
 
   - name: analytics/dashiki
     experimental:
-      - generic-node16-docker
       - generic-node18-docker
       - generic-node20-docker
 
@@ -8877,7 +8799,7 @@ projects:
 
   - name: analytics/quarry/web
     template:
-      - name: node16-docker
+      - name: node18-docker
     test:
       - trigger-analytics-quarry-web-pipeline-test
     gate-and-submit:
@@ -8895,7 +8817,7 @@ projects:
 
   - name: analytics/mediawiki-storage
     template:
-      - name: node16-browser-docker
+      - name: node18-browser-docker
 
   - name: analytics/multimedia
     template:
@@ -8920,7 +8842,7 @@ projects:
 
   - name: analytics/wikistats2
     template:
-      - name: node16-browser-docker
+      - name: node18-browser-docker
       - name: mediawiki-i18n-check
 
   - name: analytics/wikimetrics
@@ -9051,9 +8973,9 @@ projects:
     template:
       - name: composer-test-package-php74-to-php81
     test:
-      - wikipeg-special-node16-plus-php80-composer-docker
+      - wikipeg-special-node18-plus-php80-composer-docker
     gate-and-submit:
-      - wikipeg-special-node16-plus-php80-composer-docker
+      - wikipeg-special-node18-plus-php80-composer-docker
 
   - name: WrappedString
     template:
@@ -9114,7 +9036,7 @@ projects:
   - name: mediawiki/libs/LangConv
     template:
       - name: mediawiki-php-library-php74-to-php81
-      - name: node16-docker
+      - name: node18-docker
 
   - name: mediawiki/libs/less.php
     template:
@@ -9134,10 +9056,10 @@ projects:
 
   - name: mediawiki/libs/node-cssjanus
     template:
-      - name: node16-docker
+      - name: node18-docker
     postmerge:
-      - generic-node16-docs-docker-publish
-      - generic-node16-browser-direct-coverage-docker-publish
+      - generic-node18-docs-docker-publish
+      - generic-node18-browser-direct-coverage-docker-publish
 
   - name: mediawiki/libs/php-cssjanus
     template:
@@ -9281,7 +9203,7 @@ projects:
 
   - name: labs/tools/bodh
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: labs/tools/bodh-backend
     template:
@@ -9366,7 +9288,7 @@ projects:
 
   - name: labs/tools/heritage
     template:
-      - name: node16-docker
+      - name: node18-docker
       - name: composer-test-php74-only
       - name: mediawiki-i18n-check
     test:
@@ -9383,7 +9305,7 @@ projects:
   - name: labs/tools/intuition
     template:
       - name: composer-test-php74-or-later
-      - name: node16-docker
+      - name: node18-docker
       - name: mediawiki-i18n-check
     postmerge:
       - phpunit-coverage-php74-docker-publish
@@ -9391,7 +9313,7 @@ projects:
   - name: labs/tools/intuition-web
     template:
       - name: composer-test-php74-or-later
-      - name: node16-browser-docker
+      - name: node18-browser-docker
       - name: mediawiki-i18n-check
 
   - name: labs/tools/ipchanges
@@ -9483,7 +9405,7 @@ projects:
     template:
     # Task filed requesting this been fixed (T353394)
       - name: composer-test-php74-to-php81
-      - name: node16-docker
+      - name: node18-docker
 
   - name: labs/tools/mwpackages
     template:
@@ -9554,7 +9476,7 @@ projects:
 
   - name: labs/tools/VideoCutTool
     template:
-      - name: node16-browser-docker
+      - name: node18-browser-docker
       - name: mediawiki-i18n-check
 
   - name: labs/tools/watch-translations
@@ -9589,7 +9511,7 @@ projects:
 
   - name: labs/tools/wikidata-slicer
     template:
-      - name: node16-docker
+      - name: node18-docker
       - name: tox-docker
 
   - name: labs/tools/wikiinfo
@@ -9622,7 +9544,7 @@ projects:
 
   - name: labs/tools/graphql
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: wikimedia/meet-accountmanager
     template:
@@ -9667,7 +9589,7 @@ projects:
 
   - name: pywikibot/i18n
     template:
-      - name: node16-docker
+      - name: node18-docker
       - name: mediawiki-i18n-check
     test:
       - pywikibot-i18n-tox-docker
@@ -9736,7 +9658,7 @@ projects:
 
   - name: wikimedia/portals
     template:
-      - name: node16-browser-docker
+      - name: node18-browser-docker
       - name: mediawiki-i18n-check
     test:
       - trigger-wikimedia-portals-pipeline-test
@@ -9749,7 +9671,7 @@ projects:
 
   - name: wikimedia/portals/deploy
     template:
-      - name: node16-browser-docker
+      - name: node18-browser-docker
 
   - name: wikimedia/toolhub
     test:
@@ -9837,7 +9759,7 @@ projects:
 
   - name: design/landing-page
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: research/landing-page
     test:
@@ -9847,28 +9769,27 @@ projects:
 
   - name: wikimedia/security/landing-page
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: oojs/core
     test:
-      - oojs-core-node16-runjenkins-docker
-    gate-and-submit:
-      - oojs-core-node16-runjenkins-docker
-    postmerge:
-      - generic-node16-docs-docker-publish
-      - generic-node16-browser-coverage-docker-publish
-    publish:
-      - generic-node16-docs-docker-publish
-    experimental:
       - oojs-core-node18-runjenkins-docker
+    gate-and-submit:
+      - oojs-core-node18-runjenkins-docker
+    postmerge:
+      - generic-node18-docs-docker-publish
+      - generic-node18-browser-coverage-docker-publish
+    publish:
+      - generic-node18-docs-docker-publish
+    experimental:
       - oojs-core-node20-runjenkins-docker
 
   - name: oojs/router
     template:
-      - name: node16-browser-docker
+      - name: node18-browser-docker
     postmerge:
-      - generic-node16-docs-docker-publish
-      - generic-node16-browser-coverage-docker-publish
+      - generic-node18-docs-docker-publish
+      - generic-node18-browser-coverage-docker-publish
 
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
@@ -9876,76 +9797,73 @@ projects:
       - name: composer-test-package-php74-to-php81
       - name: mediawiki-i18n-check
     test:
-      - ooui-special-node16-plus-php80-composer-docker
+      - ooui-special-node18-plus-php80-composer-docker
       - ooui-ruby2.5-rake-docker
     gate-and-submit:
-      - ooui-special-node16-plus-php80-composer-docker
+      - ooui-special-node18-plus-php80-composer-docker
       - ooui-ruby2.5-rake-docker
     postmerge:
       - oojs-ui-doxygen-publish
       - oojs-ui-docker-publish
     experimental:
-      - ooui-special-node18-plus-php80-composer-docker
       - ooui-special-node20-plus-php80-composer-docker
 
   - name: jsdoc/wmf-theme
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: unicodejs
     template:
-      - name: node16-rundoc-docker
+      - name: node18-rundoc-docker
     test:
-      - unicodejs-node16-browser-docker
-    gate-and-submit:
-      - unicodejs-node16-browser-docker
-    postmerge:
-      - generic-node16-browser-coverage-docker-publish
-      - generic-node16-docs-docker-publish
-    publish:
-      - generic-node16-docs-docker-publish
-    experimental:
       - unicodejs-node18-browser-docker
+    gate-and-submit:
+      - unicodejs-node18-browser-docker
+    postmerge:
+      - generic-node18-browser-coverage-docker-publish
+      - generic-node18-docs-docker-publish
+    publish:
+      - generic-node18-docs-docker-publish
+    experimental:
       - unicodejs-node20-browser-docker
 
   - name: jquery-client
     template:
-      - name: node16-browser-docker
-      - name: node16-rundoc-docker
+      - name: node18-browser-docker
+      - name: node18-rundoc-docker
     postmerge:
-      - generic-node16-browser-coverage-docker-publish
-      - generic-node16-docs-docker-publish
+      - generic-node18-browser-coverage-docker-publish
+      - generic-node18-docs-docker-publish
     publish:
-      - generic-node16-docs-docker-publish
+      - generic-node18-docs-docker-publish
 
   - name: VisualEditor/VisualEditor
     template:
       - name: mediawiki-i18n-check
-      - name: node16-rundoc-docker-for-MW-branches
+      - name: node18-rundoc-docker-for-MW-branches
     test:
-      - visualeditor-node16-browser-docker
-    gate-and-submit:
-      - visualeditor-node16-browser-docker
-    test-1_39:
-      - visualeditor-node16-browser-docker
-    gate-and-submit-1_39:
-      - visualeditor-node16-browser-docker
-    test-1_40:
-      - visualeditor-node16-browser-docker
-    gate-and-submit-1_40:
-      - visualeditor-node16-browser-docker
-    test-1_41:
-      - visualeditor-node16-browser-docker
-    gate-and-submit-1_41:
-      - visualeditor-node16-browser-docker
-    test-wmf:
-      - visualeditor-node16-browser-docker
-    gate-and-submit-wmf:
-      - visualeditor-node16-browser-docker
-    postmerge:
-      - generic-node16-browser-coverage-docker-publish
-    experimental:
       - visualeditor-node18-browser-docker
+    gate-and-submit:
+      - visualeditor-node18-browser-docker
+    test-1_39:
+      - visualeditor-node18-browser-docker
+    gate-and-submit-1_39:
+      - visualeditor-node18-browser-docker
+    test-1_40:
+      - visualeditor-node18-browser-docker
+    gate-and-submit-1_40:
+      - visualeditor-node18-browser-docker
+    test-1_41:
+      - visualeditor-node18-browser-docker
+    gate-and-submit-1_41:
+      - visualeditor-node18-browser-docker
+    test-wmf:
+      - visualeditor-node18-browser-docker
+    gate-and-submit-wmf:
+      - visualeditor-node18-browser-docker
+    postmerge:
+      - generic-node18-browser-coverage-docker-publish
+    experimental:
       - visualeditor-node20-browser-docker
 
   - name: mediawiki/extensions/VisualEditorPlus
@@ -9970,7 +9888,7 @@ projects:
 
   - name: wikidata/query/gui
     template:
-      - name: node16-browser-webdriver-docker
+      - name: node18-browser-webdriver-docker
       - name: mediawiki-i18n-check
     # TODO enable if we decide we want this on postmerge
     # postmerge:
@@ -9981,14 +9899,14 @@ projects:
 
   - name: wikidata/query-builder
     template:
-      - name: node16-browser-docker
+      - name: node18-browser-docker
       - name: mediawiki-i18n-check
     test:
-      - branchdeploy-wikidata-query-builder-node16-npm-docker
+      - branchdeploy-wikidata-query-builder-node18-npm-docker
 
   - name: wikibase/javascript-api
     template:
-      - name: node16-browser-docker
+      - name: node18-browser-docker
 
   - name: wikibase/termbox
     test:
@@ -9997,7 +9915,7 @@ projects:
       - trigger-termbox-pipeline-rehearse
     postmerge:
       - trigger-termbox-pipeline-publish
-      - generic-node16-docs-docker-publish
+      - generic-node18-docs-docker-publish
 
   - name: wikibase/property-suggester-scripts
     template:
@@ -10013,7 +9931,7 @@ projects:
 
   - name: data-values/value-view
     template:
-      - name: node16-browser-docker
+      - name: node18-browser-docker
       - name: mediawiki-i18n-check
 
   - name: testing-access-wrapper
@@ -10058,7 +9976,7 @@ projects:
 
   - name: mediawiki/gadgets/ProveIt
     template:
-      - name: node16-docker
+      - name: node18-docker
       - name: mediawiki-i18n-check
     gate-and-submit:
       - noop
@@ -10073,11 +9991,11 @@ projects:
 
   - name: react.i18n
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: react.ooui
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: research/recommendation-api
     test:
@@ -10099,7 +10017,7 @@ projects:
 
   - name: wikimedia-cz/tracker
     template:
-      - name: node16-browser-docker
+      - name: node18-browser-docker
       - name: mediawiki-i18n-check
     test:
       - wikimedia-cz-tracker-tox-docker
@@ -10136,7 +10054,7 @@ projects:
 
   - name: wikimedia-ui-base
     template:
-      - name: node16-docker
+      - name: node18-docker
 
   - name: wikimedia/developer-portal
     test:
@@ -10173,7 +10091,7 @@ projects:
 
   - name: wikimedia/fundraising/dash
     template:
-      - name: node16-browser-docker
+      - name: node18-browser-docker
 
   - name: wikimedia/fundraising/tools/DjangoBannerStats
     template:
