@@ -22,7 +22,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2'
+        image: 'docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2'
         args: 'doc'
      - doc-publish:
            docsrc: 'src/docs/js'
@@ -152,8 +152,6 @@
                     image: docker-registry.wikimedia.org/releng/composer-test-php83:0.0.1-s3
         - '{name}-{node_version}-docker':
            node_version:
-               - node16:
-                   image: docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2
                - node18:
                    image: docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2
                - node20:
@@ -853,7 +851,7 @@
     # mediawiki/services/parsoid (T321837)
     #
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2
+        image: docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2
         options: '--volume "$(pwd)"/src/"$THING_SUBNAME":/src'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'

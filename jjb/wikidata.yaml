@@ -41,7 +41,7 @@
     name: wikibase-daily-npm-audit
     repository: mediawiki/extensions/Wikibase
     jobs:
-     - '{name}-daily-node16-npmaudit-docker':
+     - '{name}-daily-node18-npmaudit-docker':
 #        recipients:
 #         - email-wikidata-ci-status
 
@@ -134,7 +134,7 @@
     name: wikidata-query-builds
     jobs:
         - wikidata-query-{project}-build:
-            docker_image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0-s2
+            docker_image: docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0-s3
             project:
                 - gui:
                     ZUUL_PROJECT: wikidata/query/gui

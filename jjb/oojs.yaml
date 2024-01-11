@@ -1,21 +1,4 @@
 - job:
-    name: 'ooui-special-node16-plus-php80-composer-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node16-test-browser-php80-composer:0.4.0-s4
-         # 'npm run jenkins' also runs composer
-         entrypoint: /run-with-xvfb.sh
-         args: 'jenkins'
-    publishers:
-     - archive-log-allow-empty
-     # FIXME use `- teardown` to save castor cache
-     - docker-cleanup
-
-- job:
     name: 'ooui-special-node18-plus-php80-composer-docker'
     node: Docker
     triggers:
@@ -58,7 +41,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node16-test-browser-php80-composer:0.4.0-s4
+         image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.1.0-s5
          # npm run-script jenkins runs 'npm test' and 'npm run doc'
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
@@ -104,8 +87,6 @@
         - '{name}-{node_version}-run{script}-docker':
            script: 'jenkins'
            node_version:
-               - node16:
-                   image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0-s2
                - node18:
                    image: docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0-s3
                - node20:

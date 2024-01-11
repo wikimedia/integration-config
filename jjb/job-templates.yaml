@@ -472,33 +472,6 @@
      - teardown
 
 - job-template:
-    name: 'branchdeploy-{key}-node16-npm-docker'
-    node: Docker
-    triggers:
-     - zuul
-    wrappers:
-     - timeout:
-         timeout: 30
-         fail: true
-     - timestamps
-     - credentials-binding:
-          - text:
-              credential-id: BRANCHDEPLOY_AUTH_TOKEN_{key}
-              variable: BRANCHDEPLOY_AUTH_TOKEN
-          - text:
-              credential-id: BRANCHDEPLOY_SITE_ID_{key}
-              variable: BRANCHDEPLOY_SITE_ID
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2'
-        workdir: /src
-        args: 'branch-deploy'
-    publishers:
-     # FIXME: use `- teardown` to save cache?
-     - docker-cleanup
-
-- job-template:
     name: 'branchdeploy-{key}-node18-npm-docker'
     node: Docker
     triggers:
@@ -551,37 +524,6 @@
     publishers:
      # FIXME: use `- teardown` to save cache?
      - docker-cleanup
-
-- job-template:
-    name: '{name}-daily-node16-npmaudit-docker'
-    node: Docker
-    triggers:
-    - timed: '@daily'
-    parameters:
-        - string:
-              name: 'ZUUL_PROJECT'
-              default: '{repository}'
-        - string:
-              name: 'ZUUL_REF'
-              default: 'master'
-        - string:
-              name: 'ZUUL_URL'
-              default: 'https://gerrit.wikimedia.org/r/'
-        - string:
-              name: 'NPM_CONFIG_cache'
-              default: '/cache'
-    builders:
-    - docker-cache-dir
-    - docker-log-dir
-    - docker-src-dir
-    - docker-ci-src-setup-simple
-    - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16:0.2.0-s2'
-        workdir: /src
-        args: 'audit'
-    publishers:
-    # FIXME: use `- teardown` to save cache?
-    - docker-cleanup
 
 - job-template:
     name: '{name}-daily-node18-npmaudit-docker'
@@ -740,26 +682,9 @@
     publishers:
      - teardown
 
-
 # Publishing workspace/docs to doc.wikimedia.org/:DOC_PROJECT/:DOC_SUBPATH/js/
 # - DOC_PROJECT: determined in parameter_functions.py (mw extension name)
 # - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
-- job:
-    name: mwext-node16-docs-docker-publish
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2'
-        args: 'doc'
-     - doc-publish:
-        docsrc: 'src/docs'
-        docdest: '$DOC_PROJECT/$DOC_SUBPATH/js'
-    publishers:
-     - teardown
-
 - job:
     name: mwext-node18-docs-docker-publish
     node: Docker
@@ -795,8 +720,6 @@
 - project:
     name: 'generic'
     node_version:
-        - node16:
-            image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0-s2
         - node18:
             image: docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0-s3
         - node20:
@@ -812,8 +735,6 @@
        # The basic jobs images do not have web browsers:
         - '{name}-{node_version}-docker':
             node_version: &node_without_browsers
-                - node16:
-                    image: docker-registry.wikimedia.org/releng/node16-test:0.3.0-s2
                 - node18:
                     image: docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2
                 - node20:
@@ -829,8 +750,6 @@
         - '{name}-{node_version}-run{script}-docker':
            script: 'doc'
            node_version:
-               - node16:
-                   image: docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0-s2
                - node18:
                    image: docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0-s3
                - node20:
@@ -839,9 +758,6 @@
 - project:
     name: 'branchdeploy'
     jobs:
-        - 'branchdeploy-{key}-node16-npm-docker':
-            key:
-                - wikidata-query-builder
         - 'branchdeploy-{key}-node18-npm-docker':
             key:
                 - wikidata-query-builder
@@ -853,7 +769,7 @@
 - job-template:
     name: 'selenium-daily-{sitename}-{project}'
     node: Docker
-    docker_image_var: 'docker-registry.wikimedia.org/releng/node16-test-browser:0.3.0-s2'
+    docker_image_var: 'docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0-s3'
     triggers:
      - timed: '@daily'
     parameters:
