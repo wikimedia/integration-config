@@ -844,6 +844,7 @@
                 - wikidata-query-builder
         - 'branchdeploy-{key}-node18-npm-docker':
             key:
+                - wikidata-query-builder
                 - codex
         - 'branchdeploy-{key}-node20-npm-docker':
             key:
