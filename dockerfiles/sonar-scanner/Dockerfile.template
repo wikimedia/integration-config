@@ -1,4 +1,4 @@
-FROM {{ "node16" | image_tag }} as node
+FROM {{ "node18" | image_tag }} as node
 
 FROM {{ "maven-java17" | image_tag }}
 
