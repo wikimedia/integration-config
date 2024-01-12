@@ -1,3 +1,9 @@
+ajv (0.3.0) wikimedia; urgency=high
+
+   Switch parent image from node16 to node18
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 12 Jan 2024 10:21:16 -0500
+
 ajv (0.2.2-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:
