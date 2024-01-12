@@ -1,3 +1,9 @@
+quibble-buster (1.6.0-s4) wikimedia; urgency=high
+
+   Switch Node from 16 to 18
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 11 Jan 2024 09:31:33 -0500
+
 quibble-buster (1.6.0-s3) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:
