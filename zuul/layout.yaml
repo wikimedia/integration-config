@@ -9373,10 +9373,6 @@ projects:
     gate-and-submit:
       - labs-tools-ldap-tox-docker
 
-  - name: labs/tools/logo-test
-    template:
-      - name: rust-test
-
   - name: labs/tools/majavah-bot
     template:
       - name: tox-docker
@@ -9411,10 +9407,6 @@ projects:
     template:
       - name: tox-docker
 
-  - name: labs/tools/newusers
-    template:
-      - name: rust-test
-
   - name: labs/tools/ninthcircuit
     template:
       - name: tox-docker
@@ -9435,10 +9427,6 @@ projects:
     template:
       - name: tox-docker
 
-  - name: labs/tools/rust-hello-world
-    template:
-      - name: rust-test
-
   - name: labs/tools/scotus-recordings
     template:
       - name: tox-docker
@@ -9446,10 +9434,6 @@ projects:
   - name: labs/tools/search-filters
     template:
       - name: tox-docker
-
-  - name: labs/tools/shorturls
-    template:
-      - name: rust-test
 
   - name: labs/tools/stashbot
     template:
@@ -10365,6 +10349,26 @@ projects:
       - name: archived
 
   - name: labs/striker/wheels
+    template:
+      - name: archived
+
+  # Now at https://gitlab.wikimedia.org/toolforge-repos/logo-test
+  - name: labs/tools/logo-test
+    template:
+      - name: archived
+
+  # Now at https://gitlab.wikimedia.org/toolforge-repos/newusers
+  - name: labs/tools/newusers
+    template:
+      - name: archived
+
+  # Now at https://gitlab.wikimedia.org/toolforge-repos/rust-hello-world
+  - name: labs/tools/rust-hello-world
+    template:
+      - name: archived
+
+# Now at https://gitlab.wikimedia.org/toolforge-repos/shorturls
+  - name: labs/tools/shorturls
     template:
       - name: archived
 
