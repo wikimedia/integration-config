@@ -151,11 +151,13 @@
                 - php83:
                     image: docker-registry.wikimedia.org/releng/composer-test-php83:0.0.1-s3
         - '{name}-{node_version}-docker':
-           node_version:
+            node_version:
                - node18:
                    image: docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2
                - node20:
                    image: docker-registry.wikimedia.org/releng/node20-test:0.2.0-s2
+        - '{name}-tox-docker':
+            build_timeout: 10
 
 # Phan! (T132636)
 - job-template:
