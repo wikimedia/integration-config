@@ -1861,6 +1861,24 @@ project-templates:
     codehealth:
       - mwext-codehealth-patch
 
+  - name: extension-python-tox
+    test:
+      - mwgate-tox-docker
+    gate-and-submit:
+      - mwgate-tox-docker
+    test-1_39:
+      - mwgate-tox-docker
+    gate-and-submit-1_39:
+      - mwgate-tox-docker
+    test-1_40:
+      - mwgate-tox-docker
+    gate-and-submit-1_40:
+      - mwgate-tox-docker
+    test-1_41:
+      - mwgate-tox-docker
+    gate-and-submit-1_41:
+      - mwgate-tox-docker
+
   # Runs quibble, and includes experimental jobs
   # that are for skins.
   - name: skin-quibble
@@ -4162,6 +4180,7 @@ projects:
   - name: mediawiki/extensions/ConfirmEdit
     template:
       - name: in-wikimedia-production
+      - name: extension-python-tox
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
