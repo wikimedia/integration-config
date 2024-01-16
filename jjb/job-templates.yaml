@@ -155,11 +155,11 @@
             #     </pluginManagement>
             #   </build>
             #
-            # Note that Sonar must be running on Java 11, but can analyze code
-            # built on Java 8.
+            # Note that Sonar must be running on Java 17, but can analyze code
+            # built on Java 8 & 11.
             entrypoint: /src/mvnw
             workdir: '{workdir}'
-            image: docker-registry.wikimedia.org/releng/maven-java11:1.0.0-s3
+            image: docker-registry.wikimedia.org/releng/maven-java17:1.0.0-s2
             args: >
                 -gs /settings.xml --batch-mode --file {pom} -X
                 sonar:sonar
