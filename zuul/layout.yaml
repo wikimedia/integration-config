@@ -6883,11 +6883,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/LocalisationUpdate
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/LockAuthor
     template:
       - name: extension-quibble-noselenium
@@ -10916,6 +10911,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/LiveTranslate
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/LocalisationUpdate
     template:
       - name: archived
 
