@@ -9146,8 +9146,6 @@ projects:
       - trigger-codesearch-pipeline-test
     postmerge:
       - trigger-codesearch-pipeline-publish
-    experimental:
-      - rust-test
 
   - name: labs/libraryupgrader
     template:
@@ -9158,8 +9156,6 @@ projects:
       - trigger-libraryupgrader-pipeline-test
     postmerge:
       - trigger-libraryupgrader-pipeline-publish
-    experimental:
-      - rust-test
 
   - name: labs/countervandalism/cvn-api
     template:
