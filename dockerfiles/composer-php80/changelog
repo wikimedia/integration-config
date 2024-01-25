@@ -1,3 +1,10 @@
+composer-php80 (0.0.3) wikimedia; urgency=high
+
+   Refresh for update in parent image php80:
+   Install php-ldap in top-level image for simplicity
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 25 Jan 2024 11:17:06 -0500
+
 composer-php80 (0.0.2-s22) wikimedia; urgency=high
 
    Refresh for update in parent image php-ast:

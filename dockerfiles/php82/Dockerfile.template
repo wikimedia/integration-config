@@ -15,6 +15,7 @@ php8.2-excimer
 php8.2-gd
 php8.2-gmp
 php8.2-intl
+php8.2-ldap
 php8.2-mbstring
 php8.2-pcov
 php8.2-redis

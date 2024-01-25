@@ -1,3 +1,10 @@
+composer-package-php82 (0.1.2) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Install php-ldap in top-level image for simplicity
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 25 Jan 2024 11:17:31 -0500
+
 composer-package-php82 (0.1.1-s4) wikimedia; urgency=high
 
    Refresh for update in parent image php-ast:

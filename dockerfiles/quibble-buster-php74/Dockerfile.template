@@ -20,7 +20,6 @@ php7.4-excimer
 php7.4-gd
 php7.4-gmp
 php7.4-intl
-php7.4-ldap
 php7.4-mbstring
 php7.4-memcached
 php7.4-mysql

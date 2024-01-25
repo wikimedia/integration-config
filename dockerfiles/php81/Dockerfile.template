@@ -12,6 +12,7 @@ php8.1-excimer
 php8.1-gd
 php8.1-gmp
 php8.1-intl
+php8.1-ldap
 php8.1-mbstring
 php8.1-pcov
 php8.1-redis

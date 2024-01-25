@@ -6,7 +6,6 @@ USER root
 {% set mediawiki_deps|replace('\n', ' ') -%}
 php7.4-apcu
 php7.4-imagick
-php7.4-ldap
 php7.4-mysql
 php7.4-pgsql
 php7.4-sqlite3
