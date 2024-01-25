@@ -5457,6 +5457,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: extension-codehealth
 
 #### Other MediaWiki extensions ################################
 
