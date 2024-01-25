@@ -44,7 +44,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: 'docker-registry.wikimedia.org/releng/php74:0.5.1-s3'
+         image: 'docker-registry.wikimedia.org/releng/php74:0.5.2'
          args: '/src/vendor/bin/composer --version'
     publishers:
      - docker-cleanup
@@ -120,7 +120,7 @@
     builders:
       - setup
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0-s4
+          image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.6.0-s5
           entrypoint: bash
           args: '{quibble_args}'
           workdir: /src
