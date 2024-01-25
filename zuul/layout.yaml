@@ -5443,6 +5443,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: extension-codehealth
 
   # Not yet in production but maybe headed there -- JDF 2022-07-15
   - name: mediawiki/extensions/Wikistories
