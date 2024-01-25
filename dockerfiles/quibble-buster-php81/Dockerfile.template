@@ -18,6 +18,7 @@ php8.1-fpm
 php8.1-gd
 php8.1-gmp
 php8.1-intl
+php8.1-ldap
 php8.1-mbstring
 php8.1-memcached
 php8.1-mysql

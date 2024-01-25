@@ -1,3 +1,9 @@
+quibble-buster-php80 (1.6.0-s6) wikimedia; urgency=high
+
+   Re-install php-ldap, mistakenly dropped, doesn't properly inherit from php80 image
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 25 Jan 2024 14:12:21 -0500
+
 quibble-buster-php80 (1.6.0-s5) wikimedia; urgency=high
 
    Refresh for update in parent image php80:
