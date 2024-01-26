@@ -214,9 +214,6 @@
         - VisualEditor:
             recipients: eakinloose@wikimedia.org qa-alerts@lists.wikimedia.org # @EAkinloose
             repository: mediawiki/extensions/VisualEditor
-        - WikibaseLexeme:
-            recipients: qa-alerts@lists.wikimedia.org wikidata-ci-status@wikimedia.de # wikidata
-            repository: mediawiki/extensions/WikibaseLexeme
         - Wikistories:
             recipients: eudoh@wikimedia.org qa-alerts@lists.wikimedia.org # @EUdoh-WMF
             repository: mediawiki/extensions/Wikistories
