@@ -23,7 +23,7 @@ clonemap:
  - name: 'mediawiki/core'
    dest: '.'
 
- # Mediawiki composer dependencies go in ./vendor
+ # MediaWiki composer dependencies go in ./vendor
  - name: 'mediawiki/vendor'
    dest: './vendor'
 

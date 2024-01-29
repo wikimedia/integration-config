@@ -107,7 +107,7 @@ def test_repo_in_zuul():
              and state == 'ACTIVE']
     for repo in sorted(repos):
         test.assertIn.__func__.description = (
-            'Mediawiki repo is in Zuul: %s' % repo)
+            'MediaWiki repo is in Zuul: %s' % repo)
         yield test.assertIn, repo, ZUUL_PROJECTS
     del(test.assertIn.__func__.description)
 

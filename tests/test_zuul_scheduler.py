@@ -1075,10 +1075,10 @@ class TestZuulScheduler(unittest.TestCase):
                 return is_mw
             return not is_mw
 
-        def isMediawiki(zuul_project):
+        def isMediaWiki(zuul_project):
             return _mw_filter(zuul_project, is_mw=True)
 
-        def isNotMediawiki(zuul_project):
+        def isNotMediaWiki(zuul_project):
             return _mw_filter(zuul_project, is_mw=False)
 
         gate = self.getPipeline('gate-and-submit')
@@ -1087,7 +1087,7 @@ class TestZuulScheduler(unittest.TestCase):
         # Gather a set of jobs for MediaWiki repositories as defined in the
         # layout, ie before the projects are merged in the change queue.
         mw_defined_jobs = set()
-        for project in filter(isMediawiki, mw_queue.projects):
+        for project in filter(isMediaWiki, mw_queue.projects):
             mw_defined_jobs.update([
                 j.name for j in gate.getJobTree(project).getJobs()
                 ])
@@ -1104,7 +1104,7 @@ class TestZuulScheduler(unittest.TestCase):
         # Projects that are not supposed to be in the 'mediawiki' queue. Either
         # because they share a job with a mediawiki repository either directly
         # or transitively.
-        unintended = filter(isNotMediawiki, mw_queue.projects)
+        unintended = filter(isNotMediaWiki, mw_queue.projects)
         for project in unintended:
             project_jobs = {j.name for j in gate.getJobTree(project).getJobs()}
             unintended_jobs = list(project_jobs.intersection(mw_defined_jobs))
