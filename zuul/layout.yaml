@@ -1704,6 +1704,7 @@ project-templates:
       - mediawiki-i18n-check-docker
 
     experimental:
+      - quibble-vendor-mysql-php74-selenium-docker
       - quibble-vendor-sqlite-php74-noselenium-docker
       - quibble-vendor-postgres-php74-noselenium-docker
       - quibble-vendor-mysql-php82-noselenium-docker
