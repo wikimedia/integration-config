@@ -4177,6 +4177,8 @@ projects:
 
   - name: mediawiki/extensions/CommunityConfiguration
     template:
+      # Not yet in production but headed there -- JDF 2024-01-31
+      # - name: in-wikimedia-production
       - name: extension-quibble
 
   - name: mediawiki/extensions/ConfirmEdit
