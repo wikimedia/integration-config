@@ -4175,6 +4175,10 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/CommunityConfiguration
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/ConfirmEdit
     template:
       - name: in-wikimedia-production
