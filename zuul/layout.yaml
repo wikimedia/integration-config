@@ -5373,7 +5373,7 @@ projects:
   - name: mediawiki/extensions/WikiLambda
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble-noselenium
+      - name: extension-quibble
       - name: extension-quibble-only-standalone
       - name: extension-coverage
       - name: extension-codehealth
