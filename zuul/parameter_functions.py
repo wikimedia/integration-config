@@ -139,7 +139,8 @@ dependencies = {
     'BlueSpiceBookshelf': [
         'BlueSpiceFoundation',
         'BlueSpiceVisualEditorConnector',
-        'ContentDroplets'
+        'ContentDroplets',
+        'MenuEditor'
     ],
     'BlueSpiceCategoryCheck': ['BlueSpiceFoundation'],
     'BlueSpiceCategoryManager': ['BlueSpiceFoundation'],
