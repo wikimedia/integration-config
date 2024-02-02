@@ -385,6 +385,7 @@ dependencies = {
     'ImageMetrics': ['EventLogging'],
     'ImageRating': ['VoteNY'],
     'ImageSuggestions': ['Echo', 'CirrusSearch', 'Elastica'],
+    'IPInfo': ['BetaFeatures'],
     'JsonConfig': ['Scribunto', 'Kartographer'],
     'JWTAuth': ['PluggableAuth'],
     'Kartographer': ['FlaggedRevs', 'JsonConfig', 'ParserFunctions',
