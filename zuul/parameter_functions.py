@@ -398,6 +398,7 @@ dependencies = {
     'LightweightRDFa': ['WikiEditor'],
     'LoginNotify': ['CentralAuth', 'CheckUser', 'Echo'],
     'MachineVision': ['Wikibase', 'WikibaseMediaInfo', 'Echo'],
+    'MagicLinkAuthentication': ['PluggableAuth'],
     'MassMessage': ['CentralAuth', 'Flow', 'LiquidThreads'],
     'MassMessageEmail': ['MassMessage'],
     'Math': ['VisualEditor', 'Wikibase'],
