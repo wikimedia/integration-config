@@ -6930,6 +6930,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/MagicLinkAuthentication
+    template:
+      - name: extension-quibble-noselenium
+
   - name: mediawiki/extensions/MagicNoCache
     template:
       - name: extension-quibble
