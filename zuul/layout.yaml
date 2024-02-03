@@ -4421,12 +4421,6 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
 
-  - name: mediawiki/extensions/GettingStarted
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/GlobalBlocking
     template:
       - name: in-wikimedia-production
@@ -10803,6 +10797,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Genderize
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/GettingStarted
     template:
       - name: archived
 
