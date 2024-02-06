@@ -4002,6 +4002,12 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
+  - name: mediawiki/extensions/AutoModerator
+    template:
+      - name: extension-quibble
+      - name: extension-codehealth
+      - name: extension-coverage
+
   - name: mediawiki/extensions/Babel
     template:
       - name: in-wikimedia-production
