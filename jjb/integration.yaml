@@ -163,7 +163,7 @@
             timeout: 25  # minutes, Archiva is slow T273086
         - '{name}-maven-java11-docker-site-publish':
             docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s3
-            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s3
+            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s2
             maven_path: '/run-with-gearmand.sh'
             timeout: 50  # minutes, Archiva is slow T273086
 
