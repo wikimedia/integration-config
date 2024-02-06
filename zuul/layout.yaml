@@ -4129,6 +4129,7 @@ projects:
       - name: in-wikimedia-fundraising-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: extension-codehealth
       - name: extension-gate
     # Special extra jobs because Fundraising uses this on PHP74/REL1_39
     test:
