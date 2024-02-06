@@ -58,7 +58,8 @@ pipelines:
           # - Make sure to use non greedy selectors (.*?) and to escape dots: \.
 
           email: &email_allowlist
-           - .*?@wikimedia\.(org|de|se)$
+           - .*?@wikimedia\.(org|se)$
+           - .*?@(extern\.)?wikimedia\.de$
            - .*?@hallowelt\.(biz|com)$
            - .*?@jedipedia\.fi$ # Jedipedia, the Finnish-language Star Wars encyclopedia, hosted by ShoutWiki
            - .*?@microsoft\.com$
