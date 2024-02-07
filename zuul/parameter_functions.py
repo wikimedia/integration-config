@@ -230,7 +230,10 @@ dependencies = {
         'BlueSpiceVisualEditorConnector',
         'Math',
     ],
-    'BlueSpiceQrCode': ['BlueSpiceFoundation'],
+    'BlueSpiceQrCode': [
+        'BlueSpiceFoundation',
+        'BlueSpiceVisualEditorConnector'
+    ],
     'BlueSpiceRating': ['BlueSpiceFoundation'],
     'BlueSpiceRSSFeeder': ['BlueSpiceFoundation'],
     'BlueSpiceReaders': ['BlueSpiceFoundation'],
