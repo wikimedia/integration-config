@@ -8333,6 +8333,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/WikiApiary
+    template:
+      - name: extension-quibble-noselenium
+
   - name: mediawiki/extensions/WikibaseStatementUpdater
     template:
       - name: extension-quibble-composer
