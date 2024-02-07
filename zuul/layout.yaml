@@ -3693,6 +3693,10 @@ projects:
     template:
       - name: tox-docker
 
+  - name: operations/software/bitu
+    template:
+      - name: tox-docker
+
   - name: operations/software/bitu-ldap
     template:
       - name: tox-docker
