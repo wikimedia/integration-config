@@ -5539,6 +5539,7 @@ projects:
   - name: mediawiki/extensions/Adiutor
     template:
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/AdminLinks
     template:
