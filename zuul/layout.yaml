@@ -54,6 +54,12 @@ pipelines:
           event: patchset-created
           branch: (?!^refs/meta/config|^fundraising/REL|^wmf/\d\.\d{2}\.\d-wmf\.\d{1,2}|^REL)
 
+          # Patch was received with a CR+2 label set via push options, it means
+          # the change will also enter the `gate-and-submit` pipeline and there
+          # is no need to trigger tests. T357080
+          reject-approval:
+            - code-review: 2
+
           # BEWARE:
           # - Make sure to use non greedy selectors (.*?) and to escape dots: \.
 
