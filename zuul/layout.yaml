@@ -2721,6 +2721,11 @@ projects:
     template:
       - name: node18-docker
 
+  - name: mediawiki/tools/karma-launcher-firefox
+    template:
+      - name: node18-docker
+      - name: node20-docker
+
   - name: mediawiki/tools/minus-x
     template:
       - name: mediawiki-php-library
