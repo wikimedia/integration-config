@@ -2723,8 +2723,8 @@ projects:
 
   - name: mediawiki/tools/karma-firefox-launcher
     template:
-      - name: node18-docker
-      - name: node20-docker
+      - name: node18-browser-docker
+      - name: node20-browser-docker
 
   - name: mediawiki/tools/minus-x
     template:
