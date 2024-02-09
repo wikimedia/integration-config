@@ -2721,7 +2721,7 @@ projects:
     template:
       - name: node18-docker
 
-  - name: mediawiki/tools/karma-launcher-firefox
+  - name: mediawiki/tools/karma-firefox-launcher
     template:
       - name: node18-docker
       - name: node20-docker
