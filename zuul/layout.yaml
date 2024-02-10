@@ -3004,12 +3004,20 @@ projects:
       - mediawiki-quibble-vendor-mysql-php74-docker
       - mediawiki-quibble-selenium-vendor-mysql-php74-docker
     php:
+      - mwgate-composer-php80-docker
+      - mwgate-composer-php81-docker
+      - mwgate-composer-php82-docker
+      - mwgate-composer-php83-docker
       - mediawiki-quibble-vendor-mysql-php80-docker
       - mediawiki-quibble-vendor-mysql-php81-docker
       - mediawiki-quibble-vendor-mysql-php82-docker
       - mediawiki-quibble-vendor-mysql-php83-docker
     gate-and-submit:
       - mwgate-composer-php74-docker
+      - mwgate-composer-php80-docker
+      - mwgate-composer-php81-docker
+      - mwgate-composer-php82-docker
+      - mwgate-composer-php83-docker
       - mediawiki-quibble-vendor-mysql-php74-docker
       - mediawiki-quibble-vendor-mysql-php80-docker
       - mediawiki-quibble-vendor-mysql-php81-docker
@@ -3033,10 +3041,6 @@ projects:
       - mwgate-node18-docker
 
     experimental:
-      - mwgate-composer-php80-docker
-      - mwgate-composer-php81-docker
-      - mwgate-composer-php82-docker
-      - mwgate-composer-php83-docker
       # New job in testing T74952 -- JDF 2022-10-14
       - composer-php74-assert-lock-docker
 
