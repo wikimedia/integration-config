@@ -8257,6 +8257,10 @@ projects:
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
 
+  - name: mediawiki/extensions/VisualData
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/VoteNY
     template:
       - name: extension-quibble
