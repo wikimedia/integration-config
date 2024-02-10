@@ -3034,10 +3034,10 @@ projects:
 
     experimental:
       - mwgate-composer-php80-docker
-      - mediawiki-quibble-vendor-mysql-php80-docker
       - mwgate-composer-php81-docker
-      - mediawiki-quibble-vendor-mysql-php81-docker
+      - mediawiki-quibble-vendor-mysql-php82-docker
       - mwgate-composer-php82-docker
+      - mediawiki-quibble-vendor-mysql-php83-docker
       - mwgate-composer-php83-docker
       # New job in testing T74952 -- JDF 2022-10-14
       - composer-php74-assert-lock-docker
