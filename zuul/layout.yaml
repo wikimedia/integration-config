@@ -4209,7 +4209,8 @@ projects:
   - name: mediawiki/extensions/CommunityConfiguration
     template:
       # Not yet in production but headed there -- JDF 2024-01-31
-      # - name: in-wikimedia-production
+      - name: in-wikimedia-production
+      - name: extension-coverage
       - name: extension-quibble
 
   - name: mediawiki/extensions/ConfirmEdit
@@ -4735,7 +4736,7 @@ projects:
   - name: mediawiki/extensions/NetworkSession
     template:
       # Not yet in production, soon -- ebernhardson 2024-01-12
-      # - name: in-wikimedia-production
+      - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
 
