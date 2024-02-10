@@ -2993,10 +2993,6 @@ projects:
       - mwgate-composer-php74-docker
       - trigger-mediawiki-pipeline-wmf-publish
       - mediawiki-core-php80-phan-docker
-      # Experimental for testing 8.2 (T314093)
-      - quibble-vendor-mysql-php82-docker
-      # Experimental for testing 8.3 (T339349)
-      - quibble-vendor-mysql-php83-docker
       - mwgate-node20-docker
 
   - name: mediawiki/vendor
