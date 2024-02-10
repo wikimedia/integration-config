@@ -7779,7 +7779,7 @@ projects:
 
   - name: mediawiki/extensions/SemanticBundle
     template:
-      - name: extension-quibble
+      - name: extension-broken  # Semantic MediaWiki is on GitHub
 
   - name: mediawiki/extensions/SemanticGenealogy
     template:
@@ -7799,11 +7799,11 @@ projects:
 
   - name: mediawiki/extensions/SemanticRating
     template:
-      - name: extension-quibble
+      - name: extension-broken  # Semantic MediaWiki is on GitHub
 
   - name: mediawiki/extensions/SemanticRESTAPI
     template:
-      - name: extension-quibble
+      - name: extension-broken  # Semantic MediaWiki is on GitHub
 
   - name: mediawiki/extensions/SemanticSifter
     template:
@@ -7811,7 +7811,7 @@ projects:
 
   - name: mediawiki/extensions/SemanticWebBrowser
     template:
-      - name: extension-quibble
+      - name: extension-broken  # Semantic MediaWiki is on GitHub
 
   - name: mediawiki/extensions/SendGrid
     template:
