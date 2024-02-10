@@ -195,17 +195,6 @@
       - 'mobileapps-periodic-test'
 
 - project:
-    name: wikimedia-production
-    pipeline:
-      # We don't yet have a test entry point, nor a chart for deployment.
-      - publish
-    jobs:
-      # trigger-mediawiki-production-pipeline-publish
-      - 'trigger-{name}-pipeline-{pipeline}'
-      # mediawiki-production-pipeline-publish
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: kartotherian
     pipeline:
       - test
