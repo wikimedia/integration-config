@@ -11118,6 +11118,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/PlaceNewSection
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/PlanOut
     template:
       - name: archived
