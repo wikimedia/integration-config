@@ -2674,10 +2674,9 @@ projects:
   - name: integration/zuul/deploy
     test:
       - integration-zuul-deploy-python2-buster
+      - integration-zuul-deploy-python2-bullseye
     gate-and-submit:
       - integration-zuul-deploy-python2-buster
-    experimental:
-      # For adding Bullseye artifacts - T342346
       - integration-zuul-deploy-python2-bullseye
 
   - name: mediawiki/tools/api-testing
