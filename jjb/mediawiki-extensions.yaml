@@ -185,10 +185,10 @@
             recipients: vwalters@wikimedia.org qa-alerts@lists.wikimedia.org # @vaughnwalters
             repository: mediawiki/extensions/CampaignEvents
         - CentralNotice:
-            recipients: fr-tech@wikimedia.org jbolorinos-ctr@wikimedia.org qa-alerts@lists.wikimedia.org # fundraising-backlog @jbolorinos-ctr
+            recipients: fr-tech@wikimedia.org qa-alerts@lists.wikimedia.org # fundraising-backlog
             repository: mediawiki/extensions/CentralNotice
         - Echo:
-            recipients: etonkovidova@wikimedia.org qa-alerts@lists.wikimedia.org thinkcolorful@thinkcolorful.org # @Etonkovidova @Ephemeralwaves
+            recipients: etonkovidova@wikimedia.org qa-alerts@lists.wikimedia.org # @Etonkovidova
             repository: mediawiki/extensions/Echo
         - Math:
             recipients: qa-alerts@lists.wikimedia.org wiki@physikerwelt.de # @Physikerwelt
