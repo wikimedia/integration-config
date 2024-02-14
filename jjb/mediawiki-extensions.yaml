@@ -187,9 +187,6 @@
         - CentralNotice:
             recipients: fr-tech@wikimedia.org jbolorinos-ctr@wikimedia.org qa-alerts@lists.wikimedia.org # fundraising-backlog @jbolorinos-ctr
             repository: mediawiki/extensions/CentralNotice
-        - CirrusSearch:
-            recipients: discovery-alerts@lists.wikimedia.org qa-alerts@lists.wikimedia.org # @dcausse @EBernhardson
-            repository: mediawiki/extensions/CirrusSearch
         - Echo:
             recipients: etonkovidova@wikimedia.org qa-alerts@lists.wikimedia.org thinkcolorful@thinkcolorful.org # @Etonkovidova @Ephemeralwaves
             repository: mediawiki/extensions/Echo
