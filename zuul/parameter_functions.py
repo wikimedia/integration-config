@@ -329,7 +329,7 @@ dependencies = {
     'Checklists': ['VisualEditor'],
     'CheckUser': ['CentralAuth', 'FlaggedRevs', 'GuidedTour', 'Renameuser',
                   'TorBlock', 'UserMerge'],
-    'Cite': ['ParserFunctions', 'VisualEditor', 'WikiEditor'],
+    'Cite': ['ParserFunctions', 'Popups', 'VisualEditor', 'WikiEditor'],
     'Citoid': ['Cite', 'VisualEditor'],
     'CirrusSearch': ['TimedMediaHandler', 'PdfHandler', 'Cite', 'Elastica',
                      'GeoData', 'BetaFeatures', 'SiteMatrix',
