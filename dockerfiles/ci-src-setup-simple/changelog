@@ -1,3 +1,10 @@
+ci-src-setup-simple (0.6.0) wikimedia; urgency=medium
+
+   Refresh for update in parent image ci-src-buster
+   Add git-lfs package.
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 16 Feb 2024 21:31:43 +0100
+
 ci-src-setup-simple (0.5.0) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:
