@@ -29,10 +29,36 @@
     triggers:
      - zuul
     builders:
+     - docker-log-dir
      - docker-src-dir
      - docker-ci-src-setup-simple
-     # It's not really worth creating a docker image for this pretty
-     # "simple" bash script
+
+     # Get all additions from the diff of FETCH_HEAD and write them to
+     # /log/additions.txt which is then analyzed.
+     #
+     # This runs in a container as `nobody` since the repository is fetched as
+     # that user and git safe.directory requires the same user.
+     #
+     # The show command is based on the good old git-changed-in-head, notably
+     # Zuul can craft a merge commit of the proposed change into the target
+     # branch # in which case "git show" would show nothing. See
+     # T331098#9567894
+     #
+     - docker-run:
+         volumes:
+             src:
+             log:
+         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.6.0
+         entrypoint: /bin/bash
+         args: -c "set -euo pipefail; git show -m --first-parent --find-renames=100% FETCH_HEAD -U0 | grep '^+' | tee /log/additions.txt"
+
+     # TODO the whole logic should be moved to a Docker image to make it easy
+     # for developers to run the check.
+     #
+     # TODO instead of `sed` we could use `grep` which:
+     # - can be fed the patterns from a file which makes it easier to maintain.
+     #   See operations/puppet.git `typos` file and `grep -f PATTERN_FILE`
+     # - supports pcre, same as `grep -P`
      - shell: |
         #!/bin/bash
         set -euxo pipefail
@@ -45,32 +71,17 @@
           cat "$1" | sed -E -e 's/\\\\//g' -e 's/\\[nt"]//g' | grep '\\'
         }
 
-        cd src
-
-        # Disable git's dubious ownership check since we're in a container as
-        # nobody and the source is mounted from outside
-        git config --global --add safe.directory "$(pwd)"
-
-        # Get all additions from the diff of FETCH_HEAD and write them to a
-        # temporary file
-        additions="$(mktemp)"
-
-        # This is based on the good old git-changed-in-head, notably Zuul can
-        # craft a merge commit of the proposed change into the target branch
-        # in which case "git show" would show nothing. See T331098#9567894
-        git show -m --first-parent --find-renames=100% FETCH_HEAD -U0 | grep '^+' > "$additions"
-
         # Assumption: Any messages containing literal js will end in .js. Any other
         # raw html message is in normal html context (not attribute)
 
-        if contains_disallowed_html "$additions"; then
+        if contains_disallowed_html log/additions.txt; then
           echo "HTML detected. Manual review required"
           exit 1
         else
           echo 'ok'
         fi
 
-        if contains_js_escape_seq "$additions"; then
+        if contains_js_escape_seq log/additions.txt; then
           echo "JSON escape sequence detected. Manual review required"
           exit 1
         else
@@ -79,6 +90,7 @@
 
         exit 0
     publishers:
+     - archive-log-allow-empty
      - docker-cleanup
 
 # Phan! (T153039)
