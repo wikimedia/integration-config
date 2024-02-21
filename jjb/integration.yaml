@@ -232,36 +232,17 @@
     triggers:
         - zuul
     builders:
-        - docker-wipe-dir:
-            dir: wheels
-        - docker-wipe-dir:
-            dir: wheels-cache
         - docker-src-dir
         - docker-ci-src-setup-simple
 
-        # Build dependencies wheels and check against the ones proposed in the patch (any difference will fail the job)
-        - shell: |
-            set -euxo pipefail
-            docker pull {image}
-            cp -a src/artifacts/{distribution}/*.whl wheels-cache || :
-        - docker-run:
-            image: '{image}'
-            entrypoint: /bin/bash
-            args: -x /bin/run.sh
-            volumes:
-                src: /deploy
-                wheels:
-                wheels-cache:
-            environment:
-                PIP_FIND_LINKS: /wheels-cache
-        - shell: |
-            set -euxo pipefail
-
-            rm -f wheels/zuul-*.whl
-            rm -f wheels/*.tar.gz
-            diff --unified=0 --color=always <(ls src/artifacts/{distribution} | sort) <(ls wheels | sort)
-
         # Run Zuul deploy (just installs the Python2 packages)
+        - shell: |
+            set -e +x
+            docker pull {image}
+            echo
+            echo INFO: Installing Zuul + dependencies. The install process will verify that the list \
+              of provided wheels matches exactly the requirements specified in frozen-requirements.txt
+            echo
         - docker-run:
             image: '{image}'
             entrypoint: make
