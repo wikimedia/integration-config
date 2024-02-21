@@ -430,7 +430,7 @@ dependencies = {
     'PageViewInfo': ['Graph'],
     'PageViewInfoGA': ['PageViewInfo'],
     'ParserFunctions': ['Scribunto'],
-    'parsoid': ['Poem', 'TimedMediaHandler'],
+    'parsoid': ['Poem', 'TimedMediaHandler', 'ParserFunctions'],
     'Phonos': ['TimedMediaHandler'],
     'PhpTagsFunctions': ['PhpTags'],
     'PhpTagsSPARQL': ['PhpTags'],
