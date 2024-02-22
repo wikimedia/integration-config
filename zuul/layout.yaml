@@ -4259,6 +4259,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: extension-codehealth
       - name: extension-gate
 
   - name: mediawiki/extensions/DiscussionTools
