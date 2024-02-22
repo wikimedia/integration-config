@@ -4398,6 +4398,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: extension-codehealth
       - name: extension-apitests
 
   - name: mediawiki/extensions/Flow
