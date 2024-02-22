@@ -54,7 +54,11 @@
         # Get all additions from the diff of FETCH_HEAD and write them to a
         # temporary file
         additions="$(mktemp)"
-        git show FETCH_HEAD -U0 | grep '^+' > "$additions"
+
+        # This is based on the good old git-changed-in-head, notably Zuul can
+        # craft a merge commit of the proposed change into the target branch
+        # in which case "git show" would show nothing. See T331098#9567894
+        git show -m --first-parent --find-renames=100% FETCH_HEAD -U0 | grep '^+' > "$additions"
 
         # Assumption: Any messages containing literal js will end in .js. Any other
         # raw html message is in normal html context (not attribute)
