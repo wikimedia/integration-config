@@ -10200,12 +10200,6 @@ projects:
     template:
       - name: composer-test-php74-only
 
-  - name: wikimedia/iegreview
-    template:
-      # TODO: This code is likely to be archived (T351889)
-      - name: composer-test-php74-to-php81
-      - name: mediawiki-i18n-check
-
   - name: wikimedia/textcat
     template:
       - name: composer-test-package-php74-to-php81
@@ -11993,6 +11987,10 @@ projects:
   - name: wikimedia/fundraising/crm/drupal
     template:
      - name: archived
+
+  - name: wikimedia/iegreview
+    template:
+      - name: archived
 
   - name: wikimedia/production
     template:
