@@ -6766,10 +6766,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/ImageCompare
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/ImageMapEdit
     template:
       - name: extension-quibble-composer
@@ -10908,6 +10904,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/ImageCompare
+    template:
+      - name: archived # T353968
+
   - name: mediawiki/extensions/ImageLink
     template:
       - name: archived
@@ -11990,7 +11990,7 @@ projects:
 
   - name: wikimedia/iegreview
     template:
-      - name: archived
+      - name: archived # T351889
 
   - name: wikimedia/production
     template:
