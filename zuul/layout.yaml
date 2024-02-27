@@ -6975,10 +6975,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/MagicNumberedHeadings
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/Mailgun
     template:
       - name: extension-quibble-composer
@@ -10979,6 +10975,10 @@ projects:
   - name: mediawiki/extensions/LocalisationUpdate
     template:
       - name: archived
+
+  - name: mediawiki/extensions/MagicNumberedHeadings
+    template:
+      - name: archived # T353966
 
   - name: mediawiki/extensions/Mantle
     template:
