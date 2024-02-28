@@ -7,25 +7,6 @@
             docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:4.8.0-3-s2
             build_timeout: 6  # T206913
 
-- project:
-    name: 'labs-tools-wikibugs2'
-    jobs:
-     - 'labs-tools-wikibugs2-autopull'
-
-- job-template:
-    name: 'labs-tools-wikibugs2-autopull'
-    node: Docker
-    concurrent: false
-    properties:
-     - build-discarder:
-         days-to-keep: 15
-    builders:
-     - docker-run:
-         image: docker-registry.wikimedia.org/releng/curl:0.1.1-s2
-         args: '--fail --silent --show-error --max-time 10 https://wikibugs.toolforge.org/pull.php'
-    publishers:
-     - docker-cleanup
-
 - job:
     name: 'cvnbot-dotnet-test'
     node: Docker

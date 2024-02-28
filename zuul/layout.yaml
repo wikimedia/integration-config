@@ -9561,12 +9561,6 @@ projects:
     gate-and-submit:
       - labs-tools-wiki2email-tox-docker
 
-  - name: labs/tools/wikibugs2
-    template:
-      - name: tox-docker
-    postmerge:
-      - labs-tools-wikibugs2-autopull
-
   - name: labs/tools/wikidata-slicer
     template:
       - name: node18-docker
@@ -10439,8 +10433,13 @@ projects:
     template:
       - name: archived
 
-# Now at https://gitlab.wikimedia.org/toolforge-repos/shorturls
+  # Now at https://gitlab.wikimedia.org/toolforge-repos/shorturls
   - name: labs/tools/shorturls
+    template:
+      - name: archived
+
+  # Now at https://gitlab.wikimedia.org/toolforge-repos/wikibugs2
+  - name: labs/tools/wikibugs2
     template:
       - name: archived
 
