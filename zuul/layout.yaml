@@ -4134,6 +4134,7 @@ projects:
       - name: extension-codehealth
       - name: extension-coverage
       - name: extension-gate
+      - name: extension-javascript-documentation
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
 
