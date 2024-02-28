@@ -3,6 +3,17 @@
     jobs:
      - ruby2.5-rake-docker
 
+- builder:
+    name: remove-unneeded-yard-file
+    builders:
+        - docker-run:
+            image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.6.0
+            entrypoint: rm
+            workdir: "/{docdir}"
+            args: --force --verbose frames.html
+            volumes:
+                '{docdir}':
+
 - job-template: &job_ruby2_5-rake-docker
     name: 'ruby2.5-rake-docker'
     node: Docker
@@ -48,6 +59,8 @@
      - docker-run-with-log-cache-src:
          image: 'docker-registry.wikimedia.org/releng/rake-ruby2.5:0.1.0'
          args: 'yard'
+     - remove-unneeded-yard-file:
+         docdir: src/doc
      - doc-publish:
          docsrc: 'src/doc'
          docdest: 'rubygems/{name}'

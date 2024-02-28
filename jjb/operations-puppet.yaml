@@ -44,6 +44,8 @@
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/rake-ruby2.5:0.1.0
             args: 'global:doc'
+        - remove-unneeded-yard-file:
+            docdir: src/doc
         - doc-publish:
             docsrc: 'src/doc'
             docdest: 'puppet'
