@@ -102,7 +102,7 @@
      - timed: 'H/10 * * * *'
 
     builders:
-      - shell: /usr/bin/scap prep auto -Drequire_security_patches:False
+      - shell: /usr/bin/scap prep auto
 
     publishers:
       - beta-irc
