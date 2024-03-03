@@ -321,7 +321,6 @@ dependencies = {
     'BlueSpiceWhoIsOnline': ['BlueSpiceFoundation'],
     'BlueSpiceWikiExplorer': ['BlueSpiceFoundation'],
     'BounceHandler': ['Echo', 'CentralAuth'],
-    'CampaignEvents': ['Translate'],
     'Campaigns': ['EventLogging'],
     'Capiunto': ['Scribunto'],
     'CentralAuth': ['AbuseFilter', 'AntiSpoof', 'SecurePoll'],
