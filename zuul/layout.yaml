@@ -1058,7 +1058,7 @@ jobs:
     files:
         - '.pipeline/readability/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'readability/.*'
+        - 'readability_model/.*'
 
   - name: ^trigger-inference-services-pipeline-article-descriptions
     files:
