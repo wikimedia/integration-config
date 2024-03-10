@@ -5522,6 +5522,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/AchievementBadges
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/AControlImageLink
     template:
       - name: extension-quibble
@@ -6485,6 +6489,10 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/ExtraLanguageLink
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/FacetedCategory
     template:
       - name: extension-quibble
 
@@ -7724,6 +7732,10 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/Sarcasm
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/Sanctions
     template:
       - name: extension-quibble
 
