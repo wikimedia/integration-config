@@ -116,11 +116,28 @@ class TestZuulLayout(unittest.TestCase):
                     )
                     self.assertNotIn('extension-quibble', templates)
                 else:
-                    self.assertIn(
-                        '%s-quibble' % kind,
-                        templates,
-                        'Must have "%s-quibble": %s' % (kind, project['name'])
-                    )
+                    noPHP82Quibble = [
+                        # (T360560) Pending code fixes to support PHP 8.2
+                        'mediawiki/extensions/Wikibase'
+                        ]
+
+                    if project['name'] in noPHP82Quibble:
+                        self.assertIn(
+                            'extension-quibble-php74-to-php81',
+                            templates,
+                            'Must use the special PHP 7.4-8.1 template: %s' % (
+                                project['name']
+                            )
+                        )
+                        self.assertNotIn('extension-quibble', templates)
+                    else:
+                        self.assertIn(
+                            '%s-quibble' % kind,
+                            templates,
+                            'Must have "%s-quibble": %s' % (
+                                kind, project['name']
+                            )
+                        )
 
             except AssertionError, e:
                 errors.append(str(e))
@@ -254,6 +271,8 @@ class TestZuulLayout(unittest.TestCase):
                         # run in quibble; we're exploring running them in
                         # Helm/GitLab (T321942)
                         'mediawiki/extensions/WikiLambda',
+                        # (T360560) Pending code fixes to support PHP 8.2
+                        'mediawiki/extensions/Wikibase',
                         # Fix tracked in T250418
                         'mediawiki/extensions/WikimediaIncubator'
                         ]
