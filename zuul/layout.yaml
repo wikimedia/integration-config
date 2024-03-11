@@ -1310,35 +1310,35 @@ project-templates:
   # For extensions that have broken tests or magic behaviors that CI does not support.
   # See also https://phabricator.wikimedia.org/T183512
   #
-  # Only basic PHP7 linting is added.
+  # Only basic PHP8 linting is added.
   #
   - name: extension-broken
     test:
-      - mwgate-composer-php74-docker
+      - mwgate-composer-php81-docker
       - mwgate-node18-docker
     gate-and-submit:
-      - mwgate-composer-php74-docker
+      - mwgate-composer-php81-docker
       - mwgate-node18-docker
 
     test-1_39:
-      - mwgate-composer-php74-docker
+      - mwgate-composer-php81-docker
       - mwgate-node18-docker
     gate-and-submit-1_39:
-      - mwgate-composer-php74-docker
+      - mwgate-composer-php81-docker
       - mwgate-node18-docker
 
     test-1_40:
-      - mwgate-composer-php74-docker
+      - mwgate-composer-php81-docker
       - mwgate-node18-docker
     gate-and-submit-1_40:
-      - mwgate-composer-php74-docker
+      - mwgate-composer-php81-docker
       - mwgate-node18-docker
 
     test-1_41:
-      - mwgate-composer-php74-docker
+      - mwgate-composer-php81-docker
       - mwgate-node18-docker
     gate-and-submit-1_41:
-      - mwgate-composer-php74-docker
+      - mwgate-composer-php81-docker
       - mwgate-node18-docker
 
     gate-and-submit-l10n:
