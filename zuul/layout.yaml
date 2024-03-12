@@ -4534,8 +4534,10 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  # (T359922) Not yet in production but headed there -- JDF 2024-03-12
   - name: mediawiki/extensions/IPReputation
     template:
+      - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
