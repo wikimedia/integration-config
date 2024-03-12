@@ -11,8 +11,6 @@
      - docker-run-with-log-cache-src:
          image: 'docker-registry.wikimedia.org/releng/rake-vagrant-ruby2.5:0.1.0'
          args: 'doc'
-     - remove-unneeded-yard-file:
-         docdir: src/doc
      - doc-publish:
         docsrc: 'src/doc'
         docdest: 'mediawiki-vagrant'
