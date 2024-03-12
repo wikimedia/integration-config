@@ -4534,6 +4534,12 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/IPReputation
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
   - name: mediawiki/extensions/Josa
     template:
       - name: in-wikimedia-production
