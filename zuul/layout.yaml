@@ -1201,6 +1201,12 @@ jobs:
   - name: wikimedia-fundraising-civicrm-bullseye-docker
     branch: (?!.*deployment.*|^contrib$)
 
+  # Make 'standalone' jobs run consecutively not concurrently, as they can clobber each other
+  - name: quibble-vendor-mysql-php74-phpunit-standalone-docker
+    mutex: quibble-vendor-mysql-php74-phpunit-standalone-docker
+  - name: quibble-vendor-mysql-php81-phpunit-standalone-docker
+    mutex: quibble-vendor-mysql-php81-phpunit-standalone-docker
+
   # Still being tested
   #
   # XXX when making it voting, make sure to uncomment the job from definition
