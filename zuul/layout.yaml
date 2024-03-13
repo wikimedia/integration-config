@@ -2404,54 +2404,15 @@ projects:
     gate-and-submit:
       - trigger-toolforge-delete-crashing-pods-pipeline-test
 
-  - name: cloud/toolforge/disable-tool
-    template:
-      - name: tox-docker
-
-  - name: cloud/toolforge/grid-webservices
-    template:
-      - name: tox-docker
-
-  - name: cloud/toolforge/ingress-admission-controller
-    test:
-      - trigger-toolforge-ingress-admission-controller-pipeline-test
-    gate-and-submit:
-      - trigger-toolforge-ingress-admission-controller-pipeline-test
-
-  - name: cloud/toolforge/jobs-framework-api
-    template:
-      - name: tox-docker
-
-  - name: cloud/toolforge/jobs-framework-emailer
-    template:
-      - name: tox-docker
-
-  - name: cloud/toolforge/jobs-framework-cli
-    template:
-      - name: tox-docker
-      - name: debian-glue
-
   - name: cloud/toolforge/kube-container-updater
     test:
       - trigger-toolforge-kube-container-updater-pipeline-test
     gate-and-submit:
       - trigger-toolforge-kube-container-updater-pipeline-test
 
-  - name: cloud/toolforge/volume-admission-controller
-    test:
-      - trigger-toolforge-volume-admission-controller-pipeline-test
-    gate-and-submit:
-      - trigger-toolforge-volume-admission-controller-pipeline-test
-
   - name: cloud/wmcs-cookbooks
     template:
       - name: tox-docker
-
-  - name: labs/tools/registry-admission-webhook
-    test:
-      - trigger-toolforge-registry-admission-controller-pipeline-test
-    gate-and-submit:
-      - trigger-toolforge-registry-admission-controller-pipeline-test
 
   # When adding a new sub project, make sure to add a job filter above in the
   # job section to have the job only trigger for the directory holding the
@@ -3859,16 +3820,6 @@ projects:
       - trigger-thumbor-plugins-pipeline-publish
     publish:
       - trigger-thumbor-plugins-pipeline-publish
-
-  - name: operations/software/tools-manifest
-    template:
-      - name: debian-glue
-      - name: tox-docker
-
-  - name: operations/software/tools-webservice
-    template:
-      - name: debian-glue
-      - name: tox-docker
 
   - name: operations/software/bernard
     template:
@@ -10271,7 +10222,36 @@ projects:
   - name: cloud/toolforge/buildpacks
     template:
       - name: archived
+
+  - name: cloud/toolforge/disable-tool
+    template:
+      - name: archived
+
+  - name: cloud/toolforge/grid-webservices
+    template:
+      - name: archived  # T359935
+
+  - name: cloud/toolforge/ingress-admission-controller
+    template:
+      - name: archived
+
+  - name: cloud/toolforge/jobs-framework-api
+    template:
+      - name: archived
+
+  - name: cloud/toolforge/jobs-framework-emailer
+    template:
+      - name: archived
+
+  - name: cloud/toolforge/jobs-framework-cli
+    template:
+      - name: archived
+
   - name: cloud/toolforge/toolforge-cli
+    template:
+      - name: archived
+
+  - name: cloud/toolforge/volume-admission-controller
     template:
       - name: archived
 
@@ -10340,6 +10320,10 @@ projects:
       - name: archived
 
   - name: labs/tools/Luke081515IRCBot
+    template:
+      - name: archived
+
+  - name: labs/tools/registry-admission-webhook
     template:
       - name: archived
 
@@ -11681,15 +11665,23 @@ projects:
     template:
       - name: archived
 
-  - name: operations/software/hhvm_exporter
-    template:
-      - name: archived # T343707
-
   - name: operations/software/certcentral
     template:
       - name: archived
 
   - name: operations/software/gerrit/plugins/barricade
+    template:
+      - name: archived
+
+  - name: operations/software/hhvm_exporter
+    template:
+      - name: archived # T343707
+
+  - name: operations/software/tools-manifest
+    template:
+      - name: archived # T359935
+
+  - name: operations/software/tools-webservice
     template:
       - name: archived
 
