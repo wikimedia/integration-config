@@ -280,7 +280,6 @@
     name: debian-glue-jobs-by-distributions
     distribution:
         # Debian
-        - buster
         - unstable
     jobs:
         - 'debian-glue-{distribution}'
