@@ -316,6 +316,7 @@ dependencies = {
         'BlueSpiceFoundation',
         'OOJSPlus',
         'VisualEditor',
+        'VisualEditorPlus'
     ],
     'BlueSpiceWatchList': ['BlueSpiceFoundation'],
     'BlueSpiceWhoIsOnline': ['BlueSpiceFoundation'],
