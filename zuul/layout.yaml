@@ -1093,6 +1093,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'article_descriptions/.*'
 
+  - name: ^trigger-inference-services-pipeline-huggingface
+    files:
+        - '.pipeline/huggingface/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'huggingface_modelserver/.*'
+
   # End of meta jobs (the ones starting with ^)
 
 
@@ -2610,6 +2616,7 @@ projects:
       - trigger-inference-services-pipeline-langid-publish
       - trigger-inference-services-pipeline-readability-publish
       - trigger-inference-services-pipeline-article-descriptions-publish
+      - trigger-inference-services-pipeline-huggingface-publish
 
   - name: integration/config
     test-prio:

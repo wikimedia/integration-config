@@ -532,6 +532,8 @@
         - readability-publish
         - article-descriptions
         - article-descriptions-publish
+        - huggingface
+        - huggingface-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -557,6 +559,8 @@
         # trigger-inference-services-pipeline-readability-publish
         # trigger-inference-services-pipeline-article-descriptions
         # trigger-inference-services-pipeline-article-descriptions-publish
+        # trigger-inference-services-pipeline-huggingface
+        # trigger-inference-services-pipeline-huggingface-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -582,6 +586,8 @@
         # inference-services-pipeline-readability-publish
         # inference-services-pipeline-article-descriptions
         # inference-services-pipeline-article-descriptions-publish
+        # inference-services-pipeline-huggingface
+        # inference-services-pipeline-huggingface-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:
