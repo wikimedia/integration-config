@@ -2755,7 +2755,7 @@ projects:
 
   - name: mediawiki/tools/codesniffer
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
     test:
       - mw-tools-codesniffer-mwcore-testrun
 
