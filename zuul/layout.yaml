@@ -9137,7 +9137,7 @@ projects:
 
   - name: php-session-serializer
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library-php74-to-php82
 
   - name: AhoCorasick
     template:
