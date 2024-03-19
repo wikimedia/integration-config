@@ -2523,6 +2523,24 @@ project-templates:
       - composer-package-php82-docker
       - composer-package-php83-docker
 
+  - name: mediawiki-php-library-php74-to-php82
+    test:
+      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
+      - composer-package-php74-docker
+      - composer-package-php80-docker
+      - composer-package-php81-docker
+      - composer-package-php82-docker
+    gate-and-submit:
+      - composer-package-php74-docker
+      - composer-package-php80-docker
+      - composer-package-php81-docker
+      - composer-package-php82-docker
+    postmerge:
+      - doxygen-publish
+      - phpunit-coverage-php74-docker-publish
+    experimental:
+      - composer-package-php83-docker
+
 # Register the Gerrit project name, apply them pipelines that in turn trigger
 # a set of jobs.
 projects:
@@ -9099,7 +9117,7 @@ projects:
 
   - name: purtle
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library-php74-to-php82
 
   - name: utfnormal
     template:
