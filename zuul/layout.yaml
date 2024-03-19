@@ -2809,7 +2809,7 @@ projects:
 
   - name: mediawiki/tools/phpunit-patch-coverage
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: mediawiki/tools/releng
     template:
@@ -9107,13 +9107,13 @@ projects:
 
   - name: mediawiki/oauthclient-php
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
 #### MediaWiki libraries #######################################
 
   - name: cdb
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: purtle
     template:
@@ -9121,15 +9121,15 @@ projects:
 
   - name: utfnormal
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: at-ease
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: base-convert
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: css-sanitizer
     template:
@@ -9141,24 +9141,24 @@ projects:
 
   - name: AhoCorasick
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: RunningStat
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: IPSet
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: RelPath
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: wikipeg
-    # FIXME: Use mediawiki-php-library-php74-to-php81 ?
+    # FIXME: Use mediawiki-php-library ?
     template:
-      - name: composer-test-package-php74-to-php81
+      - name: composer-test-package-php74-or-later
     test:
       - wikipeg-special-node18-plus-php80-composer-docker
     gate-and-submit:
@@ -9166,35 +9166,35 @@ projects:
 
   - name: WrappedString
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: CLDRPluralRuleParser
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: HtmlFormatter
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: mediawiki/libs/alea
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: mediawiki/libs/Assert
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: mediawiki/libs/Bcp47Code
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: mediawiki/libs/CommonPasswords
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: mediawiki/libs/CloverDiff
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: mediawiki/libs/Dodo
     template:
@@ -9202,15 +9202,15 @@ projects:
 
   - name: mediawiki/libs/Equivset
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: mediawiki/libs/IDLeDOM
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: mediawiki/libs/IPAValidator
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: mediawiki/libs/IPUtils
     template:
