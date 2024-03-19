@@ -1,3 +1,10 @@
+quibble-buster-php80 (1.6.0-s8) wikimedia; urgency=high
+
+   Refresh for update in parent image sury-php:
+   Update sury.org gpg key - T360420
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 19 Mar 2024 12:31:27 +0100
+
 quibble-buster-php80 (1.6.0-s7) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-buster:

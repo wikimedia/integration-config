@@ -1,3 +1,10 @@
+php-ast (1.5.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image sury-php:
+   Update sury.org gpg key - T360420
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 19 Mar 2024 12:31:27 +0100
+
 php-ast (1.5.0) wikimedia; urgency=high
 
    Upgrade php-ast from 1.1.0 to 1.1.1
