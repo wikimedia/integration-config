@@ -1,3 +1,9 @@
+quibble-buster (1.6.0-s5) wikimedia; urgency=high
+
+   Raise php fpm memory limit from 128M to 256M - T356402
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 19 Mar 2024 11:18:45 +0100
+
 quibble-buster (1.6.0-s4) wikimedia; urgency=high
 
    Switch Node from 16 to 18
