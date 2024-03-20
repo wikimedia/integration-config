@@ -17,4 +17,4 @@ RUN pip3 install --no-cache-dir --system --prefix /opt/commit-message-validator 
 USER nobody
 WORKDIR /src
 ENV PYTHONPATH=/opt/commit-message-validator/lib/python3.9/site-packages
-ENTRYPOINT ["/opt/commit-message-validator/bin/commit-message-validator"]
+ENTRYPOINT ["/opt/commit-message-validator/bin/commit-message-validator", "validate"]

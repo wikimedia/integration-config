@@ -1,3 +1,9 @@
+commit-message-validator (2.0.0-s3) wikimedia; urgency=high
+
+   Call `commit-message-validator validate` for exit status - T360460
+
+ -- Bryan Davis <bd808@wikimedia.org>  Wed, 20 Mar 2024 00:01:00 -0600
+
 commit-message-validator (2.0.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:
