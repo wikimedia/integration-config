@@ -64,7 +64,7 @@
         set -euxo pipefail
 
         contains_disallowed_html() {
-          cat "$1" | sed -E -e 's/<\/? ?(abbr|b|bdi|big|br|charinsert|code|dd|del|div|dl|dt|em|h1|h2|h3|h4|hr|i|kbd|li|mark|math|NDL|nowiki|ol|p|page|pagelist|pages|pre|ref|samp|small|span|strong|sub|sup|syntaxhighlight|templatedata|templatestyles|tt|u|ul|user|var)( ((alttext|class|dir|display|id|lang|title|xml:lang|xmlns)=\\?["'\''][^=<>"'\'']*\\?["'\'']))* ?\/?>//g' -e 's/<!--//g' -e 's/<https?:\/\/[a-zA-Z0-9./-]*>//g' | grep '<'
+          cat "$1" | sed -E -e 's/<\/? ?(abbr|b|bdi|big|br|charinsert|citation|code|dd|del|div|dl|dt|em|h1|h2|h3|h4|hr|i|kbd|li|mark|math|NDL|nowiki|ol|p|page|pagelist|pages|pre|ref|samp|small|span|strong|sub|sup|syntaxhighlight|templatedata|templatestyles|tt|u|ul|user|var)( ((alttext|class|dir|display|id|lang|title|xml:lang|xmlns)=\\?["'\''][^=<>"'\'']*\\?["'\'']))* ?\/?>//g' -e 's/<!--//g' -e 's/<https?:\/\/[a-zA-Z0-9./-]*>//g' | grep '<'
         }
 
         contains_js_escape_seq() {
