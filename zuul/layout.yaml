@@ -2608,6 +2608,7 @@ projects:
       - trigger-inference-services-pipeline-langid
       - trigger-inference-services-pipeline-readability
       - trigger-inference-services-pipeline-article-descriptions
+      - trigger-inference-services-pipeline-huggingface
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
@@ -2621,6 +2622,7 @@ projects:
       - trigger-inference-services-pipeline-langid
       - trigger-inference-services-pipeline-readability
       - trigger-inference-services-pipeline-article-descriptions
+      - trigger-inference-services-pipeline-huggingface
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-outlink-transformer-publish
