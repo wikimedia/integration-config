@@ -5548,7 +5548,8 @@ projects:
   - name: mediawiki/extensions/WikibaseCirrusSearch
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      # (T360560) Pending code fixes to support PHP 8.2
+      - name: extension-quibble-php74-to-php81
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
@@ -5566,13 +5567,15 @@ projects:
   - name: mediawiki/extensions/WikibaseLexemeCirrusSearch
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      # (T360560) Pending code fixes to support PHP 8.2
+      - name: extension-quibble-php74-to-php81
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikibaseManifest
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      # (T360560) Pending code fixes to support PHP 8.2
+      - name: extension-quibble-php74-to-php81
       - name: extension-codehealth
       - name: extension-coverage
       - name: mwgate-npm
@@ -5581,7 +5584,8 @@ projects:
   - name: mediawiki/extensions/WikibaseMediaInfo
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      # (T360560) Pending code fixes to support PHP 8.2
+      - name: extension-quibble-php74-to-php81
       - name: extension-gate
       - name: extension-codehealth
       - name: extension-coverage
@@ -5589,20 +5593,23 @@ projects:
   - name: mediawiki/extensions/WikibaseQualityConstraints
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      # (T360560) Pending code fixes to support PHP 8.2
+      - name: extension-quibble-php74-to-php81
       - name: extension-codehealth
       - name: extension-coverage
 
   - name: mediawiki/extensions/Wikidata.org
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      # (T360560) Pending code fixes to support PHP 8.2
+      - name: extension-quibble-php74-to-php81
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikidataPageBanner
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      # (T360560) Pending code fixes to support PHP 8.2
+      - name: extension-quibble-php74-to-php81
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikiEditor

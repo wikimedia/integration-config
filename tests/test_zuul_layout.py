@@ -119,6 +119,8 @@ class TestZuulLayout(unittest.TestCase):
                     noPHP82Quibble = [
                         # (T360560) Pending code fixes to support PHP 8.2
                         'mediawiki/extensions/Wikibase',
+                        'mediawiki/extensions/WikibaseCirrusSearch',
+                        'mediawiki/extensions/WikibaseMediaInfo',
                         # (T360709) Pending code fixes to support PHP 8.2
                         'mediawiki/extensions/Math'
                     ]
@@ -275,7 +277,14 @@ class TestZuulLayout(unittest.TestCase):
                         'mediawiki/extensions/WikiLambda',
                         # (T360560) Pending code fixes to support PHP 8.2
                         'mediawiki/extensions/Wikibase',
+                        'mediawiki/extensions/WikibaseCirrusSearch',
                         'mediawiki/extensions/WikibaseLexeme',
+                        'mediawiki/extensions/WikibaseLexemeCirrusSearch',
+                        'mediawiki/extensions/WikibaseManifest',
+                        'mediawiki/extensions/WikibaseMediaInfo',
+                        'mediawiki/extensions/WikibaseQualityConstraints',
+                        'mediawiki/extensions/Wikidata.org',
+                        'mediawiki/extensions/WikidataPageBanner',
                         # (T360709) Pending code fixes to support PHP 8.2
                         'mediawiki/extensions/Math',
                         # Fix tracked in T250418
