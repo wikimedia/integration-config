@@ -119,7 +119,8 @@ class TestZuulLayout(unittest.TestCase):
                     noPHP82Quibble = [
                         # (T360560) Pending code fixes to support PHP 8.2
                         'mediawiki/extensions/Wikibase',
-                        'mediawiki/extensions/WikibaseLexeme'
+                        # (T360709) Pending code fixes to support PHP 8.2
+                        'mediawiki/extensions/Math'
                     ]
 
                     if project['name'] in noPHP82Quibble:
@@ -275,6 +276,8 @@ class TestZuulLayout(unittest.TestCase):
                         # (T360560) Pending code fixes to support PHP 8.2
                         'mediawiki/extensions/Wikibase',
                         'mediawiki/extensions/WikibaseLexeme',
+                        # (T360709) Pending code fixes to support PHP 8.2
+                        'mediawiki/extensions/Math',
                         # Fix tracked in T250418
                         'mediawiki/extensions/WikimediaIncubator'
                         ]
