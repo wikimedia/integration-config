@@ -5555,7 +5555,8 @@ projects:
   - name: mediawiki/extensions/WikibaseLexeme
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      # (T360560) Pending code fixes to support PHP 8.2
+      - name: extension-quibble-php74-to-php81
       - name: extension-codehealth
       - name: extension-coverage
     postmerge:

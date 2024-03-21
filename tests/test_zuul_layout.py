@@ -118,8 +118,9 @@ class TestZuulLayout(unittest.TestCase):
                 else:
                     noPHP82Quibble = [
                         # (T360560) Pending code fixes to support PHP 8.2
-                        'mediawiki/extensions/Wikibase'
-                        ]
+                        'mediawiki/extensions/Wikibase',
+                        'mediawiki/extensions/WikibaseLexeme'
+                    ]
 
                     if project['name'] in noPHP82Quibble:
                         self.assertIn(
@@ -273,6 +274,7 @@ class TestZuulLayout(unittest.TestCase):
                         'mediawiki/extensions/WikiLambda',
                         # (T360560) Pending code fixes to support PHP 8.2
                         'mediawiki/extensions/Wikibase',
+                        'mediawiki/extensions/WikibaseLexeme',
                         # Fix tracked in T250418
                         'mediawiki/extensions/WikimediaIncubator'
                         ]
