@@ -119,6 +119,7 @@
 - job:
     name: beta-scap-sync-world
     defaults: beta
+    disabled: true  # T360595
     description: |
       Runs "/usr/bin/scap sync-world" as jenkins-deploy on deployment-deploy03
     node: BetaClusterBastion
