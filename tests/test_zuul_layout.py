@@ -117,11 +117,12 @@ class TestZuulLayout(unittest.TestCase):
                     self.assertNotIn('extension-quibble', templates)
                 else:
                     noPHP82Quibble = [
-                        # (T360560) Pending code fixes to support PHP 8.2
+                        # (T360560) Pending Wikibase code fixes for PHP 8.2
                         'mediawiki/extensions/Wikibase',
                         'mediawiki/extensions/WikibaseCirrusSearch',
                         'mediawiki/extensions/WikibaseMediaInfo',
-                        # (T360709) Pending code fixes to support PHP 8.2
+                        'mediawiki/extensions/GeoData',
+                        # (T360709) Pending Math code fixes for PHP 8.2
                         'mediawiki/extensions/Math'
                     ]
 
@@ -275,7 +276,7 @@ class TestZuulLayout(unittest.TestCase):
                         # run in quibble; we're exploring running them in
                         # Helm/GitLab (T321942)
                         'mediawiki/extensions/WikiLambda',
-                        # (T360560) Pending code fixes to support PHP 8.2
+                        # (T360560) Pending Wikibase code fixes for PHP 8.2
                         'mediawiki/extensions/Wikibase',
                         'mediawiki/extensions/WikibaseCirrusSearch',
                         'mediawiki/extensions/WikibaseLexeme',
@@ -285,7 +286,8 @@ class TestZuulLayout(unittest.TestCase):
                         'mediawiki/extensions/WikibaseQualityConstraints',
                         'mediawiki/extensions/Wikidata.org',
                         'mediawiki/extensions/WikidataPageBanner',
-                        # (T360709) Pending code fixes to support PHP 8.2
+                        'mediawiki/extensions/GeoData',
+                        # (T360709) Pending Math code fixes for PHP 8.2
                         'mediawiki/extensions/Math',
                         # Fix tracked in T250418
                         'mediawiki/extensions/WikimediaIncubator'

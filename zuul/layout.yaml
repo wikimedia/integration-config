@@ -4644,7 +4644,8 @@ projects:
   - name: mediawiki/extensions/GeoData
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      # (T360560) Pending Wikibase code fixes to support PHP 8.2
+      - name: extension-quibble-php74-to-php81
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
@@ -4886,7 +4887,7 @@ projects:
   - name: mediawiki/extensions/Math
     template:
       - name: in-wikimedia-production
-      # (T360709) Pending code fixes to support PHP 8.2
+      # (T360709) Pending Math code fixes to support PHP 8.2
       - name: extension-quibble-php74-to-php81
       - name: extension-coverage
       - name: extension-codehealth
@@ -5484,7 +5485,7 @@ projects:
   - name: mediawiki/extensions/Wikibase
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending code fixes to support PHP 8.2
+      # (T360560) Pending Wikibase code fixes to support PHP 8.2
       - name: extension-quibble-php74-to-php81
       - name: extension-gate
       - name: extension-codehealth
@@ -5548,7 +5549,7 @@ projects:
   - name: mediawiki/extensions/WikibaseCirrusSearch
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending code fixes to support PHP 8.2
+      # (T360560) Pending Wikibase code fixes to support PHP 8.2
       - name: extension-quibble-php74-to-php81
       - name: extension-coverage
       - name: extension-codehealth
@@ -5557,7 +5558,7 @@ projects:
   - name: mediawiki/extensions/WikibaseLexeme
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending code fixes to support PHP 8.2
+      # (T360560) Pending Wikibase code fixes to support PHP 8.2
       - name: extension-quibble-php74-to-php81
       - name: extension-codehealth
       - name: extension-coverage
@@ -5567,14 +5568,14 @@ projects:
   - name: mediawiki/extensions/WikibaseLexemeCirrusSearch
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending code fixes to support PHP 8.2
+      # (T360560) Pending Wikibase code fixes to support PHP 8.2
       - name: extension-quibble-php74-to-php81
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikibaseManifest
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending code fixes to support PHP 8.2
+      # (T360560) Pending Wikibase code fixes to support PHP 8.2
       - name: extension-quibble-php74-to-php81
       - name: extension-codehealth
       - name: extension-coverage
@@ -5584,7 +5585,7 @@ projects:
   - name: mediawiki/extensions/WikibaseMediaInfo
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending code fixes to support PHP 8.2
+      # (T360560) Pending Wikibase code fixes to support PHP 8.2
       - name: extension-quibble-php74-to-php81
       - name: extension-gate
       - name: extension-codehealth
@@ -5593,7 +5594,7 @@ projects:
   - name: mediawiki/extensions/WikibaseQualityConstraints
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending code fixes to support PHP 8.2
+      # (T360560) Pending Wikibase code fixes to support PHP 8.2
       - name: extension-quibble-php74-to-php81
       - name: extension-codehealth
       - name: extension-coverage
@@ -5601,14 +5602,14 @@ projects:
   - name: mediawiki/extensions/Wikidata.org
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending code fixes to support PHP 8.2
+      # (T360560) Pending Wikibase code fixes to support PHP 8.2
       - name: extension-quibble-php74-to-php81
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikidataPageBanner
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending code fixes to support PHP 8.2
+      # (T360560) Pending Wikibase code fixes to support PHP 8.2
       - name: extension-quibble-php74-to-php81
       - name: extension-coverage
 
