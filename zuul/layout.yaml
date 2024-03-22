@@ -4306,7 +4306,8 @@ projects:
   - name: mediawiki/extensions/CirrusSearch
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      # (T360560) Pending Wikibase code fixes to support PHP 8.2
+      - name: extension-quibble-php74-to-php81
       - name: extension-quibble-only-standalone
       - name: extension-codehealth
       - name: extension-gate
