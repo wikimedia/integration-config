@@ -7545,7 +7545,7 @@ projects:
 
   - name: mediawiki/extensions/OpenIDConnect
     template:
-      - name: extension-quibble-noselenium
+      - name: extension-quibble-composer-noselenium
       - name: mwgate-npm
 
   - name: mediawiki/extensions/OpenJsCad
