@@ -1,3 +1,9 @@
+quibble-buster (1.7.0) wikimedia; urgency=high
+
+   Update Quibble to 1.7.0
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 25 Mar 2024 17:13:25 +0100
+
 quibble-buster (1.6.0-s5) wikimedia; urgency=high
 
    Raise php fpm memory limit from 128M to 256M - T356402

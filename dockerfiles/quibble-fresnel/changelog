@@ -1,3 +1,10 @@
+quibble-fresnel (1.7.0) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-buster:
+   Update Quibble to 1.7.0
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 25 Mar 2024 17:13:25 +0100
+
 quibble-fresnel (1.6.0-s7) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-buster:
