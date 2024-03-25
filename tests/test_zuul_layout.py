@@ -123,6 +123,7 @@ class TestZuulLayout(unittest.TestCase):
                         'mediawiki/extensions/WikibaseMediaInfo',
                         'mediawiki/extensions/CirrusSearch',
                         'mediawiki/extensions/GeoData',
+                        'mediawiki/extensions/GrowthExperiments',
                         # (T360709) Pending Math code fixes for PHP 8.2
                         'mediawiki/extensions/Math'
                     ]
@@ -289,6 +290,7 @@ class TestZuulLayout(unittest.TestCase):
                         'mediawiki/extensions/WikidataPageBanner',
                         'mediawiki/extensions/CirrusSearch',
                         'mediawiki/extensions/GeoData',
+                        'mediawiki/extensions/GrowthExperiments',
                         # (T360709) Pending Math code fixes for PHP 8.2
                         'mediawiki/extensions/Math',
                         # Fix tracked in T250418

@@ -4712,13 +4712,14 @@ projects:
 
   - name: mediawiki/extensions/GrowthExperiments
     template:
-      - name: extension-phpbench
       - name: in-wikimedia-production
-      - name: extension-javascript-documentation
-      - name: extension-quibble
-      - name: extension-codehealth
+      # (T360560) Pending Wikibase code fixes to support PHP 8.2
+      - name: extension-quibble-php74-to-php81
       - name: extension-coverage
+      - name: extension-codehealth
       - name: extension-gate
+      - name: extension-javascript-documentation
+      - name: extension-phpbench
       - name: extension-apitests
 
   - name: mediawiki/extensions/GuidedTour
