@@ -1,3 +1,9 @@
+operations-puppet (0.9.2) wikimedia; urgency=medium
+
+  * Rebuild to update gems to latest versions
+
+ -- Taavi Väänänen <taavi@wikimedia.org>  Mon, 25 Mar 2024 16:24:36 +0200
+
 operations-puppet (0.9.1) wikimedia; urgency=medium
 
   * Rebuild to grab, puppet-lint-wmf_styleguide-check (1.1.4)
