@@ -125,7 +125,9 @@ class TestZuulLayout(unittest.TestCase):
                         'mediawiki/extensions/GeoData',
                         'mediawiki/extensions/GrowthExperiments',
                         # (T360709) Pending Math code fixes for PHP 8.2
-                        'mediawiki/extensions/Math'
+                        'mediawiki/extensions/Math',
+                        'mediawiki/extensions/MathSearch'
+
                     ]
 
                     if project['name'] in noPHP82Quibble:
@@ -293,6 +295,7 @@ class TestZuulLayout(unittest.TestCase):
                         'mediawiki/extensions/GrowthExperiments',
                         # (T360709) Pending Math code fixes for PHP 8.2
                         'mediawiki/extensions/Math',
+                        'mediawiki/extensions/MathSearch',
                         # Fix tracked in T250418
                         'mediawiki/extensions/WikimediaIncubator'
                         ]

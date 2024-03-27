@@ -7237,7 +7237,8 @@ projects:
 
   - name: mediawiki/extensions/MathSearch
     template:
-      - name: extension-quibble
+      # (T360709) Pending Math code fixes to support PHP 8.2
+      - name: extension-quibble-php74-to-php81
       - name: extension-coverage
 
   - name: mediawiki/extensions/MediaFunctions
