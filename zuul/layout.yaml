@@ -10261,6 +10261,10 @@ projects:
     gate-and-submit:
       - wmf-utils-tox-docker
 
+  - name: mediawiki/gadgets/CVNSimpleOverlay
+    template:
+      - name: node20-docker
+
   - name: mediawiki/gadgets/MiniEdit
     template:
       - name: mediawiki-i18n-check
@@ -10274,7 +10278,7 @@ projects:
     gate-and-submit:
       - noop
 
-  - name: mediawiki/gadgets/CVNSimpleOverlay
+  - name: mediawiki/gadgets/RTRC
     template:
       - name: node20-docker
 
