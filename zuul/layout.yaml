@@ -4869,13 +4869,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/MachineVision
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble-php74-to-php81
-      - name: extension-coverage
-      - name: extension-codehealth
-
   - name: mediawiki/extensions/MapSources
     template:
       - name: in-wikimedia-production
@@ -11269,6 +11262,10 @@ projects:
       - name: archived # T353966
 
   - name: mediawiki/extensions/Mantle
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/MachineVision
     template:
       - name: archived
 
