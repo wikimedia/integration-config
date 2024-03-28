@@ -64,6 +64,8 @@
     node: Docker
     # We dont want to overload CI when multiple branches have been updated
     concurrent: false
+    # Use a cron instead of postmerge trigger via Zuul, to deduplicate jobs
+    # https://phabricator.wikimedia.org/T94715
     triggers:
         - pollscm:
             cron: '@hourly'
