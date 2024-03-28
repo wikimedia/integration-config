@@ -345,6 +345,7 @@ pipelines:
            - ^pastakhov@yandex\.ru$ # PhpTags maintainer
            - ^paulfkeffer@gmail\.com$ # MacFan4000
            - ^perry@frasers\.org$ # Perryprog
+           - ^philip-wm@shutdown\.network$ # Philipnelson99
            - ^pikne@online\.ee$ # Pikne
            - ^platonides@gmail\.com$
            - ^pleasestand@live\.com$
