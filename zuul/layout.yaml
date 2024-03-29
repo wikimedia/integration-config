@@ -2759,12 +2759,6 @@ projects:
       - integration-config-shellcheck-docker
       - integration-config-zuul-layout-validate-docker
 
-  - name: integration/composer
-    test:
-      - integration-composer-check-php74-docker
-    gate-and-submit:
-      - integration-composer-check-php74-docker
-
   - name: integration/dashboard
     template:
       - name: tox-docker
@@ -10616,6 +10610,10 @@ projects:
   - name: integration/junitdiff
     template:
       - name: archived
+
+  - name: integration/composer
+    template:
+      - name: archived # T249949
 
   - name: integration/phpunit
     template:

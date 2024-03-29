@@ -34,21 +34,6 @@
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
-# Super basic sense check for integration/composer repo
-- job:
-    name: 'integration-composer-check-php74-docker'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-src-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-         image: 'docker-registry.wikimedia.org/releng/php74:0.5.2'
-         args: '/src/vendor/bin/composer --version'
-    publishers:
-     - docker-cleanup
-
 - job:
     name: integration-config-qa
     node: Docker
