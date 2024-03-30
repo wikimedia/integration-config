@@ -8347,10 +8347,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/TranslateSvg
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/TuleapIntegration
     template:
       - name: extension-quibble-composer
@@ -11678,6 +11674,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/TopLists
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/TranslateSvg
     template:
       - name: archived
 
