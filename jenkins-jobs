@@ -1,2 +1,16 @@
 #!/bin/bash -e
-exec python -m tox -e jenkins-jobs -- "${@}"
+
+# JJB is incompatible with Python 3.12+
+# https://www.mediawiki.org/wiki/Continuous_integration/Jenkins_job_builder#Troubleshooting
+# https://bugs.launchpad.net/python-jenkins/+bug/2038855
+if which python3.11 > /dev/null 2>&1
+then
+    exec python3.11 -m tox -e jenkins-jobs -- "${@}"
+
+# "python" is undefined on macOS/Homebrew (reserved for legacy Python 2.x)
+elif which python3 > /dev/null 2>&1
+then
+    exec python3 -m tox -e jenkins-jobs -- "${@}"
+else
+    exec python -m tox -e jenkins-jobs -- "${@}"
+fi
