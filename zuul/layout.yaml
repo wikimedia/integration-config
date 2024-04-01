@@ -2342,6 +2342,14 @@ project-templates:
       - composer-php82-docker
       - composer-php83-docker
 
+  - name: composer-test-php82-or-later
+    test:
+      - composer-php82-docker
+      - composer-php83-docker
+    gate-and-submit:
+      - composer-php82-docker
+      - composer-php83-docker
+
   - name: composer-test-package-php74-or-later
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
@@ -9654,7 +9662,7 @@ projects:
 
   - name: labs/tools/fileprotectionsync
     template:
-      - name: tox-docker
+      - name: composer-test-php82-or-later
 
   - name: labs/tools/nagf
     template:
