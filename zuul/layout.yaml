@@ -4378,12 +4378,6 @@ projects:
       - name: extension-codehealth
       - name: extension-javascript-documentation
 
-  - name: mediawiki/extensions/CodeReview
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/Cognate
     template:
       - name: in-wikimedia-production
@@ -10984,6 +10978,10 @@ projects:
   - name: mediawiki/extensions/CopyToClipboard
     template:
       - name: archived
+
+  - name: mediawiki/extensions/CodeReview
+    template:
+      - name: archived # T309052
 
   - name: mediawiki/extensions/Copyvio
     template:
