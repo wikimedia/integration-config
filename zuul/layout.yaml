@@ -3321,6 +3321,10 @@ projects:
 
 #### Other MediaWiki skins #####################################
 
+  - name: mediawiki/skins/2018
+    template:
+      - name: skin-quibble
+
   - name: mediawiki/skins/Amethyst
     template:
       - name: skin-quibble
