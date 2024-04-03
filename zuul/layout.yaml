@@ -4522,7 +4522,7 @@ projects:
   - name: mediawiki/extensions/EntitySchema
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      - name: extension-quibble-php74-to-php81
       - name: extension-codehealth
       - name: extension-coverage
 
