@@ -15,7 +15,7 @@
                     - shell: 'find log/ -name "mw-debug-*.log" -exec gzip {} \+'
 
 - job:
-    name: mediawiki-core-javascript-docker-publish
+    name: mediawiki-core-javascript-publish
     node: Docker
     triggers:
      - zuul
@@ -31,7 +31,7 @@
      - teardown
 
 - job:
-    name: 'mediawiki-core-doxygen-docker-publish'
+    name: 'mediawiki-core-doxygen-publish'
     node: Docker
     properties:
         - build-discarder:
@@ -60,7 +60,7 @@
         - docker-cleanup
 
 - job:
-    name: 'mediawiki-core-doxygen-docker'
+    name: 'mediawiki-core-doxygen'
     node: Docker
     # We dont want to overload CI when multiple branches have been updated
     concurrent: false
@@ -140,7 +140,7 @@
 - project:
     name: 'mwgate'
     jobs:
-        - '{name}-composer-{phpflavor}-docker':
+        - '{name}-composer-{phpflavor}':
             phpflavor:
                 - php74:
                     image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.3-s2
@@ -152,18 +152,18 @@
                     image: docker-registry.wikimedia.org/releng/composer-test-php82:0.1.2-s2
                 - php83:
                     image: docker-registry.wikimedia.org/releng/composer-test-php83:0.0.2-s2
-        - '{name}-{node_version}-docker':
+        - '{name}-{node_version}':
             node_version:
                - node18:
                    image: docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2
                - node20:
                    image: docker-registry.wikimedia.org/releng/node20-test:0.2.0-s2
-        - '{name}-tox-docker':
+        - '{name}-tox':
             build_timeout: 10
 
 # Phan! (T132636)
 - job-template:
-    name: 'mediawiki-core-{php}-phan-docker'
+    name: 'mediawiki-core-{php}-phan'
     node: Docker
     properties:
      - build-discarder:
@@ -218,10 +218,10 @@
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.4-s2
 
     jobs:
-        - mediawiki-core-{php}-phan-docker
+        - mediawiki-core-{php}-phan
 
 - job-template: &job_quibble
-    name: quibble-{packages-source}-{database}-{php}-docker
+    name: quibble-{packages-source}-{database}-{php}
     node: Docker
     entrypoint: quibble-with-supervisord
     quibble_args: '--skip npm-test,phpunit-standalone,api-testing'
@@ -296,7 +296,7 @@
 # Skipping selenium tests - T196960
 - job-template:
     !!merge : *job_quibble
-    name: quibble-{packages-source}-{database}-{php}-noselenium-docker
+    name: quibble-{packages-source}-{database}-{php}-noselenium
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --skip selenium,npm-test,phpunit-standalone,api-testing'
     triggers:
@@ -305,7 +305,7 @@
 # And the counterpart that only does Selenium T232759
 - job-template:
     !!merge : *job_quibble
-    name: quibble-{packages-source}-{database}-{php}-selenium-docker
+    name: quibble-{packages-source}-{database}-{php}-selenium
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
     triggers:
@@ -313,7 +313,7 @@
 
 - job-template:
     !!merge : *job_quibble
-    name: quibble-daily-{project}-{packages-source}-{database}-{php}-docker
+    name: quibble-daily-{project}-{packages-source}-{database}-{php}
     triggers:
         - timed: '@daily'
     publishers:
@@ -347,7 +347,7 @@
 # Special job that runs the "standalone" phpunit tests for a repo T225068
 - job-template:
     !!merge : *job_quibble
-    name: quibble-{packages-source}-{database}-{php}-phpunit-standalone-docker
+    name: quibble-{packages-source}-{database}-{php}-phpunit-standalone
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run phpunit-standalone'
     triggers:
@@ -356,7 +356,7 @@
 # For the master and wmf/* branches
 - job-template: &job_wmf_quibble
     !!merge : *job_quibble
-    name: wmf-quibble-vendor-mysql-{php}-docker
+    name: wmf-quibble-vendor-mysql-{php}
     entrypoint: quibble-with-supervisord
     # We do not run mediawiki/core tests with extensions installed
     # https://phabricator.wikimedia.org/T197469#4293142
@@ -368,7 +368,7 @@
 # already run in a separate job
 - job-template:
     !!merge : *job_quibble
-    name: wmf-quibble-core-vendor-mysql-{php}-docker
+    name: wmf-quibble-core-vendor-mysql-{php}
     entrypoint: quibble-with-supervisord
     # We do not run mediawiki/core tests with extensions installed
     # https://phabricator.wikimedia.org/T197469#4293142
@@ -378,7 +378,7 @@
 
 - job-template:
     !!merge : *job_quibble
-    name: wmf-quibble-selenium-{php}-docker
+    name: wmf-quibble-selenium-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
     triggers:
@@ -387,7 +387,7 @@
 # Main Quibble testing; excludes Selenium and API testing, done in own jobs.
 - job-template:
     !!merge : *job_quibble
-    name: mediawiki-quibble-{packages-source}-{database}-{php}-docker
+    name: mediawiki-quibble-{packages-source}-{database}-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing'
     triggers:
@@ -397,7 +397,7 @@
 # Selenium-only Quibble testing.
 - job-template:
     !!merge : *job_quibble
-    name: mediawiki-quibble-selenium-{packages-source}-{database}-{php}-docker
+    name: mediawiki-quibble-selenium-{packages-source}-{database}-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
     triggers:
@@ -406,7 +406,7 @@
 # API-only Quibble testing.
 - job-template:
     !!merge : *job_quibble
-    name: mediawiki-quibble-apitests-{packages-source}-{php}-docker
+    name: mediawiki-quibble-apitests-{packages-source}-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run api-testing'
     triggers:
@@ -415,7 +415,7 @@
 # Testing for API testing framework repo.
 - job-template:
     !!merge : *job_quibble
-    name: 'api-testing-{database}-{php}-docker'
+    name: 'api-testing-{database}-{php}'
     entrypoint: quibble-with-supervisord
     quibble_args: '-c mediawiki/tools/api-testing/ci.sh mediawiki/tools/api-testing'
     triggers:
@@ -424,7 +424,7 @@
 - project:
     name: mediawiki-api-testing
     jobs:
-        - api-testing-{database}-{php}-docker:
+        - api-testing-{database}-{php}:
             php:
                 - php74:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.7.0-s1
@@ -434,7 +434,7 @@
                 - sqlite
 
 - job-template:
-    name: mediawiki-quibble-composertest-{php}-docker
+    name: mediawiki-quibble-composertest-{php}
     node: Docker
     triggers:
         - zuul
@@ -510,7 +510,7 @@
 # Per-patch performance report for MediaWiki core.
 - job:
     !!merge : *job_quibble
-    name: 'mediawiki-fresnel-patch-docker'
+    name: 'mediawiki-fresnel-patch'
     triggers:
         - zuul
     builders:
@@ -561,26 +561,26 @@
 # Per-patch phpbench report for MediaWiki core, skins and extensions.
 - job-template:
     !!merge : *job_quibble
-    name: 'mediawiki-phpbench-patch-docker'
+    name: 'mediawiki-phpbench-patch'
     triggers:
       - zuul
 
 - job-template:
     !!merge : *job_quibble
-    name: 'mwext-phpunit-coverage-patch-docker'
+    name: 'mwext-phpunit-coverage-patch'
     quibble_args: '--commands=mwext-phpunit-coverage-patch'
     triggers:
         - zuul
 
 - job-template:
     !!merge : *job_quibble
-    name: 'mwext-phpunit-coverage-docker'
+    name: 'mwext-phpunit-coverage'
     quibble_args: '--commands=mwext-phpunit-coverage'
 
 # XXX copy pasted to pass --volume cover:/workspace/cover
 - job-template:
     !!merge : *job_quibble
-    name: 'mwext-phpunit-coverage-docker-publish'
+    name: 'mwext-phpunit-coverage-publish'
     quibble_args: '--commands=mwext-phpunit-coverage'
     triggers:
         - zuul
@@ -629,7 +629,7 @@
 # XXX copy pasted to pass --volume cover:/workspace/cover
 - job-template:
     !!merge : *job_quibble
-    name: 'mwskin-phpunit-coverage-docker-publish'
+    name: 'mwskin-phpunit-coverage-publish'
     quibble_args: '--commands=mwskin-phpunit-coverage'
     triggers:
         - zuul
@@ -678,7 +678,7 @@
 
 - job-template:
     !!merge : *job_quibble
-    name: 'mwskin-phpunit-coverage-patch-docker'
+    name: 'mwskin-phpunit-coverage-patch'
     quibble_args: '--commands=mwskin-phpunit-coverage-patch'
     triggers:
         - zuul
@@ -966,10 +966,10 @@
                 - php81
     builders:
         - trigger-builds:
-            - project: 'mediawiki-quibble-${packagessource}-${database}-${php}-docker'
+            - project: 'mediawiki-quibble-${packagessource}-${database}-${php}'
               block: true
               predefined-parameters: |
-                    projectName=mediawiki-quibble-${packagessource}-${database}-${php}-docker
+                    projectName=mediawiki-quibble-${packagessource}-${database}-${php}
                     ZUUL_URL=https://gerrit.wikimedia.org/r/p
                     ZUUL_PROJECT=mediawiki/core
                     ZUUL_BRANCH=$ZUUL_BRANCH
@@ -986,19 +986,19 @@
         - mwcore-phpunit-coverage-master:
             packages-source: vendor
             database: sqlite
-        - mwext-phpunit-coverage-patch-docker:
+        - mwext-phpunit-coverage-patch:
             packages-source:  composer
             database: mysql
-        - mwext-phpunit-coverage-docker:
+        - mwext-phpunit-coverage:
             packages-source:  composer
             database: mysql
-        - mwext-phpunit-coverage-docker-publish:
+        - mwext-phpunit-coverage-publish:
             packages-source:  composer
             database: mysql
-        - mwskin-phpunit-coverage-patch-docker:
+        - mwskin-phpunit-coverage-patch:
             packages-source:  composer
             database: mysql
-        - mwskin-phpunit-coverage-docker-publish:
+        - mwskin-phpunit-coverage-publish:
             packages-source:  composer
             database: mysql
 
@@ -1023,17 +1023,17 @@
         - php83:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php83:1.7.0-s1
     jobs:
-        - quibble-{packages-source}-{database}-{php}-docker
-        - quibble-{packages-source}-{database}-{php}-noselenium-docker
-        - quibble-{packages-source}-{database}-{php}-selenium-docker
-        - quibble-{packages-source}-{database}-{php}-phpunit-standalone-docker
+        - quibble-{packages-source}-{database}-{php}
+        - quibble-{packages-source}-{database}-{php}-noselenium
+        - quibble-{packages-source}-{database}-{php}-selenium
+        - quibble-{packages-source}-{database}-{php}-phpunit-standalone
         - mediawiki-coverage-jobs
-        - mediawiki-quibble-{packages-source}-{database}-{php}-docker
-        - mediawiki-quibble-composertest-{php}-docker
-        - mediawiki-quibble-selenium-{packages-source}-{database}-{php}-docker
-        - mediawiki-quibble-apitests-{packages-source}-{php}-docker:
+        - mediawiki-quibble-{packages-source}-{database}-{php}
+        - mediawiki-quibble-composertest-{php}
+        - mediawiki-quibble-selenium-{packages-source}-{database}-{php}
+        - mediawiki-quibble-apitests-{packages-source}-{php}:
             database: 'mysql'
-        - mediawiki-phpbench-patch-docker:
+        - mediawiki-phpbench-patch:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.7.0-s1
             entrypoint: quibble-with-supervisord
             packages-source: vendor
@@ -1059,9 +1059,9 @@
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.7.0-s1
             entrypoint: quibble-with-supervisord
     jobs:
-        - wmf-quibble-vendor-mysql-{php}-docker
-        - wmf-quibble-core-vendor-mysql-{php}-docker
-        - wmf-quibble-selenium-{php}-docker
+        - wmf-quibble-vendor-mysql-{php}
+        - wmf-quibble-core-vendor-mysql-{php}
+        - wmf-quibble-selenium-{php}
 
 - job-template:
     !!merge : *job_quibble
@@ -1070,7 +1070,7 @@
         - string:
             name: 'EXT_DEPENDENCIES'
             description: 'Extensions to add, separated by "\n". Set by Zuul.'
-    name: wikibase-{kind}-docker
+    name: wikibase-{kind}
     triggers:
         - zuul
 
@@ -1087,7 +1087,7 @@
             database: sqlite
             phpunit-params: '--group Wikibase,WikibaseAPI,Purtle'
     jobs:
-        - wikibase-{kind}-docker:
+        - wikibase-{kind}:
             quibble_args: >
                 --commands 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r {kind}'
                 'cp --verbose $WORKSPACE/src/LocalSettings.php $LOG_DIR'

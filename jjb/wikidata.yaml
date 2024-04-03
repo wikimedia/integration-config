@@ -25,15 +25,15 @@
 - project:
     name: wikidata-query-blazegraph
     jobs:
-      - '{name}-maven-java8-docker':
+      - '{name}-maven-java8':
           timeout: 180  # Blazegraph tests are long
 
 - project:
     name: analytics-wmde-toolkit-analyzer
     jobs:
-        - '{name}-maven-java8-docker':
+        - '{name}-maven-java8':
               pom: analyzer/pom.xml
-        - '{name}-maven-java8-docker-site-publish':
+        - '{name}-maven-java8-site-publish':
               pom: analyzer/pom.xml
               site_dir: src/analyzer/target/staging
 
@@ -41,7 +41,7 @@
     name: wikibase-daily-npm-audit
     repository: mediawiki/extensions/Wikibase
     jobs:
-     - '{name}-daily-node18-npmaudit-docker':
+     - '{name}-daily-node18-npmaudit':
 #        recipients:
 #         - email-wikidata-ci-status
 
@@ -55,9 +55,9 @@
         - docker-cleanup
 
     jobs:
-     - '{name}-maven-java8-docker'
-     - '{name}-maven-java8-docker-site-publish'
-     - '{name}-maven-release-docker':
+     - '{name}-maven-java8'
+     - '{name}-maven-java8-site-publish'
+     - '{name}-maven-release':
          timeout: 240  # minutes
 
 - project:
@@ -70,9 +70,9 @@
           - docker-cleanup
 
       jobs:
-          - '{name}-maven-java8-docker'
-          - '{name}-maven-java8-docker-site-publish'
-          - '{name}-maven-release-docker'
+          - '{name}-maven-java8'
+          - '{name}-maven-java8-site-publish'
+          - '{name}-maven-release'
 
 - job-template:
     name: wikidata-query-{project}-build
@@ -164,7 +164,7 @@
         # - WikibaseQualityConstraints
         # - Wikidata.org
     jobs:
-        - quibble-daily-{project}-{packages-source}-{database}-{php}-docker:
+        - quibble-daily-{project}-{packages-source}-{database}-{php}:
             database: mysql
             packages-source: vendor
             php:

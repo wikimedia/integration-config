@@ -3,7 +3,7 @@
 # Parameter:
 # entrypoint: script to run. Relative to integration/config root dir
 - job-template:
-    name: 'integration-config-{command}-docker'
+    name: 'integration-config-{command}'
     node: Docker
     triggers:
         - zuul
@@ -73,9 +73,9 @@
 - project:
     name: 'integration-config'
     jobs:
-     - '{name}-tox-docker':
+     - '{name}-tox':
          build_timeout: 5
-     - 'integration-config-{command}-docker':
+     - 'integration-config-{command}':
          command:
              - jjb-diff:
                  entrypoint: utils/jjb-diff.sh
@@ -91,7 +91,7 @@
 - project:
     name: 'integration-pipelinelib'
     jobs:
-     - '{name}-docker-doc-publish':
+     - '{name}-doc-publish':
          image: docker-registry.wikimedia.org/releng/gradle:4.4.1-s2
          args: 'groovydoc'
          docsrc: 'src/build/docs/groovydoc'
@@ -133,20 +133,20 @@
 - project:
     name: 'integration-gear'
     jobs:
-        - '{name}-tox-docker'
+        - '{name}-tox'
 
 - project:
     name: gearman-java
     jobs:
-        - '{name}-maven-java8-docker':
+        - '{name}-maven-java8':
             docker_image_var: docker-registry.wikimedia.org/releng/gearman-java8:1.1.0-s2
             maven_path: '/run-with-gearmand.sh'
             timeout: 25  # minutes, Archiva is slow T273086
-        - '{name}-maven-java11-docker':
+        - '{name}-maven-java11':
             docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s3
             maven_path: '/run-with-gearmand.sh'
             timeout: 25  # minutes, Archiva is slow T273086
-        - '{name}-maven-java11-docker-site-publish':
+        - '{name}-maven-java11-site-publish':
             docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s3
             sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s2
             maven_path: '/run-with-gearmand.sh'
@@ -163,7 +163,7 @@
 - project:
     name: 'integration-quibble'
     jobs:
-        - '{name}-tox-docker':
+        - '{name}-tox':
             docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s2
         - '{name}-tox-publish':
             docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s2
@@ -208,7 +208,7 @@
 - project:
     name: 'integration-zuul'
     jobs:
-     - '{name}-tox-docker':
+     - '{name}-tox':
          build_timeout: 5
 
 - job-template:

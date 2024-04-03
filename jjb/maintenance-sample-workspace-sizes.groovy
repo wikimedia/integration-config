@@ -5,7 +5,7 @@ import java.io.File
 def executionTimeout = params.EXECUTION_TIMEOUT_SECONDS.toInteger()
 def targetNode = params.TARGET_NODE
 
-def computerNamePrefix = 'integration-agent-docker-'
+def computerNamePrefix = 'integration-agent-'
 def image = 'docker-registry.wikimedia.org/releng/ci-bullseye'
 def metricsServer = 'graphite-in.eqiad.wmnet'
 
@@ -72,7 +72,7 @@ def reportMetrics = {
         //println "Sending ${data}"
         conn << data
     }
-    
+
     conn.close()
 }
 

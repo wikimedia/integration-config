@@ -20,7 +20,7 @@
      - docker-cleanup
 
 - job-template:
-    name: 'phpunit-coverage-{php}-docker-publish'
+    name: 'phpunit-coverage-{php}-publish'
     node: Docker
     concurrent: false
     triggers:
@@ -65,18 +65,18 @@
         - php83:
             docker_image: docker-registry.wikimedia.org/releng/composer-php83:0.0.2-s2
     jobs:
-        - phpunit-coverage-{php}-docker-publish
+        - phpunit-coverage-{php}-publish
 
 - project:
     name: eventlogging
     jobs:
-        - '{name}-tox-docker'
+        - '{name}-tox'
 
 
 - project:
     name: node-more-specific-jobs
     jobs:
-        - '{name}-{node_version}-browser-docker':
+        - '{name}-{node_version}-browser':
            node_version:
                - node18:
                    image: docker-registry.wikimedia.org/releng/node18-test-browser:0.1.0-s3
@@ -86,7 +86,7 @@
                - fresnel
                - unicodejs
                - visualeditor
-        - '{name}-{node_version}-docker':
+        - '{name}-{node_version}':
             node_version:
                 - node18:
                     image: docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2
@@ -98,7 +98,7 @@
 - project:
     name: 'translatewiki'
     jobs:
-     - '{name}-ruby2.5-rake-docker'
+     - '{name}-ruby2.5-rake'
 
 - job:
     name: mw-cli-test
@@ -152,7 +152,7 @@
 - project:
     name: wmf-utils
     jobs:
-        - '{name}-tox-docker'
+        - '{name}-tox'
 
 - job:
     name: 'shellcheck'
@@ -171,22 +171,22 @@
 - project:
     name: 'wikimedia-cz-tracker'
     jobs:
-        - '{name}-tox-docker':
+        - '{name}-tox':
             docker_image_var: docker-registry.wikimedia.org/releng/tox-mysqld:4.8.0-3-s2
 
 - project:
     name: 'wikimedia-cz-tools'
     jobs:
-        - '{name}-tox-docker'
+        - '{name}-tox'
 
 - project:
     name: 'wikimedia-cz-events'
     jobs:
-        - '{name}-tox-docker'
+        - '{name}-tox'
 
 - project:
     name: gerrit-events-wikimedia
     jobs:
-        - '{name}-bazel-docker':
+        - '{name}-bazel':
             build_target: events-wikimedia
             test_target: events-wikimedia_tests

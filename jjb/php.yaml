@@ -5,7 +5,7 @@
 # provided by https://security.sensiolabs.org to see if any of them
 # have reported security issues. See also T74193.
 - job:
-    name: 'php-composer-security-docker'
+    name: 'php-composer-security'
     node: Docker
     concurrent: false
     triggers:
@@ -58,10 +58,10 @@
             values: '{obj:branches}'
     builders:
         - trigger-builds:
-            - project: 'php-composer-security-docker'
+            - project: 'php-composer-security'
               block: true
               predefined-parameters: |
-                    projectName=php-composer-security-docker
+                    projectName=php-composer-security
                     ZUUL_URL={host}
                     ZUUL_PROJECT=$ZUUL_PROJECT
                     ZUUL_BRANCH=$ZUUL_BRANCH
@@ -74,8 +74,8 @@
             notify-every-unstable-build: false
             matrix-trigger: only-configurations
 
-- job-template: &composer-package-phpflavor-docker
-    name: 'composer-package-{phpflavor}-docker'
+- job-template: &composer-package-phpflavor
+    name: 'composer-package-{phpflavor}'
     node: Docker
     properties:
      - build-discarder:
@@ -90,16 +90,16 @@
      - teardown
 
 - job-template:
-    !!merge : *composer-package-phpflavor-docker
-    name: '{name}-composer-package-{phpflavor}-docker'
+    !!merge : *composer-package-phpflavor
+    name: '{name}-composer-package-{phpflavor}'
     # Run more specific jobs to large executors. They might have specific
     # needs, eg Parsoid is running Phan which requires memory - T221872
     node: Docker
     triggers:
      - zuul
 
-- job-template: &composer-phpflavor-docker
-    name: 'composer-{phpflavor}-docker'
+- job-template: &composer-phpflavor
+    name: 'composer-{phpflavor}'
     node: Docker
     properties:
      - build-discarder:
@@ -114,14 +114,14 @@
      - teardown
 
 - job-template:
-    !!merge : *composer-phpflavor-docker
-    name: '{name}-composer-{phpflavor}-docker'
+    !!merge : *composer-phpflavor
+    name: '{name}-composer-{phpflavor}'
     triggers:
      - zuul
 
 - job-template:
-    !!merge : *composer-phpflavor-docker
-    name: 'composer-coverage-patch-docker'
+    !!merge : *composer-phpflavor
+    name: 'composer-coverage-patch'
     triggers:
       - zuul
     builders:
@@ -148,7 +148,7 @@
             --html /log/coverage.html
 
 - job-template:
-    name: 'phan-{php}-docker'
+    name: 'phan-{php}'
     node: Docker
     triggers:
      - zuul
@@ -181,14 +181,14 @@
          composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.3-s2
          phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.4-s2
     jobs:
-      - 'phan-{php}-docker'
+      - 'phan-{php}'
 
 - project:
-    name: 'composer-flavored-on-docker'
+    name: 'composer-flavored-on'
     jobs:
-        - 'composer-coverage-patch-docker':
+        - 'composer-coverage-patch':
             composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.3-s2
-        - 'composer-{phpflavor}-docker':
+        - 'composer-{phpflavor}':
             phpflavor:
                 - php74:
                     image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.3-s2
@@ -200,7 +200,7 @@
                     image: docker-registry.wikimedia.org/releng/composer-test-php82:0.1.2-s2
                 - php83:
                     image: docker-registry.wikimedia.org/releng/composer-test-php83:0.0.2-s2
-        - 'composer-package-{phpflavor}-docker':
+        - 'composer-package-{phpflavor}':
             phpflavor:
                 - php74:
                     image: docker-registry.wikimedia.org/releng/composer-package-php74:0.4.3-s2
@@ -250,7 +250,7 @@
      - '{repogroup}-php-security'
 
 - job-template:
-    name: 'composer-{php}-assert-lock-docker'
+    name: 'composer-{php}-assert-lock'
     node: Docker
     triggers:
      - zuul
@@ -279,4 +279,4 @@
      - php83:
          image: docker-registry.wikimedia.org/releng/composer-php83:0.0.2-s2
     jobs:
-      - 'composer-{php}-assert-lock-docker'
+      - 'composer-{php}-assert-lock'

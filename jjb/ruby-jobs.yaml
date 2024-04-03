@@ -1,10 +1,10 @@
 - project:
     name: common-rake-job
     jobs:
-     - ruby2.5-rake-docker
+     - ruby2.5-rake
 
-- job-template: &job_ruby2_5-rake-docker
-    name: 'ruby2.5-rake-docker'
+- job-template: &job_ruby2_5-rake
+    name: 'ruby2.5-rake'
     node: Docker
     docker_image_var: 'docker-registry.wikimedia.org/releng/rake-ruby2.5:0.1.0'
     triggers:
@@ -28,8 +28,8 @@
         - teardown
 
 - job-template:
-    !!merge : *job_ruby2_5-rake-docker
-    name: '{name}-ruby2.5-rake-docker'
+    !!merge : *job_ruby2_5-rake
+    name: '{name}-ruby2.5-rake'
     triggers:
         - zuul
 

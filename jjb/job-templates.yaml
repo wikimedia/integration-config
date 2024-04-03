@@ -1,6 +1,6 @@
 # CI for gerrit
 - job:
-    name: 'gerrit-docker'
+    name: 'gerrit'
     node: Docker
     wrappers:
       # needs to be 1 hour and 30 mins to give gerrit enough time to build.
@@ -38,7 +38,7 @@
       - docker-cleanup
 
 - job-template:
-    name: '{name}-bazel-docker'
+    name: '{name}-bazel'
     node: Docker
     triggers:
       - zuul
@@ -71,11 +71,11 @@
           volumes:
               /srv/git: /srv/git:ro
 
-- job-template: &job_template_maven-java8-docker
-    name: '{name}-maven-java8-docker'
+- job-template: &job_template_maven-java8
+    name: '{name}-maven-java8'
     node: Docker
     # Projects are by default built on Java 8. To build on Java 11, use the
-    # {name}-maven-java11-docker job template, which will replace this docker
+    # {name}-maven-java11 job template, which will replace this docker
     # image with the java 11 version.
     docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.1.0-s2
     triggers:
@@ -187,30 +187,30 @@
 
 # Convenience alias with name/project variables
 - job-template:
-    !!merge : *job_template_maven-java8-docker
-    name: '{name}-{project}-maven-java8-docker'
+    !!merge : *job_template_maven-java8
+    name: '{name}-{project}-maven-java8'
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
 
-- job-template: &job_template_maven-java11-docker
-    !!merge : *job_template_maven-java8-docker
-    name: '{name}-maven-java11-docker'
+- job-template: &job_template_maven-java11
+    !!merge : *job_template_maven-java8
+    name: '{name}-maven-java11'
     docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.0-s3
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
 
 - job-template:
-    !!merge : *job_template_maven-java11-docker
-    name: '{name}-{project}-maven-java11-docker'
+    !!merge : *job_template_maven-java11
+    name: '{name}-{project}-maven-java11'
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
 
 # Generate project documentation using docker and publish it
 - job-template: &job_template_docker-doc-publish
-    name: '{name}-docker-doc-publish'
+    name: '{name}-doc-publish'
     node: Docker
     concurrent: false
     triggers:
@@ -234,25 +234,25 @@
 
 - job-template:
     !!merge : *job_template_docker-doc-publish
-    name: '{name}-docker-doc-tag-publish'
+    name: '{name}-doc-tag-publish'
     triggers:
         - zuul-post
 
 - job-template:
     !!merge : *job_template_docker-doc-publish
-    name: '{name}-docker-doc-latest-publish'
+    name: '{name}-doc-latest-publish'
     triggers:
         - zuul-post
 
-# Same as '{name}-maven-java8-docker' but src is bindmounted so we can later
+# Same as '{name}-maven-java8' but src is bindmounted so we can later
 # retrieve the site from /src/target/ and push it to doc.wikimedia.org. This
 # job template is meant to be run as a post merge step.
-- job-template: &job_template_maven-java8-docker-site-publish
-    name: '{name}-maven-java8-docker-site-publish'
+- job-template: &job_template_maven-java8-site-publish
+    name: '{name}-maven-java8-site-publish'
     node: Docker
     concurrent: false
     # Projects are by default built on Java 8. To build on Java 11, use the
-    # {name}-maven-java11-docker-site-publish job template, which will replace
+    # {name}-maven-java11-site-publish job template, which will replace
     # this docker image with the java 11 version.
     docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.1.0-s2
     # The Sonar analysis runs under Java 17 though
@@ -292,7 +292,7 @@
             entrypoint: '{maven_path}'
             workdir: '{workdir}'
             args: '-gs /settings.xml --batch-mode --file {pom} {maven_args}'
-        # Sonar analysis (see '{name}-maven-java8-docker' for details)
+        # Sonar analysis (see '{name}-maven-java8' for details)
         - docker-run-with-log-cache-src:
             image: '{obj:sonar_image_var}'
             entrypoint: '{maven_path}'
@@ -335,8 +335,8 @@
         - teardown
 
 - job-template:
-    name: '{name}-{project}-maven-java8-docker-site-publish'
-    !!merge : *job_template_maven-java8-docker-site-publish
+    name: '{name}-{project}-maven-java8-site-publish'
+    !!merge : *job_template_maven-java8-site-publish
     triggers:
         - zuul
     publishers:
@@ -349,23 +349,23 @@
         - archive-log-allow-empty
         - teardown
 
-- job-template: &job_template_maven-java11-docker-site-publish
-    !!merge : *job_template_maven-java8-docker-site-publish
-    name: '{name}-maven-java11-docker-site-publish'
+- job-template: &job_template_maven-java11-site-publish
+    !!merge : *job_template_maven-java8-site-publish
+    name: '{name}-maven-java11-site-publish'
     docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.0-s3
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
 
 - job-template:
-    !!merge : *job_template_maven-java11-docker-site-publish
-    name: '{name}-{project}-maven-java11-docker-site-publish'
+    !!merge : *job_template_maven-java11-site-publish
+    name: '{name}-{project}-maven-java11-site-publish'
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
 
-- job-template: &job_template_maven-release-docker
-    name:       '{name}-maven-release-docker'
+- job-template: &job_template_maven-release
+    name:       '{name}-maven-release'
     node:       Docker
     concurrent: false
     parameters:
@@ -435,12 +435,12 @@
     publishers: '{publishers}'
 
 - job-template:
-    name: '{name}-{project}-maven-release-docker'
-    !!merge : *job_template_maven-release-docker
+    name: '{name}-{project}-maven-release'
+    !!merge : *job_template_maven-release
 
 # Node job for 'npm install-test'
 - job-template:
-    name: '{name}-{node_version}-docker'
+    name: '{name}-{node_version}'
     node: Docker
     triggers:
      - zuul
@@ -457,7 +457,7 @@
 
 # Job for 'npm install & npm run {script}'
 - job-template:
-    name: '{name}-{node_version}-run{script}-docker'
+    name: '{name}-{node_version}-run{script}'
     node: Docker
     triggers:
      - zuul
@@ -472,7 +472,7 @@
      - teardown
 
 - job-template:
-    name: 'branchdeploy-{key}-node18-npm-docker'
+    name: 'branchdeploy-{key}-node18-npm'
     node: Docker
     triggers:
      - zuul
@@ -499,7 +499,7 @@
      - docker-cleanup
 
 - job-template:
-    name: 'branchdeploy-{key}-node20-npm-docker'
+    name: 'branchdeploy-{key}-node20-npm'
     node: Docker
     triggers:
      - zuul
@@ -526,7 +526,7 @@
      - docker-cleanup
 
 - job-template:
-    name: '{name}-daily-node18-npmaudit-docker'
+    name: '{name}-daily-node18-npmaudit'
     node: Docker
     triggers:
     - timed: '@daily'
@@ -557,7 +557,7 @@
     - docker-cleanup
 
 - job-template:
-    name: '{name}-daily-node20-npmaudit-docker'
+    name: '{name}-daily-node20-npmaudit'
     node: Docker
     triggers:
     - timed: '@daily'
@@ -589,7 +589,7 @@
 
 # Node job for 'npm install-test' (with browsers installed)
 - job-template:
-    name: '{name}-{node_version}-browser-docker'
+    name: '{name}-{node_version}-browser'
     node: Docker
     triggers:
      - zuul
@@ -606,7 +606,7 @@
 
 # Node job for 'npm install-test' (with browsers installed) and webdriver running
 - job-template:
-    name: '{name}-{node_version}-browser-webdriver-docker'
+    name: '{name}-{node_version}-browser-webdriver'
     node: Docker
     triggers:
      - zuul
@@ -626,7 +626,7 @@
 # and publishing /coverage from workspace
 # to doc.wikimedia.org/cover/:DOC_PROJECT
 - job-template:
-    name: 'generic-{node_version}-browser-coverage-docker-publish'
+    name: 'generic-{node_version}-browser-coverage-publish'
     node: Docker
     triggers:
      - zuul
@@ -646,7 +646,7 @@
 # and publishing /coverage from workspace
 # to doc.wikimedia.org/cover/:DOC_PROJECT
 - job-template:
-    name: 'generic-{node_version}-browser-direct-coverage-docker-publish'
+    name: 'generic-{node_version}-browser-direct-coverage-publish'
     node: Docker
     triggers:
      - zuul
@@ -667,7 +667,7 @@
 # - DOC_PROJECT: determined in parameter_functions.py (repo name)
 # - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
 - job-template:
-    name: generic-{node_version}-docs-docker-publish
+    name: generic-{node_version}-docs-publish
     node: Docker
     triggers:
      - zuul
@@ -686,7 +686,7 @@
 # - DOC_PROJECT: determined in parameter_functions.py (mw extension name)
 # - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
 - job:
-    name: mwext-node18-docs-docker-publish
+    name: mwext-node18-docs-publish
     node: Docker
     triggers:
      - zuul
@@ -702,7 +702,7 @@
      - teardown
 
 - job:
-    name: mwext-node20-docs-docker-publish
+    name: mwext-node20-docs-publish
     node: Docker
     triggers:
      - zuul
@@ -725,21 +725,21 @@
         - node20:
             image: docker-registry.wikimedia.org/releng/node20-test-browser:0.1.0-s3
     jobs:
-        - 'generic-{node_version}-browser-coverage-docker-publish'
-        - 'generic-{node_version}-browser-direct-coverage-docker-publish'
-        - '{name}-{node_version}-browser-docker'
-        - '{name}-{node_version}-browser-webdriver-docker'
-        - '{name}-{node_version}-run{script}-docker':
+        - 'generic-{node_version}-browser-coverage-publish'
+        - 'generic-{node_version}-browser-direct-coverage-publish'
+        - '{name}-{node_version}-browser'
+        - '{name}-{node_version}-browser-webdriver'
+        - '{name}-{node_version}-run{script}':
            script: 'doc'
 
        # The basic jobs images do not have web browsers:
-        - '{name}-{node_version}-docker':
+        - '{name}-{node_version}':
             node_version: &node_without_browsers
                 - node18:
                     image: docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2
                 - node20:
                     image: docker-registry.wikimedia.org/releng/node20-test:0.2.0-s2
-        - 'generic-{node_version}-docs-docker-publish':
+        - 'generic-{node_version}-docs-publish':
             node_version: *node_without_browsers
 
 # Same as 'generic', but kept separate so that gate-and-submit jobs
@@ -747,7 +747,7 @@
 - project:
     name: 'mwext'
     jobs:
-        - '{name}-{node_version}-run{script}-docker':
+        - '{name}-{node_version}-run{script}':
            script: 'doc'
            node_version:
                - node18:
@@ -758,11 +758,11 @@
 - project:
     name: 'branchdeploy'
     jobs:
-        - 'branchdeploy-{key}-node18-npm-docker':
+        - 'branchdeploy-{key}-node18-npm':
             key:
                 - wikidata-query-builder
                 - codex
-        - 'branchdeploy-{key}-node20-npm-docker':
+        - 'branchdeploy-{key}-node20-npm':
             key:
                 - codex
 

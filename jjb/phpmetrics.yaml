@@ -32,10 +32,10 @@
         - WikibaseQualityConstraints:
             repo: mediawiki/extensions/WikibaseQualityConstraints
     jobs:
-      - '{basename}-phpmetrics-docker'
+      - '{basename}-phpmetrics'
 
 - job-template:
-      name: '{basename}-phpmetrics-docker'
+      name: '{basename}-phpmetrics'
       description: |
           <p>Generate <a href="https://doc.wikimedia.org/{basename}/master/phpmetrics/">
           https://doc.wikimedia.org/{basename}/master/phpmetrics/</a>.</p>

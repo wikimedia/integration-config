@@ -256,8 +256,8 @@ class TestZuulScheduler(unittest.TestCase):
             return
         self.assertTrue(
             any([job for job in definition
-                 if 'mediawiki-i18n-check-docker' == job]),
-            'Project %s pipeline %s must have job mediawiki-i18n-check-docker'
+                 if 'mediawiki-i18n-check' == job]),
+            'Project %s pipeline %s must have job mediawiki-i18n-check'
             % (name, pipeline)
             )
 
@@ -790,7 +790,7 @@ class TestZuulScheduler(unittest.TestCase):
                      self.getPipeline('test').job_trees.iteritems()
                      if p.name == 'mediawiki/ruby/api'][0]
         rake_docker_job = [j for j in jobs_tree.getJobs()
-                           if j.name.endswith('rake-docker')][0]
+                           if j.name.endswith('rake')][0]
 
         def change_with_files(files):
             change = zuul.model.Change('mediawiki/ruby/api')
@@ -815,11 +815,11 @@ class TestZuulScheduler(unittest.TestCase):
                 if expect:
                     self.assertTrue(
                         rake_docker_job.changeMatches(change),
-                        'rake-docker should run with files: %s' % files)
+                        'rake should run with files: %s' % files)
                 else:
                     self.assertFalse(
                         rake_docker_job.changeMatches(change),
-                        'rake-docker should NOT run with files: %s' % files)
+                        'rake should NOT run with files: %s' % files)
             except AssertionError, e:
                 errors.append(str(e))
 
@@ -948,7 +948,7 @@ class TestZuulScheduler(unittest.TestCase):
             for (ext_name, pipelines) in self.getProjectsDefs().iteritems()
             if (ext_name.startswith('mediawiki/extensions/')
                 or ext_name.startswith('mediawiki/services/'))
-            and 'wmf-quibble-vendor-mysql-php74-docker'
+            and 'wmf-quibble-vendor-mysql-php74'
                 in pipelines.get('test', {})
         ])
 
@@ -1096,9 +1096,9 @@ class TestZuulScheduler(unittest.TestCase):
         # https://review.openstack.org/#/c/361505/2
         mw_defined_jobs.discard('noop')
 
-        # The ruby2.5-rake-docker job is temporarily being used by Wikibase;
+        # The ruby2.5-rake job is temporarily being used by Wikibase;
         # not worth having a special version just for a short while.
-        mw_defined_jobs.discard('ruby2.5-rake-docker')
+        mw_defined_jobs.discard('ruby2.5-rake')
 
         errors = {}
         # Projects that are not supposed to be in the 'mediawiki' queue. Either
@@ -1121,38 +1121,38 @@ class TestZuulScheduler(unittest.TestCase):
 
     def test_mwcore_switch_to_quibble(self):
         expected_test = {
-            'mediawiki-core-php74-phan-docker': True,
-            'mediawiki-quibble-vendor-mysql-php74-docker': True,
-            'mediawiki-quibble-composertest-php74-docker': True,
-            'mediawiki-quibble-apitests-vendor-php74-docker': True,
-            'mediawiki-quibble-selenium-vendor-mysql-php74-docker': True,
-            'wmf-quibble-vendor-mysql-php74-docker': False,
-            'wmf-quibble-core-vendor-mysql-php74-docker': True,
-            'wmf-quibble-selenium-php74-docker': True,
-            'mwgate-node18-docker': True,
+            'mediawiki-core-php74-phan': True,
+            'mediawiki-quibble-vendor-mysql-php74': True,
+            'mediawiki-quibble-composertest-php74': True,
+            'mediawiki-quibble-apitests-vendor-php74': True,
+            'mediawiki-quibble-selenium-vendor-mysql-php74': True,
+            'wmf-quibble-vendor-mysql-php74': False,
+            'wmf-quibble-core-vendor-mysql-php74': True,
+            'wmf-quibble-selenium-php74': True,
+            'mwgate-node18': True,
         }
         expected_gate = {
-            'mediawiki-core-php74-phan-docker': True,
-            'mediawiki-core-php81-phan-docker': True,
-            'mediawiki-quibble-composer-mysql-php74-docker': True,
-            'mediawiki-quibble-vendor-mysql-php74-docker': True,
-            'mediawiki-quibble-vendor-mysql-php80-docker': True,
-            'mediawiki-quibble-vendor-mysql-php81-docker': True,
-            'mediawiki-quibble-vendor-mysql-php82-docker': True,
-            'mediawiki-quibble-vendor-mysql-php83-docker': True,
-            'mediawiki-quibble-composertest-php74-docker': True,
-            'mediawiki-quibble-apitests-vendor-php74-docker': True,
-            'mediawiki-quibble-selenium-vendor-mysql-php74-docker': True,
-            'mediawiki-quibble-vendor-sqlite-php74-docker': True,
-            'mediawiki-quibble-vendor-postgres-php74-docker': True,
-            'wmf-quibble-vendor-mysql-php74-docker': False,
-            'wmf-quibble-vendor-mysql-php81-docker': False,
-            'wmf-quibble-selenium-php74-docker': True,
-            'wmf-quibble-selenium-php81-docker': True,
-            'wmf-quibble-core-vendor-mysql-php74-docker': True,
-            'wmf-quibble-core-vendor-mysql-php81-docker': True,
-            'mwgate-node18-docker': True,
-            'quibble-vendor-mysql-php74-phpunit-standalone-docker': True,
+            'mediawiki-core-php74-phan': True,
+            'mediawiki-core-php81-phan': True,
+            'mediawiki-quibble-composer-mysql-php74': True,
+            'mediawiki-quibble-vendor-mysql-php74': True,
+            'mediawiki-quibble-vendor-mysql-php80': True,
+            'mediawiki-quibble-vendor-mysql-php81': True,
+            'mediawiki-quibble-vendor-mysql-php82': True,
+            'mediawiki-quibble-vendor-mysql-php83': True,
+            'mediawiki-quibble-composertest-php74': True,
+            'mediawiki-quibble-apitests-vendor-php74': True,
+            'mediawiki-quibble-selenium-vendor-mysql-php74': True,
+            'mediawiki-quibble-vendor-sqlite-php74': True,
+            'mediawiki-quibble-vendor-postgres-php74': True,
+            'wmf-quibble-vendor-mysql-php74': False,
+            'wmf-quibble-vendor-mysql-php81': False,
+            'wmf-quibble-selenium-php74': True,
+            'wmf-quibble-selenium-php81': True,
+            'wmf-quibble-core-vendor-mysql-php74': True,
+            'wmf-quibble-core-vendor-mysql-php81': True,
+            'mwgate-node18': True,
+            'quibble-vendor-mysql-php74-phpunit-standalone': True,
         }
 
         change = zuul.model.Change('mediawiki/core')
@@ -1207,7 +1207,7 @@ class TestZuulScheduler(unittest.TestCase):
         repo = 'mediawiki/extensions/CirrusSearch'
         release_job = self.getJob(
             repo, 'test',
-            'wmf-quibble-vendor-mysql-php74-docker')
+            'wmf-quibble-vendor-mysql-php74')
 
         change = zuul.model.Change(repo)
 

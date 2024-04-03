@@ -1,12 +1,12 @@
 - project:
     name: pywikibot-core
     jobs:
-     - '{name}-tox-docker':
+     - '{name}-tox':
          docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:0.7.1-s3
      - '{name}-tox-publish':
         docsrc: 'docs/_build/html'
         docdest: 'pywikibot/$DOC_SUBPATH'
-     - '{name}-tox-{toxenv}-docker':
+     - '{name}-tox-{toxenv}':
          docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:0.7.1-s3
          toxenv:
              - doc:
@@ -26,7 +26,7 @@
 - job-group:
     name: pywikibot-tox-jobs
     jobs:
-        - '{name}-tox-docker':
+        - '{name}-tox':
             docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:4.8.0-3-s2
 
 - project:

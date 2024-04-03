@@ -1,7 +1,7 @@
 - project:
     name: poolcounter
     jobs:
-        - '{name}-tox-docker':
+        - '{name}-tox':
             docker_image_var: docker-registry.wikimedia.org/releng/tox-poolcounter:4.8.0-3-s2
 
 - job-template:

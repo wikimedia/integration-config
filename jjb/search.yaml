@@ -10,13 +10,13 @@
         - email-wikimedia-discovery
         - docker-cleanup
     jobs:
-        - '{name}-{project}-maven-java8-docker'
-        - '{name}-{project}-maven-java11-docker'
-        - '{name}-{project}-maven-java8-docker-site-publish'
+        - '{name}-{project}-maven-java8'
+        - '{name}-{project}-maven-java11'
+        - '{name}-{project}-maven-java8-site-publish'
 
 - project:
     name: wmf-jvm-utils
     jobs:
-        - '{name}-maven-java8-docker'
-        - '{name}-maven-java11-docker'
-        - '{name}-maven-java8-docker-site-publish'
+        - '{name}-maven-java8'
+        - '{name}-maven-java11'
+        - '{name}-maven-java8-site-publish'

@@ -1,5 +1,5 @@
 - job:
-    name: 'ooui-special-node18-plus-php80-composer-docker'
+    name: 'ooui-special-node18-plus-php80-composer'
     node: Docker
     triggers:
      - zuul
@@ -16,7 +16,7 @@
      - docker-cleanup
 
 - job:
-    name: 'ooui-special-node20-plus-php80-composer-docker'
+    name: 'ooui-special-node20-plus-php80-composer'
     node: Docker
     triggers:
      - zuul
@@ -33,7 +33,7 @@
      - docker-cleanup
 
 - job:
-    name: 'oojs-ui-docker-publish'
+    name: 'oojs-ui-publish'
     node: Docker
     concurrent: false
     triggers:
@@ -79,12 +79,12 @@
 - project:
     name: ooui
     jobs:
-        - '{name}-ruby2.5-rake-docker'
+        - '{name}-ruby2.5-rake'
 
 - project:
     name: oojs-core
     jobs:
-        - '{name}-{node_version}-run{script}-docker':
+        - '{name}-{node_version}-run{script}':
            script: 'jenkins'
            node_version:
                - node18:

@@ -27,7 +27,7 @@
 - project:
     name: 'mediawiki-vagrant'
     jobs:
-     - '{name}-ruby2.5-rake-docker':
+     - '{name}-ruby2.5-rake':
          docker_image_var: docker-registry.wikimedia.org/releng/rake-vagrant-ruby2.5:0.1.0
          build_timeout: 10  # minutes
      - 'mediawiki-vagrant-puppet-doc-publish'

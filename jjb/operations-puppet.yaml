@@ -52,7 +52,7 @@
      - docker-cleanup
 
 - job-template: &job_operations_puppet_tests
-    name: 'operations-puppet-tests-{os}-docker'
+    name: 'operations-puppet-tests-{os}'
     node: puppet
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
@@ -89,7 +89,7 @@
 
 - job-template:
     !!merge : *job_operations_puppet_tests
-    name: 'operations-puppet-tests-{os}-docker-non-voting'
+    name: 'operations-puppet-tests-{os}-non-voting'
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
         - zuul
@@ -125,7 +125,7 @@
     name: 'operations-puppet'
     jobs:
      - operations-puppet-doc
-     - operations-puppet-tests-{os}-docker:
+     - operations-puppet-tests-{os}:
          os:
            - buster:
                image: docker-registry.wikimedia.org/releng/operations-puppet:0.9.2
@@ -133,4 +133,4 @@
 - project:
     name: puppet-wmf-styleguide
     jobs:
-        - '{name}-ruby2.5-rake-docker'
+        - '{name}-ruby2.5-rake'

@@ -34,7 +34,7 @@ def set_parameters(item, job, params):
         set_mw_dependencies(item, job, params)
 
     # Special jobs for Wikibase - T188717
-    if job.name == 'wikibase-client-docker':
+    if job.name == 'wikibase-client':
         params['EXT_DEPENDENCIES'] = '\\n'.join([
             'mediawiki/extensions/Scribunto',
             'mediawiki/extensions/Capiunto',
@@ -42,7 +42,7 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/Echo',
         ])
 
-    if job.name == 'wikibase-repo-docker':
+    if job.name == 'wikibase-repo':
         params['EXT_DEPENDENCIES'] = '\\n'.join([
             'mediawiki/extensions/CirrusSearch',
             'mediawiki/extensions/Elastica',

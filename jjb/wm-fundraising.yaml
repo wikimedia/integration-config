@@ -1,5 +1,5 @@
 - job:
-    name: wikimedia-fundraising-civicrm-bullseye-docker
+    name: wikimedia-fundraising-civicrm-bullseye
     node: Docker
     triggers:
         - zuul
@@ -34,10 +34,10 @@
          # last one, so we might be able to keep testing against master
          donation_interface_branch: master
     jobs:
-     - quibble-donationinterface-{branch}-{phpflavor}-docker
+     - quibble-donationinterface-{branch}-{phpflavor}
 
 - job-template:
-    name: quibble-donationinterface-{branch}-{phpflavor}-docker
+    name: quibble-donationinterface-{branch}-{phpflavor}
     node: Docker
     triggers:
         - zuul
@@ -94,10 +94,10 @@
          docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.7.0-s1
          entrypoint: quibble-with-supervisord
     jobs:
-     - quibble-fundraising-{ext}-{branch}-{phpflavor}-docker
+     - quibble-fundraising-{ext}-{branch}-{phpflavor}
 
 - job-template:
-    name: quibble-fundraising-{ext}-{branch}-{phpflavor}-docker
+    name: quibble-fundraising-{ext}-{branch}-{phpflavor}
     node: Docker
     triggers:
         - zuul
@@ -140,5 +140,5 @@
 - project:
     name: fundraising-tools
     jobs:
-        - '{name}-tox-docker':
+        - '{name}-tox':
             docker_image_var: docker-registry.wikimedia.org/releng/tox-mysqld:0.8.0-s2

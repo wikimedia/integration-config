@@ -4,8 +4,8 @@
      - archive:
          artifacts: '**/.tox/*/log/*.log,**/.tox/log/*'
 
-- job-template: &job_tox-docker
-    name: 'tox-docker'
+- job-template: &job_tox
+    name: 'tox'
     node: Docker
     docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:0.7.1
     triggers:
@@ -29,14 +29,14 @@
         - teardown
 
 - job-template:
-    !!merge : *job_tox-docker
-    name: '{name}-tox-docker'
+    !!merge : *job_tox
+    name: '{name}-tox'
     triggers:
         - zuul
 
 - job-template:
-    !!merge : *job_tox-docker
-    name: '{name}-tox-{toxenv}-docker'
+    !!merge : *job_tox
+    name: '{name}-tox-{toxenv}'
     triggers:
         - zuul
     builders:
@@ -131,7 +131,7 @@
 - project:
     name: common-tox-jobs
     jobs:
-     - tox-docker
+     - tox
 
 - job:
     name: 'commit-message-validator'

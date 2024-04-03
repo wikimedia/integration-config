@@ -17,7 +17,7 @@
      - docker-cleanup
 
 - job-template:
-    name: 'wikipeg-special-node18-plus-{php}-composer-docker'
+    name: 'wikipeg-special-node18-plus-{php}-composer'
     node: Docker
     triggers:
      - zuul
@@ -40,7 +40,7 @@
 - project:
     name: wikipeg
     jobs:
-        - wikipeg-special-node18-plus-{php}-composer-docker:
+        - wikipeg-special-node18-plus-{php}-composer:
             php:
                 - php80:
                     docker_image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.1.0-s7
@@ -48,7 +48,7 @@
 - project:
     name: parsoidsvc
     jobs:
-        - '{name}-composer-package-{phpflavor}-docker':
+        - '{name}-composer-package-{phpflavor}':
             phpflavor:
                 - php74:
                     image: docker-registry.wikimedia.org/releng/composer-package-php74:0.4.3-s2

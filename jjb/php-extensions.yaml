@@ -1,5 +1,5 @@
 - job-template:
-    name: 'php-compile-{php}-docker'
+    name: 'php-compile-{php}'
     node: Docker
     triggers:
      - zuul
@@ -30,7 +30,7 @@
      - php83:
           image: docker-registry.wikimedia.org/releng/php83-compile:0.0.2-s1
     jobs:
-      - 'php-compile-{php}-docker'
+      - 'php-compile-{php}'
 
 - job:
     name: 'php74-compile-coverage-publish'

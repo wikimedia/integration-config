@@ -189,7 +189,7 @@ def checkAgents = {
                     computerName,
                     diskObject.toString()
                 )
-                println "Post-Docker-cleanup: ${debugMessage}"
+                println "Post-cleanup: ${debugMessage}"
             }
 
             if (diskObject.percent >= offlinePercentage) {

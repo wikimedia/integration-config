@@ -3,7 +3,7 @@
 - project:
     name: 'labs-tools-heritage'
     jobs:
-        - '{name}-tox-docker':
+        - '{name}-tox':
             docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:4.8.0-3-s2
             build_timeout: 6  # T206913
 
@@ -26,66 +26,66 @@
 - project:
     name: 'labs-tools-Isa'
     jobs:
-       - '{name}-tox-docker'
+       - '{name}-tox'
 
 - project:
     name: 'labs-tools-ldap'
     jobs:
-        - '{name}-tox-docker'
+        - '{name}-tox'
 
 - project:
     name: 'labs-tools-map-of-monuments'
     jobs:
-       - '{name}-tox-docker':
+       - '{name}-tox':
            docker_image_var: docker-registry.wikimedia.org/releng/tox-mysqld:4.8.0-3-s2
 
 - project:
     name: 'labs-tools-commons-mass-description'
     jobs:
-       - '{name}-tox-docker'
+       - '{name}-tox'
 
 - project:
     name: 'labs-tools-weapon-of-mass-description'
     jobs:
-       - '{name}-tox-docker'
+       - '{name}-tox'
 
 - project:
     name: 'labs-tools-harvesting-data-refinery'
     jobs:
-       - '{name}-tox-docker'
+       - '{name}-tox'
 
 - project:
     name: 'labs-tools-watch-translations'
     jobs:
-       - '{name}-tox-docker'
+       - '{name}-tox'
 
 - project:
     name: 'labs-tools-wiki2email'
     jobs:
-       - '{name}-tox-docker'
+       - '{name}-tox'
 
 - project:
     name: 'labs-tools-wikinity'
     jobs:
-       - '{name}-tox-docker':
+       - '{name}-tox':
            docker_image_var: docker-registry.wikimedia.org/releng/tox-mysqld:4.8.0-3-s2
 
 - project:
     name: 'labs-tools-ipwatcher'
     jobs:
-       - '{name}-tox-docker'
+       - '{name}-tox'
 
 - project:
     name: 'labs-tools-urbanecmbot'
     jobs:
-       - '{name}-tox-docker'
+       - '{name}-tox'
 
 - project:
     name: 'labs-tools-massmailer'
     jobs:
-       - '{name}-tox-docker'
+       - '{name}-tox'
 
 - project:
     name: 'labs'
     jobs:
-     - '{name}-tox-docker'
+     - '{name}-tox'

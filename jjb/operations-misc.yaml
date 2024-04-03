@@ -16,21 +16,21 @@
 - project:
     name: cergen
     jobs:
-        - '{name}-tox-docker':
+        - '{name}-tox':
             docker_image_var: docker-registry.wikimedia.org/releng/tox-java8:4.8.0-3-s2
 
 - project:
     name: censorshipmonitoring
     jobs:
-        - '{name}-tox-docker'
+        - '{name}-tox'
 
 - project:
     name: conftool
     jobs:
-        - '{name}-tox-docker'
+        - '{name}-tox'
 
 - job:
-    name: 'operations-dns-lint-docker'
+    name: 'operations-dns-lint'
     node: Docker
     triggers:
         - zuul
@@ -41,7 +41,7 @@
         - docker-cleanup
 
 - job-template:
-    name: 'operations-mw-config-{phpflavor}-composer-{run-script}-docker'
+    name: 'operations-mw-config-{phpflavor}-composer-{run-script}'
     node: Docker
     triggers:
         - zuul
@@ -64,8 +64,8 @@
      - php74:
          image: docker-registry.wikimedia.org/releng/composer-php74:0.3.3-s2
     jobs:
-     - '{name}-tox-docker'
-     - 'operations-mw-config-{phpflavor}-composer-{run-script}-docker':
+     - '{name}-tox'
+     - 'operations-mw-config-{phpflavor}-composer-{run-script}':
          run-script:
              - lint
              - test
@@ -74,7 +74,7 @@
 - project:
     name: 'cumin'
     jobs:
-        - '{name}-tox-docker':
+        - '{name}-tox':
             build_timeout: 20 # minutes
         - tox-publish-jobs:
             docenv: 'py39-sphinx'
@@ -84,7 +84,7 @@
 - project:
     name: deployment-charts
     jobs:
-        - '{name}-tox-{toxenv}-docker':
+        - '{name}-tox-{toxenv}':
             toxenv: update_version
 
 - project:
@@ -96,7 +96,7 @@
 - project:
     name: 'homer'
     jobs:
-        - '{name}-tox-docker'
+        - '{name}-tox'
         - tox-publish-jobs:
             docenv: 'py39-sphinx'
             docsrc: 'doc/build/html'
@@ -105,7 +105,7 @@
 - project:
     name: 'homer-public'
     jobs:
-        - '{name}-tox-docker'
+        - '{name}-tox'
         - tox-publish-jobs:
             docenv: 'py3-docs'
             docsrc: 'doc/build'
@@ -114,7 +114,7 @@
 - project:
     name: netbox-reports
     jobs:
-        - '{name}-tox-docker'
+        - '{name}-tox'
 
 - project:
     name: 'spicerack'
