@@ -127,6 +127,7 @@ class TestZuulLayout(unittest.TestCase):
                         'mediawiki/extensions/EntitySchema',
                         'mediawiki/extensions/PropertySuggester',
                         'mediawiki/extensions/Score',
+                        'mediawiki/extensions/WikimediaBadges',
                         # (T360709) Pending Math code fixes for PHP 8.2
                         'mediawiki/extensions/Math',
                         'mediawiki/extensions/MathSearch'
@@ -299,6 +300,7 @@ class TestZuulLayout(unittest.TestCase):
                         'mediawiki/extensions/EntitySchema',
                         'mediawiki/extensions/PropertySuggester',
                         'mediawiki/extensions/Score',
+                        'mediawiki/extensions/WikimediaBadges',
                         # (T360709) Pending Math code fixes for PHP 8.2
                         'mediawiki/extensions/Math',
                         'mediawiki/extensions/MathSearch',

@@ -5661,7 +5661,7 @@ projects:
   - name: mediawiki/extensions/WikimediaBadges
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      - name: extension-quibble-php74-to-php81
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikimediaCampaignEvents
