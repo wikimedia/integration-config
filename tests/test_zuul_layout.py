@@ -128,6 +128,12 @@ class TestZuulLayout(unittest.TestCase):
                         'mediawiki/extensions/PropertySuggester',
                         'mediawiki/extensions/Score',
                         'mediawiki/extensions/WikimediaBadges',
+                        'mediawiki/extensions/ArticlePlaceholder',
+                        'mediawiki/extensions/ImageSuggestions',
+                        'mediawiki/extensions/MachineVision',
+                        'mediawiki/extensions/MediaSearch',
+                        'mediawiki/extensions/Wikisource',
+                        'mediawiki/extensions/TEI',
                         # (T360709) Pending Math code fixes for PHP 8.2
                         'mediawiki/extensions/Math',
                         'mediawiki/extensions/MathSearch'
@@ -301,6 +307,12 @@ class TestZuulLayout(unittest.TestCase):
                         'mediawiki/extensions/PropertySuggester',
                         'mediawiki/extensions/Score',
                         'mediawiki/extensions/WikimediaBadges',
+                        'mediawiki/extensions/ArticlePlaceholder',
+                        'mediawiki/extensions/ImageSuggestions',
+                        'mediawiki/extensions/MachineVision',
+                        'mediawiki/extensions/MediaSearch',
+                        'mediawiki/extensions/Wikisource',
+                        'mediawiki/extensions/TEI',
                         # (T360709) Pending Math code fixes for PHP 8.2
                         'mediawiki/extensions/Math',
                         'mediawiki/extensions/MathSearch',

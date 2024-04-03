@@ -4209,7 +4209,7 @@ projects:
   - name: mediawiki/extensions/ArticlePlaceholder
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      - name: extension-quibble-php74-to-php81
       - name: extension-coverage
       - name: extension-codehealth
 
@@ -4742,7 +4742,7 @@ projects:
   - name: mediawiki/extensions/ImageSuggestions
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      - name: extension-quibble-php74-to-php81
       - name: extension-codehealth
       - name: extension-coverage
 
@@ -4868,7 +4868,7 @@ projects:
   - name: mediawiki/extensions/MachineVision
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      - name: extension-quibble-php74-to-php81
       - name: extension-coverage
       - name: extension-codehealth
 
@@ -4906,7 +4906,7 @@ projects:
   - name: mediawiki/extensions/MediaSearch
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      - name: extension-quibble-php74-to-php81
       - name: extension-coverage
       - name: extension-codehealth
 
@@ -5710,7 +5710,7 @@ projects:
   - name: mediawiki/extensions/Wikisource
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
+      - name: extension-quibble-php74-to-php81
       - name: extension-coverage
       - name: extension-codehealth
 
@@ -8304,7 +8304,7 @@ projects:
 
   - name: mediawiki/extensions/TEI
     template:
-      - name: extension-quibble
+      - name: extension-quibble-php74-to-php81
 
   - name: mediawiki/extensions/TestLanguageNameGrammar
     template:
