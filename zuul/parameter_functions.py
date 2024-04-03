@@ -505,6 +505,7 @@ dependencies = {
     'UploadWizard': ['WikimediaMessages', 'EventLogging', 'AbuseFilter',
                      'SpamBlacklist'],
     'UserStatus': ['SocialProfile', 'SportsTeams', 'BlogPage'],
+    'VECancelButton': ['VisualEditor'],
     'VEForAll': ['VisualEditor'],
     'VikiSemanticTitle': ['VIKI'],
     'VikiTitleIcon': ['VIKI'],

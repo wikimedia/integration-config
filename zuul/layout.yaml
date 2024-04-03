@@ -8463,6 +8463,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/VECancelButton
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/VEForAll
     template:
       - name: extension-quibble
