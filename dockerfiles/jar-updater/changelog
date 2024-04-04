@@ -1,3 +1,9 @@
+jar-updater (0.1.2) wikimedia; urgency=high
+
+   Re-add curl package to jar-updater image
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Thu,  4 Apr 2024 10:23:00 -0700
+
 jar-updater (0.1.1) wikimedia; urgency=medium
 
    Refresh for update in parent image ci-common:

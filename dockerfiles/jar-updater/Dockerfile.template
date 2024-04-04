@@ -3,6 +3,8 @@ FROM {{ "ci-bookworm" | image_tag }}
 
 USER root
 
+# Dependencies for analytics/refinery bin/update-refinery-source-jars
+RUN {{ "curl" | apt_install }}
 COPY run.sh /run.sh
 
 USER nobody
