@@ -1,3 +1,10 @@
+ci-src-setup-simple (0.6.2) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-buster:
+   Set Gerrit as the git remote, used by git LFS to infer the remote endpoint to fetch from - T328472
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Thu,  4 Apr 2024 09:54:42 -0700
+
 ci-src-setup-simple (0.6.1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:

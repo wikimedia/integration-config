@@ -1,3 +1,9 @@
+ci-buster (0.7.1) wikimedia; urgency=high
+
+   Set Gerrit as the git remote, used by git LFS to infer the remote endpoint to fetch from - T328472
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Thu,  4 Apr 2024 09:54:42 -0700
+
 ci-buster (0.7.0) wikimedia; urgency=medium
 
    Add git-lfs package.
