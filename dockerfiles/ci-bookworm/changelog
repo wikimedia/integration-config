@@ -1,3 +1,11 @@
+ci-bookworm (1.4.0) wikimedia; urgency=medium
+
+   Refresh for update in parent image ci-common:
+   Set Gerrit as the git remote, used by git LFS to infer the remote endpoint
+   to fetch from - T328472
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 04 Apr 2024 14:42:30 +0200
+
 ci-bookworm (1.3.0) wikimedia; urgency=medium
 
    Add git-lfs package.

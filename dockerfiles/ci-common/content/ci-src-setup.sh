@@ -13,6 +13,12 @@ if [[ "${JENKINS_URL:-}" == "" && "${CI:-}" == "" ]]; then
 fi
 
 git init
+
+# Set the remote to the canonical repository, that is notably used by git LFS
+# to infer the remote endpoint to fetch from.
+git remote add origin "https://gerrit.wikimedia.org/r/${ZUUL_PROJECT}"
+
+# Fetch from the Zuul merger
 git fetch --quiet --update-head-ok --depth 2 "${ZUUL_URL}/${ZUUL_PROJECT}" "+${ZUUL_REF}:${ZUUL_REF}"
 
 if [[ "${ZUUL_BRANCH:-}" == "" ]]; then
