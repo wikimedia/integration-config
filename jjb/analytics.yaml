@@ -76,7 +76,7 @@
               EMAIL: maven-release-user@wikimedia.org
           options: >-
               -v "$NETRC_FILE":/nonexistent/.netrc:ro
-          image: docker-registry.wikimedia.org/releng/jar-updater:0.1.1
+          image: docker-registry.wikimedia.org/releng/jar-updater:0.1.2
           args: >-
               -v "$RELEASE_VERSION"
               -u 'maven-release-user'
