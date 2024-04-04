@@ -1,3 +1,10 @@
+ci-src-setup-simple (0.6.1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-common:
+   set git remote in ci-src-setup
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Thu,  4 Apr 2024 08:33:51 -0700
+
 ci-src-setup-simple (0.6.0) wikimedia; urgency=medium
 
    Refresh for update in parent image ci-src-buster
