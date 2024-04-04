@@ -1,3 +1,12 @@
+jar-updater (0.1.0) wikimedia; urgency=medium
+
+  * Switch from Buster to Bookworm.
+  * Remove git-fat since analytics/refinery moves to git LFS T328472.
+  * Remove wget, the script got moved to use curl back in 2020.
+  * curl and git-lfs are already included in the base image.
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 04 Apr 2024 10:47:44 +0200
+
 jar-updater (0.0.7-s3) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:
