@@ -48,7 +48,7 @@
          volumes:
              src:
              log:
-         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.6.0
+         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.6.1
          entrypoint: /bin/bash
          args: -c "set -euo pipefail; git show -m --first-parent --find-renames=100% FETCH_HEAD -U0 | grep '^+' | tee /log/additions.txt"
 
