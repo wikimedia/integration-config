@@ -421,7 +421,7 @@ dependencies = {
                        'skins/MinervaNeue'],
     'MobileFrontendContentProvider': ['MobileFrontend'],
     'Monstranto': ['Scribunto'],
-    'MultimediaViewer': ['BetaFeatures'],
+    'MultimediaViewer': ['BetaFeatures', 'MobileFrontend'],
     'NamespacePopups': ['PagePopups'],
     'NavigationTiming': ['EventLogging'],
     'NaylorAMS': ['PluggableAuth'],
