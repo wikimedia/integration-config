@@ -172,10 +172,6 @@
             setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.7.0-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.3-s2
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.3-s2
-        - php80:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.7.0-s1
-            composer_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.3-s2
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php80:0.1.3-s2
         - php81:
             setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.7.0-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.3-s2
