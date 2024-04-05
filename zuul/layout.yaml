@@ -755,7 +755,8 @@ pipelines:
   - name: php
     description: >
       Slower variants of PHPUnit jobs excluded from the "test" pipeline, such as additional PHP
-      versions and sqlite/postgres database types. These also run as part of the "gate-and-submit" pipeline.
+      versions and sqlite/postgres database types. These also run as part of the "gate-and-submit"
+      pipeline for the main branch, but may not pass on other branches, e.g. older releases.
       To run them ad hoc, submit the comment "check php".
     manager: IndependentPipelineManager
     source: gerrit
