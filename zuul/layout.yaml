@@ -3190,7 +3190,6 @@ projects:
     experimental:
       - mwgate-composer-php74
       - trigger-mediawiki-pipeline-wmf-publish
-      - mediawiki-core-php80-phan
       - mwgate-node20
 
   - name: mediawiki/vendor
