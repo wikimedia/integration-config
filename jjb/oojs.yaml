@@ -6,7 +6,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.1.0-s5
+         image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.1.0-s7
          # 'npm run jenkins' also runs composer
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
@@ -23,7 +23,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node20-test-browser-php80-composer:0.1.0-s5
+         image: docker-registry.wikimedia.org/releng/node20-test-browser-php80-composer:0.1.0-s7
          # 'npm run jenkins' also runs composer
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
@@ -41,7 +41,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.1.0-s5
+         image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.1.0-s7
          # npm run-script jenkins runs 'npm test' and 'npm run doc'
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
