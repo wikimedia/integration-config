@@ -1,3 +1,15 @@
+composer-scratch (2.7.2) wikimedia; urgency=high
+
+   Upgrade composer from 2.6.4 to 2.7.2
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri,  5 Apr 2024 10:04:13 -0400
+
+composer-scratch (2.6.4-s3) wikimedia; urgency=high
+
+   Re-platform onto Bullseye (no-op for downstream users)
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri,  5 Apr 2024 10:02:07 -0400
+
 composer-scratch (2.6.4-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:

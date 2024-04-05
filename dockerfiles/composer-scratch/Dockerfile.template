@@ -1,4 +1,4 @@
-FROM {{ "ci-buster" | image_tag }} AS build
+FROM {{ "ci-bullseye" | image_tag }} AS build
 
 USER root
 
@@ -9,7 +9,7 @@ COPY composer.phar.sha256sum /srv/composer/composer.phar.sha256sum
 RUN {{ "curl" | apt_install }}
 
 RUN cd /srv/composer \
-    && curl --silent --fail --output composer.phar https://getcomposer.org/download/2.6.4/composer.phar \
+    && curl --silent --fail --output composer.phar https://getcomposer.org/download/2.7.2/composer.phar \
     && sha256sum -c composer.phar.sha256sum
 
 RUN chmod +x /srv/composer/composer.phar \
