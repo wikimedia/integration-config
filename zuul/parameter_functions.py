@@ -796,7 +796,7 @@ def set_mw_dependencies(item, job, params):
         dep_key = split[-1]
         params['EXT_NAME'] = split[-1]
 
-    if '-phan-' in job.name:
+    if '-phan' in job.name:
         mapping = phan_dependencies
         recurse = False
     else:
