@@ -636,7 +636,7 @@ phan_dependencies = {
     'ImageSuggestions': ['Echo', 'CirrusSearch', 'Elastica'],
     'IPInfo': ['EventLogging'],
     'intersection': ['PageImages'],
-    'JsonConfig': ['Scribunto', 'Kartographer'],
+    'JsonConfig': ['CodeEditor', 'Kartographer', 'Scribunto'],
     'JWTAuth': ['PluggableAuth'],
     'Kartographer': ['FlaggedRevs', 'GeoData', 'JsonConfig'],
     'LiquidThreads': ['Renameuser'],
