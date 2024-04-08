@@ -158,18 +158,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: mediawiki
-    pipeline:
-      - publish
-      # builds container images for wmf branches
-      - wmf-publish
-    jobs:
-      # trigger-mediawiki-pipeline-publish
-      - 'trigger-{name}-pipeline-{pipeline}'
-      # mediawiki-pipeline-publish
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: mediawiki-cli
     pipeline:
       - test
