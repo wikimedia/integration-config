@@ -1102,15 +1102,6 @@ jobs:
 
   # End of meta jobs (the ones starting with ^)
 
-
-  - name: trigger-mediawiki-pipeline-publish
-    branch: master
-    voting: false
-
-  - name: trigger-mediawiki-pipeline-wmf-publish
-    branch: ^wmf/.*$
-    voting: false
-
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
   # queue-name can not be applied based on a regex, apply the name on most used
   # jobs.
@@ -3187,8 +3178,6 @@ projects:
     postmerge:
       - mediawiki-core-javascript-publish
       - mwcore-codehealth-master-non-voting
-      # Temporarily disable publishing for SRE (T242775)
-      # - trigger-mediawiki-pipeline-publish
       - train-deploy-notes
     publish:
       # When release tags are created
@@ -3196,7 +3185,6 @@ projects:
       - mediawiki-core-doxygen-publish
     experimental:
       - mwgate-composer-php74
-      - trigger-mediawiki-pipeline-wmf-publish
       - mwgate-node20
 
   - name: mediawiki/vendor
