@@ -88,7 +88,7 @@
             toxenv: update_version
 
 - project:
-    name: docker-pkg
+    name: dockerpkg
     jobs:
         - '{name}-tox-publish':
             docsrc: 'doc/build'

@@ -1152,7 +1152,7 @@ jobs:
   - name: cumin-tox-publish
     branch: ^master$
 
-  - name: docker-pkg-tox-publish
+  - name: dockerpkg-tox-publish
     branch: ^master$
 
   - name: ecs-publish
@@ -3973,7 +3973,7 @@ projects:
     template:
       - name: tox
     postmerge:
-      - docker-pkg-tox-publish
+      - dockerpkg-tox-publish
 
   - name: operations/docker-images/docker-report
     template:
