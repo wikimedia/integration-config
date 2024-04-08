@@ -5490,7 +5490,7 @@ projects:
       - name: in-wikimedia-production
       # (T360560) Pending Wikibase code fixes to support PHP 8.2
       - name: extension-quibble-php74-to-php81
-      - name: extension-coverage
+      # (T288396) No coverage reporting yet; needs special work
       - name: extension-gate
       - name: extension-codehealth
       - name: extension-javascript-documentation
