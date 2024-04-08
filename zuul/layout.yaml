@@ -3097,6 +3097,8 @@ projects:
       - mediawiki-quibble-composer-mysql-php74
       - mediawiki-quibble-composer-mysql-php80
       - mediawiki-quibble-composer-mysql-php81
+      - mediawiki-quibble-composer-mysql-php82
+      - mediawiki-quibble-composer-mysql-php83
       - mediawiki-quibble-composertest-php74
       - mediawiki-quibble-selenium-composer-mysql-php74
       - mediawiki-quibble-composer-sqlite-php74
@@ -3112,6 +3114,8 @@ projects:
       - mediawiki-quibble-composer-mysql-php74
       - mediawiki-quibble-composer-mysql-php80
       - mediawiki-quibble-composer-mysql-php81
+      - mediawiki-quibble-composer-mysql-php82
+      - mediawiki-quibble-composer-mysql-php83
       - mediawiki-quibble-composertest-php74
       - mediawiki-quibble-selenium-composer-mysql-php74
       - mediawiki-quibble-composer-sqlite-php74
@@ -3127,6 +3131,8 @@ projects:
       - mediawiki-quibble-composer-mysql-php74
       - mediawiki-quibble-composer-mysql-php80
       - mediawiki-quibble-composer-mysql-php81
+      - mediawiki-quibble-composer-mysql-php82
+      - mediawiki-quibble-composer-mysql-php83
       - mediawiki-quibble-composertest-php74
       - mediawiki-quibble-selenium-composer-mysql-php74
       - mediawiki-quibble-composer-sqlite-php74
