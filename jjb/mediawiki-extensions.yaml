@@ -193,6 +193,9 @@
         - AdvancedSearch:
             recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @WMDE-Fisch
             repository: mediawiki/extensions/AdvancedSearch
+        - CampaignEvents:
+            recipients: vwalters@wikimedia.org qa-alerts@lists.wikimedia.org # @vaughnwalters
+            repository: mediawiki/extensions/CampaignEvents
         - CentralNotice:
             recipients: fr-tech@wikimedia.org qa-alerts@lists.wikimedia.org # fundraising-backlog
             repository: mediawiki/extensions/CentralNotice
