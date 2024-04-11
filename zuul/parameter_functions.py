@@ -431,6 +431,7 @@ dependencies = {
     'OAuthRateLimiter': ['OAuth'],
     'OpenIDConnect': ['PluggableAuth'],
     'OpenStackManager': ['LdapAuthentication', 'Echo', 'TitleBlacklist'],
+    'PageCheckout': ['Workflows'],
     'PageTriage': ['WikiLove', 'ORES', 'Echo'],
     'PageViewInfo': ['Graph'],
     'PageViewInfoGA': ['PageViewInfo'],
