@@ -10091,6 +10091,8 @@ projects:
       - oojs-ui-publish
     experimental:
       - ooui-node20-plus-php80-runjenkins
+      - ooui-node20-plus-php81-runjenkins
+      - ooui-node20-plus-php83-runjenkins
 
   - name: jsdoc/wmf-theme
     template:
