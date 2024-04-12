@@ -1,38 +1,4 @@
 - job:
-    name: 'ooui-special-node18-plus-php80-composer'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.1.0-s7
-         # 'npm run jenkins' also runs composer
-         entrypoint: /run-with-xvfb.sh
-         args: 'jenkins'
-    publishers:
-     - archive-log-allow-empty
-     # FIXME use `- teardown` to save castor cache
-     - docker-cleanup
-
-- job:
-    name: 'ooui-special-node20-plus-php80-composer'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node20-test-browser-php80-composer:0.1.0-s7
-         # 'npm run jenkins' also runs composer
-         entrypoint: /run-with-xvfb.sh
-         args: 'jenkins'
-    publishers:
-     - archive-log-allow-empty
-     # FIXME use `- teardown` to save castor cache
-     - docker-cleanup
-
-- job:
     name: 'oojs-ui-publish'
     node: Docker
     concurrent: false
