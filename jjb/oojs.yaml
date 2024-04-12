@@ -80,6 +80,16 @@
     name: ooui
     jobs:
         - '{name}-ruby2.5-rake'
+        # "Special" combination node+php jobs that run the 'jenkins' entrypoint
+        - '{name}-{node_version}-run{script}':
+           # 'npm run jenkins' also runs composer
+           entrypoint: /run-with-xvfb.sh
+           script: 'jenkins'
+           node_version:
+               - node18-plus-php80:
+                   image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.1.0-s7
+               - node20-plus-php80:
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser-php80-composer:0.1.0-s7
 
 - project:
     name: oojs-core
