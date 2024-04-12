@@ -9289,6 +9289,10 @@ projects:
       - wikipeg-special-node18-plus-php80-composer
     gate-and-submit:
       - wikipeg-special-node18-plus-php80-composer
+    experimental:
+      - wikipeg-special-node20-plus-php80-composer
+      - wikipeg-special-node20-plus-php81-composer
+      - wikipeg-special-node20-plus-php83-composer
 
   - name: WrappedString
     template:
