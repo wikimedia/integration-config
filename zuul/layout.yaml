@@ -10081,16 +10081,16 @@ projects:
       - name: composer-test-package-php74-to-php81
       - name: mediawiki-i18n-check
     test:
-      - ooui-special-node18-plus-php80-composer
+      - ooui-node18-plus-php80-runjenkins
       - ooui-ruby2.5-rake
     gate-and-submit:
-      - ooui-special-node18-plus-php80-composer
+      - ooui-node18-plus-php80-runjenkins
       - ooui-ruby2.5-rake
     postmerge:
       - oojs-ui-doxygen-publish
       - oojs-ui-publish
     experimental:
-      - ooui-special-node20-plus-php80-composer
+      - ooui-node20-plus-php80-runjenkins
 
   - name: jsdoc/wmf-theme
     template:
