@@ -2614,7 +2614,7 @@ project-templates:
       - composer-package-php83
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php74-publish
+      - phpunit-coverage-php81-publish
 
   - name: mediawiki-php-library-php74-to-php81
     test:
@@ -2628,7 +2628,7 @@ project-templates:
       - composer-package-php81
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php74-publish
+      - phpunit-coverage-php81-publish
     experimental:
       - composer-package-php82
       - composer-package-php83
@@ -2647,7 +2647,7 @@ project-templates:
       - composer-package-php82
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php74-publish
+      - phpunit-coverage-php81-publish
     experimental:
       - composer-package-php83
 
@@ -2948,7 +2948,7 @@ projects:
       - name: composer-test-package-php74-to-php82
     postmerge:
       - mw-tools-phan-demos-publish
-      - phpunit-coverage-php74-publish
+      - phpunit-coverage-php81-publish
 
   - name: mediawiki/vagrant
     test:
@@ -8938,7 +8938,7 @@ projects:
       - composer-coverage-patch
     postmerge:
       - parsoidsvc-doxygen-publish
-      - phpunit-coverage-php74-publish
+      - phpunit-coverage-php81-publish
 
   - name: mediawiki/services/poolcounter
     template:
@@ -9619,7 +9619,7 @@ projects:
       - name: node18
       - name: mediawiki-i18n-check
     postmerge:
-      - phpunit-coverage-php74-publish
+      - phpunit-coverage-php81-publish
 
   - name: labs/tools/intuition-web
     template:
