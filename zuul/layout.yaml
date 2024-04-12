@@ -10082,21 +10082,23 @@ projects:
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
     template:
-      - name: composer-test-package-php74-to-php81
+      - name: composer-test-package-php74-or-later
       - name: mediawiki-i18n-check
     test:
       - ooui-node18-plus-php80-runjenkins
+      - ooui-node20-plus-php80-runjenkins
+      - ooui-node20-plus-php81-runjenkins
+      - ooui-node20-plus-php83-runjenkins
       - ooui-ruby2.5-rake
     gate-and-submit:
       - ooui-node18-plus-php80-runjenkins
+      - ooui-node20-plus-php80-runjenkins
+      - ooui-node20-plus-php81-runjenkins
+      - ooui-node20-plus-php83-runjenkins
       - ooui-ruby2.5-rake
     postmerge:
       - oojs-ui-doxygen-publish
       - oojs-ui-publish
-    experimental:
-      - ooui-node20-plus-php80-runjenkins
-      - ooui-node20-plus-php81-runjenkins
-      - ooui-node20-plus-php83-runjenkins
 
   - name: jsdoc/wmf-theme
     template:
