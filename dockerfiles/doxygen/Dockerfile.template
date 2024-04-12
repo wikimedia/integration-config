@@ -11,8 +11,8 @@ RUN {{ "graphviz php-cli php-intl php-mbstring php-xml curl" | apt_install }}
 # Install more recent Doxygen because Bookworm would provide Doxygen 1.9.4
 # https://packages.debian.org/bookworm/doxygen
 # https://doxygen.nl/download.html#srcbin
-ENV DOXYGEN_RELEASE_NAME=doxygen-1.9.8
-ENV DOXYGEN_RELEASE_SIG=aec78d9c9e6668258d17de94520a63a7
+ENV DOXYGEN_RELEASE_NAME=doxygen-1.10.0
+ENV DOXYGEN_RELEASE_SIG=95ca2068fb0d2fcbb2de8556511662a7
 
 RUN mkdir /tmp/doxyinstall \
     && cd /tmp/doxyinstall \
