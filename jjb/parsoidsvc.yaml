@@ -17,7 +17,7 @@
      - docker-cleanup
 
 - job-template:
-    name: 'wikipeg-special-node18-plus-{php}-composer'
+    name: 'wikipeg-special-{node-plus-php}-composer'
     node: Docker
     triggers:
      - zuul
@@ -40,9 +40,9 @@
 - project:
     name: wikipeg
     jobs:
-        - wikipeg-special-node18-plus-{php}-composer:
-            php:
-                - php80:
+        - wikipeg-special-{node-plus-php}-composer:
+            node-plus-php:
+                - node18-plus-php80:
                     docker_image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.1.0-s7
 
 - project:
