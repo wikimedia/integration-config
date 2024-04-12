@@ -42,16 +42,30 @@
      - archive-log-allow-empty
      - docker-cleanup
 
+# "Special" combination node+php jobs that run the 'jenkins' script on the 'xvfb' entrypoint
+- job-template:
+    name: '{name}-{node-plus-php}-runjenkins'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: '{image}'
+        # 'npm run jenkins' also runs composer
+        entrypoint: /run-with-xvfb.sh
+        options: '--shm-size 1g'
+        args: 'jenkins'
+    publishers:
+     - archive-log-allow-empty
+     - teardown
+
 - project:
     name: ooui
     jobs:
         - '{name}-ruby2.5-rake'
-        # "Special" combination node+php jobs that run the 'jenkins' entrypoint
-        - '{name}-{node_version}-run{script}':
-           # 'npm run jenkins' also runs composer
-           entrypoint: /run-with-xvfb.sh
-           script: 'jenkins'
-           node_version:
+        - '{name}-{node-plus-php}-runjenkins':
+           node-plus-php:
                - node18-plus-php80:
                    image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:0.1.0-s7
                - node20-plus-php80:
