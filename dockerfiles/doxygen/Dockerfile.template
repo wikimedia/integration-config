@@ -1,15 +1,15 @@
-FROM {{ "ci-bullseye" | image_tag }}
+FROM {{ "ci-bookworm" | image_tag }}
 
 USER root
 
 # * graphviz: dependency for Doxygen
 # * php: needed for the mediawiki-core job, which runs maintenance/mwdocgen.php
-#   This installs PHP 7.4 https://packages.debian.org/bullseye/php
+#   This installs PHP 8.2 https://packages.debian.org/bookworm/php
 # * curl: to install doxygen
 RUN {{ "graphviz php-cli php-intl php-mbstring php-xml curl" | apt_install }}
 
-# Install recent Doxygen because Bullseye would provide Doxygen 1.9.1
-# https://packages.debian.org/bullseye/doxygen
+# Install more recent Doxygen because Bookworm would provide Doxygen 1.9.4
+# https://packages.debian.org/bookworm/doxygen
 # https://doxygen.nl/download.html#srcbin
 ENV DOXYGEN_RELEASE_NAME=doxygen-1.9.8
 ENV DOXYGEN_RELEASE_SIG=aec78d9c9e6668258d17de94520a63a7
