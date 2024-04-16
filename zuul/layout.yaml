@@ -2456,6 +2456,59 @@ project-templates:
     gate-and-submit:
       - generic-node20-browser-webdriver
 
+  - name: node18-browser-for-MW-branches
+    test:
+      - generic-node18-browser
+    gate-and-submit:
+      - generic-node18-browser
+    test-1_39:
+      - generic-node18-browser
+    gate-and-submit-1_39:
+      - generic-node18-browser
+    test-1_40:
+      - generic-node18-browser
+    gate-and-submit-1_40:
+      - generic-node18-browser
+    test-1_41:
+      - generic-node18-browser
+    gate-and-submit-1_41:
+      - generic-node18-browser
+    test-1_42:
+      - generic-node18-browser
+    gate-and-submit-1_42:
+      - generic-node18-browser
+    test-wmf:
+      - generic-node18-browser
+    gate-and-submit-wmf:
+      - generic-node18-browser
+    experimental:
+      - generic-node20-browser
+
+  - name: node20-browser-for-MW-branches
+    test:
+      - generic-node20-browser
+    gate-and-submit:
+      - generic-node20-browser
+    test-1_39:
+      - generic-node20-browser
+    gate-and-submit-1_39:
+      - generic-node20-browser
+    test-1_40:
+      - generic-node20-browser
+    gate-and-submit-1_40:
+      - generic-node20-browser
+    test-1_41:
+      - generic-node20-browser
+    gate-and-submit-1_41:
+      - generic-node20-browser
+    test-1_42:
+      - generic-node20-browser
+    gate-and-submit-1_42:
+      - generic-node20-browser
+    test-wmf:
+      - generic-node20-browser
+    gate-and-submit-wmf:
+      - generic-node20-browser
   - name: node18-rundoc
     test:
       - generic-node18-rundoc
@@ -10146,35 +10199,11 @@ projects:
   - name: VisualEditor/VisualEditor
     template:
       - name: mediawiki-i18n-check
+      - name: node18-browser-for-MW-branches
+      - name: node20-browser-for-MW-branches
       - name: node18-rundoc-for-MW-branches
-    test:
-      - visualeditor-node18-browser
-    gate-and-submit:
-      - visualeditor-node18-browser
-    test-1_39:
-      - visualeditor-node18-browser
-    gate-and-submit-1_39:
-      - visualeditor-node18-browser
-    test-1_40:
-      - visualeditor-node18-browser
-    gate-and-submit-1_40:
-      - visualeditor-node18-browser
-    test-1_41:
-      - visualeditor-node18-browser
-    gate-and-submit-1_41:
-      - visualeditor-node18-browser
-    test-1_42:
-      - visualeditor-node18-browser
-    gate-and-submit-1_42:
-      - visualeditor-node18-browser
-    test-wmf:
-      - visualeditor-node18-browser
-    gate-and-submit-wmf:
-      - visualeditor-node18-browser
     postmerge:
       - generic-node18-browser-coverage-publish
-    experimental:
-      - visualeditor-node20-browser
 
   - name: mediawiki/extensions/VisualEditorPlus
     template:
