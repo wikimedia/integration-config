@@ -2528,11 +2528,11 @@ project-templates:
   # Track all extensions and skins in the MediaWiki tarball
   - name: in-mediawiki-tarball
     test:
-      - quibble-vendor-postgres-php74-noselenium
-      - quibble-vendor-sqlite-php74-noselenium
+      - quibble-vendor-postgres-php81-noselenium
+      - quibble-vendor-sqlite-php81-noselenium
     gate-and-submit:
-      - quibble-vendor-postgres-php74-noselenium
-      - quibble-vendor-sqlite-php74-noselenium
+      - quibble-vendor-postgres-php81-noselenium
+      - quibble-vendor-sqlite-php81-noselenium
 
   # Not used yet.
 
