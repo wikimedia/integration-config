@@ -5506,13 +5506,13 @@ projects:
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     test-1_42:
-      - wikibase-client-php74 # TODO: Change to PHP 8.1
-      - wikibase-repo-php74 # TODO: Change to PHP 8.1
+      - wikibase-client-php81
+      - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-1_42:
-      - wikibase-client-php74 # TODO: Change to PHP 8.1
-      - wikibase-repo-php74 # TODO: Change to PHP 8.1
+      - wikibase-client-php81
+      - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-wmf: *mediawiki-extensions-wikibase-gate-and-submit
