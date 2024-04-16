@@ -2998,14 +2998,11 @@ projects:
       - name: node18
 
   - name: performance/fresnel
-    test:
-      - fresnel-node18-browser
-    gate-and-submit:
-      - fresnel-node18-browser
+    template:
+      - name: node18-browser
+      - name: node20-browser
     postmerge:
       - generic-node18-browser-coverage-publish
-    experimental:
-      - fresnel-node20-browser
 
   - name: performance/navtiming
     template:
