@@ -22,7 +22,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2'
+        image: 'docker-registry.wikimedia.org/releng/node18-test:18.20.2'
         args: 'doc'
      - doc-publish:
            docsrc: 'src/docs/js'
@@ -155,9 +155,9 @@
         - '{name}-{node_version}':
             node_version:
                - node18:
-                   image: docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2
+                   image: docker-registry.wikimedia.org/releng/node18-test:18.20.2
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test:0.2.0-s2
+                   image: docker-registry.wikimedia.org/releng/node20-test:20.12.2
         - '{name}-tox':
             build_timeout: 10
 
@@ -750,7 +750,7 @@
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s1
+        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s2
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'
@@ -852,7 +852,7 @@
     # mediawiki/services/parsoid (T321837)
     #
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2
+        image: docker-registry.wikimedia.org/releng/node18-test:18.20.2
         options: '--volume "$(pwd)"/src/"$THING_SUBNAME":/src'
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
@@ -862,7 +862,7 @@
           sed -ie "s#/src/#/workspace/src/$THING_SUBNAME/#g" src/"$THING_SUBNAME"/coverage/lcov.info
         fi
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s1
+        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s2
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'

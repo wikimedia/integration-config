@@ -38,7 +38,7 @@
             rm -rf urls-to-purge.txt wik*
             cd ../..
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node18-test:0.2.0-s2
+            image: docker-registry.wikimedia.org/releng/node18-test:18.20.2
             args: 'build-all-portals'
         - shell: |
             ## now create and publish a gerrit patch
