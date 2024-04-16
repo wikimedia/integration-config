@@ -5544,13 +5544,17 @@ projects:
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     test-1_42:
-      - wikibase-client
-      - wikibase-repo
+      # (T362412) Temporarily disabled as REL1_42 requires PHP 8.1
+      - noop
+      # - wikibase-client
+      # - wikibase-repo
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-1_42:
-      - wikibase-client
-      - wikibase-repo
+      # (T362412) Temporarily disabled as REL1_42 requires PHP 8.1
+      - noop
+      # - wikibase-client
+      # - wikibase-repo
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-wmf: *mediawiki-extensions-wikibase-gate-and-submit
