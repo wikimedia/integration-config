@@ -1,0 +1,51 @@
+FROM {{ "quibble-bullseye" | image_tag }}
+
+ENV PHP_VERSION=7.4
+
+USER root
+
+# Align with SRE provided packages
+COPY wikimedia-php74.list /etc/apt/sources.list.d/wikimedia-php74.list
+
+#############################
+#  Debian packages we need  #
+#############################
+{% set mediawiki_deps|replace('\n', ' ') -%}
+php7.4-apcu
+php7.4-bcmath
+php7.4-cli
+php7.4-curl
+php7.4-fpm
+php7.4-excimer
+php7.4-gd
+php7.4-gmp
+php7.4-ldap
+php7.4-intl
+php7.4-mbstring
+php7.4-memcached
+php7.4-mysql
+php7.4-pgsql
+php7.4-sqlite3
+php7.4-tidy
+php7.4-xml
+php7.4-zip
+php7.4-wikidiff2
+{%- endset -%}
+# See T236333 for wikidiff2 rationale; may need ported forward to
+# quibble-bullseye-php74 at some point in future.
+
+RUN {{ mediawiki_deps | apt_install }} \
+    && /install-php-fpm-conf.sh
+
+# Disable pcov by default, although the performance overhead should be minimal
+RUN {{ "php7.4-pcov" | apt_install }} \
+    && phpdismod pcov
+
+# Ensure the image use PHP 7.4, even though that is the default on bullseye
+RUN update-alternatives --set php /usr/bin/php7.4
+
+# Unprivileged
+RUN install --directory /workspace --owner=nobody --group=nogroup
+USER nobody
+WORKDIR /workspace
+ENTRYPOINT ["/usr/local/bin/quibble"]
