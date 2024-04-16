@@ -5470,39 +5470,39 @@ projects:
       - name: mwgate-npm
       - name: extension-apitests
     test:
-      - wikibase-client-php74 # TODO: Change to PHP 8.1
-      - wikibase-repo-php74 # TODO: Change to PHP 8.1
+      - wikibase-client-php81
+      - wikibase-repo-php81
     gate-and-submit: &mediawiki-extensions-wikibase-gate-and-submit
-      - wikibase-client-php74 # TODO: Change to PHP 8.1
-      - wikibase-repo-php74 # TODO: Change to PHP 8.1
+      - wikibase-client-php81
+      - wikibase-repo-php81
     test-1_39:
-      - wikibase-client-php74 # TODO: Change to PHP 8.1
-      - wikibase-repo-php74 # TODO: Change to PHP 8.1
+      - wikibase-client-php81
+      - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     gate-and-submit-1_39:
-      - wikibase-client-php74 # TODO: Change to PHP 8.1
-      - wikibase-repo-php74 # TODO: Change to PHP 8.1
+      - wikibase-client-php81
+      - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     test-1_40:
-      - wikibase-client-php74 # TODO: Change to PHP 8.1
-      - wikibase-repo-php74 # TODO: Change to PHP 8.1
+      - wikibase-client-php81
+      - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     gate-and-submit-1_40:
-      - wikibase-client-php74 # TODO: Change to PHP 8.1
-      - wikibase-repo-php74 # TODO: Change to PHP 8.1
+      - wikibase-client-php81
+      - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     test-1_41:
-      - wikibase-client-php74 # TODO: Change to PHP 8.1
-      - wikibase-repo-php74 # TODO: Change to PHP 8.1
+      - wikibase-client-php81
+      - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     gate-and-submit-1_41:
-      - wikibase-client-php74 # TODO: Change to PHP 8.1
-      - wikibase-repo-php74 # TODO: Change to PHP 8.1
+      - wikibase-client-php81
+      - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     test-1_42:
@@ -5521,8 +5521,8 @@ projects:
     experimental:
       - mwext-phpunit-coverage
       - quibble-vendor-postgres-php74-noselenium
-      - wikibase-client-php81
-      - wikibase-repo-php81
+      - wikibase-client-php74
+      - wikibase-repo-php74
       - wikibase-client-php83
       - wikibase-repo-php83
 
