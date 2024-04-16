@@ -5562,7 +5562,6 @@ projects:
       - mwext-doxygen-publish
     experimental:
       - mwext-phpunit-coverage
-      - quibble-vendor-mysql-php74-noselenium
       - quibble-vendor-postgres-php74-noselenium
 
   - name: mediawiki/extensions/WikibaseCirrusSearch
