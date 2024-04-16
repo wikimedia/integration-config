@@ -54,10 +54,6 @@
 - project:
     name: phpunit-coverage-publish
     php:
-        - php74:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.3-s2
-        - php80:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php80:0.0.3-s2
         - php81:
             docker_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.3-s2
         - php82:
