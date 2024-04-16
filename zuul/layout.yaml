@@ -10124,18 +10124,14 @@ projects:
 
   - name: unicodejs
     template:
+      - name: node18-browser
+      - name: node20-browser
       - name: node18-rundoc
-    test:
-      - unicodejs-node18-browser
-    gate-and-submit:
-      - unicodejs-node18-browser
     postmerge:
       - generic-node18-browser-coverage-publish
       - generic-node18-docs-publish
     publish:
       - generic-node18-docs-publish
-    experimental:
-      - unicodejs-node20-browser
 
   - name: jquery-client
     template:
