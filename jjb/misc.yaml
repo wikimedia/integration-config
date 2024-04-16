@@ -76,16 +76,6 @@
 - project:
     name: node-more-specific-jobs
     jobs:
-        - '{name}-{node_version}-browser':
-           node_version:
-               - node18:
-                   image: docker-registry.wikimedia.org/releng/node18-test-browser:18.20.2
-               - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.12.2
-           name:
-               - fresnel
-               - unicodejs
-               - visualeditor
         - '{name}-{node_version}':
             node_version:
                 - node18:
