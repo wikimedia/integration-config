@@ -1146,11 +1146,8 @@ class TestZuulScheduler(unittest.TestCase):
             'mediawiki-quibble-vendor-sqlite-php74': True,
             'mediawiki-quibble-vendor-postgres-php74': True,
             'wmf-quibble-vendor-mysql-php74': False,
-            'wmf-quibble-vendor-mysql-php81': False,
             'wmf-quibble-selenium-php74': True,
-            'wmf-quibble-selenium-php81': True,
             'wmf-quibble-core-vendor-mysql-php74': True,
-            'wmf-quibble-core-vendor-mysql-php81': True,
             'mwgate-node18': True,
             'quibble-vendor-mysql-php74-phpunit-standalone': True,
         }

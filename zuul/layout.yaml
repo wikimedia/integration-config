@@ -1980,10 +1980,6 @@ project-templates:
       - wmf-quibble-vendor-mysql-php74
       - wmf-quibble-core-vendor-mysql-php74
       - wmf-quibble-selenium-php74
-      # Only triggered on master; jobs to track Wikimedia production on PHP 8.1
-      - wmf-quibble-core-vendor-mysql-php81
-      - wmf-quibble-vendor-mysql-php81
-      - wmf-quibble-selenium-php81
 
     # For wmf branches
     test-wmf:
