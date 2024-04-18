@@ -9479,6 +9479,10 @@ projects:
     template:
       - name: mediawiki-php-library-php74-to-php81
 
+  - name: mediawiki/libs/UpdateHistory
+    template:
+      - name: mediawiki-php-library
+
   - name: mediawiki/libs/WaitConditionLoop
     template:
       - name: mediawiki-php-library-php74-to-php81
