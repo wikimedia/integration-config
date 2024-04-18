@@ -49,7 +49,7 @@
         - setup
         - docker-run-with-log-cache-src:
             image: '{image}'
-            args: 'install --working-dir=/src --no-progress --prefer-dist'
+            args: 'install --working-dir=/src --ansi --no-progress --prefer-dist'
         # Now in /src, just run composer test
         - docker-run-with-log-cache-src:
             image: '{image}'

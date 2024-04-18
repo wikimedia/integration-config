@@ -33,7 +33,7 @@
          image: '{docker_image}'
          workdir: /src
          # prefer-dist to get cacheable content
-         args: 'install --no-progress --prefer-dist'
+         args: 'install --ansi --no-progress --prefer-dist'
      # phpunit coverage
      - docker-run-with-log-cache-src:
          image: '{docker_image}'
