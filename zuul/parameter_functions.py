@@ -176,6 +176,7 @@ dependencies = {
     ],
     'BlueSpiceExtendedFilelist': ['BlueSpiceFoundation'],
     'BlueSpiceExtendedSearch': [
+        'BlueSpiceDistributionConnector',
         'BlueSpiceFoundation',
         'BlueSpiceVisualEditorConnector'
     ],
