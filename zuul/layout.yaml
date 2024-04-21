@@ -8582,7 +8582,7 @@ projects:
 
   - name: mediawiki/extensions/WarnNotRecentlyUpdated
     template:
-      - name: extension-quibble
+      - name: extension-quibble-php81-or-later
 
   - name: mediawiki/extensions/WatchAnalytics
     template:
