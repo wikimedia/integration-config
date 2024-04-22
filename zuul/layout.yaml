@@ -5409,6 +5409,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: extension-codehealth
 
   - name: mediawiki/extensions/TimedMediaHandler
     template:
