@@ -9010,6 +9010,10 @@ projects:
       - parsoidsvc-doxygen-publish
       - phpunit-coverage-php81-publish
 
+  - name: mediawiki/services/parsoid/testreduce
+    template:
+      - name: node18
+
   - name: mediawiki/services/poolcounter
     template:
       - name: debian-glue-non-voting
