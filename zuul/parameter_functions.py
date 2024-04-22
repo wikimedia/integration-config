@@ -592,6 +592,7 @@ phan_dependencies = {
                   'FlaggedRevs', 'GlobalBlocking', 'TorBlock', 'UserMerge'],
     'CirrusSearch': ['BetaFeatures', 'Elastica', 'SiteMatrix', 'GeoData',
                      'EventBus'],
+    'Cite': ['Gadgets'],
     'Citoid': ['Cite', 'VisualEditor'],
     'CleanChanges': ['cldr'],
     'CodeReview': ['Renameuser'],
