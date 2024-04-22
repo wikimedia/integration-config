@@ -7640,6 +7640,10 @@ projects:
     template:
       - name: extension-quibble-noselenium
 
+  - name: mediawiki/extensions/PageEncryption
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/PageExchange
     template:
       - name: extension-quibble
