@@ -469,6 +469,7 @@ pipelines:
            - ^zorandori4444@gmail\.com$ # Zoranzoki21
            - ^abaris@null\.net$ # abaris / User:Doǵu
            - ^yn\.jiyu@gmail\.com$ # Jiyu/Abstract09 - working with RhinosF1 on Quarry
+           - ^gerges\.shamoon\.dev@gmail\.com$ # Gerges
 
            # Pywikibot related
            - ^CommodoreFabianus@gmx\.de$ # XZise, Pywikibot maintainer
