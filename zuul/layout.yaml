@@ -5679,6 +5679,7 @@ projects:
       # (T360560) Pending Wikibase code fixes to support PHP 8.2
       - name: extension-quibble-php74-to-php81
       - name: extension-coverage
+      - name: extension-codehealth
 
   - name: mediawiki/extensions/WikiEditor
     template:
