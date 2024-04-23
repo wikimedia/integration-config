@@ -4191,7 +4191,7 @@ projects:
   - name: mediawiki/extensions/ArticlePlaceholder
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
 
@@ -4291,8 +4291,7 @@ projects:
   - name: mediawiki/extensions/CirrusSearch
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending Wikibase code fixes to support PHP 8.2
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-quibble-only-standalone
       - name: extension-codehealth
       - name: extension-gate
@@ -4505,7 +4504,7 @@ projects:
   - name: mediawiki/extensions/EntitySchema
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
 
@@ -4627,8 +4626,7 @@ projects:
   - name: mediawiki/extensions/GeoData
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending Wikibase code fixes to support PHP 8.2
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
@@ -4696,8 +4694,7 @@ projects:
   - name: mediawiki/extensions/GrowthExperiments
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending Wikibase code fixes to support PHP 8.2
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
@@ -4727,7 +4724,7 @@ projects:
   - name: mediawiki/extensions/ImageSuggestions
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
 
@@ -4885,7 +4882,7 @@ projects:
   - name: mediawiki/extensions/MediaSearch
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
 
@@ -5104,7 +5101,7 @@ projects:
   - name: mediawiki/extensions/PropertySuggester
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-coverage
 
   - name: mediawiki/extensions/QuickSurveys
@@ -5172,7 +5169,7 @@ projects:
   - name: mediawiki/extensions/Score
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-coverage
       - name: mwgate-npm
 
@@ -5467,8 +5464,7 @@ projects:
   - name: mediawiki/extensions/Wikibase
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending Wikibase code fixes to support PHP 8.2
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       # (T288396) No coverage reporting yet; needs special work
       - name: extension-gate
       - name: extension-codehealth
@@ -5535,8 +5531,7 @@ projects:
   - name: mediawiki/extensions/WikibaseCirrusSearch
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending Wikibase code fixes to support PHP 8.2
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
@@ -5544,8 +5539,7 @@ projects:
   - name: mediawiki/extensions/WikibaseLexeme
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending Wikibase code fixes to support PHP 8.2
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
     postmerge:
@@ -5554,15 +5548,13 @@ projects:
   - name: mediawiki/extensions/WikibaseLexemeCirrusSearch
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending Wikibase code fixes to support PHP 8.2
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikibaseManifest
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending Wikibase code fixes to support PHP 8.2
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
       - name: mwgate-npm
@@ -5571,8 +5563,7 @@ projects:
   - name: mediawiki/extensions/WikibaseMediaInfo
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending Wikibase code fixes to support PHP 8.2
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-gate
       - name: extension-codehealth
       - name: extension-coverage
@@ -5580,23 +5571,20 @@ projects:
   - name: mediawiki/extensions/WikibaseQualityConstraints
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending Wikibase code fixes to support PHP 8.2
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
 
   - name: mediawiki/extensions/Wikidata.org
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending Wikibase code fixes to support PHP 8.2
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikidataPageBanner
     template:
       - name: in-wikimedia-production
-      # (T360560) Pending Wikibase code fixes to support PHP 8.2
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
 
@@ -5647,7 +5635,7 @@ projects:
   - name: mediawiki/extensions/WikimediaBadges
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-coverage
 
   - name: mediawiki/extensions/WikimediaCampaignEvents
@@ -5696,7 +5684,7 @@ projects:
   - name: mediawiki/extensions/Wikisource
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
 
@@ -8294,7 +8282,7 @@ projects:
 
   - name: mediawiki/extensions/TEI
     template:
-      - name: extension-quibble-php74-to-php81
+      - name: extension-quibble
 
   - name: mediawiki/extensions/TestLanguageNameGrammar
     template:

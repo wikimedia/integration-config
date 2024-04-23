@@ -117,22 +117,6 @@ class TestZuulLayout(unittest.TestCase):
                     self.assertNotIn('extension-quibble', templates)
                 else:
                     noPHP82Quibble = [
-                        # (T360560) Pending Wikibase code fixes for PHP 8.2
-                        'mediawiki/extensions/Wikibase',
-                        'mediawiki/extensions/WikibaseCirrusSearch',
-                        'mediawiki/extensions/WikibaseMediaInfo',
-                        'mediawiki/extensions/CirrusSearch',
-                        'mediawiki/extensions/GeoData',
-                        'mediawiki/extensions/GrowthExperiments',
-                        'mediawiki/extensions/EntitySchema',
-                        'mediawiki/extensions/PropertySuggester',
-                        'mediawiki/extensions/Score',
-                        'mediawiki/extensions/WikimediaBadges',
-                        'mediawiki/extensions/ArticlePlaceholder',
-                        'mediawiki/extensions/ImageSuggestions',
-                        'mediawiki/extensions/MediaSearch',
-                        'mediawiki/extensions/Wikisource',
-                        'mediawiki/extensions/TEI',
                         # (T360709) Pending Math code fixes for PHP 8.2
                         'mediawiki/extensions/Math',
                         'mediawiki/extensions/MathSearch'
@@ -289,28 +273,6 @@ class TestZuulLayout(unittest.TestCase):
                         # run in quibble; we're exploring running them in
                         # Helm/GitLab (T321942)
                         'mediawiki/extensions/WikiLambda',
-                        # (T360560) Pending Wikibase code fixes for PHP 8.2
-                        'mediawiki/extensions/Wikibase',
-                        'mediawiki/extensions/WikibaseCirrusSearch',
-                        'mediawiki/extensions/WikibaseLexeme',
-                        'mediawiki/extensions/WikibaseLexemeCirrusSearch',
-                        'mediawiki/extensions/WikibaseManifest',
-                        'mediawiki/extensions/WikibaseMediaInfo',
-                        'mediawiki/extensions/WikibaseQualityConstraints',
-                        'mediawiki/extensions/Wikidata.org',
-                        'mediawiki/extensions/WikidataPageBanner',
-                        'mediawiki/extensions/CirrusSearch',
-                        'mediawiki/extensions/GeoData',
-                        'mediawiki/extensions/GrowthExperiments',
-                        'mediawiki/extensions/EntitySchema',
-                        'mediawiki/extensions/PropertySuggester',
-                        'mediawiki/extensions/Score',
-                        'mediawiki/extensions/WikimediaBadges',
-                        'mediawiki/extensions/ArticlePlaceholder',
-                        'mediawiki/extensions/ImageSuggestions',
-                        'mediawiki/extensions/MediaSearch',
-                        'mediawiki/extensions/Wikisource',
-                        'mediawiki/extensions/TEI',
                         # (T360709) Pending Math code fixes for PHP 8.2
                         'mediawiki/extensions/Math',
                         'mediawiki/extensions/MathSearch',
