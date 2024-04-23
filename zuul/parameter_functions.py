@@ -615,6 +615,7 @@ phan_dependencies = {
     'Echo': ['CentralAuth', 'EventLogging', 'UserMerge'],
     'EntitySchema': ['Wikibase'],
     'EventBus': ['CentralNotice', 'EventStreamConfig'],
+    'FacetedCategory': ['CategoryTree'],
     'FanBoxes': ['SocialProfile'],
     'FileImporter': ['GlobalBlocking', 'VisualEditor'],
     'FlaggedRevs': ['Scribunto', 'Echo', 'GoogleNewsSitemap', 'MobileFrontend',
