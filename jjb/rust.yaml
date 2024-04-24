@@ -6,7 +6,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/rust:1.56.1-1
+         image: docker-registry.wikimedia.org/releng/rust:1.56.1-1-s2
     publishers:
      - teardown
 
@@ -19,7 +19,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/rust:1.56.1-1
+         image: docker-registry.wikimedia.org/releng/rust:1.56.1-1-s2
          entrypoint: /run-doc.sh
      - doc-publish:
         docsrc: 'src/target/doc'
