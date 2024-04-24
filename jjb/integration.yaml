@@ -15,7 +15,7 @@
             projects: >
                 integration/config
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s2
+            image: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s3
             entrypoint: '/src/integration/config/{entrypoint}'
             workdir: /src/integration/config
     publishers:
@@ -60,7 +60,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s2
+         image: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s3
          args: '-e qa -- --xunit-file=/log/junit-qa.xml'
     publishers:
      - archive-log-dir
@@ -105,7 +105,7 @@
     builders:
       - setup
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.7.0-s1
+          image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.7.0-s2
           entrypoint: bash
           args: '{quibble_args}'
           workdir: /src
@@ -139,16 +139,16 @@
     name: gearman-java
     jobs:
         - '{name}-maven-java8':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java8:1.1.0-s2
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java8:1.1.0-s3
             maven_path: '/run-with-gearmand.sh'
             timeout: 25  # minutes, Archiva is slow T273086
         - '{name}-maven-java11':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s3
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s4
             maven_path: '/run-with-gearmand.sh'
             timeout: 25  # minutes, Archiva is slow T273086
         - '{name}-maven-java11-site-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s3
-            # Commented out, 2024-04-16 – no such image? -- JDF
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s4
+            # FIXME Commented out, 2024-04-16 – no such image? -- JDF
             # sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s2
             maven_path: '/run-with-gearmand.sh'
             timeout: 50  # minutes, Archiva is slow T273086
@@ -157,7 +157,7 @@
     name: integration-tox-jenkins-override
     jobs:
         - '{name}-tox-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s2
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s3
             docsrc: 'doc/build/html'
             docdest: tox-jenkins-override
 
@@ -165,9 +165,9 @@
     name: 'integration-quibble'
     jobs:
         - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s2
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s3
         - '{name}-tox-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s2
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s3
             docsrc: 'doc/build/html'
             docdest: 'quibble'
         - 'integration-quibble-fullrun-{type}':

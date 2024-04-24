@@ -266,7 +266,7 @@
              src:
              cache:
              /srv/git: /srv/git:ro
-         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.6.2
+         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.6.2-s1
 
 - builder:
     name: setup
@@ -290,7 +290,7 @@
         volumes:
             src:
             /srv/git: /srv/git:ro
-        image: docker-registry.wikimedia.org/releng/zuul-cloner:0.3.0-s7
+        image: docker-registry.wikimedia.org/releng/zuul-cloner:0.3.0-s8
         args: >-
           --color --verbose
           --map /zuul-clonemap.yaml

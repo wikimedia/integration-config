@@ -17,7 +17,7 @@
     name: cergen
     jobs:
         - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-java8:4.8.0-3-s2
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-java8:4.8.0-3-s3
 
 - project:
     name: censorshipmonitoring
@@ -36,7 +36,7 @@
         - zuul
     builders:
         - docker-run:
-            image: docker-registry.wikimedia.org/releng/operations-dnslint:0.0.12-s2
+            image: docker-registry.wikimedia.org/releng/operations-dnslint:0.0.12-s3
     publishers:
         - docker-cleanup
 
@@ -62,7 +62,7 @@
     name: 'operations-mw-config'
     phpflavor:
      - php74:
-         image: docker-registry.wikimedia.org/releng/composer-php74:0.3.3-s2
+         image: docker-registry.wikimedia.org/releng/composer-php74:0.3.3-s3
      - php81:
          image: docker-registry.wikimedia.org/releng/composer-php81:0.0.3-s2
      - php83:
@@ -167,7 +167,7 @@
         - docker-src-dir
         - docker-ci-src-setup-simple
         - docker-run-with-log-cache-src:
-            image: 'docker-registry.wikimedia.org/releng/ecs:0.0.2-1-s2'
+            image: docker-registry.wikimedia.org/releng/ecs:0.0.2-1-s3
     publishers:
      - docker-cleanup
 
@@ -181,7 +181,7 @@
         - docker-src-dir
         - docker-ci-src-setup-simple
         - docker-run-with-log-cache-src:
-            image: 'docker-registry.wikimedia.org/releng/ecs:0.0.2-1-s2'
+            image: docker-registry.wikimedia.org/releng/ecs:0.0.2-1-s3
         - doc-publish:
             docsrc: 'src/dist'
             docdest: 'ecs'
