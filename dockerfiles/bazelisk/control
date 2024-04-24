@@ -1,1 +1,1 @@
-Depends: ci-buster, bazel
+Depends: ci-bullseye, bazel
