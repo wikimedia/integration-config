@@ -65,7 +65,6 @@ ARG PIP_DISABLE_PIP_VERSION_CHECK=1
 ADD pyall.list /etc/apt/sources.list.d/pyall.list
 ADD cobertura-clover-transform.py /usr/bin/cobertura-clover-transform
 ADD cobertura-clover-transform.xslt /usr/bin/cobertura-clover-transform.xslt
-ADD apt.pref /etc/apt/preferences.d/pinning.pref
 
 RUN {{ packages | apt_install }} \
     && pip2 install pip==${PIP2_VERSION} \

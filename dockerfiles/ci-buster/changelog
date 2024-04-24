@@ -1,3 +1,10 @@
+ci-buster (0.8.0) wikimedia; urgency=high
+
+   Rebuild for removal of buster-backports.
+   Pin shellcheck from component/shellcheck - T362518
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 24 Apr 2024 15:11:33 +0200
+
 ci-buster (0.7.1) wikimedia; urgency=high
 
    Set Gerrit as the git remote, used by git LFS to infer the remote endpoint to fetch from - T328472

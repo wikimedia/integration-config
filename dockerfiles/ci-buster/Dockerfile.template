@@ -17,5 +17,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV XDG_CACHE_HOME=/cache
 ENV XDG_CONFIG_HOME=/tmp/xdg-config-home
 
+COPY shellcheck.list /etc/apt/sources.list.d/shellcheck.list
+COPY apt.pref /etc/apt/preferences.d/pinning.pref
+
 RUN {{ "ca-certificates git git-lfs rsync" | apt_install }} \
     && install --directory --mode 777 "${XDG_CACHE_HOME}" "${XDG_CONFIG_HOME}" /log /src

@@ -1,3 +1,11 @@
+quibble-buster-php81 (1.7.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-buster:
+   Rebuild for removal of buster-backports.
+   Pin shellcheck from component/shellcheck - T362518
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 24 Apr 2024 15:11:33 +0200
+
 quibble-buster-php81 (1.7.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

@@ -1,3 +1,11 @@
+sonar-scanner (4.6.0.2311-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-buster:
+   Rebuild for removal of buster-backports.
+   Pin shellcheck from component/shellcheck - T362518
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 24 Apr 2024 15:11:33 +0200
+
 sonar-scanner (4.6.0.2311-s2) wikimedia; urgency=high
 
    Refresh for update in parent image node18:

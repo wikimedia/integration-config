@@ -20,7 +20,6 @@ ARG TOX_VERSION=4.8.0
 ARG VIRTUALENV_VERSION=20.21.1
 
 USER root
-COPY apt.pref /etc/apt/preferences.d/pinning.pref
 RUN {{ pkgs_to_install | apt_install }} \
     && pip3 install --no-cache-dir \
         setuptools \
