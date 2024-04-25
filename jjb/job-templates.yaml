@@ -25,7 +25,7 @@
           submodules: false
 
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.2.0-s2  # T363339
+          image: docker-registry.wikimedia.org/releng/gerrit:1.3.0
           entrypoint: /src/wmf-build.py
           environment:
               LOG_DIR: /log
@@ -60,12 +60,12 @@
       - docker-log-dir
       - docker-ci-src-setup-simple
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.2.0-s2  # T363339
+          image: docker-registry.wikimedia.org/releng/gerrit:1.3.0
           args: '{build_target}'
           volumes:
               /srv/git: /srv/git:ro
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.2.0-s2  # T363339
+          image: docker-registry.wikimedia.org/releng/gerrit:1.3.0
           entrypoint: bazelisk
           args: 'test {test_target}'
           volumes:
