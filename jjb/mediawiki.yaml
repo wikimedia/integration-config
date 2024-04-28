@@ -158,6 +158,8 @@
                    image: docker-registry.wikimedia.org/releng/node18-test:18.20.2
                - node20:
                    image: docker-registry.wikimedia.org/releng/node20-test:20.12.2
+               - node22:
+                   image: docker-registry.wikimedia.org/releng/node22-test:22.0.0
         - '{name}-tox':
             build_timeout: 10
 
