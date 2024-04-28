@@ -1,0 +1,5 @@
+node22 (22.0.0) wikimedia; urgency=high
+
+   Initial image, with Node 22.0.0 and npm 10.5.1.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Sun, 28 Apr 2024 18:54:20 +0100
