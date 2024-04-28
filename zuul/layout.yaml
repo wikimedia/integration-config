@@ -9839,7 +9839,7 @@ projects:
 
   - name: wikimedia/slimapp
     template:
-      - name: mediawiki-php-library-php74-to-php81
+      - name: mediawiki-php-library
 
   - name: wikimedia/portals
     template:
