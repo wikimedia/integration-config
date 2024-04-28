@@ -1493,6 +1493,7 @@ project-templates:
       - quibble-vendor-postgres-php74-noselenium
       - quibble-vendor-mysql-php83-noselenium
       - mwgate-node20
+      - mwgate-node22
 
   - name: extension-quibble-php81-or-later
     test:
@@ -1571,6 +1572,7 @@ project-templates:
       - quibble-vendor-mysql-php83-noselenium
       - mwext-php81-phan
       - mwgate-node20
+      - mwgate-node22
 
   # Special job template that runs composer rather than than relying
   # on mediawiki/vendor for quibble.
@@ -1671,6 +1673,7 @@ project-templates:
       - quibble-composer-postgres-php74-noselenium
       - quibble-composer-mysql-php83-noselenium
       - mwgate-node20
+      - mwgate-node22
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
@@ -1756,6 +1759,7 @@ project-templates:
       - quibble-vendor-postgres-php74-noselenium
       - quibble-vendor-mysql-php83-noselenium
       - mwgate-node20
+      - mwgate-node22
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
@@ -1831,6 +1835,7 @@ project-templates:
       - mwext-php74-phan
       - quibble-composer-mysql-php83-noselenium
       - mwgate-node20
+      - mwgate-node22
 
   # Special job template that runs the "standalone" jobs - T225068
   - name: extension-quibble-only-standalone
@@ -2025,6 +2030,7 @@ project-templates:
       - quibble-vendor-postgres-php74
       - quibble-vendor-mysql-php83
       - mwgate-node20
+      - mwgate-node22
 
   - name: skin-quibble-composer
     test:
@@ -2109,6 +2115,7 @@ project-templates:
       - quibble-composer-postgres-php74
       - quibble-composer-mysql-php83
       - mwgate-node20
+      - mwgate-node22
 
   - name: skin-coverage
     postmerge:
@@ -2245,12 +2252,15 @@ project-templates:
       - generic-node18
     experimental:
       - generic-node20
+      - generic-node22
 
   - name: node20
     test:
       - generic-node20
     gate-and-submit:
       - generic-node20
+    experimental:
+      - generic-node22
 
   - name: node18-browser
     test:
@@ -2259,12 +2269,15 @@ project-templates:
       - generic-node18-browser
     experimental:
       - generic-node20-browser
+      - generic-node22-browser
 
   - name: node20-browser
     test:
       - generic-node20-browser
     gate-and-submit:
       - generic-node20-browser
+    experimental:
+      - generic-node22-browser
 
   - name: node18-browser-webdriver
     test:
@@ -2273,12 +2286,15 @@ project-templates:
       - generic-node18-browser-webdriver
     experimental:
       - generic-node20-browser-webdriver
+      - generic-node22-browser-webdriver
 
   - name: node20-browser-webdriver
     test:
       - generic-node20-browser-webdriver
     gate-and-submit:
       - generic-node20-browser-webdriver
+    experimental:
+      - generic-node22-browser-webdriver
 
   - name: node18-browser-for-MW-branches
     test:
@@ -2307,6 +2323,7 @@ project-templates:
       - generic-node18-browser
     experimental:
       - generic-node20-browser
+      - generic-node22-browser
 
   - name: node20-browser-for-MW-branches
     test:
@@ -2333,6 +2350,9 @@ project-templates:
       - generic-node20-browser
     gate-and-submit-wmf:
       - generic-node20-browser
+    experimental:
+      - generic-node22-browser
+
   - name: node18-rundoc
     test:
       - generic-node18-rundoc
@@ -2340,12 +2360,15 @@ project-templates:
       - generic-node18-rundoc
     experimental:
       - generic-node20-rundoc
+      - generic-node22-rundoc
 
   - name: node20-rundoc
     test:
       - generic-node20-rundoc
     gate-and-submit:
       - generic-node20-rundoc
+    experimental:
+      - generic-node22-rundoc
 
   - name: node18-rundoc-for-MW-branches
     test:
@@ -2374,6 +2397,7 @@ project-templates:
       - generic-node18-rundoc
     experimental:
       - generic-node20-rundoc
+      - generic-node22-rundoc
 
   - name: node20-rundoc-for-MW-branches
     test:
@@ -2400,6 +2424,8 @@ project-templates:
       - generic-node20-rundoc
     gate-and-submit-wmf:
       - generic-node20-rundoc
+    experimental:
+      - generic-node22-rundoc
 
   - name: mwgate-npm
     test:
@@ -2424,6 +2450,7 @@ project-templates:
       - mwgate-node18
     experimental:
       - mwgate-node20
+      - mwgate-node22
 
   - name: puppet-module
     test:
@@ -3072,6 +3099,7 @@ projects:
     experimental:
       - mwgate-composer-php74
       - mwgate-node20
+      - mwgate-node22
 
   - name: mediawiki/vendor
     template:
@@ -3892,8 +3920,8 @@ projects:
       - gerrit
       - gerrit-node18
     experimental:
-      - gerrit-node18
       - gerrit-node20
+      - gerrit-node22
 
   - name: operations/software/gerrit/plugins/events-wikimedia
     test:
@@ -4377,6 +4405,7 @@ projects:
       - mwext-php74-phan
     experimental:
       - mwgate-node20
+      - mwgate-node22
       # These are the remaining parts of extension-quibble
       - quibble-vendor-mysql-php74-noselenium
       - quibble-vendor-mysql-php80-noselenium
@@ -8782,6 +8811,7 @@ projects:
       - name: node18
     experimental:
       - generic-node20
+      - generic-node22
 
   - name: mediawiki/services/mobileapps
     template:
@@ -8997,6 +9027,7 @@ projects:
     experimental:
       - generic-node18
       - generic-node20
+      - generic-node22
 
   - name: analytics/geowiki
     template:
@@ -9186,6 +9217,10 @@ projects:
       - wikipeg-special-node20-plus-php80-composer
       - wikipeg-special-node20-plus-php81-composer
       - wikipeg-special-node20-plus-php83-composer
+    experimental:
+      - wikipeg-special-node22-plus-php80-composer
+      - wikipeg-special-node22-plus-php81-composer
+      - wikipeg-special-node22-plus-php83-composer
 
   - name: WrappedString
     template:
@@ -9968,6 +10003,7 @@ projects:
       - generic-node18-docs-publish
     experimental:
       - oojs-core-node20-runjenkins
+      - oojs-core-node22-runjenkins
 
   - name: oojs/router
     template:
@@ -9996,6 +10032,10 @@ projects:
     postmerge:
       - oojs-ui-doxygen-publish
       - oojs-ui-publish
+    experimental:
+      - ooui-node22-plus-php80-runjenkins
+      - ooui-node22-plus-php81-runjenkins
+      - ooui-node22-plus-php83-runjenkins
 
   - name: jsdoc/wmf-theme
     template:
