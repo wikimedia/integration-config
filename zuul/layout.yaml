@@ -10069,6 +10069,7 @@ projects:
       - name: node20-browser-for-MW-branches
       - name: node18-rundoc-for-MW-branches
     postmerge:
+      - generic-node18-docs-publish
       - generic-node18-browser-coverage-publish
 
   - name: mediawiki/extensions/VisualEditorPlus
