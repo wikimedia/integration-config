@@ -579,7 +579,7 @@ phan_dependencies = {
                     'AntiSpoof', 'Scribunto', 'EventLogging', 'UserMerge'],
     'AntiSpoof': ['UserMerge'],
     'ApiFeatureUsage': ['Elastica'],
-    'ArticleFeedbackv5': ['AbuseFilter', 'Echo', 'SpamBlacklist'],
+    'ArticleFeedbackv5': ['AbuseFilter', 'Echo', 'SpamBlacklist', 'SpamRegex'],
     'ArticlePlaceholder': ['Scribunto', 'Wikibase'],
     'BlogPage': ['Comments', 'RandomGameUnit', 'SocialProfile', 'Video',
                  'VoteNY'],
