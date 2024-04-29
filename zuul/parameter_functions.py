@@ -218,6 +218,7 @@ dependencies = {
     ],
     'BlueSpicePageVersion': ['BlueSpiceFoundation'],
     'BlueSpicePagesVisited': [
+        'BlueSpiceDistributionConnector',
         'BlueSpiceFoundation',
         'BlueSpiceVisualEditorConnector',
         'BlueSpiceWhoIsOnline',
