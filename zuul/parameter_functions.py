@@ -269,9 +269,13 @@ dependencies = {
                               'BlueSpiceExtendedSearch'],
     'BlueSpiceSocialWatch': ['BlueSpiceFoundation', 'BlueSpiceSocial',
                              'BlueSpiceExtendedSearch'],
-    'BlueSpiceSocialWikiPage': ['BlueSpiceFoundation', 'BlueSpiceSocial',
-                                'BlueSpiceExtendedSearch',
-                                'BlueSpiceMultiUpload'],
+    'BlueSpiceSocialWikiPage': [
+        'BlueSpiceFoundation',
+        'BlueSpiceSocial',
+        'BlueSpiceExtendedSearch',
+        'BlueSpiceMultiUpload',
+        'BlueSpiceEchoConnector'
+    ],
     'BlueSpiceSaferEdit': ['BlueSpiceFoundation'],
     'BlueSpiceSignHere': ['BlueSpiceFoundation'],
     'BlueSpiceSmartList': [
