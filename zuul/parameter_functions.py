@@ -1000,7 +1000,7 @@ def set_gated_extensions(item, job, params):
 # The default is determined in set_doc_variables
 doc_destination = {
     'performance/fresnel': 'fresnel',
-    'VisualEditor/VisualEditor': 'visualeditor',
+    'VisualEditor/VisualEditor': 'visualeditor-standalone',
     'oojs/core': 'oojs',
     'mediawiki/libs/node-cssjanus': 'cssjanus',
     'design/codex': 'codex'
