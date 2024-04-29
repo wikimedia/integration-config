@@ -498,7 +498,7 @@ dependencies = {
     'TheWikipediaLibrary': ['Echo', 'CentralAuth', 'GlobalPreferences'],
     'Thanks': ['Echo', 'Flow', 'MobileFrontend'],
     'Translate': ['UniversalLanguageSelector', 'EventLogging', 'cldr',
-                  'VisualEditor'],
+                  'VisualEditor', 'Scribunto'],
     'TranslateSvg': ['Translate'],
     'TranslationNotifications': ['MassMessage', 'Translate'],
     'Toolhub': ['Scribunto'],
