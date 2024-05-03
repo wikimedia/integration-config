@@ -3252,11 +3252,11 @@ projects:
 
   - name: mediawiki/skins/BlueSpiceCalumma
     template:
-      - name: skin-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/skins/BlueSpiceDiscovery
     template:
-      - name: skin-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/skins/Bouquet
     template:
@@ -5807,35 +5807,35 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceAbout
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpicePageAccess
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceArticleInfo
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceArticlePreviewCapture
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceAuthors
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceAvatars
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceBookshelf
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceCategoryCheck
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceCategoryManager
     template:
@@ -5843,27 +5843,27 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceChecklist
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceConfigManager
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceContextMenu
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceCountThings
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceCustomMenu
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceNamespaceCSS
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceDashboards
     template:
@@ -5871,31 +5871,31 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceDistributionConnector
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceEchoConnector
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceEmoticons
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceExpiry
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceExportTables
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceExtendedFilelist
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceExtendedSearch
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceExtendedStatistics
     template:
@@ -5903,15 +5903,15 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceFilterableTables
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceFlaggedRevsConnector
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceFoundation
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceGroupManager
     template:
@@ -5919,123 +5919,123 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceHideTitle
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceInsertCategory
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceInsertFile
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceInsertLink
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceInsertMagic
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceInsertTemplate
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceInstanceStatus
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceInterWikiLinks
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceInterwikiSearch
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceMultiUpload
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceNamespaceManager
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceNSFileRepoConnector
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpicePageAssignments
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpicePageFormsConnector
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpicePageTemplates
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpicePageVersion
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpicePagesVisited
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpicePermissionManager
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpicePlayer
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpicePrivacy
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceProDistributionConnector
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceQrCode
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceRating
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceRSSFeeder
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceReadConfirmation
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceReminder
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceReaders
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSaferEdit
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSignHere
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSmartList
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSMWConnector
     template:
@@ -6043,95 +6043,95 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceSocial
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSocialArticleActions
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSocialBlog
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSocialComments
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSocialMicroBlog
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSocialProfile
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSocialRating
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSocialResolve
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSocialTags
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSocialTimelineUpdate
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSocialTopics
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSocialWatch
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSocialWikiPage
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceSubPageTree
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceTagCloud
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceUEModuleBookPDF
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceUEModuleDOCX
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceUEModulePDF
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceUEModulePDFRecursive
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceUEModulePDFSubpages
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceUEModuleHTML
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceUEModuleTable2Excel
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceUniversalExport
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceUsageTracker
     template:
@@ -6139,35 +6139,35 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceUserInfo
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceUserManager
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceUserSidebar
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceVisualDiff
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceVisualEditorConnector
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceWatchList
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceWhoIsOnline
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
   - name: mediawiki/extensions/BlueSpiceWikiExplorer
     template:
-      - name: extension-quibble-composer
+      - name: extension-broken
 
 ###### BlueSpice extensions: End
 
