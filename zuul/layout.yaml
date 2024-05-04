@@ -9381,16 +9381,6 @@ projects:
     postmerge:
       - trigger-codesearch-pipeline-publish
 
-  - name: labs/libraryupgrader
-    template:
-      - name: tox
-    test:
-      - trigger-libraryupgrader-pipeline-test
-    gate-and-submit:
-      - trigger-libraryupgrader-pipeline-test
-    postmerge:
-      - trigger-libraryupgrader-pipeline-publish
-
   - name: labs/countervandalism/cvn-api
     template:
       - name: composer-test-php74-or-later
@@ -9408,10 +9398,6 @@ projects:
       - cvnbot-dotnet-test
     gate-and-submit:
       - cvnbot-dotnet-test
-
-  - name: labs/libraryupgrader/config
-    template:
-      - name: tox
 
   - name: labs/striker
     test:
@@ -10539,6 +10525,16 @@ projects:
       - name: archived
 
   - name: integration/utils-rs
+    template:
+      - name: archived
+
+  # Moved to GitLab
+  - name: labs/libraryupgrader
+    template:
+      - name: archived
+
+  # Moved to GitLab
+  - name: labs/libraryupgrader/config
     template:
       - name: archived
 
