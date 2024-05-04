@@ -164,3 +164,14 @@ class TestMwDependencies(unittest.TestCase):
         self.assertIn('EXT_DEPENDENCIES', deps)
         self.assertIn('\\nmediawiki/extensions/Wikibase\\n',
                       deps['EXT_DEPENDENCIES'])
+
+    def test_bluespice_branch_exception(self):
+        deps = self.fetch_dependencies(
+            job_name='quibble-composer-mysql-php74',
+            project='mediawiki/extensions/BlueSpiceFoundation')
+        self.assertIn('EXT_DEPENDENCIES', deps)
+        self.assertEqual('\\n'.join([
+                         'mediawiki/extensions/ExtJSBase',
+                         'mediawiki/extensions/OOJSPlus',
+                         ]),
+                         deps['EXT_DEPENDENCIES'])

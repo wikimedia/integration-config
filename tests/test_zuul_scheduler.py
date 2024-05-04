@@ -212,8 +212,6 @@ class TestZuulScheduler(unittest.TestCase):
             % (name, pipeline))
 
     def assertProjectHasSkinTests(self, name, definition, pipeline):
-        if name.startswith('mediawiki/skins/BlueSpice'):
-            return
         if pipeline != 'test':
             return
         self.assertTrue(

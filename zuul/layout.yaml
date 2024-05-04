@@ -1680,6 +1680,59 @@ project-templates:
       - mwgate-node20
       - mwgate-node22
 
+  # Special job template for BlueSpice extensions, that:
+  # - only runs for LTS and master branches,
+  # - uses composer rather than vendor,
+  # - doesn't run 'selenium' jobs, as BlueSpice has their own testing system,
+  # - runs bespoke 'bluespice-nodeXX' jobs instead of the mwgate mutex one, so
+  #   that they do not run in line with other extensions' gate jobs.
+  - name: extension-quibble-bluespice
+    test:
+      - mwext-bluespice-node18
+      - quibble-composer-mysql-php74-noselenium
+    php:
+      - quibble-composer-mysql-php80-noselenium
+      - quibble-composer-mysql-php81-noselenium
+      - quibble-composer-mysql-php82-noselenium
+    gate-and-submit:
+      - mwext-bluespice-node18
+      - quibble-composer-mysql-php74-noselenium
+      - quibble-composer-mysql-php80-noselenium
+      - quibble-composer-mysql-php81-noselenium
+      - quibble-composer-mysql-php82-noselenium
+
+    test-1_39:
+      - mwext-bluespice-node18
+      - quibble-composer-mysql-php74-noselenium
+    gate-and-submit-1_39:
+      - mwext-bluespice-node18
+      - quibble-composer-mysql-php74-noselenium
+
+    test-1_40:
+      - noop
+    gate-and-submit-1_40:
+      - noop
+
+    test-1_41:
+      - noop
+    gate-and-submit-1_41:
+      - noop
+
+    test-1_42:
+      - noop
+    gate-and-submit-1_42:
+      - noop
+
+    gate-and-submit-l10n:
+      - mediawiki-i18n-check
+
+    experimental:
+      - quibble-composer-sqlite-php74-noselenium
+      - quibble-composer-postgres-php74-noselenium
+      - quibble-composer-mysql-php83-noselenium
+      - mwext-bluespice-node20
+      - mwext-bluespice-node22
+
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
   #
@@ -3256,11 +3309,11 @@ projects:
 
   - name: mediawiki/skins/BlueSpiceCalumma
     template:
-      - name: extension-broken
+      - name: skin-quibble-composer
 
   - name: mediawiki/skins/BlueSpiceDiscovery
     template:
-      - name: extension-broken
+      - name: skin-quibble-composer
 
   - name: mediawiki/skins/Bouquet
     template:
@@ -5811,235 +5864,235 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceAbout
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpicePageAccess
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceArticleInfo
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceArticlePreviewCapture
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceAuthors
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceAvatars
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceBookshelf
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceCategoryCheck
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceCategoryManager
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceChecklist
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceConfigManager
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceContextMenu
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceCountThings
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceCustomMenu
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceNamespaceCSS
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceDashboards
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceDistributionConnector
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceEchoConnector
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceEmoticons
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceExpiry
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceExportTables
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceExtendedFilelist
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceExtendedSearch
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceExtendedStatistics
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceFilterableTables
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceFlaggedRevsConnector
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceFoundation
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceGroupManager
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceHideTitle
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceInsertCategory
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceInsertFile
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceInsertLink
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceInsertMagic
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceInsertTemplate
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceInstanceStatus
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceInterWikiLinks
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceInterwikiSearch
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceMultiUpload
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceNamespaceManager
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceNSFileRepoConnector
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpicePageAssignments
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpicePageFormsConnector
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpicePageTemplates
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpicePageVersion
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpicePagesVisited
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpicePermissionManager
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpicePlayer
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpicePrivacy
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceProDistributionConnector
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceQrCode
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceRating
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceRSSFeeder
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceReadConfirmation
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceReminder
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceReaders
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSaferEdit
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSignHere
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSmartList
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSMWConnector
     template:
@@ -6047,131 +6100,131 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceSocial
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocialArticleActions
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocialBlog
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocialComments
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocialMicroBlog
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocialProfile
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocialRating
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocialResolve
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocialTags
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocialTimelineUpdate
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocialTopics
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocialWatch
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocialWikiPage
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSubPageTree
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceTagCloud
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceUEModuleBookPDF
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceUEModuleDOCX
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceUEModulePDF
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceUEModulePDFRecursive
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceUEModulePDFSubpages
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceUEModuleHTML
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceUEModuleTable2Excel
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceUniversalExport
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceUsageTracker
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceUserInfo
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceUserManager
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceUserSidebar
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceVisualDiff
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceVisualEditorConnector
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceWatchList
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceWhoIsOnline
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceWikiExplorer
     template:
-      - name: extension-broken
+      - name: extension-quibble-bluespice
 
 ###### BlueSpice extensions: End
 
