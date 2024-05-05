@@ -6387,7 +6387,7 @@ projects:
 
   - name: mediawiki/extensions/ContainerFilter
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/ContentDroplets
     template:
