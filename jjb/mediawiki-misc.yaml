@@ -23,6 +23,7 @@
     name: 'mediawiki-ruby-api'
     jobs:
      - '{name}-ruby2.5-bundle-yard-publish'
+     - '{name}-ruby3.1-bundle-yard-publish'
 
 - project:
     name: 'mediawiki-vagrant'
