@@ -576,7 +576,7 @@ phan_dependencies = {
     'skins/MinervaNeue': ['Echo', 'MobileFrontend'],
     'skins/Nimbus': ['Echo', 'RandomGameUnit', 'SocialProfile', 'Video'],
     'skins/Refreshed': ['SocialProfile'],
-    'skins/Vector': ['CentralAuth'],
+    'skins/Vector': ['CentralAuth', 'MobileFrontend'],
     'AbuseFilter': ['CheckUser', 'CentralAuth', 'Echo', 'Renameuser',
                     'AntiSpoof', 'Scribunto', 'EventLogging', 'UserMerge',
                     'ConfirmEdit'],
