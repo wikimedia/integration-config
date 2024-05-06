@@ -33,6 +33,36 @@
     triggers:
         - zuul
 
+- job-template: &job_ruby3_1-rake
+    name: 'ruby3.1-rake'
+    node: Docker
+    docker_image_var: 'docker-registry.wikimedia.org/releng/rake-ruby3.1:0.1.0'
+    triggers:
+        - zuul
+    builders:
+        - docker-castor-load
+        - docker-log-dir
+        - docker-src-dir
+        - docker-run-with-log-cache-src:
+            image: '{obj:docker_image_var}'
+    wrappers:
+      - timeout:
+          timeout: '{obj:build_timeout|3}'  # minutes
+      - timestamps
+      - credentials-binding:
+          - text:
+              credential-id: composer-github-oauthtoken
+              variable: COMPOSER_GITHUB_OAUTHTOKEN
+    publishers:
+        - archive-log-allow-empty
+        - teardown
+
+- job-template:
+    !!merge : *job_ruby3_1-rake
+    name: '{name}-ruby3.1-rake'
+    triggers:
+        - zuul
+
 # Call bundle 'yard' to generate documentation in labs and publish to
 # doc.wikimedia.org using an intermediate rsync repository in labs.
 - job-template:
@@ -47,6 +77,26 @@
      - docker-src-dir
      - docker-run-with-log-cache-src:
          image: 'docker-registry.wikimedia.org/releng/rake-ruby2.5:0.1.0'
+         args: 'yard'
+     - doc-publish:
+         docsrc: 'src/doc'
+         docdest: 'rubygems/{name}'
+    publishers:
+     - archive-log-allow-empty
+     - teardown
+
+- job-template:
+    name: '{name}-ruby3.1-bundle-yard-publish'
+    node: Docker
+    concurrent: false
+    triggers:
+     - zuul
+    builders:
+     - docker-castor-load
+     - docker-log-dir
+     - docker-src-dir
+     - docker-run-with-log-cache-src:
+         image: 'docker-registry.wikimedia.org/releng/rake-ruby3.1:0.1.0'
          args: 'yard'
      - doc-publish:
          docsrc: 'src/doc'
