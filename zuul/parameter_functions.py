@@ -723,6 +723,7 @@ phan_dependencies = {
     'UserStatus': ['SocialProfile', 'SportsTeams', 'BlogPage'],
     'UploadWizard': ['EventLogging', 'CodeEditor'],
     'VisualEditor': ['BetaFeatures'],
+    'VisualEditorPlus': ['VisualEditor'],
     'VoteNY': ['SocialProfile'],
     'WebAuthn': ['OATHAuth'],
     'WikiEditor': ['BetaFeatures', 'ConfirmEdit', 'EventLogging',
