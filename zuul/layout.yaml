@@ -9819,13 +9819,11 @@ projects:
 
   - name: mediawiki/ruby/api
     test:
-      - ruby2.5-rake
       - ruby3.1-rake
     gate-and-submit:
-      - ruby2.5-rake
       - ruby3.1-rake
     postmerge:
-      - mediawiki-ruby-api-ruby2.5-bundle-yard-publish
+      - mediawiki-ruby-api-ruby3.1-bundle-yard-publish
 
   - name: wikimedia/irc/ircservserv
     template:
