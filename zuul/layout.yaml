@@ -10036,14 +10036,10 @@ projects:
       - name: composer-test-package-php74-or-later
       - name: mediawiki-i18n-check
     test:
-      - ooui-node18-plus-php80-runjenkins
-      - ooui-node20-plus-php80-runjenkins
       - ooui-node20-plus-php81-runjenkins
       - ooui-node20-plus-php83-runjenkins
       - ooui-ruby2.5-rake
     gate-and-submit:
-      - ooui-node18-plus-php80-runjenkins
-      - ooui-node20-plus-php80-runjenkins
       - ooui-node20-plus-php81-runjenkins
       - ooui-node20-plus-php83-runjenkins
       - ooui-ruby2.5-rake
@@ -10051,7 +10047,6 @@ projects:
       - oojs-ui-doxygen-publish
       - oojs-ui-publish
     experimental:
-      - ooui-node22-plus-php80-runjenkins
       - ooui-node22-plus-php81-runjenkins
       - ooui-node22-plus-php83-runjenkins
 
