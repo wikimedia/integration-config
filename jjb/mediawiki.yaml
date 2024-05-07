@@ -961,8 +961,9 @@
             type: user-defined
             values:
                 - php74
-                - php80
                 - php81
+                - php82
+                - php83
     builders:
         - trigger-builds:
             - project: 'mediawiki-quibble-${packagessource}-${database}-${php}'
