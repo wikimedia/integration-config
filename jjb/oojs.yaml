@@ -66,16 +66,10 @@
         - '{name}-ruby2.5-rake'
         - '{name}-{node-plus-php}-runjenkins':
            node-plus-php:
-               - node18-plus-php80:
-                   image: docker-registry.wikimedia.org/releng/node18-test-browser-php80-composer:18.20.2
-               - node20-plus-php80:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser-php80-composer:20.12.2
                - node20-plus-php81:
                    image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.12.2
                - node20-plus-php83:
                    image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.12.2
-               - node22-plus-php80:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser-php80-composer:22.0.0
                - node22-plus-php81:
                    image: docker-registry.wikimedia.org/releng/node22-test-browser-php81-composer:22.0.0
                - node22-plus-php83:
