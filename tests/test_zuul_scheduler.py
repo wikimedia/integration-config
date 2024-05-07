@@ -1136,7 +1136,6 @@ class TestZuulScheduler(unittest.TestCase):
             'mediawiki-core-php81-phan': True,
             'mediawiki-quibble-composer-mysql-php74': True,
             'mediawiki-quibble-vendor-mysql-php74': True,
-            'mediawiki-quibble-vendor-mysql-php80': True,
             'mediawiki-quibble-vendor-mysql-php81': True,
             'mediawiki-quibble-vendor-mysql-php82': True,
             'mediawiki-quibble-vendor-mysql-php83': True,
