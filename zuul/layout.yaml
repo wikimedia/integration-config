@@ -5800,7 +5800,7 @@ projects:
 
   - name: mediawiki/extensions/AtMentions
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/Auth_remoteuser
     template:
@@ -6277,7 +6277,7 @@ projects:
 
   - name: mediawiki/extensions/Checklists
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/Checkpoint
     template:
@@ -6369,19 +6369,19 @@ projects:
 
   - name: mediawiki/extensions/ContainerFilter
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/ContentDroplets
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/ContentStabilization
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/ContentTransfer
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/ContributionCredits
     template:
@@ -6458,7 +6458,7 @@ projects:
 
   - name: mediawiki/extensions/DateTimeTools
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/DebugMode
     template:
@@ -6621,11 +6621,11 @@ projects:
 
   - name: mediawiki/extensions/EnhancedStandardUIs
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/EnhancedUpload
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/ErrorHandler
     template:
@@ -6653,7 +6653,7 @@ projects:
 
   - name: mediawiki/extensions/ExtJSBase
     template:
-      - name: extension-quibble
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/Expressions
     template:
@@ -7215,11 +7215,11 @@ projects:
 
   - name: mediawiki/extensions/MenuEditor
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/MergeArticles
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/MessageCommons
     template:
@@ -7475,7 +7475,7 @@ projects:
 
   - name: mediawiki/extensions/OOJSPlus
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/OOJsUIAjaxLogin
     template:
@@ -7948,7 +7948,7 @@ projects:
 
   - name: mediawiki/extensions/SectionAnchors
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/SectionDisqus
     template:
@@ -8082,7 +8082,7 @@ projects:
 
   - name: mediawiki/extensions/SimpleTasks
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/SiteMetrics
     template:
@@ -8190,7 +8190,7 @@ projects:
 
   - name: mediawiki/extensions/StandardDialogs
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/StandardWikitext
     template:
@@ -8350,7 +8350,7 @@ projects:
 
   - name: mediawiki/extensions/UnifiedTaskOverview
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/UnlinkedWikibase
     template:
@@ -10088,7 +10088,7 @@ projects:
 
   - name: mediawiki/extensions/VisualEditorPlus
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: wikidata/query/rdf
     # Blazegraph is not running on Java 11 and unlikely to ever be - T350587
