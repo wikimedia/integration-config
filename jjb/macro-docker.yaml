@@ -163,6 +163,19 @@
         #!/bin/bash
         set -eux
         set -o pipefail
+        {% if volumes is defined -%}
+        {%   for host_path in volumes -%}
+        {%     if host_path.startswith('/') or host_path.startswith('$') -%}
+        {%       set host_dir = host_path -%}
+        {%     else -%}
+        {%       set host_dir = '$(pwd)/' + host_path -%}
+        {%     endif -%}
+        if [ ! -d "{{ host_dir }}" ]; then
+          echo "T282893: Expected host directory {{ host_dir }} to exist but it does not."
+          exit 1
+        fi
+        {%   endfor -%}
+        {% endif -%}
         exec docker run
           {%- if entrypoint is defined and entrypoint|length -%}
             {{ " --entrypoint=" + entrypoint }}
