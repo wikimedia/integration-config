@@ -574,7 +574,6 @@
     name: 'mwext-phpunit-coverage'
     quibble_args: '--commands=mwext-phpunit-coverage'
 
-# XXX copy pasted to pass --volume cover:/workspace/cover
 - job-template:
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage-publish'
@@ -623,7 +622,6 @@
                       dir: 'cover'
         - docker-cleanup
 
-# XXX copy pasted to pass --volume cover:/workspace/cover
 - job-template:
     !!merge : *job_quibble
     name: 'mwskin-phpunit-coverage-publish'
@@ -853,7 +851,8 @@
     #
     - docker-run-with-log-cache-src:
         image: docker-registry.wikimedia.org/releng/node18-test:18.20.2
-        options: '--volume "$(pwd)"/src/"$THING_SUBNAME":/src'
+        volumes:
+            src/$THING_SUBNAME: /src
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '--if-present coverage'
@@ -868,7 +867,6 @@
         args: '{sonar_args}'
     publishers: '{publishers}'
 
-# XXX copy pasted to pass --volume cover:/workspace/cover and run cover-publish
 - job-template:
     !!merge : *job_quibble
     name: 'mwcore-phpunit-coverage-master'

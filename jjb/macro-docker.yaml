@@ -35,10 +35,11 @@
             build-steps:
               - docker-run:
                  image: 'docker-registry.wikimedia.org/buster:latest'
+                 volumes:
+                     $WORKSPACE: /workspace
                  entrypoint: /usr/bin/find
                  options: >-
                    --user=root
-                   --volume "$WORKSPACE":/workspace
                  args: >-
                    "/workspace" -mindepth 1 -delete
               - shell: |
@@ -91,10 +92,11 @@
          mkdir -m 2777 -p "{dir}"
      - docker-run:
         image: 'docker-registry.wikimedia.org/buster:latest'
+        volumes:
+            $WORKSPACE: /workspace
         entrypoint: /usr/bin/find
         options: >-
           --user=nobody
-          --volume "$WORKSPACE":/workspace
         args: >-
           "/workspace/{dir}" -mindepth 1 -delete
 
@@ -130,7 +132,8 @@
 # [volumes] a map of bind mounts.
 #
 #  Key is the path on the host relative to the current workspace, a key
-#  starting with '/' is an absolute path.
+#  starting with '/' is an absolute path.  A key starting with '$' is expected
+#  to be a variable that will expand to an absolute path at runtime.
 #  Value is optional, when not set the key is reused. When set, the path in the
 #  container.
 #  Example:
@@ -140,6 +143,8 @@
 #   volumes: { src: /bar }  => --volume "$(pwd)/src:/bar"
 #
 #   volumes: { /srv/git: /srv/git:ro }  => --volume "/srv/git:/srv/git:ro"
+#
+#   volumes: { $WORKSPACE: /workspace }  => --volume "$WORKSPACE:/workspace"
 #
 # [image] Docker image to run
 #
@@ -183,12 +188,12 @@
           {%- endif -%}
           {%- if volumes is defined -%}
               {%- for host_path, container_path in volumes.items() -%}
-                  {%- if host_path.startswith('/') -%}
+                  {%- if host_path.startswith('/') or host_path.startswith('$') -%}
                   {%-   set base_dir = '' -%}
                   {%- else -%}
-                  {%-   set base_dir = '"$(pwd)"/' -%}
+                  {%-   set base_dir = '$(pwd)/' -%}
                   {%- endif -%}
-                  {{ " " }}--volume {{ base_dir + host_path }}:{{ container_path or ("/" + host_path) }}
+                  {{ " " }}--volume "{{ base_dir + host_path }}:{{ container_path or ("/" + host_path) }}"
               {%- endfor -%}
           {%- endif %} \
           --security-opt seccomp=unconfined \

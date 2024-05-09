@@ -51,9 +51,9 @@
           mkdir -m 2777 -p "log"
       - docker-run:
           image: docker-registry.wikimedia.org/buster:latest
+          volumes:
+              log:
           entrypoint: /bin/chmod
-          options: >-
-              --volume "$WORKSPACE/log":/log
           args: >-
               -R u+w /log
 
