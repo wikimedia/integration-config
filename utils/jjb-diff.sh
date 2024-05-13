@@ -12,7 +12,11 @@ tox -e jenkins-jobs --notest
 base_dir=$(realpath "$(dirname "$0")"/../)
 
 JJB_BIN=.tox/jenkins-jobs/bin/jenkins-jobs
-DIFF_HIGHLIGHT_BIN="$base_dir"/.tox/jenkins-jobs/bin/diff-highlight
+if [[ -n "${FORCE_COLOR:-}" || -t 1 ]]; then
+    DIFF_HIGHLIGHT_BIN="$base_dir"/.tox/jenkins-jobs/bin/diff-highlight
+else
+    DIFF_HIGHLIGHT_BIN="cat"
+fi
 JJB_CONF=tests/fixtures/jjb-disable-query-plugins.conf
 JJB_TEST="$JJB_BIN --conf $JJB_CONF -l warning test"
 CHANGELOG_BIN="$base_dir"/utils/diff2changelog
