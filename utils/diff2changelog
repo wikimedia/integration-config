@@ -23,28 +23,42 @@ set -eu -o pipefail
 
 pgm="$(basename "$0")"
 
+if [[ -n "${FORCE_COLOR:-}" || -t 1 ]]; then
+    BLACK_BOLD='\e[0;1m'
+    YELLOW='\e[33m'
+    MAGENTA='\e[35m'
+    CYAN='\e[36m'
+    RESET='\e[0;0m'
+else
+    BLACK_BOLD=
+    YELLOW=
+    MAGENTA=
+    CYAN=
+    RESET=
+fi
+
 sort | while IFS= read -r line
 do
     if [[ "$line" =~ ^Files\ \./output-parent/([^/]+)/config.xml\ and\ .* ]]; then
         if [[ ! -v affected_header_written ]]; then
-            printf "\e[0;1mAffected jobs:\e[0;0m\n"
+            printf "%sAffected jobs:%s\n" "$BLACK_BOLD" "$RESET"
             affected_header_written=1
         fi
-        printf " - \e[33m%s\e[0;0m\n" "${BASH_REMATCH[1]}"
+        printf " - %s%s%s\n" "$YELLOW" "${BASH_REMATCH[1]}" "$RESET"
 
     elif [[ "$line" =~ ^Only\ in\ ./output-parent:\ (.+) ]]; then
         if [[ ! -v deleted_header_written ]]; then
-            printf "\e[0;1mDeleted jobs:\e[0;0m\n"
+            printf "%sDeleted jobs:%s\n" "$BLACK_BOLD" "$RESET"
             deleted_header_written=1
         fi
-        printf " - \e[35m%s\e[0;0m\n" "${BASH_REMATCH[1]}"
+        printf " - %s%s%s\n" "$MAGENTA" "${BASH_REMATCH[1]}" "$RESET"
 
     elif [[ "$line" =~ ^Only\ in\ \./output-proposed:\ (.*) ]]; then
         if [[ ! -v new_header_written ]]; then
-            printf "\e[0;1mNew jobs:\e[0;0m\n"
+            printf "%sNew jobs:%s\n" "$BLACK_BOLD" "$RESET"
             new_header_written=1
         fi
-        printf " - \e[36m%s\e[0;0m\n" "${BASH_REMATCH[1]}"
+        printf " - %s%s%s\n" "$CYAN" "${BASH_REMATCH[1]}" "$RESET"
     else
         >&2 printf "%s: unrecognized line: %s\n" "$pgm" "$line"
         if [ "$line" == "---" ]; then
