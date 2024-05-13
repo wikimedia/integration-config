@@ -614,6 +614,7 @@ phan_dependencies = {
     'CreateAPage': ['ConfirmEdit'],
     'Dashiki': ['JsonConfig'],
     'Disambiguator': ['VisualEditor'],
+    'DiscordRCFeed': ['Flow'],
     'DiscussionTools': ['VisualEditor', 'Linter', 'Echo', 'EventLogging',
                         'Gadgets', 'BetaFeatures', 'Thanks'],
     'DonationInterface': ['cldr', 'CodeEditor', 'FundraisingEmailUnsubscribe',
