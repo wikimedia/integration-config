@@ -130,7 +130,7 @@
 
 - job:
     name: 'fail-archived-repositories'
-    node: contint2002
+    node: contint1002
     concurrent: false
     triggers:
      - zuul

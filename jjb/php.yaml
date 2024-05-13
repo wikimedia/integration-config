@@ -47,7 +47,7 @@
             type: label-expression
             name: label
             values:
-                - contint2002
+                - contint1002
         - axis:
             name: ZUUL_PROJECT
             type: user-defined

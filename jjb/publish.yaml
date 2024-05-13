@@ -1,4 +1,4 @@
-# Sync files from a Jenkins agent in Cloud Services on the contint2002 agent which is
+# Sync files from a Jenkins agent in Cloud Services on the contint1002 agent which is
 # also the CI master. Then rsync to doc.discovery.wmnet, which hosts
 # https://doc.wikimedia.org/ .
 #
@@ -56,7 +56,7 @@
 
 - job:
     name: publish-to-doc
-    node: contint2002
+    node: contint1002
     concurrent: false
     properties:
         - build-discarder:
