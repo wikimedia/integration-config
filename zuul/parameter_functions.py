@@ -661,6 +661,7 @@ phan_dependencies = {
     'MassMessageEmail': ['MassMessage'],
     'Math': ['VisualEditor', 'Wikibase', 'Popups'],
     'MediaSearch': ['CirrusSearch', 'WikibaseCirrusSearch'],
+    'MediaWikiChat': ['CheckUser', 'SocialProfile'],
     'MiniInvite': ['BlogPage'],
     'MobileApp': ['AbuseFilter'],
     'MobileFrontend': ['AbuseFilter', 'CentralAuth', 'LiquidThreads',
