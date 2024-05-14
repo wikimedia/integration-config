@@ -714,7 +714,7 @@ phan_dependencies = {
     'Toolhub': ['Scribunto'],
     'TorBlock': ['AbuseFilter'],
     'Translate': ['AbuseFilter', 'AdminLinks', 'cldr', 'Elastica',
-                  'TranslationNotifications'],
+                  'Scribunto', 'TranslationNotifications'],
     'TranslationNotifications': ['CentralAuth', 'MassMessage', 'SiteMatrix',
                                  'Translate'],
     'TwoColConflict': ['BetaFeatures', 'EventLogging', 'WikiEditor'],
