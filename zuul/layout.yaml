@@ -4305,6 +4305,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
+      - name: extension-javascript-documentation
 
   - name: mediawiki/extensions/cldr
     template:
@@ -4466,6 +4467,7 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-coverage
+      - name: extension-javascript-documentation
 
   - name: mediawiki/extensions/Elastica
     template:
@@ -4669,6 +4671,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
+      - name: extension-javascript-documentation
 
   - name: mediawiki/extensions/GrowthExperiments
     template:
@@ -5248,6 +5251,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
+      - name: extension-javascript-documentation
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
 
@@ -5355,6 +5359,7 @@ projects:
       - name: extension-gate
       - name: extension-codehealth
       - name: extension-coverage
+      - name: extension-javascript-documentation
     postmerge:
       - mwext-doxygen-publish
 
