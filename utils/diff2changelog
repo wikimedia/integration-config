@@ -41,24 +41,27 @@ sort | while IFS= read -r line
 do
     if [[ "$line" =~ ^Files\ \./output-parent/([^/]+)/config.xml\ and\ .* ]]; then
         if [[ ! -v affected_header_written ]]; then
-            printf "%sAffected jobs:%s\n" "$BLACK_BOLD" "$RESET"
+            # shellcheck disable=SC2059
+            printf "${BLACK_BOLD}Affected jobs:${RESET}\n"
             affected_header_written=1
         fi
-        printf " - %s%s%s\n" "$YELLOW" "${BASH_REMATCH[1]}" "$RESET"
+        printf " - ${YELLOW}%s${RESET}\n" "${BASH_REMATCH[1]}"
 
     elif [[ "$line" =~ ^Only\ in\ ./output-parent:\ (.+) ]]; then
         if [[ ! -v deleted_header_written ]]; then
-            printf "%sDeleted jobs:%s\n" "$BLACK_BOLD" "$RESET"
+            # shellcheck disable=SC2059
+            printf "${BLACK_BOLD}Deleted jobs:${RESET}\n"
             deleted_header_written=1
         fi
-        printf " - %s%s%s\n" "$MAGENTA" "${BASH_REMATCH[1]}" "$RESET"
+        printf " - ${MAGENTA}%s${RESET}\n" "${BASH_REMATCH[1]}"
 
     elif [[ "$line" =~ ^Only\ in\ \./output-proposed:\ (.*) ]]; then
         if [[ ! -v new_header_written ]]; then
-            printf "%sNew jobs:%s\n" "$BLACK_BOLD" "$RESET"
+            # shellcheck disable=SC2059
+            printf "${BLACK_BOLD}New jobs:${RESET}\n"
             new_header_written=1
         fi
-        printf " - %s%s%s\n" "$CYAN" "${BASH_REMATCH[1]}" "$RESET"
+        printf " - ${CYAN}%s${RESET}\n" "${BASH_REMATCH[1]}"
     else
         >&2 printf "%s: unrecognized line: %s\n" "$pgm" "$line"
         if [ "$line" == "---" ]; then
