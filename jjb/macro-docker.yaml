@@ -232,6 +232,7 @@
         #!/bin/bash -eu
         set -x
         chmod 2777 src
+        mkdir -m 2777 -p "cache"
      - docker-run:
         entrypoint: >-
           {obj:entrypoint|}
