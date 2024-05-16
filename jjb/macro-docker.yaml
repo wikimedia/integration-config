@@ -64,7 +64,7 @@
     builders:
      - shell: |
         ls -laF --color=always
-        mkdir -m 2777 -p "cache"
+        mkdir -m 2777 -p cache
 
 # Create a log directory that will be
 # mounted into a container with --volume
@@ -232,7 +232,7 @@
         #!/bin/bash -eu
         set -x
         chmod 2777 src
-        mkdir -m 2777 -p "cache"
+        mkdir -m 2777 -p cache log
      - docker-run:
         entrypoint: >-
           {obj:entrypoint|}
@@ -274,6 +274,10 @@
 - builder:
     name: docker-ci-src-setup-simple
     builders:
+     - shell: |
+        #!/bin/bash -eu
+        set -x
+        mkdir -m 2777 -p "cache"
      - docker-run: !j2-yaml: >-
          options:
            {%- if submodules is defined and not submodules %}
