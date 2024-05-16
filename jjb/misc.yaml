@@ -10,6 +10,7 @@
     builders:
      - docker-log-dir
      - docker-src-dir
+     - docker-cache-dir
      - docker-run-with-log-cache-src:
          image: docker-registry.wikimedia.org/releng/doxygen:1.10.0
      - doc-publish:
