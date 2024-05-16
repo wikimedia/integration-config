@@ -5973,10 +5973,6 @@ projects:
     template:
       - name: extension-quibble-bluespice
 
-  - name: mediawiki/extensions/BlueSpiceInsertMagic
-    template:
-      - name: extension-quibble-bluespice
-
   - name: mediawiki/extensions/BlueSpiceInsertTemplate
     template:
       - name: extension-quibble-bluespice
@@ -10801,6 +10797,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/BlueSpiceExtensions
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/BlueSpiceInsertMagic
     template:
       - name: archived
 

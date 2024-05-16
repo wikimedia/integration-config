@@ -138,6 +138,7 @@ class TestZuulLayout(unittest.TestCase):
             'mediawiki/extensions/BlueSpiceBookshelfUI',
             'mediawiki/extensions/BlueSpiceEditNotifyConnector',
             'mediawiki/extensions/BlueSpiceExtensions',
+            'mediawiki/extensions/BlueSpiceInsertMagic',
             'mediawiki/extensions/BlueSpiceMenues',
             'mediawiki/skins/BlueSpiceSkin'
         ]

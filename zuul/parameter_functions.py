@@ -192,10 +192,6 @@ dependencies = {
         'BlueSpiceFoundation',
         'BlueSpiceVisualEditorConnector'
     ],
-    'BlueSpiceInsertMagic': [
-        'BlueSpiceFoundation',
-        'BlueSpiceVisualEditorConnector'
-    ],
     'BlueSpiceFoundation': ['ExtJSBase', 'OOJSPlus'],
     'BlueSpiceInsertTemplate': ['BlueSpiceFoundation'],
     'BlueSpiceInstanceStatus': ['BlueSpiceFoundation'],
