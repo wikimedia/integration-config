@@ -4366,6 +4366,14 @@ projects:
       - name: extension-codehealth
       - name: extension-quibble
 
+  - name: mediawiki/extensions/CommunityRequests
+    template:
+      # Extension not yet in production
+      - name: in-wikimedia-production
+      - name: extension-coverage
+      - name: extension-codehealth
+      - name: extension-quibble
+
   - name: mediawiki/extensions/ConfirmEdit
     template:
       - name: in-wikimedia-production
