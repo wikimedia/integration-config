@@ -130,6 +130,7 @@ pipelines:
            - ^[Tt]ulsibhagat50@gmail\.com$ # Tulsi Bhagat
            - ^[lL]adsgroup@gmail\.com$
            - ^aarcos\.wiki@gmail\.com$
+           - ^abaris@null\.net$ # abaris / User:Doǵu
            - ^abhisandy47@gmail\.com$ # Sandeep Kumar Patel
            - ^adamr_carter@btinternet\.com$ # UltrasonicNXT
            - ^admin@glados\.cc$ # Unicodesnowman
@@ -212,6 +213,7 @@ pipelines:
            - ^framawiki@tools\.wmflabs\.org$
            - ^geofbot@gmail\.com$
            - ^geoffreytrang@gmail\.com$
+           - ^gerges\.shamoon\.dev@gmail\.com$ # Gerges
            - ^gianiskido@gmail\.com$ # IoannisKydonis, former GCI student
            - ^gifti@tools\.wmflabs\.org$
            - ^glaisher\.wiki@gmail\.com$
@@ -460,6 +462,7 @@ pipelines:
            - ^yaron57@gmail\.com$
            - ^yash\.girdhar@gmail\.com$ # yash / yashasvi
            - ^yashagrawal9265@gmail\.com$ #Yash9265
+           - ^yn\.jiyu@gmail\.com$ # Jiyu/Abstract09 - working with RhinosF1 on Quarry
            - ^yuriastrakhan@gmail\.com$
            - ^yuvipanda@gmail\.com$
            - ^zabe@avorwerk\.net$ # Zabe
@@ -467,9 +470,6 @@ pipelines:
            - ^zhuyifei1999@gmail\.com$
            - ^zivkovica006@gmail\.com$ # Aca
            - ^zorandori4444@gmail\.com$ # Zoranzoki21
-           - ^abaris@null\.net$ # abaris / User:Doǵu
-           - ^yn\.jiyu@gmail\.com$ # Jiyu/Abstract09 - working with RhinosF1 on Quarry
-           - ^gerges\.shamoon\.dev@gmail\.com$ # Gerges
 
            # Pywikibot related
            - ^CommodoreFabianus@gmx\.de$ # XZise, Pywikibot maintainer
