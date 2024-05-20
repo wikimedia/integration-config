@@ -734,6 +734,8 @@
     builders:
     - docker-log-dir
     - docker-src-dir
+    - docker-wipe-dir:
+        dir: 'cover'
     - docker-castor-load
     - docker-run-with-log-cache-src:
         image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.7.0-s2
