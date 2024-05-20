@@ -10230,6 +10230,8 @@ projects:
       - name: node18
 
   - name: research/recommendation-api
+    template:
+      - name: mediawiki-i18n-check
     test:
       - trigger-recommendation-api-ng-pipeline-test
     gate-and-submit:
