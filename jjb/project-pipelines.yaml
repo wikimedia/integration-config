@@ -48,6 +48,20 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: bitu
+    pipeline:
+      - test
+      - rehearse
+      - publish
+    jobs:
+      # trigger-bitu-pipeline-test
+      # trigger-bitu-pipeline-publish
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # bitu-pipeline-test
+      # bitu-pipeline-publish
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     name: citoid
     pipeline:
       - test

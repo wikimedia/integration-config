@@ -3877,6 +3877,8 @@ projects:
   - name: operations/software/bitu
     template:
       - name: tox
+    experimental:
+      - trigger-bitu-pipeline-test
 
   - name: operations/software/bitu-ldap
     template:
