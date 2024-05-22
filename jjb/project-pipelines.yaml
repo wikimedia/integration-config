@@ -609,14 +609,6 @@
         - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: service-scaffold-node
-    pipeline:
-      - test
-    jobs:
-      - 'trigger-{name}-pipeline-{pipeline}'
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: image-suggestions
     pipeline:
       - test
