@@ -145,5 +145,11 @@ COPY ./install-php-fpm-conf.sh /install-php-fpm-conf.sh
 # Unprivileged
 RUN install --directory /workspace --owner=nobody --group=nogroup
 USER nobody
+
+# (T365871) Firefox needs this, because it will always write to $HOME/.mozilla,
+# and the nobody user doesn't have one. Other tools likely will need it in some
+# form as well, so setting it generally.
+ENV HOME=/tmp
+
 WORKDIR /workspace
 ENTRYPOINT ["/usr/local/bin/quibble"]

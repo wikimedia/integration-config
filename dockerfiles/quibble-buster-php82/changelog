@@ -1,3 +1,10 @@
+quibble-buster-php82 (1.7.0-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-buster:
+   Set HOME=/tmp to fix Firefox etc.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 24 May 2024 14:58:57 -0400
+
 quibble-buster-php82 (1.7.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster:
