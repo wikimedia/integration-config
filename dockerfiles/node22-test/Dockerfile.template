@@ -55,6 +55,12 @@ ENV NPM_CONFIG_update_notifier=false
 # https://github.com/GoogleChrome/puppeteer/blob/v1.11.0/docs/troubleshooting.md
 ENV CHROMIUM_FLAGS="--no-sandbox"
 
+# Firefox needs this, because it will write to $HOME/.mozilla, and the nobody
+# user has default HOME of unwritable /nonexistent.
+# Other tools likely will need it in some form as well, so set it generally.
+# https://phabricator.wikimedia.org/T365871
+ENV HOME="/tmp"
+
 WORKDIR /src
 COPY run.sh /run.sh
 ENTRYPOINT ["/run.sh"]

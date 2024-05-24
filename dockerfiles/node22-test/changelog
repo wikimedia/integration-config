@@ -1,3 +1,9 @@
+node22-test (22.0.0-s1) wikimedia; urgency=high
+
+   Set HOME=/tmp (T365871)
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Fri, 24 May 2024 20:51:23 +0100
+
 node22-test (22.0.0) wikimedia; urgency=high
 
    Initial image, with Node 22.0.0 and npm 10.5.1.

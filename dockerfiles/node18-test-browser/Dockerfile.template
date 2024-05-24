@@ -7,7 +7,6 @@ USER root
 
 # Not phantomjs as that's not available any more
 RUN {{ "chromium chromium-driver firefox-esr xvfb ffmpeg" | apt_install }}
-COPY firefox /usr/local/bin/firefox
 
 USER nobody
 
@@ -15,9 +14,5 @@ USER nobody
 #
 # Developers usually configure Chrome, so point it to Chromium
 ENV CHROME_BIN=/usr/bin/chromium
-# For karma-firefox-launcher
-#
-# Firefox wrapper introduced above to set HOME to a writable directory
-ENV FIREFOX_BIN=/usr/local/bin/firefox
 
 COPY run-with-xvfb.sh /run-with-xvfb.sh
