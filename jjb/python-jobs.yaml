@@ -144,6 +144,6 @@
      - docker-run:
         volumes:
             src:
-        image: docker-registry.wikimedia.org/releng/commit-message-validator:2.0.0-s3
+        image: docker-registry.wikimedia.org/releng/commit-message-validator:2.1.0
     publishers:
      - docker-cleanup
