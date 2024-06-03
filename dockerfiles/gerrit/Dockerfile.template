@@ -12,8 +12,10 @@ COPY --from=maven /opt/apache-maven /opt/apache-maven
 COPY --from=maven /usr/local/bin/mvn /usr/local/bin/mvn
 COPY --from=maven /settings.xml /settings.xml
 
+COPY wikimedia-jdk17.list /etc/apt/sources.list.d/wikimedia-jdk17.list
+
 RUN mkdir -p /usr/share/man/man1 \
-    && {{ "openjdk-11-jdk-headless" | apt_install }}
+    && {{ "openjdk-17-jdk-headless" | apt_install }}
 
 # Setting home dir for Gerrit tools/download_file.py which uses ~ for caching
 # downloaded artifacts
