@@ -6548,11 +6548,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/DoubleWiki
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/DPLforum
     template:
       - name: extension-quibble
@@ -11003,6 +10998,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/DjangoAnalytics
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/DoubleWiki
     template:
       - name: archived
 
