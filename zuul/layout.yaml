@@ -8362,10 +8362,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/UploadBlacklist
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/UrlGetParameters
     template:
       - name: extension-quibble
@@ -11678,6 +11674,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/UnitTest
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/UploadBlacklist
     template:
       - name: archived
 
