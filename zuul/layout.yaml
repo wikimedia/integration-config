@@ -7255,10 +7255,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/MixedNamespaceSearchSuggestions
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/MobileDetect
     template:
       - name: extension-quibble
@@ -11250,6 +11246,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Minifier
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/MixedNamespaceSearchSuggestions
     template:
       - name: archived
 
