@@ -7320,10 +7320,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/MultimediaPlayer
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/MusicBrainzAuth
     template:
       - name: extension-quibble
@@ -11266,6 +11262,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/MSSQLBackCompat
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/MultimediaPlayer
     template:
       - name: archived
 
