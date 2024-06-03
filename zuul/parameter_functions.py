@@ -488,6 +488,7 @@ dependencies = {
     'StickyTOC': ['skins/chameleon'],
     'StopForumSpam': ['AbuseFilter'],
     'SyntaxHighlight_GeSHi': ['VisualEditor'],
+    'TableTools': ['VisualEditor', 'VueJsPlus'],
     'TEI': ['CodeMirror', 'Math', 'VisualEditor'],
     'TemplateWizard': ['TemplateData', 'WikiEditor'],
     'TitleBlacklist': ['AntiSpoof', 'Scribunto'],

@@ -8275,6 +8275,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/TableTools
+    template:
+     - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/TalkBelow
     template:
       - name: extension-quibble
