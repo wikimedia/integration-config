@@ -8480,6 +8480,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/VueJsPlus
+    template:
+     - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/VueTest
     template:
       - name: in-wikimedia-production
