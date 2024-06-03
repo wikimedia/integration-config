@@ -7619,10 +7619,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/PerPageLicense
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/Petition
     template:
       - name: extension-quibble
@@ -11366,6 +11362,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/PdfExport
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/PerPageLicense
     template:
       - name: archived
 
