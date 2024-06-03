@@ -6483,10 +6483,6 @@ projects:
     template:
       - name: extension-quibble-bluespice
 
-  - name: mediawiki/extensions/DebugMode
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/DebugTemplates
     template:
       - name: extension-quibble
@@ -10991,6 +10987,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/DebateTree
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/DebugMode
     template:
       - name: archived
 
