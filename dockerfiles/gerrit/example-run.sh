@@ -26,4 +26,4 @@ docker run \
     --volume /"$(pwd)"/cache://cache \
     --volume /"$(pwd)"/src://src \
     --entrypoint=/src/wmf-build.py \
-    docker-registry.wikimedia.org/releng/gerrit:1.3.0
+    docker-registry.wikimedia.org/releng/gerrit:latest
