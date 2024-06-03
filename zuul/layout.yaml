@@ -7015,10 +7015,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Interlanguage
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/InterwikiExtracts
     template:
       - name: extension-quibble
@@ -11166,6 +11162,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ImageTagging
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Interlanguage
     template:
       - name: archived
 
