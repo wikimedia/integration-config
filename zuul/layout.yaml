@@ -6932,9 +6932,6 @@ projects:
       - name: extension-quibble
 
   # Require $wgNamespacesWithSubpages set to TRUE in the MAIN namespace.
-  - name: mediawiki/extensions/Html2Wiki
-    template:
-      - name: extension-broken
 
   - name: mediawiki/extensions/HTMLets
     template:
@@ -11118,6 +11115,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/GWToolset
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Html2Wiki
     template:
       - name: archived
 
