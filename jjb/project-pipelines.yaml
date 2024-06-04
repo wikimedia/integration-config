@@ -488,16 +488,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: image-suggestion-api
-    pipeline:
-      - test
-      - rehearse
-      - publish
-    jobs:
-      - 'trigger-{name}-pipeline-{pipeline}'
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     # machinelearning/liftwing/inference-services
     name: inference-services
     pipeline:
