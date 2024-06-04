@@ -6573,10 +6573,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/DynamicPageList
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/DynamicPageListEngine
     template:
       - name: extension-quibble
@@ -11019,6 +11015,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Duplicator
+    template:
+      - name: archived
+    
+  - name: mediawiki/extensions/DynamicPageList
     template:
       - name: archived
 
