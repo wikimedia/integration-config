@@ -8795,14 +8795,6 @@ projects:
     gate-and-submit:
       - eventlogging-tox
 
-  - name: mediawiki/services/image-suggestion-api
-    test:
-      - trigger-image-suggestion-api-pipeline-test
-    gate-and-submit:
-      - trigger-image-suggestion-api-pipeline-rehearse
-    postmerge:
-      - trigger-image-suggestion-api-pipeline-publish
-
   - name: mediawiki/services/example-node-api
     test:
         - trigger-example-node-api-pipeline-test
@@ -11875,6 +11867,10 @@ projects:
       - name: archived
 
   - name: mediawiki/services/graphoid
+    template:
+      - name: archived
+
+  - name: mediawiki/services/image-suggestion-api
     template:
       - name: archived
 
