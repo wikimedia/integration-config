@@ -5608,6 +5608,15 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  # Not yet in production, but headed there -- JDF 2024-06-5
+  - name: mediawiki/extensions/WikifunctionsClient
+    template:
+      # - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+    postmerge:
+      - mwext-doxygen-publish
+
   - name: mediawiki/extensions/WikiLambda
     template:
       - name: in-wikimedia-production
@@ -10985,7 +10994,7 @@ projects:
   - name: mediawiki/extensions/Duplicator
     template:
       - name: archived
-    
+
   - name: mediawiki/extensions/DynamicPageList
     template:
       - name: archived
