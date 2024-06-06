@@ -351,6 +351,7 @@ pipelines:
            - ^owen@miraheze\.org$ # Owen
            - ^ozdemir@gmail\.com$ # HakanIST
            - ^p4.wikipedia@gmail\.com$ # WhitePhosphorus
+           - ^parthivmenon\.dev@gmail\.com$ # TheProtonade
            - ^pastakhov@yandex\.ru$ # PhpTags maintainer
            - ^paulfkeffer@gmail\.com$ # MacFan4000
            - ^perry@frasers\.org$ # Perryprog
