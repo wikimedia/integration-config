@@ -82,7 +82,7 @@ pipelines:
            - ^amir\.aharoni@mail\.huji\.ac\.il$ # Amir Aharoni; Language Engineering Team
            - ^andrew\.green\.df@gmail\.com$ # Andrew Green; Fundraising Technology Team
            - ^ayg@aryeh\.name$ # Aryeh Gregor (simetrical); Core Platform Team
-           - ^chad@horohoe.email$ # Chad Horohoe; Release Engineering Team
+           - ^chad@horohoe\.email$ # Chad Horohoe; Release Engineering Team
            - ^david@troi\.org$ # David Chan; Editing Team
            - ^ejegg@ejegg\.com$ # Elliott Eggleston; Fundraising Tech Team
            - ^git@samsmith\.io$ # Sam Smith; Reading Web Team
@@ -350,7 +350,7 @@ pipelines:
            - ^ostrzycielnozyczek@gmail\.com$ # Ostrzyciel
            - ^owen@miraheze\.org$ # Owen
            - ^ozdemir@gmail\.com$ # HakanIST
-           - ^p4.wikipedia@gmail\.com$ # WhitePhosphorus
+           - ^p4\.wikipedia@gmail\.com$ # WhitePhosphorus
            - ^parthivmenon\.dev@gmail\.com$ # TheProtonade
            - ^pastakhov@yandex\.ru$ # PhpTags maintainer
            - ^paulfkeffer@gmail\.com$ # MacFan4000
