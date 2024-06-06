@@ -7454,6 +7454,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/NumberHeadings
+    template:
+      - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/NumberOfWikis
     template:
       - name: extension-quibble
