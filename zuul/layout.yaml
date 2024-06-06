@@ -4890,6 +4890,14 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
+  - name: mediawiki/extensions/MetricsPlatform
+    template:
+      # Not yet in production -- phuedx 2024-06-06
+      #- name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
   - name: mediawiki/extensions/MobileApp
     template:
       - name: in-wikimedia-production
