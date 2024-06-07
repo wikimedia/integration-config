@@ -6249,6 +6249,10 @@ projects:
     template:
       - name: extension-quibble-bluespice
 
+  - name: mediawiki/extensions/BlueSpiceWikiFarm
+    template:
+     - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/BlueSpiceWhoIsOnline
     template:
       - name: extension-quibble-bluespice

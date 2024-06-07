@@ -322,6 +322,7 @@ dependencies = {
         'VisualEditorPlus'
     ],
     'BlueSpiceWatchList': ['BlueSpiceFoundation'],
+    'BlueSpiceWikiFarm': ['OOJSPlus'],
     'BlueSpiceWhoIsOnline': ['BlueSpiceFoundation'],
     'BlueSpiceWikiExplorer': ['BlueSpiceFoundation'],
     'BounceHandler': ['Echo', 'CentralAuth'],
