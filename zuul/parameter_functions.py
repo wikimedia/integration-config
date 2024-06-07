@@ -648,6 +648,7 @@ phan_dependencies = {
     'HAWelcome': ['SocialProfile'],
     'ImageRating': ['SocialProfile', 'VoteNY'],
     'ImageSuggestions': ['Echo', 'CirrusSearch', 'Elastica'],
+    'InlineComments': ['Echo'],
     'IPInfo': ['EventLogging'],
     'intersection': ['PageImages'],
     'JsonConfig': ['CodeEditor', 'Kartographer', 'Scribunto'],
