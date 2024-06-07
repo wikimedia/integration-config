@@ -5787,6 +5787,10 @@ projects:
     template:
       - name: extension-quibble-composer
 
+  - name: mediawiki/extensions/AIEditingAssistant
+    template:
+     - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/AJAXPoll
     template:
       - name: extension-quibble
