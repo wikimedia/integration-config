@@ -10237,7 +10237,7 @@ projects:
 
   - name: translatewiki
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php82-or-later
     test:
       - translatewiki-ruby2.5-rake
     gate-and-submit:
