@@ -9503,11 +9503,6 @@ projects:
     gate-and-submit:
       - labs-tools-commons-mass-description-tox
 
-  - name: labs/tools/crosswatch
-    template:
-      - name: tox
-      - name: mediawiki-i18n-check
-
   - name: labs/tools/coverme
     template:
       - name: composer-test-php74-or-later
@@ -10591,6 +10586,10 @@ projects:
       - name: archived
 
   - name: labs/tools/coursestats
+    template:
+      - name: archived
+
+  - name: labs/tools/crosswatch
     template:
       - name: archived
 
