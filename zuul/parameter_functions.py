@@ -940,6 +940,7 @@ gatedextensions = [
     'CirrusSearch',
     'cldr',
     'ContentTranslation',
+    'CommunityConfiguration',
     'Disambiguator',
     'Echo',
     'Elastica',
