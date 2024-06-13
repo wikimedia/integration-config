@@ -8718,30 +8718,6 @@ projects:
     publish:
       - trigger-apertium-pipeline-publish
 
-  # eventgate-wikimedia contains the wikimedia specific
-  # eventgate factory code and config.
-  # https://github.com/wikimedia/eventgate is an npm
-  # dependency.
-  - name: eventgate-wikimedia
-    test:
-      - trigger-eventgate-wikimedia-pipeline-test
-    gate-and-submit:
-      - trigger-eventgate-wikimedia-pipeline-test
-    postmerge:
-      - trigger-eventgate-wikimedia-pipeline-publish
-    publish:
-      - trigger-eventgate-wikimedia-pipeline-publish
-
-  - name: mediawiki/services/eventstreams
-    test:
-      - trigger-eventstreams-pipeline-test
-    gate-and-submit:
-      - trigger-eventstreams-pipeline-test
-    postmerge:
-      - trigger-eventstreams-pipeline-publish
-    publish:
-      - trigger-eventstreams-pipeline-publish
-
   - name: schemas/event/primary
     template:
       - name: node18
@@ -10535,6 +10511,11 @@ projects:
     template:
       - name: archived
 
+  # Moved to GitLab at https://gitlab.wikimedia.org/repos/data-engineering/eventgate-wikimedia
+  - name: eventgate-wikimedia
+    template:
+      - name: archived
+
   - name: integration/audit-resources
     template:
       - name: archived
@@ -11888,6 +11869,11 @@ projects:
       - name: archived
 
   - name: mediawiki/services/cxserver/deploy
+    template:
+      - name: archived
+
+  # Moved to GitLab at https://gitlab.wikimedia.org/repos/data-engineering/eventstreams
+  - name: mediawiki/services/eventstreams
     template:
       - name: archived
 
