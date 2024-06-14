@@ -493,6 +493,8 @@
         - huggingface-publish
         - logo-detection
         - logo-detection-publish
+        - articlequality
+        - articlequality-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -522,6 +524,8 @@
         # trigger-inference-services-pipeline-huggingface-publish
         # trigger-inference-services-pipeline-logo-detection
         # trigger-inference-services-pipeline-logo-detection-publish
+        # trigger-inference-services-pipeline-articlequality
+        # trigger-inference-services-pipeline-articlequality-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -551,6 +555,8 @@
         # inference-services-pipeline-huggingface-publish
         # inference-services-pipeline-logo-detection
         # inference-services-pipeline-logo-detection-publish
+        # inference-services-pipeline-articlequality
+        # inference-services-pipeline-articlequality-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:

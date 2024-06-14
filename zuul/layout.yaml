@@ -1125,6 +1125,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'logo_detection/.*'
 
+  - name: ^trigger-inference-services-pipeline-articlequality
+    files:
+        - '.pipeline/articlequality/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/articlequality/.*'
+
   # End of meta jobs (the ones starting with ^)
 
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
@@ -2686,6 +2692,7 @@ projects:
       - trigger-inference-services-pipeline-article-descriptions
       - trigger-inference-services-pipeline-huggingface
       - trigger-inference-services-pipeline-logo-detection
+      - trigger-inference-services-pipeline-articlequality
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
@@ -2701,6 +2708,7 @@ projects:
       - trigger-inference-services-pipeline-article-descriptions
       - trigger-inference-services-pipeline-huggingface
       - trigger-inference-services-pipeline-logo-detection
+      - trigger-inference-services-pipeline-articlequality
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-outlink-transformer-publish
@@ -2716,6 +2724,7 @@ projects:
       - trigger-inference-services-pipeline-article-descriptions-publish
       - trigger-inference-services-pipeline-huggingface-publish
       - trigger-inference-services-pipeline-logo-detection-publish
+      - trigger-inference-services-pipeline-articlequality-publish
 
   - name: integration/config
     test-prio:
