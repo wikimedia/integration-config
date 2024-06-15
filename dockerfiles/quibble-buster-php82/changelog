@@ -1,3 +1,9 @@
+quibble-buster-php82 (1.9.0) wikimedia; urgency=medium
+
+  * Update Quibble to 1.9.0
+
+ -- Antoine Musso <hashar@free.fr>  Sat, 15 Jun 2024 10:20:44 +0200
+
 quibble-buster-php82 (1.8.0) wikimedia; urgency=medium
 
   Update Quibble to 1.8.0
