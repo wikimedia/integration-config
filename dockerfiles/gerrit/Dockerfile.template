@@ -32,12 +32,14 @@ RUN {{ "nodejs" | apt_install }} \
 # gcc for asciidoctor
 # curl is required by Gerrit tools/download_file.py
 # zip and unzip by src/tools/js/download_bower.py
+# openssh-client for ssh-keygen which is required by acceptance tests
 {% set gerrit_deps -%}
 gcc
 g++
 curl
 zip
 unzip
+openssh-client
 python-is-python3
 python3
 python3-distutils
