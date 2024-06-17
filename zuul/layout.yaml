@@ -5633,8 +5633,8 @@ projects:
   # Not yet in production, but headed there -- JDF 2024-06-5
   - name: mediawiki/extensions/WikifunctionsClient
     template:
-      # - name: in-wikimedia-production
-      - name: extension-quibble
+      - name: in-wikimedia-production
+      - name: extension-quibble-noselenium
       - name: extension-coverage
     postmerge:
       - mwext-doxygen-publish
