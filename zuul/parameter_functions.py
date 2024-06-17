@@ -50,6 +50,17 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/cldr',
         ])
 
+    # Enable parallel phpunit for specific repos so that we
+    # can progressively roll out the feature and measure the
+    # impact. See T361190, T50217
+    # Starting with Lexeme, since it has few commits and is a
+    # WMDE project - WMDE stakeholders will help with the
+    # monitoring / deployment
+    if params['ZUUL_PROJECT'] in [
+        'mediawiki/extensions/WikibaseLexeme'
+    ]:
+        params['QUIBBLE_PHPUNIT_PARALLEL'] = '1'
+
     # parallel-lint can be slow
     if params['ZUUL_PROJECT'].startswith('mediawiki/vendor'):
         params['COMPOSER_PROCESS_TIMEOUT'] = 600
