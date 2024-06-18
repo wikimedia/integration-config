@@ -7422,10 +7422,6 @@ projects:
     template:
       - name: extension-quibble-noselenium
 
-  - name: mediawiki/extensions/NewsTicker
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/NewUserActions
     template:
       - name: extension-quibble
@@ -11272,6 +11268,10 @@ projects:
   - name: mediawiki/extensions/News
     template:
       - name: archived
+
+  - name: mediawiki/extensions/NewsTicker
+    template:
+      - name: archived # T353928
 
   - name: mediawiki/extensions/NewUsersList
     template:
