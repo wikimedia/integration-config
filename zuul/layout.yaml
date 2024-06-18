@@ -1148,10 +1148,6 @@ jobs:
     files:
       - '.*'
 
-  # Our puppet-compiler supports Puppet 7 but our manifests are not ready yet.
-  - name: operations-puppet-catalog-compiler-puppet7-test
-    voting: false
-
   - name: puppet-wmf-styleguide-ruby2.5-rake
     files:
       - '.*'
