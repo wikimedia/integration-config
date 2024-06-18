@@ -1927,8 +1927,8 @@ project-templates:
       - mediawiki-quibble-apitests-vendor-php74
 
   # Extensions tested together and intended for deployment to the Wikimedia Cluster
-  # This job is expensive, so should only be run using the current and soon-to-be-used
-  # flavour/flavours of PHP, not all of them.
+  # This job is expensive, so should only be run using the current flavour of PHP,
+  # and *maybe* a soon-to-be-used one; certainly, not all of them.
   - name: extension-gate
     # For master
     test:
@@ -2844,11 +2844,6 @@ projects:
   - name: mediawiki/tools/cookiecutter-library
     template:
       - name: tox
-
-  - name: mediawiki/tools/dependency-analysis
-    template:
-      # TODO: This code is likely to be archived (T350258)
-      - name: composer-test-php74-to-php81
 
   - name: mediawiki/tools/grunt-cssjanus
     template:
@@ -11976,6 +11971,10 @@ projects:
       - name: archived
 
   - name: operations/debs/hhvm
+    template:
+      - name: archived
+
+  - name: mediawiki/tools/dependency-analysis
     template:
       - name: archived
 
