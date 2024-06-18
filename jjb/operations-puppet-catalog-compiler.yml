@@ -21,7 +21,7 @@
         - matrix-combinations:
             name: Puppet workers to use
             # Set the default selection:
-            filter: (label =="puppet5-compiler-node")
+            filter: (label =="puppet7-compiler-node")
         - string:
             name: NUM_THREADS
             default: 4
