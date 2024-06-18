@@ -8067,10 +8067,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/SideBarMenu
-    template:
-      - name: extension-quibble-composer
-
   - name: mediawiki/extensions/SignWritingMediaWikiPlugin
     template:
       - name: extension-quibble
@@ -11546,6 +11542,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ShortDescription
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/SideBarMenu
     template:
       - name: archived
 
