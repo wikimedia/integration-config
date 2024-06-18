@@ -7366,10 +7366,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/NamespaceHTML
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/NamespacePaths
     template:
       - name: extension-quibble
@@ -11266,6 +11262,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/MWSearch
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/NamespaceHTML
     template:
       - name: archived
 
