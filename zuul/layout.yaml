@@ -5077,6 +5077,13 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/Phonos
+    template:
+      # Extension not yet in production, but headed there - T314294
+      - name: in-wikimedia-production
+      - name: extension-coverage
+      - name: extension-quibble
+
   - name: mediawiki/extensions/Poem
     template:
       - name: in-wikimedia-production
@@ -5152,6 +5159,13 @@ projects:
       - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
+
+  - name: mediawiki/extensions/ReportIncident
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
 
   - name: mediawiki/extensions/RevisionSlider
     template:
@@ -5460,6 +5474,16 @@ projects:
       - name: extension-apitests
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
+
+  - name: mediawiki/extensions/VueTest
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-codehealth
+      # There is no PHPUnit code coverage since that extension is JavaScript
+      # only. There is an exception for it in
+      # test_wikimedia_production_repos_have_requirements
+      # - name: extension-coverage
 
   - name: mediawiki/extensions/WebAuthn
     template:
@@ -7017,13 +7041,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/ReportIncident
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-codehealth
-
   - name: mediawiki/extensions/InlineCategorizer
     template:
       - name: extension-quibble
@@ -7654,13 +7671,6 @@ projects:
 
   - name: mediawiki/extensions/PhabTaskGraph
     template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/Phonos
-    template:
-      # Extension not yet in production - T314294
-      - name: in-wikimedia-production
-      - name: extension-coverage
       - name: extension-quibble
 
   - name: mediawiki/extensions/PhpHighlight
@@ -8479,16 +8489,6 @@ projects:
   - name: mediawiki/extensions/VueJsPlus
     template:
      - name: extension-quibble-bluespice
-
-  - name: mediawiki/extensions/VueTest
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-codehealth
-      # There is no PHPUnit code coverage since that extension is JavaScript
-      # only. There is an exception for it in
-      # test_wikimedia_production_repos_have_requirements
-      # - name: extension-coverage
 
   - name: mediawiki/extensions/WantedPagesFromNS
     template:
