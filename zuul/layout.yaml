@@ -1664,19 +1664,6 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
 
-    test-wmf:
-      - quibble-composer-mysql-php74-noselenium
-      - quibble-composer-mysql-php74-selenium
-      - mwgate-node18
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php74-phan
-    gate-and-submit-wmf:
-      - quibble-composer-mysql-php74-noselenium
-      - quibble-composer-mysql-php74-selenium
-      - mwgate-node18
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php74-phan
-
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
@@ -2152,17 +2139,6 @@ project-templates:
       - quibble-composer-mysql-php82
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php81-phan
-
-    test-wmf:
-      - quibble-composer-mysql-php74
-      - mwgate-node18
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php74-phan
-    gate-and-submit-wmf:
-      - quibble-composer-mysql-php74
-      - mwgate-node18
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php74-phan
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -4609,6 +4585,15 @@ projects:
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_39-php74
     gate-and-submit:
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_39-php74
+    # Special extra config because this is -composer, so doesn't get wmf branch jobs
+    test-wmf:
+      - quibble-composer-mysql-php74-noselenium
+      - quibble-composer-mysql-php74-selenium
+      - mwgate-node18
+    gate-and-submit-wmf:
+      - quibble-composer-mysql-php74-noselenium
+      - quibble-composer-mysql-php74-selenium
+      - mwgate-node18
 
   - name: mediawiki/extensions/FundraisingTranslateWorkflow
     template:
