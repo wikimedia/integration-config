@@ -7992,10 +7992,6 @@ projects:
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
 
-  - name: mediawiki/extensions/SemanticBundle
-    template:
-      - name: extension-broken  # Semantic MediaWiki is on GitHub
-
   - name: mediawiki/extensions/SemanticGenealogy
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
@@ -11486,6 +11482,10 @@ projects:
   - name: mediawiki/extensions/SecureSessions
     template:
       - name: archived
+
+  - name: mediawiki/extensions/SemanticBundle
+    template:
+      - name: archived # T366277
 
   - name: mediawiki/extensions/SemanticComments
     template:
