@@ -4254,6 +4254,15 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/Chart
+    template:
+      # Not yet in production but headed there -- JDF 2024-06-20
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+    postmerge:
+      - mwext-doxygen-publish
+
   - name: mediawiki/extensions/CheckUser
     template:
       - name: in-wikimedia-production
