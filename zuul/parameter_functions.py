@@ -648,7 +648,7 @@ phan_dependencies = {
              'CirrusSearch', 'ConfirmEdit', 'Echo', 'Elastica', 'GuidedTour',
              'LiquidThreads', 'SpamBlacklist', 'VisualEditor'],
     'FundraisingTranslateWorkflow': ['Translate'],
-    'Gadgets': ['CodeEditor'],
+    'Gadgets': ['CodeEditor', 'Scribunto'],
     'GettingStarted': ['CentralAuth', 'CirrusSearch', 'MobileFrontend',
                        'VisualEditor'],
     'GeoData': ['CirrusSearch', 'Elastica'],
