@@ -50,14 +50,25 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/cldr',
         ])
 
-    # Enable parallel phpunit for specific repos so that we
-    # can progressively roll out the feature and measure the
-    # impact. See T361190, T50217
-    # Starting with Lexeme, since it has few commits and is a
-    # WMDE project - WMDE stakeholders will help with the
-    # monitoring / deployment
+    # Enable parallel phpunit for all WMDE-maintained repos
+    # so we can observe the impact. See T361190, T50217
+    # WMDE stakeholders will help with monitoring / deployment
     if params['ZUUL_PROJECT'] in [
-        'mediawiki/extensions/WikibaseLexeme'
+        'mediawiki/extensions/AdvancedSearch',
+        'mediawiki/extensions/ArticlePlaceholder',
+        'mediawiki/extensions/Cognate',
+        'mediawiki/extensions/ElectronPdfService',
+        'mediawiki/extensions/EntitySchema',
+        'mediawiki/extensions/FileExporter',
+        'mediawiki/extensions/FileImporter',
+        'mediawiki/extensions/InterwikiSorting',
+        'mediawiki/extensions/PropertySuggester',
+        'mediawiki/extensions/RevisionSlider',
+        'mediawiki/extensions/TwoColConflict',
+        'mediawiki/extensions/Wikibase',
+        'mediawiki/extensions/Wikidata.org',
+        'mediawiki/extensions/WikibaseLexeme',
+        'mediawiki/extensions/WikimediaBadges',
     ]:
         params['QUIBBLE_PHPUNIT_PARALLEL'] = '1'
 
