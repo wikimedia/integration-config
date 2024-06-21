@@ -153,7 +153,8 @@ dependencies = {
         'BlueSpiceVisualEditorConnector',
         'ContentDroplets',
         'MenuEditor',
-        'VueJsPlus'
+        'VueJsPlus',
+        'BlueSpiceExtendedSearch'
     ],
     'BlueSpiceCategoryCheck': ['BlueSpiceFoundation'],
     'BlueSpiceCategoryManager': ['BlueSpiceFoundation'],
