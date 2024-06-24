@@ -8866,8 +8866,9 @@ projects:
       - quibble-composer-mysql-php81
       - parsoidsvc-composer-package-php82
       - quibble-composer-mysql-php82
-    experimental:
       - parsoidsvc-composer-package-php83
+      - quibble-composer-mysql-php83
+    experimental:
       # These are the jobs which would be added by the extension-gate template
       - wmf-quibble-core-vendor-mysql-php74
       - wmf-quibble-vendor-mysql-php74
