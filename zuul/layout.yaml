@@ -2224,12 +2224,12 @@ project-templates:
       - composer-package-php80
       - composer-package-php81
       - composer-package-php82
+      - composer-package-php83
     gate-and-submit:
       - composer-package-php74
       - composer-package-php80
       - composer-package-php81
       - composer-package-php82
-    experimental:
       - composer-package-php83
 
   # Temporary template for repos that fail on PHP 8.2
