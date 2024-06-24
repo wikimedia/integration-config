@@ -4472,6 +4472,8 @@ projects:
       # These are the remaining parts of extension-quibble
       - quibble-vendor-mysql-php74-noselenium
       - quibble-vendor-mysql-php81-noselenium
+      - quibble-vendor-mysql-php82-noselenium
+      - quibble-vendor-mysql-php83-noselenium
       - quibble-vendor-mysql-php74-selenium
 
   - name: mediawiki/extensions/DynamicSidebar
