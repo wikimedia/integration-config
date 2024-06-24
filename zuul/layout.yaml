@@ -1417,9 +1417,9 @@ project-templates:
     # No wmf/ jobs, as this should never be used for WMF production code
 
   # Main CI template for extensions, using quibble
-  # As of 2024-05-07, this means PHP 8.1–8.2, and Node 18, plus
+  # As of 2024-05-07, this means PHP 8.1–8.3, and Node 18, plus
   #   testing in PHP 7.4 temporarily whilst Wikimedia production migrates;
-  #   8.3 jobs (T353362) are waiting until after the 1.42 release (T360560#9757535)
+  #   8.3 jobs are live in master, but not yet older release branches (T356405)
   - name: extension-quibble
     test:
       - quibble-vendor-mysql-php74-noselenium
@@ -1429,10 +1429,12 @@ project-templates:
     php:
       - quibble-vendor-mysql-php81-noselenium
       - quibble-vendor-mysql-php82-noselenium
+      - quibble-vendor-mysql-php83-noselenium
     gate-and-submit:
       - quibble-vendor-mysql-php74-noselenium
       - quibble-vendor-mysql-php81-noselenium
       - quibble-vendor-mysql-php82-noselenium
+      - quibble-vendor-mysql-php83-noselenium
       - quibble-vendor-mysql-php74-selenium
       - mwgate-node18
       - mwext-php74-phan
@@ -1507,7 +1509,6 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74-noselenium
       - quibble-vendor-postgres-php74-noselenium
-      - quibble-vendor-mysql-php83-noselenium
       - mwgate-node20
       - mwgate-node22
 
@@ -1519,9 +1520,11 @@ project-templates:
       - mwext-php81-phan
     php:
       - quibble-vendor-mysql-php82-noselenium
+      - quibble-vendor-mysql-php83-noselenium
     gate-and-submit:
       - quibble-vendor-mysql-php81-noselenium
       - quibble-vendor-mysql-php82-noselenium
+      - quibble-vendor-mysql-php83-noselenium
       - quibble-vendor-mysql-php81-selenium
       - mwgate-node18
       - mwext-php81-phan
@@ -1585,7 +1588,6 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php81-noselenium
       - quibble-vendor-postgres-php81-noselenium
-      - quibble-vendor-mysql-php83-noselenium
       - mwext-php81-phan
       - mwgate-node20
       - mwgate-node22
@@ -1604,10 +1606,12 @@ project-templates:
     php:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
     gate-and-submit:
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
       - quibble-composer-mysql-php74-selenium
       - mwgate-node18
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
@@ -1672,7 +1676,6 @@ project-templates:
     experimental:
       - quibble-composer-sqlite-php74-noselenium
       - quibble-composer-postgres-php74-noselenium
-      - quibble-composer-mysql-php83-noselenium
       - mwgate-node20
       - mwgate-node22
 
@@ -1690,12 +1693,14 @@ project-templates:
       - quibble-composer-mysql-php80-noselenium
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
     gate-and-submit:
       - mwext-bluespice-node18
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php80-noselenium
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
 
     test-1_39:
       - mwext-bluespice-node18
@@ -1725,14 +1730,13 @@ project-templates:
     experimental:
       - quibble-composer-sqlite-php74-noselenium
       - quibble-composer-postgres-php74-noselenium
-      - quibble-composer-mysql-php83-noselenium
       - mwext-bluespice-node20
       - mwext-bluespice-node22
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
   #
-  # Should *not* be used for Wikimedia production.
+  # Should *not* be used for Wikimedia production without very good reason.
   - name: extension-quibble-noselenium
     test:
       - quibble-vendor-mysql-php74-noselenium
@@ -1741,10 +1745,12 @@ project-templates:
     php:
       - quibble-vendor-mysql-php81-noselenium
       - quibble-vendor-mysql-php82-noselenium
+      - quibble-vendor-mysql-php83-noselenium
     gate-and-submit:
       - quibble-vendor-mysql-php74-noselenium
       - quibble-vendor-mysql-php81-noselenium
       - quibble-vendor-mysql-php82-noselenium
+      - quibble-vendor-mysql-php83-noselenium
       - mwgate-node18
       - mwext-php74-phan
 
@@ -1809,7 +1815,6 @@ project-templates:
       - quibble-vendor-mysql-php74-selenium
       - quibble-vendor-sqlite-php74-noselenium
       - quibble-vendor-postgres-php74-noselenium
-      - quibble-vendor-mysql-php83-noselenium
       - mwgate-node20
       - mwgate-node22
 
@@ -1823,10 +1828,12 @@ project-templates:
     php:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
     gate-and-submit:
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
       - mwgate-node18
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
@@ -1883,7 +1890,6 @@ project-templates:
       - quibble-composer-sqlite-php74-noselenium
       - quibble-composer-postgres-php74-noselenium
       - mwext-php74-phan
-      - quibble-composer-mysql-php83-noselenium
       - mwgate-node20
       - mwgate-node22
 
@@ -1894,10 +1900,13 @@ project-templates:
     php:
       - quibble-vendor-mysql-php81-phpunit-standalone
       - quibble-vendor-mysql-php82-phpunit-standalone
+      - quibble-vendor-mysql-php82-phpunit-standalone
+      - quibble-vendor-mysql-php83-phpunit-standalone
     gate-and-submit:
       - quibble-vendor-mysql-php74-phpunit-standalone
       - quibble-vendor-mysql-php81-phpunit-standalone
       - quibble-vendor-mysql-php82-phpunit-standalone
+      - quibble-vendor-mysql-php83-phpunit-standalone
     test-1_39:
       - quibble-composer-mysql-php74-phpunit-standalone
     gate-and-submit-1_39:
@@ -1914,8 +1923,6 @@ project-templates:
       - quibble-composer-mysql-php81-phpunit-standalone
     gate-and-submit-1_42:
       - quibble-composer-mysql-php81-phpunit-standalone
-    experimental:
-      - quibble-vendor-mysql-php83-phpunit-standalone
 
   # Special job template that runs the "apitests" job for test and gate
   - name: extension-apitests
@@ -2008,10 +2015,12 @@ project-templates:
     php:
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
+      - quibble-vendor-mysql-php83
     gate-and-submit:
       - quibble-vendor-mysql-php74
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
+      - quibble-vendor-mysql-php83
       - mwgate-node18
       - mwskin-php74-phan
 
@@ -2076,7 +2085,6 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74
       - quibble-vendor-postgres-php74
-      - quibble-vendor-mysql-php83
       - mwgate-node20
       - mwgate-node22
 
@@ -2089,10 +2097,12 @@ project-templates:
     php:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
     gate-and-submit:
       - quibble-composer-mysql-php74
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
       - mwgate-node18
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan
@@ -2148,7 +2158,6 @@ project-templates:
     experimental:
       - quibble-composer-sqlite-php74
       - quibble-composer-postgres-php74
-      - quibble-composer-mysql-php83
       - mwgate-node20
       - mwgate-node22
 
