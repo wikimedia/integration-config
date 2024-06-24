@@ -251,8 +251,6 @@ class TestZuulLayout(unittest.TestCase):
                         'mediawiki/extensions/DonationInterface',
                         # Uses special composer libraries; being replaced
                         'mediawiki/extensions/FundraisingEmailUnsubscribe',
-                        # Fix tracked in T250420
-                        'mediawiki/extensions/OpenStackManager',
                         # Wikifunctions's selenium tests need extra services
                         # that cannot be run in quibble; we're running them in
                         # Helm/GitLab, aka Catalyst (T321942)

@@ -4958,12 +4958,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/OpenStackManager
-    template:
-      - name: in-wikimedia-production
-      # OSM changes login and so breaks selenium tests, and we haven't fixed it
-      - name: extension-quibble-noselenium
-
   - name: mediawiki/extensions/ORES
     template:
       - name: in-wikimedia-production
@@ -11297,6 +11291,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/OpenSearchXml
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/OpenStackManager
     template:
       - name: archived
 
