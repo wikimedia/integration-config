@@ -1489,6 +1489,7 @@ project-templates:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
 
@@ -1578,6 +1579,7 @@ project-templates:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
       - mwgate-node18
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
@@ -1667,6 +1669,7 @@ project-templates:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
 
@@ -1795,6 +1798,7 @@ project-templates:
     gate-and-submit-1_42:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
       - mwgate-node18
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
@@ -1879,6 +1883,7 @@ project-templates:
     gate-and-submit-1_42:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
       - mwgate-node18
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
@@ -2067,6 +2072,7 @@ project-templates:
       - mwgate-node18
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php81-phan
 
@@ -2149,6 +2155,7 @@ project-templates:
       - mwgate-node18
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php81-phan
 
