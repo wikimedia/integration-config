@@ -68,6 +68,7 @@ def set_parameters(item, job, params):
         'mediawiki/extensions/Wikibase',
         'mediawiki/extensions/Wikidata.org',
         'mediawiki/extensions/WikibaseLexeme',
+        'mediawiki/extensions/WikibaseQualityConstraints',
         'mediawiki/extensions/WikimediaBadges',
     ]:
         params['QUIBBLE_PHPUNIT_PARALLEL'] = '1'
