@@ -1,3 +1,10 @@
+castor (0.4.0) wikimedia; urgency=medium
+
+  * Always restore cache to `/cache` T368550
+  * Update CASTOR_HOST to integration-castor05
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 26 Jun 2024 17:39:39 +0200
+
 castor (0.3.0) wikimedia; urgency=medium
 
   * Update base image from Stretch to Bullseye

@@ -6,7 +6,7 @@ CASTOR_LOAD_SCRIPT = os.path.relpath(os.path.join(
     '../jjb/castor-load-sync.bash'))
 
 default_env = {
-    'JOB_NAME': 'project-docker',
+    'JOB_NAME': 'some-job',
     'CASTOR_NAMESPACE': 'path/to/x/y',
     }
 
@@ -48,7 +48,7 @@ def assert_castor_output(expected, env={}):
 
 def test_basic_run():
     assert_castor_output(
-        'rsync://integration-castor03.integration.eqiad.wmflabs:'
+        'rsync://integration-castor05.integration.eqiad.wmflabs:'
         '/caches/path/to/x/y')
 
 
