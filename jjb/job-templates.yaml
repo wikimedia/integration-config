@@ -33,7 +33,7 @@
               /srv/git: /srv/git:ro
     publishers:
       - archive:
-         artifacts: 'log/*.war, log/*.jar'
+         artifacts: 'log/*.war, log/*.jar, log/*.js'
       - castor-save-workspace-cache
       - docker-cleanup
 
