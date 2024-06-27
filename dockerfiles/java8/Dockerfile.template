@@ -1,6 +1,6 @@
 FROM {{ "ci-bullseye" | image_tag }}
 
-COPY wikimedia-jdk8.list /etc/apt/sources.list.d/wikimedia-php74.list
+COPY wikimedia-jdk8.list /etc/apt/sources.list.d/wikimedia-jdk8.list
 
 RUN mkdir -p /usr/share/man/man1 && \
     {{ "openjdk-8-jdk-headless" | apt_install }}
