@@ -635,19 +635,6 @@ pipelines:
           branch: ^REL1_39$
 
   - !!merge : *test_pipeline
-    name: test-1_40
-    description: >
-      Variation of the "test" pipeline reserved for MediaWiki 1.40
-    trigger:
-      gerrit:
-        - !!merge : *test-event-patchset-created
-          branch: ^REL1_40$
-        - !!merge : *test-event-comment-recheck
-          branch: ^REL1_40$
-        - !!merge : *test-event-plus-one
-          branch: ^REL1_40$
-
-  - !!merge : *test_pipeline
     name: test-1_41
     description: >
       Variation of the "test" pipeline reserved for MediaWiki 1.41
@@ -866,15 +853,6 @@ pipelines:
       gerrit:
         - !!merge : *gate-and-submit-comment-added
           branch: ^REL1_39
-
-  - !!merge : *gate_and_submit_pipeline
-    name: gate-and-submit-1_40
-    description: >
-      Variation of the "gate-and-submit" pipeline reserved for MediaWiki 1.40.
-    trigger:
-      gerrit:
-        - !!merge : *gate-and-submit-comment-added
-          branch: ^REL1_40
 
   - !!merge : *gate_and_submit_pipeline
     name: gate-and-submit-1_41
@@ -1384,13 +1362,6 @@ project-templates:
       - mwgate-composer-php81
       - mwgate-node18
 
-    test-1_40:
-      - mwgate-composer-php81
-      - mwgate-node18
-    gate-and-submit-1_40:
-      - mwgate-composer-php81
-      - mwgate-node18
-
     test-1_41:
       - mwgate-composer-php81
       - mwgate-node18
@@ -1446,19 +1417,6 @@ project-templates:
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     gate-and-submit-1_39:
-      - mwgate-node18
-      - quibble-composer-mysql-php74-noselenium
-      - quibble-composer-mysql-php74-selenium
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php74-phan
-
-    test-1_40:
-      - mwgate-node18
-      - quibble-composer-mysql-php74-noselenium
-      - quibble-composer-mysql-php74-selenium
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php74-phan
-    gate-and-submit-1_40:
       - mwgate-node18
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
@@ -1543,19 +1501,6 @@ project-templates:
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
 
-    test-1_40:
-      - quibble-composer-mysql-php81-noselenium
-      - quibble-composer-mysql-php81-selenium
-      - mwgate-node18
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
-    gate-and-submit-1_40:
-      - quibble-composer-mysql-php81-noselenium
-      - quibble-composer-mysql-php81-selenium
-      - mwgate-node18
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
-
     test-1_41:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
@@ -1632,19 +1577,6 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
 
-    test-1_40:
-      - mwgate-node18
-      - quibble-composer-mysql-php74-noselenium
-      - quibble-composer-mysql-php74-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php74-phan
-    gate-and-submit-1_40:
-      - mwgate-node18
-      - quibble-composer-mysql-php74-noselenium
-      - quibble-composer-mysql-php74-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php74-phan
-
     test-1_41:
       - mwgate-node18
       - quibble-composer-mysql-php74-noselenium
@@ -1712,11 +1644,6 @@ project-templates:
       - mwext-bluespice-node18
       - quibble-composer-mysql-php74-noselenium
 
-    test-1_40:
-      - noop
-    gate-and-submit-1_40:
-      - noop
-
     test-1_41:
       - noop
     gate-and-submit-1_41:
@@ -1763,17 +1690,6 @@ project-templates:
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     gate-and-submit-1_39:
-      - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php74-phan
-
-    test-1_40:
-      - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php74-phan
-    gate-and-submit-1_40:
       - quibble-composer-mysql-php74-noselenium
       - mwgate-node18
       # (T231966 / T226945) Disabled on release branches
@@ -1853,17 +1769,6 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
 
-    test-1_40:
-      - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php74-phan
-    gate-and-submit-1_40:
-      - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php74-phan
-
     test-1_41:
       - quibble-composer-mysql-php74-noselenium
       - mwgate-node18
@@ -1915,10 +1820,6 @@ project-templates:
     test-1_39:
       - quibble-composer-mysql-php74-phpunit-standalone
     gate-and-submit-1_39:
-      - quibble-composer-mysql-php74-phpunit-standalone
-    test-1_40:
-      - quibble-composer-mysql-php74-phpunit-standalone
-    gate-and-submit-1_40:
       - quibble-composer-mysql-php74-phpunit-standalone
     test-1_41:
       - quibble-composer-mysql-php74-phpunit-standalone
@@ -1997,10 +1898,6 @@ project-templates:
       - mwgate-tox
     gate-and-submit-1_39:
       - mwgate-tox
-    test-1_40:
-      - mwgate-tox
-    gate-and-submit-1_40:
-      - mwgate-tox
     test-1_41:
       - mwgate-tox
     gate-and-submit-1_41:
@@ -2036,17 +1933,6 @@ project-templates:
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan
     gate-and-submit-1_39:
-      - mwgate-node18
-      - quibble-composer-mysql-php74
-      # (T231966 / T226945) Disabled on release branches
-      # - mwskin-php74-phan
-
-    test-1_40:
-      - mwgate-node18
-      - quibble-composer-mysql-php74
-      # (T231966 / T226945) Disabled on release branches
-      # - mwskin-php74-phan
-    gate-and-submit-1_40:
       - mwgate-node18
       - quibble-composer-mysql-php74
       # (T231966 / T226945) Disabled on release branches
@@ -2119,17 +2005,6 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan
     gate-and-submit-1_39:
-      - mwgate-node18
-      - quibble-composer-mysql-php74
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php74-phan
-
-    test-1_40:
-      - mwgate-node18
-      - quibble-composer-mysql-php74
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php74-phan
-    gate-and-submit-1_40:
       - mwgate-node18
       - quibble-composer-mysql-php74
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
@@ -2325,10 +2200,6 @@ project-templates:
       - generic-node18-browser
     gate-and-submit-1_39:
       - generic-node18-browser
-    test-1_40:
-      - generic-node18-browser
-    gate-and-submit-1_40:
-      - generic-node18-browser
     test-1_41:
       - generic-node18-browser
     gate-and-submit-1_41:
@@ -2353,10 +2224,6 @@ project-templates:
     test-1_39:
       - generic-node20-browser
     gate-and-submit-1_39:
-      - generic-node20-browser
-    test-1_40:
-      - generic-node20-browser
-    gate-and-submit-1_40:
       - generic-node20-browser
     test-1_41:
       - generic-node20-browser
@@ -2399,10 +2266,6 @@ project-templates:
       - generic-node18-rundoc
     gate-and-submit-1_39:
       - generic-node18-rundoc
-    test-1_40:
-      - generic-node18-rundoc
-    gate-and-submit-1_40:
-      - generic-node18-rundoc
     test-1_41:
       - generic-node18-rundoc
     gate-and-submit-1_41:
@@ -2428,10 +2291,6 @@ project-templates:
       - generic-node20-rundoc
     gate-and-submit-1_39:
       - generic-node20-rundoc
-    test-1_40:
-      - generic-node20-rundoc
-    gate-and-submit-1_40:
-      - generic-node20-rundoc
     test-1_41:
       - generic-node20-rundoc
     gate-and-submit-1_41:
@@ -2455,10 +2314,6 @@ project-templates:
     test-1_39:
       - mwgate-node18
     gate-and-submit-1_39:
-      - mwgate-node18
-    test-1_40:
-      - mwgate-node18
-    gate-and-submit-1_40:
       - mwgate-node18
     test-1_41:
       - mwgate-node18
@@ -2998,23 +2853,6 @@ projects:
       - mediawiki-quibble-selenium-composer-mysql-php74
       - mediawiki-core-php74-phan
     gate-and-submit-1_39:
-      - mediawiki-quibble-composer-mysql-php74
-      - mediawiki-quibble-composer-mysql-php80
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composer-mysql-php82
-      - mediawiki-quibble-composer-mysql-php83
-      - mediawiki-quibble-composertest-php74
-      - mediawiki-quibble-selenium-composer-mysql-php74
-      - mediawiki-quibble-composer-sqlite-php74
-      - mediawiki-quibble-composer-postgres-php74
-      - mediawiki-core-php74-phan
-
-    test-1_40:
-      - mediawiki-quibble-composer-mysql-php74
-      - mediawiki-quibble-composertest-php74
-      - mediawiki-quibble-selenium-composer-mysql-php74
-      - mediawiki-core-php74-phan
-    gate-and-submit-1_40:
       - mediawiki-quibble-composer-mysql-php74
       - mediawiki-quibble-composer-mysql-php80
       - mediawiki-quibble-composer-mysql-php81
@@ -5485,16 +5323,6 @@ projects:
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     gate-and-submit-1_39:
-      - wikibase-client-php81
-      - wikibase-repo-php81
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php74-phan
-    test-1_40:
-      - wikibase-client-php81
-      - wikibase-repo-php81
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php74-phan
-    gate-and-submit-1_40:
       - wikibase-client-php81
       - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
