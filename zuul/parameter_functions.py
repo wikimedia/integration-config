@@ -631,6 +631,7 @@ phan_dependencies = {
     'Cite': ['Gadgets'],
     'Citoid': ['Cite', 'VisualEditor'],
     'CleanChanges': ['cldr'],
+    'CodeMirror': ['Gadgets'],
     'CodeReview': ['Renameuser'],
     'CognitiveProcessDesigner': ['PageForms', 'BlueSpiceFoundation',
                                  'BlueSpiceUEModulePDF'],
