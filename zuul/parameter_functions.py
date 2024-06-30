@@ -789,7 +789,7 @@ phan_dependencies = {
     'Wikistories': ['Echo', 'BetaFeatures', 'MobileFrontend'],
     'WikiToLDAP': ['LDAPAuthentication2', 'LDAPProvider', 'PluggableAuth',
                    'Renameuser', 'UserMerge'],
-    'Wikisource': ['Wikibase', 'ProofreadPage']
+    'Wikisource': ['Gadgets', 'ProofreadPage', 'Wikibase']
 }
 
 
