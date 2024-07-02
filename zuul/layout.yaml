@@ -238,6 +238,7 @@ pipelines:
            - ^inductiveload@gmail\.com$ # inductiveload
            - ^j@mywikis\.com$ # Jeffrey Wang
            - ^jackmcbarn@gmail\.com$ # Jackmcbarn
+           - ^jayden@weirdgloop\.org$
            - ^jamesin\.hongkong\.1@gmail\.com$ # Mwjames
            - ^jamesmhare@gmail\.com$ # James Hare (harej)
            - ^jamesmontalvo3@gmail\.com$ # jamesmontalvo3
