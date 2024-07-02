@@ -278,6 +278,7 @@ pipelines:
            - ^l\.verhovskij@gmail\.com$ # Ljonka
            - ^lacrymarum\.valle@gmail\.com$ # Candalua
            - ^ladsgroup\+gerritbot@gmail\.com$ # Gerrit maintenance bot, see T253439
+           - ^lakesarchive@outlook\.com$ # Lakejason0
            - ^lautgesetz@gmail\.com$ # David Kamholz
            - ^lewis@lewiscawte\.me$
            - ^lexnasser@icloud\.com$ # Lex Nasser
