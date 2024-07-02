@@ -4650,12 +4650,6 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
-  - name: mediawiki/extensions/Listings
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/LoginNotify
     template:
       - name: in-wikimedia-production
@@ -10991,6 +10985,10 @@ projects:
   - name: mediawiki/extensions/ListSignup
     template:
       - name: archived
+
+  - name: mediawiki/extensions/Listings
+    template:
+      - name: archived # T354997
 
   - name: mediawiki/extensions/LiveTranslate
     template:
