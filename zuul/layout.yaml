@@ -1629,14 +1629,12 @@ project-templates:
       - mwext-bluespice-node18
       - quibble-composer-mysql-php74-noselenium
     php:
-      - quibble-composer-mysql-php80-noselenium
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
       - quibble-composer-mysql-php83-noselenium
     gate-and-submit:
       - mwext-bluespice-node18
       - quibble-composer-mysql-php74-noselenium
-      - quibble-composer-mysql-php80-noselenium
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
       - quibble-composer-mysql-php83-noselenium
@@ -2067,27 +2065,23 @@ project-templates:
     test:
       - composer-php74
     php:
-      - composer-php80
       - composer-php81
       - composer-php82
       - composer-php83
     gate-and-submit:
       - composer-php74
-      - composer-php80
       - composer-php81
       - composer-php82
       - composer-php83
 
   # Temporary template for repos that fail on PHP 8.2
-  - name: composer-test-php74-to-php81
+  - name: composer-test-php74-and-php81
     test:
       - composer-php74
     php:
-      - composer-php80
       - composer-php81
     gate-and-submit:
       - composer-php74
-      - composer-php80
       - composer-php81
     experimental:
       - composer-php82
@@ -2099,7 +2093,6 @@ project-templates:
     gate-and-submit:
       - composer-php74
     experimental:
-      - composer-php80
       - composer-php81
       - composer-php82
       - composer-php83
@@ -2116,13 +2109,11 @@ project-templates:
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
       - composer-package-php74
-      - composer-package-php80
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
     gate-and-submit:
       - composer-package-php74
-      - composer-package-php80
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
@@ -2131,13 +2122,11 @@ project-templates:
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
       - php-compile-php74
-      - php-compile-php80
       - php-compile-php81
       - php-compile-php82
       - php-compile-php83
     gate-and-submit:
       - php-compile-php74
-      - php-compile-php80
       - php-compile-php81
       - php-compile-php82
       - php-compile-php83
@@ -2392,13 +2381,11 @@ project-templates:
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
       - composer-package-php74
-      - composer-package-php80
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
     gate-and-submit:
       - composer-package-php74
-      - composer-package-php80
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
@@ -2410,12 +2397,10 @@ project-templates:
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
       - composer-package-php74
-      - composer-package-php80
       - composer-package-php81
       - composer-package-php82
     gate-and-submit:
       - composer-package-php74
-      - composer-package-php80
       - composer-package-php81
       - composer-package-php82
     postmerge:
@@ -2708,10 +2693,8 @@ projects:
     # (T307504): Enable a regular CI template, once PHP 8.1+ supported
     test:
       - composer-package-php74
-      - composer-package-php80
     gate-and-submit:
       - composer-package-php74
-      - composer-package-php80
     experimental:
       - composer-package-php81
       - composer-package-php82
@@ -2858,7 +2841,6 @@ projects:
       - mediawiki-core-php74-phan
     gate-and-submit-1_39:
       - mediawiki-quibble-composer-mysql-php74
-      - mediawiki-quibble-composer-mysql-php80
       - mediawiki-quibble-composer-mysql-php81
       - mediawiki-quibble-composer-mysql-php82
       - mediawiki-quibble-composer-mysql-php83
@@ -2875,7 +2857,6 @@ projects:
       - mediawiki-core-php74-phan
     gate-and-submit-1_41:
       - mediawiki-quibble-composer-mysql-php74
-      - mediawiki-quibble-composer-mysql-php80
       - mediawiki-quibble-composer-mysql-php81
       - mediawiki-quibble-composer-mysql-php82
       - mediawiki-quibble-composer-mysql-php83
@@ -3605,7 +3586,7 @@ projects:
   - name: operations/dumps/dcat
     template:
       # (T353397) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-and-php81
       - name: node18
       - name: mediawiki-i18n-check
 
@@ -9335,7 +9316,7 @@ projects:
   - name: labs/tools/ipchanges
     template:
       # (T353396) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-and-php81
 
   - name: labs/tools/ipwatcher
     template:
@@ -9373,7 +9354,7 @@ projects:
   - name: labs/tools/nagf
     template:
       # (T353395) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-and-php81
 
   - name: labs/tools/Isa
     test:
@@ -9416,7 +9397,7 @@ projects:
   - name: labs/tools/meetingtimes
     template:
       # (T353394) This repo does not yet pass on PHP 8.2 or 8.3
-      - name: composer-test-php74-to-php81
+      - name: composer-test-php74-and-php81
       - name: node18
 
   - name: labs/tools/mwpackages
