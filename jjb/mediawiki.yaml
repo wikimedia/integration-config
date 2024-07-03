@@ -1012,8 +1012,6 @@
     php:
         - php74:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.9.1
-        - php80:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php80:1.9.1
         - php81:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.9.1
         - php82:

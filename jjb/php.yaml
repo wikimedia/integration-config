@@ -189,8 +189,6 @@
             phpflavor:
                 - php74:
                     image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.3-s3
-                - php80:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php80:0.1.2-s2
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.3-s2
                 - php82:
@@ -201,8 +199,6 @@
             phpflavor:
                 - php74:
                     image: docker-registry.wikimedia.org/releng/composer-package-php74:0.4.3-s3
-                - php80:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php80:0.0.6-s2
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-package-php81:0.0.3-s2
                 - php82:
@@ -267,8 +263,6 @@
     php:
      - php74:
          image: docker-registry.wikimedia.org/releng/composer-php74:0.3.3-s3
-     - php80:
-         image: docker-registry.wikimedia.org/releng/composer-php80:0.0.3-s2
      - php81:
          image: docker-registry.wikimedia.org/releng/composer-php81:0.0.3-s2
      - php82:
