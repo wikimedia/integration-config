@@ -24,9 +24,6 @@ COPY --from=sury /etc/apt/trusted.gpg.d/php.gpg /etc/apt/trusted.gpg.d/php.gpg
 RUN {{ "apt-transport-https" | apt_install }} && \
     echo "deb https://packages.sury.org/php/ $(. /etc/os-release && echo $VERSION_CODENAME) main" > /etc/apt/sources.list.d/php.list
 
-
-# Copied from the php80 image; keep this synchronised!
-
 # zip is needed for composer to install things from dist
 # others are libraries/MediaWiki related
 {% set packages|replace('\n', ' ') -%}

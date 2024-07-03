@@ -18,4 +18,4 @@ docker run \
     --volume "/$(pwd)/cache://cache" \
     --volume "/$(pwd)/log://var/lib/jenkins/log" \
     --volume "/$(pwd)/src://src" \
-    docker-registry.wikimedia.org/releng/composer-package-php80:latest
+    docker-registry.wikimedia.org/releng/composer-package-php83:latest
