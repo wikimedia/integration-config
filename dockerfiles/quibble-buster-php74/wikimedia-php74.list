@@ -1,1 +1,3 @@
-deb http://apt.wikimedia.org/wikimedia buster-wikimedia component/php74
+# NOTE: For buster, this component is 'icu76' and pulls in PHP 7.4 etc.
+# For Bullseye, it's back to 'php74'
+deb http://apt.wikimedia.org/wikimedia buster-wikimedia component/icu67
