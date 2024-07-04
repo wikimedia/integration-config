@@ -650,6 +650,7 @@ phan_dependencies = {
     'DiscordRCFeed': ['Flow'],
     'DiscussionTools': ['VisualEditor', 'Linter', 'Echo', 'EventLogging',
                         'Gadgets', 'BetaFeatures', 'Thanks'],
+    'DisplayTitle': ['Scribunto'],
     'DonationInterface': ['cldr', 'CodeEditor', 'FundraisingEmailUnsubscribe',
                           'ParserFunctions', 'SyntaxHighlight_GeSHi',
                           'WikiEditor'],
