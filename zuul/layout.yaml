@@ -6928,6 +6928,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/LinkCards
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/LinkedWiki
     template:
       - name: extension-broken  # T198919
