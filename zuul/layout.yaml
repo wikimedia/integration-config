@@ -1106,7 +1106,7 @@ jobs:
     files:
         - '.pipeline/logo_detection/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'logo_detection/.*'
+        - 'src/models/logo_detection/.*'
 
   - name: ^trigger-inference-services-pipeline-articlequality
     files:
