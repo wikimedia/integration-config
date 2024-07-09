@@ -24,11 +24,6 @@
     jobs:
         - '{name}-tox'
 
-- project:
-    name: conftool
-    jobs:
-        - '{name}-tox'
-
 - job:
     name: 'operations-dns-lint'
     node: Docker

@@ -3689,15 +3689,6 @@ projects:
     gate-and-submit:
       - censorshipmonitoring-tox
 
-  - name: operations/software/conftool
-    template:
-      - name: debian-glue-non-voting
-    test:
-      - conftool-tox
-    gate-and-submit:
-      # requires etcd to be installed for integration tests
-      - conftool-tox
-
   - name: operations/software/cumin
     test:
       - debian-glue-backports-non-voting
@@ -11878,6 +11869,10 @@ projects:
       - name: archived
 
   - name: operations/debs/wikimedia-job-runner
+    template:
+      - name: archived
+
+  - name: operations/software/conftool
     template:
       - name: archived
 
