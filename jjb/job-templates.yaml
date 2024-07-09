@@ -853,10 +853,10 @@
     jobs:
         - 'branchdeploy-{key}-node18-npm':
             key:
-                - wikidata-query-builder
                 - codex
         - 'branchdeploy-{key}-node20-npm':
             key:
+                - wikidata-query-builder
                 - codex
         - 'branchdeploy-{key}-node22-npm':
             key:

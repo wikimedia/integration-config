@@ -9860,10 +9860,10 @@ projects:
 
   - name: wikidata/query-builder
     template:
-      - name: node18-browser
+      - name: node20-browser
       - name: mediawiki-i18n-check
     test:
-      - branchdeploy-wikidata-query-builder-node18-npm
+      - branchdeploy-wikidata-query-builder-node20-npm
 
   - name: wikibase/javascript-api
     template:
