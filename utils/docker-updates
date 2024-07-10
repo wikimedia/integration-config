@@ -67,8 +67,13 @@ for jjb_def in jjb_defs.decode().split('\n'):
     found_image = '%s:%s' % (image_name, image_version)
 
     if image_name not in latest_version:
-        errors.append("%s:%s ERROR: %s not found!" % (
-            yaml_file, line, image_name))
+        if comment:
+            print('%s:%s:%s' % (
+                yaml_file, line, image_name)
+                + (' \033[33m Image not found: %s\033[0m' % comment))
+        else:
+            errors.append("%s:%s ERROR: %s not found!" % (
+                yaml_file, line, image_name))
     elif found_image not in latest_images:
         print('%s:%s:%s > %s' % (
             yaml_file, line, found_image, latest_version[image_name])

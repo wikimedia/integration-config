@@ -1013,11 +1013,11 @@
         - php74:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.9.1
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.9.1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.9.1 # T369146 - sury.org dropped Buster
         - php82:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php82:1.9.1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php82:1.9.1 # T369146 - sury.org dropped Buster
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php83:1.9.1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php83:1.9.1 # T369146 - sury.org dropped Buster
     jobs:
         - quibble-{packages-source}-{database}-{php}
         - quibble-{packages-source}-{database}-{php}-noselenium
@@ -1052,7 +1052,7 @@
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.9.1
             entrypoint: quibble-with-supervisord
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.9.1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.9.1 # T369146 - sury.org dropped Buster
             entrypoint: quibble-with-supervisord
     jobs:
         - wmf-quibble-vendor-mysql-{php}
@@ -1085,9 +1085,9 @@
         - php74:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.9.1
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.9.1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.9.1 # T369146 - sury.org dropped Buster
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php83:1.9.1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php83:1.9.1 # T369146 - sury.org dropped Buster
     jobs:
         - wikibase-{kind}-{phpflavour}:
             quibble_args: >
