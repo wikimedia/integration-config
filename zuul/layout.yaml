@@ -1094,7 +1094,7 @@ jobs:
     files:
         - '.pipeline/article_descriptions/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'article_descriptions/.*'
+        - 'src/models/article_descriptions/.*'
 
   - name: ^trigger-inference-services-pipeline-huggingface
     files:
