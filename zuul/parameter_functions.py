@@ -659,7 +659,7 @@ phan_dependencies = {
     'EntitySchema': ['Wikibase'],
     'EventBus': ['CentralNotice', 'EventStreamConfig'],
     'FacetedCategory': ['CategoryTree'],
-    'FanBoxes': ['SocialProfile'],
+    'FanBoxes': ['SocialProfile', 'SpamRegex'],
     'FileImporter': ['GlobalBlocking', 'VisualEditor'],
     'FlaggedRevs': ['Scribunto', 'Echo', 'GoogleNewsSitemap', 'MobileFrontend',
                     'skins/Vector'],
