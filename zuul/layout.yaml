@@ -4283,10 +4283,6 @@ projects:
       - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
-    test:
-      - wikibase-client-php81
-    gate-and-submit:
-      - wikibase-client-php81
 
   - name: mediawiki/extensions/EventBus
     template:

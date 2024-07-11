@@ -40,8 +40,6 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/Capiunto',
             'mediawiki/extensions/cldr',
             'mediawiki/extensions/Echo',
-            'mediawiki/extensions/EntitySchema',
-            'mediawiki/extensions/Wikibase',
         ])
 
     if job.name.startswith('wikibase-repo'):
