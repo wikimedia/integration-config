@@ -102,7 +102,7 @@
      - timed: 'H/10 * * * *'
 
     builders:
-      - shell: /usr/bin/scap prep auto
+      - shell: /usr/bin/scap -Dblock_deployments:False prep auto
 
     publishers:
       - beta-irc
@@ -141,7 +141,7 @@
           # For the record
           /usr/bin/scap version
 
-          /usr/bin/scap sync-world "$JOB_NAME (build $BUILD_DISPLAY_NAME)"
+          /usr/bin/scap -Dblock_deployments:False sync-world "$JOB_NAME (build $BUILD_DISPLAY_NAME)"
 
     properties:
      - build-discarder:
