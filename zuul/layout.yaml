@@ -6309,10 +6309,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/DeleteOwn
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/DeletePagesForGood
     template:
       - name: extension-quibble
@@ -10718,6 +10714,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/DebugMode
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/DeleteOwn
     template:
       - name: archived
 
