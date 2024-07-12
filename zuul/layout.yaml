@@ -7979,10 +7979,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/StickToThatLanguage
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/StickyTOC
     template:
       - name: extension-quibble
@@ -11394,6 +11390,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/StarterWiki
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/StickToThatLanguage
     template:
       - name: archived
 
