@@ -8195,6 +8195,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/UserVerification
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/Variables
     template:
       - name: extension-quibble
