@@ -7325,10 +7325,6 @@ projects:
     template:
       - name: extension-quibble-composer
 
-  - name: mediawiki/extensions/PageCreationNotif
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/PageDisqus
     template:
       - name: extension-quibble-noselenium
@@ -11122,6 +11118,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/PageBlock
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/PageCreationNotif
     template:
       - name: archived
 
