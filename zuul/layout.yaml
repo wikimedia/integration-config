@@ -6155,14 +6155,6 @@ projects:
     template:
       - name: extension-quibble-composer
 
-  - name: mediawiki/extensions/CollaborationKit
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-javascript-documentation
-    postmerge:
-      - mwext-doxygen-publish
-
   - name: mediawiki/extensions/CollapsibleSections
     template:
       - name: extension-quibble
@@ -10590,6 +10582,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ClientSide
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/CollaborationKit
     template:
       - name: archived
 
