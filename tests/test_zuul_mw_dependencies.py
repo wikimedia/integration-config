@@ -148,11 +148,11 @@ class TestMwDependencies(unittest.TestCase):
     def test_inject_skin_on_an_extension(self):
         deps = self.fetch_dependencies(
             job_name='mediawiki-quibble-composer-mysql-php74',
-            project='mediawiki/extensions/CustomPage')
+            project='mediawiki/extensions/MobileFrontend')
         self.assertDictContainsSubset(
             {
-                'EXT_NAME': 'CustomPage',
-                'SKIN_DEPENDENCIES': 'mediawiki/skins/CustomPage',
+                'EXT_NAME': 'MobileFrontend',
+                'SKIN_DEPENDENCIES': 'mediawiki/skins/MinervaNeue',
             },
             deps)
 
