@@ -1033,7 +1033,7 @@ jobs:
     files:
         - '.pipeline/nsfw/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'nsfw-model/model-server/.*'
+        - 'src/models/nsfw-model/model-server/.*'
 
   - name: ^trigger-inference-services-pipeline-revertrisk
     files:
