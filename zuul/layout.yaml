@@ -6536,7 +6536,7 @@ projects:
 
   - name: mediawiki/extensions/FlexiSkin
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/FlickrAPI
     template:
@@ -8356,7 +8356,7 @@ projects:
 
   - name: mediawiki/extensions/Workflows
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/WSOAuth
     template:
