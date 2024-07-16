@@ -3881,11 +3881,6 @@ projects:
     template:
       - name: tox
 
-  # Varnish related - T180329
-  - name: operations/software/varnish/libvmod-querysort
-    test: [ 'debian-glue' ]
-  # End Varnish related
-
   - name: operations/switchdc
     template:
       - name: tox
@@ -11970,6 +11965,10 @@ projects:
       - name: archived
 
   - name: operations/software/varnish/libvmod-vslp
+    template:
+      - name: archived
+
+  - name: operations/software/varnish/libvmod-querysort
     template:
       - name: archived
 
