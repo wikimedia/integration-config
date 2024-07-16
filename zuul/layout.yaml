@@ -1019,14 +1019,14 @@ jobs:
     files:
         - '.pipeline/outlink/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'outlink-topic-model/model-server/.*'
+        - 'src/models/outlink_topic_model/model-server/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-outlink-transformer
     files:
         - '.pipeline/outlink/transformer.yaml'
         - '.pipeline/config.yaml'
-        - 'outlink-topic-model/transformer/.*'
+        - 'src/models/outlink_topic_model/transformer/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-nsfw
