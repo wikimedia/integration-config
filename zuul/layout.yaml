@@ -1083,7 +1083,7 @@ jobs:
     files:
         - '.pipeline/langid/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'langid/.*'
+        - 'src/models/langid/.*'
 
   - name: ^trigger-inference-services-pipeline-readability
     files:
