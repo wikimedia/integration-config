@@ -1,3 +1,9 @@
+node22 (22.0.0-s1) wikimedia; urgency=high
+
+   change NPM_CONFIG_cache to all lower case - T370427
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 18 Jul 2024 18:16:57 +0200
+
 node22 (22.0.0) wikimedia; urgency=high
 
    Initial image, with Node 22.0.0 and npm 10.5.1.

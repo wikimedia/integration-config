@@ -1,3 +1,10 @@
+node22-test (22.0.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image node22:
+   change NPM_CONFIG_cache to all lower case - T370427
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 18 Jul 2024 18:16:57 +0200
+
 node22-test (22.0.0-s1) wikimedia; urgency=high
 
    Set HOME=/tmp (T365871)

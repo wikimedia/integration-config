@@ -36,8 +36,9 @@ USER nobody
 # so that they don't break when using the default of HOME:/nonexistent.
 #
 # These will write to /cache, which is re-used across builds via Castor.
+# Npm does not honor XDG_CACHE_HOME and defaults its cache to ~/.npm.
 # - npm http cache, <https://docs.npmjs.com/cli/cache>
-ENV NPM_CONFIG_cache=$XDG_CACHE_HOME
+ENV npm_config_cache=$XDG_CACHE_HOME
 # - https://babeljs.io/docs/en/babel-register/#babel-cache-path
 ENV BABEL_CACHE_PATH=$XDG_CACHE_HOME/babel-cache.json
 #
