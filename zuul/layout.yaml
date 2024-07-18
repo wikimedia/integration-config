@@ -1041,6 +1041,7 @@ jobs:
         - '.pipeline/revertrisk/revertrisk.yaml'
         - '.pipeline/config.yaml'
         - 'revert_risk_model/model_server/.*'
+        - 'src/models/revert_risk_model/model_server/.*'
         - 'python/.*\.py$'
         - 'python/.*\.yaml$'
 
@@ -1049,6 +1050,7 @@ jobs:
         - '.pipeline/revertrisk/multilingual.yaml'
         - '.pipeline/config.yaml'
         - 'revert_risk_model/model_server/.*'
+        - 'src/models/revert_risk_model/model_server/.*'
         - 'python/.*\.py$'
         - 'python/.*\.yaml$'
 
@@ -1057,6 +1059,7 @@ jobs:
         - '.pipeline/revertrisk/wikidata.yaml'
         - '.pipeline/config.yaml'
         - 'revert_risk_model/model_server/.*'
+        - 'src/models/revert_risk_model/model_server/.*'
         - 'python/.*\.py$'
         - 'python/.*\.yaml$'
 
@@ -1078,6 +1081,7 @@ jobs:
         - '.pipeline/llm/blubber.yaml'
         - '.pipeline/config.yaml'
         - 'llm/.*'
+        - 'src/models/llm/.*'
 
   - name: ^trigger-inference-services-pipeline-langid
     files:
@@ -1102,6 +1106,7 @@ jobs:
         - '.pipeline/huggingface/blubber.yaml'
         - '.pipeline/config.yaml'
         - 'huggingface_modelserver/.*'
+        - 'src/models/huggingface_modelserver/.*'
 
   - name: ^trigger-inference-services-pipeline-logo-detection
     files:
