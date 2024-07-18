@@ -360,7 +360,7 @@ dependencies = {
     'Challenge': ['SocialProfile'],
     'Checklists': ['VisualEditor'],
     'CheckUser': ['CentralAuth', 'FlaggedRevs', 'GlobalBlocking', 'GuidedTour',
-                  'Renameuser', 'TorBlock'],
+                  'MobileFrontend', 'Renameuser', 'TorBlock'],
     'Cite': ['Gadgets', 'ParserFunctions', 'Popups', 'VisualEditor',
              'WikiEditor'],
     'Citoid': ['Cite', 'VisualEditor'],
