@@ -1,3 +1,9 @@
+java11 (0.3) wikimedia; urgency=medium
+
+  * Reimage to use Bullseye - T335765
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 18 Jul 2024 12:20:00 +0200
+
 java11 (0.2-s3) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster:

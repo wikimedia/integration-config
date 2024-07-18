@@ -1,3 +1,10 @@
+maven-java11 (1.0.0-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image java11:
+   Reimage to use Bullseye - T335765
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 18 Jul 2024 12:21:47 +0200
+
 maven-java11 (1.0.0-s4) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster:
