@@ -196,7 +196,7 @@
 - job-template: &job_template_maven-java11
     !!merge : *job_template_maven-java8
     name: '{name}-maven-java11'
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.0-s5
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.1
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
@@ -352,7 +352,7 @@
 - job-template: &job_template_maven-java11-site-publish
     !!merge : *job_template_maven-java8-site-publish
     name: '{name}-maven-java11-site-publish'
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.0-s5
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.1
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
