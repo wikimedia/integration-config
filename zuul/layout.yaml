@@ -2376,14 +2376,6 @@ project-templates:
     gate-and-submit:
       - fail-archived-repositories
 
-  - name: rust-test
-    test:
-      - rust-test
-    gate-and-submit:
-      - rust-test
-    postmerge:
-      - rust-doc-publish
-
   - name: mediawiki-php-library
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
@@ -9433,8 +9425,10 @@ projects:
       - name: tox
 
   - name: labs/tools/suggestor
-    template:
-      - name: rust-test
+    test:
+      - noop
+    gate-and-submit:
+      - noop
 
   - name: labs/tools/qrcode-generator
     template:
@@ -9577,8 +9571,10 @@ projects:
       - mediawiki-ruby-api-ruby3.1-bundle-yard-publish
 
   - name: wikimedia/irc/ircservserv
-    template:
-      - name: rust-test
+    test:
+      - noop
+    gate-and-submit:
+      - noop
 
   - name: wikimedia/irc/ircservserv-config
     test:
