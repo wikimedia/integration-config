@@ -1,3 +1,9 @@
+quibble-bullseye-php74 (1.9.4) wikimedia; urgency=medium
+
+  * Update Quibble to 1.9.4
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 19 Jul 2024 16:27:23 +0200
+
 quibble-bullseye-php74 (1.9.3) wikimedia; urgency=medium
 
   * Update Quibble to 1.9.3
