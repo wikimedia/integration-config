@@ -491,7 +491,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node18-test:18.20.2-s1'
+        image: 'docker-registry.wikimedia.org/releng/node18-test:18.20.2-s2'
         workdir: /src
         args: 'branch-deploy'
     publishers:
@@ -518,7 +518,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test:20.12.2-s1'
+        image: 'docker-registry.wikimedia.org/releng/node20-test:20.12.2-s2'
         workdir: /src
         args: 'branch-deploy'
     publishers:
@@ -545,7 +545,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node22-test:22.0.0-s1'
+        image: 'docker-registry.wikimedia.org/releng/node22-test:22.0.0-s2'
         workdir: /src
         args: 'branch-deploy'
     publishers:
@@ -576,7 +576,7 @@
     - docker-src-dir
     - docker-ci-src-setup-simple
     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node18:18.20.2'
+        image: 'docker-registry.wikimedia.org/releng/node18:18.20.2-s1'
         workdir: /src
         args: 'audit'
     publishers:
@@ -607,7 +607,7 @@
     - docker-src-dir
     - docker-ci-src-setup-simple
     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20:20.12.2'
+        image: 'docker-registry.wikimedia.org/releng/node20:20.12.2-s1'
         workdir: /src
         args: 'audit'
     publishers:
@@ -638,7 +638,7 @@
     - docker-src-dir
     - docker-ci-src-setup-simple
     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node22:22.0.0'
+        image: 'docker-registry.wikimedia.org/releng/node22:22.0.0-s1'
         workdir: /src
         args: 'audit'
     publishers:
@@ -751,7 +751,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node18-test:18.20.2-s1'
+        image: 'docker-registry.wikimedia.org/releng/node18-test:18.20.2-s2'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -767,7 +767,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test:20.12.2-s1'
+        image: 'docker-registry.wikimedia.org/releng/node20-test:20.12.2-s2'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -783,7 +783,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node22-test:22.0.0-s1'
+        image: 'docker-registry.wikimedia.org/releng/node22-test:22.0.0-s2'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -795,11 +795,11 @@
     name: 'generic'
     node_version:
         - node18:
-            image: docker-registry.wikimedia.org/releng/node18-test-browser:18.20.2-s1
+            image: docker-registry.wikimedia.org/releng/node18-test-browser:18.20.2-s2
         - node20:
-            image: docker-registry.wikimedia.org/releng/node20-test-browser:20.12.2-s1
+            image: docker-registry.wikimedia.org/releng/node20-test-browser:20.12.2-s2
         - node22:
-            image: docker-registry.wikimedia.org/releng/node22-test-browser:22.0.0-s1
+            image: docker-registry.wikimedia.org/releng/node22-test-browser:22.0.0-s2
     jobs:
         - 'generic-{node_version}-browser-coverage-publish'
         - 'generic-{node_version}-browser-direct-coverage-publish'
@@ -812,11 +812,11 @@
         - '{name}-{node_version}':
             node_version: &node_without_browsers
                 - node18:
-                    image: docker-registry.wikimedia.org/releng/node18-test:18.20.2-s1
+                    image: docker-registry.wikimedia.org/releng/node18-test:18.20.2-s2
                 - node20:
-                    image: docker-registry.wikimedia.org/releng/node20-test:20.12.2-s1
+                    image: docker-registry.wikimedia.org/releng/node20-test:20.12.2-s2
                 - node22:
-                    image: docker-registry.wikimedia.org/releng/node22-test:22.0.0-s1
+                    image: docker-registry.wikimedia.org/releng/node22-test:22.0.0-s2
         - 'generic-{node_version}-docs-publish':
             node_version: *node_without_browsers
 
@@ -829,11 +829,11 @@
            script: 'doc'
            node_version:
                - node18:
-                   image: docker-registry.wikimedia.org/releng/node18-test-browser:18.20.2-s1
+                   image: docker-registry.wikimedia.org/releng/node18-test-browser:18.20.2-s2
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.12.2-s1
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.12.2-s2
                - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.0.0-s1
+                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.0.0-s2
 
 # Same as 'mwext', but solo so BlueSpice repos don't conflict
 - project:
@@ -842,11 +842,11 @@
         - '{name}-{node_version}':
            node_version:
                - node18:
-                   image: docker-registry.wikimedia.org/releng/node18-test-browser:18.20.2-s1
+                   image: docker-registry.wikimedia.org/releng/node18-test-browser:18.20.2-s2
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.12.2-s1
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.12.2-s2
                - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.0.0-s1
+                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.0.0-s2
 
 - project:
     name: 'branchdeploy'
@@ -865,7 +865,7 @@
 - job-template:
     name: 'selenium-daily-{sitename}-{project}'
     node: Docker
-    docker_image_var: 'docker-registry.wikimedia.org/releng/node18-test-browser:18.20.2-s1'
+    docker_image_var: 'docker-registry.wikimedia.org/releng/node18-test-browser:18.20.2-s2'
     triggers:
      - timed: '@daily'
     parameters:
