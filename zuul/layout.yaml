@@ -9570,18 +9570,6 @@ projects:
     postmerge:
       - mediawiki-ruby-api-ruby3.1-bundle-yard-publish
 
-  - name: wikimedia/irc/ircservserv
-    test:
-      - noop
-    gate-and-submit:
-      - noop
-
-  - name: wikimedia/irc/ircservserv-config
-    test:
-      - trigger-ircservserv-config-pipeline-test
-    gate-and-submit:
-      - trigger-ircservserv-config-pipeline-test
-
   - name: wikimedia/security/deployer-audit
     template:
       - name: tox
@@ -12075,6 +12063,14 @@ projects:
   - name: wikimedia/iegreview
     template:
       - name: archived # T351889
+
+  - name: wikimedia/irc/ircservserv
+    template:
+     - name: archived
+
+  - name: wikimedia/irc/ircservserv-config
+    template:
+     - name: archived
 
   - name: wikimedia/production
     template:
