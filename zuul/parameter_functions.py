@@ -974,6 +974,7 @@ gatedextensions = [
     'Graph',
     'GrowthExperiments',
     'GuidedTour',
+    'IPInfo',
     'JsonConfig',
     'Kartographer',
     'Math',
