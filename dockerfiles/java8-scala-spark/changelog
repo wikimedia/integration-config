@@ -1,3 +1,10 @@
+java8-scala-spark (0.3.0-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image maven:
+   Add GitLab ssh host keys to known_hosts - T367403
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 23 Jul 2024 13:30:12 +0200
+
 java8-scala-spark (0.3.0-s3) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster:

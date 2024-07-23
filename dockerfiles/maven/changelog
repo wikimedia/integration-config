@@ -1,3 +1,9 @@
+maven (3.5.2-1-s5) wikimedia; urgency=high
+
+   Add GitLab ssh host keys to known_hosts - T367403
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 23 Jul 2024 13:30:12 +0200
+
 maven (3.5.2-1-s4) wikimedia; urgency=medium
 
   * Include Gerrit ssh host key to ease reuse between child images - T367403
