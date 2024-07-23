@@ -8,8 +8,6 @@ COPY --from=maven /opt/apache-maven /opt/apache-maven
 
 RUN {{ "openssh-client" | apt_install }}
 
-COPY gerrit_ssh_host_key /etc/ssh/ssh_known_hosts
-
 # sonar:sonar does not support XDG_CACHE_HOME - T207046
 ENV SONAR_USER_HOME=$XDG_CACHE_HOME/sonar
 
@@ -23,6 +21,7 @@ RUN /usr/local/bin/mvn --version
 
 COPY --from=maven /settings.xml /settings.xml
 COPY --from=maven /run.sh /run.sh
+COPY --from=maven ssh_known_hosts_wikimedia /etc/ssh/ssh_known_hosts
 
 USER nobody
 WORKDIR /src
