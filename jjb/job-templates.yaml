@@ -77,7 +77,7 @@
     # Projects are by default built on Java 8. To build on Java 11, use the
     # {name}-maven-java11 job template, which will replace this docker
     # image with the java 11 version.
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.1.0-s3
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.1.0-s4
     triggers:
         - zuul
     # The project is expected to provide a maven wrapper at the root of the
@@ -159,7 +159,7 @@
             # built on Java 8 & 11.
             entrypoint: /src/mvnw
             workdir: '{workdir}'
-            image: docker-registry.wikimedia.org/releng/maven-java17:1.0.0-s3
+            image: docker-registry.wikimedia.org/releng/maven-java17:1.0.1
             args: >
                 -gs /settings.xml --batch-mode --file {pom} -X
                 sonar:sonar
@@ -196,7 +196,7 @@
 - job-template: &job_template_maven-java11
     !!merge : *job_template_maven-java8
     name: '{name}-maven-java11'
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.1
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.1-s1
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
@@ -254,9 +254,9 @@
     # Projects are by default built on Java 8. To build on Java 11, use the
     # {name}-maven-java11-site-publish job template, which will replace
     # this docker image with the java 11 version.
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.1.0-s3
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.1.0-s4
     # The Sonar analysis runs under Java 17 though
-    sonar_image_var: docker-registry.wikimedia.org/releng/maven-java17:1.0.0-s3
+    sonar_image_var: docker-registry.wikimedia.org/releng/maven-java17:1.0.1
 
     # The project is expected to provide a maven wrapper at the root of the
     # project. If another entry point is required for a project (for example
@@ -352,7 +352,7 @@
 - job-template: &job_template_maven-java11-site-publish
     !!merge : *job_template_maven-java8-site-publish
     name: '{name}-maven-java11-site-publish'
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.1
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java11:1.0.1-s1
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
@@ -424,7 +424,7 @@
             options: >-
                      -v "$NETRC_FILE":/nonexistent/.netrc:ro
                      -v "$WORKSPACE/archiva-credentials.xml":/archiva-credentials.xml
-            image:   docker-registry.wikimedia.org/releng/maven-java8:1.1.0-s3
+            image:   docker-registry.wikimedia.org/releng/maven-java8:1.1.0-s4
             args:    >-
                      -Dresume=false
                      -Djdk.net.URLClassPath.disableClassPathURLCheck=true
