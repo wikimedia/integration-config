@@ -514,7 +514,7 @@ dependencies = {
     'TemplateWizard': ['TemplateData', 'WikiEditor'],
     'TitleBlacklist': ['AntiSpoof', 'Scribunto'],
     'TheWikipediaLibrary': ['Echo', 'CentralAuth', 'GlobalPreferences'],
-    'Thanks': ['Echo', 'Flow', 'MobileFrontend'],
+    'Thanks': ['AbuseFilter', 'Echo', 'Flow', 'MobileFrontend'],
     'Translate': ['UniversalLanguageSelector', 'EventLogging', 'cldr',
                   'VisualEditor', 'Scribunto'],
     'TranslateSvg': ['Translate'],
