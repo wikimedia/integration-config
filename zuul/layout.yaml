@@ -3291,7 +3291,6 @@ projects:
   - { name: operations/debs/file-read-backwards,              test: ['debian-glue-non-voting'] }
   - { name: operations/debs/flannel,                          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/flask-login,                      test: ['debian-glue-non-voting'] }
-  - { name: operations/debs/gdnsd,                            test: ['debian-glue'] }
   - { name: operations/debs/geckodriver,                      test: ['debian-glue-non-voting'] }
   - { name: operations/debs/git-deploy,                       test: ['debian-glue-non-voting'] }
   - { name: operations/debs/git-fat,                          test: ['debian-glue-non-voting'] }
@@ -11811,6 +11810,10 @@ projects:
   - name: operations/debs/dnsdist
     template:
       - name: archived
+
+  - name: operations/debs/gdnsd
+    template:
+      - name: archived # Migrated to https://gitlab.wikimedia.org/repos/sre/gdnsd - T341991
 
   - name: operations/debs/nodepool
     template:
