@@ -120,6 +120,12 @@ def set_parameters(item, job, params):
         elif (params['ZUUL_PROJECT'] == 'operations/debs/hue'):
             # fetches from pypi/npm
             params['PBUILDER_USENETWORK'] = 'yes'
+        elif (params['ZUUL_PROJECT'] == 'operations/debs/trafficserver'):
+            # Building ATS takes a while
+            params['BUILD_TIMEOUT'] = 60  # minutes
+            # Backports needed on stretch for libbrotli-dev and a recent
+            # debhelper version (>= 11)
+            params['BACKPORTS'] = 'yes'
         elif (params['ZUUL_PROJECT']
               == 'operations/debs/contenttranslation/giella-sme'):
             # Heavy build T143546
