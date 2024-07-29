@@ -1,3 +1,11 @@
+logstash-filter-verifier (7.16.3) wikimedia; urgency=medium
+
+  * Change version numbering to align with logstash-oss package version.
+  * Change base image from Buster to Bullseye - T371285
+  * Change apt component to thirdparty/opensearch2 - T371285
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 29 Jul 2024 19:00:15 +0200
+
 logstash-filter-verifier (0.0.3-s3) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster:

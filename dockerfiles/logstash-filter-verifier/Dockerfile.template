@@ -1,4 +1,4 @@
-FROM {{ "ci-buster" | image_tag }}
+FROM {{ "ci-bullseye" | image_tag }}
 
 USER root
 
@@ -13,7 +13,7 @@ RUN mkdir -p /usr/share/man/man1
 # make is the entrypoint used in operations/puppet to run the tests
 RUN {{ "default-jre-headless make" | apt_install }}
 
-RUN echo "deb http://apt.wikimedia.org/wikimedia buster-wikimedia thirdparty/opensearch1" \
+RUN echo "deb http://apt.wikimedia.org/wikimedia bullseye-wikimedia thirdparty/opensearch2" \
         > /etc/apt/sources.list.d/wikimedia-opensearch1.list \
     && {{ "logstash-oss logstash-plugins logstash-filter-verifier" | apt_install }}
 
