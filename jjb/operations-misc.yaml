@@ -162,7 +162,7 @@
         - docker-src-dir
         - docker-ci-src-setup-simple
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/ecs:0.0.2-1-s3
+            image: docker-registry.wikimedia.org/releng/ecs:0.1.0
     publishers:
      - docker-cleanup
 
@@ -176,7 +176,7 @@
         - docker-src-dir
         - docker-ci-src-setup-simple
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/ecs:0.0.2-1-s3
+            image: docker-registry.wikimedia.org/releng/ecs:0.1.0
         - doc-publish:
             docsrc: 'src/dist'
             docdest: 'ecs'
