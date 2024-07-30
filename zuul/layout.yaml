@@ -4655,6 +4655,7 @@ projects:
       - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
+      - name: extension-gate
 
   - name: mediawiki/extensions/MediaSearch
     template:

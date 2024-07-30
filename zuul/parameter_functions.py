@@ -984,6 +984,7 @@ gatedextensions = [
     'JsonConfig',
     'Kartographer',
     'Math',
+    'MediaModeration',
     'MobileApp',
     'MobileFrontend',
     'NavigationTiming',
