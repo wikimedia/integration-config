@@ -1,4 +1,4 @@
-FROM {{ "ci-buster" | image_tag }}
+FROM {{ "ci-bookworm" | image_tag }}
 
 ENV RELEASE_TOOLS_DIR=/srv/workspace/release
 

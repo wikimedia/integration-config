@@ -1,3 +1,10 @@
+release-notes (0.1.0) wikimedia; urgency=medium
+
+  * Change base image from Buster to Bookworm - T371511
+  * Remove Mukunda from list of maintainers.
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 31 Jul 2024 17:45:29 +0200
+
 release-notes (0.0.10-s3) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster:
