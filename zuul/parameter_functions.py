@@ -626,6 +626,7 @@ phan_dependencies = {
     'CentralNotice': ['CentralAuth', 'MobileFrontend', 'Translate', 'cldr',
                       'UserMerge'],
     'Challenge': ['Echo', 'SocialProfile'],
+    'Chart': ['JsonConfig'],
     'CheckUser': ['CentralAuth', 'EventLogging', 'GuidedTour', 'Renameuser',
                   'FlaggedRevs', 'GlobalBlocking', 'TorBlock', 'UserMerge'],
     'CirrusSearch': ['BetaFeatures', 'Elastica', 'SiteMatrix', 'GeoData',
