@@ -364,6 +364,7 @@ dependencies = {
     'CentralAuth': ['AbuseFilter', 'AntiSpoof', 'SecurePoll'],
     'CentralNotice': ['EventLogging'],
     'Challenge': ['SocialProfile'],
+    'Chart': ['JsonConfig'],
     'Checklists': ['VisualEditor'],
     'CheckUser': ['CentralAuth', 'FlaggedRevs', 'GlobalBlocking', 'GuidedTour',
                   'MobileFrontend', 'Renameuser', 'TorBlock'],
