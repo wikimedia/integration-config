@@ -9569,11 +9569,11 @@ projects:
 
   - name: mediawiki/ruby/api
     test:
-      - ruby3.1-rake
+      - ruby2.7-rake
     gate-and-submit:
-      - ruby3.1-rake
+      - ruby2.7-rake
     postmerge:
-      - mediawiki-ruby-api-ruby3.1-bundle-yard-publish
+      - mediawiki-ruby-api-ruby2.7-bundle-yard-publish
 
   - name: wikimedia/security/deployer-audit
     template:
