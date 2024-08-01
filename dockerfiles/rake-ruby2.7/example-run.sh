@@ -13,4 +13,4 @@ docker run \
     --env ZUUL_REF=master \
     --volume /"$(pwd)"/cache://cache \
     --volume /"$(pwd)"/log://log \
-    docker-registry.wikimedia.org/releng/rake-ruby3.1:latest
+    docker-registry.wikimedia.org/releng/rake-ruby2.7:latest
