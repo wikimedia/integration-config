@@ -1,3 +1,10 @@
+ci-src-setup-simple (0.7.0) wikimedia; urgency=medium
+
+  * Change base image from Buster to Bookworm - T335765
+    Upgrade git from 2.20.1-2+deb10u8 to 2.39.2-1.1
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 06 Aug 2024 11:00:45 +0200
+
 ci-src-setup-simple (0.6.2-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster:
