@@ -1,3 +1,14 @@
+tox-v3-pywikibot (1.0) wikimedia; urgency=medium
+
+  * Change image back to tox v3 since v4 is broken (T345695). The
+    pywikibot/core jobs are still using the old 0.7.1-s3 version.
+  * Rename image from `tox-pywikibot` to `tox-v3-pywikibot` to reflect the
+    version is rolling back.
+  * Use tox-v3 as a base image which get rid of Buster (T335765) and add
+    support for Python 3.10 to 3.12 (T342019)
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 08 Aug 2024 13:39:32 +0200
+
 tox-pywikibot (4.8.0-3-s3) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster:
