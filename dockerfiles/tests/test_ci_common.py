@@ -43,7 +43,12 @@ class Test(unittest.TestCase):
         ]
         os.mkdir(cls.upstream)
         for git_cmd in git_cmds:
-            subprocess.check_output(git_cmd, cwd=cls.upstream)
+            subprocess.check_output(
+                git_cmd, cwd=cls.upstream,
+                env={
+                    'GIT_ALLOW_PROTOCOL': 'file',
+                }
+            )
 
     @classmethod
     def tearDownClass(cls):
@@ -62,6 +67,7 @@ class Test(unittest.TestCase):
     def run_script(self, env):
         # With some sane defaults
         run_env = {
+            'GIT_ALLOW_PROTOCOL': 'file',
             'ZUUL_URL': self.fixture_dir,
             'ZUUL_PROJECT': self.upstream[len(self.fixture_dir) + 1:],
             }
