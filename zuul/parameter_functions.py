@@ -613,6 +613,7 @@ phan_dependencies = {
     'ApiFeatureUsage': ['Elastica'],
     'ArticleFeedbackv5': ['AbuseFilter', 'Echo', 'SpamBlacklist', 'SpamRegex'],
     'ArticlePlaceholder': ['Scribunto', 'Wikibase'],
+    'Babel': ['CommunityConfiguration'],
     'BlogPage': ['Comments', 'RandomGameUnit', 'SocialProfile', 'Video',
                  'VoteNY'],
     'BlueSpiceAvatars': ['BlueSpiceFoundation', 'BlueSpicePrivacy'],
