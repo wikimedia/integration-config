@@ -27,7 +27,7 @@
     name: pywikibot-tox-jobs
     jobs:
         - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-pywikibot:4.8.0-3-s3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.0
 
 - project:
     name: pywikibot-i18n
