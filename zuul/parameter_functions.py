@@ -654,7 +654,7 @@ phan_dependencies = {
                           'ParserFunctions', 'SyntaxHighlight_GeSHi',
                           'WikiEditor'],
     'Echo': ['CentralAuth', 'EventLogging', 'UserMerge'],
-    'ElasticPdfService': ['FlaggedRevs'],
+    'ElectronPdfService': ['FlaggedRevs'],
     'EntitySchema': ['Wikibase'],
     'EventBus': ['CentralNotice', 'EventStreamConfig'],
     'FacetedCategory': ['CategoryTree'],
