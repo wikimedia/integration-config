@@ -162,6 +162,7 @@ dependencies = {
     'ArticlePlaceholder': ['Wikibase', 'Scribunto'],
     'AtMentions': ['OOJSPlus', 'VisualEditor'],
     'AutoModerator': ['ORES'],
+    'Babel': ['CommunityConfiguration'],
     'BlogPage': ['Comments', 'SocialProfile', 'VoteNY'],
     'BlueSpiceAbout': ['BlueSpiceFoundation'],
     'BlueSpiceArticleInfo': ['BlueSpiceFoundation'],
