@@ -1,3 +1,9 @@
+node18 (18.20.4) wikimedia; urgency=high
+
+   Update Node to v18.20.4
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Sun, 11 Aug 2024 13:55:31 +0200
+
 node18 (18.20.2-s1) wikimedia; urgency=high
 
    change NPM_CONFIG_cache to all lower case - T370427

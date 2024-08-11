@@ -4,7 +4,7 @@ FROM {{ "ci-bullseye" | image_tag }}
 
 USER root
 
-ENV NODE_VERSION=v22.0.0
+ENV NODE_VERSION=v22.6.0
 ENV NODE_FILENAME=node-${NODE_VERSION}-linux-x64.tar.gz
 ENV NODE_DIRNAME=node-${NODE_VERSION}-linux-x64
 

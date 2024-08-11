@@ -1,3 +1,10 @@
+node20-test-browser-php81-composer (20.16.0) wikimedia; urgency=high
+
+   Refresh for update in parent image node20:
+   Update Node to v20.16.0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Sun, 11 Aug 2024 13:52:51 +0200
+
 node20-test-browser-php81-composer (20.12.2-s2) wikimedia; urgency=high
 
    Refresh for update in parent image node20:
