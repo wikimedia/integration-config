@@ -1077,7 +1077,7 @@
     kind:
         - client:
             database: mysql
-            phpunit-params: '--group Wikibase,WikibaseClient'
+            phpunit-params: '--group Wikibase,WikibaseClient,EntitySchemaClient'
         - repo:
             database: sqlite
             phpunit-params: '--group Wikibase,WikibaseAPI,Purtle'
