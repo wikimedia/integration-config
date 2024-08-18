@@ -6539,10 +6539,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/GlobalContribs
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/GlobalContributions
     template:
       - name: extension-quibble
@@ -10815,6 +10811,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/GlobalCheckUser
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/GlobalContribs
     template:
       - name: archived
 
