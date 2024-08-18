@@ -6100,10 +6100,6 @@ projects:
     template:
       - name: extension-quibble-bluespice
 
-  - name: mediawiki/extensions/Checkpoint
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/ChessBrowser
     template:
       - name: extension-quibble
@@ -10543,6 +10539,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/CharRangeSpan
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Checkpoint
     template:
       - name: archived
 
