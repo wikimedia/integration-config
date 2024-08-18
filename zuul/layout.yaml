@@ -6175,11 +6175,6 @@ projects:
     template:
       - name: extension-quibble-noselenium
 
-  - name: mediawiki/extensions/CongressLookup
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/ContactManager
     template:
       - name: extension-quibble
@@ -10622,6 +10617,10 @@ projects:
   - name: mediawiki/extensions/Configure
     template:
       - name: archived
+
+  - name: mediawiki/extensions/CongressLookup
+    template:
+      - name: archived # T371339
 
   - name: mediawiki/extensions/Contest
     template:
