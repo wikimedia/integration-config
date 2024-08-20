@@ -218,7 +218,7 @@
             recipients: qa-alerts@lists.wikimedia.org samsmith@wikimedia.org discovery-alerts@lists.wikimedia.org # @phuedx
             repository: mediawiki/extensions/RelatedArticles
         - TwoColConflict:
-            recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @awight TCB-Team
+            recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @awight wmde-techwish
             repository: mediawiki/extensions/TwoColConflict
         - VisualEditor:
             recipients: eakinloose@wikimedia.org qa-alerts@lists.wikimedia.org # @EAkinloose
@@ -235,7 +235,7 @@
     name: wdio-selenium-daily-wikifunctions
     project:
         - WikiLambda:
-            recipients: sdunlap@wikimedia.org aw-alerts-aaaahdftahushqrqpyfzzvrm3q@wikimedia.org.slack.com #Abstract Wikipedia
+            recipients: sdunlap@wikimedia.org aw-alerts-aaaahdftahushqrqpyfzzvrm3q@wikimedia.org.slack.com # https://phabricator.wikimedia.org/tag/wikifunctions_team/
             repository: mediawiki/extensions/WikiLambda
     jobs:
         - 'selenium-daily-{sitename}-{project}':
