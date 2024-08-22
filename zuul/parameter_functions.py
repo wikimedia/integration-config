@@ -582,7 +582,6 @@ dependencies = {
     'Wikidata.org': ['Wikibase'],
     'WikidataPageBanner': ['Wikibase'],
     'WikiEditor': ['EventLogging', 'WikimediaEvents'],
-    'WikifunctionsClient': ['WikiLambda'],
     'WikiLambda': [
         'VisualEditor',
         'UniversalLanguageSelector',
@@ -769,7 +768,6 @@ phan_dependencies = {
     'WebAuthn': ['OATHAuth'],
     'WikiEditor': ['BetaFeatures', 'ConfirmEdit', 'EventLogging',
                    'MobileFrontend', 'WikimediaEvents'],
-    'WikifunctionsClient': ['WikiLambda'],
     'WikiLambda': ['EventLogging'],
     'WikiLove': ['Flow', 'LiquidThreads', 'UserMerge'],
     'WikiForum': ['ConfirmEdit', 'SocialProfile'],

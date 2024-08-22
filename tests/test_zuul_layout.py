@@ -255,7 +255,6 @@ class TestZuulLayout(unittest.TestCase):
                         # that cannot be run in quibble; we're running them in
                         # Helm/GitLab, aka Catalyst (T321942)
                         'mediawiki/extensions/WikiLambda',
-                        'mediawiki/extensions/WikifunctionsClient',
                         # Fix tracked in T250418
                         'mediawiki/extensions/WikimediaIncubator'
                         ]
