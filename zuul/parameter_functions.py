@@ -583,7 +583,8 @@ dependencies = {
     'WikidataPageBanner': ['Wikibase'],
     'WikiEditor': ['EventLogging', 'WikimediaEvents'],
     'WikiLambda': [
-        'VisualEditor',
+        # Temporarily disabled for testing
+        # 'VisualEditor',
         'UniversalLanguageSelector',
         'WikimediaMessages'
     ],
