@@ -134,7 +134,7 @@
     name: wikidata-query-builds
     jobs:
         - wikidata-query-{project}-build:
-            docker_image: docker-registry.wikimedia.org/releng/node18-test-browser:18.20.2-s2
+            docker_image: docker-registry.wikimedia.org/releng/node18-test-browser:18.20.4
             project:
                 - gui:
                     ZUUL_PROJECT: wikidata/query/gui
@@ -169,5 +169,5 @@
             packages-source: vendor
             php:
                 - php74:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.9.4
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.9.4-s1
                     entrypoint: quibble-with-supervisord
