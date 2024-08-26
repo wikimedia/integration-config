@@ -431,7 +431,7 @@ dependencies = {
     'HierarchyBuilder': ['PageForms'],
     'ImageRating': ['VoteNY'],
     'ImageSuggestions': ['Echo', 'CirrusSearch', 'Elastica'],
-    'IPInfo': ['BetaFeatures'],
+    'IPInfo': ['BetaFeatures', 'CheckUser'],
     'JsonConfig': ['Scribunto', 'Kartographer'],
     'JWTAuth': ['PluggableAuth'],
     'Kartographer': ['FlaggedRevs', 'JsonConfig', 'ParserFunctions',
