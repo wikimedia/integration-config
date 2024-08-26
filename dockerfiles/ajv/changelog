@@ -1,0 +1,95 @@
+ajv (0.3.0-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image node18:
+   Update Node to v18.20.4
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Sun, 11 Aug 2024 13:55:31 +0200
+
+ajv (0.3.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image node18:
+   change NPM_CONFIG_cache to all lower case - T370427
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 18 Jul 2024 18:16:04 +0200
+
+ajv (0.3.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image node18:
+   Upgrade to NodeJS v18.20.2
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 16 Apr 2024 11:34:55 -0400
+
+ajv (0.3.0) wikimedia; urgency=high
+
+   Switch parent image from node16 to node18
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 12 Jan 2024 10:21:16 -0500
+
+ajv (0.2.2-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-common:
+   Disable git safe.directory - T354409
+
+ -- Antoine Musso <hashar@free.fr>  Mon,  8 Jan 2024 10:13:31 +0100
+
+ajv (0.2.2-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Add rsync to ci-bullseye image in preparation for Zuul+Gitlab integration
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Tue, 19 Dec 2023 13:23:02 -0800
+
+ajv (0.2.2) wikimedia; urgency=high
+
+   Refresh for update in parent image node16:
+   Switch from npm 7.21.0 (pinned) to npm 8.19.3 (upstream).
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Tue,  8 Aug 2023 02:00:00 +0100
+
+ajv (0.2.1) wikimedia; urgency=high
+
+   Refresh for update in parent image node16:
+   Upgrade node from v16.16.0 to v16.19.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 23 Feb 2023 15:57:53 -0500
+
+ajv (0.2.0) wikimedia; urgency=high
+
+   Switch parent image from node14 to node16
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 21 Feb 2023 21:55:22 -0500
+
+ajv (0.1.0-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image node14:
+   Add npx command (T300930).
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Thu,  3 Feb 2022 22:20:09 +0000
+
+ajv (0.1.0-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image node14:
+   Ensure node14 install materials are entirely removed
+
+ -- Antoine Musso <Antoine Musso <hashar@free.fr>>  Thu, 16 Dec 2021 18:52:18 +0100
+
+ajv (0.1.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image node14:
+   Upgrade npm from 7.5.2 to 7.21.0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 12 Oct 2021 11:56:18 -0700
+
+ajv (0.1.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Rebuild to add security updates apt repositories
+
+ -- Antoine Musso <hashar@free.fr>  Fri,  8 Oct 2021 12:51:49 +0200
+
+ajv (0.1.0) wikimedia; urgency=medium
+
+  * Provide a ajv image for use in validating YAML/JSON pipelinelib
+    configuration
+
+ -- Dan Duvall <dduvall@wikimedia.org>  Tue, 07 Sep 2021 12:12:36 -0700
