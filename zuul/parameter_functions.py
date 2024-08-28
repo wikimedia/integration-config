@@ -747,7 +747,7 @@ phan_dependencies = {
     'StopForumSpam': ['AbuseFilter'],
     'TEI': ['Math'],
     'TemplateStyles': ['CodeEditor'],
-    'Thanks': ['CheckUser', 'Echo', 'Flow', 'MobileFrontend'],
+    'Thanks': ['AbuseFilter', 'CheckUser', 'Echo', 'Flow', 'MobileFrontend'],
     'TheWikipediaLibrary': ['Echo', 'CentralAuth', 'GlobalPreferences'],
     'TimedMediaHandler': ['BetaFeatures'],
     'TitleBlacklist': ['AntiSpoof', 'Scribunto'],
