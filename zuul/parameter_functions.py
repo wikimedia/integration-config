@@ -720,6 +720,7 @@ phan_dependencies = {
     'PageTriage': ['Echo', 'ORES'],
     'PageViewInfoGA': ['PageViewInfo'],
     'ParserFunctions': ['Scribunto'],
+    'ParserMigration': ['MobileFrontend'],
     'Petition': ['CheckUser', 'cldr'],
     'Phonos': ['TimedMediaHandler'],
     'PictureGame': ['SocialProfile'],
