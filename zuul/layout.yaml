@@ -2696,9 +2696,11 @@ projects:
     test:
       - gearman-java-maven-java8
       - gearman-java-maven-java11
+      - gearman-java-maven-java17
     gate-and-submit:
       - gearman-java-maven-java8
       - gearman-java-maven-java11
+      - gearman-java-maven-java17
     postmerge:
       - gearman-java-maven-java11-site-publish
 

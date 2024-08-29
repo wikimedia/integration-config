@@ -144,6 +144,9 @@
         - '{name}-maven-java11':
             docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s5
             maven_path: '/run-with-gearmand.sh'
+        - '{name}-maven-java17':
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s1
+            maven_path: '/run-with-gearmand.sh'
         - '{name}-maven-java11-site-publish':
             docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s5
             sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0
