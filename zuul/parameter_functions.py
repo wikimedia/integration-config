@@ -303,8 +303,7 @@ dependencies = {
         'BlueSpiceFoundation',
         'BlueSpiceSocial',
         'BlueSpiceExtendedSearch',
-        'BlueSpiceMultiUpload',
-        'BlueSpiceEchoConnector'
+        'BlueSpiceMultiUpload'
     ],
     'BlueSpiceSaferEdit': ['BlueSpiceFoundation'],
     'BlueSpiceSignHere': ['BlueSpiceFoundation'],
