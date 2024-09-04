@@ -1423,9 +1423,14 @@ project-templates:
     # No wmf/ jobs, as this should never be used for WMF production code
 
   # Main CI template for extensions, using quibble
-  # As of 2024-05-07, this means PHP 8.1–8.3, and Node 18, plus
-  #   testing in PHP 7.4 temporarily whilst Wikimedia production migrates;
-  #   8.3 jobs are live in master, but not yet older release branches (T356405)
+  #
+  # As of 2024-09-04, our current CI testing targets are Node 18, plus:
+  # master : PHP 8.1–8.3 (supported & tested)
+  #          PHP 7.4 (temporarily whilst Wikimedia production migrates)
+  # REL1_39: PHP 7.4–8.1 (but only test 7.4)
+  # REL1_41: PHP 7.4–8.1 (but only test 7.4)
+  # REL1_42: PHP 8.1–8.3 (supported & tested)
+  # REL1_43: PHP 8.1–8.3 (supported & tested)
   - name: extension-quibble
     test:
       - quibble-vendor-mysql-php74-noselenium
