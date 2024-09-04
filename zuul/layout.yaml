@@ -1014,6 +1014,7 @@ jobs:
     branch: (?!^REL)
     skip-if:
       - project: ^mediawiki/extensions/.*$
+      - project: ^mediawiki/skins/.*$
 
   - name: ^wmf-quibble-selenium
     # Gated extensions are only for master and Wikimedia deployment. We do not
