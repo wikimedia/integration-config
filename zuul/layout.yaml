@@ -4113,7 +4113,6 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
-  # (T336934) Not in production yet but headed there -- 2024-02-07
   - name: mediawiki/extensions/AutoModerator
     template:
       - name: in-wikimedia-production
