@@ -52,7 +52,7 @@ pipelines:
       gerrit:
         - &test-event-patchset-created
           event: patchset-created
-          branch: (?!^refs/meta/config|^fundraising/REL|^wmf/\d\.\d{2}\.\d-wmf\.\d{1,2}|^REL)
+          branch: (?!^refs/meta/config|^fundraising/REL|^wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|^REL)
 
           # Patch was received with a CR+2 label set via push options, it means
           # the change will also enter the `gate-and-submit` pipeline and there
@@ -559,7 +559,7 @@ pipelines:
         # pipeline by simply commenting 'recheck' on a change.
         - &test-event-comment-recheck
           event: comment-added
-          branch: (?!^refs/meta/config|^fundraising/REL|^wmf/\d\.\d{2}\.\d-wmf\.\d{1,2}|^REL)
+          branch: (?!^refs/meta/config|^fundraising/REL|^wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|^REL)
           comment: (?im)^Patch Set \d+:( -?Code\-Review(\+|-)?(1|2)?)?(\n\n\(\d+ comment(s)?\))?\n\n\s*recheck\b
           email: *email_allowlist
 
@@ -567,7 +567,7 @@ pipelines:
         # (Verified 0 or 1)
         - &test-event-plus-one
           event: comment-added
-          branch: (?!^refs/meta/config|^fundraising/REL|wmf/\d\.\d{2}\.\d-wmf\.\d{1,2}|^REL)
+          branch: (?!^refs/meta/config|^fundraising/REL|wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|^REL)
           reject-approval:
             # hasn't been tested yet
             - verified: [-1, 2]
@@ -580,7 +580,7 @@ pipelines:
         # Let LibUp run tests on the changes it doesn't +2
         - &test-event-libup
           event: comment-added
-          branch: (?!^refs/meta/config|^fundraising/REL|wmf/\d\.\d{2}\.\d-wmf\.\d{1,2}|^REL)
+          branch: (?!^refs/meta/config|^fundraising/REL|wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|^REL)
           reject-approval:
             # hasn't been tested yet
             - verified: [-1, 2]
@@ -613,11 +613,11 @@ pipelines:
     trigger:
       gerrit:
         - !!merge : *test-event-patchset-created
-          branch: wmf/\d\.\d{2}\.\d-wmf\.\d{1,2}
+          branch: wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)
         - !!merge : *test-event-comment-recheck
-          branch: wmf/\d\.\d{2}\.\d-wmf\.\d{1,2}
+          branch: wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)
         - !!merge : *test-event-plus-one
-          branch: wmf/\d\.\d{2}\.\d-wmf\.\d{1,2}
+          branch: wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)
 
   - !!merge : *test_pipeline
     name: test-fundraising
@@ -822,7 +822,7 @@ pipelines:
         - &gate-and-submit-comment-added
           event: comment-added
           branch:
-           - (?!^(refs/meta/config|wmf/\d\.\d{2}\.\d-wmf\.\d{1,2}|fundraising/REL|REL))
+           - (?!^(refs/meta/config|wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|fundraising/REL|REL))
           email:
            - ^(?!l10n-bot@translatewiki\.net).*$
           approval:
@@ -852,7 +852,7 @@ pipelines:
     trigger:
       gerrit:
         - event: comment-added
-          branch: wmf/\d\.\d{2}\.\d-wmf\.\d{1,2}
+          branch: wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)
           email:
            - ^(?!l10n-bot@translatewiki\.net).*$
           approval:
@@ -1348,6 +1348,7 @@ jobs:
     voting: false
     # Only fails if someone edits includes/Defines.php on a wmf branch that is NOT the most recent
     failure-message: 'FAILURE to generate new changelog for mediawiki.org (safe to ignore)'
+    # There is no need to generate train deploy notes for wmf/branch_cut_pretest
     branch: wmf/\d\.\d{2}\.\d-wmf\.\d{1,2}$
     files:
       - '^includes/Defines\.php$'
