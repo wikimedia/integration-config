@@ -753,7 +753,7 @@ phan_dependencies = {
     'TitleBlacklist': ['AntiSpoof', 'Scribunto'],
     'Toolhub': ['Scribunto'],
     'TorBlock': ['AbuseFilter'],
-    'Translate': ['AbuseFilter', 'AdminLinks', 'cldr', 'Elastica',
+    'Translate': ['AbuseFilter', 'AdminLinks', 'cldr', 'Elastica', 'Echo',
                   'Scribunto', 'TranslationNotifications'],
     'TranslationNotifications': ['CentralAuth', 'MassMessage', 'SiteMatrix',
                                  'Translate'],
