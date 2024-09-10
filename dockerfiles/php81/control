@@ -1,1 +1,1 @@
-Depends: sury-php, php-ast
+Depends: ci-bullseye, php-ast

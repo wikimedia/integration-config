@@ -1,5 +1,8 @@
 FROM {{ "php-ast" | image_tag }} as ast
-FROM {{ "sury-php" | image_tag }}
+FROM {{ "ci-bullseye" | image_tag }}
+
+# Align with SRE provided packages
+COPY wikimedia-php81.list /etc/apt/sources.list.d/wikimedia-php81.list
 
 # zip is needed for composer to install things from dist
 # others are libraries/MediaWiki related

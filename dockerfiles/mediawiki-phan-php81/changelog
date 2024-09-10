@@ -1,3 +1,10 @@
+mediawiki-phan-php81 (8.1.29-1-wmf11u1) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Re-build on Wikimedia-flavoured PHP
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 10 Sep 2024 15:12:03 -0400
+
 mediawiki-phan-php81 (0.0.4-s2) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
