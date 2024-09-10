@@ -1,10 +1,11 @@
-FROM {{ "sury-php" | image_tag }} AS sury-php
-
 FROM {{ "quibble-bullseye" | image_tag }}
 
 ENV PHP_VERSION=8.1
 
 USER root
+
+# Align with SRE provided packages
+COPY wikimedia-php81.list /etc/apt/sources.list.d/wikimedia-php81.list
 
 #############################
 #  Debian packages we need  #
@@ -27,22 +28,18 @@ php8.1-sqlite3
 php8.1-tidy
 php8.1-xml
 php8.1-zip
+php8.1-wikidiff2
 {%- endset -%}
 
-# We need to get a newer version of php-ast from sury.org (T174338)
-COPY --from=sury-php /etc/apt/trusted.gpg.d/php.gpg /etc/apt/trusted.gpg.d/php.gpg
-
-RUN {{ "apt-transport-https" | apt_install }} && \
-    echo "deb https://packages.sury.org/php/ bullseye main" > /etc/apt/sources.list.d/php.list
-
-# Pin sury's repo higher for the packages that exist in both bullseye and sury
-COPY sury.pin /etc/apt/preferences.d/sury
 RUN {{ mediawiki_deps | apt_install }} \
     && /install-php-fpm-conf.sh
 
 # Disable pcov by default, although the performance overhead should be minimal
 RUN {{ "php8.1-pcov" | apt_install }} \
     && phpdismod pcov
+
+# Ensure the image use PHP 8.1, as that is not the default on bullseye
+RUN update-alternatives --set php /usr/bin/php8.1
 
 # Unprivileged
 RUN install --directory /workspace --owner=nobody --group=nogroup
