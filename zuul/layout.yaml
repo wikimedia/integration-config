@@ -6828,6 +6828,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/Hashtags
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/HAWelcome
     template:
       - name: extension-quibble
