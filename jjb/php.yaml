@@ -175,8 +175,8 @@
          composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.3-s3
          phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.3-s3
      - php81:
-         composer_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.3-s2
-         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:0.0.4-s2
+         composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.29-1-wmf11u1
+         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:8.1.29-1-wmf11u1
     jobs:
       - 'phan-{php}'
 
@@ -190,7 +190,7 @@
                 - php74:
                     image: docker-registry.wikimedia.org/releng/composer-test-php74:0.1.3-s3
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php81:0.0.3-s2
+                    image: docker-registry.wikimedia.org/releng/composer-test-php81:8.1.29-1-wmf11u1
                 - php82:
                     image: docker-registry.wikimedia.org/releng/composer-test-php82:0.1.2-s2
                 - php83:
@@ -200,7 +200,7 @@
                 - php74:
                     image: docker-registry.wikimedia.org/releng/composer-package-php74:0.4.3-s3
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php81:0.0.3-s2
+                    image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.29-1-wmf11u1
                 - php82:
                     image: docker-registry.wikimedia.org/releng/composer-package-php82:0.1.2-s2
                 - php83:
@@ -264,7 +264,7 @@
      - php74:
          image: docker-registry.wikimedia.org/releng/composer-php74:0.3.3-s3
      - php81:
-         image: docker-registry.wikimedia.org/releng/composer-php81:0.0.3-s2
+         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.29-1-wmf11u1
      - php82:
          image: docker-registry.wikimedia.org/releng/composer-php82:0.1.1-s2
      - php83:

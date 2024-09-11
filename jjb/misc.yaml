@@ -55,7 +55,7 @@
     name: phpunit-coverage-publish
     php:
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php81:0.0.3-s2
+            docker_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.29-1-wmf11u1
         - php82:
             docker_image: docker-registry.wikimedia.org/releng/composer-php82:0.1.1-s2
         - php83:
