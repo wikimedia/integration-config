@@ -515,7 +515,7 @@
         - docker-log-dir
         - docker-src-dir
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.9.4-s1
+            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.9.4-s2
             entrypoint: quibble-with-supervisord
             options: '--tmpfs /workspace/db:size=320M'
             volumes:
@@ -1013,7 +1013,7 @@
         - php74:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.9.4-s1
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.9.4-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.9.4-s2
         - php82:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.9.4-s1
         - php83:
@@ -1052,7 +1052,7 @@
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.9.4-s1
             entrypoint: quibble-with-supervisord
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.9.4-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.9.4-s2
             entrypoint: quibble-with-supervisord
     jobs:
         - wmf-quibble-vendor-mysql-{php}
@@ -1085,7 +1085,7 @@
         - php74:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.9.4-s1
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.9.4-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.9.4-s2
         - php83:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.9.4-s1
     jobs:
