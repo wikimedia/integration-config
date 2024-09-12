@@ -39,6 +39,7 @@ php8.1-intl
 php8.1-mbstring
 php8.1-redis
 php8.1-sqlite3
+php8.1-uuid
 php8.1-xml
 zip
 unzip

@@ -1,3 +1,10 @@
+quibble-bullseye-php82 (1.14.1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Update PHP to 8.2.28; add php8.2-uuid
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  5 Jun 2025 13:33:44 -0400
+
 quibble-bullseye-php82 (1.14.1) wikimedia; urgency=medium
 
   * Update Quibble to 1.14.1

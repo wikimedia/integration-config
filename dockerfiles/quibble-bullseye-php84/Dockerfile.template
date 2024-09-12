@@ -25,6 +25,7 @@ php8.4-mysql
 php8.4-pgsql
 php8.4-sqlite3
 php8.4-tidy
+php8.4-uuid
 php8.4-xml
 php8.4-zip
 {%- endset -%}

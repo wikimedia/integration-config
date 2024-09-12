@@ -1,3 +1,10 @@
+composer-php83 (8.3.21) wikimedia; urgency=high
+
+   Refresh for update in parent image php83:
+   Update PHP to 8.3.21; add php8.3-uuid
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  5 Jun 2025 13:33:49 -0400
+
 composer-php83 (8.3.17) wikimedia; urgency=high
 
    Refresh for update in parent image php83:

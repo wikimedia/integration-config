@@ -1,3 +1,9 @@
+node22-test-browser-php83-composer (22.15.0-s2) wikimedia; urgency=high
+
+   Add php8.3-uuid
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  5 Jun 2025 14:18:54 -0400
+
 node22-test-browser-php83-composer (22.15.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image node22-test:

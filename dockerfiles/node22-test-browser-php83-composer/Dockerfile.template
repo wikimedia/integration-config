@@ -39,6 +39,7 @@ php8.3-intl
 php8.3-mbstring
 php8.3-redis
 php8.3-sqlite3
+php8.3-uuid
 php8.3-xml
 zip
 unzip

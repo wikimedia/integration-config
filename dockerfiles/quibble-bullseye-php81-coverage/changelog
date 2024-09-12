@@ -1,3 +1,10 @@
+quibble-bullseye-php81-coverage (1.14.1-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Update PHP to 8.1.32-1+wmf11u1; add php8.1-uuid
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  5 Jun 2025 13:33:39 -0400
+
 quibble-bullseye-php81-coverage (1.14.1-s2) wikimedia; urgency=high
 
    Update clover-edit.py for python 3.9

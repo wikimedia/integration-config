@@ -20,6 +20,7 @@ php8.3-mbstring
 php8.3-pcov
 php8.3-redis
 php8.3-sqlite3
+php8.3-uuid
 php8.3-xml
 php8.3-yaml
 zip

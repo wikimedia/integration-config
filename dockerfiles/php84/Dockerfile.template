@@ -19,6 +19,7 @@ php8.4-mbstring
 php8.4-pcov
 php8.4-redis
 php8.4-sqlite3
+php8.4-uuid
 php8.4-xml
 php8.4-yaml
 php8.4-zip

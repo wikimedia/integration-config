@@ -1,3 +1,10 @@
+composer-php82 (8.2.28) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Update PHP to 8.2.28; add php8.2-uuid
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  5 Jun 2025 13:33:44 -0400
+
 composer-php82 (8.2.27) wikimedia; urgency=high
 
    Refresh for update in parent image php82:
