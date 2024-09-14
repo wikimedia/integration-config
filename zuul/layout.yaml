@@ -5773,6 +5773,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/Analytics
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/AnchorHandler
     template:
       - name: extension-quibble
