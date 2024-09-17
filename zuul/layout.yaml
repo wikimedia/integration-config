@@ -3448,11 +3448,7 @@ projects:
   - { name: operations/debs/carbon-c-relay,                   test: ['debian-glue-non-voting'] }
   - { name: operations/debs/carbonate,                        test: ['debian-glue-non-voting'] }
   - { name: operations/debs/cassandra-tools-wmf,              test: ['debian-glue-non-voting'] }
-  - name: operations/debs/chartmuseum
-    test:
-      - debian-glue-backports
-    gate-and-submit:
-      - debian-glue-backports
+  - { name: operations/debs/chartmuseum,                      test: ['debian-glue-non-voting'] }
   - { name: operations/debs/cni,                              test: ['debian-glue-non-voting'] }
   - { name: operations/debs/confd,                            test: ['debian-glue-non-voting'] }
   - { name: operations/debs/debdeploy,                        test: ['debian-glue-non-voting'] }
@@ -3490,11 +3486,7 @@ projects:
     gate-and-submit:
       - debian-glue-backports
   - { name: operations/debs/helm-secrets,                     test: ['debian-glue-non-voting'] }
-  - name: operations/debs/helm3
-    test:
-      - debian-glue-backports
-    gate-and-submit:
-      - debian-glue-backports
+  - { name: operations/debs/helm3,                            test: ['debian-glue-non-voting'] }
   - name: operations/debs/helmfile
     test:
       - debian-glue-backports
