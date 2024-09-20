@@ -3804,7 +3804,7 @@ projects:
 
   - name: operations/puppet
     test-prio:
-      - operations-puppet-tests-buster
+      - operations-puppet-tests-bullseye
       - operations-puppet-logstash-filter-verifier
     experimental:
       - operations-puppet-catalog-compiler-test
