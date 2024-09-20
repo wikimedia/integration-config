@@ -64,9 +64,7 @@ def set_parameters(item, job, params):
         'mediawiki/extensions/InterwikiSorting',
         'mediawiki/extensions/PropertySuggester',
         'mediawiki/extensions/RevisionSlider',
-        # T368783, disabled since we can't rebuild Buster images to update
-        # Quibble in CI (T369146)
-        # 'mediawiki/extensions/TwoColConflict',
+        'mediawiki/extensions/TwoColConflict',
         'mediawiki/extensions/Wikibase',
         'mediawiki/extensions/Wikidata.org',
         'mediawiki/extensions/WikibaseLexeme',
