@@ -686,7 +686,7 @@ phan_dependencies = {
                           'skins/MinervaNeue', 'Flow', 'MobileFrontend',
                           'Echo', 'CirrusSearch', 'CentralAuth',
                           'TimedMediaHandler', 'VisualEditor', 'EventBus',
-                          'Thanks', 'CommunityConfiguration'],
+                          'Thanks', 'CommunityConfiguration', 'ConfirmEdit'],
     'HAWelcome': ['SocialProfile'],
     'ImageRating': ['SocialProfile', 'VoteNY'],
     'ImageSuggestions': ['Echo', 'CirrusSearch', 'Elastica'],
