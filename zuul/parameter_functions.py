@@ -50,27 +50,12 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/cldr',
         ])
 
-    # Enable parallel phpunit for all WMDE-maintained repos
-    # so we can observe the impact. See T361190, T50217
-    # WMDE stakeholders will help with monitoring / deployment
-    if params['ZUUL_PROJECT'] in [
-        'mediawiki/extensions/AdvancedSearch',
-        'mediawiki/extensions/ArticlePlaceholder',
-        'mediawiki/extensions/Cognate',
-        'mediawiki/extensions/ElectronPdfService',
-        'mediawiki/extensions/EntitySchema',
-        'mediawiki/extensions/FileExporter',
-        'mediawiki/extensions/FileImporter',
-        'mediawiki/extensions/InterwikiSorting',
-        'mediawiki/extensions/PropertySuggester',
-        'mediawiki/extensions/RevisionSlider',
-        'mediawiki/extensions/TwoColConflict',
-        'mediawiki/extensions/Wikibase',
-        'mediawiki/extensions/Wikidata.org',
-        'mediawiki/extensions/WikibaseLexeme',
-        'mediawiki/extensions/WikibaseQualityConstraints',
-        'mediawiki/extensions/WikimediaBadges',
-    ]:
+    # Enable parallel PHPUnit runs for all extensions.
+    # Exclude MediaWiki core for now.
+    # Do not enable parallel PHPUnit on REL_ branches.
+    if params['ZUUL_PROJECT'] not in ['mediawiki/core'] and \
+       'ZUUL_BRANCH' in params and \
+       not params['ZUUL_BRANCH'].startswith('REL1'):
         params['QUIBBLE_PHPUNIT_PARALLEL'] = '1'
 
     # parallel-lint can be slow
