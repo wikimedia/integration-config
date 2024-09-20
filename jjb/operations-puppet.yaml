@@ -128,7 +128,7 @@
      - operations-puppet-tests-{os}:
          os:
            - bullseye:
-               image: docker-registry.wikimedia.org/releng/operations-puppet:0.9.3
+               image: docker-registry.wikimedia.org/releng/operations-puppet:0.9.4
 
 - project:
     name: puppet-wmf-styleguide

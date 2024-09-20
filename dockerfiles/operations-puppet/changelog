@@ -1,3 +1,9 @@
+operations-puppet (0.9.4) wikimedia; urgency=medium
+
+  * re-bundle to grab the updates in the Gemfile for Puppet 7
+
+ -- Jesse Hathaway <jhathaway@wikimedia.org>  Fri, 20 Sep 2024 14:41:20 -0500
+
 operations-puppet (0.9.3) wikimedia; urgency=medium
 
   * upgrade to bullseye
