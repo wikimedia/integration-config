@@ -464,6 +464,7 @@ pipelines:
            - ^wiki@revi\.dev$ # revi
            - ^wiki@sportshead\.dev$ # Sportzpikachu
            - ^wikimedia@agamya\.dev$
+           - ^wikimedia@blankeclair\.slmail\.me$
            - ^wikimedia@bjorn\.ml$ # Bjornskjald, former GCI student
            - ^wikimedia@ptrcnull\.me$ # ptrcnull, former GCI student
            - ^wikimedia@retrocraft\.ca$ # RetroCraft, former GCI student
