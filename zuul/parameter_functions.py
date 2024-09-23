@@ -381,6 +381,7 @@ dependencies = {
                                  'BlueSpiceVisualEditorConnector'],
     'CommunityConfiguration': ['CommunityConfigurationExample'],
     'CommunityConfigurationExample': ['CommunityConfiguration'],
+    'CommunityRequests': ['DiscussionTools'],
     'ConfigManager': ['BlueSpiceFoundation'],
     'ConfirmEdit': ['AbuseFilter'],
     'ContactManager': ['PageProperties'],

@@ -4322,7 +4322,6 @@ projects:
 
   - name: mediawiki/extensions/CommunityRequests
     template:
-      # Extension not yet in production
       - name: in-wikimedia-production
       - name: extension-coverage
       - name: extension-codehealth
