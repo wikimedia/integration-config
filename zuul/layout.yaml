@@ -4994,12 +4994,6 @@ projects:
       - name: extension-gate
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
-    # Special extra jobs because Fundraising uses this on PHP74/REL1_39
-    test:
-      - quibble-fundraising-ParserFunctions-REL1_39-php74
-    # gate-and-submit FR jobs disabled due to T328240
-    # gate-and-submit:
-    #   - quibble-fundraising-ParserFunctions-REL1_39-php74
 
   # Not currently in production, but will be brought back for the Parsoid migration
   - name: mediawiki/extensions/ParserMigration

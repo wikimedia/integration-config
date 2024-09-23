@@ -61,7 +61,6 @@
                 mediawiki/vendor
                 mediawiki/extensions/DonationInterface
                 mediawiki/extensions/FundraisingEmailUnsubscribe
-                mediawiki/extensions/ParserFunctions
                 mediawiki/extensions/cldr
             logdir: '/workspace/log'
     publishers:
@@ -86,7 +85,6 @@
     name: fundraising-branches
     ext:
      - FundraisingEmailUnsubscribe
-     - ParserFunctions
      - cldr
     branch:
      - REL1_39:
