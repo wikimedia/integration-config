@@ -52,15 +52,19 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/cldr',
         ])
 
-    # Enable parallel PHPUnit runs for all extensions.
-    # Exclude MediaWiki core for now.
-    # Do not enable parallel PHPUnit on REL_ branches.
-    if params['ZUUL_PROJECT'] not in ['mediawiki/core'] and \
-       'ZUUL_BRANCH' in params and \
-       not params['ZUUL_BRANCH'].startswith('REL1'):
+    # Enable parallel PHPUnit runs for MW ecosystem, except:
+    if (
+        # ... exclude MediaWiki core (for now)
+        params["ZUUL_PROJECT"] not in ["mediawiki/core"]
+        # ... exclude PHP 7.4 jobs (appears broken),
+        and "php74" not in job.name
+        # ... exclude on REL_ branches (not yet tested/patched),
+        and "ZUUL_BRANCH" in params
+        and not params["ZUUL_BRANCH"].startswith("REL1")
+    ):
         params['QUIBBLE_PHPUNIT_PARALLEL'] = '1'
 
-    # parallel-lint can be slow
+    # parallel-lint can be slow, so raise the limit for vendor.git
     if params['ZUUL_PROJECT'].startswith('mediawiki/vendor'):
         params['COMPOSER_PROCESS_TIMEOUT'] = 600
 
