@@ -1,0 +1,725 @@
+# This file is used to control injected dependencies for MediaWiki phan jobs.
+#
+# Values are assumed to be MediaWiki extensions, so 'Foo' maps to 'mediawiki/extensions/Foo'.
+# Skins have to be prefixed with 'skins/', so 'skins/Foo' maps to 'mediawiki/skins/Foo'.
+
+# The data is used by set_mw_dependencies() in parameter_functions.py
+
+# Note: This list is not used by PHPUnit/etc. See dependencies.yaml that list.
+# Note: This list is *not* recursively processed.
+
+# Skins:
+skins/Cosmos:
+ - AdminLinks
+ - CookieWarning
+ - SocialProfile
+
+skins/Metrolook:
+ - SocialProfile
+
+skins/MinervaNeue:
+ - Echo
+ - MobileFrontend
+
+skins/Nimbus:
+ - Echo
+ - RandomGameUnit
+ - SocialProfile
+ - Video
+
+skins/Refreshed:
+ - SocialProfile
+
+skins/Vector:
+ - CentralAuth
+ - MobileFrontend
+
+
+# Extensions:
+AbuseFilter:
+ - CheckUser
+ - CentralAuth
+ - Echo
+ - Renameuser
+ - AntiSpoof
+ - Scribunto
+ - EventLogging
+ - UserMerge
+ - ConfirmEdit
+
+AchievementBadges:
+ - BetaFeatures
+ - CentralAuth
+ - Echo
+ - EventLogging
+ - EventStreamConfig
+
+AntiSpoof:
+ - UserMerge
+
+ApiFeatureUsage:
+ - Elastica
+
+ArticleFeedbackv5:
+ - AbuseFilter
+ - Echo
+ - SpamBlacklist
+ - SpamRegex
+
+ArticlePlaceholder:
+ - Scribunto
+ - Wikibase
+
+AutoModerator:
+ - ORES
+
+Babel:
+ - CommunityConfiguration
+
+BlogPage:
+ - Comments
+ - RandomGameUnit
+ - SocialProfile
+ - Video
+ - VoteNY
+
+BlueSpiceAvatars:
+ - BlueSpiceFoundation
+ - BlueSpicePrivacy
+
+BounceHandler:
+ - CentralAuth
+ - Echo
+
+CampaignEvents:
+ - Echo
+ - Translate
+
+Campaigns:
+ - EventLogging
+ - MobileFrontend
+
+Capiunto:
+ - Scribunto
+
+CentralAuth:
+ - AbuseFilter
+ - AntiSpoof
+ - CheckUser
+ - ConfirmEdit
+ - Echo
+ - EventLogging
+ - GlobalBlocking
+ - MassMessage
+ - MobileFrontend
+ - Renameuser
+ - SecurePoll
+ - TitleBlacklist
+
+CentralNotice:
+ - CentralAuth
+ - MobileFrontend
+ - Translate
+ - cldr
+ - UserMerge
+
+Challenge:
+ - Echo
+ - SocialProfile
+
+Chart:
+ - JsonConfig
+
+CheckUser:
+ - AbuseFilter
+ - CentralAuth
+ - EventLogging
+ - GuidedTour
+ - Renameuser
+ - FlaggedRevs
+ - GlobalBlocking
+ - TorBlock
+ - UserMerge
+
+CirrusSearch:
+ - BetaFeatures
+ - Elastica
+ - SiteMatrix
+ - GeoData
+ - EventBus
+
+Cite:
+ - Gadgets
+
+Citoid:
+ - Cite
+ - VisualEditor
+
+CleanChanges:
+ - cldr
+
+CodeMirror:
+ - Gadgets
+
+CommunityConfigurationExample:
+ - CommunityConfiguration
+
+CognitiveProcessDesigner:
+ - PageForms
+ - BlueSpiceFoundation
+ - BlueSpiceUEModulePDF
+
+CommentStreams:
+ - Echo
+ - SocialProfile
+
+ConfirmEdit:
+ - AbuseFilter
+ - Math
+
+ContactPage:
+ - ConfirmEdit
+
+ContentTranslation:
+ - AbuseFilter
+ - BetaFeatures
+ - CentralAuth
+ - Echo
+ - EventLogging
+ - GlobalPreferences
+
+CreateAPage:
+ - ConfirmEdit
+
+Dashiki:
+ - JsonConfig
+
+Disambiguator:
+ - VisualEditor
+
+DiscordRCFeed:
+ - Flow
+
+DiscussionTools:
+ - VisualEditor
+ - Linter
+ - Echo
+ - EventLogging
+ - Gadgets
+ - BetaFeatures
+ - Thanks
+
+DisplayTitle:
+ - Scribunto
+
+DonationInterface:
+ - cldr
+ - CodeEditor
+ - FundraisingEmailUnsubscribe
+ - ParserFunctions
+ - SyntaxHighlight_GeSHi
+ - WikiEditor
+
+Echo:
+ - CentralAuth
+ - EventLogging
+ - UserMerge
+
+ElectronPdfService:
+ - FlaggedRevs
+
+EntitySchema:
+ - Wikibase
+
+EventBus:
+ - CentralNotice
+ - EventStreamConfig
+
+FacetedCategory:
+ - CategoryTree
+
+FanBoxes:
+ - SocialProfile
+ - SpamRegex
+
+FileImporter:
+ - GlobalBlocking
+ - VisualEditor
+
+FlaggedRevs:
+ - Scribunto
+ - Echo
+ - GoogleNewsSitemap
+ - MobileFrontend
+ - skins/Vector
+
+Flow:
+ - AbuseFilter
+ - BetaFeatures
+ - CentralAuth
+ - CheckUser
+ - CirrusSearch
+ - ConfirmEdit
+ - Echo
+ - Elastica
+ - GuidedTour
+ - LiquidThreads
+ - SpamBlacklist
+ - VisualEditor
+
+FundraisingTranslateWorkflow:
+ - Translate
+
+Gadgets:
+ - CodeEditor
+ - Scribunto
+
+GeoData:
+ - CirrusSearch
+ - Elastica
+
+GlobalBlocking:
+ - CentralAuth
+ - Renameuser
+ - UserMerge
+
+GlobalPreferences:
+ - BetaFeatures
+ - skins/Vector
+
+GrowthExperiments:
+ - EventLogging
+ - PageImages
+ - PageViewInfo
+ - skins/MinervaNeue
+ - Flow
+ - MobileFrontend
+ - Echo
+ - CirrusSearch
+ - CentralAuth
+ - TimedMediaHandler
+ - VisualEditor
+ - EventBus
+ - Thanks
+ - CommunityConfiguration
+ - ConfirmEdit
+
+HAWelcome:
+ - SocialProfile
+
+ImageRating:
+ - SocialProfile
+ - VoteNY
+
+ImageSuggestions:
+ - Echo
+ - CirrusSearch
+ - Elastica
+
+InlineComments:
+ - Echo
+
+IPInfo:
+ - EventLogging
+
+intersection:
+ - PageImages
+
+JsonConfig:
+ - CodeEditor
+ - Kartographer
+ - Scribunto
+
+JWTAuth:
+ - PluggableAuth
+
+Kartographer:
+ - FlaggedRevs
+ - GeoData
+ - JsonConfig
+
+LiquidThreads:
+ - Renameuser
+
+LinkFilter:
+ - Comments
+ - ConfirmEdit
+ - Echo
+ - RandomGameUnit
+ - SocialProfile
+ - SpamRegex
+
+LoginNotify:
+ - CentralAuth
+ - Echo
+
+MassMessage:
+ - CentralAuth
+
+MassMessageEmail:
+ - MassMessage
+
+Math:
+ - VisualEditor
+ - Wikibase
+ - Popups
+
+MediaSearch:
+ - CirrusSearch
+ - WikibaseCirrusSearch
+
+MediaWikiChat:
+ - CheckUser
+ - SocialProfile
+
+MetricsPlatform:
+ - EventStreamConfig
+
+MiniInvite:
+ - BlogPage
+
+MobileApp:
+ - AbuseFilter
+
+MobileFrontend:
+ - AbuseFilter
+ - CentralAuth
+ - Gadgets
+ - LiquidThreads
+ - PageImages
+ - Wikibase
+ - XAnalytics
+
+MobileFrontendContentProvider:
+ - MobileFrontend
+
+Monstranto:
+ - Scribunto
+
+MultimediaViewer:
+ - MobileFrontend
+
+Newsletter:
+ - Echo
+
+NewSignupPage:
+ - SocialProfile
+
+OATHAuth:
+ - CheckUser
+ - Echo
+ - WebAuthn
+
+OAuth:
+ - AbuseFilter
+ - Echo
+
+OAuthRateLimiter:
+ - OAuth
+
+ORES:
+ - AbuseFilter
+
+PageForms:
+ - AdminLinks
+ - Cargo
+ - PageSchemas
+
+PageImages:
+ - MobileFrontend
+
+PageTriage:
+ - Echo
+ - ORES
+
+PageViewInfoGA:
+ - PageViewInfo
+
+ParserFunctions:
+ - Scribunto
+
+ParserMigration:
+ - MobileFrontend
+
+Petition:
+ - CheckUser
+ - cldr
+
+Phonos:
+ - TimedMediaHandler
+
+PictureGame:
+ - SocialProfile
+
+PollNY:
+ - SocialProfile
+
+Popups:
+ - EventLogging
+ - Gadgets
+
+ProofreadPage:
+ - Scribunto
+ - BetaFeatures
+
+PropertySuggester:
+ - Wikibase
+ - EventLogging
+
+QuizGame:
+ - Renameuser
+ - SocialProfile
+
+# technically speaking PictureGame, PollNY & QuizGame are all dependencies,
+# but PollNY is the only PHP-level hard dependency needed to pass phan
+RandomGameUnit:
+ - PollNY
+
+ReadingLists:
+ - SiteMatrix
+
+RelatedArticles:
+ - Disambiguator
+
+ReplaceText:
+ - AdminLinks
+
+ReportIncident:
+ - DiscussionTools
+
+Sanctions:
+ - Echo
+ - Flow
+
+Score:
+ - TimedMediaHandler
+ - Wikibase
+
+Scribunto:
+ - SyntaxHighlight_GeSHi
+ - CodeEditor
+
+SecurePoll:
+ - CentralAuth
+ - Flow
+
+SocialProfile:
+ - Echo
+
+Sofa:
+ - Scribunto
+
+SoftRedirector:
+ - VisualEditor
+
+SpamBlacklist:
+ - CheckUser
+ - EventLogging
+
+SportsTeams:
+ - SocialProfile
+ - UserStatus
+ - BlogPage
+
+StopForumSpam:
+ - AbuseFilter
+
+TEI:
+ - Math
+
+TemplateStyles:
+ - CodeEditor
+
+Thanks:
+ - AbuseFilter
+ - CheckUser
+ - Echo
+ - Flow
+ - MobileFrontend
+
+TheWikipediaLibrary:
+ - Echo
+ - CentralAuth
+ - GlobalPreferences
+
+TimedMediaHandler:
+ - BetaFeatures
+
+TitleBlacklist:
+ - AntiSpoof
+ - Scribunto
+
+Toolhub:
+ - Scribunto
+
+TorBlock:
+ - AbuseFilter
+
+Translate:
+ - AbuseFilter
+ - AdminLinks
+ - cldr
+ - Elastica
+ - Echo
+ - Scribunto
+ - TranslationNotifications
+
+TranslationNotifications:
+ - CentralAuth
+ - MassMessage
+ - SiteMatrix
+ - Translate
+
+TwoColConflict:
+ - BetaFeatures
+ - EventLogging
+ - WikiEditor
+
+UniversalLanguageSelector:
+ - Babel
+ - BetaFeatures
+ - MobileFrontend
+ - cldr
+
+UnlinkedWikibase:
+ - Scribunto
+
+UserStatus:
+ - SocialProfile
+ - SportsTeams
+ - BlogPage
+
+UploadWizard:
+ - EventLogging
+ - CodeEditor
+
+VisualEditor:
+ - BetaFeatures
+
+VisualEditorPlus:
+ - VisualEditor
+
+VoteNY:
+ - SocialProfile
+
+WebAuthn:
+ - OATHAuth
+
+WikiEditor:
+ - BetaFeatures
+ - ConfirmEdit
+ - EventLogging
+ - MobileFrontend
+ - WikimediaEvents
+
+WikiLambda:
+ - EventLogging
+
+WikiLove:
+ - Flow
+ - LiquidThreads
+ - UserMerge
+
+WikiForum:
+ - ConfirmEdit
+ - SocialProfile
+
+Wikibase:
+ - Babel
+ - CirrusSearch
+ - Echo
+ - GeoData
+ - Math
+ - MobileFrontend
+ - PageImages
+ - Scribunto
+
+WikibaseCirrusSearch:
+ - Elastica
+ - CirrusSearch
+ - Scribunto
+ - Wikibase
+
+WikibaseLexeme:
+ - Wikibase
+ - Scribunto
+
+WikibaseLexemeCirrusSearch:
+ - CirrusSearch
+ - Scribunto
+ - Wikibase
+ - WikibaseCirrusSearch
+ - WikibaseLexeme
+
+WikibaseManifest:
+ - Wikibase
+ - OAuth
+ - Scribunto
+
+WikibaseMediaInfo:
+ - Wikibase
+ - CirrusSearch
+ - Elastica
+ - WikibaseCirrusSearch
+
+WikibaseQualityConstraints:
+ - Wikibase
+
+Wikidata.org:
+ - Wikibase
+
+WikidataPageBanner:
+ - PageImages
+ - Wikibase
+
+WikimediaBadges:
+ - Wikibase
+
+WikimediaCampaignEvents:
+ - CampaignEvents
+
+WikimediaEvents:
+ - AbuseFilter
+ - BetaFeatures
+ - CentralAuth
+ - EventBus
+ - EventLogging
+ - GrowthExperiments
+ - MobileFrontend
+
+WikimediaMaintenance:
+ - AbuseFilter
+ - CentralAuth
+ - CirrusSearch
+ - cldr
+ - Cognate
+ - MassMessage
+ - Wikibase
+
+WikimediaMessages:
+ - CampaignEvents
+ - GuidedTour
+ - ORES
+ - skins/MinervaNeue
+
+WikiSEO:
+ - PageImages
+ - Scribunto
+
+Wikistories:
+ - Echo
+ - BetaFeatures
+ - MobileFrontend
+
+WikiToLDAP:
+ - LDAPAuthentication2
+ - LDAPProvider
+ - PluggableAuth
+ - Renameuser
+ - UserMerge
+
+Wikisource:
+ - Gadgets
+ - ProofreadPage
+ - Wikibase']
+

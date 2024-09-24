@@ -1,0 +1,1227 @@
+# This file is used to control injected dependencies for MediaWiki jobs.
+#
+# Values are assumed to be MediaWiki extensions, so 'Foo' maps to 'mediawiki/extensions/Foo'.
+# Skins have to be prefixed with 'skins/', so 'skins/Foo' maps to 'mediawiki/skins/Foo'.
+
+# The data is used by set_mw_dependencies() in parameter_functions.py
+
+# Note! This list is not used by Phan. See phan_dependencies.yaml that list.
+
+# Skins:
+skins/BlueSpiceCalumma:
+ - BlueSpiceFoundation
+
+skins/BlueSpiceDiscovery:
+ - BlueSpiceFoundation
+ - MenuEditor
+
+skins/Cosmos:
+ - AdminLinks
+ - CookieWarning
+ - CreateRedirect
+ - DismissableSiteNotice
+ - Echo
+ - SocialProfile
+ - Video
+ - VisualEditor
+
+skins/MinervaNeue:
+ - MobileFrontend
+
+skins/Refreshed:
+ - SocialProfile
+
+skins/TuleapSkin:
+ - TuleapIntegration
+ - TuleapWikiFarm
+
+
+# Extensions:
+3D:
+ - MultimediaViewer
+
+AbuseFilter:
+ - AntiSpoof
+ - CentralAuth
+ - CodeEditor
+ - CheckUser
+ - ConfirmEdit
+ - Echo
+ - Renameuser
+ - Scribunto
+ - EventLogging
+
+AchievementBadges:
+ - BetaFeatures
+ - Echo
+
+AdvancedSearch:
+ - Translate
+
+ApiFeatureUsage:
+ - Elastica
+
+Arrays:
+ - Loops
+ - ParserFunctions
+
+ArticlePlaceholder:
+ - Wikibase
+ - Scribunto
+
+AtMentions:
+ - OOJSPlus
+ - VisualEditor
+
+AutoModerator:
+ - ORES
+
+Babel:
+ - CommunityConfiguration
+
+BlogPage:
+ - Comments
+ - SocialProfile
+ - VoteNY
+
+BlueSpiceAbout:
+ - BlueSpiceFoundation
+
+BlueSpiceArticleInfo:
+ - BlueSpiceFoundation
+
+BlueSpiceArticlePreviewCapture:
+ - BlueSpiceFoundation
+
+BlueSpiceAuthors:
+ - BlueSpiceFoundation
+
+BlueSpiceAvatars:
+ - BlueSpiceFoundation
+
+BlueSpiceBookshelf:
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
+ - ContentDroplets
+ - MenuEditor
+ - VueJsPlus
+ - BlueSpiceExtendedSearch
+
+BlueSpiceCategoryCheck:
+ - BlueSpiceFoundation
+
+BlueSpiceCategoryManager:
+ - BlueSpiceFoundation
+
+BlueSpiceChecklist:
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
+
+BlueSpiceConfigManager:
+ - BlueSpiceFoundation
+
+BlueSpiceContextMenu:
+ - BlueSpiceFoundation
+
+BlueSpiceCountThings:
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
+
+BlueSpiceCustomMenu:
+ - BlueSpiceFoundation
+ - MenuEditor
+
+BlueSpiceDashboards:
+ - BlueSpiceFoundation
+
+BlueSpiceDistributionConnector:
+ - BlueSpiceFoundation
+ - BlueSpiceSMWConnector
+ - ContentDroplets
+ - Echo
+ - OOJSPlus
+ - UserMerge
+ - Workflows
+
+BlueSpiceEchoConnector:
+ - BlueSpiceFoundation
+ - Echo
+
+BlueSpiceEmoticons:
+ - BlueSpiceFoundation
+
+BlueSpiceExpiry:
+ - BlueSpiceFoundation
+ - BlueSpiceReminder
+
+BlueSpiceExportTables:
+ - BlueSpiceFoundation
+ - BlueSpiceUEModuleTable2Excel
+ - BlueSpiceVisualEditorConnector
+
+BlueSpiceExtendedFilelist:
+ - BlueSpiceFoundation
+
+BlueSpiceExtendedSearch:
+ - BlueSpiceDistributionConnector
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
+
+BlueSpiceExtendedStatistics:
+ - BlueSpiceFoundation
+ - BlueSpiceExtendedSearch
+
+BlueSpiceFilterableTables:
+ - BlueSpiceFoundation
+
+BlueSpiceFlaggedRevsConnector:
+ - BlueSpiceFoundation
+ - FlaggedRevs
+
+BlueSpiceGroupManager:
+ - BlueSpiceFoundation
+
+BlueSpiceHideTitle:
+ - BlueSpiceFoundation
+
+BlueSpiceInsertCategory:
+ - BlueSpiceFoundation
+
+BlueSpiceInsertFile:
+ - BlueSpiceFoundation
+
+BlueSpiceInsertLink:
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
+
+BlueSpiceFoundation:
+ - ExtJSBase
+ - OOJSPlus
+
+BlueSpiceInsertTemplate:
+ - BlueSpiceFoundation
+
+BlueSpiceInstanceStatus:
+ - BlueSpiceFoundation
+
+BlueSpiceInterWikiLinks:
+ - BlueSpiceFoundation
+
+BlueSpiceInterwikiSearch:
+ - BlueSpiceFoundation
+
+BlueSpiceMultiUpload:
+ - BlueSpiceFoundation
+
+BlueSpiceNamespaceCSS:
+ - BlueSpiceFoundation
+
+BlueSpiceNamespaceManager:
+ - BlueSpiceFoundation
+
+BlueSpiceNSFileRepoConnector:
+ - BlueSpiceFoundation
+ - NSFileRepo
+
+BlueSpicePageAccess:
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
+
+BlueSpicePageAssignments:
+ - BlueSpiceFoundation
+
+BlueSpicePageFormsConnector:
+ - BlueSpiceFoundation
+ - PageForms
+
+BlueSpicePageTemplates:
+ - BlueSpiceFoundation
+ - BlueSpiceDistributionConnector
+ - ContentDroplets
+
+BlueSpicePageVersion:
+ - BlueSpiceFoundation
+
+BlueSpicePagesVisited:
+ - BlueSpiceDistributionConnector
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
+ - BlueSpiceWhoIsOnline
+
+BlueSpicePlayer:
+ - BlueSpiceFoundation
+
+BlueSpicePermissionManager:
+ - BlueSpiceFoundation
+
+BlueSpicePrivacy:
+ - BlueSpiceFoundation
+
+BlueSpiceProDistributionConnector:
+ - BlueSpiceFoundation
+ - BlueSpiceUEModulePDF
+ - BlueSpiceUniversalExport
+ - BlueSpiceVisualEditorConnector
+ - Math
+
+BlueSpiceQrCode:
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
+
+BlueSpiceRating:
+ - BlueSpiceFoundation
+
+BlueSpiceRSSFeeder:
+ - BlueSpiceFoundation
+
+BlueSpiceReaders:
+ - BlueSpiceFoundation
+
+BlueSpiceReadConfirmation:
+ - BlueSpiceFoundation
+ - BlueSpicePageAssignments
+
+BlueSpiceReminder:
+ - BlueSpiceFoundation
+ - Workflows
+
+BlueSpiceSMWConnector:
+ - BlueSpiceFoundation
+ - BlueSpiceSmartList
+
+BlueSpiceSocial:
+ - BlueSpiceFoundation
+ - BlueSpiceExtendedSearch
+
+BlueSpiceSocialArticleActions:
+ - BlueSpiceFoundation
+ - BlueSpiceSocial
+ - BlueSpiceExtendedSearch
+
+BlueSpiceSocialBlog:
+ - BlueSpiceFoundation
+ - BlueSpiceSocial
+ - BlueSpiceExtendedSearch
+
+BlueSpiceSocialComments:
+ - BlueSpiceFoundation
+ - BlueSpiceSocial
+ - BlueSpiceExtendedSearch
+
+BlueSpiceSocialMicroBlog:
+ - BlueSpiceFoundation
+ - BlueSpiceSocial
+ - BlueSpiceExtendedSearch
+
+BlueSpiceSocialProfile:
+ - BlueSpiceFoundation
+ - BlueSpiceSocial
+ - BlueSpiceExtendedSearch
+ - BlueSpiceAvatars
+
+BlueSpiceSocialRating:
+ - BlueSpiceFoundation
+ - BlueSpiceSocial
+ - BlueSpiceExtendedSearch
+ - BlueSpiceRating
+
+BlueSpiceSocialResolve:
+ - BlueSpiceFoundation
+ - BlueSpiceSocial
+ - BlueSpiceExtendedSearch
+
+BlueSpiceSocialTags:
+ - BlueSpiceFoundation
+ - BlueSpiceSocial
+ - BlueSpiceExtendedSearch
+
+BlueSpiceSocialTimelineUpdate:
+ - BlueSpiceFoundation
+ - BlueSpiceSocial
+ - BlueSpiceExtendedSearch
+
+BlueSpiceSocialTopics:
+ - BlueSpiceFoundation
+ - BlueSpiceSocial
+ - BlueSpiceExtendedSearch
+
+BlueSpiceSocialWatch:
+ - BlueSpiceFoundation
+ - BlueSpiceSocial
+ - BlueSpiceExtendedSearch
+
+BlueSpiceSocialWikiPage:
+ - BlueSpiceFoundation
+ - BlueSpiceSocial
+ - BlueSpiceExtendedSearch
+ - BlueSpiceMultiUpload
+
+BlueSpiceSaferEdit:
+ - BlueSpiceFoundation
+
+BlueSpiceSignHere:
+ - BlueSpiceFoundation
+
+BlueSpiceSmartList:
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
+
+BlueSpiceSubPageTree:
+ - BlueSpiceFoundation
+
+BlueSpiceTagCloud:
+ - BlueSpiceFoundation
+
+BlueSpiceUEModuleBookPDF:
+ - BlueSpiceFoundation
+ - BlueSpiceUniversalExport
+ - BlueSpiceBookshelf
+ - BlueSpiceUEModulePDF
+
+BlueSpiceUEModuleDOCX:
+ - BlueSpiceFoundation
+ - BlueSpiceUniversalExport
+
+BlueSpiceUEModulePDF:
+ - BlueSpiceFoundation
+ - BlueSpiceUniversalExport
+
+BlueSpiceUEModulePDFRecursive:
+ - BlueSpiceFoundation
+ - BlueSpiceUniversalExport
+
+BlueSpiceUEModulePDFSubpages:
+ - BlueSpiceFoundation
+ - BlueSpiceUniversalExport
+
+BlueSpiceUEModuleHTML:
+ - BlueSpiceFoundation
+ - BlueSpiceUniversalExport
+
+BlueSpiceUEModuleTable2Excel:
+ - BlueSpiceFoundation
+ - BlueSpiceUniversalExport
+
+BlueSpiceUniversalExport:
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
+
+BlueSpiceUsageTracker:
+ - BlueSpiceFoundation
+
+BlueSpiceUserInfo:
+ - BlueSpiceFoundation
+
+BlueSpiceUserManager:
+ - BlueSpiceFoundation
+
+BlueSpiceUserSidebar:
+ - BlueSpiceFoundation
+ - MenuEditor
+
+BlueSpiceVisualDiff:
+ - BlueSpiceFoundation
+
+BlueSpiceVisualEditorConnector:
+ - BlueSpiceFoundation
+ - OOJSPlus
+ - VisualEditor
+ - VisualEditorPlus
+
+BlueSpiceWatchList:
+ - BlueSpiceFoundation
+
+BlueSpiceWikiFarm:
+ - OOJSPlus
+
+BlueSpiceWhoIsOnline:
+ - BlueSpiceFoundation
+
+BlueSpiceWikiExplorer:
+ - BlueSpiceFoundation
+
+BounceHandler:
+ - Echo
+ - CentralAuth
+
+CampaignEvents:
+ - Translate
+ - WikimediaCampaignEvents
+
+Campaigns:
+ - EventLogging
+
+Capiunto:
+ - Scribunto
+
+CentralAuth:
+ - AbuseFilter
+ - AntiSpoof
+ - CheckUser
+ - GlobalBlocking
+ - SecurePoll
+
+CentralNotice:
+ - EventLogging
+
+Challenge:
+ - SocialProfile
+
+Chart:
+ - JsonConfig
+
+Checklists:
+ - VisualEditor
+
+CheckUser:
+ - AbuseFilter
+ - CentralAuth
+ - FlaggedRevs
+ - GlobalBlocking
+ - GuidedTour
+ - MobileFrontend
+ - Renameuser
+ - TorBlock
+
+Cite:
+ - Gadgets
+ - ParserFunctions
+ - Popups
+ - VisualEditor
+ - WikiEditor
+
+Citoid:
+ - Cite
+ - VisualEditor
+
+CirrusSearch:
+ - TimedMediaHandler
+ - PdfHandler
+ - Cite
+ - Elastica
+ - GeoData
+ - BetaFeatures
+ - SiteMatrix
+ - WikibaseCirrusSearch
+ - EventBus
+
+CodeEditor:
+ - WikiEditor
+
+CodeMirror:
+ - WikiEditor
+ - VisualEditor
+
+CognitiveProcessDesigner:
+ - PageForms
+ - BlueSpiceVisualEditorConnector
+
+CommunityConfiguration:
+ - CommunityConfigurationExample
+
+CommunityConfigurationExample:
+ - CommunityConfiguration
+
+CommunityRequests:
+ - DiscussionTools
+
+ConfigManager:
+ - BlueSpiceFoundation
+
+ConfirmEdit:
+ - AbuseFilter
+
+ContactManager:
+ - PageProperties
+
+ContainerFilter:
+ - VisualEditor
+
+ContentDroplets:
+ - VisualEditor
+
+ContentStabilization:
+ - BlueSpiceBookshelf
+ - BlueSpiceFoundation
+ - BlueSpiceSMWConnector
+ - OOJSPlus
+ - Workflows
+
+ContentTranslation:
+ - AbuseFilter
+ - Echo
+ - EventLogging
+ - UniversalLanguageSelector
+ - VisualEditor
+
+CookieWarning:
+ - MobileFrontend
+
+CreateAPage:
+ - WikiEditor
+
+Dashiki:
+ - JsonConfig
+
+DateTimeTools:
+ - VisualEditor
+
+Disambiguator:
+ - VisualEditor
+
+DiscordRCFeed:
+ - Flow
+
+DiscussionTools:
+ - VisualEditor
+ - Linter
+ - Echo
+ - Thanks
+
+DrawioEditor:
+ - VisualEditor
+
+Echo:
+ - CentralAuth
+ - EventLogging
+ - MobileFrontend
+
+EditNotify:
+ - Echo
+
+ElectronPdfService:
+ - Collection
+ - FlaggedRevs
+
+EmailAuthorization:
+ - PluggableAuth
+
+EncryptedUploads:
+ - UploadWizard
+
+EnhancedStandardUIs:
+ - OOJSPlus
+
+EnhancedUpload:
+ - OOJSPlus
+ - VisualEditor
+
+EntitySchema:
+ - Wikibase
+
+EventBus:
+ - EventStreamConfig
+
+EventLogging:
+ - EventStreamConfig
+ - EventBus
+
+ExternalGuidance:
+ - MobileFrontend
+ - UniversalLanguageSelector
+
+FacetedCategory:
+ - CategoryTree
+
+FanBoxes:
+ - SocialProfile
+
+FileAnnotations:
+ - EventLogging
+
+FileImporter:
+ - CentralAuth
+ - WikiEditor
+
+FlaggedRevs:
+ - Scribunto
+
+FlexiSkin:
+ - BlueSpiceFoundation
+ - OOJSPlus
+ - CodeEditor
+
+Flow:
+ - AbuseFilter
+ - BetaFeatures
+ - Echo
+ - VisualEditor
+
+Forms:
+ - OOJSPlus
+
+FundraiserLandingPage:
+ - EventLogging
+
+FundraisingTranslateWorkflow:
+ - Translate
+
+GeoData:
+ - CirrusSearch
+
+GettingStarted:
+ - CentralAuth
+ - EventLogging
+ - GuidedTour
+
+GlobalBlocking:
+ - CentralAuth
+
+GlobalContribs:
+ - Editcount
+
+Graph:
+ - CodeEditor
+ - JsonConfig
+ - VisualEditor
+
+GrowthExperiments:
+ - skins/MinervaNeue
+ - PageViewInfo
+ - PageImages
+ - EventLogging
+ - Flow
+ - MobileFrontend
+ - Echo
+ - CirrusSearch
+ - VisualEditor
+ - Thanks
+ - CommunityConfiguration
+
+GuidedTour:
+ - EventLogging
+
+HierarchyBuilder:
+ - PageForms
+
+ImageRating:
+ - VoteNY
+
+ImageSuggestions:
+ - Echo
+ - CirrusSearch
+ - Elastica
+
+IPInfo:
+ - BetaFeatures
+ - CheckUser
+
+JsonConfig:
+ - Scribunto
+ - Kartographer
+
+JWTAuth:
+ - PluggableAuth
+
+Kartographer:
+ - FlaggedRevs
+ - JsonConfig
+ - ParserFunctions
+ - VisualEditor
+ - WikimediaMessages
+
+LanguageTool:
+ - VisualEditor
+
+LDAPAuthentication2:
+ - LDAPProvider
+ - PluggableAuth
+
+LDAPAuthorization:
+ - LDAPProvider
+ - PluggableAuth
+
+LDAPGroups:
+ - LDAPProvider
+
+LDAPSyncAll:
+ - LDAPGroups
+ - LDAPProvider
+ - LDAPUserInfo
+
+LDAPUserInfo:
+ - LDAPProvider
+
+LoginNotify:
+ - CentralAuth
+ - CheckUser
+ - Echo
+
+MagicLinkAuthentication:
+ - PluggableAuth
+
+MassMessage:
+ - CentralAuth
+ - Flow
+ - LiquidThreads
+
+MassMessageEmail:
+ - MassMessage
+
+Math:
+ - VisualEditor
+ - Wikibase
+
+MathSearch:
+ - Math
+
+MediaSearch:
+ - CirrusSearch
+ - WikibaseCirrusSearch
+
+MediaUploader:
+ - AbuseFilter
+ - SpamBlacklist
+
+MenuEditor:
+ - skins/BlueSpiceDiscovery
+ - OOJSPlus
+
+MetricsPlatform:
+ - EventStreamConfig
+
+MobileApp:
+ - Echo
+ - MobileFrontend
+ - VisualEditor
+ - AbuseFilter
+
+MobileFrontend:
+ - Echo
+ - VisualEditor
+ - MobileApp
+ - skins/MinervaNeue
+
+MobileFrontendContentProvider:
+ - MobileFrontend
+
+Monstranto:
+ - Scribunto
+
+MultimediaViewer:
+ - BetaFeatures
+
+NamespacePopups:
+ - PagePopups
+
+NavigationTiming:
+ - EventLogging
+
+NaylorAMS:
+ - PluggableAuth
+
+NSFileRepo:
+ - EnhancedUpload
+ - Lockdown
+
+Newsletter:
+ - Echo
+
+OATHAuth:
+ - CheckUser
+ - Echo
+ - WebAuthn
+
+OAuth:
+ - AbuseFilter
+ - Echo
+
+OAuthRateLimiter:
+ - OAuth
+
+OpenIDConnect:
+ - PluggableAuth
+
+ORES:
+ - AbuseFilter
+
+PageCheckout:
+ - Workflows
+
+PageTriage:
+ - WikiLove
+ - ORES
+ - Echo
+
+PageViewInfo:
+ - Graph
+
+PageViewInfoGA:
+ - PageViewInfo
+
+ParserFunctions:
+ - Scribunto
+
+parsoid:
+ - TimedMediaHandler
+ - ParserFunctions
+
+Phonos:
+ - TimedMediaHandler
+
+PhpTagsFunctions:
+ - PhpTags
+
+PhpTagsSPARQL:
+ - PhpTags
+
+PhpTagsSMW:
+ - PhpTags
+
+PhpTagsStorage:
+ - PhpTags
+ - PhpTagsFunctions
+ - PhpTagsWiki
+ - PhpTagsWidgets
+
+PhpTagsWidgets:
+ - PhpTags
+ - PhpTagsFunctions
+ - PhpTagsWiki
+
+PhpTagsWiki:
+ - PhpTags
+ - PhpTagsFunctions
+
+PictureGame:
+ - SocialProfile
+
+PollNY:
+ - SocialProfile
+
+Popups:
+ - TextExtracts
+ - PageImages
+ - EventLogging
+ - Cite
+
+PronunciationRecording:
+ - UploadWizard
+
+ProofreadPage:
+ - LabeledSectionTransclusion
+ - Scribunto
+ - VisualEditor
+ - BetaFeatures
+
+PropertySuggester:
+ - Wikibase
+ - EventLogging
+
+QuickSurveys:
+ - EventLogging
+
+QuizGame:
+ - Renameuser
+ - SocialProfile
+
+RandomGameUnit:
+ - SocialProfile
+ - PictureGame
+ - PollNY
+ - QuizGame
+
+RegexFun:
+ - ParserFunctions
+ - Arrays
+
+RelatedArticles:
+ - BetaFeatures
+ - MobileFrontend
+
+ReplaceText:
+ - AdminLinks
+
+ReportIncident:
+ - DiscussionTools
+
+RevisionSlider:
+ - MobileFrontend
+
+Sanctions:
+ - Echo
+ - Flow
+
+Score:
+ - VisualEditor
+ - TimedMediaHandler
+ - Wikibase
+
+Scribunto:
+ - SyntaxHighlight_GeSHi
+
+SearchVue:
+ - WikimediaMessages
+
+Shibboleth:
+ - PluggableAuth
+
+SimilarEditors:
+ - QuickSurveys
+
+SiteMetrics:
+ - SocialProfile
+
+SimpleSAMLphp:
+ - PluggableAuth
+
+SimpleTasks:
+ - Checklists
+ - AtMentions
+ - DateTimeTools
+
+SocialProfile:
+ - WikiEditor
+
+Sofa:
+ - Scribunto
+
+SoftRedirector:
+ - VisualEditor
+
+SpamBlacklist:
+ - AbuseFilter
+ - CheckUser
+ - EventLogging
+
+SpamDiffTool:
+ - SpamBlacklist
+
+SpellingDictionary:
+ - UniversalLanguageSelector
+
+SportsTeams:
+ - SocialProfile
+ - UserStatus
+ - BlogPage
+
+StandardDialogs:
+ - OOJSPlus
+
+StickyTOC:
+ - skins/chameleon
+
+StopForumSpam:
+ - AbuseFilter
+
+SyntaxHighlight_GeSHi:
+ - VisualEditor
+
+TableTools:
+ - VisualEditor
+ - VueJsPlus
+
+TEI:
+ - CodeMirror
+ - Math
+ - VisualEditor
+
+TemplateWizard:
+ - TemplateData
+ - WikiEditor
+
+TitleBlacklist:
+ - AntiSpoof
+ - Scribunto
+
+TheWikipediaLibrary:
+ - Echo
+ - CentralAuth
+ - GlobalPreferences
+
+Thanks:
+ - AbuseFilter
+ - Echo
+ - Flow
+ - MobileFrontend
+
+Translate:
+ - UniversalLanguageSelector
+ - EventLogging
+ - cldr
+ - VisualEditor
+ - Scribunto
+
+TranslateSvg:
+ - Translate
+
+TranslationNotifications:
+ - MassMessage
+ - Translate
+
+Toolhub:
+ - Scribunto
+
+TopTenPages:
+ - HitCounters
+
+TorBlock:
+ - AbuseFilter
+
+TuleapIntegration:
+ - TuleapWikiFarm
+
+TuleapWikiFarm:
+ - TuleapIntegration
+
+TwitterCards:
+ - TextExtracts
+
+TwnMainPage:
+ - Translate
+
+TwoColConflict:
+ - BetaFeatures
+ - EventLogging
+ - WikiEditor
+
+UniversalLanguageSelector:
+ - EventLogging
+
+UnlinkedWikibase:
+ - Scribunto
+
+UploadWizard:
+ - WikimediaMessages
+ - EventLogging
+ - AbuseFilter
+ - SpamBlacklist
+
+UserStatus:
+ - SocialProfile
+ - SportsTeams
+ - BlogPage
+
+VECancelButton:
+ - VisualEditor
+
+VEForAll:
+ - VisualEditor
+
+VikiSemanticTitle:
+ - VIKI
+
+VikiTitleIcon:
+ - VIKI
+
+VisualEditor:
+ - Cite
+ - TemplateData
+ - FlaggedRevs
+ - ConfirmEdit
+ - DiscussionTools
+
+VisualEditorPlus:
+ - VisualEditor
+
+WebAuthn:
+ - OATHAuth
+
+WebDAVClientIntegration:
+ - WebDAV
+
+WebDAVMinorSave:
+ - WebDAV
+
+WhoIsWatching:
+ - Echo
+
+Wikibase:
+ - ArticlePlaceholder
+ - CirrusSearch
+ - cldr
+ - Elastica
+ - GeoData
+ # temporarily dropped due to excessive slowness (T231198)
+ # - Scribunto
+ # - Capiunto
+ - Echo
+ - PropertySuggester
+ - WikibaseQualityConstraints
+ - WikimediaBadges
+ - WikibaseMediaInfo
+ - WikibaseLexeme
+ - skins/MinervaNeue
+ - MobileFrontend
+
+WikibaseCirrusSearch:
+ - Wikibase
+ - CirrusSearch
+
+WikibaseLexeme:
+ - Wikibase
+ - WikibaseLexemeCirrusSearch
+
+WikibaseLexemeCirrusSearch:
+ - Wikibase
+ - WikibaseLexeme
+ - CirrusSearch
+ - WikibaseCirrusSearch
+
+WikibaseManifest:
+ - Wikibase
+ - OAuth
+
+WikibaseMediaInfo:
+ - Wikibase
+ - UniversalLanguageSelector
+ - WikibaseCirrusSearch
+
+WikibaseQualityConstraints:
+ - Wikibase
+ - WikibaseLexeme
+
+Wikidata.org:
+ - Wikibase
+
+WikidataPageBanner:
+ - Wikibase
+
+WikiEditor:
+ - EventLogging
+ - WikimediaEvents
+
+WikiLambda:
+ # Temporarily disabled for testing
+ # - VisualEditor
+ - UniversalLanguageSelector
+ - WikimediaMessages
+
+WikimediaBadges:
+ - Wikibase
+
+WikimediaCampaignEvents:
+ - CampaignEvents
+
+WikimediaEvents:
+ - EventLogging
+
+WikiSEO:
+ - PageImages
+ - Scribunto
+
+Wikisource:
+ - Wikibase
+ - ProofreadPage
+
+Wikistories:
+ - BetaFeatures
+ - EventLogging
+ - MobileFrontend
+ - skins/MinervaNeue
+ - Echo
+
+WikiToLDAP:
+ - LDAPAuthentication2
+ - Renameuser
+ - UserMerge
+
+wikihiero:
+ - VisualEditor
+
+Workflows:
+ - Forms
+ - OOJSPlus
+
+WSOAuth:
+ - PluggableAuth
