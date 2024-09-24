@@ -1137,6 +1137,7 @@ Wikibase:
  # - Capiunto
  - Echo
  - PropertySuggester
+ - SpamBlacklist
  - WikibaseQualityConstraints
  - WikimediaBadges
  - WikibaseMediaInfo
