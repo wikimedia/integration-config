@@ -700,6 +700,7 @@ WikimediaMaintenance:
 WikimediaMessages:
  - CampaignEvents
  - GuidedTour
+ - MobileFrontend
  - ORES
  - skins/MinervaNeue
 
