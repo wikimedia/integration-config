@@ -16,8 +16,7 @@
         docdest: 'mediawiki-vagrant'
     publishers:
      - archive-log-allow-empty
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 - project:
     name: 'mediawiki-ruby-api'

@@ -68,8 +68,7 @@
          workdir: /src
          args: '--color'
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
 
 - job:
     name: 'mw-tools-phan-demos-publish'

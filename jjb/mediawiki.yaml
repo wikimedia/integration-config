@@ -192,8 +192,7 @@
         args: '--color'
         srcdir: /mediawiki
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
     wrappers:
       - timeout:
           timeout: 30
@@ -451,8 +450,7 @@
             srcdir: '/workspace/src'
     publishers:
         - archive-log-allow-empty
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
     wrappers:
         - timeout:
             timeout: 45  # npm is broken T198348

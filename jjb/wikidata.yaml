@@ -51,8 +51,7 @@
     release-branch: master
     publishers:
         - email-wikimedia-discovery
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
 
     jobs:
      - '{name}-maven-java8'
@@ -66,8 +65,7 @@
       release-branch: master
       publishers:
           - email-wikimedia-discovery
-          - castor-save-workspace-cache
-          - docker-cleanup
+          - teardown
 
       jobs:
           - '{name}-maven-java8'

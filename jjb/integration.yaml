@@ -19,8 +19,7 @@
             entrypoint: '/src/integration/config/{entrypoint}'
             workdir: /src/integration/config
     publishers:
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
     wrappers:
       - timeout:
           timeout: '{timeout|30}'
@@ -240,8 +239,7 @@
             volumes:
                 src: /deploy
     publishers:
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
 
 - project:
     name: 'integration-zuul-deploy'

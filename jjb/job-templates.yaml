@@ -34,8 +34,7 @@
     publishers:
       - archive:
          artifacts: 'log/*.war, log/*.jar, log/*.js'
-      - castor-save-workspace-cache
-      - docker-cleanup
+      - teardown
 
 - job-template:
     name: '{name}-bazel'

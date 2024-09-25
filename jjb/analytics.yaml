@@ -97,8 +97,7 @@
     publishers:
         - email-wikimedia-analytics
         - irc-wikimedia-analytics
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
 
     jobs:
      - '{name}-maven-release'
@@ -115,8 +114,7 @@
     publishers:
         - email-wikimedia-analytics
         - irc-wikimedia-analytics
-        - castor-save-workspace-cache
-        - docker-cleanup
+        - teardown
 
     jobs:
      - '{name}-maven-release'
@@ -131,8 +129,7 @@
       publishers:
           - email-wikimedia-analytics
           - irc-wikimedia-analytics
-          - castor-save-workspace-cache
-          - docker-cleanup
+          - teardown
 
       jobs:
           - '{name}-maven-release'

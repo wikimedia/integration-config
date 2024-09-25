@@ -147,8 +147,7 @@
         srcdir: '/mediawiki'
 
     publishers:
-     - castor-save-workspace-cache
-     - docker-cleanup
+     - teardown
     wrappers:
       - timeout:
           timeout: 30
