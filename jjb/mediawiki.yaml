@@ -314,7 +314,6 @@
         - timed: '@daily'
     publishers:
         - archive-log-allow-empty
-        - castor-save-workspace-cache
         - junit:
             results: 'log/WDIO.xunit*.xml'
             # We do not have any JUnit files when all tests pass
@@ -324,7 +323,7 @@
             body: '${{SCRIPT, template="wikimedia.template"}}'
             failure: true
             unstable: true
-        - docker-cleanup
+        - teardown
     parameters:
         # Zuul parameters for Castor
         - string:
@@ -782,7 +781,6 @@
              -Dsonar.host.url=https://sonarcloud.io \
          publishers:
              - archive-log-allow-empty
-             - castor-save-workspace-cache
              - postbuildscript:
                  mark-unstable-if-failed: false
                  builders:
@@ -794,7 +792,7 @@
                      build-steps:
                        -   docker-wipe-dir:
                                dir: 'cover'
-             - docker-cleanup
+             - teardown
 
 - job-template:
     name: 'mwext-codehealth-{name}'

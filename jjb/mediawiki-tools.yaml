@@ -41,9 +41,8 @@
          workdir: /src
          args: '-s -p'
     publishers:
-     - castor-save-workspace-cache
      - archive-log-allow-empty
-     - docker-cleanup
+     - teardown
 
 # Job to run phan against MW core.
 # TODO perhaps we can reduce duplication with mw-tools-codesniffer-mwcore-testrun
