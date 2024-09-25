@@ -337,6 +337,7 @@ gatedextensions = [
     'cldr',
     'ContentTranslation',
     'CommunityConfiguration',
+    'CommunityConfigurationExample',  # Required by CommunityConfiguration
     'Disambiguator',
     'Echo',
     'Elastica',

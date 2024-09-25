@@ -6364,6 +6364,7 @@ projects:
         - name: extension-coverage
         - name: extension-codehealth
         - name: extension-quibble
+        - name: extension-gate
 
   - name: mediawiki/extensions/ConfigManager
     template:
