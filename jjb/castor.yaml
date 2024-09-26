@@ -1,36 +1,7 @@
 # CASTOR - CAche STORage
 #
 # Let us save package manager caches on a central instance and warm a cache
-# when a job runs on a Nodepool disposable instance.
-#
-
-# Entry point to save to the central cache
-- publisher:
-    name: castor-save
-    publishers:
-     - postbuildscript:
-         builders:
-           - build-on:
-              - SUCCESS
-             build-steps:
-              - trigger-builds:
-                  - project: castor-save
-                    # Pass ZUUL and others
-                    current-parameters: True
-                    # Pass:
-                    # - job name to namespace the central cache
-                    # - ssh connection which holds the slave IP to which castor
-                    #   will rsync from
-                    predefined-parameters: |
-                        TRIGGERED_JOB_NAME=$JOB_NAME
-                        TRIGGERED_SSH_CONNECTION=$SSH_CONNECTION
-                    # Must be blocking or the instance might be disposed
-                    block: true
-                    # Ignore any error
-                    block-thresholds:
-                        build-step-failure-threshold: 'never'
-                        unstable-threshold: 'never'
-                        failure-threshold: 'never'
+# when a job runs on CI
 
 - publisher:
     name: castor-save-workspace-cache
@@ -52,7 +23,8 @@
                         TRIGGERED_JOB_NAME=$JOB_NAME
                         TRIGGERED_SSH_CONNECTION=$SSH_CONNECTION
                         TRIGGERED_WORKSPACE=$WORKSPACE
-                    # Must be blocking or the instance might be disposed
+                    # Must be blocking or the next publisher will kick in and
+                    # delete the cache while it is being saved.
                     block: true
                     # Ignore any error
                     block-thresholds:
