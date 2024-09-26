@@ -98,7 +98,7 @@
          docdest: 'pipelinelib'
 
 - job-template:
-    name: 'integration-quibble-fullrun-{type}'
+    name: 'integration-quibble-fullrun-{type}-{php}'
     node: Docker
     triggers:
       - zuul
@@ -169,7 +169,12 @@
             docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s3
             docsrc: 'doc/build/html'
             docdest: 'quibble'
-        - 'integration-quibble-fullrun-{type}':
+        - 'integration-quibble-fullrun-{type}-{php}':
+            php:
+                - php74:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.10.0
+                - php81:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php81:1.10.0
             type:
                 - defaults:
                     quibble_args: >-
