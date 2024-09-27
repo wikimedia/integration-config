@@ -56,13 +56,17 @@ def set_parameters(item, job, params):
 
     # Enable parallel PHPUnit runs for MW ecosystem, except:
     if (
-        # ... exclude MediaWiki core (for now)
-        params["ZUUL_PROJECT"] not in ["mediawiki/core"]
-        # ... exclude PHP 7.4 jobs (appears broken),
-        and "php74" not in job.name
+        # ... temporarily exclude MediaWiki core and extensions
+        # that have issues with parallel tests
+        params["ZUUL_PROJECT"] not in [
+            "mediawiki/core",
+            "mediawiki/extensions/WikiLambda"
+        ]
         # ... exclude on REL_ branches (not yet tested/patched),
         and "ZUUL_BRANCH" in params
         and not params["ZUUL_BRANCH"].startswith("REL1")
+        # Exclude fundraising branches
+        and not params["ZUUL_BRANCH"].startswith("fundraising")
     ):
         params['QUIBBLE_PHPUNIT_PARALLEL'] = '1'
 
