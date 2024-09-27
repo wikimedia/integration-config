@@ -6849,6 +6849,7 @@ projects:
   - name: mediawiki/extensions/Hashtags
     template:
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/HAWelcome
     template:
