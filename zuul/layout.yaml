@@ -9883,6 +9883,10 @@ projects:
       # … and also over-write the version at /latest/ for a stable link
       - codex-doc-latest-publish
 
+  - name: design/codex-php
+    template:
+      - name: mediawiki-php-library
+
   - name: design/landing-page
     template:
       - name: node18
