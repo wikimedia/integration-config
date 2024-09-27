@@ -30,6 +30,9 @@ skins/Nimbus:
 skins/Refreshed:
  - SocialProfile
 
+skins/TuleapSkin:
+ - TuleapIntegration
+
 skins/Vector:
  - CentralAuth
  - MobileFrontend
