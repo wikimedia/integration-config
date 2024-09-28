@@ -158,6 +158,9 @@ Citoid:
 CleanChanges:
  - cldr
 
+CloneDiff:
+ - AdminLinks
+
 CodeMirror:
  - Gadgets
 
