@@ -747,7 +747,7 @@ pipelines:
     trigger:
       gerrit:
         - event: patchset-created
-          branch: (?!^refs/meta/config)
+          branch: (?!^refs/meta/config|^fundraising/REL)
           email: *email_allowlist
         - event: comment-added
           comment: (?im)^Patch Set \d+:\n\n\s*check codehealth\.?\s*$
