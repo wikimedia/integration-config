@@ -3301,6 +3301,10 @@ projects:
     template:
       - name: skin-quibble
 
+  - name: mediawiki/skins/Freo
+    template:
+      - name: skin-quibble
+
   - name: mediawiki/skins/Gamepress
     template:
       - name: skin-quibble
