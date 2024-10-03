@@ -1,0 +1,43 @@
+FROM {{ "php-ast" | image_tag }} as ast
+FROM {{ "sury-php" | image_tag }}
+
+USER root
+
+# Currently missing upstream:
+# php8.4-excimer
+# php8.4-pcov
+# php8.4-redis
+# php8.4-yaml
+
+# zip is needed for composer to install things from dist
+# others are libraries/MediaWiki related
+{% set packages|replace('\n', ' ') -%}
+php8.4-cli
+php8.4-zip
+php8.4-bcmath
+php8.4-curl
+php8.4-dba
+php8.4-gd
+php8.4-gmp
+php8.4-intl
+php8.4-ldap
+php8.4-mbstring
+php8.4-sqlite3
+php8.4-xml
+zip
+unzip
+{%- endset -%}
+
+RUN {{ packages | apt_install }}
+
+# Set a standard, new version of php-ast rather than using Debian's older one
+COPY --from=ast /usr/lib/php/20240924/ast.so /usr/lib/php/20240924/ast.so
+COPY --from=ast /srv/20-ast.ini /etc/php/8.4/cli/conf.d/20-ast.ini
+
+# Disable pcov by default, although the performance overhead should be minimal
+RUN phpdismod pcov
+
+USER nobody
+
+ENTRYPOINT ["php"]
+CMD ["--help"]

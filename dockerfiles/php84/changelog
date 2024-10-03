@@ -1,0 +1,5 @@
+php84 (8.4.0-rc1) wikimedia; urgency=medium
+
+  * Initial fork from php83, using PHP 8.4.0-rc1.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  3 Oct 2024 14:44:09 -0400
