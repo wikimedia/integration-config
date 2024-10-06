@@ -43,13 +43,13 @@
         - wikipeg-special-{node-plus-php}-composer:
             node-plus-php:
                 - node20-plus-php81:
-                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.16.0
+                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.16.0-s1
                 - node20-plus-php83:
-                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.16.0
+                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.16.0-s1
                 - node22-plus-php81:
-                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php81-composer:22.6.0
+                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php81-composer:22.6.0-s1
                 - node22-plus-php83:
-                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.6.0
+                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.6.0-s1
 
 - project:
     name: parsoidsvc
@@ -57,10 +57,10 @@
         - '{name}-composer-package-{phpflavor}':
             phpflavor:
                 - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php74:0.4.3-s3
+                    image: docker-registry.wikimedia.org/releng/composer-package-php74:0.4.3-s4
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.29-1-wmf11u1
+                    image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.30
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php82:0.1.2-s2
+                    image: docker-registry.wikimedia.org/releng/composer-package-php82:0.1.2-s3
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php83:0.0.2-s2
+                    image: docker-registry.wikimedia.org/releng/composer-package-php83:0.0.2-s3
