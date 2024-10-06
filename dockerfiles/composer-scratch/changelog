@@ -1,3 +1,9 @@
+composer-scratch (2.8.1) wikimedia; urgency=high
+
+   Upgrade composer from v2.7.2 to v2.8.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Sun,  6 Oct 2024 16:29:05 -0400
+
 composer-scratch (2.7.2) wikimedia; urgency=high
 
    Upgrade composer from 2.6.4 to 2.7.2

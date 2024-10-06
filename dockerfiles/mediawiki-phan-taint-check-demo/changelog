@@ -1,3 +1,10 @@
+mediawiki-phan-taint-check-demo (0.2.0-s6) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer from v2.7.2 to v2.8.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Sun,  6 Oct 2024 16:29:05 -0400
+
 mediawiki-phan-taint-check-demo (0.2.0-s5) wikimedia; urgency=high
 
    change NPM_CONFIG_cache to all lower case - T370427
