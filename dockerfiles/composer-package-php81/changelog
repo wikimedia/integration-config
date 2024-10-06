@@ -1,3 +1,10 @@
+composer-package-php81 (8.1.30) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Upgrade Wikimedia-provided PHP to 8.1.30-1+wmf11u1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Sun,  6 Oct 2024 16:44:15 -0400
+
 composer-package-php81 (8.1.29-1-wmf11u1-s1) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
