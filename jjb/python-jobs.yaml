@@ -68,9 +68,8 @@
         docsrc: 'src/{docsrc}'
         docdest: '{docdest}'
     publishers:
-     - castor-save-workspace-cache
      - archive-log-dir
-     - docker-cleanup
+     - teardown
 
 # Same but for ref-update, eg in 'publish'
 - job-template:
@@ -124,9 +123,8 @@
         src: 'src/coverage'
         dest: '$DOC_PROJECT'
     publishers:
-        - castor-save-workspace-cache
         - archive-log-dir
-        - docker-cleanup
+        - teardown
 
 - project:
     name: common-tox-jobs
