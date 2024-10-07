@@ -944,8 +944,6 @@
               variable: COMPOSER_GITHUB_OAUTHTOKEN
     publishers:
      - archive-log-allow-empty
-     # FIXME remove and replace by `- teardown`
-     - castor-save-workspace-cache
      - junit:
          results: 'log/junit*.xml,log/WDIO.xunit*.xml'
          # We do not have any JUnit files when all tests pass
@@ -955,4 +953,4 @@
         body: '${{SCRIPT, template="wikimedia.template"}}'
         failure: true
         unstable: true
-     - docker-cleanup
+     - teardown
