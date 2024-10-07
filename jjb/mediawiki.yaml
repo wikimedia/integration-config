@@ -579,9 +579,11 @@
     triggers:
         - zuul
     builders:
-        - setup
+        - docker-castor-load
         - docker-wipe-dir:
             dir: 'cover'
+        - docker-log-dir
+        - docker-src-dir
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--tmpfs /workspace/db:size=320M'
@@ -594,6 +596,7 @@
             srcdir: '/workspace/src'
     publishers:
         - archive-log-allow-empty
+        - castor-save-workspace-cache
         - postbuildscript:
             mark-unstable-if-failed: true
             builders:
@@ -615,7 +618,7 @@
                 build-steps:
                   - docker-wipe-dir:
                       dir: 'cover'
-        - teardown
+        - docker-cleanup
 
 - job-template:
     !!merge : *job_quibble
@@ -624,9 +627,12 @@
     triggers:
         - zuul
     builders:
-        - setup
+        # FIXME reorder and use `- setup`
+        - docker-castor-load
         - docker-wipe-dir:
             dir: 'cover'
+        - docker-log-dir
+        - docker-src-dir
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--tmpfs /workspace/db:size=320M'
@@ -639,6 +645,8 @@
             srcdir: '/workspace/src'
     publishers:
         - archive-log-allow-empty
+        # FIXME reorder and use `- teardown`
+        - castor-save-workspace-cache
         - postbuildscript:
             mark-unstable-if-failed: true
             builders:
@@ -659,7 +667,7 @@
                 build-steps:
                   - docker-wipe-dir:
                       dir: 'cover'
-        - teardown
+        - docker-cleanup
 
 - job-template:
     !!merge : *job_quibble
