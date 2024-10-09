@@ -742,6 +742,9 @@ LDAPSyncAll:
 LDAPUserInfo:
  - LDAPProvider
 
+Linter:
+ - VisualEditor
+
 LoginNotify:
  - CentralAuth
  - CheckUser
