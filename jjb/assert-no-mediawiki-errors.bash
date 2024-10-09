@@ -24,9 +24,12 @@ if [ ! -v ERROR_FILES ]; then
 fi
 echo "Dumping file(s) ${ERROR_FILES[*]}"
 set +e
-    # Use `grep --color . file list` to ensure that file names appear next
+    # Use `grep . file list` to ensure that file names appear next
     # to log messages
-    (cd "$WORKSPACE/log"; grep --color . "${ERROR_FILES[@]}" 2> /dev/null)
+    (
+        cd "$WORKSPACE/log"
+        grep --color=always . "${ERROR_FILES[@]}" 2> /dev/null
+    )
 set -e
 echo -e "MediaWiki emitted some errors. Check output above."
 exit 1
