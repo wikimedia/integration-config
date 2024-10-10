@@ -26,6 +26,7 @@ php8.2-pgsql
 php8.2-sqlite3
 php8.2-tidy
 php8.2-uuid
+php8.2-xdebug
 php8.2-xml
 php8.2-zip
 {%- endset -%}

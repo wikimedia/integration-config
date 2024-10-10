@@ -30,6 +30,7 @@ php8.1-pgsql
 php8.1-sqlite3
 php8.1-tidy
 php8.1-uuid
+php8.1-xdebug
 php8.1-xml
 php8.1-zip
 php8.1-wikidiff2
