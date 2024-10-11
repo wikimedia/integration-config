@@ -487,6 +487,8 @@
         - articlequality-publish
         - reference-quality
         - reference-quality-publish
+        - article-country
+        - article-country-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -518,6 +520,8 @@
         # trigger-inference-services-pipeline-articlequality-publish
         # trigger-inference-services-pipeline-reference-quality
         # trigger-inference-services-pipeline-reference-quality-publish
+        # trigger-inference-services-pipeline-article-country
+        # trigger-inference-services-pipeline-article-country-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -549,6 +553,8 @@
         # inference-services-pipeline-articlequality-publish
         # inference-services-pipeline-reference-quality
         # inference-services-pipeline-reference-quality-publish
+        # inference-services-pipeline-article-country
+        # inference-services-pipeline-article-country-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:
