@@ -1001,9 +1001,6 @@ SportsTeams:
 StandardDialogs:
  - OOJSPlus
 
-StickyTOC:
- - skins/chameleon
-
 StopForumSpam:
  - AbuseFilter
 

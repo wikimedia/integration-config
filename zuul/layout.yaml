@@ -8147,10 +8147,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/StickyTOC
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/StringFunctionsEscaped
     template:
       - name: extension-quibble
@@ -11598,6 +11594,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/StickToThatLanguage
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/StickyTOC
     template:
       - name: archived
 
