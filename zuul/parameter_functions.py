@@ -60,7 +60,11 @@ def set_parameters(item, job, params):
         # that have issues with parallel tests
         params["ZUUL_PROJECT"] not in [
             "mediawiki/core",
-            "mediawiki/extensions/WikiLambda"
+            "mediawiki/extensions/WikiLambda",
+            # DonationInterface uses a different branching model. Its master
+            # branch is tested with mediawiki/core fundraising/REL1_39 branch
+            # which does not have the parallel work.
+            "mediawiki/extensions/DonationInterface",
         ]
         # ... exclude on REL_ branches (not yet tested/patched),
         and "ZUUL_BRANCH" in params
