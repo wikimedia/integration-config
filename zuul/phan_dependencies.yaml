@@ -414,6 +414,9 @@ Newsletter:
 NewSignupPage:
  - SocialProfile
 
+Nuke:
+ - CheckUser
+
 OATHAuth:
  - CheckUser
  - Echo

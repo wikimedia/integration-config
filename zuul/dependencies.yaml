@@ -820,6 +820,9 @@ NSFileRepo:
 Newsletter:
  - Echo
 
+Nuke:
+ - CheckUser
+
 OATHAuth:
  - CheckUser
  - Echo
