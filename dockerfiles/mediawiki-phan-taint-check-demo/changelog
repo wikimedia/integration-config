@@ -1,3 +1,9 @@
+mediawiki-phan-taint-check-demo (0.3.0) wikimedia; urgency=high
+
+   Update emscripten version
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Thu, 17 Oct 2024 02:03:50 +0200
+
 mediawiki-phan-taint-check-demo (0.2.0-s6) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
