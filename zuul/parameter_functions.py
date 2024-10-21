@@ -69,8 +69,9 @@ def set_parameters(item, job, params):
         # ... exclude on REL_ branches (not yet tested/patched),
         and "ZUUL_BRANCH" in params
         and not params["ZUUL_BRANCH"].startswith("REL1")
-        # Exclude fundraising branches
+        # Exclude fundraising branches and specific jobs
         and not params["ZUUL_BRANCH"].startswith("fundraising")
+        and not job.name.startswith("quibble-fundraising")
     ):
         params['QUIBBLE_PHPUNIT_PARALLEL'] = '1'
 
