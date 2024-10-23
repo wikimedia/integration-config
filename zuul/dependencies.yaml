@@ -490,6 +490,7 @@ CheckUser:
  - TorBlock
 
 Cite:
+ - cldr
  - CommunityConfiguration
  - Gadgets
  - ParserFunctions
