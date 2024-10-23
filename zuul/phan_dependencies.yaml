@@ -240,6 +240,7 @@ EntitySchema:
  - Wikibase
  - Elastica
  - CirrusSearch
+ - WikibaseCirrusSearch
 
 EventBus:
  - CentralNotice
