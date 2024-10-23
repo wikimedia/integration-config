@@ -3953,6 +3953,8 @@ projects:
       - name: extension-javascript-documentation
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
+    postmerge:
+      - mwext-doxygen-publish
 
   - name: mediawiki/extensions/CiteThisPage
     template:
