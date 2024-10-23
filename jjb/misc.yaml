@@ -89,26 +89,6 @@
      - '{name}-ruby2.5-rake'
 
 - job:
-    name: mw-cli-test
-    node: Qemu
-    concurrent: false
-    triggers:
-      - zuul
-    wrappers:
-      - timeout:
-          timeout: 60
-          fail: true
-      - timestamps
-      - ansicolor
-      - workspace-cleanup
-    builders:
-      - shell:
-          !include-raw: qemu-run.bash
-    publishers:
-      - archive-log-allow-empty
-      - workspace-cleanup
-
-- job:
     name: fresh-test
     node: Qemu
     concurrent: false

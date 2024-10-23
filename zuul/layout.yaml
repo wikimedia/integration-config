@@ -2812,14 +2812,6 @@ projects:
     postmerge:
       - generic-node18-docs-publish
 
-  - name: mediawiki/tools/cli
-    test:
-      - trigger-mediawiki-cli-pipeline-test
-    gate-and-submit:
-      - trigger-mediawiki-cli-pipeline-test
-    experimental:
-      - mw-cli-test
-
   - name: mediawiki/tools/code-utils
     template:
       - name: composer-test-php74-or-later
@@ -11989,6 +11981,10 @@ projects:
   - name: mediawiki/tools/release
     template:
       - name: archived
+
+  - name: mediawiki/tools/cli
+    template:
+      - name: archived # Moved to GitLab: https://gitlab.wikimedia.org/releng/cli
 
   - name: mediawiki/tools/scap
     template:

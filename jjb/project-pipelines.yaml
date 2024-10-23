@@ -146,16 +146,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: mediawiki-cli
-    pipeline:
-      - test
-    jobs:
-      # trigger-mediawiki-cli-pipeline-test
-      - 'trigger-{name}-pipeline-{pipeline}'
-      # mediawiki-cli-pipeline-test
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: mobileapps
     pipeline:
       - test
