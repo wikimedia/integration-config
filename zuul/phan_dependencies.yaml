@@ -141,6 +141,7 @@ CheckUser:
  - Renameuser
  - FlaggedRevs
  - GlobalBlocking
+ - GlobalPreferences
  - TorBlock
  - UserMerge
 

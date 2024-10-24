@@ -479,6 +479,7 @@ CheckUser:
  - CentralAuth
  - FlaggedRevs
  - GlobalBlocking
+ - GlobalPreferences
  - GuidedTour
  - MobileFrontend
  - Renameuser
