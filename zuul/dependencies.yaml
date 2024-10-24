@@ -79,6 +79,7 @@ AtMentions:
 AutoModerator:
  - ORES
  - CommunityConfiguration
+ - DiscussionTools
 
 Babel:
  - CommunityConfiguration
