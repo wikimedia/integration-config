@@ -694,6 +694,7 @@ WikimediaEvents:
  - AbuseFilter
  - BetaFeatures
  - CentralAuth
+ - CheckUser
  - EventBus
  - EventLogging
  - GrowthExperiments

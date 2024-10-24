@@ -1198,6 +1198,7 @@ WikimediaCampaignEvents:
  - CampaignEvents
 
 WikimediaEvents:
+ - CheckUser
  - EventLogging
 
 WikiSEO:
