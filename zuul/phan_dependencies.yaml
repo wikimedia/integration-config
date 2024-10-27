@@ -246,6 +246,9 @@ EventBus:
  - CentralNotice
  - EventStreamConfig
 
+ExternalData:
+ - Scribunto
+
 FacetedCategory:
  - CategoryTree
 
