@@ -697,6 +697,7 @@ WikimediaEvents:
  - CheckUser
  - EventBus
  - EventLogging
+ - GlobalPreferences
  - GrowthExperiments
  - MobileFrontend
 
