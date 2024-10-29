@@ -1,0 +1,5 @@
+composer-package-php84 (8.4.0-rc1) wikimedia; urgency=medium
+
+  * Initial release, using PHP 8.4.0-rc1.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 29 Oct 2024 16:56:15 -0400
