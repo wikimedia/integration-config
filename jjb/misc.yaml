@@ -57,9 +57,9 @@
         - php81:
             docker_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.30
         - php82:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php82:0.1.1-s3
+            docker_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.25
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php83:0.0.2-s3
+            docker_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.12
         - php84:
             docker_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.0-rc1
     jobs:

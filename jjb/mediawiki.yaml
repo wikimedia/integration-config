@@ -147,9 +147,9 @@
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-test-php81:8.1.30
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php82:0.1.2-s3
+                    image: docker-registry.wikimedia.org/releng/composer-test-php82:8.2.25
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php83:0.0.2-s3
+                    image: docker-registry.wikimedia.org/releng/composer-test-php83:8.3.12
                 - php84:
                     image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.0-rc1
         - '{name}-{node_version}':
@@ -1009,9 +1009,9 @@
         - php81:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.10.0-s2
         - php82:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.10.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.10.0-s2
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.10.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.10.0-s2
     jobs:
         - quibble-{packages-source}-{database}-{php}
         - quibble-{packages-source}-{database}-{php}-noselenium
@@ -1081,7 +1081,7 @@
         - php81:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.10.0-s2
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.10.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.10.0-s2
     jobs:
         - wikibase-{kind}-{phpflavour}:
             quibble_args: >
