@@ -1,3 +1,10 @@
+composer-test-php82 (8.2.25) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Upgrade PHP to 8.2.25
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 29 Oct 2024 17:39:14 -0400
+
 composer-test-php82 (0.1.2-s3) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

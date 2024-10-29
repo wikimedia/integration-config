@@ -1,3 +1,10 @@
+php83-compile (8.3.12) wikimedia; urgency=high
+
+   Refresh for update in parent image php83:
+   Upgrade PHP to 8.3.12
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 29 Oct 2024 17:34:21 -0400
+
 php83-compile (0.0.2-s1) wikimedia; urgency=high
 
    Refresh for update in parent image sury-php:
