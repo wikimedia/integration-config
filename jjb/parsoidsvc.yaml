@@ -64,3 +64,5 @@
                     image: docker-registry.wikimedia.org/releng/composer-package-php82:0.1.2-s3
                 - php83:
                     image: docker-registry.wikimedia.org/releng/composer-package-php83:0.0.2-s3
+                - php84:
+                    image: docker-registry.wikimedia.org/releng/composer-package-php84:8.4.0-rc1

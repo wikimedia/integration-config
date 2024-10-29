@@ -62,6 +62,8 @@
          image: docker-registry.wikimedia.org/releng/composer-php81:8.1.30
      - php83:
          image: docker-registry.wikimedia.org/releng/composer-php83:0.0.2-s3
+     - php84:
+         image: docker-registry.wikimedia.org/releng/composer-php84:8.4.0-rc1
     jobs:
      - '{name}-tox'
      - 'operations-mw-config-{phpflavor}-composer-{run-script}':
