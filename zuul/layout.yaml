@@ -2290,6 +2290,8 @@ project-templates:
       - php-compile-php81
       - php-compile-php82
       - php-compile-php83
+    experimental:
+      - php-compile-php84
     postmerge:
       - php74-compile-coverage-publish
 
