@@ -2285,6 +2285,24 @@ project-templates:
       - php-compile-php81
       - php-compile-php82
       - php-compile-php83
+      - php-compile-php84
+    gate-and-submit:
+      - php-compile-php74
+      - php-compile-php81
+      - php-compile-php82
+      - php-compile-php83
+      - php-compile-php84
+    postmerge:
+      - php74-compile-coverage-publish
+
+  # Temporary job for repos that don't yet pass on PHP 8.4
+  - name: php-compile-php74-to-php83
+    test:
+      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
+      - php-compile-php74
+      - php-compile-php81
+      - php-compile-php82
+      - php-compile-php83
     gate-and-submit:
       - php-compile-php74
       - php-compile-php81
@@ -9068,7 +9086,7 @@ projects:
 
   - name: mediawiki/php/excimer
     template:
-      - name: php-compile-php74-or-later
+      - name: php-compile-php74-to-php83
 
   - name: mediawiki/php/luasandbox
     template:
