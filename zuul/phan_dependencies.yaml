@@ -628,6 +628,9 @@ VoteNY:
 WebAuthn:
  - OATHAuth
 
+WhoIsWatching:
+ - Echo
+
 WikiEditor:
  - BetaFeatures
  - ConfirmEdit
