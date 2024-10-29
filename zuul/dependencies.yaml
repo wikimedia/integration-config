@@ -58,6 +58,9 @@ AchievementBadges:
 AdvancedSearch:
  - Translate
 
+AIEditingAssistant:
+  - VisualEditor
+
 ApiFeatureUsage:
  - Elastica
 
