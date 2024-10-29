@@ -521,6 +521,9 @@ CognitiveProcessDesigner:
  - PageForms
  - BlueSpiceVisualEditorConnector
 
+CollabPads:
+ - VisualEditor
+
 CommunityConfiguration:
  - CommunityConfigurationExample
 
