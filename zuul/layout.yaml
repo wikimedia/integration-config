@@ -2233,6 +2233,8 @@ project-templates:
       - composer-php81
       - composer-php82
       - composer-php83
+    experimental:
+      - composer-php84
 
   # Temporary template for repos that fail on PHP 8.2
   - name: composer-test-php74-and-php81
@@ -2246,6 +2248,7 @@ project-templates:
     experimental:
       - composer-php82
       - composer-php83
+      - composer-php84
 
   - name: composer-test-php74-only
     test:
@@ -2256,6 +2259,7 @@ project-templates:
       - composer-php81
       - composer-php82
       - composer-php83
+      - composer-php84
 
   - name: composer-test-php82-or-later
     test:
@@ -2264,6 +2268,8 @@ project-templates:
     gate-and-submit:
       - composer-php82
       - composer-php83
+    experimental:
+      - composer-php84
 
   - name: composer-test-package-php74-or-later
     test:
@@ -2277,6 +2283,8 @@ project-templates:
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
+    experimental:
+      - composer-package-php84
 
   - name: php-compile-php74-or-later
     test:
@@ -2584,6 +2592,8 @@ project-templates:
     postmerge:
       - doxygen-publish
       - phpunit-coverage-php81-publish
+    experimental:
+      - composer-package-php84
 
   - name: mediawiki-php-library-php74-to-php82
     test:
@@ -2600,6 +2610,7 @@ project-templates:
       - phpunit-coverage-php81-publish
     experimental:
       - composer-package-php83
+      - composer-package-php84
 
 # Register the Gerrit project name, apply them pipelines that in turn trigger
 # a set of jobs.
@@ -2890,6 +2901,7 @@ projects:
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
+      - composer-package-php84
 
   - name: mediawiki/tools/phan/SecurityCheckPlugin
     # FIXME: Use mediawiki-php-library?
@@ -3174,6 +3186,7 @@ projects:
     experimental:
       # New job in testing T74952 -- JDF 2022-10-14
       - composer-php74-assert-lock
+      - mwgate-composer-php84
 
 #### MediaWiki skins ###########################################
 
@@ -3829,6 +3842,9 @@ projects:
       - operations-mw-config-php83-composer-lint
       - operations-mw-config-php83-composer-test
       - operations-mw-config-php83-composer-diffConfig
+      - operations-mw-config-php84-composer-lint
+      - operations-mw-config-php84-composer-test
+      - operations-mw-config-php84-composer-diffConfig
 
   - name: operations/puppet
     test-prio:
@@ -8802,6 +8818,7 @@ projects:
       - wmf-quibble-core-vendor-mysql-php74
       - wmf-quibble-vendor-mysql-php74
       - wmf-quibble-selenium-php74
+      - parsoidsvc-composer-package-php84
     coverage:
       - composer-coverage-patch
     postmerge:
