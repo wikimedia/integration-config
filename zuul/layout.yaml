@@ -7425,6 +7425,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/NotifyMe
+    template:
+     - name: extension-quibble
+
   - name: mediawiki/extensions/NSFileRepo
     template:
       - name: extension-quibble
