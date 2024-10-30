@@ -532,6 +532,8 @@ CommunityConfigurationExample:
 
 CommunityRequests:
  - DiscussionTools
+ - VisualEditor
+ - WikimediaMessages
 
 ConfigManager:
  - BlueSpiceFoundation
