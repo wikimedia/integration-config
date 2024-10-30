@@ -4,9 +4,31 @@ Parameter functions for zuul jobs
 Combined into one Python function due to T125498
 """
 
-import re
+import inspect
 import os
+import re
+
 import yaml
+
+
+# Find the configuration directory to load the dependencies YAML files
+#
+# This code is read() by Zuul and executed using something such as:
+#
+#  fn = os.path.realpath("parameters_functions.py")
+#  with open(fn) as _f:
+#      code = compile(_f.read(), fn, 'exec')
+#      # Execute with no globals set
+#      exec(code, {})
+#
+# Since the execution is done with no globals, __file__ is not set and we can't
+# use it to retrieve the directory holding the dependencies YAML files. Given
+# the code was compiled with the fullname for context, it can be retrieved
+# using inspect() and thus retrieve directory holding the Zuul config files.
+def getZuulConfigDir():
+    return os.path.dirname(
+        inspect.getfile(inspect.currentframe())
+        )
 
 
 # For historical reasons, Parsoid is a 'service' not an 'extension'.
@@ -132,28 +154,13 @@ def set_parameters(item, job, params):
             params['BUILD_TIMEOUT'] = 180  # minutes
 
 
+ZUUL_CONFIG_DIR = getZuulConfigDir()
+
 # This hash is used to inject dependencies for MediaWiki jobs.
 #
 # Note! This list is not used by Phan. Edit the other file for that list.
-# ZUUL_DIR = os.path.dirname(os.path.abspath(__file__))
-# HACK: This is horrible, but __file__ isn't defined.
-if os.path.exists("/etc/zuul/wikimedia/zuul"):
-    # For actual running of CI
-    ZUUL_DIR = "/etc/zuul/wikimedia/zuul"
-elif os.path.exists("/src/zuul"):
-    # For most of the test cases for testing CI
-    ZUUL_DIR = "/src/zuul"
-elif os.path.exists("/src/integration/config/zuul"):
-    # For the rest of the test cases for testing CI
-    ZUUL_DIR = "/src/integration/config/zuul"
-else:
-    raise Exception(
-        "ZUUL_DIR could not be set, environment not recognised; I'm in: '"
-        + os.getcwd() + "'"
-    )
 
-
-with open(os.path.join(ZUUL_DIR, "dependencies.yaml")) as stream:
+with open(os.path.join(ZUUL_CONFIG_DIR, "dependencies.yaml")) as stream:
     try:
         dependencies = yaml.safe_load(stream)
     except yaml.YAMLError as error:
@@ -164,7 +171,7 @@ with open(os.path.join(ZUUL_DIR, "dependencies.yaml")) as stream:
 # This list is *not* recursively processed.
 #
 # Note! This list is only used by Phan. Edit the other file for PHPUnit etc.
-with open(os.path.join(ZUUL_DIR, "phan_dependencies.yaml")) as stream:
+with open(os.path.join(ZUUL_CONFIG_DIR, "phan_dependencies.yaml")) as stream:
     try:
         phan_dependencies = yaml.safe_load(stream)
     except yaml.YAMLError as error:
