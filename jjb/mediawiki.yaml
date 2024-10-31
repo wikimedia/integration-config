@@ -424,7 +424,7 @@
         - api-testing-{database}-{php}:
             php:
                 - php74:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.10.0-s1
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.11.0
             packages-source: vendor
             database:
                 - mysql
@@ -514,7 +514,7 @@
         - docker-log-dir
         - docker-src-dir
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.10.0-s2
+            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.11.0
             entrypoint: quibble-with-supervisord
             options: '--tmpfs /workspace/db:size=320M'
             volumes:
@@ -733,7 +733,7 @@
         dir: 'cover'
     - docker-castor-load
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.10.0-s1
+        image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.11.0
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -831,7 +831,7 @@
     - docker-wipe-dir:
         dir: 'cover'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.10.0-s1
+        image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.11.0
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -969,7 +969,7 @@
 
 - job-group:
     name: mediawiki-coverage-jobs
-    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.10.0-s1
+    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.11.0
     entrypoint: quibble-with-supervisord
     jobs:
         - mwcore-phpunit-coverage-patch:
@@ -1005,13 +1005,13 @@
         - sqlite
     php:
         - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.10.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.11.0
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.10.0-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.11.0
         - php82:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.10.0-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.11.0
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.10.0-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.11.0
     jobs:
         - quibble-{packages-source}-{database}-{php}
         - quibble-{packages-source}-{database}-{php}-noselenium
@@ -1024,7 +1024,7 @@
         - mediawiki-quibble-apitests-{packages-source}-{php}:
             database: 'mysql'
         - mediawiki-phpbench-patch:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.10.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.11.0
             entrypoint: quibble-with-supervisord
             packages-source: vendor
             database: mysql
@@ -1043,10 +1043,10 @@
     # And only php7.4 and php8.1
     php:
         - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.10.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.11.0
             entrypoint: quibble-with-supervisord
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.10.0-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.11.0
             entrypoint: quibble-with-supervisord
     jobs:
         - wmf-quibble-vendor-mysql-{php}
@@ -1077,11 +1077,11 @@
             phpunit-params: '--group Wikibase,WikibaseAPI,Purtle'
     phpflavour:
         - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.10.0-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.11.0
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.10.0-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.11.0
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.10.0-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.11.0
     jobs:
         - wikibase-{kind}-{phpflavour}:
             quibble_args: >
