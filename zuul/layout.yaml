@@ -382,6 +382,7 @@ pipelines:
            - ^raimond\.spekking@gmail\.com$
            - ^randomemail2468@protonmail\.com$ # User:Nikki
            - ^razesoldier@outlook\.com$ # RazeSoldier / 星耀晨曦
+           - ^revi@revi\.wiki$ # revi
            - ^rillke@wikipedia\.de$
            - ^rj23@protonmail\.com$ # Filip / rlot, former GCI student
            - ^robinp\.1273@gmail\.com$
@@ -461,7 +462,6 @@ pipelines:
            - ^wctaiwan@gmail\.com$
            - ^webmelos@gmail\.com$ # Melos
            - ^wiki@physikerwelt\.de$
-           - ^wiki@revi\.dev$ # revi
            - ^wiki@sportshead\.dev$ # Sportzpikachu
            - ^wikimedia@agamya\.dev$
            - ^wikimedia@blankeclair\.slmail\.me$
