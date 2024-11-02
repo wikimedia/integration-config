@@ -242,6 +242,13 @@ def set_mw_dependencies(item, job, params):
     skin_deps = {d for d in deps if d.startswith('skins/')}
     ext_deps = deps - skin_deps
 
+    # T363639 - WebAuthn won't run on REL1_XX because of library issues
+    if (
+        params['ZUUL_PROJECT'] == 'mediawiki/extensions/OATHAuth'
+        and params['ZUUL_BRANCH'] != 'master'
+    ):
+        ext_deps.remove('WebAuthn')
+
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
 
