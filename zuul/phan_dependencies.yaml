@@ -433,6 +433,9 @@ OAuthRateLimiter:
 ORES:
  - AbuseFilter
 
+PageAssessments:
+ - CirrusSearch
+
 PageForms:
  - AdminLinks
  - Cargo
