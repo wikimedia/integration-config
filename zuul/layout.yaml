@@ -6639,6 +6639,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/EmailNotifications
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/EncryptedUploads
     template:
       - name: extension-quibble
