@@ -1,5 +1,5 @@
 FROM {{ "composer-scratch" | image_tag }} as composer
-FROM {{ "node18" | image_tag }} as node
+FROM {{ "node20" | image_tag }} as node
 
 FROM {{ "ci-buster" | image_tag }}
 

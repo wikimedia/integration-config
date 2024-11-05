@@ -1,1 +1,1 @@
-Depends: composer-scratch, ci-bullseye, node18
+Depends: composer-scratch, ci-bullseye, node20
