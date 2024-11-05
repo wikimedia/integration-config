@@ -168,23 +168,23 @@
         - mwskin
     php:
         - php74:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.11.0
+            setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.11.0-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php74:0.3.3-s4
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:0.2.3-s4
         - php81:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.11.0
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.11.0-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.30
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:8.1.30
         - php82:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.11.0
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.11.0-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.25
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php82:8.2.25
         - php83:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.11.0
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.11.0-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.12
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php83:8.3.12
         - php84:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.11.0
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.11.0-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.1
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php84:8.4.1
     jobs:
