@@ -1171,7 +1171,7 @@ jobs:
     queue-name: mediawiki
   - name: mediawiki-quibble-vendor-mysql-php74
     queue-name: mediawiki
-  - name: mwgate-node18
+  - name: mwgate-node20
     queue-name: mediawiki
 
   # Some rake jobs should trigger regardless of affected files:
@@ -1332,7 +1332,7 @@ jobs:
   - name: 'integration-config-zuul-layout-validate'
     branch: (?!labs)
 
-  - name: 'mwext-node18-docs-publish'
+  - name: 'mwext-node20-docs-publish'
     branch: ^master$
 
   - name: 'mwext-doxygen-publish'
@@ -1403,10 +1403,10 @@ project-templates:
   - name: extension-broken
     test:
       - mwgate-composer-php81
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit:
       - mwgate-composer-php81
-      - mwgate-node18
+      - mwgate-node20
 
     test-1_39:
       - mwgate-composer-php81
@@ -1461,7 +1461,7 @@ project-templates:
     test:
       - quibble-vendor-mysql-php74-noselenium
       - quibble-vendor-mysql-php74-selenium
-      - mwgate-node18
+      - mwgate-node20
       - mwext-php74-phan
     php:
       - quibble-vendor-mysql-php81-noselenium
@@ -1473,7 +1473,7 @@ project-templates:
       - quibble-vendor-mysql-php82-noselenium
       - quibble-vendor-mysql-php83-noselenium
       - quibble-vendor-mysql-php74-selenium
-      - mwgate-node18
+      - mwgate-node20
       - mwext-php74-phan
 
     test-1_39:
@@ -1550,14 +1550,13 @@ project-templates:
       - quibble-vendor-sqlite-php74-noselenium
       - quibble-vendor-postgres-php74-noselenium
       - quibble-vendor-mysql-php84-noselenium
-      - mwgate-node20
       - mwgate-node22
 
   - name: extension-quibble-php81-or-later
     test:
       - quibble-vendor-mysql-php81-noselenium
       - quibble-vendor-mysql-php81-selenium
-      - mwgate-node18
+      - mwgate-node20
       - mwext-php81-phan
     php:
       - quibble-vendor-mysql-php82-noselenium
@@ -1567,7 +1566,7 @@ project-templates:
       - quibble-vendor-mysql-php82-noselenium
       - quibble-vendor-mysql-php83-noselenium
       - quibble-vendor-mysql-php81-selenium
-      - mwgate-node18
+      - mwgate-node20
       - mwext-php81-phan
 
     test-1_39:
@@ -1634,7 +1633,6 @@ project-templates:
       - quibble-vendor-postgres-php81-noselenium
       - quibble-vendor-mysql-php84-noselenium
       - mwext-php81-phan
-      - mwgate-node20
       - mwgate-node22
 
   # Special job template that runs composer rather than than relying
@@ -1645,7 +1643,7 @@ project-templates:
     test:
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
     php:
@@ -1658,7 +1656,7 @@ project-templates:
       - quibble-composer-mysql-php82-noselenium
       - quibble-composer-mysql-php83-noselenium
       - quibble-composer-mysql-php74-selenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
 
@@ -1725,7 +1723,6 @@ project-templates:
       - quibble-composer-sqlite-php74-noselenium
       - quibble-composer-postgres-php74-noselenium
       - quibble-composer-mysql-php84-noselenium
-      - mwgate-node20
       - mwgate-node22
 
   # Special job template for BlueSpice extensions, that:
@@ -1736,14 +1733,14 @@ project-templates:
   #   that they do not run in line with other extensions' gate jobs.
   - name: extension-quibble-bluespice
     test:
-      - mwext-bluespice-node18
+      - mwext-bluespice-node20
       - quibble-composer-mysql-php74-noselenium
     php:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
       - quibble-composer-mysql-php83-noselenium
     gate-and-submit:
-      - mwext-bluespice-node18
+      - mwext-bluespice-node20
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
@@ -1766,6 +1763,7 @@ project-templates:
     gate-and-submit-1_42:
       - noop
 
+    # FIXME: This is an LTS release, so needs BlueSpice-specific jobs.
     test-1_43:
       - noop
     gate-and-submit-1_43:
@@ -1778,7 +1776,6 @@ project-templates:
       - quibble-composer-sqlite-php74-noselenium
       - quibble-composer-postgres-php74-noselenium
       - quibble-composer-mysql-php84-noselenium
-      - mwext-bluespice-node20
       - mwext-bluespice-node22
 
   # Special job template that runs the quibble jobs but skips the
@@ -1788,7 +1785,7 @@ project-templates:
   - name: extension-quibble-noselenium
     test:
       - quibble-vendor-mysql-php74-noselenium
-      - mwgate-node18
+      - mwgate-node20
       - mwext-php74-phan
     php:
       - quibble-vendor-mysql-php81-noselenium
@@ -1799,7 +1796,7 @@ project-templates:
       - quibble-vendor-mysql-php81-noselenium
       - quibble-vendor-mysql-php82-noselenium
       - quibble-vendor-mysql-php83-noselenium
-      - mwgate-node18
+      - mwgate-node20
       - mwext-php74-phan
 
     test-1_39:
@@ -1852,11 +1849,11 @@ project-templates:
 
     test-wmf:
       - quibble-vendor-mysql-php74-noselenium
-      - mwgate-node18
+      - mwgate-node20
       - mwext-php74-phan
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php74-noselenium
-      - mwgate-node18
+      - mwgate-node20
       - mwext-php74-phan
 
     gate-and-submit-l10n:
@@ -1867,14 +1864,13 @@ project-templates:
       - quibble-vendor-sqlite-php74-noselenium
       - quibble-vendor-postgres-php74-noselenium
       - quibble-vendor-mysql-php84-noselenium
-      - mwgate-node20
       - mwgate-node22
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
     test:
       - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
     php:
@@ -1886,7 +1882,7 @@ project-templates:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
       - quibble-composer-mysql-php83-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
 
@@ -1946,7 +1942,6 @@ project-templates:
       - quibble-composer-postgres-php74-noselenium
       - quibble-composer-mysql-php84-noselenium
       - mwext-php74-phan
-      - mwgate-node20
       - mwgate-node22
 
   # Special job template that runs the "standalone" jobs - T225068
@@ -2002,9 +1997,9 @@ project-templates:
       - wmf-quibble-core-vendor-mysql-php74
       - wmf-quibble-vendor-mysql-php74
       - wmf-quibble-selenium-php74
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit:
-      - mwgate-node18
+      - mwgate-node20
       # Only triggered on master; jobs to track Wikimedia production on PHP 7.4
       - wmf-quibble-vendor-mysql-php74
       - wmf-quibble-core-vendor-mysql-php74
@@ -2012,12 +2007,12 @@ project-templates:
 
     # For wmf branches
     test-wmf:
-      - mwgate-node18
+      - mwgate-node20
       - wmf-quibble-vendor-mysql-php74
       - wmf-quibble-core-vendor-mysql-php74
       - wmf-quibble-selenium-php74
     gate-and-submit-wmf:
-      - mwgate-node18
+      - mwgate-node20
       - wmf-quibble-vendor-mysql-php74
       - wmf-quibble-core-vendor-mysql-php74
       - wmf-quibble-selenium-php74
@@ -2068,7 +2063,7 @@ project-templates:
   - name: skin-quibble
     test:
       - quibble-vendor-mysql-php74
-      - mwgate-node18
+      - mwgate-node20
       - mwskin-php74-phan
     php:
       - quibble-vendor-mysql-php81
@@ -2079,7 +2074,7 @@ project-templates:
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
-      - mwgate-node18
+      - mwgate-node20
       - mwskin-php74-phan
 
     # We use composer on release branches
@@ -2133,11 +2128,11 @@ project-templates:
 
     test-wmf:
       - quibble-vendor-mysql-php74
-      - mwgate-node18
+      - mwgate-node20
       - mwskin-php74-phan
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php74
-      - mwgate-node18
+      - mwgate-node20
       - mwskin-php74-phan
 
     gate-and-submit-l10n:
@@ -2147,13 +2142,12 @@ project-templates:
       - quibble-vendor-sqlite-php74
       - quibble-vendor-postgres-php74
       - quibble-vendor-mysql-php84
-      - mwgate-node20
       - mwgate-node22
 
   - name: skin-quibble-composer
     test:
       - quibble-composer-mysql-php74
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan
     php:
@@ -2165,7 +2159,7 @@ project-templates:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan
 
@@ -2224,7 +2218,6 @@ project-templates:
       - quibble-composer-sqlite-php74
       - quibble-composer-postgres-php74
       - quibble-composer-mysql-php84
-      - mwgate-node20
       - mwgate-node22
 
   - name: skin-coverage
@@ -2235,13 +2228,13 @@ project-templates:
 
   - name: extension-javascript-documentation
     test:
-      - mwext-node18-rundoc
-    gate-and-submit:
-      - mwext-node18-rundoc
-    postmerge:
-      - mwext-node18-docs-publish
-    experimental:
       - mwext-node20-rundoc
+    gate-and-submit:
+      - mwext-node20-rundoc
+    postmerge:
+      - mwext-node20-docs-publish
+    experimental:
+      - mwext-node22-rundoc
 
   - name: composer-test-php74-or-later
     test:
@@ -2527,9 +2520,9 @@ project-templates:
 
   - name: mwgate-npm
     test:
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit:
-      - mwgate-node18
+      - mwgate-node20
     test-1_39:
       - mwgate-node18
     gate-and-submit-1_39:
@@ -2547,7 +2540,6 @@ project-templates:
     gate-and-submit-1_43:
       - mwgate-node18
     experimental:
-      - mwgate-node20
       - mwgate-node22
 
   - name: puppet-module
@@ -2858,7 +2850,7 @@ projects:
 
   - name: mediawiki/tools/api-testing
     template:
-      - name: node18-rundoc
+      - name: node20-rundoc
     test:
       - api-testing-mysql-php74
       - api-testing-sqlite-php74
@@ -2866,7 +2858,7 @@ projects:
       - api-testing-mysql-php74
       - api-testing-sqlite-php74
     postmerge:
-      - generic-node18-docs-publish
+      - generic-node20-docs-publish
 
   - name: mediawiki/tools/code-utils
     template:
@@ -4476,12 +4468,12 @@ projects:
       - name: extension-codehealth
     test:
       - mwgate-composer-php74
-      - mwgate-node18
+      - mwgate-node20
       - quibble-donationinterface-REL1_39-php74
       - mwext-php74-phan
     gate-and-submit:
       - mwgate-composer-php74
-      - mwgate-node18
+      - mwgate-node20
       - quibble-donationinterface-REL1_39-php74
       - mwext-php74-phan
     experimental:
@@ -4629,11 +4621,11 @@ projects:
     test-wmf:
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit-wmf:
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
-      - mwgate-node18
+      - mwgate-node20
 
   - name: mediawiki/extensions/FundraisingTranslateWorkflow
     template:
@@ -5674,7 +5666,7 @@ projects:
       - mwext-doxygen-publish
       # NOTE: This is the 'wrong' publisher, but there's no JS extension
       # publish step yet. Let's go with this for now. 2022-02-25 JDF.
-      - generic-node18-browser-coverage-publish
+      - generic-node20-browser-coverage-publish
 
   - name: mediawiki/extensions/WikiLove
     template:
@@ -10056,12 +10048,11 @@ projects:
   - name: VisualEditor/VisualEditor
     template:
       - name: mediawiki-i18n-check
-      - name: node18-browser-for-MW-branches
       - name: node20-browser-for-MW-branches
-      - name: node18-rundoc-for-MW-branches
+      - name: node20-rundoc-for-MW-branches
     postmerge:
-      - generic-node18-docs-publish
-      - generic-node18-browser-coverage-publish
+      - generic-node20-docs-publish
+      - generic-node20-browser-coverage-publish
 
   - name: mediawiki/extensions/VisualEditorPlus
     template:

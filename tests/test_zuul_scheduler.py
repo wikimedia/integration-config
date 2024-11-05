@@ -1133,7 +1133,7 @@ class TestZuulScheduler(unittest.TestCase):
             'wmf-quibble-vendor-mysql-php74': False,
             'wmf-quibble-core-vendor-mysql-php74': True,
             'wmf-quibble-selenium-php74': True,
-            'mwgate-node18': True,
+            'mwgate-node20': True,
         }
         expected_gate = {
             'mediawiki-core-php74-phan': True,
@@ -1151,7 +1151,7 @@ class TestZuulScheduler(unittest.TestCase):
             'wmf-quibble-vendor-mysql-php74': False,
             'wmf-quibble-selenium-php74': True,
             'wmf-quibble-core-vendor-mysql-php74': True,
-            'mwgate-node18': True,
+            'mwgate-node20': True,
             'quibble-vendor-mysql-php74-phpunit-standalone': True,
         }
 
