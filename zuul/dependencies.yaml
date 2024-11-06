@@ -490,6 +490,7 @@ CheckUser:
  - TorBlock
 
 Cite:
+ - CommunityConfiguration
  - Gadgets
  - ParserFunctions
  - Popups
