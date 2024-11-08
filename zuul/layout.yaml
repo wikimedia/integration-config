@@ -6642,7 +6642,7 @@ projects:
 
   - name: mediawiki/extensions/EmailNotifications
     template:
-      - name: extension-quibble
+      - name: extension-quibble-noselenium
 
   - name: mediawiki/extensions/EncryptedUploads
     template:
