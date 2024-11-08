@@ -711,6 +711,7 @@ WikimediaEvents:
  - CheckUser
  - EventBus
  - EventLogging
+ - FlaggedRevs
  - GlobalPreferences
  - GrowthExperiments
  - MobileFrontend
