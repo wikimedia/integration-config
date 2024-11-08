@@ -9317,6 +9317,10 @@ projects:
     template:
       - name: mediawiki-php-library
 
+  - name: mediawiki/libs/UUID
+    template:
+      - name: mediawiki-php-library
+
   - name: mediawiki/libs/WaitConditionLoop
     template:
       - name: mediawiki-php-library
