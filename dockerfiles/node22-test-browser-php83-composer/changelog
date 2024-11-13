@@ -1,3 +1,10 @@
+node22-test-browser-php83-composer (22.6.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image sury-php:
+   Migrate from bullseye to bookworm
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed, 13 Nov 2024 15:29:12 -0500
+
 node22-test-browser-php83-composer (22.6.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

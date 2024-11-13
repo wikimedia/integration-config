@@ -1,2 +1,2 @@
 Description: Base image using Sury's php repository
-Depends: ci-bullseye
+Depends: ci-bookworm
