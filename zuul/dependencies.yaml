@@ -516,6 +516,7 @@ CodeEditor:
  - WikiEditor
 
 CodeMirror:
+ - BetaFeatures
  - WikiEditor
  - VisualEditor
 
