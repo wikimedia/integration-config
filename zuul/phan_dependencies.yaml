@@ -169,6 +169,7 @@ CloneDiff:
  - AdminLinks
 
 CodeMirror:
+ - BetaFeatures
  - Gadgets
 
 CommunityConfigurationExample:
