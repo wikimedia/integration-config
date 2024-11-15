@@ -713,6 +713,7 @@ WikimediaEvents:
  - EventBus
  - EventLogging
  - FlaggedRevs
+ - GlobalBlocking
  - GlobalPreferences
  - GrowthExperiments
  - MobileFrontend

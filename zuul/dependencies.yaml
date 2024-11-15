@@ -1221,6 +1221,7 @@ WikimediaEvents:
  - CheckUser
  - EventLogging
  - FlaggedRevs
+ - GlobalBlocking
  - GlobalPreferences
 
 WikiSEO:
