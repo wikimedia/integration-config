@@ -421,11 +421,15 @@
             default:     'postmerge'
             description: '"postmerge" triggers saving the Maven cache.'
     wrappers:
-        # Credentials for Gerrit
         - credentials-binding:
+            # Credentials for Gerrit
             - file:
                 credential-id: maven-release-user-netrc
                 variable:      NETRC_FILE
+            # Credentials for Gitlab repos/wmf-packages
+            - text:
+                credential-id: gitlab-release-token
+                variable: CI_RELEASE_TOKEN
         # Credentials for Archiva
         - config-file-provider:
             files:
