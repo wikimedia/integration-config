@@ -1,3 +1,9 @@
+helm-linter (0.6.1) wikimedia; urgency=medium
+
+  *  Bump version to update kubeconform-json-schema (k8s 1.31.2) - T379919
+
+ -- Jelto Wodstrcil <jwodstrcil@wikimedia.org>  Fri, 15 Nov 2024 15:12:39 +0100
+
 helm-linter (0.6.0) wikimedia; urgency=medium
 
   * Update helm to 3.11.3 - T325541
