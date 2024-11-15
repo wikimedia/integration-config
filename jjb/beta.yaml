@@ -84,7 +84,7 @@
     name: beta-code-update-eqiad
     defaults: beta
     description: |
-      This job updates deployment-deploy03 automatically every ten minutes. It
+      This job updates deployment-deploy04 automatically every ten minutes. It
       updates the MediaWiki core/extensions/skins code and the configuration to
       the latest versions from git using "scap prep auto". Then it triggers the
       beta-scap-sync-world job to run "scap sync-world" to deploy the changes.
@@ -120,7 +120,7 @@
     name: beta-scap-sync-world
     defaults: beta
     description: |
-      Runs "/usr/bin/scap sync-world" as jenkins-deploy on deployment-deploy03
+      Runs "/usr/bin/scap sync-world" as jenkins-deploy on deployment-deploy04
     node: BetaClusterBastion
 
     # Do not run concurrently with upstream jobs
