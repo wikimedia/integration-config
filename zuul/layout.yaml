@@ -2935,6 +2935,10 @@ projects:
     template:
       - name: node18
 
+  - name: performance/statsv
+    template:
+      - name: tox
+
   - name: performance/synthetic-monitoring-tests
     template:
       - name: node18
