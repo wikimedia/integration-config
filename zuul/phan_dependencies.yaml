@@ -175,6 +175,9 @@ CodeMirror:
 CommunityConfigurationExample:
  - CommunityConfiguration
 
+CommunityRequests:
+ - Translate
+
 CognitiveProcessDesigner:
  - PageForms
  - BlueSpiceFoundation
