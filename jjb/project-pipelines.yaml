@@ -463,6 +463,8 @@
         - revscoring-publish
         - ores-legacy
         - ores-legacy-publish
+        - llm
+        - llm-publish
         - langid
         - langid-publish
         - readability
@@ -496,6 +498,8 @@
         # trigger-inference-services-pipeline-revscoring-publish
         # trigger-inference-services-pipeline-ores-legacy
         # trigger-inference-services-pipeline-ores-legacy-publish
+        # trigger-inference-services-pipeline-llm
+        # trigger-inference-services-pipeline-llm-publish
         # trigger-inference-services-pipeline-langid
         # trigger-inference-services-pipeline-langid-publish
         # trigger-inference-services-pipeline-readability
@@ -529,6 +533,8 @@
         # inference-services-pipeline-revscoring-publish
         # inference-services-pipeline-ores-legacy
         # inference-services-pipeline-ores-legacy-publish
+        # inference-services-pipeline-llm
+        # inference-services-pipeline-llm-publish
         # inference-services-pipeline-langid
         # inference-services-pipeline-langid-publish
         # inference-services-pipeline-readability

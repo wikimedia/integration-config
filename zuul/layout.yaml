@@ -1106,6 +1106,13 @@ jobs:
         - '.pipeline/config.yaml'
         - 'ores-legacy/.*'
 
+  - name: ^trigger-inference-services-pipeline-llm
+    files:
+        - '.pipeline/llm/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'llm/.*'
+        - 'src/models/llm/.*'
+
   - name: ^trigger-inference-services-pipeline-langid
     files:
         - '.pipeline/langid/blubber.yaml'
@@ -2678,6 +2685,7 @@ projects:
       - trigger-inference-services-pipeline-revertrisk-wikidata
       - trigger-inference-services-pipeline-revscoring
       - trigger-inference-services-pipeline-ores-legacy
+      - trigger-inference-services-pipeline-llm
       - trigger-inference-services-pipeline-langid
       - trigger-inference-services-pipeline-readability
       - trigger-inference-services-pipeline-article-descriptions
@@ -2695,6 +2703,7 @@ projects:
       - trigger-inference-services-pipeline-revertrisk-wikidata
       - trigger-inference-services-pipeline-revscoring
       - trigger-inference-services-pipeline-ores-legacy
+      - trigger-inference-services-pipeline-llm
       - trigger-inference-services-pipeline-langid
       - trigger-inference-services-pipeline-readability
       - trigger-inference-services-pipeline-article-descriptions
@@ -2712,6 +2721,7 @@ projects:
       - trigger-inference-services-pipeline-revertrisk-wikidata-publish
       - trigger-inference-services-pipeline-revscoring-publish
       - trigger-inference-services-pipeline-ores-legacy-publish
+      - trigger-inference-services-pipeline-llm-publish
       - trigger-inference-services-pipeline-langid-publish
       - trigger-inference-services-pipeline-readability-publish
       - trigger-inference-services-pipeline-article-descriptions-publish
