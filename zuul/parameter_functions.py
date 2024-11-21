@@ -255,10 +255,13 @@ def set_mw_dependencies(item, job, params):
     if (
         params['ZUUL_BRANCH'] in ['REL1_39', 'REL1_41', 'REL1_42']
     ):
-        # Not in REL1_39 and REL1_41
-        ext_deps.remove('CommunityConfiguration')
-        # Not in REL1_39, REL1_41 and REL1_42
-        ext_deps.remove('CommunityConfigurationExample')
+        if 'CommunityConfiguration' in ext_deps:
+            # Not in REL1_39 and REL1_41
+            ext_deps.remove('CommunityConfiguration')
+
+        if 'CommunityConfigurationExample' in ext_deps:
+            # Not in REL1_39, REL1_41 and REL1_42
+            ext_deps.remove('CommunityConfigurationExample')
 
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
