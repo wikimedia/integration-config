@@ -8936,16 +8936,6 @@ projects:
     publish:
       - trigger-wikifeeds-pipeline-publish
 
-  - name: mediawiki/services/zotero
-    test:
-      - trigger-zotero-pipeline-test
-    gate-and-submit:
-      - trigger-zotero-pipeline-test
-    postmerge:
-      - trigger-zotero-pipeline-publish
-    publish:
-      - trigger-zotero-pipeline-publish
-
 #### Generated data platform datasets ##########################
   - name: generated-data-platform/datasets/image-suggestions
     test:
@@ -11970,6 +11960,10 @@ projects:
   - name: mediawiki/services/mathoid
     template:
       - name: archived # T344747
+
+  - name: mediawiki/services/zotero
+    template:
+      - name: archived # T380259
 
   - name: mediawiki/services/graphoid/deploy
     template:

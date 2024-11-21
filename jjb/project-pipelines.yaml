@@ -598,17 +598,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: zotero
-    pipeline:
-      - test
-      - publish
-    jobs:
-      # trigger-zotero-pipeline-test
-      - 'trigger-{name}-pipeline-{pipeline}'
-      # zotero-pipeline-test
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: thumbor-plugins
     pipeline:
       - test
