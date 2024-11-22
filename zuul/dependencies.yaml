@@ -867,6 +867,7 @@ PageTriage:
  - WikiLove
  - ORES
  - Echo
+ - PageViewInfo
 
 PageViewInfo:
  - Graph
