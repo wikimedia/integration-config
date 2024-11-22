@@ -4238,6 +4238,7 @@ projects:
       - name: extension-codehealth
       - name: extension-apitests
       - name: commit-message-validator
+      - name: extension-gate
 
   - name: mediawiki/extensions/Campaigns
     template:
@@ -5701,6 +5702,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: commit-message-validator
+      - name: extension-gate
 
   - name: mediawiki/extensions/WikimediaEditorTasks
     template:

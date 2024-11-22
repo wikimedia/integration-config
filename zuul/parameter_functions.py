@@ -367,6 +367,7 @@ gatedextensions = [
     'AntiSpoof',
     'Babel',
     'BetaFeatures',
+    'CampaignEvents',
     'CheckUser',
     'CirrusSearch',
     'cldr',
@@ -411,6 +412,7 @@ gatedextensions = [
     'WikibaseCirrusSearch',
     'WikibaseMediaInfo',
     'WikiLove',
+    'WikimediaCampaignEvents',
     'WikimediaMessages',
 ]
 gatedskins = [
