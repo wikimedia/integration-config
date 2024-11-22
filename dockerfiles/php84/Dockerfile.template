@@ -3,27 +3,25 @@ FROM {{ "sury-php" | image_tag }}
 
 USER root
 
-# Currently missing upstream:
-# php8.4-excimer
-# php8.4-pcov
-# php8.4-redis
-# php8.4-yaml
-
 # zip is needed for composer to install things from dist
 # others are libraries/MediaWiki related
 {% set packages|replace('\n', ' ') -%}
-php8.4-cli
-php8.4-zip
 php8.4-bcmath
+php8.4-cli
 php8.4-curl
 php8.4-dba
+php8.4-excimer
 php8.4-gd
 php8.4-gmp
 php8.4-intl
 php8.4-ldap
 php8.4-mbstring
+php8.4-pcov
+php8.4-redis
 php8.4-sqlite3
 php8.4-xml
+php8.4-yaml
+php8.4-zip
 zip
 unzip
 {%- endset -%}
