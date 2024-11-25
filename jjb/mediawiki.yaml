@@ -151,7 +151,7 @@
                 - php83:
                     image: docker-registry.wikimedia.org/releng/composer-test-php83:8.3.12
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.0-rc1
+                    image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.1
         - '{name}-{node_version}':
             node_version:
                - node18:
@@ -956,6 +956,7 @@
                 - php81
                 - php82
                 - php83
+                - php84
     builders:
         - trigger-builds:
             - project: 'mediawiki-quibble-${packagessource}-${database}-${php}'
@@ -1012,6 +1013,8 @@
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.11.0
         - php83:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.11.0
+        - php84:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.11.0
     jobs:
         - quibble-{packages-source}-{database}-{php}
         - quibble-{packages-source}-{database}-{php}-noselenium

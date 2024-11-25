@@ -196,7 +196,7 @@
                 - php83:
                     image: docker-registry.wikimedia.org/releng/composer-test-php83:8.3.12
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.0-rc1
+                    image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.1
         - 'composer-package-{phpflavor}':
             phpflavor:
                 - php74:
@@ -208,7 +208,7 @@
                 - php83:
                     image: docker-registry.wikimedia.org/releng/composer-package-php83:8.3.12
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php84:8.4.0-rc1
+                    image: docker-registry.wikimedia.org/releng/composer-package-php84:8.4.1
 
 - project:
     name: 'github-php-security'
@@ -274,6 +274,6 @@
      - php83:
          image: docker-registry.wikimedia.org/releng/composer-php83:8.3.12
      - php84:
-         image: docker-registry.wikimedia.org/releng/composer-php84:8.4.0-rc1
+         image: docker-registry.wikimedia.org/releng/composer-php84:8.4.1
     jobs:
       - 'composer-{php}-assert-lock'
