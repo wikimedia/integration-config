@@ -1443,6 +1443,7 @@ project-templates:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php84
 
     # No wmf/ jobs, as this should never be used for WMF production code
 
@@ -1547,6 +1548,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74-noselenium
       - quibble-vendor-postgres-php74-noselenium
+      - quibble-vendor-mysql-php84-noselenium
       - mwgate-node20
       - mwgate-node22
 
@@ -1629,6 +1631,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php81-noselenium
       - quibble-vendor-postgres-php81-noselenium
+      - quibble-vendor-mysql-php84-noselenium
       - mwext-php81-phan
       - mwgate-node20
       - mwgate-node22
@@ -1720,6 +1723,7 @@ project-templates:
     experimental:
       - quibble-composer-sqlite-php74-noselenium
       - quibble-composer-postgres-php74-noselenium
+      - quibble-composer-mysql-php84-noselenium
       - mwgate-node20
       - mwgate-node22
 
@@ -1772,6 +1776,7 @@ project-templates:
     experimental:
       - quibble-composer-sqlite-php74-noselenium
       - quibble-composer-postgres-php74-noselenium
+      - quibble-composer-mysql-php84-noselenium
       - mwext-bluespice-node20
       - mwext-bluespice-node22
 
@@ -1860,6 +1865,7 @@ project-templates:
       - quibble-vendor-mysql-php74-selenium
       - quibble-vendor-sqlite-php74-noselenium
       - quibble-vendor-postgres-php74-noselenium
+      - quibble-vendor-mysql-php84-noselenium
       - mwgate-node20
       - mwgate-node22
 
@@ -1937,6 +1943,7 @@ project-templates:
     experimental:
       - quibble-composer-sqlite-php74-noselenium
       - quibble-composer-postgres-php74-noselenium
+      - quibble-composer-mysql-php84-noselenium
       - mwext-php74-phan
       - mwgate-node20
       - mwgate-node22
@@ -1971,6 +1978,8 @@ project-templates:
       - quibble-composer-mysql-php81-phpunit-standalone
     gate-and-submit-1_43:
       - quibble-composer-mysql-php81-phpunit-standalone
+    experimental:
+      - quibble-vendor-mysql-php84-phpunit-standalone
 
   # Special job template that runs the "apitests" job for test and gate
   - name: extension-apitests
@@ -2136,6 +2145,7 @@ project-templates:
     experimental:
       - quibble-vendor-sqlite-php74
       - quibble-vendor-postgres-php74
+      - quibble-vendor-mysql-php84
       - mwgate-node20
       - mwgate-node22
 
@@ -2212,6 +2222,7 @@ project-templates:
     experimental:
       - quibble-composer-sqlite-php74
       - quibble-composer-postgres-php74
+      - quibble-composer-mysql-php84
       - mwgate-node20
       - mwgate-node22
 
@@ -3155,6 +3166,7 @@ projects:
       - mediawiki-core-javascript-publish
       - mediawiki-core-doxygen-publish
     experimental:
+      - mediawiki-quibble-vendor-mysql-php84
       - mwgate-composer-php74
       - mwgate-node20
       - mwgate-node22
@@ -3201,6 +3213,8 @@ projects:
       - mwgate-node18
 
     experimental:
+      - mwgate-composer-php84
+      - mediawiki-quibble-vendor-mysql-php84
       # New job in testing T74952 -- JDF 2022-10-14
       - composer-php74-assert-lock
       - mwgate-composer-php84
@@ -4476,6 +4490,7 @@ projects:
       - quibble-vendor-mysql-php81-noselenium
       - quibble-vendor-mysql-php82-noselenium
       - quibble-vendor-mysql-php83-noselenium
+      - quibble-vendor-mysql-php84-noselenium
       - quibble-vendor-mysql-php74-selenium
 
   - name: mediawiki/extensions/DynamicSidebar
@@ -8844,6 +8859,7 @@ projects:
       - wmf-quibble-vendor-mysql-php74
       - wmf-quibble-selenium-php74
       - parsoidsvc-composer-package-php84
+      - quibble-composer-mysql-php84
     coverage:
       - composer-coverage-patch
     postmerge:
@@ -9128,7 +9144,7 @@ projects:
 
   - name: mediawiki/php/excimer
     template:
-      - name: php-compile-php74-to-php83
+      - name: php-compile-php74-to-php83 # Broken test on PHP 8.4, see T380748
 
   - name: mediawiki/php/luasandbox
     template:
