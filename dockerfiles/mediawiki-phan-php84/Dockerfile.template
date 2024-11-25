@@ -1,0 +1,23 @@
+FROM {{ "composer-package-php84" | image_tag }}
+
+USER root
+
+# TODO: Should these be installed in a more base dockerfile?
+{% set mediawiki_deps|replace('\n', ' ') -%}
+php8.4-apcu
+php8.4-imagick
+php8.4-mysql
+php8.4-pgsql
+php8.4-sqlite3
+php8.4-tidy
+{%- endset -%}
+
+RUN {{ mediawiki_deps | apt_install }}
+
+USER nobody
+
+COPY run.sh /run.sh
+COPY run-core.sh /run-core.sh
+COPY run-libraries.sh /run-libraries.sh
+COPY run-generic.sh /run-generic.sh
+ENTRYPOINT ["/run.sh"]
