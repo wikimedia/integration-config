@@ -9174,8 +9174,7 @@ projects:
 
   - name: purtle
     template:
-      # (T368271) Does not yet pass on PHP 8.3
-      - name: mediawiki-php-library-php74-to-php82
+      - name: mediawiki-php-library
 
   - name: utfnormal
     template:
