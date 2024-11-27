@@ -109,6 +109,7 @@ BlueSpiceBookshelf:
  - BlueSpiceVisualEditorConnector
  - ContentDroplets
  - MenuEditor
+ - NotifyMe
  - VueJsPlus
  - BlueSpiceExtendedSearch
 
@@ -234,6 +235,7 @@ BlueSpicePageAccess:
 
 BlueSpicePageAssignments:
  - BlueSpiceFoundation
+ - NotifyMe
 
 BlueSpicePageFormsConnector:
  - BlueSpiceFoundation
