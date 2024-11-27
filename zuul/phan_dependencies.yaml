@@ -513,6 +513,7 @@ ReplaceText:
 
 ReportIncident:
  - DiscussionTools
+ - EventLogging
 
 Sanctions:
  - Echo
@@ -757,4 +758,3 @@ Wikisource:
  - Gadgets
  - ProofreadPage
  - Wikibase
-

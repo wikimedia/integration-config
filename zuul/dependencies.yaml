@@ -959,6 +959,7 @@ ReplaceText:
 
 ReportIncident:
  - DiscussionTools
+ - EventLogging
 
 RevisionSlider:
  - MobileFrontend
