@@ -12384,3 +12384,7 @@ projects:
   - name: wvui
     template:
       - name: archived
+
+  - name: zotero
+    template:
+      - name: archived # T380259
