@@ -9769,7 +9769,6 @@ projects:
     test:
       - pywikibot-core-tox
       - pywikibot-core-tox-typing
-      - pywikibot-core-tox-fasttest-py37
       - pywikibot-core-tox-fasttest-py38
       - pywikibot-core-tox-fasttest-py39
       - pywikibot-core-tox-fasttest-py310
@@ -9781,7 +9780,6 @@ projects:
       - pywikibot-core-tox-sphinx
     gate-and-submit:
       - pywikibot-core-tox
-      - pywikibot-core-tox-fasttest-py37
       - pywikibot-core-tox-fasttest-py38
       - pywikibot-core-tox-fasttest-py39
       - pywikibot-core-tox-fasttest-py310
@@ -9791,13 +9789,13 @@ projects:
       - pywikibot-core-tox-doctest
       - pywikibot-core-tox-rstcheck
       - pywikibot-core-tox-doc
-      - pywikibot-core-tox-deeptest-py37
+      - pywikibot-core-tox-deeptest-py38
       - pywikibot-core-tox-deeptest-py312
     postmerge:
       - pywikibot-core-tox-publish
     experimental:
       - pywikibot-core-tox-doc
-      - pywikibot-core-tox-deeptest-py37
+      - pywikibot-core-tox-deeptest-py38
       - pywikibot-core-tox-deeptest-py312
 
   - name: pywikibot/i18n
