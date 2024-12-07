@@ -7605,6 +7605,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/PagePort
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/PageProperties
     template:
       - name: extension-quibble
