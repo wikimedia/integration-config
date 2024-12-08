@@ -215,6 +215,9 @@ Disambiguator:
 DiscordRCFeed:
  - Flow
 
+Discourse:
+ - Scribunto
+
 DiscussionTools:
  - VisualEditor
  - Linter
