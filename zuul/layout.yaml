@@ -9341,6 +9341,10 @@ projects:
     template:
       - name: mediawiki-php-library
 
+  - name: mediawiki/libs/StringUtils
+    template:
+      - name: mediawiki-php-library
+
   - name: mediawiki/libs/Timestamp
     template:
       - name: mediawiki-php-library
