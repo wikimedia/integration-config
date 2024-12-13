@@ -554,14 +554,6 @@
         - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: analytics-quarry-web
-    pipeline:
-      - test
-    jobs:
-      - 'trigger-{name}-pipeline-{pipeline}'
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     # mediawiki/services/servicelib-node
     name: servicelib-node
     pipeline:
