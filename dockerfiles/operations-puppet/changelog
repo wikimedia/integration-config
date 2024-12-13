@@ -1,3 +1,9 @@
+operations-puppet (0.9.6) wikimedia; urgency=medium
+
+  * Tweak run.sh to remove spam from capture_logs
+
+ -- Chris Danis <cdanis@wikimedia.org>  Fri, 13 Dec 2024 12:17:11 -0500
+
 operations-puppet (0.9.5) wikimedia; urgency=medium
 
   * Add benthos to the image for running config unittests in CI

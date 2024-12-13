@@ -13,8 +13,8 @@ export TMP_PUPPET_DIR
 
 capture_logs() {
     # Save logs
-    mv "${PUPPET_DIR}"/.tox/*/log/*.log "${LOG_DIR}/" || /bin/true
-    mv "${PUPPET_DIR}"/.tox/log/* "${LOG_DIR}/" || /bin/true
+    mv --backup=t "${PUPPET_DIR}"/.tox/*/log/*.log "${LOG_DIR}/" || /bin/true
+    mv --backup=t "${PUPPET_DIR}"/.tox/log/* "${LOG_DIR}/" || /bin/true
 }
 
 local_cleanup() {
