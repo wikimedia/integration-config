@@ -1,3 +1,9 @@
+operations-puppet (0.9.5) wikimedia; urgency=medium
+
+  * Add benthos to the image for running config unittests in CI
+
+ -- Chris Danis <cdanis@wikimedia.org>  Fri, 13 Dec 2024 10:58:34 -0500
+
 operations-puppet (0.9.4) wikimedia; urgency=medium
 
   * re-bundle to grab the updates in the Gemfile for Puppet 7
