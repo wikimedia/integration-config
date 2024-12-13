@@ -9296,6 +9296,13 @@ projects:
     template:
       - name: mediawiki-php-library
 
+  - name: mediawiki/libs/node-cssjanus
+    template:
+      - name: node18
+    postmerge:
+      - generic-node18-docs-publish
+      - generic-node18-browser-direct-coverage-publish
+
   - name: mediawiki/libs/NormalizedException
     template:
       - name: mediawiki-php-library
@@ -9303,13 +9310,6 @@ projects:
   - name: mediawiki/libs/ObjectFactory
     template:
       - name: mediawiki-php-library
-
-  - name: mediawiki/libs/node-cssjanus
-    template:
-      - name: node18
-    postmerge:
-      - generic-node18-docs-publish
-      - generic-node18-browser-direct-coverage-publish
 
   - name: mediawiki/libs/php-cssjanus
     template:
