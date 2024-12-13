@@ -8776,6 +8776,7 @@ projects:
       - phpunit-coverage-php81-publish
 
   - name: mediawiki/services/parsoid/testreduce
+    # TODO (T382177): Repo doesn't yet pass on Node 20
     template:
       - name: node18
 
@@ -8939,14 +8940,6 @@ projects:
   - name: analytics/geowiki
     template:
       - name: tox
-
-  - name: analytics/quarry/web
-    template:
-      - name: node18
-    test:
-      - trigger-analytics-quarry-web-pipeline-test
-    gate-and-submit:
-      - trigger-analytics-quarry-web-pipeline-test
 
   - name: analytics/limn-mobile-data
     template:
@@ -10284,6 +10277,10 @@ projects:
 
   # Migrated to GitLab #T341194
   - name: analytics/datahub
+    template:
+      - name: archived
+
+  - name: analytics/quarry/web
     template:
       - name: archived
 
