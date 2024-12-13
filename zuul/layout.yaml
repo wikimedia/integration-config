@@ -3826,7 +3826,7 @@ projects:
     template:
       # (T353397) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
       - name: composer-test-php74-and-php81
-      - name: node18
+      - name: node20
       - name: mediawiki-i18n-check
 
   - name: operations/dumps/import-tools
@@ -9268,7 +9268,7 @@ projects:
   - name: mediawiki/libs/LangConv
     template:
       - name: mediawiki-php-library
-      - name: node18
+      - name: node20
 
   - name: mediawiki/libs/less.php
     template:
@@ -9284,10 +9284,10 @@ projects:
 
   - name: mediawiki/libs/node-cssjanus
     template:
-      - name: node18
+      - name: node20
     postmerge:
-      - generic-node18-docs-publish
-      - generic-node18-browser-direct-coverage-publish
+      - generic-node20-docs-publish
+      - generic-node20-browser-direct-coverage-publish
 
   - name: mediawiki/libs/NormalizedException
     template:
@@ -9961,7 +9961,7 @@ projects:
 
   - name: design/landing-page
     template:
-      - name: node18
+      - name: node20
 
   - name: research/landing-page
     test:
@@ -9971,28 +9971,27 @@ projects:
 
   - name: wikimedia/security/landing-page
     template:
-      - name: node18
+      - name: node20
 
   - name: oojs/core
     test:
-      - oojs-core-node18-runjenkins
-    gate-and-submit:
-      - oojs-core-node18-runjenkins
-    postmerge:
-      - generic-node18-docs-publish
-      - generic-node18-browser-coverage-publish
-    publish:
-      - generic-node18-docs-publish
-    experimental:
       - oojs-core-node20-runjenkins
+    gate-and-submit:
+      - oojs-core-node20-runjenkins
+    postmerge:
+      - generic-node20-docs-publish
+      - generic-node20-browser-coverage-publish
+    publish:
+      - generic-node20-docs-publish
+    experimental:
       - oojs-core-node22-runjenkins
 
   - name: oojs/router
     template:
-      - name: node18-browser
+      - name: node20-browser
     postmerge:
-      - generic-node18-docs-publish
-      - generic-node18-browser-coverage-publish
+      - generic-node20-docs-publish
+      - generic-node20-browser-coverage-publish
 
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
@@ -10016,28 +10015,27 @@ projects:
 
   - name: jsdoc/wmf-theme
     template:
-      - name: node18
+      - name: node20
 
   - name: unicodejs
     template:
-      - name: node18-browser
       - name: node20-browser
-      - name: node18-rundoc
+      - name: node20-rundoc
     postmerge:
-      - generic-node18-browser-coverage-publish
-      - generic-node18-docs-publish
+      - generic-node20-browser-coverage-publish
+      - generic-node20-docs-publish
     publish:
-      - generic-node18-docs-publish
+      - generic-node20-docs-publish
 
   - name: jquery-client
     template:
-      - name: node18-browser
-      - name: node18-rundoc
+      - name: node20-browser
+      - name: node20-rundoc
     postmerge:
-      - generic-node18-browser-coverage-publish
-      - generic-node18-docs-publish
+      - generic-node20-browser-coverage-publish
+      - generic-node20-docs-publish
     publish:
-      - generic-node18-docs-publish
+      - generic-node20-docs-publish
 
   - name: VisualEditor/VisualEditor
     template:
@@ -10070,7 +10068,7 @@ projects:
 
   - name: wikidata/query/gui
     template:
-      - name: node18-browser-webdriver
+      - name: node20-browser-webdriver
       - name: mediawiki-i18n-check
     # TODO enable if we decide we want this on postmerge
     # postmerge:
@@ -10088,7 +10086,7 @@ projects:
 
   - name: wikibase/javascript-api
     template:
-      - name: node18-browser
+      - name: node20-browser
 
   - name: wikibase/termbox
     test:
@@ -10113,7 +10111,7 @@ projects:
 
   - name: data-values/value-view
     template:
-      - name: node18-browser
+      - name: node20-browser
       - name: mediawiki-i18n-check
 
   - name: testing-access-wrapper
@@ -10177,11 +10175,11 @@ projects:
 
   - name: react.i18n
     template:
-      - name: node18
+      - name: node20
 
   - name: react.ooui
     template:
-      - name: node18
+      - name: node20
 
   - name: research/recommendation-api
     template:
@@ -10242,7 +10240,7 @@ projects:
 
   - name: wikimedia-ui-base
     template:
-      - name: node18
+      - name: node20
 
   - name: wikimedia/developer-portal
     test:
