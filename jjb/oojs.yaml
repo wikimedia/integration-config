@@ -81,8 +81,6 @@
         - '{name}-{node_version}-run{script}':
            script: 'jenkins'
            node_version:
-               - node18:
-                   image: docker-registry.wikimedia.org/releng/node18-test-browser:18.20.4
                - node20:
                    image: docker-registry.wikimedia.org/releng/node20-test-browser:20.16.0
                - node22:
