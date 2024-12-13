@@ -2370,15 +2370,6 @@ project-templates:
     experimental:
       - generic-node22-browser
 
-  - name: node18-browser-webdriver
-    test:
-      - generic-node18-browser-webdriver
-    gate-and-submit:
-      - generic-node18-browser-webdriver
-    experimental:
-      - generic-node20-browser-webdriver
-      - generic-node22-browser-webdriver
-
   - name: node20-browser-webdriver
     test:
       - generic-node20-browser-webdriver
@@ -2386,35 +2377,6 @@ project-templates:
       - generic-node20-browser-webdriver
     experimental:
       - generic-node22-browser-webdriver
-
-  - name: node18-browser-for-MW-branches
-    test:
-      - generic-node18-browser
-    gate-and-submit:
-      - generic-node18-browser
-    test-1_39:
-      - generic-node18-browser
-    gate-and-submit-1_39:
-      - generic-node18-browser
-    test-1_41:
-      - generic-node18-browser
-    gate-and-submit-1_41:
-      - generic-node18-browser
-    test-1_42:
-      - generic-node18-browser
-    gate-and-submit-1_42:
-      - generic-node18-browser
-    test-1_43:
-      - generic-node18-browser
-    gate-and-submit-1_43:
-      - generic-node18-browser
-    test-wmf:
-      - generic-node18-browser
-    gate-and-submit-wmf:
-      - generic-node18-browser
-    experimental:
-      - generic-node20-browser
-      - generic-node22-browser
 
   - name: node20-browser-for-MW-branches
     test:
@@ -2444,50 +2406,12 @@ project-templates:
     experimental:
       - generic-node22-browser
 
-  - name: node18-rundoc
-    test:
-      - generic-node18-rundoc
-    gate-and-submit:
-      - generic-node18-rundoc
-    experimental:
-      - generic-node20-rundoc
-      - generic-node22-rundoc
-
   - name: node20-rundoc
     test:
       - generic-node20-rundoc
     gate-and-submit:
       - generic-node20-rundoc
     experimental:
-      - generic-node22-rundoc
-
-  - name: node18-rundoc-for-MW-branches
-    test:
-      - generic-node18-rundoc
-    gate-and-submit:
-      - generic-node18-rundoc
-    test-1_39:
-      - generic-node18-rundoc
-    gate-and-submit-1_39:
-      - generic-node18-rundoc
-    test-1_41:
-      - generic-node18-rundoc
-    gate-and-submit-1_41:
-      - generic-node18-rundoc
-    test-1_42:
-      - generic-node18-rundoc
-    gate-and-submit-1_42:
-      - generic-node18-rundoc
-    test-1_43:
-      - generic-node18-rundoc
-    gate-and-submit-1_43:
-      - generic-node18-rundoc
-    test-wmf:
-      - generic-node18-rundoc
-    gate-and-submit-wmf:
-      - generic-node18-rundoc
-    experimental:
-      - generic-node20-rundoc
       - generic-node22-rundoc
 
   - name: node20-rundoc-for-MW-branches
