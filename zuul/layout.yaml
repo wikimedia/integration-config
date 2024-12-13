@@ -9849,18 +9849,18 @@ projects:
 
   - name: design/codex
     template:
-      - name: node18-browser
+      - name: node20-browser
     test:
-      - branchdeploy-codex-node18-npm
+      - branchdeploy-codex-node20-npm
     postmerge:
-      - codex-node18-doc-publish
+      - codex-node20-doc-publish
       # We want to use the special `npm run coverage` job for Codex
-      - generic-node18-browser-direct-coverage-publish
+      - generic-node20-browser-direct-coverage-publish
     publish:
       # Use `npm run doc-release` when publishing docs for a release tag
-      - codex-node18-doc-tag-publish
+      - codex-node20-doc-tag-publish
       # … and also over-write the version at /latest/ for a stable link
-      - codex-node18-doc-latest-publish
+      - codex-node20-doc-latest-publish
 
   - name: design/codex-php
     template:
