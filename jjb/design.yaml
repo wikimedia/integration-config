@@ -1,5 +1,55 @@
 # Publish Codex documentation to doc.wikimedia.org
 - project:
+    name: 'codex-node18'
+    jobs:
+     - '{name}-doc-publish':
+         image: 'docker-registry.wikimedia.org/releng/node18-test:18.20.4'
+         args: 'doc'
+         environment:
+             CODEX_DOC_ROOT: '/$DOC_PROJECT/$DOC_SUBPATH/'
+         docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
+         docdest: '$DOC_PROJECT/$DOC_SUBPATH'
+     - '{name}-doc-tag-publish':
+         image: 'docker-registry.wikimedia.org/releng/node18-test:18.20.4'
+         args: 'doc-release'
+         environment:
+             CODEX_DOC_ROOT: '/$DOC_PROJECT/$DOC_SUBPATH/'
+         docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
+         docdest: '$DOC_PROJECT/$DOC_SUBPATH'
+     - '{name}-doc-latest-publish':
+         image: 'docker-registry.wikimedia.org/releng/node18-test:18.20.4'
+         args: 'doc-release'
+         environment:
+             CODEX_DOC_ROOT: '/$DOC_PROJECT/latest/'
+         docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
+         docdest: '$DOC_PROJECT/latest'
+
+- project:
+    name: 'codex-node20'
+    jobs:
+     - '{name}-doc-publish':
+         image: 'docker-registry.wikimedia.org/releng/node20-test:20.16.0'
+         args: 'doc'
+         environment:
+             CODEX_DOC_ROOT: '/$DOC_PROJECT/$DOC_SUBPATH/'
+         docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
+         docdest: '$DOC_PROJECT/$DOC_SUBPATH'
+     - '{name}-doc-tag-publish':
+         image: 'docker-registry.wikimedia.org/releng/node20-test:20.16.0'
+         args: 'doc-release'
+         environment:
+             CODEX_DOC_ROOT: '/$DOC_PROJECT/$DOC_SUBPATH/'
+         docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
+         docdest: '$DOC_PROJECT/$DOC_SUBPATH'
+     - '{name}-doc-latest-publish':
+         image: 'docker-registry.wikimedia.org/releng/node20-test:20.16.0'
+         args: 'doc-release'
+         environment:
+             CODEX_DOC_ROOT: '/$DOC_PROJECT/latest/'
+         docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
+         docdest: '$DOC_PROJECT/latest'
+
+- project:
     name: 'codex'
     jobs:
      - '{name}-doc-publish':
