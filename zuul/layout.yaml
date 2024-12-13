@@ -2678,7 +2678,7 @@ projects:
 
   - name: integration/docroot
     template:
-      - name: node18
+      - name: node20
       - name: composer-test-php74-or-later
 
   - name: integration/gear
@@ -2751,7 +2751,7 @@ projects:
 
   - name: integration/visualdiff
     template:
-      - name: node18
+      - name: node20
 
   - name: integration/zuul
     test:
@@ -2804,11 +2804,10 @@ projects:
 
   - name: mediawiki/tools/grunt-cssjanus
     template:
-      - name: node18
+      - name: node20
 
   - name: mediawiki/tools/karma-firefox-launcher
     template:
-      - name: node18-browser
       - name: node20-browser
 
   - name: mediawiki/tools/minus-x
@@ -2871,7 +2870,7 @@ projects:
 
   - name: performance/bttostatsv
     template:
-      - name: node18
+      - name: node20
 
   - name: performance/statsv
     template:
@@ -2879,11 +2878,11 @@ projects:
 
   - name: performance/synthetic-monitoring-tests
     template:
-      - name: node18
+      - name: node20
 
   - name: performance/mobile-synthetic-monitoring-tests
     template:
-      - name: node18
+      - name: node20
 
   - name: performance/coal
     template:
@@ -2891,14 +2890,13 @@ projects:
 
   - name: performance/docroot
     template:
-      - name: node18
+      - name: node20
 
   - name: performance/fresnel
     template:
-      - name: node18-browser
       - name: node20-browser
     postmerge:
-      - generic-node18-browser-coverage-publish
+      - generic-node20-browser-coverage-publish
 
   - name: performance/navtiming
     template:
@@ -2906,11 +2904,11 @@ projects:
 
   - name: performance/perfromance
     template:
-      - name: node18
+      - name: node20
 
   - name: performance/WikimediaDebug
     template:
-      - name: node18
+      - name: node20
 
   - name: performance/xhgui-vendor
     template:
@@ -2918,7 +2916,7 @@ projects:
 
   - name: releng/phatality
     template:
-      - name: node18
+      - name: node20
 
   - name: releng/local-charts
     experimental:
@@ -3061,11 +3059,11 @@ projects:
 
     test-fundraising:
       - mwgate-composer-php74
-      - mwgate-node18
+      - mwgate-node20
       - quibble-donationinterface-REL1_39-php74
     gate-and-submit-fundraising:
       - mwgate-composer-php74
-      - mwgate-node18
+      - mwgate-node20
       - quibble-donationinterface-REL1_39-php74
 
     coverage:
@@ -3124,10 +3122,10 @@ projects:
 
     test-fundraising:
       - mwgate-composer-php74
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit-fundraising:
       - mwgate-composer-php74
-      - mwgate-node18
+      - mwgate-node20
 
     experimental:
       - mwgate-composer-php84
@@ -8615,7 +8613,7 @@ projects:
 
   - name: mapdata
     template:
-      - name: node18
+      - name: node20
 
   # To archive, once service has migrated to the pipeline
   - name: maps/kartotherian/deploy
@@ -8724,9 +8722,8 @@ projects:
 
   - name: mediawiki/services/texvcjs
     template:
-      - name: node18
+      - name: node20
     experimental:
-      - generic-node20
       - generic-node22
 
   - name: mediawiki/services/mobileapps
@@ -8925,7 +8922,7 @@ projects:
 
   - name: analytics/aqs
     template:
-      - name: node18
+      - name: node20
 
   - name: analytics/blog
     template:
@@ -8933,7 +8930,6 @@ projects:
 
   - name: analytics/dashiki
     experimental:
-      - generic-node18
       - generic-node20
       - generic-node22
 
@@ -8953,7 +8949,7 @@ projects:
 
   - name: analytics/mediawiki-storage
     template:
-      - name: node18-browser
+      - name: node20-browser
 
   - name: analytics/multimedia
     template:
@@ -8978,7 +8974,7 @@ projects:
 
   - name: analytics/wikistats2
     template:
-      - name: node18-browser
+      - name: node20-browser
       - name: mediawiki-i18n-check
 
   - name: analytics/wikimetrics
@@ -9339,7 +9335,7 @@ projects:
 
   - name: labs/tools/bodh
     template:
-      - name: node18
+      - name: node20
 
   - name: labs/tools/bodh-backend
     template:
@@ -9419,7 +9415,7 @@ projects:
 
   - name: labs/tools/heritage
     template:
-      - name: node18
+      - name: node20
       - name: composer-test-php74-only
       - name: mediawiki-i18n-check
     test:
@@ -9436,7 +9432,7 @@ projects:
   - name: labs/tools/intuition
     template:
       - name: composer-test-php74-or-later
-      - name: node18
+      - name: node20
       - name: mediawiki-i18n-check
     postmerge:
       - phpunit-coverage-php81-publish
@@ -9444,7 +9440,7 @@ projects:
   - name: labs/tools/intuition-web
     template:
       - name: composer-test-php74-or-later
-      - name: node18-browser
+      - name: node20-browser
       - name: mediawiki-i18n-check
 
   - name: labs/tools/ipchanges
@@ -9532,7 +9528,7 @@ projects:
     template:
       # (T353394) This repo does not yet pass on PHP 8.2 or 8.3
       - name: composer-test-php74-and-php81
-      - name: node18
+      - name: node20
 
   - name: labs/tools/mwpackages
     template:
@@ -9593,7 +9589,7 @@ projects:
 
   - name: labs/tools/VideoCutTool
     template:
-      - name: node18-browser
+      - name: node20-browser
       - name: mediawiki-i18n-check
 
   - name: labs/tools/watch-translations
@@ -9622,7 +9618,7 @@ projects:
 
   - name: labs/tools/wikidata-slicer
     template:
-      - name: node18
+      - name: node20
       - name: tox
 
   - name: labs/tools/wikiinfo
@@ -9655,7 +9651,7 @@ projects:
 
   - name: labs/tools/graphql
     template:
-      - name: node18
+      - name: node20
 
   - name: wikimedia/meet-accountmanager
     template:
@@ -9706,7 +9702,7 @@ projects:
 
   - name: pywikibot/i18n
     template:
-      - name: node18
+      - name: node20
       - name: mediawiki-i18n-check
     test:
       - pywikibot-i18n-tox
@@ -9764,6 +9760,7 @@ projects:
       - name: mediawiki-php-library
 
   - name: wikimedia/portals
+    # TODO (T382179): Repo doesn't yet pass on Node 20
     template:
       - name: node18-browser
       - name: mediawiki-i18n-check
@@ -9777,6 +9774,7 @@ projects:
       - trigger-wikimedia-portals-pipeline-publish
 
   - name: wikimedia/portals/deploy
+    # TODO (T382179): Don't move this differently from main repo
     template:
       - name: node18-browser
 
@@ -10004,7 +10002,7 @@ projects:
       - trigger-termbox-pipeline-rehearse
     postmerge:
       - trigger-termbox-pipeline-publish
-      - generic-node18-docs-publish
+      - generic-node20-docs-publish
 
   - name: wikibase/property-suggester-scripts
     template:
@@ -10069,7 +10067,7 @@ projects:
 
   - name: mediawiki/gadgets/ProveIt
     template:
-      - name: node18
+      - name: node20
       - name: mediawiki-i18n-check
     gate-and-submit:
       - noop
@@ -10112,7 +10110,7 @@ projects:
 
   - name: wikimedia-cz/tracker
     template:
-      - name: node18-browser
+      - name: node20-browser
       - name: mediawiki-i18n-check
     test:
       - wikimedia-cz-tracker-tox
@@ -10186,7 +10184,7 @@ projects:
 
   - name: wikimedia/fundraising/dash
     template:
-      - name: node18-browser
+      - name: node20-browser
 
   - name: wikimedia/fundraising/tools/DjangoBannerStats
     template:
