@@ -8613,14 +8613,6 @@ projects:
     publish:
       - trigger-apertium-pipeline-publish
 
-  - name: schemas/event/primary
-    template:
-      - name: node18
-
-  - name: schemas/event/secondary
-    template:
-      - name: node18
-
   - name: mapdata
     template:
       - name: node18
@@ -12214,6 +12206,14 @@ projects:
       - name: archived
 
   - name: pywikibot/wikibase
+    template:
+      - name: archived
+
+  - name: schemas/event/primary
+    template:
+      - name: archived
+
+  - name: schemas/event/secondary
     template:
       - name: archived
 
