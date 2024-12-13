@@ -1410,31 +1410,31 @@ project-templates:
 
     test-1_39:
       - mwgate-composer-php81
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit-1_39:
       - mwgate-composer-php81
-      - mwgate-node18
+      - mwgate-node20
 
     test-1_41:
       - mwgate-composer-php81
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit-1_41:
       - mwgate-composer-php81
-      - mwgate-node18
+      - mwgate-node20
 
     test-1_42:
       - mwgate-composer-php81
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit-1_42:
       - mwgate-composer-php81
-      - mwgate-node18
+      - mwgate-node20
 
     test-1_43:
       - mwgate-composer-php81
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit-1_43:
       - mwgate-composer-php81
-      - mwgate-node18
+      - mwgate-node20
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -1477,39 +1477,39 @@ project-templates:
       - mwext-php74-phan
 
     test-1_39:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     gate-and-submit-1_39:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
 
     test-1_41:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     gate-and-submit-1_41:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
 
     test-1_42:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-1_42:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82-noselenium
@@ -1518,13 +1518,13 @@ project-templates:
       # - mwext-php81-phan
 
     test-1_43:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-1_43:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82-noselenium
@@ -1535,12 +1535,12 @@ project-templates:
     test-wmf:
       - quibble-vendor-mysql-php74-noselenium
       - quibble-vendor-mysql-php74-selenium
-      - mwgate-node18
+      - mwgate-node20
       - mwext-php74-phan
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php74-noselenium
       - quibble-vendor-mysql-php74-selenium
-      - mwgate-node18
+      - mwgate-node20
       - mwext-php74-phan
 
     gate-and-submit-l10n:
@@ -1572,33 +1572,33 @@ project-templates:
     test-1_39:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-1_39:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
 
     test-1_41:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-1_41:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
 
     test-1_42:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-1_42:
@@ -1606,14 +1606,14 @@ project-templates:
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82-noselenium
       - quibble-composer-mysql-php83-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
 
     test-1_43:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-1_43:
@@ -1621,7 +1621,7 @@ project-templates:
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82-noselenium
       - quibble-composer-mysql-php83-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
 
@@ -1661,39 +1661,39 @@ project-templates:
       # - mwext-php74-phan
 
     test-1_39:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
     gate-and-submit-1_39:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
 
     test-1_41:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
     gate-and-submit-1_41:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
 
     test-1_42:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
     gate-and-submit-1_42:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82-noselenium
@@ -1702,13 +1702,13 @@ project-templates:
       # - mwext-php81-phan
 
     test-1_43:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
     gate-and-submit-1_43:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82-noselenium
@@ -1747,10 +1747,10 @@ project-templates:
       - quibble-composer-mysql-php83-noselenium
 
     test-1_39:
-      - mwext-bluespice-node18
+      - mwext-bluespice-node20
       - quibble-composer-mysql-php74-noselenium
     gate-and-submit-1_39:
-      - mwext-bluespice-node18
+      - mwext-bluespice-node20
       - quibble-composer-mysql-php74-noselenium
 
     test-1_41:
@@ -1801,49 +1801,49 @@ project-templates:
 
     test-1_39:
       - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     gate-and-submit-1_39:
       - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
 
     test-1_41:
       - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
     gate-and-submit-1_41:
       - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php74-phan
 
     test-1_42:
       - quibble-composer-mysql-php81-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-1_42:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
       - quibble-composer-mysql-php83-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
 
     test-1_43:
       - quibble-composer-mysql-php81-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-1_43:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
       - quibble-composer-mysql-php83-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
 
@@ -1888,49 +1888,49 @@ project-templates:
 
     test-1_39:
       - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
     gate-and-submit-1_39:
       - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
 
     test-1_41:
       - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
     gate-and-submit-1_41:
       - quibble-composer-mysql-php74-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php74-phan
 
     test-1_42:
       - quibble-composer-mysql-php81-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
     gate-and-submit-1_42:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
       - quibble-composer-mysql-php83-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
 
     test-1_43:
       - quibble-composer-mysql-php81-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
     gate-and-submit-1_43:
       - quibble-composer-mysql-php81-noselenium
       - quibble-composer-mysql-php82-noselenium
       - quibble-composer-mysql-php83-noselenium
-      - mwgate-node18
+      - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
 
@@ -2079,34 +2079,34 @@ project-templates:
 
     # We use composer on release branches
     test-1_39:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan
     gate-and-submit-1_39:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan
 
     test-1_41:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan
     gate-and-submit-1_41:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74
       # (T231966 / T226945) Disabled on release branches
       # - mwskin-php74-phan
 
     test-1_42:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php81-phan
     gate-and-submit-1_42:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -2114,12 +2114,12 @@ project-templates:
       # - mwskin-php81-phan
 
     test-1_43:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php81-phan
     gate-and-submit-1_43:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -2164,34 +2164,34 @@ project-templates:
       # - mwskin-php74-phan
 
     test-1_39:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan
     gate-and-submit-1_39:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan
 
     test-1_41:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan
     gate-and-submit-1_41:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php74
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php74-phan
 
     test-1_42:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php81-phan
     gate-and-submit-1_42:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -2199,12 +2199,12 @@ project-templates:
       # - mwskin-php81-phan
 
     test-1_43:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php81-phan
     gate-and-submit-1_43:
-      - mwgate-node18
+      - mwgate-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -2448,21 +2448,21 @@ project-templates:
     gate-and-submit:
       - mwgate-node20
     test-1_39:
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit-1_39:
-      - mwgate-node18
+      - mwgate-node20
     test-1_41:
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit-1_41:
-      - mwgate-node18
+      - mwgate-node20
     test-1_42:
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit-1_42:
-      - mwgate-node18
+      - mwgate-node20
     test-1_43:
-      - mwgate-node18
+      - mwgate-node20
     gate-and-submit-1_43:
-      - mwgate-node18
+      - mwgate-node20
     experimental:
       - mwgate-node22
 
