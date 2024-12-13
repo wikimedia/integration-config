@@ -8715,12 +8715,6 @@ projects:
     gate-and-submit:
       - noop
 
-  # To archive once schemas/event/{primary,secondary} are used everywhere.
-  # https://phabricator.wikimedia.org/T240985
-  - name: mediawiki/event-schemas
-    template:
-      - name: node18
-
   - name: mediawiki/services/change-propagation
     test:
       - trigger-change-propagation-pipeline-test
@@ -10665,6 +10659,10 @@ projects:
       - name: archived
 
   - name: mediawiki/debian
+    template:
+      - name: archived
+
+  - name: mediawiki/event-schemas
     template:
       - name: archived
 
