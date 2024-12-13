@@ -9946,14 +9946,14 @@ projects:
     test:
       - branchdeploy-codex-node18-npm
     postmerge:
-      - codex-doc-publish
+      - codex-node18-doc-publish
       # We want to use the special `npm run coverage` job for Codex
       - generic-node18-browser-direct-coverage-publish
     publish:
       # Use `npm run doc-release` when publishing docs for a release tag
-      - codex-doc-tag-publish
+      - codex-node18-doc-tag-publish
       # … and also over-write the version at /latest/ for a stable link
-      - codex-doc-latest-publish
+      - codex-node18-doc-latest-publish
 
   - name: design/codex-php
     template:
