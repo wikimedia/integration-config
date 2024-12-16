@@ -2339,15 +2339,6 @@ project-templates:
     postmerge:
       - php74-compile-coverage-publish
 
-  - name: node18
-    test:
-      - generic-node18
-    gate-and-submit:
-      - generic-node18
-    experimental:
-      - generic-node20
-      - generic-node22
-
   - name: node20
     test:
       - generic-node20
@@ -2355,15 +2346,6 @@ project-templates:
       - generic-node20
     experimental:
       - generic-node22
-
-  - name: node18-browser
-    test:
-      - generic-node18-browser
-    gate-and-submit:
-      - generic-node18-browser
-    experimental:
-      - generic-node20-browser
-      - generic-node22-browser
 
   - name: node20-browser
     test:
@@ -8775,8 +8757,15 @@ projects:
 
   - name: mediawiki/services/parsoid/testreduce
     # TODO (T382177): Repo doesn't yet pass on Node 20
-    template:
-      - name: node18
+    # template:
+    #  - name: node20
+    test:
+      - generic-node18
+    gate-and-submit:
+      - generic-node18
+    experimental:
+      - generic-node20
+      - generic-node22
 
   - name: mediawiki/services/poolcounter
     template:
@@ -9767,21 +9756,33 @@ projects:
   - name: wikimedia/portals
     # TODO (T382179): Repo doesn't yet pass on Node 20
     template:
-      - name: node18-browser
+    #  - name: node20-browser
       - name: mediawiki-i18n-check
     test:
       - trigger-wikimedia-portals-pipeline-test
+      - generic-node18-browser
     gate-and-submit:
       - trigger-wikimedia-portals-pipeline-test
+      - generic-node18-browser
     postmerge:
       - trigger-wikimedia-portals-pipeline-publish
     publish:
       - trigger-wikimedia-portals-pipeline-publish
+    experimental:
+      - generic-node20-browser
+      - generic-node22-browser
 
   - name: wikimedia/portals/deploy
     # TODO (T382179): Don't move this differently from main repo
-    template:
-      - name: node18-browser
+    # template:
+    #  - name: node20-browser
+    test:
+      - generic-node18-browser
+    gate-and-submit:
+      - generic-node18-browser
+    experimental:
+      - generic-node20-browser
+      - generic-node22-browser
 
   - name: wikimedia/toolhub
     test:
