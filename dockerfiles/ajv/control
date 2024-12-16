@@ -1,4 +1,4 @@
 Package: ajv
 Description: CLI JSON Schema validator
 Maintainer: Dan Duvall <dduvall@wikimedia.org>
-Depends: node18
+Depends: node20
