@@ -9203,6 +9203,10 @@ projects:
     template:
       - name: mediawiki-php-library
 
+  - name: mediawiki/libs/ParamValidator
+    template:
+        - name: mediawiki-php-library
+
   - name: mediawiki/libs/php-cssjanus
     template:
       - name: mediawiki-php-library
