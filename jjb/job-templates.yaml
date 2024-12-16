@@ -908,7 +908,7 @@
 - job-template:
     name: 'selenium-daily-{sitename}-{project}'
     node: Docker
-    docker_image_var: 'docker-registry.wikimedia.org/releng/node18-test-browser:18.20.4'
+    docker_image_var: 'docker-registry.wikimedia.org/releng/node20-test-browser:20.16.0'
     triggers:
      - timed: '@daily'
     parameters:

@@ -22,7 +22,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node18-test:18.20.4'
+        image: 'docker-registry.wikimedia.org/releng/node20-test:20.16.0'
         args: 'doc'
      - doc-publish:
            docsrc: 'src/docs/js'
@@ -846,7 +846,7 @@
     # mediawiki/services/parsoid (T321837)
     #
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/node18-test:18.20.4
+        image: docker-registry.wikimedia.org/releng/node20-test:20.16.0
         volumes:
             src/$THING_SUBNAME: /src
         logdir: '/workspace/log'
