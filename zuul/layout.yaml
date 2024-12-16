@@ -8760,9 +8760,9 @@ projects:
     # template:
     #  - name: node20
     test:
-      - generic-node18
+      - legacy-node18
     gate-and-submit:
-      - generic-node18
+      - legacy-node18
     experimental:
       - generic-node20
       - generic-node22
@@ -9760,10 +9760,10 @@ projects:
       - name: mediawiki-i18n-check
     test:
       - trigger-wikimedia-portals-pipeline-test
-      - generic-node18-browser
+      - legacy-node18-browser
     gate-and-submit:
       - trigger-wikimedia-portals-pipeline-test
-      - generic-node18-browser
+      - legacy-node18-browser
     postmerge:
       - trigger-wikimedia-portals-pipeline-publish
     publish:
@@ -9777,9 +9777,9 @@ projects:
     # template:
     #  - name: node20-browser
     test:
-      - generic-node18-browser
+      - legacy-node18-browser
     gate-and-submit:
-      - generic-node18-browser
+      - legacy-node18-browser
     experimental:
       - generic-node20-browser
       - generic-node22-browser
