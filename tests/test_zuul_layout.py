@@ -134,23 +134,16 @@ class TestZuulLayout(unittest.TestCase):
         errors = []
         bsrepos = [r for r in self.getExtSkinRepos()
                    if '/BlueSpice' in r['name']]
-        archivedRepos = [
-            'mediawiki/extensions/BlueSpiceBookshelfUI',
-            'mediawiki/extensions/BlueSpiceEditNotifyConnector',
-            'mediawiki/extensions/BlueSpiceExtensions',
-            'mediawiki/extensions/BlueSpiceInsertMagic',
-            'mediawiki/extensions/BlueSpiceMenues',
-            'mediawiki/skins/BlueSpiceSkin'
-        ]
         for project in bsrepos:
-            if project['name'] in archivedRepos:
-                # Ignore archived projects
-                continue
             try:
                 if 'template' not in project:
                     continue
                 templates = [template['name']
                              for template in project.get('template')]
+
+                # Skip archived projects
+                if templates == ['archived']:
+                    continue
 
                 # Extract singular 'extension' or 'skin'
                 kind = project['name'].split('/')[1][:-1]
