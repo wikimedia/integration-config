@@ -8,9 +8,6 @@
 # Note! This list is not used by Phan. See phan_dependencies.yaml that list.
 
 # Skins:
-skins/BlueSpiceCalumma:
- - BlueSpiceFoundation
-
 skins/BlueSpiceDiscovery:
  - BlueSpiceFoundation
  - MenuEditor
