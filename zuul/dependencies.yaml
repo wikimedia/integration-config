@@ -958,6 +958,7 @@ ReplaceText:
  - AdminLinks
 
 ReportIncident:
+ - CommunityConfiguration
  - DiscussionTools
  - EventLogging
 
