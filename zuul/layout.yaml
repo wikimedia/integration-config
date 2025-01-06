@@ -9751,6 +9751,8 @@ projects:
 
   - name: wikimedia/portals
     # TODO (T382179): Repo doesn't yet pass on Node 20
+    #
+    # XXX make sure to also update wikimedia-portals-build job.
     template:
     #  - name: node20-browser
       - name: mediawiki-i18n-check
