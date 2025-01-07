@@ -5396,10 +5396,14 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble-noselenium
-      - name: extension-quibble-only-standalone
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-javascript-documentation
+    # Using the job directly, not via template, as it won't pass on REL branches -- JDF 2025-01-07
+    test:
+      - quibble-vendor-mysql-php74-phpunit-standalone
+    gate-and-submit:
+      - quibble-vendor-mysql-php74-phpunit-standalone
     postmerge:
       - mwext-doxygen-publish
       # NOTE: This is the 'wrong' publisher, but there's no JS extension
