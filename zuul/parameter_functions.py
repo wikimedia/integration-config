@@ -118,8 +118,6 @@ def set_parameters(item, job, params):
         # https://horizon.wikimedia.org/project/sudo/
         #
 
-        if 'nocheck' in job.name:
-            params['DEB_BUILD_OPTIONS'] = 'nocheck'
         if 'backports' in job.name:  # T173999
             params['BACKPORTS'] = 'yes'
         # Always set the value to be safe (T144094)

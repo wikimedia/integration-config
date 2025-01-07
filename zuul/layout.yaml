@@ -2602,13 +2602,7 @@ projects:
       - name: node20
 
   - name: integration/zuul
-    test:
-      - debian-glue-nocheck
-    gate-and-submit:
-      - debian-glue-nocheck
     experimental:
-      # Tests timeout for some reason - T222952
-      - debian-glue
       # For the patch-queue branches - T222952
       - integration-zuul-tox
 
