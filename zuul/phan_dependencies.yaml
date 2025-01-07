@@ -173,6 +173,9 @@ CodeMirror:
  - BetaFeatures
  - Gadgets
 
+CollapsibleVector:
+ - skins/Vector
+
 CommunityConfigurationExample:
  - CommunityConfiguration
 
