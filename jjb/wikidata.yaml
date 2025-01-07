@@ -1,15 +1,4 @@
 - publisher:
-    name: email-wikidata-ci-status
-    publishers:
-     - email-ext:
-         recipients: wikidata-ci-status@wikimedia.de
-         attach-build-log: true
-         first-failure: true
-         aborted: true
-         failure: false
-         fixed: true
-
-- publisher:
     name: email-wikimedia-discovery
     publishers:
         - email-ext:
@@ -36,14 +25,6 @@
         - '{name}-maven-java8-site-publish':
               pom: analyzer/pom.xml
               site_dir: src/analyzer/target/staging
-
-- project:
-    name: wikibase-daily-npm-audit
-    repository: mediawiki/extensions/Wikibase
-    jobs:
-     - '{name}-daily-node20-npmaudit':
-#        recipients:
-#         - email-wikidata-ci-status
 
 - project:
     name: wikidata-query-rdf
