@@ -911,61 +911,6 @@
         - beta-irc  # Spam #wikimedia-releng on failure
         - docker-cleanup
 
-- job:
-    name: 'quibble-integration'
-    project-type: matrix
-    concurrent: false
-    execution-strategy:
-        sequential: true
-    parameters:
-        - matrix-combinations:
-            name: combo
-            description: 'Select matrix combinations'
-    axes:
-        - axis:
-            type: label-expression
-            name: label
-            values:
-                - contint1002
-        - axis:
-            name: ZUUL_BRANCH
-            type: user-defined
-            values: &mediawiki_supported_branches
-                - master
-                - REL1_39
-        - axis:
-            name: packagessource
-            type: user-defined
-            values:
-                - composer
-                - vendor
-        - axis:
-            name: database
-            type: user-defined
-            values:
-                - mysql
-                - postgres
-                - sqlite
-        - axis:
-            name: php
-            type: user-defined
-            values:
-                - php74
-                - php81
-                - php82
-                - php83
-                - php84
-    builders:
-        - trigger-builds:
-            - project: 'mediawiki-quibble-${packagessource}-${database}-${php}'
-              block: true
-              predefined-parameters: |
-                    projectName=mediawiki-quibble-${packagessource}-${database}-${php}
-                    ZUUL_URL=https://gerrit.wikimedia.org/r/p
-                    ZUUL_PROJECT=mediawiki/core
-                    ZUUL_BRANCH=$ZUUL_BRANCH
-                    ZUUL_REF=$ZUUL_BRANCH
-
 - job-group:
     name: mediawiki-coverage-jobs
     docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74-coverage:1.11.0-s2
@@ -1115,6 +1060,8 @@
     projects:
       - mediawiki/core
       - mediawiki/vendor
-    branches: *mediawiki_supported_branches
+    branches:
+      - master
+      - REL1_39
     jobs:
      - '{repogroup}-php-security'
