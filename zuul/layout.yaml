@@ -1323,6 +1323,7 @@ jobs:
     # it may run on for tags in the 'publish' pipeline (T232055)
     skip-if:
       - branch: ^wmf/.*$
+      - branch: ^fundraising/.*$
 
   - name: mediawiki-phpbench-patch
     voting: false
