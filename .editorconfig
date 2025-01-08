@@ -8,6 +8,10 @@ insert_final_newline = true
 indent_size = 4
 indent_style = space
 
+# Cause of left-padding spaces being used
+[zuul-migrate]
+indent_size = unset
+
 [{*.groovy,*.xml}]
 indent_size = 2
 
