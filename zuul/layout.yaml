@@ -2314,12 +2314,6 @@ project-templates:
     experimental:
       - mwgate-node22
 
-  - name: puppet-module
-    test:
-      - puppet-{name}-rake
-    gate-and-submit:
-      - puppet-{name}-rake
-
   - name: tox
     test:
       - tox
