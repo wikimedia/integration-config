@@ -3650,12 +3650,6 @@ projects:
     template:
       - name: tox
 
-  - name: operations/software/censorship-monitoring
-    test:
-      - censorshipmonitoring-tox
-    gate-and-submit:
-      - censorshipmonitoring-tox
-
   - name: operations/software/cumin
     test:
       - debian-glue-backports-non-voting
@@ -11830,6 +11824,10 @@ projects:
   - name: operations/software/acme-chief
     template:
       - name: archived
+
+  - name: operations/software/censorship-monitoring
+    template:
+      - name: archived # T383229
 
   - name: operations/software/certcentral
     template:
