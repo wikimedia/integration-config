@@ -1,0 +1,3 @@
+labels:
+    - name: debian-bullseye
+    - name: debian-bookworm

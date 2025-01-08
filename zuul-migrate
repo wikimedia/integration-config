@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # Copyright 2017 Red Hat, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -12,6 +14,19 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+# Run this using a JJB virtual env:
+#
+#   tox -e jenkins-jobs --notest
+#   ./.tox/jenkins-jobs/bin/python zuul-migrate
+#
+# To verify syntax
+#   ./.tox/jenkins-jobs/bin/pip install 'ansible==9.*'
+#   ./.tox/jenkins-jobs/bin/python zuul-migrate --syntax-check
+#
+# The resulting playbooks and zuul.d are written in the current working
+# directory
+#
+
 # TODO(mordred):
 # * Read and apply filters from the jobs: section
 # * Figure out shared job queues
@@ -23,7 +38,6 @@
 import argparse
 import collections
 import copy
-import itertools
 import getopt
 import logging
 import os
@@ -34,16 +48,17 @@ import re
 from typing import Any, Dict, List, Optional
 
 import jenkins_jobs.builder
-from jenkins_jobs.formatter import deep_format
+from jenkins_jobs.config import JJBConfig
 import jenkins_jobs.formatter
-from jenkins_jobs.parser import matches
+from jenkins_jobs.local_yaml import Jinja2Loader
+import jenkins_jobs.registry
+from jenkins_jobs.parser import YamlParser
 import jenkins_jobs.parser
 import yaml
 
 JOB_MATCHERS = {}  # type: Dict[str, Dict[str, Dict]]
 TEMPLATES_TO_EXPAND = {}  # type: Dict[str, List]
 JOBS_FOR_EXPAND = collections.defaultdict(dict)  # type: ignore
-JOBS_BY_ORIG_TEMPLATE = {}  # type: ignore
 SUFFIXES = []  # type: ignore
 SKIP_MACROS = []  # type: ignore
 ENVIRONMENT = '{{ zuul | zuul_legacy_vars }}'
@@ -310,7 +325,7 @@ class IndentedDumper(IndentedEmitter, yaml.serializer.Serializer,
                  canonical=None, indent=None, width=None,
                  allow_unicode=None, line_break=None,
                  encoding=None, explicit_start=None, explicit_end=None,
-                 version=None, tags=None):
+                 version=None, tags=None, sort_keys=True):
         IndentedEmitter.__init__(
             self, stream, canonical=canonical,
             indent=indent, width=width,
@@ -328,7 +343,7 @@ class IndentedDumper(IndentedEmitter, yaml.serializer.Serializer,
 
 
 def ordered_load(stream, *args, **kwargs):
-    return yaml.load(stream=stream, *args, **kwargs)
+    return yaml.load(stream=stream, *args, Loader=yaml.SafeLoader, **kwargs)
 
 
 def ordered_dump(data, stream=None, *args, **kwargs):
@@ -391,95 +406,29 @@ def combination_matches(combination, match_combinations):
     return False
 
 
-def expandYamlForTemplateJob(self, project, template, jobs_glob=None):
-    dimensions = []
-    template_name = template['name']
-    orig_template = copy.deepcopy(template)
-
-    # reject keys that are not useful during yaml expansion
-    for k in ['jobs']:
-        project.pop(k)
-    excludes = project.pop('exclude', [])
-    for (k, v) in project.items():
-        tmpk = '{{{0}}}'.format(k)
-        if tmpk not in template_name:
-            continue
-        if type(v) == list:
-            dimensions.append(zip([k] * len(v), v))
-    # XXX somewhat hackish to ensure we actually have a single
-    # pass through the loop
-    if len(dimensions) == 0:
-        dimensions = [(("", ""),)]
-
-    for values in itertools.product(*dimensions):
-        params = copy.deepcopy(project)
-        params = self.applyDefaults(params, template)
-
-        expanded_values = {}
-        for (k, v) in values:
-            if isinstance(v, dict):
-                inner_key = next(iter(v))
-                expanded_values[k] = inner_key
-                expanded_values.update(v[inner_key])
-            else:
-                expanded_values[k] = v
-
-        params.update(expanded_values)
-        params = deep_format(params, params)
-        if combination_matches(params, excludes):
-            log = logging.getLogger("zuul.Migrate.YamlParser")
-            log.debug('Excluding combination %s', str(params))
-            continue
-
-        allow_empty_variables = self.config \
-            and self.config.has_section('job_builder') \
-            and self.config.has_option(
-                'job_builder', 'allow_empty_variables') \
-            and self.config.getboolean(
-                'job_builder', 'allow_empty_variables')
-
-        for key in template:
-            if key not in params:
-                params[key] = template[key]
-
-        params['template-name'] = template_name
-        project_name = params['name']
-        params['name'] = '$ZUUL_SHORT_PROJECT_NAME'
-        expanded = deep_format(template, params, allow_empty_variables)
-
-        job_name = expanded.get('name')
-        templated_job_name = job_name
-        if job_name:
-            job_name = job_name.replace(
-                '$ZUUL_SHORT_PROJECT_NAME', project_name)
-            expanded['name'] = job_name
-        if jobs_glob and not matches(job_name, jobs_glob):
-            continue
-
-        self.formatDescription(expanded)
-        expanded['orig_template'] = orig_template
-        expanded['template_name'] = template_name
-        self.jobs.append(expanded)
-        JOBS_BY_ORIG_TEMPLATE[templated_job_name] = expanded
-
-
-jenkins_jobs.parser.YamlParser.expandYamlForTemplateJob = \
-    expandYamlForTemplateJob
-
-
-class JJB(jenkins_jobs.builder.Builder):
-    def __init__(self):
+class JJB(jenkins_jobs.builder.JenkinsManager):
+    def __init__(self, parser):
         self.global_config = None
         self._plugins_list = []
+        self.parser = parser
 
     def expandComponent(self, component_type, component, template_data):
         component_list_type = component_type + 's'
         new_components = []
         if isinstance(component, dict):
+            # The component is a singleton dictionary of name: dict(args)
             name, component_data = next(iter(component.items()))
-            if template_data:
-                component_data = jenkins_jobs.formatter.deep_format(
-                    component_data, template_data, True)
+            if template_data or isinstance(component_data, Jinja2Loader):
+                try:
+                    component_data = jenkins_jobs.formatter.deep_format(
+                        component_data, template_data, True)
+                except Exception:
+                    logging.error(
+                        "Failure formatting component ('%s') data '%s'",
+                        name,
+                        component_data,
+                    )
+                    raise
         else:
             name = component
             component_data = {}
@@ -593,11 +542,7 @@ class Job:
         return self.nodes
 
     def addJJBJob(self, jobs):
-        if '{name}' in self.orig:
-            self.jjb_job = JOBS_BY_ORIG_TEMPLATE[self.orig.format(
-                name='$ZUUL_SHORT_PROJECT_NAME')]
-        else:
-            self.jjb_job = jobs[self.orig]
+        self.jjb_job = jobs[self.orig]
 
     def getTimeout(self):
         timeout = None
@@ -609,7 +554,16 @@ class Job:
                     if isinstance(build_timeout, dict):
                         timeout = build_timeout.get('timeout')
                         if timeout is not None:
-                            timeout = int(timeout) * 60
+                            try:
+                                timeout = int(timeout) * 60
+                            except ValueError:
+                                # XXX The debian-glue jobs use '$BUILD_TIMEOUT'
+                                # which is injected by Zuul
+                                self.log.warning(
+                                    'Can not process timeout for %s: '
+                                    'timeout "%s" is invalid',
+                                    self.jjb_job['name'], timeout)
+                                timeout = 10800
                             # NOTE: This should be read from tenant config
                             if timeout > 10800:
                                 timeout = 10800
@@ -788,6 +742,7 @@ class Job:
                     self.log.error(
                         "Job {name} had an ansible syntax error, using script"
                         " instead of shell".format(name=self.name))
+                    self.log.error(proc.stdout)
                     return None
             finally:
                 os.unlink(tmp_path)
@@ -868,8 +823,8 @@ class Job:
         if not os.path.exists(playbook_dir):
             os.makedirs(playbook_dir)
 
-        run_playbook = os.path.join(self.job_path, 'run.yaml')
-        post_playbook = os.path.join(self.job_path, 'post.yaml')
+        run_playbook = os.path.join(playbook_dir, 'run.yaml')
+        post_playbook = os.path.join(playbook_dir, 'post.yaml')
 
         tasks = []
         workspace_task = collections.OrderedDict()
@@ -1184,16 +1139,23 @@ class ZuulMigrate:
     def run(self):
         self.loadJobs()
         self.buildChangeQueues()
-        self.convertJobs()
         self.writeJobs()
 
     def loadJobs(self):
         self.log.debug("Loading jobs")
-        builder = JJB()
-        builder.load_files([self.job_config])
-        builder.parser.expandYaml()
+
+        jjb_config = JJBConfig()
+
+        registry = jenkins_jobs.registry.ModuleRegistry(jjb_config)
+
+        parser = YamlParser(jjb_config)
+        parser.load_files([self.job_config])
+        parser.expandYaml(registry)
+
+        builder = JJB(parser)
+
         unseen = set(self.jobs.keys())
-        for job in builder.parser.jobs:
+        for job in parser.jobs:
             builder.expandMacros(job)
             self.jobs[job['name']] = job
             unseen.discard(job['name'])
@@ -1288,9 +1250,6 @@ class ZuulMigrate:
                 new_change_queues.append(a)
         return new_change_queues
 
-    def convertJobs(self):
-        pass
-
     def setupDir(self):
         zuul_d = os.path.join(self.outdir, 'zuul.d')
         job_outfile = os.path.join(zuul_d, 'zuul-legacy-jobs.yaml')
@@ -1311,7 +1270,7 @@ class ZuulMigrate:
             project_template_outfile=project_template_outfile,
         )
 
-    def makeNewJobs(self, old_job, parent: Job=None):
+    def makeNewJobs(self, old_job, parent: Job = None):
         self.log.debug("makeNewJobs(%s)", old_job)
         if isinstance(old_job, str):
             remove_gate = True
@@ -1319,6 +1278,9 @@ class ZuulMigrate:
                 # Check to see if gate- and bare versions exist
                 if old_job.replace('gate-', '', 1) in self.jobs:
                     remove_gate = False
+            elif old_job == 'noop':
+                self.log.debug("makeNewJobs(noop): ignoring 'noop' job")
+                return []
             job = self.mapping.getNewJob(old_job, remove_gate)
             if parent:
                 job.setParent(parent)
@@ -1738,17 +1700,23 @@ def main():
 
     parser = argparse.ArgumentParser(description=DESCRIPTION)
     parser.add_argument(
-        'layout',
+        '--layout',
+        default='zuul/layout.yaml',
         help="The Zuul v2 layout.yaml file to read.")
     parser.add_argument(
-        'job_config',
+        '--job_config',
+        default='jjb',
         help="Directory containing Jenkins Job Builder job definitions.")
     parser.add_argument(
-        'nodepool_config',
+        '--nodepool_config',
+        default='zuul/nodepool.yaml',
         help="Nodepool config file containing complete set of node names")
     parser.add_argument(
         'outdir',
-        help="A directory into which the Zuul v3 config will be written.")
+        nargs='?',
+        default=os.curdir,
+        help="A directory into which the Zuul v3 config will be written."
+             "Default: current working directory")
     parser.add_argument(
         '--mapping',
         default=None,
@@ -1770,3 +1738,11 @@ def main():
 
     ZuulMigrate(args.layout, args.job_config, args.nodepool_config,
                 args.outdir, args.mapping, args.syntax_check).run()
+    print("Done. Wrote config in '%s' and '%s'" % (
+        os.path.normpath(os.path.join(args.outdir, 'playbooks')),
+        os.path.normpath(os.path.join(args.outdir, 'zuul.d')),
+    ))
+
+
+if __name__ == '__main__':
+    main()
