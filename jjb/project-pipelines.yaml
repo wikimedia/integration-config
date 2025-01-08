@@ -51,7 +51,6 @@
     name: bitu
     pipeline:
       - test
-      - rehearse
       - publish
     jobs:
       # trigger-bitu-pipeline-test
