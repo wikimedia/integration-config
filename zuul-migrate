@@ -28,6 +28,7 @@ import getopt
 import logging
 import os
 import subprocess
+import sys
 import tempfile
 import re
 from typing import Any, Dict, List, Optional
@@ -53,6 +54,29 @@ Builder job definitions and transforms them into a Zuul v3 config. An
 optional mapping config can be given that defines how to map old jobs
 to new jobs.
 """
+
+
+def colored_logging():
+    # Color codes http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
+    logging.addLevelName(  # cyan
+        logging.DEBUG,
+        "\033[36m%s\033[0m" % logging.getLevelName(logging.DEBUG),
+    )
+    logging.addLevelName(  # green
+        logging.INFO, "\033[32m%s\033[0m" % logging.getLevelName(logging.INFO)
+    )
+    logging.addLevelName(  # yellow
+        logging.WARNING,
+        "\033[33m%s\033[0m" % logging.getLevelName(logging.WARNING),
+    )
+    logging.addLevelName(  # red
+        logging.ERROR,
+        "\033[31m%s\033[0m" % logging.getLevelName(logging.ERROR),
+    )
+    logging.addLevelName(  # red background
+        logging.CRITICAL,
+        "\033[41m%s\033[0m" % logging.getLevelName(logging.CRITICAL),
+    )
 
 
 def deal_with_shebang(data):
@@ -1735,6 +1759,10 @@ def main():
         '--syntax-check', dest='syntax_check', action='store_true',
         help='Run ansible-playbook --syntax-check on generated playbooks')
     args = parser.parse_args()
+
+    if sys.stderr.isatty() or 'FORCE_COLOR' in os.environ:
+        colored_logging()
+
     if args.verbose:
         logging.basicConfig(level=logging.DEBUG)
     else:
