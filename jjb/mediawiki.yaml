@@ -1052,16 +1052,3 @@
                     mw_server: 'https://commons.wikimedia.beta.wmflabs.org'
                     mw_user: 'Selenium user'
                     mw_credential_id: 'selenium-user-beta'
-
-- project:
-    name: 'mediawiki-php-security'
-    repogroup: 'mediawiki'
-    host: 'https://gerrit.wikimedia.org/r/p'
-    projects:
-      - mediawiki/core
-      - mediawiki/vendor
-    branches:
-      - master
-      - REL1_39
-    jobs:
-     - '{repogroup}-php-security'
