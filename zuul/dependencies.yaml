@@ -484,6 +484,7 @@ CheckUser:
  - GlobalBlocking
  - GlobalPreferences
  - GuidedTour
+ - IPInfo
  - MobileFrontend
  - Renameuser
  - TorBlock
