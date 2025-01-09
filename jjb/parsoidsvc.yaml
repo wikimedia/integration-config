@@ -43,13 +43,13 @@
         - wikipeg-special-{node-plus-php}-composer:
             node-plus-php:
                 - node20-plus-php81:
-                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.16.0-s1
+                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.18.1
                 - node20-plus-php83:
-                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.16.0-s1
+                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.18.1
                 - node22-plus-php81:
-                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php81-composer:22.6.0-s1
+                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php81-composer:22.13.0
                 - node22-plus-php83:
-                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.6.0-s1
+                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.13.0
 
 - project:
     name: parsoidsvc
@@ -57,12 +57,12 @@
         - '{name}-composer-package-{phpflavor}':
             phpflavor:
                 - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php74:0.4.3-s4
+                    image: docker-registry.wikimedia.org/releng/composer-package-php74:0.4.3-s5
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.30
+                    image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.30-s1
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php82:8.2.25
+                    image: docker-registry.wikimedia.org/releng/composer-package-php82:8.2.25-s1
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php83:8.3.12
+                    image: docker-registry.wikimedia.org/releng/composer-package-php83:8.3.12-s1
                 - php84:
                     image: docker-registry.wikimedia.org/releng/composer-package-php84:8.4.1

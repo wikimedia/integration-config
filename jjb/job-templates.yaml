@@ -524,7 +524,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test:20.16.0'
+        image: 'docker-registry.wikimedia.org/releng/node20-test:20.18.1'
         workdir: /src
         args: 'branch-deploy'
     publishers:
@@ -551,7 +551,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node22-test:22.6.0'
+        image: 'docker-registry.wikimedia.org/releng/node22-test:22.13.0'
         workdir: /src
         args: 'branch-deploy'
     publishers:
@@ -664,7 +664,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test:20.16.0'
+        image: 'docker-registry.wikimedia.org/releng/node20-test:20.18.1'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -680,7 +680,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node22-test:22.6.0'
+        image: 'docker-registry.wikimedia.org/releng/node22-test:22.13.0'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -692,9 +692,9 @@
     name: 'generic'
     node_version:
         - node20:
-            image: docker-registry.wikimedia.org/releng/node20-test-browser:20.16.0
+            image: docker-registry.wikimedia.org/releng/node20-test-browser:20.18.1
         - node22:
-            image: docker-registry.wikimedia.org/releng/node22-test-browser:22.6.0
+            image: docker-registry.wikimedia.org/releng/node22-test-browser:22.13.0
     jobs:
         - 'generic-{node_version}-browser-coverage-publish'
         - 'generic-{node_version}-browser-direct-coverage-publish'
@@ -707,9 +707,9 @@
         - '{name}-{node_version}':
             node_version: &node_without_browsers
                 - node20:
-                    image: docker-registry.wikimedia.org/releng/node20-test:20.16.0
+                    image: docker-registry.wikimedia.org/releng/node20-test:20.18.1
                 - node22:
-                    image: docker-registry.wikimedia.org/releng/node22-test:22.6.0
+                    image: docker-registry.wikimedia.org/releng/node22-test:22.13.0
         - 'generic-{node_version}-docs-publish':
             node_version: *node_without_browsers
 
@@ -735,9 +735,9 @@
            script: 'doc'
            node_version:
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.16.0
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.18.1
                - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.6.0
+                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.13.0
 
 # Same as 'mwext', but solo so BlueSpice repos don't conflict
 - project:
@@ -746,9 +746,9 @@
         - '{name}-{node_version}':
            node_version:
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.16.0
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.18.1
                - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.6.0
+                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.13.0
 
 - project:
     name: 'branchdeploy'
@@ -764,7 +764,7 @@
 - job-template:
     name: 'selenium-daily-{sitename}-{project}'
     node: Docker
-    docker_image_var: 'docker-registry.wikimedia.org/releng/node20-test-browser:20.16.0'
+    docker_image_var: 'docker-registry.wikimedia.org/releng/node20-test-browser:20.18.1'
     triggers:
      - timed: '@daily'
     parameters:

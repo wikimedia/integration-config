@@ -55,11 +55,11 @@
     name: phpunit-coverage-publish
     php:
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.30
+            docker_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.30-s1
         - php82:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.25
+            docker_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.25-s1
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.12
+            docker_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.12-s1
         - php84:
             docker_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.1
     jobs:
@@ -77,9 +77,9 @@
         - '{name}-{node_version}':
             node_version:
                 - node20:
-                    image: docker-registry.wikimedia.org/releng/node20-test:20.16.0
+                    image: docker-registry.wikimedia.org/releng/node20-test:20.18.1
                 - node22:
-                    image: docker-registry.wikimedia.org/releng/node22-test:22.6.0
+                    image: docker-registry.wikimedia.org/releng/node22-test:22.13.0
             name:
                - gerrit
 
