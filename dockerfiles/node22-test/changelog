@@ -1,3 +1,10 @@
+node22-test (22.13.0) wikimedia; urgency=high
+
+   Refresh for update in parent image node22:
+   Update Node to v22.13.0, and switch base image from bullseye to bookworm
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  9 Jan 2025 12:42:13 -0500
+
 node22-test (22.6.0) wikimedia; urgency=high
 
    Refresh for update in parent image node22:
