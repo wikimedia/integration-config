@@ -80,6 +80,7 @@ deploy_docker() {
     _ssh_command_self "$host" '
     docker pull docker-registry.wikimedia.org/buster
     docker pull docker-registry.wikimedia.org/bullseye
+    docker pull docker-registry.wikimedia.org/bookworm
     '
 
     local docker_pkg='/srv/deployment/docker-pkg/venv/bin/docker-pkg'
