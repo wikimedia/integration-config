@@ -1,3 +1,10 @@
+ajv (0.4.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image node20:
+   Update Node to v20.18.1, and switch base image from bullseye to bookworm
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  9 Jan 2025 10:54:08 -0500
+
 ajv (0.4.0) wikimedia; urgency=high
 
    Switch parent image from node18 to node20

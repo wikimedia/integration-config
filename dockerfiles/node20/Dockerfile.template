@@ -1,10 +1,10 @@
 # Docker image with plain nodejs and npm.
 
-FROM {{ "ci-bullseye" | image_tag }}
+FROM {{ "ci-bookworm" | image_tag }}
 
 USER root
 
-ENV NODE_VERSION=v20.16.0
+ENV NODE_VERSION=v20.18.1
 ENV NODE_FILENAME=node-${NODE_VERSION}-linux-x64.tar.gz
 ENV NODE_DIRNAME=node-${NODE_VERSION}-linux-x64
 
