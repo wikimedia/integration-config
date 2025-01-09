@@ -1493,12 +1493,10 @@ project-templates:
 
     test-wmf:
       - quibble-vendor-mysql-php74-noselenium
-      - quibble-vendor-mysql-php74-selenium
       - mwgate-node20
       - mwext-php74-phan
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php74-noselenium
-      - quibble-vendor-mysql-php74-selenium
       - mwgate-node20
       - mwext-php74-phan
 
@@ -1915,12 +1913,10 @@ project-templates:
       - mwgate-node20
       - wmf-quibble-vendor-mysql-php74
       - wmf-quibble-core-vendor-mysql-php74
-      - wmf-quibble-selenium-php74
     gate-and-submit-wmf:
       - mwgate-node20
       - wmf-quibble-vendor-mysql-php74
       - wmf-quibble-core-vendor-mysql-php74
-      - wmf-quibble-selenium-php74
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -2876,14 +2872,12 @@ projects:
       - mediawiki-quibble-composer-mysql-php74
       - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-composertest-php74
-      - mediawiki-quibble-selenium-vendor-mysql-php74
       - mediawiki-quibble-apitests-vendor-php74
       - mediawiki-core-php74-phan
     gate-and-submit-wmf:
       - mediawiki-quibble-composer-mysql-php74
       - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-composertest-php74
-      - mediawiki-quibble-selenium-vendor-mysql-php74
       - mediawiki-quibble-apitests-vendor-php74
       - mediawiki-core-php74-phan
 
@@ -4367,11 +4361,9 @@ projects:
     # Special extra config because this is -composer, so doesn't get wmf branch jobs
     test-wmf:
       - quibble-composer-mysql-php74-noselenium
-      - quibble-composer-mysql-php74-selenium
       - mwgate-node20
     gate-and-submit-wmf:
       - quibble-composer-mysql-php74-noselenium
-      - quibble-composer-mysql-php74-selenium
       - mwgate-node20
 
   - name: mediawiki/extensions/FundraisingTranslateWorkflow
