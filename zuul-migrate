@@ -61,6 +61,10 @@ TEMPLATES_TO_EXPAND = {}  # type: Dict[str, List]
 JOBS_FOR_EXPAND = collections.defaultdict(dict)  # type: ignore
 SUFFIXES = []  # type: ignore
 SKIP_MACROS = []  # type: ignore
+# Jenkins jobs we are not migrated
+SKIP_JOBS = [
+    'fail-archived-repositories',
+]
 ENVIRONMENT = '{{ zuul | zuul_legacy_vars }}'
 DESCRIPTION = """Migrate zuul v2 and Jenkins Job Builder to Zuul v3.
 
@@ -1156,6 +1160,8 @@ class ZuulMigrate:
 
         unseen = set(self.jobs.keys())
         for job in parser.jobs:
+            if job['name'] in SKIP_JOBS:
+                continue
             builder.expandMacros(job)
             self.jobs[job['name']] = job
             unseen.discard(job['name'])
@@ -1274,7 +1280,9 @@ class ZuulMigrate:
         self.log.debug("makeNewJobs(%s)", old_job)
         if isinstance(old_job, str):
             remove_gate = True
-            if old_job.startswith('gate-'):
+            if old_job in SKIP_JOBS:
+                return []
+            elif old_job.startswith('gate-'):
                 # Check to see if gate- and bare versions exist
                 if old_job.replace('gate-', '', 1) in self.jobs:
                     remove_gate = False
@@ -1655,13 +1663,20 @@ class ZuulMigrate:
         normalize_project_expansions()
 
         project_names = []
+        archived = []
         for project in self.layout.get('projects', []):
+            if project.get('template') == [{'name': 'archived'}]:
+                archived.append(project['name'])
+                continue
             project_names.append(project['name'])
             project_dict = self.writeProject(project)
             merge_project_dict(
                 project_dicts, project['name'],
                 project_dict)
         project_config = project_dicts_to_list(project_dicts)
+
+        if archived:
+            self.log.info('Skipped %s archived projects' % len(archived))
 
         seen_jobs = []
         for job in sorted(self.job_objects, key=lambda job: job.name):
