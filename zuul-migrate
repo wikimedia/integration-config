@@ -1286,10 +1286,12 @@ class ZuulMigrate:
                 # Check to see if gate- and bare versions exist
                 if old_job.replace('gate-', '', 1) in self.jobs:
                     remove_gate = False
-            elif old_job == 'noop':
-                self.log.debug("makeNewJobs(noop): ignoring 'noop' job")
+            if old_job in SKIP_JOBS:
                 return []
-            job = self.mapping.getNewJob(old_job, remove_gate)
+            elif old_job == 'noop':
+                job = Job('noop')
+            else:
+                job = self.mapping.getNewJob(old_job, remove_gate)
             if parent:
                 job.setParent(parent)
             return [job]
@@ -1571,6 +1573,7 @@ class ZuulMigrate:
                 continue
             else:
                 new_project[key] = collections.OrderedDict()
+                # XXX we have gates per branches!
                 if key == 'gate':
                     for queue in self.change_queues:
                         if project['name'] not in queue.getProjects():
@@ -1680,9 +1683,12 @@ class ZuulMigrate:
 
         seen_jobs = []
         for job in sorted(self.job_objects, key=lambda job: job.name):
-            if (job.name not in seen_jobs and
-                    job.name not in self.mapping.seen_new_jobs and
-                    job.emit):
+            if (
+                job.name not in seen_jobs
+                and job.name != 'noop'
+                and job.name not in self.mapping.seen_new_jobs
+                and job.emit
+            ):
                 has_artifacts, has_post, has_draft = job.emitPlaybooks(
                     self.outdir, self.syntax_check)
                 job_config.append({'job': job.toJobDict(
