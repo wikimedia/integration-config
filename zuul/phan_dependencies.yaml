@@ -260,6 +260,9 @@ EventBus:
  - CentralNotice
  - EventStreamConfig
 
+EventLogging:
+ - SyntaxHighlight_GeSHi
+
 ExternalData:
  - Scribunto
 
