@@ -255,6 +255,7 @@ EntitySchema:
  - Wikibase
  - Elastica
  - CirrusSearch
+ - SyntaxHighlight_GeSHi
  - WikibaseCirrusSearch
 
 EventBus:
