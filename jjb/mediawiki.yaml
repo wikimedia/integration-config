@@ -154,8 +154,6 @@
                     image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.1
         - '{name}-{node_version}':
             node_version:
-               - node18:
-                   image: docker-registry.wikimedia.org/releng/node18-test:18.20.4
                - node20:
                    image: docker-registry.wikimedia.org/releng/node20-test:20.18.1
                - node22:

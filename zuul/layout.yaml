@@ -2879,11 +2879,11 @@ projects:
 
     test-fundraising:
       - mwgate-composer-php74
-      - mwgate-node18
+      - mwgate-node20
       - quibble-donationinterface-REL1_39-php74
     gate-and-submit-fundraising:
       - mwgate-composer-php74
-      - mwgate-node18
+      - mwgate-node20
       - quibble-donationinterface-REL1_39-php74
 
     coverage:
