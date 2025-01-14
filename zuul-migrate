@@ -64,6 +64,7 @@ SKIP_MACROS = []  # type: ignore
 # Jenkins jobs we are not migrated
 SKIP_JOBS = [
     'fail-archived-repositories',
+    '.+-pipeline-.+',
 ]
 ENVIRONMENT = '{{ zuul | zuul_legacy_vars }}'
 DESCRIPTION = """Migrate zuul v2 and Jenkins Job Builder to Zuul v3.
@@ -1280,15 +1281,18 @@ class ZuulMigrate:
         self.log.debug("makeNewJobs(%s)", old_job)
         if isinstance(old_job, str):
             remove_gate = True
-            if old_job in SKIP_JOBS:
+
+            if any(
+                (re.match(skip_job, old_job) for skip_job in SKIP_JOBS)
+            ):
                 return []
-            elif old_job.startswith('gate-'):
+
+            if old_job.startswith('gate-'):
                 # Check to see if gate- and bare versions exist
                 if old_job.replace('gate-', '', 1) in self.jobs:
                     remove_gate = False
-            if old_job in SKIP_JOBS:
-                return []
-            elif old_job == 'noop':
+
+            if old_job == 'noop':
                 job = Job('noop')
             else:
                 job = self.mapping.getNewJob(old_job, remove_gate)
