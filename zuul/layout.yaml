@@ -7806,6 +7806,10 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/SimpleBlogPage
+    template:
+      - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/SimpleCalendar
     template:
       - name: extension-quibble
