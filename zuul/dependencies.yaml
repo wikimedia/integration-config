@@ -198,7 +198,6 @@ BlueSpiceInsertLink:
  - BlueSpiceVisualEditorConnector
 
 BlueSpiceFoundation:
- - ExtJSBase
  - OOJSPlus
 
 BlueSpiceInsertTemplate:

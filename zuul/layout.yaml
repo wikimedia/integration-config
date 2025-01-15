@@ -6455,10 +6455,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/ExtJSBase
-    template:
-      - name: extension-quibble-bluespice
-
   - name: mediawiki/extensions/Expressions
     template:
       - name: extension-quibble
@@ -10836,6 +10832,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ExpandTemplates
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/ExtJSBase
     template:
       - name: archived
 

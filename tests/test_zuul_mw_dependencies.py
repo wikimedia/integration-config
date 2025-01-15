@@ -171,7 +171,6 @@ class TestMwDependencies(unittest.TestCase):
             project='mediawiki/extensions/BlueSpiceFoundation')
         self.assertIn('EXT_DEPENDENCIES', deps)
         self.assertEqual('\\n'.join([
-                         'mediawiki/extensions/ExtJSBase',
                          'mediawiki/extensions/OOJSPlus',
                          ]),
                          deps['EXT_DEPENDENCIES'])
