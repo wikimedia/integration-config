@@ -1032,7 +1032,7 @@ jobs:
     files:
         - '.pipeline/outlink/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'src/models/outlink_topic_model/model-server/.*'
+        - 'src/models/outlink_topic_model/model_server/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-outlink-transformer
