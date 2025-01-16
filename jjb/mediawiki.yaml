@@ -236,7 +236,16 @@
             options: '--tmpfs /workspace/db:size=320M'
             volumes:
                 /srv/git: /srv/git:ro
-            args: '--reporting-url="https://earlywarningbot.toolforge.org" --packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db --git-parallel=8 {quibble_args}'
+            args: >-
+                --reporting-url="https://earlywarningbot.toolforge.org"
+                --packages-source "{packages-source}"
+                --db "{database}"
+                --db-dir /workspace/db
+                --git-parallel=8
+                --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
+                --success-cache-key-data="$JOB_NAME"
+                --success-cache-key-data="{docker_image}"
+                {quibble_args}
             logdir: '/workspace/log'
             srcdir: '/workspace/src'
         - assert-no-mediawiki-errors
