@@ -1,0 +1,57 @@
+#!/bin/bash
+
+set -euo pipefail
+
+REPO=https://gerrit.wikimedia.org/r/integration/quibble
+CHANGELOG_FILES=(dockerfiles/quibble-*/changelog)
+DOCKERFILE_FILES=(dockerfiles/quibble-*/Dockerfile.template)
+QUIBBLE_VERSION_LINE='^\(ARG QUIBBLE_VERSION=\).*'
+DCH_IGNORE="New package version is Debian native whilst previous version was not"
+
+bold=$(tput bold)
+reset=$(tput sgr0)
+
+echo_bold() {
+    printf "%s%s%s\n" "$bold" "${*}" "$reset"
+}
+
+echo_bold "Scanning for latest tag in $REPO ..."
+_version_ref=$(git ls-remote --tags --refs --sort=version:refname $REPO|tail -n1)
+# See bash(1): 'Pattern substitution'
+_pattern=$'#*\trefs/tags/'
+upstream_version=${_version_ref/$_pattern/}
+echo "Found upstream version $upstream_version"
+
+echo_bold "Updating Quibble version in images"
+sed -i -e "s/$QUIBBLE_VERSION_LINE/\1$upstream_version/" "${DOCKERFILE_FILES[@]}"
+git grep "$QUIBBLE_VERSION_LINE" "${DOCKERFILE_FILES[@]}"
+
+echo_bold "Updating changelog entries"
+for changelog_file in "${CHANGELOG_FILES[@]}"; do
+    dch \
+        --vendor=wikimedia \
+        --distribution=wikimedia \
+        --changelog "$changelog_file" \
+        --newversion="$upstream_version" \
+        "Update Quibble to $upstream_version" 2>&1 |
+            bash -c "grep -v \"$DCH_IGNORE\" || :"
+done;
+head --quiet --lines=1 "${CHANGELOG_FILES[@]}"|column -t
+echo_bold "done"
+
+echo_bold "Generating commit"
+git commit \
+    -m "dockerfiles: update Quibble to $upstream_version" \
+    "${CHANGELOG_FILES[@]}" \
+    "${DOCKERFILE_FILES[@]}"
+
+git log --stat "HEAD@{u}..HEAD"
+cmd="git push origin HEAD:refs/for/master%topic=quibble-$upstream_version"
+echo -e "\n\t$cmd\n"
+read -r -p "${bold}Send for review? [yN] ${reset}"
+case $REPLY in
+    [yY])
+        echo "Sending for review ..."
+        $cmd
+    ;;
+esac
