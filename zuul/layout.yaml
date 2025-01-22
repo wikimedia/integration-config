@@ -1004,7 +1004,7 @@ jobs:
     # run them on REL branches.
     branch: (?!^REL)
 
-  - name: ^quibble-donationinterface-REL1_39-php74$
+  - name: ^quibble-donationinterface-REL1_43-php82$
     skip-if:
       - project: ^mediawiki/extensions/DonationInterface$
         branch: ^deployment$
@@ -2880,11 +2880,11 @@ projects:
     test-fundraising:
       - mwgate-composer-php74
       - mwgate-node20
-      - quibble-donationinterface-REL1_39-php74
+      - quibble-donationinterface-REL1_43-php82
     gate-and-submit-fundraising:
       - mwgate-composer-php74
       - mwgate-node20
-      - quibble-donationinterface-REL1_39-php74
+      - quibble-donationinterface-REL1_43-php82
 
     coverage:
       - mwcore-phpunit-coverage-patch
@@ -4070,11 +4070,11 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-    # Special extra jobs because Fundraising uses this on PHP74/REL1_39
+    # Special extra jobs because Fundraising uses this on PHP82/REL1_43
     test:
-      - quibble-fundraising-cldr-REL1_39-php74
+      - quibble-fundraising-cldr-REL1_43-php82
     #gate-and-submit:
-    #  - quibble-fundraising-cldr-REL1_39-php74
+    #  - quibble-fundraising-cldr-REL1_43-php82
 
   - name: mediawiki/extensions/CodeEditor
     template:
@@ -4201,12 +4201,12 @@ projects:
     test:
       - mwgate-composer-php74
       - mwgate-node20
-      - quibble-donationinterface-REL1_39-php74
+      - quibble-donationinterface-REL1_43-php82
       - mwext-php74-phan
     gate-and-submit:
       - mwgate-composer-php74
       - mwgate-node20
-      - quibble-donationinterface-REL1_39-php74
+      - quibble-donationinterface-REL1_43-php82
       - mwext-php74-phan
     experimental:
       - mwgate-node20
@@ -4344,11 +4344,11 @@ projects:
       - name: extension-quibble-composer
       - name: extension-coverage
       - name: mediawiki-i18n-check
-    # Special extra jobs because Fundraising uses this on PHP74/REL1_39
+    # Special extra jobs because Fundraising uses this on PHP82/REL1_43
     test:
-      - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_39-php74
+      - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_43-php82
     gate-and-submit:
-      - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_39-php74
+      - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_43-php82
     # Special extra config because this is -composer, so doesn't get wmf branch jobs
     test-wmf:
       - quibble-composer-mysql-php74-noselenium
