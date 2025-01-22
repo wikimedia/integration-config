@@ -1,4 +1,4 @@
-FROM {{ "ci-bullseye" | image_tag }}
+FROM {{ "ci-bookworm" | image_tag }}
 
 USER root
 

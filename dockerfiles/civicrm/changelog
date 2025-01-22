@@ -1,3 +1,9 @@
+civicrm (0.5) wikimedia; urgency=medium
+
+  * Upgrading base image to bookworm with php8.2
+
+ -- Elliott Eggleston <ejegg@ejegg.com>  Wed, 22 Jan 2025 14:53:27 -0500
+
 civicrm (0.4.2-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:
