@@ -308,16 +308,16 @@ class TestZuulLayout(unittest.TestCase):
                     self.assertIn(
                         'quibble-donationinterface-REL1_39-php74',
                         project['gate-and-submit'],
-                        'Fundraising %s %s must have FR G&S job for REL1_39'
+                        'Fundraising %s %s must have G&S FR job for REL1_39'
                         % (kind, name)
                     )
-                # else:
-                #    self.assertIn(
-                #        'quibble-fundraising-%s-REL1_39-php74' % name,
-                #        project['gate-and-submit'],
-                #        'Fundraising %s %s must have FR job G&S for REL1_39'
-                #        % (kind, name)
-                #    )
+                else:
+                    self.assertIn(
+                        'quibble-fundraising-%s-REL1_39-php74' % name,
+                        project['gate-and-submit'],
+                        'Fundraising %s %s must have FR job G&S for REL1_39'
+                        % (kind, name)
+                    )
 
             except AssertionError, e:
                 errors.append(str(e))
