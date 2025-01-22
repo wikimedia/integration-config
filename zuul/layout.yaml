@@ -1257,7 +1257,7 @@ jobs:
   - name: mediawiki-core-doxygen-publish
     mutex: mediawiki-core-doxygen-publish
 
-  - name: wikimedia-fundraising-civicrm-bullseye
+  - name: wikimedia-fundraising-civicrm-bookworm
     branch: (?!.*deployment.*|^contrib$)
 
   # Make 'standalone' jobs run consecutively not concurrently, as they can clobber each other
@@ -10044,15 +10044,15 @@ projects:
     template:
       - name: composer-test-php74-only
     test:
-      - wikimedia-fundraising-civicrm-bullseye
+      - wikimedia-fundraising-civicrm-bookworm
     gate-and-submit:
-      - wikimedia-fundraising-civicrm-bullseye
+      - wikimedia-fundraising-civicrm-bookworm
 
   - name: wikimedia/fundraising/crm/vendor
     test:
-      - wikimedia-fundraising-civicrm-bullseye
+      - wikimedia-fundraising-civicrm-bookworm
     gate-and-submit:
-      - wikimedia-fundraising-civicrm-bullseye
+      - wikimedia-fundraising-civicrm-bookworm
 
   - name: wikimedia/fundraising/slander
     template:
