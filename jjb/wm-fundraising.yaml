@@ -26,6 +26,11 @@
 - project:
     name: donationinterface-fundraising-branches
     branch:
+     - REL1_39:
+         phpflavor: php74
+         docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.12.0
+         entrypoint: quibble-with-supervisord
+         donation_interface_branch: master
      - REL1_43:
          phpflavor: php82
          docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.12.0
@@ -85,6 +90,10 @@
      - FundraisingEmailUnsubscribe
      - cldr
     branch:
+     - REL1_39:
+         phpflavor: php74
+         docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.12.0
+         entrypoint: quibble-with-supervisord
      - REL1_43:
          phpflavor: php82
          docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.12.0
