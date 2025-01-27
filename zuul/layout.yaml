@@ -2880,13 +2880,13 @@ projects:
       - mediawiki-core-php74-phan
 
     test-fundraising:
-      - mwgate-composer-php74
+      - mwgate-composer-php82
       - mwgate-node20
-      - quibble-donationinterface-REL1_39-php74
+      - quibble-donationinterface-REL1_43-php82
     gate-and-submit-fundraising:
-      - mwgate-composer-php74
+      - mwgate-composer-php82
       - mwgate-node20
-      - quibble-donationinterface-REL1_39-php74
+      - quibble-donationinterface-REL1_43-php82
 
     coverage:
       - mwcore-phpunit-coverage-patch
@@ -2943,10 +2943,10 @@ projects:
     # use composer install instead. T189560
 
     test-fundraising:
-      - mwgate-composer-php74
+      - mwgate-composer-php82
       - mwgate-node20
     gate-and-submit-fundraising:
-      - mwgate-composer-php74
+      - mwgate-composer-php82
       - mwgate-node20
 
     experimental:
