@@ -843,6 +843,7 @@ NotifyMe:
 
 Nuke:
  - CheckUser
+ - EventLogging
 
 OATHAuth:
  - CheckUser
