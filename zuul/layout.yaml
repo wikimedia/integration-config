@@ -4221,6 +4221,7 @@ projects:
       - quibble-donationinterface-REL1_39-php74
       - mwext-php74-phan
     experimental:
+      - quibble-donationinterface-REL1_43-php82
       - mwgate-node20
       - mwgate-node22
       # These are the remaining parts of extension-quibble
@@ -4370,6 +4371,8 @@ projects:
       - quibble-composer-mysql-php74-noselenium
       - quibble-composer-mysql-php74-selenium
       - mwgate-node20
+    experimental:
+      - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_43-php82
 
   - name: mediawiki/extensions/FundraisingTranslateWorkflow
     template:
@@ -4805,7 +4808,6 @@ projects:
   - name: mediawiki/extensions/ParserFunctions
     template:
       - name: in-wikimedia-production
-      - name: in-wikimedia-fundraising-production
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
