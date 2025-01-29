@@ -4083,8 +4083,8 @@ projects:
     # Special extra jobs because Fundraising uses this on PHP74/REL1_39
     test:
       - quibble-fundraising-cldr-REL1_39-php74
-    #gate-and-submit:
-    #  - quibble-fundraising-cldr-REL1_39-php74
+    gate-and-submit:
+      - quibble-fundraising-cldr-REL1_39-php74
 
   - name: mediawiki/extensions/CodeEditor
     template:
