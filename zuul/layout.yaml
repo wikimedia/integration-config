@@ -10047,7 +10047,7 @@ projects:
 
   - name: wikimedia/fundraising/crm
     template:
-      - name: composer-test-php74-only
+      - name: composer-test-php82-only
     test:
       - wikimedia-fundraising-civicrm-bookworm
     gate-and-submit:
