@@ -2165,6 +2165,15 @@ project-templates:
     experimental:
       - composer-php84
 
+  - name: composer-test-php82-only
+    test:
+      - composer-php82
+    gate-and-submit:
+      - composer-php82
+    experimental:
+      - composer-php83
+      - composer-php84
+
   - name: composer-test-package-php74-or-later
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
@@ -10060,7 +10069,7 @@ projects:
 
   - name: wikimedia/fundraising/SmashPig
     template:
-      - name: composer-test-php74-only
+      - name: composer-test-php82-only
 
   - name: wikimedia/textcat
     template:
