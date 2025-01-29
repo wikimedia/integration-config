@@ -2869,13 +2869,11 @@ projects:
       - mediawiki-core-php81-phan
 
     test-wmf:
-      - mediawiki-quibble-composer-mysql-php74
       - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-composertest-php74
       - mediawiki-quibble-apitests-vendor-php74
       - mediawiki-core-php74-phan
     gate-and-submit-wmf:
-      - mediawiki-quibble-composer-mysql-php74
       - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-composertest-php74
       - mediawiki-quibble-apitests-vendor-php74
