@@ -4085,6 +4085,8 @@ projects:
       - quibble-fundraising-cldr-REL1_39-php74
     gate-and-submit:
       - quibble-fundraising-cldr-REL1_39-php74
+    experimental:
+      - quibble-fundraising-cldr-REL1_43-php82
 
   - name: mediawiki/extensions/CodeEditor
     template:
