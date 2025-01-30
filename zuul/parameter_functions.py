@@ -64,9 +64,16 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/Capiunto',
             'mediawiki/extensions/cldr',
             'mediawiki/extensions/Echo',
-            'mediawiki/extensions/EntitySchema',
             'mediawiki/extensions/Wikibase',
         ])
+
+        # (T367156, T385175) Hack to only load EntitySchema on REL1_43+ jobs;
+        # remove once old branch support is dropped
+        if not (
+            params["ZUUL_BRANCH"].startswith("REL1_39")
+            or params["ZUUL_BRANCH"].startswith("REL1_42")
+        ):
+            params['EXT_DEPENDENCIES'] += '\\nmediawiki/extensions/EntitySchema'
 
     if job.name.startswith('wikibase-repo'):
         params['EXT_DEPENDENCIES'] = '\\n'.join([
