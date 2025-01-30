@@ -1908,26 +1908,28 @@ project-templates:
   - name: extension-gate
     # For master
     test:
-      - wmf-quibble-core-vendor-mysql-php74
-      - wmf-quibble-vendor-mysql-php74
-      - wmf-quibble-selenium-php74
+      - wmf-quibble-core-vendor-mysql-php81
+      - wmf-quibble-vendor-mysql-php81
+      - wmf-quibble-selenium-php81
       - mwgate-node20
     gate-and-submit:
       - mwgate-node20
-      # Only triggered on master; jobs to track Wikimedia production on PHP 7.4
-      - wmf-quibble-vendor-mysql-php74
-      - wmf-quibble-core-vendor-mysql-php74
-      - wmf-quibble-selenium-php74
+      # Only triggered on master; jobs to track Wikimedia production on PHP 8.1
+      - wmf-quibble-core-vendor-mysql-php81
+      - wmf-quibble-vendor-mysql-php81
+      - wmf-quibble-selenium-php81
 
     # For wmf branches
     test-wmf:
       - mwgate-node20
-      - wmf-quibble-vendor-mysql-php74
-      - wmf-quibble-core-vendor-mysql-php74
+      - wmf-quibble-core-vendor-mysql-php81
+      - wmf-quibble-vendor-mysql-php81
+      # Not running the Selenium jobs, as they're slow and low-value
     gate-and-submit-wmf:
       - mwgate-node20
-      - wmf-quibble-vendor-mysql-php74
-      - wmf-quibble-core-vendor-mysql-php74
+      - wmf-quibble-core-vendor-mysql-php81
+      - wmf-quibble-vendor-mysql-php81
+      # Not running the Selenium jobs, as they're slow and low-value
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -8586,9 +8588,9 @@ projects:
       - quibble-composer-mysql-php83
     experimental:
       # These are the jobs which would be added by the extension-gate template
-      - wmf-quibble-core-vendor-mysql-php74
-      - wmf-quibble-vendor-mysql-php74
-      - wmf-quibble-selenium-php74
+      - wmf-quibble-core-vendor-mysql-php81
+      - wmf-quibble-vendor-mysql-php81
+      - wmf-quibble-selenium-php81
       - parsoidsvc-composer-package-php84
       - quibble-composer-mysql-php84
     coverage:
