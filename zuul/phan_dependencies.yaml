@@ -117,6 +117,7 @@ CentralAuth:
  - Echo
  - EventLogging
  - GlobalBlocking
+ - GlobalPreferences
  - MassMessage
  - MobileFrontend
  - Renameuser
