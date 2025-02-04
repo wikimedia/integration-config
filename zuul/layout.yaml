@@ -4343,7 +4343,6 @@ projects:
 
   - name: mediawiki/extensions/FundraisingEmailUnsubscribe
     template:
-      - name: in-wikimedia-production
       - name: in-wikimedia-fundraising-production
       # Using the -composer (rather than vendor) version because of FR-only use of twig etc.
       - name: extension-quibble-composer
