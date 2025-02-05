@@ -4061,12 +4061,10 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-    # Special extra jobs because Fundraising uses this on PHP74/REL1_39
+    # Special extra jobs because Fundraising uses this on PHP82/REL1_43
     test:
-      - quibble-fundraising-cldr-REL1_39-php74
       - quibble-fundraising-cldr-REL1_43-php82
     gate-and-submit:
-      - quibble-fundraising-cldr-REL1_39-php74
       - quibble-fundraising-cldr-REL1_43-php82
 
   - name: mediawiki/extensions/CodeEditor
