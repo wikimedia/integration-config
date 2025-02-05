@@ -4190,18 +4190,22 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
     test:
-      - mwgate-composer-php74
+      # Note: Although DonationInterface is in both prod and FR-prod, we run tests
+      # tailored for FR-prod as that's where the majority of the code is run.
+      - mwgate-composer-php82
       - mwgate-node20
       - quibble-donationinterface-REL1_43-php82
-      - mwext-php74-phan
+      - mwgate-composer-php82
+      - mwext-php82-phan
     gate-and-submit:
-      - mwgate-composer-php74
+      - mwgate-composer-php82
       - mwgate-node20
       - quibble-donationinterface-REL1_43-php82
-      - mwext-php74-phan
+      - mwext-php82-phan
     experimental:
-      - mwgate-node20
       - mwgate-node22
+      - mwgate-composer-php81
+      - mwext-php81-phan
       # These are the remaining parts of extension-quibble
       - quibble-vendor-mysql-php74-noselenium
       - quibble-vendor-mysql-php81-noselenium
