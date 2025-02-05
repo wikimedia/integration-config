@@ -4341,27 +4341,29 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  # Not in general production, just Fundraising production
   - name: mediawiki/extensions/FundraisingEmailUnsubscribe
     template:
       - name: in-wikimedia-fundraising-production
       # Using the -composer (rather than vendor) version because of FR-only use of twig etc.
-      - name: extension-quibble-composer
+      # Not using a quibble job because we're limited to PHP 8.2+ only
+      # - name: extension-quibble-composer
       - name: extension-coverage
       - name: mediawiki-i18n-check
-    # Special extra jobs because Fundraising uses this on PHP74/REL1_39
     test:
-      - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_39-php74
+      # Jobs that we would inherit from extension-quibble-composer, but PHP 8.2+ only
+      - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
+      - mwgate-node20
+      # Special extra jobs because Fundraising uses this on PHP82/REL1_43
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_43-php82
     gate-and-submit:
-      - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_39-php74
+      # Jobs that we would inherit from extension-quibble-composer, but PHP 8.2+ only
+      - quibble-composer-mysql-php82-noselenium
+      - quibble-composer-mysql-php83-noselenium
+      - mwgate-node20
+      # Special extra jobs because Fundraising uses this on PHP82/REL1_43
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_43-php82
-    # Special extra config because this is -composer, so doesn't get wmf branch jobs
-    test-wmf:
-      - quibble-composer-mysql-php74-noselenium
-      - mwgate-node20
-    gate-and-submit-wmf:
-      - quibble-composer-mysql-php74-noselenium
-      - mwgate-node20
 
   - name: mediawiki/extensions/FundraisingTranslateWorkflow
     template:
