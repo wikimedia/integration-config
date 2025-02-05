@@ -1005,7 +1005,7 @@ jobs:
     # run them on REL branches.
     branch: (?!^REL)
 
-  - name: ^quibble-donationinterface-REL1_39-php74$
+  - name: ^quibble-donationinterface-REL1_43-php82$
     skip-if:
       - project: ^mediawiki/extensions/DonationInterface$
         branch: ^deployment$
@@ -4194,15 +4194,14 @@ projects:
     test:
       - mwgate-composer-php74
       - mwgate-node20
-      - quibble-donationinterface-REL1_39-php74
+      - quibble-donationinterface-REL1_43-php82
       - mwext-php74-phan
     gate-and-submit:
       - mwgate-composer-php74
       - mwgate-node20
-      - quibble-donationinterface-REL1_39-php74
+      - quibble-donationinterface-REL1_43-php82
       - mwext-php74-phan
     experimental:
-      - quibble-donationinterface-REL1_43-php82
       - mwgate-node20
       - mwgate-node22
       # These are the remaining parts of extension-quibble

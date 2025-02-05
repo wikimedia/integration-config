@@ -307,9 +307,9 @@ class TestZuulLayout(unittest.TestCase):
                 # run themselves, so this is a non-trivial change.)
                 if project['name'] == 'mediawiki/extensions/DonationInterface':
                     self.assertIn(
-                        'quibble-donationinterface-REL1_39-php74',
+                        'quibble-donationinterface-REL1_43-php82',
                         project['gate-and-submit'],
-                        'Fundraising %s %s must have G&S FR job for REL1_39'
+                        'Fundraising %s %s must have G&S FR job for REL1_43'
                         % (kind, name)
                     )
                 else:
