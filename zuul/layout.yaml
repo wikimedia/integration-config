@@ -2140,17 +2140,6 @@ project-templates:
       - composer-php83
       - composer-php84
 
-  - name: composer-test-php74-only
-    test:
-      - composer-php74
-    gate-and-submit:
-      - composer-php74
-    experimental:
-      - composer-php81
-      - composer-php82
-      - composer-php83
-      - composer-php84
-
   - name: composer-test-php82-or-later
     test:
       - composer-php82
@@ -2939,7 +2928,7 @@ projects:
       - mediawiki-quibble-selenium-vendor-mysql-php74
       - mediawiki-quibble-apitests-vendor-php74
 
-    # CI no more supports mediawiki/vendor on release branches, folks should
+    # No CI support for mediawiki/vendor on release branches, folks should
     # use composer install instead. T189560
 
     test-fundraising:
@@ -9240,14 +9229,20 @@ projects:
   - name: labs/tools/heritage
     template:
       - name: node20
-      - name: composer-test-php74-only
       - name: mediawiki-i18n-check
     test:
+      - composer-php74
       - labs-tools-heritage-tox
     gate-and-submit:
+      - composer-php74
       - labs-tools-heritage-tox
     postmerge:
       - tox-py37-coverage-publish
+    experimental:
+      - composer-php81
+      - composer-php82
+      - composer-php83
+      - composer-php84
 
   - name: labs/tools/indic-wscontest
     template:
