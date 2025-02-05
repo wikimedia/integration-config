@@ -313,9 +313,9 @@ class TestZuulLayout(unittest.TestCase):
                     )
                 else:
                     self.assertIn(
-                        'quibble-fundraising-%s-REL1_39-php74' % name,
+                        'quibble-fundraising-%s-REL1_43-php82' % name,
                         project['gate-and-submit'],
-                        'Fundraising %s %s must have FR job G&S for REL1_39'
+                        'Fundraising %s %s must have FR job G&S for REL1_43'
                         % (kind, name)
                     )
 
