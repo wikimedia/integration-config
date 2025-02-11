@@ -2112,22 +2112,22 @@ project-templates:
     experimental:
       - mwext-node22-rundoc
 
-  - name: composer-test-php74-or-later
+  - name: composer-test-php74-to-php84
     test:
       - composer-php74
     php:
       - composer-php81
       - composer-php82
       - composer-php83
+      - composer-php84
     gate-and-submit:
       - composer-php74
       - composer-php81
       - composer-php82
       - composer-php83
-    experimental:
       - composer-php84
 
-  # Temporary template for repos that fail on PHP 8.2
+  # Temporary template for repos that fail on PHP 8.2+
   - name: composer-test-php74-and-php81
     test:
       - composer-php74
@@ -2141,41 +2141,48 @@ project-templates:
       - composer-php83
       - composer-php84
 
-  - name: composer-test-php82-or-later
+  # Temporary template for repos that fail on PHP 8.4+
+  - name: composer-test-php74-to-php83
     test:
+      - composer-php74
+    php:
+      - composer-php81
       - composer-php82
       - composer-php83
     gate-and-submit:
+      - composer-php74
+      - composer-php81
       - composer-php82
       - composer-php83
     experimental:
       - composer-php84
 
-  - name: composer-test-php82-only
+  - name: composer-test-php82-to-php84
     test:
       - composer-php82
+      - composer-php83
+      - composer-php84
     gate-and-submit:
       - composer-php82
-    experimental:
       - composer-php83
       - composer-php84
 
-  - name: composer-test-package-php74-or-later
+  - name: composer-test-package-php74-to-php84
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
       - composer-package-php74
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
+      - composer-package-php84
     gate-and-submit:
       - composer-package-php74
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
-    experimental:
       - composer-package-php84
 
-  - name: php-compile-php74-or-later
+  - name: php-compile-php74-to-php84
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
       - php-compile-php74
@@ -2517,7 +2524,8 @@ projects:
   - name: integration/docroot
     template:
       - name: node20
-      - name: composer-test-php74-or-later
+      # TODO (T386108): Fix this test failure and enable on PHP 8.4
+      - name: composer-test-php74-to-php83
 
   - name: integration/gear
     test:
@@ -2618,7 +2626,7 @@ projects:
 
   - name: mediawiki/tools/code-utils
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php84
     test:
       - shellcheck
     gate-and-submit:
@@ -2678,7 +2686,7 @@ projects:
   - name: mediawiki/tools/phan/SecurityCheckPlugin
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php84
     postmerge:
       - mw-tools-phan-demos-publish
       - phpunit-coverage-php81-publish
@@ -2694,7 +2702,7 @@ projects:
   - name: performance/arc-lamp
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php84
 
   - name: performance/asoranking
     template:
@@ -2744,7 +2752,7 @@ projects:
 
   - name: performance/xhgui-vendor
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php84
 
   - name: releng/phatality
     template:
@@ -2764,7 +2772,8 @@ projects:
 
   - name: labs/tools/sonarqubebot
     template:
-      - name: composer-test-php74-or-later
+      # TODO (T386108): Fix this test failure and enable on PHP 8.4
+      - name: composer-test-php74-to-php83
 
 #### MediaWiki itself ##########################################
 
@@ -8794,7 +8803,7 @@ projects:
 
   - name: analytics/wmde/scripts
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php84
 
   - name: analytics/wmde/toolkit-analyzer
     test:
@@ -8847,7 +8856,7 @@ projects:
 
   - name: mediawiki/php/luasandbox
     template:
-      - name: php-compile-php74-or-later
+      - name: php-compile-php74-to-php84
     postmerge:
       - doxygen-publish
     publish:
@@ -8855,11 +8864,11 @@ projects:
 
   - name: mediawiki/php/wikidiff2
     template:
-      - name: php-compile-php74-or-later
+      - name: php-compile-php74-to-php84
 
   - name: mediawiki/php/wmerrors
     template:
-      - name: php-compile-php74-or-later
+      - name: php-compile-php74-to-php84
 
   - name: mediawiki/oauthclient-php
     template:
@@ -9101,7 +9110,8 @@ projects:
 
   - name: labs/countervandalism/cvn-api
     template:
-      - name: composer-test-php74-or-later
+      # TODO (T386108): Fix this test failure and enable on PHP 8.4
+      - name: composer-test-php74-to-php83
 
   - name: labs/countervandalism/cvn-clerkbot
     template:
@@ -9109,7 +9119,8 @@ projects:
 
   - name: labs/countervandalism/stillalive
     template:
-      - name: composer-test-php74-or-later
+      # TODO (T386108): Fix this test failure and enable on PHP 8.4
+      - name: composer-test-php74-to-php83
 
   - name: labs/countervandalism/CVNBot
     test:
@@ -9146,7 +9157,8 @@ projects:
 
   - name: labs/tools/blankpages
     template:
-      - name: composer-test-php74-or-later
+      # TODO (T386108): Fix this test failure and enable on PHP 8.4
+      - name: composer-test-php74-to-php83
 
   - name: labs/tools/bodh
     template:
@@ -9184,7 +9196,7 @@ projects:
 
   - name: labs/tools/coverme
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php84
 
   - name: labs/tools/dump-torrents
     template:
@@ -9196,7 +9208,7 @@ projects:
 
   - name: labs/tools/extjsonuploader
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php84
 
   - name: labs/tools/extreg-wos
     template:
@@ -9208,7 +9220,7 @@ projects:
 
   - name: labs/tools/force-rebase
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php84
 
   - name: labs/tools/forrestbot
     template:
@@ -9252,7 +9264,7 @@ projects:
 
   - name: labs/tools/intuition
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php84
       - name: node20
       - name: mediawiki-i18n-check
     postmerge:
@@ -9260,7 +9272,8 @@ projects:
 
   - name: labs/tools/intuition-web
     template:
-      - name: composer-test-php74-or-later
+      # TODO (T386108): Fix this test failure and enable on PHP 8.4
+      - name: composer-test-php74-to-php83
       - name: node20-browser
       - name: mediawiki-i18n-check
 
@@ -9279,12 +9292,14 @@ projects:
 
   - name: labs/tools/orphantalk
     template:
-      - name: composer-test-php74-or-later
+      # TODO (T386108): Fix this test failure and enable on PHP 8.4
+      - name: composer-test-php74-to-php83
       - name: mediawiki-i18n-check
 
   - name: labs/tools/usage
     template:
-      - name: composer-test-php74-or-later
+      # TODO (T386108): Fix this test failure and enable on PHP 8.4
+      - name: composer-test-php74-to-php83
       - name: mediawiki-i18n-check
 
   - name: labs/tools/urbanecmbot
@@ -9295,12 +9310,13 @@ projects:
 
   - name: labs/tools/guc
     template:
-      - name: composer-test-php74-or-later
+      # TODO (T386108): Fix this test failure and enable on PHP 8.4
+      - name: composer-test-php74-to-php83
       - name: mediawiki-i18n-check
 
   - name: labs/tools/fileprotectionsync
     template:
-      - name: composer-test-php82-or-later
+      - name: composer-test-php82-to-php84
 
   - name: labs/tools/nagf
     template:
@@ -9389,7 +9405,7 @@ projects:
 
   - name: labs/tools/stewardbots
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php84
       - name: tox
 
   - name: labs/tools/stewardbots-ui
@@ -9444,7 +9460,8 @@ projects:
 
   - name: labs/tools/wikiinfo
     template:
-      - name: composer-test-php74-or-later
+      # TODO (T386108): Fix this test failure and enable on PHP 8.4
+      - name: composer-test-php74-to-php83
 
   - name: labs/tools/wikinity
     template:
@@ -9738,7 +9755,7 @@ projects:
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
     template:
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php84
       - name: mediawiki-i18n-check
     test:
       - ooui-node20-plus-php81-runjenkins
@@ -9937,7 +9954,7 @@ projects:
 
   - name: translatewiki
     template:
-      - name: composer-test-php82-or-later
+      - name: composer-test-php82-to-php84
     test:
       - translatewiki-ruby2.5-rake
     gate-and-submit:
@@ -9966,17 +9983,17 @@ projects:
 
   - name: wikimedia-cz/mediawiki-config
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php84
 
   - name: wikimedia-cz/web-theme
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php84
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
   - name: wikimedia-cz/web-plugin
     template:
-      - name: composer-test-php74-or-later
+      - name: composer-test-php74-to-php84
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
@@ -10042,12 +10059,15 @@ projects:
       - fundraising-tools-tox
 
   - name: wikimedia/fundraising/crm
-    template:
-      - name: composer-test-php82-only
     test:
       - wikimedia-fundraising-civicrm-bookworm
+      - composer-php82
     gate-and-submit:
       - wikimedia-fundraising-civicrm-bookworm
+      - composer-php82
+    experimental:
+      - composer-php83
+      - composer-php84
 
   - name: wikimedia/fundraising/crm/vendor
     test:
@@ -10060,18 +10080,23 @@ projects:
       - name: tox
 
   - name: wikimedia/fundraising/SmashPig
-    template:
-      - name: composer-test-php82-only
+    test:
+      - composer-php82
+    gate-and-submit:
+      - composer-php82
+    experimental:
+      - composer-php83
+      - composer-php84
 
   - name: wikimedia/textcat
     template:
       # FIXME: Use mediawiki-php-library?
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php84
 
   - name: wikimedia/lucene-explain-parser
     template:
       # FIXME: Use mediawiki-php-library?
-      - name: composer-test-package-php74-or-later
+      - name: composer-test-package-php74-to-php84
 
   - name: performance/slack-bot
     template:
