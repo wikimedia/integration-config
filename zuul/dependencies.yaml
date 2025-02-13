@@ -511,7 +511,6 @@ CirrusSearch:
  - GeoData
  - BetaFeatures
  - SiteMatrix
- - WikibaseCirrusSearch
  - EventBus
 
 CodeEditor:
@@ -1157,7 +1156,7 @@ WhoIsWatching:
 
 Wikibase:
  - ArticlePlaceholder
- - CirrusSearch
+ - WikibaseCirrusSearch
  - cldr
  - Elastica
  - GeoData
