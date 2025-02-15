@@ -219,6 +219,7 @@ pipelines:
            - ^fomafix@googlemail\.com$
            - ^fossati@spaziodati\.eu$ # Hjfocs
            - ^framawiki@tools\.wmflabs\.org$
+           - ^frederik-hennecke@web\.de$
            - ^geofbot@gmail\.com$
            - ^geoffreytrang@gmail\.com$
            - ^gerges\.shamoon\.dev@gmail\.com$ # Gerges
