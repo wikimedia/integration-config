@@ -1,3 +1,9 @@
+quibble-bullseye-php74-coverage (1.12.0-s1) wikimedia; urgency=medium
+
+  * Fix suite.xml configuration generation for Wikibase - T288396
+
+ -- Arthur Taylor <arthur.taylor@wikimedia.de>  Tue, 18 Feb 2025 13:40:45 +0100
+
 quibble-bullseye-php74-coverage (1.12.0) wikimedia; urgency=medium
 
   * Update Quibble to 1.12.0

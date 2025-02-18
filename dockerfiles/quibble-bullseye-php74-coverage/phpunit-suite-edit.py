@@ -19,6 +19,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 """
 
 import argparse
+import os
 import xml.etree.cElementTree as etree
 
 
@@ -57,11 +58,24 @@ def main():
                 # we don't want to include any of them
                 for ichild in list(include):
                     include.remove(ichild)
+                added_cover = False
                 # Add the three directories we care about
                 for folder in ['src', 'includes', 'maintenance']:
-                    sub = etree.SubElement(include, 'directory')
-                    sub.text = '../../extensions/%s/%s' \
+                    path = '../../extensions/%s/%s' \
                         % (args.cover_extension, folder)
+                    if os.path.exists(os.path.join(os.path.dirname(args.suite), path)):
+                        added_cover = True
+                        sub = etree.SubElement(include, 'directory')
+                        sub.text = path
+                        sub.set('suffix', '.php')
+                # If the none of the covers we added correspond to a folder,
+                # no coverage report is generated. Add the extension base path
+                # here instead. (T288396)
+                if not added_cover:
+                    sub = etree.SubElement(include, 'directory')
+                    path = '../../extensions/%s' \
+                        % (args.cover_extension)
+                    sub.text = path
                     sub.set('suffix', '.php')
 
             if args.cover_service:
