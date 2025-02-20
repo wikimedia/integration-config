@@ -5257,8 +5257,8 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
-      # (T288396) No coverage reporting yet; needs special work
       - name: extension-gate
+      - name: extension-coverage
       - name: extension-codehealth
       - name: extension-javascript-documentation
       - name: mwgate-npm
