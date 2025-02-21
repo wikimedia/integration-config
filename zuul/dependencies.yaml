@@ -723,6 +723,9 @@ IPInfo:
  - BetaFeatures
  - CheckUser
 
+IPReputation:
+ - AbuseFilter
+
 JsonConfig:
  - Scribunto
  - Kartographer
