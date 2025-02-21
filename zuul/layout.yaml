@@ -1148,6 +1148,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'src/models/article_country/.*'
 
+  - name: ^trigger-inference-services-pipeline-edit-check
+    files:
+        - '.pipeline/edit_check/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/edit_check/.*'
+
   # End of meta jobs (the ones starting with ^)
 
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
@@ -2471,6 +2477,7 @@ projects:
       - trigger-inference-services-pipeline-articlequality
       - trigger-inference-services-pipeline-reference-quality
       - trigger-inference-services-pipeline-article-country
+      - trigger-inference-services-pipeline-edit-check
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
@@ -2489,6 +2496,7 @@ projects:
       - trigger-inference-services-pipeline-articlequality
       - trigger-inference-services-pipeline-reference-quality
       - trigger-inference-services-pipeline-article-country
+      - trigger-inference-services-pipeline-edit-check
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-outlink-transformer-publish
@@ -2507,6 +2515,7 @@ projects:
       - trigger-inference-services-pipeline-articlequality-publish
       - trigger-inference-services-pipeline-reference-quality-publish
       - trigger-inference-services-pipeline-article-country-publish
+      - trigger-inference-services-pipeline-edit-check
 
   - name: integration/config
     test-prio:
