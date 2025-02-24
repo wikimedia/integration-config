@@ -1,3 +1,10 @@
+quibble-fresnel (1.12.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Upgrade Wikimedia-provided PHP to 8.1.31-1+wmf11u3 and bump PCRE to 10.42
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 24 Feb 2025 17:06:00 -0500
+
 quibble-fresnel (1.12.0) wikimedia; urgency=medium
 
   * Update Quibble to 1.12.0
