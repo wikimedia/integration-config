@@ -993,6 +993,9 @@ Shibboleth:
 SimilarEditors:
  - QuickSurveys
 
+SimpleBlogPage:
+ - OOJSPlus
+
 SiteMetrics:
  - SocialProfile
 
