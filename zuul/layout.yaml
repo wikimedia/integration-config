@@ -2515,7 +2515,7 @@ projects:
       - trigger-inference-services-pipeline-articlequality-publish
       - trigger-inference-services-pipeline-reference-quality-publish
       - trigger-inference-services-pipeline-article-country-publish
-      - trigger-inference-services-pipeline-edit-check
+      - trigger-inference-services-pipeline-edit-check-publish
 
   - name: integration/config
     test-prio:
