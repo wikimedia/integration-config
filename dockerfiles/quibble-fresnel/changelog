@@ -1,3 +1,10 @@
+quibble-fresnel (1.12.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Update PHP to 8.1.31-1+wmf11u4
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 25 Feb 2025 15:09:51 -0500
+
 quibble-fresnel (1.12.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php81:
