@@ -960,7 +960,7 @@
         - php74:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.12.0
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.12.0-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.12.0-s3
         - php82:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.12.0
         - php83:
@@ -1001,7 +1001,7 @@
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.12.0
             entrypoint: quibble-with-supervisord
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.12.0-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.12.0-s3
             entrypoint: quibble-with-supervisord
     jobs:
         - wmf-quibble-vendor-mysql-{php}
@@ -1034,7 +1034,7 @@
         - php74:
             docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.12.0
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.12.0-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.12.0-s3
         - php83:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.12.0
     jobs:
