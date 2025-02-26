@@ -1,3 +1,10 @@
+php82-compile (8.2.27) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Update PHP to 8.2.27
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 25 Feb 2025 16:14:33 -0500
+
 php82-compile (8.2.25-s1) wikimedia; urgency=high
 
    Refresh for update in parent image sury-php:

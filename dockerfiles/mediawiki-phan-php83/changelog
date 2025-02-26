@@ -1,3 +1,10 @@
+mediawiki-phan-php83 (8.3.17) wikimedia; urgency=high
+
+   Refresh for update in parent image php83:
+   Update PHP to 8.3.17
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 25 Feb 2025 16:14:33 -0500
+
 mediawiki-phan-php83 (8.3.12-s1) wikimedia; urgency=high
 
    Refresh for update in parent image sury-php:
