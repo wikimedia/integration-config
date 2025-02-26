@@ -208,6 +208,7 @@ ContentTranslation:
  - Echo
  - EventLogging
  - GlobalPreferences
+ - WikimediaMessages
 
 CreateAPage:
  - ConfirmEdit
@@ -338,6 +339,7 @@ GrowthExperiments:
  - Thanks
  - CommunityConfiguration
  - ConfirmEdit
+ - WikimediaMessages
 
 HAWelcome:
  - SocialProfile

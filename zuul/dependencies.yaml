@@ -570,6 +570,7 @@ ContentTranslation:
  - EventLogging
  - UniversalLanguageSelector
  - VisualEditor
+ - WikimediaMessages
 
 CookieWarning:
  - MobileFrontend
@@ -704,6 +705,7 @@ GrowthExperiments:
  - VisualEditor
  - Thanks
  - CommunityConfiguration
+ - WikimediaMessages
 
 GuidedTour:
  - EventLogging
