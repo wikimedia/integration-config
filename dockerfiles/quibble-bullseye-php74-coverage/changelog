@@ -1,3 +1,9 @@
+quibble-bullseye-php74-coverage (1.13.0) wikimedia; urgency=medium
+
+  * Update Quibble to 1.13.0
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 26 Feb 2025 12:08:17 +0100
+
 quibble-bullseye-php74-coverage (1.12.0-s2) wikimedia; urgency=medium
 
   * Fix patch coverage generation for Wikibase - T288396
