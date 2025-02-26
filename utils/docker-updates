@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from collections import defaultdict, namedtuple
 from glob import glob
 import re
 import os.path
@@ -22,6 +23,8 @@ DOCKERFILES_DIR = os.path.join(
 JJB_DIR = os.path.join(
     os.path.dirname(__file__),
     '../jjb')
+
+Fix = namedtuple('Fix', 'line old_image new_version')
 
 latest_images = set()
 latest_version = {}
@@ -50,6 +53,7 @@ except subprocess.CalledProcessError as e:
     sys.exit(e.returncode)
 
 errors = []
+files_fixes = defaultdict(list)
 for jjb_def in jjb_defs.decode().split('\n'):
     if jjb_def == '':
         continue
@@ -78,7 +82,34 @@ for jjb_def in jjb_defs.decode().split('\n'):
         print('%s:%s:%s > %s' % (
             yaml_file, line, found_image, latest_version[image_name])
             + (' \033[33m# %s\033[0m' % comment if comment else ''))
+        if not comment:
+            files_fixes[yaml_file].append(
+                Fix(int(line), found_image, str(latest_version[image_name]))
+            )
 
 if errors:
     print('\n'.join(errors), file=sys.stderr)
     sys.exit(1)
+
+if (
+    '--apply' in sys.argv
+    or (
+        sys.stdout.isatty()
+        and input('Apply updates? [y/N]: ').lower() == 'y'
+    )
+):
+    print('Applying changes ...')
+    for yaml_file, fixes in files_fixes.items():
+        lines = []
+        with open(yaml_file) as f:
+            lines = f.readlines()
+
+        for fix in fixes:
+            line = lines[fix.line - 1]
+            assert fix.old_image in line, 'Could not find expected line'
+            new_image = fix.old_image.split(':')[0] + ':' + fix.new_version
+            lines[fix.line - 1] = line.replace(fix.old_image, new_image)
+
+        with open(yaml_file, "w") as f:
+            f.writelines(lines)
+            print('Updated', yaml_file)

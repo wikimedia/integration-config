@@ -116,3 +116,15 @@ In rare cases, you may need:
 To spot where the JJB definitions are using outdated docker images, use:
 
     $ ./utils/docker-updates
+    <list of updates>
+    Apply updates? [y/N]: y
+
+It will shows a list of images to update and prompts for confirmation. The prompt can be automatically accepted by using `--apply`:
+
+    $ ./utils/docker-updates --apply
+    <list of updates>
+    Applying changes ...
+    Updated jjb/integration.yaml
+    Updated jjb/mediawiki.yaml
+
+The changes to the jobs can then be reviewed with `./utils/jjb-diff.sh`.
