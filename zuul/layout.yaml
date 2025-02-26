@@ -4598,12 +4598,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/LdapAuthentication
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/Linter
     template:
       - name: in-wikimedia-production
@@ -10974,6 +10968,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Jade
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/LdapAuthentication
     template:
       - name: archived
 
