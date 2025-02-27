@@ -5612,6 +5612,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/ArticleSummaries
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/ArticleToCategory2
     template:
       - name: extension-quibble
