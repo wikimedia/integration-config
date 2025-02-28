@@ -15,7 +15,7 @@ COPY --from=build /go/bin/semver-cli /usr/bin/
 # envoy-future is a bullseye component but it will run on buster as well
 ADD envoy-future.list /etc/apt/sources.list.d/envoy-future.list
 
-RUN {{ "helm311 helm317 rake envoyproxy helmfile helm-diff ruby-git istioctl python3-minimal python3-yaml kubeconform python3-pip wmf-certificates" | apt_install }} && \
+RUN {{ "helm3 rake envoyproxy helmfile helm-diff ruby-git istioctl python3-minimal python3-yaml kubeconform python3-pip wmf-certificates" | apt_install }} && \
     mkdir -p /etc/envoy/ssl $HELM_HOME $HELM_CONFIG_HOME $HELM_DATA_HOME $HELM_CACHE_HOME && \
     chmod -R 777 /etc/envoy /var/log/envoy && \
     helm3 repo list | tail -n +2 | awk '{print $1}' | xargs --no-run-if-empty helm3 repo remove && \
@@ -23,9 +23,7 @@ RUN {{ "helm311 helm317 rake envoyproxy helmfile helm-diff ruby-git istioctl pyt
     chmod -R 777 /tmp/helm3 $HELM_HOME && \
     ln -s /usr/bin/true /usr/local/bin/helmfile_log_sal && \
     /usr/bin/pip3 install sextant && \
-    /usr/bin/update-kubeconform-json-schema && \
-    update-alternatives --set helm /usr/bin/helm311 && \
-    update-alternatives --set helm3 /usr/bin/helm311
+    /usr/bin/update-kubeconform-json-schema
 
 USER nobody
 
