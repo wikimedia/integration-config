@@ -1,4 +1,3 @@
 Package: operations-dnslint
 Description: Image for running CI tests on the authoritative dns repo
-Maintainer: Giuseppe Lavagetto <joe@wikimedia.org>
-Depends: ci-buster
+Depends: ci-bookworm

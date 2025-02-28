@@ -1,3 +1,11 @@
+operations-dnslint (0.1.0) wikimedia; urgency=medium
+
+  * Change base image from Buster to Bookworm (T371001):
+  ** Upgrade gdnsd from 3.8.0-1~wmf1 to 3.99.0~alpha2-2
+  ** Switch to Python 3.11
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 28 Feb 2025 15:05:43 +0100
+
 operations-dnslint (0.0.12-s3) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster:
