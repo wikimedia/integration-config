@@ -1,3 +1,9 @@
+helm-linter (0.7.1) wikimedia; urgency=medium
+
+  * Bump to update helmfile and helm-diff once more time
+
+ -- Janis Meybohm <jmeybohm@wikimedia.org>  Mon, 03 Mar 2025 18:20:47 +0100
+
 helm-linter (0.7.0) wikimedia; urgency=medium
 
   * Change helm package from helm3 to helm311 (no actual upgrade, just a name
