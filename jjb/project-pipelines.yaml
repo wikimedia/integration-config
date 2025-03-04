@@ -77,22 +77,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: example-node-api
-    pipeline:
-      - test
-      - rehearse
-      - publish
-    jobs:
-      # trigger-example-node-api-pipeline-test
-      # trigger-example-node-api-pipeline-rehearse
-      # trigger-example-node-api-pipeline-publish
-      - 'trigger-{name}-pipeline-{pipeline}'
-      # example-node-api-pipeline-test
-      # example-node-api-pipeline-rehearse
-      # example-node-api-pipeline-publish
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: change-propagation
     pipeline:
       - test
