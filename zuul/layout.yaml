@@ -8526,14 +8526,6 @@ projects:
     gate-and-submit:
       - eventlogging-tox
 
-  - name: mediawiki/services/example-node-api
-    test:
-        - trigger-example-node-api-pipeline-test
-    gate-and-submit:
-        - trigger-example-node-api-pipeline-test
-    # postmerge:
-    #     - trigger-example-node-api-pipeline-publish
-
   - name: mediawiki/services/jobrunner
     template:
       - name: mediawiki-php-library-php74-to-php84
@@ -11747,6 +11739,10 @@ projects:
 
   # Moved to GitLab at https://gitlab.wikimedia.org/repos/data-engineering/eventstreams
   - name: mediawiki/services/eventstreams
+    template:
+      - name: archived
+
+  - name: mediawiki/services/example-node-api
     template:
       - name: archived
 
