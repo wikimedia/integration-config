@@ -2372,39 +2372,40 @@ project-templates:
     gate-and-submit:
       - fail-archived-repositories
 
-  - name: mediawiki-php-library
+  - name: mediawiki-php-library-php74-to-php84
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
       - composer-package-php74
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
-    gate-and-submit:
-      - composer-package-php74
-      - composer-package-php81
-      - composer-package-php82
-      - composer-package-php83
-    postmerge:
-      - doxygen-publish
-      - phpunit-coverage-php81-publish
-    experimental:
       - composer-package-php84
+    gate-and-submit:
+      - composer-package-php74
+      - composer-package-php81
+      - composer-package-php82
+      - composer-package-php83
+      - composer-package-php84
+    postmerge:
+      - doxygen-publish
+      - phpunit-coverage-php81-publish
 
-  - name: mediawiki-php-library-php74-to-php82
+  - name: mediawiki-php-library-php74-to-php83
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
       - composer-package-php74
       - composer-package-php81
       - composer-package-php82
+      - composer-package-php83
     gate-and-submit:
       - composer-package-php74
       - composer-package-php81
       - composer-package-php82
+      - composer-package-php83
     postmerge:
       - doxygen-publish
       - phpunit-coverage-php81-publish
     experimental:
-      - composer-package-php83
       - composer-package-php84
 
 # Register the Gerrit project name, apply them pipelines that in turn trigger
@@ -2649,7 +2650,7 @@ projects:
 
   - name: mediawiki/tools/codesniffer
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
     test:
       - mw-tools-codesniffer-mwcore-testrun
 
@@ -2667,11 +2668,11 @@ projects:
 
   - name: mediawiki/tools/minus-x
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/tools/phpunit-patch-coverage
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/tools/releng
     template:
@@ -2681,7 +2682,7 @@ projects:
 
   - name: mediawiki/tools/phan
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
     test:
       - mw-tools-phan-mwcore-testrun
 
@@ -8525,7 +8526,7 @@ projects:
 
   - name: mediawiki/services/jobrunner
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/services/kafka-watcher
     template:
@@ -8886,58 +8887,73 @@ projects:
 
   - name: mediawiki/oauthclient-php
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
 #### MediaWiki libraries #######################################
 
   - name: cdb
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: purtle
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: utfnormal
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: at-ease
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: base-convert
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: css-sanitizer
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: php-session-serializer
-    template:
-      # (T368270) Does not yet pass on PHP 8.3
-      - name: mediawiki-php-library-php74-to-php82
+    # (T368270) Does not yet pass on PHP 8.3
+    # template:
+    #   - name: mediawiki-php-library-php74-to-php84
+    test:
+      - composer-package-php74
+      - composer-package-php81
+      - composer-package-php82
+    gate-and-submit:
+      - composer-package-php74
+      - composer-package-php81
+      - composer-package-php82
+    postmerge:
+      - doxygen-publish
+      - phpunit-coverage-php81-publish
+    experimental:
+      - composer-package-php83
+      - composer-package-php84
 
   - name: AhoCorasick
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: RunningStat
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: IPSet
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: RelPath
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: wikipeg
     template:
-      - name: mediawiki-php-library
+      # (T386570) Does not yet pass on PHP 8.4 due to Phan issue
+      - name: mediawiki-php-library-php74-to-php83
     test:
       - wikipeg-special-node20-plus-php81-composer
       - wikipeg-special-node20-plus-php83-composer
@@ -8950,76 +8966,77 @@ projects:
 
   - name: WrappedString
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: CLDRPluralRuleParser
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: HtmlFormatter
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/alea
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/Assert
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/Bcp47Code
     template:
-      - name: mediawiki-php-library
-
-  - name: mediawiki/libs/CommonPasswords
-    template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/CloverDiff
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
+
+  - name: mediawiki/libs/CommonPasswords
+    template:
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/Dodo
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/Equivset
     template:
-      - name: mediawiki-php-library
+      # (T387806) Does not yet pass on PHP 8.4
+      - name: mediawiki-php-library-php74-to-php83
 
   - name: mediawiki/libs/IDLeDOM
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/IPAValidator
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/IPUtils
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/JsonCodec
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/LangConv
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
       - name: node20
 
   - name: mediawiki/libs/less.php
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/Message
     template:
-     - name: mediawiki-php-library
+     - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/Minify
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/node-cssjanus
     template:
@@ -9030,35 +9047,36 @@ projects:
 
   - name: mediawiki/libs/NormalizedException
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/ObjectFactory
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/ParamValidator
     template:
-        - name: mediawiki-php-library
+        - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/php-cssjanus
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/RemexHtml
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/RequestTimeout
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/ScopedCallback
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/Shellbox
     template:
-      - name: mediawiki-php-library
+      # (T386570) Does not yet pass on PHP 8.4 due to Phan issue
+      - name: mediawiki-php-library-php74-to-php83
     test:
       - trigger-shellbox-pipeline-test
     gate-and-submit:
@@ -9068,47 +9086,47 @@ projects:
 
   - name: mediawiki/libs/Services
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/StringUtils
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/Timestamp
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/UpdateHistory
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/UUID
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/WaitConditionLoop
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/WebIDL
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/XMPReader
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/Zest
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: performance/excimer-ui-client
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: performance/excimer-ui-server
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
 #### Tools deployed on Wikimedia Cloud Services (aka "Labs") ###
 
@@ -9609,7 +9627,7 @@ projects:
 
   - name: wikimedia/slimapp
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: wikimedia/portals
     # TODO (T382179): Repo doesn't yet pass on Node 20
@@ -9730,7 +9748,7 @@ projects:
 
   - name: design/codex-php
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: design/landing-page
     template:
@@ -9889,7 +9907,7 @@ projects:
 
   - name: testing-access-wrapper
     template:
-      - name: mediawiki-php-library
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: research/ores/wheels
     test:
