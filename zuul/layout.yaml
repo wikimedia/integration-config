@@ -3276,7 +3276,7 @@ projects:
   - { name: operations/debs/archiva,                          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/avconv10,                         test: ['debian-glue-non-voting'] }
   - { name: operations/debs/bdsync,                           test: ['debian-glue-non-voting'] }
-  - { name: operations/debs/benthos,                          test: ['debian-glue-non-voting'] }
+  - { name: operations/debs/benthos,                          test: ['debian-glue-backports-non-voting'] }
   - { name: operations/debs/bloomd,                           test: ['debian-glue-non-voting'] }
   - { name: operations/debs/burrow,                           test: ['debian-glue-non-voting'] }
   - { name: operations/debs/cadvisor,                         test: ['debian-glue'] }
