@@ -8955,8 +8955,7 @@ projects:
 
   - name: wikipeg
     template:
-      # (T386570) Does not yet pass on PHP 8.4 due to Phan issue
-      - name: mediawiki-php-library-php74-to-php83
+      - name: mediawiki-php-library-php74-to-php84
     test:
       - wikipeg-special-node20-plus-php81-composer
       - wikipeg-special-node20-plus-php83-composer
