@@ -9005,8 +9005,7 @@ projects:
 
   - name: mediawiki/libs/Equivset
     template:
-      # (T387806) Does not yet pass on PHP 8.4
-      - name: mediawiki-php-library-php74-to-php83
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: mediawiki/libs/IDLeDOM
     template:
