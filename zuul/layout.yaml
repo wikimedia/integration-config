@@ -2349,7 +2349,7 @@ project-templates:
   # Track all extensions and skins in Wikimedia Fundraising production
   - name: in-wikimedia-fundraising-production
 
-  # Track all extensions and skins in the MediaWiki tarball
+  # Track all extensions and skins in the MediaWiki tarball (not yet used)
   - name: in-mediawiki-tarball
     test:
       - quibble-vendor-postgres-php81-noselenium
@@ -2358,8 +2358,7 @@ project-templates:
       - quibble-vendor-postgres-php81-noselenium
       - quibble-vendor-sqlite-php81-noselenium
 
-  # Not used yet.
-
+  # Enforce each gerrit commit to follow a particular format (in testing only)
   - name: commit-message-validator
     test:
       - commit-message-validator
@@ -2390,24 +2389,6 @@ project-templates:
     postmerge:
       - doxygen-publish
       - phpunit-coverage-php81-publish
-
-  - name: mediawiki-php-library-php74-to-php83
-    test:
-      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php74
-      - composer-package-php81
-      - composer-package-php82
-      - composer-package-php83
-    gate-and-submit:
-      - composer-package-php74
-      - composer-package-php81
-      - composer-package-php82
-      - composer-package-php83
-    postmerge:
-      - doxygen-publish
-      - phpunit-coverage-php81-publish
-    experimental:
-      - composer-package-php84
 
 # Register the Gerrit project name, apply them pipelines that in turn trigger
 # a set of jobs.
@@ -9076,8 +9057,7 @@ projects:
 
   - name: mediawiki/libs/Shellbox
     template:
-      # (T386570) Does not yet pass on PHP 8.4 due to Phan issue
-      - name: mediawiki-php-library-php74-to-php83
+      - name: mediawiki-php-library-php74-to-php84
     test:
       - trigger-shellbox-pipeline-test
     gate-and-submit:
