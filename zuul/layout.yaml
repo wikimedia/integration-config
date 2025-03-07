@@ -8900,23 +8900,8 @@ projects:
       - name: mediawiki-php-library-php74-to-php84
 
   - name: php-session-serializer
-    # (T368270) Does not yet pass on PHP 8.3
-    # template:
-    #   - name: mediawiki-php-library-php74-to-php84
-    test:
-      - composer-package-php74
-      - composer-package-php81
-      - composer-package-php82
-    gate-and-submit:
-      - composer-package-php74
-      - composer-package-php81
-      - composer-package-php82
-    postmerge:
-      - doxygen-publish
-      - phpunit-coverage-php81-publish
-    experimental:
-      - composer-package-php83
-      - composer-package-php84
+    template:
+      - name: mediawiki-php-library-php74-to-php84
 
   - name: AhoCorasick
     template:
