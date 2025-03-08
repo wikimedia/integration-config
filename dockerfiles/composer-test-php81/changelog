@@ -1,3 +1,10 @@
+composer-test-php81 (8.1.31-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Install libpcre2-8-0 from component/php81 instead of component/pcre2
+
+ -- Scott French <swfrench@wikimedia.org>  Fri,  7 Mar 2025 16:28:51 -0800
+
 composer-test-php81 (8.1.31-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php81:

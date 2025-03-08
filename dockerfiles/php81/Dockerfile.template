@@ -1,10 +1,9 @@
 FROM {{ "php-ast" | image_tag }} as ast
 FROM {{ "ci-bullseye" | image_tag }}
 
-# Align with SRE provided packages
+# Align with SRE provided packages. These include both PHP 8.1 packages and the
+# PCRE2 10.42 backport on which they depend (T386006).
 COPY wikimedia-php81.list /etc/apt/sources.list.d/wikimedia-php81.list
-# (T386006) Also specify pcre2 so we have the newer version than Debian provides by default
-COPY wikimedia-pcre2.list /etc/apt/sources.list.d/wikimedia-pcre2.list
 
 # zip is needed for composer to install things from dist
 # others are libraries/MediaWiki related
