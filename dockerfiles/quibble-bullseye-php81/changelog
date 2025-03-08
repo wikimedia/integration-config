@@ -1,3 +1,9 @@
+quibble-bullseye-php81 (1.13.0-s1) wikimedia; urgency=high
+
+   Install libpcre2-8-0 from component/php81 instead of component/pcre2
+
+ -- Scott French <swfrench@wikimedia.org>  Fri,  7 Mar 2025 16:23:13 -0800
+
 quibble-bullseye-php81 (1.13.0) wikimedia; urgency=medium
 
   * Update Quibble to 1.13.0

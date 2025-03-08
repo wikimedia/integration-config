@@ -1,3 +1,10 @@
+quibble-fresnel (1.13.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye-php81:
+   Install libpcre2-8-0 from component/php81 instead of component/pcre2
+
+ -- Scott French <swfrench@wikimedia.org>  Fri,  7 Mar 2025 16:23:13 -0800
+
 quibble-fresnel (1.13.0) wikimedia; urgency=medium
 
   * Update Quibble to 1.13.0
