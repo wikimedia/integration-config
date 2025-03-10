@@ -1371,12 +1371,6 @@ jobs:
     files:
       - '^includes/Defines\.php$'
 
-  - name: trigger-servicelib-node-pipeline-spec
-    files:
-        - '.pipeline/spec/blubber.yaml'
-        - '.pipeline/config.yaml'
-        - 'spec/.*'
-
 project-templates:
 
   - name: debian-glue
@@ -8526,12 +8520,6 @@ projects:
     publish:
       - trigger-kartotherian-pipeline-publish
 
-  - name: mediawiki/services/servicelib-node
-    test:
-      - trigger-servicelib-node-pipeline-spec
-    gate-and-submit:
-      - trigger-servicelib-node-pipeline-spec
-
   - name: mediawiki/services/texvcjs
     template:
       - name: node20
@@ -11763,6 +11751,10 @@ projects:
       - name: archived
 
   - name: mediawiki/services/recommendation-api/deploy
+    template:
+      - name: archived
+
+  - name: mediawiki/services/servicelib-node
     template:
       - name: archived
 
