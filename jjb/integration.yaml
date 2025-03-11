@@ -173,7 +173,7 @@
                 - php74:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.13.0
                 - php81:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.13.0
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.13.0-s1
             type:
                 - defaults:
                     quibble_args: >-

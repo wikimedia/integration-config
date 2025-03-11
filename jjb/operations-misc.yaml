@@ -54,7 +54,7 @@
      - php74:
          image: docker-registry.wikimedia.org/releng/composer-php74:7.4.33
      - php81:
-         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.31-s1
+         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.31-s2
      - php83:
          image: docker-registry.wikimedia.org/releng/composer-php83:8.3.17
      - php84:

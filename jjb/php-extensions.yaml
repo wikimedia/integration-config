@@ -22,7 +22,7 @@
      - php74:
           image: docker-registry.wikimedia.org/releng/php74-compile:7.4.33
      - php81:
-          image: docker-registry.wikimedia.org/releng/php81-compile:8.1.31-s1
+          image: docker-registry.wikimedia.org/releng/php81-compile:8.1.31-s2
      - php82:
           image: docker-registry.wikimedia.org/releng/php82-compile:8.2.27
      - php83:
