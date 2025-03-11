@@ -98,6 +98,7 @@ BounceHandler:
  - Echo
 
 CampaignEvents:
+ - CommunityConfiguration
  - Echo
  - Translate
  - WikimediaMessages
