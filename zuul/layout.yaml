@@ -3707,6 +3707,10 @@ projects:
     template:
       - name: debian-glue-non-voting
 
+  - name: operations/software/opensearch/plugins
+    template:
+      - name: debian-glue-non-voting
+
   - name: operations/software/etcd-mirror
     template:
       - name: debian-glue-non-voting
