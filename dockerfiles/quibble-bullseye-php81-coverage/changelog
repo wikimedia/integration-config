@@ -1,0 +1,5 @@
+quibble-bullseye-php81-coverage (1.14.1) wikimedia; urgency=high
+
+   Initial release, forked from quibble-bullseye-php74-coverage.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed, 12 Apr 2025 14:57:51 -0400
