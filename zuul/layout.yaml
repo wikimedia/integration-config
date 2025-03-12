@@ -2746,19 +2746,17 @@ projects:
   - name: integration/quibble
     test:
       - integration-quibble-tox:
-        - integration-quibble-fullrun-defaults-php74
-        - integration-quibble-fullrun-opensearch-php74
-        - integration-quibble-fullrun-sqlite-php74
-        - integration-quibble-fullrun-extensions-php74
-        - integration-quibble-fullrun-extensions-phpunit-php74
+        - integration-quibble-fullrun-defaults-php81
+        - integration-quibble-fullrun-opensearch-php81
+        - integration-quibble-fullrun-sqlite-php81
+        - integration-quibble-fullrun-extensions-php81
         - integration-quibble-fullrun-extensions-phpunit-php81
     gate-and-submit:
       - integration-quibble-tox:
-        - integration-quibble-fullrun-defaults-php74
-        - integration-quibble-fullrun-opensearch-php74
-        - integration-quibble-fullrun-sqlite-php74
-        - integration-quibble-fullrun-extensions-php74
-        - integration-quibble-fullrun-extensions-phpunit-php74
+        - integration-quibble-fullrun-defaults-php81
+        - integration-quibble-fullrun-opensearch-php81
+        - integration-quibble-fullrun-sqlite-php81
+        - integration-quibble-fullrun-extensions-php81
         - integration-quibble-fullrun-extensions-phpunit-php81
     postmerge:
       - integration-quibble-tox-publish
