@@ -60,8 +60,6 @@
     jobs:
         - '{name}-composer-package-{phpflavor}':
             phpflavor:
-                - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php74:7.4.33
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.31-s2
                 - php82:

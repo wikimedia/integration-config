@@ -167,10 +167,6 @@
         - mwext
         - mwskin
     php:
-        - php74:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.14.1
-            composer_image: docker-registry.wikimedia.org/releng/composer-php74:7.4.33
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:7.4.33
         - php81:
             setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1
             composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.31-s2

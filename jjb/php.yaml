@@ -95,9 +95,6 @@
 - project:
     name: generic-phan-jobs
     php:
-     - php74:
-         composer_image: docker-registry.wikimedia.org/releng/composer-php74:7.4.33
-         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:7.4.33
      - php81:
          composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.31-s2
          phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:8.1.31-s2
@@ -111,8 +108,6 @@
             composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.31-s2
         - 'composer-{phpflavor}':
             phpflavor:
-                - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php74:7.4.33
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-test-php81:8.1.31-s2
                 - php82:
@@ -123,8 +118,6 @@
                     image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.4
         - 'composer-package-{phpflavor}':
             phpflavor:
-                - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php74:7.4.33
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.31-s2
                 - php82:
@@ -153,8 +146,6 @@
 - project:
     name: generic-composer-assert-lock-jobs
     php:
-     - php74:
-         image: docker-registry.wikimedia.org/releng/composer-php74:7.4.33
      - php81:
          image: docker-registry.wikimedia.org/releng/composer-php81:8.1.31-s2
      - php82:

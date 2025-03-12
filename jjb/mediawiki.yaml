@@ -142,8 +142,6 @@
     jobs:
         - '{name}-composer-{phpflavor}':
             phpflavor:
-                - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php74:7.4.33
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-test-php81:8.1.31-s2
                 - php82:
@@ -208,9 +206,6 @@
 - project:
     name: mediawiki-core_phan_jobs
     php:
-        - php74:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php74:7.4.33
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:7.4.33
         - php81:
             composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.31-s2
             phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:8.1.31-s2
@@ -406,8 +401,6 @@
     jobs:
         - api-testing-{database}-{php}:
             php:
-                - php74:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.14.1
                 - php81:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1
             packages-source: vendor
@@ -935,8 +928,6 @@
         - postgres
         - sqlite
     php:
-        - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.14.1
         - php81:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1
         - php82:
@@ -972,11 +963,8 @@
     packages-source: vendor
     # We only use MariaDB/MySQL
     database: mysql
-    # And only php7.4 and php8.1
+    # And only php8.1
     php:
-        - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.14.1
-            entrypoint: quibble-with-supervisord
         - php81:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1
             entrypoint: quibble-with-supervisord
@@ -1008,8 +996,6 @@
             database: sqlite
             phpunit-params: '--group Wikibase,WikibaseAPI,Purtle'
     phpflavour:
-        - php74:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.14.1
         - php81:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1
         - php83:
