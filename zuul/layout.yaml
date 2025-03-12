@@ -2290,29 +2290,24 @@ project-templates:
       - mwext-node22-rundoc
       - mwext-node24-rundoc
 
-  - name: composer-test-php74-to-php84
+  - name: composer-test-php81-to-php84
     test:
-      - composer-php74
-    php:
       - composer-php81
+    php:
       - composer-php82
       - composer-php83
       - composer-php84
     gate-and-submit:
-      - composer-php74
       - composer-php81
       - composer-php82
       - composer-php83
       - composer-php84
 
   # Temporary template for repos that fail on PHP 8.2+
-  - name: composer-test-php74-and-php81
+  - name: composer-test-php81-only
     test:
-      - composer-php74
-    php:
       - composer-php81
     gate-and-submit:
-      - composer-php74
       - composer-php81
     experimental:
       - composer-php82
@@ -2320,15 +2315,13 @@ project-templates:
       - composer-php84
 
   # Temporary template for repos that fail on PHP 8.4+
-  - name: composer-test-php74-to-php83
+  - name: composer-test-php81-to-php83
     test:
-      - composer-php74
-    php:
       - composer-php81
+    php:
       - composer-php82
       - composer-php83
     gate-and-submit:
-      - composer-php74
       - composer-php81
       - composer-php82
       - composer-php83
@@ -2345,16 +2338,14 @@ project-templates:
       - composer-php83
       - composer-php84
 
-  - name: composer-test-package-php74-to-php84
+  - name: composer-test-package-php81-to-php84
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php74
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
     gate-and-submit:
-      - composer-package-php74
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
@@ -2560,16 +2551,14 @@ project-templates:
     gate-and-submit:
       - fail-archived-repositories
 
-  - name: mediawiki-php-library-php74-to-php84
+  - name: mediawiki-php-library-php81-to-php84
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php74
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
     gate-and-submit:
-      - composer-package-php74
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
@@ -2711,7 +2700,7 @@ projects:
     template:
       - name: node20
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php74-to-php83
+      - name: composer-test-php81-to-php83
 
   - name: integration/gear
     test:
@@ -2812,7 +2801,7 @@ projects:
 
   - name: mediawiki/tools/code-utils
     template:
-      - name: composer-test-php74-to-php84
+      - name: composer-test-php81-to-php84
     test:
       - shellcheck
     gate-and-submit:
@@ -2820,7 +2809,7 @@ projects:
 
   - name: mediawiki/tools/codesniffer
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
     test:
       - mw-tools-codesniffer-mwcore-testrun
 
@@ -2838,11 +2827,11 @@ projects:
 
   - name: mediawiki/tools/minus-x
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/tools/phpunit-patch-coverage
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/tools/releng
     template:
@@ -2852,7 +2841,7 @@ projects:
 
   - name: mediawiki/tools/phan
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
     test:
       - mw-tools-phan-mwcore-testrun
 
@@ -2873,7 +2862,7 @@ projects:
     # FIXME: Use mediawiki-php-library?
     # template:
       # (T386570) Does not yet pass on PHP 8.4
-      # - name: composer-test-package-php74-to-php84
+      # - name: composer-test-package-php81-to-php84
     test:
       - composer-package-php74
       - composer-package-php81
@@ -2901,7 +2890,7 @@ projects:
   - name: performance/arc-lamp
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php74-to-php84
+      - name: composer-test-package-php81-to-php84
 
   - name: performance/asoranking
     template:
@@ -2951,7 +2940,7 @@ projects:
 
   - name: performance/xhgui-vendor
     template:
-      - name: composer-test-php74-to-php84
+      - name: composer-test-php81-to-php84
 
   - name: releng/phatality
     template:
@@ -2972,7 +2961,7 @@ projects:
   - name: labs/tools/sonarqubebot
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php74-to-php83
+      - name: composer-test-php81-to-php83
 
 #### MediaWiki itself ##########################################
 
@@ -3784,7 +3773,7 @@ projects:
   - name: operations/dumps/dcat
     template:
       # (T353397) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
-      - name: composer-test-php74-and-php81
+      - name: composer-test-php81-only
       - name: node20
       - name: mediawiki-i18n-check
 
@@ -8734,7 +8723,7 @@ projects:
 
   - name: mediawiki/services/jobrunner
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/services/kafka-watcher
     template:
@@ -9007,7 +8996,7 @@ projects:
 
   - name: analytics/wmde/scripts
     template:
-      - name: composer-test-php74-to-php84
+      - name: composer-test-php81-to-php84
 
   - name: analytics/wmde/toolkit-analyzer
     test:
@@ -9076,57 +9065,57 @@ projects:
 
   - name: mediawiki/oauthclient-php
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
 #### MediaWiki libraries #######################################
 
   - name: cdb
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: purtle
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: utfnormal
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: at-ease
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: base-convert
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: css-sanitizer
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: php-session-serializer
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: AhoCorasick
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: RunningStat
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: IPSet
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: RelPath
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: wikipeg
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
     test:
       - wikipeg-special-node24-plus-php81-composer
       - wikipeg-special-node24-plus-php83-composer
@@ -9140,76 +9129,76 @@ projects:
 
   - name: WrappedString
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: CLDRPluralRuleParser
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: HtmlFormatter
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/alea
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/Assert
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/Bcp47Code
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/CloverDiff
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/CommonPasswords
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/Dodo
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/Equivset
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/IDLeDOM
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/IPAValidator
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/IPUtils
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/JsonCodec
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/LangConv
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
       - name: node20
 
   - name: mediawiki/libs/less.php
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/Message
     template:
-     - name: mediawiki-php-library-php74-to-php84
+     - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/Minify
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/node-cssjanus
     template:
@@ -9220,35 +9209,35 @@ projects:
 
   - name: mediawiki/libs/NormalizedException
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/ObjectFactory
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/ParamValidator
     template:
-        - name: mediawiki-php-library-php74-to-php84
+        - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/php-cssjanus
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/RemexHtml
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/RequestTimeout
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/ScopedCallback
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/Shellbox
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
     test:
       - trigger-shellbox-pipeline-test
     gate-and-submit:
@@ -9258,47 +9247,47 @@ projects:
 
   - name: mediawiki/libs/Services
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/StringUtils
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/Timestamp
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/UpdateHistory
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/UUID
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/WaitConditionLoop
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/WebIDL
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/XMPReader
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/Zest
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: performance/excimer-ui-client
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: performance/excimer-ui-server
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
 #### Tools deployed on Wikimedia Cloud Services (aka "Labs") ###
 
@@ -9315,7 +9304,7 @@ projects:
   - name: labs/countervandalism/cvn-api
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php74-to-php83
+      - name: composer-test-php81-to-php83
 
   - name: labs/countervandalism/cvn-clerkbot
     template:
@@ -9324,7 +9313,7 @@ projects:
   - name: labs/countervandalism/stillalive
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php74-to-php83
+      - name: composer-test-php81-to-php83
 
   - name: labs/countervandalism/CVNBot
     test:
@@ -9362,7 +9351,7 @@ projects:
   - name: labs/tools/blankpages
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php74-to-php83
+      - name: composer-test-php81-to-php83
 
   - name: labs/tools/bodh
     template:
@@ -9412,7 +9401,7 @@ projects:
 
   - name: labs/tools/extjsonuploader
     template:
-      - name: composer-test-php74-to-php84
+      - name: composer-test-php81-to-php84
 
   - name: labs/tools/extreg-wos
     template:
@@ -9424,7 +9413,7 @@ projects:
 
   - name: labs/tools/force-rebase
     template:
-      - name: composer-test-php74-to-php84
+      - name: composer-test-php81-to-php84
 
   - name: labs/tools/forrestbot
     template:
@@ -9468,7 +9457,7 @@ projects:
 
   - name: labs/tools/intuition
     template:
-      - name: composer-test-php74-to-php84
+      - name: composer-test-php81-to-php84
       - name: node20
       - name: mediawiki-i18n-check
     postmerge:
@@ -9477,14 +9466,14 @@ projects:
   - name: labs/tools/intuition-web
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php74-to-php83
+      - name: composer-test-php81-to-php83
       - name: node20-browser
       - name: mediawiki-i18n-check
 
   - name: labs/tools/ipchanges
     template:
       # (T353396) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
-      - name: composer-test-php74-and-php81
+      - name: composer-test-php81-only
 
   - name: labs/tools/ipwatcher
     template:
@@ -9497,13 +9486,13 @@ projects:
   - name: labs/tools/orphantalk
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php74-to-php83
+      - name: composer-test-php81-to-php83
       - name: mediawiki-i18n-check
 
   - name: labs/tools/usage
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php74-to-php83
+      - name: composer-test-php81-to-php83
       - name: mediawiki-i18n-check
 
   - name: labs/tools/urbanecmbot
@@ -9515,7 +9504,7 @@ projects:
   - name: labs/tools/guc
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php74-to-php83
+      - name: composer-test-php81-to-php83
       - name: mediawiki-i18n-check
 
   - name: labs/tools/fileprotectionsync
@@ -9525,7 +9514,7 @@ projects:
   - name: labs/tools/nagf
     template:
       # (T353395) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
-      - name: composer-test-php74-and-php81
+      - name: composer-test-php81-only
 
   - name: labs/tools/Isa
     test:
@@ -9568,7 +9557,7 @@ projects:
   - name: labs/tools/meetingtimes
     template:
       # (T353394) This repo does not yet pass on PHP 8.2 or 8.3
-      - name: composer-test-php74-and-php81
+      - name: composer-test-php81-only
       - name: node20
 
   - name: labs/tools/mwpackages
@@ -9609,7 +9598,7 @@ projects:
 
   - name: labs/tools/stewardbots
     template:
-      - name: composer-test-package-php74-to-php84
+      - name: composer-test-package-php81-to-php84
       - name: tox
 
   - name: labs/tools/stewardbots-ui
@@ -9665,7 +9654,7 @@ projects:
   - name: labs/tools/wikiinfo
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php74-to-php83
+      - name: composer-test-php81-to-php83
 
   - name: labs/tools/wikinity
     template:
@@ -9799,7 +9788,7 @@ projects:
 
   - name: wikimedia/slimapp
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: wikimedia/portals
     template:
@@ -9909,7 +9898,7 @@ projects:
 
   - name: design/codex-php
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: design/landing-page
     template:
@@ -9941,7 +9930,7 @@ projects:
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
     template:
-      - name: composer-test-package-php74-to-php84
+      - name: composer-test-package-php81-to-php84
       - name: mediawiki-i18n-check
     test:
       - ooui-node24-plus-php81-runjenkins
@@ -10062,7 +10051,7 @@ projects:
 
   - name: testing-access-wrapper
     template:
-      - name: mediawiki-php-library-php74-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: research/ores/wheels
     test:
@@ -10170,17 +10159,17 @@ projects:
 
   - name: wikimedia-cz/mediawiki-config
     template:
-      - name: composer-test-php74-to-php84
+      - name: composer-test-php81-to-php84
 
   - name: wikimedia-cz/web-theme
     template:
-      - name: composer-test-php74-to-php84
+      - name: composer-test-php81-to-php84
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
   - name: wikimedia-cz/web-plugin
     template:
-      - name: composer-test-php74-to-php84
+      - name: composer-test-php81-to-php84
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
@@ -10278,12 +10267,12 @@ projects:
   - name: wikimedia/textcat
     template:
       # FIXME: Use mediawiki-php-library?
-      - name: composer-test-package-php74-to-php84
+      - name: composer-test-package-php81-to-php84
 
   - name: wikimedia/lucene-explain-parser
     template:
       # FIXME: Use mediawiki-php-library?
-      - name: composer-test-package-php74-to-php84
+      - name: composer-test-package-php81-to-php84
 
   - name: performance/slack-bot
     template:
