@@ -2864,12 +2864,10 @@ projects:
       # (T386570) Does not yet pass on PHP 8.4
       # - name: composer-test-package-php81-to-php84
     test:
-      - composer-package-php74
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
     gate-and-submit:
-      - composer-package-php74
       - composer-package-php81
       - composer-package-php82
       - composer-package-php83
