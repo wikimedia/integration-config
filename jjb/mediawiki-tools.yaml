@@ -22,7 +22,7 @@
              mediawiki/core
              mediawiki/tools/codesniffer
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/composer-php74:7.4.33
+         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.31-s2
          workdir: /src/mediawiki/tools/codesniffer
          args: 'install --ansi --no-progress --prefer-dist --profile --no-dev'
      - docker-run-with-log-cache-src:
@@ -36,7 +36,7 @@
          options: '--user=nobody'
          args: '/src/mediawiki/tools/codesniffer /src/vendor/mediawiki/mediawiki-codesniffer'
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/composer-php74:7.4.33
+         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.31-s2
          entrypoint: /src/vendor/mediawiki/mediawiki-codesniffer/vendor/bin/phpcs
          workdir: /src
          args: '-s -p'
