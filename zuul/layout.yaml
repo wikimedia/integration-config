@@ -8783,8 +8783,6 @@ projects:
       - parsoidsvc-composer-package-php81
       - quibble-composer-mysql-php81
     gate-and-submit:
-      - parsoidsvc-composer-package-php74
-      - quibble-composer-mysql-php74
       - parsoidsvc-composer-package-php81
       - quibble-composer-mysql-php81
       - parsoidsvc-composer-package-php82
