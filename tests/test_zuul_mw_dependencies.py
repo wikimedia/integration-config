@@ -37,7 +37,7 @@ class TestMwDependencies(unittest.TestCase):
         params['ZUUL_BRANCH'] = branch
 
         job = FakeJob(job_name if job_name
-                      else 'mediawiki-quibble-composer-mysql-php74')
+                      else 'mediawiki-quibble-composer-mysql-php81')
         zuul_config.set_parameters(None, job, params)
         return params
 
@@ -86,10 +86,10 @@ class TestMwDependencies(unittest.TestCase):
 
     def test_job_name(self):
         self.assertHasDependencies(self.fetch_dependencies(
-            job_name='mediawiki-quibble-composer-mysql-php74'))
+            job_name='mediawiki-quibble-composer-mysql-php81'))
 
         self.assertHasDependencies(self.fetch_dependencies(
-            job_name='quibble-composer-mysql-php74'))
+            job_name='quibble-composer-mysql-php81'))
 
         self.assertMissingDependencies(self.fetch_dependencies(
             job_name='mediawiki-core-phplint'))
@@ -147,7 +147,7 @@ class TestMwDependencies(unittest.TestCase):
 
     def test_inject_skin_on_an_extension(self):
         deps = self.fetch_dependencies(
-            job_name='mediawiki-quibble-composer-mysql-php74',
+            job_name='mediawiki-quibble-composer-mysql-php81',
             project='mediawiki/extensions/MobileFrontend')
         self.assertDictContainsSubset(
             {
@@ -159,7 +159,7 @@ class TestMwDependencies(unittest.TestCase):
     def test_inject_dependencies_on_quibble_jobs(self):
         self.maxDiff = None
         deps = self.fetch_dependencies(
-            job_name='quibble-composer-mysql-php74',
+            job_name='quibble-composer-mysql-php81',
             project='mediawiki/extensions/PropertySuggester')
         self.assertIn('EXT_DEPENDENCIES', deps)
         self.assertIn('\\nmediawiki/extensions/Wikibase\\n',
@@ -167,7 +167,7 @@ class TestMwDependencies(unittest.TestCase):
 
     def test_bluespice_branch_exception(self):
         deps = self.fetch_dependencies(
-            job_name='quibble-composer-mysql-php74',
+            job_name='quibble-composer-mysql-php81',
             project='mediawiki/extensions/BlueSpiceFoundation')
         self.assertIn('EXT_DEPENDENCIES', deps)
         self.assertEqual('\\n'.join([

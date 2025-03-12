@@ -1191,9 +1191,9 @@ jobs:
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
   # queue-name can not be applied based on a regex, apply the name on most used
   # jobs.
-  - name: mediawiki-quibble-composer-mysql-php74
+  - name: mediawiki-quibble-composer-mysql-php81
     queue-name: mediawiki
-  - name: mediawiki-quibble-vendor-mysql-php74
+  - name: mediawiki-quibble-vendor-mysql-php81
     queue-name: mediawiki
   - name: mwgate-node20
     queue-name: mediawiki
@@ -1306,8 +1306,6 @@ jobs:
     branch: (?!.*deployment.*|^contrib$)
 
   # Make 'standalone' jobs run consecutively not concurrently, as they can clobber each other
-  - name: quibble-vendor-mysql-php74-phpunit-standalone
-    mutex: quibble-vendor-mysql-php74-phpunit-standalone
   - name: quibble-vendor-mysql-php81-phpunit-standalone
     mutex: quibble-vendor-mysql-php81-phpunit-standalone
 
@@ -1337,12 +1335,6 @@ jobs:
       - '^utils/jjb-diff.sh'
       - '^jjb/.*'
       - '^tox.ini$'
-
-  - name: operations-mw-config-php74-composer-diffConfig
-    voting: false
-    # Note that the results are the other way around because we're using `git diff --exit-code`.
-    success-message: 'FAILURE No change detected against the current configuration.'
-    failure-message: 'SUCCESS Please carefully review the change in effective configuration.'
 
   - name: operations-mw-config-php81-composer-diffConfig
     voting: false
@@ -1480,7 +1472,6 @@ project-templates:
   #
   # As of 2025-05-19, our current CI testing targets are Node 20, plus:
   # master : PHP 8.1–8.3 (supported & tested)
-  #          PHP 7.4 (temporarily whilst Wikimedia production migrates)
   # REL1_39: PHP 7.4 & 8.1 (but only test 8.1)
   # REL1_42: PHP 8.1–8.3 (supported & tested)
   # REL1_43: PHP 8.1–8.3 (supported & tested)
@@ -1491,11 +1482,9 @@ project-templates:
       - mwgate-node20
       - mwext-php81-phan
     php:
-      - quibble-vendor-mysql-php74
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
     gate-and-submit:
-      - quibble-vendor-mysql-php74
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
@@ -1574,9 +1563,11 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
+      # Non-standard database types
       - quibble-vendor-sqlite-php81
       - quibble-vendor-postgres-php81
-      - quibble-vendor-mysql-php81
+      # Not-yet-supported language runtimes
+      - quibble-vendor-mysql-php84
       - mwgate-node22
       - mwgate-node24
 
@@ -1659,10 +1650,11 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
+      # Non-standard database types
       - quibble-vendor-sqlite-php81
       - quibble-vendor-postgres-php81
+      # Not-yet-supported language runtimes
       - quibble-vendor-mysql-php84
-      - mwext-php81-phan
       - mwgate-node22
       - mwgate-node24
 
@@ -1678,11 +1670,9 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
     php:
-      - quibble-composer-mysql-php74
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
     gate-and-submit:
-      - quibble-composer-mysql-php74
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1753,8 +1743,10 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
+      # Non-standard database types
       - quibble-composer-sqlite-php81
       - quibble-composer-postgres-php81
+      # Not-yet-supported language runtimes
       - quibble-composer-mysql-php84
       - mwgate-node22
       - mwgate-node24
@@ -1826,11 +1818,9 @@ project-templates:
       - mwgate-node20
       - mwext-php81-phan
     php:
-      - quibble-vendor-mysql-php74
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
     gate-and-submit:
-      - quibble-vendor-mysql-php74
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
@@ -1915,11 +1905,9 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
     php:
-      - quibble-composer-mysql-php74
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
     gate-and-submit:
-      - quibble-composer-mysql-php74
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1993,12 +1981,9 @@ project-templates:
     test:
       - quibble-vendor-mysql-php81-phpunit-standalone
     php:
-      - quibble-vendor-mysql-php74-phpunit-standalone
-      - quibble-vendor-mysql-php82-phpunit-standalone
       - quibble-vendor-mysql-php82-phpunit-standalone
       - quibble-vendor-mysql-php83-phpunit-standalone
     gate-and-submit:
-      - quibble-vendor-mysql-php74-phpunit-standalone
       - quibble-vendor-mysql-php81-phpunit-standalone
       - quibble-vendor-mysql-php82-phpunit-standalone
       - quibble-vendor-mysql-php83-phpunit-standalone
@@ -2111,11 +2096,9 @@ project-templates:
       - mwgate-node20
       - mwskin-php81-phan
     php:
-      - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
     gate-and-submit:
-      - quibble-vendor-mysql-php74
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
@@ -2211,11 +2194,9 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwskin-php81-phan
     php:
-      - quibble-composer-mysql-php74
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
     gate-and-submit:
-      - quibble-composer-mysql-php74
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -3022,7 +3003,6 @@ projects:
       - mediawiki-quibble-vendor-sqlite-php81
       - mediawiki-quibble-vendor-postgres-php81
       # Alternate php versions
-      - mediawiki-quibble-vendor-mysql-php81
       - mediawiki-quibble-vendor-mysql-php82
       - mediawiki-quibble-vendor-mysql-php83
       # Standalone run for core-only changes
@@ -3031,7 +3011,6 @@ projects:
       - mediawiki-core-php81-phan
     gate-and-submit:
       - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-vendor-mysql-php81
       - mediawiki-quibble-vendor-mysql-php82
       - mediawiki-quibble-vendor-mysql-php83
@@ -3040,7 +3019,6 @@ projects:
       - mediawiki-quibble-apitests-vendor-php81
       - mediawiki-quibble-vendor-sqlite-php81
       - mediawiki-quibble-vendor-postgres-php81
-      - mediawiki-core-php81-phan
       - mediawiki-core-php81-phan
       # Standalone run for core-only changes
       - quibble-vendor-mysql-php81-phpunit-standalone
@@ -3052,7 +3030,6 @@ projects:
       - mediawiki-core-php81-phan
       - mwgate-node20
     gate-and-submit-1_39:
-      - mediawiki-quibble-composer-mysql-php74
       - mediawiki-quibble-composer-mysql-php81
       - mediawiki-quibble-composer-mysql-php82
       - mediawiki-quibble-composer-mysql-php83
@@ -3163,18 +3140,14 @@ projects:
       - mediawiki-quibble-vendor-mysql-php81
       - mediawiki-quibble-selenium-vendor-mysql-php81
     php:
-      - mwgate-composer-php81
       - mwgate-composer-php82
       - mwgate-composer-php83
-      - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-vendor-mysql-php82
       - mediawiki-quibble-vendor-mysql-php83
     gate-and-submit:
-      - mwgate-composer-php74
       - mwgate-composer-php81
       - mwgate-composer-php82
       - mwgate-composer-php83
-      - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-vendor-mysql-php81
       - mediawiki-quibble-vendor-mysql-php82
       - mediawiki-quibble-vendor-mysql-php83

@@ -239,14 +239,13 @@ class TestZuulScheduler(unittest.TestCase):
             % (name, pipeline)
         )
 
-    def assertProjectHasVotingPHP74(self, name, definition, pipeline):
+    def assertProjectHasVotingPHP81(self, name, definition, pipeline):
         if pipeline != 'gate-and-submit':
             return
         self.assertTrue(
             any([job for job in definition
-                 if 'quibble' in job and 'php74' in job]),
-            'Project %s pipeline %s must have job '
-            'for PHP 7.4 quibble'
+                 if 'quibble' in job and 'php81' in job]),
+            'Project %s pipeline %s must have quibble job for PHP 8.1'
             % (name, pipeline)
             )
 
@@ -256,7 +255,7 @@ class TestZuulScheduler(unittest.TestCase):
         has_quibble = any([job for job in definition if 'quibble' in job])
         has_npm_test = any([job for job in definition if 'npm-node-6' in job])
         self.assertEqual(has_npm_test, has_quibble,
-                         'Project %s pipeline %s must have both quibble and '
+                         'Project %s pipeline %s must have both a quibble and '
                          'npm job' % (name, pipeline))
 
     def assertProjectHasI18nChecker(self, name, definition, pipeline):
@@ -274,7 +273,7 @@ class TestZuulScheduler(unittest.TestCase):
             r'mediawiki/core$': [
                 self.assertProjectHasComposerValidate,
                 self.assertProjectHasPhplint,
-                self.assertProjectHasVotingPHP74,
+                self.assertProjectHasVotingPHP81,
                 self.assertProjectHasI18nChecker,
             ],
             r'mediawiki/extensions/\w+$': [
@@ -1142,7 +1141,6 @@ class TestZuulScheduler(unittest.TestCase):
         expected_gate = {
             'mediawiki-core-php81-phan': True,
             'mediawiki-quibble-composer-mysql-php81': True,
-            'mediawiki-quibble-vendor-mysql-php74': True,
             'mediawiki-quibble-vendor-mysql-php81': True,
             'mediawiki-quibble-vendor-mysql-php82': True,
             'mediawiki-quibble-vendor-mysql-php83': True,
