@@ -2781,11 +2781,11 @@ projects:
     template:
       - name: node20-rundoc
     test:
-      - api-testing-mysql-php74
-      - api-testing-sqlite-php74
+      - api-testing-mysql-php81
+      - api-testing-sqlite-php81
     gate-and-submit:
-      - api-testing-mysql-php74
-      - api-testing-sqlite-php74
+      - api-testing-mysql-php81
+      - api-testing-sqlite-php81
     postmerge:
       - generic-node20-docs-publish
 
