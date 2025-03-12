@@ -2360,40 +2360,36 @@ project-templates:
       - composer-package-php83
       - composer-package-php84
 
-  - name: php-compile-php74-to-php84
+  - name: php-compile-php81-to-php84
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - php-compile-php74
       - php-compile-php81
       - php-compile-php82
       - php-compile-php83
       - php-compile-php84
     gate-and-submit:
-      - php-compile-php74
       - php-compile-php81
       - php-compile-php82
       - php-compile-php83
       - php-compile-php84
     postmerge:
-      - php74-compile-coverage-publish
+      - php81-compile-coverage-publish
 
   # Temporary job for repos that don't yet pass on PHP 8.4
-  - name: php-compile-php74-to-php83
+  - name: php-compile-php81-to-php83
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - php-compile-php74
       - php-compile-php81
       - php-compile-php82
       - php-compile-php83
     gate-and-submit:
-      - php-compile-php74
       - php-compile-php81
       - php-compile-php82
       - php-compile-php83
     experimental:
       - php-compile-php84
     postmerge:
-      - php74-compile-coverage-publish
+      - php81-compile-coverage-publish
 
   - name: node20
     test:
@@ -9060,11 +9056,11 @@ projects:
 
   - name: mediawiki/php/excimer
     template:
-      - name: php-compile-php74-to-php83 # Broken test on PHP 8.4, see T380748
+      - name: php-compile-php81-to-php83 # Broken test on PHP 8.4, see T380748
 
   - name: mediawiki/php/luasandbox
     template:
-      - name: php-compile-php74-to-php84
+      - name: php-compile-php81-to-php84
     postmerge:
       - doxygen-publish
     publish:
@@ -9072,11 +9068,11 @@ projects:
 
   - name: mediawiki/php/wikidiff2
     template:
-      - name: php-compile-php74-to-php84
+      - name: php-compile-php81-to-php84
 
   - name: mediawiki/php/wmerrors
     template:
-      - name: php-compile-php74-to-php84
+      - name: php-compile-php81-to-php84
 
   - name: mediawiki/oauthclient-php
     template:
