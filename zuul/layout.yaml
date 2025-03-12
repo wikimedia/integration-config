@@ -9438,10 +9438,10 @@ projects:
       - name: node20
       - name: mediawiki-i18n-check
     test:
-      - composer-php74
+      - composer-php81
       - labs-tools-heritage-tox
     gate-and-submit:
-      - composer-php74
+      - composer-php81
       - labs-tools-heritage-tox
     postmerge:
       - tox-py37-coverage-publish
