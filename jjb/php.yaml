@@ -59,7 +59,7 @@
         workdir: /src
         args: >-
             require --ansi --no-progress --prefer-dist --profile --
-            mediawiki/phpunit-patch-coverage 0.0.12
+            mediawiki/phpunit-patch-coverage 0.0.14
      - docker-run-with-log-cache-src:
         image: '{composer_image}'
         workdir: /src
