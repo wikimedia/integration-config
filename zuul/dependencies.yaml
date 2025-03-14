@@ -364,6 +364,7 @@ BlueSpiceSaferEdit:
 
 BlueSpiceSignHere:
  - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
 
 BlueSpiceSmartList:
  - BlueSpiceFoundation
@@ -374,6 +375,7 @@ BlueSpiceSubPageTree:
 
 BlueSpiceTagCloud:
  - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
 
 BlueSpiceUEModuleBookPDF:
  - BlueSpiceFoundation
@@ -433,12 +435,14 @@ BlueSpiceVisualEditorConnector:
 
 BlueSpiceWatchList:
  - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
 
 BlueSpiceWikiFarm:
  - OOJSPlus
 
 BlueSpiceWhoIsOnline:
  - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
 
 BlueSpiceWikiExplorer:
  - BlueSpiceFoundation
@@ -554,6 +558,7 @@ ContainerFilter:
 
 ContentDroplets:
  - VisualEditor
+ - OOJSPlus
 
 ContentStabilization:
  - BlueSpiceBookshelf
