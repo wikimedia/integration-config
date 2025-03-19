@@ -3598,17 +3598,20 @@ projects:
       - operations-mw-config-php74-composer-lint
       - operations-mw-config-php74-composer-test
       - operations-mw-config-php74-composer-diffConfig
+      - operations-mw-config-php81-composer-lint
+      - operations-mw-config-php81-composer-test
+      - operations-mw-config-php81-composer-diffConfig
       - operations-mw-config-tox
     gate-and-submit:
       - operations-mw-config-php74-composer-lint
       - operations-mw-config-php74-composer-test
-      # Not allowed whilst non-voting:
-      # - operations-mw-config-php74-composer-diffConfig
-      - operations-mw-config-tox
-    experimental:
       - operations-mw-config-php81-composer-lint
       - operations-mw-config-php81-composer-test
-      - operations-mw-config-php81-composer-diffConfig
+      # Not allowed whilst non-voting:
+      # - operations-mw-config-php74-composer-diffConfig
+      # - operations-mw-config-php81-composer-diffConfig
+      - operations-mw-config-tox
+    experimental:
       - operations-mw-config-php83-composer-lint
       - operations-mw-config-php83-composer-test
       - operations-mw-config-php83-composer-diffConfig
