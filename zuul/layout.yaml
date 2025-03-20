@@ -3256,7 +3256,6 @@ projects:
       - name: tox
   - { name: operations/debs/archiva,                          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/avconv10,                         test: ['debian-glue-non-voting'] }
-  - { name: operations/debs/bdsync,                           test: ['debian-glue-non-voting'] }
   - { name: operations/debs/benthos,                          test: ['debian-glue-backports-non-voting'] }
   - { name: operations/debs/bloomd,                           test: ['debian-glue-non-voting'] }
   - { name: operations/debs/burrow,                           test: ['debian-glue-non-voting'] }
@@ -10099,6 +10098,9 @@ projects:
 
   # T343707
   - name: operations/software/cassandra-table-properties
+    template:
+      - name: archived
+  - name: operations/debs/bdsync
     template:
       - name: archived
   - name: operations/debs/salt
