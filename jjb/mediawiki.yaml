@@ -481,7 +481,7 @@
      - docker-cleanup
     wrappers:
       - timeout:
-          timeout: 60
+          timeout: 20
           fail: true
       - timestamps
       - credentials-binding:
