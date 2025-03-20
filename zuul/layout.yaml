@@ -1313,6 +1313,12 @@ jobs:
     success-message: 'FAILURE No change detected against the current configuration.'
     failure-message: 'SUCCESS Please carefully review the change in effective configuration.'
 
+  - name: operations-mw-config-php81-composer-diffConfig
+    voting: false
+    # Note that the results are the other way around because we're using `git diff --exit-code`.
+    success-message: 'FAILURE No change detected against the current configuration.'
+    failure-message: 'SUCCESS Please carefully review the change in effective configuration.'
+
   - name: operations-puppet-logstash-filter-verifier
     files:
       - '^modules/profile/files/logstash'
