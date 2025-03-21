@@ -490,6 +490,7 @@ CheckUser:
  - FlaggedRevs
  - GlobalBlocking
  - GlobalPreferences
+ - GrowthExperiments
  - GuidedTour
  - IPInfo
  - MobileFrontend

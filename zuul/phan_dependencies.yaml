@@ -148,6 +148,7 @@ CheckUser:
  - FlaggedRevs
  - GlobalBlocking
  - GlobalPreferences
+ - GrowthExperiments
  - TorBlock
  - UserMerge
 
