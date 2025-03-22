@@ -461,6 +461,9 @@ Campaigns:
 Capiunto:
  - Scribunto
 
+CategoryWatch:
+ - Echo
+
 CentralAuth:
  - AbuseFilter
  - AntiSpoof
