@@ -1149,6 +1149,7 @@ jobs:
         - '.pipeline/article_country/blubber.yaml'
         - '.pipeline/config.yaml'
         - 'src/models/article_country/.*'
+        - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-edit-check
     files:
