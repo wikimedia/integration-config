@@ -250,24 +250,6 @@
             srcdir: '/workspace/src'
         - assert-no-mediawiki-errors
     publishers:
-        - postbuildscript:
-            builders:
-                - build-on:
-                    - SUCCESS
-                    - UNSTABLE
-                    - FAILURE
-                    - ABORTED
-                  build-steps:
-                    # wdio-video-reporter 3.1.1 leaves screenshots behind after
-                    # creating the video. Delete them to save space (T249268),
-                    # they are transient files anyway.
-                    - docker-run:
-                        image: docker-registry.wikimedia.org/buster:latest
-                        entrypoint: /bin/rm
-                        volumes:
-                            log:
-                        args: '-fR /log/rawSeleniumVideoGrabs'
-
         - compress-mw-debug-logs
         - archive-log-allow-empty
         # Garbage collect npm cache
