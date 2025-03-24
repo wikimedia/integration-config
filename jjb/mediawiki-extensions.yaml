@@ -233,3 +233,48 @@
                     mw_server: 'https://en.wikipedia.beta.wmflabs.org'
                     mw_user: 'Selenium user'
                     mw_credential_id: 'selenium-user-beta'
+
+- job:
+      name: wikilambda-catalyst-end-to-end
+      node: Docker
+      parameters:
+          - string:
+              name: 'WIKILAMBDA_REF'
+              default: '{BASE_LOG_PATH}'
+          - string:
+              name: 'ENV_API_PATH'
+              description: The path to the catalyst API for environments
+              default: 'https://api.catalyst.wmcloud.org/api/environments'
+      triggers:
+          - zuul
+      builders:
+          - setup
+          - docker-run-with-log-cache-src:
+                image: 'docker-registry.wikimedia.org/releng/catalyst:1.0.0'
+                entrypoint: '/deploy_env.py'
+                environment:
+                    WIKILAMBDA_REF: $WIKILAMBDA_REF
+                    ZUUL_CHANGE: $ZUUL_CHANGE
+                    ENV_API_PATH: $ENV_API_PATH
+      wrappers:
+          - timeout:
+              timeout: 20
+              fail: true
+          - credentials-binding:
+                - text:
+                    credential-id: wikilambda-catalyst-api-key
+                    variable: CATALYST_API_TOKEN
+      publishers:
+          - postbuildscript:
+              builders:
+                - build-on:
+                    - SUCCESS
+                    - UNSTABLE
+                    - FAILURE
+                    - ABORTED
+                  build-steps:
+                    - shell: |
+                        eval "$(cat log/envid)" 
+                        curl -X "DELETE" "https://api.catalyst.wmcloud.org/api/environments/${ENV_ID}" \
+                          -H "Authorization: ApiToken ${CATALYST_API_TOKEN}"
+          - teardown

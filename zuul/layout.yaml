@@ -5400,6 +5400,8 @@ projects:
     # Using the job directly, not via template, as it won't pass on REL branches -- JDF 2025-01-07
     test:
       - quibble-vendor-mysql-php74-phpunit-standalone
+    experimental:
+      - wikilambda-catalyst-end-to-end
     gate-and-submit:
       - quibble-vendor-mysql-php74-phpunit-standalone
     postmerge:
