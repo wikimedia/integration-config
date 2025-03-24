@@ -1,0 +1,22 @@
+# Docker image with nodejs, browsers installed and python packages installed
+# Executes 'deploy_env.py' in /src to deploy an wikifunctions environment to catalyst API
+
+FROM {{ "node22-test-browser" | image_tag }}
+
+USER root
+{% set packages|replace('\n', ' ') -%}
+python3-requests
+python3-certifi
+python3-charset-normalizer
+python3-idna
+{%- endset -%}
+
+RUN {{ packages | apt_install }}
+
+USER nobody
+ENV MW_SCRIPT_PATH='/'
+ENV FORCE_COLOR='1'
+ENV MEDIAWIKI_USER="Patch Demo"
+ENV MEDIAWIKI_PASSWORD="patchdemo"
+
+COPY deploy_env.py /deploy_env.py
