@@ -239,9 +239,6 @@
       node: Docker
       parameters:
           - string:
-              name: 'WIKILAMBDA_REF'
-              default: '{BASE_LOG_PATH}'
-          - string:
               name: 'ENV_API_PATH'
               description: The path to the catalyst API for environments
               default: 'https://api.catalyst.wmcloud.org/api/environments'
@@ -253,7 +250,7 @@
                 image: 'docker-registry.wikimedia.org/releng/catalyst:1.0.0'
                 entrypoint: '/deploy_env.py'
                 environment:
-                    WIKILAMBDA_REF: $WIKILAMBDA_REF
+                    WIKILAMBDA_REF: $BASE_LOG_PATH
                     ZUUL_CHANGE: $ZUUL_CHANGE
                     ENV_API_PATH: $ENV_API_PATH
       wrappers:
