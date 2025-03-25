@@ -159,21 +159,14 @@ def set_parameters(item, job, params):
 
 ZUUL_CONFIG_DIR = getZuulConfigDir()
 
-# This hash is used to inject dependencies for MediaWiki jobs.
-#
-# Note! This list is not used by Phan. Edit the other file for that list.
-
+# MediaWiki extension dependencies for most jobs.
 with open(os.path.join(ZUUL_CONFIG_DIR, "dependencies.yaml")) as stream:
     try:
         dependencies = yaml.safe_load(stream)
     except yaml.YAMLError as error:
         print(error)
 
-# This hash is used to inject dependencies for MediaWiki phan jobs.
-#
-# This list is *not* recursively processed.
-#
-# Note! This list is only used by Phan. Edit the other file for PHPUnit etc.
+# MediaWiki extension dependencies for MediaWiki "phan" jobs.
 with open(os.path.join(ZUUL_CONFIG_DIR, "phan_dependencies.yaml")) as stream:
     try:
         phan_dependencies = yaml.safe_load(stream)
@@ -233,13 +226,9 @@ def set_mw_dependencies(item, job, params):
         params['EXT_NAME'] = split[-1]
 
     if '-phan' in job.name:
-        mapping = phan_dependencies
-        recurse = False
+        deps = set(phan_dependencies.get(dep_key, []))
     else:
-        mapping = dependencies
-        recurse = True
-
-    deps = get_dependencies(dep_key, mapping, recurse)
+        deps = set(dependencies.get(dep_key, []))
 
     # Split extensions and skins
     skin_deps = {d for d in deps if d.startswith('skins/')}
@@ -268,33 +257,6 @@ def set_mw_dependencies(item, job, params):
 
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
-
-
-def get_dependencies(key, mapping, recurse=True):
-    """
-    Get the full set of dependencies required by an extension
-
-    :param key: extension base name or skin as 'skin/BASENAME'
-    :param mapping: mapping of repositories to their dependencies
-    :param recurse: Whether to recursively process dependencies
-    :return: set of dependencies
-    """
-    resolved = set()
-
-    def resolve_deps(ext):
-        resolved.add(ext)
-        deps = set()
-
-        if ext in mapping:
-            for dep in mapping[ext]:
-                deps.add(dep)
-
-                if recurse and dep not in resolved:
-                    deps = deps.union(resolve_deps(dep))
-
-        return deps
-
-    return resolve_deps(key)
 
 
 tarballextensions = [

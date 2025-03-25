@@ -1,12 +1,12 @@
-# This file is used to control injected dependencies for MediaWiki phan jobs.
+# This file controls which MediaWiki extensions Quibble clones and installs,
+# during "-phan" jobs.
 #
-# Values are assumed to be MediaWiki extensions, so 'Foo' maps to 'mediawiki/extensions/Foo'.
-# Skins have to be prefixed with 'skins/', so 'skins/Foo' maps to 'mediawiki/skins/Foo'.
-
+# Keys and values are assumed to be MediaWiki extensions, so 'Foo' maps to 'mediawiki/extensions/Foo'.
+# Skins must be prefixed by 'skins/', so 'skins/Foo' maps to 'mediawiki/skins/Foo'.
+#
 # The data is used by set_mw_dependencies() in parameter_functions.py
-
-# Note: This list is not used by PHPUnit/etc. See dependencies.yaml that list.
-# Note: This list is *not* recursively processed.
+#
+# NOTE: For the list used by other jobs, refer to dependencies.yaml.
 
 # Skins:
 skins/Cosmos:
