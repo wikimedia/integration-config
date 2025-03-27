@@ -366,6 +366,7 @@ intersection:
 
 IPReputation:
  - AbuseFilter
+ - ConfirmEdit
 
 JsonConfig:
  - CodeEditor

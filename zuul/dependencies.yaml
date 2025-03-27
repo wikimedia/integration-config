@@ -735,6 +735,7 @@ IPInfo:
 
 IPReputation:
  - AbuseFilter
+ - ConfirmEdit
 
 JsonConfig:
  - Scribunto
