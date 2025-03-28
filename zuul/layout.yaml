@@ -4661,8 +4661,7 @@ projects:
 
   - name: mediawiki/extensions/MetricsPlatform
     template:
-      # Not yet in production -- phuedx 2024-06-06
-      #- name: in-wikimedia-production
+      - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth

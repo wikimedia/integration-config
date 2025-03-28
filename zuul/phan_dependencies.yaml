@@ -417,6 +417,7 @@ MediaWikiChat:
 
 MetricsPlatform:
  - EventStreamConfig
+ - EventLogging
 
 MiniInvite:
  - BlogPage

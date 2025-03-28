@@ -814,6 +814,7 @@ MenuEditor:
 
 MetricsPlatform:
  - EventStreamConfig
+ - EventLogging
 
 MobileApp:
  - Echo
