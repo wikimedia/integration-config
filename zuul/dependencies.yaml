@@ -470,6 +470,7 @@ CentralAuth:
  - CheckUser
  - GlobalBlocking
  - GlobalPreferences
+ - MobileFrontend
  - SecurePoll
 
 CentralNotice:
