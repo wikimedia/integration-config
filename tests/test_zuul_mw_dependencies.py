@@ -55,32 +55,21 @@ class TestMwDependencies(unittest.TestCase):
         self.assertIn('SKIN_NAME', params)
         self.assertEqual(params['SKIN_NAME'], 'Vector')
 
-    def test_inject_dependencies(self):
-        # VisualEditor adds extra DiscussionTools
-        params = self.fetch_dependencies(
-            project='mediawiki/extensions/VisualEditor')
-        self.assertIn('EXT_DEPENDENCIES', params)
-        self.assertIn(
-            'mediawiki/extensions/DiscussionTools',
-            params.get('EXT_DEPENDENCIES').strip().split('\\n')
-        )
+    def test_cyclical_dependencies(self):
+        """verifies that cyclical dependencies are possible"""
 
-        # Wikibase adds extra ArticlePlaceholder
-        params = self.fetch_dependencies(
-            project='mediawiki/extensions/Wikibase')
-        self.assertIn('EXT_DEPENDENCIES', params)
-        self.assertIn(
-            'mediawiki/extensions/ArticlePlaceholder',
-            params.get('EXT_DEPENDENCIES').strip().split('\\n')
-        )
+        mapping = {'Foo': ['Bar'], 'Bar': ['Foo']}
 
-        # No recursion. Math adds VE/Wikibase without inheriting more (T389998)
-        params = self.fetch_dependencies(
-            project='mediawiki/extensions/Math')
-        self.assertIn('EXT_DEPENDENCIES', params)
         self.assertEqual(
-            ['mediawiki/extensions/VisualEditor', 'mediawiki/extensions/Wikibase'],
-            params.get('EXT_DEPENDENCIES').strip().split('\\n')
+            zuul_config.get_dependencies('Foo', mapping),
+            set(['Foo', 'Bar']),
+        )
+
+    def test_cyclical_dependencies_with_skins(self):
+        mapping = {'Foo': ['skins/Vector'], 'skins/Vector': ['Foo']}
+        self.assertEqual(
+            zuul_config.get_dependencies('skins/Vector', mapping),
+            set(['Foo', 'skins/Vector'])
         )
 
     def test_resolvable_dependencies(self):
@@ -118,6 +107,44 @@ class TestMwDependencies(unittest.TestCase):
         self.assertMissingDependencies(self.fetch_dependencies(
             project='foo/bar/baz'))
 
+    def test_resolve_skin_on_extension(self):
+        mapping = {'Foo': ['skins/Vector']}
+        self.assertEqual(
+            zuul_config.get_dependencies('Foo', mapping),
+            set(['skins/Vector'])
+            )
+
+    def test_resolve_extension_on_skin(self):
+        mapping = {'skins/Vector': ['Foo']}
+        self.assertEqual(
+            zuul_config.get_dependencies('skins/Vector', mapping),
+            set(['Foo'])
+            )
+
+    def test_resolve_extension_on_extension(self):
+        mapping = {'Foo': ['DepExtension']}
+        self.assertEqual(
+            zuul_config.get_dependencies('Foo', mapping),
+            set(['DepExtension'])
+            )
+
+    def test_resolve_skin_on_skin(self):
+        mapping = {'skins/Child': ['skin/Common']}
+        self.assertEqual(
+            zuul_config.get_dependencies('skins/Child', mapping),
+            set(['skin/Common'])
+            )
+
+    def test_no_recursion(self):
+        mapping = {
+            'A': ['B'],
+            'B': ['C'],
+        }
+        self.assertEqual(
+            zuul_config.get_dependencies('A', mapping, recurse=False),
+            set(['B'])
+        )
+
     def test_inject_skin_on_an_extension(self):
         deps = self.fetch_dependencies(
             job_name='mediawiki-quibble-composer-mysql-php74',
@@ -135,17 +162,15 @@ class TestMwDependencies(unittest.TestCase):
             job_name='quibble-composer-mysql-php74',
             project='mediawiki/extensions/PropertySuggester')
         self.assertIn('EXT_DEPENDENCIES', deps)
-        self.assertEqual(
-            ['mediawiki/extensions/EventLogging', 'mediawiki/extensions/Wikibase'],
-            deps['EXT_DEPENDENCIES'].strip().split('\\n')
-        )
+        self.assertIn('\\nmediawiki/extensions/Wikibase\\n',
+                      deps['EXT_DEPENDENCIES'])
 
     def test_bluespice_branch_exception(self):
         deps = self.fetch_dependencies(
             job_name='quibble-composer-mysql-php74',
             project='mediawiki/extensions/BlueSpiceFoundation')
         self.assertIn('EXT_DEPENDENCIES', deps)
-        self.assertEqual(
-            ['mediawiki/extensions/OOJSPlus'],
-            deps['EXT_DEPENDENCIES'].strip().split('\\n')
-        )
+        self.assertEqual('\\n'.join([
+                         'mediawiki/extensions/OOJSPlus',
+                         ]),
+                         deps['EXT_DEPENDENCIES'])

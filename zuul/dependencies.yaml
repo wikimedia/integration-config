@@ -1,18 +1,16 @@
-# This file controls which MediaWiki extensions Quibble clones and installs,
-# during PHPUnit and Selenium jobs.
+# This file is used to control injected dependencies for MediaWiki jobs.
 #
-# Keys and values are assumed to be MediaWiki extensions, so 'Foo' maps to 'mediawiki/extensions/Foo'.
-# Skins must be prefixed by 'skins/', so 'skins/Foo' maps to 'mediawiki/skins/Foo'.
-#
+# Values are assumed to be MediaWiki extensions, so 'Foo' maps to 'mediawiki/extensions/Foo'.
+# Skins have to be prefixed with 'skins/', so 'skins/Foo' maps to 'mediawiki/skins/Foo'.
+
 # The data is used by set_mw_dependencies() in parameter_functions.py
-#
-# NOTE: For the list used for Phan jobs, refer to phan_dependencies.yaml.
+
+# Note! This list is not used by Phan. See phan_dependencies.yaml that list.
 
 # Skins:
 skins/BlueSpiceDiscovery:
  - BlueSpiceFoundation
  - MenuEditor
- - OOJSPlus
 
 skins/Cosmos:
  - AdminLinks
@@ -49,7 +47,6 @@ AbuseFilter:
  - Renameuser
  - Scribunto
  - EventLogging
- - WikiEditor
 
 AchievementBadges:
  - BetaFeatures
@@ -57,10 +54,9 @@ AchievementBadges:
 
 AdvancedSearch:
  - Translate
- - UniversalLanguageSelector
 
 AIEditingAssistant:
- - VisualEditor
+  - VisualEditor
 
 ApiFeatureUsage:
  - Elastica
@@ -81,8 +77,6 @@ AutoModerator:
  - ORES
  - CommunityConfiguration
  - DiscussionTools
- - Linter
- - VisualEditor
 
 Babel:
  - CommunityConfiguration
@@ -94,23 +88,18 @@ BlogPage:
 
 BlueSpiceAbout:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceArticleInfo:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceArticlePreviewCapture:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceAuthors:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceAvatars:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceBookshelf:
  - BlueSpiceFoundation
@@ -120,45 +109,33 @@ BlueSpiceBookshelf:
  - NotifyMe
  - VueJsPlus
  - BlueSpiceExtendedSearch
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceCategoryCheck:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceCategoryManager:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceChecklist:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceConfigManager:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceContextMenu:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceCountThings:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceCustomMenu:
  - BlueSpiceFoundation
  - MenuEditor
- - OOJSPlus
 
 BlueSpiceDashboards:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceDistributionConnector:
  - BlueSpiceFoundation
@@ -168,157 +145,120 @@ BlueSpiceDistributionConnector:
  - OOJSPlus
  - UserMerge
  - Workflows
- - Forms
 
 BlueSpiceEchoConnector:
  - BlueSpiceFoundation
  - Echo
- - OOJSPlus
 
 BlueSpiceEmoticons:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceExpiry:
  - BlueSpiceFoundation
  - BlueSpiceReminder
- - OOJSPlus
 
 BlueSpiceExportTables:
  - BlueSpiceFoundation
  - BlueSpiceUEModuleTable2Excel
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceExtendedFilelist:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceExtendedSearch:
  - BlueSpiceDistributionConnector
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceExtendedStatistics:
  - BlueSpiceFoundation
  - BlueSpiceExtendedSearch
- - OOJSPlus
 
 BlueSpiceFilterableTables:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceFlaggedRevsConnector:
  - BlueSpiceFoundation
  - FlaggedRevs
- - OOJSPlus
 
 BlueSpiceGroupManager:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceHideTitle:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceInsertCategory:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceInsertFile:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceInsertLink:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceFoundation:
  - OOJSPlus
 
 BlueSpiceInsertTemplate:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceInstanceStatus:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceInterWikiLinks:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceInterwikiSearch:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceMultiUpload:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceNamespaceCSS:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceNamespaceManager:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceNSFileRepoConnector:
  - BlueSpiceFoundation
  - NSFileRepo
- - OOJSPlus
 
 BlueSpicePageAccess:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpicePageAssignments:
  - BlueSpiceFoundation
  - NotifyMe
- - OOJSPlus
 
 BlueSpicePageFormsConnector:
  - BlueSpiceFoundation
- - OOJSPlus
  - PageForms
 
 BlueSpicePageTemplates:
  - BlueSpiceFoundation
  - BlueSpiceDistributionConnector
  - ContentDroplets
- - OOJSPlus
 
 BlueSpicePageVersion:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpicePagesVisited:
  - BlueSpiceDistributionConnector
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
  - BlueSpiceWhoIsOnline
- - OOJSPlus
- - VisualEditor
 
 BlueSpicePlayer:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpicePermissionManager:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpicePrivacy:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceProDistributionConnector:
  - BlueSpiceFoundation
@@ -326,214 +266,166 @@ BlueSpiceProDistributionConnector:
  - BlueSpiceUniversalExport
  - BlueSpiceVisualEditorConnector
  - Math
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceQrCode:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceRating:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceRSSFeeder:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceReaders:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceReadConfirmation:
  - BlueSpiceFoundation
  - BlueSpicePageAssignments
- - OOJSPlus
 
 BlueSpiceReminder:
  - BlueSpiceFoundation
  - Workflows
- - Forms
- - OOJSPlus
 
 BlueSpiceSMWConnector:
  - BlueSpiceFoundation
  - BlueSpiceSmartList
- - OOJSPlus
 
 BlueSpiceSocial:
  - BlueSpiceFoundation
  - BlueSpiceExtendedSearch
- - OOJSPlus
 
 BlueSpiceSocialArticleActions:
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
- - OOJSPlus
 
 BlueSpiceSocialBlog:
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
- - OOJSPlus
 
 BlueSpiceSocialComments:
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
- - OOJSPlus
 
 BlueSpiceSocialMicroBlog:
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
- - OOJSPlus
 
 BlueSpiceSocialProfile:
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
  - BlueSpiceAvatars
- - OOJSPlus
 
 BlueSpiceSocialRating:
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
  - BlueSpiceRating
- - OOJSPlus
 
 BlueSpiceSocialResolve:
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
- - OOJSPlus
 
 BlueSpiceSocialTags:
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
- - OOJSPlus
 
 BlueSpiceSocialTimelineUpdate:
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
- - OOJSPlus
 
 BlueSpiceSocialTopics:
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
- - OOJSPlus
 
 BlueSpiceSocialWatch:
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
- - OOJSPlus
 
 BlueSpiceSocialWikiPage:
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
  - BlueSpiceMultiUpload
- - OOJSPlus
 
 BlueSpiceSaferEdit:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceSignHere:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceSmartList:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceSubPageTree:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceTagCloud:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceUEModuleBookPDF:
  - BlueSpiceFoundation
  - BlueSpiceUniversalExport
  - BlueSpiceBookshelf
  - BlueSpiceUEModulePDF
- - OOJSPlus
- - MenuEditor
- - VueJsPlus
 
 BlueSpiceUEModuleDOCX:
  - BlueSpiceFoundation
  - BlueSpiceUniversalExport
- - OOJSPlus
 
 BlueSpiceUEModulePDF:
  - BlueSpiceFoundation
  - BlueSpiceUniversalExport
- - OOJSPlus
 
 BlueSpiceUEModulePDFRecursive:
  - BlueSpiceFoundation
  - BlueSpiceUniversalExport
- - OOJSPlus
 
 BlueSpiceUEModulePDFSubpages:
  - BlueSpiceFoundation
  - BlueSpiceUniversalExport
- - OOJSPlus
 
 BlueSpiceUEModuleHTML:
  - BlueSpiceFoundation
  - BlueSpiceUniversalExport
- - OOJSPlus
 
 BlueSpiceUEModuleTable2Excel:
  - BlueSpiceFoundation
  - BlueSpiceUniversalExport
- - OOJSPlus
 
 BlueSpiceUniversalExport:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceUsageTracker:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceUserInfo:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceUserManager:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceUserSidebar:
  - BlueSpiceFoundation
  - MenuEditor
- - OOJSPlus
 
 BlueSpiceVisualDiff:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BlueSpiceVisualEditorConnector:
  - BlueSpiceFoundation
@@ -544,8 +436,6 @@ BlueSpiceVisualEditorConnector:
 BlueSpiceWatchList:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceWikiFarm:
  - OOJSPlus
@@ -553,22 +443,17 @@ BlueSpiceWikiFarm:
 BlueSpiceWhoIsOnline:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
- - OOJSPlus
- - VisualEditor
 
 BlueSpiceWikiExplorer:
  - BlueSpiceFoundation
- - OOJSPlus
 
 BounceHandler:
  - Echo
  - CentralAuth
- - AntiSpoof
 
 CampaignEvents:
  - Translate
  - WikimediaCampaignEvents
- - UniversalLanguageSelector
 
 Campaigns:
  - EventLogging
@@ -611,8 +496,6 @@ CheckUser:
  - MobileFrontend
  - Renameuser
  - TorBlock
- - AntiSpoof
- - VisualEditor
 
 Cite:
  - cldr
@@ -648,9 +531,6 @@ CodeMirror:
 CognitiveProcessDesigner:
  - PageForms
  - BlueSpiceVisualEditorConnector
- - BlueSpiceFoundation
- - OOJSPlus
- - VisualEditor
 
 CollabPads:
  - VisualEditor
@@ -667,12 +547,9 @@ CommunityRequests:
  - VisualEditor
  - WikimediaMessages
  - Translate
- - Linter
- - UniversalLanguageSelector
 
 ConfigManager:
  - BlueSpiceFoundation
- - OOJSPlus
 
 ConfirmEdit:
  - AbuseFilter
@@ -694,9 +571,6 @@ ContentStabilization:
  - BlueSpiceSMWConnector
  - OOJSPlus
  - Workflows
- - Forms
- - MenuEditor
- - VueJsPlus
 
 ContentTranslation:
  - AbuseFilter
@@ -705,7 +579,6 @@ ContentTranslation:
  - UniversalLanguageSelector
  - VisualEditor
  - WikimediaMessages
- - Cite
 
 CookieWarning:
  - MobileFrontend
@@ -738,7 +611,6 @@ Echo:
  - CentralAuth
  - EventLogging
  - MobileFrontend
- - AntiSpoof
 
 EditNotify:
  - Echo
@@ -786,7 +658,6 @@ FileAnnotations:
 FileImporter:
  - CentralAuth
  - WikiEditor
- - AntiSpoof
 
 FlaggedRevs:
  - Scribunto
@@ -795,7 +666,6 @@ FlexiSkin:
  - BlueSpiceFoundation
  - OOJSPlus
  - CodeEditor
- - WikiEditor
 
 Flow:
  - AbuseFilter
@@ -811,21 +681,17 @@ FundraiserLandingPage:
 
 FundraisingTranslateWorkflow:
  - Translate
- - UniversalLanguageSelector
 
 GeoData:
  - CirrusSearch
- - Elastica
 
 GettingStarted:
  - CentralAuth
  - EventLogging
  - GuidedTour
- - AntiSpoof
 
 GlobalBlocking:
  - CentralAuth
- - AntiSpoof
 
 GlobalContribs:
  - Editcount
@@ -834,7 +700,6 @@ Graph:
  - CodeEditor
  - JsonConfig
  - VisualEditor
- - WikiEditor
 
 GrowthExperiments:
  - skins/MinervaNeue
@@ -849,7 +714,6 @@ GrowthExperiments:
  - Thanks
  - CommunityConfiguration
  - WikimediaMessages
- - Elastica
 
 GuidedTour:
  - EventLogging
@@ -916,7 +780,6 @@ LoginNotify:
  - CentralAuth
  - CheckUser
  - Echo
- - AntiSpoof
 
 MagicLinkAuthentication:
  - PluggableAuth
@@ -925,7 +788,6 @@ MassMessage:
  - CentralAuth
  - Flow
  - LiquidThreads
- - AntiSpoof
 
 MassMessageEmail:
  - MassMessage
@@ -940,7 +802,6 @@ MathSearch:
 MediaSearch:
  - CirrusSearch
  - WikibaseCirrusSearch
- - Elastica
 
 MediaUploader:
  - AbuseFilter
@@ -986,7 +847,6 @@ NaylorAMS:
 NSFileRepo:
  - EnhancedUpload
  - Lockdown
- - OOJSPlus
 
 Newsletter:
  - Echo
@@ -1019,8 +879,6 @@ ORES:
 
 PageCheckout:
  - Workflows
- - Forms
- - OOJSPlus
 
 PageTriage:
  - WikiLove
@@ -1121,8 +979,6 @@ ReportIncident:
  - CommunityConfiguration
  - DiscussionTools
  - EventLogging
- - Linter
- - VisualEditor
 
 RevisionSlider:
  - MobileFrontend
@@ -1161,7 +1017,6 @@ SimpleTasks:
  - Checklists
  - AtMentions
  - DateTimeTools
- - OOJSPlus
 
 SocialProfile:
  - WikiEditor
@@ -1218,7 +1073,6 @@ TheWikipediaLibrary:
  - Echo
  - CentralAuth
  - GlobalPreferences
- - AntiSpoof
 
 Thanks:
  - AbuseFilter
@@ -1235,12 +1089,10 @@ Translate:
 
 TranslateSvg:
  - Translate
- - UniversalLanguageSelector
 
 TranslationNotifications:
  - MassMessage
  - Translate
- - UniversalLanguageSelector
 
 Toolhub:
  - Scribunto
@@ -1262,7 +1114,6 @@ TwitterCards:
 
 TwnMainPage:
  - Translate
- - UniversalLanguageSelector
 
 TwoColConflict:
  - BetaFeatures
@@ -1304,7 +1155,6 @@ VisualEditor:
  - FlaggedRevs
  - ConfirmEdit
  - DiscussionTools
- - Linter
 
 VisualEditorPlus:
  - VisualEditor
@@ -1339,25 +1189,20 @@ Wikibase:
  - WikibaseLexeme
  - skins/MinervaNeue
  - MobileFrontend
- - Scribunto
- - UniversalLanguageSelector
 
 WikibaseCirrusSearch:
  - Wikibase
  - CirrusSearch
- - Elastica
 
 WikibaseLexeme:
  - Wikibase
  - WikibaseLexemeCirrusSearch
- - WikibaseCirrusSearch
 
 WikibaseLexemeCirrusSearch:
  - Wikibase
  - WikibaseLexeme
  - CirrusSearch
  - WikibaseCirrusSearch
- - Elastica
 
 WikibaseManifest:
  - Wikibase
@@ -1381,7 +1226,6 @@ WikidataPageBanner:
 WikiEditor:
  - EventLogging
  - WikimediaEvents
- - EventBus
 
 WikiLambda:
  # Temporarily disabled for testing
@@ -1402,8 +1246,6 @@ WikimediaEvents:
  - FlaggedRevs
  - GlobalBlocking
  - GlobalPreferences
- - AntiSpoof
- - EventBus
 
 WikiSEO:
  - PageImages
@@ -1424,8 +1266,6 @@ WikiToLDAP:
  - LDAPAuthentication2
  - Renameuser
  - UserMerge
- - LDAPProvider
- - PluggableAuth
 
 wikihiero:
  - VisualEditor
