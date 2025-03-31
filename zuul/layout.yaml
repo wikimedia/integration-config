@@ -4267,6 +4267,12 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/EmailAuth
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+
   - name: mediawiki/extensions/EntitySchema
     template:
       - name: in-wikimedia-production
@@ -6397,11 +6403,6 @@ projects:
   - name: mediawiki/extensions/EImage
     template:
       - name: extension-quibble
-
-  - name: mediawiki/extensions/EmailAuth
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
 
   - name: mediawiki/extensions/EmailAuthorization
     template:
