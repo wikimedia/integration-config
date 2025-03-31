@@ -57,6 +57,7 @@ AdvancedSearch:
 
 AIEditingAssistant:
   - VisualEditor
+  - VisualEditorPlus
 
 ApiFeatureUsage:
  - Elastica
