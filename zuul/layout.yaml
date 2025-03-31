@@ -6362,7 +6362,7 @@ projects:
 
   - name: mediawiki/extensions/DrawioEditor
     template:
-      - name: extension-quibble
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/DumpsOnDemand
     template:
@@ -7297,7 +7297,7 @@ projects:
 
   - name: mediawiki/extensions/PageCheckout
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/PageDisqus
     template:
