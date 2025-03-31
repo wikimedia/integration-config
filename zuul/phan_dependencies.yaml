@@ -740,13 +740,17 @@ WikimediaEvents:
  - BetaFeatures
  - CentralAuth
  - CheckUser
+ - EmailAuth
  - EventBus
  - EventLogging
  - FlaggedRevs
  - GlobalBlocking
  - GlobalPreferences
  - GrowthExperiments
+ - IPReputation
+ - LoginNotify
  - MobileFrontend
+ - OATHAuth
 
 WikimediaMaintenance:
  - AbuseFilter

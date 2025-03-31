@@ -1244,10 +1244,14 @@ WikimediaCampaignEvents:
 WikimediaEvents:
  - CentralAuth
  - CheckUser
+ - EmailAuth
  - EventLogging
  - FlaggedRevs
  - GlobalBlocking
  - GlobalPreferences
+ - IPReputation
+ - LoginNotify
+ - OATHAuth
 
 WikiSEO:
  - PageImages
