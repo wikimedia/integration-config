@@ -266,6 +266,10 @@ def set_mw_dependencies(item, job, params):
             # Not in REL1_39 or REL1_42 (or REL1_41)
             ext_deps.remove('CommunityConfigurationExample')
 
+    # T390772 - IPReputation isn't in REL1_39, so remove it.
+    if params['ZUUL_BRANCH'] == 'REL1_39' and 'IPReputation' in ext_deps:
+        ext_deps.remove('IPReputation')
+
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
 
