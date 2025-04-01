@@ -247,7 +247,7 @@ def set_mw_dependencies(item, job, params):
 
     # T363639 - WebAuthn won't run on REL1_XX because of library issues
     # T390754 - Just don't load WebAuthn at all if it's not master
-    if params['ZUUL_BRANCH'] != 'master':
+    if params['ZUUL_BRANCH'] != 'master' and 'WebAuthn' in ext_deps:
         ext_deps.remove('WebAuthn')
 
     # T380434 - CommunityConfiguration and CommunityConfigurationExample,
