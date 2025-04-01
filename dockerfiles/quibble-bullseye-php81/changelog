@@ -1,3 +1,10 @@
+quibble-bullseye-php81 (1.13.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   Switch MariaDB to 10.6 Wikimedia package
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue,  1 Apr 2025 16:05:01 -0400
+
 quibble-bullseye-php81 (1.13.0-s1) wikimedia; urgency=high
 
    Install libpcre2-8-0 from component/php81 instead of component/pcre2
