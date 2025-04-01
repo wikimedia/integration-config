@@ -246,10 +246,8 @@ def set_mw_dependencies(item, job, params):
     ext_deps = deps - skin_deps
 
     # T363639 - WebAuthn won't run on REL1_XX because of library issues
-    if (
-        params['ZUUL_PROJECT'] == 'mediawiki/extensions/OATHAuth'
-        and params['ZUUL_BRANCH'] != 'master'
-    ):
+    # T390754 - Just don't load WebAuthn at all if it's not master
+    if params['ZUUL_BRANCH'] != 'master':
         ext_deps.remove('WebAuthn')
 
     # T380434 - CommunityConfiguration and CommunityConfigurationExample,
