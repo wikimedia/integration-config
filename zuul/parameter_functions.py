@@ -257,9 +257,7 @@ def set_mw_dependencies(item, job, params):
     # T380434 - CommunityConfiguration and CommunityConfigurationExample,
     # aren't in all old release branches, and falling back to the master
     # version won't work, so just remove both in these branches...
-    if (
-        params['ZUUL_BRANCH'] in ['REL1_39', 'REL1_42']
-    ):
+    if params['ZUUL_BRANCH'] in ['REL1_39', 'REL1_42']:
         if 'CommunityConfiguration' in ext_deps:
             # Not in REL1_39 (or REL1_41)
             ext_deps.remove('CommunityConfiguration')
