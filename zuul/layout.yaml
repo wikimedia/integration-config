@@ -8568,10 +8568,11 @@ projects:
       - parsoidsvc-composer-package-php81
       - quibble-composer-mysql-php81
       - parsoidsvc-composer-package-php82
-      - quibble-composer-mysql-php82
       - parsoidsvc-composer-package-php83
-      - quibble-composer-mysql-php83
     experimental:
+      # T390754 vendor gets upset on PHP 8.2/8.3...
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
       # These are the jobs which would be added by the extension-gate template
       - wmf-quibble-core-vendor-mysql-php81
       - wmf-quibble-vendor-mysql-php81
