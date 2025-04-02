@@ -3649,6 +3649,7 @@ projects:
 
   - name: operations/software/bitu
     template:
+      - name: debian-glue-non-voting
       - name: tox
     test:
       - trigger-bitu-pipeline-test
