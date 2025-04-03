@@ -2701,6 +2701,10 @@ projects:
     postmerge:
       - gearman-java-maven-java11-site-publish
 
+  - name: integration/gerrit-admin
+    template:
+      - name: tox
+
   - name: integration/pipelinelib
     test:
       - trigger-pipelinelib-pipeline-test
