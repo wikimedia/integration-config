@@ -78,16 +78,13 @@ python3-distutils
 djvulibre-bin
 imagemagick
 libimage-exiftool-perl
+mariadb-server
 memcached
 postgresql
 postgresql-client
 procps
 tidy
-wmf-mariadb106
 {%- endset -%}
-
-# Note that we're using 'wmf-mariadb106' not 'mariadb-server', as MariaDB 10.3 is the default in
-# Bullseye, but Wikimedia production uses 10.6, so we load Wikimedia's special package of it.
 
 {% set browsers_deps|replace('\n', ' ') -%}
 chromium-driver

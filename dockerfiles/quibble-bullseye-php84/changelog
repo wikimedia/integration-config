@@ -1,3 +1,10 @@
+quibble-bullseye-php84 (1.13.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   Revert MardiaDB to 10.5, Wikimedia package lacks mysql_install_db
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  3 Apr 2025 09:27:11 -0400
+
 quibble-bullseye-php84 (1.13.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-bullseye:
