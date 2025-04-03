@@ -1,3 +1,11 @@
+tox-v3-pywikibot (1.1) wikimedia; urgency=medium
+
+  Refresh for update in parent image python:all
+  * Change default python from 3.7 to 3.9
+  * Include pyenv in PATH to ease interactive usage
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 03 Apr 2025 22:10:49 +0200
+
 tox-v3-pywikibot (1.0) wikimedia; urgency=medium
 
   * Change image back to tox v3 since v4 is broken (T345695). The

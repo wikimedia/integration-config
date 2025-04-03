@@ -1,3 +1,11 @@
+tox-v3 (0.2) wikimedia; urgency=medium
+
+  Refresh for update in parent image python:all
+  * Change default python from 3.7 to 3.9
+  * Include pyenv in PATH to ease interactive usage
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 03 Apr 2025 22:10:49 +0200
+
 tox-v3 (0.1) wikimedia; urgency=medium
 
   * Initial release based on python-all image to provide multiple python3

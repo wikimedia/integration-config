@@ -40,8 +40,10 @@ RUN curl --silent --fail --location \
     && unzip -q /tmp/pyenv.zip -d $PYENV_ROOT \
     && rm /tmp/pyenv.zip
 
-RUN pyenv install   2.7 3.7 3.8 3.9 3.10 3.11 3.12 \
-    && pyenv global 2.7 3.7 3.8 3.9 3.10 3.11 3.12 \
+# The first minor version is the default for the major series
+# Eg 3.9 3.7  would have python3 set to 3.9
+RUN pyenv install   2.7 3.9 3.7 3.8 3.10 3.11 3.12 \
+    && pyenv global 2.7 3.9 3.7 3.8 3.10 3.11 3.12 \
     && pyenv versions
 # NOTE: pypy is installed from the Debian package
 
@@ -89,7 +91,7 @@ bats
 RUN {{ (python_run_deps + misc_deps) | apt_install }}
 
 COPY --from=build /opt/pyenv /opt/pyenv
-ENV PATH "$PYENV_ROOT/shims:$PATH"
+ENV PATH "$PYENV_ROOT/shims:$PATH:$PYENV_ROOT/$TARGET_PYENV_VERSION/bin"
 
 USER nobody
 WORKDIR /src
