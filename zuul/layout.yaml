@@ -4672,6 +4672,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
+      - name: extension-javascript-documentation
 
   - name: mediawiki/extensions/MobileApp
     template:
