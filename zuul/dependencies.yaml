@@ -733,6 +733,7 @@ ImageSuggestions:
 
 IPInfo:
  - BetaFeatures
+ - MobileFrontend
  - CheckUser
 
 IPReputation:
