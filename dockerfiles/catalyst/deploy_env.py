@@ -29,7 +29,7 @@ logger = logging.getLogger()
 
 
 def rest(url, method='get', **kwargs):
-    r = getattr(session, method)(url, timeout=60, **kwargs)
+    r = getattr(session, method)(url, timeout=120, **kwargs)
     r.raise_for_status()
     return r
 
@@ -123,4 +123,4 @@ if __name__ == '__main__':
     logger.info("Creation logs completed. Will check for environment availability now")
     check_status(env)
     os.environ['MW_SERVER'] = ENV_URL
-    subprocess.run(['/run-with-xvfb.sh', 'selenium-test'], shell=True, check=True)
+    subprocess.run(['/run-with-xvfb.sh {}'.format(os.getenv('NPM_ARGS'))], shell=True, check=True)
