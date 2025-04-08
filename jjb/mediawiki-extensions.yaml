@@ -242,12 +242,16 @@
       builders:
           - setup
           - docker-run-with-log-cache-src:
-                image: 'docker-registry.wikimedia.org/releng/catalyst:1.0.0'
+                image: 'docker-registry.wikimedia.org/releng/catalyst:1.2.0'
                 entrypoint: '/deploy_env.py'
                 environment:
                     WIKILAMBDA_REF: $BASE_LOG_PATH
                     ZUUL_CHANGE: $ZUUL_CHANGE
                     ENV_API_PATH: 'https://api.catalyst.wmcloud.org/api/environments'
+                    NPM_ARGS: 'selenium-test'
+                    MEDIAWIKI_USER: 'Admin'
+                    MEDIAWIKI_PASSWORD: 'dockerpass'
+                    MW_SCRIPT_PATH: '/w'
       wrappers:
           - timeout:
               timeout: 20
