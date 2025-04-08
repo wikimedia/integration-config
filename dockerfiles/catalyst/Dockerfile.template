@@ -14,9 +14,6 @@ python3-idna
 RUN {{ packages | apt_install }}
 
 USER nobody
-ENV MW_SCRIPT_PATH='/'
 ENV FORCE_COLOR='1'
-ENV MEDIAWIKI_USER="Patch Demo"
-ENV MEDIAWIKI_PASSWORD="patchdemo"
 
 COPY deploy_env.py /deploy_env.py
