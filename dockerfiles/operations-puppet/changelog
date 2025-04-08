@@ -1,3 +1,10 @@
+operations-puppet (0.9.9) wikimedia; urgency=medium
+
+  * local-ci: mount local repo ontop of PUPPET_DIR rather than using tar to
+    increase speed and allow for faster iterations.
+
+ -- Jesse Hathaway <jhathaway@wikimedia.org>  Tue, 18 Mar 2026 13:52:51 -0500
+
 operations-puppet (0.9.8) wikimedia; urgency=high
 
   * use Lua 5.3 for CI tests, for utf8 library (T401383)
