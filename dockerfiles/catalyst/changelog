@@ -1,3 +1,9 @@
+catalyst (1.1.1) wikimedia; urgency=high
+
+   Add https to MW_SERVER URL
+
+ -- Brennen Bearnes <bbearnes@wikimedia.org>  Tue, 08 Apr 2025 15:57:15 -0600
+
 catalyst (1.1.0) wikimedia; urgency=high
 
    Make npm args configurable

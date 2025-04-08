@@ -122,5 +122,5 @@ if __name__ == '__main__':
     stream_creation_logs(env)
     logger.info("Creation logs completed. Will check for environment availability now")
     check_status(env)
-    os.environ['MW_SERVER'] = ENV_URL
+    os.environ['MW_SERVER'] = "https://{}".format(ENV_URL)
     subprocess.run(['/run-with-xvfb.sh {}'.format(os.getenv('NPM_ARGS'))], shell=True, check=True)
