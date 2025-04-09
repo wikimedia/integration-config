@@ -7580,6 +7580,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/PDFCreator
+    template:
+     - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/PDFEmbed
     template:
       - name: extension-quibble

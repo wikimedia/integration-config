@@ -902,6 +902,9 @@ parsoid:
  - TimedMediaHandler
  - ParserFunctions
 
+PDFCreator:
+ - OOJSPlus
+
 Phonos:
  - TimedMediaHandler
 
