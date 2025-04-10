@@ -3522,6 +3522,7 @@ projects:
   - { name: operations/debs/mwbzutils,                        test: ['debian-glue-non-voting'] }
   - { name: operations/debs/mysqlatfacebook,                  test: ['debian-glue-non-voting'] }
   - { name: operations/debs/nfsd-ldap,                        test: ['debian-glue-non-voting'] }
+  - { name: operations/debs/nginx-ech,                        test: ['debian-glue'] }
   - name: operations/debs/node-tunnel-agent
     template:
       - name: debian-glue
