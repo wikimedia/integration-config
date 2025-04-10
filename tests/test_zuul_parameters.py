@@ -49,3 +49,15 @@ class TestZuulSetParameters(unittest.TestCase):
         self.assertIn('EXT_DEPENDENCIES', params)
         self.assertIn('mediawiki/extensions/AbuseFilter\\n',
                       params['EXT_DEPENDENCIES'])
+
+    def test_quibble_jobs_are_parallel_and_results_cache_server_set(self):
+        job = FakeJob('quibble-anything')
+        params = {
+            'ZUUL_PROJECT': 'mediawiki/core',
+            'ZUUL_PIPELINE': 'test',
+            'ZUUL_BRANCH': 'master',
+            }
+        zuul_config.set_parameters(None, job, params)
+
+        self.assertIn('QUIBBLE_PHPUNIT_PARALLEL', params)
+        self.assertIn('MW_RESULTS_CACHE_SERVER_BASE_URL', params)

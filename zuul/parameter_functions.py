@@ -101,6 +101,8 @@ def set_parameters(item, job, params):
         and not job.name.startswith("quibble-fundraising")
     ):
         params['QUIBBLE_PHPUNIT_PARALLEL'] = '1'
+        params['MW_RESULTS_CACHE_SERVER_BASE_URL'] = \
+            'https://phpunit-results-cache.toolforge.org/results'
 
     # parallel-lint can be slow, so raise the limit for vendor.git
     if params['ZUUL_PROJECT'].startswith('mediawiki/vendor'):
