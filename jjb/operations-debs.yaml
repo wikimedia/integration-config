@@ -207,6 +207,10 @@
             export PBUILDER_CONFIG="$WORKSPACE/job-pbuilderrc"
             export LINTIAN=true
 
+            # D04component allows adding apt components such as:
+            #  COMPONENT=component/puppet7 DIST=bullseye pdebuild
+            export COMPONENT
+
             # Skip:
             # * signing (-sa)
             # * debian/rules clean, since we start from a fresh workspace
