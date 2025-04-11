@@ -10285,44 +10285,17 @@ projects:
 
 #### Archive repositories ######################################
 
-  # T343707
-  - name: operations/software/cassandra-table-properties
-    template:
-      - name: archived
-  - name: operations/debs/bdsync
-    template:
-      - name: archived
-  - name: operations/debs/salt
-    template:
-      - name: archived
-  - name: operations/debs/python-diamond
-    template:
-      - name: archived
-  - name: operations/debs/prometheus-storage-migrator
-    template:
-      - name: archived
-  - name: operations/debs/logster
-    template:
-      - name: archived
-  - name: operations/debs/jmxtrans
-    template:
-      - name: archived
-  - name: operations/debs/ganglia
-    template:
-      - name: archived
-  - name: operations/debs/elastalert
-    template:
-      - name: archived
-  - name: operations/debs/check_ganglia
-    template:
-      - name: archived
+# Please keep this list alpha-sorted!
 
-  # Migrated to GitLab #T341194
   - name: analytics/datahub
     template:
-      - name: archived
+      - name: archived # Migrated to GitLab #T341194
 
   - name: analytics/quarry/web
+    template:
+      - name: archived
+
+  - name: analytics/wikistats
     template:
       - name: archived
 
@@ -10378,10 +10351,6 @@ projects:
     template:
       - name: archived # T354534
 
-  - name: analytics/wikistats
-    template:
-      - name: archived
-
   - name: apps/android/java-mwapi
     template:
       - name: archived
@@ -10398,10 +10367,6 @@ projects:
     template:
       - name: archived
 
-  - name: cloud/wmcs-backups
-    template:
-      - name: archived
-
   - name: cloud/toolforge/buildpacks
     template:
       - name: archived
@@ -10412,7 +10377,7 @@ projects:
 
   - name: cloud/toolforge/grid-webservices
     template:
-      - name: archived  # T359935
+      - name: archived # T359935
 
   - name: cloud/toolforge/ingress-admission-controller
     template:
@@ -10422,11 +10387,11 @@ projects:
     template:
       - name: archived
 
-  - name: cloud/toolforge/jobs-framework-emailer
+  - name: cloud/toolforge/jobs-framework-cli
     template:
       - name: archived
 
-  - name: cloud/toolforge/jobs-framework-cli
+  - name: cloud/toolforge/jobs-framework-emailer
     template:
       - name: archived
 
@@ -10438,10 +10403,13 @@ projects:
     template:
       - name: archived
 
-  # Moved to GitLab at https://gitlab.wikimedia.org/repos/data-engineering/eventgate-wikimedia
-  - name: eventgate-wikimedia
+  - name: cloud/wmcs-backups
     template:
       - name: archived
+
+  - name: eventgate-wikimedia
+    template:
+      - name: archived # Moved to GitLab at https://gitlab.wikimedia.org/repos/data-engineering/eventgate-wikimedia
 
   - name: integration/audit-resources
     template:
@@ -10450,6 +10418,10 @@ projects:
   - name: integration/commit-message-validator
     template:
       - name: archived
+
+  - name: integration/composer
+    template:
+      - name: archived # T249949
 
   - name: integration/jenkins
     template:
@@ -10467,10 +10439,6 @@ projects:
     template:
       - name: archived
 
-  - name: integration/composer
-    template:
-      - name: archived # T249949
-
   - name: integration/phpunit
     template:
       - name: archived
@@ -10479,21 +10447,31 @@ projects:
     template:
       - name: archived
 
-  # Moved to GitLab
   - name: labs/libraryupgrader
     template:
-      - name: archived
+      - name: archived # Moved to GitLab
 
-  # Moved to GitLab
   - name: labs/libraryupgrader/config
     template:
-      - name: archived
+      - name: archived # Moved to GitLab
 
   - name: labs/migration-assistant
     template:
       - name: archived
 
   - name: labs/nagios-builder
+    template:
+      - name: archived
+
+  - name: labs/striker/deploy
+    template:
+      - name: archived
+
+  - name: labs/striker/staticfiles
+    template:
+      - name: archived
+
+  - name: labs/striker/wheels
     template:
       - name: archived
 
@@ -10525,13 +10503,29 @@ projects:
     template:
       - name: archived
 
+  - name: labs/tools/logo-test
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/toolforge-repos/logo-test
+
   - name: labs/tools/Luke081515IRCBot
     template:
       - name: archived
 
+  - name: labs/tools/newusers
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/toolforge-repos/newusers
+
   - name: labs/tools/registry-admission-webhook
     template:
       - name: archived
+
+  - name: labs/tools/rust-hello-world
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/toolforge-repos/rust-hello-world
+
+  - name: labs/tools/shorturls
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/toolforge-repos/shorturls
 
   - name: labs/tools/signpost
     template:
@@ -10545,48 +10539,15 @@ projects:
     template:
       - name: archived
 
+  - name: labs/tools/wikibugs2
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/toolforge-repos/wikibugs2
+
   - name: labs/tools/wikicaptcha
     template:
       - name: archived
 
   - name: labs/tools/Wikimedia-Emoji-Bot
-    template:
-      - name: archived
-
-  - name: labs/striker/deploy
-    template:
-      - name: archived
-
-  - name: labs/striker/staticfiles
-    template:
-      - name: archived
-
-  - name: labs/striker/wheels
-    template:
-      - name: archived
-
-  # Now at https://gitlab.wikimedia.org/toolforge-repos/logo-test
-  - name: labs/tools/logo-test
-    template:
-      - name: archived
-
-  # Now at https://gitlab.wikimedia.org/toolforge-repos/newusers
-  - name: labs/tools/newusers
-    template:
-      - name: archived
-
-  # Now at https://gitlab.wikimedia.org/toolforge-repos/rust-hello-world
-  - name: labs/tools/rust-hello-world
-    template:
-      - name: archived
-
-  # Now at https://gitlab.wikimedia.org/toolforge-repos/shorturls
-  - name: labs/tools/shorturls
-    template:
-      - name: archived
-
-  # Now at https://gitlab.wikimedia.org/toolforge-repos/wikibugs2
-  - name: labs/tools/wikibugs2
     template:
       - name: archived
 
@@ -10705,7 +10666,7 @@ projects:
 
   - name: mediawiki/extensions/AzharAuth
     template:
-      - name: archived  # T110291 / T198601
+      - name: archived # T110291 / T198601
 
   - name: mediawiki/extensions/BaseHooks
     template:
@@ -10791,6 +10752,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/CodeReview
+    template:
+      - name: archived # T309052
+
   - name: mediawiki/extensions/CollaborationKit
     template:
       - name: archived
@@ -10874,10 +10839,6 @@ projects:
   - name: mediawiki/extensions/CopyToClipboard
     template:
       - name: archived
-
-  - name: mediawiki/extensions/CodeReview
-    template:
-      - name: archived # T309052
 
   - name: mediawiki/extensions/Copyvio
     template:
@@ -10975,11 +10936,11 @@ projects:
     template:
       - name: archived
 
-  - name: mediawiki/extensions/EmailDiff
+  - name: mediawiki/extensions/EmailDeletedPages
     template:
       - name: archived
 
-  - name: mediawiki/extensions/EmailDeletedPages
+  - name: mediawiki/extensions/EmailDiff
     template:
       - name: archived
 
@@ -11107,10 +11068,6 @@ projects:
     template:
       - name: archived
 
-  - name: mediawiki/extensions/IndexFunction
-    template:
-      - name: archived
-
   - name: mediawiki/extensions/ImageCompare
     template:
       - name: archived # T353968
@@ -11124,6 +11081,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ImageTagging
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/IndexFunction
     template:
       - name: archived
 
@@ -11183,19 +11144,23 @@ projects:
     template:
       - name: archived
 
-  - name: mediawiki/extensions/ListSignup
-    template:
-      - name: archived
-
   - name: mediawiki/extensions/Listings
     template:
       - name: archived # T354997
+
+  - name: mediawiki/extensions/ListSignup
+    template:
+      - name: archived
 
   - name: mediawiki/extensions/LiveTranslate
     template:
       - name: archived
 
   - name: mediawiki/extensions/LocalisationUpdate
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/MachineVision
     template:
       - name: archived
 
@@ -11208,10 +11173,6 @@ projects:
       - name: archived # T353966
 
   - name: mediawiki/extensions/Mantle
-    template:
-      - name: archived
-
-  - name: mediawiki/extensions/MachineVision
     template:
       - name: archived
 
@@ -11231,15 +11192,15 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/MolHandler
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/MOOC
     template:
       - name: archived
 
   - name: mediawiki/extensions/Moodle
-    template:
-      - name: archived
-
-  - name: mediawiki/extensions/MolHandler
     template:
       - name: archived
 
@@ -11391,6 +11352,14 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/PoolCounter
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/PopupPages
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/PostEdit
     template:
       - name: archived
@@ -11411,23 +11380,15 @@ projects:
     template:
       - name: archived
 
-  - name: mediawiki/extensions/PoolCounter
-    template:
-      - name: archived
-
-  - name: mediawiki/extensions/PopupPages
-    template:
-      - name: archived
-
   - name: mediawiki/extensions/PubSubHubbub
     template:
       - name: archived
 
-  - name: mediawiki/extensions/PushNotifications
+  - name: mediawiki/extensions/PureWikiDeletion
     template:
       - name: archived
 
-  - name: mediawiki/extensions/PureWikiDeletion
+  - name: mediawiki/extensions/PushNotifications
     template:
       - name: archived
 
@@ -11523,11 +11484,11 @@ projects:
     template:
       - name: archived
 
-  - name: mediawiki/extensions/SemanticImageAnnotator
+  - name: mediawiki/extensions/SemanticHighcharts
     template:
       - name: archived
 
-  - name: mediawiki/extensions/SemanticHighcharts
+  - name: mediawiki/extensions/SemanticImageAnnotator
     template:
       - name: archived
 
@@ -11711,6 +11672,14 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/UploadLogo
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/URNames
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/UserDailyContribs
     template:
       - name: archived
@@ -11724,14 +11693,6 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/UserThrottle
-    template:
-      - name: archived
-
-  - name: mediawiki/extensions/UploadLogo
-    template:
-      - name: archived
-
-  - name: mediawiki/extensions/URNames
     template:
       - name: archived
 
@@ -11795,6 +11756,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/WikifunctionsClient
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/WikiGrok
     template:
       - name: archived
@@ -11824,10 +11789,6 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/WikiTwidget
-    template:
-      - name: archived
-
-  - name: mediawiki/extensions/WikifunctionsClient
     template:
       - name: archived
 
@@ -11867,6 +11828,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/libs/metrics-platform
+    template:
+      - name: archived # T344733
+
   - name: mediawiki/php/FastStringSearch
     template:
       - name: archived
@@ -11891,10 +11856,9 @@ projects:
     template:
       - name: archived
 
-  # Moved to GitLab at https://gitlab.wikimedia.org/repos/data-engineering/eventstreams
   - name: mediawiki/services/eventstreams
     template:
-      - name: archived
+      - name: archived # Moved to GitLab at https://gitlab.wikimedia.org/repos/data-engineering/eventstreams
 
   - name: mediawiki/services/example-node-api
     template:
@@ -11916,23 +11880,11 @@ projects:
     template:
       - name: archived
 
-  - name: mediawiki/services/image-suggestion-api
+  - name: mediawiki/services/graphoid/deploy
     template:
       - name: archived
 
-  - name: mediawiki/libs/metrics-platform
-    template:
-      - name: archived # T344733
-
-  - name: mediawiki/services/mathoid
-    template:
-      - name: archived # T344747
-
-  - name: mediawiki/services/zotero
-    template:
-      - name: archived # T380259
-
-  - name: mediawiki/services/graphoid/deploy
+  - name: mediawiki/services/image-suggestion-api
     template:
       - name: archived
 
@@ -11943,6 +11895,10 @@ projects:
   - name: mediawiki/services/kask
     template:
       - name: archived # T335691
+
+  - name: mediawiki/services/mathoid
+    template:
+      - name: archived # T344747
 
   - name: mediawiki/services/mobileapps/deploy
     template:
@@ -11956,10 +11912,6 @@ projects:
     template:
       - name: archived
 
-  - name: mediawiki/services/servicelib-node
-    template:
-      - name: archived
-
   - name: mediawiki/services/service-scaffold-golang
     template:
       - name: archived
@@ -11968,9 +11920,13 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/services/servicelib-node
+    template:
+      - name: archived
+
   - name: mediawiki/services/texvcinfo
     template:
-        - name: archived
+      - name: archived
 
   - name: mediawiki/services/trending-edits
     template:
@@ -11979,6 +11935,10 @@ projects:
   - name: mediawiki/services/trending-edits/deploy
     template:
       - name: archived
+
+  - name: mediawiki/services/zotero
+    template:
+      - name: archived # T380259
 
   - name: mediawiki/skins/Athena
     template:
@@ -12020,9 +11980,9 @@ projects:
     template:
       - name: archived
 
-  - name: operations/debs/hhvm
+  - name: mediawiki/tools/cli
     template:
-      - name: archived
+      - name: archived # Moved to GitLab: https://gitlab.wikimedia.org/releng/cli
 
   - name: mediawiki/tools/dependency-analysis
     template:
@@ -12035,10 +11995,6 @@ projects:
   - name: mediawiki/tools/release
     template:
       - name: archived
-
-  - name: mediawiki/tools/cli
-    template:
-      - name: archived # Moved to GitLab: https://gitlab.wikimedia.org/releng/cli
 
   - name: mediawiki/tools/scap
     template:
@@ -12056,31 +12012,11 @@ projects:
     template:
       - name: archived
 
-  - name: operations/software/acme-chief
+  - name: operations/debs/bdsync
     template:
       - name: archived
 
-  - name: operations/software/censorship-monitoring
-    template:
-      - name: archived # T383229
-
-  - name: operations/software/certcentral
-    template:
-      - name: archived
-
-  - name: operations/software/gerrit/plugins/barricade
-    template:
-      - name: archived
-
-  - name: operations/software/hhvm_exporter
-    template:
-      - name: archived # T343707
-
-  - name: operations/software/tools-manifest
-    template:
-      - name: archived # T359935
-
-  - name: operations/software/tools-webservice
+  - name: operations/debs/check_ganglia
     template:
       - name: archived
 
@@ -12088,9 +12024,29 @@ projects:
     template:
       - name: archived
 
+  - name: operations/debs/elastalert
+    template:
+      - name: archived
+
+  - name: operations/debs/ganglia
+    template:
+      - name: archived
+
   - name: operations/debs/gdnsd
     template:
       - name: archived # Migrated to https://gitlab.wikimedia.org/repos/sre/gdnsd - T341991
+
+  - name: operations/debs/hhvm
+    template:
+      - name: archived
+
+  - name: operations/debs/jmxtrans
+    template:
+      - name: archived
+
+  - name: operations/debs/logster
+    template:
+      - name: archived
 
   - name: operations/debs/nodepool
     template:
@@ -12108,6 +12064,10 @@ projects:
     template:
       - name: archived
 
+  - name: operations/debs/prometheus-storage-migrator
+    template:
+      - name: archived
+
   - name: operations/debs/prometheus-varnishkafka-exporter
     template:
       - name: archived
@@ -12116,35 +12076,15 @@ projects:
     template:
       - name: archived
 
+  - name: operations/debs/python-diamond
+    template:
+      - name: archived
+
+  - name: operations/debs/salt
+    template:
+      - name: archived
+
   - name: operations/debs/wikimedia-job-runner
-    template:
-      - name: archived
-
-  - name: operations/software/conftool
-    template:
-      - name: archived
-
-  - name: operations/software/fifo-log-demux
-    template:
-      - name: archived
-
-  - name: operations/software/knead-wikidough
-    template:
-      - name: archived
-
-  - name: operations/software/purged
-    template:
-      - name: archived
-
-  - name: operations/software/schema-changes
-    template:
-      - name: archived
-
-  - name: operations/software/varnishkafka
-    template:
-      - name: archived
-
-  - name: operations/software/varnishkafka/testing
     template:
       - name: archived
 
@@ -12192,6 +12132,10 @@ projects:
     template:
       - name: archived
 
+  - name: operations/software/acme-chief
+    template:
+      - name: archived
+
   - name: operations/software/analytics-eventlogging-maintenance
     template:
       - name: archived
@@ -12200,23 +12144,63 @@ projects:
     template:
       - name: archived
 
-  - name: operations/software/wmfbackups
+  - name: operations/software/cassandra-table-properties
     template:
       - name: archived # T343707
 
-  - name: operations/software/wmfmariadbpy
+  - name: operations/software/censorship-monitoring
+    template:
+      - name: archived # T383229
+
+  - name: operations/software/certcentral
+    template:
+      - name: archived
+
+  - name: operations/software/conftool
+    template:
+      - name: archived
+
+  - name: operations/software/fifo-log-demux
+    template:
+      - name: archived
+
+  - name: operations/software/gerrit/plugins/barricade
+    template:
+      - name: archived
+
+  - name: operations/software/hhvm_exporter
     template:
       - name: archived # T343707
 
-  - name: operations/software/wmfdb
+  - name: operations/software/knead-wikidough
     template:
-      - name: archived # T343707
+      - name: archived
+
+  - name: operations/software/purged
+    template:
+      - name: archived
+
+  - name: operations/software/schema-changes
+    template:
+      - name: archived
+
+  - name: operations/software/tools-manifest
+    template:
+      - name: archived # T359935
+
+  - name: operations/software/tools-webservice
+    template:
+      - name: archived
 
   - name: operations/software/varnish/libvmod-header
     template:
       - name: archived
 
   - name: operations/software/varnish/libvmod-netmapper
+    template:
+      - name: archived
+
+  - name: operations/software/varnish/libvmod-querysort
     template:
       - name: archived
 
@@ -12236,19 +12220,35 @@ projects:
     template:
       - name: archived
 
-  - name: operations/software/varnish/libvmod-querysort
-    template:
-      - name: archived
-
   - name: operations/software/varnish/vhtcpd
     template:
       - name: archived
 
-  - name: performance/WebPageTest
+  - name: operations/software/varnishkafka
     template:
       - name: archived
 
+  - name: operations/software/varnishkafka/testing
+    template:
+      - name: archived
+
+  - name: operations/software/wmfbackups
+    template:
+      - name: archived # T343707
+
+  - name: operations/software/wmfdb
+    template:
+      - name: archived # T343707
+
+  - name: operations/software/wmfmariadbpy
+    template:
+      - name: archived # T343707
+
   - name: performance/perflogbot
+    template:
+      - name: archived
+
+  - name: performance/WebPageTest
     template:
       - name: archived
 
@@ -12284,6 +12284,10 @@ projects:
     template:
       - name: archived
 
+  - name: search/cirrus-streaming-updater
+    template:
+      - name: archived
+
   - name: search/ltr
     template:
       - name: archived
@@ -12292,15 +12296,11 @@ projects:
     template:
       - name: archived
 
-  - name: search/xgboost
-    template:
-      - name: archived
-
-  - name: search/cirrus-streaming-updater
-    template:
-      - name: archived
-
   - name: search/repository-swift
+    template:
+      - name: archived
+
+  - name: search/xgboost
     template:
       - name: archived
 
@@ -12342,11 +12342,11 @@ projects:
 
   - name: wikimedia/fundraising/crm/civicrm
     template:
-     - name: archived
+      - name: archived
 
   - name: wikimedia/fundraising/crm/drupal
     template:
-     - name: archived
+      - name: archived
 
   - name: wikimedia/iegreview
     template:
@@ -12354,15 +12354,15 @@ projects:
 
   - name: wikimedia/irc/ircservserv
     template:
-     - name: archived
+      - name: archived
 
   - name: wikimedia/irc/ircservserv-config
     template:
-     - name: archived
+      - name: archived
 
   - name: wikimedia/production
     template:
-     - name: archived
+      - name: archived
 
   - name: wikimedia/wikimania-scholarships
     template:
