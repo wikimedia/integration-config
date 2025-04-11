@@ -9933,13 +9933,6 @@ projects:
     experimental:
       - oojs-core-node22-runjenkins
 
-  - name: oojs/router
-    template:
-      - name: node20-browser
-    postmerge:
-      - generic-node20-docs-publish
-      - generic-node20-browser-coverage-publish
-
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
     template:
@@ -12056,6 +12049,10 @@ projects:
       - name: archived
 
   - name: mediawiki/tools/wikilambda-cli
+    template:
+      - name: archived
+
+  - name: oojs/router
     template:
       - name: archived
 
