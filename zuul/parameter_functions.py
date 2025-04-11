@@ -147,6 +147,10 @@ def set_parameters(item, job, params):
         elif (params['ZUUL_PROJECT'] == 'operations/debs/hue'):
             # fetches from pypi/npm
             params['PBUILDER_USENETWORK'] = 'yes'
+        elif (params['ZUUL_PROJECT'] == 'operations/debs/nginx-ech'):
+            # Nginx support for Encrypted Client Hello (ECH) also needs a
+            # specific libssl version - T205378
+            params['COMPONENT'] = 'component/nginx-ech'
         elif (params['ZUUL_PROJECT'] == 'operations/debs/trafficserver'):
             # Building ATS takes a while
             params['BUILD_TIMEOUT'] = 60  # minutes
