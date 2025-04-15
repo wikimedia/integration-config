@@ -30,8 +30,10 @@
       gerrit:
         - event: comment-added
           branch:
-           - (?!^(refs/meta/config|wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|fundraising/REL|REL))
+            - regex: ^(?:refs/meta/config|wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|fundraising/REL|REL)
+              negate: true
           email:
-           - ^(?!l10n-bot@translatewiki\.net).*$
+            - regex: ^(?:l10n-bot@translatewiki\.net).*$
+              negate: true
           approval:
             - Code-Review: 2
