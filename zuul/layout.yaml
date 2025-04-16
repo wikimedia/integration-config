@@ -8277,7 +8277,7 @@ projects:
 
   - name: mediawiki/extensions/TwnMainPage
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble
 
   - name: mediawiki/extensions/UIFeedback
     template:
