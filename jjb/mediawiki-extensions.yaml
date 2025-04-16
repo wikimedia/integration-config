@@ -270,7 +270,13 @@
                     - ABORTED
                   build-steps:
                     - shell: |
-                        eval "$(cat log/envid)" 
+                        eval "$(cat log/envid)"
                         curl -X "DELETE" "https://api.catalyst.wmcloud.org/api/environments/${ENV_ID}" \
                           -H "Authorization: ApiToken ${CATALYST_API_TOKEN}"
           - teardown
+          # Temporarily, e-mail Vaughn on failures
+          - email-ext:
+             recipients: vwalters@wikimedia.org
+             body: '${{SCRIPT, template="wikimedia.template"}}'
+             failure: true
+             unstable: true
