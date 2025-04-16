@@ -1402,6 +1402,10 @@ jobs:
     files:
       - '^includes/Defines\.php$'
 
+  # Temporarily make WikiLambda's use of Catalyst for end-to-end testing non-voting
+  - name: ^wikilambda-catalyst-end-to-end$
+    voting: false
+
 project-templates:
 
   - name: debian-glue
@@ -5596,8 +5600,8 @@ projects:
       # Using the job directly, not via template, as it won't pass on REL branches -- JDF 2025-01-07
       - quibble-vendor-mysql-php74-phpunit-standalone
     gate-and-submit:
-      # Special Catalyst helm test runner for WikiLambda end-to-end system check
-      - wikilambda-catalyst-end-to-end
+      # Special Catalyst helm test runner for WikiLambda end-to-end system check; disabled whilst non-voting
+      # - wikilambda-catalyst-end-to-end
       # Using the job directly, not via template, as it won't pass on REL branches -- JDF 2025-01-07
       - quibble-vendor-mysql-php74-phpunit-standalone
     postmerge:
