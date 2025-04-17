@@ -1,3 +1,9 @@
+quibble-bullseye (1.13.0-s4) wikimedia; urgency=high
+
+  Add OpenSearch package (T386691).
+
+ -- Jakob Warkotsch <jakob.warkotsch@wikimedia.de>  Tue, 29 Apr 2025 09:08:17 +0100
+
 quibble-bullseye (1.13.0-s3) wikimedia; urgency=high
 
    Refresh for update in parent image node20:
