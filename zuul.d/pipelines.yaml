@@ -3,7 +3,7 @@
     description: |
       Newly uploaded patchsets enter this pipeline to receive an
       initial +/-1 Verified vote.
-    manager: dependent
+    manager: independent
     require:
       gerrit.wikimedia.org:
         open: True
