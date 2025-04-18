@@ -11,4 +11,4 @@
     name: test/gerrit-ping
     check:
         jobs:
-          - noop
+          - docker-run-hello-world

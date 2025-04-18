@@ -21,3 +21,14 @@
       nodes:
         - name: ubuntu-jammy
           label: ubuntu-jammy
+
+- job:
+    name: docker-run-hello-world
+    parent: run-test-command
+    vars:
+      # Sudo rule added to zuul-1001 at /etc/sudoers.d/nodepool
+      test_command: sudo docker run --rm --entrypoint=/usr/bin/echo docker-registry.wikimedia.org/bookworm Hello world
+    nodeset:
+      nodes:
+        - name: docker-host
+          label: docker-host
