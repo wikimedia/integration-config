@@ -5,11 +5,11 @@
       initial +/-1 Verified vote.
     manager: dependent
     require:
-      gerrit:
+      gerrit.wikimedia.org:
         open: True
         current-patchset: True
     trigger:
-      gerrit:
+      gerrit.wikimedia.org: &gerrit_events
         - event: patchset-created
         - event: change-restored
         - event: comment-added
@@ -23,11 +23,11 @@
     manager: dependent
     post-review: True
     require:
-      gerrit:
+      gerrit.wikimedia.org:
         open: True
         current-patchset: True
     trigger:
-      gerrit:
+      gerrit.wikimedia.org:
         - event: comment-added
           branch:
             - regex: ^(?:refs/meta/config|wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|fundraising/REL|REL)
