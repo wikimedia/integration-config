@@ -25,6 +25,7 @@
 - job:
     name: docker-run-hello-world
     parent: run-test-command
+    attempts: 1
     vars:
       # Sudo rule added to zuul-1001 at /etc/sudoers.d/nodepool
       test_command: sudo docker run --rm --entrypoint=/usr/bin/echo docker-registry.wikimedia.org/bookworm Hello world
