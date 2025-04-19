@@ -1,11 +1,11 @@
-- project:
-    name: ^.*$
-    check:
-      jobs:
-        - noop
-    gate:
-      jobs:
-        - noop
+#- project:
+#    name: ^.*$
+#    check:
+#      jobs:
+#        - noop
+#    gate:
+#      jobs:
+#        - noop
 
 - project:
     name: test/gerrit-ping
