@@ -149,6 +149,7 @@ CheckUser:
  - GlobalBlocking
  - GlobalPreferences
  - GrowthExperiments
+ - IPInfo
  - TorBlock
  - UserMerge
 
