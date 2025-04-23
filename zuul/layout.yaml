@@ -2703,7 +2703,7 @@ projects:
       - gearman-java-maven-java11
       - gearman-java-maven-java17
     postmerge:
-      - gearman-java-maven-java11-site-publish
+      - gearman-java-maven-java17-site-publish
 
   - name: integration/gerrit-admin
     template:
