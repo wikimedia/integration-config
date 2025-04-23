@@ -137,12 +137,6 @@
 - project:
     name: gearman-java
     jobs:
-        - '{name}-maven-java8':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java8:1.1.0-s4
-            maven_path: '/run-with-gearmand.sh'
-        - '{name}-maven-java11':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s6
-            maven_path: '/run-with-gearmand.sh'
         - '{name}-maven-java17':
             docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s1
             maven_path: '/run-with-gearmand.sh'
