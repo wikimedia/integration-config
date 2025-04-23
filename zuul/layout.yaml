@@ -1213,7 +1213,7 @@ jobs:
     success-pattern: 'https://integration.wikimedia.org/ci/job/{job.name}/{build.number}/'
     branch: ^wmf/.*$
 
-  - name: gerrit-node18
+  - name: gerrit-node20
     branch: ^deploy/wmf.*$
 
   - name: cumin-tox-publish
@@ -3906,12 +3906,11 @@ projects:
   - name: operations/software/gerrit
     test:
       - gerrit
-      - gerrit-node18
+      - gerrit-node20
     gate-and-submit:
       - gerrit
-      - gerrit-node18
-    experimental:
       - gerrit-node20
+    experimental:
       - gerrit-node22
 
   - name: operations/software/gerrit/plugins/events-wikimedia
