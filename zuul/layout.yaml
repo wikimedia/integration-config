@@ -8782,9 +8782,9 @@ projects:
     # template:
     #  - name: node20
     test:
-      - legacy-node18
+      - noop
     gate-and-submit:
-      - legacy-node18
+      - noop
     experimental:
       - generic-node20
       - generic-node22
