@@ -8778,15 +8778,9 @@ projects:
       - phpunit-coverage-php81-publish
 
   - name: mediawiki/services/parsoid/testreduce
-    # TODO (T382177): Repo doesn't yet pass on Node 20
-    # template:
-    #  - name: node20
-    test:
-      - noop
-    gate-and-submit:
-      - noop
+    template:
+     - name: node20
     experimental:
-      - generic-node20
       - generic-node22
 
   - name: mediawiki/services/poolcounter
