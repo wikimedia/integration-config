@@ -713,19 +713,6 @@
         - 'generic-{node_version}-docs-publish':
             node_version: *node_without_browsers
 
-# Special split-out to preserve our last two node18 images
-- project:
-    name: 'legacy'
-    jobs:
-        - '{name}-{node_version}-browser':
-            node_version:
-                - node18:
-                    image: docker-registry.wikimedia.org/releng/node18-test-browser:18.20.4
-        - '{name}-{node_version}':
-            node_version:
-                - node18:
-                    image: docker-registry.wikimedia.org/releng/node18-test:18.20.4
-
 # Same as 'generic', but kept separate so that gate-and-submit jobs
 # don't cross-block between mediawiki/* and non-mediawiki changes.
 - project:
