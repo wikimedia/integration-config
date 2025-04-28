@@ -1,3 +1,10 @@
+node20-test (20.19.1) wikimedia; urgency=high
+
+   Refresh for update in parent image node20:
+   Upgrade Node to 20.19.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 28 Apr 2025 13:18:05 +0100
+
 node20-test (20.18.1) wikimedia; urgency=high
 
    Refresh for update in parent image node20:

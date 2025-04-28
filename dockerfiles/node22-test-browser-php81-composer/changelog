@@ -1,3 +1,10 @@
+node22-test-browser-php81-composer (22.15.0) wikimedia; urgency=high
+
+   Refresh for update in parent image node22:
+   Upgrade Node to 22.15.0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 28 Apr 2025 13:18:05 +0100
+
 node22-test-browser-php81-composer (22.13.0) wikimedia; urgency=high
 
    Refresh for update in parent image node22:
