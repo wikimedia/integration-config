@@ -43,13 +43,13 @@
         - wikipeg-special-{node-plus-php}-composer:
             node-plus-php:
                 - node20-plus-php81:
-                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.18.1
+                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.19.1
                 - node20-plus-php83:
-                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.18.1
+                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.19.1
                 - node22-plus-php81:
-                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php81-composer:22.13.0
+                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php81-composer:22.15.0
                 - node22-plus-php83:
-                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.13.0
+                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.15.0
 
 - project:
     name: parsoidsvc

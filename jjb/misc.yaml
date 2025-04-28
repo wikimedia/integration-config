@@ -77,9 +77,9 @@
         - '{name}-{node_version}':
             node_version:
                 - node20:
-                    image: docker-registry.wikimedia.org/releng/node20-test:20.18.1
+                    image: docker-registry.wikimedia.org/releng/node20-test:20.19.1
                 - node22:
-                    image: docker-registry.wikimedia.org/releng/node22-test:22.13.0
+                    image: docker-registry.wikimedia.org/releng/node22-test:22.15.0
             name:
                - gerrit
 
