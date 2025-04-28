@@ -478,6 +478,7 @@ pipelines:
            - ^wikimedia@agamya\.dev$
            - ^wikimedia@blankeclair\.slmail\.me$
            - ^wikimedia@bjorn\.ml$ # Bjornskjald, former GCI student
+           - ^wikimedia@lucaweiss\.eu$ # Luca Weiss
            - ^wikimedia@ptrcnull\.me$ # ptrcnull, former GCI student
            - ^wikimedia@retrocraft\.ca$ # RetroCraft, former GCI student
            - ^wikimedia\.org@eddie-sh\.de$ # EddieGP
