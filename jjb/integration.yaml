@@ -189,6 +189,17 @@
                         --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
+                - opensearch:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php74:1.13.0-s4
+                    quibble_args: >-
+                        -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+                        && /src/utils/ci-opensearch.sh
+                        --color
+                        --db-dir /workspace/db
+                        --db sqlite
+                        --success-cache-key-data="$JOB_NAME"
+                        --web-backend=external --web-url=http://127.0.0.1:9413
+                        -c /bin/true'  # We only care about Quibble starting OpenSearch and MediaWiki installing
                 - extensions:
                     quibble_args: >-
                         -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf

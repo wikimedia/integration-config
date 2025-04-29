@@ -2718,6 +2718,7 @@ projects:
     test:
       - integration-quibble-tox:
         - integration-quibble-fullrun-defaults-php74
+        - integration-quibble-fullrun-opensearch-php74
         - integration-quibble-fullrun-sqlite-php74
         - integration-quibble-fullrun-extensions-php74
         - integration-quibble-fullrun-extensions-phpunit-php74
@@ -2725,6 +2726,7 @@ projects:
     gate-and-submit:
       - integration-quibble-tox:
         - integration-quibble-fullrun-defaults-php74
+        - integration-quibble-fullrun-opensearch-php74
         - integration-quibble-fullrun-sqlite-php74
         - integration-quibble-fullrun-extensions-php74
         - integration-quibble-fullrun-extensions-phpunit-php74
