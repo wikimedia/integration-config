@@ -104,6 +104,9 @@ def set_parameters(item, job, params):
         params['MW_RESULTS_CACHE_SERVER_BASE_URL'] = \
             'https://phpunit-results-cache.toolforge.org/results'
 
+    if job.name.startswith('integration-quibble-fullrun-opensearch'):
+        params['QUIBBLE_OPENSEARCH'] = 'true'
+
     # parallel-lint can be slow, so raise the limit for vendor.git
     if params['ZUUL_PROJECT'].startswith('mediawiki/vendor'):
         params['COMPOSER_PROCESS_TIMEOUT'] = 600
