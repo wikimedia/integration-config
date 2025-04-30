@@ -1,3 +1,9 @@
+helm-linter (0.7.2) wikimedia; urgency=medium
+
+  * Remove duplicate update-alternatives for helm3
+
+ -- Jelto Wodstrcil <jwodstrcil@wikimedia.org>  Wed, 30 Apr 2025 14:04:01 +0200
+
 helm-linter (0.7.1) wikimedia; urgency=medium
 
   * Bump to update helmfile and helm-diff once more time

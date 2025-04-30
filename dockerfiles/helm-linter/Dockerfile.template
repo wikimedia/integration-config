@@ -24,8 +24,7 @@ RUN {{ "helm311 helm317 rake envoyproxy helmfile helm-diff ruby-git istioctl pyt
     ln -s /usr/bin/true /usr/local/bin/helmfile_log_sal && \
     /usr/bin/pip3 install sextant && \
     /usr/bin/update-kubeconform-json-schema && \
-    update-alternatives --set helm /usr/bin/helm3.11 && \
-    update-alternatives --set helm3 /usr/bin/helm3.11
+    update-alternatives --set helm /usr/bin/helm3.11
 
 USER nobody
 
