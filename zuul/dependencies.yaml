@@ -1258,6 +1258,9 @@ WikimediaEvents:
  - LoginNotify
  - OATHAuth
 
+WikimediaMessages:
+ - cldr
+
 WikiSEO:
  - PageImages
  - Scribunto
