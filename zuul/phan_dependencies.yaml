@@ -769,6 +769,7 @@ WikimediaMaintenance:
 WikimediaMessages:
  - CampaignEvents
  - cldr
+ - Echo
  - GuidedTour
  - MobileFrontend
  - ORES
