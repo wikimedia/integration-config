@@ -182,6 +182,9 @@ CodeMirror:
 CollapsibleVector:
  - skins/Vector
 
+CodeEditor:
+ - BetaFeatures
+
 CommunityConfigurationExample:
  - CommunityConfiguration
 
