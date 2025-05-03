@@ -475,6 +475,7 @@ ORES:
 
 PageAssessments:
  - CirrusSearch
+ - Scribunto
 
 PageForms:
  - AdminLinks
