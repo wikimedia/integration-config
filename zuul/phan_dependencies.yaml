@@ -484,6 +484,7 @@ PageForms:
 
 PageImages:
  - MobileFrontend
+ - Scribunto
 
 PageTriage:
  - Echo
