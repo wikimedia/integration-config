@@ -1249,6 +1249,7 @@ WikimediaCampaignEvents:
 WikimediaEvents:
  - CentralAuth
  - CheckUser
+ - cldr
  - EmailAuth
  - EventLogging
  - FlaggedRevs
