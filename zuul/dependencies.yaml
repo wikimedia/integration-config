@@ -139,6 +139,7 @@ BlueSpiceDashboards:
  - BlueSpiceFoundation
 
 BlueSpiceDistributionConnector:
+ - BlueSpiceExtendedStatistics
  - BlueSpiceFoundation
  - BlueSpiceSMWConnector
  - ContentDroplets
