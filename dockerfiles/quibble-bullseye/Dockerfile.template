@@ -144,9 +144,10 @@ COPY ./install-php-fpm-conf.sh /install-php-fpm-conf.sh
 
 # OpenSearch
 COPY wikimedia-opensearch.list /etc/apt/sources.list.d/wikimedia-opensearch.list
-RUN {{ "opensearch" | apt_install }}
+RUN {{ "opensearch wmf-opensearch-search-plugins" | apt_install }}
 COPY opensearch/opensearch.yml /etc/opensearch/opensearch.yml
 COPY opensearch/jvm.options /etc/opensearch/jvm.options
+RUN ln -s /usr/share/opensearch/config/sudachi /etc/opensearch/sudachi
 RUN usermod -aG opensearch nobody
 
 # Don't start OpenSearch by default

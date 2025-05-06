@@ -1,3 +1,9 @@
+quibble-bullseye-php74 (1.14.0-s1) wikimedia; urgency=medium
+
+  Add missing OpenSearch plugins
+
+ -- Jakob Warkotsch <jakob.warkotsch@wikimedia.de>  Tue, 06 May 2025 09:18:00 +0100
+
 quibble-bullseye-php74 (1.14.0) wikimedia; urgency=medium
 
   * Update Quibble to 1.14.0
