@@ -165,9 +165,9 @@
         - 'integration-quibble-fullrun-{type}-{php}':
             php:
                 - php74:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.14.0
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.14.1
                 - php81:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.0
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1
             type:
                 - defaults:
                     quibble_args: >-
@@ -190,7 +190,7 @@
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
                 - opensearch:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php74:1.14.0-s1
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php74:1.14.1
                     quibble_args: >-
                         -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
                         && /src/utils/ci-opensearch.sh
