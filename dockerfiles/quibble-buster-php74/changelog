@@ -1,3 +1,9 @@
+quibble-buster-php74 (1.14.1) wikimedia; urgency=medium
+
+  * Update Quibble to 1.14.1
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 07 May 2025 10:12:20 +0200
+
 quibble-buster-php74 (1.14.0) wikimedia; urgency=medium
 
   * Update Quibble to 1.14.0
