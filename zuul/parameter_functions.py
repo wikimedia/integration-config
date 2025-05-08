@@ -257,9 +257,10 @@ def set_mw_dependencies(item, job, params):
     # T363639 - WebAuthn won't run on REL1_XX because of library issues
     # T390754 - Just don't load WebAuthn at all if it's not master, or it's Parsoid
     if (
-        (params['ZUUL_BRANCH'] in ['REL1_39', 'REL1_42', 'REL1_43']
-         or params['ZUUL_PROJECT'] == 'mediawiki/services/parsoid')
-        and 'WebAuthn' in ext_deps
+        'WebAuthn' in ext_deps and (
+            not (params['ZUUL_BRANCH'] == 'master' or params['ZUUL_BRANCH'].startswith('wmf/'))
+            or params['ZUUL_PROJECT'] == 'mediawiki/services/parsoid'
+        )
     ):
         ext_deps.remove('WebAuthn')
 
