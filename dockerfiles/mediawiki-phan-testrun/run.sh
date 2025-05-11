@@ -13,7 +13,7 @@ sed -i 's!\(\"include\":\s*\[\)!\1 \"./mediawiki/tools/phan/composer.json\",!' c
 # Some blacker magic: re-point phan config in the merge-plugin section
 sed -i 's#vendor/mediawiki/mediawiki-phan-config/#mediawiki/tools/phan/#' .phan/config.php
 
-MW_VENDOR_PATH=$(pwd)
+MW_VENDOR_PATH=$PWD
 export MW_VENDOR_PATH
 
 export PHP_ARGS='-dextension=ast_101.so'

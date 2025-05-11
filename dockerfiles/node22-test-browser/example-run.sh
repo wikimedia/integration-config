@@ -12,8 +12,8 @@ git checkout FETCH_HEAD
 
 docker run \
     --rm --tty \
-    --volume /"$(pwd)"/log://var/lib/jenkins/log \
-    --volume /"$(pwd)"/cache://cache \
-    --volume /"$(pwd)"/log://log \
-    --volume /"$(pwd)"/src://src \
+    --volume /"$PWD"/log://var/lib/jenkins/log \
+    --volume /"$PWD"/cache://cache \
+    --volume /"$PWD"/log://log \
+    --volume /"$PWD"/src://src \
     docker-registry.wikimedia.org/releng/node22-test-browser:latest

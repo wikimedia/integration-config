@@ -11,7 +11,7 @@ repos=(
 )
 for repo in "${repos[@]}"; do
     docker run --rm -it \
-        --volume /"$(pwd)"/src://src \
+        --volume /"$PWD"/src://src \
         --entrypoint=git \
         docker-registry.wikimedia.org/releng/civicrm:latest \
         clone --depth 1 \
@@ -19,9 +19,9 @@ for repo in "${repos[@]}"; do
 done
 
 docker run --rm -it \
-    --volume /"$(pwd)"/cache://cache \
-    --volume /"$(pwd)"/log://log \
-    --volume /"$(pwd)"/src://src \
+    --volume /"$PWD"/cache://cache \
+    --volume /"$PWD"/log://log \
+    --volume /"$PWD"/src://src \
     --env BUILD_NUMBER=fake_build_number \
     --env BUILD_TAG=fake_build_tag \
     --env JOB_ID=fake_job_id \

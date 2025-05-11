@@ -12,7 +12,7 @@ git checkout FETCH_HEAD
 
 docker run \
     --rm --tty \
-    --volume "/$(pwd)/cache:/cache" \
-    --volume "/$(pwd)/log:/log" \
-    --volume "/$(pwd)/src:/src" \
+    --volume "/$PWD/cache:/cache" \
+    --volume "/$PWD/log:/log" \
+    --volume "/$PWD/src:/src" \
     docker-registry.wikimedia.org/releng/composer-test-php73:latest

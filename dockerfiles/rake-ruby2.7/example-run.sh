@@ -11,6 +11,6 @@ docker run \
     --env ZUUL_PROJECT=mediawiki/ruby/api \
     --env ZUUL_COMMIT=master \
     --env ZUUL_REF=master \
-    --volume /"$(pwd)"/cache://cache \
-    --volume /"$(pwd)"/log://log \
+    --volume /"$PWD"/cache://cache \
+    --volume /"$PWD"/log://log \
     docker-registry.wikimedia.org/releng/rake-ruby2.7:latest

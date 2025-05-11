@@ -15,7 +15,7 @@ git checkout FETCH_HEAD
 mkdir -p log
 docker run \
     --rm --tty \
-    --volume "/$(pwd)/cache://cache" \
-    --volume "/$(pwd)/log://var/lib/jenkins/log" \
-    --volume "/$(pwd)/src://src" \
+    --volume "/$PWD/cache://cache" \
+    --volume "/$PWD/log://var/lib/jenkins/log" \
+    --volume "/$PWD/src://src" \
     docker-registry.wikimedia.org/releng/composer-package-php83:latest

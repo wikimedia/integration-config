@@ -138,9 +138,9 @@
 #  container.
 #  Example:
 #
-#   volumes: { cache: }  => --volume "$(pwd)/cache:/cache"
+#   volumes: { cache: }  => --volume "$PWD/cache:/cache"
 #
-#   volumes: { src: /bar }  => --volume "$(pwd)/src:/bar"
+#   volumes: { src: /bar }  => --volume "$PWD/src:/bar"
 #
 #   volumes: { /srv/git: /srv/git:ro }  => --volume "/srv/git:/srv/git:ro"
 #
@@ -168,7 +168,7 @@
         {%     if host_path.startswith('/') or host_path.startswith('$') -%}
         {%       set host_dir = host_path -%}
         {%     else -%}
-        {%       set host_dir = '$(pwd)/' + host_path -%}
+        {%       set host_dir = '$PWD/' + host_path -%}
         {%     endif -%}
         if [ ! -d "{{ host_dir }}" ]; then
           echo "T282893: Expected host directory {{ host_dir }} to exist but it does not."
@@ -204,7 +204,7 @@
                   {%- if host_path.startswith('/') or host_path.startswith('$') -%}
                   {%-   set base_dir = '' -%}
                   {%- else -%}
-                  {%-   set base_dir = '$(pwd)/' -%}
+                  {%-   set base_dir = '$PWD/' -%}
                   {%- endif -%}
                   {{ " " }}--volume "{{ base_dir + host_path }}:{{ container_path or ("/" + host_path) }}"
               {%- endfor -%}
