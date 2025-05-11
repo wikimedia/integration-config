@@ -63,8 +63,7 @@
     name: docker-cache-dir
     builders:
      - shell: |
-        ls -laF --color=always
-        mkdir -m 2777 -p cache
+        mkdir -m 2777 -p cache || (ls -laF --color=always && false)
 
 # Create a log directory that will be
 # mounted into a container with --volume
@@ -88,8 +87,7 @@
     builders:
      - shell: |
          set -eux
-         ls -laF --color=always
-         mkdir -m 2777 -p "{dir}"
+         mkdir -m 2777 -p "{dir}" || (ls -laF --color=always && false)
      - docker-run:
         image: 'docker-registry.wikimedia.org/buster:latest'
         volumes:
