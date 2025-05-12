@@ -9,7 +9,7 @@ USER nobody
 RUN git clone https://github.com/nikic/php-ast /srv/php-ast && \
     cd /srv/php-ast && \
     # v1.1.2, use sha1 for immutability
-    git checkout 152b420ed6ca9029b47e52362916af0b25b2c7b3 && \
+    git checkout --quiet 152b420ed6ca9029b47e52362916af0b25b2c7b3 && \
     phpize7.4 && ./configure --with-php-config=php-config7.4 && make && \
     cp modules/ast.so /srv/modules/ast_74.so && \
     git clean -fdx && \
