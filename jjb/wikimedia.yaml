@@ -30,9 +30,9 @@
         - shell: |
             cd src/
             git config --global --add safe.directory '*'
-            git submodule update --init
-            git submodule foreach git fetch --all
-            git submodule foreach git reset --hard origin/master
+            git submodule --quiet update --init
+            git submodule --quiet foreach git fetch --all
+            git submodule --quiet foreach git reset --hard origin/master
             # clean up whatever left from previous builds.
             cd prod/
             rm -rf urls-to-purge.txt wik*
