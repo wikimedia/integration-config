@@ -4,15 +4,17 @@ umask 002
 
 set -euxo pipefail
 
+set +x
 if [ ! -f "package.json" ]; then
     echo "package.json not found, skipping"
     exit 0
 fi
+set -x
 
 node --version
 npm --version
 
-if [ -e 'npm-shrinkwrap.json' ] || [ -e 'package-lock.json' ]; then
+if [ -e 'package-lock.json' ] || [ -e 'npm-shrinkwrap.json' ]; then
     npm ci
 else
     # Use whatever version matched in package.json devDependencies

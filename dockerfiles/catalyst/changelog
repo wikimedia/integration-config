@@ -1,3 +1,10 @@
+catalyst (1.2.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image node22-test:
+   Mute checks for npm packaging files - T393847
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 13 May 2025 09:38:44 +0200
+
 catalyst (1.2.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image node22:

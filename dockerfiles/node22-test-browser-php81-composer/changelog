@@ -1,3 +1,10 @@
+node22-test-browser-php81-composer (22.15.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image node22-test:
+   Mute checks for npm packaging files - T393847
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 13 May 2025 09:38:44 +0200
+
 node22-test-browser-php81-composer (22.15.0) wikimedia; urgency=high
 
    Refresh for update in parent image node22:
