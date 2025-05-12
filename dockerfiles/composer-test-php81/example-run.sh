@@ -5,9 +5,9 @@ set -eux -o pipefail
 mkdir -m 2777 -p log src cache
 (
 cd src
-git init
+git init --quiet
 git fetch --quiet --depth 1 "https://gerrit.wikimedia.org/r/integration/jenkins" "master"
-git checkout FETCH_HEAD
+git checkout --quiet FETCH_HEAD
 )
 
 docker run \

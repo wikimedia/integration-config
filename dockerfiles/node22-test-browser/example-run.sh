@@ -5,9 +5,9 @@ set -euo pipefail
 mkdir -m 777 -p cache log src
 (
 cd src
-git init
+git init --quiet
 git fetch --quiet --depth 1 https://gerrit.wikimedia.org/r/data-values/value-view
-git checkout FETCH_HEAD
+git checkout --quiet FETCH_HEAD
 )
 
 docker run \
