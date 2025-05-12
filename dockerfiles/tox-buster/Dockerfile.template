@@ -1,4 +1,6 @@
-FROM {{ "ci-buster" | image_tag }}
+# This image can no more be built after buster-wikimedia thirdparty/pyall has
+# been removed from apt.wikimedia.org
+#FROM {{ "ci-buster" | image_tag }}
 {% set packages|replace('\n', ' ') -%}
 python-pip
 python-dev

@@ -97,7 +97,8 @@ def test_control_files():
 
 
 def assertDockerfileFromsMatchesControlDepends(image_dir):
-    DOCKER_FROM_RE = re.compile('FROM (?:{{ "(.*?)" \\| image_tag }}|"(.*?"))')
+    DOCKER_FROM_RE = re.compile('^FROM (?:{{ "(.*?)" \\| image_tag }}|"(.*?"))',
+                                re.MULTILINE)
     control_deps = getDepends(os.path.join(image_dir, 'control'))
     with open(os.path.join(image_dir, 'Dockerfile.template')) as f:
         froms = set()
