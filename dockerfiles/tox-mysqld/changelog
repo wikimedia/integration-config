@@ -1,3 +1,10 @@
+tox-mysqld (4.8.0-3-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-common:
+   Silence git init warning in ci-src-setup - T393847
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 12 May 2025 11:44:02 +0200
+
 tox-mysqld (4.8.0-3-s3) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster:

@@ -1,3 +1,10 @@
+java8-scala-spark (0.3.0-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-common:
+   Silence git init warning in ci-src-setup - T393847
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 12 May 2025 11:44:02 +0200
+
 java8-scala-spark (0.3.0-s4) wikimedia; urgency=high
 
    Refresh for update in parent image maven:
