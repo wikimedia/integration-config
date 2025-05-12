@@ -287,7 +287,7 @@
              src:
              cache:
              /srv/git: /srv/git:ro
-         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.7.0
+         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.7.0-s1
 
 - builder:
     name: setup

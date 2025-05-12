@@ -11,7 +11,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/doxygen:1.10.0
+         image: docker-registry.wikimedia.org/releng/doxygen:1.10.0-s1
      - doc-publish:
         docsrc: 'src/docs/php'
         docdest: '$DOC_PROJECT/$DOC_SUBPATH/php'
@@ -48,7 +48,7 @@
          volumes:
              src:
              log:
-         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.7.0
+         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.7.0-s1
          entrypoint: /bin/bash
          args: -c "set -euo pipefail; git show -m --first-parent --find-renames=100% FETCH_HEAD -U0 | grep '^+' | tee /log/additions.txt"
 
