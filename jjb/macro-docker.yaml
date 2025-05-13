@@ -159,9 +159,9 @@
      - shell: !j2: |
         {% block xxx_dummy_block_to_keep_trailing_newline -%}
         #!/bin/bash
-        set -eux
-        set -o pipefail
+        set -euxo pipefail
         {% if volumes is defined -%}
+        set +x
         {%   for host_path in volumes -%}
         {%     if host_path.startswith('/') or host_path.startswith('$') -%}
         {%       set host_dir = host_path -%}
@@ -173,6 +173,7 @@
           exit 1
         fi
         {%   endfor -%}
+        set -x
         {% endif -%}
         exec docker run
           {%- if entrypoint is defined and entrypoint|length -%}
@@ -212,7 +213,7 @@
           --rm \
           --label "jenkins.job=$JOB_NAME" \
           --label "jenkins.build=$BUILD_NUMBER" \
-          --env-file <(/usr/bin/env|egrep -v '^(HOME|SHELL|PATH|LOGNAME|MAIL)=') \
+          --env-file <(set +x; /usr/bin/env | egrep -v '^(HOME|SHELL|PATH|LOGNAME|MAIL)=') \
           '{{ image }}' {{ args | default }}
         # nothing else can be executed due to exec
         {% endblock %}
