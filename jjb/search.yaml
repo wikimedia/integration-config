@@ -16,7 +16,13 @@
 
 - project:
     name: wmf-jvm-utils
+    release-project: wmf-jvm-utils
+    release-branch: master
+    publishers:
+        - email-wikimedia-discovery
+        - teardown
     jobs:
         - '{name}-maven-java8'
         - '{name}-maven-java11'
         - '{name}-maven-java8-site-publish'
+        - '{name}-maven-release'
