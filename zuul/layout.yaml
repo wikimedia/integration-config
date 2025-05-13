@@ -2018,13 +2018,13 @@ project-templates:
   # Special job template that runs the "apitests" job for test and gate
   - name: extension-apitests
     test:
-      - mediawiki-quibble-apitests-vendor-php74
+      - mediawiki-quibble-apitests-vendor-php81
     gate-and-submit:
-      - mediawiki-quibble-apitests-vendor-php74
+      - mediawiki-quibble-apitests-vendor-php81
     test-wmf:
-      - mediawiki-quibble-apitests-vendor-php74
+      - mediawiki-quibble-apitests-vendor-php81
     gate-and-submit-wmf:
-      - mediawiki-quibble-apitests-vendor-php74
+      - mediawiki-quibble-apitests-vendor-php81
 
   # Extensions tested together and intended for deployment to the Wikimedia Cluster
   # This job is expensive, so should only be run using the current flavour of PHP,
@@ -2962,7 +2962,7 @@ projects:
       - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-composertest-php74
       - mediawiki-quibble-selenium-vendor-mysql-php74
-      - mediawiki-quibble-apitests-vendor-php74
+      - mediawiki-quibble-apitests-vendor-php81
       - mediawiki-core-php74-phan
     php:
       # This is the diff between the optimised test-pipeline and the gate.
@@ -2991,7 +2991,7 @@ projects:
       - mediawiki-quibble-vendor-mysql-php83
       - mediawiki-quibble-composertest-php74
       - mediawiki-quibble-selenium-vendor-mysql-php74
-      - mediawiki-quibble-apitests-vendor-php74
+      - mediawiki-quibble-apitests-vendor-php81
       - mediawiki-quibble-vendor-sqlite-php74
       - mediawiki-quibble-vendor-postgres-php74
       - mediawiki-core-php74-phan
@@ -3063,12 +3063,12 @@ projects:
     test-wmf:
       - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-composertest-php74
-      - mediawiki-quibble-apitests-vendor-php74
+      - mediawiki-quibble-apitests-vendor-php81
       - mediawiki-core-php74-phan
     gate-and-submit-wmf:
       - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-composertest-php74
-      - mediawiki-quibble-apitests-vendor-php74
+      - mediawiki-quibble-apitests-vendor-php81
       - mediawiki-core-php74-phan
 
     test-fundraising:
@@ -3129,7 +3129,7 @@ projects:
       - mwgate-composer-php74
       - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-selenium-vendor-mysql-php74
-      - mediawiki-quibble-apitests-vendor-php74
+      - mediawiki-quibble-apitests-vendor-php81
 
     # No CI support for mediawiki/vendor on release branches, folks should
     # use composer install instead. T189560
