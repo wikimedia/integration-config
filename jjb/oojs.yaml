@@ -7,7 +7,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.19.1
+         image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.19.1-s1
          # npm run-script jenkins runs 'npm test' and 'npm run doc'
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
@@ -67,13 +67,13 @@
         - '{name}-{node-plus-php}-runjenkins':
            node-plus-php:
                - node20-plus-php81:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.19.1
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.19.1-s1
                - node20-plus-php83:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.19.1
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.19.1-s1
                - node22-plus-php81:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser-php81-composer:22.15.0
+                   image: docker-registry.wikimedia.org/releng/node22-test-browser-php81-composer:22.15.0-s1
                - node22-plus-php83:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.15.0
+                   image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.15.0-s1
 
 - project:
     name: oojs-core
@@ -82,6 +82,6 @@
            script: 'jenkins'
            node_version:
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.19.1
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.19.1-s1
                - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.15.0
+                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.15.0-s1

@@ -22,7 +22,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test:20.19.1'
+        image: 'docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1'
         args: 'doc'
      - doc-publish:
            docsrc: 'src/docs/js'
@@ -155,9 +155,9 @@
         - '{name}-{node_version}':
             node_version:
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test:20.19.1
+                   image: docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1
                - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test:22.15.0
+                   image: docker-registry.wikimedia.org/releng/node22-test:22.15.0-s1
         - '{name}-tox':
             build_timeout: 10
 
@@ -835,7 +835,7 @@
     # mediawiki/services/parsoid (T321837)
     #
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/node20-test:20.19.1
+        image: docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1
         volumes:
             src/$THING_SUBNAME: /src
         logdir: '/workspace/log'

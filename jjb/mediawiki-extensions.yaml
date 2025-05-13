@@ -242,7 +242,7 @@
       builders:
           - setup
           - docker-run-with-log-cache-src:
-                image: 'docker-registry.wikimedia.org/releng/catalyst:1.2.0-s1'
+                image: 'docker-registry.wikimedia.org/releng/catalyst:1.2.0-s2'
                 entrypoint: '/deploy_env.py'
                 environment:
                     WIKILAMBDA_REF: $BASE_LOG_PATH
