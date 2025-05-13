@@ -414,6 +414,8 @@
             php:
                 - php74:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.14.1
+                - php81:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1
             packages-source: vendor
             database:
                 - mysql
