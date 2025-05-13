@@ -107,6 +107,15 @@ def set_parameters(item, job, params):
     if job.name.startswith('integration-quibble-fullrun-opensearch'):
         params['QUIBBLE_OPENSEARCH'] = 'true'
 
+    # Enable Open Search for Wikibase API tests. T386691
+    if (
+        params['ZUUL_PROJECT'] == 'mediawiki/extensions/Wikibase'
+        and params['ZUUL_BRANCH'] == 'master'
+        and job.name.startswith('mediawiki-quibble-apitests')
+        and 'php74' not in job.name
+    ):
+        params['QUIBBLE_OPENSEARCH'] = 'true'
+
     # parallel-lint can be slow, so raise the limit for vendor.git
     if params['ZUUL_PROJECT'].startswith('mediawiki/vendor'):
         params['COMPOSER_PROCESS_TIMEOUT'] = 600
