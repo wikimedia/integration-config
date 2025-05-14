@@ -93,9 +93,13 @@ def set_parameters(item, job, params):
             # which does not have the parallel work.
             "mediawiki/extensions/DonationInterface",
         ]
-        # ... exclude on REL_ branches (not yet tested/patched),
+        # ... exclude on pre-1.44 REL_ branches (not yet tested/patched),
         and "ZUUL_BRANCH" in params
-        and not params["ZUUL_BRANCH"].startswith("REL1")
+        and not (
+            params["ZUUL_BRANCH"].startswith("REL1_43")
+            or params["ZUUL_BRANCH"].startswith("REL1_42")
+            or params["ZUUL_BRANCH"].startswith("REL1_39")
+        )
         # Exclude fundraising branches and specific jobs
         and not params["ZUUL_BRANCH"].startswith("fundraising")
         and not job.name.startswith("quibble-fundraising")
