@@ -146,6 +146,8 @@
         - quibble-daily-{project}-{packages-source}-{database}-{php}:
             database: mysql
             packages-source: vendor
+            # Quibble jobs by default skip several tests, but we want e.g. selenium
+            quibble_args: '--skip npm-test,phpunit-standalone,api-testing'
             php:
                 - php74:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.14.1
