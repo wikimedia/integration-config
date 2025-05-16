@@ -220,7 +220,8 @@
     name: quibble-{packages-source}-{database}-{php}
     node: Docker
     entrypoint: quibble-with-supervisord
-    quibble_args: '--skip npm-test,phpunit-standalone,api-testing'
+    # Quibble jobs by default skipping several tests, including (T196960) selenium
+    quibble_args: '--skip selenium,npm-test,phpunit-standalone,api-testing'
     triggers:
         - zuul
     properties:
@@ -280,16 +281,7 @@
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
-# Skipping selenium tests - T196960
-- job-template:
-    !!merge : *job_quibble
-    name: quibble-{packages-source}-{database}-{php}-noselenium
-    entrypoint: quibble-with-supervisord
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --skip selenium,npm-test,phpunit-standalone,api-testing'
-    triggers:
-        - zuul
-
-# And the counterpart that only does Selenium T232759
+# (T232759) This is a special kind of Quibble job that runs the Selenium test suites
 - job-template:
     !!merge : *job_quibble
     name: quibble-{packages-source}-{database}-{php}-selenium
@@ -953,7 +945,6 @@
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.14.1
     jobs:
         - quibble-{packages-source}-{database}-{php}
-        - quibble-{packages-source}-{database}-{php}-noselenium
         - quibble-{packages-source}-{database}-{php}-selenium
         - quibble-{packages-source}-{database}-{php}-phpunit-standalone
         - mediawiki-coverage-jobs
