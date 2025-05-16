@@ -102,16 +102,11 @@
     builders:
         - setup
         - docker-run-with-log-cache-src:
-            entrypoint: '{maven_path}'
-            workdir: '{workdir}'
-            image: '{obj:docker_image_var}'
-            args: '-gs /settings.xml -s /archiva-credentials.xml --file {pom} help:effective-settings help:active-profiles'
-        - docker-run-with-log-cache-src:
             # run Maven Wrapper directly from the project
             entrypoint: '{maven_path}'
             workdir: '{workdir}'
             image: '{obj:docker_image_var}'
-            args: '-gs /settings.xml -s /archiva-credentials.xml --batch-mode --file {pom} {maven_args}'
+            args: '-gs /settings.xml --batch-mode --file {pom} {maven_args}'
 
         # The branch holding the patch is named $ZUUL_BRANCH
         #
@@ -165,7 +160,7 @@
             workdir: '{workdir}'
             image: docker-registry.wikimedia.org/releng/maven-java17:1.0.1-s2
             args: >
-                -gs /settings.xml --settings /archiva-credentials.xml --batch-mode --file {pom} -X
+                -gs /settings.xml --batch-mode --file {pom} -X
                 sonar:sonar
                 -Dsonar.analysis.allowCommentOnMaster="1"
                 -Dsonar.analysis.gerritProjectName="$ZUUL_PROJECT"
@@ -188,11 +183,6 @@
                 # https://integration.wikimedia.org/ci/credentials/
                 credential-id: SONAR_API_KEY
                 variable: SONAR_API_KEY
-          # Credentials for Archiva
-      - config-file-provider:
-          files:
-            - file-id: 'org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig.ArchivaCredentialsSettings'
-              target: archiva-credentials.xml
 
 # Convenience alias with name/project variables
 - job-template:
