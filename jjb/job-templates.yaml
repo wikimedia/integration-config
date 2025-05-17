@@ -752,6 +752,10 @@
     name: 'selenium-daily-{sitename}-{project}'
     node: Docker
     docker_image_var: 'docker-registry.wikimedia.org/releng/node20-test-browser:20.19.1-s1'
+    failure: true
+    unstable: true
+    still_failing: false
+    still_unstable: false
     triggers:
      - timed: '@daily'
     parameters:
@@ -808,6 +812,8 @@
      - email-ext:
         recipients: '{recipients}'
         body: '${{SCRIPT, template="wikimedia.template"}}'
-        failure: true
-        unstable: true
+        failure: '{failure}'
+        unstable: '{unstable}'
+        still-failing: '{still_failing}'
+        still-unstable: '{still_unstable}'
      - teardown
