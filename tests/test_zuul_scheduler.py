@@ -1129,34 +1129,33 @@ class TestZuulScheduler(unittest.TestCase):
 
     def test_mwcore_switch_to_quibble(self):
         expected_test = {
-            'mediawiki-core-php74-phan': True,
-            'mediawiki-quibble-vendor-mysql-php74': True,
-            'mediawiki-quibble-composertest-php74': True,
+            'mediawiki-core-php81-phan': True,
+            'mediawiki-quibble-vendor-mysql-php81': True,
+            'mediawiki-quibble-composertest-php81': True,
             'mediawiki-quibble-apitests-vendor-php81': True,
-            'mediawiki-quibble-selenium-vendor-mysql-php74': True,
+            'mediawiki-quibble-selenium-vendor-mysql-php81': True,
             'wmf-quibble-vendor-mysql-php81': False,
             'wmf-quibble-core-vendor-mysql-php81': True,
             'wmf-quibble-selenium-php81': True,
             'mwgate-node20': True,
         }
         expected_gate = {
-            'mediawiki-core-php74-phan': True,
             'mediawiki-core-php81-phan': True,
-            'mediawiki-quibble-composer-mysql-php74': True,
+            'mediawiki-quibble-composer-mysql-php81': True,
             'mediawiki-quibble-vendor-mysql-php74': True,
             'mediawiki-quibble-vendor-mysql-php81': True,
             'mediawiki-quibble-vendor-mysql-php82': True,
             'mediawiki-quibble-vendor-mysql-php83': True,
-            'mediawiki-quibble-composertest-php74': True,
+            'mediawiki-quibble-composertest-php81': True,
             'mediawiki-quibble-apitests-vendor-php81': True,
-            'mediawiki-quibble-selenium-vendor-mysql-php74': True,
-            'mediawiki-quibble-vendor-sqlite-php74': True,
-            'mediawiki-quibble-vendor-postgres-php74': True,
+            'mediawiki-quibble-selenium-vendor-mysql-php81': True,
+            'mediawiki-quibble-vendor-sqlite-php81': True,
+            'mediawiki-quibble-vendor-postgres-php81': True,
             'wmf-quibble-vendor-mysql-php81': False,
             'wmf-quibble-selenium-php81': True,
             'wmf-quibble-core-vendor-mysql-php81': True,
             'mwgate-node20': True,
-            'quibble-vendor-mysql-php74-phpunit-standalone': True,
+            'quibble-vendor-mysql-php81-phpunit-standalone': True,
         }
 
         change = zuul.model.Change('mediawiki/core')

@@ -1485,12 +1485,12 @@ project-templates:
   # REL1_43: PHP 8.1–8.3 (supported & tested)
   - name: extension-quibble
     test:
-      - quibble-vendor-mysql-php74
-      - quibble-vendor-mysql-php74-selenium
-      - mwgate-node20
-      - mwext-php74-phan
-    php:
       - quibble-vendor-mysql-php81
+      - quibble-vendor-mysql-php81-selenium
+      - mwgate-node20
+      - mwext-php81-phan
+    php:
+      - quibble-vendor-mysql-php74
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
     gate-and-submit:
@@ -1498,9 +1498,9 @@ project-templates:
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
-      - quibble-vendor-mysql-php74-selenium
+      - quibble-vendor-mysql-php81-selenium
       - mwgate-node20
-      - mwext-php74-phan
+      - mwext-php81-phan
 
     test-1_39:
       - mwgate-node20
@@ -1669,13 +1669,13 @@ project-templates:
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer
     test:
-      - quibble-composer-mysql-php74
-      - quibble-composer-mysql-php74-selenium
+      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php81-selenium
       - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php74-phan
+      # - mwext-php81-phan
     php:
-      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php74
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
     gate-and-submit:
@@ -1683,10 +1683,10 @@ project-templates:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php74-selenium
+      - quibble-composer-mysql-php81-selenium
       - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php74-phan
+      # - mwext-php81-phan
 
     test-1_39:
       - mwgate-node20
@@ -1819,11 +1819,11 @@ project-templates:
   # Should *not* be used for Wikimedia production without very good reason.
   - name: extension-quibble-noselenium
     test:
-      - quibble-vendor-mysql-php74
-      - mwgate-node20
-      - mwext-php74-phan
-    php:
       - quibble-vendor-mysql-php81
+      - mwgate-node20
+      - mwext-php81-phan
+    php:
+      - quibble-vendor-mysql-php74
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
     gate-and-submit:
@@ -1832,7 +1832,7 @@ project-templates:
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
       - mwgate-node20
-      - mwext-php74-phan
+      - mwext-php81-phan
 
     test-1_39:
       - quibble-composer-mysql-php81
@@ -1906,12 +1906,12 @@ project-templates:
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
     test:
-      - quibble-composer-mysql-php74
+      - quibble-composer-mysql-php81
       - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php74-phan
+      # - mwext-php81-phan
     php:
-      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php74
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
     gate-and-submit:
@@ -1921,7 +1921,7 @@ project-templates:
       - quibble-composer-mysql-php83
       - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php74-phan
+      # - mwext-php81-phan
 
     test-1_39:
       - quibble-composer-mysql-php81
@@ -2101,10 +2101,10 @@ project-templates:
   # that are for skins.
   - name: skin-quibble
     test:
-      - quibble-vendor-mysql-php74
-      - quibble-vendor-mysql-php74-selenium
+      - quibble-vendor-mysql-php81
+      - quibble-vendor-mysql-php81-selenium
       - mwgate-node20
-      - mwskin-php74-phan
+      - mwskin-php81-phan
     php:
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
@@ -2114,9 +2114,9 @@ project-templates:
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
-      - quibble-vendor-mysql-php74-selenium
+      - quibble-vendor-mysql-php81-selenium
       - mwgate-node20
-      - mwskin-php74-phan
+      - mwskin-php81-phan
 
     # We use composer on release branches
     test-1_39:
@@ -2192,20 +2192,20 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-vendor-sqlite-php74
-      - quibble-vendor-postgres-php74
+      - quibble-vendor-sqlite-php81
+      - quibble-vendor-postgres-php81
       - quibble-vendor-mysql-php84
       - mwgate-node22
 
   - name: skin-quibble-composer
     test:
-      - quibble-composer-mysql-php74
-      - quibble-composer-mysql-php74-selenium
+      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php81-selenium
       - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php74-phan
+      # - mwskin-php81-phan
     php:
-      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php74
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
     gate-and-submit:
@@ -2213,10 +2213,10 @@ project-templates:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php74-selenium
+      - quibble-composer-mysql-php81-selenium
       - mwgate-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php74-phan
+      # - mwskin-php81-phan
 
     test-1_39:
       - mwgate-node20
@@ -2982,45 +2982,45 @@ projects:
     template:
       - name: extension-gate
     test:
-      - mediawiki-quibble-vendor-mysql-php74
-      - mediawiki-quibble-composertest-php74
-      - mediawiki-quibble-selenium-vendor-mysql-php74
+      - mediawiki-quibble-vendor-mysql-php81
+      - mediawiki-quibble-composertest-php81
+      - mediawiki-quibble-selenium-vendor-mysql-php81
       - mediawiki-quibble-apitests-vendor-php81
-      - mediawiki-core-php74-phan
+      - mediawiki-core-php81-phan
     php:
       # This is the diff between the optimised test-pipeline and the gate.
       #
       # The main quibble job that runs PHPUnit tests is:
-      #   mediawiki-quibble-vendor-mysql-php74
+      #   mediawiki-quibble-vendor-mysql-php81
       #
       # Alternate deps (composer instead of vendor)
-      - mediawiki-quibble-composer-mysql-php74
+      - mediawiki-quibble-composer-mysql-php81
       # Alternate db backends
-      - mediawiki-quibble-vendor-sqlite-php74
-      - mediawiki-quibble-vendor-postgres-php74
+      - mediawiki-quibble-vendor-sqlite-php81
+      - mediawiki-quibble-vendor-postgres-php81
       # Alternate php versions
       - mediawiki-quibble-vendor-mysql-php81
       - mediawiki-quibble-vendor-mysql-php82
       - mediawiki-quibble-vendor-mysql-php83
       # Standalone run for core-only changes
-      - quibble-vendor-mysql-php74-phpunit-standalone
+      - quibble-vendor-mysql-php81-phpunit-standalone
       # Phan for future version of PHP in Wikimedia production
       - mediawiki-core-php81-phan
     gate-and-submit:
-      - mediawiki-quibble-composer-mysql-php74
+      - mediawiki-quibble-composer-mysql-php81
       - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-vendor-mysql-php81
       - mediawiki-quibble-vendor-mysql-php82
       - mediawiki-quibble-vendor-mysql-php83
-      - mediawiki-quibble-composertest-php74
-      - mediawiki-quibble-selenium-vendor-mysql-php74
+      - mediawiki-quibble-composertest-php81
+      - mediawiki-quibble-selenium-vendor-mysql-php81
       - mediawiki-quibble-apitests-vendor-php81
-      - mediawiki-quibble-vendor-sqlite-php74
-      - mediawiki-quibble-vendor-postgres-php74
-      - mediawiki-core-php74-phan
+      - mediawiki-quibble-vendor-sqlite-php81
+      - mediawiki-quibble-vendor-postgres-php81
+      - mediawiki-core-php81-phan
       - mediawiki-core-php81-phan
       # Standalone run for core-only changes
-      - quibble-vendor-mysql-php74-phpunit-standalone
+      - quibble-vendor-mysql-php81-phpunit-standalone
 
     test-1_39:
       - mediawiki-quibble-composer-mysql-php81
@@ -3128,14 +3128,14 @@ projects:
       - name: extension-gate
       - name: extension-apitests
     test:
-      - mwgate-composer-php74
-      - mediawiki-quibble-vendor-mysql-php74
-      - mediawiki-quibble-selenium-vendor-mysql-php74
+      - mwgate-composer-php81
+      - mediawiki-quibble-vendor-mysql-php81
+      - mediawiki-quibble-selenium-vendor-mysql-php81
     php:
       - mwgate-composer-php81
       - mwgate-composer-php82
       - mwgate-composer-php83
-      - mediawiki-quibble-vendor-mysql-php81
+      - mediawiki-quibble-vendor-mysql-php74
       - mediawiki-quibble-vendor-mysql-php82
       - mediawiki-quibble-vendor-mysql-php83
     gate-and-submit:
@@ -3168,7 +3168,7 @@ projects:
       - mwgate-composer-php84
       - mediawiki-quibble-vendor-mysql-php84
       # New job in testing T74952 -- JDF 2022-10-14
-      - composer-php74-assert-lock
+      - composer-php81-assert-lock
       - mwgate-composer-php84
 
 #### MediaWiki skins ###########################################
@@ -4440,7 +4440,7 @@ projects:
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php84
-      - quibble-vendor-mysql-php74-selenium
+      - quibble-vendor-mysql-php81-selenium
 
   - name: mediawiki/extensions/DynamicSidebar
     template:
@@ -5618,12 +5618,12 @@ projects:
       # Special Catalyst helm test runner for WikiLambda end-to-end system check
       - wikilambda-catalyst-end-to-end
       # Using the job directly, not via template, as it won't pass on REL branches -- JDF 2025-01-07
-      - quibble-vendor-mysql-php74-phpunit-standalone
+      - quibble-vendor-mysql-php81-phpunit-standalone
     gate-and-submit:
       # Special Catalyst helm test runner for WikiLambda end-to-end system check; disabled whilst non-voting
       # - wikilambda-catalyst-end-to-end
       # Using the job directly, not via template, as it won't pass on REL branches -- JDF 2025-01-07
-      - quibble-vendor-mysql-php74-phpunit-standalone
+      - quibble-vendor-mysql-php81-phpunit-standalone
     postmerge:
       - mwext-doxygen-publish
       # NOTE: This is the 'wrong' publisher, but there's no JS extension
@@ -8775,8 +8775,6 @@ projects:
       - name: extension-apitests
       - name: commit-message-validator
     test:
-      - parsoidsvc-composer-package-php74
-      - quibble-composer-mysql-php74
       - parsoidsvc-composer-package-php81
       - quibble-composer-mysql-php81
     gate-and-submit:
