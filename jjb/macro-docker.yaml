@@ -34,7 +34,7 @@
               - ABORTED
             build-steps:
               - docker-run:
-                 image: 'docker-registry.wikimedia.org/buster:latest'
+                 image: 'docker-registry.wikimedia.org/bookworm:latest'
                  volumes:
                      $WORKSPACE: /workspace
                  entrypoint: /usr/bin/find
@@ -89,7 +89,7 @@
          set -eux
          mkdir -m 2777 -p "{dir}" || (ls -laF --color=always && false)
      - docker-run:
-        image: 'docker-registry.wikimedia.org/buster:latest'
+        image: 'docker-registry.wikimedia.org/bookworm:latest'
         volumes:
             $WORKSPACE: /workspace
         entrypoint: /usr/bin/find
