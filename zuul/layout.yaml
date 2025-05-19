@@ -1562,13 +1562,13 @@ project-templates:
       # - mwext-php81-phan
 
     test-wmf:
-      - quibble-vendor-mysql-php74
+      - quibble-vendor-mysql-php81
       - mwgate-node20
-      - mwext-php74-phan
+      - mwext-php81-phan
     gate-and-submit-wmf:
-      - quibble-vendor-mysql-php74
+      - quibble-vendor-mysql-php81
       - mwgate-node20
-      - mwext-php74-phan
+      - mwext-php81-phan
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -1886,13 +1886,13 @@ project-templates:
       # - mwext-php81-phan
 
     test-wmf:
-      - quibble-vendor-mysql-php74
+      - quibble-vendor-mysql-php81
       - mwgate-node20
-      - mwext-php74-phan
+      - mwext-php81-phan
     gate-and-submit-wmf:
-      - quibble-vendor-mysql-php74
+      - quibble-vendor-mysql-php81
       - mwgate-node20
-      - mwext-php74-phan
+      - mwext-php81-phan
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -2179,15 +2179,15 @@ project-templates:
       # - mwskin-php81-phan
 
     test-wmf:
-      - quibble-vendor-mysql-php74
-      - quibble-vendor-mysql-php74-selenium
+      - quibble-vendor-mysql-php81
+      - quibble-vendor-mysql-php81-selenium
       - mwgate-node20
-      - mwskin-php74-phan
+      - mwskin-php81-phan
     gate-and-submit-wmf:
-      - quibble-vendor-mysql-php74
-      - quibble-vendor-mysql-php74-selenium
+      - quibble-vendor-mysql-php81
+      - quibble-vendor-mysql-php81-selenium
       - mwgate-node20
-      - mwskin-php74-phan
+      - mwskin-php81-phan
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -3085,15 +3085,15 @@ projects:
       - mediawiki-core-php81-phan
 
     test-wmf:
-      - mediawiki-quibble-vendor-mysql-php74
-      - mediawiki-quibble-composertest-php74
+      - mediawiki-quibble-vendor-mysql-php81
+      - mediawiki-quibble-composertest-php81
       - mediawiki-quibble-apitests-vendor-php81
-      - mediawiki-core-php74-phan
+      - mediawiki-core-php81-phan
     gate-and-submit-wmf:
-      - mediawiki-quibble-vendor-mysql-php74
-      - mediawiki-quibble-composertest-php74
+      - mediawiki-quibble-vendor-mysql-php81
+      - mediawiki-quibble-composertest-php81
       - mediawiki-quibble-apitests-vendor-php81
-      - mediawiki-core-php74-phan
+      - mediawiki-core-php81-phan
 
     test-fundraising:
       - mwgate-composer-php82
@@ -3148,11 +3148,11 @@ projects:
       - mediawiki-quibble-vendor-mysql-php81
       - mediawiki-quibble-vendor-mysql-php82
       - mediawiki-quibble-vendor-mysql-php83
-      - mediawiki-quibble-selenium-vendor-mysql-php74
+      - mediawiki-quibble-selenium-vendor-mysql-php81
     gate-and-submit-wmf:
-      - mwgate-composer-php74
-      - mediawiki-quibble-vendor-mysql-php74
-      - mediawiki-quibble-selenium-vendor-mysql-php74
+      - mwgate-composer-php81
+      - mediawiki-quibble-vendor-mysql-php81
+      - mediawiki-quibble-selenium-vendor-mysql-php81
       - mediawiki-quibble-apitests-vendor-php81
 
     # No CI support for mediawiki/vendor on release branches, folks should
