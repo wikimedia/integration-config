@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # jjb-diff: compare generated Jenkins jobs against HEAD^
 #

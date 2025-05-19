@@ -1,4 +1,5 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
+set -e
 
 # JJB is incompatible with Python 3.12+
 # https://www.mediawiki.org/wiki/Continuous_integration/Jenkins_job_builder#Troubleshooting
