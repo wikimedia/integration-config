@@ -26,12 +26,12 @@
          workdir: /src/mediawiki/tools/codesniffer
          args: 'install --ansi --no-progress --prefer-dist --profile --no-dev'
      - docker-run-with-log-cache-src:
-         image: 'docker-registry.wikimedia.org/buster:latest'
+         image: docker-registry.wikimedia.org/bookworm:latest
          entrypoint: /bin/bash
          options: '--user=nobody'
          args: '-c "mkdir -p /src/vendor/mediawiki"'
      - docker-run-with-log-cache-src:
-         image: 'docker-registry.wikimedia.org/buster:latest'
+         image: docker-registry.wikimedia.org/bookworm:latest
          entrypoint: /bin/mv
          options: '--user=nobody'
          args: '/src/mediawiki/tools/codesniffer /src/vendor/mediawiki/mediawiki-codesniffer'
