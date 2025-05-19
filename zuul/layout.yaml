@@ -1467,8 +1467,7 @@ project-templates:
     gate-and-submit-l10n:
       - mediawiki-i18n-check
     experimental:
-      - mwext-php74-phan
-      - quibble-composer-mysql-php74
+      - mwext-php81-phan
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1574,9 +1573,9 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-vendor-sqlite-php74
-      - quibble-vendor-postgres-php74
-      - quibble-vendor-mysql-php84
+      - quibble-vendor-sqlite-php81
+      - quibble-vendor-postgres-php81
+      - quibble-vendor-mysql-php81
       - mwgate-node22
 
   - name: extension-quibble-php81-or-later
@@ -1751,8 +1750,8 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-composer-sqlite-php74
-      - quibble-composer-postgres-php74
+      - quibble-composer-sqlite-php81
+      - quibble-composer-postgres-php81
       - quibble-composer-mysql-php84
       - mwgate-node22
 
@@ -1809,8 +1808,8 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-composer-sqlite-php74
-      - quibble-composer-postgres-php74
+      - quibble-composer-sqlite-php81
+      - quibble-composer-postgres-php81
       - quibble-composer-mysql-php84
       - mwext-bluespice-node22
 
@@ -1898,9 +1897,9 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-vendor-mysql-php74-selenium
-      - quibble-vendor-sqlite-php74
-      - quibble-vendor-postgres-php74
+      - quibble-vendor-mysql-php81-selenium
+      - quibble-vendor-sqlite-php81
+      - quibble-vendor-postgres-php81
       - quibble-vendor-mysql-php84
       - mwgate-node22
 
@@ -1978,8 +1977,8 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-composer-sqlite-php74
-      - quibble-composer-postgres-php74
+      - quibble-composer-sqlite-php81
+      - quibble-composer-postgres-php81
       - quibble-composer-mysql-php84
       - mwext-php81-phan
       - mwgate-node22
@@ -2281,8 +2280,8 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-composer-sqlite-php74
-      - quibble-composer-postgres-php74
+      - quibble-composer-sqlite-php81
+      - quibble-composer-postgres-php81
       - quibble-composer-mysql-php84
       - mwgate-node22
 
@@ -3120,7 +3119,7 @@ projects:
       - mediawiki-core-doxygen-publish
     experimental:
       - mediawiki-quibble-vendor-mysql-php84
-      - mwgate-composer-php74
+      - mwgate-composer-php81
       - mwgate-node20
       - mwgate-node22
 
@@ -3238,7 +3237,7 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
     experimental:
-      - quibble-composer-mysql-php74
+      - quibble-composer-mysql-php81
     postmerge:
       - mwext-doxygen-publish
 
@@ -4437,7 +4436,6 @@ projects:
       - mwgate-composer-php81
       - mwext-php81-phan
       # These are the remaining parts of extension-quibble
-      - quibble-vendor-mysql-php74
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
@@ -5529,9 +5527,7 @@ projects:
       - mwext-doxygen-publish
     experimental:
       - mwext-phpunit-coverage
-      - quibble-vendor-postgres-php74
-      - wikibase-client-php74
-      - wikibase-repo-php74
+      - quibble-vendor-postgres-php81
       - wikibase-client-php83
       - wikibase-repo-php83
 
