@@ -1054,6 +1054,9 @@ SportsTeams:
 StandardDialogs:
  - OOJSPlus
 
+StructuredNavigation:
+ - CodeEditor
+
 StopForumSpam:
  - AbuseFilter
 
