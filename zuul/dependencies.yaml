@@ -736,6 +736,7 @@ IPInfo:
  - BetaFeatures
  - MobileFrontend
  - CheckUser
+ - GlobalPreferences
 
 IPReputation:
  - AbuseFilter
