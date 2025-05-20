@@ -31,14 +31,14 @@ def main():
                              'leaving cumulative metrics',
                         action='store_true')
     parser.add_argument('--save', help='Location to save to, '
-                                       'otherwise will overrite clover.xml')
+                                       'otherwise will overwrite clover.xml')
     args = parser.parse_args()
     tree = etree.parse(args.clover)
     root = tree.getroot()
-    project = root.getchildren()[0]
+    project = list(root)[0]
     assert project.tag == 'project'
     if args.remove_full_info:
-        for child in project.getchildren():
+        for child in list(project):
             # All we want to keep is the final <metrics> tag
             if child.tag != 'metrics':
                 project.remove(child)
