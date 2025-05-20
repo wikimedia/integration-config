@@ -1,3 +1,9 @@
+quibble-bullseye-php81-coverage (1.14.1-s1) wikimedia; urgency=high
+
+   Upgrade mediawiki/phpunit-patch-coverage to 0.0.15
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 20 May 2025 10:24:28 -0400
+
 quibble-bullseye-php81-coverage (1.14.1) wikimedia; urgency=high
 
    Initial release, forked from quibble-bullseye-php74-coverage.
