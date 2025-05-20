@@ -716,7 +716,7 @@
         dir: 'cover'
     - docker-castor-load
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81-coverage:1.14.1-s1
+        image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81-coverage:1.14.1-s2
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -814,7 +814,7 @@
     - docker-wipe-dir:
         dir: 'cover'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81-coverage:1.14.1-s1
+        image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81-coverage:1.14.1-s2
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -898,7 +898,7 @@
 
 - job-group:
     name: mediawiki-coverage-jobs
-    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81-coverage:1.14.1-s1
+    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81-coverage:1.14.1-s2
     entrypoint: quibble-with-supervisord
     jobs:
         - mwcore-phpunit-coverage-patch:
