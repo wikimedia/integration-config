@@ -1127,7 +1127,7 @@ class TestZuulScheduler(unittest.TestCase):
             {}, errors, "\nNon-MediaWiki projects must not have jobs "
                         "in common with the mediawiki queue.")
 
-    def test_mwcore_switch_to_quibble(self):
+    def test_mwcore_master_branch_has_expected_values(self):
         expected_test = {
             'mediawiki-core-php81-phan': True,
             'mediawiki-quibble-vendor-mysql-php81': True,
@@ -1205,6 +1205,58 @@ class TestZuulScheduler(unittest.TestCase):
                     job.name, expected_gate[job.name],
                     job.changeMatches(change))
                 )
+
+    def test_mwcore_release_branches_have_expected_values(self):
+
+        # Note that these are checked for 'prefixes', not exact matches
+        expected_job_prefices = [
+            # A regular quibble job
+            'mediawiki-quibble-composer-mysql-php',
+            # A composer test job (PHP linting)
+            'mediawiki-quibble-composertest-php',
+            # A 'mediawiki' selenium test (bundled extensions browser testing)
+            'mediawiki-quibble-selenium-composer-mysql-php',
+            # A phan job (PHP static analysis)
+            'mediawiki-core-php81-phan',
+            # A node job (JS linting)
+            'mwgate-node20',
+        ]
+
+        for (desc, config) in MEDIAWIKI_VERSIONS.iteritems():
+            change = zuul.model.Change('mediawiki/core')
+            change.branch = config['branch']
+
+            if config['pipeline-suffix'] in ['wmf', 'fundraising']:
+                # Ignore special branches, this is just for release branches
+                continue
+
+            test_pipeline = 'test-%s' % config['pipeline-suffix']
+            job_tree = [t for (p, t) in self.getPipeline(test_pipeline).job_trees.iteritems()
+                        if p.name == 'mediawiki/core'][0]
+            test_jobs = job_tree.getJobs()
+
+            for expected_job in expected_job_prefices:
+                self.assertTrue(
+                    any([job for job in test_jobs
+                        if (
+                            job.name.startswith(expected_job)
+                        )]),
+                    'MW pipeline %s must have a %s job'
+                    % (test_pipeline, expected_job))
+
+            gate_pipeline = 'gate-and-submit-%s' % config['pipeline-suffix']
+            job_tree = [t for (p, t) in self.getPipeline(gate_pipeline).job_trees.iteritems()
+                        if p.name == 'mediawiki/core'][0]
+            gate_jobs = job_tree.getJobs()
+
+            for expected_job in expected_job_prefices:
+                self.assertTrue(
+                    any([job for job in gate_jobs
+                        if (
+                            job.name.startswith(expected_job)
+                        )]),
+                    'MW pipeline %s must have a %s job'
+                    % (gate_pipeline, expected_job))
 
     def test_gated_extension_run_tests_on_feature_branch(self):
         repo = 'mediawiki/extensions/CirrusSearch'
