@@ -3027,6 +3027,7 @@ projects:
       - mediawiki-quibble-composertest-php81
       - mediawiki-quibble-selenium-composer-mysql-php81
       - mediawiki-core-php81-phan
+      - mwgate-node20
     gate-and-submit-1_39:
       - mediawiki-quibble-composer-mysql-php74
       - mediawiki-quibble-composer-mysql-php81
@@ -3037,12 +3038,14 @@ projects:
       - mediawiki-quibble-composer-sqlite-php81
       - mediawiki-quibble-composer-postgres-php81
       - mediawiki-core-php81-phan
+      - mwgate-node20
 
     test-1_42:
       - mediawiki-quibble-composer-mysql-php81
       - mediawiki-quibble-composertest-php81
       - mediawiki-quibble-selenium-composer-mysql-php81
       - mediawiki-core-php81-phan
+      - mwgate-node20
     gate-and-submit-1_42:
       - mediawiki-quibble-composer-mysql-php81
       - mediawiki-quibble-composertest-php81
@@ -3052,12 +3055,14 @@ projects:
       - mediawiki-quibble-composer-mysql-php82
       - mediawiki-quibble-composer-mysql-php83
       - mediawiki-core-php81-phan
+      - mwgate-node20
 
     test-1_43:
       - mediawiki-quibble-composer-mysql-php81
       - mediawiki-quibble-composertest-php81
       - mediawiki-quibble-selenium-composer-mysql-php81
       - mediawiki-core-php81-phan
+      - mwgate-node20
     gate-and-submit-1_43:
       - mediawiki-quibble-composer-mysql-php81
       - mediawiki-quibble-composertest-php81
@@ -3067,12 +3072,14 @@ projects:
       - mediawiki-quibble-composer-mysql-php82
       - mediawiki-quibble-composer-mysql-php83
       - mediawiki-core-php81-phan
+      - mwgate-node20
 
     test-1_44:
       - mediawiki-quibble-composer-mysql-php81
       - mediawiki-quibble-composertest-php81
       - mediawiki-quibble-selenium-composer-mysql-php81
       - mediawiki-core-php81-phan
+      - mwgate-node20
     gate-and-submit-1_44:
       - mediawiki-quibble-composer-mysql-php81
       - mediawiki-quibble-composertest-php81
@@ -3082,6 +3089,7 @@ projects:
       - mediawiki-quibble-composer-mysql-php82
       - mediawiki-quibble-composer-mysql-php83
       - mediawiki-core-php81-phan
+      - mwgate-node20
 
     test-wmf:
       - mediawiki-quibble-vendor-mysql-php81
