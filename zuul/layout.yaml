@@ -9403,7 +9403,7 @@ projects:
 
   - name: labs/tools/coverme
     template:
-      - name: composer-test-php74-to-php84
+      - name: composer-test-php82-to-php84
 
   - name: labs/tools/dump-torrents
     template:
