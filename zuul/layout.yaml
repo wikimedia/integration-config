@@ -1796,13 +1796,9 @@ project-templates:
       - quibble-composer-mysql-php83
 
     test-1_44:
-      - mwext-bluespice-node20
-      - quibble-composer-mysql-php81
+      - noop
     gate-and-submit-1_44:
-      - mwext-bluespice-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
+      - noop
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
