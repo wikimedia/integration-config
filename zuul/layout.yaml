@@ -1781,6 +1781,7 @@ project-templates:
       - mwext-bluespice-node20
       - quibble-composer-mysql-php81
 
+    # Note: BlueSpice does not support non-LTS branches, so we set them as no-ops.
     test-1_42:
       - noop
     gate-and-submit-1_42:
@@ -1795,6 +1796,7 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
 
+    # Note: BlueSpice does not support non-LTS branches, so we set them as no-ops.
     test-1_44:
       - noop
     gate-and-submit-1_44:
