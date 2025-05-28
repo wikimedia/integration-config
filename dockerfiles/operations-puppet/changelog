@@ -1,3 +1,9 @@
+operations-puppet (0.9.7) wikimedia; urgency=medium
+
+  * Rebuild to update gems to latest versions
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 28 May 2025 15:32:21 +0200
+
 operations-puppet (0.9.6) wikimedia; urgency=medium
 
   * Tweak run.sh to remove spam from capture_logs
