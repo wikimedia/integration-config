@@ -1263,7 +1263,6 @@ WikimediaEvents:
  - IPReputation
  - LoginNotify
  - OATHAuth
- - MetricsPlatform
 
 WikimediaMessages:
  - cldr
