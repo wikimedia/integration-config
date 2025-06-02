@@ -16,14 +16,11 @@
     triggers:
      - zuul
     builders:
-      - docker-castor-load
-      - docker-log-dir
-      - docker-src-dir
-      # .gitsubmodules uses relative url, we need to point to upstream gerrit
-      # repository to fetch them which is handled by the repo build script.
-      - docker-ci-src-setup-simple:
+      - setup:
+          # .gitsubmodules uses relative url, we need to point to upstream
+          # gerrit repository to fetch them which is handled by the repo build
+          # script.
           submodules: false
-
       - docker-run-with-log-cache-src:
           image: docker-registry.wikimedia.org/releng/gerrit:1.5.0-s2
           entrypoint: /src/wmf-build.py
