@@ -39,9 +39,7 @@
     triggers:
       - zuul
     builders:
-      - docker-castor-load
-      - docker-src-dir
-
+      - setup
       # Ensure /log files are writable before deleting - T320251
       - shell: |
           mkdir -m 2777 -p "log"
@@ -66,6 +64,8 @@
           args: 'test {test_target}'
           volumes:
               /srv/git: /srv/git:ro
+    publishers:
+      - teardown
 
 - job-template: &job_template_maven-java8
     name: '{name}-maven-java8'
