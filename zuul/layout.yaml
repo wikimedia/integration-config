@@ -6451,6 +6451,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/CookieConsent
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/CookieWarning
     template:
       - name: extension-quibble-composer
