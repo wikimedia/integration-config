@@ -62,8 +62,20 @@
 - builder:
     name: docker-cache-dir
     builders:
-     - shell: |
-        mkdir -m 2777 -p cache || (ls -laF --color=always && false)
+     # Create a cache directory with same ownership as what we use in container
+     # (nobody:nogroup) - T282893, T188488
+     - docker-run:
+        image: docker-registry.wikimedia.org/bookworm:latest
+        volumes:
+            $WORKSPACE: /workspace
+        entrypoint: /usr/bin/install
+        options: >-
+          --user=root
+        args: >-
+          --directory
+          --owner=nobody
+          --group=nogroup
+          /workspace/cache
 
 # Create a log directory that will be
 # mounted into a container with --volume
@@ -227,11 +239,12 @@
 - builder:
     name: docker-run-with-log-cache-src
     builders:
+     - docker-cache-dir
      - shell: |
         #!/bin/bash -eu
         set -x
         chmod 2777 src
-        mkdir -m 2777 -p cache log
+        mkdir -m 2777 -p log
      - docker-run:
         entrypoint: >-
           {obj:entrypoint|}
@@ -273,10 +286,7 @@
 - builder:
     name: docker-ci-src-setup-simple
     builders:
-     - shell: |
-        #!/bin/bash -eu
-        set -x
-        mkdir -m 2777 -p "cache"
+     - docker-cache-dir
      - docker-run: !j2-yaml: >-
          options:
            {%- if submodules is defined and not submodules %}
