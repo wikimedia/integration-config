@@ -3952,12 +3952,6 @@ projects:
     experimental:
       - gerrit-node22
 
-  - name: operations/software/gerrit/plugins/events-wikimedia
-    test:
-      - gerrit-events-wikimedia-bazel
-    gate-and-submit:
-      - gerrit-events-wikimedia-bazel
-
   - name: operations/software/homer
     test:
       - homer-tox
@@ -12189,6 +12183,10 @@ projects:
   - name: operations/software/gerrit/plugins/barricade
     template:
       - name: archived
+
+  - name: operations/software/gerrit/plugins/events-wikimedia
+    template:
+      - name: archived # T304947
 
   - name: operations/software/hhvm_exporter
     template:
