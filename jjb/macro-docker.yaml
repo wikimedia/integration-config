@@ -239,12 +239,6 @@
 - builder:
     name: docker-run-with-log-cache-src
     builders:
-     - docker-cache-dir
-     - shell: |
-        #!/bin/bash -eu
-        set -x
-        chmod 2777 src
-        mkdir -m 2777 -p log
      - docker-run:
         entrypoint: >-
           {obj:entrypoint|}
