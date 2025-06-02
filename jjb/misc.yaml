@@ -151,10 +151,3 @@
     name: 'wikimedia-cz-events'
     jobs:
         - '{name}-tox'
-
-- project:
-    name: gerrit-events-wikimedia
-    jobs:
-        - '{name}-bazel':
-            build_target: events-wikimedia
-            test_target: events-wikimedia_tests

@@ -33,40 +33,6 @@
          artifacts: 'log/*.war, log/*.jar, log/*.js'
       - teardown
 
-- job-template:
-    name: '{name}-bazel'
-    node: Docker
-    triggers:
-      - zuul
-    builders:
-      - setup
-      # Ensure /log files are writable before deleting - T320251
-      - shell: |
-          mkdir -m 2777 -p "log"
-      - docker-run:
-          image: docker-registry.wikimedia.org/bullseye:latest
-          volumes:
-              log:
-          entrypoint: /bin/chmod
-          args: >-
-              -R u+w /log
-
-      - docker-log-dir
-      - docker-ci-src-setup-simple
-      - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.5.0-s2
-          args: '{build_target}'
-          volumes:
-              /srv/git: /srv/git:ro
-      - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.5.0-s2
-          entrypoint: bazelisk
-          args: 'test {test_target}'
-          volumes:
-              /srv/git: /srv/git:ro
-    publishers:
-      - teardown
-
 - job-template: &job_template_maven-java8
     name: '{name}-maven-java8'
     node: Docker
