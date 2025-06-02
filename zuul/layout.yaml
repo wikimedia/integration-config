@@ -3380,6 +3380,10 @@ projects:
     template:
       - name: skin-quibble
 
+  - name: mediawiki/skins/SimpleText
+    template:
+      - name: skin-quibble
+
   - name: mediawiki/skins/Schulenburg
     template:
       - name: skin-quibble
