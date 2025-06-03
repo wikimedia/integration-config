@@ -1,4 +1,6 @@
 - hosts: all
   roles:
     - add-build-sshkey
-    - prepare-workspace-git
+    # Used instead of prepare-workspace-git. Uses the OpenShift client which
+    # has a "synchronize" command. It is provided by the zuul-executor image
+    - prepare-workspace-openshift
