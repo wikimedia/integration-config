@@ -9857,11 +9857,10 @@ projects:
       - generic-node24-browser
 
   - name: wikimedia/portals/deploy
-    template:
-     - name: node20-browser
-    experimental:
-      - generic-node22-browser
-      - generic-node24-browser
+    test:
+      - noop
+    gate-and-submit:
+      - noop
 
   - name: wikimedia/toolhub
     test:
