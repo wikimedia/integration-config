@@ -1132,6 +1132,9 @@ TwoColConflict:
  - EventLogging
  - WikiEditor
 
+UnifiedTaskOverview:
+ - OOJSPlus
+
 UniversalLanguageSelector:
  - EventLogging
 
