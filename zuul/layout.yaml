@@ -2423,6 +2423,14 @@ project-templates:
       - generic-node22
       - generic-node24
 
+  - name: node20-to-node24
+    test:
+      - generic-node24
+    gate-and-submit:
+      - generic-node20
+      - generic-node22
+      - generic-node24
+
   - name: node20-browser
     test:
       - generic-node20-browser
@@ -8831,10 +8839,7 @@ projects:
 
   - name: mediawiki/services/parsoid/testreduce
     template:
-     - name: node20
-    experimental:
-      - generic-node22
-      - generic-node24
+     - name: node20-to-node24
 
   - name: mediawiki/services/poolcounter
     template:
