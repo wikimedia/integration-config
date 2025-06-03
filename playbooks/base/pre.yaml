@@ -4,3 +4,7 @@
     # Used instead of prepare-workspace-git. Uses the OpenShift client which
     # has a "synchronize" command. It is provided by the zuul-executor image
     - prepare-workspace-openshift
+    # Standard output directories
+    - ensure-output-dirs
+    # Copies Ansible inventory to zuul-info/
+    - log-inventory
