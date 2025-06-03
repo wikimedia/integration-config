@@ -8788,10 +8788,7 @@ projects:
 
   - name: mediawiki/services/texvcjs
     template:
-      - name: node20
-    experimental:
-      - generic-node22
-      - generic-node24
+      - name: node20-to-node24
 
   - name: mediawiki/services/mobileapps
     template:
