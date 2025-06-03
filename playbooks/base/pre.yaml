@@ -1,9 +1,16 @@
-- hosts: all
+- name: Create inventory log
+  hosts: localhost
   roles:
+    # Copies Ansible inventory to zuul-info/
+    - log-inventory
+
+- name: Setup Zuul environment
+  hosts: all
+  roles:
+    # Start the streaming log daemon on the remote node
+    - start-zuul-console
     # Used instead of prepare-workspace-git. Uses the OpenShift client which
     # has a "synchronize" command. It is provided by the zuul-executor image
     - prepare-workspace-openshift
     # Standard output directories
     - ensure-output-dirs
-    # Copies Ansible inventory to zuul-info/
-    - log-inventory
