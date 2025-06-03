@@ -80,6 +80,8 @@
                     image: docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1
                 - node22:
                     image: docker-registry.wikimedia.org/releng/node22-test:22.15.0-s1
+                - node24:
+                    image: docker-registry.wikimedia.org/releng/node24-test:24.1.0
             name:
                - gerrit
 

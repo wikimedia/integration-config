@@ -50,6 +50,10 @@
                     docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php81-composer:22.15.0-s1
                 - node22-plus-php83:
                     docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.15.0-s1
+                - node24-plus-php81:
+                    docker_image: docker-registry.wikimedia.org/releng/node24-test-browser-php81-composer:24.1.0
+                - node24-plus-php83:
+                    docker_image: docker-registry.wikimedia.org/releng/node24-test-browser-php83-composer:24.1.0
 
 - project:
     name: parsoidsvc
