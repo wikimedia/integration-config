@@ -1578,6 +1578,7 @@ project-templates:
       - quibble-vendor-postgres-php81
       - quibble-vendor-mysql-php81
       - mwgate-node22
+      - mwgate-node24
 
   - name: extension-quibble-php81-or-later
     test:
@@ -1663,6 +1664,7 @@ project-templates:
       - quibble-vendor-mysql-php84
       - mwext-php81-phan
       - mwgate-node22
+      - mwgate-node24
 
   # Special job template that runs composer rather than than relying
   # on mediawiki/vendor for quibble.
@@ -1755,6 +1757,7 @@ project-templates:
       - quibble-composer-postgres-php81
       - quibble-composer-mysql-php84
       - mwgate-node22
+      - mwgate-node24
 
   # Special job template for BlueSpice extensions, that:
   # - only runs for LTS and master branches,
@@ -1811,6 +1814,7 @@ project-templates:
       - quibble-composer-postgres-php81
       - quibble-composer-mysql-php84
       - mwext-bluespice-node22
+      - mwext-bluespice-node24
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
@@ -1901,6 +1905,7 @@ project-templates:
       - quibble-vendor-postgres-php81
       - quibble-vendor-mysql-php84
       - mwgate-node22
+      - mwgate-node24
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
@@ -1981,6 +1986,7 @@ project-templates:
       - quibble-composer-mysql-php84
       - mwext-php81-phan
       - mwgate-node22
+      - mwgate-node24
 
   # Special job template that runs the "standalone" jobs - T225068
   - name: extension-quibble-only-standalone
@@ -2195,6 +2201,7 @@ project-templates:
       - quibble-vendor-postgres-php81
       - quibble-vendor-mysql-php84
       - mwgate-node22
+      - mwgate-node24
 
   - name: skin-quibble-composer
     test:
@@ -2283,6 +2290,7 @@ project-templates:
       - quibble-composer-postgres-php81
       - quibble-composer-mysql-php84
       - mwgate-node22
+      - mwgate-node24
 
   - name: skin-coverage
     postmerge:
@@ -2299,6 +2307,7 @@ project-templates:
       - mwext-node20-docs-publish
     experimental:
       - mwext-node22-rundoc
+      - mwext-node24-rundoc
 
   - name: composer-test-php74-to-php84
     test:
@@ -2412,6 +2421,7 @@ project-templates:
       - generic-node20
     experimental:
       - generic-node22
+      - generic-node24
 
   - name: node20-browser
     test:
@@ -2420,6 +2430,7 @@ project-templates:
       - generic-node20-browser
     experimental:
       - generic-node22-browser
+      - generic-node24-browser
 
   - name: node20-browser-webdriver
     test:
@@ -2428,6 +2439,7 @@ project-templates:
       - generic-node20-browser-webdriver
     experimental:
       - generic-node22-browser-webdriver
+      - generic-node24-browser-webdriver
 
   - name: node20-browser-for-MW-branches
     test:
@@ -2456,6 +2468,7 @@ project-templates:
       - generic-node20-browser
     experimental:
       - generic-node22-browser
+      - generic-node24-browser
 
   - name: node20-rundoc
     test:
@@ -2464,6 +2477,7 @@ project-templates:
       - generic-node20-rundoc
     experimental:
       - generic-node22-rundoc
+      - generic-node24-rundoc
 
   - name: node20-rundoc-for-MW-branches
     test:
@@ -2492,6 +2506,7 @@ project-templates:
       - generic-node20-rundoc
     experimental:
       - generic-node22-rundoc
+      - generic-node24-rundoc
 
   - name: mwgate-npm
     test:
@@ -2516,6 +2531,7 @@ project-templates:
       - mwgate-node20
     experimental:
       - mwgate-node22
+      - mwgate-node24
 
   - name: tox
     test:
@@ -3127,8 +3143,8 @@ projects:
     experimental:
       - mediawiki-quibble-vendor-mysql-php84
       - mwgate-composer-php81
-      - mwgate-node20
       - mwgate-node22
+      - mwgate-node24
 
   - name: mediawiki/vendor
     template:
@@ -3951,6 +3967,7 @@ projects:
       - gerrit-node20
     experimental:
       - gerrit-node22
+      - gerrit-node24
 
   - name: operations/software/homer
     test:
@@ -4444,6 +4461,7 @@ projects:
       - mwext-php82-phan
     experimental:
       - mwgate-node22
+      - mwgate-node24
       - mwgate-composer-php81
       - mwext-php81-phan
       # These are the remaining parts of extension-quibble
@@ -8765,6 +8783,7 @@ projects:
       - name: node20
     experimental:
       - generic-node22
+      - generic-node24
 
   - name: mediawiki/services/mobileapps
     template:
@@ -8815,6 +8834,7 @@ projects:
      - name: node20
     experimental:
       - generic-node22
+      - generic-node24
 
   - name: mediawiki/services/poolcounter
     template:
@@ -8971,6 +8991,7 @@ projects:
     experimental:
       - generic-node20
       - generic-node22
+      - generic-node24
 
   - name: analytics/geowiki
     template:
@@ -9151,6 +9172,8 @@ projects:
     experimental:
       - wikipeg-special-node22-plus-php81-composer
       - wikipeg-special-node22-plus-php83-composer
+      - wikipeg-special-node24-plus-php81-composer
+      - wikipeg-special-node24-plus-php83-composer
 
   - name: WrappedString
     template:
@@ -9831,12 +9854,14 @@ projects:
       - trigger-wikimedia-portals-pipeline-publish
     experimental:
       - generic-node22-browser
+      - generic-node24-browser
 
   - name: wikimedia/portals/deploy
     template:
      - name: node20-browser
     experimental:
       - generic-node22-browser
+      - generic-node24-browser
 
   - name: wikimedia/toolhub
     test:
@@ -9952,6 +9977,7 @@ projects:
       - generic-node20-docs-publish
     experimental:
       - oojs-core-node22-runjenkins
+      - oojs-core-node24-runjenkins
 
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
@@ -9972,6 +9998,8 @@ projects:
     experimental:
       - ooui-node22-plus-php81-runjenkins
       - ooui-node22-plus-php83-runjenkins
+      - ooui-node24-plus-php81-runjenkins
+      - ooui-node24-plus-php83-runjenkins
 
   - name: jsdoc/wmf-theme
     template:
