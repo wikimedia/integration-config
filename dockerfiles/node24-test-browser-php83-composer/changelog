@@ -1,0 +1,5 @@
+node24-test-browser-php83-composer (24.1.0) wikimedia; urgency=high
+
+   Initial image, with Node 24.1.0 and npm 11.3.0.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue,  3 Jun 2025 11:30:22 -0400

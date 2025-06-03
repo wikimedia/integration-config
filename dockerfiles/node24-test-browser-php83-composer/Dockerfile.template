@@ -1,0 +1,70 @@
+# Docker image with nodejs, jsduck, and browsers installed, plus composer.
+
+FROM {{ "composer-scratch" | image_tag }} as composer
+
+FROM {{ "sury-php" | image_tag }} as sury
+
+FROM {{ "php-ast" | image_tag }} as ast
+
+FROM {{ "node24-test-browser" | image_tag }}
+
+# Install composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+# Grab our composer helper scripts
+COPY --from=composer /srv/composer /srv/composer
+
+USER root
+
+## START: O, my kingdom for multiple inheritance!
+# Copied from the sury image; keep this synchronised!
+
+COPY --from=sury /etc/apt/trusted.gpg.d/php.gpg /etc/apt/trusted.gpg.d/php.gpg
+# Sury uses https and requires lsb per https://packages.sury.org/php/README.txt
+RUN {{ "apt-transport-https" | apt_install }} && \
+    echo "deb https://packages.sury.org/php/ bookworm main" > /etc/apt/sources.list.d/php.list
+
+# zip is needed for composer to install things from dist
+# others are libraries/MediaWiki related
+{% set packages|replace('\n', ' ') -%}
+php8.3-ast
+php8.3-cli
+php8.3-zip
+php8.3-bcmath
+php8.3-curl
+php8.3-dba
+php8.3-gd
+php8.3-gmp
+php8.3-intl
+php8.3-mbstring
+php8.3-redis
+php8.3-sqlite3
+php8.3-xml
+zip
+unzip
+{%- endset -%}
+
+RUN {{ packages | apt_install }}
+
+RUN {{ "jq" | apt_install }}
+
+# This will override the already-existing ast
+COPY --from=ast /usr/lib/php/20230831/ast.so /usr/lib/php/20230831/ast.so
+COPY --from=ast /srv/20-ast.ini /etc/php/8.3/cli/conf.d/20-ast.ini
+
+# phantomjs crashes when there is no DISPLAY
+ENV QT_QPA_PLATFORM=offscreen
+
+# HACK: We manually copy across composer, like all the other images that need it
+# Install composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+# Grab our composer helper scripts
+COPY --from=composer /srv/composer /srv/composer
+
+## END: O, my kingdom for multiple inheritance!
+
+USER nobody
+
+WORKDIR /src
+ENTRYPOINT "echo 'This image does not define an entrypoint, you have to define one yourself'; exit 1"
