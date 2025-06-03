@@ -3969,11 +3969,10 @@ projects:
   - name: operations/software/gerrit
     test:
       - gerrit
-      - gerrit-node20
+      - gerrit-node24
     gate-and-submit:
       - gerrit
       - gerrit-node20
-    experimental:
       - gerrit-node22
       - gerrit-node24
 
