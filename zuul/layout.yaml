@@ -9966,17 +9966,16 @@ projects:
 
   - name: oojs/core
     test:
-      - oojs-core-node20-runjenkins
+      - oojs-core-node24-runjenkins
     gate-and-submit:
       - oojs-core-node20-runjenkins
+      - oojs-core-node22-runjenkins
+      - oojs-core-node24-runjenkins
     postmerge:
       - generic-node20-docs-publish
       - generic-node20-browser-coverage-publish
     publish:
       - generic-node20-docs-publish
-    experimental:
-      - oojs-core-node22-runjenkins
-      - oojs-core-node24-runjenkins
 
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
