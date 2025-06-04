@@ -8191,6 +8191,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/Springboard
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/StaffEdits
     template:
       - name: extension-quibble
