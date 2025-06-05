@@ -130,7 +130,7 @@ def test_quibble_images_version_is_in_sync():
 
     # Get Quibble version installed by pip
     base_dockerfile = os.path.join(
-        DOCKERFILES_DIR, 'quibble-buster/Dockerfile.template')
+        DOCKERFILES_DIR, 'quibble-bullseye/Dockerfile.template')
     quibble_version_re = re.compile(
         r'^ARG QUIBBLE_VERSION=([\.\d]+)$')
 
