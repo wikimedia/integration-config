@@ -10164,10 +10164,6 @@ projects:
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
-  - name: wikimedia-ui-base
-    template:
-      - name: node20
-
   - name: wikimedia/developer-portal
     test:
       - commit-message-validator
@@ -12355,6 +12351,10 @@ projects:
       - name: archived
 
   - name: wikimedia/wikimania-scholarships
+    template:
+      - name: archived
+
+  - name: wikimedia-ui-base
     template:
       - name: archived
 
