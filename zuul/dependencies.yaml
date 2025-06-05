@@ -1267,6 +1267,11 @@ WikimediaEvents:
  - LoginNotify
  - OATHAuth
 
+WikimediaMaintenance:
+ - CentralAuth
+ - CheckUser
+ - Echo
+
 WikimediaMessages:
  - cldr
 
