@@ -1,3 +1,9 @@
+mediawiki-phan-testrun (8.1.31) wikimedia; urgency=high
+
+   Migrate parent image from php74 to php81
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  5 Jun 2025 12:58:54 -0400
+
 mediawiki-phan-testrun (7.4.33) wikimedia; urgency=high
 
    Refresh for update in parent image php74:
