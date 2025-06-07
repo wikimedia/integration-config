@@ -255,7 +255,6 @@ DonationInterface:
 
 Echo:
  - CentralAuth
- - EventLogging
  - UserMerge
 
 ElectronPdfService:
