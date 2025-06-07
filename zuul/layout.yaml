@@ -7970,6 +7970,13 @@ projects:
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
 
+  # This extension is not a Semantic MediaWiki-related extension
+  # despite the name, but related to software semantic versioning
+  # hence separated from above
+  - name: mediawiki/extensions/SemanticVersion
+    template:
+      - name: extension-quibble-php81-or-later
+
   - name: mediawiki/extensions/SendGrid
     template:
       - name: extension-quibble-composer
