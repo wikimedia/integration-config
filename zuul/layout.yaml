@@ -2766,19 +2766,8 @@ projects:
 
   - name: mediawiki/tools/phan/SecurityCheckPlugin
     # FIXME: Use mediawiki-php-library?
-    # template:
-      # (T386570) Does not yet pass on PHP 8.4
-      # - name: composer-test-package-php81-to-php84
-    test:
-      - composer-package-php81
-      - composer-package-php82
-      - composer-package-php83
-    gate-and-submit:
-      - composer-package-php81
-      - composer-package-php82
-      - composer-package-php83
-    experimental:
-      - composer-package-php84
+    template:
+      - name: composer-test-package-php81-to-php84
     postmerge:
       - mw-tools-phan-demos-publish
       - phpunit-coverage-php81-publish
