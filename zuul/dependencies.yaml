@@ -82,7 +82,6 @@ AbuseFilter:
     - ConfirmEdit
     - Echo
     - EventLogging
-    - Renameuser
     - Scribunto
     - WikiEditor
 
@@ -1125,7 +1124,6 @@ CheckUser:
     - GrowthExperiments
     - IPInfo
     - MobileFrontend
-    - Renameuser
     - TorBlock
     - VisualEditor
 
@@ -2035,7 +2033,6 @@ QuizGame:
   dependencies:
     # no requirements in extension.json
     # extras
-    - Renameuser
     - SocialProfile
 
 RandomGameUnit:
@@ -2554,7 +2551,6 @@ WikiToLDAP:
     - LDAPProvider
     - PluggableAuth
     # extras
-    - Renameuser
     - UserMerge
 
 Wikibase:

@@ -44,7 +44,6 @@ AbuseFilter:
   - CommunityConfiguration
   - CentralAuth
   - Echo
-  - Renameuser
   - AntiSpoof
   - Scribunto
   - EventLogging
@@ -129,7 +128,6 @@ CentralAuth:
   - GlobalPreferences
   - MassMessage
   - MobileFrontend
-  - Renameuser
   - SecurePoll
   - TitleBlacklist
 
@@ -154,7 +152,6 @@ CheckUser:
   - EventLogging
  # HACK: This is no longer needed in master, but in REL1_44 and before
   - GuidedTour
-  - Renameuser
   - FlaggedRevs
   - GlobalBlocking
   - GlobalPreferences
@@ -345,7 +342,6 @@ GeoData:
 
 GlobalBlocking:
   - CentralAuth
-  - Renameuser
   - UserMerge
 
 GlobalPreferences:
@@ -411,9 +407,6 @@ Kartographer:
   - FlaggedRevs
   - GeoData
   - JsonConfig
-
-LiquidThreads:
-  - Renameuser
 
 LinkFilter:
   - Comments
@@ -562,7 +555,6 @@ PropertySuggester:
   - EventLogging
 
 QuizGame:
-  - Renameuser
   - SocialProfile
 
 # technically speaking PictureGame, PollNY & QuizGame are all dependencies,
@@ -864,7 +856,6 @@ WikiToLDAP:
   - LDAPAuthentication2
   - LDAPProvider
   - PluggableAuth
-  - Renameuser
   - UserMerge
 
 Wikisource:
