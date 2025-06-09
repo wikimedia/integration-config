@@ -1,11 +1,4 @@
 # Holds various projects under 'labs/'
-#
-- project:
-    name: 'labs-tools-heritage'
-    jobs:
-        - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.1-s1
-            build_timeout: 6  # T206913
 
 - job:
     name: 'cvnbot-dotnet-test'
@@ -23,10 +16,38 @@
     publishers:
      - docker-cleanup
 
+# This is the standard tox job for WMCS tools, unless they need something special.
+- project:
+    name: 'labs'
+    jobs:
+     - '{name}-tox'
+
 - project:
     name: 'labs-tools-Isa'
     jobs:
-       - '{name}-tox'
+        - '{name}-tox'
+
+- project:
+    name: 'labs-tools-commons-mass-description'
+    jobs:
+        - '{name}-tox'
+
+- project:
+    name: 'labs-tools-harvesting-data-refinery'
+    jobs:
+        - '{name}-tox'
+
+- project:
+    name: 'labs-tools-heritage'
+    jobs:
+        - '{name}-tox':
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.1-s1
+            build_timeout: 6  # T206913
+
+- project:
+    name: 'labs-tools-ipwatcher'
+    jobs:
+        - '{name}-tox'
 
 - project:
     name: 'labs-tools-ldap'
@@ -40,29 +61,29 @@
            docker_image_var: docker-registry.wikimedia.org/releng/tox-mysqld:4.8.0-3-s3
 
 - project:
-    name: 'labs-tools-commons-mass-description'
+    name: 'labs-tools-massmailer'
     jobs:
-       - '{name}-tox'
+        - '{name}-tox'
 
 - project:
-    name: 'labs-tools-weapon-of-mass-description'
+    name: 'labs-tools-urbanecmbot'
     jobs:
-       - '{name}-tox'
-
-- project:
-    name: 'labs-tools-harvesting-data-refinery'
-    jobs:
-       - '{name}-tox'
+        - '{name}-tox'
 
 - project:
     name: 'labs-tools-watch-translations'
     jobs:
-       - '{name}-tox'
+        - '{name}-tox'
+
+- project:
+    name: 'labs-tools-weapon-of-mass-description'
+    jobs:
+        - '{name}-tox'
 
 - project:
     name: 'labs-tools-wiki2email'
     jobs:
-       - '{name}-tox'
+        - '{name}-tox'
 
 - project:
     name: 'labs-tools-wikinity'
@@ -70,22 +91,3 @@
        - '{name}-tox':
            docker_image_var: docker-registry.wikimedia.org/releng/tox-mysqld:4.8.0-3-s3
 
-- project:
-    name: 'labs-tools-ipwatcher'
-    jobs:
-       - '{name}-tox'
-
-- project:
-    name: 'labs-tools-urbanecmbot'
-    jobs:
-       - '{name}-tox'
-
-- project:
-    name: 'labs-tools-massmailer'
-    jobs:
-       - '{name}-tox'
-
-- project:
-    name: 'labs'
-    jobs:
-     - '{name}-tox'
