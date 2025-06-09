@@ -2758,12 +2758,6 @@ projects:
     test:
       - mw-tools-phan-mwcore-testrun
 
-  - name: mediawiki/tools/phan/PerfCheckPlugin
-    # (T307504): CI is broken in all supported versions of PHP now
-    # FIXME: Use mediawiki-php-library?
-    template:
-      - name: composer-test-package-php81-to-php84
-
   - name: mediawiki/tools/phan/SecurityCheckPlugin
     # FIXME: Use mediawiki-php-library?
     template:
@@ -11882,6 +11876,10 @@ projects:
   - name: mediawiki/tools/mwdumper
     template:
       - name: archived # T351228
+
+  - name: mediawiki/tools/phan/PerfCheckPlugin
+    template:
+      - name: archived # T396311
 
   - name: mediawiki/tools/release
     template:
