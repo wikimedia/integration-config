@@ -9418,6 +9418,12 @@ projects:
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
+  - name: labs/tools/WdTmCollab
+    test:
+      - labs-tools-WdTmCollab-tox
+    gate-and-submit:
+      - labs-tools-WdTmCollab-tox
+
   - name: labs/tools/ldap
     test:
       - labs-tools-ldap-tox
