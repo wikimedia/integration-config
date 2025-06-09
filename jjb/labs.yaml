@@ -28,6 +28,11 @@
         - '{name}-tox'
 
 - project:
+    name: 'labs-tools-WdTmCollab'
+    jobs:
+        - '{name}-tox'
+
+- project:
     name: 'labs-tools-commons-mass-description'
     jobs:
         - '{name}-tox'
