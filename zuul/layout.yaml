@@ -1186,6 +1186,10 @@ jobs:
         - '.pipeline/config.yaml'
         - 'src/models/edit_check/.*'
 
+  - name: ^trigger-inference-services-pipeline-pre-commit-check
+    files:
+        - '.*'
+
   # End of meta jobs (the ones starting with ^)
 
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.

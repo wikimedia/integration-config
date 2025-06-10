@@ -466,6 +466,7 @@
         - article-country-publish
         - edit-check
         - edit-check-publish
+        - pre-commit-check
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -503,6 +504,7 @@
         # trigger-inference-services-pipeline-article-country-publish
         # trigger-inference-services-pipeline-edit-check
         # trigger-inference-services-pipeline-edit-check-publish
+        # trigger-inference-services-pipeline-pre-commit-check
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -540,6 +542,7 @@
         # inference-services-pipeline-article-country-publish
         # inference-services-pipeline-edit-check
         # inference-services-pipeline-edit-check-publish
+        # inference-services-pipeline-pre-commit-check
         - '{name}-pipeline-{pipeline}'
 
 - project:
