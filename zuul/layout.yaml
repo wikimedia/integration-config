@@ -8972,6 +8972,8 @@ projects:
   - name: css-sanitizer
     template:
       - name: mediawiki-php-library-php81-to-php84
+    coverage:
+      - composer-coverage-patch
 
   - name: php-session-serializer
     template:
