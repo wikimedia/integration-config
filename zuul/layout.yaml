@@ -8542,20 +8542,6 @@ projects:
     template:
       - name: node20
 
-  # To archive, once service has migrated to the pipeline
-  - name: maps/kartotherian/deploy
-    test:
-      - noop
-    gate-and-submit:
-      - noop
-
-  # To archive, once service has migrated to the pipeline
-  - name: maps/tilerator/deploy
-    test:
-      - noop
-    gate-and-submit:
-      - noop
-
   - name: mediawiki/services/change-propagation
     test:
       - trigger-change-propagation-pipeline-test
@@ -10450,12 +10436,19 @@ projects:
     template:
       - name: archived
 
-  # Don't ask. -- JDF 2019-09-16
-  # - name: maps/kartotherian/package
-  #   template:
-  #    - name: archived
+  - name: maps/kartotherian/deploy
+    template:
+      - name: archived
+
+  - name: maps/kartotherian/package
+    template:
+     - name: archived
 
   - name: maps/tilerator
+    template:
+      - name: archived
+
+  - name: maps/tilerator/deploy
     template:
       - name: archived
 
