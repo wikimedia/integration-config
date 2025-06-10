@@ -732,6 +732,9 @@ ImageSuggestions:
  - CirrusSearch
  - Elastica
 
+InputBox:
+ - MediaSearch
+
 IPInfo:
  - BetaFeatures
  - MobileFrontend
