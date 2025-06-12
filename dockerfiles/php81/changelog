@@ -1,7 +1,6 @@
 php81 (8.1.32-s1) wikimedia; urgency=high
 
-  * Inline building of the PHP extension to ensure it is compiled with the
-    same version of PHP that is provided by this image. T396312
+  Build php-ast inline to lock version to the PHP binary T396312
 
  -- Antoine Musso <hashar@free.fr>  Thu, 12 Jun 2025 12:38:24 +0200
 

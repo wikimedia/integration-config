@@ -1,3 +1,10 @@
+mediawiki-phan-php82 (8.2.28-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Build php-ast inline to lock version to the PHP binary
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 12 Jun 2025 11:05:28 -0400
+
 mediawiki-phan-php82 (8.2.28) wikimedia; urgency=high
 
    Refresh for update in parent image php82:
