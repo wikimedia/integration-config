@@ -2,9 +2,30 @@
 
 FROM {{ "composer-scratch" | image_tag }} as composer
 
+FROM {{ "php-scratch" | image_tag }} as php-scratch
+
 FROM {{ "sury-php" | image_tag }} as sury
 
-FROM {{ "php-ast" | image_tag }} as ast
+## START: Copied from php83 image...
+#
+# Set a standard, new version of php-ast rather than using Debian's older one.
+#
+# We create a stage with php-dev to compile the ast extension from source. This
+# is done as a multistage build to ensure it is compiled with the same version
+# of PHP than the one that will be in the final image (T396312).
+FROM {{ "sury-php" | image_tag }} as ast-builder
+
+USER root
+RUN {{ "php8.3-dev build-essential" | apt_install }}
+RUN install --owner=nobody --group=nogroup --directory /srv/php-ast
+RUN install --owner=nobody --group=nogroup --directory /srv/artifacts
+
+USER nobody
+COPY --from=php-scratch build-extension-ast /build-extension-ast
+RUN cd /srv && /build-extension-ast
+# Outputs: /srv/artifacts/ast.so /srv/artifacts/ast.ini
+
+## END: Copy from php83 image...
 
 FROM {{ "node24-test-browser" | image_tag }}
 
@@ -47,11 +68,16 @@ unzip
 
 RUN {{ packages | apt_install }}
 
-RUN {{ "jq" | apt_install }}
+## START: Copied from php83 image...
+#
+# Copy ast from the above building stage
+COPY --from=ast-builder /srv/artifacts/ast.so /usr/lib/php/20230831/ast.so
+COPY --from=ast-builder /srv/artifacts/ast.ini /etc/php/8.3/cli/conf.d/20-ast.ini
+COPY --from=php-scratch test-ast-tokens.php /test-ast-tokens.php
+RUN php /test-ast-tokens.php
+## END: Copy from php83 image...
 
-# This will override the already-existing ast
-COPY --from=ast /usr/lib/php/20230831/ast.so /usr/lib/php/20230831/ast.so
-COPY --from=ast /srv/20-ast.ini /etc/php/8.3/cli/conf.d/20-ast.ini
+RUN {{ "jq" | apt_install }}
 
 # phantomjs crashes when there is no DISPLAY
 ENV QT_QPA_PLATFORM=offscreen
