@@ -1,0 +1,7 @@
+php-scratch (1.0) wikimedia; urgency=medium
+
+  * Hold utilities shared by php based images. This is initially for the
+    scripts to build the ast extension and verify it is working properly.
+    T396312
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 12 Jun 2025 15:37:09 +0200

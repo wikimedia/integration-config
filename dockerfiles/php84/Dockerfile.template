@@ -1,4 +1,23 @@
-FROM {{ "php-ast" | image_tag }} as ast
+FROM {{ "php-scratch" | image_tag }} as php-scratch
+
+# Set a standard, new version of php-ast rather than using Debian's older one.
+#
+# We create a stage with php-dev to compile the ast extension from source. This
+# is done as a multistage build to ensure it is compiled with the same version
+# of PHP than the one that will be in the final image (T396312).
+FROM {{ "sury-php" | image_tag }} as ast-builder
+
+USER root
+RUN {{ "php8.4-dev build-essential" | apt_install }}
+RUN install --owner=nobody --group=nogroup --directory /srv/php-ast
+RUN install --owner=nobody --group=nogroup --directory /srv/artifacts
+
+USER nobody
+COPY --from=php-scratch build-extension-ast /build-extension-ast
+RUN cd /srv && /build-extension-ast
+# Outputs: /srv/artifacts/ast.so /srv/artifacts/ast.ini
+
+# Now build the final image
 FROM {{ "sury-php" | image_tag }}
 
 USER root
@@ -30,8 +49,10 @@ unzip
 RUN {{ packages | apt_install }}
 
 # Set a standard, new version of php-ast rather than using Debian's older one
-COPY --from=ast /usr/lib/php/20240924/ast.so /usr/lib/php/20240924/ast.so
-COPY --from=ast /srv/20-ast.ini /etc/php/8.4/cli/conf.d/20-ast.ini
+COPY --from=ast-builder /srv/artifacts/ast.so /usr/lib/php/20240924/ast.so
+COPY --from=ast-builder /srv/artifacts/ast.ini /etc/php/8.4/cli/conf.d/20-ast.ini
+COPY --from=php-scratch test-ast-tokens.php /test-ast-tokens.php
+RUN php /test-ast-tokens.php
 
 # Disable pcov by default, although the performance overhead should be minimal
 RUN phpdismod pcov
