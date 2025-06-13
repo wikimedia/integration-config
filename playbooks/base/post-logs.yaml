@@ -2,6 +2,14 @@
   gather_facts: False
   roles:
     - generate-zuul-manifest
+
     - role: upload-logs
       #zuul_log_url: "http://localhost:8000"
       zuul_log_url: "https://zuul-logs.wmcloud.org"
+
+    # https://zuul-ci.org/docs/zuul-jobs/latest/log-roles.html#role-upload-logs-s3
+    - role: upload-logs-s3
+      zuul_log_bucket: artifacts
+      zuul_log_aws_access_key: {{ s3_artifacts.access }}
+      zuul_log_aws_secret_key: {{ s3_artifacts.secret }}
+      upload_logs_s3_endpoint: https://object.eqiad1.wikimediacloud.org/

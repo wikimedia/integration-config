@@ -9,6 +9,11 @@
       the nodes in the nodeset.
 
       It also sets a default timeout value (which may be overidden).
+
+    secrets:
+        - name: s3_artifacts
+          secret: s3_artifacts
+
     pre-run: playbooks/base/pre.yaml
     post-run:
       - playbooks/base/post-logs.yaml
