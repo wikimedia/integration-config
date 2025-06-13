@@ -44,34 +44,6 @@
      - zuul
 
 - job-template:
-    !!merge : *composer-phpflavor
-    name: 'composer-coverage-patch'
-    triggers:
-      - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: '{composer_image}'
-        workdir: /src
-        args: 'install --ansi --no-progress --prefer-dist --profile'
-     - docker-run-with-log-cache-src:
-        image: '{composer_image}'
-        workdir: /src
-        args: >-
-            require --ansi --no-progress --prefer-dist --profile --
-            mediawiki/phpunit-patch-coverage 0.0.14
-     - docker-run-with-log-cache-src:
-        image: '{composer_image}'
-        workdir: /src
-        # Allocate a pseudo tty to enable color output from Symphony console
-        options: --tty
-        args: >-
-            exec --ansi --
-            phpunit-patch-coverage check
-            --command "php -d extension=pcov.so -d pcov.enabled=1 -d pcov.exclude='@(tests|vendor)@' vendor/bin/phpunit --colors=always"
-            --html /log/coverage.html
-
-- job-template:
     name: 'phan-{php}'
     node: Docker
     triggers:
@@ -104,8 +76,6 @@
 - project:
     name: 'composer-flavored-on'
     jobs:
-        - 'composer-coverage-patch':
-            composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s1
         - 'composer-{phpflavor}':
             phpflavor:
                 - php81:
