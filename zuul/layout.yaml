@@ -2279,22 +2279,6 @@ project-templates:
     postmerge:
       - php81-compile-coverage-publish
 
-  # Temporary job for repos that don't yet pass on PHP 8.4
-  - name: php-compile-php81-to-php83
-    test:
-      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - php-compile-php81
-      - php-compile-php82
-      - php-compile-php83
-    gate-and-submit:
-      - php-compile-php81
-      - php-compile-php82
-      - php-compile-php83
-    experimental:
-      - php-compile-php84
-    postmerge:
-      - php81-compile-coverage-publish
-
   - name: node20
     test:
       - generic-node20
@@ -8925,7 +8909,7 @@ projects:
 
   - name: mediawiki/php/excimer
     template:
-      - name: php-compile-php81-to-php83 # Broken test on PHP 8.4, see T380748
+      - name: php-compile-php81-to-php84
 
   - name: mediawiki/php/luasandbox
     template:
