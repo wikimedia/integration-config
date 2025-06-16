@@ -98,6 +98,7 @@ if updates_count == 0:
     sys.exit(0)
 
 if '--apply' not in sys.argv:
+    print("You can apply the updates with the --apply flag.")
     sys.exit(0)
 
 if (
