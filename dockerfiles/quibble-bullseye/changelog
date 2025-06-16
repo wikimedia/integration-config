@@ -1,3 +1,9 @@
+quibble-bullseye (1.14.1-s3) wikimedia; urgency=high
+
+   (T366646) Revert MardiaDB to 10.5, Wikimedia package lacks all scripts
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 16 Jun 2025 11:41:25 -0400
+
 quibble-bullseye (1.14.1-s2) wikimedia; urgency=high
 
    (T366646) Add the MariaDB binaries to our path
