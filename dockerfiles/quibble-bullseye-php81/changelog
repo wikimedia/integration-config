@@ -1,3 +1,10 @@
+quibble-bullseye-php81 (1.14.1-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   (T366646) Switch MariaDB to 10.6 Wikimedia package, again
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 16 Jun 2025 08:53:17 -0400
+
 quibble-bullseye-php81 (1.14.1-s2) wikimedia; urgency=high
 
    Refresh for update in parent image php81:

@@ -1,3 +1,9 @@
+quibble-bullseye (1.14.1-s1) wikimedia; urgency=high
+
+   (T366646) Switch MariaDB to 10.6 Wikimedia package, again
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 16 Jun 2025 08:53:17 -0400
+
 quibble-bullseye (1.14.1) wikimedia; urgency=medium
 
   * Update Quibble to 1.14.1
