@@ -159,6 +159,9 @@ ENV QUIBBLE_OPENSEARCH=false
 # We use the old name 'mysql_install_db' for backwards-compatibility
 RUN cp /opt/wmf-mariadb106/scripts/mysql_install_db /usr/local/bin/mysql_install_db
 
+# Also add the MariaDB binaries to our path, as the apt package does not
+ENV PATH "$PATH:/opt/wmf-mariadb106/bin/"
+
 # Unprivileged
 RUN install --directory /workspace --owner=nobody --group=nogroup
 USER nobody
