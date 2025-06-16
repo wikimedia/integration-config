@@ -2521,43 +2521,13 @@ projects:
   # project in the repository.
   - name: machinelearning/liftwing/inference-services
     test:
-      - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
-      - trigger-inference-services-pipeline-nsfw
       - trigger-inference-services-pipeline-revertrisk
-      - trigger-inference-services-pipeline-revertrisk-multilingual
-      - trigger-inference-services-pipeline-revertrisk-wikidata
-      - trigger-inference-services-pipeline-revscoring
-      - trigger-inference-services-pipeline-ores-legacy
-      - trigger-inference-services-pipeline-llm
-      - trigger-inference-services-pipeline-langid
-      - trigger-inference-services-pipeline-readability
-      - trigger-inference-services-pipeline-article-descriptions
-      - trigger-inference-services-pipeline-huggingface
-      - trigger-inference-services-pipeline-logo-detection
-      - trigger-inference-services-pipeline-articlequality
-      - trigger-inference-services-pipeline-reference-quality
-      - trigger-inference-services-pipeline-article-country
       - trigger-inference-services-pipeline-edit-check
       - trigger-inference-services-pipeline-pre-commit-check
     gate-and-submit:
-      - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-outlink-transformer
-      - trigger-inference-services-pipeline-nsfw
       - trigger-inference-services-pipeline-revertrisk
-      - trigger-inference-services-pipeline-revertrisk-multilingual
-      - trigger-inference-services-pipeline-revertrisk-wikidata
-      - trigger-inference-services-pipeline-revscoring
-      - trigger-inference-services-pipeline-ores-legacy
-      - trigger-inference-services-pipeline-llm
-      - trigger-inference-services-pipeline-langid
-      - trigger-inference-services-pipeline-readability
-      - trigger-inference-services-pipeline-article-descriptions
-      - trigger-inference-services-pipeline-huggingface
-      - trigger-inference-services-pipeline-logo-detection
-      - trigger-inference-services-pipeline-articlequality
-      - trigger-inference-services-pipeline-reference-quality
-      - trigger-inference-services-pipeline-article-country
       - trigger-inference-services-pipeline-edit-check
       - trigger-inference-services-pipeline-pre-commit-check
     postmerge:
