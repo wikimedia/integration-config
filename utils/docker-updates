@@ -9,6 +9,11 @@ import sys
 
 from debian.changelog import Changelog
 
+if '--help' in sys.argv:
+    print("Wikimedia Jenkins Job Builder CI docker image usage updater tool")
+    print("usage: docker-updates [--apply]")
+    sys.exit(0)
+
 # pcre regex passed to `git grep -P' to find images in the jjb directory
 IMAGE_GREP_PATTERN = (
     'docker-registry\\.wikimedia\\.org'
