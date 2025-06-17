@@ -83,6 +83,7 @@ pipelines:
            - ^andrew\.green\.df@gmail\.com$ # Andrew Green; Fundraising Technology Team
            - ^ayg@aryeh\.name$ # Aryeh Gregor (simetrical); Core Platform Team
            - ^chad@horohoe\.email$ # Chad Horohoe; Release Engineering Team
+           - ^corvus@inaugust\.com # James E. Blair; contractor, Zuul author
            - ^david@troi\.org$ # David Chan; Editing Team
            - ^ejegg@ejegg\.com$ # Elliott Eggleston; Fundraising Tech Team
            - ^git@samsmith\.io$ # Sam Smith; Reading Web Team
