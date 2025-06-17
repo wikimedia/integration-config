@@ -1,17 +1,26 @@
 - hosts: localhost
   gather_facts: False
+  vars:
+      zuul_log_bucket: artifacts
+      upload_logs_s3_endpoint: https://object.eqiad1.wikimediacloud.org/
+      rgw_prefix: swift/v1/AUTH_a3598983742448b3b056b5fcb228faa9/
   roles:
     - generate-zuul-manifest
 
-    # This is the instance provided by Docker compose
-    # - role: upload-logs
-    #   #zuul_log_url: "http://localhost:8000"
-    #   zuul_log_url: "https://zuul-logs.wmcloud.org"
-
     # https://zuul-ci.org/docs/zuul-jobs/latest/log-roles.html#role-upload-logs-s3
     - role: upload-logs-s3
-      zuul_log_bucket: artifacts
       zuul_log_aws_access_key: "{{ s3_artifacts.access }}"
       zuul_log_aws_secret_key: "{{ s3_artifacts.secret }}"
-      upload_logs_s3_endpoint: https://object.eqiad1.wikimediacloud.org/
-      zuul_log_url: "https://object.eqiad1.wikimediacloud.org/swift/v1/AUTH_a3598983742448b3b056b5fcb228faa9/artifacts/"
+
+  post_tasks:
+    # We're uploading via an S3 endpoint, but fetching via the Ceph
+    # rados gateway swift endpoint; the upstream role doesn't expect that,
+    # so we need to override the returned url.
+    # zuul_log_path is set by the upload-logs-s3 role (which calls the
+    # set-zuul-log-path-fact role).  The other variables are set above.
+    - name: Override log URL
+      delegate_to: localhost
+      zuul_return:
+        data:
+          zuul:
+            log_url: "{{ upload_logs_s3_endpoint }}{{ rgw_prefix }}{{ zuul_log_bucket }}/{{ zuul_log_path }}"
