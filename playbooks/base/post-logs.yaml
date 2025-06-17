@@ -8,7 +8,8 @@
     - generate-zuul-manifest
 
     # Collect artifacts, logs and docs from the nodes `zuul_output_dir`
-    - fetch-output-openshift
+    - role: fetch-output-openshift
+      zuul_log_verbose: true
 
     # https://zuul-ci.org/docs/zuul-jobs/latest/log-roles.html#role-upload-logs-s3
     - role: upload-logs-s3
