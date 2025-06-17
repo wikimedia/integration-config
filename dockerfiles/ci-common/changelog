@@ -1,3 +1,9 @@
+ci-common (0.6-s1) wikimedia; urgency=high
+
+   Silence git init warning in ci-src-setup - T393847
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 12 May 2025 11:44:02 +0200
+
 ci-common (0.6) wikimedia; urgency=medium
 
   * Set Gerrit as the git remote, used by git LFS to infer the remote endpoint

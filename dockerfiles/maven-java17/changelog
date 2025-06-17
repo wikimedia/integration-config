@@ -1,3 +1,10 @@
+maven-java17 (1.0.1-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-common:
+   Silence git init warning in ci-src-setup - T393847
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 12 May 2025 11:44:02 +0200
+
 maven-java17 (1.0.1-s1) wikimedia; urgency=high
 
    Refresh for update in parent image maven:

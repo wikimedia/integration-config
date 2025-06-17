@@ -3,7 +3,7 @@ FROM {{ "node20" | image_tag }} as node
 
 FROM {{ "ci-bullseye" | image_tag }}
 
-ARG QUIBBLE_VERSION=1.13.0
+ARG QUIBBLE_VERSION=1.14.1
 
 ######################
 #  Install node/npm  #
@@ -141,6 +141,17 @@ COPY ./quibble-with-supervisord.sh /usr/local/bin/quibble-with-supervisord
 COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY ./php-fpm /php-fpm
 COPY ./install-php-fpm-conf.sh /install-php-fpm-conf.sh
+
+# OpenSearch
+COPY wikimedia-opensearch.list /etc/apt/sources.list.d/wikimedia-opensearch.list
+RUN {{ "opensearch wmf-opensearch-search-plugins" | apt_install }}
+COPY opensearch/opensearch.yml /etc/opensearch/opensearch.yml
+COPY opensearch/jvm.options /etc/opensearch/jvm.options
+RUN ln -s /usr/share/opensearch/config/sudachi /etc/opensearch/sudachi
+RUN usermod -aG opensearch nobody
+
+# Don't start OpenSearch by default
+ENV QUIBBLE_OPENSEARCH=false
 
 # Unprivileged
 RUN install --directory /workspace --owner=nobody --group=nogroup

@@ -1,3 +1,57 @@
+quibble-bullseye-php81 (1.14.1-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   (T366646) Revert MardiaDB to 10.5, Wikimedia package lacks all scripts
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 16 Jun 2025 11:41:25 -0400
+
+quibble-bullseye-php81 (1.14.1-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   (T366646) Add the MariaDB binaries to our path
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 16 Jun 2025 11:00:19 -0400
+
+quibble-bullseye-php81 (1.14.1-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   (T366646) Switch MariaDB to 10.6 Wikimedia package, again
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 16 Jun 2025 08:53:17 -0400
+
+quibble-bullseye-php81 (1.14.1-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Build php-ast inline to lock version to the PHP binary
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 12 Jun 2025 11:05:28 -0400
+
+quibble-bullseye-php81 (1.14.1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Update PHP to 8.1.32-1+wmf11u1; add php8.1-uuid
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  5 Jun 2025 13:33:39 -0400
+
+quibble-bullseye-php81 (1.14.1) wikimedia; urgency=medium
+
+  * Update Quibble to 1.14.1
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 07 May 2025 10:12:20 +0200
+
+quibble-bullseye-php81 (1.14.0) wikimedia; urgency=medium
+
+  * Update Quibble to 1.14.0
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 30 Apr 2025 17:01:38 +0200
+
+quibble-bullseye-php81 (1.13.0-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image node20:
+   Upgrade Node to 20.19.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 28 Apr 2025 13:18:05 +0100
+
 quibble-bullseye-php81 (1.13.0-s3) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-bullseye:

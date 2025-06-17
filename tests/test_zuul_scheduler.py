@@ -239,14 +239,13 @@ class TestZuulScheduler(unittest.TestCase):
             % (name, pipeline)
         )
 
-    def assertProjectHasVotingPHP74(self, name, definition, pipeline):
+    def assertProjectHasVotingPHP81(self, name, definition, pipeline):
         if pipeline != 'gate-and-submit':
             return
         self.assertTrue(
             any([job for job in definition
-                 if 'quibble' in job and 'php74' in job]),
-            'Project %s pipeline %s must have job '
-            'for PHP 7.4 quibble'
+                 if 'quibble' in job and 'php81' in job]),
+            'Project %s pipeline %s must have quibble job for PHP 8.1'
             % (name, pipeline)
             )
 
@@ -256,7 +255,7 @@ class TestZuulScheduler(unittest.TestCase):
         has_quibble = any([job for job in definition if 'quibble' in job])
         has_npm_test = any([job for job in definition if 'npm-node-6' in job])
         self.assertEqual(has_npm_test, has_quibble,
-                         'Project %s pipeline %s must have both quibble and '
+                         'Project %s pipeline %s must have both a quibble and '
                          'npm job' % (name, pipeline))
 
     def assertProjectHasI18nChecker(self, name, definition, pipeline):
@@ -274,7 +273,7 @@ class TestZuulScheduler(unittest.TestCase):
             r'mediawiki/core$': [
                 self.assertProjectHasComposerValidate,
                 self.assertProjectHasPhplint,
-                self.assertProjectHasVotingPHP74,
+                self.assertProjectHasVotingPHP81,
                 self.assertProjectHasI18nChecker,
             ],
             r'mediawiki/extensions/\w+$': [
@@ -1127,36 +1126,34 @@ class TestZuulScheduler(unittest.TestCase):
             {}, errors, "\nNon-MediaWiki projects must not have jobs "
                         "in common with the mediawiki queue.")
 
-    def test_mwcore_switch_to_quibble(self):
+    def test_mwcore_master_branch_has_expected_values(self):
         expected_test = {
-            'mediawiki-core-php74-phan': True,
-            'mediawiki-quibble-vendor-mysql-php74': True,
-            'mediawiki-quibble-composertest-php74': True,
-            'mediawiki-quibble-apitests-vendor-php74': True,
-            'mediawiki-quibble-selenium-vendor-mysql-php74': True,
+            'mediawiki-core-php81-phan': True,
+            'mediawiki-quibble-vendor-mysql-php81': True,
+            'mediawiki-quibble-composertest-php81': True,
+            'mediawiki-quibble-apitests-vendor-php81': True,
+            'mediawiki-quibble-selenium-vendor-mysql-php81': True,
             'wmf-quibble-vendor-mysql-php81': False,
             'wmf-quibble-core-vendor-mysql-php81': True,
             'wmf-quibble-selenium-php81': True,
             'mwgate-node20': True,
         }
         expected_gate = {
-            'mediawiki-core-php74-phan': True,
             'mediawiki-core-php81-phan': True,
-            'mediawiki-quibble-composer-mysql-php74': True,
-            'mediawiki-quibble-vendor-mysql-php74': True,
+            'mediawiki-quibble-composer-mysql-php81': True,
             'mediawiki-quibble-vendor-mysql-php81': True,
             'mediawiki-quibble-vendor-mysql-php82': True,
             'mediawiki-quibble-vendor-mysql-php83': True,
-            'mediawiki-quibble-composertest-php74': True,
-            'mediawiki-quibble-apitests-vendor-php74': True,
-            'mediawiki-quibble-selenium-vendor-mysql-php74': True,
-            'mediawiki-quibble-vendor-sqlite-php74': True,
-            'mediawiki-quibble-vendor-postgres-php74': True,
+            'mediawiki-quibble-composertest-php81': True,
+            'mediawiki-quibble-apitests-vendor-php81': True,
+            'mediawiki-quibble-selenium-vendor-mysql-php81': True,
+            'mediawiki-quibble-vendor-sqlite-php81': True,
+            'mediawiki-quibble-vendor-postgres-php81': True,
             'wmf-quibble-vendor-mysql-php81': False,
             'wmf-quibble-selenium-php81': True,
             'wmf-quibble-core-vendor-mysql-php81': True,
             'mwgate-node20': True,
-            'quibble-vendor-mysql-php74-phpunit-standalone': True,
+            'quibble-vendor-mysql-php81-phpunit-standalone': True,
         }
 
         change = zuul.model.Change('mediawiki/core')
@@ -1206,6 +1203,58 @@ class TestZuulScheduler(unittest.TestCase):
                     job.name, expected_gate[job.name],
                     job.changeMatches(change))
                 )
+
+    def test_mwcore_release_branches_have_expected_values(self):
+
+        # Note that these are checked for 'prefixes', not exact matches
+        expected_job_prefices = [
+            # A regular quibble job
+            'mediawiki-quibble-composer-mysql-php',
+            # A composer test job (PHP linting)
+            'mediawiki-quibble-composertest-php',
+            # A 'mediawiki' selenium test (bundled extensions browser testing)
+            'mediawiki-quibble-selenium-composer-mysql-php',
+            # A phan job (PHP static analysis)
+            'mediawiki-core-php81-phan',
+            # A node job (JS linting)
+            'mwgate-node20',
+        ]
+
+        for (desc, config) in MEDIAWIKI_VERSIONS.iteritems():
+            change = zuul.model.Change('mediawiki/core')
+            change.branch = config['branch']
+
+            if config['pipeline-suffix'] in ['wmf', 'fundraising']:
+                # Ignore special branches, this is just for release branches
+                continue
+
+            test_pipeline = 'test-%s' % config['pipeline-suffix']
+            job_tree = [t for (p, t) in self.getPipeline(test_pipeline).job_trees.iteritems()
+                        if p.name == 'mediawiki/core'][0]
+            test_jobs = job_tree.getJobs()
+
+            for expected_job in expected_job_prefices:
+                self.assertTrue(
+                    any([job for job in test_jobs
+                        if (
+                            job.name.startswith(expected_job)
+                        )]),
+                    'MW pipeline %s must have a %s job'
+                    % (test_pipeline, expected_job))
+
+            gate_pipeline = 'gate-and-submit-%s' % config['pipeline-suffix']
+            job_tree = [t for (p, t) in self.getPipeline(gate_pipeline).job_trees.iteritems()
+                        if p.name == 'mediawiki/core'][0]
+            gate_jobs = job_tree.getJobs()
+
+            for expected_job in expected_job_prefices:
+                self.assertTrue(
+                    any([job for job in gate_jobs
+                        if (
+                            job.name.startswith(expected_job)
+                        )]),
+                    'MW pipeline %s must have a %s job'
+                    % (gate_pipeline, expected_job))
 
     def test_gated_extension_run_tests_on_feature_branch(self):
         repo = 'mediawiki/extensions/CirrusSearch'

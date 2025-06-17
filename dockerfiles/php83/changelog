@@ -1,3 +1,15 @@
+php83 (8.3.21-s1) wikimedia; urgency=high
+
+  Build php-ast inline to lock version to the PHP binary T396312
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 12 Jun 2025 12:38:24 +0200
+
+php83 (8.3.21) wikimedia; urgency=high
+
+   Update PHP to 8.3.21; add php8.3-uuid
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  5 Jun 2025 13:33:49 -0400
+
 php83 (8.3.17) wikimedia; urgency=high
 
    Update PHP to 8.3.17

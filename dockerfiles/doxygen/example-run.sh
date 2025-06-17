@@ -9,16 +9,16 @@ mkdir -m 777 -p cache
 echo "Cleaning generated documentation in /src/doc"
 docker run \
     --rm --tty \
-    --volume /"$(pwd)"/src://src \
+    --volume /"$PWD"/src://src \
     --entrypoint=/bin/rm \
     docker-registry.wikimedia.org/releng/doxygen:latest \
     -fR /src/doc
 
 docker run \
     --rm --tty \
-    --volume /"$(pwd)"/log://var/lib/jenkins/log \
-    --volume /"$(pwd)"/cache://cache \
-    --volume /"$(pwd)"/src://src \
+    --volume /"$PWD"/log://var/lib/jenkins/log \
+    --volume /"$PWD"/cache://cache \
+    --volume /"$PWD"/src://src \
     -e ZUUL_URL=https://gerrit.wikimedia.org/r/ \
     -e ZUUL_PROJECT=oojs/ui \
     -e ZUUL_REF=master \

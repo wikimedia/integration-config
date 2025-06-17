@@ -34,7 +34,7 @@
               - ABORTED
             build-steps:
               - docker-run:
-                 image: 'docker-registry.wikimedia.org/buster:latest'
+                 image: 'docker-registry.wikimedia.org/bookworm:latest'
                  volumes:
                      $WORKSPACE: /workspace
                  entrypoint: /usr/bin/find
@@ -62,9 +62,20 @@
 - builder:
     name: docker-cache-dir
     builders:
-     - shell: |
-        ls -laF --color=always
-        mkdir -m 2777 -p cache
+     # Create a cache directory with same ownership as what we use in container
+     # (nobody:nogroup) - T282893, T188488
+     - docker-run:
+        image: docker-registry.wikimedia.org/bookworm:latest
+        volumes:
+            $WORKSPACE: /workspace
+        entrypoint: /usr/bin/install
+        options: >-
+          --user=root
+        args: >-
+          --directory
+          --owner=nobody
+          --group=nogroup
+          /workspace/cache
 
 # Create a log directory that will be
 # mounted into a container with --volume
@@ -88,10 +99,9 @@
     builders:
      - shell: |
          set -eux
-         ls -laF --color=always
-         mkdir -m 2777 -p "{dir}"
+         mkdir -m 2777 -p "{dir}" || (ls -laF --color=always && false)
      - docker-run:
-        image: 'docker-registry.wikimedia.org/buster:latest'
+        image: 'docker-registry.wikimedia.org/bookworm:latest'
         volumes:
             $WORKSPACE: /workspace
         entrypoint: /usr/bin/find
@@ -138,9 +148,9 @@
 #  container.
 #  Example:
 #
-#   volumes: { cache: }  => --volume "$(pwd)/cache:/cache"
+#   volumes: { cache: }  => --volume "$PWD/cache:/cache"
 #
-#   volumes: { src: /bar }  => --volume "$(pwd)/src:/bar"
+#   volumes: { src: /bar }  => --volume "$PWD/src:/bar"
 #
 #   volumes: { /srv/git: /srv/git:ro }  => --volume "/srv/git:/srv/git:ro"
 #
@@ -161,20 +171,21 @@
      - shell: !j2: |
         {% block xxx_dummy_block_to_keep_trailing_newline -%}
         #!/bin/bash
-        set -eux
-        set -o pipefail
+        set -euxo pipefail
         {% if volumes is defined -%}
+        set +x
         {%   for host_path in volumes -%}
         {%     if host_path.startswith('/') or host_path.startswith('$') -%}
         {%       set host_dir = host_path -%}
         {%     else -%}
-        {%       set host_dir = '$(pwd)/' + host_path -%}
+        {%       set host_dir = '$PWD/' + host_path -%}
         {%     endif -%}
         if [ ! -d "{{ host_dir }}" ]; then
           echo "T282893: Expected host directory {{ host_dir }} to exist but it does not."
           exit 1
         fi
         {%   endfor -%}
+        set -x
         {% endif -%}
         exec docker run
           {%- if entrypoint is defined and entrypoint|length -%}
@@ -204,7 +215,7 @@
                   {%- if host_path.startswith('/') or host_path.startswith('$') -%}
                   {%-   set base_dir = '' -%}
                   {%- else -%}
-                  {%-   set base_dir = '$(pwd)/' -%}
+                  {%-   set base_dir = '$PWD/' -%}
                   {%- endif -%}
                   {{ " " }}--volume "{{ base_dir + host_path }}:{{ container_path or ("/" + host_path) }}"
               {%- endfor -%}
@@ -214,7 +225,7 @@
           --rm \
           --label "jenkins.job=$JOB_NAME" \
           --label "jenkins.build=$BUILD_NUMBER" \
-          --env-file <(/usr/bin/env|egrep -v '^(HOME|SHELL|PATH|LOGNAME|MAIL)=') \
+          --env-file <(set +x; /usr/bin/env | egrep -v '^(HOME|SHELL|PATH|LOGNAME|MAIL)=') \
           '{{ image }}' {{ args | default }}
         # nothing else can be executed due to exec
         {% endblock %}
@@ -228,11 +239,12 @@
 - builder:
     name: docker-run-with-log-cache-src
     builders:
+     - docker-cache-dir
      - shell: |
         #!/bin/bash -eu
         set -x
         chmod 2777 src
-        mkdir -m 2777 -p cache log
+        mkdir -m 2777 -p log
      - docker-run:
         entrypoint: >-
           {obj:entrypoint|}
@@ -274,10 +286,7 @@
 - builder:
     name: docker-ci-src-setup-simple
     builders:
-     - shell: |
-        #!/bin/bash -eu
-        set -x
-        mkdir -m 2777 -p "cache"
+     - docker-cache-dir
      - docker-run: !j2-yaml: >-
          options:
            {%- if submodules is defined and not submodules %}
@@ -289,7 +298,7 @@
              src:
              cache:
              /srv/git: /srv/git:ro
-         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.7.0
+         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.7.0-s1
 
 - builder:
     name: setup
@@ -297,7 +306,8 @@
      - docker-castor-load
      - docker-log-dir
      - docker-src-dir
-     - docker-ci-src-setup-simple
+     - docker-ci-src-setup-simple:
+        submodules: "{submodules}"
 
 - publisher:
     name: teardown

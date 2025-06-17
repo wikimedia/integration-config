@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Asks Zuul server to validate its layout with the list of Jenkins jobs
 # deployed. This is intended to be used before merge to ensure that all

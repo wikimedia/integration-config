@@ -22,21 +22,21 @@
              mediawiki/core
              mediawiki/tools/codesniffer
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/composer-php74:7.4.33
+         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s1
          workdir: /src/mediawiki/tools/codesniffer
          args: 'install --ansi --no-progress --prefer-dist --profile --no-dev'
      - docker-run-with-log-cache-src:
-         image: 'docker-registry.wikimedia.org/buster:latest'
+         image: docker-registry.wikimedia.org/bookworm:latest
          entrypoint: /bin/bash
          options: '--user=nobody'
          args: '-c "mkdir -p /src/vendor/mediawiki"'
      - docker-run-with-log-cache-src:
-         image: 'docker-registry.wikimedia.org/buster:latest'
+         image: docker-registry.wikimedia.org/bookworm:latest
          entrypoint: /bin/mv
          options: '--user=nobody'
          args: '/src/mediawiki/tools/codesniffer /src/vendor/mediawiki/mediawiki-codesniffer'
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/composer-php74:7.4.33
+         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s1
          entrypoint: /src/vendor/mediawiki/mediawiki-codesniffer/vendor/bin/phpcs
          workdir: /src
          args: '-s -p'
@@ -60,7 +60,7 @@
              mediawiki/core
              mediawiki/tools/phan
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/mediawiki-phan-testrun:7.4.33
+         image: docker-registry.wikimedia.org/releng/mediawiki-phan-testrun:8.1.32-s1
          memory: 7G  # Instances have 24G of RAM and 3 executors
          environment:
              PHAN_COLOR_SCHEME: light

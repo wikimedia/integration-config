@@ -1,3 +1,17 @@
+php82-compile (8.2.28-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Build php-ast inline to lock version to the PHP binary
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 12 Jun 2025 11:05:28 -0400
+
+php82-compile (8.2.28) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Update PHP to 8.2.28; add php8.2-uuid
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  5 Jun 2025 13:33:44 -0400
+
 php82-compile (8.2.27) wikimedia; urgency=high
 
    Refresh for update in parent image php82:

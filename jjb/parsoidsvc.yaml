@@ -8,7 +8,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/doxygen:1.10.0
+         image: docker-registry.wikimedia.org/releng/doxygen:1.10.0-s1
      - doc-publish:
         docsrc: 'src/doc/html'
         docdest: 'Parsoid-PHP/$DOC_SUBPATH'
@@ -43,26 +43,28 @@
         - wikipeg-special-{node-plus-php}-composer:
             node-plus-php:
                 - node20-plus-php81:
-                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.18.1
+                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.19.1-s3
                 - node20-plus-php83:
-                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.18.1
+                    docker_image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.19.1-s3
                 - node22-plus-php81:
-                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php81-composer:22.13.0
+                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php81-composer:22.15.0-s3
                 - node22-plus-php83:
-                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.13.0
+                    docker_image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.15.0-s3
+                - node24-plus-php81:
+                    docker_image: docker-registry.wikimedia.org/releng/node24-test-browser-php81-composer:24.1.0-s2
+                - node24-plus-php83:
+                    docker_image: docker-registry.wikimedia.org/releng/node24-test-browser-php83-composer:24.1.0-s2
 
 - project:
     name: parsoidsvc
     jobs:
         - '{name}-composer-package-{phpflavor}':
             phpflavor:
-                - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php74:7.4.33
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.31-s2
+                    image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.32-s1
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php82:8.2.27
+                    image: docker-registry.wikimedia.org/releng/composer-package-php82:8.2.28-s1
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php83:8.3.17
+                    image: docker-registry.wikimedia.org/releng/composer-package-php83:8.3.21-s1
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php84:8.4.4
+                    image: docker-registry.wikimedia.org/releng/composer-package-php84:8.4.7-s1

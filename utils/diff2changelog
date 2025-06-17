@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # diffrecursive2changelog: generate a changelog from a diff
 #

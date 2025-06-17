@@ -12,6 +12,6 @@ docker run \
     --env ZUUL_PROJECT=wikimedia/fundraising/tools \
     --env ZUUL_COMMIT=master \
     --env ZUUL_REF=master \
-    --volume /"$(pwd)"/log://log \
-    --volume /"$(pwd)"/cache://cache \
+    --volume /"$PWD"/log://log \
+    --volume /"$PWD"/cache://cache \
     docker-registry.wikimedia.org/releng/tox-mysqld:0.1.0

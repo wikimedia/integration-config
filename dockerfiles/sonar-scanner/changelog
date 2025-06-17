@@ -1,3 +1,17 @@
+sonar-scanner (4.6.0.2311-s10) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-common:
+   Silence git init warning in ci-src-setup - T393847
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 12 May 2025 11:44:02 +0200
+
+sonar-scanner (4.6.0.2311-s9) wikimedia; urgency=high
+
+   Refresh for update in parent image node20:
+   Upgrade Node to 20.19.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 28 Apr 2025 13:18:05 +0100
+
 sonar-scanner (4.6.0.2311-s8) wikimedia; urgency=high
 
    Refresh for update in parent image node20:

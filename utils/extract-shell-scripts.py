@@ -20,7 +20,7 @@ def extract_shell_scripts(input_file):
         script = task.find('command').text
         with open(os.path.join(output_dir, str(i) + '.sh'), 'wt') as f:
             if not script.startswith('#!/'):
-                f.write("#!/bin/bash\n")
+                f.write("#!/usr/bin/env bash\n")
             f.write(script)
 
 

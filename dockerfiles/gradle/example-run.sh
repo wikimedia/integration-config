@@ -10,12 +10,12 @@ docker run \
     --env ZUUL_PROJECT=integration/pipelinelib \
     --env ZUUL_COMMIT=master \
     --env ZUUL_REF=master \
-    --volume "/$(pwd)/src://src" \
+    --volume "/$PWD/src://src" \
         docker-registry.wikimedia.org/releng/ci-src-setup-simple:latest
 
 docker run \
     --rm --tty \
     --workdir=/src \
-    --volume /"$(pwd)"/src://src \
+    --volume /"$PWD"/src://src \
     docker-registry.wikimedia.org/releng/gradle:latest \
     groovydoc

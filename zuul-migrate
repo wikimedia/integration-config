@@ -64,6 +64,7 @@ SKIP_MACROS = []  # type: ignore
 # Jenkins jobs we are not migrated
 SKIP_JOBS = [
     'fail-archived-repositories',
+    '.+-pipeline-.+',
 ]
 ENVIRONMENT = '{{ zuul | zuul_legacy_vars }}'
 DESCRIPTION = """Migrate zuul v2 and Jenkins Job Builder to Zuul v3.
@@ -849,6 +850,20 @@ class Job:
                     if 'script' in task:
                         sequence += 1
                     tasks.append(task)
+            else:
+                # trigger-builds from doc-publish in jjb/publish.yaml
+                builder_name = list(builder)[0]
+
+                if builder_name == 'trigger-builds':
+                    self.log.warning('Job %s: can not migrate %s: %s' % (
+                        self.name,
+                        builder_name,
+                        builder[builder_name][0]['project']
+                    ))
+                else:
+                    self.log.warning('Job %s: can not migrate builder %s' % (
+                        self.name, builder_name))
+
         play = collections.OrderedDict()
         play['hosts'] = 'all'
         play['name'] = 'Autoconverted job {name} from old job {old}'.format(
@@ -863,6 +878,7 @@ class Job:
         early_publishers, late_publishers = self._transformPublishers(
             self.jjb_job)
         for publishers in [early_publishers, late_publishers]:
+            warn_once = set()
             for publisher in publishers:
                 if 'scp' in publisher:
                     ret = self._makeSCPTask(publisher)
@@ -871,9 +887,21 @@ class Job:
                     if ret['draft']:
                         has_draft = True
                     tasks.extend(ret['tasks'])
-                if 'afs' in builder:
-                    self.log.error(
-                        "Job {name} uses AFS publisher".format(name=self.name))
+                elif 'archive' in publisher:
+                    pass
+                elif 'postbuildscript' in publisher:
+                    pass
+                elif 'workspace-cleanup' in publisher:
+                    pass
+                elif 'xunit' in publisher:
+                    pass
+                else:
+                    publisher_name = list(publisher)[0]
+                    self.log.warning(
+                        'Job %s: can not migrate publisher: %s' % (
+                            self.name, publisher_name)
+                    )
+                    warn_once.add(publisher_name)
         if tasks:
             has_post = True
             play = collections.OrderedDict()
@@ -1280,15 +1308,18 @@ class ZuulMigrate:
         self.log.debug("makeNewJobs(%s)", old_job)
         if isinstance(old_job, str):
             remove_gate = True
-            if old_job in SKIP_JOBS:
+
+            if any(
+                (re.match(skip_job, old_job) for skip_job in SKIP_JOBS)
+            ):
                 return []
-            elif old_job.startswith('gate-'):
+
+            if old_job.startswith('gate-'):
                 # Check to see if gate- and bare versions exist
                 if old_job.replace('gate-', '', 1) in self.jobs:
                     remove_gate = False
-            if old_job in SKIP_JOBS:
-                return []
-            elif old_job == 'noop':
+
+            if old_job == 'noop':
                 job = Job('noop')
             else:
                 job = self.mapping.getNewJob(old_job, remove_gate)

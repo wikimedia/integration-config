@@ -12,14 +12,14 @@ docker run \
     --env ZUUL_PROJECT=operations/puppet \
     --env ZUUL_COMMIT=production \
     --env ZUUL_REF=production \
-    --volume "/$(pwd)/src://src" \
+    --volume "/$PWD/src://src" \
         docker-registry.wikimedia.org/releng/ci-src-setup-simple:latest
 
 docker run \
     --rm --tty \
-    --volume /"$(pwd)"/log://log \
-    --volume /"$(pwd)"/cache://cache \
-    --volume /"$(pwd)"/src://src \
+    --volume /"$PWD"/log://log \
+    --volume /"$PWD"/cache://cache \
+    --volume /"$PWD"/src://src \
     --workdir=/src/modules/profile/files/logstash \
     --entrypoint=make \
     docker-registry.wikimedia.org/releng/logstash-filter-verifier:latest

@@ -11,12 +11,12 @@ docker run \
     --env ZUUL_PROJECT=operations/software/ecs \
     --env ZUUL_BRANCH=master \
     --env ZUUL_REF=master \
-    --volume "/$(pwd)/src://src" \
+    --volume "/$PWD/src://src" \
         docker-registry.wikimedia.org/releng/ci-src-setup-simple:latest
 
 docker run \
     --rm --tty \
-    --volume /"$(pwd)"/cache://cache \
-    --volume /"$(pwd)"/src://src \
+    --volume /"$PWD"/cache://cache \
+    --volume /"$PWD"/src://src \
     --entrypoint=make \
     docker-registry.wikimedia.org/releng/ecs:latest

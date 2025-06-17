@@ -44,34 +44,6 @@
      - zuul
 
 - job-template:
-    !!merge : *composer-phpflavor
-    name: 'composer-coverage-patch'
-    triggers:
-      - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: '{composer_image}'
-        workdir: /src
-        args: 'install --ansi --no-progress --prefer-dist --profile'
-     - docker-run-with-log-cache-src:
-        image: '{composer_image}'
-        workdir: /src
-        args: >-
-            require --ansi --no-progress --prefer-dist --profile --
-            mediawiki/phpunit-patch-coverage 0.0.14
-     - docker-run-with-log-cache-src:
-        image: '{composer_image}'
-        workdir: /src
-        # Allocate a pseudo tty to enable color output from Symphony console
-        options: --tty
-        args: >-
-            exec --ansi --
-            phpunit-patch-coverage check
-            --command "php -d extension=pcov.so -d pcov.enabled=1 -d pcov.exclude='@(tests|vendor)@' vendor/bin/phpunit --colors=always"
-            --html /log/coverage.html
-
-- job-template:
     name: 'phan-{php}'
     node: Docker
     triggers:
@@ -95,44 +67,35 @@
 - project:
     name: generic-phan-jobs
     php:
-     - php74:
-         composer_image: docker-registry.wikimedia.org/releng/composer-php74:7.4.33
-         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php74:7.4.33
      - php81:
-         composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.31-s2
-         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:8.1.31-s2
+         composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s1
+         phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:8.1.32-s1
     jobs:
       - 'phan-{php}'
 
 - project:
     name: 'composer-flavored-on'
     jobs:
-        - 'composer-coverage-patch':
-            composer_image: docker-registry.wikimedia.org/releng/composer-php74:7.4.33
         - 'composer-{phpflavor}':
             phpflavor:
-                - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php74:7.4.33
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php81:8.1.31-s2
+                    image: docker-registry.wikimedia.org/releng/composer-test-php81:8.1.32-s1
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php82:8.2.27
+                    image: docker-registry.wikimedia.org/releng/composer-test-php82:8.2.28-s1
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php83:8.3.17
+                    image: docker-registry.wikimedia.org/releng/composer-test-php83:8.3.21-s1
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.4
+                    image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.7-s1
         - 'composer-package-{phpflavor}':
             phpflavor:
-                - php74:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php74:7.4.33
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.31-s2
+                    image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.32-s1
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php82:8.2.27
+                    image: docker-registry.wikimedia.org/releng/composer-package-php82:8.2.28-s1
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php83:8.3.17
+                    image: docker-registry.wikimedia.org/releng/composer-package-php83:8.3.21-s1
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php84:8.4.4
+                    image: docker-registry.wikimedia.org/releng/composer-package-php84:8.4.7-s1
 
 - job-template:
     name: 'composer-{php}-assert-lock'
@@ -153,15 +116,13 @@
 - project:
     name: generic-composer-assert-lock-jobs
     php:
-     - php74:
-         image: docker-registry.wikimedia.org/releng/composer-php74:7.4.33
      - php81:
-         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.31-s2
+         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s1
      - php82:
-         image: docker-registry.wikimedia.org/releng/composer-php82:8.2.27
+         image: docker-registry.wikimedia.org/releng/composer-php82:8.2.28-s1
      - php83:
-         image: docker-registry.wikimedia.org/releng/composer-php83:8.3.17
+         image: docker-registry.wikimedia.org/releng/composer-php83:8.3.21-s1
      - php84:
-         image: docker-registry.wikimedia.org/releng/composer-php84:8.4.4
+         image: docker-registry.wikimedia.org/releng/composer-php84:8.4.7-s1
     jobs:
       - 'composer-{php}-assert-lock'

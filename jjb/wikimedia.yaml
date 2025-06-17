@@ -30,15 +30,15 @@
         - shell: |
             cd src/
             git config --global --add safe.directory '*'
-            git submodule update --init
-            git submodule foreach git fetch --all
-            git submodule foreach git reset --hard origin/master
+            git submodule --quiet update --init
+            git submodule --quiet foreach git fetch --all
+            git submodule --quiet foreach git reset --hard origin/master
             # clean up whatever left from previous builds.
             cd prod/
             rm -rf urls-to-purge.txt wik*
             cd ../..
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/node18-test:18.20.4
+            image: docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1
             args: 'build-all-portals'
         - shell: |
             ## now create and publish a gerrit patch

@@ -139,6 +139,7 @@ BlueSpiceDashboards:
  - BlueSpiceFoundation
 
 BlueSpiceDistributionConnector:
+ - BlueSpiceExtendedStatistics
  - BlueSpiceFoundation
  - BlueSpiceSMWConnector
  - ContentDroplets
@@ -731,10 +732,14 @@ ImageSuggestions:
  - CirrusSearch
  - Elastica
 
+InputBox:
+ - MediaSearch
+
 IPInfo:
  - BetaFeatures
  - MobileFrontend
  - CheckUser
+ - GlobalPreferences
 
 IPReputation:
  - AbuseFilter
@@ -1053,6 +1058,9 @@ SportsTeams:
 StandardDialogs:
  - OOJSPlus
 
+StructuredNavigation:
+ - CodeEditor
+
 StopForumSpam:
  - AbuseFilter
 
@@ -1126,6 +1134,9 @@ TwoColConflict:
  - BetaFeatures
  - EventLogging
  - WikiEditor
+
+UnifiedTaskOverview:
+ - OOJSPlus
 
 UniversalLanguageSelector:
  - EventLogging
@@ -1249,6 +1260,7 @@ WikimediaCampaignEvents:
 WikimediaEvents:
  - CentralAuth
  - CheckUser
+ - cldr
  - EmailAuth
  - EventLogging
  - FlaggedRevs
@@ -1257,6 +1269,14 @@ WikimediaEvents:
  - IPReputation
  - LoginNotify
  - OATHAuth
+
+WikimediaMaintenance:
+ - CentralAuth
+ - CheckUser
+ - Echo
+
+WikimediaMessages:
+ - cldr
 
 WikiSEO:
  - PageImages

@@ -1,3 +1,10 @@
+ci-src-setup-simple (0.7.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-common:
+   Silence git init warning in ci-src-setup - T393847
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 12 May 2025 11:44:02 +0200
+
 ci-src-setup-simple (0.7.0) wikimedia; urgency=medium
 
   * Change base image from Buster to Bookworm - T335765

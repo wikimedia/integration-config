@@ -64,7 +64,7 @@ set -eux -o pipefail
 mkdir -p src/
 cd src/
 git init --quiet
-git fetch --depth 2 --quiet %q %q
+git fetch --quiet --depth 2 %q %q
 git checkout --quiet -b %q FETCH_HEAD
 git submodule --quiet update --init --recursive
 

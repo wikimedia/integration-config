@@ -104,7 +104,7 @@
     builders:
       - setup
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.13.0
+          image: '{docker_image}'
           entrypoint: bash
           args: '{quibble_args}'
           workdir: /src
@@ -137,18 +137,12 @@
 - project:
     name: gearman-java
     jobs:
-        - '{name}-maven-java8':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java8:1.1.0-s4
-            maven_path: '/run-with-gearmand.sh'
-        - '{name}-maven-java11':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s6
-            maven_path: '/run-with-gearmand.sh'
         - '{name}-maven-java17':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s1
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s2
             maven_path: '/run-with-gearmand.sh'
-        - '{name}-maven-java11-site-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java11:1.0.0-s6
-            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s1
+        - '{name}-maven-java17-site-publish':
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s2
+            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s2
             maven_path: '/run-with-gearmand.sh'
 
 - project:
@@ -170,10 +164,8 @@
             docdest: 'quibble'
         - 'integration-quibble-fullrun-{type}-{php}':
             php:
-                - php74:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-buster-php74:1.13.0
                 - php81:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.13.0-s3
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s2
             type:
                 - defaults:
                     quibble_args: >-
@@ -195,6 +187,17 @@
                         --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
+                - opensearch:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s2
+                    quibble_args: >-
+                        -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+                        && /src/utils/ci-opensearch.sh
+                        --color
+                        --db-dir /workspace/db
+                        --db sqlite
+                        --success-cache-key-data="$JOB_NAME"
+                        --web-backend=external --web-url=http://127.0.0.1:9413
+                        -c /bin/true'  # We only care about Quibble starting OpenSearch and MediaWiki installing
                 - extensions:
                     quibble_args: >-
                         -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf

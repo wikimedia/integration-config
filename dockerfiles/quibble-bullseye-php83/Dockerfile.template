@@ -25,6 +25,7 @@ php8.3-mysql
 php8.3-pgsql
 php8.3-sqlite3
 php8.3-tidy
+php8.3-uuid
 php8.3-xml
 php8.3-zip
 {%- endset -%}

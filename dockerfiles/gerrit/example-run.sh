@@ -17,13 +17,13 @@ docker run \
     --env ZUUL_PROJECT=operations/software/gerrit \
     --env ZUUL_BRANCH=$GERRIT_WMF_BRANCH \
     --env ZUUL_REF=$GERRIT_WMF_BRANCH \
-    --volume "/$(pwd)/src://src" \
+    --volume "/$PWD/src://src" \
         docker-registry.wikimedia.org/releng/ci-src-setup-simple:latest
 
 docker run \
     --rm --tty \
-    --volume /"$(pwd)"/log://log \
-    --volume /"$(pwd)"/cache://cache \
-    --volume /"$(pwd)"/src://src \
+    --volume /"$PWD"/log://log \
+    --volume /"$PWD"/cache://cache \
+    --volume /"$PWD"/src://src \
     --entrypoint=/src/wmf-build.py \
     docker-registry.wikimedia.org/releng/gerrit:latest

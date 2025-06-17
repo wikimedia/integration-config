@@ -93,9 +93,13 @@ def set_parameters(item, job, params):
             # which does not have the parallel work.
             "mediawiki/extensions/DonationInterface",
         ]
-        # ... exclude on REL_ branches (not yet tested/patched),
+        # ... exclude on pre-1.44 REL_ branches (not yet tested/patched),
         and "ZUUL_BRANCH" in params
-        and not params["ZUUL_BRANCH"].startswith("REL1")
+        and not (
+            params["ZUUL_BRANCH"].startswith("REL1_43")
+            or params["ZUUL_BRANCH"].startswith("REL1_42")
+            or params["ZUUL_BRANCH"].startswith("REL1_39")
+        )
         # Exclude fundraising branches and specific jobs
         and not params["ZUUL_BRANCH"].startswith("fundraising")
         and not job.name.startswith("quibble-fundraising")
@@ -103,6 +107,17 @@ def set_parameters(item, job, params):
         params['QUIBBLE_PHPUNIT_PARALLEL'] = '1'
         params['MW_RESULTS_CACHE_SERVER_BASE_URL'] = \
             'https://phpunit-results-cache.toolforge.org/results'
+
+    if job.name.startswith('integration-quibble-fullrun-opensearch'):
+        params['QUIBBLE_OPENSEARCH'] = 'true'
+
+    # Enable Open Search for Wikibase API tests. T386691
+    if (
+        params['ZUUL_PROJECT'] == 'mediawiki/extensions/Wikibase'
+        and params['ZUUL_BRANCH'] == 'master'
+        and job.name.startswith('mediawiki-quibble-apitests')
+    ):
+        params['QUIBBLE_OPENSEARCH'] = 'true'
 
     # parallel-lint can be slow, so raise the limit for vendor.git
     if params['ZUUL_PROJECT'].startswith('mediawiki/vendor'):
@@ -254,9 +269,10 @@ def set_mw_dependencies(item, job, params):
     # T363639 - WebAuthn won't run on REL1_XX because of library issues
     # T390754 - Just don't load WebAuthn at all if it's not master, or it's Parsoid
     if (
-        (params['ZUUL_BRANCH'] in ['REL1_39', 'REL1_42', 'REL1_43']
-         or params['ZUUL_PROJECT'] == 'mediawiki/services/parsoid')
-        and 'WebAuthn' in ext_deps
+        'WebAuthn' in ext_deps and (
+            not (params['ZUUL_BRANCH'] == 'master' or params['ZUUL_BRANCH'].startswith('wmf/'))
+            or params['ZUUL_PROJECT'] == 'mediawiki/services/parsoid'
+        )
     ):
         ext_deps.remove('WebAuthn')
 

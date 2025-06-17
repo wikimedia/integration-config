@@ -41,6 +41,7 @@ skins/Vector:
 # Extensions:
 AbuseFilter:
  - CheckUser
+ - CommunityConfiguration
  - CentralAuth
  - Echo
  - Renameuser
@@ -149,6 +150,7 @@ CheckUser:
  - GlobalBlocking
  - GlobalPreferences
  - GrowthExperiments
+ - IPInfo
  - TorBlock
  - UserMerge
 
@@ -180,6 +182,9 @@ CodeMirror:
 
 CollapsibleVector:
  - skins/Vector
+
+CodeEditor:
+ - BetaFeatures
 
 CommunityConfigurationExample:
  - CommunityConfiguration
@@ -250,7 +255,6 @@ DonationInterface:
 
 Echo:
  - CentralAuth
- - EventLogging
  - UserMerge
 
 ElectronPdfService:
@@ -360,6 +364,7 @@ InlineComments:
 
 IPInfo:
  - EventLogging
+ - GlobalPreferences
  - MobileFrontend
 
 intersection:
@@ -471,6 +476,7 @@ ORES:
 
 PageAssessments:
  - CirrusSearch
+ - Scribunto
 
 PageForms:
  - AdminLinks
@@ -479,6 +485,7 @@ PageForms:
 
 PageImages:
  - MobileFrontend
+ - Scribunto
 
 PageTriage:
  - Echo
@@ -513,6 +520,7 @@ Popups:
 ProofreadPage:
  - Scribunto
  - BetaFeatures
+ - CodeMirror
 
 PropertySuggester:
  - Wikibase
@@ -574,6 +582,9 @@ SportsTeams:
  - SocialProfile
  - UserStatus
  - BlogPage
+
+StructuredNavigation:
+ - CodeEditor
 
 StopForumSpam:
  - AbuseFilter
@@ -741,6 +752,7 @@ WikimediaEvents:
  - BetaFeatures
  - CentralAuth
  - CheckUser
+ - cldr
  - EmailAuth
  - EventBus
  - EventLogging
@@ -764,6 +776,8 @@ WikimediaMaintenance:
 
 WikimediaMessages:
  - CampaignEvents
+ - cldr
+ - Echo
  - GuidedTour
  - MobileFrontend
  - ORES

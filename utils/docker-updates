@@ -9,6 +9,11 @@ import sys
 
 from debian.changelog import Changelog
 
+if '--help' in sys.argv:
+    print("Wikimedia Jenkins Job Builder CI docker image usage updater tool")
+    print("usage: docker-updates [--apply]")
+    sys.exit(0)
+
 # pcre regex passed to `git grep -P' to find images in the jjb directory
 IMAGE_GREP_PATTERN = (
     'docker-registry\\.wikimedia\\.org'
@@ -52,6 +57,7 @@ except subprocess.CalledProcessError as e:
     print(e.output.decode())
     sys.exit(e.returncode)
 
+updates_count = 0
 errors = []
 files_fixes = defaultdict(list)
 for jjb_def in jjb_defs.decode().split('\n'):
@@ -82,6 +88,7 @@ for jjb_def in jjb_defs.decode().split('\n'):
         print('%s:%s:%s > %s' % (
             yaml_file, line, found_image, latest_version[image_name])
             + (' \033[33m# %s\033[0m' % comment if comment else ''))
+        updates_count += 1
         if not comment:
             files_fixes[yaml_file].append(
                 Fix(int(line), found_image, str(latest_version[image_name]))
@@ -91,12 +98,17 @@ if errors:
     print('\n'.join(errors), file=sys.stderr)
     sys.exit(1)
 
+if updates_count == 0:
+    print("No updates")
+    sys.exit(0)
+
+if '--apply' not in sys.argv:
+    print("You can apply the updates with the --apply flag.")
+    sys.exit(0)
+
 if (
-    '--apply' in sys.argv
-    or (
-        sys.stdout.isatty()
-        and input('Apply updates? [y/N]: ').lower() == 'y'
-    )
+    sys.stdout.isatty()
+    and input('Apply updates? [y/N]: ').lower() == 'y'
 ):
     print('Applying changes ...')
     for yaml_file, fixes in files_fixes.items():

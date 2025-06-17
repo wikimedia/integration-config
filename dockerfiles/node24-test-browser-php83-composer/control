@@ -1,0 +1,1 @@
+Depends: node24-test-browser, composer-scratch, php-scratch, sury-php

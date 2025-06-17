@@ -1,3 +1,17 @@
+php83-compile (8.3.21-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php83:
+   Build php-ast inline to lock version to the PHP binary
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 12 Jun 2025 11:05:28 -0400
+
+php83-compile (8.3.21) wikimedia; urgency=high
+
+   Refresh for update in parent image php83:
+   Update PHP to 8.3.21; add php8.3-uuid
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  5 Jun 2025 13:33:49 -0400
+
 php83-compile (8.3.17) wikimedia; urgency=high
 
    Refresh for update in parent image php83:

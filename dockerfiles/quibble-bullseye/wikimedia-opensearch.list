@@ -1,0 +1,2 @@
+deb http://apt.wikimedia.org/wikimedia bullseye-wikimedia thirdparty/opensearch1
+deb http://apt.wikimedia.org/wikimedia bullseye-wikimedia component/opensearch13

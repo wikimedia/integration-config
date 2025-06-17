@@ -1,0 +1,52 @@
+quibble-bullseye-php81-coverage (1.14.1-s7) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   (T366646) Revert MardiaDB to 10.5, Wikimedia package lacks all scripts
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 16 Jun 2025 11:41:25 -0400
+
+quibble-bullseye-php81-coverage (1.14.1-s6) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   (T366646) Add the MariaDB binaries to our path
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 16 Jun 2025 11:00:19 -0400
+
+quibble-bullseye-php81-coverage (1.14.1-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   (T366646) Switch MariaDB to 10.6 Wikimedia package, again
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 16 Jun 2025 08:53:17 -0400
+
+quibble-bullseye-php81-coverage (1.14.1-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Build php-ast inline to lock version to the PHP binary
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 12 Jun 2025 11:05:28 -0400
+
+quibble-bullseye-php81-coverage (1.14.1-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Update PHP to 8.1.32-1+wmf11u1; add php8.1-uuid
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  5 Jun 2025 13:33:39 -0400
+
+quibble-bullseye-php81-coverage (1.14.1-s2) wikimedia; urgency=high
+
+   Update clover-edit.py for python 3.9
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 20 May 2025 12:21:52 -0400
+
+quibble-bullseye-php81-coverage (1.14.1-s1) wikimedia; urgency=high
+
+   Upgrade mediawiki/phpunit-patch-coverage to 0.0.15
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 20 May 2025 10:24:28 -0400
+
+quibble-bullseye-php81-coverage (1.14.1) wikimedia; urgency=high
+
+   Initial release, forked from quibble-bullseye-php74-coverage.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed, 12 Apr 2025 14:57:51 -0400

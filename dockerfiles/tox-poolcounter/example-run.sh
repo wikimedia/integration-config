@@ -9,6 +9,6 @@ docker run \
     --env ZUUL_PROJECT=mediawiki/services/poolcounter \
     --env ZUUL_COMMIT=master \
     --env ZUUL_REF=master \
-    --volume /"$(pwd)"/log://log \
-    --volume /"$(pwd)"/cache://cache \
+    --volume /"$PWD"/log://log \
+    --volume /"$PWD"/cache://cache \
     docker-registry.wikimedia.org/releng/tox-poolcounter:lastest

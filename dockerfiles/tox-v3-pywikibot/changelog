@@ -1,3 +1,10 @@
+tox-v3-pywikibot (1.1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-common:
+   Silence git init warning in ci-src-setup - T393847
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 12 May 2025 11:44:02 +0200
+
 tox-v3-pywikibot (1.1) wikimedia; urgency=medium
 
   Refresh for update in parent image python:all

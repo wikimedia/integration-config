@@ -1,3 +1,17 @@
+catalyst (1.2.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image node22-test:
+   Mute checks for npm packaging files - T393847
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 13 May 2025 09:38:44 +0200
+
+catalyst (1.2.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image node22:
+   Upgrade Node to 22.15.0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 28 Apr 2025 13:13:22 +0100
+
 catalyst (1.2.0) wikimedia; urgency=high
 
    Make npm args configurable

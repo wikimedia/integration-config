@@ -1,4 +1,4 @@
-FROM {{ "composer-php74" | image_tag }}
+FROM {{ "composer-php81" | image_tag }}
 
 # Version to install. You can check new releases at:
 #

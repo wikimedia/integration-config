@@ -1,3 +1,10 @@
+java11 (0.3-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-common:
+   Silence git init warning in ci-src-setup - T393847
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 12 May 2025 11:44:02 +0200
+
 java11 (0.3) wikimedia; urgency=medium
 
   * Reimage to use Bullseye - T335765

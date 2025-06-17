@@ -1,0 +1,18 @@
+node24-test-browser-php83-composer (24.1.0-s2) wikimedia; urgency=high
+
+  * Inline building of the PHP extension to ensure it is compiled with the
+    same version of PHP that is provided by this image. T396312
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 12 Jun 2025 12:38:24 +0200
+
+node24-test-browser-php83-composer (24.1.0-s1) wikimedia; urgency=high
+
+   Add php8.3-uuid
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  5 Jun 2025 14:19:00 -0400
+
+node24-test-browser-php83-composer (24.1.0) wikimedia; urgency=high
+
+   Initial image, with Node 24.1.0 and npm 11.3.0.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue,  3 Jun 2025 11:30:22 -0400

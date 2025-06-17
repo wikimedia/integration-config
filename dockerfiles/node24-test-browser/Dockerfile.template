@@ -1,0 +1,18 @@
+# Docker image with nodejs, jsduck, and browsers installed.
+# Executes 'npm run {cmd:test}' in /src.
+
+FROM {{ "node24-test" | image_tag }}
+
+USER root
+
+# Not phantomjs as that's not available any more
+RUN {{ "chromium chromium-driver firefox-esr xvfb ffmpeg" | apt_install }}
+
+USER nobody
+
+# For karma-chrome-launcher
+#
+# Developers usually configure Chrome, so point it to Chromium
+ENV CHROME_BIN=/usr/bin/chromium
+
+COPY run-with-xvfb.sh /run-with-xvfb.sh

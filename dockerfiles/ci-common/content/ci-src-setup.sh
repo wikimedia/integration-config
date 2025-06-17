@@ -12,7 +12,8 @@ if [[ "${JENKINS_URL:-}" == "" && "${CI:-}" == "" ]]; then
     exit
 fi
 
-git init
+# Explicitly set initial branch to mute a warning
+git init --initial-branch="${ZUUL_BRANCH:-master}"
 
 # Set the remote to the canonical repository, that is notably used by git LFS
 # to infer the remote endpoint to fetch from.
@@ -23,8 +24,9 @@ git fetch --quiet --update-head-ok --depth 2 "${ZUUL_URL}/${ZUUL_PROJECT}" "+${Z
 
 if [[ "${ZUUL_BRANCH:-}" == "" ]]; then
     # For ref-updated events such as a new tag
-    git checkout -q FETCH_HEAD
+    git checkout --quiet FETCH_HEAD
 else
+    # That one is not quiet to display the checked out branch
     git checkout -B "$ZUUL_BRANCH" FETCH_HEAD
 fi
 

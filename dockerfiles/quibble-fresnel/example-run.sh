@@ -13,7 +13,7 @@ docker run \
     --env ZUUL_PROJECT=mediawiki/core \
     --env ZUUL_COMMIT=master \
     --env ZUUL_REF=master \
-    --volume /"$(pwd)"/log:/workspace/log \
+    --volume /"$PWD"/log:/workspace/log \
     --rm \
     docker-registry.wikimedia.org/releng/quibble-fresnel:latest \
     --packages-source vendor --db mysql --db-dir /workspace/db --skip-deps --commands mediawiki-fresnel-patch
