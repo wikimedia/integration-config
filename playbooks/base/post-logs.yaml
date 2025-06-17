@@ -7,6 +7,9 @@
   roles:
     - generate-zuul-manifest
 
+    # Collect artifacts, logs and docs from the nodes `zuul_output_dir`
+    - fetch-output-openshift
+
     # https://zuul-ci.org/docs/zuul-jobs/latest/log-roles.html#role-upload-logs-s3
     - role: upload-logs-s3
       zuul_log_aws_access_key: "{{ s3_artifacts.access }}"
