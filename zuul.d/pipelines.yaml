@@ -1,4 +1,3 @@
-# noop
 - pipeline:
     name: check
     description: |
