@@ -1,3 +1,9 @@
+- hosts: all
+  roles:
+    # Collect artifacts, logs and docs from the nodes `zuul_output_dir`
+    - role: fetch-output-openshift
+      zuul_log_verbose: true
+
 - hosts: localhost
   gather_facts: False
   vars:
@@ -6,10 +12,6 @@
       rgw_prefix: swift/v1/AUTH_a3598983742448b3b056b5fcb228faa9/
   roles:
     - generate-zuul-manifest
-
-    # Collect artifacts, logs and docs from the nodes `zuul_output_dir`
-    - role: fetch-output-openshift
-      zuul_log_verbose: true
 
     # https://zuul-ci.org/docs/zuul-jobs/latest/log-roles.html#role-upload-logs-s3
     - role: upload-logs-s3
