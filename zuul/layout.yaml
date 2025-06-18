@@ -6824,7 +6824,7 @@ projects:
 
   - name: mediawiki/extensions/ImageMapEdit
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/ImageRating
     template:
