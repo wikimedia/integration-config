@@ -1,3 +1,12 @@
+quibble-bullseye-php82 (1.14.1-s7) wikimedia; urgency=medium
+
+  * Disable XDebug due to performance impact - T319495
+  * Move php-pcov install next to the other extensions so we do a single apt
+    installation.
+  * Disable pcov and XDebug in a single command.
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 19 Jun 2025 13:36:58 +0200
+
 quibble-bullseye-php82 (1.14.1-s6) wikimedia; urgency=medium
 
   * Add XDebug back into quibble images to assist debug

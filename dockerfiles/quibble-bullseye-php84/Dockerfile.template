@@ -22,11 +22,12 @@ php8.4-ldap
 php8.4-mbstring
 php8.4-memcached
 php8.4-mysql
+php8.4-pcov
 php8.4-pgsql
 php8.4-sqlite3
 php8.4-tidy
 php8.4-uuid
-php8.3-xdebug
+php8.4-xdebug
 php8.4-xml
 php8.4-zip
 {%- endset -%}
@@ -43,8 +44,8 @@ RUN {{ mediawiki_deps | apt_install }} \
     && /install-php-fpm-conf.sh
 
 # Disable pcov by default, although the performance overhead should be minimal
-RUN {{ "php8.4-pcov" | apt_install }} \
-    && phpdismod pcov
+# Disable XDebug by default due to its performance impact
+RUN phpdismod pcov xdebug
 
 # Unprivileged
 RUN install --directory /workspace --owner=nobody --group=nogroup

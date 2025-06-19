@@ -26,6 +26,7 @@ php8.1-ldap
 php8.1-mbstring
 php8.1-memcached
 php8.1-mysql
+php8.1-pcov
 php8.1-pgsql
 php8.1-sqlite3
 php8.1-tidy
@@ -40,8 +41,8 @@ RUN {{ mediawiki_deps | apt_install }} \
     && /install-php-fpm-conf.sh
 
 # Disable pcov by default, although the performance overhead should be minimal
-RUN {{ "php8.1-pcov" | apt_install }} \
-    && phpdismod pcov
+# Disable XDebug by default due to its performance impact
+RUN phpdismod pcov xdebug
 
 # Ensure the image use PHP 8.1, as that is not the default on bullseye
 RUN update-alternatives --set php /usr/bin/php8.1
