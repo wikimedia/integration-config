@@ -273,6 +273,7 @@ EventBus:
 
 EventLogging:
  - SyntaxHighlight_GeSHi
+ - CodeEditor
 
 ExternalData:
  - Scribunto
