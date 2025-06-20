@@ -1,3 +1,9 @@
+php84 (8.4.7-s2) wikimedia; urgency=high
+
+   Enable php-pcov by default T395743
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Fri, 20 Jun 2025 17:13:11 -0700
+
 php84 (8.4.7-s1) wikimedia; urgency=high
 
   Build php-ast inline to lock version to the PHP binary T396312

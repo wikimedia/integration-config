@@ -1,3 +1,10 @@
+composer-package-php84 (8.4.7-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image php84:
+   Enable php-pcov by default T395743
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Fri, 20 Jun 2025 17:13:11 -0700
+
 composer-package-php84 (8.4.7-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php84:

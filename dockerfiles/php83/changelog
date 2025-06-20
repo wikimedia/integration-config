@@ -1,5 +1,11 @@
 php83 (8.3.21-s1) wikimedia; urgency=high
 
+   Enable php-pcov by default T395743
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Fri, 20 Jun 2025 17:12:56 -0700
+
+php83 (8.3.21-s1) wikimedia; urgency=high
+
   Build php-ast inline to lock version to the PHP binary T396312
 
  -- Antoine Musso <hashar@free.fr>  Thu, 12 Jun 2025 12:38:24 +0200
