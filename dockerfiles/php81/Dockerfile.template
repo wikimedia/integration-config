@@ -60,6 +60,10 @@ COPY --from=ast-builder /srv/artifacts/ast.ini /etc/php/8.1/cli/conf.d/20-ast.in
 COPY --from=php-scratch test-ast-tokens.php /test-ast-tokens.php
 RUN php /test-ast-tokens.php
 
+# Disable pcov (re-enabled in phpunit-coverage-*-publish job)
+# Overhead is low, but incompat with profilers/debuggers makes debugging harder
+RUN phpdismod pcov
+
 USER nobody
 
 ENTRYPOINT ["php"]

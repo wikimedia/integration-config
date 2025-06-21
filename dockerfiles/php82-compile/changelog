@@ -1,3 +1,10 @@
+php82-compile (8.2.28-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Disable php-pcov by default T395743
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Fri, 20 Jun 2025 20:19:56 -0700
+
 php82-compile (8.2.28-s2) wikimedia; urgency=high
 
    Refresh for update in parent image php82:

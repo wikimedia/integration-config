@@ -1,3 +1,9 @@
+php81 (8.1.32-s3) wikimedia; urgency=high
+
+   Disable php-pcov by default T395743
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Fri, 20 Jun 2025 20:19:24 -0700
+
 php81 (8.1.32-s2) wikimedia; urgency=high
 
    Enable php-pcov by default T395743
