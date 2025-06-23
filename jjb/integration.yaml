@@ -149,7 +149,7 @@
     name: integration-tox-jenkins-override
     jobs:
         - '{name}-tox-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.2
             docsrc: 'doc/build/html'
             docdest: tox-jenkins-override
 
