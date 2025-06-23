@@ -1,0 +1,5 @@
+tox-v4 (0.1) wikimedia; urgency=medium
+
+  * Initial release based on tox-v3.
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 23 Jun 2025 10:47:11 +0200

@@ -1,0 +1,15 @@
+FROM {{ "python-all" | image_tag }}
+
+ARG TOX_VERSION=4.27.0
+ARG VIRTUALENV_VERSION=20.31.2
+
+USER nobody
+
+RUN pip3 install --no-cache-dir \
+        tox==${TOX_VERSION} \
+    && pip3 install --no-cache-dir \
+        virtualenv==${VIRTUALENV_VERSION} \
+    && rm -fR "$XDG_CACHE_HOME/pip"
+
+ENTRYPOINT ["/run.sh"]
+COPY run.sh /run.sh
