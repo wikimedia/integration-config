@@ -2,11 +2,15 @@ FROM {{ "python-all" | image_tag }}
 
 ARG TOX_VERSION=4.27.0
 ARG VIRTUALENV_VERSION=20.31.2
+# Tox plugin to support [tox:jenkins] configuration - T345607
+# See https://gerrit.wikimedia.org/g/integration/tox-jenkins-override
+ARG TOX_JENKINS_OVERRIDE_SHA1=4ea7ab8845a3ed40c8a769a694f1037b68c455cf
 
 USER nobody
 
 RUN pip3 install --no-cache-dir \
         tox==${TOX_VERSION} \
+        git+https://gerrit.wikimedia.org/r/integration/tox-jenkins-override.git\@${TOX_JENKINS_OVERRIDE_SHA1}\#egg=tox-jenkins-override \
     && pip3 install --no-cache-dir \
         virtualenv==${VIRTUALENV_VERSION} \
     && rm -fR "$XDG_CACHE_HOME/pip"
