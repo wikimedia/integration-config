@@ -454,6 +454,7 @@ BounceHandler:
  - CentralAuth
 
 CampaignEvents:
+ - cldr
  - Translate
  - WikimediaCampaignEvents
 

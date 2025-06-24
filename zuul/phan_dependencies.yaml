@@ -99,6 +99,7 @@ BounceHandler:
  - Echo
 
 CampaignEvents:
+ - cldr
  - CommunityConfiguration
  - Echo
  - Translate
