@@ -2,7 +2,7 @@
 # (.pipeline/config.yaml)
 - job-template:
     name: 'trigger-{name}-pipeline-{pipeline}'
-    node: contint1002
+    node: productionAgents
     parameters: &project-pipeline-parameters
       - string:
           name: PLIB_PIPELINE
