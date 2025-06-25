@@ -56,7 +56,7 @@
 
 - job:
     name: publish-to-doc
-    node: contint1002
+    node: productionAgents
     concurrent: false
     properties:
         - build-discarder:
