@@ -833,4 +833,5 @@
         unstable: '{unstable}'
         still-failing: '{still_failing}'
         still-unstable: '{still_unstable}'
+     - send-metrics-to-prometheus
      - teardown
