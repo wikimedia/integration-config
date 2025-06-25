@@ -54,6 +54,29 @@
          docsrc: '{src}'
          docdest: 'cover-skins/{dest}'
 
+- builder:
+    name: fetch-from-remote-instance
+    builders:
+     - shell: |
+         set -u
+         set +x
+         ssh_config=($TRIGGERED_SSH_CONNECTION)
+         REMOTE_INSTANCE=${ssh_config[2]}
+
+         echo "Fetching from:"
+         echo "- Instance...: ${REMOTE_INSTANCE}"
+         echo "- Workspace..: ${TRIGGERED_WORKSPACE}"
+         echo "- Subdir.....: ${WMF_CI_SRC}"
+
+         # Paths are normalized via the trailing slash dot in source path
+         (set -x; rsync \
+            --archive \
+            --stats \
+            --compress \
+            --rsh="/usr/bin/ssh -a -T -o ConnectTimeout=6 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
+            jenkins-deploy@"${REMOTE_INSTANCE}:${TRIGGERED_WORKSPACE}/${WMF_CI_SRC}"/. .
+         )
+
 - job:
     name: publish-to-doc
     node: productionAgents
@@ -86,28 +109,8 @@
     publishers:
       - workspace-cleanup
     builders:
+      - fetch-from-remote-instance
       - shell: |
-         set -u
-         set +x
-         ssh_config=($TRIGGERED_SSH_CONNECTION)
-         REMOTE_INSTANCE=${ssh_config[2]}
-
-         DOC_URL="https://doc.wikimedia.org/${WMF_CI_PUB_DEST}/"
-
-         echo "Fetching from:"
-         echo "- Instance...: ${REMOTE_INSTANCE}"
-         echo "- Workspace..: ${TRIGGERED_WORKSPACE}"
-         echo "- Subdir.....: ${WMF_CI_SRC}"
-
-         # Paths are normalized via the trailing slash dot in source path
-         (set -x; rsync \
-            --archive \
-            --stats \
-            --compress \
-            --rsh="/usr/bin/ssh -a -T -o ConnectTimeout=6 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
-            jenkins-deploy@"${REMOTE_INSTANCE}:${TRIGGERED_WORKSPACE}/${WMF_CI_SRC}"/. .
-         )
-
          echo "Creating remote directory ${WMF_CI_PUB_DEST}"
          tmpdir=$(mktemp -d)
          (
@@ -132,4 +135,6 @@
             . \
             "rsync://doc.discovery.wmnet/doc/${WMF_CI_PUB_DEST}"
          )
+
+         DOC_URL="https://doc.wikimedia.org/${WMF_CI_PUB_DEST}/"
          echo -e "\nPublished at ${DOC_URL}\nDone."
