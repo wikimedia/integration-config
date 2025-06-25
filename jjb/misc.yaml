@@ -112,7 +112,7 @@
 
 - job:
     name: 'fail-archived-repositories'
-    node: contint1002
+    node: productionAgents
     concurrent: false
     triggers:
      - zuul
