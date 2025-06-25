@@ -7,7 +7,7 @@
 # <https://wikitech.wikimedia.org/wiki/Heterogeneous_deployment/Train_deploys#Update_deploy_notes>
 - job:
     name: 'train-deploy-notes'
-    node: train
+    node: productionAgents
     concurrent: false
     triggers:
       - zuul
