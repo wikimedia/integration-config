@@ -911,6 +911,7 @@ parsoid:
 
 PDFCreator:
  - OOJSPlus
+ - VueJsPlus
 
 Phonos:
  - TimedMediaHandler
