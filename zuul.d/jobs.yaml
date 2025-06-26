@@ -11,8 +11,8 @@
       It also sets a default timeout value (which may be overidden).
 
     secrets:
-        - name: s3_artifacts
-          secret: s3_artifacts
+        - name: wmcs_swift_api
+          secret: wmcs_swift_api
 
     pre-run: playbooks/base/pre.yaml
     post-run:

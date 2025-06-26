@@ -6,30 +6,17 @@
 
 - hosts: localhost
   gather_facts: False
-  vars:
-      zuul_log_bucket: artifacts
-      upload_logs_s3_endpoint: https://object.eqiad1.wikimediacloud.org/
-      rgw_prefix: swift/v1/AUTH_a3598983742448b3b056b5fcb228faa9/
   roles:
     - role: generate-zuul-manifest
       # Tell the zuul web ui that it needs to add index.html to the
       # end of directory links.
       generate_zuul_manifest_index_links: true
 
-    # https://zuul-ci.org/docs/zuul-jobs/latest/log-roles.html#role-upload-logs-s3
-    - role: upload-logs-s3
-      zuul_log_aws_access_key: "{{ s3_artifacts.access }}"
-      zuul_log_aws_secret_key: "{{ s3_artifacts.secret }}"
-
-  post_tasks:
-    # We're uploading via an S3 endpoint, but fetching via the Ceph
-    # rados gateway swift endpoint; the upstream role doesn't expect that,
-    # so we need to override the returned url.
-    # zuul_log_path is set by the upload-logs-s3 role (which calls the
-    # set-zuul-log-path-fact role).  The other variables are set above.
-    - name: Override log URL
-      delegate_to: localhost
-      zuul_return:
-        data:
-          zuul:
-            log_url: "{{ upload_logs_s3_endpoint }}{{ rgw_prefix }}{{ zuul_log_bucket }}/{{ zuul_log_path }}"
+    # https://zuul-ci.org/docs/zuul-jobs/latest/log-roles.html#role-upload-logs-swift
+    # https://wikitech.wikimedia.org/wiki/Help:Object_storage_user_guide#Swift_API
+    - role: upload-logs-swift
+      zuul_log_cloud_config: "{{ wmcs_swift_api.cloud_config }}"
+      zuul_log_container: artifacts
+      # Swift object expiration, passed to `X-Delete-After` header
+      # https://docs.openstack.org/swift/latest/overview_expiring_objects.html
+      zuul_log_delete_after: 300 # seconds = 5 minutes
