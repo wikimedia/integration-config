@@ -15,7 +15,7 @@
     # https://zuul-ci.org/docs/zuul-jobs/latest/log-roles.html#role-upload-logs-swift
     # https://wikitech.wikimedia.org/wiki/Help:Object_storage_user_guide#Swift_API
     - role: upload-logs-swift
-      zuul_log_cloud_config: "{{ wmcs_swift_api.cloud_config }}"
+      zuul_log_cloud_config: "{{ wmcs_cloud_config }}"
       zuul_log_container: artifacts
       # Swift object expiration, passed to `X-Delete-After` header
       # https://docs.openstack.org/swift/latest/overview_expiring_objects.html

@@ -11,8 +11,8 @@
       It also sets a default timeout value (which may be overidden).
 
     secrets:
-        - name: wmcs_swift_api
-          secret: wmcs_swift_api
+        - name: wmcs_cloud_config
+          secret: wmcs_cloud_config
 
     pre-run: playbooks/base/pre.yaml
     post-run:
