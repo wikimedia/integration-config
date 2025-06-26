@@ -8815,10 +8815,6 @@ projects:
     postmerge:
       - analytics-refinery-maven-java8-site-publish
 
-  - name: analytics/reportupdater
-    template:
-      - name: tox
-
   - name: analytics/udplog
     template:
       - name: debian-glue
@@ -10129,6 +10125,10 @@ projects:
   - name: analytics/quarry/web
     template:
       - name: archived
+
+  - name: analytics/reportupdater
+    template:
+      - name: archived # T397922
 
   - name: analytics/wikistats
     template:
