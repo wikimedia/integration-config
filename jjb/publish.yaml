@@ -154,7 +154,14 @@
      # trigger-builds can not be run postbuild wrap it with postbuildscript
      - postbuildscript:
          builders:
-          - build-steps:
+          - build-on:
+              # We want to report tests regardless of their statuses. If
+              # nothing ran (failure), publish-to-prometheus would simply have
+              # no *.prom to act on and skip.
+              - SUCCESS
+              - UNSTABLE
+              - FAILURE
+            build-steps:
              - trigger-builds:
                 - project: publish-to-prometheus
                   block: true
