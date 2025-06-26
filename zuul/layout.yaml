@@ -5263,12 +5263,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/VipsScaler
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/VisualEditor
     template:
       - name: in-wikimedia-production
@@ -8267,6 +8261,11 @@ projects:
   - name: mediawiki/extensions/VikiTitleIcon
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
+
+  - name: mediawiki/extensions/VipsScaler
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/VisualData
     template:
