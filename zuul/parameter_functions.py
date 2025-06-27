@@ -92,6 +92,17 @@ def set_parameters(item, job, params):
             # branch is tested with mediawiki/core fundraising/REL1_43 branch
             # which does not have the parallel work.
             "mediawiki/extensions/DonationInterface",
+
+            # MediaWiki core PhpUnitXmlManager.php assumes test classes and
+            # file names match. MediaWikiFarm prefixes classes names while the
+            # files names use the shorthand.
+            #
+            # For example \MediaWikiFarmHooksTest is in HooksTest.php and it
+            # thus can't be found by the PHPUnit tests splitter: T398023.
+            #
+            # The extension classes should have the prefix dropped in favor of
+            # using PHP namespaces. Meanwhile disable parallel testing.
+            "mediawiki/extensions/MediaWikiFarm",
         ]
         # ... exclude on pre-1.44 REL_ branches (not yet tested/patched),
         and "ZUUL_BRANCH" in params
