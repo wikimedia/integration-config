@@ -661,6 +661,9 @@ UploadWizard:
  - EventLogging
  - CodeEditor
 
+VisualData:
+ - Scribunto
+
 VisualEditor:
  - BetaFeatures
 
