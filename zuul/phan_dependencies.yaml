@@ -595,6 +595,9 @@ StopForumSpam:
 TEI:
  - Math
 
+TemplateData:
+ - CommunityConfiguration
+
 TemplateStyles:
  - CodeEditor
 
