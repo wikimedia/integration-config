@@ -563,6 +563,7 @@ Score:
 Scribunto:
  - SyntaxHighlight_GeSHi
  - CodeEditor
+ - CodeMirror
 
 SecurePoll:
  - CentralAuth
