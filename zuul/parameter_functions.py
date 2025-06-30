@@ -71,7 +71,6 @@ def set_parameters(item, job, params):
         # remove once old branch support is dropped
         if not (
             params["ZUUL_BRANCH"].startswith("REL1_39")
-            or params["ZUUL_BRANCH"].startswith("REL1_42")
         ):
             params['EXT_DEPENDENCIES'] += '\\nmediawiki/extensions/EntitySchema'
 
@@ -108,7 +107,6 @@ def set_parameters(item, job, params):
         and "ZUUL_BRANCH" in params
         and not (
             params["ZUUL_BRANCH"].startswith("REL1_43")
-            or params["ZUUL_BRANCH"].startswith("REL1_42")
             or params["ZUUL_BRANCH"].startswith("REL1_39")
         )
         # Exclude fundraising branches and specific jobs
@@ -290,7 +288,7 @@ def set_mw_dependencies(item, job, params):
     # T380434 - CommunityConfiguration and CommunityConfigurationExample,
     # aren't in all old release branches, and falling back to the master
     # version won't work, so just remove both in these branches...
-    if params['ZUUL_BRANCH'] in ['REL1_39', 'REL1_42']:
+    if params['ZUUL_BRANCH'] in ['REL1_39']:
         if 'CommunityConfiguration' in ext_deps:
             # Not in REL1_39 (or REL1_41)
             ext_deps.remove('CommunityConfiguration')
