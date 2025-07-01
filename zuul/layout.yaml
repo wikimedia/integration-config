@@ -6709,7 +6709,7 @@ projects:
 
   - name: mediawiki/extensions/HeaderFooter
     template:
-      - name: extension-quibble
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/HeaderTabs
     template:
