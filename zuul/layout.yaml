@@ -1201,7 +1201,8 @@ jobs:
     success-pattern: 'https://integration.wikimedia.org/ci/job/{job.name}/{build.number}/'
     branch: ^wmf/.*$
 
-  - name: gerrit-node20
+  # Only deploy branches need `npm run test`
+  - name: ^gerrit-node.*
     branch: ^deploy/wmf.*$
 
   - name: cumin-tox-publish
@@ -3610,8 +3611,6 @@ projects:
       - gerrit-node24
     gate-and-submit:
       - gerrit
-      - gerrit-node20
-      - gerrit-node22
       - gerrit-node24
 
   - name: operations/software/homer
