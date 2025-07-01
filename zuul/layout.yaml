@@ -6398,7 +6398,7 @@ projects:
 
   - name: mediawiki/extensions/Forms
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/FormatDates
     template:
