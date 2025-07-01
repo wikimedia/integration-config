@@ -6901,7 +6901,7 @@ projects:
 
   - name: mediawiki/extensions/LDAPUserInfo
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/LegalLogin
     template:
