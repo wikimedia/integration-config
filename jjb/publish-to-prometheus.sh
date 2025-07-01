@@ -14,6 +14,8 @@ shopt -s nullglob
 PROM_FILES=(*.prom)
 if [ ${#PROM_FILES[@]} -eq 0 ]; then
     echo "Could not find any *.prom file."
+    echo "Skipping..."
+    exit 0
 fi
 
 # curl is so terrible for this... --fail shallows any output, instead:
