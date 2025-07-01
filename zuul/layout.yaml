@@ -6893,7 +6893,7 @@ projects:
 
   - name: mediawiki/extensions/LDAPProvider
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/LDAPSyncAll
     template:
