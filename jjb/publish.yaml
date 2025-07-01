@@ -72,11 +72,22 @@
          echo "- Subdir.....: ${WMF_CI_SRC}"
          echo "- Pattern....: ${WMF_CI_FILES_PATTERN}"
 
+         # When given a pattern which does not exist on the remote, ignore it
+         # entirely. T398284
+         allow_missing_source=1
+
+         # When fetching the whole subdir (the default), we still want to error
+         # out if the source does not exist.
+         if [ "$WMF_CI_FILES_PATTERN" = "." ]; then
+             unset allow_missing_source
+         fi
+
          # Paths are normalized via the trailing slash dot in source path
          (set -x; rsync \
             --archive \
             --stats \
             --compress \
+            ${allow_missing_source:+"--ignore-missing-args"} \
             --rsh="/usr/bin/ssh -a -T -o ConnectTimeout=6 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
             jenkins-deploy@"${REMOTE_INSTANCE}:${TRIGGERED_WORKSPACE}/${WMF_CI_SRC}/${WMF_CI_FILES_PATTERN}" .
          )
