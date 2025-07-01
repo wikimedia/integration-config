@@ -7368,7 +7368,7 @@ projects:
 
   - name: mediawiki/extensions/PreToClip
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/Prezi
     template:
