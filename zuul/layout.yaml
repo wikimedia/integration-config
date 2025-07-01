@@ -6897,7 +6897,7 @@ projects:
 
   - name: mediawiki/extensions/LDAPSyncAll
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/LDAPUserInfo
     template:
