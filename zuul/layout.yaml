@@ -7245,9 +7245,7 @@ projects:
 
   - name: mediawiki/extensions/NSFileRepo
     template:
-      - name: extension-quibble
-      - name: mwgate-npm
-      - name: extension-coverage
+     - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/NukeDPL
     template:
