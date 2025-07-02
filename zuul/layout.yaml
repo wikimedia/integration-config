@@ -9417,9 +9417,9 @@ projects:
 
   - name: mediawiki/ruby/api
     test:
-      - ruby2.7-rake
+      - mediawiki-ruby-api-ruby2.7-rake
     gate-and-submit:
-      - ruby2.7-rake
+      - mediawiki-ruby-api-ruby2.7-rake
     postmerge:
       - mediawiki-ruby-api-ruby2.7-bundle-yard-publish
 

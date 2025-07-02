@@ -19,8 +19,9 @@
      - teardown
 
 - project:
-    name: 'mediawiki-ruby-api'
+    name: mediawiki-ruby-api
     jobs:
+     - '{name}-ruby2.7-rake'
      - '{name}-ruby2.7-bundle-yard-publish'
 
 - project:

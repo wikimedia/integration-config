@@ -1,11 +1,5 @@
-- project:
-    name: common-rake-job
-    jobs:
-     - ruby2.5-rake
-     - ruby2.7-rake
-
-- job-template: &job_ruby2_5-rake
-    name: 'ruby2.5-rake'
+- job-template:
+    name: '{name}-ruby2.5-rake'
     node: Docker
     docker_image_var: 'docker-registry.wikimedia.org/releng/rake-ruby2.5:0.1.0'
     triggers:
@@ -29,13 +23,7 @@
         - teardown
 
 - job-template:
-    !!merge : *job_ruby2_5-rake
-    name: '{name}-ruby2.5-rake'
-    triggers:
-        - zuul
-
-- job-template: &job_ruby2_7-rake
-    name: 'ruby2.7-rake'
+    name: '{name}-ruby2.7-rake'
     node: Docker
     docker_image_var: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.1.0
     triggers:
@@ -57,12 +45,6 @@
     publishers:
         - archive-log-allow-empty
         - teardown
-
-- job-template:
-    !!merge : *job_ruby2_7-rake
-    name: '{name}-ruby2.7-rake'
-    triggers:
-        - zuul
 
 # Call bundle 'yard' to generate documentation in labs and publish to
 # doc.wikimedia.org using an intermediate rsync repository in labs.
