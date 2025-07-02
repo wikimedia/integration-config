@@ -9601,7 +9601,7 @@ projects:
     test:
       - ooui-node24-plus-php81-runjenkins
       - ooui-node24-plus-php83-runjenkins
-      - ooui-ruby2.5-rake
+      - ooui-ruby2.7-rake
     gate-and-submit:
       - ooui-node20-plus-php81-runjenkins
       - ooui-node20-plus-php83-runjenkins
@@ -9609,7 +9609,7 @@ projects:
       - ooui-node22-plus-php83-runjenkins
       - ooui-node24-plus-php81-runjenkins
       - ooui-node24-plus-php83-runjenkins
-      - ooui-ruby2.5-rake
+      - ooui-ruby2.7-rake
     postmerge:
       - oojs-ui-doxygen-publish
       - oojs-ui-publish
