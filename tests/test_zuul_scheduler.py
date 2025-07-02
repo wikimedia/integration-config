@@ -1099,10 +1099,6 @@ class TestZuulScheduler(unittest.TestCase):
         # https://review.openstack.org/#/c/361505/2
         mw_defined_jobs.discard('noop')
 
-        # The ruby2.5-rake job is temporarily being used by Wikibase;
-        # not worth having a special version just for a short while.
-        mw_defined_jobs.discard('ruby2.5-rake')
-
         errors = {}
         # Projects that are not supposed to be in the 'mediawiki' queue. Either
         # because they share a job with a mediawiki repository either directly
