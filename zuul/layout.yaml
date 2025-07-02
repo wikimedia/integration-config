@@ -1190,7 +1190,7 @@ jobs:
       - '.*'
 
   # Ditto for translatewiki which has puppet modules under /puppet
-  - name: translatewiki-ruby2.5-rake
+  - name: translatewiki-ruby2.7-rake
     files:
       - '^\.puppet-lint\.rc$'
       - '^puppet/.*'
@@ -9798,9 +9798,9 @@ projects:
     template:
       - name: composer-test-php82-to-php84
     test:
-      - translatewiki-ruby2.5-rake
+      - translatewiki-ruby2.7-rake
     gate-and-submit:
-      - translatewiki-ruby2.5-rake
+      - translatewiki-ruby2.7-rake
 
   - name: wikimedia-cz/tracker
     template:

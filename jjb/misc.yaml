@@ -84,7 +84,7 @@
 - project:
     name: 'translatewiki'
     jobs:
-     - '{name}-ruby2.5-rake'
+     - '{name}-ruby2.7-rake'
 
 - job:
     name: fresh-test
