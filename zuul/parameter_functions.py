@@ -290,11 +290,11 @@ def set_mw_dependencies(item, job, params):
     # version won't work, so just remove both in these branches...
     if params['ZUUL_BRANCH'] in ['REL1_39']:
         if 'CommunityConfiguration' in ext_deps:
-            # Not in REL1_39 (or REL1_41)
+            # Not in REL1_39
             ext_deps.remove('CommunityConfiguration')
 
         if 'CommunityConfigurationExample' in ext_deps:
-            # Not in REL1_39 or REL1_42 (or REL1_41)
+            # Not in REL1_39
             ext_deps.remove('CommunityConfigurationExample')
 
     # T390772 - IPReputation isn't in REL1_39, so remove it.
