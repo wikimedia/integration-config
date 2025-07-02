@@ -133,4 +133,4 @@
 - project:
     name: puppet-wmf-styleguide
     jobs:
-        - '{name}-ruby2.5-rake'
+        - '{name}-ruby2.7-rake'

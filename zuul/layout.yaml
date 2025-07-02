@@ -1185,7 +1185,7 @@ jobs:
     files:
       - '.*'
 
-  - name: puppet-wmf-styleguide-ruby2.5-rake
+  - name: puppet-wmf-styleguide-ruby2.7-rake
     files:
       - '.*'
 
@@ -3514,9 +3514,9 @@ projects:
 
   - name: operations/puppet-lint/wmf_styleguide-check
     test:
-      - puppet-wmf-styleguide-ruby2.5-rake
+      - puppet-wmf-styleguide-ruby2.7-rake
     gate-and-submit:
-      - puppet-wmf-styleguide-ruby2.5-rake
+      - puppet-wmf-styleguide-ruby2.7-rake
 
   # Repo of misc softwares
   # Voting V+2 so ops don't idle waiting for CI to report.
