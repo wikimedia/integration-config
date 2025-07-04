@@ -1,31 +1,7 @@
 - job-template:
-    name: '{name}-ruby2.5-rake'
-    node: Docker
-    docker_image_var: 'docker-registry.wikimedia.org/releng/rake-ruby2.5:0.1.0'
-    triggers:
-        - zuul
-    builders:
-        - docker-castor-load
-        - docker-log-dir
-        - docker-src-dir
-        - docker-run-with-log-cache-src:
-            image: '{obj:docker_image_var}'
-    wrappers:
-      - timeout:
-          timeout: '{obj:build_timeout|3}'  # minutes
-      - timestamps
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-    publishers:
-        - archive-log-allow-empty
-        - teardown
-
-- job-template:
     name: '{name}-ruby2.7-rake'
     node: Docker
-    docker_image_var: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.1.0
+    docker_image_var: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.2.0
     triggers:
         - zuul
     builders:
@@ -59,7 +35,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.1.0
+         image: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.2.0
          args: 'yard'
      - doc-publish:
          docsrc: 'src/doc'

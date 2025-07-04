@@ -1,5 +1,5 @@
 - job-template:
-    name: 'mediawiki-vagrant-puppet-doc-publish'
+    name: mediawiki-vagrant-puppet-doc-publish
     node: Docker
     concurrent: false
     triggers:
@@ -9,7 +9,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: 'docker-registry.wikimedia.org/releng/rake-vagrant-ruby2.5:0.1.0'
+         image: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.2.0
          args: 'doc'
      - doc-publish:
         docsrc: 'src/doc'
@@ -27,7 +27,7 @@
 - project:
     name: 'mediawiki-vagrant'
     jobs:
-     - '{name}-ruby2.5-rake':
-         docker_image_var: docker-registry.wikimedia.org/releng/rake-vagrant-ruby2.5:0.1.0
+     - '{name}-ruby2.7-rake':
+         docker_image_var: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.2.0
          build_timeout: 10  # minutes
-     - 'mediawiki-vagrant-puppet-doc-publish'
+     - mediawiki-vagrant-puppet-doc-publish
