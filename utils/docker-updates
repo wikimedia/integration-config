@@ -18,7 +18,7 @@ if '--help' in sys.argv:
 IMAGE_GREP_PATTERN = (
     'docker-registry\\.wikimedia\\.org'
     '\\/releng\\/'
-    '[\\w-]+?:[\\w\\.-]+\\b')
+    '[\\w\\.-]+?:[\\w\\.-]+\\b')
 COMMENT_RE = '\\s+#\\s+?(.+)'
 
 DOCKERFILES_DIR = os.path.join(
