@@ -10,7 +10,7 @@ ruby-dev
 bundler
 rsync
 zlib1g-dev
-{- endset -%}
+{%- endset -%}
 
 RUN {{ ruby_deps | apt_install }}
 
