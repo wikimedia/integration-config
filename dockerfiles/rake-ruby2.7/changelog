@@ -1,3 +1,9 @@
+rake-ruby2.7 (0.2.0) wikimedia; urgency=medium
+
+  * Add mediawiki/vagrant dependencies (rsync, zlib1g-dev) T398469
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 04 Jul 2025 18:42:58 +0200
+
 rake-ruby2.7 (0.1.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:
