@@ -1,3 +1,16 @@
+python-all (0.3) wikimedia; urgency=medium
+
+  * Upgrade pyenv from 2.3.35 to 2.6.3
+  * Add Python 3.13.5 - T396273
+  * Upgrade other Python versions:
+  ** 3.8.18  > 3.8.20
+  ** 3.9.18  > 3.9.23
+  ** 3.10.13 > 3.10.18
+  ** 3.11.7  > 3.11.13
+  ** 3.12.1  > 3.12.11
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 07 Jul 2025 10:59:59 +0200
+
 python-all (0.2) wikimedia; urgency=medium
 
   * Change default python from 3.7 to 3.9

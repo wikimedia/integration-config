@@ -3,7 +3,8 @@
 ##############################
 FROM {{ "ci-bookworm" | image_tag }} as build
 
-ARG TARGET_PYENV_VERSION=2.3.35
+# See https://github.com/pyenv/pyenv/blob/master/CHANGELOG.md
+ARG TARGET_PYENV_VERSION=2.6.3
 ENV PYENV_ROOT=/opt/pyenv
 
 RUN install --owner=nobody --group=nogroup -d $PYENV_ROOT
@@ -42,8 +43,8 @@ RUN curl --silent --fail --location \
 
 # The first minor version is the default for the major series
 # Eg 3.9 3.7  would have python3 set to 3.9
-RUN pyenv install   2.7 3.9 3.7 3.8 3.10 3.11 3.12 \
-    && pyenv global 2.7 3.9 3.7 3.8 3.10 3.11 3.12 \
+RUN pyenv install   2.7 3.9 3.7 3.8 3.10 3.11 3.12 3.13 \
+    && pyenv global 2.7 3.9 3.7 3.8 3.10 3.11 3.12 3.13 \
     && pyenv versions
 # NOTE: pypy is installed from the Debian package
 
