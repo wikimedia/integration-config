@@ -3123,6 +3123,14 @@ projects:
     postmerge:
       - trigger-miscweb-pipeline-publish
 
+  - name: operations/container/codesearch
+    test:
+      - trigger-codesearch-sourcebot-pipeline-test
+    gate-and-submit:
+      - trigger-codesearch-sourcebot-pipeline-test
+    postmerge:
+      - trigger-codesearch-sourcebot-pipeline-publish
+
   - name: operations/cookbooks
     template:
       - name: tox
