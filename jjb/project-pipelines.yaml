@@ -427,6 +427,15 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: codesearch-sourcebot
+    pipeline:
+      - test
+      - publish
+    jobs:
+      - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'
+
+- project:
     # machinelearning/liftwing/inference-services
     name: inference-services
     pipeline:
