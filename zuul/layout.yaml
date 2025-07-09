@@ -9001,14 +9001,6 @@ projects:
     publish:
       - trigger-striker-pipeline-publish
 
-  - name: labs/toollabs
-    template:
-      - name: tox
-    test:
-      - debian-glue
-    gate-and-submit:
-      - debian-glue
-
   - name: labs/tools/apt-browser
     template:
       - name: tox
@@ -10142,6 +10134,10 @@ projects:
       - name: archived
 
   - name: labs/striker/wheels
+    template:
+      - name: archived
+
+  - name: labs/toollabs
     template:
       - name: archived
 
