@@ -7302,34 +7302,6 @@ projects:
     template:
       - name: extension-quibble-composer
 
-  - name: mediawiki/extensions/PhpTags
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/PhpTagsFunctions
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/PhpTagsSMW
-    template:
-      - name: extension-quibble-composer
-
-  - name: mediawiki/extensions/PhpTagsSPARQL
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/PhpTagsStorage
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/PhpTagsWidgets
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/PhpTagsWiki
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/PictureGame
     template:
       - name: extension-quibble
@@ -11013,9 +10985,37 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/PhpTags
+    template:
+      - name: archived # T389454
+
+  - name: mediawiki/extensions/PhpTagsFunctions
+    template:
+      - name: archived # T389454
+
   - name: mediawiki/extensions/PhpTagsMaps
     template:
       - name: archived
+
+  - name: mediawiki/extensions/PhpTagsSMW
+    template:
+      - name: archived # T389454
+
+  - name: mediawiki/extensions/PhpTagsSPARQL
+    template:
+      - name: archived # T389454
+
+  - name: mediawiki/extensions/PhpTagsStorage
+    template:
+      - name: archived # T389454
+
+  - name: mediawiki/extensions/PhpTagsWiki
+    template:
+      - name: archived # T389454
+
+  - name: mediawiki/extensions/PhpTagsWidgets
+    template:
+      - name: archived # T389454
 
   - name: mediawiki/extensions/Pickle
     template:
