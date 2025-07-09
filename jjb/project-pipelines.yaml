@@ -177,6 +177,19 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
+    name: poolcounter
+    pipeline:
+      - test
+    jobs:
+      # trigger-poolcounter-api-pipeline-test
+      - 'trigger-{name}-pipeline-{pipeline}'
+      # poolcounter-api-pipeline-test
+      - '{name}-pipeline-{pipeline}'
+      # Legacy job - T399075
+      - '{name}-tox':
+         docker_image_var: docker-registry.wikimedia.org/releng/tox-poolcounter:4.8.0-3-s3
+
+- project:
     name: recommendation-api
     pipeline:
       - test
