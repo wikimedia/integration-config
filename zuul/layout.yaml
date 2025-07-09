@@ -8439,8 +8439,10 @@ projects:
       - name: debian-glue-non-voting
     test:
       - poolcounter-tox
+      - trigger-poolcounter-pipeline-test
     gate-and-submit:
       - poolcounter-tox
+      - trigger-poolcounter-pipeline-test
 
   - name: mediawiki/services/push-notifications
     test:
