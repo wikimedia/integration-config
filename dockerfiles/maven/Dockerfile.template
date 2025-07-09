@@ -1,6 +1,6 @@
 # Scratch container containing Maven
 
-FROM {{ "ci-buster" | image_tag }} AS build
+FROM {{ "ci-bookworm" | image_tag }} AS build
 
 # Install a more recent Maven version
 COPY KEYS /tmp/KEYS
