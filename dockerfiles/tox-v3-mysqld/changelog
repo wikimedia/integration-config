@@ -1,0 +1,7 @@
+tox-v3-mysqld (0.1) wikimedia; urgency=medium
+
+  * Initial release, replaces Buster based image tox-mysqld - T335765
+  * Disable `unix_socket` authentication so that jobs running as `nobody` can
+    easily connect as root.
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 11 Jul 2025 11:14:12 +0200
