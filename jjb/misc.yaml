@@ -138,7 +138,7 @@
     name: 'wikimedia-cz-tracker'
     jobs:
         - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-mysqld:4.8.0-3-s3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.2
 
 - project:
     name: 'wikimedia-cz-tools'
