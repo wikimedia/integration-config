@@ -2,13 +2,10 @@
 
 install --mode 777 --directory log cache src
 
-# XXX note wikimedia/fundraising/tools test suite expects the Jenkins env
-# variable EXECUTOR_NUMBER to be set.
-
+# CI is set for wikimedia/fundraising/tools test suite
 docker run \
     --rm --tty \
     --env CI=1 \
-    --env EXECUTOR_NUMBER=1 \
     --env ZUUL_URL=https://gerrit.wikimedia.org/r \
     --env ZUUL_PROJECT=labs/tools/wikinity \
     --env ZUUL_COMMIT=master \
