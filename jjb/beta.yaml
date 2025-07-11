@@ -43,19 +43,6 @@
 
     builders:
       - shell: |
-          # Setup tmpfs directory
-          export TMPDIR_FS="/srv/home/jenkins-deploy/tmpfs/jenkins-${EXECUTOR_NUMBER}"
-          if [ -d "/srv/home/jenkins-deploy/tmpfs" ]; then
-            mkdir -p "$TMPDIR_FS"
-            chmod 777 "$TMPDIR_FS"
-            export TMPDIR="$TMPDIR_FS"
-          fi
-          # Teardown tmpfs directory
-          function global_teardown() {
-              rm -rf "$TMPDIR_FS"
-          }
-          trap global_teardown EXIT
-
           /usr/local/bin/wmf-beta-update-databases.py
 
     publishers:
