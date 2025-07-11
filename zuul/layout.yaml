@@ -9675,14 +9675,6 @@ projects:
     template:
       - name: tox
 
-  - name: wikibase/release-prototype
-    test:
-      - trigger-wikibase-release-prototype-pipeline-test
-    gate-and-submit:
-      - trigger-wikibase-release-prototype-pipeline-rehearse
-    postmerge:
-      - trigger-wikibase-release-prototype-pipeline-publish
-
   - name: data-values/value-view
     template:
       - name: node20-browser
@@ -11996,6 +11988,10 @@ projects:
   - name: sink_nova_ldap
     template:
       - name: archived
+
+  - name: wikibase/release-prototype
+    template:
+      - name: archived # T399279
 
   - name: wikibase/vuejs-components
     template:
