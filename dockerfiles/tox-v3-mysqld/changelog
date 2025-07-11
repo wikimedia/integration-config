@@ -1,3 +1,10 @@
+tox-v3-mysqld (0.2) wikimedia; urgency=medium
+
+  * Add pkg-config, required by labs/tools/wikinity to compile the mysqlclient
+    Python module.
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 11 Jul 2025 14:33:15 +0200
+
 tox-v3-mysqld (0.1) wikimedia; urgency=medium
 
   * Initial release, replaces Buster based image tox-mysqld - T335765

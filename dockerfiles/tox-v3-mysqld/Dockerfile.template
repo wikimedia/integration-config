@@ -1,7 +1,7 @@
 FROM {{ "tox-v3" | image_tag }}
 
 USER root
-RUN {{ "mariadb-server" | apt_install }}
+RUN {{ "mariadb-server pkgconf" | apt_install }}
 
 COPY 80-passwordless-root.cnf /etc/mysql/mariadb.conf.d/80-passwordless-root.cnf
 COPY run-with-mysqld.sh /run-with-mysqld.sh
