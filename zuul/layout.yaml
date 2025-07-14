@@ -2333,6 +2333,7 @@ project-templates:
 # a set of jobs.
 projects:
 
+
 #### Continuous integration and other developer services #######
 
   - name: blubber-doc/example/helloworldoid
@@ -2586,6 +2587,10 @@ projects:
     postmerge:
       - mw-tools-phan-demos-publish
       - phpunit-coverage-php81-publish
+
+  - name: mediawiki/tools/ParseWiki
+    template:
+      - name: composer-test-package-php81-to-php84
 
   - name: mediawiki/vagrant
     test:
