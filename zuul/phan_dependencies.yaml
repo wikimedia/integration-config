@@ -378,6 +378,7 @@ IPReputation:
 
 JsonConfig:
  - CodeEditor
+ - CodeMirror
  - Kartographer
  - Scribunto
 
@@ -601,6 +602,7 @@ TemplateData:
 
 TemplateStyles:
  - CodeEditor
+ - CodeMirror
 
 Thanks:
  - AbuseFilter
