@@ -316,6 +316,7 @@ FundraisingTranslateWorkflow:
 
 Gadgets:
  - CodeEditor
+ - CodeMirror
  - Scribunto
 
 GeoData:
