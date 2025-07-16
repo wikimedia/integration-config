@@ -1,3 +1,8 @@
+# Align with SRE-provided PHP 8.3 packages (T398245).
+FROM {{ "ci-bullseye" | image_tag }} as wmfphp
+
+COPY wikimedia-php83.list /etc/apt/sources.list.d/wikimedia-php83.list
+
 FROM {{ "php-scratch" | image_tag }} as php-scratch
 
 # Set a standard, new version of php-ast rather than using Debian's older one.
@@ -5,7 +10,7 @@ FROM {{ "php-scratch" | image_tag }} as php-scratch
 # We create a stage with php-dev to compile the ast extension from source. This
 # is done as a multistage build to ensure it is compiled with the same version
 # of PHP than the one that will be in the final image (T396312).
-FROM {{ "sury-php" | image_tag }} as ast-builder
+FROM wmfphp as ast-builder
 
 USER root
 RUN {{ "php8.3-dev build-essential" | apt_install }}
@@ -18,13 +23,13 @@ RUN cd /srv && /build-extension-ast
 # Outputs: /srv/artifacts/ast.so /srv/artifacts/ast.ini
 
 # Now build the final image
-FROM {{ "sury-php" | image_tag }}
-
-USER root
+FROM wmfphp
 
 # zip is needed for composer to install things from dist
 # others are libraries/MediaWiki related
+# (T386006) We're re-specifying pcre2 (libpcre2-8-0) to re-install the newer version than base
 {% set packages|replace('\n', ' ') -%}
+libpcre2-8-0
 php8.3-cli
 php8.3-zip
 php8.3-bcmath
@@ -48,7 +53,7 @@ unzip
 
 RUN {{ packages | apt_install }}
 
-# Set a standard, new version of php-ast rather than using Debian's older one
+# Copy ast from the above building stage
 COPY --from=ast-builder /srv/artifacts/ast.so /usr/lib/php/20230831/ast.so
 COPY --from=ast-builder /srv/artifacts/ast.ini /etc/php/8.3/cli/conf.d/20-ast.ini
 COPY --from=php-scratch test-ast-tokens.php /test-ast-tokens.php

@@ -1,3 +1,10 @@
+composer-test-php83 (8.3.23) wikimedia; urgency=high
+
+   Refresh for update in parent image php83:
+   (T398245) Migrate to Wikimedia-provided PHP binary
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed, 16 Jul 2025 10:10:51 -0400
+
 composer-test-php83 (8.3.21-s3) wikimedia; urgency=high
 
    Refresh for update in parent image php83:
