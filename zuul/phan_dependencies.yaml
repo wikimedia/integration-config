@@ -666,6 +666,7 @@ UserStatus:
 UploadWizard:
  - EventLogging
  - CodeEditor
+ - CodeMirror
 
 VisualData:
  - Scribunto
