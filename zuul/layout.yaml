@@ -4785,6 +4785,12 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
+  - name: mediawiki/extensions/ReaderExperiments
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
   - name: mediawiki/extensions/ReadingLists
     template:
       - name: in-wikimedia-production
