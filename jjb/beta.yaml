@@ -28,10 +28,6 @@
           timeout: 30
           fail: true
       - timestamps
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
 
 # Job to run MediaWiki update.php script on all the beta wikis.
 #
@@ -52,10 +48,6 @@
       - timestamps
       - timeout:
           timeout: 45
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
 
     # We do not have a good way to detect databases modifications, so just spam
     # the beta cluster with update requests.
@@ -138,10 +130,6 @@
       - timestamps
       - timeout:
           timeout: 60
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
 
     publishers:
       - beta-irc

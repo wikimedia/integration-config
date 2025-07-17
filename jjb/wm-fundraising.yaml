@@ -71,9 +71,6 @@
       - timestamps
       - credentials-binding:
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
@@ -126,9 +123,6 @@
           fail: true
       - timestamps
       - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
           - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY

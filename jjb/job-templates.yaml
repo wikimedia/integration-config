@@ -9,10 +9,6 @@
           timeout: 90
           fail: true
       - timestamps
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
     triggers:
      - zuul
     builders:
@@ -138,9 +134,6 @@
           fail: true
       - timestamps
       - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
           - text:
                 # SONAR_API_KEY is in Jenkins credentials store
                 # https://integration.wikimedia.org/ci/credentials/
@@ -298,9 +291,6 @@
           - text:
               credential-id: SONAR_API_KEY
               variable: SONAR_API_KEY
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
     publishers:
         - postbuildscript:
               builders:
@@ -817,9 +807,6 @@
           - text:
               credential-id: '{mw_credential_id}'
               variable: MEDIAWIKI_PASSWORD
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
     publishers:
      - archive-log-allow-empty
      - junit:

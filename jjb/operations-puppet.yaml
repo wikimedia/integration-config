@@ -71,10 +71,6 @@
       - timeout:
           timeout: 7 # minutes
       - timestamps
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
     publishers:
      - xunit:
          types:

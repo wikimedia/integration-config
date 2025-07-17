@@ -20,10 +20,6 @@
       - timeout:
           timeout: '{obj:build_timeout|20}'  # minutes
       - timestamps
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
     publishers:
         - archive-log-dir
         - teardown

@@ -74,10 +74,6 @@
       - timeout:
           timeout: 15 # minutes
       - timestamps
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
       - ssh-agent-credentials:
           users:
             - 'portalsbuilder'

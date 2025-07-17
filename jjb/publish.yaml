@@ -113,10 +113,6 @@
           timeout: 6 # minutes
           fail: true
       - timestamps
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
       - ssh-agent-credentials:
           users:
             - 'ae711ff4-813e-4462-9a27-21bdbd4fdcb9'  # jenkins-deploy

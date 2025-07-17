@@ -64,10 +64,6 @@
           timeout: '${{BUILD_TIMEOUT}}'
           fail: true
       - timestamps
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
     triggers:
         - zuul
     builders:

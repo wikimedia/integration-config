@@ -198,10 +198,6 @@
           timeout: 30
           fail: true
       - timestamps
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
 
 - project:
     name: mediawiki-core_phan_jobs
@@ -271,9 +267,6 @@
             fail: true
         - timestamps
         - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
           - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
@@ -437,9 +430,6 @@
         - timestamps
         - credentials-binding:
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
@@ -474,9 +464,6 @@
           fail: true
       - timestamps
       - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
           - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
@@ -525,9 +512,6 @@
           fail: true
       - timestamps
       - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
           - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
@@ -699,9 +683,6 @@
               credential-id: SONAR_API_KEY
               variable: SONAR_API_KEY
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
     builders:
@@ -796,9 +777,6 @@
               credential-id: SONAR_API_KEY
               variable: SONAR_API_KEY
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
@@ -857,9 +835,6 @@
          fail: true
      - timestamps
      - credentials-binding:
-         - text:
-             credential-id: composer-github-oauthtoken
-             variable: COMPOSER_GITHUB_OAUTHTOKEN
          - text:
              credential-id: quibble-earlywarningbot-api-key
              variable: QUIBBLE_API_KEY
