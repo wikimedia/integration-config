@@ -1,3 +1,9 @@
+composer-package-php82 (8.2.28-s4) wikimedia; urgency=high
+
+   Remove GitHub OAuth token management, replaced by COMPOSER_AUTH - T399846
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 18 Jul 2025 15:28:28 +0200
+
 composer-package-php82 (8.2.28-s3) wikimedia; urgency=high
 
    Refresh for update in parent image php82:

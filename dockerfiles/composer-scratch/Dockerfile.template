@@ -17,7 +17,7 @@ RUN chmod +x /srv/composer/composer.phar \
 
 # Various helpful scripts, copied to /srv/composer; child containers are expected to copy them if needed.
 
-# Wrapper script for composer that uses `COMPOSER_GITHUB_OAUTHTOKEN` if set.
+# Wrapper script for composer
 COPY run-composer.sh /srv/composer/run-composer.sh
 
 FROM scratch
