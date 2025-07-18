@@ -208,7 +208,7 @@
     php:
         - php81:
             composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s3
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:8.1.32-s3
+            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:8.1.32-s4
 
     jobs:
         - mediawiki-core-{php}-phan
