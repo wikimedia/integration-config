@@ -55,13 +55,13 @@
     name: phpunit-coverage-publish
     php:
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s4
+            docker_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s5
         - php82:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.28-s4
+            docker_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.28-s5
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.23-s1
+            docker_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.23-s2
         - php84:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.7-s4
+            docker_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.7-s5
     jobs:
         - phpunit-coverage-{php}-publish
 
