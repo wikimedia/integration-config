@@ -13,6 +13,8 @@ USER root
 RUN {{ "jq" | apt_install }}
 
 USER nobody
+COPY run-test /run-test
+COPY run-testpackage /run-testpackage
 
 ENTRYPOINT ["/usr/bin/composer"]
 CMD ["help"]

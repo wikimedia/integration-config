@@ -1,3 +1,11 @@
+composer-php81 (8.1.32-s5) wikimedia; urgency=medium
+
+  * Add run scripts from child composer images:
+    /run-test from composer-test-php81
+    /run-testpackage from composer-package-php81
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 18 Jul 2025 19:06:22 +0200
+
 composer-php81 (8.1.32-s4) wikimedia; urgency=medium
 
   * Remove composer wrapper and COMPOSER_DISABLE_XDEBUG_WARN=1.

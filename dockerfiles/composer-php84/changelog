@@ -1,3 +1,11 @@
+composer-php84 (8.4.7-s5) wikimedia; urgency=medium
+
+  * Add run scripts from child composer images:
+    /run-test from composer-test-php84
+    /run-testpackage from composer-package-php84
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 18 Jul 2025 19:06:22 +0200
+
 composer-php84 (8.4.7-s4) wikimedia; urgency=medium
 
   * Remove composer wrapper and COMPOSER_DISABLE_XDEBUG_WARN=1.
