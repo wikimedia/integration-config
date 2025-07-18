@@ -15,11 +15,6 @@ RUN cd /srv/composer \
 RUN chmod +x /srv/composer/composer.phar \
     && mv /srv/composer/composer.phar /usr/bin/composer
 
-# Various helpful scripts, copied to /srv/composer; child containers are expected to copy them if needed.
-
-# Wrapper script for composer
-COPY run-composer.sh /srv/composer/run-composer.sh
-
 FROM scratch
 
 COPY --from=build /srv/composer /srv/composer

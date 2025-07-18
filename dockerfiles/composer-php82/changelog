@@ -1,3 +1,9 @@
+composer-php82 (8.2.28-s4) wikimedia; urgency=medium
+
+  * Remove composer wrapper and COMPOSER_DISABLE_XDEBUG_WARN=1.
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 18 Jul 2025 16:15:42 +0200
+
 composer-php82 (8.2.28-s3) wikimedia; urgency=high
 
    Refresh for update in parent image php82:

@@ -14,5 +14,5 @@ RUN {{ "jq" | apt_install }}
 
 USER nobody
 
-ENTRYPOINT ["/srv/composer/run-composer.sh"]
+ENTRYPOINT ["/usr/bin/composer"]
 CMD ["help"]
