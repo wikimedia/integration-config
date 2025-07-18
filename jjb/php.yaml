@@ -1,27 +1,4 @@
-- job-template: &composer-package-phpflavor
-    name: 'composer-package-{phpflavor}'
-    node: Docker
-    properties:
-     - build-discarder:
-         days-to-keep: 15
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: '{image}'
-    publishers:
-     - teardown
-
-- job-template:
-    !!merge : *composer-package-phpflavor
-    name: '{name}-composer-package-{phpflavor}'
-    # Run more specific jobs to large executors. They might have specific
-    # needs, eg Parsoid is running Phan which requires memory - T221872
-    node: Docker
-    triggers:
-     - zuul
-
+# The base composer job
 - job-template: &composer-phpflavor
     name: 'composer-{phpflavor}'
     node: Docker
@@ -37,12 +14,79 @@
     publishers:
      - teardown
 
+# Project specific
 - job-template:
     !!merge : *composer-phpflavor
     name: '{name}-composer-{phpflavor}'
     triggers:
      - zuul
 
+# A variant that validates the package for publishing
+- job-template: &composer-package-phpflavor
+    !!merge : *composer-phpflavor
+    name: 'composer-package-{phpflavor}'
+    triggers:
+     - zuul
+
+# And its project specific template
+- job-template:
+    !!merge : *composer-package-phpflavor
+    name: '{name}-composer-package-{phpflavor}'
+    triggers:
+     - zuul
+
+- job-template:
+    name: 'composer-{php}-assert-lock'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+         image: '{image}'
+         workdir: /src
+         args: >-
+             install --no-dev
+             && git diff --exit-code -- . '!composer'
+    publishers:
+     - teardown
+
+
+- project:
+    name: 'composer-flavored-on'
+    jobs:
+        - 'composer-{phpflavor}':
+            phpflavor:
+                - php81:
+                    image: docker-registry.wikimedia.org/releng/composer-test-php81:8.1.32-s3
+                - php82:
+                    image: docker-registry.wikimedia.org/releng/composer-test-php82:8.2.28-s3
+                - php83:
+                    image: docker-registry.wikimedia.org/releng/composer-test-php83:8.3.23
+                - php84:
+                    image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.7-s3
+        - 'composer-package-{phpflavor}':
+            phpflavor:
+                - php81:
+                    image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.32-s4
+                - php82:
+                    image: docker-registry.wikimedia.org/releng/composer-package-php82:8.2.28-s4
+                - php83:
+                    image: docker-registry.wikimedia.org/releng/composer-package-php83:8.3.23-s1
+                - php84:
+                    image: docker-registry.wikimedia.org/releng/composer-package-php84:8.4.7-s4
+        - 'composer-{php}-assert-lock':
+            php:
+                - php81:
+                    image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s4
+                - php82:
+                    image: docker-registry.wikimedia.org/releng/composer-php82:8.2.28-s4
+                - php83:
+                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.23-s1
+                - php84:
+                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.7-s4
+
+# Generic jobs for Phan
 - job-template:
     name: 'phan-{php}'
     node: Docker
@@ -72,57 +116,3 @@
          phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:8.1.32-s4
     jobs:
       - 'phan-{php}'
-
-- project:
-    name: 'composer-flavored-on'
-    jobs:
-        - 'composer-{phpflavor}':
-            phpflavor:
-                - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php81:8.1.32-s3
-                - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php82:8.2.28-s3
-                - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php83:8.3.23
-                - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.7-s3
-        - 'composer-package-{phpflavor}':
-            phpflavor:
-                - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php81:8.1.32-s4
-                - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php82:8.2.28-s4
-                - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php83:8.3.23-s1
-                - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-package-php84:8.4.7-s4
-
-- job-template:
-    name: 'composer-{php}-assert-lock'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-         image: '{image}'
-         workdir: /src
-         args: >-
-             install --no-dev
-             && git diff --exit-code -- . '!composer'
-    publishers:
-     - teardown
-
-- project:
-    name: generic-composer-assert-lock-jobs
-    php:
-     - php81:
-         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s4
-     - php82:
-         image: docker-registry.wikimedia.org/releng/composer-php82:8.2.28-s4
-     - php83:
-         image: docker-registry.wikimedia.org/releng/composer-php83:8.3.23-s1
-     - php84:
-         image: docker-registry.wikimedia.org/releng/composer-php84:8.4.7-s4
-    jobs:
-      - 'composer-{php}-assert-lock'
