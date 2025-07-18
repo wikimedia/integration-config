@@ -1,6 +1,7 @@
 # The base composer job
 - job-template: &composer-phpflavor
     name: 'composer-{phpflavor}'
+    entrypoint: /run-test
     node: Docker
     properties:
      - build-discarder:
@@ -60,13 +61,13 @@
         - 'composer-{phpflavor}':
             phpflavor:
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php81:8.1.32-s3
+                    image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s5
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php82:8.2.28-s3
+                    image: docker-registry.wikimedia.org/releng/composer-php82:8.2.28-s5
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php83:8.3.23
+                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.23-s2
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.7-s3
+                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.7-s5
         - 'composer-package-{phpflavor}':
             phpflavor:
                 - php81:
