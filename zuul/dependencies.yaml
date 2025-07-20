@@ -1226,6 +1226,7 @@ WikiEditor:
 WikiLambda:
  # Temporarily disabled for testing
  # - VisualEditor
+ - Scribunto
  - UniversalLanguageSelector
  - WikimediaMessages
 
