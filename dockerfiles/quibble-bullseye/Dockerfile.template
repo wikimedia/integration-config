@@ -162,5 +162,11 @@ USER nobody
 # form as well, so setting it generally.
 ENV HOME=/tmp
 
+# Add phan scripts
+COPY run-phan.sh /run-phan.sh
+COPY run-phan-core.sh /run-phan-core.sh
+COPY run-phan-libraries.sh /run-phan-libraries.sh
+COPY run-phan-generic.sh /run-phan-generic.sh
+
 WORKDIR /workspace
 ENTRYPOINT ["/usr/local/bin/quibble"]

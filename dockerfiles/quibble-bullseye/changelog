@@ -1,3 +1,9 @@
+quibble-bullseye (1.14.1-s5) wikimedia; urgency=high
+
+   Copy over Phan running scripts so we can use these images
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 24 Jul 2025 09:06:27 -0400
+
 quibble-bullseye (1.14.1-s4) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:
