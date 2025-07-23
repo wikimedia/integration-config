@@ -1,3 +1,10 @@
+composer-package-php81 (8.1.32-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   T383557: bullseye base image has been updated
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Wed, 23 Jul 2025 12:21:44 -0700
+
 composer-package-php81 (8.1.32-s4) wikimedia; urgency=high
 
    Remove GitHub OAuth token management, replaced by COMPOSER_AUTH - T399846

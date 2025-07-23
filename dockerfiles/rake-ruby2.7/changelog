@@ -1,3 +1,10 @@
+rake-ruby2.7 (0.2.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   T383557: bullseye base image has been updated
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Wed, 23 Jul 2025 12:21:44 -0700
+
 rake-ruby2.7 (0.2.0) wikimedia; urgency=medium
 
   * Add mediawiki/vagrant dependencies (rsync, zlib1g-dev) T398469

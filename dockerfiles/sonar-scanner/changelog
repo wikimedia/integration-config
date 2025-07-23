@@ -1,3 +1,10 @@
+sonar-scanner (4.6.0.2311-s11) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   T383557: bullseye base image has been updated
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Wed, 23 Jul 2025 12:21:44 -0700
+
 sonar-scanner (4.6.0.2311-s10) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:

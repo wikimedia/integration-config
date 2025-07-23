@@ -1,3 +1,10 @@
+quibble-bullseye-php83 (1.14.1-s9) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   T383557: bullseye base image has been updated
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Wed, 23 Jul 2025 12:21:44 -0700
+
 quibble-bullseye-php83 (1.14.1-s8) wikimedia; urgency=high
 
    Refresh for update in parent image php83:
