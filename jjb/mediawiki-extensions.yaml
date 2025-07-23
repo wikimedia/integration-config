@@ -270,7 +270,11 @@
           - teardown
           # Temporarily, e-mail Vaughn on failures
           - email-ext:
-             recipients: vwalters@wikimedia.org
-             body: '${{SCRIPT, template="wikimedia.template"}}'
-             failure: true
-             unstable: true
+              recipients:   vwalters@wikimedia.org
+              content-type: text
+              subject:      Broken build $BUILD_TAG
+              body:         |
+                            The build $BUILD_NUMBER for $ZUUL_PROJECT has failed.
+                            See $BUILD_URL for details.
+              failure:      true
+              unstable:     true
