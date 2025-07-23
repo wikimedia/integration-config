@@ -42,7 +42,7 @@
         - docker-src-dir
         - docker-cache-dir
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.2.0
+            image: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.2.0-s1
             args: 'global:doc'
         - doc-publish:
             docsrc: 'src/doc'
@@ -101,7 +101,7 @@
         - docker-src-dir
         - docker-ci-src-setup-simple
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/logstash-filter-verifier:7.16.3
+            image: docker-registry.wikimedia.org/releng/logstash-filter-verifier:7.16.3-s1
             # Some of our logstash filters use the ruby {} plugin configured to
             # point to a ruby script using an absolute path. That is done to
             # guarantee our configuration point to the file since the current
@@ -124,7 +124,7 @@
      - operations-puppet-tests-{os}:
          os:
            - bullseye:
-               image: docker-registry.wikimedia.org/releng/operations-puppet:0.9.7
+               image: docker-registry.wikimedia.org/releng/operations-puppet:0.9.7-s1
 
 - project:
     name: puppet-wmf-styleguide

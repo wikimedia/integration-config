@@ -9,7 +9,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.2.0
+         image: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.2.0-s1
          args: 'doc'
      - doc-publish:
         docsrc: 'src/doc'
@@ -28,6 +28,6 @@
     name: 'mediawiki-vagrant'
     jobs:
      - '{name}-ruby2.7-rake':
-         docker_image_var: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.2.0
+         docker_image_var: docker-registry.wikimedia.org/releng/rake-ruby2.7:0.2.0-s1
          build_timeout: 10  # minutes
      - mediawiki-vagrant-puppet-doc-publish

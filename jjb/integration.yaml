@@ -88,7 +88,7 @@
     name: 'integration-pipelinelib'
     jobs:
      - '{name}-doc-publish':
-         image: docker-registry.wikimedia.org/releng/gradle:4.4.1-s2
+         image: docker-registry.wikimedia.org/releng/gradle:4.4.1-s3
          args: 'groovydoc'
          docsrc: 'src/build/docs/groovydoc'
          docdest: 'pipelinelib'
@@ -132,11 +132,11 @@
     name: gearman-java
     jobs:
         - '{name}-maven-java17':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s2
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s3
             maven_path: '/run-with-gearmand.sh'
         - '{name}-maven-java17-site-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s2
-            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s2
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s3
+            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s3
             maven_path: '/run-with-gearmand.sh'
 
 - project:
@@ -159,7 +159,7 @@
         - 'integration-quibble-fullrun-{type}-{php}':
             php:
                 - php81:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s7
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s9
             type:
                 - defaults:
                     quibble_args: >-
@@ -182,7 +182,7 @@
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
                 - opensearch:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s7
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s9
                     quibble_args: >-
                         -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
                         && /src/utils/ci-opensearch.sh
