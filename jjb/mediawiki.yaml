@@ -186,7 +186,7 @@
      - docker-run-with-log-cache-src:
         image: '{phan_image}'
         memory: 7G  # Instances have 24G of RAM and 3 executors
-        entrypoint: /run-core.sh
+        entrypoint: /run-phan-core.sh
         environment:
             PHAN_COLOR_SCHEME: light
         args: '--color'
@@ -204,7 +204,7 @@
     php:
         - php81:
             composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s6
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:8.1.32-s5
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s10
 
     jobs:
         - mediawiki-core-{php}-phan
