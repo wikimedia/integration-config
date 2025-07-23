@@ -4786,6 +4786,13 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
+  - name: mediawiki/extensions/ReaderExperiments
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
   - name: mediawiki/extensions/ReadingLists
     template:
       - name: in-wikimedia-production
@@ -7459,14 +7466,6 @@ projects:
   - name: mediawiki/extensions/ReadAloud
     template:
       - name: extension-quibble-composer
-
-  - name: mediawiki/extensions/ReaderExperiments
-    template:
-        # This is a testing-only extension, and is not planned to be
-        # enabled in production ever
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-codehealth
 
   - name: mediawiki/extensions/Realnames
     template:
