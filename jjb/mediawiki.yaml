@@ -395,7 +395,7 @@
         - api-testing-{database}-{php}:
             php:
                 - php81:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s9
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s10
             packages-source: vendor
             database:
                 - mysql
@@ -904,13 +904,13 @@
         - sqlite
     php:
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s9
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s10
         - php82:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.14.1-s9
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.14.1-s10
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.1-s10
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.1-s11
         - php84:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.14.1-s9
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.14.1-s10
     jobs:
         - quibble-{packages-source}-{database}-{php}
         - quibble-{packages-source}-{database}-{php}-selenium
@@ -922,7 +922,7 @@
         - mediawiki-quibble-apitests-{packages-source}-{php}:
             database: 'mysql'
         - mediawiki-phpbench-patch:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s9
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s10
             entrypoint: quibble-with-supervisord
             packages-source: vendor
             database: mysql
@@ -941,7 +941,7 @@
     # And only php8.1
     php:
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s9
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s10
             entrypoint: quibble-with-supervisord
     jobs:
         - wmf-quibble-vendor-mysql-{php}
@@ -972,9 +972,9 @@
             phpunit-params: '--group Wikibase,WikibaseAPI,Purtle'
     phpflavour:
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s9
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s10
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.1-s10
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.1-s11
     jobs:
         - wikibase-{kind}-{phpflavour}:
             quibble_args: >
