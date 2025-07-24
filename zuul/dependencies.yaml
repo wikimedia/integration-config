@@ -264,7 +264,6 @@ BlueSpicePrivacy:
 
 BlueSpiceProDistributionConnector:
  - BlueSpiceFoundation
- - BlueSpiceUEModulePDF
  - BlueSpiceUniversalExport
  - BlueSpiceVisualEditorConnector
  - Math
