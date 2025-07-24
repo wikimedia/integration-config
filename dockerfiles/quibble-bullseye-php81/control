@@ -1,1 +1,1 @@
-Depends: quibble-bullseye
+Depends: quibble-bullseye, php81

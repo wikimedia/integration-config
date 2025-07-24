@@ -1,3 +1,5 @@
+FROM {{ "php82" | image_tag }} AS php-82
+
 FROM {{ "sury-php" | image_tag }} AS sury-php
 
 FROM {{ "quibble-bullseye" | image_tag }}
@@ -42,6 +44,11 @@ RUN {{ "apt-transport-https" | apt_install }} && \
 COPY sury.pin /etc/apt/preferences.d/sury
 RUN {{ mediawiki_deps | apt_install }} \
     && /install-php-fpm-conf.sh
+
+# Get a new, standard-across-Wikimedia-CI version of php-ast from our build, rather than using Debian's old one.
+# The careful work to custom-build this is already done in the php82 image, so just re-use.
+COPY --from=php-82 /usr/lib/php/20220829/ast.so /usr/lib/php/20220829/ast.so
+COPY --from=php-82 /etc/php/8.2/cli/conf.d/20-ast.ini /etc/php/8.2/cli/conf.d/20-ast.ini
 
 # Disable pcov by default, although the performance overhead should be minimal
 # Disable XDebug by default due to its performance impact
