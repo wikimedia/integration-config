@@ -26,7 +26,7 @@
      - php83:
           image: docker-registry.wikimedia.org/releng/php83-compile:8.3.23-s1
      - php84:
-          image: docker-registry.wikimedia.org/releng/php84-compile:8.4.7-s3
+          image: docker-registry.wikimedia.org/releng/php84-compile:8.4.10
     jobs:
       - 'php-compile-{php}'
 

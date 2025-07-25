@@ -67,7 +67,7 @@
                 - php83:
                     image: docker-registry.wikimedia.org/releng/composer-php83:8.3.23-s3
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.7-s6
+                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.10
         - 'composer-package-{phpflavor}':
             phpflavor:
                 - php81:
@@ -77,7 +77,7 @@
                 - php83:
                     image: docker-registry.wikimedia.org/releng/composer-php83:8.3.23-s3
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.7-s6
+                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.10
         - 'composer-{php}-assert-lock':
             php:
                 - php81:
@@ -87,7 +87,7 @@
                 - php83:
                     image: docker-registry.wikimedia.org/releng/composer-php83:8.3.23-s3
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.7-s6
+                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.10
 
 # Generic jobs for Phan
 - job-template:
