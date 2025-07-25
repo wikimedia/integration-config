@@ -3,7 +3,7 @@ FROM {{ "node20" | image_tag }} as node
 
 FROM {{ "ci-bullseye" | image_tag }}
 
-ARG QUIBBLE_VERSION=1.14.1
+ARG QUIBBLE_VERSION=1.14.2
 
 ######################
 #  Install node/npm  #

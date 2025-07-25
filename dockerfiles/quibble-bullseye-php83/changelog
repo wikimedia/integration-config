@@ -1,3 +1,10 @@
+quibble-bullseye-php83 (1.14.2) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   Update Quibble to 1.14.2
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 25 Jul 2025 09:16:19 -0400
+
 quibble-bullseye-php83 (1.14.1-s11) wikimedia; urgency=high
 
   Add php-ast build steps so we can use these images with Phan.
