@@ -1,3 +1,10 @@
+composer-php84 (8.4.10) wikimedia; urgency=high
+
+   Refresh for update in parent image php84:
+   Upgrade PHP 8.4 to a newer release
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 24 Jul 2025 20:12:16 -0400
+
 composer-php84 (8.4.7-s6) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:
