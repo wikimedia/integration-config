@@ -141,7 +141,7 @@ pipelines:
            - ^albertoleoncio@hotmail\.com$ # Albertoleoncio
            - ^alex@blueselene\.com$ # Alex - Miraheze Tech Volunteer
            - ^alex\.mashin@gmail\.com$ # Alex Mashin
-           - ^alex@wiki\.gg 
+           - ^alex@wiki\.gg
            - ^alk@astarios\.com$ # AKulbii
            - ^ali\.assaf\.mail@gmail\.com$
            - ^alistair31494322@gmail\.com$ # Alistair3149
@@ -2435,8 +2435,7 @@ projects:
   - name: integration/docroot
     template:
       - name: node20
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      - name: composer-test-php81-to-php84
 
   - name: integration/gear
     test:
