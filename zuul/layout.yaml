@@ -9299,8 +9299,7 @@ projects:
 
   - name: labs/tools/wikiinfo
     template:
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      - name: composer-test-php81-to-php84
 
   - name: labs/tools/wikinity
     template:
