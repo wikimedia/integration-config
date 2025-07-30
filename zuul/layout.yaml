@@ -141,7 +141,7 @@ pipelines:
            - ^albertoleoncio@hotmail\.com$ # Albertoleoncio
            - ^alex@blueselene\.com$ # Alex - Miraheze Tech Volunteer
            - ^alex\.mashin@gmail\.com$ # Alex Mashin
-           - ^alex@wiki\.gg
+           - ^alex@wiki\.gg$
            - ^alk@astarios\.com$ # AKulbii
            - ^ali\.assaf\.mail@gmail\.com$
            - ^alistair31494322@gmail\.com$ # Alistair3149
@@ -358,6 +358,7 @@ pipelines:
            - ^nicholasgregory@live\.co\.uk$ # NicholasG04, former GCI student
            - ^nikitarana360@gmail\.com$ # Nikitrain
            - ^nikitav30@gmail\.com$ # Phantom42, former GCI student
+           - ^nic@nicj\.net$
            - ^nik\.xyz\.in@gmail\.com$ # Nik.xyz.in
            - ^nilesh@nileshc\.com$
            - ^nils\.andre\.chang@gmail\.com$ #zD/Zd1LqRH, former GCI student
