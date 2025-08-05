@@ -3357,7 +3357,6 @@ projects:
   - { name: operations/debs/superior-cache-analyzer,          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/varnish-modules,                  test: ['debian-glue'] }
   - { name: operations/software/atskafka,                     test: ['debian-glue-backports'] }
-  - { name: operations/software/prometheus-rdkafka-exporter,  test: ['debian-glue-backports'] }
   - { name: operations/debs/vips,                             test: ['debian-glue-non-voting'] }
   - { name: operations/debs/wikibugs,                         test: ['debian-glue-non-voting'] }
   - { name: operations/debs/wikimedia-base,                   test: ['debian-glue-non-voting'] }
@@ -11861,6 +11860,10 @@ projects:
       - name: archived # T343707
 
   - name: operations/software/knead-wikidough
+    template:
+      - name: archived
+
+  - name: operations/software/prometheus-rdkafka-exporter
     template:
       - name: archived
 
