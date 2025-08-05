@@ -3354,7 +3354,6 @@ projects:
   - { name: operations/debs/utfnormal,                        test: ['debian-glue-non-voting'] }
   - { name: operations/debs/varnish,                          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/varnish4,                         test: ['debian-glue'] }
-  - { name: operations/debs/trafficserver,                    test: ['debian-glue'] }
   - { name: operations/debs/superior-cache-analyzer,          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/varnish-modules,                  test: ['debian-glue'] }
   - { name: operations/software/atskafka,                     test: ['debian-glue-backports'] }
@@ -11762,6 +11761,10 @@ projects:
       - name: archived
 
   - name: operations/debs/salt
+    template:
+      - name: archived
+
+  - name: operations/debs/trafficserver
     template:
       - name: archived
 
