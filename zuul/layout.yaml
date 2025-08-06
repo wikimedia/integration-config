@@ -6409,6 +6409,10 @@ projects:
     template:
       - name: extension-quibble-noselenium
 
+  - name: mediawiki/extensions/ForceSkin
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/Form
     template:
       - name: extension-quibble
