@@ -342,7 +342,6 @@ GrowthExperiments:
  - Echo
  - CirrusSearch
  - CentralAuth
- - TimedMediaHandler
  - VisualEditor
  - EventBus
  - Thanks
