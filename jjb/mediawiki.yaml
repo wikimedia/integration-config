@@ -986,7 +986,7 @@
 - project:
     name: mediawiki-wdio-selenium
     project: MediaWiki
-    recipients: betacluster-alerts@lists.wikimedia.org cparle@wikimedia.org etonkovidova@wikimedia.org qa-alerts@lists.wikimedia.org zfilipin@wikimedia.org
+    recipients: cparle@wikimedia.org etonkovidova@wikimedia.org qa-alerts@lists.wikimedia.org zfilipin@wikimedia.org
     repository: mediawiki/core
     # Only alert on consecutive failures to reduce notification fatigue.
     # See T270771#10829124 and T394551 for details.
