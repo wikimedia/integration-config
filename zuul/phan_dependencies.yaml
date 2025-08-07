@@ -572,6 +572,7 @@ SecurePoll:
 
 SocialProfile:
  - Echo
+ - SpamRegex
 
 Sofa:
  - Scribunto
