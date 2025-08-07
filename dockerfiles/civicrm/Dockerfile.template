@@ -11,6 +11,7 @@ USER root
 bzip2
 curl
 default-mysql-server
+patch
 php-bcmath
 php-cli
 php-curl

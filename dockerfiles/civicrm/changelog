@@ -1,3 +1,9 @@
+civicrm (0.6) wikimedia; urgency=high
+
+   Add patch program to civicrm image (T401451)
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Thu,  7 Aug 2025 15:47:14 -0700
+
 civicrm (0.5) wikimedia; urgency=medium
 
   * Upgrading base image to bookworm with php8.2
