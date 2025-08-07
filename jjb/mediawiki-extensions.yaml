@@ -228,7 +228,7 @@
                     mw_user: 'Selenium user'
                     mw_credential_id: 'selenium-user-beta'
 
-- job:
+- job: &wikilambda-catalyst-end-to-end
       name: wikilambda-catalyst-end-to-end
       node: Docker
       triggers:
@@ -280,3 +280,15 @@
                             See $BUILD_URL for details.
               failure:      true
               unstable:     true
+
+# Variant that is running on a daily basis
+- job:
+    !!merge : *wikilambda-catalyst-end-to-end
+    name: wikilambda-catalyst-end-to-end-daily
+    triggers:
+        - zuul
+        - timed: '@daily'
+    parameters:
+        - string:
+            name: 'CATALYST_ENV_NAME'
+            default: 'mw-ext-wl-ci-daily-${BUILD_NUMBER}'
