@@ -2821,7 +2821,6 @@ projects:
     test:
       - mwgate-composer-php81
       - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-selenium-vendor-mysql-php81
     php:
       - mwgate-composer-php82
       - mwgate-composer-php83
@@ -2834,11 +2833,9 @@ projects:
       - mediawiki-quibble-vendor-mysql-php81
       - mediawiki-quibble-vendor-mysql-php82
       - mediawiki-quibble-vendor-mysql-php83
-      - mediawiki-quibble-selenium-vendor-mysql-php81
     gate-and-submit-wmf:
       - mwgate-composer-php81
       - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-selenium-vendor-mysql-php81
       - mediawiki-quibble-apitests-vendor-php81
 
     # No CI support for mediawiki/vendor on release branches, folks should
