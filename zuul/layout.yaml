@@ -1035,8 +1035,7 @@ jobs:
       - project: ^mediawiki/extensions/DonationInterface$
         branch: ^deployment$
 
-  # Only run patch coverage if a PHP file was
-  # changed on master.
+  # Only run patch coverage if a PHP file was changed on master.
   - name: ^.*-phpunit-coverage-patch
     branch: master
     files:

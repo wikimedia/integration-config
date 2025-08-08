@@ -20,7 +20,7 @@ set -eux -o pipefail
 EXT_NAME=$(basename "$ZUUL_PROJECT")
 
 # Edit suite.xml to use the proper coverage paths
-phpunit-suite-edit "$MW_INSTALL_PATH/tests/phpunit/suite.xml" --cover-extension "$EXT_NAME"
+phpunit-suite-edit "$MW_INSTALL_PATH/phpunit.xml.dist" --path-to-mw "../../" --cover-extension "$EXT_NAME"
 
 mkdir -p "$WORKSPACE"/cover
 find "$WORKSPACE"/cover -mindepth 1 -delete
@@ -36,7 +36,7 @@ function relay_signals() {
 set +e
 if [[ ! -v CODEHEALTH ]]; then
     php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH/extensions/$EXT_NAME" -d pcov.exclude='@(tests|vendor)@' \
-        "$MW_INSTALL_PATH"/tests/phpunit/phpunit.php \
+        vendor/bin/phpunit \
         --testsuite extensions \
         --coverage-clover "$LOG_DIR"/clover.xml \
         --coverage-html "$WORKSPACE"/cover \

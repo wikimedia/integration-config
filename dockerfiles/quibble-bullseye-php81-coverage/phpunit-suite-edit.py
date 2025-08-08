@@ -26,6 +26,11 @@ import xml.etree.cElementTree as etree
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('suite', help='Path to suite.xml')
+
+    # Default is for compat with /mediawiki/tests/phpunit/phpunit.php and /tests/phpunit/suite.xml
+    # Remove once all calls use /mediawiki/vendor/bin/phpunit with /suite.xml
+    parser.add_argument('--path-to-mw', default='../../',
+                        help='Path from suite to MW_INSTALL_PATH, including trailing slash')
     parser.add_argument('--cover-extension',
                         help='Extension path to set for coverage')
     parser.add_argument('--cover-service',
@@ -61,8 +66,8 @@ def main():
                 added_cover = False
                 # Add the three directories we care about
                 for folder in ['src', 'includes', 'maintenance']:
-                    path = '../../extensions/%s/%s' \
-                        % (args.cover_extension, folder)
+                    path = '%sextensions/%s/%s' \
+                        % (args.path_to_mw, args.cover_extension, folder)
                     if os.path.exists(os.path.join(os.path.dirname(args.suite), path)):
                         added_cover = True
                         sub = etree.SubElement(include, 'directory')
@@ -73,8 +78,8 @@ def main():
                 # here instead. (T288396)
                 if not added_cover:
                     sub = etree.SubElement(include, 'directory')
-                    path = '../../extensions/%s' \
-                        % (args.cover_extension)
+                    path = '%sextensions/%s' \
+                        % (args.path_to_mw, args.cover_extension)
                     sub.text = path
                     sub.set('suffix', '.php')
 
@@ -86,8 +91,8 @@ def main():
                 # Add the three directories we care about
                 for folder in ['src', 'includes', 'maintenance']:
                     sub = etree.SubElement(include, 'directory')
-                    sub.text = '../../services/%s/%s' \
-                        % (args.cover_service, folder)
+                    sub.text = '%sservices/%s/%s' \
+                        % (args.path_to_mw, args.cover_service, folder)
                     sub.set('suffix', '.php')
 
             if args.cover_skin:
@@ -98,8 +103,8 @@ def main():
                 # Add the three directories we care about
                 for folder in ['src', 'includes', 'maintenance']:
                     sub = etree.SubElement(include, 'directory')
-                    sub.text = '../../skins/%s/%s' \
-                        % (args.cover_skin, folder)
+                    sub.text = '%sskins/%s/%s' \
+                        % (args.path_to_mw, args.cover_skin, folder)
                     sub.set('suffix', '.php')
 
     # This produces a dirty diff, strips comments, ignores newlines,
