@@ -33,8 +33,6 @@ def main():
                         help='Path from suite to MW_INSTALL_PATH, including trailing slash')
     parser.add_argument('--cover-extension',
                         help='Extension path to set for coverage')
-    parser.add_argument('--cover-service',
-                        help='Service path to set for coverage')
     parser.add_argument('--cover-skin',
                         help='Skin path to set for coverage')
 
@@ -81,18 +79,6 @@ def main():
                     path = '%sextensions/%s' \
                         % (args.path_to_mw, args.cover_extension)
                     sub.text = path
-                    sub.set('suffix', '.php')
-
-            if args.cover_service:
-                # Remove the current directories that are there,
-                # we don't want to include any of them
-                for ichild in list(include):
-                    include.remove(ichild)
-                # Add the three directories we care about
-                for folder in ['src', 'includes', 'maintenance']:
-                    sub = etree.SubElement(include, 'directory')
-                    sub.text = '%sservices/%s/%s' \
-                        % (args.path_to_mw, args.cover_service, folder)
                     sub.set('suffix', '.php')
 
             if args.cover_skin:

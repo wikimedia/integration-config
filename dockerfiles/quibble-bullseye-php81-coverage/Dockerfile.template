@@ -20,8 +20,6 @@ COPY phpunit-junit-edit.py /usr/local/bin/phpunit-junit-edit
 COPY mediawiki-coverage.sh /usr/local/bin/mediawiki-coverage
 COPY mwext-phpunit-coverage.sh /usr/local/bin/mwext-phpunit-coverage
 COPY mwext-phpunit-coverage-patch.sh /usr/local/bin/mwext-phpunit-coverage-patch
-COPY mwservice-phpunit-coverage.sh /usr/local/bin/mwservice-phpunit-coverage
-COPY mwservice-phpunit-coverage-patch.sh /usr/local/bin/mwservice-phpunit-coverage-patch
 COPY mwskin-phpunit-coverage.sh /usr/local/bin/mwskin-phpunit-coverage
 COPY mwskin-phpunit-coverage-patch.sh /usr/local/bin/mwskin-phpunit-coverage-patch
 
