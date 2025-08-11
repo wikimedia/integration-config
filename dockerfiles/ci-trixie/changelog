@@ -1,0 +1,5 @@
+ci-trixie (1.0.0) wikimedia; urgency=high
+
+   (T400931) Initial release.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 11 Aug 2025 16:09:51 +0100
