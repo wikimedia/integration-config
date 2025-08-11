@@ -233,7 +233,6 @@
       node: Docker
       triggers:
           - zuul
-          - timed: '@daily'
       builders:
           - setup
           - docker-run-with-log-cache-src:
