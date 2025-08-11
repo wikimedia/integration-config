@@ -1,3 +1,9 @@
+civicrm (0.7) wikimedia; urgency=medium
+
+  * Add php-mysqli (T401451)
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 11 Aug 2025 11:29:32 +0200
+
 civicrm (0.6) wikimedia; urgency=high
 
    Add patch program to civicrm image (T401451)
