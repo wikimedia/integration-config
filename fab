@@ -81,6 +81,7 @@ deploy_docker() {
     docker pull docker-registry.wikimedia.org/buster
     docker pull docker-registry.wikimedia.org/bullseye
     docker pull docker-registry.wikimedia.org/bookworm
+    docker pull docker-registry.wikimedia.org/trixie
     '
 
     local docker_pkg='/srv/deployment/docker-pkg/venv/bin/docker-pkg'
