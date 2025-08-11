@@ -238,7 +238,7 @@
           - docker-run:
                 volumes:
                     log:
-                image: 'docker-registry.wikimedia.org/releng/catalyst:1.2.0-s2'
+                image: docker-registry.wikimedia.org/releng/catalyst:1.3.0
                 entrypoint: '/deploy_env.py'
                 environment:
                     WIKILAMBDA_REF: $BASE_LOG_PATH
