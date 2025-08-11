@@ -696,6 +696,7 @@ WikiEditor:
 
 WikiLambda:
  - EventLogging
+ - SiteMatrix
  - Wikibase
 
 WikiLove:
