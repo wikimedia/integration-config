@@ -234,8 +234,10 @@
       triggers:
           - zuul
       builders:
-          - setup
-          - docker-run-with-log-cache-src:
+          - docker-log-dir
+          - docker-run:
+                volumes:
+                    log:
                 image: 'docker-registry.wikimedia.org/releng/catalyst:1.2.0-s2'
                 entrypoint: '/deploy_env.py'
                 environment:
@@ -267,7 +269,7 @@
                         eval "$(cat log/envid)"
                         curl -X "DELETE" "https://api.catalyst.wmcloud.org/api/environments/${ENV_ID}" \
                           -H "Authorization: ApiToken ${CATALYST_API_TOKEN}"
-          - teardown
+          - docker-cleanup
           # Temporarily, e-mail Vaughn on failures
           - email-ext:
               recipients:   vwalters@wikimedia.org
