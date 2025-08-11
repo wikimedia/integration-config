@@ -1,3 +1,10 @@
+catalyst (1.3.0) wikimedia; urgency=medium
+
+  * Allow setting the Catalyst environment name using CATALYST_ENV_NAME, this
+    will be used for daily jobs that are not associated with a Zuul change.
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 11 Aug 2025 15:32:19 +0200
+
 catalyst (1.2.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image node22-test:

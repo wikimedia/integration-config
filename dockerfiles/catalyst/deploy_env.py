@@ -16,7 +16,13 @@ import requests
 
 WIKILAMBDA_REF = os.getenv('WIKILAMBDA_REF')
 ENV_API_PATH = os.getenv('ENV_API_PATH')
-ENV_NAME = "mw-ext-wl-ci-{}-{}".format(os.getenv('ZUUL_CHANGE'), random.randrange(10000, 99999))
+ENV_NAME = os.getenv(
+    'CATALYST_ENV_NAME',
+    "mw-ext-wl-ci-{}-{}".format(
+        os.getenv('ZUUL_CHANGE'),
+        random.randrange(10000, 99999)
+    )
+)
 ENV_URL = "{}.catalyst.wmcloud.org".format(ENV_NAME)
 
 session = requests.Session()
