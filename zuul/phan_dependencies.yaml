@@ -348,6 +348,7 @@ GrowthExperiments:
  - CommunityConfiguration
  - ConfirmEdit
  - WikimediaMessages
+ - MetricsPlatform
 
 HAWelcome:
  - SocialProfile
