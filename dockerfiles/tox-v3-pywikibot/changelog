@@ -1,3 +1,17 @@
+tox-v3-pywikibot (1.1-s2) wikimedia; urgency=medium
+
+  Refresh for update in parent image python-all:
+  * Upgrade pyenv from 2.3.35 to 2.6.3
+  * Add Python 3.13.5 - T396273
+  * Upgrade other Python versions:
+  ** 3.8.18  > 3.8.20
+  ** 3.9.18  > 3.9.23
+  ** 3.10.13 > 3.10.18
+  ** 3.11.7  > 3.11.13
+  ** 3.12.1  > 3.12.11
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 12 Aug 2025 20:11:43 +0200
+
 tox-v3-pywikibot (1.1-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:
