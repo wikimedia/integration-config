@@ -1002,6 +1002,6 @@
                     mw_user: 'Selenium user'
                     mw_credential_id: 'selenium-user-beta'
                 - betacommons:
-                    mw_server: 'https://commons.wikimedia.beta.wmflabs.org'
+                    mw_server: 'https://commons.wikimedia.beta.wmcloud.org'
                     mw_user: 'Selenium user'
                     mw_credential_id: 'selenium-user-beta'
