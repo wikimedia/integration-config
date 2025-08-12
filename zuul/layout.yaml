@@ -9353,6 +9353,7 @@ projects:
       - pywikibot-core-tox-fasttest-py310
       - pywikibot-core-tox-fasttest-py311
       - pywikibot-core-tox-fasttest-py312
+      - pywikibot-core-tox-fasttest-py313
       - pywikibot-core-tox-fasttest-pypy
       - pywikibot-core-tox-doctest
       - pywikibot-core-tox-rstcheck
@@ -9364,6 +9365,7 @@ projects:
       - pywikibot-core-tox-fasttest-py310
       - pywikibot-core-tox-fasttest-py311
       - pywikibot-core-tox-fasttest-py312
+      - pywikibot-core-tox-fasttest-py313
       - pywikibot-core-tox-fasttest-pypy
       - pywikibot-core-tox-doctest
       - pywikibot-core-tox-rstcheck
