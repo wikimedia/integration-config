@@ -234,10 +234,9 @@
       triggers:
           - zuul
       builders:
-          - docker-log-dir
-          - docker-run:
-                volumes:
-                    log:
+          # The castor setup/teardown is how the Catalyst image gets a copy of the code to test
+          - setup
+          - docker-run-with-log-cache-src:
                 image: docker-registry.wikimedia.org/releng/catalyst:1.3.0
                 entrypoint: '/deploy_env.py'
                 environment:
@@ -269,7 +268,7 @@
                         eval "$(cat log/envid)"
                         curl -X "DELETE" "https://api.catalyst.wmcloud.org/api/environments/${ENV_ID}" \
                           -H "Authorization: ApiToken ${CATALYST_API_TOKEN}"
-          - docker-cleanup
+          - teardown
           # Temporarily, e-mail Vaughn on failures
           - email-ext:
               recipients:   vwalters@wikimedia.org
