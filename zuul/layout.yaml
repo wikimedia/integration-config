@@ -9375,13 +9375,13 @@ projects:
       - pywikibot-core-tox-rstcheck
       - pywikibot-core-tox-doc
       - pywikibot-core-tox-deeptest-py38
-      - pywikibot-core-tox-deeptest-py312
+      - pywikibot-core-tox-deeptest-py313
     postmerge:
       - pywikibot-core-tox-publish
     experimental:
       - pywikibot-core-tox-doc
       - pywikibot-core-tox-deeptest-py38
-      - pywikibot-core-tox-deeptest-py312
+      - pywikibot-core-tox-deeptest-py313
 
   - name: pywikibot/i18n
     template:
