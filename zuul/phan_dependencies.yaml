@@ -780,6 +780,7 @@ WikimediaEvents:
  - LoginNotify
  - MobileFrontend
  - OATHAuth
+ - MetricsPlatform
 
 WikimediaMaintenance:
  - AbuseFilter
