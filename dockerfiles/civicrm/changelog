@@ -1,3 +1,10 @@
+civicrm (0.8-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Remove copy of /srv/composer which only has a checksum file
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 14 Aug 2025 10:08:32 +0200
+
 civicrm (0.8) wikimedia; urgency=medium
 
   * Remove php-mysqli which is an alias of php-mysql

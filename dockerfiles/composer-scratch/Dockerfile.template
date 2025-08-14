@@ -17,5 +17,4 @@ RUN chmod +x /srv/composer/composer.phar \
 
 FROM scratch
 
-COPY --from=build /srv/composer /srv/composer
 COPY --from=build /usr/bin/composer /usr/bin/composer

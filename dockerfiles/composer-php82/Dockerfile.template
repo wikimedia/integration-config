@@ -5,9 +5,6 @@ FROM {{ "php82" | image_tag }}
 # Install composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-# Grab our composer helper scripts
-COPY --from=composer /srv/composer /srv/composer
-
 USER root
 
 RUN {{ "jq" | apt_install }}

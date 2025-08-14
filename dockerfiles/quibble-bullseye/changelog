@@ -1,3 +1,10 @@
+quibble-bullseye (1.14.2-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Remove copy of /srv/composer which only has a checksum file
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 14 Aug 2025 10:08:32 +0200
+
 quibble-bullseye (1.14.2) wikimedia; urgency=high
 
    Update Quibble to 1.14.2

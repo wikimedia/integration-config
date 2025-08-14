@@ -1,3 +1,10 @@
+quibble-bullseye-php81-coverage (1.14.2-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Remove copy of /srv/composer which only has a checksum file
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 14 Aug 2025 10:08:32 +0200
+
 quibble-bullseye-php81-coverage (1.14.2-s2) wikimedia; urgency=high
 
    Fix bad --path-to-mw arg in mwext-phpunit-coverage (T395470).

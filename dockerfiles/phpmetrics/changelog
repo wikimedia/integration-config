@@ -1,3 +1,10 @@
+phpmetrics (2.8.1-s22) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Remove copy of /srv/composer which only has a checksum file
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 14 Aug 2025 10:08:32 +0200
+
 phpmetrics (2.8.1-s21) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:
