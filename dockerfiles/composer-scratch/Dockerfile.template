@@ -18,3 +18,5 @@ RUN chmod +x /srv/composer/composer.phar \
 FROM scratch
 
 COPY --from=build /usr/bin/composer /usr/bin/composer
+COPY run-test /run-test
+COPY run-testpackage /run-testpackage

@@ -1,3 +1,10 @@
+composer-scratch (2.8.1-s3) wikimedia; urgency=medium
+
+  * Import /run-test and /run-testpackage from downstream images to avoid
+    having multiple copies of them.
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 14 Aug 2025 10:21:21 +0200
+
 composer-scratch (2.8.1-s2) wikimedia; urgency=high
 
    Remove copy of /srv/composer which only has a checksum file
