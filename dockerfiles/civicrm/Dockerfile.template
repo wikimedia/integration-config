@@ -22,7 +22,6 @@ php-imap
 php-intl
 php-mbstring
 php-mysql
-php-mysqli
 php-sqlite3
 php-xml
 php-zip
