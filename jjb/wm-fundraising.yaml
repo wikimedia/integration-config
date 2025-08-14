@@ -11,7 +11,7 @@
             projects: >
                 wikimedia/fundraising/crm
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/civicrm:0.8
+            image: docker-registry.wikimedia.org/releng/civicrm:0.9
             environment:
                 # $WORKSPACE is leaked from the host environment
                 WORKSPACE: "''"
@@ -29,7 +29,7 @@
         # Run `composer test` with the same env has the civicrm test env
         - '{name}-composer-{phpflavor}':
             phpflavor: civicrm
-            image: docker-registry.wikimedia.org/releng/civicrm:0.8
+            image: docker-registry.wikimedia.org/releng/civicrm:0.9
 
 - project:
     name: donationinterface-fundraising-branches
