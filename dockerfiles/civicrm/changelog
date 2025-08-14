@@ -1,3 +1,10 @@
+civicrm (0.8) wikimedia; urgency=medium
+
+  * Remove php-mysqli which is an alias of php-mysql
+  * Add composer
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 14 Aug 2025 09:27:50 +0200
+
 civicrm (0.7) wikimedia; urgency=medium
 
   * Add php-mysqli (T401451)
