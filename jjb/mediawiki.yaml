@@ -981,7 +981,7 @@
                 --commands 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r {kind}'
                 'cp --verbose $WORKSPACE/src/LocalSettings.php $LOG_DIR'
                 'php maintenance/update.php --quick'
-                'composer phpunit:entrypoint -- --verbose --log-junit "$LOG_DIR/junit-wikibase-{kind}.xml" {phpunit-params}'
+                'composer run --timeout=0 phpunit:entrypoint -- --verbose --log-junit "$LOG_DIR/junit-wikibase-{kind}.xml" {phpunit-params}'
 
 - project:
     name: mediawiki-wdio-selenium
