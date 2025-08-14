@@ -24,6 +24,14 @@
         - teardown
 
 - project:
+    name: wikimedia-fundraising
+    jobs:
+        # Run `composer test` with the same env has the civicrm test env
+        - '{name}-composer-{phpflavor}':
+            phpflavor: civicrm
+            image: docker-registry.wikimedia.org/releng/civicrm:0.8
+
+- project:
     name: donationinterface-fundraising-branches
     branch:
      - REL1_43:
