@@ -4,6 +4,8 @@ FROM {{ "ci-bookworm" | image_tag }}
 
 # Install composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+# Import the entry point used by the composer test jobs:
+COPY --from=composer /run-test /run-test
 
 USER root
 
