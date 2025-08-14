@@ -9872,14 +9872,11 @@ projects:
 
   - name: wikimedia/fundraising/crm
     test:
-      - composer-php82:
+      - wikimedia-fundraising-composer-civicrm:  # composer test
         - wikimedia-fundraising-civicrm-bookworm
     gate-and-submit:
-      - composer-php82:
+      - wikimedia-fundraising-composer-civicrm:  # composer test
         - wikimedia-fundraising-civicrm-bookworm
-    experimental:
-      - composer-php83
-      - composer-php84
 
   - name: wikimedia/fundraising/crm/vendor
     test:
