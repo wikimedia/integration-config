@@ -8286,6 +8286,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/XSSProtector
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/YetAnotherKeywords
     template:
       - name: extension-quibble
