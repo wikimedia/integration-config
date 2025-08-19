@@ -236,7 +236,7 @@
       builders:
           # The castor setup/teardown is how the Catalyst image gets a copy of the code to test
           - setup
-          - docker-run-with-log-cache-src:
+          - docker-run-with-log-cache-src: &wikilambda-catalyst-docker-builder
                 image: docker-registry.wikimedia.org/releng/catalyst:1.3.0
                 entrypoint: '/deploy_env.py'
                 environment:
@@ -261,7 +261,6 @@
                 - build-on:
                     - SUCCESS
                     - UNSTABLE
-                    - FAILURE
                     - ABORTED
                   build-steps:
                     - shell: |
@@ -285,9 +284,31 @@
     !!merge : *wikilambda-catalyst-end-to-end
     name: wikilambda-catalyst-end-to-end-daily
     triggers:
-        - zuul
         - timed: '@daily'
+    builders:
+        - docker-cache-dir
+        - docker-log-dir
+        - docker-src-dir
+        - docker-ci-src-setup-simple
+        - docker-run-with-log-cache-src: *wikilambda-catalyst-docker-builder
     parameters:
         - string:
             name: 'CATALYST_ENV_NAME'
             default: 'mw-ext-wl-ci-daily-${BUILD_NUMBER}'
+        - string:
+            name: 'ZUUL_URL'
+            default: 'https://gerrit.wikimedia.org/r/p'
+        - string:
+            name: 'ZUUL_PROJECT'
+            default: 'mediawiki/extensions/WikiLambda'
+        - string:
+            name: 'ZUUL_REF'
+            default: 'master'
+        - string:
+            name: 'ZUUL_CHANGE'
+            default: ' '
+        - string:
+            name: 'BASE_LOG_PATH'
+            description: 'Used as the wikilambda ref as this is what is available from zuul'
+            default: ' '
+
