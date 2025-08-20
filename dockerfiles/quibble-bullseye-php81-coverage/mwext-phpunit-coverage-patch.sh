@@ -16,8 +16,9 @@
 
 set -eux -o pipefail
 
-EXT_NAME=$(basename "$ZUUL_PROJECT")
-EXT_DIR="$MW_INSTALL_PATH/extensions/$EXT_NAME"
+# Absolute path to the extension, which is the MediaWiki installation path +
+# the Gerrit project name stripped from the `mediawiki/` prefix.
+EXT_DIR="$MW_INSTALL_PATH/${ZUUL_PROJECT#mediawiki/}"
 cd "$EXT_DIR"
 
 TEST_DIR="$EXT_DIR/tests/phpunit"
