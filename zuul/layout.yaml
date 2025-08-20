@@ -9254,6 +9254,10 @@ projects:
     gate-and-submit:
       - noop
 
+  - name: labs/tools/toolbase
+    template:
+      - name: composer-test-php81-to-php84
+
   - name: labs/tools/qrcode-generator
     template:
       - name: tox
