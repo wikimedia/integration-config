@@ -95,7 +95,7 @@
 
 # Phan! (T153039)
 - job-template:
-    name: '{thing}-{php}-phan'
+    name: 'mwext-{php}-phan'
     node: Docker
     properties:
      - build-discarder:
@@ -161,9 +161,6 @@
 
 - project:
     name: phan-jobs
-    thing:
-        - mwext
-        - mwskin
     php:
         - php81:
             setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s1
@@ -182,7 +179,7 @@
             composer_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.10-s1
             phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.14.2-s1
     jobs:
-        - '{thing}-{php}-phan'
+        - 'mwext-{php}-phan'
 
 - project:
     name: wdio-selenium-daily
