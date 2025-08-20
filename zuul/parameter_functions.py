@@ -293,6 +293,10 @@ def set_mw_dependencies(item, job, params):
         if 'IPReputation' in ext_deps:
             ext_deps.remove('IPReputation')
 
+        # T402463
+        if 'MetricsPlatform' in ext_deps:
+            ext_deps.remove('MetricsPlatform')
+
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
 
