@@ -279,21 +279,19 @@ def set_mw_dependencies(item, job, params):
     ):
         ext_deps.remove('WebAuthn')
 
-    # T380434 - CommunityConfiguration and CommunityConfigurationExample,
-    # aren't in all old release branches, and falling back to the master
-    # version won't work, so just remove both in these branches...
     if params['ZUUL_BRANCH'] in ['REL1_39']:
+        # T380434 - CommunityConfiguration and CommunityConfigurationExample,
+        # aren't in all old release branches, and falling back to the master
+        # version won't work, so just remove both in these branches...
         if 'CommunityConfiguration' in ext_deps:
-            # Not in REL1_39
             ext_deps.remove('CommunityConfiguration')
 
         if 'CommunityConfigurationExample' in ext_deps:
-            # Not in REL1_39
             ext_deps.remove('CommunityConfigurationExample')
 
-    # T390772 - IPReputation isn't in REL1_39, so remove it.
-    if params['ZUUL_BRANCH'] == 'REL1_39' and 'IPReputation' in ext_deps:
-        ext_deps.remove('IPReputation')
+        # T390772
+        if 'IPReputation' in ext_deps:
+            ext_deps.remove('IPReputation')
 
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
