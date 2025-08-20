@@ -8700,16 +8700,6 @@ projects:
     postmerge:
       - wikimedia-event-utilities-maven-java8-site-publish
 
-  - name: analytics/gobblin-wmf
-    test:
-      - analytics-gobblin-wmf-maven-java8
-      - analytics-gobblin-wmf-maven-java11
-    gate-and-submit:
-      - analytics-gobblin-wmf-maven-java8
-      - analytics-gobblin-wmf-maven-java11
-    postmerge:
-      - analytics-gobblin-wmf-maven-java8-site-publish
-
 #### PHP Extensions ###################################################
 
   - name: mediawiki/php/excimer
@@ -9936,6 +9926,10 @@ projects:
   - name: analytics/datahub
     template:
       - name: archived # Migrated to GitLab #T341194
+
+  - name: analytics/gobblin-wmf
+    template:
+      - name: archived # Moved to GitLab - T392854
 
   - name: analytics/quarry/web
     template:
