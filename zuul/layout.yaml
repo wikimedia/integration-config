@@ -9025,10 +9025,6 @@ projects:
     template:
       - name: tox
 
-  - name: labs/tools/ci
-    template:
-      - name: tox
-
   - name: labs/tools/commons-mass-description
     template:
       - name: mediawiki-i18n-check
@@ -10128,6 +10124,10 @@ projects:
       - name: archived
 
   - name: labs/tools/bub
+    template:
+      - name: archived
+
+  - name: labs/tools/ci
     template:
       - name: archived
 
