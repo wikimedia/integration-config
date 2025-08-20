@@ -9003,14 +9003,6 @@ projects:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
       - name: composer-test-php81-to-php83
 
-  - name: labs/tools/bodh
-    template:
-      - name: node20
-
-  - name: labs/tools/bodh-backend
-    template:
-      - name: tox
-
   - name: labs/tools/bookreader
     template:
       - name: tox
@@ -10120,6 +10112,14 @@ projects:
       - name: archived
 
   - name: labs/toollabs
+    template:
+      - name: archived
+
+  - name: labs/tools/bodh
+    template:
+      - name: archived
+
+  - name: labs/tools/bodh-backend
     template:
       - name: archived
 
