@@ -20,7 +20,8 @@ SKIN_NAME=$(basename "$ZUUL_PROJECT")
 cd "$MW_INSTALL_PATH/skins/$SKIN_NAME"
 
 # Edit suite.xml to use the proper coverage paths
-phpunit-suite-edit "$MW_INSTALL_PATH/tests/phpunit/suite.xml" --cover-skin "$SKIN_NAME"
+phpunit-suite-edit "$MW_INSTALL_PATH/tests/phpunit/suite.xml" \
+    --cover-extension "${ZUUL_PROJECT#mediawiki/}"
 
 exec phpunit-patch-coverage check \
     --command "php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$PWD -d pcov.exclude='@(tests|vendor)@' -d pcov.initial.files=3000 \"\$MW_INSTALL_PATH\"/tests/phpunit/phpunit.php" \

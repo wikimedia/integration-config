@@ -20,7 +20,8 @@ set -eux -o pipefail
 SKIN_NAME=$(basename "$ZUUL_PROJECT")
 
 # Edit suite.xml to use the proper coverage paths
-phpunit-suite-edit "$MW_INSTALL_PATH/tests/phpunit/suite.xml" --cover-skin "$SKIN_NAME"
+phpunit-suite-edit "$MW_INSTALL_PATH/tests/phpunit/suite.xml" \
+    --cover-extension "${ZUUL_PROJECT#mediawiki/}"
 
 mkdir -p "$WORKSPACE"/cover
 find "$WORKSPACE"/cover -mindepth 1 -delete

@@ -32,11 +32,13 @@ def main():
     parser.add_argument('--path-to-mw', default='../../',
                         help='Path from suite to MW_INSTALL_PATH')
     parser.add_argument('--cover-extension',
-                        help='Extension path to set for coverage')
-    parser.add_argument('--cover-skin',
-                        help='Skin path to set for coverage')
+                        help='Extension path to set for coverage '
+                             '(ex: extensions/Foo, skins/Beautiful)')
 
     args = parser.parse_args()
+    assert args.cover_extension == "" or args.cover_extension.startswith(
+        ('extensions/', 'skins/'))
+
     tree = etree.parse(args.suite)
     root = tree.getroot()
     for child in list(root):
@@ -70,6 +72,7 @@ def main():
                         sub = etree.SubElement(include, 'directory')
                         sub.text = path
                         sub.set('suffix', '.php')
+
                 # If the none of the covers we added correspond to a folder,
                 # no coverage report is generated. Add the extension base path
                 # here instead. (T288396)
@@ -77,17 +80,6 @@ def main():
                     sub = etree.SubElement(include, 'directory')
                     path = os.path.join(args.path_to_mw, 'extensions', args.cover_extension)
                     sub.text = path
-                    sub.set('suffix', '.php')
-
-            if args.cover_skin:
-                # Remove the current directories that are there,
-                # we don't want to include any of them
-                for ichild in list(include):
-                    include.remove(ichild)
-                # Add the three directories we care about
-                for folder in ['src', 'includes', 'maintenance']:
-                    sub = etree.SubElement(include, 'directory')
-                    sub.text = os.path.join(args.path_to_mw, 'skins', args.cover_skin, folder)
                     sub.set('suffix', '.php')
 
     # This produces a dirty diff, strips comments, ignores newlines,
