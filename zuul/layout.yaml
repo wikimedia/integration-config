@@ -2851,8 +2851,6 @@ projects:
     experimental:
       - mwgate-composer-php84
       - mediawiki-quibble-vendor-mysql-php84
-      # New job in testing T74952 -- JDF 2022-10-14
-      - composer-php81-assert-lock
       - mwgate-composer-php84
 
 #### MediaWiki skins ###########################################
