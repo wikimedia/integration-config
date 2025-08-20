@@ -5434,6 +5434,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/AdhocTranslation
+    template:
+      - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/Adiutor
     template:
       - name: extension-quibble
@@ -5705,6 +5709,10 @@ projects:
     template:
       - name: extension-quibble-bluespice
 
+  - name: mediawiki/extensions/BlueSpiceMatomoConnector
+    template:
+      - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/BlueSpiceMultiUpload
     template:
       - name: extension-quibble-bluespice
@@ -5850,6 +5858,10 @@ projects:
       - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceTagCloud
+    template:
+      - name: extension-quibble-bluespice
+
+  - name: mediawiki/extensions/BluespiceTranslationTransfer
     template:
       - name: extension-quibble-bluespice
 
@@ -6087,6 +6099,10 @@ projects:
   - name: mediawiki/extensions/ContentDroplets
     template:
       - name: extension-quibble-bluespice
+
+  - name: mediawiki/extensions/ContentProvisioning
+    template:
+     - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/ContentStabilization
     template:
@@ -8031,6 +8047,10 @@ projects:
   - name: mediawiki/extensions/UserPageViewTracker
     template:
       - name: extension-quibble
+
+  - name: mediawiki/extensions/UserProfile
+    template:
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/UserProtect
     template:

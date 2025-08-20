@@ -214,6 +214,9 @@ BlueSpiceInterWikiLinks:
 BlueSpiceInterwikiSearch:
  - BlueSpiceFoundation
 
+BlueSpiceMatomoConnector:
+ - BlueSpiceFoundation
+
 BlueSpiceMultiUpload:
  - BlueSpiceFoundation
 
@@ -377,6 +380,14 @@ BlueSpiceSubPageTree:
 BlueSpiceTagCloud:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
+
+BluespiceTranslationTransfer:
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
+ - ContentTransfer
+ - MergeArticles
+ - OOJSPlus
+ - VisualEditor
 
 BlueSpiceUEModuleBookPDF:
  - BlueSpiceFoundation
