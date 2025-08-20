@@ -30,7 +30,7 @@ def main():
     # Default is for compat with /mediawiki/tests/phpunit/phpunit.php and /tests/phpunit/suite.xml
     # Remove once all calls use /mediawiki/vendor/bin/phpunit with /suite.xml
     parser.add_argument('--path-to-mw', default='../../',
-                        help='Path from suite to MW_INSTALL_PATH, including trailing slash')
+                        help='Path from suite to MW_INSTALL_PATH')
     parser.add_argument('--cover-extension',
                         help='Extension path to set for coverage')
     parser.add_argument('--cover-skin',
@@ -64,8 +64,7 @@ def main():
                 added_cover = False
                 # Add the three directories we care about
                 for folder in ['src', 'includes', 'maintenance']:
-                    path = '%sextensions/%s/%s' \
-                        % (args.path_to_mw, args.cover_extension, folder)
+                    path = os.path.join(args.path_to_mw, 'extensions', args.cover_extension, folder)
                     if os.path.exists(os.path.join(os.path.dirname(args.suite), path)):
                         added_cover = True
                         sub = etree.SubElement(include, 'directory')
@@ -76,8 +75,7 @@ def main():
                 # here instead. (T288396)
                 if not added_cover:
                     sub = etree.SubElement(include, 'directory')
-                    path = '%sextensions/%s' \
-                        % (args.path_to_mw, args.cover_extension)
+                    path = os.path.join(args.path_to_mw, 'extensions', args.cover_extension)
                     sub.text = path
                     sub.set('suffix', '.php')
 
@@ -89,8 +87,7 @@ def main():
                 # Add the three directories we care about
                 for folder in ['src', 'includes', 'maintenance']:
                     sub = etree.SubElement(include, 'directory')
-                    sub.text = '%sskins/%s/%s' \
-                        % (args.path_to_mw, args.cover_skin, folder)
+                    sub.text = os.path.join(args.path_to_mw, 'skins', args.cover_skin, folder)
                     sub.set('suffix', '.php')
 
     # This produces a dirty diff, strips comments, ignores newlines,
