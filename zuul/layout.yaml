@@ -8396,12 +8396,6 @@ projects:
     publish:
       - trigger-machinetranslation-pipeline-publish
 
-  - name: eventlogging
-    test:
-      - eventlogging-tox
-    gate-and-submit:
-      - eventlogging-tox
-
   - name: mediawiki/services/jobrunner
     template:
       - name: mediawiki-php-library-php81-to-php84
@@ -10022,6 +10016,10 @@ projects:
   - name: avro-php
     template:
       - name: archived
+
+  - name: eventlogging
+    template:
+      - name: archived # Infrastructure has been replaced
 
   - name: cloud/toolforge/buildpacks
     template:

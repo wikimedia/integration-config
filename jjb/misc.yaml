@@ -66,12 +66,6 @@
         - phpunit-coverage-{php}-publish
 
 - project:
-    name: eventlogging
-    jobs:
-        - '{name}-tox'
-
-
-- project:
     name: node-more-specific-jobs
     jobs:
         - '{name}-{node_version}':
