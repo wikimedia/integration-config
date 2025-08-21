@@ -19,12 +19,16 @@ set -eux -o pipefail
 # Absolute path to the extension, which is the MediaWiki installation path +
 # the Gerrit project name stripped from the `mediawiki/` prefix.
 EXT_DIR="$MW_INSTALL_PATH/${ZUUL_PROJECT#mediawiki/}"
+
 cd "$EXT_DIR"
 
-TEST_DIR="$EXT_DIR/tests/phpunit"
+# TEST_DIR must be relative. It is passed to `phpunit-patch-coverage` which
+# expects --test-dir to be relative to the extension git root repository.
+TEST_DIR="tests/phpunit"
 if [ ! -d "$TEST_DIR" ]; then
     echo "Folder $TEST_DIR does not exist. Falling back to extension root..."
-    TEST_DIR="$EXT_DIR"
+    # This is for Wikibase, see T288396
+    TEST_DIR="."
 fi
 
 # Edit suite.xml to use the proper coverage paths

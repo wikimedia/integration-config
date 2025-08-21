@@ -1,3 +1,10 @@
+quibble-bullseye-php81-coverage (1.14.2-s6) wikimedia; urgency=medium
+
+  * Use a relative directory for `phpunit-patch-coverage --test-dir`. The
+    absolute path filtered out any files changed in HEAD.
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 21 Aug 2025 18:41:42 +0200
+
 quibble-bullseye-php81-coverage (1.14.2-s5) wikimedia; urgency=medium
 
   * remove "extensions" path from phpunit-suite-edit
