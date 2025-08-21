@@ -2071,7 +2071,7 @@ project-templates:
     postmerge:
       - mwskin-phpunit-coverage-publish
     coverage:
-      - mwskin-phpunit-coverage-patch
+      - mwext-phpunit-coverage-patch
 
   - name: extension-javascript-documentation
     test:
