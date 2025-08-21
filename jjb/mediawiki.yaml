@@ -628,13 +628,6 @@
                       dir: 'cover'
         - teardown
 
-- job-template:
-    !!merge : *job_quibble
-    name: 'mwskin-phpunit-coverage-patch'
-    quibble_args: '--commands=mwskin-phpunit-coverage-patch'
-    triggers:
-        - zuul
-
 - project:
     name: mwcore-codehealth
     packages-source: composer
@@ -884,9 +877,6 @@
             packages-source:  composer
             database: mysql
         - mwext-phpunit-coverage-publish:
-            packages-source:  composer
-            database: mysql
-        - mwskin-phpunit-coverage-patch:
             packages-source:  composer
             database: mysql
         - mwskin-phpunit-coverage-publish:
