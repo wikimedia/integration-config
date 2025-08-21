@@ -1,3 +1,10 @@
+quibble-bullseye-php81-coverage (1.14.2-s7) wikimedia; urgency=medium
+
+  * Remove mwskin-phpunit-coverage-patch, mwext-phpunit-coverage-patch must be
+    used instead (T402398).
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 21 Aug 2025 09:31:28 +0200
+
 quibble-bullseye-php81-coverage (1.14.2-s6) wikimedia; urgency=medium
 
   * Use a relative directory for `phpunit-patch-coverage --test-dir`. The
