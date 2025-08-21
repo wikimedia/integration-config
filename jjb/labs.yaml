@@ -46,7 +46,7 @@
     name: 'labs-tools-heritage'
     jobs:
         - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.1-s1
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.1-s2
             build_timeout: 6  # T206913
 
 - project:
