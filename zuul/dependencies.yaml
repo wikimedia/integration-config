@@ -101,6 +101,7 @@ BlueSpiceAuthors:
 
 BlueSpiceAvatars:
  - BlueSpiceFoundation
+ - UserProfile
 
 BlueSpiceBookshelf:
  - BlueSpiceFoundation
