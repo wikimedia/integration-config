@@ -66,7 +66,7 @@ def main():
                 added_cover = False
                 # Add the three directories we care about
                 for folder in ['src', 'includes', 'maintenance']:
-                    path = os.path.join(args.path_to_mw, 'extensions', args.cover_extension, folder)
+                    path = os.path.join(args.path_to_mw, args.cover_extension, folder)
                     if os.path.exists(os.path.join(os.path.dirname(args.suite), path)):
                         added_cover = True
                         sub = etree.SubElement(include, 'directory')
@@ -78,7 +78,7 @@ def main():
                 # here instead. (T288396)
                 if not added_cover:
                     sub = etree.SubElement(include, 'directory')
-                    path = os.path.join(args.path_to_mw, 'extensions', args.cover_extension)
+                    path = os.path.join(args.path_to_mw, args.cover_extension)
                     sub.text = path
                     sub.set('suffix', '.php')
 

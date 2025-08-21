@@ -1,3 +1,9 @@
+quibble-bullseye-php81-coverage (1.14.2-s5) wikimedia; urgency=medium
+
+  * remove "extensions" path from phpunit-suite-edit
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 21 Aug 2025 10:44:22 +0200
+
 quibble-bullseye-php81-coverage (1.14.2-s4) wikimedia; urgency=medium
 
   Changes made to phase out "skins" terminology (T402398):
