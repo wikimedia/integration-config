@@ -578,6 +578,9 @@ ContentDroplets:
  - VisualEditor
  - OOJSPlus
 
+ContentProvisioning:
+ - OOJSPlus
+
 ContentStabilization:
  - BlueSpiceBookshelf
  - BlueSpiceFoundation
