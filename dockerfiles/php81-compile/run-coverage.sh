@@ -23,3 +23,6 @@ make test
 lcov --directory . --capture --output-file $INFO_FILE
 lcov --remove $INFO_FILE "tests/*" "/usr/*" --output-file $INFO_FILE
 genhtml --o $REPORT_PATH -t "${ZUUL_PROJECT} test coverage report" --num-spaces 4 --demangle-cpp $INFO_FILE
+
+# Publish lcov.info file, required for listing at https://doc.wikimedia.org/cover/
+cp $INFO_FILE $REPORT_PATH/lcov.info
