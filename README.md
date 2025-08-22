@@ -25,7 +25,7 @@ First create a jenkins_jobs.ini file e.g.
 
 Make sure you have tox and python 3 installed, you can then run Jenkins job builder using:
 
-    $ ./jenkin-jobs <arguments>
+    $ ./jenkins-jobs <arguments>
 
 Generate from the YAML an XML file for each Jenkins job, in the `output/` directory:
 

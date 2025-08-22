@@ -1,0 +1,127 @@
+#!/usr/bin/env python3
+
+from collections import defaultdict, namedtuple
+from glob import glob
+import re
+import os.path
+import subprocess
+import sys
+
+from debian.changelog import Changelog
+
+if '--help' in sys.argv:
+    print("Wikimedia Jenkins Job Builder CI docker image usage updater tool")
+    print("usage: docker-updates [--apply]")
+    sys.exit(0)
+
+# pcre regex passed to `git grep -P' to find images in the jjb directory
+IMAGE_GREP_PATTERN = (
+    'docker-registry\\.wikimedia\\.org'
+    '\\/releng\\/'
+    '[\\w\\.-]+?:[\\w\\.-]+\\b')
+COMMENT_RE = '\\s+#\\s+?(.+)'
+
+DOCKERFILES_DIR = os.path.join(
+    os.path.dirname(__file__),
+    '../dockerfiles')
+
+JJB_DIR = os.path.join(
+    os.path.dirname(__file__),
+    '../jjb')
+
+Fix = namedtuple('Fix', 'line old_image new_version')
+
+latest_images = set()
+latest_version = {}
+
+for changelog_file in glob(os.path.join(DOCKERFILES_DIR, '*', 'changelog')):
+    with open(changelog_file, 'r') as f:
+        chglog = Changelog(f, max_blocks=1, strict=True)
+
+        package = chglog.package
+        version = chglog.version
+        image_name = 'docker-registry.wikimedia.org/releng/%s' % package
+        latest_images.add('%s:%s' % (image_name, version))
+        latest_version[image_name] = version
+
+try:
+    grep_cmd = ['git', 'grep', '-n', '-o', '-P',
+                IMAGE_GREP_PATTERN + '(%s)?' % COMMENT_RE,
+                JJB_DIR]
+    print("Running: '%s'" % "' '".join(grep_cmd))
+    jjb_defs = subprocess.check_output(
+        grep_cmd, stderr=subprocess.STDOUT)
+
+except subprocess.CalledProcessError as e:
+    print('git grep failed: %s' % e.returncode)
+    print(e.output.decode())
+    sys.exit(e.returncode)
+
+updates_count = 0
+errors = []
+files_fixes = defaultdict(list)
+for jjb_def in jjb_defs.decode().split('\n'):
+    if jjb_def == '':
+        continue
+    try:
+        (yaml_file, line, image_name, image_version) = jjb_def.split(':')
+        comment = None
+        m = re.search(COMMENT_RE, image_version)
+        if m:
+            image_version = image_version[:-len(m[0])]
+            comment = m[1]
+
+    except ValueError:
+        print('Failed to parse: %s' % jjb_def)
+
+    found_image = '%s:%s' % (image_name, image_version)
+
+    if image_name not in latest_version:
+        if comment:
+            print('%s:%s:%s' % (
+                yaml_file, line, image_name)
+                + (' \033[33m Image not found: %s\033[0m' % comment))
+        else:
+            errors.append("%s:%s ERROR: %s not found!" % (
+                yaml_file, line, image_name))
+    elif found_image not in latest_images:
+        print('%s:%s:%s > %s' % (
+            yaml_file, line, found_image, latest_version[image_name])
+            + (' \033[33m# %s\033[0m' % comment if comment else ''))
+        updates_count += 1
+        if not comment:
+            files_fixes[yaml_file].append(
+                Fix(int(line), found_image, str(latest_version[image_name]))
+            )
+
+if errors:
+    print('\n'.join(errors), file=sys.stderr)
+    sys.exit(1)
+
+if updates_count == 0:
+    print("No updates")
+    sys.exit(0)
+
+if '--apply' not in sys.argv:
+    print("You can apply the updates with the --apply flag.")
+    sys.exit(0)
+
+if (
+    sys.stdout.isatty()
+    and input('Apply updates? [y/N]: ').lower() == 'y'
+):
+    print('Applying changes ...')
+    for yaml_file, fixes in files_fixes.items():
+        lines = []
+        with open(yaml_file) as f:
+            lines = f.readlines()
+
+        for fix in fixes:
+            line = lines[fix.line - 1]
+            assert fix.old_image in line, 'Could not find expected line'
+            new_image = fix.old_image.split(':')[0] + ':' + fix.new_version
+            lines[fix.line - 1] = line.replace(fix.old_image, new_image)
+
+        with open(yaml_file, "w") as f:
+            f.writelines(lines)
+            print('Updated', yaml_file)
