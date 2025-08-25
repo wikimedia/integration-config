@@ -5862,7 +5862,7 @@ projects:
     template:
       - name: extension-quibble-bluespice
 
-  - name: mediawiki/extensions/BluespiceTranslationTransfer
+  - name: mediawiki/extensions/BlueSpiceTranslationTransfer
     template:
       - name: extension-quibble-bluespice
 

@@ -382,7 +382,7 @@ BlueSpiceTagCloud:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
 
-BluespiceTranslationTransfer:
+BlueSpiceTranslationTransfer:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
  - ContentTransfer
