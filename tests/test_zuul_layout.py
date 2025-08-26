@@ -88,7 +88,7 @@ class TestZuulLayout(unittest.TestCase):
                     has_extension_unittests,
                     'Project %s in Zuul lacks an extension-unittests* '
                     'template' % project['name'])
-            except AssertionError, e:
+            except AssertionError as e:
                 errors.append(str(e))
 
         self.maxDiff = None
@@ -125,7 +125,7 @@ class TestZuulLayout(unittest.TestCase):
                         )
                     )
 
-            except AssertionError, e:
+            except AssertionError as e:
                 errors.append(str(e))
 
         self.maxDiff = None
@@ -162,7 +162,7 @@ class TestZuulLayout(unittest.TestCase):
                         ', '.join(templates),
                     )
                 )
-            except AssertionError, e:
+            except AssertionError as e:
                 errors.append(str(e))
 
         self.maxDiff = None
@@ -279,7 +279,7 @@ class TestZuulLayout(unittest.TestCase):
                         % (kind, name, kind)
                     )
 
-            except AssertionError, e:
+            except AssertionError as e:
                 errors.append(str(e))
 
         self.maxDiff = None
@@ -320,7 +320,7 @@ class TestZuulLayout(unittest.TestCase):
                         % (kind, name)
                     )
 
-            except AssertionError, e:
+            except AssertionError as e:
                 errors.append(str(e))
 
         self.maxDiff = None
@@ -365,7 +365,7 @@ class TestZuulLayout(unittest.TestCase):
                         )
                     )
                 )
-            except AssertionError, e:
+            except AssertionError as e:
                 errors.append(str(e))
 
         self.maxDiff = None
