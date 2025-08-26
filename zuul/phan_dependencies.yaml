@@ -601,6 +601,7 @@ TEI:
 
 TemplateData:
  - CommunityConfiguration
+ - WikiBase
 
 TemplateStyles:
  - CodeEditor
