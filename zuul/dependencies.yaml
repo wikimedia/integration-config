@@ -706,9 +706,6 @@ GeoData:
 GlobalBlocking:
  - CentralAuth
 
-GlobalContribs:
- - Editcount
-
 Graph:
  - CodeEditor
  - JsonConfig
