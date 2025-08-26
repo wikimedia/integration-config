@@ -3,6 +3,15 @@
 # Copyright (c) 2025 - Antoine "hashar" Musso
 # Copyright (c) 2025 - Wikimedia Foundation Inc.
 #
+# Script to manually launch MediaWiki Jenkins jobs with dependencies injected.
+#
+# The script runs PHPUnit and Selenium jobs for any repository having a
+# dependency set.  This is done by submitting requests to the Zuul Gearman
+# server, it report back the repo/job/success.
+#
+# This was written to stop recursively processing extensions dependencies,
+# see https://phabricator.wikimedia.org/T389998
+#
 # Setup the environment:
 #
 # virtualenv foo
