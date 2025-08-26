@@ -40,13 +40,13 @@ skins/TuleapSkin:
 AbuseFilter:
  - AntiSpoof
  - CentralAuth
- - CodeEditor
  - CheckUser
+ - CodeEditor
  - ConfirmEdit
  - Echo
+ - EventLogging
  - Renameuser
  - Scribunto
- - EventLogging
 
 AchievementBadges:
  - BetaFeatures
@@ -56,8 +56,8 @@ AdvancedSearch:
  - Translate
 
 AIEditingAssistant:
-  - VisualEditor
-  - VisualEditorPlus
+ - VisualEditor
+ - VisualEditorPlus
 
 ApiFeatureUsage:
  - Elastica
@@ -67,17 +67,17 @@ Arrays:
  - ParserFunctions
 
 ArticlePlaceholder:
- - Wikibase
  - Scribunto
+ - Wikibase
 
 AtMentions:
  - OOJSPlus
  - VisualEditor
 
 AutoModerator:
- - ORES
  - CommunityConfiguration
  - DiscussionTools
+ - ORES
 
 Babel:
  - CommunityConfiguration
@@ -105,12 +105,12 @@ BlueSpiceAvatars:
 
 BlueSpiceBookshelf:
  - BlueSpiceFoundation
+ - BlueSpiceExtendedSearch
  - BlueSpiceVisualEditorConnector
  - ContentDroplets
  - MenuEditor
  - NotifyMe
  - VueJsPlus
- - BlueSpiceExtendedSearch
 
 BlueSpiceCategoryCheck:
  - BlueSpiceFoundation
@@ -298,8 +298,8 @@ BlueSpiceSMWConnector:
  - BlueSpiceSmartList
 
 BlueSpiceSocial:
- - BlueSpiceFoundation
  - BlueSpiceExtendedSearch
+ - BlueSpiceFoundation
 
 BlueSpiceSocialArticleActions:
  - BlueSpiceFoundation
@@ -322,16 +322,16 @@ BlueSpiceSocialMicroBlog:
  - BlueSpiceExtendedSearch
 
 BlueSpiceSocialProfile:
+ - BlueSpiceAvatars
  - BlueSpiceFoundation
  - BlueSpiceSocial
  - BlueSpiceExtendedSearch
- - BlueSpiceAvatars
 
 BlueSpiceSocialRating:
  - BlueSpiceFoundation
- - BlueSpiceSocial
  - BlueSpiceExtendedSearch
  - BlueSpiceRating
+ - BlueSpiceSocial
 
 BlueSpiceSocialResolve:
  - BlueSpiceFoundation
@@ -360,9 +360,9 @@ BlueSpiceSocialWatch:
 
 BlueSpiceSocialWikiPage:
  - BlueSpiceFoundation
- - BlueSpiceSocial
  - BlueSpiceExtendedSearch
  - BlueSpiceMultiUpload
+ - BlueSpiceSocial
 
 BlueSpiceSaferEdit:
  - BlueSpiceFoundation
@@ -391,10 +391,10 @@ BlueSpiceTranslationTransfer:
  - VisualEditor
 
 BlueSpiceUEModuleBookPDF:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
  - BlueSpiceBookshelf
+ - BlueSpiceFoundation
  - BlueSpiceUEModulePDF
+ - BlueSpiceUniversalExport
 
 BlueSpiceUEModuleDOCX:
  - BlueSpiceFoundation
@@ -461,8 +461,8 @@ BlueSpiceWikiExplorer:
  - BlueSpiceFoundation
 
 BounceHandler:
- - Echo
  - CentralAuth
+ - Echo
 
 CampaignEvents:
  - cldr
@@ -526,30 +526,30 @@ Citoid:
  - VisualEditor
 
 CirrusSearch:
- - TimedMediaHandler
- - PdfHandler
+ - BetaFeatures
  - Cite
  - Elastica
- - GeoData
- - BetaFeatures
- - SiteMatrix
  - EventBus
+ - GeoData
+ - PdfHandler
+ - SiteMatrix
+ - TimedMediaHandler
 
 CodeEditor:
  - WikiEditor
 
 CodeMirror:
  - BetaFeatures
- - WikiEditor
  - VisualEditor
+ - WikiEditor
 
 CognitiveProcessDesigner:
- - PageForms
  - BlueSpiceVisualEditorConnector
+ - PageForms
 
 CollabPads:
- - VisualEditor
  - OOJSPlus
+ - VisualEditor
 
 CommunityConfiguration:
  - CommunityConfigurationExample
@@ -559,9 +559,9 @@ CommunityConfigurationExample:
 
 CommunityRequests:
  - DiscussionTools
+ - Translate
  - VisualEditor
  - WikimediaMessages
- - Translate
 
 ConfigManager:
  - BlueSpiceFoundation
@@ -576,8 +576,8 @@ ContainerFilter:
  - VisualEditor
 
 ContentDroplets:
- - VisualEditor
  - OOJSPlus
+ - VisualEditor
 
 ContentProvisioning:
  - OOJSPlus
@@ -617,10 +617,10 @@ DiscordRCFeed:
  - Flow
 
 DiscussionTools:
- - VisualEditor
- - Linter
  - Echo
+ - Linter
  - Thanks
+ - VisualEditor
 
 DrawioEditor:
  - VisualEditor
@@ -657,8 +657,8 @@ EventBus:
  - EventStreamConfig
 
 EventLogging:
- - EventStreamConfig
  - EventBus
+ - EventStreamConfig
 
 ExternalGuidance:
  - MobileFrontend
@@ -682,8 +682,8 @@ FlaggedRevs:
 
 FlexiSkin:
  - BlueSpiceFoundation
- - OOJSPlus
  - CodeEditor
+ - OOJSPlus
 
 Flow:
  - AbuseFilter
@@ -712,19 +712,19 @@ Graph:
  - VisualEditor
 
 GrowthExperiments:
- - skins/MinervaNeue
- - PageViewInfo
- - PageImages
+ - CirrusSearch
+ - CommunityConfiguration
+ - Echo
  - EventLogging
  - Flow
- - MobileFrontend
- - Echo
- - CirrusSearch
- - VisualEditor
- - Thanks
- - CommunityConfiguration
- - WikimediaMessages
  - MetricsPlatform
+ - MobileFrontend
+ - PageImages
+ - PageViewInfo
+ - VisualEditor
+ - skins/MinervaNeue
+ - Thanks
+ - WikimediaMessages
 
 GuidedTour:
  - EventLogging
@@ -736,8 +736,8 @@ ImageRating:
  - VoteNY
 
 ImageSuggestions:
- - Echo
  - CirrusSearch
+ - Echo
  - Elastica
 
 InputBox:
@@ -745,17 +745,17 @@ InputBox:
 
 IPInfo:
  - BetaFeatures
- - MobileFrontend
  - CheckUser
  - GlobalPreferences
+ - MobileFrontend
 
 IPReputation:
  - AbuseFilter
  - ConfirmEdit
 
 JsonConfig:
- - Scribunto
  - Kartographer
+ - Scribunto
 
 JWTAuth:
  - PluggableAuth
@@ -824,24 +824,24 @@ MediaUploader:
  - SpamBlacklist
 
 MenuEditor:
- - skins/BlueSpiceDiscovery
  - OOJSPlus
+ - skins/BlueSpiceDiscovery
 
 MetricsPlatform:
- - EventStreamConfig
  - EventLogging
+ - EventStreamConfig
 
 MobileApp:
+ - AbuseFilter
  - Echo
  - MobileFrontend
  - VisualEditor
- - AbuseFilter
 
 MobileFrontend:
  - Echo
- - VisualEditor
  - MobileApp
  - skins/MinervaNeue
+ - VisualEditor
 
 MobileFrontendContentProvider:
  - MobileFrontend
@@ -898,10 +898,10 @@ PageCheckout:
  - Workflows
 
 PageTriage:
- - WikiLove
- - ORES
  - Echo
+ - ORES
  - PageViewInfo
+ - WikiLove
 
 PageViewInfo:
  - Graph
@@ -913,8 +913,8 @@ ParserFunctions:
  - Scribunto
 
 parsoid:
- - TimedMediaHandler
  - ParserFunctions
+ - TimedMediaHandler
 
 PDFCreator:
  - OOJSPlus
@@ -930,23 +930,23 @@ PollNY:
  - SocialProfile
 
 Popups:
- - TextExtracts
- - PageImages
- - EventLogging
  - Cite
+ - EventLogging
+ - PageImages
+ - TextExtracts
 
 PronunciationRecording:
  - UploadWizard
 
 ProofreadPage:
+ - BetaFeatures
  - LabeledSectionTransclusion
  - Scribunto
  - VisualEditor
- - BetaFeatures
 
 PropertySuggester:
- - Wikibase
  - EventLogging
+ - Wikibase
 
 QuickSurveys:
  - EventLogging
@@ -985,8 +985,8 @@ Sanctions:
  - Flow
 
 Score:
- - VisualEditor
  - TimedMediaHandler
+ - VisualEditor
  - Wikibase
 
 Scribunto:
@@ -1011,8 +1011,8 @@ SimpleSAMLphp:
  - PluggableAuth
 
 SimpleTasks:
- - Checklists
  - AtMentions
+ - Checklists
  - DateTimeTools
 
 SocialProfile:
@@ -1036,9 +1036,9 @@ SpellingDictionary:
  - UniversalLanguageSelector
 
 SportsTeams:
+ - BlogPage
  - SocialProfile
  - UserStatus
- - BlogPage
 
 StandardDialogs:
  - OOJSPlus
@@ -1082,10 +1082,10 @@ Thanks:
 
 Translate:
  - UniversalLanguageSelector
- - EventLogging
  - cldr
- - VisualEditor
+ - EventLogging
  - Scribunto
+ - VisualEditor
 
 TranslationNotifications:
  - MassMessage
@@ -1127,18 +1127,18 @@ UnlinkedWikibase:
  - Scribunto
 
 UploadWizard:
- - WikimediaMessages
- - EventLogging
  - AbuseFilter
+ - EventLogging
  - SpamBlacklist
+ - WikimediaMessages
 
 UserProfile:
  - skins/BlueSpiceDiscovery
 
 UserStatus:
+ - BlogPage
  - SocialProfile
  - SportsTeams
- - BlogPage
 
 VECancelButton:
  - VisualEditor
@@ -1154,10 +1154,10 @@ VikiTitleIcon:
 
 VisualEditor:
  - Cite
- - TemplateData
- - FlaggedRevs
  - ConfirmEdit
  - DiscussionTools
+ - FlaggedRevs
+ - TemplateData
 
 VisualEditorPlus:
  - VisualEditor
@@ -1170,26 +1170,26 @@ WhoIsWatching:
 
 Wikibase:
  - ArticlePlaceholder
- - WikibaseCirrusSearch
  - cldr
+ - Echo
  - Elastica
  - GeoData
+ - MobileFrontend
  # temporarily dropped due to excessive slowness (T231198)
  # - Scribunto
  # - Capiunto
- - Echo
  - PropertySuggester
+ - skins/MinervaNeue
  - SpamBlacklist
+ - WikibaseCirrusSearch
+ - WikibaseLexeme
+ - WikibaseMediaInfo
  - WikibaseQualityConstraints
  - WikimediaBadges
- - WikibaseMediaInfo
- - WikibaseLexeme
- - skins/MinervaNeue
- - MobileFrontend
 
 WikibaseCirrusSearch:
- - Wikibase
  - CirrusSearch
+ - Wikibase
 
 WikibaseLexeme:
  - Wikibase
@@ -1262,15 +1262,15 @@ WikiSEO:
  - Scribunto
 
 Wikisource:
- - Wikibase
  - ProofreadPage
+ - Wikibase
 
 Wikistories:
  - BetaFeatures
+ - Echo
  - EventLogging
  - MobileFrontend
  - skins/MinervaNeue
- - Echo
 
 WikiToLDAP:
  - LDAPAuthentication2
