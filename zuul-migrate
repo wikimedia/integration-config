@@ -145,8 +145,8 @@ def _extract_from_vars(line):
     # export DEVSTACK_PROJECT_FROM_GIT+=",glean"
     projects = []
     line = line.replace('"', '').replace('+', '').replace(',', ' ')
-    if (line.startswith('export PROJECTS') or
-            line.startswith('export DEVSTACK_PROJECT_FROM_GIT')):
+    if (line.startswith('export PROJECTS')
+            or line.startswith('export DEVSTACK_PROJECT_FROM_GIT')):
         nothing, project_string = line.split('=')
         project_string = project_string.replace('$PROJECTS', '').strip()
         projects = project_string.split()
@@ -482,10 +482,10 @@ class Job:
 
     def __init__(self,
                  orig: str,
-                 name: str=None,
-                 content: Dict[str, Any]=None,
-                 vars: Dict[str, str]=None,
-                 nodes: List[str]=None,
+                 name: str = None,
+                 content: Dict[str, Any] = None,
+                 vars: Dict[str, str] = None,
+                 nodes: List[str] = None,
                  parent=None) -> None:
         self.orig = orig
         self.voting = True
@@ -775,8 +775,8 @@ class Job:
             return
         if 'echo "Detailed logs:' in builder['shell']:
             return
-        if ('cat /etc/dib-builddate.txt' in builder['shell'] and
-                'echo "Network configuration data..."' in builder['shell']):
+        if ('cat /etc/dib-builddate.txt' in builder['shell']
+                and 'echo "Network configuration data..."' in builder['shell']):
             return
 
         task = self._emitShellTask(builder['shell'], syntax_check)
@@ -1137,8 +1137,8 @@ class ChangeQueue:
 
             for job in self._jobs:
                 if job.queue_name:
-                    if (self.assigned_name and
-                            job.queue_name != self.assigned_name):
+                    if (self.assigned_name
+                            and job.queue_name != self.assigned_name):
                         raise Exception("More than one name assigned to "
                                         "change queue: %s != %s" %
                                         (self.assigned_name,
@@ -1561,8 +1561,8 @@ class ZuulMigrate:
                 new_project[key] = collections.OrderedDict()
                 if key == 'gate':
                     for queue in self.change_queues:
-                        if (project['name'] not in queue.getProjects() or
-                                len(queue.getProjects()) == 1):
+                        if (project['name'] not in queue.getProjects()
+                                or len(queue.getProjects()) == 1):
                             continue
                         new_project[key]['queue'] = queue.name
                 tmp = [job for job in self.makeNewJobs(value)]
