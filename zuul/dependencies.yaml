@@ -703,11 +703,6 @@ FundraisingTranslateWorkflow:
 GeoData:
  - CirrusSearch
 
-GettingStarted:
- - CentralAuth
- - EventLogging
- - GuidedTour
-
 GlobalBlocking:
  - CentralAuth
 
