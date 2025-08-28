@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from collections import defaultdict, namedtuple
 from glob import glob
 import re

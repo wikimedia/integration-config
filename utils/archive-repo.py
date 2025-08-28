@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from __future__ import print_function
 
 import argparse
@@ -16,7 +14,7 @@ except ModuleNotFoundError as e:  # noqa:F821
     print(e, file=sys.stderr)
     print("Install python Levenshtein module or alternatively try:",
           file=sys.stderr)
-    print("tox -e archive-repo -- --help", file=sys.stderr)
+    print("./utils/archive-repo --help", file=sys.stderr)
     sys.exit(1)
 
 

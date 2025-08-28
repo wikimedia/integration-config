@@ -1,8 +1,2 @@
-#!/usr/bin/env bash
-
-set -eu -o pipefail
-
-cd "$(realpath "$(dirname "$0")"/../)"
-tox -e docker-updates --notest
-source .tox/docker-updates/bin/activate
-exec python3 utils/docker-updates.py "$@"
+#!/bin/sh
+exec tox -qq -e docker-updates -- "$@"
