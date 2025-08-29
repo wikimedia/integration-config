@@ -17,8 +17,17 @@ repodir="$(realpath "$_dir/..")"
 jobslist=$(mktemp --tmpdir zuul-layout-validate_jobslist.XXXX)
 trap 'rm "$jobslist"' EXIT
 
+if [ -v CI ]; then
+    echo "CI> Creating jenkins_jobs.ini"
+    cat > "$repodir"/jenkins_jobs.ini << EOF
+[jenkins]
+query_plugins_info = False
+url = https://integration.wikimedia.org/ci/
+EOF
+fi
+
 echo "Getting list of jobs from Jenkins."
-python "$repodir"/utils/jenkins-jobs-list.py > "$jobslist"
+"$repodir"/jjb-list > "$jobslist"
 echo "There are $(wc -l "$jobslist"|cut -d\  -f1) jobs defined."
 
 # shellcheck source=/dev/null
