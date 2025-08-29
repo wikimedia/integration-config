@@ -54,6 +54,9 @@ class TestMwDependencies(unittest.TestCase):
 
         self.assertIn('SKIN_NAME', params)
         self.assertEqual(params['SKIN_NAME'], 'Vector')
+        # EXT_NAME is set to allow transition to 'ext' T402398
+        self.assertIn('EXT_NAME', params)
+        self.assertEqual(params['EXT_NAME'], 'Vector')
 
     def test_cyclical_dependencies(self):
         """verifies that cyclical dependencies are possible"""

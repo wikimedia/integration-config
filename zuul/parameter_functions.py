@@ -247,6 +247,9 @@ def set_mw_dependencies(item, job, params):
         dep_key = 'skins' + '/' + split[-1]
         # 'Vector'
         params['SKIN_NAME'] = split[-1]
+        # Also set EXT_NAME to allow transition to 'ext' T402398
+        params['EXT_NAME'] = split[-1]
+
     elif split[1] == 'services':
         # Lookup key in 'dependencies'. Example: 'parsoid'
         dep_key = split[-1]
@@ -489,6 +492,8 @@ def set_gated_extensions(item, job, params):
         params['SERVICE_NAME'] = split[-1]
     if len(split) == 3 and split[1] == 'skins':
         params['SKIN_NAME'] = split[-1]
+        # Also set EXT_NAME to allow transition to 'ext' T402398
+        params['EXT_NAME'] = split[-1]
 
 
 # Map from ZUUL_PROJECT to DOC_PROJECT
