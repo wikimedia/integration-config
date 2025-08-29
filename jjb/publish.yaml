@@ -38,22 +38,6 @@
          docsrc: '{src}'
          docdest: 'cover/{dest}'
 
-# Variant of cover-publish that publishes to cover-extensions/
-- builder:
-    name: cover-extensions-publish
-    builders:
-     - doc-publish:
-         docsrc: '{src}'
-         docdest: 'cover-extensions/{dest}'
-
-# Variant of cover-publish that publishes to cover-skins/
-- builder:
-    name: cover-skins-publish
-    builders:
-     - doc-publish:
-         docsrc: '{src}'
-         docdest: 'cover-skins/{dest}'
-
 - builder:
     name: fetch-from-remote-instance
     builders:

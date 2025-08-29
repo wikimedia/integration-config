@@ -535,10 +535,11 @@
     name: 'mwext-phpunit-coverage'
     quibble_args: '--commands=mwext-phpunit-coverage'
 
-- job-template:
+- job-template: &mwext_phpunit_coverage_publish
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage-publish'
     quibble_args: '--commands=mwext-phpunit-coverage'
+    cover_dest: 'cover-extensions/$EXT_NAME'
     triggers:
         - zuul
     builders:
@@ -565,10 +566,10 @@
               - build-on:
                   - SUCCESS
                 build-steps:
-                  - cover-extensions-publish:
-                      src: 'cover'
-                      # https://doc.wikimedia.org/cover-extensions/$EXT_NAME
-                      dest: '$EXT_NAME'
+                  - doc-publish:
+                      docsrc: 'cover'
+                      # https://doc.wikimedia.org/{cover_dest}
+                      docdest: '{cover_dest}'
         - postbuildscript:
             mark-unstable-if-failed: false
             builders:
@@ -583,50 +584,12 @@
         - teardown
 
 - job-template:
-    !!merge : *job_quibble
-    name: 'mwskin-phpunit-coverage-publish'
+    !!merge : *mwext_phpunit_coverage_publish
+    name: mwskin-phpunit-coverage-publish
     quibble_args: '--commands=mwskin-phpunit-coverage'
+    cover_dest: 'cover-skins/$SKIN_NAME'
     triggers:
         - zuul
-    builders:
-        - docker-castor-load
-        - docker-log-dir
-        - docker-src-dir
-        - docker-wipe-dir:
-            dir: 'cover'
-        - docker-run-with-log-cache-src:
-            image: '{docker_image}'
-            options: '--tmpfs /workspace/db:size=320M'
-            entrypoint: '{entrypoint|}'
-            volumes:
-                /srv/git: /srv/git:ro
-                cover: /workspace/cover
-            args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db {quibble_args}'
-            logdir: '/workspace/log'
-            srcdir: '/workspace/src'
-    publishers:
-        - archive-log-allow-empty
-        - postbuildscript:
-            mark-unstable-if-failed: true
-            builders:
-              - build-on:
-                  - SUCCESS
-                build-steps:
-                  - cover-skins-publish:
-                      src: 'cover'
-                      dest: '$SKIN_NAME'
-        - postbuildscript:
-            mark-unstable-if-failed: false
-            builders:
-              - build-on:
-                  - SUCCESS
-                  - UNSTABLE
-                  - FAILURE
-                  - ABORTED
-                build-steps:
-                  - docker-wipe-dir:
-                      dir: 'cover'
-        - teardown
 
 - project:
     name: mwcore-codehealth
