@@ -52,9 +52,6 @@ class TestMwDependencies(unittest.TestCase):
         params = self.fetch_dependencies(
             project='mediawiki/skins/Vector')
 
-        self.assertIn('SKIN_NAME', params)
-        self.assertEqual(params['SKIN_NAME'], 'Vector')
-        # EXT_NAME is set to allow transition to 'ext' T402398
         self.assertIn('EXT_NAME', params)
         self.assertEqual(params['EXT_NAME'], 'Vector')
 
