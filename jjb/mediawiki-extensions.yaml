@@ -200,16 +200,16 @@
             recipients: qa-alerts@lists.wikimedia.org wiki@physikerwelt.de # @Physikerwelt
             repository: mediawiki/extensions/Math
         - Minerva:
-            recipients: proticom-ctr@wikimedia.org qa-alerts@lists.wikimedia.org # @Edtadros
+            recipients: proticom-ctr@wikimedia.org qa-alerts@lists.wikimedia.org performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com # @Edtadros
             repository: mediawiki/skins/MinervaNeue
         - Newsletter:
             recipients: qa-alerts@lists.wikimedia.org 01tonythomas@gmail.com # @01tonythomas
             repository: mediawiki/extensions/Newsletter
         - Popups:
-            recipients: jrobson@wikimedia.org qa-alerts@lists.wikimedia.org samsmith@wikimedia.org # @Jdlrobson @phuedx
+            recipients: qa-alerts@lists.wikimedia.org performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com # @jdrewniak
             repository: mediawiki/extensions/Popups
         - RelatedArticles:
-            recipients: qa-alerts@lists.wikimedia.org samsmith@wikimedia.org discovery-alerts@lists.wikimedia.org # @phuedx
+            recipients: qa-alerts@lists.wikimedia.org performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com # @jdrewniak
             repository: mediawiki/extensions/RelatedArticles
         - TwoColConflict:
             recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @awight wmde-techwish
