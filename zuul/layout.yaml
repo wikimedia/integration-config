@@ -4335,13 +4335,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/Graph
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-codehealth
-
   - name: mediawiki/extensions/GrowthExperiments
     template:
       - name: in-wikimedia-production
@@ -6524,6 +6517,12 @@ projects:
   - name: mediawiki/extensions/GPGMail
     template:
       - name: extension-quibble
+
+  - name: mediawiki/extensions/Graph
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
 
   - name: mediawiki/extensions/GraphQL
     template:
