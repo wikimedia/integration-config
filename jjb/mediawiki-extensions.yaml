@@ -257,6 +257,7 @@
               builders:
                 - build-on:
                     - SUCCESS
+                    - FAILURE
                     - UNSTABLE
                     - ABORTED
                   build-steps:
