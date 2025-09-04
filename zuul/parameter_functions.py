@@ -421,7 +421,6 @@ gatedextensions = [
     'GeoData',
     'GlobalCssJs',
     'GlobalPreferences',
-    'Graph',
     'GrowthExperiments',
     'GuidedTour',
     'IPInfo',
