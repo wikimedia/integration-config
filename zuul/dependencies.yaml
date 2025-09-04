@@ -903,9 +903,6 @@ PageTriage:
  - PageViewInfo
  - WikiLove
 
-PageViewInfo:
- - Graph
-
 PageViewInfoGA:
  - PageViewInfo
 
