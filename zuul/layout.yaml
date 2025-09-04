@@ -6518,12 +6518,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Graph
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-codehealth
-
   - name: mediawiki/extensions/GraphQL
     template:
       - name: extension-quibble-composer
@@ -10694,6 +10688,10 @@ projects:
   - name: mediawiki/extensions/GoToShell
     template:
       - name: archived
+
+  - name: mediawiki/extensions/Graph
+    template:
+      - name: archived # T362317
 
   - name: mediawiki/extensions/GraphViz
     template:

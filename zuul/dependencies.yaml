@@ -721,11 +721,6 @@ GeoData:
 GlobalBlocking:
  - CentralAuth
 
-Graph:
- - CodeEditor
- - JsonConfig
- - VisualEditor
-
 GrowthExperiments:
  - CirrusSearch
  - CommunityConfiguration
