@@ -661,6 +661,9 @@ UniversalLanguageSelector:
 UnlinkedWikibase:
  - Scribunto
 
+UrlShortener:
+ - MobileFrontend
+
 UserStatus:
  - SocialProfile
  - SportsTeams
