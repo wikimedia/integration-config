@@ -50,7 +50,6 @@ def set_parameters(item, job, params):
 
     mw_deps_jobs_starting_with = (
         'mwext-',
-        'mwskin-',
         'mediawiki-quibble',
         'quibble',
         )

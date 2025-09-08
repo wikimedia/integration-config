@@ -1267,9 +1267,6 @@ jobs:
   - name: mwext-phpunit-coverage-publish
     mutex: mwext-phpunit-coverage-publish
 
-  - name: mwskin-phpunit-coverage-publish
-    mutex: mwskin-phpunit-coverage-publish
-
   # Zuul does not know whether a Jenkins job is marked as non concurrent and
   # would thus trigger the associated Gearman function multiple times.
   # The Gearman plugin assign each build to a node and each of its executors
