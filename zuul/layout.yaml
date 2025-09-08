@@ -2070,7 +2070,7 @@ project-templates:
 
   - name: skin-coverage
     postmerge:
-      - mwskin-phpunit-coverage-publish
+      - mwext-phpunit-coverage-publish
     coverage:
       - mwext-phpunit-coverage-patch
 
