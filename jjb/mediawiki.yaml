@@ -590,7 +590,7 @@
     # Skins do have $EXT_NAME set but are publicly at
     # https://doc.wikimedia.org/cover-skins/ until we migrate them.
     # See T402398
-    cover_dest: 'cover-skins/$EXT_NAME'
+    cover_dest: 'cover-extensions/$EXT_NAME'
     triggers:
         - zuul
 
