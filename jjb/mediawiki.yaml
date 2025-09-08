@@ -583,17 +583,6 @@
                       dir: 'cover'
         - teardown
 
-- job-template:
-    !!merge : *mwext_phpunit_coverage_publish
-    name: mwskin-phpunit-coverage-publish
-    quibble_args: '--commands=mwext-phpunit-coverage'
-    # Skins do have $EXT_NAME set but are publicly at
-    # https://doc.wikimedia.org/cover-skins/ until we migrate them.
-    # See T402398
-    cover_dest: 'cover-extensions/$EXT_NAME'
-    triggers:
-        - zuul
-
 - project:
     name: mwcore-codehealth
     packages-source: composer
@@ -843,9 +832,6 @@
             packages-source:  composer
             database: mysql
         - mwext-phpunit-coverage-publish:
-            packages-source:  composer
-            database: mysql
-        - mwskin-phpunit-coverage-publish:
             packages-source:  composer
             database: mysql
 
