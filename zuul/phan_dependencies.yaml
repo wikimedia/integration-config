@@ -78,6 +78,7 @@ ArticlePlaceholder:
  - Wikibase
 
 AutoModerator:
+ - CommunityConfiguration
  - ORES
 
 Babel:
