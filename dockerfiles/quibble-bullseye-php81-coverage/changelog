@@ -1,3 +1,10 @@
+quibble-bullseye-php81-coverage (1.14.2-s9) wikimedia; urgency=medium
+
+  * Remove mwskin-phpunit-coverage.sh, skins have been switched to use the
+    same script as extensions: mwext-phpunit-coverage.sh - T402398 T395470
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 08 Sep 2025 15:11:14 +0200
+
 quibble-bullseye-php81-coverage (1.14.2-s8) wikimedia; urgency=medium
 
   * Make mwext-phpunit-coverage usable by skins (T402398).
