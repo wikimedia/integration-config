@@ -17,7 +17,9 @@
 
 set -eux -o pipefail
 
-SKIN_NAME=$(basename "$ZUUL_PROJECT")
+# Absolute path to the extension, which is the MediaWiki installation path +
+# the Gerrit project name stripped from the `mediawiki/` prefix.
+SKIN_DIR="$MW_INSTALL_PATH/${ZUUL_PROJECT#mediawiki/}"
 
 # Edit suite.xml to use the proper coverage paths
 phpunit-suite-edit "$MW_INSTALL_PATH/tests/phpunit/suite.xml" \
@@ -36,13 +38,13 @@ function relay_signals() {
 # report for those that passed.
 set +e
 if [[ ! -v CODEHEALTH ]]; then
-    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH/skins/$SKIN_NAME" -d pcov.exclude='@(tests|vendor)@' \
+    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$SKIN_DIR" -d pcov.exclude='@(tests|vendor)@' \
         "$MW_INSTALL_PATH"/tests/phpunit/phpunit.php \
         --testsuite skins \
         --coverage-clover "$LOG_DIR"/clover.xml \
         --coverage-html "$WORKSPACE"/cover \
         --log-junit "$LOG_DIR"/junit.xml \
-        "$MW_INSTALL_PATH/skins/$SKIN_NAME" &
+        "$SKIN_DIR" &
 else
     # This runs unit tests for all skins in the file system. We are doing this because:
     # 1. in the CODEHEALTH env context only the skin we care about should be cloned
@@ -50,7 +52,7 @@ else
     # 3. the unit tests take just a few seconds to run
     # 4. Passing in the tests/phpunit/unit directory when it doesn't exist results in exit
     #    code 1.
-    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH/skins/$SKIN_NAME" -d pcov.exclude='@(tests|vendor)@' \
+    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$SKIN_DIR" -d pcov.exclude='@(tests|vendor)@' \
         vendor/bin/phpunit \
         --testsuite skins:unit \
         --exclude-group Dump,Broken,ParserFuzz,Stub \

@@ -1,3 +1,9 @@
+quibble-bullseye-php81-coverage (1.14.2-s8) wikimedia; urgency=medium
+
+  * Make mwext-phpunit-coverage usable by skins (T402398).
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 09 Sep 2025 08:51:32 +0200
+
 quibble-bullseye-php81-coverage (1.14.2-s7) wikimedia; urgency=medium
 
   * Remove mwskin-phpunit-coverage-patch, mwext-phpunit-coverage-patch must be
