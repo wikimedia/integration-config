@@ -9,6 +9,7 @@
 
 # Skins:
 skins/BlueSpiceDiscovery:
+ - OOJSPlus
  - BlueSpiceFoundation
  - MenuEditor
 
@@ -159,6 +160,7 @@ BlueSpiceEmoticons:
 BlueSpiceExpiry:
  - BlueSpiceFoundation
  - BlueSpiceReminder
+ - OOJSPlus
 
 BlueSpiceExportTables:
  - BlueSpiceFoundation
@@ -179,6 +181,7 @@ BlueSpiceExtendedStatistics:
 
 BlueSpiceFilterableTables:
  - BlueSpiceFoundation
+ - OOJSPlus
 
 BlueSpiceFlaggedRevsConnector:
  - BlueSpiceFoundation
@@ -211,6 +214,7 @@ BlueSpiceInstanceStatus:
 
 BlueSpiceInterWikiLinks:
  - BlueSpiceFoundation
+ - OOJSPlus
 
 BlueSpiceInterwikiSearch:
  - BlueSpiceFoundation
@@ -237,6 +241,7 @@ BlueSpicePageAccess:
 
 BlueSpicePageAssignments:
  - BlueSpiceFoundation
+ - OOJSPlus
  - NotifyMe
 
 BlueSpicePageFormsConnector:
@@ -245,6 +250,7 @@ BlueSpicePageFormsConnector:
 
 BlueSpicePageTemplates:
  - BlueSpiceFoundation
+ - OOJSPlus
  - BlueSpiceDistributionConnector
  - ContentDroplets
 
@@ -262,9 +268,11 @@ BlueSpicePlayer:
 
 BlueSpicePermissionManager:
  - BlueSpiceFoundation
+ - OOJSPlus
 
 BlueSpicePrivacy:
  - BlueSpiceFoundation
+ - OOJSPlus
 
 BlueSpiceProDistributionConnector:
  - BlueSpiceFoundation
@@ -278,6 +286,7 @@ BlueSpiceQrCode:
 
 BlueSpiceRating:
  - BlueSpiceFoundation
+ - OOJSPlus
 
 BlueSpiceRSSFeeder:
  - BlueSpiceFoundation
@@ -291,6 +300,7 @@ BlueSpiceReadConfirmation:
 
 BlueSpiceReminder:
  - BlueSpiceFoundation
+ - OOJSPlus
  - Workflows
 
 BlueSpiceSMWConnector:
@@ -432,6 +442,7 @@ BlueSpiceUserInfo:
 
 BlueSpiceUserManager:
  - BlueSpiceFoundation
+ - OOJSPlus
 
 BlueSpiceUserSidebar:
  - BlueSpiceFoundation
@@ -459,6 +470,7 @@ BlueSpiceWhoIsOnline:
 
 BlueSpiceWikiExplorer:
  - BlueSpiceFoundation
+ - OOJSPlus
 
 BounceHandler:
  - CentralAuth
@@ -544,6 +556,7 @@ CodeMirror:
  - WikiEditor
 
 CognitiveProcessDesigner:
+ - OOJSPlus
  - BlueSpiceVisualEditorConnector
  - PageForms
 
@@ -583,6 +596,7 @@ ContentProvisioning:
  - OOJSPlus
 
 ContentStabilization:
+ - OOJSPlus
  - BlueSpiceBookshelf
  - BlueSpiceFoundation
  - BlueSpicePageAssignments
