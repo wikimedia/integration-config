@@ -113,7 +113,7 @@
     name: wikidata-query-builds
     jobs:
         - wikidata-query-{project}-build:
-            docker_image: docker-registry.wikimedia.org/releng/node20-test-browser:20.19.1-s1
+            docker_image: docker-registry.wikimedia.org/releng/node20-test-browser:20.19.5
             project:
                 - gui:
                     ZUUL_PROJECT: wikidata/query/gui
@@ -150,5 +150,5 @@
             quibble_args: '--skip npm-test,phpunit-standalone,api-testing'
             php:
                 - php81:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s1
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s2
                     entrypoint: quibble-with-supervisord

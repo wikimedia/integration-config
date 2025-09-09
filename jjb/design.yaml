@@ -3,7 +3,7 @@
     name: 'codex-node20'
     jobs:
      - '{name}-doc-publish':
-         image: 'docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1'
+         image: 'docker-registry.wikimedia.org/releng/node20-test:20.19.5'
          args: 'doc'
          environment:
              CODEX_DOC_ROOT: '/$DOC_PROJECT/$DOC_SUBPATH/'
@@ -11,7 +11,7 @@
          docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
          docdest: '$DOC_PROJECT/$DOC_SUBPATH'
      - '{name}-doc-tag-publish':
-         image: 'docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1'
+         image: 'docker-registry.wikimedia.org/releng/node20-test:20.19.5'
          args: 'doc-release'
          environment:
              CODEX_DOC_ROOT: '/$DOC_PROJECT/$DOC_SUBPATH/'
@@ -19,7 +19,7 @@
          docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
          docdest: '$DOC_PROJECT/$DOC_SUBPATH'
      - '{name}-doc-latest-publish':
-         image: 'docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1'
+         image: 'docker-registry.wikimedia.org/releng/node20-test:20.19.5'
          args: 'doc-release'
          environment:
              CODEX_DOC_ROOT: '/$DOC_PROJECT/latest/'

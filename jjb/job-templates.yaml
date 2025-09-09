@@ -590,7 +590,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1'
+        image: 'docker-registry.wikimedia.org/releng/node20-test:20.19.5'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -606,7 +606,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node22-test:22.15.0-s1'
+        image: 'docker-registry.wikimedia.org/releng/node22-test:22.19.0'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -622,7 +622,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node24-test:24.1.0'
+        image: 'docker-registry.wikimedia.org/releng/node24-test:24.7.0'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -634,11 +634,11 @@
     name: 'generic'
     node_version:
         - node20:
-            image: docker-registry.wikimedia.org/releng/node20-test-browser:20.19.1-s1
+            image: docker-registry.wikimedia.org/releng/node20-test-browser:20.19.5
         - node22:
-            image: docker-registry.wikimedia.org/releng/node22-test-browser:22.15.0-s1
+            image: docker-registry.wikimedia.org/releng/node22-test-browser:22.19.0
         - node24:
-            image: docker-registry.wikimedia.org/releng/node24-test-browser:24.1.0
+            image: docker-registry.wikimedia.org/releng/node24-test-browser:24.7.0
     jobs:
         - 'generic-{node_version}-browser-coverage-publish'
         - 'generic-{node_version}-browser-direct-coverage-publish'
@@ -651,11 +651,11 @@
         - '{name}-{node_version}':
             node_version: &node_without_browsers
                 - node20:
-                    image: docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1
+                    image: docker-registry.wikimedia.org/releng/node20-test:20.19.5
                 - node22:
-                    image: docker-registry.wikimedia.org/releng/node22-test:22.15.0-s1
+                    image: docker-registry.wikimedia.org/releng/node22-test:22.19.0
                 - node24:
-                    image: docker-registry.wikimedia.org/releng/node24-test:24.1.0
+                    image: docker-registry.wikimedia.org/releng/node24-test:24.7.0
         - 'generic-{node_version}-docs-publish':
             node_version: *node_without_browsers
 
@@ -668,11 +668,11 @@
            script: 'doc'
            node_version:
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.19.1-s1
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.19.5
                - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.15.0-s1
+                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.19.0
                - node24:
-                   image: docker-registry.wikimedia.org/releng/node24-test-browser:24.1.0
+                   image: docker-registry.wikimedia.org/releng/node24-test-browser:24.7.0
 
 # Same as 'mwext', but solo so BlueSpice repos don't conflict
 - project:
@@ -681,11 +681,11 @@
         - '{name}-{node_version}':
            node_version:
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.19.1-s1
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.19.5
                - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.15.0-s1
+                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.19.0
                - node24:
-                   image: docker-registry.wikimedia.org/releng/node24-test-browser:24.1.0
+                   image: docker-registry.wikimedia.org/releng/node24-test-browser:24.7.0
 
 - project:
     name: branchdeploy
@@ -698,11 +698,11 @@
         - 'branchdeploy-{key}-{node_version}-npm':
             node_version:
                 - node20:
-                    node_image: docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1
+                    node_image: docker-registry.wikimedia.org/releng/node20-test:20.19.5
                 - node22:
-                    node_image: docker-registry.wikimedia.org/releng/node22-test:22.15.0-s1
+                    node_image: docker-registry.wikimedia.org/releng/node22-test:22.19.0
                 - node24:
-                    node_image: docker-registry.wikimedia.org/releng/node24-test:24.1.0
+                    node_image: docker-registry.wikimedia.org/releng/node24-test:24.7.0
             key:
                 - codex
                 - wikidata-query-builder
@@ -710,7 +710,7 @@
 - job-template:
     name: 'selenium-daily-{sitename}-{project}'
     node: Docker
-    docker_image_var: 'docker-registry.wikimedia.org/releng/node20-test-browser:20.19.1-s1'
+    docker_image_var: 'docker-registry.wikimedia.org/releng/node20-test-browser:20.19.5'
     failure: true
     unstable: true
     still_failing: false
