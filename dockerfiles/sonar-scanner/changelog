@@ -1,3 +1,10 @@
+sonar-scanner (4.6.0.2311-s12) wikimedia; urgency=high
+
+   Refresh for update in parent image node20:
+   Update Node to 20.19.5
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue,  9 Sep 2025 10:11:33 -0400
+
 sonar-scanner (4.6.0.2311-s11) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:

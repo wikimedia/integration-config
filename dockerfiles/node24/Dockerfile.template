@@ -4,7 +4,7 @@ FROM {{ "ci-bookworm" | image_tag }}
 
 USER root
 
-ENV NODE_VERSION=v24.1.0
+ENV NODE_VERSION=v24.7.0
 ENV NODE_FILENAME=node-${NODE_VERSION}-linux-x64.tar.gz
 ENV NODE_DIRNAME=node-${NODE_VERSION}-linux-x64
 
