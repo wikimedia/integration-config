@@ -322,6 +322,15 @@
         - zuul
 
 # For the master and wmf/* branches
+- job-template:
+    !!merge : *job_quibble
+    name: quibble-with-gated-extensions-vendor-mysql-{php}
+    entrypoint: quibble-with-supervisord
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
+    triggers:
+        - zuul
+
+# For the master and wmf/* branches
 - job-template: &job_wmf_quibble
     !!merge : *job_quibble
     name: wmf-quibble-vendor-mysql-{php}
@@ -341,6 +350,14 @@
     # We do not run mediawiki/core tests with extensions installed
     # https://phabricator.wikimedia.org/T197469#4293142
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
+    triggers:
+        - zuul
+
+- job-template:
+    !!merge : *job_quibble
+    name: quibble-with-gated-extensions-selenium-{php}
+    entrypoint: quibble-with-supervisord
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
     triggers:
         - zuul
 
@@ -886,6 +903,8 @@
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s2
             entrypoint: quibble-with-supervisord
     jobs:
+        - quibble-with-gated-extensions-vendor-mysql-{php}
+        - quibble-with-gated-extensions-selenium-{php}
         - wmf-quibble-vendor-mysql-{php}
         - wmf-quibble-core-vendor-mysql-{php}
         - wmf-quibble-selenium-{php}
