@@ -321,7 +321,7 @@
     triggers:
         - zuul
 
-# For the master and wmf/* branches
+# Special jobs for gated extensions, only for the master and wmf/* branches
 - job-template:
     !!merge : *job_quibble
     name: quibble-with-gated-extensions-vendor-mysql-{php}
@@ -330,40 +330,9 @@
     triggers:
         - zuul
 
-# For the master and wmf/* branches
-- job-template: &job_wmf_quibble
-    !!merge : *job_quibble
-    name: wmf-quibble-vendor-mysql-{php}
-    entrypoint: quibble-with-supervisord
-    # We do not run mediawiki/core tests with extensions installed
-    # https://phabricator.wikimedia.org/T197469#4293142
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
-    triggers:
-        - zuul
-
-# HACK: Don't run composer test for mediawiki/core, it's
-# already run in a separate job
-- job-template:
-    !!merge : *job_quibble
-    name: wmf-quibble-core-vendor-mysql-{php}
-    entrypoint: quibble-with-supervisord
-    # We do not run mediawiki/core tests with extensions installed
-    # https://phabricator.wikimedia.org/T197469#4293142
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
-    triggers:
-        - zuul
-
 - job-template:
     !!merge : *job_quibble
     name: quibble-with-gated-extensions-selenium-{php}
-    entrypoint: quibble-with-supervisord
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
-    triggers:
-        - zuul
-
-- job-template:
-    !!merge : *job_quibble
-    name: wmf-quibble-selenium-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
     triggers:
@@ -905,9 +874,6 @@
     jobs:
         - quibble-with-gated-extensions-vendor-mysql-{php}
         - quibble-with-gated-extensions-selenium-{php}
-        - wmf-quibble-vendor-mysql-{php}
-        - wmf-quibble-core-vendor-mysql-{php}
-        - wmf-quibble-selenium-{php}
 
 - job-template:
     !!merge : *job_quibble
