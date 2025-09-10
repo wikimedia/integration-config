@@ -131,7 +131,7 @@ def set_parameters(item, job, params):
     if params['ZUUL_PROJECT'].startswith('mediawiki/vendor'):
         params['COMPOSER_PROCESS_TIMEOUT'] = 600
 
-    if job.name.startswith('wmf-quibble-'):
+    if job.name.startswith('quibble-with-gated-extensions-'):
         set_gated_extensions(item, job, params)
 
     if job.name.endswith('-publish') or 'codehealth' in job.name:

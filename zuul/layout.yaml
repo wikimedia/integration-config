@@ -1012,23 +1012,7 @@ jobs:
     success-pattern: 'https://integration.wikimedia.org/ci/job/{job.name}/{build.number}/'
     files: 'debian/.*'
 
-  - name: ^wmf-quibble-vendor
-    # Gated extensions are only for master and Wikimedia deployment. We do not
-    # run them on REL branches.
-    branch: (?!^REL)
-    skip-if:
-      - project: ^mediawiki/core$
-      - project: ^mediawiki/vendor$
-
-  - name: ^wmf-quibble-core-vendor
-    # Gated extensions are only for master and Wikimedia deployment. We do not
-    # run them on REL branches.
-    branch: (?!^REL)
-    skip-if:
-      - project: ^mediawiki/extensions/.*$
-      - project: ^mediawiki/skins/.*$
-
-  - name: ^wmf-quibble-selenium
+  - name: ^quibble-with-gated-extensions
     # Gated extensions are only for master and Wikimedia deployment. We do not
     # run them on REL branches.
     branch: (?!^REL)
@@ -1850,27 +1834,23 @@ project-templates:
   - name: extension-gate
     # For master
     test:
-      - wmf-quibble-core-vendor-mysql-php81
-      - wmf-quibble-vendor-mysql-php81
-      - wmf-quibble-selenium-php81
       - mwgate-node20
+      - quibble-with-gated-extensions-vendor-mysql-php81
+      - quibble-with-gated-extensions-selenium-php81
     gate-and-submit:
       - mwgate-node20
       # Only triggered on master; jobs to track Wikimedia production on PHP 8.1
-      - wmf-quibble-core-vendor-mysql-php81
-      - wmf-quibble-vendor-mysql-php81
-      - wmf-quibble-selenium-php81
+      - quibble-with-gated-extensions-vendor-mysql-php81
+      - quibble-with-gated-extensions-selenium-php81
 
     # For wmf branches
     test-wmf:
       - mwgate-node20
-      - wmf-quibble-core-vendor-mysql-php81
-      - wmf-quibble-vendor-mysql-php81
+      - quibble-with-gated-extensions-vendor-mysql-php81
       # Not running the Selenium jobs, as they're slow and low-value
     gate-and-submit-wmf:
       - mwgate-node20
-      - wmf-quibble-core-vendor-mysql-php81
-      - wmf-quibble-vendor-mysql-php81
+      - quibble-with-gated-extensions-vendor-mysql-php81
       # Not running the Selenium jobs, as they're slow and low-value
 
     gate-and-submit-l10n:
@@ -8446,9 +8426,8 @@ projects:
       - quibble-composer-mysql-php83
     experimental:
       # These are the jobs which would be added by the extension-gate template
-      - wmf-quibble-core-vendor-mysql-php81
-      - wmf-quibble-vendor-mysql-php81
-      - wmf-quibble-selenium-php81
+      - quibble-with-gated-extensions-vendor-mysql-php81
+      - quibble-with-gated-extensions-selenium-php81
       - parsoidsvc-composer-package-php84
       - quibble-composer-mysql-php84
     postmerge:

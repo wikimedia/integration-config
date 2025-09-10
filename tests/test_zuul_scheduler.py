@@ -197,7 +197,6 @@ class TestZuulScheduler(unittest.TestCase):
                  if (
                      job.startswith(('composer', 'mwgate-composer'))
                      or job.startswith('quibble-')
-                     or job.startswith('wmf-quibble-')
                  )]),
             'Project %s pipeline %s must have either '
             'composer-validate or a composer-* job, '
@@ -210,7 +209,6 @@ class TestZuulScheduler(unittest.TestCase):
         self.assertTrue(
             any([job for job in definition
                  if job.startswith('quibble-')
-                 or job.startswith('wmf-quibble')
                  or job.startswith(('composer-', 'mwgate-composer'))]),
             'Project %s pipeline %s must have either a composer-* job'
             % (name, pipeline))
@@ -947,13 +945,13 @@ class TestZuulScheduler(unittest.TestCase):
         allextensions = set(zuul_config.tarballextensions).union(
             set(zuul_config.gatedextensions))
 
-        # Grab projects having the gate job 'wmf-quibble-*'
+        # Grab projects having the gate job 'quibble-with-gated-extensions-*'
         gated_in_zuul = set([
             ext_name.split('/')[-1]  # extension basename
             for (ext_name, pipelines) in self.getProjectsDefs().iteritems()
             if (ext_name.startswith('mediawiki/extensions/')
                 or ext_name.startswith('mediawiki/services/'))
-            and 'wmf-quibble-vendor-mysql-php81'
+            and 'quibble-with-gated-extensions-vendor-mysql-php81'
                 in pipelines.get('test', {})
         ])
 
@@ -1127,9 +1125,8 @@ class TestZuulScheduler(unittest.TestCase):
             'mediawiki-quibble-composertest-php81': True,
             'mediawiki-quibble-apitests-vendor-php81': True,
             'mediawiki-quibble-selenium-vendor-mysql-php81': True,
-            'wmf-quibble-vendor-mysql-php81': False,
-            'wmf-quibble-core-vendor-mysql-php81': True,
-            'wmf-quibble-selenium-php81': True,
+            'quibble-with-gated-extensions-vendor-mysql-php81': True,
+            'quibble-with-gated-extensions-selenium-php81': True,
             'mwgate-node20': True,
         }
         expected_gate = {
@@ -1143,11 +1140,10 @@ class TestZuulScheduler(unittest.TestCase):
             'mediawiki-quibble-selenium-vendor-mysql-php81': True,
             'mediawiki-quibble-vendor-sqlite-php81': True,
             'mediawiki-quibble-vendor-postgres-php81': True,
-            'wmf-quibble-vendor-mysql-php81': False,
-            'wmf-quibble-selenium-php81': True,
-            'wmf-quibble-core-vendor-mysql-php81': True,
             'mwgate-node20': True,
             'quibble-vendor-mysql-php81-phpunit-standalone': True,
+            'quibble-with-gated-extensions-vendor-mysql-php81': True,
+            'quibble-with-gated-extensions-selenium-php81': True,
         }
 
         change = zuul.model.Change('mediawiki/core')
@@ -1254,7 +1250,7 @@ class TestZuulScheduler(unittest.TestCase):
         repo = 'mediawiki/extensions/CirrusSearch'
         release_job = self.getJob(
             repo, 'test',
-            'wmf-quibble-vendor-mysql-php81')
+            'quibble-with-gated-extensions-vendor-mysql-php81')
 
         change = zuul.model.Change(repo)
 
