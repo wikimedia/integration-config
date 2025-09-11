@@ -328,7 +328,7 @@
     entrypoint: quibble-with-supervisord
     # We do not run mediawiki/core tests with extensions installed
     # https://phabricator.wikimedia.org/T197469#4293142
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,npm-test,phpunit-standalone,api-testing,phpbench'
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
     triggers:
         - zuul
 
