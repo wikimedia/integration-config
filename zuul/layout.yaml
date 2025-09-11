@@ -6127,7 +6127,7 @@ projects:
 
   - name: mediawiki/extensions/CookieConsent
     template:
-      - name: extension-quibble
+      - name: extension-quibble-noselenium
 
   - name: mediawiki/extensions/CookieWarning
     template:
