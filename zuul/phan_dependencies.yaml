@@ -146,6 +146,7 @@ CheckUser:
  - AbuseFilter
  - CentralAuth
  - EventLogging
+ # HACK: This is no longer needed in master, but in REL1_44 and before
  - GuidedTour
  - Renameuser
  - FlaggedRevs

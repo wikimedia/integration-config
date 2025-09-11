@@ -518,7 +518,6 @@ CheckUser:
  - GlobalBlocking
  - GlobalPreferences
  - GrowthExperiments
- - GuidedTour
  - IPInfo
  - MobileFrontend
  - Renameuser
