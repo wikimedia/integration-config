@@ -433,9 +433,8 @@
     # machinelearning/liftwing/inference-services
     name: inference-services
     pipeline:
+        - outlink
         - outlink-publish
-        - outlink-transformer
-        - outlink-transformer-publish
         - revertrisk
         - revertrisk-publish
         - revertrisk-multilingual-publish
@@ -455,9 +454,8 @@
         - edit-check-publish
         - pre-commit-check
     jobs:
+        # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
-        # trigger-inference-services-pipeline-outlink-transformer
-        # trigger-inference-services-pipeline-outlink-transformer-publish
         # trigger-inference-services-pipeline-revertrisk
         # trigger-inference-services-pipeline-revertrisk-publish
         # trigger-inference-services-pipeline-revertrisk-multilingual-publish
@@ -477,9 +475,8 @@
         # trigger-inference-services-pipeline-edit-check-publish
         # trigger-inference-services-pipeline-pre-commit-check
         - 'trigger-{name}-pipeline-{pipeline}'
+        # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
-        # inference-services-pipeline-outlink-transformer
-        # inference-services-pipeline-outlink-transformer-publish
         # inference-services-pipeline-revertrisk
         # inference-services-pipeline-revertrisk-publish
         # inference-services-pipeline-revertrisk-multilingual-publish

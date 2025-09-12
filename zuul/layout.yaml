@@ -2364,18 +2364,17 @@ projects:
   # project in the repository.
   - name: machinelearning/liftwing/inference-services
     test:
-      - trigger-inference-services-pipeline-outlink-transformer
+      - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-revertrisk
       - trigger-inference-services-pipeline-edit-check
       - trigger-inference-services-pipeline-pre-commit-check
     gate-and-submit:
-      - trigger-inference-services-pipeline-outlink-transformer
+      - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-revertrisk
       - trigger-inference-services-pipeline-edit-check
       - trigger-inference-services-pipeline-pre-commit-check
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
-      - trigger-inference-services-pipeline-outlink-transformer-publish
       - trigger-inference-services-pipeline-revertrisk-publish
       - trigger-inference-services-pipeline-revertrisk-multilingual-publish
       - trigger-inference-services-pipeline-revertrisk-wikidata-publish
