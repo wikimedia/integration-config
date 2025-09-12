@@ -80,6 +80,7 @@ class ZuulMwJobsRunner():
         self.zuul_layout = args.zuul_layout
         self.params_file = args.params_file
         self.num_jobs = args.jobs
+        self.selenium = args.selenium
 
     def prepare(self):
         set_parameters = self._load_function(self.params_file)
@@ -145,44 +146,37 @@ class ZuulMwJobsRunner():
         if templates.issubset({'archived', 'extension-broken'}):
             return []
 
+        # Gated extensions and vendor based extensions
         if (
             # mediawiki/core
             templates == {'extension-gate'}
             # mediawiki/vendor
             or templates == {'extension-gate', 'extension-apitests'}
+            or 'extension-quibble' in templates
         ):
-            return [
-                'quibble-vendor-mysql-php81',
-                'quibble-vendor-mysql-php81-selenium',
-            ]
+            jobs = ['quibble-vendor-mysql-php81']
+            if self.selenium:
+                jobs += ['quibble-composer-mysql-php81-selenium']
+            return jobs
 
-        # Extensions
-        if 'extension-quibble' in templates:
-            return [
-                'quibble-vendor-mysql-php81',
-                'quibble-vendor-mysql-php81-selenium',
-            ]
-        if 'extension-quibble-composer' in templates:
-            return [
-                'quibble-composer-mysql-php81',
-            ]
+        # Extensions using composer
+        if (
+            'extension-quibble-composer' in templates
+            or 'extension-quibble-php81-or-later' in templates
+        ):
+            jobs = ['quibble-composer-mysql-php81']
+            if self.selenium:
+                jobs += ['quibble-composer-mysql-php81-selenium']
+            return jobs
+
+        # The ones without Selenium
         if 'extension-quibble-noselenium' in templates:
-            return [
-                'quibble-vendor-mysql-php81',
-            ]
+            return ['quibble-vendor-mysql-php81']
         if 'extension-quibble-composer-noselenium' in templates:
-            return [
-                'quibble-composer-mysql-php81'
-            ]
+            return ['quibble-composer-mysql-php81']
+        # Bluespice
         if 'extension-quibble-bluespice' in templates:
-            return [
-                'quibble-composer-mysql-php81',
-            ]
-        if 'extension-quibble-php81-or-later' in templates:
-            return [
-                'quibble-composer-mysql-php81',
-                'quibble-composer-mysql-php81-selenium',
-            ]
+            return ['quibble-composer-mysql-php81']
 
         # Skins
         if 'skin-quibble' in templates:
@@ -264,6 +258,8 @@ def parse_args(args):
     parser.add_argument('--start', action='store_true')
     parser.add_argument('--jobs', default=2, type=int)
     parser.add_argument('--debug', action='store_true')
+    parser.add_argument('--selenium', action=argparse.BooleanOptionalAction,
+                        default=True)
     return parser.parse_args(args)
 
 
