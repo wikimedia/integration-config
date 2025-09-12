@@ -196,6 +196,8 @@ class TestZuulScheduler(unittest.TestCase):
             any([job for job in definition
                  if (
                      job.startswith(('composer', 'mediawiki-composer'))
+                    # BlueSpice extensions are allowed to just have 'noop'
+                     or job.startswith('noop')
                      or job.startswith('quibble-')
                  )]),
             'Project %s pipeline %s must have either '
@@ -209,6 +211,8 @@ class TestZuulScheduler(unittest.TestCase):
         self.assertTrue(
             any([job for job in definition
                  if job.startswith('quibble-')
+                # BlueSpice extensions are allowed to just have 'noop'
+                 or job.startswith('noop')
                  or job.startswith(('composer-', 'mediawiki-composer'))]),
             'Project %s pipeline %s must have either a composer-* job'
             % (name, pipeline))

@@ -1619,22 +1619,17 @@ project-templates:
       - mediawiki-node22
       - mediawiki-node24
 
-  # Special job template for BlueSpice extensions, that:
-  # - only runs for LTS and master branches,
-  # - uses composer rather than vendor,
-  # - doesn't run 'selenium' jobs, as BlueSpice has their own testing system,
-  # - runs bespoke 'bluespice-nodeXX' jobs instead of the mwgate mutex one, so
-  #   that they do not run in line with other extensions' gate jobs.
+  # Special job template for extensions maintained by the BlueSpice team.
+  # - Only runs for LTS branches (not master branch).
+  # - Uses composer rather than vendor.
+  # - Doesn't run 'selenium' jobs, as BlueSpice has their own testing system.
+  # - Runs bespoke 'bluespice-nodeXX' jobs instead of the mwgate mutex one,
+  #   so that they do not run in line with other extensions' gate jobs.
   - name: extension-quibble-bluespice
     test:
-      - mwext-bluespice-node20
-      - quibble-composer-mysql-php83
-    php:
-      - quibble-composer-mysql-php82
+      - noop
     gate-and-submit:
-      - mwext-bluespice-node20
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
+      - noop
 
     test-1_43:
       - mwext-bluespice-node20
