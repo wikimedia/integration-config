@@ -223,6 +223,9 @@ ContentTranslation:
 CreateAPage:
  - ConfirmEdit
 
+DataTable2:
+ - Scribunto
+
 Dashiki:
  - JsonConfig
 
