@@ -152,35 +152,35 @@ class ZuulMwJobsRunner():
             or templates == {'extension-gate', 'extension-apitests'}
         ):
             return [
-                'quibble-vendor-mysql-php81-noselenium',
+                'quibble-vendor-mysql-php81',
                 'quibble-vendor-mysql-php81-selenium',
             ]
 
         # Extensions
         if 'extension-quibble' in templates:
             return [
-                'quibble-vendor-mysql-php81-noselenium',
+                'quibble-vendor-mysql-php81',
                 'quibble-vendor-mysql-php81-selenium',
             ]
         if 'extension-quibble-composer' in templates:
             return [
-                'quibble-composer-mysql-php81-noselenium',
+                'quibble-composer-mysql-php81',
             ]
         if 'extension-quibble-noselenium' in templates:
             return [
-                'quibble-vendor-mysql-php81-noselenium',
+                'quibble-vendor-mysql-php81',
             ]
         if 'extension-quibble-composer-noselenium' in templates:
             return [
-                'quibble-composer-mysql-php81-noselenium'
+                'quibble-composer-mysql-php81'
             ]
         if 'extension-quibble-bluespice' in templates:
             return [
-                'quibble-composer-mysql-php81-noselenium',
+                'quibble-composer-mysql-php81',
             ]
         if 'extension-quibble-php81-or-later' in templates:
             return [
-                'quibble-composer-mysql-php81-noselenium',
+                'quibble-composer-mysql-php81',
                 'quibble-composer-mysql-php81-selenium',
             ]
 
