@@ -34,6 +34,7 @@ import json
 import logging
 import os
 from queue import Queue
+import re
 import sys
 import threading
 from time import sleep
@@ -80,6 +81,8 @@ class ZuulMwJobsRunner():
         self.zuul_layout = args.zuul_layout
         self.params_file = args.params_file
         self.num_jobs = args.jobs
+        self.requested_projects = args.projects
+        self.projects_filter = args.projects_filter
         self.selenium = args.selenium
 
     def prepare(self):
@@ -130,6 +133,16 @@ class ZuulMwJobsRunner():
                 or p['name'] in IGNORE_PROJECTS
             ):
                 continue
+
+            if (
+                self.requested_projects is not None
+                and p['name'] not in self.requested_projects
+            ):
+                continue
+
+            if self.projects_filter is not None:
+                if not re.search(self.projects_filter, p['name']):
+                    continue
 
             jobs = self._mapTemplatesToJobs(p['name'], p['template'])
             if not jobs:
@@ -260,6 +273,17 @@ def parse_args(args):
     parser.add_argument('--debug', action='store_true')
     parser.add_argument('--selenium', action=argparse.BooleanOptionalAction,
                         default=True)
+
+    projects = parser.add_mutually_exclusive_group()
+    projects.add_argument(
+        '--projects', nargs='*',
+        help='Space separated list of projects to run. '
+             'Example: Echo Flow')
+    projects.add_argument(
+        '--projects-filter', metavar='REGEX',
+        help='Runs on project matching pattern. '
+        'Example: ^mediawiki/extensions/Blue')
+
     return parser.parse_args(args)
 
 
