@@ -280,6 +280,15 @@
     triggers:
         - zuul
 
+# API-only Quibble testing.
+- job-template:
+    !!merge : *job_quibble
+    name: quibble-apitests-only-{packages-source}-{php}
+    entrypoint: quibble-with-supervisord
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run api-testing'
+    triggers:
+        - zuul
+
 - job-template:
     !!merge : *job_quibble
     name: quibble-daily-{project}-{packages-source}-{database}-{php}
@@ -355,15 +364,6 @@
     name: quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
-    triggers:
-        - zuul
-
-# API-only Quibble testing, for MediaWiki core and extensions. FIXME: This isn't core-only, so should be moved.
-- job-template:
-    !!merge : *job_quibble
-    name: quibble-apitests-only-{packages-source}-{php}
-    entrypoint: quibble-with-supervisord
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run api-testing'
     triggers:
         - zuul
 
