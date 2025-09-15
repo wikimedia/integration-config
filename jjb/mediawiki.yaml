@@ -338,7 +338,17 @@
     triggers:
         - zuul
 
-# Main Quibble testing; excludes Selenium and API testing, done in own jobs.
+# Special jobs for MediaWiki core
+
+# Main Quibble testing; excludes Selenium and API testing, which are done in own jobs.
+- job-template:
+    !!merge : *job_quibble
+    name: quibble-for-mediawiki-core-{packages-source}-{database}-{php}
+    entrypoint: quibble-with-supervisord
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing'
+    triggers:
+        - zuul
+
 - job-template:
     !!merge : *job_quibble
     name: mediawiki-quibble-{packages-source}-{database}-{php}
@@ -347,8 +357,15 @@
     triggers:
         - zuul
 
+# Selenium-only Quibble testing, for MediaWiki core.
+- job-template:
+    !!merge : *job_quibble
+    name: quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}
+    entrypoint: quibble-with-supervisord
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
+    triggers:
+        - zuul
 
-# Selenium-only Quibble testing.
 - job-template:
     !!merge : *job_quibble
     name: mediawiki-quibble-selenium-{packages-source}-{database}-{php}
@@ -357,7 +374,15 @@
     triggers:
         - zuul
 
-# API-only Quibble testing.
+# API-only Quibble testing, for MediaWiki core and extensions. FIXME: This isn't core-only, so should be moved.
+- job-template:
+    !!merge : *job_quibble
+    name: quibble-apitests-only-{packages-source}-{php}
+    entrypoint: quibble-with-supervisord
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run api-testing'
+    triggers:
+        - zuul
+
 - job-template:
     !!merge : *job_quibble
     name: mediawiki-quibble-apitests-{packages-source}-{php}
@@ -365,6 +390,38 @@
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run api-testing'
     triggers:
         - zuul
+
+- job-template:
+    name: quibble-for-mediawiki-core-composertest-only-{php}
+    node: Docker
+    triggers:
+        - zuul
+    properties:
+        - build-discarder:
+            days-to-keep: 7
+    builders:
+        - docker-castor-load
+        - docker-log-dir
+        - docker-src-dir
+        - docker-run-with-log-cache-src:
+            image: '{docker_image}'
+            volumes:
+                /srv/git: /srv/git:ro
+            args: '--reporting-url="https://earlywarningbot.toolforge.org" --packages-source "vendor" --git-parallel=8 --skip-install --run composer-test'
+            logdir: '/workspace/log'
+            srcdir: '/workspace/src'
+    publishers:
+        - archive-log-allow-empty
+        - teardown
+    wrappers:
+        - timeout:
+            timeout: 45  # npm is broken T198348
+            fail: true
+        - timestamps
+        - credentials-binding:
+          - text:
+              credential-id: quibble-earlywarningbot-api-key
+              variable: QUIBBLE_API_KEY
 
 - job-template:
     name: mediawiki-quibble-composertest-{php}
@@ -823,9 +880,14 @@
         - quibble-{packages-source}-{database}-{php}-selenium
         - quibble-{packages-source}-{database}-{php}-phpunit-standalone
         - mediawiki-coverage-jobs
+        - quibble-for-mediawiki-core-{packages-source}-{database}-{php}
         - mediawiki-quibble-{packages-source}-{database}-{php}
+        - quibble-for-mediawiki-core-composertest-only-{php}
         - mediawiki-quibble-composertest-{php}
+        - quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}
         - mediawiki-quibble-selenium-{packages-source}-{database}-{php}
+        - quibble-apitests-only-{packages-source}-{php}:
+            database: 'mysql'
         - mediawiki-quibble-apitests-{packages-source}-{php}:
             database: 'mysql'
         - mediawiki-phpbench-patch:
