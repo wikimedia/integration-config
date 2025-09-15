@@ -189,13 +189,13 @@ class TestZuulScheduler(unittest.TestCase):
     def assertProjectHasComposerValidate(self, name, definition, pipeline):
         # composer-validate-package
         # composer-test-*
-        # mwgate-composer-*
+        # mediawiki-composer-*
         if pipeline in ['experimental', 'gate-and-submit-l10n']:
             return
         self.assertTrue(
             any([job for job in definition
                  if (
-                     job.startswith(('composer', 'mwgate-composer'))
+                     job.startswith(('composer', 'mediawiki-composer'))
                      or job.startswith('quibble-')
                  )]),
             'Project %s pipeline %s must have either '
@@ -209,7 +209,7 @@ class TestZuulScheduler(unittest.TestCase):
         self.assertTrue(
             any([job for job in definition
                  if job.startswith('quibble-')
-                 or job.startswith(('composer-', 'mwgate-composer'))]),
+                 or job.startswith(('composer-', 'mediawiki-composer'))]),
             'Project %s pipeline %s must have either a composer-* job'
             % (name, pipeline))
 
@@ -1127,7 +1127,7 @@ class TestZuulScheduler(unittest.TestCase):
             'mediawiki-quibble-selenium-vendor-mysql-php81': True,
             'quibble-with-gated-extensions-vendor-mysql-php81': True,
             'quibble-with-gated-extensions-selenium-php81': True,
-            'mwgate-node20': True,
+            'mediawiki-node20': True,
         }
         expected_gate = {
             'mediawiki-core-php81-phan': True,
@@ -1140,7 +1140,7 @@ class TestZuulScheduler(unittest.TestCase):
             'mediawiki-quibble-selenium-vendor-mysql-php81': True,
             'mediawiki-quibble-vendor-sqlite-php81': True,
             'mediawiki-quibble-vendor-postgres-php81': True,
-            'mwgate-node20': True,
+            'mediawiki-node20': True,
             'quibble-vendor-mysql-php81-phpunit-standalone': True,
             'quibble-with-gated-extensions-vendor-mysql-php81': True,
             'quibble-with-gated-extensions-selenium-php81': True,
@@ -1207,7 +1207,7 @@ class TestZuulScheduler(unittest.TestCase):
             # A phan job (PHP static analysis)
             'mediawiki-core-php81-phan',
             # A node job (JS linting)
-            'mwgate-node20',
+            'mediawiki-node20',
         ]
 
         for (desc, config) in MEDIAWIKI_VERSIONS.iteritems():
