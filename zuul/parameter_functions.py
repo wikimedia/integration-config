@@ -50,7 +50,6 @@ def set_parameters(item, job, params):
 
     mw_deps_jobs_starting_with = (
         'mwext-',
-        'mediawiki-quibble',
         'quibble',
         )
     if job.name.startswith(mw_deps_jobs_starting_with):
@@ -123,7 +122,7 @@ def set_parameters(item, job, params):
     if (
         params['ZUUL_PROJECT'] == 'mediawiki/extensions/Wikibase'
         and params['ZUUL_BRANCH'] == 'master'
-        and job.name.startswith('mediawiki-quibble-apitests')
+        and job.name.startswith('quibble-apitests-only')
     ):
         params['QUIBBLE_OPENSEARCH'] = 'true'
 

@@ -1165,9 +1165,9 @@ jobs:
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
   # queue-name can not be applied based on a regex, apply the name on most used
   # jobs.
-  - name: mediawiki-quibble-composer-mysql-php81
+  - name: quibble-for-mediawiki-core-composer-mysql-php81
     queue-name: mediawiki
-  - name: mediawiki-quibble-vendor-mysql-php81
+  - name: quibble-for-mediawiki-core-vendor-mysql-php81
     queue-name: mediawiki
   - name: mediawiki-node20
     queue-name: mediawiki
@@ -1821,13 +1821,13 @@ project-templates:
   # Special job template that runs the "apitests" job for test and gate
   - name: extension-apitests
     test:
-      - mediawiki-quibble-apitests-vendor-php81
+      - quibble-apitests-only-vendor-php81
     gate-and-submit:
-      - mediawiki-quibble-apitests-vendor-php81
+      - quibble-apitests-only-vendor-php81
     test-wmf:
-      - mediawiki-quibble-apitests-vendor-php81
+      - quibble-apitests-only-vendor-php81
     gate-and-submit-wmf:
-      - mediawiki-quibble-apitests-vendor-php81
+      - quibble-apitests-only-vendor-php81
 
   # Extensions tested together and intended for deployment to the Wikimedia Cluster
   # This job is expensive, so should only be run using the current flavour of PHP,
@@ -2666,103 +2666,103 @@ projects:
     template:
       - name: extension-gate
     test:
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-vendor-mysql-php81
-      - mediawiki-quibble-apitests-vendor-php81
+      - quibble-for-mediawiki-core-vendor-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php81
+      - quibble-apitests-only-vendor-php81
       - mediawiki-core-php81-phan
     php:
       # This is the diff between the optimised test-pipeline and the gate.
       #
       # The main quibble job that runs PHPUnit tests is:
-      #   mediawiki-quibble-vendor-mysql-php81
+      #   quibble-for-mediawiki-core-vendor-mysql-php81
       #
       # Alternate deps (composer instead of vendor)
-      - mediawiki-quibble-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-mysql-php81
       # Alternate db backends
-      - mediawiki-quibble-vendor-sqlite-php81
-      - mediawiki-quibble-vendor-postgres-php81
+      - quibble-for-mediawiki-core-vendor-sqlite-php81
+      - quibble-for-mediawiki-core-vendor-postgres-php81
       # Alternate php versions
-      - mediawiki-quibble-vendor-mysql-php82
-      - mediawiki-quibble-vendor-mysql-php83
+      - quibble-for-mediawiki-core-vendor-mysql-php82
+      - quibble-for-mediawiki-core-vendor-mysql-php83
       # Standalone run for core-only changes
       - quibble-vendor-mysql-php81-phpunit-standalone
       # Phan for future version of PHP in Wikimedia production
       - mediawiki-core-php81-phan
     gate-and-submit:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-vendor-mysql-php82
-      - mediawiki-quibble-vendor-mysql-php83
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-vendor-mysql-php81
-      - mediawiki-quibble-apitests-vendor-php81
-      - mediawiki-quibble-vendor-sqlite-php81
-      - mediawiki-quibble-vendor-postgres-php81
+      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-vendor-mysql-php81
+      - quibble-for-mediawiki-core-vendor-mysql-php82
+      - quibble-for-mediawiki-core-vendor-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php81
+      - quibble-apitests-only-vendor-php81
+      - quibble-for-mediawiki-core-vendor-sqlite-php81
+      - quibble-for-mediawiki-core-vendor-postgres-php81
       - mediawiki-core-php81-phan
       # Standalone run for core-only changes
       - quibble-vendor-mysql-php81-phpunit-standalone
 
     test-1_39:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
       - mediawiki-core-php81-phan
       - mediawiki-node20
     gate-and-submit-1_39:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composer-mysql-php82
-      - mediawiki-quibble-composer-mysql-php83
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
-      - mediawiki-quibble-composer-sqlite-php81
-      - mediawiki-quibble-composer-postgres-php81
+      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-mysql-php82
+      - quibble-for-mediawiki-core-composer-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-sqlite-php81
+      - quibble-for-mediawiki-core-composer-postgres-php81
       - mediawiki-core-php81-phan
       - mediawiki-node20
 
     test-1_43:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
       - mediawiki-core-php81-phan
       - mediawiki-node20
     gate-and-submit-1_43:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
-      - mediawiki-quibble-composer-sqlite-php81
-      - mediawiki-quibble-composer-postgres-php81
-      - mediawiki-quibble-composer-mysql-php82
-      - mediawiki-quibble-composer-mysql-php83
+      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-sqlite-php81
+      - quibble-for-mediawiki-core-composer-postgres-php81
+      - quibble-for-mediawiki-core-composer-mysql-php82
+      - quibble-for-mediawiki-core-composer-mysql-php83
       - mediawiki-core-php81-phan
       - mediawiki-node20
 
     test-1_44:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
       - mediawiki-core-php81-phan
       - mediawiki-node20
     gate-and-submit-1_44:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
-      - mediawiki-quibble-composer-sqlite-php81
-      - mediawiki-quibble-composer-postgres-php81
-      - mediawiki-quibble-composer-mysql-php82
-      - mediawiki-quibble-composer-mysql-php83
+      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-sqlite-php81
+      - quibble-for-mediawiki-core-composer-postgres-php81
+      - quibble-for-mediawiki-core-composer-mysql-php82
+      - quibble-for-mediawiki-core-composer-mysql-php83
       - mediawiki-core-php81-phan
       - mediawiki-node20
 
     test-wmf:
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-apitests-vendor-php81
+      - quibble-for-mediawiki-core-vendor-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-apitests-only-vendor-php81
       - mediawiki-core-php81-phan
     gate-and-submit-wmf:
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-apitests-vendor-php81
+      - quibble-for-mediawiki-core-vendor-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-apitests-only-vendor-php81
       - mediawiki-core-php81-phan
 
     test-fundraising:
@@ -2789,7 +2789,7 @@ projects:
       - mediawiki-core-javascript-publish
       - mediawiki-core-doxygen-publish
     experimental:
-      - mediawiki-quibble-vendor-mysql-php84
+      - quibble-for-mediawiki-core-vendor-mysql-php84
       - mediawiki-composer-php81
       - mediawiki-node22
       - mediawiki-node24
@@ -2800,23 +2800,23 @@ projects:
       - name: extension-apitests
     test:
       - mediawiki-composer-php81
-      - mediawiki-quibble-vendor-mysql-php81
+      - quibble-for-mediawiki-core-vendor-mysql-php81
     php:
       - mediawiki-composer-php82
       - mediawiki-composer-php83
-      - mediawiki-quibble-vendor-mysql-php82
-      - mediawiki-quibble-vendor-mysql-php83
+      - quibble-for-mediawiki-core-vendor-mysql-php82
+      - quibble-for-mediawiki-core-vendor-mysql-php83
     gate-and-submit:
       - mediawiki-composer-php81
       - mediawiki-composer-php82
       - mediawiki-composer-php83
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-vendor-mysql-php82
-      - mediawiki-quibble-vendor-mysql-php83
+      - quibble-for-mediawiki-core-vendor-mysql-php81
+      - quibble-for-mediawiki-core-vendor-mysql-php82
+      - quibble-for-mediawiki-core-vendor-mysql-php83
     gate-and-submit-wmf:
       - mediawiki-composer-php81
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-apitests-vendor-php81
+      - quibble-for-mediawiki-core-vendor-mysql-php81
+      - quibble-apitests-only-vendor-php81
 
     # No CI support for mediawiki/vendor on release branches, folks should
     # use composer install instead. T189560
@@ -2830,7 +2830,7 @@ projects:
 
     experimental:
       - mediawiki-composer-php84
-      - mediawiki-quibble-vendor-mysql-php84
+      - quibble-for-mediawiki-core-vendor-mysql-php84
       - mediawiki-composer-php84
 
 #### MediaWiki skins ###########################################

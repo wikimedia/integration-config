@@ -1121,25 +1121,25 @@ class TestZuulScheduler(unittest.TestCase):
     def test_mwcore_master_branch_has_expected_values(self):
         expected_test = {
             'mediawiki-core-php81-phan': True,
-            'mediawiki-quibble-vendor-mysql-php81': True,
-            'mediawiki-quibble-composertest-php81': True,
-            'mediawiki-quibble-apitests-vendor-php81': True,
-            'mediawiki-quibble-selenium-vendor-mysql-php81': True,
+            'quibble-for-mediawiki-core-vendor-mysql-php81': True,
+            'quibble-for-mediawiki-core-composertest-only-php81': True,
+            'quibble-apitests-only-vendor-php81': True,
+            'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php81': True,
             'quibble-with-gated-extensions-vendor-mysql-php81': True,
             'quibble-with-gated-extensions-selenium-php81': True,
             'mediawiki-node20': True,
         }
         expected_gate = {
             'mediawiki-core-php81-phan': True,
-            'mediawiki-quibble-composer-mysql-php81': True,
-            'mediawiki-quibble-vendor-mysql-php81': True,
-            'mediawiki-quibble-vendor-mysql-php82': True,
-            'mediawiki-quibble-vendor-mysql-php83': True,
-            'mediawiki-quibble-composertest-php81': True,
-            'mediawiki-quibble-apitests-vendor-php81': True,
-            'mediawiki-quibble-selenium-vendor-mysql-php81': True,
-            'mediawiki-quibble-vendor-sqlite-php81': True,
-            'mediawiki-quibble-vendor-postgres-php81': True,
+            'quibble-for-mediawiki-core-composer-mysql-php81': True,
+            'quibble-for-mediawiki-core-vendor-mysql-php81': True,
+            'quibble-for-mediawiki-core-vendor-mysql-php82': True,
+            'quibble-for-mediawiki-core-vendor-mysql-php83': True,
+            'quibble-for-mediawiki-core-composertest-only-php81': True,
+            'quibble-apitests-only-vendor-php81': True,
+            'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php81': True,
+            'quibble-for-mediawiki-core-vendor-sqlite-php81': True,
+            'quibble-for-mediawiki-core-vendor-postgres-php81': True,
             'mediawiki-node20': True,
             'quibble-vendor-mysql-php81-phpunit-standalone': True,
             'quibble-with-gated-extensions-vendor-mysql-php81': True,
@@ -1199,11 +1199,11 @@ class TestZuulScheduler(unittest.TestCase):
         # Note that these are checked for 'prefixes', not exact matches
         expected_job_prefices = [
             # A regular quibble job
-            'mediawiki-quibble-composer-mysql-php',
+            'quibble-for-mediawiki-core-composer-mysql-php',
             # A composer test job (PHP linting)
-            'mediawiki-quibble-composertest-php',
+            'quibble-for-mediawiki-core-composertest-only-php',
             # A 'mediawiki' selenium test (bundled extensions browser testing)
-            'mediawiki-quibble-selenium-composer-mysql-php',
+            'quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php',
             # A phan job (PHP static analysis)
             'mediawiki-core-php81-phan',
             # A node job (JS linting)
