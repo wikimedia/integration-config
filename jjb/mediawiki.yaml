@@ -366,27 +366,6 @@
     triggers:
         - zuul
 
-# Testing for API testing framework repo.
-- job-template:
-    !!merge : *job_quibble
-    name: 'api-testing-{database}-{php}'
-    entrypoint: quibble-with-supervisord
-    quibble_args: '-c mediawiki/tools/api-testing/ci.sh mediawiki/tools/api-testing'
-    triggers:
-        - zuul
-
-- project:
-    name: mediawiki-api-testing
-    jobs:
-        - api-testing-{database}-{php}:
-            php:
-                - php81:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s2
-            packages-source: vendor
-            database:
-                - mysql
-                - sqlite
-
 - job-template:
     name: mediawiki-quibble-composertest-{php}
     node: Docker
@@ -932,3 +911,24 @@
                     mw_server: 'https://commons.wikimedia.beta.wmcloud.org'
                     mw_user: 'Selenium user'
                     mw_credential_id: 'selenium-user-beta'
+
+# Testing for API testing framework repo. This re-uses the quibble job setup, so can't be in mediawiki-tools.yaml
+- job-template:
+    !!merge : *job_quibble
+    name: 'api-testing-{database}-{php}'
+    entrypoint: quibble-with-supervisord
+    quibble_args: '-c mediawiki/tools/api-testing/ci.sh mediawiki/tools/api-testing'
+    triggers:
+        - zuul
+
+- project:
+    name: mediawiki-api-testing
+    jobs:
+        - api-testing-{database}-{php}:
+            php:
+                - php81:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s2
+            packages-source: vendor
+            database:
+                - mysql
+                - sqlite
