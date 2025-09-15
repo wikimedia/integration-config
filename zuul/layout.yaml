@@ -6633,6 +6633,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/ImageFilter
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/ImageMapEdit
     template:
       - name: extension-quibble-bluespice
