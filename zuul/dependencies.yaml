@@ -542,6 +542,7 @@ CirrusSearch:
  - Cite
  - Elastica
  - EventBus
+ - EventStreamConfig
  - GeoData
  - PdfHandler
  - SiteMatrix
