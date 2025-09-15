@@ -233,7 +233,7 @@ class ZuulMwJobsRunner():
                     isSuccess = json.loads(job.data[-1])['result'] == 'SUCCESS'
                     print('%s %s %s' % (
                         item.params['ZUUL_PROJECT'],
-                        json.loads(job.data[0])['url'],
+                        json.loads(job.data[0])['url'] + '/console',
                         "\033[32mSUCCESS\033[0m" if isSuccess else "\033[31mFAILURE\033[0m"
                     ))
                     sys.stdout.flush()
