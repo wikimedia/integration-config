@@ -638,6 +638,7 @@ DiscussionTools:
  - VisualEditor
 
 DrawioEditor:
+ - Forms
  - VisualEditor
 
 Echo:
