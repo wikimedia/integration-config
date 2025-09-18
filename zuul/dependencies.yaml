@@ -1259,6 +1259,8 @@ WikimediaEvents:
  - cldr
  - EmailAuth
  - EventLogging
+ - EventBus
+ - EventStreamConfig
  - FlaggedRevs
  - GlobalBlocking
  - GlobalPreferences
