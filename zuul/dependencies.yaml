@@ -1251,6 +1251,7 @@ WikimediaBadges:
 
 WikimediaCampaignEvents:
  - CampaignEvents
+ - cldr
 
 WikimediaEvents:
  - CentralAuth
