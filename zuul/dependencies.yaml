@@ -1238,6 +1238,8 @@ WikidataPageBanner:
 
 WikiEditor:
  - EventLogging
+ - EventBus
+ - EventStreamConfig
  - WikimediaEvents
 
 WikiLambda:
