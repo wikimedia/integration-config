@@ -1202,6 +1202,7 @@ Wikibase:
 
 WikibaseCirrusSearch:
  - CirrusSearch
+ - cldr
  - Wikibase
 
 WikibaseLexeme:
@@ -1213,6 +1214,7 @@ WikibaseLexemeCirrusSearch:
  - Wikibase
  - WikibaseLexeme
  - CirrusSearch
+ - cldr
  - WikibaseCirrusSearch
 
 WikibaseManifest:
@@ -1222,6 +1224,7 @@ WikibaseManifest:
 WikibaseMediaInfo:
  - Wikibase
  - CirrusSearch
+ - cldr
  - Elastica
  - UniversalLanguageSelector
  - WikibaseCirrusSearch
