@@ -147,6 +147,7 @@ BlueSpiceDistributionConnector:
  - ContentDroplets
  - Echo
  - OOJSPlus
+ - PDFCreator
  - UserMerge
  - Workflows
 
