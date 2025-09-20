@@ -9063,7 +9063,7 @@ projects:
       - composer-php81
       - labs-tools-heritage-tox
     postmerge:
-      - tox-py37-coverage-publish
+      - tox-py39-coverage-publish
     experimental:
       - composer-php81
       - composer-php82
