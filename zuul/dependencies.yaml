@@ -974,6 +974,9 @@ RandomGameUnit:
  - PollNY
  - QuizGame
 
+ReaderExperiments:
+ - WikimediaMessages
+
 RegexFun:
  - ParserFunctions
  - Arrays
