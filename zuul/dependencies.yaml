@@ -732,6 +732,7 @@ GrowthExperiments:
  - Echo
  - EventLogging
  - Flow
+ - GuidedTour
  - MetricsPlatform
  - MobileFrontend
  - PageImages

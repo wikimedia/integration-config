@@ -355,6 +355,7 @@ GrowthExperiments:
  - ConfirmEdit
  - WikimediaMessages
  - MetricsPlatform
+ - GuidedTour
 
 HAWelcome:
  - SocialProfile
