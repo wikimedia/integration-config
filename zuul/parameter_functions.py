@@ -268,20 +268,8 @@ def set_mw_dependencies(item, job, params):
     skin_deps = {d for d in deps if d.startswith('skins/')}
     ext_deps = deps - skin_deps
 
-    # T363639 - WebAuthn won't run on REL1_XX because of library issues
-    # T390754 - Just don't load WebAuthn at all if it's not master, or it's Parsoid
-    if (
-        'WebAuthn' in ext_deps and (
-            not (params['ZUUL_BRANCH'] == 'master' or params['ZUUL_BRANCH'].startswith('wmf/'))
-            or params['ZUUL_PROJECT'] == 'mediawiki/services/parsoid'
-        )
-    ):
-        ext_deps.remove('WebAuthn')
-
     if params['ZUUL_BRANCH'] in ['REL1_39']:
-        # T380434 - CommunityConfiguration and CommunityConfigurationExample,
-        # aren't in all old release branches, and falling back to the master
-        # version won't work, so just remove both in these branches...
+        # T380434
         if 'CommunityConfiguration' in ext_deps:
             ext_deps.remove('CommunityConfiguration')
 
@@ -295,6 +283,10 @@ def set_mw_dependencies(item, job, params):
         # T402463
         if 'MetricsPlatform' in ext_deps:
             ext_deps.remove('MetricsPlatform')
+
+        # T363639
+        if 'WebAuthn' in ext_deps:
+            ext_deps.remove('WebAuthn')
 
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
