@@ -53,6 +53,9 @@ AchievementBadges:
  - BetaFeatures
  - Echo
 
+AdhocTranslation:
+ - skins/BlueSpiceDiscovery
+
 AdvancedSearch:
  - Translate
 
