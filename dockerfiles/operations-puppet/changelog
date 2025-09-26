@@ -1,3 +1,9 @@
+operations-puppet (0.9.8) wikimedia; urgency=high
+
+  * use Lua 5.3 for CI tests, for utf8 library (T401383)
+
+ -- Tyler Cipriani <tcipriani@wikimedia.org>  Fri, 26 Sep 2025 08:28:11 -0600
+
 operations-puppet (0.9.7-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:
