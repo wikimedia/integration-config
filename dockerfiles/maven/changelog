@@ -1,3 +1,9 @@
+maven (3.5.2-2) wikimedia; urgency=high
+
+   Stop running ci-src-setup
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 29 Sep 2025 15:32:59 +0200
+
 maven (3.5.2-1-s7) wikimedia; urgency=medium
 
   * Switch base image from Buster to Bookworm - T335765

@@ -8,4 +8,4 @@ function terminate_gearmand() {
 
 trap terminate_gearmand EXIT
 
-/run.sh "${@}"
+exec mvn "${@}"

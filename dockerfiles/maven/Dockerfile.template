@@ -24,4 +24,5 @@ COPY mvn /usr/local/bin/mvn
 COPY ssh_known_hosts_wikimedia /ssh_known_hosts_wikimedia
 
 COPY settings.xml /settings.xml
-COPY run.sh /run.sh
+
+ENTRYPOINT ["/usr/local/bin/mvn"]

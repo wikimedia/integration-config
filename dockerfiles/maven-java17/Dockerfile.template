@@ -20,10 +20,9 @@ ENV MAVEN_BIN=/opt/apache-maven/bin/mvn
 RUN /usr/local/bin/mvn --version
 
 COPY --from=maven /settings.xml /settings.xml
-COPY --from=maven /run.sh /run.sh
 COPY --from=maven ssh_known_hosts_wikimedia /etc/ssh/ssh_known_hosts
 
 USER nobody
 WORKDIR /src
 CMD ["clean package"]
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["/usr/local/bin/mvn"]

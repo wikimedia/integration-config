@@ -1,3 +1,10 @@
+gearman-java17 (1.0.0-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image maven:
+   Stop running ci-src-setup
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 29 Sep 2025 15:32:59 +0200
+
 gearman-java17 (1.0.0-s3) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:
