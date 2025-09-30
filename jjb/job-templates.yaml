@@ -393,9 +393,7 @@
             fail:    true
         - timestamps
     builders:
-        - docker-castor-load
-        - docker-log-dir
-        - docker-src-dir
+        - setup
         # The config-file-provider has the file created by the jenkins-slave and
         # respecting umask. It is thus not readable by the nobody user in the
         # container. setfacl lets us grant an extra permission.
