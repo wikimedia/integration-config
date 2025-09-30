@@ -1263,6 +1263,7 @@ WikimediaCampaignEvents:
 WikimediaEvents:
  - CentralAuth
  - CheckUser
+ - ConfirmEdit
  - cldr
  - EmailAuth
  - EventLogging

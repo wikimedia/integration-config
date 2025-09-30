@@ -779,6 +779,7 @@ WikimediaEvents:
  - BetaFeatures
  - CentralAuth
  - CheckUser
+ - ConfirmEdit
  - cldr
  - EmailAuth
  - EventBus
