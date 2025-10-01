@@ -1031,6 +1031,9 @@ SimpleTasks:
  - Checklists
  - DateTimeTools
 
+SpecialPageCaptcha:
+ - ConfirmEdit
+
 SocialProfile:
  - WikiEditor
 
