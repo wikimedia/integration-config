@@ -7775,6 +7775,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/SpecialPageCaptcha
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/SpellingApi
     template:
       - name: extension-quibble
