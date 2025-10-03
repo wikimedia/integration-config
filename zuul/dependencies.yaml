@@ -283,6 +283,7 @@ BlueSpiceProDistributionConnector:
  - BlueSpiceUniversalExport
  - BlueSpiceVisualEditorConnector
  - Math
+ - VisualEditor
 
 BlueSpiceQrCode:
  - BlueSpiceFoundation
@@ -511,6 +512,7 @@ Challenge:
 
 Chart:
  - JsonConfig
+ - VisualEditor
 
 Checklists:
  - VisualEditor
@@ -563,6 +565,7 @@ CognitiveProcessDesigner:
  - OOJSPlus
  - BlueSpiceVisualEditorConnector
  - PageForms
+ - VisualEditor
 
 CollabPads:
  - OOJSPlus
@@ -932,6 +935,7 @@ parsoid:
 PDFCreator:
  - OOJSPlus
  - VueJsPlus
+ - VisualEditor
 
 Phonos:
  - TimedMediaHandler
@@ -999,6 +1003,7 @@ RevisionSlider:
 Sanctions:
  - Echo
  - Flow
+ - VisualEditor
 
 Score:
  - TimedMediaHandler
@@ -1030,6 +1035,7 @@ SimpleTasks:
  - AtMentions
  - Checklists
  - DateTimeTools
+ - VisualEditor
 
 SpecialPageCaptcha:
  - ConfirmEdit
