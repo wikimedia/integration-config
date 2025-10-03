@@ -7453,6 +7453,10 @@ projects:
     template:
       - name: extension-quibble-composer
 
+  - name: mediawiki/extensions/ReadMode
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/Realnames
     template:
       - name: extension-quibble
