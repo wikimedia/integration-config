@@ -8093,6 +8093,10 @@ projects:
     template:
      - name: extension-quibble-bluespice
 
+  - name: mediawiki/extensions/Wanda
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/WantedPagesFromNS
     template:
       - name: extension-quibble
