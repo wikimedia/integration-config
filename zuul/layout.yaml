@@ -8938,10 +8938,6 @@ projects:
     template:
       - name: mediawiki-php-library-php81-to-php84
 
-  - name: IPSet
-    template:
-      - name: mediawiki-php-library-php81-to-php84
-
   - name: RelPath
     template:
       - name: mediawiki-php-library-php81-to-php84
@@ -10222,6 +10218,10 @@ projects:
   - name: eventgate-wikimedia
     template:
       - name: archived # Moved to GitLab at https://gitlab.wikimedia.org/repos/data-engineering/eventgate-wikimedia
+
+  - name: IPSet
+    template:
+      - name: archived # T401155
 
   - name: integration/audit-resources
     template:
