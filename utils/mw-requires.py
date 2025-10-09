@@ -18,6 +18,11 @@ NO_EXTENSION_REGISTRY = [
     'parsoid',
 ]
 
+# Requirements that are not in extension.json yet
+MISSING_REQUIREMENTS = {
+    'Flow': ['Echo'],  # https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Flow/+/1194629
+}
+
 logging.basicConfig(
     level=logging.INFO,
     # Format without the logger name (default is 'root')
@@ -160,6 +165,11 @@ class MwRequires():
                 .get('extensions', {})
                 .keys()
         }
+        if ext in MISSING_REQUIREMENTS:
+            for missing_req in MISSING_REQUIREMENTS[ext]:
+                if missing_req not in requirements:
+                    log.info("%s: added missing requirement: %s", ext, missing_req)
+                    requirements.add(missing_req)
         self.requirements_cache[ext] = requirements
 
         if recursive:
