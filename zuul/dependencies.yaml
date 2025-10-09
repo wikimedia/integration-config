@@ -887,6 +887,7 @@ NaylorAMS:
 NSFileRepo:
  - EnhancedUpload
  - Lockdown
+ - VisualEditor
 
 Newsletter:
  - Echo
