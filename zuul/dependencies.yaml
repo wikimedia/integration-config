@@ -775,6 +775,7 @@ IPReputation:
 
 JsonConfig:
  - Kartographer
+ - VisualEditor
  - Scribunto
 
 JWTAuth:
