@@ -152,6 +152,7 @@ BlueSpiceDistributionConnector:
  - OOJSPlus
  - PDFCreator
  - UserMerge
+ - VisualEditor
  - Workflows
 
 BlueSpiceEchoConnector:
