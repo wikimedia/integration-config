@@ -835,6 +835,7 @@ Math:
 
 MathSearch:
  - Math
+ - VisualEditor
 
 MediaSearch:
  - CirrusSearch
