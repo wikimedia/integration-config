@@ -258,6 +258,7 @@ BlueSpicePageTemplates:
  - OOJSPlus
  - BlueSpiceDistributionConnector
  - ContentDroplets
+ - VisualEditor
 
 BlueSpicePageVersion:
  - BlueSpiceFoundation
