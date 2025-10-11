@@ -744,6 +744,8 @@ GrowthExperiments:
  - CommunityConfiguration
  - Echo
  - EventLogging
+ - EventBus
+ - EventStreamConfig
  - Flow
  - GuidedTour
  - MetricsPlatform
