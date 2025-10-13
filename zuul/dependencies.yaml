@@ -940,6 +940,7 @@ parsoid:
 
 PDFCreator:
  - OOJSPlus
+ - skins/BlueSpiceDiscovery
  - VueJsPlus
  - VisualEditor
 
