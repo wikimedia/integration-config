@@ -436,6 +436,7 @@ BlueSpiceUEModuleHTML:
 BlueSpiceUEModuleTable2Excel:
  - BlueSpiceFoundation
  - BlueSpiceUniversalExport
+ - BlueSpiceVisualEditorConnector
 
 BlueSpiceUniversalExport:
  - BlueSpiceFoundation
