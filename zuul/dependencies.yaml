@@ -470,6 +470,7 @@ BlueSpiceWatchList:
  - BlueSpiceVisualEditorConnector
 
 BlueSpiceWikiFarm:
+ - BlueSpiceFoundation
  - OOJSPlus
 
 BlueSpiceWhoIsOnline:
