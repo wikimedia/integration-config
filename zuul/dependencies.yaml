@@ -488,6 +488,7 @@ BounceHandler:
 CampaignEvents:
  - cldr
  - Translate
+ - UserMerge
  - WikimediaCampaignEvents
 
 Campaigns:

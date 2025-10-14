@@ -100,10 +100,12 @@ BounceHandler:
  - Echo
 
 CampaignEvents:
+ - CentralAuth
  - cldr
  - CommunityConfiguration
  - Echo
  - Translate
+ - UserMerge
  - WikimediaMessages
 
 Campaigns:
