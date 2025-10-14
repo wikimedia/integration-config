@@ -472,6 +472,7 @@ BlueSpiceWatchList:
 BlueSpiceWikiFarm:
  - BlueSpiceFoundation
  - OOJSPlus
+ - skins/BlueSpiceDiscovery
 
 BlueSpiceWhoIsOnline:
  - BlueSpiceFoundation
