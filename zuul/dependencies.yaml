@@ -486,6 +486,7 @@ BounceHandler:
  - Echo
 
 CampaignEvents:
+ - CentralAuth
  - cldr
  - Translate
  - UserMerge
