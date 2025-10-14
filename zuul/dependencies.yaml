@@ -992,6 +992,10 @@ RegexFun:
  - ParserFunctions
  - Arrays
 
+ReadingLists:
+ - BetaFeatures
+ - MetricsPlatform
+
 RelatedArticles:
  - BetaFeatures
  - MobileFrontend
