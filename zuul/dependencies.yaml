@@ -607,12 +607,12 @@ ContentProvisioning:
  - OOJSPlus
 
 ContentStabilization:
- - OOJSPlus
  - BlueSpiceBookshelf
  - BlueSpiceFoundation
  - BlueSpicePageAssignments
  - BlueSpiceSMWConnector
  - OOJSPlus
+ - PDFCreator
  - Workflows
 
 ContentTranslation:
