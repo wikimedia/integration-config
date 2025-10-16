@@ -470,7 +470,9 @@ BlueSpiceWatchList:
  - BlueSpiceVisualEditorConnector
 
 BlueSpiceWikiFarm:
+ - BlueSpiceExtendedSearch
  - BlueSpiceFoundation
+ - EnhancedUpload
  - OOJSPlus
  - skins/BlueSpiceDiscovery
 
