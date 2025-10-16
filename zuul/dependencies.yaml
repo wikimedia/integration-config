@@ -595,6 +595,8 @@ ConfigManager:
 
 ConfirmEdit:
  - AbuseFilter
+ - MobileFrontend
+ - VisualEditor
 
 ContactManager:
  - PageProperties
