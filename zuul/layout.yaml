@@ -8213,6 +8213,10 @@ projects:
     template:
       - name: extension-quibble-bluespice
 
+  - name: mediawiki/extensions/WP25EasterEggs
+    template:
+      - name: extension-quibble-composer
+
   - name: mediawiki/extensions/WSOAuth
     template:
       - name: extension-quibble-composer-noselenium
