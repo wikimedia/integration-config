@@ -419,6 +419,7 @@ LoginNotify:
 
 MassMessage:
  - CentralAuth
+ - CodeMirror
 
 MassMessageEmail:
  - MassMessage
