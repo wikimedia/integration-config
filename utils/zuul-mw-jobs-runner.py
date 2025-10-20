@@ -66,8 +66,8 @@ class JobToRun():
             self.name,
             ','.join([
                 dep.removeprefix('mediawiki/extensions/')
-                for dep in self.params['EXT_DEPENDENCIES'].split('\\n')
-            ])
+                for dep in self.params.get('EXT_DEPENDENCIES', '').split('\\n')
+            ]) or '[]'
         )
 
 
@@ -85,6 +85,7 @@ class ZuulMwJobsRunner():
         self.requested_projects = args.projects
         self.projects_filter = args.projects_filter
         self.phpunit = args.phpunit
+        self.requires_only = args.requires_only
         self.selenium = args.selenium
 
     def prepare(self):
@@ -100,6 +101,16 @@ class ZuulMwJobsRunner():
                         'ZUUL_BRANCH': 'master',
                     },
                 )
+
+                # quibble --resolve-requires does not need parameters
+                if job_name in [
+                    'quibble-requires-only-vendor-non-voting',
+                    'quibble-requires-only-composer-non-voting',
+                ]:
+                    # Added without EXT_DEPENDENCIES
+                    self.jenkins_jobs_to_run.append(jenkins_job)
+                    continue
+
                 set_parameters(None, jenkins_job, jenkins_job.params)
 
                 if not jenkins_job.params.get('EXT_DEPENDENCIES'):
@@ -180,10 +191,13 @@ class ZuulMwJobsRunner():
             or templates == {'extension-gate', 'extension-apitests'}
             or 'extension-quibble' in templates
         ):
-            if self.phpunit:
-                jobs += ['quibble-vendor-mysql-php81']
-            if self.selenium:
-                jobs += ['quibble-composer-mysql-php81-selenium']
+            if self.requires_only:
+                jobs += ['quibble-requires-only-vendor-non-voting']
+            else:
+                if self.phpunit:
+                    jobs += ['quibble-vendor-mysql-php81']
+                if self.selenium:
+                    jobs += ['quibble-composer-mysql-php81-selenium']
             return jobs
 
         # Extensions using composer
@@ -191,33 +205,46 @@ class ZuulMwJobsRunner():
             'extension-quibble-composer' in templates
             or 'extension-quibble-php81-or-later' in templates
         ):
-            if self.phpunit:
-                jobs += ['quibble-composer-mysql-php81']
-            if self.selenium:
-                jobs += ['quibble-composer-mysql-php81-selenium']
+            if self.requires_only:
+                jobs += ['quibble-requires-only-composer-non-voting']
+            else:
+                if self.phpunit:
+                    jobs += ['quibble-composer-mysql-php81']
+                if self.selenium:
+                    jobs += ['quibble-composer-mysql-php81-selenium']
             return jobs
 
         # The ones without Selenium
         if 'extension-quibble-noselenium' in templates:
-            if self.phpunit:
+            if self.requires_only:
+                jobs += ['quibble-requires-only-vendor-non-voting']
+            elif self.phpunit:
                 jobs += ['quibble-vendor-mysql-php81']
             return jobs
         if 'extension-quibble-composer-noselenium' in templates:
-            if self.phpunit:
+            if self.requires_only:
+                jobs += ['quibble-requires-only-composer-non-voting']
+            elif self.phpunit:
                 jobs += ['quibble-composer-mysql-php81']
             return jobs
         # Bluespice
         if 'extension-quibble-bluespice' in templates:
-            if self.phpunit:
+            if self.requires_only:
+                jobs += ['quibble-requires-only-composer-non-voting']
+            elif self.phpunit:
                 jobs += ['quibble-composer-mysql-php81']
             return jobs
 
         if 'skin-quibble' in templates:
-            if self.phpunit:
+            if self.requires_only:
+                jobs += ['quibble-requires-only-vendor-non-voting']
+            elif self.phpunit:
                 jobs += ['quibble-vendor-mysql-php81']
             return jobs
         if 'skin-quibble-composer' in templates:
-            if self.phpunit:
+            if self.requires_only:
+                jobs += ['quibble-requires-only-composer-non-voting']
+            elif self.phpunit:
                 jobs += ['quibble-composer-mysql-php81']
             return jobs
 
@@ -300,6 +327,7 @@ def parse_args(args):
     parser.add_argument('--debug', action='store_true')
     parser.add_argument('--phpunit', action=argparse.BooleanOptionalAction,
                         default=True)
+    parser.add_argument('--requires-only', action='store_true')
     parser.add_argument('--selenium', action=argparse.BooleanOptionalAction,
                         default=True)
 

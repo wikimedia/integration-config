@@ -52,7 +52,10 @@ def set_parameters(item, job, params):
         'mwext-',
         'quibble',
         )
-    if job.name.startswith(mw_deps_jobs_starting_with):
+    if (
+        job.name.startswith(mw_deps_jobs_starting_with)
+        and job.name != 'quibble-requires-only-non-voting'
+    ):
         set_mw_dependencies(item, job, params)
 
     # Special jobs for Wikibase - T188717

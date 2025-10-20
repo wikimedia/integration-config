@@ -403,6 +403,13 @@
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
+- job-template:
+    !!merge : *job_quibble
+    name: 'quibble-requires-only-{packages-source}-non-voting'
+    entrypoint: quibble-with-supervisord
+    triggers:
+        - zuul
+
 # Per-patch coverage for MediaWiki core.
 - job-template:
     !!merge : *job_quibble
@@ -831,6 +838,16 @@
         - quibble-for-mediawiki-core-{packages-source}-{database}-{php}
         - quibble-for-mediawiki-core-composertest-only-{php}
         - quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}
+        - quibble-requires-only-{packages-source}-non-voting:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s2
+            entrypoint: quibble-with-supervisord
+            database: mysql
+            environment:
+                # Since we use --resolve-requires, unset dependencies that
+                # might have been set by Zuul
+                EXT_DEPENDENCIES: ''
+                SKIN_DEPENDENCIES: ''
+            quibble_args: '--resolve-requires --run phpunit-unit,phpunit,qunit'
         - quibble-apitests-only-{packages-source}-{php}:
             database: 'mysql'
         - mediawiki-phpbench-patch:
