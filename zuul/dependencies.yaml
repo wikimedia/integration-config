@@ -786,6 +786,7 @@ JsonConfig:
  - Kartographer
  - VisualEditor
  - Scribunto
+ - WikimediaMessages
 
 JWTAuth:
  - PluggableAuth
