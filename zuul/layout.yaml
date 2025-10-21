@@ -707,6 +707,19 @@ pipelines:
         - !!merge : *test-event-plus-one
           branch: ^REL1_44$
 
+  - !!merge : *test_pipeline
+    name: test-1_45
+    description: >
+      Variation of the "test" pipeline reserved for MediaWiki 1.45
+    trigger:
+      gerrit:
+        - !!merge : *test-event-patchset-created
+          branch: ^REL1_45$
+        - !!merge : *test-event-comment-recheck
+          branch: ^REL1_45$
+        - !!merge : *test-event-plus-one
+          branch: ^REL1_45$
+
   # Dedicated pipeline for per-patch coverage report (non-voting)
   - name: coverage
     description: >
@@ -918,6 +931,15 @@ pipelines:
       gerrit:
         - !!merge : *gate-and-submit-comment-added
           branch: ^REL1_44
+
+  - !!merge : *gate_and_submit_pipeline
+    name: gate-and-submit-1_45
+    description: >
+      Variation of the "gate-and-submit" pipeline reserved for MediaWiki 1.45.
+    trigger:
+      gerrit:
+        - !!merge : *gate-and-submit-comment-added
+          branch: ^REL1_45
 
   # Separate gate for commits authored by l10n-bot, which run different tests.
   # It also has a lower priority, and improved concurrency (no DependentPipelineManager).
@@ -1418,6 +1440,13 @@ project-templates:
       - mediawiki-composer-php81
       - mediawiki-node20
 
+    test-1_45:
+      - mediawiki-composer-php83
+      - mediawiki-node20
+    gate-and-submit-1_45:
+      - mediawiki-composer-php83
+      - mediawiki-node20
+
     gate-and-submit-l10n:
       - mediawiki-i18n-check
     experimental:
@@ -1487,6 +1516,18 @@ project-templates:
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-1_44:
+      - mediawiki-node20
+      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php81-selenium
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php81-phan
+
+    test-1_45:
+      - mediawiki-node20
+      - quibble-composer-mysql-php83
+    gate-and-submit-1_45:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
@@ -1582,6 +1623,18 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
 
+    test-1_45:
+      - mediawiki-node20
+      - quibble-composer-mysql-php83
+    gate-and-submit-1_45:
+      - mediawiki-node20
+      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php81-selenium
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php81-phan
+
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
@@ -1633,6 +1686,11 @@ project-templates:
     test-1_44:
       - noop
     gate-and-submit-1_44:
+      - noop
+
+    test-1_45:
+      - noop
+    gate-and-submit-1_45:
       - noop
 
     gate-and-submit-l10n:
@@ -1694,6 +1752,17 @@ project-templates:
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
     gate-and-submit-1_44:
+      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
+      - mediawiki-node20
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-php81-phan
+
+    test-1_45:
+      - quibble-composer-mysql-php83
+      - mediawiki-node20
+    gate-and-submit-1_45:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1776,6 +1845,17 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
 
+    test-1_45:
+      - quibble-composer-mysql-php83
+      - mediawiki-node20
+    gate-and-submit-1_45:
+      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
+      - mediawiki-node20
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php81-phan
+
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
@@ -1810,6 +1890,10 @@ project-templates:
       - quibble-composer-mysql-php81-phpunit-standalone
     gate-and-submit-1_44:
       - quibble-composer-mysql-php81-phpunit-standalone
+    test-1_45:
+      - quibble-composer-mysql-php83-phpunit-standalone
+    gate-and-submit-1_45:
+      - quibble-composer-mysql-php83-phpunit-standalone
     experimental:
       - quibble-vendor-mysql-php84-phpunit-standalone
 
@@ -1885,6 +1969,10 @@ project-templates:
       - mediawiki-tox
     gate-and-submit-1_44:
       - mediawiki-tox
+    test-1_45:
+      - mediawiki-tox
+    gate-and-submit-1_45:
+      - mediawiki-tox
 
   # Runs quibble, and includes experimental jobs
   # that are for skins.
@@ -1941,6 +2029,18 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
     gate-and-submit-1_44:
+      - mediawiki-node20
+      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php81-selenium
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php81-phan
+
+    test-1_45:
+      - mediawiki-node20
+      - quibble-composer-mysql-php83
+    gate-and-submit-1_45:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
@@ -2024,6 +2124,18 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-php81-phan
     gate-and-submit-1_44:
+      - mediawiki-node20
+      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php81-selenium
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-php81-phan
+
+    test-1_45:
+      - mediawiki-node20
+      - quibble-composer-mysql-php83
+    gate-and-submit-1_45:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
@@ -2187,6 +2299,10 @@ project-templates:
       - generic-node20-browser
     gate-and-submit-1_44:
       - generic-node20-browser
+    test-1_45:
+      - generic-node20-browser
+    gate-and-submit-1_45:
+      - generic-node20-browser
     test-wmf:
       - generic-node20-browser
     gate-and-submit-wmf:
@@ -2221,6 +2337,10 @@ project-templates:
       - generic-node20-rundoc
     gate-and-submit-1_44:
       - generic-node20-rundoc
+    test-1_45:
+      - generic-node20-rundoc
+    gate-and-submit-1_45:
+      - generic-node20-rundoc
     test-wmf:
       - generic-node20-rundoc
     gate-and-submit-wmf:
@@ -2245,6 +2365,10 @@ project-templates:
     test-1_44:
       - mediawiki-node20
     gate-and-submit-1_44:
+      - mediawiki-node20
+    test-1_45:
+      - mediawiki-node20
+    gate-and-submit-1_45:
       - mediawiki-node20
     experimental:
       - mediawiki-node22
@@ -2737,6 +2861,23 @@ projects:
       - mediawiki-core-php81-phan
       - mediawiki-node20
     gate-and-submit-1_44:
+      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-sqlite-php81
+      - quibble-for-mediawiki-core-composer-postgres-php81
+      - quibble-for-mediawiki-core-composer-mysql-php82
+      - quibble-for-mediawiki-core-composer-mysql-php83
+      - mediawiki-core-php81-phan
+      - mediawiki-node20
+
+    test-1_45:
+      - quibble-for-mediawiki-core-composer-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
+      - mediawiki-core-php81-phan
+      - mediawiki-node20
+    gate-and-submit-1_45:
       - quibble-for-mediawiki-core-composer-mysql-php81
       - quibble-for-mediawiki-core-composertest-only-php81
       - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
@@ -5169,6 +5310,12 @@ projects:
       - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-php81-phan
+    test-1_45:
+      - wikibase-client-php83
+      - wikibase-repo-php83
+    gate-and-submit-1_45:
+      - wikibase-client-php83
+      - wikibase-repo-php83
     gate-and-submit-wmf: *mediawiki-extensions-wikibase-gate-and-submit
     postmerge:
       - mwext-doxygen-publish
