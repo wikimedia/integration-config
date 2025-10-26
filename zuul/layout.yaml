@@ -3009,6 +3009,10 @@ projects:
     template:
       - name: skin-quibble
 
+  - name: mediawiki/skins/Monaco
+    template:
+      - name: skin-quibble
+
   - name: mediawiki/skins/Nimbus
     template:
       - name: skin-quibble
