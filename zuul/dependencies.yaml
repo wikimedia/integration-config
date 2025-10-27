@@ -1215,6 +1215,7 @@ WhoIsWatching:
 Wikibase:
  - ArticlePlaceholder
  - cldr
+ - CirrusSearch
  - Echo
  - Elastica
  - GeoData
