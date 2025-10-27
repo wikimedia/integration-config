@@ -517,6 +517,9 @@ ParserFunctions:
 ParserMigration:
  - MobileFrontend
 
+PersonalDashboard:
+ - skins/MinervaNeue
+
 Petition:
  - CheckUser
  - cldr

@@ -957,6 +957,7 @@ PDFCreator:
 
 PersonalDashboard:
  - CommunityConfiguration
+ - skins/MinervaNeue
 
 Phonos:
  - TimedMediaHandler
