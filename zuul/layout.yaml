@@ -4696,6 +4696,13 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  # (T403982) Not in production yet but headed there -- 2025-10-27
+  - name: mediawiki/extensions/PersonalDashboard
+    template:
+      - name: extension-quibble
+      - name: extension-codehealth
+      - name: extension-coverage
+
   - name: mediawiki/extensions/Phonos
     template:
       # Extension not yet in production, but headed there - T314294

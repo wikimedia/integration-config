@@ -955,6 +955,9 @@ PDFCreator:
  - VueJsPlus
  - VisualEditor
 
+PersonalDashboard:
+ - CommunityConfiguration
+
 Phonos:
  - TimedMediaHandler
 
