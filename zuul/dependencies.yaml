@@ -1241,6 +1241,7 @@ WikibaseLexeme:
  - cldr
  - Wikibase
  - WikibaseLexemeCirrusSearch
+ - CirrusSearch
 
 WikibaseLexemeCirrusSearch:
  - Wikibase
