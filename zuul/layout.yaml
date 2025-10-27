@@ -5589,6 +5589,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/AllowlistHTMLTags
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/AllTimeZones
     template:
       - name: extension-quibble
