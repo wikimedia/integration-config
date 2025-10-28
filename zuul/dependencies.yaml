@@ -33,10 +33,13 @@ skins/TuleapSkin:
  - TuleapIntegration
  - TuleapWikiFarm
 
-
 # Extensions:
 3D:
  - MultimediaViewer
+
+AIEditingAssistant:
+ - VisualEditor
+ - VisualEditorPlus
 
 AbuseFilter:
  - AntiSpoof
@@ -58,10 +61,6 @@ AdhocTranslation:
 
 AdvancedSearch:
  - Translate
-
-AIEditingAssistant:
- - VisualEditor
- - VisualEditorPlus
 
 ApiFeatureUsage:
  - Elastica
@@ -192,6 +191,9 @@ BlueSpiceFlaggedRevsConnector:
  - BlueSpiceFoundation
  - FlaggedRevs
 
+BlueSpiceFoundation:
+ - OOJSPlus
+
 BlueSpiceGroupManager:
  - BlueSpiceFoundation
 
@@ -207,9 +209,6 @@ BlueSpiceInsertFile:
 BlueSpiceInsertLink:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
-
-BlueSpiceFoundation:
- - OOJSPlus
 
 BlueSpiceInsertTemplate:
  - BlueSpiceFoundation
@@ -230,15 +229,15 @@ BlueSpiceMatomoConnector:
 BlueSpiceMultiUpload:
  - BlueSpiceFoundation
 
+BlueSpiceNSFileRepoConnector:
+ - BlueSpiceFoundation
+ - NSFileRepo
+
 BlueSpiceNamespaceCSS:
  - BlueSpiceFoundation
 
 BlueSpiceNamespaceManager:
  - BlueSpiceFoundation
-
-BlueSpiceNSFileRepoConnector:
- - BlueSpiceFoundation
- - NSFileRepo
 
 BlueSpicePageAccess:
  - BlueSpiceFoundation
@@ -269,12 +268,12 @@ BlueSpicePagesVisited:
  - BlueSpiceVisualEditorConnector
  - BlueSpiceWhoIsOnline
 
-BlueSpicePlayer:
- - BlueSpiceFoundation
-
 BlueSpicePermissionManager:
  - BlueSpiceFoundation
  - OOJSPlus
+
+BlueSpicePlayer:
+ - BlueSpiceFoundation
 
 BlueSpicePrivacy:
  - BlueSpiceFoundation
@@ -291,19 +290,19 @@ BlueSpiceQrCode:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
 
+BlueSpiceRSSFeeder:
+ - BlueSpiceFoundation
+
 BlueSpiceRating:
  - BlueSpiceFoundation
  - OOJSPlus
 
-BlueSpiceRSSFeeder:
- - BlueSpiceFoundation
-
-BlueSpiceReaders:
- - BlueSpiceFoundation
-
 BlueSpiceReadConfirmation:
  - BlueSpiceFoundation
  - BlueSpicePageAssignments
+
+BlueSpiceReaders:
+ - BlueSpiceFoundation
 
 BlueSpiceReminder:
  - BlueSpiceFoundation
@@ -313,6 +312,17 @@ BlueSpiceReminder:
 BlueSpiceSMWConnector:
  - BlueSpiceFoundation
  - BlueSpiceSmartList
+
+BlueSpiceSaferEdit:
+ - BlueSpiceFoundation
+
+BlueSpiceSignHere:
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
+
+BlueSpiceSmartList:
+ - BlueSpiceFoundation
+ - BlueSpiceVisualEditorConnector
 
 BlueSpiceSocial:
  - BlueSpiceExtendedSearch
@@ -381,17 +391,6 @@ BlueSpiceSocialWikiPage:
  - BlueSpiceMultiUpload
  - BlueSpiceSocial
 
-BlueSpiceSaferEdit:
- - BlueSpiceFoundation
-
-BlueSpiceSignHere:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
-
-BlueSpiceSmartList:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
-
 BlueSpiceSubPageTree:
  - BlueSpiceFoundation
 
@@ -417,6 +416,10 @@ BlueSpiceUEModuleDOCX:
  - BlueSpiceFoundation
  - BlueSpiceUniversalExport
 
+BlueSpiceUEModuleHTML:
+ - BlueSpiceFoundation
+ - BlueSpiceUniversalExport
+
 BlueSpiceUEModulePDF:
  - BlueSpiceFoundation
  - BlueSpiceUniversalExport
@@ -426,10 +429,6 @@ BlueSpiceUEModulePDFRecursive:
  - BlueSpiceUniversalExport
 
 BlueSpiceUEModulePDFSubpages:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
-
-BlueSpiceUEModuleHTML:
  - BlueSpiceFoundation
  - BlueSpiceUniversalExport
 
@@ -469,13 +468,6 @@ BlueSpiceWatchList:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
 
-BlueSpiceWikiFarm:
- - BlueSpiceExtendedSearch
- - BlueSpiceFoundation
- - EnhancedUpload
- - OOJSPlus
- - skins/BlueSpiceDiscovery
-
 BlueSpiceWhoIsOnline:
  - BlueSpiceFoundation
  - BlueSpiceVisualEditorConnector
@@ -483,6 +475,13 @@ BlueSpiceWhoIsOnline:
 BlueSpiceWikiExplorer:
  - BlueSpiceFoundation
  - OOJSPlus
+
+BlueSpiceWikiFarm:
+ - BlueSpiceExtendedSearch
+ - BlueSpiceFoundation
+ - EnhancedUpload
+ - OOJSPlus
+ - skins/BlueSpiceDiscovery
 
 BounceHandler:
  - CentralAuth
@@ -523,9 +522,6 @@ Chart:
  - JsonConfig
  - VisualEditor
 
-Checklists:
- - VisualEditor
-
 CheckUser:
  - AbuseFilter
  - CentralAuth
@@ -537,6 +533,20 @@ CheckUser:
  - MobileFrontend
  - Renameuser
  - TorBlock
+
+Checklists:
+ - VisualEditor
+
+CirrusSearch:
+ - BetaFeatures
+ - Cite
+ - Elastica
+ - EventBus
+ - EventStreamConfig
+ - GeoData
+ - PdfHandler
+ - SiteMatrix
+ - TimedMediaHandler
 
 Cite:
  - cldr
@@ -550,17 +560,6 @@ Cite:
 Citoid:
  - Cite
  - VisualEditor
-
-CirrusSearch:
- - BetaFeatures
- - Cite
- - Elastica
- - EventBus
- - EventStreamConfig
- - GeoData
- - PdfHandler
- - SiteMatrix
- - TimedMediaHandler
 
 CodeEditor:
  - WikiEditor
@@ -763,6 +762,16 @@ GuidedTour:
 HierarchyBuilder:
  - PageForms
 
+IPInfo:
+ - BetaFeatures
+ - CheckUser
+ - GlobalPreferences
+ - MobileFrontend
+
+IPReputation:
+ - AbuseFilter
+ - ConfirmEdit
+
 ImageRating:
  - VoteNY
 
@@ -774,15 +783,8 @@ ImageSuggestions:
 InputBox:
  - MediaSearch
 
-IPInfo:
- - BetaFeatures
- - CheckUser
- - GlobalPreferences
- - MobileFrontend
-
-IPReputation:
- - AbuseFilter
- - ConfirmEdit
+JWTAuth:
+ - PluggableAuth
 
 JsonConfig:
  - Kartographer
@@ -790,18 +792,12 @@ JsonConfig:
  - Scribunto
  - WikimediaMessages
 
-JWTAuth:
- - PluggableAuth
-
 Kartographer:
  - FlaggedRevs
  - JsonConfig
  - ParserFunctions
  - VisualEditor
  - WikimediaMessages
-
-LanguageTool:
- - VisualEditor
 
 LDAPAuthentication2:
  - LDAPProvider
@@ -821,6 +817,9 @@ LDAPSyncAll:
 
 LDAPUserInfo:
  - LDAPProvider
+
+LanguageTool:
+ - VisualEditor
 
 Linter:
  - VisualEditor
@@ -887,6 +886,11 @@ Monstranto:
 MultimediaViewer:
  - BetaFeatures
 
+NSFileRepo:
+ - EnhancedUpload
+ - Lockdown
+ - VisualEditor
+
 NamespacePopups:
  - PagePopups
 
@@ -895,11 +899,6 @@ NavigationTiming:
 
 NaylorAMS:
  - PluggableAuth
-
-NSFileRepo:
- - EnhancedUpload
- - Lockdown
- - VisualEditor
 
 Newsletter:
  - Echo
@@ -924,11 +923,21 @@ OAuth:
 OAuthRateLimiter:
  - OAuth
 
+ORES:
+ - AbuseFilter
+
 OpenIDConnect:
  - PluggableAuth
 
-ORES:
- - AbuseFilter
+parsoid:
+ - ParserFunctions
+ - TimedMediaHandler
+
+PDFCreator:
+ - OOJSPlus
+ - skins/BlueSpiceDiscovery
+ - VueJsPlus
+ - VisualEditor
 
 PageCheckout:
  - Workflows
@@ -944,16 +953,6 @@ PageViewInfoGA:
 
 ParserFunctions:
  - Scribunto
-
-parsoid:
- - ParserFunctions
- - TimedMediaHandler
-
-PDFCreator:
- - OOJSPlus
- - skins/BlueSpiceDiscovery
- - VueJsPlus
- - VisualEditor
 
 PersonalDashboard:
  - CommunityConfiguration
@@ -1003,13 +1002,13 @@ RandomGameUnit:
 ReaderExperiments:
  - WikimediaMessages
 
-RegexFun:
- - ParserFunctions
- - Arrays
-
 ReadingLists:
  - BetaFeatures
  - MetricsPlatform
+
+RegexFun:
+ - ParserFunctions
+ - Arrays
 
 RelatedArticles:
  - BetaFeatures
@@ -1048,9 +1047,6 @@ SimilarEditors:
 SimpleBlogPage:
  - OOJSPlus
 
-SiteMetrics:
- - SocialProfile
-
 SimpleSAMLphp:
  - PluggableAuth
 
@@ -1060,8 +1056,8 @@ SimpleTasks:
  - DateTimeTools
  - VisualEditor
 
-SpecialPageCaptcha:
- - ConfirmEdit
+SiteMetrics:
+ - SocialProfile
 
 SocialProfile:
  - WikiEditor
@@ -1080,6 +1076,9 @@ SpamBlacklist:
 SpamDiffTool:
  - SpamBlacklist
 
+SpecialPageCaptcha:
+ - ConfirmEdit
+
 SpellingDictionary:
  - UniversalLanguageSelector
 
@@ -1091,42 +1090,51 @@ SportsTeams:
 StandardDialogs:
  - OOJSPlus
 
-StructuredNavigation:
- - CodeEditor
-
 StopForumSpam:
  - AbuseFilter
 
+StructuredNavigation:
+ - CodeEditor
+
 SyntaxHighlight_GeSHi:
  - VisualEditor
-
-TableTools:
- - VisualEditor
- - VueJsPlus
 
 TEI:
  - CodeMirror
  - Math
  - VisualEditor
 
+TableTools:
+ - VisualEditor
+ - VueJsPlus
+
 TemplateWizard:
  - TemplateData
  - WikiEditor
-
-TitleBlacklist:
- - AntiSpoof
- - Scribunto
-
-TheWikipediaLibrary:
- - Echo
- - CentralAuth
- - GlobalPreferences
 
 Thanks:
  - AbuseFilter
  - Echo
  - Flow
  - MobileFrontend
+
+TheWikipediaLibrary:
+ - Echo
+ - CentralAuth
+ - GlobalPreferences
+
+TitleBlacklist:
+ - AntiSpoof
+ - Scribunto
+
+Toolhub:
+ - Scribunto
+
+TopTenPages:
+ - HitCounters
+
+TorBlock:
+ - AbuseFilter
 
 Translate:
  - UniversalLanguageSelector
@@ -1138,15 +1146,6 @@ Translate:
 TranslationNotifications:
  - MassMessage
  - Translate
-
-Toolhub:
- - Scribunto
-
-TopTenPages:
- - HitCounters
-
-TorBlock:
- - AbuseFilter
 
 TuleapIntegration:
  - TuleapWikiFarm
@@ -1210,11 +1209,33 @@ VisualEditor:
 VisualEditorPlus:
  - VisualEditor
 
+WSOAuth:
+ - PluggableAuth
+
 WebAuthn:
  - OATHAuth
 
 WhoIsWatching:
  - Echo
+
+WikiEditor:
+ - EventLogging
+ - EventBus
+ - EventStreamConfig
+ - WikimediaEvents
+
+WikiLambda:
+ - UniversalLanguageSelector
+ - WikimediaMessages
+
+WikiSEO:
+ - PageImages
+ - Scribunto
+
+WikiToLDAP:
+ - LDAPAuthentication2
+ - Renameuser
+ - UserMerge
 
 Wikibase:
  - ArticlePlaceholder
@@ -1224,9 +1245,6 @@ Wikibase:
  - Elastica
  - GeoData
  - MobileFrontend
- # temporarily dropped due to excessive slowness (T231198)
- # - Scribunto
- # - Capiunto
  - PropertySuggester
  - skins/MinervaNeue
  - SpamBlacklist
@@ -1276,17 +1294,8 @@ Wikidata.org:
 WikidataPageBanner:
  - Wikibase
 
-WikiEditor:
- - EventLogging
- - EventBus
- - EventStreamConfig
- - WikimediaEvents
-
-WikiLambda:
- # Temporarily disabled for testing
- # - VisualEditor
- - UniversalLanguageSelector
- - WikimediaMessages
+wikihiero:
+ - VisualEditor
 
 WikimediaBadges:
  - Wikibase
@@ -1319,10 +1328,6 @@ WikimediaMaintenance:
 WikimediaMessages:
  - cldr
 
-WikiSEO:
- - PageImages
- - Scribunto
-
 Wikisource:
  - ProofreadPage
  - Wikibase
@@ -1334,17 +1339,6 @@ Wikistories:
  - MobileFrontend
  - skins/MinervaNeue
 
-WikiToLDAP:
- - LDAPAuthentication2
- - Renameuser
- - UserMerge
-
-wikihiero:
- - VisualEditor
-
 Workflows:
  - Forms
  - OOJSPlus
-
-WSOAuth:
- - PluggableAuth
