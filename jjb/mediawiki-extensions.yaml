@@ -253,6 +253,7 @@
                     credential-id: wikilambda-catalyst-api-key
                     variable: CATALYST_API_TOKEN
       publishers:
+          - archive-log-allow-empty
           - postbuildscript:
               builders:
                 - build-on:
