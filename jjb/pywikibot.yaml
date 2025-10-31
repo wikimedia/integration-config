@@ -14,14 +14,13 @@
              - rstcheck
              - sphinx
              - doctest
-             - fasttest-py38
              - fasttest-py39
              - fasttest-py310
              - fasttest-py311
              - fasttest-py312
              - fasttest-py313
              - fasttest-pypy
-             - deeptest-py38:
+             - deeptest-py39:
                  build_timeout: 30 # minutes
              - deeptest-py313:
                  build_timeout: 30 # minutes
