@@ -453,6 +453,8 @@
         - edit-check
         - edit-check-publish
         - pre-commit-check
+        - revise-tone-task-generator
+        - revise-tone-task-generator-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -474,6 +476,8 @@
         # trigger-inference-services-pipeline-edit-check
         # trigger-inference-services-pipeline-edit-check-publish
         # trigger-inference-services-pipeline-pre-commit-check
+        # trigger-inference-services-pipeline-revise-tone-task-generator
+        # trigger-inference-services-pipeline-revise-tone-task-generator-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -495,6 +499,8 @@
         # inference-services-pipeline-edit-check
         # inference-services-pipeline-edit-check-publish
         # inference-services-pipeline-pre-commit-check
+        # inference-services-pipeline-revise-tone-task-generator
+        # inference-services-pipeline-revise-tone-task-generator-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:
