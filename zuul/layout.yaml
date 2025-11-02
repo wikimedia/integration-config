@@ -5666,6 +5666,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/AutoCreatePage
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/AutoGallery
     template:
       - name: extension-quibble
