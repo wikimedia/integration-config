@@ -6850,6 +6850,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/JavascriptSlideshow
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/JSBreadCrumbs
     template:
       - name: extension-quibble
