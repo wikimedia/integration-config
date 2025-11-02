@@ -6987,6 +6987,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/MachineTranslation
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/MagicLinkAuthentication
     template:
       - name: extension-quibble-noselenium
