@@ -2499,11 +2499,13 @@ projects:
       - trigger-inference-services-pipeline-revertrisk
       - trigger-inference-services-pipeline-edit-check
       - trigger-inference-services-pipeline-pre-commit-check
+      - trigger-inference-services-pipeline-revise-tone-task-generator
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-revertrisk
       - trigger-inference-services-pipeline-edit-check
       - trigger-inference-services-pipeline-pre-commit-check
+      - trigger-inference-services-pipeline-revise-tone-task-generator
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-revertrisk-publish
