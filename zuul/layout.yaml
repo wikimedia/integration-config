@@ -592,6 +592,9 @@ pipelines:
            - ^edlira\.dushku@gmail\.com$
            - ^nokibsarkar@gmail\.com$
 
+          # New developers
+           - ^camilojdiaz@gmail\.com$
+
         # Let allowed users the ability to reenqueue a change in the test
         # pipeline by simply commenting 'recheck' on a change.
         - &test-event-comment-recheck
