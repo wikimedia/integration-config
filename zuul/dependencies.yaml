@@ -9,1336 +9,1336 @@
 
 # Skins:
 skins/BlueSpiceDiscovery:
- - OOJSPlus
- - BlueSpiceFoundation
- - MenuEditor
+  - OOJSPlus
+  - BlueSpiceFoundation
+  - MenuEditor
 
 skins/Cosmos:
- - AdminLinks
- - CookieWarning
- - CreateRedirect
- - DismissableSiteNotice
- - Echo
- - SocialProfile
- - Video
- - VisualEditor
+  - AdminLinks
+  - CookieWarning
+  - CreateRedirect
+  - DismissableSiteNotice
+  - Echo
+  - SocialProfile
+  - Video
+  - VisualEditor
 
 skins/MinervaNeue:
- - MobileFrontend
+  - MobileFrontend
 
 skins/Refreshed:
- - SocialProfile
+  - SocialProfile
 
 skins/TuleapSkin:
- - TuleapIntegration
- - TuleapWikiFarm
+  - TuleapIntegration
+  - TuleapWikiFarm
 
 # Extensions:
 3D:
- - MultimediaViewer
+  - MultimediaViewer
 
 AIEditingAssistant:
- - VisualEditor
- - VisualEditorPlus
+  - VisualEditor
+  - VisualEditorPlus
 
 AbuseFilter:
- - AntiSpoof
- - CentralAuth
- - CheckUser
- - CodeEditor
- - ConfirmEdit
- - Echo
- - EventLogging
- - Renameuser
- - Scribunto
+  - AntiSpoof
+  - CentralAuth
+  - CheckUser
+  - CodeEditor
+  - ConfirmEdit
+  - Echo
+  - EventLogging
+  - Renameuser
+  - Scribunto
 
 AchievementBadges:
- - BetaFeatures
- - Echo
+  - BetaFeatures
+  - Echo
 
 AdhocTranslation:
- - skins/BlueSpiceDiscovery
+  - skins/BlueSpiceDiscovery
 
 AdvancedSearch:
- - Translate
+  - Translate
 
 ApiFeatureUsage:
- - Elastica
+  - Elastica
 
 Arrays:
- - Loops
- - ParserFunctions
+  - Loops
+  - ParserFunctions
 
 ArticlePlaceholder:
- - Scribunto
- - Wikibase
+  - Scribunto
+  - Wikibase
 
 AtMentions:
- - OOJSPlus
- - VisualEditor
+  - OOJSPlus
+  - VisualEditor
 
 AutoModerator:
- - CommunityConfiguration
- - DiscussionTools
- - ORES
+  - CommunityConfiguration
+  - DiscussionTools
+  - ORES
 
 Babel:
- - CommunityConfiguration
+  - CommunityConfiguration
 
 BlogPage:
- - Comments
- - SocialProfile
- - VoteNY
+  - Comments
+  - SocialProfile
+  - VoteNY
 
 BlueSpiceAbout:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceArticleInfo:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceArticlePreviewCapture:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceAuthors:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceAvatars:
- - BlueSpiceFoundation
- - UserProfile
+  - BlueSpiceFoundation
+  - UserProfile
 
 BlueSpiceBookshelf:
- - BlueSpiceFoundation
- - BlueSpiceExtendedSearch
- - BlueSpiceVisualEditorConnector
- - ContentDroplets
- - MenuEditor
- - NotifyMe
- - VueJsPlus
+  - BlueSpiceFoundation
+  - BlueSpiceExtendedSearch
+  - BlueSpiceVisualEditorConnector
+  - ContentDroplets
+  - MenuEditor
+  - NotifyMe
+  - VueJsPlus
 
 BlueSpiceCategoryCheck:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceCategoryManager:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceChecklist:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceConfigManager:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceContextMenu:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceCountThings:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceCustomMenu:
- - BlueSpiceFoundation
- - MenuEditor
+  - BlueSpiceFoundation
+  - MenuEditor
 
 BlueSpiceDashboards:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceDistributionConnector:
- - BlueSpiceExtendedStatistics
- - BlueSpiceFoundation
- - BlueSpiceSMWConnector
- - ContentDroplets
- - Echo
- - OOJSPlus
- - PDFCreator
- - UserMerge
- - VisualEditor
- - Workflows
+  - BlueSpiceExtendedStatistics
+  - BlueSpiceFoundation
+  - BlueSpiceSMWConnector
+  - ContentDroplets
+  - Echo
+  - OOJSPlus
+  - PDFCreator
+  - UserMerge
+  - VisualEditor
+  - Workflows
 
 BlueSpiceEchoConnector:
- - BlueSpiceFoundation
- - Echo
+  - BlueSpiceFoundation
+  - Echo
 
 BlueSpiceEmoticons:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceExpiry:
- - BlueSpiceFoundation
- - BlueSpiceReminder
- - OOJSPlus
+  - BlueSpiceFoundation
+  - BlueSpiceReminder
+  - OOJSPlus
 
 BlueSpiceExportTables:
- - BlueSpiceFoundation
- - BlueSpiceUEModuleTable2Excel
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceUEModuleTable2Excel
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceExtendedFilelist:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceExtendedSearch:
- - BlueSpiceDistributionConnector
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceDistributionConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceExtendedStatistics:
- - BlueSpiceFoundation
- - BlueSpiceExtendedSearch
+  - BlueSpiceFoundation
+  - BlueSpiceExtendedSearch
 
 BlueSpiceFilterableTables:
- - BlueSpiceFoundation
- - OOJSPlus
+  - BlueSpiceFoundation
+  - OOJSPlus
 
 BlueSpiceFlaggedRevsConnector:
- - BlueSpiceFoundation
- - FlaggedRevs
+  - BlueSpiceFoundation
+  - FlaggedRevs
 
 BlueSpiceFoundation:
- - OOJSPlus
+  - OOJSPlus
 
 BlueSpiceGroupManager:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceHideTitle:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceInsertCategory:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceInsertFile:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceInsertLink:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceInsertTemplate:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceInstanceStatus:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceInterWikiLinks:
- - BlueSpiceFoundation
- - OOJSPlus
+  - BlueSpiceFoundation
+  - OOJSPlus
 
 BlueSpiceInterwikiSearch:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceMatomoConnector:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceMultiUpload:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceNSFileRepoConnector:
- - BlueSpiceFoundation
- - NSFileRepo
+  - BlueSpiceFoundation
+  - NSFileRepo
 
 BlueSpiceNamespaceCSS:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceNamespaceManager:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpicePageAccess:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
 
 BlueSpicePageAssignments:
- - BlueSpiceFoundation
- - OOJSPlus
- - NotifyMe
+  - BlueSpiceFoundation
+  - OOJSPlus
+  - NotifyMe
 
 BlueSpicePageFormsConnector:
- - BlueSpiceFoundation
- - PageForms
+  - BlueSpiceFoundation
+  - PageForms
 
 BlueSpicePageTemplates:
- - BlueSpiceFoundation
- - OOJSPlus
- - BlueSpiceDistributionConnector
- - ContentDroplets
- - VisualEditor
+  - BlueSpiceFoundation
+  - OOJSPlus
+  - BlueSpiceDistributionConnector
+  - ContentDroplets
+  - VisualEditor
 
 BlueSpicePageVersion:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpicePagesVisited:
- - BlueSpiceDistributionConnector
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
- - BlueSpiceWhoIsOnline
+  - BlueSpiceDistributionConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
+  - BlueSpiceWhoIsOnline
 
 BlueSpicePermissionManager:
- - BlueSpiceFoundation
- - OOJSPlus
+  - BlueSpiceFoundation
+  - OOJSPlus
 
 BlueSpicePlayer:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpicePrivacy:
- - BlueSpiceFoundation
- - OOJSPlus
+  - BlueSpiceFoundation
+  - OOJSPlus
 
 BlueSpiceProDistributionConnector:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
- - BlueSpiceVisualEditorConnector
- - Math
- - VisualEditor
+  - BlueSpiceFoundation
+  - BlueSpiceUniversalExport
+  - BlueSpiceVisualEditorConnector
+  - Math
+  - VisualEditor
 
 BlueSpiceQrCode:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceRSSFeeder:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceRating:
- - BlueSpiceFoundation
- - OOJSPlus
+  - BlueSpiceFoundation
+  - OOJSPlus
 
 BlueSpiceReadConfirmation:
- - BlueSpiceFoundation
- - BlueSpicePageAssignments
+  - BlueSpiceFoundation
+  - BlueSpicePageAssignments
 
 BlueSpiceReaders:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceReminder:
- - BlueSpiceFoundation
- - OOJSPlus
- - Workflows
+  - BlueSpiceFoundation
+  - OOJSPlus
+  - Workflows
 
 BlueSpiceSMWConnector:
- - BlueSpiceFoundation
- - BlueSpiceSmartList
+  - BlueSpiceFoundation
+  - BlueSpiceSmartList
 
 BlueSpiceSaferEdit:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceSignHere:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceSmartList:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceSocial:
- - BlueSpiceExtendedSearch
- - BlueSpiceFoundation
+  - BlueSpiceExtendedSearch
+  - BlueSpiceFoundation
 
 BlueSpiceSocialArticleActions:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
+  - BlueSpiceFoundation
+  - BlueSpiceSocial
+  - BlueSpiceExtendedSearch
 
 BlueSpiceSocialBlog:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
+  - BlueSpiceFoundation
+  - BlueSpiceSocial
+  - BlueSpiceExtendedSearch
 
 BlueSpiceSocialComments:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
+  - BlueSpiceFoundation
+  - BlueSpiceSocial
+  - BlueSpiceExtendedSearch
 
 BlueSpiceSocialMicroBlog:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
+  - BlueSpiceFoundation
+  - BlueSpiceSocial
+  - BlueSpiceExtendedSearch
 
 BlueSpiceSocialProfile:
- - BlueSpiceAvatars
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
+  - BlueSpiceAvatars
+  - BlueSpiceFoundation
+  - BlueSpiceSocial
+  - BlueSpiceExtendedSearch
 
 BlueSpiceSocialRating:
- - BlueSpiceFoundation
- - BlueSpiceExtendedSearch
- - BlueSpiceRating
- - BlueSpiceSocial
+  - BlueSpiceFoundation
+  - BlueSpiceExtendedSearch
+  - BlueSpiceRating
+  - BlueSpiceSocial
 
 BlueSpiceSocialResolve:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
+  - BlueSpiceFoundation
+  - BlueSpiceSocial
+  - BlueSpiceExtendedSearch
 
 BlueSpiceSocialTags:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
+  - BlueSpiceFoundation
+  - BlueSpiceSocial
+  - BlueSpiceExtendedSearch
 
 BlueSpiceSocialTimelineUpdate:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
+  - BlueSpiceFoundation
+  - BlueSpiceSocial
+  - BlueSpiceExtendedSearch
 
 BlueSpiceSocialTopics:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
+  - BlueSpiceFoundation
+  - BlueSpiceSocial
+  - BlueSpiceExtendedSearch
 
 BlueSpiceSocialWatch:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
+  - BlueSpiceFoundation
+  - BlueSpiceSocial
+  - BlueSpiceExtendedSearch
 
 BlueSpiceSocialWikiPage:
- - BlueSpiceFoundation
- - BlueSpiceExtendedSearch
- - BlueSpiceMultiUpload
- - BlueSpiceSocial
+  - BlueSpiceFoundation
+  - BlueSpiceExtendedSearch
+  - BlueSpiceMultiUpload
+  - BlueSpiceSocial
 
 BlueSpiceSubPageTree:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceTagCloud:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceTranslationTransfer:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
- - ContentTransfer
- - MergeArticles
- - OOJSPlus
- - VisualEditor
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
+  - ContentTransfer
+  - MergeArticles
+  - OOJSPlus
+  - VisualEditor
 
 BlueSpiceUEModuleBookPDF:
- - BlueSpiceBookshelf
- - BlueSpiceFoundation
- - BlueSpiceUEModulePDF
- - BlueSpiceUniversalExport
+  - BlueSpiceBookshelf
+  - BlueSpiceFoundation
+  - BlueSpiceUEModulePDF
+  - BlueSpiceUniversalExport
 
 BlueSpiceUEModuleDOCX:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
+  - BlueSpiceFoundation
+  - BlueSpiceUniversalExport
 
 BlueSpiceUEModuleHTML:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
+  - BlueSpiceFoundation
+  - BlueSpiceUniversalExport
 
 BlueSpiceUEModulePDF:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
+  - BlueSpiceFoundation
+  - BlueSpiceUniversalExport
 
 BlueSpiceUEModulePDFRecursive:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
+  - BlueSpiceFoundation
+  - BlueSpiceUniversalExport
 
 BlueSpiceUEModulePDFSubpages:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
+  - BlueSpiceFoundation
+  - BlueSpiceUniversalExport
 
 BlueSpiceUEModuleTable2Excel:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceUniversalExport
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceUniversalExport:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceUsageTracker:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceUserInfo:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceUserManager:
- - BlueSpiceFoundation
- - OOJSPlus
+  - BlueSpiceFoundation
+  - OOJSPlus
 
 BlueSpiceUserSidebar:
- - BlueSpiceFoundation
- - MenuEditor
+  - BlueSpiceFoundation
+  - MenuEditor
 
 BlueSpiceVisualDiff:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 BlueSpiceVisualEditorConnector:
- - BlueSpiceFoundation
- - OOJSPlus
- - VisualEditor
- - VisualEditorPlus
+  - BlueSpiceFoundation
+  - OOJSPlus
+  - VisualEditor
+  - VisualEditorPlus
 
 BlueSpiceWatchList:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceWhoIsOnline:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  - BlueSpiceFoundation
+  - BlueSpiceVisualEditorConnector
 
 BlueSpiceWikiExplorer:
- - BlueSpiceFoundation
- - OOJSPlus
+  - BlueSpiceFoundation
+  - OOJSPlus
 
 BlueSpiceWikiFarm:
- - BlueSpiceExtendedSearch
- - BlueSpiceFoundation
- - EnhancedUpload
- - OOJSPlus
- - skins/BlueSpiceDiscovery
+  - BlueSpiceExtendedSearch
+  - BlueSpiceFoundation
+  - EnhancedUpload
+  - OOJSPlus
+  - skins/BlueSpiceDiscovery
 
 BounceHandler:
- - CentralAuth
- - Echo
+  - CentralAuth
+  - Echo
 
 CampaignEvents:
- - CentralAuth
- - cldr
- - Translate
- - UserMerge
- - WikimediaCampaignEvents
+  - CentralAuth
+  - cldr
+  - Translate
+  - UserMerge
+  - WikimediaCampaignEvents
 
 Campaigns:
- - EventLogging
+  - EventLogging
 
 Capiunto:
- - Scribunto
+  - Scribunto
 
 CategoryWatch:
- - Echo
+  - Echo
 
 CentralAuth:
- - AbuseFilter
- - AntiSpoof
- - CheckUser
- - GlobalBlocking
- - GlobalPreferences
- - MobileFrontend
- - SecurePoll
+  - AbuseFilter
+  - AntiSpoof
+  - CheckUser
+  - GlobalBlocking
+  - GlobalPreferences
+  - MobileFrontend
+  - SecurePoll
 
 CentralNotice:
- - EventLogging
+  - EventLogging
 
 Challenge:
- - SocialProfile
+  - SocialProfile
 
 Chart:
- - JsonConfig
- - VisualEditor
+  - JsonConfig
+  - VisualEditor
 
 CheckUser:
- - AbuseFilter
- - CentralAuth
- - FlaggedRevs
- - GlobalBlocking
- - GlobalPreferences
- - GrowthExperiments
- - IPInfo
- - MobileFrontend
- - Renameuser
- - TorBlock
+  - AbuseFilter
+  - CentralAuth
+  - FlaggedRevs
+  - GlobalBlocking
+  - GlobalPreferences
+  - GrowthExperiments
+  - IPInfo
+  - MobileFrontend
+  - Renameuser
+  - TorBlock
 
 Checklists:
- - VisualEditor
+  - VisualEditor
 
 CirrusSearch:
- - BetaFeatures
- - Cite
- - Elastica
- - EventBus
- - EventStreamConfig
- - GeoData
- - PdfHandler
- - SiteMatrix
- - TimedMediaHandler
+  - BetaFeatures
+  - Cite
+  - Elastica
+  - EventBus
+  - EventStreamConfig
+  - GeoData
+  - PdfHandler
+  - SiteMatrix
+  - TimedMediaHandler
 
 Cite:
- - cldr
- - CommunityConfiguration
- - Gadgets
- - ParserFunctions
- - Popups
- - VisualEditor
- - WikiEditor
+  - cldr
+  - CommunityConfiguration
+  - Gadgets
+  - ParserFunctions
+  - Popups
+  - VisualEditor
+  - WikiEditor
 
 Citoid:
- - Cite
- - VisualEditor
+  - Cite
+  - VisualEditor
 
 CodeEditor:
- - WikiEditor
+  - WikiEditor
 
 CodeMirror:
- - BetaFeatures
- - VisualEditor
- - WikiEditor
+  - BetaFeatures
+  - VisualEditor
+  - WikiEditor
 
 CognitiveProcessDesigner:
- - OOJSPlus
- - BlueSpiceVisualEditorConnector
- - PageForms
- - VisualEditor
+  - OOJSPlus
+  - BlueSpiceVisualEditorConnector
+  - PageForms
+  - VisualEditor
 
 CollabPads:
- - OOJSPlus
- - VisualEditor
+  - OOJSPlus
+  - VisualEditor
 
 CommunityConfiguration:
- - CommunityConfigurationExample
+  - CommunityConfigurationExample
 
 CommunityConfigurationExample:
- - CommunityConfiguration
+  - CommunityConfiguration
 
 CommunityRequests:
- - DiscussionTools
- - Translate
- - VisualEditor
- - WikimediaMessages
+  - DiscussionTools
+  - Translate
+  - VisualEditor
+  - WikimediaMessages
 
 ConfigManager:
- - BlueSpiceFoundation
+  - BlueSpiceFoundation
 
 ConfirmEdit:
- - AbuseFilter
- - MobileFrontend
- - VisualEditor
+  - AbuseFilter
+  - MobileFrontend
+  - VisualEditor
 
 ContactManager:
- - PageProperties
+  - PageProperties
 
 ContainerFilter:
- - VisualEditor
+  - VisualEditor
 
 ContentDroplets:
- - OOJSPlus
- - VisualEditor
+  - OOJSPlus
+  - VisualEditor
 
 ContentProvisioning:
- - OOJSPlus
+  - OOJSPlus
 
 ContentStabilization:
- - BlueSpiceBookshelf
- - BlueSpiceFoundation
- - BlueSpicePageAssignments
- - BlueSpiceSMWConnector
- - OOJSPlus
- - PDFCreator
- - Workflows
+  - BlueSpiceBookshelf
+  - BlueSpiceFoundation
+  - BlueSpicePageAssignments
+  - BlueSpiceSMWConnector
+  - OOJSPlus
+  - PDFCreator
+  - Workflows
 
 ContentTranslation:
- - AbuseFilter
- - Echo
- - EventLogging
- - UniversalLanguageSelector
- - VisualEditor
- - WikimediaMessages
+  - AbuseFilter
+  - Echo
+  - EventLogging
+  - UniversalLanguageSelector
+  - VisualEditor
+  - WikimediaMessages
 
 CookieWarning:
- - MobileFrontend
+  - MobileFrontend
 
 CreateAPage:
- - WikiEditor
+  - WikiEditor
 
 Dashiki:
- - JsonConfig
+  - JsonConfig
 
 DateTimeTools:
- - VisualEditor
+  - VisualEditor
 
 Disambiguator:
- - VisualEditor
+  - VisualEditor
 
 DiscordRCFeed:
- - Flow
+  - Flow
 
 DiscussionTools:
- - Echo
- - Linter
- - Thanks
- - VisualEditor
+  - Echo
+  - Linter
+  - Thanks
+  - VisualEditor
 
 DrawioEditor:
- - Forms
- - VisualEditor
+  - Forms
+  - VisualEditor
 
 Echo:
- - CentralAuth
- - EventLogging
- - MobileFrontend
+  - CentralAuth
+  - EventLogging
+  - MobileFrontend
 
 EditNotify:
- - Echo
+  - Echo
 
 ElectronPdfService:
- - Collection
- - FlaggedRevs
+  - Collection
+  - FlaggedRevs
 
 EmailAuthorization:
- - PluggableAuth
+  - PluggableAuth
 
 EncryptedUploads:
- - UploadWizard
+  - UploadWizard
 
 EnhancedStandardUIs:
- - OOJSPlus
+  - OOJSPlus
 
 EnhancedUpload:
- - OOJSPlus
- - VisualEditor
+  - OOJSPlus
+  - VisualEditor
 
 EntitySchema:
- - Wikibase
+  - Wikibase
 
 EventBus:
- - EventStreamConfig
+  - EventStreamConfig
 
 EventLogging:
- - EventBus
- - EventStreamConfig
+  - EventBus
+  - EventStreamConfig
 
 ExternalGuidance:
- - MobileFrontend
- - UniversalLanguageSelector
+  - MobileFrontend
+  - UniversalLanguageSelector
 
 FacetedCategory:
- - CategoryTree
+  - CategoryTree
 
 FanBoxes:
- - SocialProfile
+  - SocialProfile
 
 FileAnnotations:
- - EventLogging
+  - EventLogging
 
 FileImporter:
- - CentralAuth
- - WikiEditor
+  - CentralAuth
+  - WikiEditor
 
 FlaggedRevs:
- - Scribunto
+  - Scribunto
 
 FlexiSkin:
- - BlueSpiceFoundation
- - CodeEditor
- - OOJSPlus
+  - BlueSpiceFoundation
+  - CodeEditor
+  - OOJSPlus
 
 Flow:
- - AbuseFilter
- - BetaFeatures
- - Echo
- - VisualEditor
+  - AbuseFilter
+  - BetaFeatures
+  - Echo
+  - VisualEditor
 
 Forms:
- - OOJSPlus
+  - OOJSPlus
 
 FundraiserLandingPage:
- - EventLogging
+  - EventLogging
 
 FundraisingTranslateWorkflow:
- - Translate
+  - Translate
 
 GeoData:
- - CirrusSearch
+  - CirrusSearch
 
 GlobalBlocking:
- - CentralAuth
+  - CentralAuth
 
 GrowthExperiments:
- - CirrusSearch
- - CommunityConfiguration
- - Echo
- - EventLogging
- - EventBus
- - EventStreamConfig
- - Flow
- - GuidedTour
- - MetricsPlatform
- - MobileFrontend
- - PageImages
- - PageViewInfo
- - VisualEditor
- - skins/MinervaNeue
- - Thanks
- - WikimediaMessages
+  - CirrusSearch
+  - CommunityConfiguration
+  - Echo
+  - EventLogging
+  - EventBus
+  - EventStreamConfig
+  - Flow
+  - GuidedTour
+  - MetricsPlatform
+  - MobileFrontend
+  - PageImages
+  - PageViewInfo
+  - VisualEditor
+  - skins/MinervaNeue
+  - Thanks
+  - WikimediaMessages
 
 GuidedTour:
- - EventLogging
+  - EventLogging
 
 HierarchyBuilder:
- - PageForms
+  - PageForms
 
 IPInfo:
- - BetaFeatures
- - CheckUser
- - GlobalPreferences
- - MobileFrontend
+  - BetaFeatures
+  - CheckUser
+  - GlobalPreferences
+  - MobileFrontend
 
 IPReputation:
- - AbuseFilter
- - ConfirmEdit
+  - AbuseFilter
+  - ConfirmEdit
 
 ImageRating:
- - VoteNY
+  - VoteNY
 
 ImageSuggestions:
- - CirrusSearch
- - Echo
- - Elastica
+  - CirrusSearch
+  - Echo
+  - Elastica
 
 InputBox:
- - MediaSearch
+  - MediaSearch
 
 JWTAuth:
- - PluggableAuth
+  - PluggableAuth
 
 JsonConfig:
- - Kartographer
- - VisualEditor
- - Scribunto
- - WikimediaMessages
+  - Kartographer
+  - VisualEditor
+  - Scribunto
+  - WikimediaMessages
 
 Kartographer:
- - FlaggedRevs
- - JsonConfig
- - ParserFunctions
- - VisualEditor
- - WikimediaMessages
+  - FlaggedRevs
+  - JsonConfig
+  - ParserFunctions
+  - VisualEditor
+  - WikimediaMessages
 
 LDAPAuthentication2:
- - LDAPProvider
- - PluggableAuth
+  - LDAPProvider
+  - PluggableAuth
 
 LDAPAuthorization:
- - LDAPProvider
- - PluggableAuth
+  - LDAPProvider
+  - PluggableAuth
 
 LDAPGroups:
- - LDAPProvider
+  - LDAPProvider
 
 LDAPSyncAll:
- - LDAPGroups
- - LDAPProvider
- - LDAPUserInfo
+  - LDAPGroups
+  - LDAPProvider
+  - LDAPUserInfo
 
 LDAPUserInfo:
- - LDAPProvider
+  - LDAPProvider
 
 LanguageTool:
- - VisualEditor
+  - VisualEditor
 
 Linter:
- - VisualEditor
+  - VisualEditor
 
 LoginNotify:
- - CentralAuth
- - CheckUser
- - Echo
+  - CentralAuth
+  - CheckUser
+  - Echo
 
 MagicLinkAuthentication:
- - PluggableAuth
+  - PluggableAuth
 
 MassMessage:
- - CentralAuth
- - Flow
- - LiquidThreads
+  - CentralAuth
+  - Flow
+  - LiquidThreads
 
 MassMessageEmail:
- - MassMessage
+  - MassMessage
 
 Math:
- - VisualEditor
- - Wikibase
+  - VisualEditor
+  - Wikibase
 
 MathSearch:
- - Math
- - VisualEditor
+  - Math
+  - VisualEditor
 
 MediaSearch:
- - CirrusSearch
- - WikibaseCirrusSearch
+  - CirrusSearch
+  - WikibaseCirrusSearch
 
 MediaUploader:
- - AbuseFilter
- - SpamBlacklist
+  - AbuseFilter
+  - SpamBlacklist
 
 MenuEditor:
- - OOJSPlus
- - skins/BlueSpiceDiscovery
+  - OOJSPlus
+  - skins/BlueSpiceDiscovery
 
 MetricsPlatform:
- - EventLogging
- - EventStreamConfig
- - GrowthExperiments
+  - EventLogging
+  - EventStreamConfig
+  - GrowthExperiments
 
 MobileApp:
- - AbuseFilter
- - Echo
- - MobileFrontend
- - VisualEditor
+  - AbuseFilter
+  - Echo
+  - MobileFrontend
+  - VisualEditor
 
 MobileFrontend:
- - Echo
- - MobileApp
- - skins/MinervaNeue
- - VisualEditor
+  - Echo
+  - MobileApp
+  - skins/MinervaNeue
+  - VisualEditor
 
 MobileFrontendContentProvider:
- - MobileFrontend
+  - MobileFrontend
 
 Monstranto:
- - Scribunto
+  - Scribunto
 
 MultimediaViewer:
- - BetaFeatures
+  - BetaFeatures
 
 NSFileRepo:
- - EnhancedUpload
- - Lockdown
- - VisualEditor
+  - EnhancedUpload
+  - Lockdown
+  - VisualEditor
 
 NamespacePopups:
- - PagePopups
+  - PagePopups
 
 NavigationTiming:
- - EventLogging
+  - EventLogging
 
 NaylorAMS:
- - PluggableAuth
+  - PluggableAuth
 
 Newsletter:
- - Echo
+  - Echo
 
 NotifyMe:
- - OOJSPlus
- - VisualEditor
+  - OOJSPlus
+  - VisualEditor
 
 Nuke:
- - CheckUser
- - EventLogging
+  - CheckUser
+  - EventLogging
 
 OATHAuth:
- - CheckUser
- - Echo
- - WebAuthn
+  - CheckUser
+  - Echo
+  - WebAuthn
 
 OAuth:
- - AbuseFilter
- - Echo
+  - AbuseFilter
+  - Echo
 
 OAuthRateLimiter:
- - OAuth
+  - OAuth
 
 ORES:
- - AbuseFilter
+  - AbuseFilter
 
 OpenIDConnect:
- - PluggableAuth
+  - PluggableAuth
 
 parsoid:
- - ParserFunctions
- - TimedMediaHandler
+  - ParserFunctions
+  - TimedMediaHandler
 
 PDFCreator:
- - OOJSPlus
- - skins/BlueSpiceDiscovery
- - VueJsPlus
- - VisualEditor
+  - OOJSPlus
+  - skins/BlueSpiceDiscovery
+  - VueJsPlus
+  - VisualEditor
 
 PageCheckout:
- - Workflows
+  - Workflows
 
 PageTriage:
- - Echo
- - ORES
- - PageViewInfo
- - WikiLove
+  - Echo
+  - ORES
+  - PageViewInfo
+  - WikiLove
 
 PageViewInfoGA:
- - PageViewInfo
+  - PageViewInfo
 
 ParserFunctions:
- - Scribunto
+  - Scribunto
 
 PersonalDashboard:
- - CommunityConfiguration
- - skins/MinervaNeue
+  - CommunityConfiguration
+  - skins/MinervaNeue
 
 Phonos:
- - TimedMediaHandler
+  - TimedMediaHandler
 
 PictureGame:
- - SocialProfile
+  - SocialProfile
 
 PollNY:
- - SocialProfile
+  - SocialProfile
 
 Popups:
- - Cite
- - EventLogging
- - PageImages
- - TextExtracts
+  - Cite
+  - EventLogging
+  - PageImages
+  - TextExtracts
 
 PronunciationRecording:
- - UploadWizard
+  - UploadWizard
 
 ProofreadPage:
- - BetaFeatures
- - LabeledSectionTransclusion
- - Scribunto
- - VisualEditor
+  - BetaFeatures
+  - LabeledSectionTransclusion
+  - Scribunto
+  - VisualEditor
 
 PropertySuggester:
- - EventLogging
- - Wikibase
+  - EventLogging
+  - Wikibase
 
 QuickSurveys:
- - EventLogging
+  - EventLogging
 
 QuizGame:
- - Renameuser
- - SocialProfile
+  - Renameuser
+  - SocialProfile
 
 RandomGameUnit:
- - SocialProfile
- - PictureGame
- - PollNY
- - QuizGame
+  - SocialProfile
+  - PictureGame
+  - PollNY
+  - QuizGame
 
 ReaderExperiments:
- - WikimediaMessages
+  - WikimediaMessages
 
 ReadingLists:
- - BetaFeatures
- - MetricsPlatform
+  - BetaFeatures
+  - MetricsPlatform
 
 RegexFun:
- - ParserFunctions
- - Arrays
+  - ParserFunctions
+  - Arrays
 
 RelatedArticles:
- - BetaFeatures
- - MobileFrontend
+  - BetaFeatures
+  - MobileFrontend
 
 ReplaceText:
- - AdminLinks
+  - AdminLinks
 
 ReportIncident:
- - CommunityConfiguration
- - DiscussionTools
- - EventLogging
+  - CommunityConfiguration
+  - DiscussionTools
+  - EventLogging
 
 RevisionSlider:
- - MobileFrontend
+  - MobileFrontend
 
 Sanctions:
- - Echo
- - Flow
- - VisualEditor
+  - Echo
+  - Flow
+  - VisualEditor
 
 Score:
- - TimedMediaHandler
- - VisualEditor
- - Wikibase
+  - TimedMediaHandler
+  - VisualEditor
+  - Wikibase
 
 SearchVue:
- - WikimediaMessages
+  - WikimediaMessages
 
 Shibboleth:
- - PluggableAuth
+  - PluggableAuth
 
 SimilarEditors:
- - QuickSurveys
+  - QuickSurveys
 
 SimpleBlogPage:
- - OOJSPlus
+  - OOJSPlus
 
 SimpleSAMLphp:
- - PluggableAuth
+  - PluggableAuth
 
 SimpleTasks:
- - AtMentions
- - Checklists
- - DateTimeTools
- - VisualEditor
+  - AtMentions
+  - Checklists
+  - DateTimeTools
+  - VisualEditor
 
 SiteMetrics:
- - SocialProfile
+  - SocialProfile
 
 SocialProfile:
- - WikiEditor
+  - WikiEditor
 
 Sofa:
- - Scribunto
+  - Scribunto
 
 SoftRedirector:
- - VisualEditor
+  - VisualEditor
 
 SpamBlacklist:
- - AbuseFilter
- - CheckUser
- - EventLogging
+  - AbuseFilter
+  - CheckUser
+  - EventLogging
 
 SpamDiffTool:
- - SpamBlacklist
+  - SpamBlacklist
 
 SpecialPageCaptcha:
- - ConfirmEdit
+  - ConfirmEdit
 
 SpellingDictionary:
- - UniversalLanguageSelector
+  - UniversalLanguageSelector
 
 SportsTeams:
- - BlogPage
- - SocialProfile
- - UserStatus
+  - BlogPage
+  - SocialProfile
+  - UserStatus
 
 StandardDialogs:
- - OOJSPlus
+  - OOJSPlus
 
 StopForumSpam:
- - AbuseFilter
+  - AbuseFilter
 
 StructuredNavigation:
- - CodeEditor
+  - CodeEditor
 
 SyntaxHighlight_GeSHi:
- - VisualEditor
+  - VisualEditor
 
 TEI:
- - CodeMirror
- - Math
- - VisualEditor
+  - CodeMirror
+  - Math
+  - VisualEditor
 
 TableTools:
- - VisualEditor
- - VueJsPlus
+  - VisualEditor
+  - VueJsPlus
 
 TemplateWizard:
- - TemplateData
- - WikiEditor
+  - TemplateData
+  - WikiEditor
 
 Thanks:
- - AbuseFilter
- - Echo
- - Flow
- - MobileFrontend
+  - AbuseFilter
+  - Echo
+  - Flow
+  - MobileFrontend
 
 TheWikipediaLibrary:
- - Echo
- - CentralAuth
- - GlobalPreferences
+  - Echo
+  - CentralAuth
+  - GlobalPreferences
 
 TitleBlacklist:
- - AntiSpoof
- - Scribunto
+  - AntiSpoof
+  - Scribunto
 
 Toolhub:
- - Scribunto
+  - Scribunto
 
 TopTenPages:
- - HitCounters
+  - HitCounters
 
 TorBlock:
- - AbuseFilter
+  - AbuseFilter
 
 Translate:
- - UniversalLanguageSelector
- - cldr
- - EventLogging
- - Scribunto
- - VisualEditor
+  - UniversalLanguageSelector
+  - cldr
+  - EventLogging
+  - Scribunto
+  - VisualEditor
 
 TranslationNotifications:
- - MassMessage
- - Translate
+  - MassMessage
+  - Translate
 
 TuleapIntegration:
- - TuleapWikiFarm
+  - TuleapWikiFarm
 
 TuleapWikiFarm:
- - TuleapIntegration
+  - TuleapIntegration
 
 TwitterCards:
- - TextExtracts
+  - TextExtracts
 
 TwnMainPage:
- - Translate
+  - Translate
 
 TwoColConflict:
- - BetaFeatures
- - EventLogging
- - WikiEditor
+  - BetaFeatures
+  - EventLogging
+  - WikiEditor
 
 UnifiedTaskOverview:
- - OOJSPlus
+  - OOJSPlus
 
 UniversalLanguageSelector:
- - EventLogging
+  - EventLogging
 
 UnlinkedWikibase:
- - Scribunto
+  - Scribunto
 
 UploadWizard:
- - AbuseFilter
- - EventLogging
- - SpamBlacklist
- - WikimediaMessages
+  - AbuseFilter
+  - EventLogging
+  - SpamBlacklist
+  - WikimediaMessages
 
 UserProfile:
- - skins/BlueSpiceDiscovery
+  - skins/BlueSpiceDiscovery
 
 UserStatus:
- - BlogPage
- - SocialProfile
- - SportsTeams
+  - BlogPage
+  - SocialProfile
+  - SportsTeams
 
 VECancelButton:
- - VisualEditor
+  - VisualEditor
 
 VEForAll:
- - VisualEditor
+  - VisualEditor
 
 VikiSemanticTitle:
- - VIKI
+  - VIKI
 
 VikiTitleIcon:
- - VIKI
+  - VIKI
 
 VisualEditor:
- - Cite
- - ConfirmEdit
- - DiscussionTools
- - FlaggedRevs
- - TemplateData
+  - Cite
+  - ConfirmEdit
+  - DiscussionTools
+  - FlaggedRevs
+  - TemplateData
 
 VisualEditorPlus:
- - VisualEditor
+  - VisualEditor
 
 WSOAuth:
- - PluggableAuth
+  - PluggableAuth
 
 WebAuthn:
- - OATHAuth
+  - OATHAuth
 
 WhoIsWatching:
- - Echo
+  - Echo
 
 WikiEditor:
- - EventLogging
- - EventBus
- - EventStreamConfig
- - WikimediaEvents
+  - EventLogging
+  - EventBus
+  - EventStreamConfig
+  - WikimediaEvents
 
 WikiLambda:
- - UniversalLanguageSelector
- - WikimediaMessages
+  - UniversalLanguageSelector
+  - WikimediaMessages
 
 WikiSEO:
- - PageImages
- - Scribunto
+  - PageImages
+  - Scribunto
 
 WikiToLDAP:
- - LDAPAuthentication2
- - Renameuser
- - UserMerge
+  - LDAPAuthentication2
+  - Renameuser
+  - UserMerge
 
 Wikibase:
- - ArticlePlaceholder
- - cldr
- - CirrusSearch
- - Echo
- - Elastica
- - GeoData
- - MobileFrontend
- - PropertySuggester
- - skins/MinervaNeue
- - SpamBlacklist
- - WikibaseCirrusSearch
- - WikibaseLexeme
- - WikibaseMediaInfo
- - WikibaseQualityConstraints
- - WikimediaBadges
+  - ArticlePlaceholder
+  - cldr
+  - CirrusSearch
+  - Echo
+  - Elastica
+  - GeoData
+  - MobileFrontend
+  - PropertySuggester
+  - skins/MinervaNeue
+  - SpamBlacklist
+  - WikibaseCirrusSearch
+  - WikibaseLexeme
+  - WikibaseMediaInfo
+  - WikibaseQualityConstraints
+  - WikimediaBadges
 
 WikibaseCirrusSearch:
- - CirrusSearch
- - cldr
- - Wikibase
+  - CirrusSearch
+  - cldr
+  - Wikibase
 
 WikibaseLexeme:
- - cldr
- - Wikibase
- - WikibaseLexemeCirrusSearch
- - CirrusSearch
+  - cldr
+  - Wikibase
+  - WikibaseLexemeCirrusSearch
+  - CirrusSearch
 
 WikibaseLexemeCirrusSearch:
- - Wikibase
- - WikibaseLexeme
- - CirrusSearch
- - cldr
- - WikibaseCirrusSearch
+  - Wikibase
+  - WikibaseLexeme
+  - CirrusSearch
+  - cldr
+  - WikibaseCirrusSearch
 
 WikibaseManifest:
- - Wikibase
- - OAuth
+  - Wikibase
+  - OAuth
 
 WikibaseMediaInfo:
- - Wikibase
- - CirrusSearch
- - cldr
- - Elastica
- - UniversalLanguageSelector
- - WikibaseCirrusSearch
+  - Wikibase
+  - CirrusSearch
+  - cldr
+  - Elastica
+  - UniversalLanguageSelector
+  - WikibaseCirrusSearch
 
 WikibaseQualityConstraints:
- - Wikibase
- - WikibaseLexeme
+  - Wikibase
+  - WikibaseLexeme
 
 Wikidata.org:
- - Wikibase
+  - Wikibase
 
 WikidataPageBanner:
- - Wikibase
+  - Wikibase
 
 wikihiero:
- - VisualEditor
+  - VisualEditor
 
 WikimediaBadges:
- - Wikibase
+  - Wikibase
 
 WikimediaCampaignEvents:
- - CampaignEvents
- - cldr
+  - CampaignEvents
+  - cldr
 
 WikimediaEvents:
- - CentralAuth
- - CheckUser
- - ConfirmEdit
- - cldr
- - EmailAuth
- - EventLogging
- - EventBus
- - EventStreamConfig
- - FlaggedRevs
- - GlobalBlocking
- - GlobalPreferences
- - IPReputation
- - LoginNotify
- - OATHAuth
+  - CentralAuth
+  - CheckUser
+  - ConfirmEdit
+  - cldr
+  - EmailAuth
+  - EventLogging
+  - EventBus
+  - EventStreamConfig
+  - FlaggedRevs
+  - GlobalBlocking
+  - GlobalPreferences
+  - IPReputation
+  - LoginNotify
+  - OATHAuth
 
 WikimediaMaintenance:
- - CentralAuth
- - CheckUser
- - Echo
+  - CentralAuth
+  - CheckUser
+  - Echo
 
 WikimediaMessages:
- - cldr
+  - cldr
 
 Wikisource:
- - ProofreadPage
- - Wikibase
+  - ProofreadPage
+  - Wikibase
 
 Wikistories:
- - BetaFeatures
- - Echo
- - EventLogging
- - MobileFrontend
- - skins/MinervaNeue
+  - BetaFeatures
+  - Echo
+  - EventLogging
+  - MobileFrontend
+  - skins/MinervaNeue
 
 Workflows:
- - Forms
- - OOJSPlus
+  - Forms
+  - OOJSPlus

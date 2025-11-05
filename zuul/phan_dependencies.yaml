@@ -10,840 +10,840 @@
 
 # Skins:
 skins/Cosmos:
- - AdminLinks
- - CookieWarning
- - SocialProfile
+  - AdminLinks
+  - CookieWarning
+  - SocialProfile
 
 skins/Metrolook:
- - SocialProfile
+  - SocialProfile
 
 skins/MinervaNeue:
- - Echo
- - MobileFrontend
+  - Echo
+  - MobileFrontend
 
 skins/Nimbus:
- - Echo
- - RandomGameUnit
- - SocialProfile
- - Video
+  - Echo
+  - RandomGameUnit
+  - SocialProfile
+  - Video
 
 skins/Refreshed:
- - SocialProfile
+  - SocialProfile
 
 skins/TuleapSkin:
- - TuleapIntegration
+  - TuleapIntegration
 
 skins/Vector:
- - CentralAuth
- - MobileFrontend
+  - CentralAuth
+  - MobileFrontend
 
 
 # Extensions:
 AbuseFilter:
- - CheckUser
- - CommunityConfiguration
- - CentralAuth
- - Echo
- - Renameuser
- - AntiSpoof
- - Scribunto
- - EventLogging
- - UserMerge
- - ConfirmEdit
+  - CheckUser
+  - CommunityConfiguration
+  - CentralAuth
+  - Echo
+  - Renameuser
+  - AntiSpoof
+  - Scribunto
+  - EventLogging
+  - UserMerge
+  - ConfirmEdit
 
 AchievementBadges:
- - BetaFeatures
- - CentralAuth
- - Echo
- - EventLogging
- - EventStreamConfig
+  - BetaFeatures
+  - CentralAuth
+  - Echo
+  - EventLogging
+  - EventStreamConfig
 
 AntiSpoof:
- - UserMerge
+  - UserMerge
 
 ApiFeatureUsage:
- - Elastica
+  - Elastica
 
 ArrayFunctions:
- - Scribunto
+  - Scribunto
 
 ArticleFeedbackv5:
- - AbuseFilter
- - Echo
- - SpamBlacklist
- - SpamRegex
+  - AbuseFilter
+  - Echo
+  - SpamBlacklist
+  - SpamRegex
 
 ArticlePlaceholder:
- - Scribunto
- - Wikibase
+  - Scribunto
+  - Wikibase
 
 AutoModerator:
- - CommunityConfiguration
- - ORES
+  - CommunityConfiguration
+  - ORES
 
 Babel:
- - CommunityConfiguration
+  - CommunityConfiguration
 
 BlogPage:
- - Comments
- - RandomGameUnit
- - SocialProfile
- - Video
- - VoteNY
+  - Comments
+  - RandomGameUnit
+  - SocialProfile
+  - Video
+  - VoteNY
 
 BlueSpiceAvatars:
- - BlueSpiceFoundation
- - BlueSpicePrivacy
+  - BlueSpiceFoundation
+  - BlueSpicePrivacy
 
 BounceHandler:
- - CentralAuth
- - Echo
+  - CentralAuth
+  - Echo
 
 CampaignEvents:
- - CentralAuth
- - cldr
- - CommunityConfiguration
- - Echo
- - Translate
- - UserMerge
- - WikimediaMessages
+  - CentralAuth
+  - cldr
+  - CommunityConfiguration
+  - Echo
+  - Translate
+  - UserMerge
+  - WikimediaMessages
 
 Campaigns:
- - EventLogging
- - MobileFrontend
+  - EventLogging
+  - MobileFrontend
 
 Capiunto:
- - Scribunto
+  - Scribunto
 
 CentralAuth:
- - AbuseFilter
- - AntiSpoof
- - CheckUser
- - ConfirmEdit
- - Echo
- - EventLogging
- - GlobalBlocking
- - GlobalPreferences
- - MassMessage
- - MobileFrontend
- - Renameuser
- - SecurePoll
- - TitleBlacklist
+  - AbuseFilter
+  - AntiSpoof
+  - CheckUser
+  - ConfirmEdit
+  - Echo
+  - EventLogging
+  - GlobalBlocking
+  - GlobalPreferences
+  - MassMessage
+  - MobileFrontend
+  - Renameuser
+  - SecurePoll
+  - TitleBlacklist
 
 CentralNotice:
- - CentralAuth
- - MobileFrontend
- - Translate
- - cldr
- - UserMerge
+  - CentralAuth
+  - MobileFrontend
+  - Translate
+  - cldr
+  - UserMerge
 
 Challenge:
- - Echo
- - SocialProfile
+  - Echo
+  - SocialProfile
 
 Chart:
- - JsonConfig
+  - JsonConfig
 
 CheckUser:
- - AbuseFilter
- - CentralAuth
- - EventLogging
+  - AbuseFilter
+  - CentralAuth
+  - EventLogging
  # HACK: This is no longer needed in master, but in REL1_44 and before
- - GuidedTour
- - Renameuser
- - FlaggedRevs
- - GlobalBlocking
- - GlobalPreferences
- - GrowthExperiments
- - IPInfo
- - TorBlock
- - UserMerge
+  - GuidedTour
+  - Renameuser
+  - FlaggedRevs
+  - GlobalBlocking
+  - GlobalPreferences
+  - GrowthExperiments
+  - IPInfo
+  - TorBlock
+  - UserMerge
 
 CirrusSearch:
- - BetaFeatures
- - Elastica
- - SiteMatrix
- - GeoData
- - EventBus
+  - BetaFeatures
+  - Elastica
+  - SiteMatrix
+  - GeoData
+  - EventBus
 
 Cite:
- - cldr
- - CommunityConfiguration
- - Gadgets
+  - cldr
+  - CommunityConfiguration
+  - Gadgets
 
 Citoid:
- - Cite
- - MobileFrontend
- - VisualEditor
+  - Cite
+  - MobileFrontend
+  - VisualEditor
 
 CleanChanges:
- - cldr
+  - cldr
 
 CloneDiff:
- - AdminLinks
+  - AdminLinks
 
 CodeMirror:
- - BetaFeatures
- - Gadgets
+  - BetaFeatures
+  - Gadgets
 
 CollapsibleVector:
- - skins/Vector
+  - skins/Vector
 
 CodeEditor:
- - BetaFeatures
+  - BetaFeatures
 
 CommunityConfigurationExample:
- - CommunityConfiguration
+  - CommunityConfiguration
 
 CommunityRequests:
- - Translate
+  - Translate
 
 CognitiveProcessDesigner:
- - PageForms
- - BlueSpiceFoundation
- - BlueSpiceUEModulePDF
+  - PageForms
+  - BlueSpiceFoundation
+  - BlueSpiceUEModulePDF
 
 CommentStreams:
- - Echo
- - SocialProfile
+  - Echo
+  - SocialProfile
 
 ConfirmEdit:
- - AbuseFilter
- - Math
- - MobileFrontend
- - VisualEditor
+  - AbuseFilter
+  - Math
+  - MobileFrontend
+  - VisualEditor
 
 ContactPage:
- - ConfirmEdit
+  - ConfirmEdit
 
 ContentTranslation:
- - AbuseFilter
- - BetaFeatures
- - CentralAuth
- - Echo
- - EventLogging
- - GlobalPreferences
- - WikimediaMessages
+  - AbuseFilter
+  - BetaFeatures
+  - CentralAuth
+  - Echo
+  - EventLogging
+  - GlobalPreferences
+  - WikimediaMessages
 
 CreateAPage:
- - ConfirmEdit
+  - ConfirmEdit
 
 DataTable2:
- - Scribunto
+  - Scribunto
 
 Dashiki:
- - JsonConfig
+  - JsonConfig
 
 Disambiguator:
- - Scribunto
- - VisualEditor
+  - Scribunto
+  - VisualEditor
 
 DiscordRCFeed:
- - Flow
+  - Flow
 
 Discourse:
- - Scribunto
+  - Scribunto
 
 DiscussionTools:
- - VisualEditor
- - Linter
- - Echo
- - EventLogging
- - Gadgets
- - BetaFeatures
- - Thanks
+  - VisualEditor
+  - Linter
+  - Echo
+  - EventLogging
+  - Gadgets
+  - BetaFeatures
+  - Thanks
 
 DisplayTitle:
- - Scribunto
+  - Scribunto
 
 DonationInterface:
- - cldr
- - CodeEditor
- - FundraisingEmailUnsubscribe
- - ParserFunctions
- - SyntaxHighlight_GeSHi
- - WikiEditor
+  - cldr
+  - CodeEditor
+  - FundraisingEmailUnsubscribe
+  - ParserFunctions
+  - SyntaxHighlight_GeSHi
+  - WikiEditor
 
 Echo:
- - CentralAuth
- - UserMerge
+  - CentralAuth
+  - UserMerge
 
 ElectronPdfService:
- - FlaggedRevs
+  - FlaggedRevs
 
 EntitySchema:
- - Wikibase
- - Elastica
- - CirrusSearch
- - SyntaxHighlight_GeSHi
- - WikibaseCirrusSearch
+  - Wikibase
+  - Elastica
+  - CirrusSearch
+  - SyntaxHighlight_GeSHi
+  - WikibaseCirrusSearch
 
 EventBus:
- - CentralNotice
- - EventStreamConfig
+  - CentralNotice
+  - EventStreamConfig
 
 EventLogging:
- - SyntaxHighlight_GeSHi
- - CodeEditor
+  - SyntaxHighlight_GeSHi
+  - CodeEditor
 
 ExternalData:
- - Scribunto
+  - Scribunto
 
 FacetedCategory:
- - CategoryTree
+  - CategoryTree
 
 FanBoxes:
- - SocialProfile
- - SpamRegex
+  - SocialProfile
+  - SpamRegex
 
 FileImporter:
- - GlobalBlocking
- - VisualEditor
+  - GlobalBlocking
+  - VisualEditor
 
 FlaggedRevs:
- - Scribunto
- - Echo
- - GoogleNewsSitemap
- - MobileFrontend
- - skins/Vector
+  - Scribunto
+  - Echo
+  - GoogleNewsSitemap
+  - MobileFrontend
+  - skins/Vector
 
 Flow:
- - AbuseFilter
- - BetaFeatures
- - CentralAuth
- - CheckUser
- - CirrusSearch
- - ConfirmEdit
- - Echo
- - Elastica
- - GuidedTour
- - LiquidThreads
- - SpamBlacklist
- - VisualEditor
+  - AbuseFilter
+  - BetaFeatures
+  - CentralAuth
+  - CheckUser
+  - CirrusSearch
+  - ConfirmEdit
+  - Echo
+  - Elastica
+  - GuidedTour
+  - LiquidThreads
+  - SpamBlacklist
+  - VisualEditor
 
 FundraisingTranslateWorkflow:
- - Translate
+  - Translate
 
 Gadgets:
- - CodeEditor
- - CodeMirror
- - Scribunto
+  - CodeEditor
+  - CodeMirror
+  - Scribunto
 
 GeoData:
- - CirrusSearch
- - Elastica
+  - CirrusSearch
+  - Elastica
 
 GlobalBlocking:
- - CentralAuth
- - Renameuser
- - UserMerge
+  - CentralAuth
+  - Renameuser
+  - UserMerge
 
 GlobalPreferences:
- - BetaFeatures
- - skins/Vector
+  - BetaFeatures
+  - skins/Vector
 
 GrowthExperiments:
- - EventLogging
- - PageImages
- - PageViewInfo
- - skins/MinervaNeue
- - Flow
- - MobileFrontend
- - Echo
- - CirrusSearch
- - CentralAuth
- - VisualEditor
- - EventBus
- - Thanks
- - CommunityConfiguration
- - ConfirmEdit
- - WikimediaMessages
- - MetricsPlatform
- - GuidedTour
+  - EventLogging
+  - PageImages
+  - PageViewInfo
+  - skins/MinervaNeue
+  - Flow
+  - MobileFrontend
+  - Echo
+  - CirrusSearch
+  - CentralAuth
+  - VisualEditor
+  - EventBus
+  - Thanks
+  - CommunityConfiguration
+  - ConfirmEdit
+  - WikimediaMessages
+  - MetricsPlatform
+  - GuidedTour
 
 HAWelcome:
- - SocialProfile
+  - SocialProfile
 
 ImageRating:
- - SocialProfile
- - VoteNY
+  - SocialProfile
+  - VoteNY
 
 ImageSuggestions:
- - Echo
- - CirrusSearch
- - Elastica
+  - Echo
+  - CirrusSearch
+  - Elastica
 
 InlineComments:
- - Echo
+  - Echo
 
 IPInfo:
- - EventLogging
- - GlobalPreferences
- - MobileFrontend
+  - EventLogging
+  - GlobalPreferences
+  - MobileFrontend
 
 intersection:
- - PageImages
+  - PageImages
 
 IPReputation:
- - AbuseFilter
- - ConfirmEdit
+  - AbuseFilter
+  - ConfirmEdit
 
 JsonConfig:
- - CodeEditor
- - CodeMirror
- - Kartographer
- - Scribunto
+  - CodeEditor
+  - CodeMirror
+  - Kartographer
+  - Scribunto
 
 JWTAuth:
- - PluggableAuth
+  - PluggableAuth
 
 Kartographer:
- - FlaggedRevs
- - GeoData
- - JsonConfig
+  - FlaggedRevs
+  - GeoData
+  - JsonConfig
 
 LiquidThreads:
- - Renameuser
+  - Renameuser
 
 LinkFilter:
- - Comments
- - ConfirmEdit
- - Echo
- - RandomGameUnit
- - SocialProfile
- - SpamRegex
+  - Comments
+  - ConfirmEdit
+  - Echo
+  - RandomGameUnit
+  - SocialProfile
+  - SpamRegex
 
 LoginNotify:
- - CentralAuth
- - Echo
+  - CentralAuth
+  - Echo
 
 MassMessage:
- - CentralAuth
- - CodeMirror
+  - CentralAuth
+  - CodeMirror
 
 MassMessageEmail:
- - MassMessage
+  - MassMessage
 
 Math:
- - VisualEditor
- - Wikibase
- - Popups
+  - VisualEditor
+  - Wikibase
+  - Popups
 
 MediaSearch:
- - CirrusSearch
- - WikibaseCirrusSearch
+  - CirrusSearch
+  - WikibaseCirrusSearch
 
 MediaWikiChat:
- - CheckUser
- - SocialProfile
+  - CheckUser
+  - SocialProfile
 
 MetricsPlatform:
- - EventStreamConfig
- - EventLogging
- - GrowthExperiments
+  - EventStreamConfig
+  - EventLogging
+  - GrowthExperiments
 
 MiniInvite:
- - BlogPage
+  - BlogPage
 
 MobileApp:
- - AbuseFilter
+  - AbuseFilter
 
 MobileFrontend:
- - AbuseFilter
- - CentralAuth
- - Gadgets
- - LiquidThreads
- - PageImages
- - Wikibase
- - XAnalytics
+  - AbuseFilter
+  - CentralAuth
+  - Gadgets
+  - LiquidThreads
+  - PageImages
+  - Wikibase
+  - XAnalytics
 
 MobileFrontendContentProvider:
- - MobileFrontend
+  - MobileFrontend
 
 Monstranto:
- - Scribunto
+  - Scribunto
 
 MultimediaViewer:
- - MobileFrontend
+  - MobileFrontend
 
 Newsletter:
- - Echo
+  - Echo
 
 NewSignupPage:
- - SocialProfile
+  - SocialProfile
 
 Nuke:
- - CheckUser
- - EventLogging
+  - CheckUser
+  - EventLogging
 
 OATHAuth:
- - CheckUser
- - Echo
- - WebAuthn
+  - CheckUser
+  - Echo
+  - WebAuthn
 
 OAuth:
- - AbuseFilter
- - Echo
+  - AbuseFilter
+  - Echo
 
 OAuthRateLimiter:
- - OAuth
+  - OAuth
 
 ORES:
- - AbuseFilter
+  - AbuseFilter
 
 PageAssessments:
- - CirrusSearch
- - Scribunto
+  - CirrusSearch
+  - Scribunto
 
 PageForms:
- - AdminLinks
- - Cargo
- - PageSchemas
+  - AdminLinks
+  - Cargo
+  - PageSchemas
 
 PageImages:
- - MobileFrontend
- - Scribunto
+  - MobileFrontend
+  - Scribunto
 
 PageTriage:
- - Echo
- - ORES
+  - Echo
+  - ORES
 
 PageViewInfo:
- - Scribunto
+  - Scribunto
 
 PageViewInfoGA:
- - PageViewInfo
+  - PageViewInfo
 
 ParserFunctions:
- - Scribunto
+  - Scribunto
 
 ParserMigration:
- - MobileFrontend
+  - MobileFrontend
 
 PersonalDashboard:
- - skins/MinervaNeue
+  - skins/MinervaNeue
 
 Petition:
- - CheckUser
- - cldr
+  - CheckUser
+  - cldr
 
 Phonos:
- - TimedMediaHandler
+  - TimedMediaHandler
 
 PictureGame:
- - SocialProfile
+  - SocialProfile
 
 PollNY:
- - SocialProfile
+  - SocialProfile
 
 Popups:
- - EventLogging
- - Gadgets
+  - EventLogging
+  - Gadgets
 
 ProofreadPage:
- - Scribunto
- - BetaFeatures
- - CodeMirror
+  - Scribunto
+  - BetaFeatures
+  - CodeMirror
 
 PropertySuggester:
- - Wikibase
- - EventLogging
+  - Wikibase
+  - EventLogging
 
 QuizGame:
- - Renameuser
- - SocialProfile
+  - Renameuser
+  - SocialProfile
 
 # technically speaking PictureGame, PollNY & QuizGame are all dependencies,
 # but PollNY is the only PHP-level hard dependency needed to pass phan
 RandomGameUnit:
- - PollNY
+  - PollNY
 
 ReadingLists:
- - BetaFeatures
- - MetricsPlatform
- - SiteMatrix
+  - BetaFeatures
+  - MetricsPlatform
+  - SiteMatrix
 
 RelatedArticles:
- - Disambiguator
+  - Disambiguator
 
 ReplaceText:
- - AdminLinks
+  - AdminLinks
 
 ReportIncident:
- - CommunityConfiguration
- - DiscussionTools
- - EventLogging
+  - CommunityConfiguration
+  - DiscussionTools
+  - EventLogging
 
 Sanctions:
- - Echo
- - Flow
+  - Echo
+  - Flow
 
 Score:
- - TimedMediaHandler
- - Wikibase
+  - TimedMediaHandler
+  - Wikibase
 
 Scribunto:
- - SyntaxHighlight_GeSHi
- - CodeEditor
- - CodeMirror
+  - SyntaxHighlight_GeSHi
+  - CodeEditor
+  - CodeMirror
 
 SecurePoll:
- - CentralAuth
- - Flow
+  - CentralAuth
+  - Flow
 
 SocialProfile:
- - Echo
- - SpamRegex
+  - Echo
+  - SpamRegex
 
 Sofa:
- - Scribunto
+  - Scribunto
 
 SoftRedirector:
- - VisualEditor
+  - VisualEditor
 
 SpamBlacklist:
- - CheckUser
- - EventLogging
+  - CheckUser
+  - EventLogging
 
 SportsTeams:
- - SocialProfile
- - UserStatus
- - BlogPage
+  - SocialProfile
+  - UserStatus
+  - BlogPage
 
 StructuredNavigation:
- - CodeEditor
+  - CodeEditor
 
 StopForumSpam:
- - AbuseFilter
+  - AbuseFilter
 
 TEI:
- - Math
+  - Math
 
 TemplateData:
- - CommunityConfiguration
- - Wikibase
+  - CommunityConfiguration
+  - Wikibase
 
 TemplateStyles:
- - CodeEditor
- - CodeMirror
+  - CodeEditor
+  - CodeMirror
 
 Thanks:
- - AbuseFilter
- - CheckUser
- - Echo
- - Flow
- - MobileFrontend
+  - AbuseFilter
+  - CheckUser
+  - Echo
+  - Flow
+  - MobileFrontend
 
 TheWikipediaLibrary:
- - Echo
- - CentralAuth
- - GlobalPreferences
+  - Echo
+  - CentralAuth
+  - GlobalPreferences
 
 TimedMediaHandler:
- - BetaFeatures
+  - BetaFeatures
 
 TitleBlacklist:
- - AntiSpoof
- - Scribunto
+  - AntiSpoof
+  - Scribunto
 
 Toolhub:
- - Scribunto
+  - Scribunto
 
 TorBlock:
- - AbuseFilter
+  - AbuseFilter
 
 Translate:
- - AbuseFilter
- - AdminLinks
- - cldr
- - Elastica
- - Echo
- - Scribunto
- - TranslationNotifications
+  - AbuseFilter
+  - AdminLinks
+  - cldr
+  - Elastica
+  - Echo
+  - Scribunto
+  - TranslationNotifications
 
 TranslationNotifications:
- - CentralAuth
- - MassMessage
- - SiteMatrix
- - Translate
+  - CentralAuth
+  - MassMessage
+  - SiteMatrix
+  - Translate
 
 TwoColConflict:
- - BetaFeatures
- - EventLogging
- - WikiEditor
+  - BetaFeatures
+  - EventLogging
+  - WikiEditor
 
 UniversalLanguageSelector:
- - Babel
- - BetaFeatures
- - MobileFrontend
- - cldr
+  - Babel
+  - BetaFeatures
+  - MobileFrontend
+  - cldr
 
 UnlinkedWikibase:
- - Scribunto
+  - Scribunto
 
 UrlShortener:
- - MobileFrontend
+  - MobileFrontend
 
 UserStatus:
- - SocialProfile
- - SportsTeams
- - BlogPage
+  - SocialProfile
+  - SportsTeams
+  - BlogPage
 
 UploadWizard:
- - EventLogging
- - CodeEditor
- - CodeMirror
+  - EventLogging
+  - CodeEditor
+  - CodeMirror
 
 VisualData:
- - Scribunto
+  - Scribunto
 
 VisualEditor:
- - BetaFeatures
+  - BetaFeatures
 
 VisualEditorPlus:
- - VisualEditor
+  - VisualEditor
 
 VoteNY:
- - SocialProfile
+  - SocialProfile
 
 WebAuthn:
- - OATHAuth
+  - OATHAuth
 
 WhoIsWatching:
- - Echo
+  - Echo
 
 WikiEditor:
- - BetaFeatures
- - ConfirmEdit
- - EventLogging
- - MobileFrontend
- - WikimediaEvents
+  - BetaFeatures
+  - ConfirmEdit
+  - EventLogging
+  - MobileFrontend
+  - WikimediaEvents
 
 WikiLambda:
- - EventLogging
- - SiteMatrix
- - Wikibase
+  - EventLogging
+  - SiteMatrix
+  - Wikibase
 
 WikiLove:
- - Flow
- - LiquidThreads
- - UserMerge
+  - Flow
+  - LiquidThreads
+  - UserMerge
 
 WikiForum:
- - ConfirmEdit
- - SocialProfile
+  - ConfirmEdit
+  - SocialProfile
 
 Wikibase:
- - Babel
- - CirrusSearch
- - Echo
- - GeoData
- - Math
- - MobileFrontend
- - PageImages
- - Scribunto
+  - Babel
+  - CirrusSearch
+  - Echo
+  - GeoData
+  - Math
+  - MobileFrontend
+  - PageImages
+  - Scribunto
 
 WikibaseCirrusSearch:
- - Elastica
- - CirrusSearch
- - Scribunto
- - Wikibase
+  - Elastica
+  - CirrusSearch
+  - Scribunto
+  - Wikibase
 
 WikibaseLexeme:
- - Wikibase
- - Scribunto
+  - Wikibase
+  - Scribunto
 
 WikibaseLexemeCirrusSearch:
- - CirrusSearch
- - Scribunto
- - Wikibase
- - WikibaseCirrusSearch
- - WikibaseLexeme
+  - CirrusSearch
+  - Scribunto
+  - Wikibase
+  - WikibaseCirrusSearch
+  - WikibaseLexeme
 
 WikibaseManifest:
- - Wikibase
- - OAuth
- - Scribunto
+  - Wikibase
+  - OAuth
+  - Scribunto
 
 WikibaseMediaInfo:
- - Wikibase
- - CirrusSearch
- - Elastica
- - WikibaseCirrusSearch
+  - Wikibase
+  - CirrusSearch
+  - Elastica
+  - WikibaseCirrusSearch
 
 WikibaseQualityConstraints:
- - Wikibase
+  - Wikibase
 
 Wikidata.org:
- - Wikibase
+  - Wikibase
 
 WikidataPageBanner:
- - PageImages
- - Wikibase
+  - PageImages
+  - Wikibase
 
 WikimediaBadges:
- - Wikibase
+  - Wikibase
 
 WikimediaCampaignEvents:
- - CampaignEvents
+  - CampaignEvents
 
 WikimediaEvents:
- - AbuseFilter
- - BetaFeatures
- - CentralAuth
- - CheckUser
- - ConfirmEdit
- - cldr
- - EmailAuth
- - EventBus
- - EventLogging
- - FlaggedRevs
- - GlobalBlocking
- - GlobalPreferences
- - GrowthExperiments
- - IPReputation
- - LoginNotify
- - MobileFrontend
- - OATHAuth
- - MetricsPlatform
+  - AbuseFilter
+  - BetaFeatures
+  - CentralAuth
+  - CheckUser
+  - ConfirmEdit
+  - cldr
+  - EmailAuth
+  - EventBus
+  - EventLogging
+  - FlaggedRevs
+  - GlobalBlocking
+  - GlobalPreferences
+  - GrowthExperiments
+  - IPReputation
+  - LoginNotify
+  - MobileFrontend
+  - OATHAuth
+  - MetricsPlatform
 
 WikimediaMaintenance:
- - AbuseFilter
- - CentralAuth
- - CirrusSearch
- - cldr
- - Cognate
- - Echo
- - MassMessage
- - Wikibase
+  - AbuseFilter
+  - CentralAuth
+  - CirrusSearch
+  - cldr
+  - Cognate
+  - Echo
+  - MassMessage
+  - Wikibase
 
 WikimediaMessages:
- - CampaignEvents
- - cldr
- - Echo
- - GuidedTour
- - MetricsPlatform
- - MobileFrontend
- - ORES
- - skins/MinervaNeue
+  - CampaignEvents
+  - cldr
+  - Echo
+  - GuidedTour
+  - MetricsPlatform
+  - MobileFrontend
+  - ORES
+  - skins/MinervaNeue
 
 WikiSEO:
- - PageImages
- - Scribunto
+  - PageImages
+  - Scribunto
 
 Wikistories:
- - Echo
- - BetaFeatures
- - MobileFrontend
+  - Echo
+  - BetaFeatures
+  - MobileFrontend
 
 WikiToLDAP:
- - LDAPAuthentication2
- - LDAPProvider
- - PluggableAuth
- - Renameuser
- - UserMerge
+  - LDAPAuthentication2
+  - LDAPProvider
+  - PluggableAuth
+  - Renameuser
+  - UserMerge
 
 Wikisource:
- - Gadgets
- - ProofreadPage
- - Wikibase
+  - Gadgets
+  - ProofreadPage
+  - Wikibase
