@@ -2,1344 +2,1974 @@
 #
 # Values are assumed to be MediaWiki extensions, so 'Foo' maps to 'mediawiki/extensions/Foo'.
 # Skins have to be prefixed with 'skins/', so 'skins/Foo' maps to 'mediawiki/skins/Foo'.
-
+#
+# The `recurse` option is instructs to recursively process each of the dependencies.
+#
 # The data is used by set_mw_dependencies() in parameter_functions.py
-
+#
 # Note! This list is not used by Phan. See phan_dependencies.yaml that list.
 
 # Skins:
 skins/BlueSpiceDiscovery:
-  - OOJSPlus
-  - BlueSpiceFoundation
-  - MenuEditor
+  recurse: true
+  dependencies:
+    - OOJSPlus
+    - BlueSpiceFoundation
+    - MenuEditor
 
 skins/Cosmos:
-  - AdminLinks
-  - CookieWarning
-  - CreateRedirect
-  - DismissableSiteNotice
-  - Echo
-  - SocialProfile
-  - Video
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - AdminLinks
+    - CookieWarning
+    - CreateRedirect
+    - DismissableSiteNotice
+    - Echo
+    - SocialProfile
+    - Video
+    - VisualEditor
 
 skins/MinervaNeue:
-  - MobileFrontend
+  recurse: true
+  dependencies:
+    - MobileFrontend
 
 skins/Refreshed:
-  - SocialProfile
+  recurse: true
+  dependencies:
+    - SocialProfile
 
 skins/TuleapSkin:
-  - TuleapIntegration
-  - TuleapWikiFarm
+  recurse: true
+  dependencies:
+    - TuleapIntegration
+    - TuleapWikiFarm
 
 # Extensions:
 3D:
-  - MultimediaViewer
+  recurse: true
+  dependencies:
+    - MultimediaViewer
 
 AIEditingAssistant:
-  - VisualEditor
-  - VisualEditorPlus
+  recurse: true
+  dependencies:
+    - VisualEditor
+    - VisualEditorPlus
 
 AbuseFilter:
-  - AntiSpoof
-  - CentralAuth
-  - CheckUser
-  - CodeEditor
-  - ConfirmEdit
-  - Echo
-  - EventLogging
-  - Renameuser
-  - Scribunto
+  recurse: true
+  dependencies:
+    - AntiSpoof
+    - CentralAuth
+    - CheckUser
+    - CodeEditor
+    - ConfirmEdit
+    - Echo
+    - EventLogging
+    - Renameuser
+    - Scribunto
 
 AchievementBadges:
-  - BetaFeatures
-  - Echo
+  recurse: true
+  dependencies:
+    - BetaFeatures
+    - Echo
 
 AdhocTranslation:
-  - skins/BlueSpiceDiscovery
+  recurse: true
+  dependencies:
+    - skins/BlueSpiceDiscovery
 
 AdvancedSearch:
-  - Translate
+  recurse: true
+  dependencies:
+    - Translate
 
 ApiFeatureUsage:
-  - Elastica
+  recurse: true
+  dependencies:
+    - Elastica
 
 Arrays:
-  - Loops
-  - ParserFunctions
+  recurse: true
+  dependencies:
+    - Loops
+    - ParserFunctions
 
 ArticlePlaceholder:
-  - Scribunto
-  - Wikibase
+  recurse: true
+  dependencies:
+    - Scribunto
+    - Wikibase
 
 AtMentions:
-  - OOJSPlus
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - OOJSPlus
+    - VisualEditor
 
 AutoModerator:
-  - CommunityConfiguration
-  - DiscussionTools
-  - ORES
+  recurse: true
+  dependencies:
+    - CommunityConfiguration
+    - DiscussionTools
+    - ORES
 
 Babel:
-  - CommunityConfiguration
+  recurse: true
+  dependencies:
+    - CommunityConfiguration
 
 BlogPage:
-  - Comments
-  - SocialProfile
-  - VoteNY
+  recurse: true
+  dependencies:
+    - Comments
+    - SocialProfile
+    - VoteNY
 
 BlueSpiceAbout:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceArticleInfo:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceArticlePreviewCapture:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceAuthors:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceAvatars:
-  - BlueSpiceFoundation
-  - UserProfile
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - UserProfile
 
 BlueSpiceBookshelf:
-  - BlueSpiceFoundation
-  - BlueSpiceExtendedSearch
-  - BlueSpiceVisualEditorConnector
-  - ContentDroplets
-  - MenuEditor
-  - NotifyMe
-  - VueJsPlus
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceExtendedSearch
+    - BlueSpiceVisualEditorConnector
+    - ContentDroplets
+    - MenuEditor
+    - NotifyMe
+    - VueJsPlus
 
 BlueSpiceCategoryCheck:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceCategoryManager:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceChecklist:
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceConfigManager:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceContextMenu:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceCountThings:
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceCustomMenu:
-  - BlueSpiceFoundation
-  - MenuEditor
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - MenuEditor
 
 BlueSpiceDashboards:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceDistributionConnector:
-  - BlueSpiceExtendedStatistics
-  - BlueSpiceFoundation
-  - BlueSpiceSMWConnector
-  - ContentDroplets
-  - Echo
-  - OOJSPlus
-  - PDFCreator
-  - UserMerge
-  - VisualEditor
-  - Workflows
+  recurse: true
+  dependencies:
+    - BlueSpiceExtendedStatistics
+    - BlueSpiceFoundation
+    - BlueSpiceSMWConnector
+    - ContentDroplets
+    - Echo
+    - OOJSPlus
+    - PDFCreator
+    - UserMerge
+    - VisualEditor
+    - Workflows
 
 BlueSpiceEchoConnector:
-  - BlueSpiceFoundation
-  - Echo
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - Echo
 
 BlueSpiceEmoticons:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceExpiry:
-  - BlueSpiceFoundation
-  - BlueSpiceReminder
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceReminder
+    - OOJSPlus
 
 BlueSpiceExportTables:
-  - BlueSpiceFoundation
-  - BlueSpiceUEModuleTable2Excel
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceUEModuleTable2Excel
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceExtendedFilelist:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceExtendedSearch:
-  - BlueSpiceDistributionConnector
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceDistributionConnector
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceExtendedStatistics:
-  - BlueSpiceFoundation
-  - BlueSpiceExtendedSearch
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceExtendedSearch
 
 BlueSpiceFilterableTables:
-  - BlueSpiceFoundation
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceFlaggedRevsConnector:
-  - BlueSpiceFoundation
-  - FlaggedRevs
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - FlaggedRevs
 
 BlueSpiceFoundation:
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - OOJSPlus
 
 BlueSpiceGroupManager:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceHideTitle:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceInsertCategory:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceInsertFile:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceInsertLink:
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceInsertTemplate:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceInstanceStatus:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceInterWikiLinks:
-  - BlueSpiceFoundation
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceInterwikiSearch:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceMatomoConnector:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceMultiUpload:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceNSFileRepoConnector:
-  - BlueSpiceFoundation
-  - NSFileRepo
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - NSFileRepo
 
 BlueSpiceNamespaceCSS:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceNamespaceManager:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpicePageAccess:
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
 
 BlueSpicePageAssignments:
-  - BlueSpiceFoundation
-  - OOJSPlus
-  - NotifyMe
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    - NotifyMe
 
 BlueSpicePageFormsConnector:
-  - BlueSpiceFoundation
-  - PageForms
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - PageForms
 
 BlueSpicePageTemplates:
-  - BlueSpiceFoundation
-  - OOJSPlus
-  - BlueSpiceDistributionConnector
-  - ContentDroplets
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    - BlueSpiceDistributionConnector
+    - ContentDroplets
+    - VisualEditor
 
 BlueSpicePageVersion:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpicePagesVisited:
-  - BlueSpiceDistributionConnector
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
-  - BlueSpiceWhoIsOnline
+  recurse: true
+  dependencies:
+    - BlueSpiceDistributionConnector
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
+    - BlueSpiceWhoIsOnline
 
 BlueSpicePermissionManager:
-  - BlueSpiceFoundation
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpicePlayer:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpicePrivacy:
-  - BlueSpiceFoundation
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceProDistributionConnector:
-  - BlueSpiceFoundation
-  - BlueSpiceUniversalExport
-  - BlueSpiceVisualEditorConnector
-  - Math
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceUniversalExport
+    - BlueSpiceVisualEditorConnector
+    - Math
+    - VisualEditor
 
 BlueSpiceQrCode:
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceRSSFeeder:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceRating:
-  - BlueSpiceFoundation
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceReadConfirmation:
-  - BlueSpiceFoundation
-  - BlueSpicePageAssignments
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpicePageAssignments
 
 BlueSpiceReaders:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceReminder:
-  - BlueSpiceFoundation
-  - OOJSPlus
-  - Workflows
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    - Workflows
 
 BlueSpiceSMWConnector:
-  - BlueSpiceFoundation
-  - BlueSpiceSmartList
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceSmartList
 
 BlueSpiceSaferEdit:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceSignHere:
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceSmartList:
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceSocial:
-  - BlueSpiceExtendedSearch
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceExtendedSearch
+    - BlueSpiceFoundation
 
 BlueSpiceSocialArticleActions:
-  - BlueSpiceFoundation
-  - BlueSpiceSocial
-  - BlueSpiceExtendedSearch
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    - BlueSpiceExtendedSearch
 
 BlueSpiceSocialBlog:
-  - BlueSpiceFoundation
-  - BlueSpiceSocial
-  - BlueSpiceExtendedSearch
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    - BlueSpiceExtendedSearch
 
 BlueSpiceSocialComments:
-  - BlueSpiceFoundation
-  - BlueSpiceSocial
-  - BlueSpiceExtendedSearch
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    - BlueSpiceExtendedSearch
 
 BlueSpiceSocialMicroBlog:
-  - BlueSpiceFoundation
-  - BlueSpiceSocial
-  - BlueSpiceExtendedSearch
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    - BlueSpiceExtendedSearch
 
 BlueSpiceSocialProfile:
-  - BlueSpiceAvatars
-  - BlueSpiceFoundation
-  - BlueSpiceSocial
-  - BlueSpiceExtendedSearch
+  recurse: true
+  dependencies:
+    - BlueSpiceAvatars
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    - BlueSpiceExtendedSearch
 
 BlueSpiceSocialRating:
-  - BlueSpiceFoundation
-  - BlueSpiceExtendedSearch
-  - BlueSpiceRating
-  - BlueSpiceSocial
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceExtendedSearch
+    - BlueSpiceRating
+    - BlueSpiceSocial
 
 BlueSpiceSocialResolve:
-  - BlueSpiceFoundation
-  - BlueSpiceSocial
-  - BlueSpiceExtendedSearch
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    - BlueSpiceExtendedSearch
 
 BlueSpiceSocialTags:
-  - BlueSpiceFoundation
-  - BlueSpiceSocial
-  - BlueSpiceExtendedSearch
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    - BlueSpiceExtendedSearch
 
 BlueSpiceSocialTimelineUpdate:
-  - BlueSpiceFoundation
-  - BlueSpiceSocial
-  - BlueSpiceExtendedSearch
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    - BlueSpiceExtendedSearch
 
 BlueSpiceSocialTopics:
-  - BlueSpiceFoundation
-  - BlueSpiceSocial
-  - BlueSpiceExtendedSearch
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    - BlueSpiceExtendedSearch
 
 BlueSpiceSocialWatch:
-  - BlueSpiceFoundation
-  - BlueSpiceSocial
-  - BlueSpiceExtendedSearch
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    - BlueSpiceExtendedSearch
 
 BlueSpiceSocialWikiPage:
-  - BlueSpiceFoundation
-  - BlueSpiceExtendedSearch
-  - BlueSpiceMultiUpload
-  - BlueSpiceSocial
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceExtendedSearch
+    - BlueSpiceMultiUpload
+    - BlueSpiceSocial
 
 BlueSpiceSubPageTree:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceTagCloud:
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceTranslationTransfer:
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
-  - ContentTransfer
-  - MergeArticles
-  - OOJSPlus
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
+    - ContentTransfer
+    - MergeArticles
+    - OOJSPlus
+    - VisualEditor
 
 BlueSpiceUEModuleBookPDF:
-  - BlueSpiceBookshelf
-  - BlueSpiceFoundation
-  - BlueSpiceUEModulePDF
-  - BlueSpiceUniversalExport
+  recurse: true
+  dependencies:
+    - BlueSpiceBookshelf
+    - BlueSpiceFoundation
+    - BlueSpiceUEModulePDF
+    - BlueSpiceUniversalExport
 
 BlueSpiceUEModuleDOCX:
-  - BlueSpiceFoundation
-  - BlueSpiceUniversalExport
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceUniversalExport
 
 BlueSpiceUEModuleHTML:
-  - BlueSpiceFoundation
-  - BlueSpiceUniversalExport
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceUniversalExport
 
 BlueSpiceUEModulePDF:
-  - BlueSpiceFoundation
-  - BlueSpiceUniversalExport
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceUniversalExport
 
 BlueSpiceUEModulePDFRecursive:
-  - BlueSpiceFoundation
-  - BlueSpiceUniversalExport
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceUniversalExport
 
 BlueSpiceUEModulePDFSubpages:
-  - BlueSpiceFoundation
-  - BlueSpiceUniversalExport
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceUniversalExport
 
 BlueSpiceUEModuleTable2Excel:
-  - BlueSpiceFoundation
-  - BlueSpiceUniversalExport
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceUniversalExport
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceUniversalExport:
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceUsageTracker:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceUserInfo:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceUserManager:
-  - BlueSpiceFoundation
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceUserSidebar:
-  - BlueSpiceFoundation
-  - MenuEditor
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - MenuEditor
 
 BlueSpiceVisualDiff:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 BlueSpiceVisualEditorConnector:
-  - BlueSpiceFoundation
-  - OOJSPlus
-  - VisualEditor
-  - VisualEditorPlus
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    - VisualEditor
+    - VisualEditorPlus
 
 BlueSpiceWatchList:
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceWhoIsOnline:
-  - BlueSpiceFoundation
-  - BlueSpiceVisualEditorConnector
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
 
 BlueSpiceWikiExplorer:
-  - BlueSpiceFoundation
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceWikiFarm:
-  - BlueSpiceExtendedSearch
-  - BlueSpiceFoundation
-  - EnhancedUpload
-  - OOJSPlus
-  - skins/BlueSpiceDiscovery
+  recurse: true
+  dependencies:
+    - BlueSpiceExtendedSearch
+    - BlueSpiceFoundation
+    - EnhancedUpload
+    - OOJSPlus
+    - skins/BlueSpiceDiscovery
 
 BounceHandler:
-  - CentralAuth
-  - Echo
+  recurse: true
+  dependencies:
+    - CentralAuth
+    - Echo
 
 CampaignEvents:
-  - CentralAuth
-  - cldr
-  - Translate
-  - UserMerge
-  - WikimediaCampaignEvents
+  recurse: true
+  dependencies:
+    - CentralAuth
+    - cldr
+    - Translate
+    - UserMerge
+    - WikimediaCampaignEvents
 
 Campaigns:
-  - EventLogging
+  recurse: true
+  dependencies:
+    - EventLogging
 
 Capiunto:
-  - Scribunto
+  recurse: true
+  dependencies:
+    - Scribunto
 
 CategoryWatch:
-  - Echo
+  recurse: true
+  dependencies:
+    - Echo
 
 CentralAuth:
-  - AbuseFilter
-  - AntiSpoof
-  - CheckUser
-  - GlobalBlocking
-  - GlobalPreferences
-  - MobileFrontend
-  - SecurePoll
+  recurse: true
+  dependencies:
+    - AbuseFilter
+    - AntiSpoof
+    - CheckUser
+    - GlobalBlocking
+    - GlobalPreferences
+    - MobileFrontend
+    - SecurePoll
 
 CentralNotice:
-  - EventLogging
+  recurse: true
+  dependencies:
+    - EventLogging
 
 Challenge:
-  - SocialProfile
+  recurse: true
+  dependencies:
+    - SocialProfile
 
 Chart:
-  - JsonConfig
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - JsonConfig
+    - VisualEditor
 
 CheckUser:
-  - AbuseFilter
-  - CentralAuth
-  - FlaggedRevs
-  - GlobalBlocking
-  - GlobalPreferences
-  - GrowthExperiments
-  - IPInfo
-  - MobileFrontend
-  - Renameuser
-  - TorBlock
+  recurse: true
+  dependencies:
+    - AbuseFilter
+    - CentralAuth
+    - FlaggedRevs
+    - GlobalBlocking
+    - GlobalPreferences
+    - GrowthExperiments
+    - IPInfo
+    - MobileFrontend
+    - Renameuser
+    - TorBlock
 
 Checklists:
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - VisualEditor
 
 CirrusSearch:
-  - BetaFeatures
-  - Cite
-  - Elastica
-  - EventBus
-  - EventStreamConfig
-  - GeoData
-  - PdfHandler
-  - SiteMatrix
-  - TimedMediaHandler
+  recurse: true
+  dependencies:
+    - BetaFeatures
+    - Cite
+    - Elastica
+    - EventBus
+    - EventStreamConfig
+    - GeoData
+    - PdfHandler
+    - SiteMatrix
+    - TimedMediaHandler
 
 Cite:
-  - cldr
-  - CommunityConfiguration
-  - Gadgets
-  - ParserFunctions
-  - Popups
-  - VisualEditor
-  - WikiEditor
+  recurse: true
+  dependencies:
+    - cldr
+    - CommunityConfiguration
+    - Gadgets
+    - ParserFunctions
+    - Popups
+    - VisualEditor
+    - WikiEditor
 
 Citoid:
-  - Cite
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - Cite
+    - VisualEditor
 
 CodeEditor:
-  - WikiEditor
+  recurse: true
+  dependencies:
+    - WikiEditor
 
 CodeMirror:
-  - BetaFeatures
-  - VisualEditor
-  - WikiEditor
+  recurse: true
+  dependencies:
+    - BetaFeatures
+    - VisualEditor
+    - WikiEditor
 
 CognitiveProcessDesigner:
-  - OOJSPlus
-  - BlueSpiceVisualEditorConnector
-  - PageForms
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - OOJSPlus
+    - BlueSpiceVisualEditorConnector
+    - PageForms
+    - VisualEditor
 
 CollabPads:
-  - OOJSPlus
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - OOJSPlus
+    - VisualEditor
 
 CommunityConfiguration:
-  - CommunityConfigurationExample
+  recurse: true
+  dependencies:
+    - CommunityConfigurationExample
 
 CommunityConfigurationExample:
-  - CommunityConfiguration
+  recurse: true
+  dependencies:
+    - CommunityConfiguration
 
 CommunityRequests:
-  - DiscussionTools
-  - Translate
-  - VisualEditor
-  - WikimediaMessages
+  recurse: true
+  dependencies:
+    - DiscussionTools
+    - Translate
+    - VisualEditor
+    - WikimediaMessages
 
 ConfigManager:
-  - BlueSpiceFoundation
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
 
 ConfirmEdit:
-  - AbuseFilter
-  - MobileFrontend
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - AbuseFilter
+    - MobileFrontend
+    - VisualEditor
 
 ContactManager:
-  - PageProperties
+  recurse: true
+  dependencies:
+    - PageProperties
 
 ContainerFilter:
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - VisualEditor
 
 ContentDroplets:
-  - OOJSPlus
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - OOJSPlus
+    - VisualEditor
 
 ContentProvisioning:
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - OOJSPlus
 
 ContentStabilization:
-  - BlueSpiceBookshelf
-  - BlueSpiceFoundation
-  - BlueSpicePageAssignments
-  - BlueSpiceSMWConnector
-  - OOJSPlus
-  - PDFCreator
-  - Workflows
+  recurse: true
+  dependencies:
+    - BlueSpiceBookshelf
+    - BlueSpiceFoundation
+    - BlueSpicePageAssignments
+    - BlueSpiceSMWConnector
+    - OOJSPlus
+    - PDFCreator
+    - Workflows
 
 ContentTranslation:
-  - AbuseFilter
-  - Echo
-  - EventLogging
-  - UniversalLanguageSelector
-  - VisualEditor
-  - WikimediaMessages
+  recurse: true
+  dependencies:
+    - AbuseFilter
+    - Echo
+    - EventLogging
+    - UniversalLanguageSelector
+    - VisualEditor
+    - WikimediaMessages
 
 CookieWarning:
-  - MobileFrontend
+  recurse: true
+  dependencies:
+    - MobileFrontend
 
 CreateAPage:
-  - WikiEditor
+  recurse: true
+  dependencies:
+    - WikiEditor
 
 Dashiki:
-  - JsonConfig
+  recurse: true
+  dependencies:
+    - JsonConfig
 
 DateTimeTools:
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - VisualEditor
 
 Disambiguator:
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - VisualEditor
 
 DiscordRCFeed:
-  - Flow
+  recurse: true
+  dependencies:
+    - Flow
 
 DiscussionTools:
-  - Echo
-  - Linter
-  - Thanks
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - Echo
+    - Linter
+    - Thanks
+    - VisualEditor
 
 DrawioEditor:
-  - Forms
-  - VisualEditor
-  - VisualEditorPlus
+  recurse: true
+  dependencies:
+    - Forms
+    - VisualEditor
+    - VisualEditorPlus
 
 Echo:
-  - CentralAuth
-  - EventLogging
-  - MobileFrontend
+  recurse: true
+  dependencies:
+    - CentralAuth
+    - EventLogging
+    - MobileFrontend
 
 EditNotify:
-  - Echo
+  recurse: true
+  dependencies:
+    - Echo
 
 ElectronPdfService:
-  - Collection
-  - FlaggedRevs
+  recurse: true
+  dependencies:
+    - Collection
+    - FlaggedRevs
 
 EmailAuthorization:
-  - PluggableAuth
+  recurse: true
+  dependencies:
+    - PluggableAuth
 
 EncryptedUploads:
-  - UploadWizard
+  recurse: true
+  dependencies:
+    - UploadWizard
 
 EnhancedStandardUIs:
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - OOJSPlus
 
 EnhancedUpload:
-  - OOJSPlus
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - OOJSPlus
+    - VisualEditor
 
 EntitySchema:
-  - Wikibase
+  recurse: true
+  dependencies:
+    - Wikibase
 
 EventBus:
-  - EventStreamConfig
+  recurse: true
+  dependencies:
+    - EventStreamConfig
 
 EventLogging:
-  - EventBus
-  - EventStreamConfig
+  recurse: true
+  dependencies:
+    - EventBus
+    - EventStreamConfig
 
 ExternalGuidance:
-  - MobileFrontend
-  - UniversalLanguageSelector
+  recurse: true
+  dependencies:
+    - MobileFrontend
+    - UniversalLanguageSelector
 
 FacetedCategory:
-  - CategoryTree
+  recurse: true
+  dependencies:
+    - CategoryTree
 
 FanBoxes:
-  - SocialProfile
+  recurse: true
+  dependencies:
+    - SocialProfile
 
 FileAnnotations:
-  - EventLogging
+  recurse: true
+  dependencies:
+    - EventLogging
 
 FileImporter:
-  - CentralAuth
-  - WikiEditor
+  recurse: true
+  dependencies:
+    - CentralAuth
+    - WikiEditor
 
 FlaggedRevs:
-  - Scribunto
+  recurse: true
+  dependencies:
+    - Scribunto
 
 FlexiSkin:
-  - BlueSpiceFoundation
-  - CodeEditor
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - BlueSpiceFoundation
+    - CodeEditor
+    - OOJSPlus
 
 Flow:
-  - AbuseFilter
-  - BetaFeatures
-  - Echo
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - AbuseFilter
+    - BetaFeatures
+    - Echo
+    - VisualEditor
 
 Forms:
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - OOJSPlus
 
 FundraiserLandingPage:
-  - EventLogging
+  recurse: true
+  dependencies:
+    - EventLogging
 
 FundraisingTranslateWorkflow:
-  - Translate
+  recurse: true
+  dependencies:
+    - Translate
 
 GeoData:
-  - CirrusSearch
+  recurse: true
+  dependencies:
+    - CirrusSearch
 
 GlobalBlocking:
-  - CentralAuth
+  recurse: true
+  dependencies:
+    - CentralAuth
 
 GrowthExperiments:
-  - CirrusSearch
-  - CommunityConfiguration
-  - Echo
-  - EventLogging
-  - EventBus
-  - EventStreamConfig
-  - Flow
-  - GuidedTour
-  - MetricsPlatform
-  - MobileFrontend
-  - PageImages
-  - PageViewInfo
-  - VisualEditor
-  - skins/MinervaNeue
-  - Thanks
-  - WikimediaMessages
+  recurse: true
+  dependencies:
+    - CirrusSearch
+    - CommunityConfiguration
+    - Echo
+    - EventLogging
+    - EventBus
+    - EventStreamConfig
+    - Flow
+    - GuidedTour
+    - MetricsPlatform
+    - MobileFrontend
+    - PageImages
+    - PageViewInfo
+    - VisualEditor
+    - skins/MinervaNeue
+    - Thanks
+    - WikimediaMessages
 
 GuidedTour:
-  - EventLogging
+  recurse: true
+  dependencies:
+    - EventLogging
 
 HierarchyBuilder:
-  - PageForms
+  recurse: true
+  dependencies:
+    - PageForms
 
 IPInfo:
-  - BetaFeatures
-  - CheckUser
-  - GlobalPreferences
-  - MobileFrontend
+  recurse: true
+  dependencies:
+    - BetaFeatures
+    - CheckUser
+    - GlobalPreferences
+    - MobileFrontend
 
 IPReputation:
-  - AbuseFilter
-  - ConfirmEdit
+  recurse: true
+  dependencies:
+    - AbuseFilter
+    - ConfirmEdit
 
 ImageRating:
-  - VoteNY
+  recurse: true
+  dependencies:
+    - VoteNY
 
 ImageSuggestions:
-  - CirrusSearch
-  - Echo
-  - Elastica
+  recurse: true
+  dependencies:
+    - CirrusSearch
+    - Echo
+    - Elastica
 
 InputBox:
-  - MediaSearch
+  recurse: true
+  dependencies:
+    - MediaSearch
 
 JWTAuth:
-  - PluggableAuth
+  recurse: true
+  dependencies:
+    - PluggableAuth
 
 JsonConfig:
-  - Kartographer
-  - VisualEditor
-  - Scribunto
-  - WikimediaMessages
+  recurse: true
+  dependencies:
+    - Kartographer
+    - VisualEditor
+    - Scribunto
+    - WikimediaMessages
 
 Kartographer:
-  - FlaggedRevs
-  - JsonConfig
-  - ParserFunctions
-  - VisualEditor
-  - WikimediaMessages
+  recurse: true
+  dependencies:
+    - FlaggedRevs
+    - JsonConfig
+    - ParserFunctions
+    - VisualEditor
+    - WikimediaMessages
 
 LDAPAuthentication2:
-  - LDAPProvider
-  - PluggableAuth
+  recurse: true
+  dependencies:
+    - LDAPProvider
+    - PluggableAuth
 
 LDAPAuthorization:
-  - LDAPProvider
-  - PluggableAuth
+  recurse: true
+  dependencies:
+    - LDAPProvider
+    - PluggableAuth
 
 LDAPGroups:
-  - LDAPProvider
+  recurse: true
+  dependencies:
+    - LDAPProvider
 
 LDAPSyncAll:
-  - LDAPGroups
-  - LDAPProvider
-  - LDAPUserInfo
+  recurse: true
+  dependencies:
+    - LDAPGroups
+    - LDAPProvider
+    - LDAPUserInfo
 
 LDAPUserInfo:
-  - LDAPProvider
+  recurse: true
+  dependencies:
+    - LDAPProvider
 
 LanguageTool:
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - VisualEditor
 
 Linter:
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - VisualEditor
 
 LoginNotify:
-  - CentralAuth
-  - CheckUser
-  - Echo
+  recurse: true
+  dependencies:
+    - CentralAuth
+    - CheckUser
+    - Echo
 
 MagicLinkAuthentication:
-  - PluggableAuth
+  recurse: true
+  dependencies:
+    - PluggableAuth
 
 MassMessage:
-  - CentralAuth
-  - Flow
-  - LiquidThreads
+  recurse: true
+  dependencies:
+    - CentralAuth
+    - Flow
+    - LiquidThreads
 
 MassMessageEmail:
-  - MassMessage
+  recurse: true
+  dependencies:
+    - MassMessage
 
 Math:
-  - VisualEditor
-  - Wikibase
+  recurse: true
+  dependencies:
+    - VisualEditor
+    - Wikibase
 
 MathSearch:
-  - Math
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - Math
+    - VisualEditor
 
 MediaSearch:
-  - CirrusSearch
-  - WikibaseCirrusSearch
+  recurse: true
+  dependencies:
+    - CirrusSearch
+    - WikibaseCirrusSearch
 
 MediaUploader:
-  - AbuseFilter
-  - SpamBlacklist
+  recurse: true
+  dependencies:
+    - AbuseFilter
+    - SpamBlacklist
 
 MenuEditor:
-  - OOJSPlus
-  - skins/BlueSpiceDiscovery
+  recurse: true
+  dependencies:
+    - OOJSPlus
+    - skins/BlueSpiceDiscovery
 
 MetricsPlatform:
-  - EventLogging
-  - EventStreamConfig
-  - GrowthExperiments
+  recurse: true
+  dependencies:
+    - EventLogging
+    - EventStreamConfig
+    - GrowthExperiments
 
 MobileApp:
-  - AbuseFilter
-  - Echo
-  - MobileFrontend
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - AbuseFilter
+    - Echo
+    - MobileFrontend
+    - VisualEditor
 
 MobileFrontend:
-  - Echo
-  - MobileApp
-  - skins/MinervaNeue
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - Echo
+    - MobileApp
+    - skins/MinervaNeue
+    - VisualEditor
 
 MobileFrontendContentProvider:
-  - MobileFrontend
+  recurse: true
+  dependencies:
+    - MobileFrontend
 
 Monstranto:
-  - Scribunto
+  recurse: true
+  dependencies:
+    - Scribunto
 
 MultimediaViewer:
-  - BetaFeatures
+  recurse: true
+  dependencies:
+    - BetaFeatures
 
 NSFileRepo:
-  - EnhancedUpload
-  - Lockdown
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - EnhancedUpload
+    - Lockdown
+    - VisualEditor
 
 NamespacePopups:
-  - PagePopups
+  recurse: true
+  dependencies:
+    - PagePopups
 
 NavigationTiming:
-  - EventLogging
+  recurse: true
+  dependencies:
+    - EventLogging
 
 NaylorAMS:
-  - PluggableAuth
+  recurse: true
+  dependencies:
+    - PluggableAuth
 
 Newsletter:
-  - Echo
+  recurse: true
+  dependencies:
+    - Echo
 
 NotifyMe:
-  - OOJSPlus
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - OOJSPlus
+    - VisualEditor
 
 Nuke:
-  - CheckUser
-  - EventLogging
+  recurse: true
+  dependencies:
+    - CheckUser
+    - EventLogging
 
 OATHAuth:
-  - CheckUser
-  - Echo
-  - WebAuthn
+  recurse: true
+  dependencies:
+    - CheckUser
+    - Echo
+    - WebAuthn
 
 OAuth:
-  - AbuseFilter
-  - Echo
+  recurse: true
+  dependencies:
+    - AbuseFilter
+    - Echo
 
 OAuthRateLimiter:
-  - OAuth
+  recurse: true
+  dependencies:
+    - OAuth
 
 ORES:
-  - AbuseFilter
+  recurse: true
+  dependencies:
+    - AbuseFilter
 
 OpenIDConnect:
-  - PluggableAuth
+  recurse: true
+  dependencies:
+    - PluggableAuth
 
 parsoid:
-  - ParserFunctions
-  - TimedMediaHandler
+  recurse: true
+  dependencies:
+    - ParserFunctions
+    - TimedMediaHandler
 
 PDFCreator:
-  - OOJSPlus
-  - skins/BlueSpiceDiscovery
-  - VueJsPlus
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - OOJSPlus
+    - skins/BlueSpiceDiscovery
+    - VueJsPlus
+    - VisualEditor
 
 PageCheckout:
-  - Workflows
+  recurse: true
+  dependencies:
+    - Workflows
 
 PageTriage:
-  - Echo
-  - ORES
-  - PageViewInfo
-  - WikiLove
+  recurse: true
+  dependencies:
+    - Echo
+    - ORES
+    - PageViewInfo
+    - WikiLove
 
 PageViewInfoGA:
-  - PageViewInfo
+  recurse: true
+  dependencies:
+    - PageViewInfo
 
 ParserFunctions:
-  - Scribunto
+  recurse: true
+  dependencies:
+    - Scribunto
 
 PersonalDashboard:
-  - CommunityConfiguration
-  - skins/MinervaNeue
+  recurse: true
+  dependencies:
+    - CommunityConfiguration
+    - skins/MinervaNeue
 
 Phonos:
-  - TimedMediaHandler
+  recurse: true
+  dependencies:
+    - TimedMediaHandler
 
 PictureGame:
-  - SocialProfile
+  recurse: true
+  dependencies:
+    - SocialProfile
 
 PollNY:
-  - SocialProfile
+  recurse: true
+  dependencies:
+    - SocialProfile
 
 Popups:
-  - Cite
-  - EventLogging
-  - PageImages
-  - TextExtracts
+  recurse: true
+  dependencies:
+    - Cite
+    - EventLogging
+    - PageImages
+    - TextExtracts
 
 PronunciationRecording:
-  - UploadWizard
+  recurse: true
+  dependencies:
+    - UploadWizard
 
 ProofreadPage:
-  - BetaFeatures
-  - LabeledSectionTransclusion
-  - Scribunto
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - BetaFeatures
+    - LabeledSectionTransclusion
+    - Scribunto
+    - VisualEditor
 
 PropertySuggester:
-  - EventLogging
-  - Wikibase
+  recurse: true
+  dependencies:
+    - EventLogging
+    - Wikibase
 
 QuickSurveys:
-  - EventLogging
+  recurse: true
+  dependencies:
+    - EventLogging
 
 QuizGame:
-  - Renameuser
-  - SocialProfile
+  recurse: true
+  dependencies:
+    - Renameuser
+    - SocialProfile
 
 RandomGameUnit:
-  - SocialProfile
-  - PictureGame
-  - PollNY
-  - QuizGame
+  recurse: true
+  dependencies:
+    - SocialProfile
+    - PictureGame
+    - PollNY
+    - QuizGame
 
 ReaderExperiments:
-  - WikimediaMessages
+  recurse: true
+  dependencies:
+    - WikimediaMessages
 
 ReadingLists:
-  - BetaFeatures
-  - MetricsPlatform
+  recurse: true
+  dependencies:
+    - BetaFeatures
+    - MetricsPlatform
 
 RegexFun:
-  - ParserFunctions
-  - Arrays
+  recurse: true
+  dependencies:
+    - ParserFunctions
+    - Arrays
 
 RelatedArticles:
-  - BetaFeatures
-  - MobileFrontend
+  recurse: true
+  dependencies:
+    - BetaFeatures
+    - MobileFrontend
 
 ReplaceText:
-  - AdminLinks
+  recurse: true
+  dependencies:
+    - AdminLinks
 
 ReportIncident:
-  - CommunityConfiguration
-  - DiscussionTools
-  - EventLogging
+  recurse: true
+  dependencies:
+    - CommunityConfiguration
+    - DiscussionTools
+    - EventLogging
 
 RevisionSlider:
-  - MobileFrontend
+  recurse: true
+  dependencies:
+    - MobileFrontend
 
 Sanctions:
-  - Echo
-  - Flow
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - Echo
+    - Flow
+    - VisualEditor
 
 Score:
-  - TimedMediaHandler
-  - VisualEditor
-  - Wikibase
+  recurse: true
+  dependencies:
+    - TimedMediaHandler
+    - VisualEditor
+    - Wikibase
 
 SearchVue:
-  - WikimediaMessages
+  recurse: true
+  dependencies:
+    - WikimediaMessages
 
 Shibboleth:
-  - PluggableAuth
+  recurse: true
+  dependencies:
+    - PluggableAuth
 
 SimilarEditors:
-  - QuickSurveys
+  recurse: true
+  dependencies:
+    - QuickSurveys
 
 SimpleBlogPage:
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - OOJSPlus
 
 SimpleSAMLphp:
-  - PluggableAuth
+  recurse: true
+  dependencies:
+    - PluggableAuth
 
 SimpleTasks:
-  - AtMentions
-  - Checklists
-  - DateTimeTools
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - AtMentions
+    - Checklists
+    - DateTimeTools
+    - VisualEditor
 
 SiteMetrics:
-  - SocialProfile
+  recurse: true
+  dependencies:
+    - SocialProfile
 
 SocialProfile:
-  - WikiEditor
+  recurse: true
+  dependencies:
+    - WikiEditor
 
 Sofa:
-  - Scribunto
+  recurse: true
+  dependencies:
+    - Scribunto
 
 SoftRedirector:
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - VisualEditor
 
 SpamBlacklist:
-  - AbuseFilter
-  - CheckUser
-  - EventLogging
+  recurse: true
+  dependencies:
+    - AbuseFilter
+    - CheckUser
+    - EventLogging
 
 SpamDiffTool:
-  - SpamBlacklist
+  recurse: true
+  dependencies:
+    - SpamBlacklist
 
 SpecialPageCaptcha:
-  - ConfirmEdit
+  recurse: true
+  dependencies:
+    - ConfirmEdit
 
 SpellingDictionary:
-  - UniversalLanguageSelector
+  recurse: true
+  dependencies:
+    - UniversalLanguageSelector
 
 SportsTeams:
-  - BlogPage
-  - SocialProfile
-  - UserStatus
+  recurse: true
+  dependencies:
+    - BlogPage
+    - SocialProfile
+    - UserStatus
 
 StandardDialogs:
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - OOJSPlus
 
 StopForumSpam:
-  - AbuseFilter
+  recurse: true
+  dependencies:
+    - AbuseFilter
 
 StructuredNavigation:
-  - CodeEditor
+  recurse: true
+  dependencies:
+    - CodeEditor
 
 SyntaxHighlight_GeSHi:
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - VisualEditor
 
 TEI:
-  - CodeMirror
-  - Math
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - CodeMirror
+    - Math
+    - VisualEditor
 
 TableTools:
-  - VisualEditor
-  - VueJsPlus
+  recurse: true
+  dependencies:
+    - VisualEditor
+    - VueJsPlus
 
 TemplateWizard:
-  - TemplateData
-  - WikiEditor
+  recurse: true
+  dependencies:
+    - TemplateData
+    - WikiEditor
 
 Thanks:
-  - AbuseFilter
-  - Echo
-  - Flow
-  - MobileFrontend
+  recurse: true
+  dependencies:
+    - AbuseFilter
+    - Echo
+    - Flow
+    - MobileFrontend
 
 TheWikipediaLibrary:
-  - Echo
-  - CentralAuth
-  - GlobalPreferences
+  recurse: true
+  dependencies:
+    - Echo
+    - CentralAuth
+    - GlobalPreferences
 
 TitleBlacklist:
-  - AntiSpoof
-  - Scribunto
+  recurse: true
+  dependencies:
+    - AntiSpoof
+    - Scribunto
 
 Toolhub:
-  - Scribunto
+  recurse: true
+  dependencies:
+    - Scribunto
 
 TopTenPages:
-  - HitCounters
+  recurse: true
+  dependencies:
+    - HitCounters
 
 TorBlock:
-  - AbuseFilter
+  recurse: true
+  dependencies:
+    - AbuseFilter
 
 Translate:
-  - UniversalLanguageSelector
-  - cldr
-  - EventLogging
-  - Scribunto
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - UniversalLanguageSelector
+    - cldr
+    - EventLogging
+    - Scribunto
+    - VisualEditor
 
 TranslationNotifications:
-  - MassMessage
-  - Translate
+  recurse: true
+  dependencies:
+    - MassMessage
+    - Translate
 
 TuleapIntegration:
-  - TuleapWikiFarm
+  recurse: true
+  dependencies:
+    - TuleapWikiFarm
 
 TuleapWikiFarm:
-  - TuleapIntegration
+  recurse: true
+  dependencies:
+    - TuleapIntegration
 
 TwitterCards:
-  - TextExtracts
+  recurse: true
+  dependencies:
+    - TextExtracts
 
 TwnMainPage:
-  - Translate
+  recurse: true
+  dependencies:
+    - Translate
 
 TwoColConflict:
-  - BetaFeatures
-  - EventLogging
-  - WikiEditor
+  recurse: true
+  dependencies:
+    - BetaFeatures
+    - EventLogging
+    - WikiEditor
 
 UnifiedTaskOverview:
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - OOJSPlus
 
 UniversalLanguageSelector:
-  - EventLogging
+  recurse: true
+  dependencies:
+    - EventLogging
 
 UnlinkedWikibase:
-  - Scribunto
+  recurse: true
+  dependencies:
+    - Scribunto
 
 UploadWizard:
-  - AbuseFilter
-  - EventLogging
-  - SpamBlacklist
-  - WikimediaMessages
+  recurse: true
+  dependencies:
+    - AbuseFilter
+    - EventLogging
+    - SpamBlacklist
+    - WikimediaMessages
 
 UserProfile:
-  - skins/BlueSpiceDiscovery
+  recurse: true
+  dependencies:
+    - skins/BlueSpiceDiscovery
 
 UserStatus:
-  - BlogPage
-  - SocialProfile
-  - SportsTeams
+  recurse: true
+  dependencies:
+    - BlogPage
+    - SocialProfile
+    - SportsTeams
 
 VECancelButton:
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - VisualEditor
 
 VEForAll:
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - VisualEditor
 
 VikiSemanticTitle:
-  - VIKI
+  recurse: true
+  dependencies:
+    - VIKI
 
 VikiTitleIcon:
-  - VIKI
+  recurse: true
+  dependencies:
+    - VIKI
 
 VisualEditor:
-  - Cite
-  - ConfirmEdit
-  - DiscussionTools
-  - FlaggedRevs
-  - TemplateData
+  recurse: true
+  dependencies:
+    - Cite
+    - ConfirmEdit
+    - DiscussionTools
+    - FlaggedRevs
+    - TemplateData
 
 VisualEditorPlus:
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - VisualEditor
 
 WSOAuth:
-  - PluggableAuth
+  recurse: true
+  dependencies:
+    - PluggableAuth
 
 WebAuthn:
-  - OATHAuth
+  recurse: true
+  dependencies:
+    - OATHAuth
 
 WhoIsWatching:
-  - Echo
+  recurse: true
+  dependencies:
+    - Echo
 
 WikiEditor:
-  - EventLogging
-  - EventBus
-  - EventStreamConfig
-  - WikimediaEvents
+  recurse: true
+  dependencies:
+    - EventLogging
+    - EventBus
+    - EventStreamConfig
+    - WikimediaEvents
 
 WikiLambda:
-  - UniversalLanguageSelector
-  - WikimediaMessages
+  recurse: true
+  dependencies:
+    - UniversalLanguageSelector
+    - WikimediaMessages
 
 WikiSEO:
-  - PageImages
-  - Scribunto
+  recurse: true
+  dependencies:
+    - PageImages
+    - Scribunto
 
 WikiToLDAP:
-  - LDAPAuthentication2
-  - Renameuser
-  - UserMerge
+  recurse: true
+  dependencies:
+    - LDAPAuthentication2
+    - Renameuser
+    - UserMerge
 
 Wikibase:
-  - ArticlePlaceholder
-  - cldr
-  - CirrusSearch
-  - Echo
-  - Elastica
-  - GeoData
-  - MobileFrontend
-  - PropertySuggester
-  - skins/MinervaNeue
-  - SpamBlacklist
-  - WikibaseCirrusSearch
-  - WikibaseLexeme
-  - WikibaseMediaInfo
-  - WikibaseQualityConstraints
-  - WikimediaBadges
+  recurse: true
+  dependencies:
+    - ArticlePlaceholder
+    - cldr
+    - CirrusSearch
+    - Echo
+    - Elastica
+    - GeoData
+    - MobileFrontend
+    - PropertySuggester
+    - skins/MinervaNeue
+    - SpamBlacklist
+    - WikibaseCirrusSearch
+    - WikibaseLexeme
+    - WikibaseMediaInfo
+    - WikibaseQualityConstraints
+    - WikimediaBadges
 
 WikibaseCirrusSearch:
-  - CirrusSearch
-  - cldr
-  - Wikibase
+  recurse: true
+  dependencies:
+    - CirrusSearch
+    - cldr
+    - Wikibase
 
 WikibaseLexeme:
-  - cldr
-  - Wikibase
-  - WikibaseLexemeCirrusSearch
-  - CirrusSearch
+  recurse: true
+  dependencies:
+    - cldr
+    - Wikibase
+    - WikibaseLexemeCirrusSearch
+    - CirrusSearch
 
 WikibaseLexemeCirrusSearch:
-  - Wikibase
-  - WikibaseLexeme
-  - CirrusSearch
-  - cldr
-  - WikibaseCirrusSearch
+  recurse: true
+  dependencies:
+    - Wikibase
+    - WikibaseLexeme
+    - CirrusSearch
+    - cldr
+    - WikibaseCirrusSearch
 
 WikibaseManifest:
-  - Wikibase
-  - OAuth
+  recurse: true
+  dependencies:
+    - Wikibase
+    - OAuth
 
 WikibaseMediaInfo:
-  - Wikibase
-  - CirrusSearch
-  - cldr
-  - Elastica
-  - UniversalLanguageSelector
-  - WikibaseCirrusSearch
+  recurse: true
+  dependencies:
+    - Wikibase
+    - CirrusSearch
+    - cldr
+    - Elastica
+    - UniversalLanguageSelector
+    - WikibaseCirrusSearch
 
 WikibaseQualityConstraints:
-  - Wikibase
-  - WikibaseLexeme
+  recurse: true
+  dependencies:
+    - Wikibase
+    - WikibaseLexeme
 
 Wikidata.org:
-  - Wikibase
+  recurse: true
+  dependencies:
+    - Wikibase
 
 WikidataPageBanner:
-  - Wikibase
+  recurse: true
+  dependencies:
+    - Wikibase
 
 wikihiero:
-  - VisualEditor
+  recurse: true
+  dependencies:
+    - VisualEditor
 
 WikimediaBadges:
-  - Wikibase
+  recurse: true
+  dependencies:
+    - Wikibase
 
 WikimediaCampaignEvents:
-  - CampaignEvents
-  - cldr
+  recurse: true
+  dependencies:
+    - CampaignEvents
+    - cldr
 
 WikimediaEvents:
-  - CentralAuth
-  - CheckUser
-  - ConfirmEdit
-  - cldr
-  - EmailAuth
-  - EventLogging
-  - EventBus
-  - EventStreamConfig
-  - FlaggedRevs
-  - GlobalBlocking
-  - GlobalPreferences
-  - IPReputation
-  - LoginNotify
-  - OATHAuth
+  recurse: true
+  dependencies:
+    - CentralAuth
+    - CheckUser
+    - ConfirmEdit
+    - cldr
+    - EmailAuth
+    - EventLogging
+    - EventBus
+    - EventStreamConfig
+    - FlaggedRevs
+    - GlobalBlocking
+    - GlobalPreferences
+    - IPReputation
+    - LoginNotify
+    - OATHAuth
 
 WikimediaMaintenance:
-  - CentralAuth
-  - CheckUser
-  - Echo
+  recurse: true
+  dependencies:
+    - CentralAuth
+    - CheckUser
+    - Echo
 
 WikimediaMessages:
-  - cldr
+  recurse: true
+  dependencies:
+    - cldr
 
 Wikisource:
-  - ProofreadPage
-  - Wikibase
+  recurse: true
+  dependencies:
+    - ProofreadPage
+    - Wikibase
 
 Wikistories:
-  - BetaFeatures
-  - Echo
-  - EventLogging
-  - MobileFrontend
-  - skins/MinervaNeue
+  recurse: true
+  dependencies:
+    - BetaFeatures
+    - Echo
+    - EventLogging
+    - MobileFrontend
+    - skins/MinervaNeue
 
 Workflows:
-  - Forms
-  - OOJSPlus
+  recurse: true
+  dependencies:
+    - Forms
+    - OOJSPlus

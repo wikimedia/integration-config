@@ -145,6 +145,50 @@ class TestMwDependencies(unittest.TestCase):
             set(['B'])
         )
 
+    def test_recursion_optout(self):
+        mapping = {
+            'A': {
+                'recurse': False,
+                'dependencies': ['B'],
+            },
+            'B': ['C'],
+        }
+        self.assertEqual(
+            zuul_config.get_dependencies('A', mapping),
+            set(['B']),
+            'Transitive dependency C is not added',
+        )
+
+    def test_recursion_optin(self):
+        mapping = {
+            'A': {
+                'recurse': True,
+                'dependencies': ['B'],
+            },
+            'B': ['C'],
+        }
+        self.assertEqual(
+            zuul_config.get_dependencies('A', mapping),
+            set(['B', 'C']),
+        )
+
+    def test_recursion_nested_optout(self):
+        mapping = {
+            'A': {
+                'recurse': True,
+                'dependencies': ['B'],
+            },
+            'B': {
+                'recurse': False,
+                'dependencies': ['C'],
+            },
+            'C': ['D'],
+        }
+        self.assertEqual(
+            zuul_config.get_dependencies('A', mapping),
+            set(['B', 'C']),
+        )
+
     def test_inject_skin_on_an_extension(self):
         deps = self.fetch_dependencies(
             job_name='quibble-for-mediawiki-core-composer-mysql-php81',

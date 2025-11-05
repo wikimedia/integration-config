@@ -306,20 +306,39 @@ def get_dependencies(key, mapping, recurse=True):
     """
     resolved = set()
 
-    def resolve_deps(ext):
+    def resolve_deps(ext, recurse=True):
         resolved.add(ext)
         deps = set()
 
         if ext in mapping:
-            for dep in mapping[ext]:
+            if 'recurse' in mapping[ext]:
+                # Format to have some extensions opt out recursive processing,
+                # example:
+                #
+                #   Foo:
+                #     recurse: False
+                #     dependencies:
+                #      - Bar
+                recurse = mapping[ext]['recurse']
+                mapping_deps = mapping[ext]['dependencies']
+            else:
+                # Legacy format, the mapping has the list of dependencies since
+                # for Phan we never processed them recursively.
+                #
+                #   Foo:
+                #    - Bar
+                #
+                mapping_deps = mapping[ext]
+
+            for dep in mapping_deps:
                 deps.add(dep)
 
                 if recurse and dep not in resolved:
-                    deps = deps.union(resolve_deps(dep))
+                    deps = deps.union(resolve_deps(dep, recurse))
 
         return deps
 
-    return resolve_deps(key)
+    return resolve_deps(key, recurse)
 
 
 tarballextensions = [
