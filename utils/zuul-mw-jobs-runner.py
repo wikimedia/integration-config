@@ -256,10 +256,10 @@ class ZuulMwJobsRunner():
         self._connect()
 
         # No point in starting more threads than total number of jobs
-        threads_to_start = min(self.num_jobs, self.jenkins_jobs_to_run)
+        threads_to_start = min(self.num_jobs, len(self.jenkins_jobs_to_run))
 
         log.info('Starting %s processing threads', threads_to_start)
-        for x in range(0, self.threads_to_start):
+        for x in range(0, threads_to_start):
             threading.Thread(target=worker, name='worker-%s' % x, args=[x], daemon=True).start()
 
         for job in self.jenkins_jobs_to_run:
