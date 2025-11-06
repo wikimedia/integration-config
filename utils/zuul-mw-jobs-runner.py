@@ -83,6 +83,7 @@ class ZuulMwJobsRunner():
         self.num_jobs = args.jobs
         self.requested_projects = args.projects
         self.projects_filter = args.projects_filter
+        self.phpunit = args.phpunit
         self.selenium = args.selenium
 
     def prepare(self):
@@ -159,6 +160,7 @@ class ZuulMwJobsRunner():
         if templates.issubset({'archived', 'extension-broken'}):
             return []
 
+        jobs = []
         # Gated extensions and vendor based extensions
         if (
             # mediawiki/core
@@ -167,7 +169,8 @@ class ZuulMwJobsRunner():
             or templates == {'extension-gate', 'extension-apitests'}
             or 'extension-quibble' in templates
         ):
-            jobs = ['quibble-vendor-mysql-php81']
+            if self.phpunit:
+                jobs += ['quibble-vendor-mysql-php81']
             if self.selenium:
                 jobs += ['quibble-composer-mysql-php81-selenium']
             return jobs
@@ -177,25 +180,35 @@ class ZuulMwJobsRunner():
             'extension-quibble-composer' in templates
             or 'extension-quibble-php81-or-later' in templates
         ):
-            jobs = ['quibble-composer-mysql-php81']
+            if self.phpunit:
+                jobs += ['quibble-composer-mysql-php81']
             if self.selenium:
                 jobs += ['quibble-composer-mysql-php81-selenium']
             return jobs
 
         # The ones without Selenium
         if 'extension-quibble-noselenium' in templates:
-            return ['quibble-vendor-mysql-php81']
+            if self.phpunit:
+                jobs += ['quibble-vendor-mysql-php81']
+            return jobs
         if 'extension-quibble-composer-noselenium' in templates:
-            return ['quibble-composer-mysql-php81']
+            if self.phpunit:
+                jobs += ['quibble-composer-mysql-php81']
+            return jobs
         # Bluespice
         if 'extension-quibble-bluespice' in templates:
-            return ['quibble-composer-mysql-php81']
+            if self.phpunit:
+                jobs += ['quibble-composer-mysql-php81']
+            return jobs
 
-        # Skins
         if 'skin-quibble' in templates:
-            return ['quibble-vendor-mysql-php81']
+            if self.phpunit:
+                jobs += ['quibble-vendor-mysql-php81']
+            return jobs
         if 'skin-quibble-composer' in templates:
-            return ['quibble-composer-mysql-php81']
+            if self.phpunit:
+                jobs += ['quibble-composer-mysql-php81']
+            return jobs
 
         raise Exception("Unhandled set of templates for %s: %s" % (
             project_name, templates))
@@ -274,6 +287,8 @@ def parse_args(args):
     parser.add_argument('--start', action='store_true')
     parser.add_argument('--jobs', default=2, type=int)
     parser.add_argument('--debug', action='store_true')
+    parser.add_argument('--phpunit', action=argparse.BooleanOptionalAction,
+                        default=True)
     parser.add_argument('--selenium', action=argparse.BooleanOptionalAction,
                         default=True)
 
