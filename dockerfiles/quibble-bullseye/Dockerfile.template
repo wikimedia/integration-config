@@ -157,6 +157,9 @@ USER nobody
 # form as well, so setting it generally.
 ENV HOME=/tmp
 
+# Force Python stdout and stderr streams to be unbuffered
+ENV PYTHONUNBUFFERED=1
+
 # Add phan scripts
 COPY run-phan.sh /run-phan.sh
 COPY run-phan-core.sh /run-phan-core.sh

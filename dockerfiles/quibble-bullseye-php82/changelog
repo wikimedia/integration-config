@@ -1,3 +1,10 @@
+quibble-bullseye-php82 (1.14.2-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   Add PYTHONUNBUFFERED envvar
+
+ -- Bryan Davis <bd808@wikimedia.org>  Thu,  6 Nov 2025 10:39:56 -0700
+
 quibble-bullseye-php82 (1.14.2-s3) wikimedia; urgency=high
 
    Refresh for update in parent image php-scratch:

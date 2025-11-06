@@ -1,3 +1,9 @@
+quibble-bullseye (1.14.2-s3) wikimedia; urgency=high
+
+   Add PYTHONUNBUFFERED envvar
+
+ -- Bryan Davis <bd808@wikimedia.org>  Thu,  6 Nov 2025 10:39:56 -0700
+
 quibble-bullseye (1.14.2-s2) wikimedia; urgency=high
 
    Refresh for update in parent image node20:
