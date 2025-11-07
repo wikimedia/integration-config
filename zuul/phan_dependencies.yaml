@@ -220,6 +220,7 @@ ContentTranslation:
   - AbuseFilter
   - BetaFeatures
   - CentralAuth
+  - CommunityConfiguration
   - Echo
   - EventLogging
   - GlobalPreferences
