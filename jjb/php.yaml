@@ -89,6 +89,6 @@
     php:
      - php81:
          composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s8
-         phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s3
+         phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s4
     jobs:
       - 'phan-{php}'
