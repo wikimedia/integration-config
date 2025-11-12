@@ -81,6 +81,7 @@ class ZuulMwJobsRunner():
         self.zuul_layout = args.zuul_layout
         self.params_file = args.params_file
         self.num_jobs = args.jobs
+        self.in_production = args.in_production
         self.requested_projects = args.projects
         self.projects_filter = args.projects_filter
         self.phpunit = args.phpunit
@@ -119,6 +120,9 @@ class ZuulMwJobsRunner():
         log.info('Successfully loaded Zuul set_parameters()')
         return set_parameters
 
+    def _templates_names(self, templates):
+        return {t['name'] for t in templates}
+
     def _read_projects(self, zuul_layout):
         log.info('Reading projects from %s', zuul_layout)
         with open(zuul_layout) as f:
@@ -141,6 +145,13 @@ class ZuulMwJobsRunner():
             ):
                 continue
 
+            # To only process extensions that are marked as being in Production
+            if (
+                self.in_production
+                and 'in-wikimedia-production' not in self._templates_names(p['template'])
+            ):
+                continue
+
             if self.projects_filter is not None:
                 if not re.search(self.projects_filter, p['name']):
                     continue
@@ -155,7 +166,7 @@ class ZuulMwJobsRunner():
         return projects
 
     def _mapTemplatesToJobs(self, project_name, templates):
-        templates = {t['name'] for t in templates}
+        templates = self._templates_names(templates)
 
         if templates.issubset({'archived', 'extension-broken'}):
             return []
@@ -301,6 +312,11 @@ def parse_args(args):
         '--projects-filter', metavar='REGEX',
         help='Runs on project matching pattern. '
         'Example: ^mediawiki/extensions/Blue')
+
+    parser.add_argument(
+        '--in-production', action='store_true',
+        help='Only act on projects having "in-wikimedia-production template" '
+             'in Zuul layout')
 
     return parser.parse_args(args)
 
