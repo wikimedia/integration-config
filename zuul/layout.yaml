@@ -1321,8 +1321,8 @@ jobs:
     branch: (?!.*deployment.*|^contrib$)
 
   # Make 'standalone' jobs run consecutively not concurrently, as they can clobber each other
-  - name: quibble-vendor-mysql-php81-phpunit-standalone
-    mutex: quibble-vendor-mysql-php81-phpunit-standalone
+  - name: quibble-vendor-mysql-php83-phpunit-standalone
+    mutex: quibble-vendor-mysql-php83-phpunit-standalone
 
   # Still being tested
   #
@@ -1351,7 +1351,7 @@ jobs:
       - '^jjb/.*'
       - '^tox.ini$'
 
-  - name: operations-mw-config-php81-composer-diffConfig
+  - name: operations-mw-config-php83-composer-diffConfig
     voting: false
     # Note that the results are the other way around because we're using `git diff --exit-code`.
     success-message: 'FAILURE No change detected against the current configuration.'
@@ -1443,10 +1443,10 @@ project-templates:
   #
   - name: extension-broken
     test:
-      - mediawiki-composer-php81
+      - mediawiki-composer-php83
       - mediawiki-node20
     gate-and-submit:
-      - mediawiki-composer-php81
+      - mediawiki-composer-php83
       - mediawiki-node20
 
     test-1_39:
@@ -1480,7 +1480,7 @@ project-templates:
     gate-and-submit-l10n:
       - mediawiki-i18n-check
     experimental:
-      - mwext-phan-php81
+      - mwext-phan-php83
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1490,8 +1490,8 @@ project-templates:
 
   # Main CI template for extensions, using quibble
   #
-  # As of 2025-11-13, our current CI testing targets are Node 20, plus:
-  # master : PHP 8.1–8.3 (supported & tested)
+  # As of 2025-11-25, our current CI testing targets are Node 20, plus:
+  # master : PHP 8.2–8.3 (supported & tested)
   # REL1_39: PHP 7.4 & 8.1 (but only test 8.1)
   # REL1_43: PHP 8.1–8.3 (supported & tested)
   # REL1_44: PHP 8.1–8.3 (supported & tested)
@@ -1499,20 +1499,18 @@ project-templates:
   # wmf/*:   PHP 8.3 (supported & tested)
   - name: extension-quibble
     test:
-      - quibble-vendor-mysql-php81
-      - quibble-vendor-mysql-php81-selenium
+      - quibble-vendor-mysql-php83
+      - quibble-vendor-mysql-php83-selenium
       - mediawiki-node20
-      - mwext-phan-php81
+      - mwext-phan-php83
     php:
       - quibble-vendor-mysql-php82
-      - quibble-vendor-mysql-php83
     gate-and-submit:
-      - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
-      - quibble-vendor-mysql-php81-selenium
+      - quibble-vendor-mysql-php83-selenium
       - mediawiki-node20
-      - mwext-phan-php81
+      - mwext-phan-php83
 
     test-1_39:
       - mediawiki-node20
@@ -1595,22 +1593,20 @@ project-templates:
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer
     test:
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php83-selenium
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
+      # - mwext-phan-php83
     php:
       - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
     gate-and-submit:
-      - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
+      - quibble-composer-mysql-php83-selenium
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
+      # - mwext-phan-php83
 
     test-1_39:
       - mediawiki-node20
@@ -1687,13 +1683,11 @@ project-templates:
   - name: extension-quibble-bluespice
     test:
       - mwext-bluespice-node20
-      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php83
     php:
       - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
     gate-and-submit:
       - mwext-bluespice-node20
-      - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
 
@@ -1740,18 +1734,16 @@ project-templates:
   # Should *not* be used for Wikimedia production without very good reason.
   - name: extension-quibble-noselenium
     test:
-      - quibble-vendor-mysql-php81
+      - quibble-vendor-mysql-php83
       - mediawiki-node20
-      - mwext-phan-php81
+      - mwext-phan-php83
     php:
       - quibble-vendor-mysql-php82
-      - quibble-vendor-mysql-php83
     gate-and-submit:
-      - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
       - mediawiki-node20
-      - mwext-phan-php81
+      - mwext-phan-php83
 
     test-1_39:
       - quibble-composer-mysql-php81
@@ -1823,20 +1815,18 @@ project-templates:
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
     test:
-      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php83
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
+      # - mwext-phan-php83
     php:
       - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
     gate-and-submit:
-      - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
+      # - mwext-phan-php83
 
     test-1_39:
       - quibble-composer-mysql-php81
@@ -1899,12 +1889,10 @@ project-templates:
   # Special job template that runs the "standalone" jobs - T225068
   - name: extension-quibble-only-standalone
     test:
-      - quibble-vendor-mysql-php81-phpunit-standalone
+      - quibble-vendor-mysql-php83-phpunit-standalone
     php:
       - quibble-vendor-mysql-php82-phpunit-standalone
-      - quibble-vendor-mysql-php83-phpunit-standalone
     gate-and-submit:
-      - quibble-vendor-mysql-php81-phpunit-standalone
       - quibble-vendor-mysql-php82-phpunit-standalone
       - quibble-vendor-mysql-php83-phpunit-standalone
     test-1_39:
@@ -1929,9 +1917,9 @@ project-templates:
   # Special job template that runs the "apitests" job for test and gate
   - name: extension-apitests
     test:
-      - quibble-apitests-only-vendor-php81
+      - quibble-apitests-only-vendor-php83
     gate-and-submit:
-      - quibble-apitests-only-vendor-php81
+      - quibble-apitests-only-vendor-php83
     test-wmf:
       - quibble-apitests-only-vendor-php83
     gate-and-submit-wmf:
@@ -1944,13 +1932,13 @@ project-templates:
     # For master
     test:
       - mediawiki-node20
-      - quibble-with-gated-extensions-vendor-mysql-php81
-      - quibble-with-gated-extensions-selenium-php81
+      - quibble-with-gated-extensions-vendor-mysql-php83
+      - quibble-with-gated-extensions-selenium-php83
     gate-and-submit:
       - mediawiki-node20
-      # Only triggered on master; jobs to track Wikimedia production on PHP 8.1
-      - quibble-with-gated-extensions-vendor-mysql-php81
-      - quibble-with-gated-extensions-selenium-php81
+      # Only triggered on master; jobs to track Wikimedia production on PHP 8.3
+      - quibble-with-gated-extensions-vendor-mysql-php83
+      - quibble-with-gated-extensions-selenium-php83
 
     # For wmf branches
     test-wmf:
@@ -2007,20 +1995,18 @@ project-templates:
   # that are for skins.
   - name: skin-quibble
     test:
-      - quibble-vendor-mysql-php81
-      - quibble-vendor-mysql-php81-selenium
+      - quibble-vendor-mysql-php83
+      - quibble-vendor-mysql-php83-selenium
       - mediawiki-node20
-      - mwext-phan-php81
+      - mwext-phan-php83
     php:
       - quibble-vendor-mysql-php82
-      - quibble-vendor-mysql-php83
     gate-and-submit:
-      - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
-      - quibble-vendor-mysql-php81-selenium
+      - quibble-vendor-mysql-php83-selenium
       - mediawiki-node20
-      - mwext-phan-php81
+      - mwext-phan-php83
 
     # We use composer on release branches
     test-1_39:
@@ -2100,19 +2086,17 @@ project-templates:
 
   - name: skin-quibble-composer
     test:
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php83-selenium
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
+      # - mwext-phan-php83
     php:
       - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
     gate-and-submit:
-      - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
+      - quibble-composer-mysql-php83-selenium
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php81
@@ -2283,7 +2267,7 @@ project-templates:
       - composer-package-php85
 
   # Temporary template for repos that fail on PHP 8.5+
-  - name: composer-test-package-php81-to-php84
+  - name: composer-test-package-php82-to-php84
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
       - composer-package-php81
@@ -2298,16 +2282,14 @@ project-templates:
     experimental:
       - composer-package-php85
 
-  - name: php-compile-php81-to-php85
+  - name: php-compile-php82-to-php85
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - php-compile-php81
       - php-compile-php82
       - php-compile-php83
       - php-compile-php84
       - php-compile-php85
     gate-and-submit:
-      - php-compile-php81
       - php-compile-php82
       - php-compile-php83
       - php-compile-php84
@@ -2464,11 +2446,11 @@ project-templates:
   # Track all extensions and skins in the MediaWiki tarball (not yet used)
   - name: in-mediawiki-tarball
     test:
-      - quibble-vendor-postgres-php81
-      - quibble-vendor-sqlite-php81
+      - quibble-vendor-postgres-php83
+      - quibble-vendor-sqlite-php83
     gate-and-submit:
-      - quibble-vendor-postgres-php81
-      - quibble-vendor-sqlite-php81
+      - quibble-vendor-postgres-php83
+      - quibble-vendor-sqlite-php83
 
   # Enforce each gerrit commit to follow a particular format (in testing only)
   - name: commit-message-validator
@@ -2484,7 +2466,7 @@ project-templates:
     gate-and-submit:
       - fail-archived-repositories
 
-  - name: mediawiki-php-library-php81-to-php85
+  - name: mediawiki-php-library-php82-to-php85
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
       - composer-package-php81
@@ -2502,7 +2484,7 @@ project-templates:
       - doxygen-publish
       - phpunit-coverage-php81-publish
 
-  # Temporary template for repos that fail on PHP 8.5+
+  # Temporary template for repos that fail on PHP 8.5+ and still support PHP 8.1
   - name: mediawiki-php-library-php81-to-php84
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
@@ -2520,6 +2502,21 @@ project-templates:
     postmerge:
       - doxygen-publish
       - phpunit-coverage-php81-publish
+
+  # Temporary template for repos that fail on PHP 8.5+
+  - name: mediawiki-php-library-php82-to-php84
+    test:
+      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
+      - composer-package-php82
+      - composer-package-php83
+      - composer-package-php84
+    gate-and-submit:
+      - composer-package-php82
+      - composer-package-php83
+      - composer-package-php84
+    postmerge:
+      - doxygen-publish
+      - phpunit-coverage-php83-publish
 
 # Register the Gerrit project name, apply them pipelines that in turn trigger
 # a set of jobs.
@@ -2720,11 +2717,11 @@ projects:
     template:
       - name: node20-rundoc
     test:
-      - api-testing-mysql-php81
-      - api-testing-sqlite-php81
+      - api-testing-mysql-php83
+      - api-testing-sqlite-php83
     gate-and-submit:
-      - api-testing-mysql-php81
-      - api-testing-sqlite-php81
+      - api-testing-mysql-php83
+      - api-testing-sqlite-php83
     postmerge:
       - generic-node20-docs-publish
 
@@ -2757,7 +2754,7 @@ projects:
 
   - name: mediawiki/tools/minus-x
     template:
-      - name: mediawiki-php-library-php81-to-php85
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/tools/phpunit-patch-coverage
     template:
@@ -2781,7 +2778,7 @@ projects:
     # FIXME: Use mediawiki-php-library?
     template:
       # (T410941) Not running in PHP 8.5 yet; waiting on upstream support
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php82-to-php84
     postmerge:
       - mw-tools-phan-demos-publish
       - phpunit-coverage-php81-publish
@@ -2881,40 +2878,38 @@ projects:
     template:
       - name: extension-gate
     test:
-      - quibble-for-mediawiki-core-vendor-mysql-php81
-      - quibble-for-mediawiki-core-composertest-only-php81
-      - quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php81
-      - quibble-apitests-only-vendor-php81
-      - mediawiki-core-phan-only-php81
+      - quibble-for-mediawiki-core-vendor-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83
+      - quibble-apitests-only-vendor-php83
+      - mediawiki-core-phan-only-php83
     php:
       # This is the diff between the optimised test-pipeline and the gate.
       #
       # The main quibble job that runs PHPUnit tests is:
-      #   quibble-for-mediawiki-core-vendor-mysql-php81
+      #   quibble-for-mediawiki-core-vendor-mysql-php83
       #
       # Alternate deps (composer instead of vendor)
-      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-mysql-php83
       # Alternate db backends
-      - quibble-for-mediawiki-core-vendor-sqlite-php81
-      - quibble-for-mediawiki-core-vendor-postgres-php81
+      - quibble-for-mediawiki-core-vendor-sqlite-php83
+      - quibble-for-mediawiki-core-vendor-postgres-php83
       # Alternate php versions
       - quibble-for-mediawiki-core-vendor-mysql-php82
-      - quibble-for-mediawiki-core-vendor-mysql-php83
       # Standalone run for core-only changes
       - quibble-vendor-mysql-php81-phpunit-standalone
     gate-and-submit:
-      - quibble-for-mediawiki-core-composer-mysql-php81
-      - quibble-for-mediawiki-core-vendor-mysql-php81
+      - quibble-for-mediawiki-core-composer-mysql-php83
       - quibble-for-mediawiki-core-vendor-mysql-php82
       - quibble-for-mediawiki-core-vendor-mysql-php83
-      - quibble-for-mediawiki-core-composertest-only-php81
-      - quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php81
-      - quibble-apitests-only-vendor-php81
-      - quibble-for-mediawiki-core-vendor-sqlite-php81
-      - quibble-for-mediawiki-core-vendor-postgres-php81
-      - mediawiki-core-phan-only-php81
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83
+      - quibble-apitests-only-vendor-php83
+      - quibble-for-mediawiki-core-vendor-sqlite-php83
+      - quibble-for-mediawiki-core-vendor-postgres-php83
+      - mediawiki-core-phan-only-php83
       # Standalone run for core-only changes
-      - quibble-vendor-mysql-php81-phpunit-standalone
+      - quibble-vendor-mysql-php83-phpunit-standalone
 
     test-1_39:
       - quibble-for-mediawiki-core-composer-mysql-php81
@@ -3028,18 +3023,14 @@ projects:
       - name: extension-gate
       - name: extension-apitests
     test:
-      - mediawiki-composer-php81
-      - quibble-for-mediawiki-core-vendor-mysql-php81
+      - mediawiki-composer-php83
+      - quibble-for-mediawiki-core-vendor-mysql-php83
     php:
       - mediawiki-composer-php82
-      - mediawiki-composer-php83
       - quibble-for-mediawiki-core-vendor-mysql-php82
-      - quibble-for-mediawiki-core-vendor-mysql-php83
     gate-and-submit:
-      - mediawiki-composer-php81
       - mediawiki-composer-php82
       - mediawiki-composer-php83
-      - quibble-for-mediawiki-core-vendor-mysql-php81
       - quibble-for-mediawiki-core-vendor-mysql-php82
       - quibble-for-mediawiki-core-vendor-mysql-php83
     gate-and-submit-wmf:
@@ -4372,9 +4363,9 @@ projects:
       - name: extension-codehealth
       - name: extension-coverage
     test:
-      - wikibase-client-php81
+      - wikibase-client-php83
     gate-and-submit:
-      - wikibase-client-php81
+      - wikibase-client-php83
 
   - name: mediawiki/extensions/EventBus
     template:
@@ -4460,22 +4451,13 @@ projects:
     template:
       - name: in-wikimedia-fundraising-production
       # Using the -composer (rather than vendor) version because of FR-only use of twig etc.
-      # Not using a quibble job because we're limited to PHP 8.2+ only
-      # - name: extension-quibble-composer
+      - name: extension-quibble-composer
       - name: extension-coverage
       - name: mediawiki-i18n-check
     test:
-      # Jobs that we would inherit from extension-quibble-composer, but PHP 8.2+ only
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - mediawiki-node20
       # Special extra jobs because Fundraising uses this on PHP82/REL1_43
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_43-php82
     gate-and-submit:
-      # Jobs that we would inherit from extension-quibble-composer, but PHP 8.2+ only
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - mediawiki-node20
       # Special extra jobs because Fundraising uses this on PHP82/REL1_43
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_43-php82
 
@@ -5366,11 +5348,11 @@ projects:
       - name: mwgate-npm
       - name: extension-apitests
     test:
-      - wikibase-client-php81
-      - wikibase-repo-php81
+      - wikibase-client-php83
+      - wikibase-repo-php83
     gate-and-submit: &mediawiki-extensions-wikibase-gate-and-submit
-      - wikibase-client-php81
-      - wikibase-repo-php81
+      - wikibase-client-php83
+      - wikibase-repo-php83
     test-1_39:
       - wikibase-client-php81
       - wikibase-repo-php81
@@ -5503,12 +5485,12 @@ projects:
       # Special Catalyst helm test runner for WikiLambda end-to-end system check
       - wikilambda-catalyst-end-to-end
       # Using the job directly, not via template, as it won't pass on REL branches -- JDF 2025-01-07
-      - quibble-vendor-mysql-php81-phpunit-standalone
+      - quibble-vendor-mysql-php83-phpunit-standalone
     gate-and-submit:
       # Special Catalyst helm test runner for WikiLambda end-to-end system check
       - wikilambda-catalyst-end-to-end
       # Using the job directly, not via template, as it won't pass on REL branches -- JDF 2025-01-07
-      - quibble-vendor-mysql-php81-phpunit-standalone
+      - quibble-vendor-mysql-php83-phpunit-standalone
     postmerge:
       - mwext-doxygen-publish
       # NOTE: This is the 'wrong' publisher, but there's no JS extension
@@ -8704,25 +8686,23 @@ projects:
       - name: extension-apitests
       - name: commit-message-validator
     test:
-      - parsoidsvc-composer-package-php81
-      - quibble-composer-mysql-php81
+      - parsoidsvc-composer-package-php83
+      - quibble-composer-mysql-php83
     gate-and-submit:
-      - parsoidsvc-composer-package-php81
-      - quibble-composer-mysql-php81
       - parsoidsvc-composer-package-php82
       - quibble-composer-mysql-php82
       - parsoidsvc-composer-package-php83
       - quibble-composer-mysql-php83
     experimental:
       # These are the jobs which would be added by the extension-gate template
-      - quibble-with-gated-extensions-vendor-mysql-php81
-      - quibble-with-gated-extensions-selenium-php81
+      - quibble-with-gated-extensions-vendor-mysql-php83
+      - quibble-with-gated-extensions-selenium-php83
       - parsoidsvc-composer-package-php84
       - parsoidsvc-composer-package-php85
       - quibble-composer-mysql-php84
     postmerge:
       - parsoidsvc-doxygen-publish
-      - phpunit-coverage-php81-publish
+      - phpunit-coverage-php83-publish
 
   - name: mediawiki/services/parsoid/testreduce
     template:
@@ -8970,11 +8950,11 @@ projects:
 
   - name: mediawiki/php/excimer
     template:
-      - name: php-compile-php81-to-php85
+      - name: php-compile-php82-to-php85
 
   - name: mediawiki/php/luasandbox
     template:
-      - name: php-compile-php81-to-php85
+      - name: php-compile-php82-to-php85
     postmerge:
       - doxygen-publish
     publish:
@@ -8982,19 +8962,17 @@ projects:
 
   - name: mediawiki/php/wikidiff2
     template:
-      - name: php-compile-php81-to-php85
+      - name: php-compile-php82-to-php85
 
   - name: mediawiki/php/wmerrors
     # (T410921) Temporarily disable PHP 8.5 builds due to build failures.
     # template:
-      # - name: php-compile-php81-to-php85
+      # - name: php-compile-php82-to-php85
     test:
-      - php-compile-php81
       - php-compile-php82
       - php-compile-php83
       - php-compile-php84
     gate-and-submit:
-      - php-compile-php81
       - php-compile-php82
       - php-compile-php83
       - php-compile-php84
@@ -9005,7 +8983,7 @@ projects:
 
   - name: mediawiki/oauthclient-php
     template:
-      - name: mediawiki-php-library-php81-to-php85
+      - name: mediawiki-php-library-php82-to-php85
 
 #### MediaWiki libraries #######################################
 
@@ -9860,7 +9838,7 @@ projects:
     # composer is run by npm-run-jenkins T155483
     template:
       # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php82-to-php84
       - name: mediawiki-i18n-check
     test:
       - ooui-node24-plus-php81-runjenkins
@@ -10184,13 +10162,13 @@ projects:
     template:
       # FIXME: Use mediawiki-php-library?
       # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php82-to-php84
 
   - name: wikimedia/lucene-explain-parser
     template:
       # FIXME: Use mediawiki-php-library?
       # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php82-to-php84
 
   - name: performance/slack-bot
     template:

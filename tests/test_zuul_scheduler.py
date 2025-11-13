@@ -237,13 +237,13 @@ class TestZuulScheduler(unittest.TestCase):
             % (name, pipeline)
         )
 
-    def assertProjectHasVotingPHP81(self, name, definition, pipeline):
+    def assertProjectHasVotingPHP83(self, name, definition, pipeline):
         if pipeline != 'gate-and-submit':
             return
         self.assertTrue(
             any([job for job in definition
-                 if 'quibble' in job and 'php81' in job]),
-            'Project %s pipeline %s must have quibble job for PHP 8.1'
+                 if 'quibble' in job and 'php83' in job]),
+            'Project %s pipeline %s must have quibble job for PHP 8.3'
             % (name, pipeline)
             )
 
@@ -271,7 +271,7 @@ class TestZuulScheduler(unittest.TestCase):
             r'mediawiki/core$': [
                 self.assertProjectHasComposerValidate,
                 self.assertProjectHasPhplint,
-                self.assertProjectHasVotingPHP81,
+                self.assertProjectHasVotingPHP83,
                 self.assertProjectHasI18nChecker,
             ],
             r'mediawiki/extensions/\w+$': [
@@ -955,7 +955,7 @@ class TestZuulScheduler(unittest.TestCase):
             for (ext_name, pipelines) in self.getProjectsDefs().iteritems()
             if (ext_name.startswith('mediawiki/extensions/')
                 or ext_name.startswith('mediawiki/services/'))
-            and 'quibble-with-gated-extensions-vendor-mysql-php81'
+            and 'quibble-with-gated-extensions-vendor-mysql-php83'
                 in pipelines.get('test', {})
         ])
 
@@ -1124,30 +1124,29 @@ class TestZuulScheduler(unittest.TestCase):
 
     def test_mwcore_master_branch_has_expected_values(self):
         expected_test = {
-            'mediawiki-core-phan-only-php81': True,
-            'quibble-for-mediawiki-core-vendor-mysql-php81': True,
-            'quibble-for-mediawiki-core-composertest-only-php81': True,
-            'quibble-apitests-only-vendor-php81': True,
-            'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php81': True,
-            'quibble-with-gated-extensions-vendor-mysql-php81': True,
-            'quibble-with-gated-extensions-selenium-php81': True,
+            'mediawiki-core-phan-only-php83': True,
+            'quibble-for-mediawiki-core-vendor-mysql-php83': True,
+            'quibble-for-mediawiki-core-composertest-only-php83': True,
+            'quibble-apitests-only-vendor-php83': True,
+            'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83': True,
+            'quibble-with-gated-extensions-vendor-mysql-php83': True,
+            'quibble-with-gated-extensions-selenium-php83': True,
             'mediawiki-node20': True,
         }
         expected_gate = {
-            'mediawiki-core-phan-only-php81': True,
-            'quibble-for-mediawiki-core-composer-mysql-php81': True,
-            'quibble-for-mediawiki-core-vendor-mysql-php81': True,
+            'mediawiki-core-phan-only-php83': True,
+            'quibble-for-mediawiki-core-composer-mysql-php83': True,
             'quibble-for-mediawiki-core-vendor-mysql-php82': True,
             'quibble-for-mediawiki-core-vendor-mysql-php83': True,
-            'quibble-for-mediawiki-core-composertest-only-php81': True,
-            'quibble-apitests-only-vendor-php81': True,
-            'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php81': True,
-            'quibble-for-mediawiki-core-vendor-sqlite-php81': True,
-            'quibble-for-mediawiki-core-vendor-postgres-php81': True,
+            'quibble-for-mediawiki-core-composertest-only-php83': True,
+            'quibble-apitests-only-vendor-php83': True,
+            'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83': True,
+            'quibble-for-mediawiki-core-vendor-sqlite-php83': True,
+            'quibble-for-mediawiki-core-vendor-postgres-php83': True,
             'mediawiki-node20': True,
-            'quibble-vendor-mysql-php81-phpunit-standalone': True,
-            'quibble-with-gated-extensions-vendor-mysql-php81': True,
-            'quibble-with-gated-extensions-selenium-php81': True,
+            'quibble-vendor-mysql-php83-phpunit-standalone': True,
+            'quibble-with-gated-extensions-vendor-mysql-php83': True,
+            'quibble-with-gated-extensions-selenium-php83': True,
         }
 
         change = zuul.model.Change('mediawiki/core')
@@ -1254,7 +1253,7 @@ class TestZuulScheduler(unittest.TestCase):
         repo = 'mediawiki/extensions/CirrusSearch'
         release_job = self.getJob(
             repo, 'test',
-            'quibble-with-gated-extensions-vendor-mysql-php81')
+            'quibble-with-gated-extensions-vendor-mysql-php83')
 
         change = zuul.model.Change(repo)
 
