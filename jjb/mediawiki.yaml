@@ -953,6 +953,8 @@
             php:
                 - php81:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s5
+                - php83:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.2-s5
             packages-source: vendor
             database:
                 - mysql
