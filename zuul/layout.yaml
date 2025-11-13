@@ -1470,10 +1470,13 @@ project-templates:
 
   # Main CI template for extensions, using quibble
   #
-  # As of 2025-05-19, our current CI testing targets are Node 20, plus:
+  # As of 2025-11-13, our current CI testing targets are Node 20, plus:
   # master : PHP 8.1–8.3 (supported & tested)
   # REL1_39: PHP 7.4 & 8.1 (but only test 8.1)
   # REL1_43: PHP 8.1–8.3 (supported & tested)
+  # REL1_44: PHP 8.1–8.3 (supported & tested)
+  # REL1_45: PHP 8.1–8.3 (supported & tested)
+  # wmf/*:   PHP 8.1–8.3 (but only test 8.1)
   - name: extension-quibble
     test:
       - quibble-vendor-mysql-php81
