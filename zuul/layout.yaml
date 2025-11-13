@@ -1194,13 +1194,21 @@ jobs:
   # jobs.
   - name: quibble-for-mediawiki-core-composer-mysql-php81
     queue-name: mediawiki
+  - name: quibble-for-mediawiki-core-composer-mysql-php83
+    queue-name: mediawiki
   - name: quibble-for-mediawiki-core-vendor-mysql-php81
+    queue-name: mediawiki
+  - name: quibble-for-mediawiki-core-vendor-mysql-php83
     queue-name: mediawiki
   - name: mediawiki-node20
     queue-name: mediawiki
   - name: quibble-composer-mysql-php81
     queue-name: mediawiki
+  - name: quibble-composer-mysql-php83
+    queue-name: mediawiki
   - name: quibble-vendor-mysql-php81
+    queue-name: mediawiki
+  - name: quibble-vendor-mysql-php83
     queue-name: mediawiki
 
   # Some rake jobs should trigger regardless of affected files:
@@ -1476,7 +1484,7 @@ project-templates:
   # REL1_43: PHP 8.1–8.3 (supported & tested)
   # REL1_44: PHP 8.1–8.3 (supported & tested)
   # REL1_45: PHP 8.1–8.3 (supported & tested)
-  # wmf/*:   PHP 8.1–8.3 (but only test 8.1)
+  # wmf/*:   PHP 8.3 (supported & tested)
   - name: extension-quibble
     test:
       - quibble-vendor-mysql-php81
@@ -1550,13 +1558,13 @@ project-templates:
       # - mwext-php81-phan
 
     test-wmf:
-      - quibble-vendor-mysql-php81
+      - quibble-vendor-mysql-php83
       - mediawiki-node20
-      - mwext-php81-phan
+      - mwext-php83-phan
     gate-and-submit-wmf:
-      - quibble-vendor-mysql-php81
+      - quibble-vendor-mysql-php83
       - mediawiki-node20
-      - mwext-php81-phan
+      - mwext-php83-phan
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -1784,13 +1792,13 @@ project-templates:
       # - mwext-php81-phan
 
     test-wmf:
-      - quibble-vendor-mysql-php81
+      - quibble-vendor-mysql-php83
       - mediawiki-node20
-      - mwext-php81-phan
+      - mwext-php83-phan
     gate-and-submit-wmf:
-      - quibble-vendor-mysql-php81
+      - quibble-vendor-mysql-php83
       - mediawiki-node20
-      - mwext-php81-phan
+      - mwext-php83-phan
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -1917,9 +1925,9 @@ project-templates:
     gate-and-submit:
       - quibble-apitests-only-vendor-php81
     test-wmf:
-      - quibble-apitests-only-vendor-php81
+      - quibble-apitests-only-vendor-php83
     gate-and-submit-wmf:
-      - quibble-apitests-only-vendor-php81
+      - quibble-apitests-only-vendor-php83
 
   # Extensions tested together and intended for deployment to the Wikimedia Cluster
   # This job is expensive, so should only be run using the current flavour of PHP,
@@ -1939,11 +1947,11 @@ project-templates:
     # For wmf branches
     test-wmf:
       - mediawiki-node20
-      - quibble-with-gated-extensions-vendor-mysql-php81
+      - quibble-with-gated-extensions-vendor-mysql-php83
       # Not running the Selenium jobs, as they're slow and low-value
     gate-and-submit-wmf:
       - mediawiki-node20
-      - quibble-with-gated-extensions-vendor-mysql-php81
+      - quibble-with-gated-extensions-vendor-mysql-php83
       # Not running the Selenium jobs, as they're slow and low-value
 
     gate-and-submit-l10n:
@@ -2063,15 +2071,15 @@ project-templates:
       # - mwext-php81-phan
 
     test-wmf:
-      - quibble-vendor-mysql-php81
-      - quibble-vendor-mysql-php81-selenium
+      - quibble-vendor-mysql-php83
+      - quibble-vendor-mysql-php83-selenium
       - mediawiki-node20
-      - mwext-php81-phan
+      - mwext-php83-phan
     gate-and-submit-wmf:
-      - quibble-vendor-mysql-php81
-      - quibble-vendor-mysql-php81-selenium
+      - quibble-vendor-mysql-php83
+      - quibble-vendor-mysql-php83-selenium
       - mediawiki-node20
-      - mwext-php81-phan
+      - mwext-php83-phan
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -2905,15 +2913,15 @@ projects:
       - mediawiki-node20
 
     test-wmf:
-      - quibble-for-mediawiki-core-vendor-mysql-php81
-      - quibble-for-mediawiki-core-composertest-only-php81
-      - quibble-apitests-only-vendor-php81
-      - mediawiki-core-php81-phan
+      - quibble-for-mediawiki-core-vendor-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-apitests-only-vendor-php83
+      - mediawiki-core-php83-phan
     gate-and-submit-wmf:
-      - quibble-for-mediawiki-core-vendor-mysql-php81
-      - quibble-for-mediawiki-core-composertest-only-php81
-      - quibble-apitests-only-vendor-php81
-      - mediawiki-core-php81-phan
+      - quibble-for-mediawiki-core-vendor-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-apitests-only-vendor-php83
+      - mediawiki-core-php83-phan
 
     test-fundraising:
       - mediawiki-composer-php82
@@ -2964,9 +2972,9 @@ projects:
       - quibble-for-mediawiki-core-vendor-mysql-php82
       - quibble-for-mediawiki-core-vendor-mysql-php83
     gate-and-submit-wmf:
-      - mediawiki-composer-php81
-      - quibble-for-mediawiki-core-vendor-mysql-php81
-      - quibble-apitests-only-vendor-php81
+      - mediawiki-composer-php83
+      - quibble-for-mediawiki-core-vendor-mysql-php83
+      - quibble-apitests-only-vendor-php83
 
     # No CI support for mediawiki/vendor on release branches, folks should
     # use composer install instead. T189560
