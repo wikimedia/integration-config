@@ -199,6 +199,44 @@
           fail: true
       - timestamps
 
+# Phan! (T132636)
+- job-template:
+    name: 'mediawiki-core-phan-only-{php}'
+    node: Docker
+    properties:
+     - build-discarder:
+         days-to-keep: 15
+    triggers:
+     - zuul
+    builders:
+     - docker-log-dir
+     - docker-src-dir
+     - docker-castor-load
+     - docker-ci-src-setup-simple:
+          # Note that mediawiki/core branches may have a lot of submodules, we
+          # thus usually need to NOT process submodules.
+          # See https://phabricator.wikimedia.org/T44455
+         submodules: false
+     - docker-run-with-log-cache-src:
+        image: '{composer_image}'
+        args: '--working-dir=/src update --ansi --no-progress --prefer-dist --profile'
+
+     - docker-run-with-log-cache-src:
+        image: '{phan_image}'
+        memory: 7G  # Instances have 24G of RAM and 3 executors
+        entrypoint: /run-phan-core.sh
+        environment:
+            PHAN_COLOR_SCHEME: light
+        args: '--color'
+        srcdir: /mediawiki
+    publishers:
+     - teardown
+    wrappers:
+      - timeout:
+          timeout: 30
+          fail: true
+      - timestamps
+
 - project:
     name: mediawiki-core_phan_jobs
     php:
@@ -210,6 +248,7 @@
             phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.2-s5
 
     jobs:
+        - mediawiki-core-phan-only-{php}
         - mediawiki-core-{php}-phan
 
 - job-template: &job_quibble
