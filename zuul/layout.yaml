@@ -4827,7 +4827,6 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
 
-  # Not currently in production, but will be brought back for the Parsoid migration
   - name: mediawiki/extensions/ParserMigration
     template:
       - name: in-wikimedia-production
