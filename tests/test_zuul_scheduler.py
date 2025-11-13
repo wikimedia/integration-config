@@ -1209,7 +1209,7 @@ class TestZuulScheduler(unittest.TestCase):
             # A 'mediawiki' selenium test (bundled extensions browser testing)
             'quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php',
             # A phan job (PHP static analysis)
-            'mediawiki-core-phan-only-php81',
+            'mediawiki-core-phan-only-php',
             # A node job (JS linting)
             'mediawiki-node20',
         ]
