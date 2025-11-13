@@ -95,71 +95,6 @@
 
 # Phan! (T153039)
 - job-template:
-    name: 'mwext-{php}-phan'
-    node: Docker
-    properties:
-     - build-discarder:
-         days-to-keep: 15
-    triggers:
-     - zuul
-    builders:
-     - docker-castor-load
-     - docker-log-dir
-     - docker-src-dir
-
-     # Prepare the sources using Quibble.
-     # Notably run composer update in the thing to install mediawiki/phan-config.
-     - docker-run-with-log-cache-src:
-         image: '{setup_image}'
-         options: >-
-             --tmpfs /workspace/db:size=320M
-         volumes:
-             /srv/git: /srv/git:ro
-         # Use vendor and skip-deps
-         # We do not want to bring in MediaWiki core dev dependencies (T223397)
-         #
-         # MediaWiki installation is skipped, we do not need it. Additionally
-         # we only inject the extension dependencies required by Phan, notably
-         # we do not install dependencies of dependencies which might end up
-         # breaking the installation due to a missing extension.json
-         # requirement. (T232413)
-         args: >
-             --git-parallel=8
-             --packages-source=vendor
-             --db=mysql --db-dir=/workspace/db
-             --skip-deps
-             --skip-install
-             --skip=all
-         logdir: '/workspace/log'
-         srcdir: '/workspace/src'
-     # Install the extension/skin composer dev dependencies to bring in phan config
-     - docker-run-with-log-cache-src:
-        image: '{composer_image}'
-        args: '--working-dir=/src/"$THING_SUBNAME" update --ansi --no-progress --prefer-dist --profile'
-
-     # Now run Phan
-     - docker-run-with-log-cache-src:
-        environment:
-            PHAN_COLOR_SCHEME: light
-        image: '{phan_image}'
-        memory: 7G  # Instances have 24G of RAM and 3 executors
-        entrypoint: /run-phan.sh
-        args: '--color'
-        srcdir: '/mediawiki'
-
-    publishers:
-     - teardown
-    wrappers:
-      - timeout:
-          timeout: 30
-          fail: true
-      - timestamps
-      - credentials-binding:
-          - text:
-              credential-id: quibble-earlywarningbot-api-key
-              variable: QUIBBLE_API_KEY
-
-- job-template:
     name: 'mwext-phan-{php}'
     node: Docker
     properties:
@@ -244,7 +179,6 @@
             composer_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.10-s2
             phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.14.2-s5
     jobs:
-        - 'mwext-{php}-phan'
         - 'mwext-phan-{php}'
 
 - project:
