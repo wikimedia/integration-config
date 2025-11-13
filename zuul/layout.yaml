@@ -9059,16 +9059,12 @@ projects:
 
   - name: wikipeg
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php84
     test:
-      - wikipeg-special-node24-plus-php81-composer
       - wikipeg-special-node24-plus-php83-composer
     gate-and-submit:
-      - wikipeg-special-node20-plus-php81-composer
       - wikipeg-special-node20-plus-php83-composer
-      - wikipeg-special-node22-plus-php81-composer
       - wikipeg-special-node22-plus-php83-composer
-      - wikipeg-special-node24-plus-php81-composer
       - wikipeg-special-node24-plus-php83-composer
 
   - name: WrappedString
