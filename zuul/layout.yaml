@@ -1469,7 +1469,7 @@ project-templates:
     gate-and-submit-l10n:
       - mediawiki-i18n-check
     experimental:
-      - mwext-php81-phan
+      - mwext-phan-php81
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1491,7 +1491,7 @@ project-templates:
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php81-selenium
       - mediawiki-node20
-      - mwext-php81-phan
+      - mwext-phan-php81
     php:
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
@@ -1501,27 +1501,27 @@ project-templates:
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php81-selenium
       - mediawiki-node20
-      - mwext-php81-phan
+      - mwext-phan-php81
 
     test-1_39:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_39:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_43:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_43:
       - mediawiki-node20
       - quibble-composer-mysql-php81
@@ -1529,14 +1529,14 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_44:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_44:
       - mediawiki-node20
       - quibble-composer-mysql-php81
@@ -1544,7 +1544,7 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_45:
       - mediawiki-node20
@@ -1556,16 +1556,16 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-wmf:
       - quibble-vendor-mysql-php83
       - mediawiki-node20
-      - mwext-php83-phan
+      - mwext-phan-php83
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php83
       - mediawiki-node20
-      - mwext-php83-phan
+      - mwext-phan-php83
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -1589,7 +1589,7 @@ project-templates:
       - quibble-composer-mysql-php81-selenium
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     php:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1600,27 +1600,27 @@ project-templates:
       - quibble-composer-mysql-php81-selenium
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_39:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_39:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_43:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_43:
       - mediawiki-node20
       - quibble-composer-mysql-php81
@@ -1628,14 +1628,14 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_44:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_44:
       - mediawiki-node20
       - quibble-composer-mysql-php81
@@ -1643,7 +1643,7 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_45:
       - mediawiki-node20
@@ -1655,7 +1655,7 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -1733,7 +1733,7 @@ project-templates:
     test:
       - quibble-vendor-mysql-php81
       - mediawiki-node20
-      - mwext-php81-phan
+      - mwext-phan-php81
     php:
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
@@ -1742,44 +1742,44 @@ project-templates:
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
       - mediawiki-node20
-      - mwext-php81-phan
+      - mwext-phan-php81
 
     test-1_39:
       - quibble-composer-mysql-php81
       - mediawiki-node20
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_39:
       - quibble-composer-mysql-php81
       - mediawiki-node20
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_43:
       - quibble-composer-mysql-php81
       - mediawiki-node20
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_43:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - mediawiki-node20
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_44:
       - quibble-composer-mysql-php81
       - mediawiki-node20
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_44:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - mediawiki-node20
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_45:
       - quibble-composer-mysql-php83
@@ -1790,16 +1790,16 @@ project-templates:
       - quibble-composer-mysql-php83
       - mediawiki-node20
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-wmf:
       - quibble-vendor-mysql-php83
       - mediawiki-node20
-      - mwext-php83-phan
+      - mwext-phan-php83
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php83
       - mediawiki-node20
-      - mwext-php83-phan
+      - mwext-phan-php83
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -1818,7 +1818,7 @@ project-templates:
       - quibble-composer-mysql-php81
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     php:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1828,44 +1828,44 @@ project-templates:
       - quibble-composer-mysql-php83
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_39:
       - quibble-composer-mysql-php81
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_39:
       - quibble-composer-mysql-php81
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_43:
       - quibble-composer-mysql-php81
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_43:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_44:
       - quibble-composer-mysql-php81
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_44:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_45:
       - quibble-composer-mysql-php83
@@ -1876,7 +1876,7 @@ project-templates:
       - quibble-composer-mysql-php83
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -1885,7 +1885,7 @@ project-templates:
       - quibble-composer-sqlite-php81
       - quibble-composer-postgres-php81
       - quibble-composer-mysql-php84
-      - mwext-php81-phan
+      - mwext-phan-php81
       - mediawiki-node22
       - mediawiki-node24
 
@@ -2003,7 +2003,7 @@ project-templates:
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php81-selenium
       - mediawiki-node20
-      - mwext-php81-phan
+      - mwext-phan-php81
     php:
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
@@ -2013,7 +2013,7 @@ project-templates:
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php81-selenium
       - mediawiki-node20
-      - mwext-php81-phan
+      - mwext-phan-php81
 
     # We use composer on release branches
     test-1_39:
@@ -2021,20 +2021,20 @@ project-templates:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_39:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_43:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_43:
       - mediawiki-node20
       - quibble-composer-mysql-php81
@@ -2042,14 +2042,14 @@ project-templates:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_44:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_44:
       - mediawiki-node20
       - quibble-composer-mysql-php81
@@ -2057,7 +2057,7 @@ project-templates:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_45:
       - mediawiki-node20
@@ -2069,18 +2069,18 @@ project-templates:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-wmf:
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php83-selenium
       - mediawiki-node20
-      - mwext-php83-phan
+      - mwext-phan-php83
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php83-selenium
       - mediawiki-node20
-      - mwext-php83-phan
+      - mwext-phan-php83
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -2098,7 +2098,7 @@ project-templates:
       - quibble-composer-mysql-php81-selenium
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     php:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -2109,27 +2109,27 @@ project-templates:
       - quibble-composer-mysql-php81-selenium
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_39:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_39:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_43:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_43:
       - mediawiki-node20
       - quibble-composer-mysql-php81
@@ -2137,14 +2137,14 @@ project-templates:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_44:
       - mediawiki-node20
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_44:
       - mediawiki-node20
       - quibble-composer-mysql-php81
@@ -2152,7 +2152,7 @@ project-templates:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_45:
       - mediawiki-node20
@@ -2164,7 +2164,7 @@ project-templates:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -2812,7 +2812,7 @@ projects:
       - quibble-for-mediawiki-core-composertest-only-php81
       - quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php81
       - quibble-apitests-only-vendor-php81
-      - mediawiki-core-php81-phan
+      - mediawiki-core-phan-only-php81
     php:
       # This is the diff between the optimised test-pipeline and the gate.
       #
@@ -2829,8 +2829,6 @@ projects:
       - quibble-for-mediawiki-core-vendor-mysql-php83
       # Standalone run for core-only changes
       - quibble-vendor-mysql-php81-phpunit-standalone
-      # Phan for future version of PHP in Wikimedia production
-      - mediawiki-core-php81-phan
     gate-and-submit:
       - quibble-for-mediawiki-core-composer-mysql-php81
       - quibble-for-mediawiki-core-vendor-mysql-php81
@@ -2841,7 +2839,7 @@ projects:
       - quibble-apitests-only-vendor-php81
       - quibble-for-mediawiki-core-vendor-sqlite-php81
       - quibble-for-mediawiki-core-vendor-postgres-php81
-      - mediawiki-core-php81-phan
+      - mediawiki-core-phan-only-php81
       # Standalone run for core-only changes
       - quibble-vendor-mysql-php81-phpunit-standalone
 
@@ -2849,7 +2847,7 @@ projects:
       - quibble-for-mediawiki-core-composer-mysql-php81
       - quibble-for-mediawiki-core-composertest-only-php81
       - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
-      - mediawiki-core-php81-phan
+      - mediawiki-core-phan-only-php81
       - mediawiki-node20
     gate-and-submit-1_39:
       - quibble-for-mediawiki-core-composer-mysql-php81
@@ -2859,14 +2857,14 @@ projects:
       - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
       - quibble-for-mediawiki-core-composer-sqlite-php81
       - quibble-for-mediawiki-core-composer-postgres-php81
-      - mediawiki-core-php81-phan
+      - mediawiki-core-phan-only-php81
       - mediawiki-node20
 
     test-1_43:
       - quibble-for-mediawiki-core-composer-mysql-php81
       - quibble-for-mediawiki-core-composertest-only-php81
       - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
-      - mediawiki-core-php81-phan
+      - mediawiki-core-phan-only-php81
       - mediawiki-node20
     gate-and-submit-1_43:
       - quibble-for-mediawiki-core-composer-mysql-php81
@@ -2876,14 +2874,14 @@ projects:
       - quibble-for-mediawiki-core-composer-postgres-php81
       - quibble-for-mediawiki-core-composer-mysql-php82
       - quibble-for-mediawiki-core-composer-mysql-php83
-      - mediawiki-core-php81-phan
+      - mediawiki-core-phan-only-php81
       - mediawiki-node20
 
     test-1_44:
       - quibble-for-mediawiki-core-composer-mysql-php81
       - quibble-for-mediawiki-core-composertest-only-php81
       - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
-      - mediawiki-core-php81-phan
+      - mediawiki-core-phan-only-php81
       - mediawiki-node20
     gate-and-submit-1_44:
       - quibble-for-mediawiki-core-composer-mysql-php81
@@ -2893,14 +2891,14 @@ projects:
       - quibble-for-mediawiki-core-composer-postgres-php81
       - quibble-for-mediawiki-core-composer-mysql-php82
       - quibble-for-mediawiki-core-composer-mysql-php83
-      - mediawiki-core-php81-phan
+      - mediawiki-core-phan-only-php81
       - mediawiki-node20
 
     test-1_45:
       - quibble-for-mediawiki-core-composer-mysql-php83
       - quibble-for-mediawiki-core-composertest-only-php83
       - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
-      - mediawiki-core-php81-phan
+      - mediawiki-core-phan-only-php81
       - mediawiki-node20
     gate-and-submit-1_45:
       - quibble-for-mediawiki-core-composer-mysql-php81
@@ -2910,19 +2908,19 @@ projects:
       - quibble-for-mediawiki-core-composer-postgres-php81
       - quibble-for-mediawiki-core-composer-mysql-php82
       - quibble-for-mediawiki-core-composer-mysql-php83
-      - mediawiki-core-php81-phan
+      - mediawiki-core-phan-only-php81
       - mediawiki-node20
 
     test-wmf:
       - quibble-for-mediawiki-core-vendor-mysql-php83
       - quibble-for-mediawiki-core-composertest-only-php83
       - quibble-apitests-only-vendor-php83
-      - mediawiki-core-php83-phan
+      - mediawiki-core-phan-only-php83
     gate-and-submit-wmf:
       - quibble-for-mediawiki-core-vendor-mysql-php83
       - quibble-for-mediawiki-core-composertest-only-php83
       - quibble-apitests-only-vendor-php83
-      - mediawiki-core-php83-phan
+      - mediawiki-core-phan-only-php83
 
     test-fundraising:
       - mediawiki-composer-php82
@@ -4241,17 +4239,17 @@ projects:
       - mediawiki-node20
       - quibble-donationinterface-REL1_43-php82
       - mediawiki-composer-php82
-      - mwext-php82-phan
+      - mwext-phan-php82
     gate-and-submit:
       - mediawiki-composer-php82
       - mediawiki-node20
       - quibble-donationinterface-REL1_43-php82
-      - mwext-php82-phan
+      - mwext-phan-php82
     experimental:
       - mediawiki-node22
       - mediawiki-node24
       - mediawiki-composer-php81
-      - mwext-php81-phan
+      - mwext-phan-php81
       # These are the remaining parts of extension-quibble
       - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
@@ -5302,32 +5300,32 @@ projects:
       - wikibase-client-php81
       - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_39:
       - wikibase-client-php81
       - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     test-1_43:
       - wikibase-client-php81
       - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_43:
       - wikibase-client-php81
       - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     test-1_44:
       - wikibase-client-php81
       - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_44:
       - wikibase-client-php81
       - wikibase-repo-php81
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     test-1_45:
       - wikibase-client-php83
       - wikibase-repo-php83

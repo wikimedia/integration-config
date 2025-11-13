@@ -1124,7 +1124,7 @@ class TestZuulScheduler(unittest.TestCase):
 
     def test_mwcore_master_branch_has_expected_values(self):
         expected_test = {
-            'mediawiki-core-php81-phan': True,
+            'mediawiki-core-phan-only-php81': True,
             'quibble-for-mediawiki-core-vendor-mysql-php81': True,
             'quibble-for-mediawiki-core-composertest-only-php81': True,
             'quibble-apitests-only-vendor-php81': True,
@@ -1134,7 +1134,7 @@ class TestZuulScheduler(unittest.TestCase):
             'mediawiki-node20': True,
         }
         expected_gate = {
-            'mediawiki-core-php81-phan': True,
+            'mediawiki-core-phan-only-php81': True,
             'quibble-for-mediawiki-core-composer-mysql-php81': True,
             'quibble-for-mediawiki-core-vendor-mysql-php81': True,
             'quibble-for-mediawiki-core-vendor-mysql-php82': True,
@@ -1209,7 +1209,7 @@ class TestZuulScheduler(unittest.TestCase):
             # A 'mediawiki' selenium test (bundled extensions browser testing)
             'quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php',
             # A phan job (PHP static analysis)
-            'mediawiki-core-php81-phan',
+            'mediawiki-core-phan-only-php81',
             # A node job (JS linting)
             'mediawiki-node20',
         ]
