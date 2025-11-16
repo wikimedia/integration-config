@@ -8299,6 +8299,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/WandaScore
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/WantedPagesFromNS
     template:
       - name: extension-quibble
