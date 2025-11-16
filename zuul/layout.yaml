@@ -8303,6 +8303,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/WandaScribe
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/WantedPagesFromNS
     template:
       - name: extension-quibble
