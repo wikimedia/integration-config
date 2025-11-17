@@ -656,6 +656,7 @@ DiscussionTools:
 DrawioEditor:
   - Forms
   - VisualEditor
+  - VisualEditorPlus
 
 Echo:
   - CentralAuth
