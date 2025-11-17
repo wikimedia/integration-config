@@ -150,5 +150,5 @@
             quibble_args: '--skip npm-test,phpunit-standalone,api-testing'
             php:
                 - php81:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s4
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s5
                     entrypoint: quibble-with-supervisord
