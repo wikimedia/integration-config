@@ -1,3 +1,10 @@
+quibble-fresnel (1.14.2-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   (T410269) Bump wmf-opensearch-search-plugins version for CirrusSearch
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 17 Nov 2025 11:35:36 -0500
+
 quibble-fresnel (1.14.2-s4) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-bullseye:
