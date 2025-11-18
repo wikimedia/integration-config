@@ -57,6 +57,16 @@ log.setLevel(logging.INFO)
 
 class JobToRun():
 
+    def getDeps(self):
+        return sorted([
+            dep.removeprefix('mediawiki/extensions/')
+            for dep in self.params.get('EXT_DEPENDENCIES', '').split('\\n')
+            ],
+            key=str.casefold)
+
+    def getProject(self):
+        return self.params['ZUUL_PROJECT']
+
     def __init__(self, name, params):
         self.name = name
         self.params = params
@@ -65,10 +75,7 @@ class JobToRun():
         return '<%s job=%s deps=%s>' % (
             self.params['ZUUL_PROJECT'],
             self.name,
-            ','.join([
-                dep.removeprefix('mediawiki/extensions/')
-                for dep in self.params.get('EXT_DEPENDENCIES', '').split('\\n')
-            ]) or '[]'
+            ','.join(self.getDeps()) or '[]'
         )
 
 
@@ -256,7 +263,17 @@ class ZuulMwJobsRunner():
             project_name, templates))
 
     def dump(self):
-        pass
+        seen_projects = set()
+        for j in self.jenkins_jobs_to_run:
+            project = j.getProject()
+            if project in seen_projects:
+                continue
+            seen_projects.add(project)
+
+            print('%s: %s' % (
+                project.removeprefix('mediawiki/extensions/'),
+                ', '.join(j.getDeps())
+            ))
 
     def start(self):
         def worker(num):
@@ -334,7 +351,15 @@ def parse_args(args):
                         default=os.path.join(zuul_config_dir, 'parameter_functions.py'),
                         help='Path to zuul/parameter_functions.py')
 
-    parser.add_argument('--start', action='store_true')
+    actions = parser.add_argument_group('Actions')
+    group = actions.add_mutually_exclusive_group()
+    group.add_argument('--dump', action='store_true',
+                       help='Show dependencies one per line')
+    group.add_argument('--print', action='store_true', default=True,
+                       help='Print representation of projects/jobs')
+    group.add_argument('--start', action='store_true',
+                       help='Start the jobs on the Gearman server')
+
     parser.add_argument('--jobs', default=2, type=int)
     parser.add_argument('--debug', action='store_true')
     parser.add_argument('--phpunit', action=argparse.BooleanOptionalAction,
@@ -370,6 +395,8 @@ if __name__ == '__main__':
     runner.prepare()
     if args.start:
         runner.start()
+    elif args.dump:
+        runner.dump()
     else:
         runner.print_queue()
         print('Use --start to run them')
