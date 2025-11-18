@@ -29,7 +29,8 @@
 #     --start --jobs 4 |& tee run.log
 
 import argparse
-import imp
+import importlib.util
+import importlib.machinery
 import json
 import logging
 import os
@@ -125,8 +126,11 @@ class ZuulMwJobsRunner():
 
     def _load_function(self, params_file):
         log.info('Loading Zuul function from %s', params_file)
-        imp.load_source('zuul_config', params_file)
-        import zuul_config
+        loader = importlib.machinery.SourceFileLoader('zuul_config', params_file)
+        spec = importlib.util.spec_from_file_location('zuul_config', params_file, loader=loader)
+        zuul_config = importlib.util.module_from_spec(spec)
+        loader.exec_module(zuul_config)
+
         set_parameters = zuul_config.set_parameters
         log.info('Successfully loaded Zuul set_parameters()')
         return set_parameters
