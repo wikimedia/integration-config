@@ -1,3 +1,10 @@
+node24-test-browser-php81-composer (24.7.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   (T410453) Upgrade composer to 2.9.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 18 Nov 2025 17:23:07 -0500
+
 node24-test-browser-php81-composer (24.7.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php-scratch:

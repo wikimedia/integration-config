@@ -1,3 +1,10 @@
+php82-compile (8.2.29) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Bump version number to 8.2.29
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 18 Nov 2025 17:30:37 -0500
+
 php82-compile (8.2.28-s5) wikimedia; urgency=high
 
    Refresh for update in parent image php-scratch:

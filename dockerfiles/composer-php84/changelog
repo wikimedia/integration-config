@@ -1,3 +1,10 @@
+composer-php84 (8.4.14) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   (T410453) Upgrade composer to 2.9.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 18 Nov 2025 17:23:08 -0500
+
 composer-php84 (8.4.10-s2) wikimedia; urgency=high
 
    Refresh for update in parent image php-scratch:

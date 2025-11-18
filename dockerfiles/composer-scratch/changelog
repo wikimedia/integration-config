@@ -1,3 +1,9 @@
+composer-scratch (2.9.1) wikimedia; urgency=high
+
+   (T410453) Upgrade composer to 2.9.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 18 Nov 2025 17:23:08 -0500
+
 composer-scratch (2.8.1-s3) wikimedia; urgency=medium
 
   * Import /run-test and /run-testpackage from downstream images to avoid

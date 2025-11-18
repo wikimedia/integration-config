@@ -1,3 +1,10 @@
+node20-test-browser-php83-composer (20.19.5-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   (T410453) Upgrade composer to 2.9.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 18 Nov 2025 17:23:07 -0500
+
 node20-test-browser-php83-composer (20.19.5-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php-scratch:

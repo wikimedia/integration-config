@@ -1,3 +1,9 @@
+php81 (8.1.33) wikimedia; urgency=high
+
+   Bump version number to 8.1.33
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 18 Nov 2025 17:30:25 -0500
+
 php81 (8.1.32-s5) wikimedia; urgency=high
 
    Refresh for update in parent image php-scratch:
