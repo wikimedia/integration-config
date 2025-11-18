@@ -4013,12 +4013,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/Capiunto
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/CategoryTree
     template:
       - name: in-wikimedia-production
@@ -6116,6 +6110,11 @@ projects:
   - name: mediawiki/extensions/BulkBlock
     template:
       - name: extension-quibble
+
+  - name: mediawiki/extensions/Capiunto
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/Cargo
     template:
