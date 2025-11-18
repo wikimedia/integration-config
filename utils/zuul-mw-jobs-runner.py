@@ -323,9 +323,17 @@ class ZuulMwJobsRunner():
 
 
 def parse_args(args):
+    zuul_config_dir = os.path.realpath(os.path.join(
+        os.path.dirname(__file__), '../zuul/'))
+
     parser = argparse.ArgumentParser()
-    parser.add_argument('zuul_layout')
-    parser.add_argument('params_file')
+    parser.add_argument('zuul_layout', nargs='?',
+                        default=os.path.join(zuul_config_dir, 'layout.yaml'),
+                        help='Path to zuul/layout.yaml')
+    parser.add_argument('params_file', nargs='?',
+                        default=os.path.join(zuul_config_dir, 'parameter_functions.py'),
+                        help='Path to zuul/parameter_functions.py')
+
     parser.add_argument('--start', action='store_true')
     parser.add_argument('--jobs', default=2, type=int)
     parser.add_argument('--debug', action='store_true')
