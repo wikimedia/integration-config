@@ -11,7 +11,7 @@
             projects: >
                 wikimedia/fundraising/crm
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/civicrm:0.9
+            image: docker-registry.wikimedia.org/releng/civicrm:0.9-s1
             environment:
                 # $WORKSPACE is leaked from the host environment
                 WORKSPACE: "''"
@@ -29,14 +29,14 @@
         # Run `composer test` with the same env has the civicrm test env
         - '{name}-composer-{phpflavor}':
             phpflavor: civicrm
-            image: docker-registry.wikimedia.org/releng/civicrm:0.9
+            image: docker-registry.wikimedia.org/releng/civicrm:0.9-s1
 
 - project:
     name: donationinterface-fundraising-branches
     branch:
      - REL1_43:
          phpflavor: php82
-         docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.14.2-s5
+         docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.14.2-s6
          entrypoint: quibble-with-supervisord
          donation_interface_branch: master
     jobs:
@@ -92,7 +92,7 @@
     branch:
      - REL1_43:
          phpflavor: php82
-         docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.14.2-s5
+         docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.14.2-s6
          entrypoint: quibble-with-supervisord
     jobs:
      - quibble-fundraising-{ext}-{branch}-{phpflavor}

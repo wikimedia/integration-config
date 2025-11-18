@@ -52,11 +52,11 @@
     name: 'operations-mw-config'
     phpflavor:
      - php81:
-         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s8
+         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.33
      - php83:
-         image: docker-registry.wikimedia.org/releng/composer-php83:8.3.23-s5
+         image: docker-registry.wikimedia.org/releng/composer-php83:8.3.26
      - php84:
-         image: docker-registry.wikimedia.org/releng/composer-php84:8.4.10-s2
+         image: docker-registry.wikimedia.org/releng/composer-php84:8.4.14
     jobs:
      - '{name}-tox'
      - 'operations-mw-config-{phpflavor}-composer-{run-script}':
