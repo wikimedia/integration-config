@@ -94,7 +94,8 @@ class MwRequires():
                     # Sort them independently
                     deps = sorted(requirements, key=str.casefold) \
                         + sorted(transitives, key=str.casefold) \
-                        + sorted(extras, key=str.casefold)
+                        + sorted(extras, key=str.casefold) \
+                        + sorted(extras_transitives, key=str.casefold)
 
                 for dep in deps:
                     print(' - %s' % dep)
