@@ -267,9 +267,9 @@
                         curl -X "DELETE" "https://api.catalyst.wmcloud.org/api/environments/${ENV_ID}" \
                           -H "Authorization: ApiToken ${CATALYST_API_TOKEN}"
           - teardown
-          # Temporarily, e-mail Vaughn on failures
+          # Temporarily, e-mail Vaughn and James on failures
           - email-ext:
-              recipients:   vwalters@wikimedia.org
+              recipients:   vwalters@wikimedia.org jforrester@wikimedia.org
               content-type: text
               subject:      Broken build $BUILD_TAG
               body:         |
