@@ -6,7 +6,8 @@ set -o pipefail
 _dir="$(dirname "$0")"
 repodir="$(realpath "$_dir/..")"
 
-"$repodir"/utils/zuul-mw-jobs-runner.py --dump > current.txt
+tox -e utils --notest
+"$repodir"/.tox/utils/bin/python "$repodir"/utils/zuul-mw-jobs-runner.py --dump > current.txt
 
 previous_env=$(mktemp -d "$repodir"/zuul/zuul-params-diff_XXXX)
 trap 'rm -fR "$previous_env"' EXIT
@@ -33,8 +34,8 @@ for file in "${FILES[@]}"; do
     git show "$layout_prev_commit":"$file" > "$previous_env"/"$_base_file"
 done
 
-chmod +x "$previous_env"/zuul-mw-jobs-runner.py
-"$previous_env"/zuul-mw-jobs-runner.py --dump -- \
+"$repodir"/.tox/utils/bin/python \
+    "$previous_env"/zuul-mw-jobs-runner.py --dump -- \
     "$previous_env"/layout.yaml \
     "$previous_env"/parameter_functions.py \
     > before.txt
