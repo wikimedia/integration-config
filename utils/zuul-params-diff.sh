@@ -7,7 +7,7 @@ _dir="$(dirname "$0")"
 repodir="$(realpath "$_dir/..")"
 
 tox -e utils --notest
-"$repodir"/.tox/utils/bin/python "$repodir"/utils/zuul-mw-jobs-runner.py --dump > current.txt
+"$repodir"/.tox/utils/bin/python "$repodir"/utils/zuul-mw-jobs-runner.py --include-non-recursive --dump > current.txt
 
 previous_env=$(mktemp -d "$repodir"/zuul/zuul-params-diff_XXXX)
 trap 'rm -fR "$previous_env"' EXIT
@@ -35,7 +35,7 @@ for file in "${FILES[@]}"; do
 done
 
 "$repodir"/.tox/utils/bin/python \
-    "$previous_env"/zuul-mw-jobs-runner.py --dump -- \
+    "$previous_env"/zuul-mw-jobs-runner.py --include-non-recursive --dump -- \
     "$previous_env"/layout.yaml \
     "$previous_env"/parameter_functions.py \
     > before.txt
