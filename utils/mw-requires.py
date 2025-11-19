@@ -59,7 +59,10 @@ class MwRequires():
             log.info("Will sort requirements and extras independently"
                      + " with comments" if self.comments else "")
 
-        for (ext, ci_deps) in zuul_deps.items():
+        for ext in zuul_deps:
+
+            recurse = zuul_deps[ext]['recurse']
+            ci_deps = zuul_deps[ext]['dependencies']
 
             if self.project and ext != self.project:
                 continue
@@ -69,9 +72,10 @@ class MwRequires():
                 errored = True
                 continue
 
-            transitives = self.get_requirements(ext, recursive=True) - requirements
+            transitives = self.get_requirements(ext, recursive=recurse) - requirements
 
             print('%s:' % ext)
+            print('  recurse: %s' % str(zuul_deps[ext]['recurse']).lower())
 
             # Any extension defined in CI which is NOT already in extension registry
             extras = {ci_dep for ci_dep in ci_deps
@@ -81,7 +85,9 @@ class MwRequires():
             extras_transitives = {
                 extra_dep
                 for extra in extras
-                for extra_dep in self.get_requirements(extra, recursive=True)
+                for extra_dep in self.get_requirements(
+                    extra,
+                    recursive=zuul_deps.get(extra, {}).get('recurse', False))
             } - requirements - extras
 
             # When using no comments, the dependencies from extension.json and
@@ -98,34 +104,35 @@ class MwRequires():
                         + sorted(extras_transitives, key=str.casefold)
 
                 for dep in deps:
-                    print(' - %s' % dep)
+                    print('    - %s' % dep)
 
                 print()
                 continue  # proceed with next extension
 
             # Else when we get comments, each list is printed by itself
 
+            print('  dependencies:')
             if requirements:
-                self.comment('# From extension.json:')
+                self.comment('    # From extension.json:')
                 for requirement in sorted(requirements, key=str.casefold):
-                    print(' - %s' % requirement)
+                    print('    - %s' % requirement)
             else:
-                self.comment('# no requirements in extension.json')
+                self.comment('    # no requirements in extension.json')
 
             if transitives:
-                self.comment('# Transitive requirements:')
+                self.comment('    # Transitive requirements:')
                 for requirement in sorted(transitives, key=str.casefold):
-                    print(' - %s' % requirement)
+                    print('    - %s' % requirement)
 
             if extras:
-                self.comment('# extras')
+                self.comment('    # extras')
                 for extra in sorted(extras, key=str.casefold):
-                    print(' - %s' % extra)
+                    print('    - %s' % extra)
 
             if extras_transitives:
-                self.comment('# extras transitive requirements:')
+                self.comment('    # extras transitive requirements:')
                 for requirement in sorted(extras_transitives, key=str.casefold):
-                    print(' - %s' % requirement)
+                    print('    - %s' % requirement)
 
             print()
 
