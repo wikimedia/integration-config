@@ -1364,6 +1364,15 @@ jobs:
     success-message: 'SUCCESS No layout difference. Build'
     failure-message: 'SUCCESS Review the Zuul layout difference. Build'
 
+  - name: 'integration-config-zuul-params-diff'
+    voting: false
+    success-message: 'SUCCESS No dependencies difference. Build'
+    failure-message: 'SUCCESS Review the Zuul dependencies difference. Build'
+    files:
+      - '^zuul/.*'
+      - '^utils/zuul-params-diff.sh'
+      - '^utils/zuul-mw-job-runner.py'  # Used to dump dependencies
+
   - name: 'integration-config-zuul-layout-validate'
     branch: (?!labs)
 
@@ -2546,6 +2555,7 @@ projects:
       - integration-config-jjb-diff
       - integration-config-shellcheck
       - integration-config-zuul-layout-diff
+      - integration-config-zuul-params-diff
 
     gate-and-submit:
       - integration-config-tox

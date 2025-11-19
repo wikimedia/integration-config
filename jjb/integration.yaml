@@ -83,6 +83,9 @@
              - zuul-layout-validate:
                  timeout: 3  # minutes
                  entrypoint: utils/zuul-layout-validate.sh
+             - zuul-params-diff:
+                 timeout: 3  # minutes
+                 entrypoint: utils/zuul-params-diff.sh
 
 - project:
     name: 'integration-pipelinelib'
