@@ -189,6 +189,26 @@ class TestMwDependencies(unittest.TestCase):
             set(['B', 'C']),
         )
 
+    def test_mw_zuul_recurse(self):
+        params = {
+            'ZUUL_BRANCH': 'master',
+        }
+        job = FakeJob('quibble-vendor-mysql-php81')
+        zuul_config.dependencies = {
+            'Recursive': {'dependencies': [], 'recurse': True},
+            'NotRecursive': {'dependencies': [], 'recurse': False},
+        }
+
+        params['ZUUL_PROJECT'] = 'mediawiki/extensions/Recursive'
+        zuul_config.set_parameters(None, job, params)
+        self.assertIn('MW_ZUUL_RECURSE', params)
+        self.assertTrue(params['MW_ZUUL_RECURSE'])
+
+        params['ZUUL_PROJECT'] = 'mediawiki/extensions/NotRecursive'
+        zuul_config.set_parameters(None, job, params)
+        self.assertIn('MW_ZUUL_RECURSE', params)
+        self.assertFalse(params['MW_ZUUL_RECURSE'])
+
     def test_inject_skin_on_an_extension(self):
         deps = self.fetch_dependencies(
             job_name='quibble-for-mediawiki-core-composer-mysql-php81',

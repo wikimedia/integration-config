@@ -264,6 +264,7 @@ def set_mw_dependencies(item, job, params):
     else:
         mapping = dependencies
         recurse = True
+        params['MW_ZUUL_RECURSE'] = dependencies.get(dep_key, {}).get('recurse')
 
     deps = get_dependencies(dep_key, mapping, recurse)
 
