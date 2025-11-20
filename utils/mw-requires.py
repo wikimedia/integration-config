@@ -88,7 +88,7 @@ class MwRequires():
                 for extra_dep in self.get_requirements(
                     extra,
                     recursive=zuul_deps.get(extra, {}).get('recurse', False))
-            } - requirements - extras
+            } - requirements - extras - transitives - {ext}
 
             # When using no comments, the dependencies from extension.json and
             # zuul/dependencies.yaml are printed sorted as a unique list. This
