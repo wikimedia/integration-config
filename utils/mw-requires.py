@@ -103,6 +103,7 @@ class MwRequires():
                         + sorted(extras, key=str.casefold) \
                         + sorted(extras_transitives, key=str.casefold)
 
+                print('  dependencies:')
                 for dep in deps:
                     print('    - %s' % dep)
 
