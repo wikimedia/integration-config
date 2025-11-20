@@ -1,0 +1,5 @@
+php85-compile (8.5.0) wikimedia; urgency=high
+
+   Initial release with PHP 8.5.0.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 20 Nov 2025 16:42:56 -0500
