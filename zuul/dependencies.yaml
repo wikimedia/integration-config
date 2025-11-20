@@ -114,8 +114,10 @@ AtMentions:
 AutoModerator:
   recurse: true
   dependencies:
-    - CommunityConfiguration
     - DiscussionTools
+    - Linter
+    - VisualEditor
+    - CommunityConfiguration
     - ORES
 
 Babel:
@@ -954,10 +956,11 @@ CommunityConfigurationExample:
 CommunityRequests:
   recurse: true
   dependencies:
+    - VisualEditor
     - DiscussionTools
     - Translate
-    - VisualEditor
     - WikimediaMessages
+    - Linter
 
 ConfigManager:
   recurse: true
@@ -1602,9 +1605,11 @@ ReplaceText:
 ReportIncident:
   recurse: true
   dependencies:
+    - EventLogging
     - CommunityConfiguration
     - DiscussionTools
-    - EventLogging
+    - Linter
+    - VisualEditor
 
 RevisionSlider:
   recurse: true
@@ -1887,6 +1892,7 @@ VisualEditor:
     - DiscussionTools
     - FlaggedRevs
     - TemplateData
+    - Linter
 
 VisualEditorPlus:
   recurse: true
