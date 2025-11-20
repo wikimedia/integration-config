@@ -814,14 +814,16 @@ BlueSpiceWikiFarm:
 BounceHandler:
   recurse: true
   dependencies:
+    - AntiSpoof
     - CentralAuth
     - Echo
 
 CampaignEvents:
   recurse: true
   dependencies:
-    - CentralAuth
     - cldr
+    - AntiSpoof
+    - CentralAuth
     - Translate
     - UniversalLanguageSelector
     - UserMerge
@@ -845,8 +847,8 @@ CategoryWatch:
 CentralAuth:
   recurse: true
   dependencies:
-    - AbuseFilter
     - AntiSpoof
+    - AbuseFilter
     - CheckUser
     - GlobalBlocking
     - GlobalPreferences
@@ -873,6 +875,7 @@ CheckUser:
   recurse: true
   dependencies:
     - AbuseFilter
+    - AntiSpoof
     - CentralAuth
     - FlaggedRevs
     - GlobalBlocking
@@ -1068,6 +1071,7 @@ DrawioEditor:
 Echo:
   recurse: true
   dependencies:
+    - AntiSpoof
     - CentralAuth
     - EventLogging
     - MobileFrontend
@@ -1144,6 +1148,7 @@ FileAnnotations:
 FileImporter:
   recurse: true
   dependencies:
+    - AntiSpoof
     - CentralAuth
     - WikiEditor
 
@@ -1191,6 +1196,7 @@ GeoData:
 GlobalBlocking:
   recurse: true
   dependencies:
+    - AntiSpoof
     - CentralAuth
 
 GrowthExperiments:
@@ -1318,9 +1324,10 @@ Linter:
 LoginNotify:
   recurse: true
   dependencies:
+    - Echo
+    - AntiSpoof
     - CentralAuth
     - CheckUser
-    - Echo
 
 MagicLinkAuthentication:
   recurse: true
@@ -1330,6 +1337,7 @@ MagicLinkAuthentication:
 MassMessage:
   recurse: true
   dependencies:
+    - AntiSpoof
     - CentralAuth
     - Flow
     - LiquidThreads
@@ -1766,9 +1774,10 @@ Thanks:
 TheWikipediaLibrary:
   recurse: true
   dependencies:
-    - Echo
     - CentralAuth
     - GlobalPreferences
+    - AntiSpoof
+    - Echo
 
 TitleBlacklist:
   recurse: true
@@ -2041,6 +2050,7 @@ WikimediaCampaignEvents:
 WikimediaEvents:
   recurse: true
   dependencies:
+    - AntiSpoof
     - CentralAuth
     - CheckUser
     - ConfirmEdit
@@ -2059,6 +2069,7 @@ WikimediaEvents:
 WikimediaMaintenance:
   recurse: true
   dependencies:
+    - AntiSpoof
     - CentralAuth
     - CheckUser
     - Echo
