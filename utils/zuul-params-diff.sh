@@ -41,4 +41,4 @@ done
     > before.txt
 
 echo "Looking for differences"
-diff --color=always -U 0 before.txt current.txt
+git diff --color=always --color-words --unified=0 --no-index -- before.txt current.txt
