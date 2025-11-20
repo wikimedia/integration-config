@@ -175,9 +175,15 @@ class ZuulMwJobsRunner():
                 continue
 
             # To only process extensions that are marked as being in Production
+            #
+            # --in-production default to None which prevents skipping in the
+            # following XOR block.
             if (
-                self.in_production
-                and 'in-wikimedia-production' not in self._templates_names(p['template'])
+                    self.in_production is True
+                    and 'in-wikimedia-production' not in self._templates_names(p['template'])
+                ) or (  # noqa
+                    self.in_production is False
+                    and 'in-wikimedia-production' in self._templates_names(p['template'])
             ):
                 continue
 
@@ -386,8 +392,8 @@ def parse_args(args):
         'Example: ^mediawiki/extensions/Blue')
 
     parser.add_argument(
-        '--in-production', action='store_true',
-        help='Only act on projects having "in-wikimedia-production template" '
+        '--in-production', action=argparse.BooleanOptionalAction, default=None,
+        help='Only act/do not act on projects having "in-wikimedia-production template" '
              'in Zuul layout')
 
     parser.add_argument(
