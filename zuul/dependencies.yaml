@@ -69,6 +69,7 @@ AbuseFilter:
     - EventLogging
     - Renameuser
     - Scribunto
+    - WikiEditor
 
 AchievementBadges:
   recurse: true
