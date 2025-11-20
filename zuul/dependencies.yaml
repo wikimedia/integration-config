@@ -80,6 +80,7 @@ AchievementBadges:
 AdhocTranslation:
   recurse: true
   dependencies:
+    - OOJSPlus
     - skins/BlueSpiceDiscovery
 
 AdvancedSearch:
@@ -133,91 +134,109 @@ BlueSpiceAbout:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceArticleInfo:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceArticlePreviewCapture:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceAuthors:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceAvatars:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
     - UserProfile
+    - OOJSPlus
 
 BlueSpiceBookshelf:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - MenuEditor
+    - VueJsPlus
+    - OOJSPlus
     - BlueSpiceExtendedSearch
     - BlueSpiceVisualEditorConnector
     - ContentDroplets
-    - MenuEditor
     - NotifyMe
-    - VueJsPlus
+    - VisualEditor
 
 BlueSpiceCategoryCheck:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceCategoryManager:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceChecklist:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceVisualEditorConnector
+    - VisualEditor
 
 BlueSpiceConfigManager:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceContextMenu:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceCountThings:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceVisualEditorConnector
+    - VisualEditor
 
 BlueSpiceCustomMenu:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - MenuEditor
 
 BlueSpiceDashboards:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceDistributionConnector:
   recurse: true
   dependencies:
-    - BlueSpiceExtendedStatistics
     - BlueSpiceFoundation
+    - OOJSPlus
+    - BlueSpiceExtendedStatistics
     - BlueSpiceSMWConnector
     - ContentDroplets
     - Echo
-    - OOJSPlus
+    - Forms
     - PDFCreator
     - UserMerge
     - VisualEditor
@@ -228,11 +247,13 @@ BlueSpiceEchoConnector:
   dependencies:
     - BlueSpiceFoundation
     - Echo
+    - OOJSPlus
 
 BlueSpiceEmoticons:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceExpiry:
   recurse: true
@@ -247,23 +268,29 @@ BlueSpiceExportTables:
     - BlueSpiceFoundation
     - BlueSpiceUEModuleTable2Excel
     - BlueSpiceVisualEditorConnector
+    - OOJSPlus
+    - VisualEditor
 
 BlueSpiceExtendedFilelist:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceExtendedSearch:
   recurse: true
   dependencies:
-    - BlueSpiceDistributionConnector
     - BlueSpiceFoundation
+    - OOJSPlus
+    - BlueSpiceDistributionConnector
     - BlueSpiceVisualEditorConnector
+    - VisualEditor
 
 BlueSpiceExtendedStatistics:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceExtendedSearch
 
 BlueSpiceFilterableTables:
@@ -277,6 +304,7 @@ BlueSpiceFlaggedRevsConnector:
   dependencies:
     - BlueSpiceFoundation
     - FlaggedRevs
+    - OOJSPlus
 
 BlueSpiceFoundation:
   recurse: true
@@ -287,37 +315,45 @@ BlueSpiceGroupManager:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceHideTitle:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceInsertCategory:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceInsertFile:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceInsertLink:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
     - BlueSpiceVisualEditorConnector
+    - OOJSPlus
+    - VisualEditor
 
 BlueSpiceInsertTemplate:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceInstanceStatus:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceInterWikiLinks:
   recurse: true
@@ -329,38 +365,46 @@ BlueSpiceInterwikiSearch:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceMatomoConnector:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceMultiUpload:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceNSFileRepoConnector:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
     - NSFileRepo
+    - OOJSPlus
 
 BlueSpiceNamespaceCSS:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceNamespaceManager:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpicePageAccess:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceVisualEditorConnector
+    - VisualEditor
 
 BlueSpicePageAssignments:
   recurse: true
@@ -374,6 +418,7 @@ BlueSpicePageFormsConnector:
   dependencies:
     - BlueSpiceFoundation
     - PageForms
+    - OOJSPlus
 
 BlueSpicePageTemplates:
   recurse: true
@@ -388,14 +433,17 @@ BlueSpicePageVersion:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpicePagesVisited:
   recurse: true
   dependencies:
-    - BlueSpiceDistributionConnector
     - BlueSpiceFoundation
-    - BlueSpiceVisualEditorConnector
     - BlueSpiceWhoIsOnline
+    - OOJSPlus
+    - BlueSpiceDistributionConnector
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
 
 BlueSpicePermissionManager:
   recurse: true
@@ -407,6 +455,7 @@ BlueSpicePlayer:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpicePrivacy:
   recurse: true
@@ -418,6 +467,7 @@ BlueSpiceProDistributionConnector:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceUniversalExport
     - BlueSpiceVisualEditorConnector
     - Math
@@ -427,12 +477,15 @@ BlueSpiceQrCode:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceVisualEditorConnector
+    - VisualEditor
 
 BlueSpiceRSSFeeder:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceRating:
   recurse: true
@@ -445,47 +498,57 @@ BlueSpiceReadConfirmation:
   dependencies:
     - BlueSpiceFoundation
     - BlueSpicePageAssignments
+    - OOJSPlus
 
 BlueSpiceReaders:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceReminder:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
     - OOJSPlus
+    - Forms
     - Workflows
 
 BlueSpiceSMWConnector:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceSmartList
 
 BlueSpiceSaferEdit:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceSignHere:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceVisualEditorConnector
+    - VisualEditor
 
 BlueSpiceSmartList:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceVisualEditorConnector
+    - VisualEditor
 
 BlueSpiceSocial:
   recurse: true
   dependencies:
     - BlueSpiceExtendedSearch
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceSocialArticleActions:
   recurse: true
@@ -493,6 +556,7 @@ BlueSpiceSocialArticleActions:
     - BlueSpiceFoundation
     - BlueSpiceSocial
     - BlueSpiceExtendedSearch
+    - OOJSPlus
 
 BlueSpiceSocialBlog:
   recurse: true
@@ -500,13 +564,16 @@ BlueSpiceSocialBlog:
     - BlueSpiceFoundation
     - BlueSpiceSocial
     - BlueSpiceExtendedSearch
+    - OOJSPlus
 
 BlueSpiceSocialComments:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
     - BlueSpiceSocial
+    - BlueSpiceSocialTopics
     - BlueSpiceExtendedSearch
+    - OOJSPlus
 
 BlueSpiceSocialMicroBlog:
   recurse: true
@@ -514,6 +581,7 @@ BlueSpiceSocialMicroBlog:
     - BlueSpiceFoundation
     - BlueSpiceSocial
     - BlueSpiceExtendedSearch
+    - OOJSPlus
 
 BlueSpiceSocialProfile:
   recurse: true
@@ -522,14 +590,17 @@ BlueSpiceSocialProfile:
     - BlueSpiceFoundation
     - BlueSpiceSocial
     - BlueSpiceExtendedSearch
+    - OOJSPlus
+    - UserProfile
 
 BlueSpiceSocialRating:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
-    - BlueSpiceExtendedSearch
     - BlueSpiceRating
     - BlueSpiceSocial
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
 
 BlueSpiceSocialResolve:
   recurse: true
@@ -537,6 +608,7 @@ BlueSpiceSocialResolve:
     - BlueSpiceFoundation
     - BlueSpiceSocial
     - BlueSpiceExtendedSearch
+    - OOJSPlus
 
 BlueSpiceSocialTags:
   recurse: true
@@ -544,6 +616,7 @@ BlueSpiceSocialTags:
     - BlueSpiceFoundation
     - BlueSpiceSocial
     - BlueSpiceExtendedSearch
+    - OOJSPlus
 
 BlueSpiceSocialTimelineUpdate:
   recurse: true
@@ -551,13 +624,15 @@ BlueSpiceSocialTimelineUpdate:
     - BlueSpiceFoundation
     - BlueSpiceSocial
     - BlueSpiceExtendedSearch
+    - OOJSPlus
 
 BlueSpiceSocialTopics:
   recurse: true
   dependencies:
+    - BlueSpiceExtendedSearch
     - BlueSpiceFoundation
     - BlueSpiceSocial
-    - BlueSpiceExtendedSearch
+    - OOJSPlus
 
 BlueSpiceSocialWatch:
   recurse: true
@@ -565,25 +640,30 @@ BlueSpiceSocialWatch:
     - BlueSpiceFoundation
     - BlueSpiceSocial
     - BlueSpiceExtendedSearch
+    - OOJSPlus
 
 BlueSpiceSocialWikiPage:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
-    - BlueSpiceExtendedSearch
     - BlueSpiceMultiUpload
     - BlueSpiceSocial
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
 
 BlueSpiceSubPageTree:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceTagCloud:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceVisualEditorConnector
+    - VisualEditor
 
 BlueSpiceTranslationTransfer:
   recurse: true
@@ -602,59 +682,73 @@ BlueSpiceUEModuleBookPDF:
     - BlueSpiceFoundation
     - BlueSpiceUEModulePDF
     - BlueSpiceUniversalExport
+    - MenuEditor
+    - OOJSPlus
+    - VueJsPlus
 
 BlueSpiceUEModuleDOCX:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
     - BlueSpiceUniversalExport
+    - OOJSPlus
 
 BlueSpiceUEModuleHTML:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
     - BlueSpiceUniversalExport
+    - OOJSPlus
 
 BlueSpiceUEModulePDF:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
     - BlueSpiceUniversalExport
+    - OOJSPlus
 
 BlueSpiceUEModulePDFRecursive:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
     - BlueSpiceUniversalExport
+    - OOJSPlus
 
 BlueSpiceUEModulePDFSubpages:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
     - BlueSpiceUniversalExport
+    - OOJSPlus
 
 BlueSpiceUEModuleTable2Excel:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
-    - BlueSpiceUniversalExport
     - BlueSpiceVisualEditorConnector
+    - OOJSPlus
+    - VisualEditor
+    - BlueSpiceUniversalExport
 
 BlueSpiceUniversalExport:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceVisualEditorConnector
+    - VisualEditor
 
 BlueSpiceUsageTracker:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceUserInfo:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceUserManager:
   recurse: true
@@ -666,12 +760,14 @@ BlueSpiceUserSidebar:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - MenuEditor
 
 BlueSpiceVisualDiff:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceVisualEditorConnector:
   recurse: true
@@ -685,13 +781,17 @@ BlueSpiceWatchList:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceVisualEditorConnector
+    - VisualEditor
 
 BlueSpiceWhoIsOnline:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
     - BlueSpiceVisualEditorConnector
+    - VisualEditor
 
 BlueSpiceWikiExplorer:
   recurse: true
@@ -702,10 +802,10 @@ BlueSpiceWikiExplorer:
 BlueSpiceWikiFarm:
   recurse: true
   dependencies:
+    - OOJSPlus
     - BlueSpiceExtendedSearch
     - BlueSpiceFoundation
     - EnhancedUpload
-    - OOJSPlus
     - skins/BlueSpiceDiscovery
 
 BounceHandler:
@@ -833,6 +933,7 @@ CognitiveProcessDesigner:
     - BlueSpiceVisualEditorConnector
     - PageForms
     - VisualEditor
+    - BlueSpiceFoundation
 
 CollabPads:
   recurse: true
@@ -862,6 +963,7 @@ ConfigManager:
   recurse: true
   dependencies:
     - BlueSpiceFoundation
+    - OOJSPlus
 
 ConfirmEdit:
   recurse: true
