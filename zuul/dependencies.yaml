@@ -87,6 +87,7 @@ AdvancedSearch:
   recurse: true
   dependencies:
     - Translate
+    - UniversalLanguageSelector
 
 ApiFeatureUsage:
   recurse: true
@@ -822,6 +823,7 @@ CampaignEvents:
     - CentralAuth
     - cldr
     - Translate
+    - UniversalLanguageSelector
     - UserMerge
     - WikimediaCampaignEvents
 
@@ -958,9 +960,10 @@ CommunityRequests:
   dependencies:
     - VisualEditor
     - DiscussionTools
+    - Linter
     - Translate
     - WikimediaMessages
-    - Linter
+    - UniversalLanguageSelector
 
 ConfigManager:
   recurse: true
@@ -1178,6 +1181,7 @@ FundraisingTranslateWorkflow:
   recurse: true
   dependencies:
     - Translate
+    - UniversalLanguageSelector
 
 GeoData:
   recurse: true
@@ -1801,6 +1805,7 @@ TranslationNotifications:
   dependencies:
     - MassMessage
     - Translate
+    - UniversalLanguageSelector
 
 TuleapIntegration:
   recurse: true
@@ -1821,6 +1826,7 @@ TwnMainPage:
   recurse: true
   dependencies:
     - Translate
+    - UniversalLanguageSelector
 
 TwoColConflict:
   recurse: true
