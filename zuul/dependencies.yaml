@@ -111,7 +111,7 @@ AdvancedSearch:
     - UniversalLanguageSelector
 
 ApiFeatureUsage:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -396,7 +396,7 @@ BlueSpiceFlaggedRevsConnector:
     - OOJSPlus
 
 BlueSpiceFoundation:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
@@ -1062,7 +1062,7 @@ Campaigns:
     - EventLogging
 
 Capiunto:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Scribunto
@@ -1229,7 +1229,7 @@ CommunityRequests:
     - WikimediaMessages
 
 ConfigManager:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -1246,7 +1246,7 @@ ConfirmEdit:
     - VisualEditor
 
 ContactManager:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1268,7 +1268,7 @@ ContentDroplets:
     - VisualEditor
 
 ContentProvisioning:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
@@ -1388,7 +1388,7 @@ ElectronPdfService:
     - FlaggedRevs
 
 EmailAuthorization:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - PluggableAuth
@@ -1401,7 +1401,7 @@ EncryptedUploads:
     - UploadWizard
 
 EnhancedStandardUIs:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
@@ -1422,14 +1422,14 @@ EntitySchema:
     - Wikibase
 
 EventBus:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - EventStreamConfig
 
 EventLogging:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1444,7 +1444,7 @@ ExternalGuidance:
     - UniversalLanguageSelector
 
 FacetedCategory:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - CategoryTree
@@ -1473,7 +1473,7 @@ FileImporter:
     - WikiEditor
 
 FlaggedRevs:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1500,7 +1500,7 @@ Flow:
     - VisualEditor
 
 Forms:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1567,7 +1567,7 @@ GuidedTour:
     - EventLogging
 
 HierarchyBuilder:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - PageForms
@@ -1592,7 +1592,7 @@ IPReputation:
     - ConfirmEdit
 
 ImageRating:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1615,7 +1615,7 @@ InputBox:
     - MediaSearch
 
 JWTAuth:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - PluggableAuth
@@ -1642,27 +1642,27 @@ Kartographer:
     - WikimediaMessages
 
 LDAPAuthentication2:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - LDAPProvider
     - PluggableAuth
 
 LDAPAuthorization:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - LDAPProvider
     - PluggableAuth
 
 LDAPGroups:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - LDAPProvider
 
 LDAPSyncAll:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - LDAPGroups
@@ -1670,7 +1670,7 @@ LDAPSyncAll:
     - LDAPUserInfo
 
 LDAPUserInfo:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - LDAPProvider
@@ -1700,7 +1700,7 @@ LoginNotify:
     - CheckUser
 
 MagicLinkAuthentication:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - PluggableAuth
@@ -1801,13 +1801,13 @@ MobileFrontendContentProvider:
     - MobileFrontend
 
 Monstranto:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Scribunto
 
 MultimediaViewer:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1824,7 +1824,7 @@ NSFileRepo:
     - VisualEditor
 
 NamespacePopups:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - PagePopups
@@ -1836,7 +1836,7 @@ NavigationTiming:
     - EventLogging
 
 NaylorAMS:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - PluggableAuth
@@ -1895,7 +1895,7 @@ ORES:
     - AbuseFilter
 
 OpenIDConnect:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - PluggableAuth
@@ -1919,7 +1919,7 @@ PDFCreator:
     - VueJsPlus
 
 PageCheckout:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1938,13 +1938,13 @@ PageTriage:
     - WikiLove
 
 PageViewInfoGA:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - PageViewInfo
 
 ParserFunctions:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1959,7 +1959,7 @@ PersonalDashboard:
     - skins/MinervaNeue
 
 Phonos:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2073,7 +2073,7 @@ RelatedArticles:
     - MobileFrontend
 
 ReplaceText:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2122,7 +2122,7 @@ SearchVue:
     - WikimediaMessages
 
 Shibboleth:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - PluggableAuth
@@ -2134,13 +2134,13 @@ SimilarEditors:
     - QuickSurveys
 
 SimpleBlogPage:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
 
 SimpleSAMLphp:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - PluggableAuth
@@ -2172,7 +2172,7 @@ SocialProfile:
     - WikiEditor
 
 Sofa:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Scribunto
@@ -2222,7 +2222,7 @@ SportsTeams:
     - UserStatus
 
 StandardDialogs:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
@@ -2294,7 +2294,7 @@ TheWikipediaLibrary:
     - Echo
 
 TitleBlacklist:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2302,13 +2302,13 @@ TitleBlacklist:
     - Scribunto
 
 Toolhub:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Scribunto
 
 TopTenPages:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - HitCounters
@@ -2355,7 +2355,7 @@ TuleapWikiFarm:
     - TuleapIntegration
 
 TwitterCards:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - TextExtracts
@@ -2378,7 +2378,7 @@ TwoColConflict:
     - WikiEditor
 
 UnifiedTaskOverview:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
@@ -2391,7 +2391,7 @@ UniversalLanguageSelector:
     - EventLogging
 
 UnlinkedWikibase:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2437,14 +2437,14 @@ VEForAll:
     - VisualEditor
 
 VikiSemanticTitle:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - VIKI
 
 VikiTitleIcon:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2470,7 +2470,7 @@ VisualEditorPlus:
     - VisualEditor
 
 WSOAuth:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - PluggableAuth
@@ -2505,7 +2505,7 @@ WikiLambda:
     - WikimediaMessages
 
 WikiSEO:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2513,7 +2513,7 @@ WikiSEO:
     - Scribunto
 
 WikiToLDAP:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - LDAPAuthentication2
@@ -2677,7 +2677,7 @@ WikimediaMaintenance:
     - Echo
 
 WikimediaMessages:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2703,9 +2703,8 @@ Wikistories:
     - skins/MinervaNeue
 
 Workflows:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Forms
     - OOJSPlus
-
