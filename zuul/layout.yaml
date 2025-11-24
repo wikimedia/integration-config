@@ -2197,6 +2197,22 @@ project-templates:
       - mwext-node22-rundoc
       - mwext-node24-rundoc
 
+  - name: composer-test-php81-to-php85
+    test:
+      - composer-php81
+    php:
+      - composer-php82
+      - composer-php83
+      - composer-php84
+      - composer-php85
+    gate-and-submit:
+      - composer-php81
+      - composer-php82
+      - composer-php83
+      - composer-php84
+      - composer-php85
+
+  # Temporary template for repos that fail on PHP 8.5+
   - name: composer-test-php81-to-php84
     test:
       - composer-php81
@@ -2209,6 +2225,8 @@ project-templates:
       - composer-php82
       - composer-php83
       - composer-php84
+    experimental:
+      - composer-php85
 
   # Temporary template for repos that fail on PHP 8.2+
   - name: composer-test-php81-only
@@ -2220,6 +2238,7 @@ project-templates:
       - composer-php82
       - composer-php83
       - composer-php84
+      - composer-php85
 
   # Temporary template for repos that fail on PHP 8.4+
   - name: composer-test-php81-to-php83
@@ -2234,6 +2253,7 @@ project-templates:
       - composer-php83
     experimental:
       - composer-php84
+      - composer-php85
 
   - name: composer-test-php82-to-php84
     test:
@@ -2244,7 +2264,24 @@ project-templates:
       - composer-php82
       - composer-php83
       - composer-php84
+      - composer-php85
 
+  - name: composer-test-package-php81-to-php85
+    test:
+      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
+      - composer-package-php81
+      - composer-package-php82
+      - composer-package-php83
+      - composer-package-php84
+      - composer-package-php85
+    gate-and-submit:
+      - composer-package-php81
+      - composer-package-php82
+      - composer-package-php83
+      - composer-package-php84
+      - composer-package-php85
+
+  # Temporary template for repos that fail on PHP 8.5+
   - name: composer-test-package-php81-to-php84
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
@@ -2257,7 +2294,27 @@ project-templates:
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
+    experimental:
+      - composer-package-php85
 
+  - name: php-compile-php81-to-php85
+    test:
+      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
+      - php-compile-php81
+      - php-compile-php82
+      - php-compile-php83
+      - php-compile-php84
+      - php-compile-php85
+    gate-and-submit:
+      - php-compile-php81
+      - php-compile-php82
+      - php-compile-php83
+      - php-compile-php84
+      - php-compile-php85
+    postmerge:
+      - php81-compile-coverage-publish
+
+  # Temporary template for repos that fail on PHP 8.5+
   - name: php-compile-php81-to-php84
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
@@ -2270,6 +2327,8 @@ project-templates:
       - php-compile-php82
       - php-compile-php83
       - php-compile-php84
+    experimental:
+      - php-compile-php85
     postmerge:
       - php81-compile-coverage-publish
 
@@ -2442,6 +2501,25 @@ project-templates:
     gate-and-submit:
       - fail-archived-repositories
 
+  - name: mediawiki-php-library-php81-to-php85
+    test:
+      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
+      - composer-package-php81
+      - composer-package-php82
+      - composer-package-php83
+      - composer-package-php84
+      - composer-package-php85
+    gate-and-submit:
+      - composer-package-php81
+      - composer-package-php82
+      - composer-package-php83
+      - composer-package-php84
+      - composer-package-php85
+    postmerge:
+      - doxygen-publish
+      - phpunit-coverage-php81-publish
+
+  # Temporary template for repos that fail on PHP 8.5+
   - name: mediawiki-php-library-php81-to-php84
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
@@ -2454,6 +2532,8 @@ project-templates:
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
+    experimental:
+      - composer-package-php85
     postmerge:
       - doxygen-publish
       - phpunit-coverage-php81-publish
@@ -2992,7 +3072,7 @@ projects:
     experimental:
       - mediawiki-composer-php84
       - quibble-for-mediawiki-core-vendor-mysql-php84
-      - mediawiki-composer-php84
+      - mediawiki-composer-php85
 
 #### MediaWiki skins ###########################################
 
@@ -3659,6 +3739,9 @@ projects:
       - operations-mw-config-php84-composer-lint
       - operations-mw-config-php84-composer-test
       - operations-mw-config-php84-composer-diffConfig
+      - operations-mw-config-php85-composer-lint
+      - operations-mw-config-php85-composer-test
+      - operations-mw-config-php85-composer-diffConfig
 
   - name: operations/puppet
     test-prio:
@@ -8646,6 +8729,7 @@ projects:
       - quibble-with-gated-extensions-vendor-mysql-php81
       - quibble-with-gated-extensions-selenium-php81
       - parsoidsvc-composer-package-php84
+      - parsoidsvc-composer-package-php85
       - quibble-composer-mysql-php84
     postmerge:
       - parsoidsvc-doxygen-publish
@@ -9065,7 +9149,7 @@ projects:
 
   - name: mediawiki/libs/ParamValidator
     template:
-        - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/libs/php-cssjanus
     template:
@@ -9277,6 +9361,7 @@ projects:
       - composer-php82
       - composer-php83
       - composer-php84
+      - composer-php85
 
   - name: labs/tools/indic-wscontest
     template:
@@ -10083,6 +10168,7 @@ projects:
     experimental:
       - composer-php83
       - composer-php84
+      - composer-php85
 
   - name: wikimedia/textcat
     template:
