@@ -493,6 +493,7 @@ pipelines:
            - ^wbm1058-wikipedia@yahoo\.com$ # wbm1058
            - ^wctaiwan@gmail\.com$
            - ^webmelos@gmail\.com$ # Melos
+           - ^wiki@ituco\.dev$ # E75ti
            - ^wiki@physikerwelt\.de$
            - ^wiki@sportshead\.dev$ # Sportzpikachu
            - ^wikimedia@agamya\.dev$
