@@ -48,7 +48,7 @@ skins/Refreshed:
     - SocialProfile
 
 skins/TuleapSkin:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - TuleapIntegration
@@ -170,7 +170,7 @@ BlogPage:
     - VoteNY
 
 BlueSpiceAbout:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -178,7 +178,7 @@ BlueSpiceAbout:
     - OOJSPlus
 
 BlueSpiceArticleInfo:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -186,7 +186,7 @@ BlueSpiceArticleInfo:
     - OOJSPlus
 
 BlueSpiceArticlePreviewCapture:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -194,7 +194,7 @@ BlueSpiceArticlePreviewCapture:
     - OOJSPlus
 
 BlueSpiceAuthors:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -227,7 +227,7 @@ BlueSpiceBookshelf:
     - VisualEditor
 
 BlueSpiceCategoryCheck:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -235,7 +235,7 @@ BlueSpiceCategoryCheck:
     - OOJSPlus
 
 BlueSpiceCategoryManager:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -254,7 +254,7 @@ BlueSpiceChecklist:
     - VisualEditor
 
 BlueSpiceConfigManager:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -262,7 +262,7 @@ BlueSpiceConfigManager:
     - OOJSPlus
 
 BlueSpiceContextMenu:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -291,7 +291,7 @@ BlueSpiceCustomMenu:
     - MenuEditor
 
 BlueSpiceDashboards:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -325,7 +325,7 @@ BlueSpiceEchoConnector:
     - OOJSPlus
 
 BlueSpiceEmoticons:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -352,7 +352,7 @@ BlueSpiceExportTables:
     - VisualEditor
 
 BlueSpiceExtendedFilelist:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -380,7 +380,7 @@ BlueSpiceExtendedStatistics:
     - BlueSpiceExtendedSearch
 
 BlueSpiceFilterableTables:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -402,7 +402,7 @@ BlueSpiceFoundation:
     - OOJSPlus
 
 BlueSpiceGroupManager:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -410,7 +410,7 @@ BlueSpiceGroupManager:
     - OOJSPlus
 
 BlueSpiceHideTitle:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -418,7 +418,7 @@ BlueSpiceHideTitle:
     - OOJSPlus
 
 BlueSpiceInsertCategory:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -426,7 +426,7 @@ BlueSpiceInsertCategory:
     - OOJSPlus
 
 BlueSpiceInsertFile:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -444,7 +444,7 @@ BlueSpiceInsertLink:
     - VisualEditor
 
 BlueSpiceInsertTemplate:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -452,7 +452,7 @@ BlueSpiceInsertTemplate:
     - OOJSPlus
 
 BlueSpiceInstanceStatus:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -460,14 +460,14 @@ BlueSpiceInstanceStatus:
     - OOJSPlus
 
 BlueSpiceInterWikiLinks:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
     - OOJSPlus
 
 BlueSpiceInterwikiSearch:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -475,7 +475,7 @@ BlueSpiceInterwikiSearch:
     - OOJSPlus
 
 BlueSpiceMatomoConnector:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -483,7 +483,7 @@ BlueSpiceMatomoConnector:
     - OOJSPlus
 
 BlueSpiceMultiUpload:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -500,7 +500,7 @@ BlueSpiceNSFileRepoConnector:
     - OOJSPlus
 
 BlueSpiceNamespaceCSS:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -508,7 +508,7 @@ BlueSpiceNamespaceCSS:
     - OOJSPlus
 
 BlueSpiceNamespaceManager:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -536,7 +536,7 @@ BlueSpicePageAssignments:
     - NotifyMe
 
 BlueSpicePageFormsConnector:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -556,7 +556,7 @@ BlueSpicePageTemplates:
     - VisualEditor
 
 BlueSpicePageVersion:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -577,14 +577,14 @@ BlueSpicePagesVisited:
     - VisualEditor
 
 BlueSpicePermissionManager:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
     - OOJSPlus
 
 BlueSpicePlayer:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -592,7 +592,7 @@ BlueSpicePlayer:
     - OOJSPlus
 
 BlueSpicePrivacy:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -623,7 +623,7 @@ BlueSpiceQrCode:
     - VisualEditor
 
 BlueSpiceRSSFeeder:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -631,7 +631,7 @@ BlueSpiceRSSFeeder:
     - OOJSPlus
 
 BlueSpiceRating:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -647,7 +647,7 @@ BlueSpiceReadConfirmation:
     - OOJSPlus
 
 BlueSpiceReaders:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -655,7 +655,7 @@ BlueSpiceReaders:
     - OOJSPlus
 
 BlueSpiceReminder:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -674,7 +674,7 @@ BlueSpiceSMWConnector:
     - BlueSpiceSmartList
 
 BlueSpiceSaferEdit:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -836,7 +836,7 @@ BlueSpiceSocialWikiPage:
     - OOJSPlus
 
 BlueSpiceSubPageTree:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -944,7 +944,7 @@ BlueSpiceUniversalExport:
     - VisualEditor
 
 BlueSpiceUsageTracker:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -952,7 +952,7 @@ BlueSpiceUsageTracker:
     - OOJSPlus
 
 BlueSpiceUserInfo:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -960,7 +960,7 @@ BlueSpiceUserInfo:
     - OOJSPlus
 
 BlueSpiceUserManager:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -977,7 +977,7 @@ BlueSpiceUserSidebar:
     - MenuEditor
 
 BlueSpiceVisualDiff:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -1016,7 +1016,7 @@ BlueSpiceWhoIsOnline:
     - VisualEditor
 
 BlueSpiceWikiExplorer:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
