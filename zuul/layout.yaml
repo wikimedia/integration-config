@@ -2627,6 +2627,7 @@ projects:
   - name: integration/docroot
     template:
       - name: node20
+      # Not running in PHP 8.5 only due to Phan support
       - name: composer-test-php81-to-php84
 
   - name: integration/gear
@@ -2728,7 +2729,7 @@ projects:
 
   - name: mediawiki/tools/code-utils
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php81-to-php85
     test:
       - shellcheck
     gate-and-submit:
@@ -2846,7 +2847,7 @@ projects:
 
   - name: performance/xhgui-vendor
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php81-to-php85
 
   - name: releng/phatality
     template:
@@ -8924,7 +8925,7 @@ projects:
 
   - name: analytics/wmde/scripts
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php81-to-php85
 
   - name: analytics/wmde/toolkit-analyzer
     test:
@@ -9241,6 +9242,7 @@ projects:
 
   - name: labs/countervandalism/stillalive
     template:
+    # Not running in PHP 8.5 yet; waiting on Phan support
       - name: composer-test-php81-to-php84
 
   - name: labs/countervandalism/CVNBot
@@ -9309,7 +9311,7 @@ projects:
 
   - name: labs/tools/extjsonuploader
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php81-to-php85
 
   - name: labs/tools/extreg-wos
     template:
@@ -9321,7 +9323,7 @@ projects:
 
   - name: labs/tools/force-rebase
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php81-to-php85
 
   - name: labs/tools/forrestbot
     template:
@@ -9366,6 +9368,7 @@ projects:
 
   - name: labs/tools/intuition
     template:
+      # TODO (T410935): Fix this test failure and enable on PHP 8.5
       - name: composer-test-php81-to-php84
       - name: node20
       - name: mediawiki-i18n-check
@@ -9381,7 +9384,7 @@ projects:
 
   - name: labs/tools/ipchanges
     template:
-      # (T353396) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
+      # (T353396) This repo doesn't yet pass its tests on PHP 8.2 or above
       - name: composer-test-php81-only
 
   - name: labs/tools/ipwatcher
@@ -9412,6 +9415,7 @@ projects:
 
   - name: labs/tools/guc
     template:
+      # Not running in PHP 8.5 only due to Phan support
       - name: composer-test-php81-to-php84
       - name: mediawiki-i18n-check
 
@@ -9527,6 +9531,7 @@ projects:
 
   - name: labs/tools/toolbase
     template:
+      # Not running in PHP 8.5 only due to Phan support
       - name: composer-test-php81-to-php84
 
   - name: labs/tools/qrcode-generator
@@ -9571,6 +9576,7 @@ projects:
 
   - name: labs/tools/wikiinfo
     template:
+    # Not running in PHP 8.5 yet; waiting on Phan support
       - name: composer-test-php81-to-php84
 
   - name: labs/tools/wikinity
@@ -10068,17 +10074,17 @@ projects:
 
   - name: wikimedia-cz/mediawiki-config
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php81-to-php85
 
   - name: wikimedia-cz/web-theme
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php81-to-php85
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
   - name: wikimedia-cz/web-plugin
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php81-to-php85
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
