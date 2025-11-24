@@ -2737,6 +2737,7 @@ projects:
 
   - name: mediawiki/tools/codesniffer
     template:
+      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
       - name: mediawiki-php-library-php81-to-php84
     test:
       - mw-tools-codesniffer-mwcore-testrun
@@ -2755,10 +2756,11 @@ projects:
 
   - name: mediawiki/tools/minus-x
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php81-to-php85
 
   - name: mediawiki/tools/phpunit-patch-coverage
     template:
+      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
       - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/tools/releng
@@ -2769,13 +2771,15 @@ projects:
 
   - name: mediawiki/tools/phan
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      # (T410941) Not running in PHP 8.5 yet; waiting on upstream support
+      - name: mediawiki-php-library-php81-to-php85
     test:
       - mw-tools-phan-mwcore-testrun
 
   - name: mediawiki/tools/phan/SecurityCheckPlugin
     # FIXME: Use mediawiki-php-library?
     template:
+      # (T410941) Not running in PHP 8.5 yet; waiting on upstream support
       - name: composer-test-package-php81-to-php84
     postmerge:
       - mw-tools-phan-demos-publish
@@ -2783,7 +2787,7 @@ projects:
 
   - name: mediawiki/tools/ParseWiki
     template:
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php81-to-php85
 
   - name: mediawiki/vagrant
     test:
@@ -2797,7 +2801,7 @@ projects:
   - name: performance/arc-lamp
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php81-to-php85
 
   - name: performance/asoranking
     template:
@@ -8658,6 +8662,7 @@ projects:
 
   - name: mediawiki/services/jobrunner
     template:
+      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
       - name: mediawiki-php-library-php81-to-php84
 
   - name: mediawiki/services/kafka-watcher
@@ -9242,7 +9247,7 @@ projects:
 
   - name: labs/countervandalism/stillalive
     template:
-    # Not running in PHP 8.5 yet; waiting on Phan support
+      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
       - name: composer-test-php81-to-php84
 
   - name: labs/countervandalism/CVNBot
@@ -9516,7 +9521,7 @@ projects:
 
   - name: labs/tools/stewardbots
     template:
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php81-to-php85
       - name: tox
 
   - name: labs/tools/stewardbots-ui
@@ -9576,7 +9581,7 @@ projects:
 
   - name: labs/tools/wikiinfo
     template:
-    # Not running in PHP 8.5 yet; waiting on Phan support
+      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
       - name: composer-test-php81-to-php84
 
   - name: labs/tools/wikinity
@@ -9853,6 +9858,7 @@ projects:
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
     template:
+      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
       - name: composer-test-package-php81-to-php84
       - name: mediawiki-i18n-check
     test:
@@ -10176,11 +10182,13 @@ projects:
   - name: wikimedia/textcat
     template:
       # FIXME: Use mediawiki-php-library?
+      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
       - name: composer-test-package-php81-to-php84
 
   - name: wikimedia/lucene-explain-parser
     template:
       # FIXME: Use mediawiki-php-library?
+      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
       - name: composer-test-package-php81-to-php84
 
   - name: performance/slack-bot
