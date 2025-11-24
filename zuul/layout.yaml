@@ -2772,7 +2772,7 @@ projects:
   - name: mediawiki/tools/phan
     template:
       # (T410941) Not running in PHP 8.5 yet; waiting on upstream support
-      - name: mediawiki-php-library-php81-to-php85
+      - name: mediawiki-php-library-php81-to-php84
     test:
       - mw-tools-phan-mwcore-testrun
 
