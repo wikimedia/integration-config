@@ -2314,24 +2314,6 @@ project-templates:
     postmerge:
       - php81-compile-coverage-publish
 
-  # Temporary template for repos that fail on PHP 8.5+
-  - name: php-compile-php81-to-php84
-    test:
-      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - php-compile-php81
-      - php-compile-php82
-      - php-compile-php83
-      - php-compile-php84
-    gate-and-submit:
-      - php-compile-php81
-      - php-compile-php82
-      - php-compile-php83
-      - php-compile-php84
-    experimental:
-      - php-compile-php85
-    postmerge:
-      - php81-compile-coverage-publish
-
   - name: node20
     test:
       - generic-node20
@@ -8981,11 +8963,11 @@ projects:
 
   - name: mediawiki/php/excimer
     template:
-      - name: php-compile-php81-to-php84
+      - name: php-compile-php81-to-php85
 
   - name: mediawiki/php/luasandbox
     template:
-      - name: php-compile-php81-to-php84
+      - name: php-compile-php81-to-php85
     postmerge:
       - doxygen-publish
     publish:
@@ -8993,15 +8975,30 @@ projects:
 
   - name: mediawiki/php/wikidiff2
     template:
-      - name: php-compile-php81-to-php84
+      - name: php-compile-php81-to-php85
 
   - name: mediawiki/php/wmerrors
-    template:
-      - name: php-compile-php81-to-php84
+    # (T410921) Temporarily disable PHP 8.5 builds due to build failures.
+    # template:
+      # - name: php-compile-php81-to-php85
+    test:
+      - php-compile-php81
+      - php-compile-php82
+      - php-compile-php83
+      - php-compile-php84
+    gate-and-submit:
+      - php-compile-php81
+      - php-compile-php82
+      - php-compile-php83
+      - php-compile-php84
+    experimental:
+      - php-compile-php85
+    postmerge:
+      - php81-compile-coverage-publish
 
   - name: mediawiki/oauthclient-php
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php81-to-php85
 
 #### MediaWiki libraries #######################################
 
