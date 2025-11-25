@@ -2322,7 +2322,7 @@ TorBlock:
     - AbuseFilter
 
 Translate:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - UniversalLanguageSelector
