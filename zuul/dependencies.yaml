@@ -64,7 +64,7 @@ skins/TuleapSkin:
     - MultimediaViewer
 
 AIEditingAssistant:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - VisualEditor
@@ -118,7 +118,7 @@ ApiFeatureUsage:
     - Elastica
 
 Arrays:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -134,7 +134,7 @@ ArticlePlaceholder:
     - Wikibase
 
 AtMentions:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
@@ -1068,7 +1068,7 @@ Capiunto:
     - Scribunto
 
 CategoryWatch:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1211,7 +1211,7 @@ CommunityConfiguration:
     - CommunityConfigurationExample
 
 CommunityConfigurationExample:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - CommunityConfiguration
@@ -1253,7 +1253,7 @@ ContactManager:
     - PageProperties
 
 ContainerFilter:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1303,14 +1303,14 @@ ContentTranslation:
     - EventLogging
 
 CookieWarning:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - MobileFrontend
 
 CreateAPage:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1323,7 +1323,7 @@ Dashiki:
     - JsonConfig
 
 DateTimeTools:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1355,7 +1355,7 @@ DiscussionTools:
     - Thanks
 
 DrawioEditor:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1374,7 +1374,7 @@ Echo:
     - MobileFrontend
 
 EditNotify:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Echo
@@ -1407,7 +1407,7 @@ EnhancedStandardUIs:
     - OOJSPlus
 
 EnhancedUpload:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
@@ -1676,7 +1676,7 @@ LDAPUserInfo:
     - LDAPProvider
 
 LanguageTool:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1717,7 +1717,7 @@ MassMessage:
     - LiquidThreads
 
 MassMessageEmail:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - MassMessage
@@ -1795,7 +1795,7 @@ MobileFrontend:
     - VisualEditor
 
 MobileFrontendContentProvider:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - MobileFrontend
@@ -1850,7 +1850,7 @@ Newsletter:
     - Echo
 
 NotifyMe:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
@@ -2099,7 +2099,7 @@ RevisionSlider:
     - MobileFrontend
 
 Sanctions:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Echo
@@ -2129,7 +2129,7 @@ Shibboleth:
     - PluggableAuth
 
 SimilarEditors:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - QuickSurveys
@@ -2166,7 +2166,7 @@ SiteMetrics:
     - SocialProfile
 
 SocialProfile:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2179,7 +2179,7 @@ Sofa:
     - Scribunto
 
 SoftRedirector:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2195,7 +2195,7 @@ SpamBlacklist:
     - EventLogging
 
 SpamDiffTool:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - SpamBlacklist
@@ -2207,7 +2207,7 @@ SpecialPageCaptcha:
     - ConfirmEdit
 
 SpellingDictionary:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2236,7 +2236,7 @@ StopForumSpam:
     - AbuseFilter
 
 StructuredNavigation:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2362,7 +2362,7 @@ TwitterCards:
     - TextExtracts
 
 TwnMainPage:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Translate
@@ -2426,13 +2426,13 @@ UserStatus:
     - SportsTeams
 
 VECancelButton:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - VisualEditor
 
 VEForAll:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - VisualEditor
@@ -2464,7 +2464,7 @@ VisualEditor:
     - TemplateData
 
 VisualEditorPlus:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2483,7 +2483,7 @@ WebAuthn:
     - OATHAuth
 
 WhoIsWatching:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Echo
