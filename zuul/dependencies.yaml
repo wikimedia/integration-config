@@ -1866,7 +1866,7 @@ Nuke:
     - EventLogging
 
 OATHAuth:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2477,7 +2477,7 @@ WSOAuth:
     - PluggableAuth
 
 WebAuthn:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OATHAuth
