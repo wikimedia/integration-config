@@ -1075,7 +1075,7 @@ CategoryWatch:
     - Echo
 
 CentralAuth:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - AntiSpoof
@@ -1529,7 +1529,7 @@ GeoData:
     - Elastica
 
 GlobalBlocking:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
