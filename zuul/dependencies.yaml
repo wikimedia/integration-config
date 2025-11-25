@@ -1171,7 +1171,7 @@ Citoid:
     - VisualEditor
 
 CodeEditor:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - WikiEditor
@@ -1204,7 +1204,7 @@ CollabPads:
     - VisualEditor
 
 CommunityConfiguration:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1345,7 +1345,7 @@ DiscordRCFeed:
     - Flow
 
 DiscussionTools:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Linter
@@ -1521,7 +1521,7 @@ FundraisingTranslateWorkflow:
     - UniversalLanguageSelector
 
 GeoData:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1560,7 +1560,7 @@ GrowthExperiments:
     - WikimediaMessages
 
 GuidedTour:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1574,7 +1574,7 @@ HierarchyBuilder:
     - SemanticMediaWiki
 
 IPInfo:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1621,7 +1621,7 @@ JWTAuth:
     - PluggableAuth
 
 JsonConfig:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1683,14 +1683,14 @@ LanguageTool:
     - VisualEditor
 
 Linter:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - VisualEditor
 
 LoginNotify:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Echo
@@ -2016,7 +2016,7 @@ PropertySuggester:
     - Wikibase
 
 QuickSurveys:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2186,7 +2186,7 @@ SoftRedirector:
     - VisualEditor
 
 SpamBlacklist:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2385,7 +2385,7 @@ UnifiedTaskOverview:
     - OOJSPlus
 
 UniversalLanguageSelector:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
