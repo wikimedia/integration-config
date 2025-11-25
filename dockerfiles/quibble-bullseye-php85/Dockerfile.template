@@ -22,7 +22,6 @@ php8.5-gmp
 php8.5-intl
 php8.5-ldap
 php8.5-mbstring
-php8.5-memcached
 php8.5-mysql
 php8.5-pcov
 php8.5-pgsql
@@ -34,6 +33,7 @@ php8.5-zip
 {%- endset -%}
 
 # (T410415) Waiting on upstream packaging:
+# php8.5-memcached
 # php8.5-xdebug
 
 # We need to get a newer version of php-ast from sury.org (T174338)
