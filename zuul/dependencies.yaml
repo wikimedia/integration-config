@@ -1043,7 +1043,7 @@ BounceHandler:
     - Echo
 
 CampaignEvents:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - cldr
@@ -2639,7 +2639,7 @@ WikimediaBadges:
     - Wikibase
 
 WikimediaCampaignEvents:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - CampaignEvents
