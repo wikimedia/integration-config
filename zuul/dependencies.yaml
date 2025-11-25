@@ -57,7 +57,7 @@ skins/TuleapSkin:
 
 # Extensions:
 3D:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -103,7 +103,7 @@ AdhocTranslation:
     - skins/BlueSpiceDiscovery
 
 AdvancedSearch:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1034,7 +1034,7 @@ BlueSpiceWikiFarm:
     - skins/BlueSpiceDiscovery
 
 BounceHandler:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1056,7 +1056,7 @@ CampaignEvents:
     - WikimediaCampaignEvents
 
 Campaigns:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - EventLogging
@@ -1088,7 +1088,7 @@ CentralAuth:
     - SecurePoll
 
 CentralNotice:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - EventLogging
@@ -1101,7 +1101,7 @@ Challenge:
     - SocialProfile
 
 Chart:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - JsonConfig
@@ -1163,7 +1163,7 @@ Cite:
     - WikiEditor
 
 Citoid:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1217,7 +1217,7 @@ CommunityConfigurationExample:
     - CommunityConfiguration
 
 CommunityRequests:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - VisualEditor
@@ -1317,7 +1317,7 @@ CreateAPage:
     - WikiEditor
 
 Dashiki:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - JsonConfig
@@ -1330,7 +1330,7 @@ DateTimeTools:
     - VisualEditor
 
 Disambiguator:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1380,7 +1380,7 @@ EditNotify:
     - Echo
 
 ElectronPdfService:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1437,7 +1437,7 @@ EventLogging:
     - EventStreamConfig
 
 ExternalGuidance:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - MobileFrontend
@@ -1464,7 +1464,7 @@ FileAnnotations:
     - EventLogging
 
 FileImporter:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1507,13 +1507,13 @@ Forms:
     - OOJSPlus
 
 FundraiserLandingPage:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - EventLogging
 
 FundraisingTranslateWorkflow:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Translate
@@ -1599,7 +1599,7 @@ ImageRating:
     - VoteNY
 
 ImageSuggestions:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - CirrusSearch
@@ -1608,7 +1608,7 @@ ImageSuggestions:
     - Elastica
 
 InputBox:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1831,7 +1831,7 @@ NamespacePopups:
     - PagePopups
 
 NavigationTiming:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - EventLogging
@@ -1843,7 +1843,7 @@ NaylorAMS:
     - PluggableAuth
 
 Newsletter:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1858,7 +1858,7 @@ NotifyMe:
     - VisualEditor
 
 Nuke:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1883,7 +1883,7 @@ OAuth:
     - Echo
 
 OAuthRateLimiter:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OAuth
@@ -1929,7 +1929,7 @@ PageCheckout:
     - Workflows
 
 PageTriage:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2041,14 +2041,14 @@ RandomGameUnit:
     - SocialProfile
 
 ReaderExperiments:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - WikimediaMessages
 
 ReadingLists:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2066,7 +2066,7 @@ RegexFun:
     - ParserFunctions
 
 RelatedArticles:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2092,7 +2092,7 @@ ReportIncident:
     - VisualEditor
 
 RevisionSlider:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2117,7 +2117,7 @@ Score:
     - Wikibase
 
 SearchVue:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - WikimediaMessages
@@ -2244,7 +2244,7 @@ StructuredNavigation:
     - WikiEditor
 
 SyntaxHighlight_GeSHi:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2267,7 +2267,7 @@ TableTools:
     - VueJsPlus
 
 TemplateWizard:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - TemplateData
@@ -2284,7 +2284,7 @@ Thanks:
     - MobileFrontend
 
 TheWikipediaLibrary:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - CentralAuth
@@ -2333,7 +2333,7 @@ Translate:
     - VisualEditor
 
 TranslationNotifications:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - MassMessage
@@ -2370,7 +2370,7 @@ TwnMainPage:
     - UniversalLanguageSelector
 
 TwoColConflict:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2499,7 +2499,7 @@ WikiEditor:
     - WikimediaEvents
 
 WikiLambda:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - UniversalLanguageSelector
@@ -2625,7 +2625,7 @@ WikidataPageBanner:
     - Wikibase
 
 wikihiero:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2668,7 +2668,7 @@ WikimediaEvents:
     - OATHAuth
 
 WikimediaMaintenance:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
