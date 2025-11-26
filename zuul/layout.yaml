@@ -6386,10 +6386,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/CreatePage
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/CreatePageUw
     template:
       - name: extension-quibble
@@ -10805,6 +10801,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Copyvio
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/CreatePage
     template:
       - name: archived
 
