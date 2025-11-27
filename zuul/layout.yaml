@@ -2966,7 +2966,7 @@ projects:
       - quibble-for-mediawiki-core-composer-mysql-php83
       - quibble-for-mediawiki-core-composertest-only-php83
       - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
-      - mediawiki-core-phan-only-php81
+      - mediawiki-core-phan-only-php83
       - mediawiki-node20
     gate-and-submit-1_45:
       - quibble-for-mediawiki-core-composer-mysql-php82
