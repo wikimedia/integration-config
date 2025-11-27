@@ -1343,6 +1343,7 @@ DiscordRCFeed:
     # extras
     - Echo
     - Flow
+    - VisualEditor
 
 DiscussionTools:
   recurse: false
@@ -1557,6 +1558,7 @@ GrowthExperiments:
     - PageViewInfo
     - skins/MinervaNeue
     - Thanks
+    - VisualEditor
     - WikimediaMessages
 
 GuidedTour:
@@ -1715,6 +1717,7 @@ MassMessage:
     - Echo
     - Flow
     - LiquidThreads
+    - VisualEditor
 
 MassMessageEmail:
   recurse: false
@@ -2282,6 +2285,7 @@ Thanks:
     - AbuseFilter
     - Flow
     - MobileFrontend
+    - VisualEditor
 
 TheWikipediaLibrary:
   recurse: false
