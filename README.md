@@ -10,6 +10,14 @@ https://www.mediawiki.org/wiki/CI/JJB
 For more about the Jenkins Job Builder software and how to use it, refer to the upstream documentation:
 https://docs.openstack.org/infra/jenkins-job-builder/
 
+## Directories
+
+* dockerfiles - Definition of CI images using https://doc.wikimedia.org/docker-pkg/
+* jjb - JJB stands for Jenkins Job Builder. It is a python script to maintain and simplify configuration of Jenkins jobs. https://www.mediawiki.org/wiki/Continuous_integration/Jenkins_job_builder
+* tests - Hosts test suite for the CI configuration
+* utils - Miscellaneous scripts to support CI configuration
+* zuul - Configuration for Zuul, the workflow and scheduler https://www.mediawiki.org/wiki/Zuul
+
 ## Jenkins job local testing and deployment
 
 First create a jenkins_jobs.ini file e.g.
