@@ -219,23 +219,23 @@ class ZuulMwJobsRunner():
                 jobs += ['quibble-requires-only-vendor-non-voting']
             else:
                 if self.phpunit:
-                    jobs += ['quibble-vendor-mysql-php81']
+                    jobs += ['quibble-vendor-mysql-php83']
                 if self.selenium:
-                    jobs += ['quibble-composer-mysql-php81-selenium']
+                    jobs += ['quibble-composer-mysql-php83-selenium']
             return jobs
 
         # Extensions using composer
         if (
             'extension-quibble-composer' in templates
-            or 'extension-quibble-php81-or-later' in templates
+            or 'extension-quibble-php83-or-later' in templates
         ):
             if self.requires_only:
                 jobs += ['quibble-requires-only-composer-non-voting']
             else:
                 if self.phpunit:
-                    jobs += ['quibble-composer-mysql-php81']
+                    jobs += ['quibble-composer-mysql-php83']
                 if self.selenium:
-                    jobs += ['quibble-composer-mysql-php81-selenium']
+                    jobs += ['quibble-composer-mysql-php83-selenium']
             return jobs
 
         # The ones without Selenium
@@ -243,33 +243,33 @@ class ZuulMwJobsRunner():
             if self.requires_only:
                 jobs += ['quibble-requires-only-vendor-non-voting']
             elif self.phpunit:
-                jobs += ['quibble-vendor-mysql-php81']
+                jobs += ['quibble-vendor-mysql-php83']
             return jobs
         if 'extension-quibble-composer-noselenium' in templates:
             if self.requires_only:
                 jobs += ['quibble-requires-only-composer-non-voting']
             elif self.phpunit:
-                jobs += ['quibble-composer-mysql-php81']
+                jobs += ['quibble-composer-mysql-php83']
             return jobs
         # Bluespice
         if 'extension-quibble-bluespice' in templates:
             if self.requires_only:
                 jobs += ['quibble-requires-only-composer-non-voting']
             elif self.phpunit:
-                jobs += ['quibble-composer-mysql-php81']
+                jobs += ['quibble-composer-mysql-php83']
             return jobs
 
         if 'skin-quibble' in templates:
             if self.requires_only:
                 jobs += ['quibble-requires-only-vendor-non-voting']
             elif self.phpunit:
-                jobs += ['quibble-vendor-mysql-php81']
+                jobs += ['quibble-vendor-mysql-php83']
             return jobs
         if 'skin-quibble-composer' in templates:
             if self.requires_only:
                 jobs += ['quibble-requires-only-composer-non-voting']
             elif self.phpunit:
-                jobs += ['quibble-composer-mysql-php81']
+                jobs += ['quibble-composer-mysql-php83']
             return jobs
 
         raise Exception("Unhandled set of templates for %s: %s" % (
