@@ -1778,7 +1778,7 @@ MetricsPlatform:
     - VisualEditor
 
 MobileApp:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
