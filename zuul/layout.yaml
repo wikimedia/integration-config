@@ -3016,7 +3016,7 @@ projects:
       - mediawiki-core-doxygen-publish
     experimental:
       - quibble-for-mediawiki-core-vendor-mysql-php84
-      - mediawiki-composer-php81
+      - mediawiki-composer-php83
       - mediawiki-node22
       - mediawiki-node24
 
