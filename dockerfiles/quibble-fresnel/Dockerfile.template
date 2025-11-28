@@ -1,4 +1,4 @@
-FROM {{ "quibble-bullseye-php81" | image_tag }}
+FROM {{ "quibble-bullseye-php83" | image_tag }}
 
 USER root
 

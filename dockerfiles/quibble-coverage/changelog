@@ -1,0 +1,5 @@
+quibble-coverage (1.14.2) wikimedia; urgency=medium
+
+   Initial release, forked from quibble-bullseye-php81-coverage.
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Fri, 28 Nov 2025 12:00:00 -0000
