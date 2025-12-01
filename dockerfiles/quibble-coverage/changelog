@@ -1,3 +1,9 @@
+quibble-coverage (1.14.2-s1) wikimedia; urgency=high
+
+   T358666: Update mediawiki/phpunit-patch-coverage to 0.0.16
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Mon,  1 Dec 2025 13:24:32 +0000
+
 quibble-coverage (1.14.2) wikimedia; urgency=medium
 
    Initial release, forked from quibble-bullseye-php81-coverage.
