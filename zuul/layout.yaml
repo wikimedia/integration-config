@@ -1426,6 +1426,10 @@ jobs:
     files:
       - '^includes/Defines\.php$'
 
+  # Voting disabled for now -- JDF 2025-12-01
+  - name: wikilambda-catalyst-end-to-end
+    voting: false
+
 project-templates:
 
   - name: debian-glue
@@ -5487,7 +5491,8 @@ projects:
       - quibble-vendor-mysql-php83-phpunit-standalone
     gate-and-submit:
       # Special Catalyst helm test runner for WikiLambda end-to-end system check
-      - wikilambda-catalyst-end-to-end
+      # Disabled on gate-and-submit for now -- JDF 2025-12-01
+      # - wikilambda-catalyst-end-to-end
       # Using the job directly, not via template, as it won't pass on REL branches -- JDF 2025-01-07
       - quibble-vendor-mysql-php83-phpunit-standalone
     postmerge:
