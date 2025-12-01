@@ -525,7 +525,8 @@ ParserMigration:
   - MobileFrontend
 
 PersonalDashboard:
-  - skins/MinervaNeue
+  - CommunityConfiguration
+  - Thanks
 
 Petition:
   - CheckUser
