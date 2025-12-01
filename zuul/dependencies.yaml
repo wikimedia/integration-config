@@ -1346,7 +1346,7 @@ DiscordRCFeed:
     - VisualEditor
 
 DiscussionTools:
-  recurse: false
+  recurse: true
   dependencies:
     # From extension.json:
     - Linter
