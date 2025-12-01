@@ -5569,6 +5569,13 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
+  - name: mediawiki/extensions/WP25EasterEggs
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
   - name: mediawiki/extensions/XAnalytics
     template:
       - name: in-wikimedia-production
@@ -8473,10 +8480,6 @@ projects:
   - name: mediawiki/extensions/Workflows
     template:
       - name: extension-quibble-bluespice
-
-  - name: mediawiki/extensions/WP25EasterEggs
-    template:
-      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/WSOAuth
     template:
