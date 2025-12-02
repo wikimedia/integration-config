@@ -1959,6 +1959,7 @@ PersonalDashboard:
   dependencies:
     # From extension.json:
     - CommunityConfiguration
+    # extras
     - Thanks
 
 Phonos:
