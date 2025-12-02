@@ -2485,6 +2485,12 @@ VisualEditorPlus:
     # extras
     - VisualEditor
 
+WandaScore:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Wanda
+
 WSOAuth:
   recurse: false
   dependencies:

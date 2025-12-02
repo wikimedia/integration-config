@@ -716,6 +716,9 @@ VisualEditorPlus:
 VoteNY:
   - SocialProfile
 
+WandaScore:
+  - Wanda
+
 WebAuthn:
   - OATHAuth
 
