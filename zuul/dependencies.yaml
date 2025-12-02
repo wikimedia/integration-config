@@ -2491,6 +2491,12 @@ WandaScore:
     # From extension.json:
     - Wanda
 
+WandaScribe:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Wanda
+
 WSOAuth:
   recurse: false
   dependencies:

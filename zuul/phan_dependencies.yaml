@@ -719,6 +719,9 @@ VoteNY:
 WandaScore:
   - Wanda
 
+WandaScribe:
+  - Wanda
+
 WebAuthn:
   - OATHAuth
 
