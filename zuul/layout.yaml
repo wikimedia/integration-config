@@ -4730,6 +4730,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
+  # To be replaced by TestKitchen
   - name: mediawiki/extensions/MetricsPlatform
     template:
       - name: in-wikimedia-production
@@ -5173,6 +5174,15 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
+
+  # To replace MetricsPlatform
+  - name: mediawiki/extensions/TestKitchen
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+      - name: extension-javascript-documentation
 
   - name: mediawiki/extensions/TextExtracts
     template:

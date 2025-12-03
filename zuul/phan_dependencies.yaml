@@ -632,6 +632,11 @@ TemplateStyles:
   - CodeEditor
   - CodeMirror
 
+TestKitchen:
+  - EventStreamConfig
+  - EventLogging
+  - GrowthExperiments
+
 Thanks:
   - AbuseFilter
   - CheckUser

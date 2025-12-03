@@ -2276,6 +2276,17 @@ TemplateWizard:
     - TemplateData
     - WikiEditor
 
+TestKitchen:
+  recurse: true
+  dependencies:
+    # From extension.json:
+    - EventLogging
+    - EventStreamConfig
+    # extras
+    - CommunityConfiguration
+    - GrowthExperiments
+    - VisualEditor
+
 Thanks:
   recurse: true
   dependencies:
