@@ -7241,6 +7241,7 @@ projects:
   - name: mediawiki/extensions/MultiTitle
     template:
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/MultiMail
     template:
