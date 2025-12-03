@@ -1135,7 +1135,7 @@ Checklists:
     - VisualEditor
 
 CirrusSearch:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Elastica
@@ -1290,7 +1290,7 @@ ContentStabilization:
     - Workflows
 
 ContentTranslation:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Cite
@@ -1993,7 +1993,7 @@ PollNY:
     - SocialProfile
 
 Popups:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
