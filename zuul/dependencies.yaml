@@ -2737,3 +2737,9 @@ Workflows:
     # From extension.json:
     - Forms
     - OOJSPlus
+
+WP25EasterEggs:
+  recurse: false
+  dependencies:
+    - CommunityConfiguration
+    - Wikibase
