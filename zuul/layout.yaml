@@ -7228,6 +7228,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/MultiTitle
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/MultiMail
     template:
       - name: extension-quibble
