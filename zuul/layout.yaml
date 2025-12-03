@@ -5525,6 +5525,12 @@ projects:
       - name: commit-message-validator
       - name: extension-gate
 
+  - name: mediawiki/extensions/WikimediaCustomizations
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+
   - name: mediawiki/extensions/WikimediaEvents
     template:
       - name: in-wikimedia-production
