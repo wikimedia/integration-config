@@ -871,11 +871,8 @@
     packages-source: vendor
     # We only use MariaDB/MySQL
     database: mysql
-    # And only php8.1 (whilst we're migrating off it) and php8.3
+    # And only php8.3
     php:
-        - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s6
-            entrypoint: quibble-with-supervisord
         - php83:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.2-s6
             entrypoint: quibble-with-supervisord
