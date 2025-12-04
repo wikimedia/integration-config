@@ -8729,9 +8729,11 @@ projects:
       # These are the jobs which would be added by the extension-gate template
       - quibble-with-gated-extensions-vendor-mysql-php83
       - quibble-with-gated-extensions-selenium-php83
+      # Jobs for future versions of PHP
       - parsoidsvc-composer-package-php84
-      - parsoidsvc-composer-package-php85
       - quibble-composer-mysql-php84
+      - parsoidsvc-composer-package-php85
+      - quibble-composer-mysql-php85
     postmerge:
       - parsoidsvc-doxygen-publish
       - phpunit-coverage-php83-publish
