@@ -855,7 +855,7 @@
         - quibble-apitests-only-{packages-source}-{php}:
             database: 'mysql'
         - mediawiki-phpbench-patch:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s6
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.2-s6
             entrypoint: quibble-with-supervisord
             packages-source: vendor
             database: mysql
