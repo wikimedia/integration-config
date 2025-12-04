@@ -22,6 +22,7 @@ php8.5-gmp
 php8.5-intl
 php8.5-ldap
 php8.5-mbstring
+php8.5-memcached
 php8.5-mysql
 php8.5-pcov
 php8.5-pgsql
@@ -33,7 +34,6 @@ php8.5-zip
 {%- endset -%}
 
 # (T410415) Waiting on upstream packaging:
-# php8.5-memcached
 # php8.5-xdebug
 
 # We need to get a newer version of php-ast from sury.org (T174338)
@@ -53,8 +53,10 @@ COPY --from=php85 /usr/lib/php/20250925/ast.so /usr/lib/php/20250925/ast.so
 COPY --from=php85 /etc/php/8.5/cli/conf.d/20-ast.ini /etc/php/8.5/cli/conf.d/20-ast.ini
 
 # Disable pcov by default, although the performance overhead should be minimal
-# Disable XDebug by default due to its performance impact
 RUN phpdismod pcov xdebug
+# Disable XDebug by default due to its performance impact
+# T410415) Waiting on upstream packaging
+# RUN phpdismod xdebug
 
 # Unprivileged
 RUN install --directory /workspace --owner=nobody --group=nogroup

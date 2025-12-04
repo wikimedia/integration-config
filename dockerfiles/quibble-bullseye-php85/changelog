@@ -1,3 +1,9 @@
+quibble-bullseye-php85 (1.14.2-s2) wikimedia; urgency=high
+
+   (T410415) Enabling php8.5-memcached, now released.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  4 Dec 2025 14:48:43 -0500
+
 quibble-bullseye-php85 (1.14.2-s1) wikimedia; urgency=high
 
    (T410415) Disabling php8.5-memcached as it's missing from apt cache despite release.
