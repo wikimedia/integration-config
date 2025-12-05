@@ -1,0 +1,61 @@
+#!/usr/bin/env python
+
+import argparse
+from collections import defaultdict
+import os
+import sys
+
+import yaml
+
+DEP_FILE = os.path.relpath(os.path.join(
+    os.path.dirname(__file__), '../zuul/dependencies.yaml'))
+
+
+def format_deps(deps):
+    return ', '.join(sorted(deps, key=str.casefold))
+
+
+# Argument parsing
+parser = argparse.ArgumentParser()
+parser.add_argument('project', nargs='?')
+parser.add_argument('--reverse', action='store_true')
+args = parser.parse_args(sys.argv[1:])
+
+# Load data
+deps = yaml.safe_load(open(DEP_FILE))
+reverse_deps = defaultdict(set)
+for dep in deps:
+    for reverse_dep in deps[dep]['dependencies']:
+        reverse_deps[reverse_dep].add(dep)
+
+# Process options
+if args.project is not None:
+    mapping = reverse_deps if args.reverse else deps
+
+    if args.project not in mapping:
+        if args.reverse:
+            print("%s has no reverse dependencies" % (args.project))
+        else:
+            print("%s is not in %s" % (args.project, DEP_FILE))
+        sys.exit()
+
+    print("Dependencies:\n", format_deps(deps[args.project]['dependencies']))
+    rev_deps = reverse_deps.get(args.project, [])
+    if not rev_deps:
+        print('No reverse dependencies')
+    else:
+        print("Reverse dependencies:\n", format_deps(reverse_deps[args.project]))
+
+    sys.exit(0)
+
+print("Dependencies of all projects")
+for project in deps.keys():
+    if args.reverse:
+        if reverse_deps[project]:
+            print(project + ':', format_deps(reverse_deps[project]))
+        else:
+            print(project)
+    else:
+        rev_deps = deps[project]['dependencies']
+        if rev_deps:
+            print(project, ':', format_deps(rev_deps))
