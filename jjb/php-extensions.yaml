@@ -33,28 +33,6 @@
       - 'php-compile-{php}'
 
 - job:
-    name: 'php81-compile-coverage-publish'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-src-dir
-     - docker-ci-src-setup-simple
-     - docker-run:
-        entrypoint: /run-coverage.sh
-        volumes:
-            src:
-        image: docker-registry.wikimedia.org/releng/php81-compile:8.1.33
-     - cover-publish:
-        src: 'src/coverage'
-        dest: '$DOC_PROJECT'
-    publishers:
-      - archive:
-          artifacts: 'src/tests/*.log'
-          allow-empty: true
-      - docker-cleanup
-
-- job:
     name: 'php83-compile-coverage-publish'
     node: Docker
     triggers:
