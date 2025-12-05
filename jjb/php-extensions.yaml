@@ -19,8 +19,6 @@
 - project:
     name: php-compile-jobs
     php:
-     - php81:
-          image: docker-registry.wikimedia.org/releng/php81-compile:8.1.33
      - php82:
           image: docker-registry.wikimedia.org/releng/php82-compile:8.2.29
      - php83:
