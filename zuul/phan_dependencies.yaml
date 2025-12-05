@@ -199,6 +199,8 @@ CommunityConfigurationExample:
   - CommunityConfiguration
 
 CommunityRequests:
+  - DiscussionTools
+  - Echo
   - Translate
 
 CognitiveProcessDesigner:
