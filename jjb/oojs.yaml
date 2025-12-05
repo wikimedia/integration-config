@@ -7,7 +7,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node20-test-browser-php81-composer:20.19.5-s2
+         image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.19.5-s2
          # npm run-script jenkins runs 'npm test' and 'npm run doc'
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
