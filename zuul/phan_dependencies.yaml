@@ -528,6 +528,7 @@ ParserMigration:
 
 PersonalDashboard:
   - CommunityConfiguration
+  - FlaggedRevs
   - Thanks
 
 Petition:
