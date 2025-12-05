@@ -833,7 +833,7 @@
         - php84:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.14.2-s6
         - php85:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.14.2-s1
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.14.2-s3
     jobs:
         - quibble-{packages-source}-{database}-{php}
         - quibble-{packages-source}-{database}-{php}-selenium
