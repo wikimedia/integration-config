@@ -3735,7 +3735,7 @@ projects:
       - operations-puppet-tests-bullseye
       - operations-puppet-logstash-filter-verifier
     experimental:
-      - operations-puppet-catalog-compiler-test
+      - operations-puppet-catalog-compiler-puppet5-test
       - operations-puppet-catalog-compiler-puppet7-test
 
   - name: operations/puppet-lint/wmf_styleguide-check
