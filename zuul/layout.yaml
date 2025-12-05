@@ -1197,21 +1197,13 @@ jobs:
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
   # queue-name can not be applied based on a regex, apply the name on most used
   # jobs.
-  - name: quibble-for-mediawiki-core-composer-mysql-php81
-    queue-name: mediawiki
   - name: quibble-for-mediawiki-core-composer-mysql-php83
-    queue-name: mediawiki
-  - name: quibble-for-mediawiki-core-vendor-mysql-php81
     queue-name: mediawiki
   - name: quibble-for-mediawiki-core-vendor-mysql-php83
     queue-name: mediawiki
   - name: mediawiki-node20
     queue-name: mediawiki
-  - name: quibble-composer-mysql-php81
-    queue-name: mediawiki
   - name: quibble-composer-mysql-php83
-    queue-name: mediawiki
-  - name: quibble-vendor-mysql-php81
     queue-name: mediawiki
   - name: quibble-vendor-mysql-php83
     queue-name: mediawiki
@@ -1669,8 +1661,8 @@ project-templates:
 
     experimental:
       # Non-standard database types
-      - quibble-composer-sqlite-php81
-      - quibble-composer-postgres-php81
+      - quibble-composer-sqlite-php83
+      - quibble-composer-postgres-php83
       # Not-yet-supported language runtimes
       - quibble-composer-mysql-php84
       - mediawiki-node22
@@ -1724,8 +1716,8 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-composer-sqlite-php81
-      - quibble-composer-postgres-php81
+      - quibble-composer-sqlite-php83
+      - quibble-composer-postgres-php83
       - quibble-composer-mysql-php84
       - mwext-bluespice-node22
       - mwext-bluespice-node24
@@ -1807,9 +1799,9 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-vendor-mysql-php81-selenium
-      - quibble-vendor-sqlite-php81
-      - quibble-vendor-postgres-php81
+      - quibble-vendor-mysql-php83-selenium
+      - quibble-vendor-sqlite-php83
+      - quibble-vendor-postgres-php83
       - quibble-vendor-mysql-php84
       - mediawiki-node22
       - mediawiki-node24
@@ -1881,10 +1873,10 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-composer-sqlite-php81
-      - quibble-composer-postgres-php81
+      - quibble-composer-sqlite-php83
+      - quibble-composer-postgres-php83
       - quibble-composer-mysql-php84
-      - mwext-phan-php81
+      - mwext-phan-php83
       - mediawiki-node22
       - mediawiki-node24
 
@@ -2080,8 +2072,8 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-vendor-sqlite-php81
-      - quibble-vendor-postgres-php81
+      - quibble-vendor-sqlite-php83
+      - quibble-vendor-postgres-php83
       - quibble-vendor-mysql-php84
       - mediawiki-node22
       - mediawiki-node24
@@ -2101,7 +2093,7 @@ project-templates:
       - quibble-composer-mysql-php83-selenium
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
+      # - mwext-phan-php83
 
     test-1_39:
       - mediawiki-node20
@@ -2161,8 +2153,8 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-composer-sqlite-php81
-      - quibble-composer-postgres-php81
+      - quibble-composer-sqlite-php83
+      - quibble-composer-postgres-php83
       - quibble-composer-mysql-php84
       - mediawiki-node22
       - mediawiki-node24
@@ -2184,85 +2176,54 @@ project-templates:
       - mwext-node22-rundoc
       - mwext-node24-rundoc
 
-  - name: composer-test-php81-to-php85
+  - name: composer-test-php82-to-php85
     test:
-      - composer-php81
+      - composer-php83
     php:
       - composer-php82
-      - composer-php83
       - composer-php84
       - composer-php85
     gate-and-submit:
-      - composer-php81
-      - composer-php82
-      - composer-php83
-      - composer-php84
-      - composer-php85
-
-  # Temporary template for repos that fail on PHP 8.5+
-  - name: composer-test-php81-to-php84
-    test:
-      - composer-php81
-    php:
-      - composer-php82
-      - composer-php83
-      - composer-php84
-    gate-and-submit:
-      - composer-php81
-      - composer-php82
-      - composer-php83
-      - composer-php84
-    experimental:
-      - composer-php85
-
-  # Temporary template for repos that fail on PHP 8.2+
-  - name: composer-test-php81-only
-    test:
-      - composer-php81
-    gate-and-submit:
-      - composer-php81
-    experimental:
       - composer-php82
       - composer-php83
       - composer-php84
       - composer-php85
 
   # Temporary template for repos that fail on PHP 8.4+
-  - name: composer-test-php81-to-php83
+  - name: composer-test-php82-to-php83
     test:
-      - composer-php81
+      - composer-php83
     php:
       - composer-php82
-      - composer-php83
     gate-and-submit:
-      - composer-php81
       - composer-php82
       - composer-php83
     experimental:
       - composer-php84
       - composer-php85
 
+  # Temporary template for repos that fail on PHP 8.5+
   - name: composer-test-php82-to-php84
     test:
-      - composer-php82
       - composer-php83
+    php:
+      - composer-php82
       - composer-php84
     gate-and-submit:
       - composer-php82
       - composer-php83
       - composer-php84
+    experimental:
       - composer-php85
 
-  - name: composer-test-package-php81-to-php85
+  - name: composer-test-package-php82-to-php85
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php81
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
       - composer-package-php85
     gate-and-submit:
-      - composer-package-php81
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
@@ -2272,12 +2233,10 @@ project-templates:
   - name: composer-test-package-php82-to-php84
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php81
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
     gate-and-submit:
-      - composer-package-php81
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
@@ -2297,7 +2256,7 @@ project-templates:
       - php-compile-php84
       - php-compile-php85
     postmerge:
-      - php81-compile-coverage-publish
+      - php83-compile-coverage-publish
 
   - name: node20
     test:
@@ -2471,20 +2430,18 @@ project-templates:
   - name: mediawiki-php-library-php82-to-php85
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php81
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
       - composer-package-php85
     gate-and-submit:
-      - composer-package-php81
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
       - composer-package-php85
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php81-publish
+      - phpunit-coverage-php83-publish
 
   # Temporary template for repos that fail on PHP 8.5+
   - name: mediawiki-php-library-php82-to-php84
@@ -2609,7 +2566,7 @@ projects:
     template:
       - name: node20
       # Not running in PHP 8.5 only due to Phan support
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php84
 
   - name: integration/gear
     test:
@@ -2710,7 +2667,7 @@ projects:
 
   - name: mediawiki/tools/code-utils
     template:
-      - name: composer-test-php81-to-php85
+      - name: composer-test-php82-to-php85
     test:
       - shellcheck
     gate-and-submit:
@@ -2764,11 +2721,11 @@ projects:
       - name: composer-test-package-php82-to-php84
     postmerge:
       - mw-tools-phan-demos-publish
-      - phpunit-coverage-php81-publish
+      - phpunit-coverage-php83-publish
 
   - name: mediawiki/tools/ParseWiki
     template:
-      - name: composer-test-package-php81-to-php85
+      - name: composer-test-package-php82-to-php85
 
   - name: mediawiki/vagrant
     test:
@@ -2782,7 +2739,7 @@ projects:
   - name: performance/arc-lamp
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php81-to-php85
+      - name: composer-test-package-php82-to-php85
 
   - name: performance/asoranking
     template:
@@ -2832,7 +2789,7 @@ projects:
 
   - name: performance/xhgui-vendor
     template:
-      - name: composer-test-php81-to-php85
+      - name: composer-test-php82-to-php85
 
   - name: releng/phatality
     template:
@@ -2853,7 +2810,7 @@ projects:
   - name: labs/tools/sonarqubebot
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      - name: composer-test-php82-to-php83
 
 #### MediaWiki itself ##########################################
 
@@ -2880,7 +2837,7 @@ projects:
       # Alternate php versions
       - quibble-for-mediawiki-core-vendor-mysql-php82
       # Standalone run for core-only changes
-      - quibble-vendor-mysql-php81-phpunit-standalone
+      - quibble-vendor-mysql-php83-phpunit-standalone
     gate-and-submit:
       - quibble-for-mediawiki-core-composer-mysql-php83
       - quibble-for-mediawiki-core-vendor-mysql-php82
@@ -3111,7 +3068,7 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
     experimental:
-      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php83
     postmerge:
       - mwext-doxygen-publish
 
@@ -3668,10 +3625,19 @@ projects:
 
   - name: operations/dumps/dcat
     template:
-      # (T353397) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
-      - name: composer-test-php81-only
+      # (T353397) This repo doesn't yet pass its tests on PHP 8.2+
+      # - name: composer-test-php82-to-php85
       - name: node20
       - name: mediawiki-i18n-check
+    test:
+      - composer-php81
+    gate-and-submit:
+      - composer-php81
+    experimental:
+      - composer-php82
+      - composer-php83
+      - composer-php84
+      - composer-php85
 
   - name: operations/dumps/import-tools
     template:
@@ -4303,14 +4269,13 @@ projects:
     experimental:
       - mediawiki-node22
       - mediawiki-node24
-      - mediawiki-composer-php81
-      - mwext-phan-php81
+      - mediawiki-composer-php83
+      - mwext-phan-php83
       # These are the remaining parts of extension-quibble
-      - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php84
-      - quibble-vendor-mysql-php81-selenium
+      - quibble-vendor-mysql-php83-selenium
 
   - name: mediawiki/extensions/DynamicSidebar
     template:
@@ -5393,7 +5358,7 @@ projects:
       - mwext-doxygen-publish
     experimental:
       - mwext-phpunit-coverage
-      - quibble-vendor-postgres-php81
+      - quibble-vendor-postgres-php83
       - wikibase-client-php83
       - wikibase-repo-php83
 
@@ -8922,7 +8887,7 @@ projects:
 
   - name: analytics/wmde/scripts
     template:
-      - name: composer-test-php81-to-php85
+      - name: composer-test-php82-to-php85
 
   - name: analytics/wmde/toolkit-analyzer
     test:
@@ -8990,7 +8955,7 @@ projects:
     experimental:
       - php-compile-php85
     postmerge:
-      - php81-compile-coverage-publish
+      - php83-compile-coverage-publish
 
   - name: mediawiki/oauthclient-php
     template:
@@ -9225,7 +9190,7 @@ projects:
   - name: labs/countervandalism/cvn-api
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      - name: composer-test-php82-to-php83
 
   - name: labs/countervandalism/cvn-clerkbot
     template:
@@ -9234,7 +9199,7 @@ projects:
   - name: labs/countervandalism/stillalive
     template:
       # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php84
 
   - name: labs/countervandalism/CVNBot
     test:
@@ -9264,7 +9229,7 @@ projects:
   - name: labs/tools/blankpages
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      - name: composer-test-php82-to-php83
 
   - name: labs/tools/bookreader
     template:
@@ -9302,7 +9267,7 @@ projects:
 
   - name: labs/tools/extjsonuploader
     template:
-      - name: composer-test-php81-to-php85
+      - name: composer-test-php82-to-php85
 
   - name: labs/tools/extreg-wos
     template:
@@ -9314,7 +9279,7 @@ projects:
 
   - name: labs/tools/force-rebase
     template:
-      - name: composer-test-php81-to-php85
+      - name: composer-test-php82-to-php85
 
   - name: labs/tools/forrestbot
     template:
@@ -9347,7 +9312,6 @@ projects:
     postmerge:
       - tox-py39-coverage-publish
     experimental:
-      - composer-php81
       - composer-php82
       - composer-php83
       - composer-php84
@@ -9360,23 +9324,32 @@ projects:
   - name: labs/tools/intuition
     template:
       # TODO (T410935): Fix this test failure and enable on PHP 8.5
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php84
       - name: node20
       - name: mediawiki-i18n-check
     postmerge:
-      - phpunit-coverage-php81-publish
+      - phpunit-coverage-php83-publish
 
   - name: labs/tools/intuition-web
     template:
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      # TODO (T386108): Fix this test failure and enable on PHP 8.4+
+      - name: composer-test-php82-to-php83
       - name: node20-browser
       - name: mediawiki-i18n-check
 
   - name: labs/tools/ipchanges
-    template:
-      # (T353396) This repo doesn't yet pass its tests on PHP 8.2 or above
-      - name: composer-test-php81-only
+    # template:
+      # (T353396) This repo doesn't yet pass its tests on PHP 8.2+
+      # - name: composer-test-php82-to-php85
+    test:
+      - composer-php81
+    gate-and-submit:
+      - composer-php81
+    experimental:
+      - composer-php82
+      - composer-php83
+      - composer-php84
+      - composer-php85
 
   - name: labs/tools/ipwatcher
     template:
@@ -9389,13 +9362,13 @@ projects:
   - name: labs/tools/orphantalk
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      - name: composer-test-php82-to-php83
       - name: mediawiki-i18n-check
 
   - name: labs/tools/usage
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      - name: composer-test-php82-to-php83
       - name: mediawiki-i18n-check
 
   - name: labs/tools/urbanecmbot
@@ -9407,7 +9380,7 @@ projects:
   - name: labs/tools/guc
     template:
       # Not running in PHP 8.5 only due to Phan support
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php84
       - name: mediawiki-i18n-check
 
   - name: labs/tools/fileprotectionsync
@@ -9415,9 +9388,18 @@ projects:
       - name: composer-test-php82-to-php84
 
   - name: labs/tools/nagf
-    template:
-      # (T353395) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
-      - name: composer-test-php81-only
+    # template:
+      # (T353395) This repo doesn't yet pass its tests on PHP 8.2+
+      # - name: composer-test-php82-to-php85
+    test:
+      - composer-php81
+    gate-and-submit:
+      - composer-php81
+    experimental:
+      - composer-php82
+      - composer-php83
+      - composer-php84
+      - composer-php85
 
   - name: labs/tools/Isa
     test:
@@ -9465,9 +9447,18 @@ projects:
 
   - name: labs/tools/meetingtimes
     template:
-      # (T353394) This repo does not yet pass on PHP 8.2 or 8.3
-      - name: composer-test-php81-only
+      # (T353394) This repo doesn't yet pass its tests on PHP 8.2+
+      # - name: composer-test-php82-to-php85
       - name: node20
+    test:
+      - composer-php81
+    gate-and-submit:
+      - composer-php81
+    experimental:
+      - composer-php82
+      - composer-php83
+      - composer-php84
+      - composer-php85
 
   - name: labs/tools/mwpackages
     template:
@@ -9507,7 +9498,7 @@ projects:
 
   - name: labs/tools/stewardbots
     template:
-      - name: composer-test-package-php81-to-php85
+      - name: composer-test-package-php82-to-php85
       - name: tox
 
   - name: labs/tools/stewardbots-ui
@@ -9523,7 +9514,7 @@ projects:
   - name: labs/tools/toolbase
     template:
       # Not running in PHP 8.5 only due to Phan support
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php84
 
   - name: labs/tools/qrcode-generator
     template:
@@ -9568,7 +9559,7 @@ projects:
   - name: labs/tools/wikiinfo
     template:
       # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php84
 
   - name: labs/tools/wikinity
     template:
@@ -10062,17 +10053,17 @@ projects:
 
   - name: wikimedia-cz/mediawiki-config
     template:
-      - name: composer-test-php81-to-php85
+      - name: composer-test-php82-to-php85
 
   - name: wikimedia-cz/web-theme
     template:
-      - name: composer-test-php81-to-php85
+      - name: composer-test-php82-to-php85
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
   - name: wikimedia-cz/web-plugin
     template:
-      - name: composer-test-php81-to-php85
+      - name: composer-test-php82-to-php85
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
