@@ -29,12 +29,10 @@ php8.5-pgsql
 php8.5-sqlite3
 php8.5-tidy
 php8.5-uuid
+php8.5-xdebug
 php8.5-xml
 php8.5-zip
 {%- endset -%}
-
-# (T410415) Waiting on upstream packaging:
-# php8.5-xdebug
 
 # We need to get a newer version of php-ast from sury.org (T174338)
 COPY --from=sury-php /etc/apt/trusted.gpg.d/php.gpg /etc/apt/trusted.gpg.d/php.gpg
@@ -54,9 +52,9 @@ COPY --from=php85 /etc/php/8.5/cli/conf.d/20-ast.ini /etc/php/8.5/cli/conf.d/20-
 
 # Disable pcov by default, although the performance overhead should be minimal
 RUN phpdismod pcov xdebug
+
 # Disable XDebug by default due to its performance impact
-# T410415) Waiting on upstream packaging
-# RUN phpdismod xdebug
+RUN phpdismod xdebug
 
 # Unprivileged
 RUN install --directory /workspace --owner=nobody --group=nogroup

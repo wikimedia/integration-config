@@ -1,3 +1,9 @@
+quibble-bullseye-php85 (1.14.2-s3) wikimedia; urgency=high
+
+   (T410415) Enabling php8.5-xdebug, now released.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri,  5 Dec 2025 09:02:58 -0500
+
 quibble-bullseye-php85 (1.14.2-s2) wikimedia; urgency=high
 
    (T410415) Enabling php8.5-memcached, now released.
