@@ -2486,25 +2486,6 @@ project-templates:
       - doxygen-publish
       - phpunit-coverage-php81-publish
 
-  # Temporary template for repos that fail on PHP 8.5+ and still support PHP 8.1
-  - name: mediawiki-php-library-php81-to-php84
-    test:
-      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php81
-      - composer-package-php82
-      - composer-package-php83
-      - composer-package-php84
-    gate-and-submit:
-      - composer-package-php81
-      - composer-package-php82
-      - composer-package-php83
-      - composer-package-php84
-    experimental:
-      - composer-package-php85
-    postmerge:
-      - doxygen-publish
-      - phpunit-coverage-php81-publish
-
   # Temporary template for repos that fail on PHP 8.5+
   - name: mediawiki-php-library-php82-to-php84
     test:
@@ -2738,7 +2719,7 @@ projects:
   - name: mediawiki/tools/codesniffer
     template:
       # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php84
     test:
       - mw-tools-codesniffer-mwcore-testrun
 
@@ -2761,7 +2742,7 @@ projects:
   - name: mediawiki/tools/phpunit-patch-coverage
     template:
       # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php84
 
   - name: mediawiki/tools/releng
     template:
@@ -2772,7 +2753,7 @@ projects:
   - name: mediawiki/tools/phan
     template:
       # (T410941) Not running in PHP 8.5 yet; waiting on upstream support
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php84
     test:
       - mw-tools-phan-mwcore-testrun
 
