@@ -19,7 +19,6 @@ JENKINS_ACCEPTABLE_LABELS = [
     'castor',  # Central cache
     'contint1002',  # Publishing
     'puppet',
-    'puppet5-compiler-node',
     'puppet7-compiler-node',
     'train',
     'trigger',

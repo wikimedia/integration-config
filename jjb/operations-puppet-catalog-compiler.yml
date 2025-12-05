@@ -15,7 +15,6 @@
             type: label-expression
             name: label
             values:
-                - puppet5-compiler-node
                 - puppet7-compiler-node
     parameters:
         - matrix-combinations:
@@ -52,10 +51,9 @@
         timeout: 180
         type: absolute
 
-# Triggered from the Zuul experimental pipeline
-- job: &job_operations-puppet-catalog-compiler-test
-    name: operations-puppet-catalog-compiler-puppet5-test
-    node: puppet5-compiler-node
+- job:
+    name: operations-puppet-catalog-compiler-puppet7-test
+    node: puppet7-compiler-node
     triggers:
         - zuul
     builders:
@@ -74,10 +72,3 @@
     - timeout:
         timeout: 180
         type: absolute
-- job:
-    !!merge : *job_operations-puppet-catalog-compiler-test
-    name: operations-puppet-catalog-compiler-puppet7-test
-    node: puppet7-compiler-node
-    # Reinject Zuul parameters since JJB strip for some reason
-    triggers:
-        - zuul
