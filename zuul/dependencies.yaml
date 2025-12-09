@@ -2744,4 +2744,5 @@ WP25EasterEggs:
   recurse: false
   dependencies:
     - CommunityConfiguration
+    - CommunityConfigurationExample # T404939
     - Wikibase
