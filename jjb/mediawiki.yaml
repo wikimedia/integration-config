@@ -495,13 +495,6 @@
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
-# Per-patch phpbench report for MediaWiki core, skins and extensions.
-- job-template:
-    !!merge : *job_quibble
-    name: 'mediawiki-phpbench-patch'
-    triggers:
-      - zuul
-
 - job-template:
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage-patch'
@@ -854,14 +847,6 @@
             quibble_args: '--resolve-requires --run phpunit-unit,phpunit,qunit'
         - quibble-apitests-only-{packages-source}-{php}:
             database: 'mysql'
-        - mediawiki-phpbench-patch:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.2-s6
-            entrypoint: quibble-with-supervisord
-            packages-source: vendor
-            database: mysql
-            quibble_args: >
-                --run=phpbench
-                --phpbench-aggregate
 
 # MediaWiki jobs for deployment to the Wikimedia cluster
 - project:
