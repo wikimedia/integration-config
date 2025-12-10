@@ -1388,9 +1388,6 @@ jobs:
       - branch: ^wmf/.*$
       - branch: ^fundraising/.*$
 
-  - name: mediawiki-phpbench-patch
-    voting: false
-
   # Job to ease reviews of MW-CS changes
   - name: mw-tools-codesniffer-mwcore-testrun
     voting: false
@@ -1953,10 +1950,6 @@ project-templates:
       - mwext-phpunit-coverage-publish
     coverage:
       - mwext-phpunit-coverage-patch
-
-  - name: extension-phpbench
-    test:
-        - mediawiki-phpbench-patch
 
   - name: extension-codehealth
     postmerge:

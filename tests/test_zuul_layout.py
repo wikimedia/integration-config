@@ -349,7 +349,6 @@ class TestZuulLayout(unittest.TestCase):
                     '-coverage',
                     '-gate',
                     '-javascript-documentation',
-                    '-phpbench',
                     )):
                 continue
 
