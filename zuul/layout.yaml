@@ -3979,12 +3979,6 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
-  - name: mediawiki/extensions/ArticleSummaries
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/AutoModerator
     template:
       - name: in-wikimedia-production
@@ -10568,6 +10562,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ArticleFeedback
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/ArticleSummaries
     template:
       - name: archived
 
