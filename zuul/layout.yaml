@@ -4506,7 +4506,6 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-javascript-documentation
-      - name: extension-phpbench
       - name: extension-apitests
 
   - name: mediawiki/extensions/GuidedTour
