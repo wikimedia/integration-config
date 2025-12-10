@@ -1117,6 +1117,8 @@ CheckUser:
     - AntiSpoof
     - CentralAuth
     - CommunityConfiguration
+    - EventBus
+    - EventLogging
     - FlaggedRevs
     - GlobalBlocking
     - GlobalPreferences
