@@ -2743,7 +2743,7 @@ Workflows:
     - OOJSPlus
 
 WP25EasterEggs:
-  recurse: false
+  recurse: true
   dependencies:
     - CommunityConfiguration
     - Wikibase
