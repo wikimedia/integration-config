@@ -115,6 +115,8 @@ class ZuulMwJobsRunner():
                 if job_name in [
                     'quibble-requires-only-vendor-non-voting',
                     'quibble-requires-only-composer-non-voting',
+                    'quibble-requires-only-composer-selenium',
+                    'quibble-requires-only-vendor-selenium',
                 ]:
                     # Added without EXT_DEPENDENCIES
                     self.jenkins_jobs_to_run.append(jenkins_job)
@@ -216,7 +218,10 @@ class ZuulMwJobsRunner():
             or 'extension-quibble' in templates
         ):
             if self.requires_only:
-                jobs += ['quibble-requires-only-vendor-non-voting']
+                if self.phpunit:
+                    jobs += ['quibble-requires-only-vendor-non-voting']
+                if self.selenium:
+                    jobs += ['quibble-requires-only-vendor-selenium']
             else:
                 if self.phpunit:
                     jobs += ['quibble-vendor-mysql-php83']
@@ -230,7 +235,10 @@ class ZuulMwJobsRunner():
             or 'extension-quibble-php83-or-later' in templates
         ):
             if self.requires_only:
-                jobs += ['quibble-requires-only-composer-non-voting']
+                if self.phpunit:
+                    jobs += ['quibble-requires-only-composer-non-voting']
+                if self.selenium:
+                    jobs += ['quibble-requires-only-composer-selenium']
             else:
                 if self.phpunit:
                     jobs += ['quibble-composer-mysql-php83']
@@ -241,33 +249,48 @@ class ZuulMwJobsRunner():
         # The ones without Selenium
         if 'extension-quibble-noselenium' in templates:
             if self.requires_only:
-                jobs += ['quibble-requires-only-vendor-non-voting']
+                if self.phpunit:
+                    jobs += ['quibble-requires-only-vendor-non-voting']
+                if self.selenium:
+                    jobs += ['quibble-requires-only-vendor-selenium']
             elif self.phpunit:
                 jobs += ['quibble-vendor-mysql-php83']
             return jobs
         if 'extension-quibble-composer-noselenium' in templates:
             if self.requires_only:
-                jobs += ['quibble-requires-only-composer-non-voting']
+                if self.phpunit:
+                    jobs += ['quibble-requires-only-composer-non-voting']
+                if self.selenium:
+                    jobs += ['quibble-requires-only-composer-selenium']
             elif self.phpunit:
                 jobs += ['quibble-composer-mysql-php83']
             return jobs
         # Bluespice
         if 'extension-quibble-bluespice' in templates:
             if self.requires_only:
-                jobs += ['quibble-requires-only-composer-non-voting']
+                if self.phpunit:
+                    jobs += ['quibble-requires-only-composer-non-voting']
+                if self.selenium:
+                    jobs += ['quibble-requires-only-composer-selenium']
             elif self.phpunit:
                 jobs += ['quibble-composer-mysql-php83']
             return jobs
 
         if 'skin-quibble' in templates:
             if self.requires_only:
-                jobs += ['quibble-requires-only-vendor-non-voting']
+                if self.phpunit:
+                    jobs += ['quibble-requires-only-vendor-non-voting']
+                if self.selenium:
+                    jobs += ['quibble-requires-only-vendor-selenium']
             elif self.phpunit:
                 jobs += ['quibble-vendor-mysql-php83']
             return jobs
         if 'skin-quibble-composer' in templates:
             if self.requires_only:
-                jobs += ['quibble-requires-only-composer-non-voting']
+                if self.phpunit:
+                    jobs += ['quibble-requires-only-composer-non-voting']
+                if self.selenium:
+                    jobs += ['quibble-requires-only-composer-selenium']
             elif self.phpunit:
                 jobs += ['quibble-composer-mysql-php83']
             return jobs
