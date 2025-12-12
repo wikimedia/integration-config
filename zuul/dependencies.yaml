@@ -1635,7 +1635,7 @@ JsonConfig:
     - WikimediaMessages
 
 Kartographer:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - JsonConfig
