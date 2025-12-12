@@ -294,7 +294,7 @@ def set_mw_dependencies(item, job, params):
 
         # T412527
         if 'DiscussionTools' in ext_deps:
-            ext_deps.add('skins/MinervaNeue')
+            skin_deps.add('skins/MinervaNeue')
             ext_deps.add('MobileFrontend')
 
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
