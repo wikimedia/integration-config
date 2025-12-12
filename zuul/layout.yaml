@@ -4860,9 +4860,9 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  # (T403982) Not in production yet but headed there -- 2025-10-27
   - name: mediawiki/extensions/PersonalDashboard
     template:
+      - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
