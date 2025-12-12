@@ -8784,21 +8784,8 @@ projects:
       - name: php-compile-php82-to-php85
 
   - name: mediawiki/php/wmerrors
-    # (T410921) Temporarily disable PHP 8.5 builds due to build failures.
-    # template:
-      # - name: php-compile-php82-to-php85
-    test:
-      - php-compile-php82
-      - php-compile-php83
-      - php-compile-php84
-    gate-and-submit:
-      - php-compile-php82
-      - php-compile-php83
-      - php-compile-php84
-    experimental:
-      - php-compile-php85
-    postmerge:
-      - php83-compile-coverage-publish
+    template:
+      - name: php-compile-php82-to-php85
 
   - name: mediawiki/oauthclient-php
     template:
