@@ -292,6 +292,11 @@ def set_mw_dependencies(item, job, params):
         if 'WebAuthn' in ext_deps:
             ext_deps.remove('WebAuthn')
 
+        # T412527
+        if 'DiscussionTools' in ext_deps:
+            ext_deps.add('MinervaNeue')
+            ext_deps.add('MobileFrontend')
+
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
 
