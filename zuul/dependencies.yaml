@@ -2088,7 +2088,7 @@ ReplaceText:
     - AdminLinks
 
 ReportIncident:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - EventLogging
