@@ -2448,6 +2448,8 @@ project-templates:
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
+    experimental:
+      - composer-package-php85
     postmerge:
       - doxygen-publish
       - phpunit-coverage-php83-publish
