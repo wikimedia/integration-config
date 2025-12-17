@@ -1582,6 +1582,7 @@ IPInfo:
   dependencies:
     # no requirements in extension.json
     # extras
+    - AbuseFilter
     - BetaFeatures
     - CheckUser
     - GlobalPreferences
