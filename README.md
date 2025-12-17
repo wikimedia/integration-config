@@ -90,7 +90,7 @@ Once the change is merged, use the `./fab` helper to deploy your CI config chang
 
     $ ./fab deploy_zuul
 
-# Docker image buiding and publishing
+# Docker image building and publishing
 
 After making the relevant `Dockerfile.template` changes and adding the changelog entry, you can
 locally build and test the new version of the image by running:
