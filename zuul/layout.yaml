@@ -1193,6 +1193,13 @@ jobs:
         - '.pipeline/config.yaml'
         - 'src/models/revise_tone_task_generator/.*'
 
+  - name: ^trigger-inference-services-pipeline-embeddings
+    files:
+        - '.pipeline/embeddings/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/embeddings/.*'
+        - 'python/.*\.py$'
+
   # End of meta jobs (the ones starting with ^)
 
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
@@ -2539,6 +2546,7 @@ projects:
       - trigger-inference-services-pipeline-article-country-publish
       - trigger-inference-services-pipeline-edit-check-publish
       - trigger-inference-services-pipeline-revise-tone-task-generator-publish
+      - trigger-inference-services-pipeline-embeddings-publish
 
   - name: integration/config
     test-prio:
