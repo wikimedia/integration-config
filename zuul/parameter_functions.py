@@ -287,8 +287,6 @@ def set_mw_dependencies(item, job, params):
         # T402463
         if 'MetricsPlatform' in ext_deps:
             ext_deps.remove('MetricsPlatform')
-        if 'TestKitchen' in ext_deps:
-            ext_deps.remove('TestKitchen')
 
         # T363639
         if 'WebAuthn' in ext_deps:
