@@ -4707,12 +4707,6 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
 
-  - name: mediawiki/extensions/PerformanceInspector
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/PersonalDashboard
     template:
       - name: in-wikimedia-production
@@ -11061,9 +11055,14 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/PerformanceInspector
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/PerPageLicense
     template:
       - name: archived
+      
 
   - name: mediawiki/extensions/Phalanx
     template:
