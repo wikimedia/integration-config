@@ -7680,10 +7680,6 @@ projects:
       - name: extension-quibble-composer
       - name: extension-coverage
 
-  - name: mediawiki/extensions/Sentry
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/Share
     template:
       - name: extension-quibble
@@ -11288,6 +11284,10 @@ projects:
   - name: mediawiki/extensions/SemanticUpdateOnPurge
     template:
       - name: archived
+
+  - name: mediawiki/extensions/Sentry
+    template:
+      - name: extension-quibble
 
   - name: mediawiki/extensions/SharedCssJs
     template:
