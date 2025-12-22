@@ -6680,10 +6680,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/ImageTweaks
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/ImapAuthorization
     template:
       - name: extension-quibble
@@ -10822,6 +10818,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ImageTagging
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/ImageTweaks
     template:
       - name: archived
 
