@@ -7997,10 +7997,6 @@ projects:
     template:
       - name: extension-quibble-composer
 
-  - name: mediawiki/extensions/TweetANew
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/TwitterCards
     template:
       - name: extension-quibble
@@ -11438,6 +11434,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Transliterator
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/TweetANew
     template:
       - name: archived
 
