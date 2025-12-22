@@ -6967,10 +6967,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Model
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/MontserratFont
     template:
       - name: extension-quibble
@@ -10928,6 +10924,10 @@ projects:
   - name: mediawiki/extensions/MixedNamespaceSearchSuggestions
     template:
       - name: archived
+
+  - name: mediawiki/extensions/Model
+    template:
+      - name: extension-quibble
 
   - name: mediawiki/extensions/MolHandler
     template:
