@@ -7678,10 +7678,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Shibboleth
-    template:
-      - name: extension-quibble-noselenium
-
   - name: mediawiki/extensions/ShoutWikiAds
     template:
       - name: extension-quibble
@@ -11285,6 +11281,10 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/SharedCssJs
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Shibboleth
     template:
       - name: archived
 
