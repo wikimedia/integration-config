@@ -8005,10 +8005,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/TwitterTag
-    template:
-      - name: extension-quibble-composer
-
   - name: mediawiki/extensions/TwnMainPage
     template:
       - name: extension-quibble
@@ -11442,6 +11438,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/Transliterator
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/TwitterTag
     template:
       - name: archived
 
