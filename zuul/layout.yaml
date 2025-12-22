@@ -6403,10 +6403,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/FileAnnotations
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/FileSystemImageServer
     template:
       - name: extension-quibble
@@ -10701,6 +10697,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/FileAnnotations
+    template:
+      - name: archived
+  
   - name: mediawiki/extensions/FirstSteps
     template:
       - name: archived
