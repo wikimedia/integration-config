@@ -189,6 +189,8 @@ CloneDiff:
 CodeMirror:
   - BetaFeatures
   - Gadgets
+  - Scribunto
+  - TemplateStyles
 
 CollapsibleVector:
   - skins/Vector
