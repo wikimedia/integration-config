@@ -7877,10 +7877,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/StalkerLog
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/StandardDialogs
     template:
       - name: extension-quibble-bluespice
@@ -11370,6 +11366,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/SSLClientAuthentication
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/StalkerLog
     template:
       - name: archived
 
