@@ -6504,10 +6504,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/GoogleAnalyticsMetrics
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/GoogleAnalyticsTopPages
     template:
       - name: extension-quibble
@@ -10786,6 +10782,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/GlobalContribs
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/GoogleAnalyticsMetrics
     template:
       - name: archived
 
