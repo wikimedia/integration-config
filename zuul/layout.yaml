@@ -7584,10 +7584,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/SacredText
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/SafeDelete
     template:
       - name: extension-quibble
@@ -11226,6 +11222,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/RT
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/SacredText
     template:
       - name: archived
 
