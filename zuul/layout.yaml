@@ -7070,10 +7070,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Negref
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/NearbyPages
     template:
       - name: extension-quibble
@@ -10954,6 +10950,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/NamespaceHTML
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Negref
     template:
       - name: archived
 
