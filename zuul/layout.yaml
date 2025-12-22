@@ -7293,10 +7293,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/PageTools
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/PageViewInfoGA
     template:
       - name: extension-quibble-composer
@@ -11058,6 +11054,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/PageCreationNotif
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/PageTools
     template:
       - name: archived
 
