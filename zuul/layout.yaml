@@ -7781,10 +7781,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/SlimboxThumbs
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/SmiteSpam
     template:
       - name: extension-quibble
@@ -11330,6 +11326,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/SkelJS
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/SlimboxThumbs
     template:
       - name: archived
 
