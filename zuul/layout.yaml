@@ -7993,10 +7993,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/UnblockMe
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/UnCaptcha
     template:
       - name: extension-quibble-noselenium
@@ -11450,6 +11446,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/TwoFactorAuthentication
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/UnblockMe
     template:
       - name: archived
 
