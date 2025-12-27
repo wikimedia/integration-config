@@ -2508,7 +2508,7 @@ WSOAuth:
     - PluggableAuth
 
 WebAuthn:
-  recurse: false
+  recurse: true
   dependencies:
     # From extension.json:
     - OATHAuth
