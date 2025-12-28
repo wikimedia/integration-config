@@ -7052,10 +7052,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/NaturalLanguageList
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/NaylorAMS
     template:
       - name: extension-quibble-noselenium
@@ -10940,6 +10936,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/NamespaceHTML
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/NaturalLanguageList
     template:
       - name: archived
 
