@@ -39,10 +39,6 @@ MEDIAWIKI_VERSIONS = {
         'branch': 'fundraising/REL1_43',
         'pipeline-suffix': 'fundraising',
     },
-    'Release 1.39': {
-        'branch': 'REL1_39',
-        'pipeline-suffix': '1_39',
-    },
     'Release 1.43': {
         'branch': 'REL1_43',
         'pipeline-suffix': '1_43',
@@ -1031,7 +1027,7 @@ class TestZuulScheduler(unittest.TestCase):
 
             # Map some other more specific pipelines
             if pipeline.name.startswith('test-'):
-                # eg 'test-prio', 'test-fundraising', 'test-1_39'
+                # eg 'test-prio', 'test-fundraising'
                 tag_suffix = 'test'
             elif pipeline.name.startswith('gate-and-submit-'):
                 tag_suffix = 'gate-and-submit'

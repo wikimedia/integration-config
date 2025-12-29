@@ -68,13 +68,6 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/Wikibase',
         ])
 
-        # (T367156, T385175) Hack to only load EntitySchema on REL1_43+ jobs;
-        # remove once old branch support is dropped
-        if not (
-            params["ZUUL_BRANCH"].startswith("REL1_39")
-        ):
-            params['EXT_DEPENDENCIES'] += '\\nmediawiki/extensions/EntitySchema'
-
     if job.name.startswith('wikibase-repo'):
         params['EXT_DEPENDENCIES'] = '\\n'.join([
             'mediawiki/extensions/CirrusSearch',
@@ -108,7 +101,6 @@ def set_parameters(item, job, params):
         and "ZUUL_BRANCH" in params
         and not (
             params["ZUUL_BRANCH"].startswith("REL1_43")
-            or params["ZUUL_BRANCH"].startswith("REL1_39")
         )
         # Exclude fundraising branches and specific jobs
         and not params["ZUUL_BRANCH"].startswith("fundraising")
@@ -271,31 +263,6 @@ def set_mw_dependencies(item, job, params):
     # Split extensions and skins
     skin_deps = {d for d in deps if d.startswith('skins/')}
     ext_deps = deps - skin_deps
-
-    if params['ZUUL_BRANCH'] in ['REL1_39']:
-        # T380434
-        if 'CommunityConfiguration' in ext_deps:
-            ext_deps.remove('CommunityConfiguration')
-
-        if 'CommunityConfigurationExample' in ext_deps:
-            ext_deps.remove('CommunityConfigurationExample')
-
-        # T390772
-        if 'IPReputation' in ext_deps:
-            ext_deps.remove('IPReputation')
-
-        # T402463
-        if 'MetricsPlatform' in ext_deps:
-            ext_deps.remove('MetricsPlatform')
-
-        # T363639
-        if 'WebAuthn' in ext_deps:
-            ext_deps.remove('WebAuthn')
-
-        # T412527
-        if 'DiscussionTools' in ext_deps:
-            skin_deps.add('skins/MinervaNeue')
-            ext_deps.add('MobileFrontend')
 
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
