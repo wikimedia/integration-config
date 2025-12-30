@@ -8216,11 +8216,6 @@ projects:
     template:
       - name: extension-quibble-composer
 
-  - name: mediawiki/extensions/WikimediaEditorTasks
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/Workflows
     template:
       - name: extension-quibble-bluespice
@@ -11561,6 +11556,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/WikiLexicalData
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/WikimediaEditorTasks
     template:
       - name: archived
 
