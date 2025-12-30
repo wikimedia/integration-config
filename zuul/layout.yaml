@@ -6546,10 +6546,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/GraphQL
-    template:
-      - name: extension-quibble-composer
-
   - name: mediawiki/extensions/Gravatar
     template:
       - name: extension-quibble
@@ -10740,6 +10736,10 @@ projects:
   - name: mediawiki/extensions/Graph
     template:
       - name: archived # T362317
+
+  - name: mediawiki/extensions/GraphQL
+    template:
+      - name: archived
 
   - name: mediawiki/extensions/GraphViz
     template:
