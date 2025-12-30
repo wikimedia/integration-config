@@ -7533,11 +7533,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Renameuser
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/ReplaceSet
     template:
       - name: extension-quibble
@@ -11180,6 +11175,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/RelationLinks
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Renameuser
     template:
       - name: archived
 
