@@ -1,3 +1,9 @@
+quibble-coverage (1.14.2-s2) wikimedia; urgency=medium
+
+  * Allow coverage for `mediawiki/services/parsoid` - T413626.
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 05 Jan 2026 12:31:24 +0100
+
 quibble-coverage (1.14.2-s1) wikimedia; urgency=high
 
    T358666: Update mediawiki/phpunit-patch-coverage to 0.0.16

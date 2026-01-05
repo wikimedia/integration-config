@@ -36,8 +36,11 @@ def main():
                              '(ex: extensions/Foo, skins/Beautiful)')
 
     args = parser.parse_args()
-    assert args.cover_extension == "" or args.cover_extension.startswith(
-        ('extensions/', 'skins/'))
+    assert args.cover_extension == "" or args.cover_extension.startswith((
+        'extensions/',
+        'skins/',
+        'services/parsoid',
+    ))
 
     tree = etree.parse(args.suite)
     root = tree.getroot()
