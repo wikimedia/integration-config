@@ -1540,6 +1540,7 @@ project-templates:
       - quibble-vendor-postgres-php81
       # Not-yet-supported language runtimes
       - quibble-vendor-mysql-php84
+      - quibble-vendor-mysql-php85
       - mediawiki-node22
       - mediawiki-node24
 
@@ -1614,6 +1615,7 @@ project-templates:
       - quibble-composer-postgres-php83
       # Not-yet-supported language runtimes
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       - mediawiki-node22
       - mediawiki-node24
 
@@ -1734,6 +1736,7 @@ project-templates:
       - quibble-vendor-sqlite-php83
       - quibble-vendor-postgres-php83
       - quibble-vendor-mysql-php84
+      - quibble-vendor-mysql-php85
       - mediawiki-node22
       - mediawiki-node24
 
@@ -1796,6 +1799,7 @@ project-templates:
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       - mwext-phan-php83
       - mediawiki-node22
       - mediawiki-node24
@@ -2810,6 +2814,7 @@ projects:
       - mediawiki-core-doxygen-publish
     experimental:
       - quibble-for-mediawiki-core-vendor-mysql-php84
+      - quibble-for-mediawiki-core-vendor-mysql-php85
       - mediawiki-composer-php83
       - mediawiki-node22
       - mediawiki-node24
