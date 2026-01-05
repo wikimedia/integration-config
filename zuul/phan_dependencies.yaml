@@ -314,6 +314,7 @@ FlaggedRevs:
   - Echo
   - GoogleNewsSitemap
   - MobileFrontend
+  - UserMerge
   - skins/Vector
 
 Flow:
