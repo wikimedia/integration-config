@@ -264,9 +264,7 @@ class TestZuulLayout(unittest.TestCase):
                 # (T287918) Coverage publish job
                 noCoverage = [
                     'mediawiki/extensions/DonationInterface',
-                    'mediawiki/extensions/OpenStackManager',
                     'mediawiki/extensions/SearchVue',  # JS only
-                    'mediawiki/extensions/VueTest',  # JS only
                     'mediawiki/extensions/Wikibase',
                     'mediawiki/extensions/WikimediaMaintenance'
                 ]
