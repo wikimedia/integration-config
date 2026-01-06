@@ -1974,6 +1974,7 @@ project-templates:
       - quibble-vendor-sqlite-php83
       - quibble-vendor-postgres-php83
       - quibble-vendor-mysql-php84
+      - quibble-vendor-mysql-php85
       - mediawiki-node22
       - mediawiki-node24
 
@@ -2042,6 +2043,7 @@ project-templates:
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
       - quibble-composer-mysql-php84
+      - quibble-vendor-mysql-php85
       - mediawiki-node22
       - mediawiki-node24
 
