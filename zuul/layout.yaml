@@ -9044,6 +9044,7 @@ projects:
     template:
       - name: node20
       - name: mediawiki-i18n-check
+      - name: composer-test-php82-to-php85
     test:
       - composer-php81
       - labs-tools-heritage-tox
@@ -9052,11 +9053,6 @@ projects:
       - labs-tools-heritage-tox
     postmerge:
       - tox-py39-coverage-publish
-    experimental:
-      - composer-php82
-      - composer-php83
-      - composer-php84
-      - composer-php85
 
   - name: labs/tools/indic-wscontest
     template:
@@ -10648,7 +10644,7 @@ projects:
   - name: mediawiki/extensions/FileAnnotations
     template:
       - name: archived
-  
+
   - name: mediawiki/extensions/FirstSteps
     template:
       - name: archived
@@ -11044,7 +11040,7 @@ projects:
   - name: mediawiki/extensions/PerPageLicense
     template:
       - name: archived
-      
+
 
   - name: mediawiki/extensions/Phalanx
     template:
