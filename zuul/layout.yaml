@@ -1451,7 +1451,6 @@ project-templates:
       - mediawiki-i18n-check
     experimental:
       - mwext-phan-php83
-      - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
