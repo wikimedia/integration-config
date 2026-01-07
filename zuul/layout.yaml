@@ -6705,6 +6705,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/IssueTrackerLinks
+    template:
+     - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/JavascriptSlideshow
     template:
       - name: extension-quibble
@@ -7366,6 +7370,10 @@ projects:
   - name: mediawiki/extensions/PreToClip
     template:
       - name: extension-quibble-bluespice
+
+  - name: mediawiki/extensions/PreviewLinks
+    template:
+     - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/Prezi
     template:
@@ -8178,6 +8186,10 @@ projects:
   - name: mediawiki/extensions/WikiLovesMonuments
     template:
       - name: extension-quibble
+
+  - name: mediawiki/extensions/WikiRAG
+    template:
+     - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/WikiSEO
     template:
