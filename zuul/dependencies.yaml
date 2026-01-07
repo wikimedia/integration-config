@@ -1618,6 +1618,12 @@ InputBox:
     # extras
     - MediaSearch
 
+IssueTrackerLinks:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - VisualEditorPlus
+
 JWTAuth:
   recurse: false
   dependencies:
