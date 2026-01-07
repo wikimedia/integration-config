@@ -6243,6 +6243,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/DisableSpecialPages
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/DisplayTitle
     template:
       - name: extension-quibble
