@@ -365,6 +365,7 @@ GrowthExperiments:
   - ConfirmEdit
   - WikimediaMessages
   - MetricsPlatform
+  - TestKitchen
   - GuidedTour
 
 HAWelcome:
@@ -566,6 +567,7 @@ ReadingLists:
   - BetaFeatures
   - MetricsPlatform
   - SiteMatrix
+  - TestKitchen
 
 RelatedArticles:
   - Disambiguator
@@ -822,6 +824,7 @@ WikimediaEvents:
   - MobileFrontend
   - OATHAuth
   - MetricsPlatform
+  - TestKitchen
 
 WikimediaMaintenance:
   - AbuseFilter
@@ -842,6 +845,7 @@ WikimediaMessages:
   - MobileFrontend
   - ORES
   - skins/MinervaNeue
+  - TestKitchen
 
 WikiSEO:
   - PageImages

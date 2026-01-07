@@ -1557,6 +1557,7 @@ GrowthExperiments:
     - PageImages
     - PageViewInfo
     - skins/MinervaNeue
+    - TestKitchen
     - Thanks
     - VisualEditor
     - WikimediaMessages
@@ -2061,6 +2062,7 @@ ReadingLists:
     - EventLogging
     - EventStreamConfig
     - MetricsPlatform
+    - TestKitchen
 
 RegexFun:
   recurse: true
