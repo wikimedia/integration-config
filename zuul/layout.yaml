@@ -2339,7 +2339,6 @@ project-templates:
 # a set of jobs.
 projects:
 
-
 #### Continuous integration and other developer services #######
 
   - name: blubber-doc/example/helloworldoid
@@ -9046,9 +9045,11 @@ projects:
       - name: mediawiki-i18n-check
       - name: composer-test-php82-to-php85
     test:
+      # TODO (T413995): Does this still need PHP 8.1 testing?
       - composer-php81
       - labs-tools-heritage-tox
     gate-and-submit:
+      # TODO (T413995): Does this still need PHP 8.1 testing?
       - composer-php81
       - labs-tools-heritage-tox
     postmerge:
@@ -11040,7 +11041,6 @@ projects:
   - name: mediawiki/extensions/PerPageLicense
     template:
       - name: archived
-
 
   - name: mediawiki/extensions/Phalanx
     template:
