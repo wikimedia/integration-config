@@ -2002,6 +2002,12 @@ Popups:
     - PageImages
     - TextExtracts
 
+PreviewLinks:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PageImages
+
 PronunciationRecording:
   recurse: true
   dependencies:
