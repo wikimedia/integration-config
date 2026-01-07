@@ -1536,8 +1536,8 @@ project-templates:
 
     experimental:
       # Non-standard database types
-      - quibble-vendor-sqlite-php81
-      - quibble-vendor-postgres-php81
+      - quibble-vendor-sqlite-php83
+      - quibble-vendor-postgres-php83
       # Not-yet-supported language runtimes
       - quibble-vendor-mysql-php84
       - quibble-vendor-mysql-php85
