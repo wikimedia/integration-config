@@ -1624,6 +1624,7 @@ IssueTrackerLinks:
   recurse: false
   dependencies:
     # From extension.json:
+    - VisualEditor
     - VisualEditorPlus
 
 JWTAuth:
