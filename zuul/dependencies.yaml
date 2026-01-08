@@ -2348,7 +2348,7 @@ TopTenPages:
     - HitCounters
 
 TorBlock:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
