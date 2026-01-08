@@ -1395,11 +1395,13 @@ EmailAuthorization:
     - PluggableAuth
 
 EncryptedUploads:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - UploadWizard
+    # Transitive requirements:
+    - EventLogging
 
 EnhancedStandardUIs:
   recurse: false
@@ -2011,11 +2013,13 @@ PreviewLinks:
     - PageImages
 
 PronunciationRecording:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - UploadWizard
+    # Transitive requirements:
+    - EventLogging
 
 ProofreadPage:
   recurse: false
@@ -2432,7 +2436,7 @@ UnlinkedWikibase:
     - Scribunto
 
 UploadWizard:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
