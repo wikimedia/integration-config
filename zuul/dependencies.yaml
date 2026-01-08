@@ -2306,7 +2306,7 @@ TestKitchen:
     - VisualEditor
 
 Thanks:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Echo
