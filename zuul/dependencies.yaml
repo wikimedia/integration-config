@@ -1963,10 +1963,12 @@ ParserFunctions:
     - Scribunto
 
 PersonalDashboard:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - CommunityConfiguration
+    # Transitive requirements
+    - Echo
     # extras
     - FlaggedRevs
     - Thanks
