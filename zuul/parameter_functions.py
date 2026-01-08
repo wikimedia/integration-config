@@ -265,6 +265,13 @@ def set_mw_dependencies(item, job, params):
     skin_deps = {d for d in deps if d.startswith('skins/')}
     ext_deps = deps - skin_deps
 
+    if params['ZUUL_BRANCH'] in ['REL1_43', 'REL1_44', 'REL1_45']:
+        # T414136 - TestKitchen doesn't exist as itself on REL1_43-REL1_45 branches,
+        # and is labelled as MetricsPlatform, therefore stop loading TestKitchen on
+        # REL1_XX until we stop adding MetricsPlatform as dependancy...
+        if 'TestKitchen' in ext_deps:
+            ext_deps.remove('TestKitchen')
+
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
 
