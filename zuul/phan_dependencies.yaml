@@ -208,6 +208,11 @@ CognitiveProcessDesigner:
   - BlueSpiceFoundation
   - BlueSpiceUEModulePDF
 
+Comments:
+  - AbuseFilter
+  - Echo
+  - SocialProfile
+
 CommentStreams:
   - Echo
   - SocialProfile
