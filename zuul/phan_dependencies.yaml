@@ -242,6 +242,9 @@ CreateAPage:
 DataTable2:
   - Scribunto
 
+DataTransfer:
+  - AdminLinks
+
 Dashiki:
   - JsonConfig
 
