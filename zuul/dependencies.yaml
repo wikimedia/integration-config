@@ -2551,7 +2551,10 @@ WikiLambda:
 WikiRAG:
   recurse: false
   dependencies:
-    # From extension.json:
+    # no requirements in extension.json
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
     - BlueSpiceFoundation
 
 WikiSEO:
