@@ -141,7 +141,7 @@ AtMentions:
     - VisualEditor
 
 AutoModerator:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - DiscussionTools
