@@ -2373,14 +2373,14 @@ TranslationNotifications:
     - UniversalLanguageSelector
 
 TuleapIntegration:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - TuleapWikiFarm
 
 TuleapWikiFarm:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
