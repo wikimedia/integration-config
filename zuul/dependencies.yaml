@@ -1128,7 +1128,7 @@ CheckUser:
     - VisualEditor
 
 Checklists:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
