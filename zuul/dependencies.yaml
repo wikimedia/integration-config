@@ -1459,13 +1459,6 @@ FanBoxes:
     # extras
     - SocialProfile
 
-FileAnnotations:
-  recurse: true
-  dependencies:
-    # no requirements in extension.json
-    # extras
-    - EventLogging
-
 FileImporter:
   recurse: false
   dependencies:
