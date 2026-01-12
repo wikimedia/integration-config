@@ -1274,7 +1274,7 @@ ContentProvisioning:
     - OOJSPlus
 
 ContentStabilization:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
