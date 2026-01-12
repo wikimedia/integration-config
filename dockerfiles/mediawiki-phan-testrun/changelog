@@ -1,3 +1,9 @@
+mediawiki-phan-testrun (8.3.26) wikimedia; urgency=medium
+
+  * Upgrade PHP from 8.1 to 8.3 - T414268
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 12 Jan 2026 08:25:34 +0100
+
 mediawiki-phan-testrun (8.1.33) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
