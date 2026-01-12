@@ -2077,7 +2077,7 @@ ReadingLists:
     - TestKitchen
 
 RegexFun:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2166,7 +2166,7 @@ SimpleSAMLphp:
     - PluggableAuth
 
 SimpleTasks:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - AtMentions
@@ -2220,7 +2220,7 @@ SpamDiffTool:
     - SpamBlacklist
 
 SpecialPageCaptcha:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - ConfirmEdit
@@ -2279,7 +2279,7 @@ TEI:
     - VisualEditor
 
 TableTools:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - VisualEditor
