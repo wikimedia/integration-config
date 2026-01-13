@@ -1134,6 +1134,7 @@ class TestZuulScheduler(unittest.TestCase):
             'quibble-for-mediawiki-core-composer-mysql-php83': True,
             'quibble-for-mediawiki-core-vendor-mysql-php82': True,
             'quibble-for-mediawiki-core-vendor-mysql-php83': True,
+            'quibble-for-mediawiki-core-vendor-mysql-php84': True,
             'quibble-for-mediawiki-core-composertest-only-php83': True,
             'quibble-apitests-only-vendor-php83': True,
             'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83': True,
