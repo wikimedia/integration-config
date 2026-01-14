@@ -160,7 +160,7 @@ Babel:
     - CommunityConfiguration
 
 BlogPage:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1093,7 +1093,7 @@ CentralNotice:
     - EventLogging
 
 Challenge:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1453,7 +1453,7 @@ FacetedCategory:
     - CategoryTree
 
 FanBoxes:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1977,14 +1977,14 @@ Phonos:
     - TimedMediaHandler
 
 PictureGame:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - SocialProfile
 
 PollNY:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2042,14 +2042,14 @@ QuickSurveys:
     - EventLogging
 
 QuizGame:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - SocialProfile
 
 RandomGameUnit:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2178,7 +2178,7 @@ SimpleTasks:
     - VisualEditor
 
 SiteMetrics:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2233,7 +2233,7 @@ SpellingDictionary:
     - UniversalLanguageSelector
 
 SportsTeams:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -2448,7 +2448,7 @@ UserProfile:
     - skins/BlueSpiceDiscovery
 
 UserStatus:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
