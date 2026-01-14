@@ -34,10 +34,11 @@ skins/Cosmos:
     - VisualEditor
 
 skins/MinervaNeue:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
+    - Cite
     - MobileFrontend
 
 skins/Refreshed:
