@@ -1393,6 +1393,8 @@ EmailAuth:
   dependencies:
     # From extension.json:
     - CentralAuth
+    # extras
+    - AntiSpoof
 
 EmailAuthorization:
   recurse: false
