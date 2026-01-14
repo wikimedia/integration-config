@@ -1388,6 +1388,12 @@ ElectronPdfService:
     - Collection
     - FlaggedRevs
 
+EmailAuth:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - CentralAuth
+
 EmailAuthorization:
   recurse: false
   dependencies:
