@@ -1179,11 +1179,12 @@ CodeEditor:
     - WikiEditor
 
 CodeMirror:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - BetaFeatures
+    - Cite
     - VisualEditor
     - WikiEditor
 
