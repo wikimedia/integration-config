@@ -41,4 +41,4 @@ done
     > before.txt
 
 echo "Looking for differences"
-git diff --color=always --color-words='[\w,]' --unified=0 --no-index -- before.txt current.txt
+git diff --color=always --color-words='[\w,]|[^[:space:]]' --unified=0 --no-index -- before.txt current.txt
