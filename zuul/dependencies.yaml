@@ -2280,13 +2280,15 @@ SyntaxHighlight_GeSHi:
     - VisualEditor
 
 TEI:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - CodeMirror
     - Math
     - VisualEditor
+    # extras transitive requirements:
+    - Cite
 
 TableTools:
   recurse: false
