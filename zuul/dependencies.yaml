@@ -1844,6 +1844,7 @@ NSFileRepo:
     - OOJSPlus
     - PDFCreator
     - VisualEditor
+    - VueJsPlus
 
 NamespacePopups:
   recurse: false
