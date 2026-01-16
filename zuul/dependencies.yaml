@@ -39,6 +39,7 @@ skins/MinervaNeue:
     # no requirements in extension.json
     # extras
     - Cite
+    - Echo
     - MobileFrontend
 
 skins/Refreshed:
