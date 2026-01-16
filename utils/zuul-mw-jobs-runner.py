@@ -402,7 +402,7 @@ def parse_args(args):
     group.add_argument('--start', action='store_true',
                        help='Start the jobs on the Gearman server')
 
-    parser.add_argument('--jobs', default=2, type=int)
+    parser.add_argument('--jobs', default=12, type=int)
     parser.add_argument('--debug', action='store_true')
     parser.add_argument('--phpunit', action=argparse.BooleanOptionalAction,
                         default=True)
