@@ -1152,7 +1152,7 @@ CirrusSearch:
     - TimedMediaHandler
 
 Cite:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
@@ -1163,6 +1163,9 @@ Cite:
     - Popups
     - VisualEditor
     - WikiEditor
+    # extras requirements
+    - PageImages
+    - TextExtracts
 
 Citoid:
   recurse: false
