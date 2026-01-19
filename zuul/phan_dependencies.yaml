@@ -105,6 +105,7 @@ CampaignEvents:
   - Echo
   - Translate
   - UserMerge
+  - Wikibase
   - WikimediaMessages
 
 Campaigns:
