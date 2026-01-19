@@ -1595,6 +1595,7 @@ IPInfo:
     - BetaFeatures
     - CheckUser
     - GlobalPreferences
+    - IPReputation
     - MobileFrontend
 
 IPReputation:

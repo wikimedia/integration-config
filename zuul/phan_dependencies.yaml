@@ -398,6 +398,7 @@ InlineComments:
 IPInfo:
   - EventLogging
   - GlobalPreferences
+  - IPReputation
   - MobileFrontend
 
 intersection:
