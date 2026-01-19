@@ -1288,6 +1288,7 @@ ContentStabilization:
     - BlueSpiceBookshelf
     - BlueSpiceFoundation
     - BlueSpicePageAssignments
+    - BlueSpiceSmartList
     - BlueSpiceSMWConnector
     - Forms
     - MenuEditor
