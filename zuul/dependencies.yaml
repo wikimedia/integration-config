@@ -73,7 +73,7 @@ AIEditingAssistant:
     - VisualEditorPlus
 
 AbuseFilter:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
