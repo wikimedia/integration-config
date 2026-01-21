@@ -1785,12 +1785,14 @@ MediaUploader:
     - SpamBlacklist
 
 MenuEditor:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - OOJSPlus
     - skins/BlueSpiceDiscovery
+    # extras transitive dependencies
+    - BlueSpiceFoundation
 
 MetricsPlatform:
   recurse: true
