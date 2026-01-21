@@ -185,7 +185,6 @@
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
                 - opensearch:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s6
                     quibble_args: >-
                         -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
                         && /src/utils/ci-opensearch.sh
