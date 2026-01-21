@@ -1501,7 +1501,7 @@ FlexiSkin:
     - WikiEditor
 
 Flow:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - Echo
