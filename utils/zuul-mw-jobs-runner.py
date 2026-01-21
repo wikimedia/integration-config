@@ -73,8 +73,10 @@ class JobToRun():
         self.params = params
 
     def __str__(self):
-        return '<%s job=%s deps=%s>' % (
+        branch = self.params['ZUUL_BRANCH']
+        return '<%s %sjob=%s deps=%s>' % (
             self.params['ZUUL_PROJECT'],
+            '' if branch == 'master' else ('branch=%s ' % branch),
             self.name,
             ','.join(self.getDeps()) or '[]'
         )
@@ -94,6 +96,7 @@ class ZuulMwJobsRunner():
         self.include_non_recursive = args.include_non_recursive
         self.requested_projects = args.projects
         self.projects_filter = args.projects_filter
+        self.branch = args.branch
         self.phpunit = args.phpunit
         self.requires_only = args.requires_only
         self.selenium = args.selenium
@@ -108,7 +111,7 @@ class ZuulMwJobsRunner():
                     name=job_name,
                     params={
                         'ZUUL_PROJECT': project,
-                        'ZUUL_BRANCH': 'master',
+                        'ZUUL_BRANCH': self.branch,
                     },
                 )
 
@@ -421,6 +424,8 @@ def parse_args(args):
         '--projects-filter', metavar='REGEX',
         help='Runs on project matching pattern. '
         'Example: ^mediawiki/extensions/Blue')
+    parser.add_argument('--branch', default='master', metavar='ZUUL_BRANCH',
+                        help='git branch to run jobs against (default: master)')
 
     parser.add_argument(
         '--in-production', action=argparse.BooleanOptionalAction, default=None,
