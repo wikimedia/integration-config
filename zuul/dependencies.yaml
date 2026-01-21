@@ -1195,7 +1195,7 @@ CodeMirror:
     - WikiEditor
 
 CognitiveProcessDesigner:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
@@ -1204,6 +1204,8 @@ CognitiveProcessDesigner:
     - BlueSpiceVisualEditorConnector
     - PageForms
     - VisualEditor
+    # extras transitive dependencies
+    - VisualEditorPlus
 
 CollabPads:
   recurse: false
