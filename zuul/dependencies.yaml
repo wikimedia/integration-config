@@ -2551,7 +2551,7 @@ WhoIsWatching:
     - Echo
 
 WikiEditor:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
