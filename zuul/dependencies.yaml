@@ -20,7 +20,7 @@ skins/BlueSpiceDiscovery:
     - MenuEditor
 
 skins/Cosmos:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
