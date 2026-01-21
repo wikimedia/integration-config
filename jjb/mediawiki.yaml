@@ -407,7 +407,7 @@
 
 - job-template: &job_quibble_requires_only
     !!merge : *job_quibble
-    name: 'quibble-requires-only-{packages-source}-non-voting'
+    name: 'quibble-requires-only-{packages-source}'
     docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.2-s6
     entrypoint: quibble-with-supervisord
     environment:
@@ -421,7 +421,22 @@
 
 - job-template:
     !!merge : *job_quibble_requires_only
+    name: 'quibble-requires-only-{packages-source}-non-voting'
+    triggers:
+        - zuul
+
+# Non voting version
+- job-template: &job_quibble_requires_only_selenium
+    !!merge : *job_quibble_requires_only
     name: 'quibble-requires-only-{packages-source}-selenium'
+    quibble_args: '--resolve-requires --run selenium'
+    triggers:
+        - zuul
+
+# Non voting version
+- job-template:
+    !!merge : *job_quibble_requires_only_selenium
+    name: 'quibble-requires-only-{packages-source}-selenium-non-voting'
     quibble_args: '--resolve-requires --run selenium'
     triggers:
         - zuul
@@ -849,9 +864,13 @@
         - quibble-for-mediawiki-core-{packages-source}-{database}-{php}
         - quibble-for-mediawiki-core-composertest-only-{php}
         - quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}
+        - quibble-requires-only-{packages-source}:
+            database: mysql
         - quibble-requires-only-{packages-source}-non-voting:
             database: mysql
         - quibble-requires-only-{packages-source}-selenium:
+            database: mysql
+        - quibble-requires-only-{packages-source}-selenium-non-voting:
             database: mysql
         - quibble-apitests-only-{packages-source}-{php}:
             database: 'mysql'
