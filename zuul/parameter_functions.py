@@ -54,7 +54,7 @@ def set_parameters(item, job, params):
         )
     if (
         job.name.startswith(mw_deps_jobs_starting_with)
-        and job.name != 'quibble-requires-only-non-voting'
+        and not job.name.startswith('quibble-requires-only')
     ):
         set_mw_dependencies(item, job, params)
 
