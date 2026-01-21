@@ -165,6 +165,7 @@ class ZuulMwJobsRunner():
                 not p['name'].startswith((
                     'mediawiki/core', 'mediawiki/vendor',
                     'mediawiki/skins/', 'mediawiki/extensions',
+                    'mediawiki/services/parsoid',
                 ))
                 or p['name'] in IGNORE_PROJECTS
             ):
