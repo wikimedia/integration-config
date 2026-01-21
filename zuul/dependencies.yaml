@@ -1719,6 +1719,7 @@ LoginNotify:
     # extras
     - AntiSpoof
     - CentralAuth
+    # Only required for release branches 1.45 and before
     - CheckUser
 
 MagicLinkAuthentication:
