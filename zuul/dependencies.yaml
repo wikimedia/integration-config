@@ -2468,12 +2468,15 @@ UploadWizard:
     - WikimediaMessages
 
 UserProfile:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
     - OOJSPlus
     - skins/BlueSpiceDiscovery
+    # extras transitive dependencies
+    - BlueSpiceFoundation
+    - MenuEditor
 
 UserStatus:
   recurse: false
