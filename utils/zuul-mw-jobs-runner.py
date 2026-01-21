@@ -48,6 +48,7 @@ IGNORE_PROJECTS = {
     # Uses a custom job
     'mediawiki/extensions/DonationInterface',
     'mediawiki/extensions/FundraisingEmailUnsubscribe',
+    'mediawiki/services/parsoid/testreduce',
 }
 
 logging.basicConfig(level=logging.WARNING)
