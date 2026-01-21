@@ -14,7 +14,7 @@ function relay_signals() {
 set +e
 if [[ ! -v CODEHEALTH ]]; then
     php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH" -d pcov.exclude='@(tests|vendor)@' \
-        tests/phpunit/phpunit.php \
+        vendor/bin/phpunit \
             --exclude-group Broken \
             --coverage-clover "$LOG_DIR"/clover.xml \
             --coverage-html "$WORKSPACE/cover" &

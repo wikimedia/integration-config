@@ -1,3 +1,9 @@
+quibble-coverage (1.14.2-s3) wikimedia; urgency=high
+
+   (T395470) Stop using legacy phpunit.php and suite.xml
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Wed, 21 Jan 2026 23:36:11 +0100
+
 quibble-coverage (1.14.2-s2) wikimedia; urgency=medium
 
   * Allow coverage for `mediawiki/services/parsoid` - T413626.

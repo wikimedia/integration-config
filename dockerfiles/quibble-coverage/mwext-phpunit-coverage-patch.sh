@@ -31,11 +31,11 @@ if [ ! -d "$TEST_DIR" ]; then
     TEST_DIR="."
 fi
 
-# Edit suite.xml to use the proper coverage paths
-phpunit-suite-edit "$MW_INSTALL_PATH/tests/phpunit/suite.xml" \
+# Edit the PHPUnit configuration to use the proper coverage paths
+phpunit-suite-edit "$MW_INSTALL_PATH/phpunit.xml.dist" \
     --cover-extension "${ZUUL_PROJECT#mediawiki/}"
 
 exec phpunit-patch-coverage check \
-    --command "php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$PWD -d pcov.exclude='@(tests|vendor)@' -d pcov.initial.files=3000 \"\$MW_INSTALL_PATH\"/tests/phpunit/phpunit.php" \
+    --command "php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$PWD -d pcov.exclude='@(tests|vendor)@' -d pcov.initial.files=3000 \"\$MW_INSTALL_PATH\"/vendor/bin/phpunit" \
     --html "$LOG_DIR"/coverage.html \
     --test-dir "$TEST_DIR"

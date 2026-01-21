@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Edit MediaWiki's PHPUnit suite.xml file
+Edit MediaWiki's PHPUnit configuration file
 Copyright (C) 2018, 2022 Kunal Mehta <legoktm@debian.org>
 
 This program is free software; you can redistribute it and/or modify
@@ -25,12 +25,8 @@ import xml.etree.cElementTree as etree
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('suite', help='Path to suite.xml')
+    parser.add_argument('suite', help='Path to phpunit.xml.dist')
 
-    # Default is for compat with /mediawiki/tests/phpunit/phpunit.php and /tests/phpunit/suite.xml
-    # Remove once all calls use /mediawiki/vendor/bin/phpunit with /suite.xml
-    parser.add_argument('--path-to-mw', default='../../',
-                        help='Path from suite to MW_INSTALL_PATH')
     parser.add_argument('--cover-extension',
                         help='Extension path to set for coverage '
                              '(ex: extensions/Foo, skins/Beautiful)')
@@ -69,7 +65,7 @@ def main():
                 added_cover = False
                 # Add the three directories we care about
                 for folder in ['src', 'includes', 'maintenance']:
-                    path = os.path.join(args.path_to_mw, args.cover_extension, folder)
+                    path = os.path.join(args.cover_extension, folder)
                     if os.path.exists(os.path.join(os.path.dirname(args.suite), path)):
                         added_cover = True
                         sub = etree.SubElement(include, 'directory')
@@ -81,8 +77,7 @@ def main():
                 # here instead. (T288396)
                 if not added_cover:
                     sub = etree.SubElement(include, 'directory')
-                    path = os.path.join(args.path_to_mw, args.cover_extension)
-                    sub.text = path
+                    sub.text = args.cover_extension
                     sub.set('suffix', '.php')
 
     # This produces a dirty diff, strips comments, ignores newlines,
