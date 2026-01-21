@@ -405,17 +405,24 @@
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
-- job-template:
+- job-template: &job_quibble_requires_only
     !!merge : *job_quibble
     name: 'quibble-requires-only-{packages-source}-non-voting'
+    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.2-s6
     entrypoint: quibble-with-supervisord
+    environment:
+        # Since we use --resolve-requires, unset dependencies that
+        # might have been set by Zuul
+        EXT_DEPENDENCIES: ''
+        SKIN_DEPENDENCIES: ''
+    quibble_args: '--resolve-requires --run phpunit-unit,phpunit,qunit'
     triggers:
         - zuul
 
 - job-template:
-    !!merge : *job_quibble
+    !!merge : *job_quibble_requires_only
     name: 'quibble-requires-only-{packages-source}-selenium'
-    entrypoint: quibble-with-supervisord
+    quibble_args: '--resolve-requires --run selenium'
     triggers:
         - zuul
 
@@ -843,25 +850,9 @@
         - quibble-for-mediawiki-core-composertest-only-{php}
         - quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}
         - quibble-requires-only-{packages-source}-non-voting:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.2-s6
-            entrypoint: quibble-with-supervisord
             database: mysql
-            environment:
-                # Since we use --resolve-requires, unset dependencies that
-                # might have been set by Zuul
-                EXT_DEPENDENCIES: ''
-                SKIN_DEPENDENCIES: ''
-            quibble_args: '--resolve-requires --run phpunit-unit,phpunit,qunit'
         - quibble-requires-only-{packages-source}-selenium:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.2-s6
-            entrypoint: quibble-with-supervisord
             database: mysql
-            environment:
-                # Since we use --resolve-requires, unset dependencies that
-                # might have been set by Zuul
-                EXT_DEPENDENCIES: ''
-                SKIN_DEPENDENCIES: ''
-            quibble_args: '--resolve-requires --run selenium'
         - quibble-apitests-only-{packages-source}-{php}:
             database: 'mysql'
 
