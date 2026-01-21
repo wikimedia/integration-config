@@ -43,7 +43,7 @@ skins/MinervaNeue:
     - MobileFrontend
 
 skins/Refreshed:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
