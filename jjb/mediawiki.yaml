@@ -458,7 +458,7 @@
             entrypoint: '{entrypoint|}'
             volumes:
                 /srv/git: /srv/git:ro
-            args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --commands "phpunit-patch-coverage check --command \"php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=. /usr/bin/composer phpunit\" --html /workspace/log/coverage.html"'
+            args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --commands "phpunit-patch-coverage check --command \"php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=. vendor/bin/phpunit\" --html /workspace/log/coverage.html"'
             logdir: '/workspace/log'
             srcdir: '/workspace/src'
     publishers:
