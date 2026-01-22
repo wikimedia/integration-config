@@ -56,7 +56,7 @@ else
     php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$EXT_DIR" -d pcov.exclude='@(tests|vendor)@' \
         vendor/bin/phpunit \
         --testsuite extensions:unit \
-        --exclude-group Dump,Broken,ParserFuzz,Stub \
+        --exclude-group Broken \
         --coverage-clover "$LOG_DIR"/clover.xml \
         --log-junit "$LOG_DIR"/junit.xml &
 fi
