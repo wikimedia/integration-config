@@ -4520,6 +4520,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-quibble-only-standalone
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-apitests
