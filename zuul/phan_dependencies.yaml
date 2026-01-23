@@ -649,6 +649,7 @@ TemplateStyles:
 TestKitchen:
   - EventStreamConfig
   - EventLogging
+  - EventBus
   - GrowthExperiments
 
 Thanks:
