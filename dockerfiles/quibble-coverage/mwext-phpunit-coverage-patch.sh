@@ -30,12 +30,14 @@ if [ ! -d "$TEST_DIR" ]; then
     # This is for Wikibase, see T288396
     TEST_DIR="."
 fi
+# We need to pass the config file explicitly to PHPUnit to avoid T395470#11548714
+CONFIG_PATH="$MW_INSTALL_PATH/phpunit.xml.dist"
 
 # Edit the PHPUnit configuration to use the proper coverage paths
-phpunit-suite-edit "$MW_INSTALL_PATH/phpunit.xml.dist" \
+phpunit-suite-edit "$CONFIG_PATH" \
     --cover-extension "${ZUUL_PROJECT#mediawiki/}"
 
 exec phpunit-patch-coverage check \
-    --command "php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$PWD -d pcov.exclude='@(tests|vendor)@' -d pcov.initial.files=3000 \"\$MW_INSTALL_PATH\"/vendor/bin/phpunit" \
+    --command "php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$PWD -d pcov.exclude='@(tests|vendor)@' -d pcov.initial.files=3000 \"\$MW_INSTALL_PATH\"/vendor/bin/phpunit -c $CONFIG_PATH" \
     --html "$LOG_DIR"/coverage.html \
     --test-dir "$TEST_DIR"

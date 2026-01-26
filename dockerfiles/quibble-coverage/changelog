@@ -1,3 +1,9 @@
+quibble-coverage (1.14.2-s4) wikimedia; urgency=high
+
+   Pass config file explicitly to PHPUnit
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Mon, 26 Jan 2026 17:25:25 +0100
+
 quibble-coverage (1.14.2-s3) wikimedia; urgency=high
 
    (T395470) Stop using legacy phpunit.php and suite.xml
