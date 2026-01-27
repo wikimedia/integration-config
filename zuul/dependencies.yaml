@@ -206,13 +206,15 @@ BlueSpiceAuthors:
     - OOJSPlus
 
 BlueSpiceAvatars:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
     - UserProfile
     # Transitive requirements:
     - OOJSPlus
+    - skins/BlueSpiceDiscovery
+    - MenuEditor
 
 BlueSpiceBookshelf:
   recurse: true
