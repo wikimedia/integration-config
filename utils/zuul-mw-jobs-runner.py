@@ -279,31 +279,6 @@ class ZuulMwJobsRunner():
                 jobs += ['quibble-composer-mysql-php83']
             return jobs
 
-        if 'skin-quibble' in templates:
-            if self.requires_only:
-                if self.phpunit:
-                    jobs += ['quibble-requires-only-vendor-non-voting']
-                if self.selenium:
-                    jobs += ['quibble-requires-only-vendor-selenium']
-            else:
-                if self.phpunit:
-                    jobs += ['quibble-vendor-mysql-php83']
-                if self.selenium:
-                    jobs += ['quibble-vendor-mysql-php83-selenium']
-            return jobs
-        if 'skin-quibble-composer' in templates:
-            if self.requires_only:
-                if self.phpunit:
-                    jobs += ['quibble-requires-only-composer-non-voting']
-                if self.selenium:
-                    jobs += ['quibble-requires-only-composer-selenium']
-            else:
-                if self.phpunit:
-                    jobs += ['quibble-composer-mysql-php83']
-                if self.selenium:
-                    jobs += ['quibble-composer-mysql-php83-selenium']
-            return jobs
-
         raise Exception("Unhandled set of templates for %s: %s" % (
             project_name, templates))
 

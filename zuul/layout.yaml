@@ -1897,162 +1897,6 @@ project-templates:
     gate-and-submit-1_45:
       - mediawiki-tox
 
-  # Runs quibble, and includes experimental jobs
-  # that are for skins.
-  - name: skin-quibble
-    test:
-      - quibble-vendor-mysql-php83
-      - quibble-vendor-mysql-php83-selenium
-      - mediawiki-node20
-      - mwext-phan-php83
-    php:
-      - quibble-vendor-mysql-php82
-    gate-and-submit:
-      - quibble-vendor-mysql-php82
-      - quibble-vendor-mysql-php83
-      - quibble-vendor-mysql-php83-selenium
-      - mediawiki-node20
-      - mwext-phan-php83
-
-    # We use composer on release branches
-    test-1_43:
-      - mediawiki-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
-    gate-and-submit-1_43:
-      - mediawiki-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
-
-    test-1_44:
-      - mediawiki-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
-    gate-and-submit-1_44:
-      - mediawiki-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
-
-    test-1_45:
-      - mediawiki-node20
-      - quibble-composer-mysql-php83
-    gate-and-submit-1_45:
-      - mediawiki-node20
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php83-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php83
-
-    test-wmf:
-      - quibble-vendor-mysql-php83
-      - quibble-vendor-mysql-php83-selenium
-      - mediawiki-node20
-      - mwext-phan-php83
-    gate-and-submit-wmf:
-      - quibble-vendor-mysql-php83
-      - quibble-vendor-mysql-php83-selenium
-      - mediawiki-node20
-      - mwext-phan-php83
-
-    gate-and-submit-l10n:
-      - mediawiki-i18n-check
-
-    experimental:
-      - quibble-vendor-sqlite-php83
-      - quibble-vendor-postgres-php83
-      - quibble-vendor-mysql-php84
-      - quibble-vendor-mysql-php85
-      - mediawiki-node22
-      - mediawiki-node24
-
-  - name: skin-quibble-composer
-    test:
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php83-selenium
-      - mediawiki-node20
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php83
-    php:
-      - quibble-composer-mysql-php82
-    gate-and-submit:
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php83-selenium
-      - mediawiki-node20
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php83
-
-    test-1_43:
-      - mediawiki-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
-    gate-and-submit-1_43:
-      - mediawiki-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
-
-    test-1_44:
-      - mediawiki-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
-    gate-and-submit-1_44:
-      - mediawiki-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php81
-
-    test-1_45:
-      - mediawiki-node20
-      - quibble-composer-mysql-php83
-    gate-and-submit-1_45:
-      - mediawiki-node20
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php83-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-phan-php83
-
-    gate-and-submit-l10n:
-      - mediawiki-i18n-check
-
-    experimental:
-      - quibble-composer-sqlite-php83
-      - quibble-composer-postgres-php83
-      - quibble-composer-mysql-php84
-      - quibble-vendor-mysql-php85
-      - mediawiki-node22
-      - mediawiki-node24
-
-  - name: skin-coverage
-    postmerge:
-      - mwext-phpunit-coverage-publish
-    coverage:
-      - mwext-phpunit-coverage-patch
-
   - name: extension-javascript-documentation
     test:
       - mwext-node20-rundoc
@@ -2872,17 +2716,17 @@ projects:
   - name: mediawiki/skins/CologneBlue
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
-      - name: skin-coverage
+      - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
 
   - name: mediawiki/skins/MinervaNeue
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
+      - name: extension-quibble
       - name: extension-gate
       - name: extension-javascript-documentation
-      - name: skin-coverage
+      - name: extension-coverage
       - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
@@ -2892,15 +2736,15 @@ projects:
   - name: mediawiki/skins/Modern
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
-      - name: skin-coverage
+      - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
 
   - name: mediawiki/skins/MonoBook
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
-      - name: skin-coverage
+      - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
@@ -2908,15 +2752,15 @@ projects:
   - name: mediawiki/skins/Nostalgia
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
-      - name: skin-coverage
+      - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
 
   - name: mediawiki/skins/Timeless
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
-      - name: skin-coverage
+      - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
@@ -2924,9 +2768,9 @@ projects:
   - name: mediawiki/skins/Vector
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
+      - name: extension-quibble
       - name: extension-gate
-      - name: skin-coverage
+      - name: extension-coverage
       - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
@@ -2938,179 +2782,179 @@ projects:
   - name: mediawiki/skins/WikimediaApiPortal
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
-      - name: skin-coverage
+      - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
 
 #### Other MediaWiki skins #####################################
 
   - name: mediawiki/skins/2018
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Amethyst
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Anisa
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/apex
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/BlueSky
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/BlueSpiceDiscovery
     template:
-      - name: skin-quibble-composer
+      - name: extension-quibble-composer
 
   - name: mediawiki/skins/Bouquet
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Cavendish
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Cosmos
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/DeskMessMirrored
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Dusk
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/DuskToDawn
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Empty
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/erudite
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Example
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Foreground
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Freo
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Gamepress
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/GreyStuff
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/GuMaxDD
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/HasSomeColours
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Mask
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Material
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/mediawiki-strapping
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Metrolook
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Mirage
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Monaco
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Nimbus
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/p2wiki
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Pivot
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Poncho
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Refreshed
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/SimpleText
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Schulenburg
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Splash
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Tempo
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Truglass
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/TuleapSkin
     template:
-      - name: skin-quibble-composer
+      - name: extension-quibble-composer
 
   - name: mediawiki/skins/webplatform
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/WoOgLeShades
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/WMAU
     template:
-        - name: skin-quibble
+        - name: extension-quibble
 
   - name: mediawiki/skins/WPtouch
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
 #### OpenStack related repositories
 
