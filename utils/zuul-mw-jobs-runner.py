@@ -59,11 +59,17 @@ log.setLevel(logging.INFO)
 class JobToRun():
 
     def getDeps(self):
-        return sorted([
+        exts = [
             dep.removeprefix('mediawiki/extensions/')
             for dep in self.params.get('EXT_DEPENDENCIES', '').split('\\n')
-            ],
-            key=str.casefold)
+            if dep != ''
+        ]
+        skins = [
+            dep.removeprefix('mediawiki/')
+            for dep in self.params.get('SKIN_DEPENDENCIES', '').split('\\n')
+            if dep != ''
+        ]
+        return sorted(exts, key=str.casefold) + sorted(skins, key=str.casefold)
 
     def getProject(self):
         return self.params['ZUUL_PROJECT']
