@@ -162,7 +162,7 @@
         - 'integration-quibble-fullrun-{type}-{php}':
             php:
                 - php83:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.2-s6
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.15.0
             type:
                 - defaults:
                     quibble_args: >-

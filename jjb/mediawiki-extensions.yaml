@@ -163,25 +163,25 @@
     name: phan-jobs
     php:
         - php81:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s6
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.15.0
             composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.33
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.2-s6
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.15.0
         - php82:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.14.2-s6
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.15.0
             composer_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.29
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.14.2-s6
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.15.0
         - php83:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.2-s6
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.15.0
             composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.26
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.2-s6
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.15.0
         - php84:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.14.2-s6
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.15.0
             composer_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.14
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.14.2-s6
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.15.0
         - php85:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.14.2-s3
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.15.0
             composer_image: docker-registry.wikimedia.org/releng/composer-php85:8.5.0
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.14.2-s3
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.15.0
     jobs:
         - 'mwext-phan-{php}'
 
