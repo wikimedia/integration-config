@@ -1036,6 +1036,8 @@ BlueSpiceWikiFarm:
     - BlueSpiceFoundation
     - EnhancedUpload
     - skins/BlueSpiceDiscovery
+    # extras transitive dependencies
+    - MenuEditor
 
 BounceHandler:
   recurse: false
@@ -1951,6 +1953,8 @@ PDFCreator:
     - skins/BlueSpiceDiscovery
     - VisualEditor
     - VueJsPlus
+    # extras transitive dependencies
+    - MenuEditor
 
 PageCheckout:
   recurse: false
