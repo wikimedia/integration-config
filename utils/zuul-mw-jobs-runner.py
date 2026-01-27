@@ -93,7 +93,6 @@ class ZuulMwJobsRunner():
         self.params_file = args.params_file
         self.num_jobs = args.jobs
         self.in_production = args.in_production
-        self.include_non_recursive = args.include_non_recursive
         self.requested_projects = args.projects
         self.projects_filter = args.projects_filter
         self.branch = args.branch
@@ -127,12 +126,6 @@ class ZuulMwJobsRunner():
                     continue
 
                 set_parameters(None, jenkins_job, jenkins_job.params)
-
-                if (not(
-                    jenkins_job.params.get('MW_ZUUL_RECURSE') is True
-                    or self.include_non_recursive
-                )):
-                    continue
 
                 if not jenkins_job.params.get('EXT_DEPENDENCIES'):
                     del jenkins_job
@@ -431,11 +424,6 @@ def parse_args(args):
         '--in-production', action=argparse.BooleanOptionalAction, default=None,
         help='Only act/do not act on projects having "in-wikimedia-production template" '
              'in Zuul layout')
-
-    parser.add_argument(
-        '--include-non-recursive', action='store_true',
-        help='Include projects that already have `recurse: false`',
-    )
 
     return parser.parse_args(args)
 
