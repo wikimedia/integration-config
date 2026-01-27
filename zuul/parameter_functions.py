@@ -259,6 +259,9 @@ def set_mw_dependencies(item, job, params):
         recurse = True
         params['MW_ZUUL_RECURSE'] = dependencies.get(dep_key, {}).get('recurse')
 
+    if 'DISABLE_RECURSE' in params:
+        recurse = False
+        params['MW_ZUUL_RECURSE'] = False
     deps = get_dependencies(dep_key, mapping, recurse)
 
     # Split extensions and skins

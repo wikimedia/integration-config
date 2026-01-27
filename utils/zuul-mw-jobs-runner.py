@@ -98,6 +98,7 @@ class ZuulMwJobsRunner():
         self.branch = args.branch
         self.phpunit = args.phpunit
         self.requires_only = args.requires_only
+        self.disable_recurse = args.disable_recurse
         self.selenium = args.selenium
 
     def prepare(self):
@@ -113,6 +114,10 @@ class ZuulMwJobsRunner():
                         'ZUUL_BRANCH': self.branch,
                     },
                 )
+                if self.disable_recurse:
+                    # Processed by set_mw_dependencies() in
+                    # zuul/parameter_functions.py
+                    jenkins_job.params['DISABLE_RECURSE'] = 1
 
                 # quibble --resolve-requires does not need parameters
                 if job_name in [
@@ -411,10 +416,14 @@ def parse_args(args):
     parser.add_argument('--selenium', action=argparse.BooleanOptionalAction,
                         default=True,
                         help='Run Selenium tests (enabled by default')
-    parser.add_argument('--requires-only', action='store_true',
-                        help='Use requires field from extension.json '
-                             'and do not use zuul/dependencies.yaml '
-                             'to set dependencies)')
+
+    requires = parser.add_mutually_exclusive_group()
+    requires.add_argument('--requires-only', action='store_true',
+                          help='Use requires field from extension.json '
+                               'and do not use zuul/dependencies.yaml '
+                               'to set dependencies)')
+    requires.add_argument('--disable-recurse', action='store_true',
+                          help='Disable recursion of extensions dependencies')
 
     projects = parser.add_mutually_exclusive_group()
     projects.add_argument(
