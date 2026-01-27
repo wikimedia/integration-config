@@ -3830,6 +3830,12 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/ArticleGuidance
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
   - name: mediawiki/extensions/ArticlePlaceholder
     template:
       - name: in-wikimedia-production
