@@ -1354,7 +1354,7 @@ jobs:
     files:
       - '^zuul/.*'
       - '^utils/zuul-params-diff.sh'
-      - '^utils/zuul-mw-job-runner.py'  # Used to dump dependencies
+      - '^utils/zuul-mw-jobs-runner.py'  # Used to dump dependencies
 
   - name: 'integration-config-zuul-layout-validate'
     branch: (?!labs)
