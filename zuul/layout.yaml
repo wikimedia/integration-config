@@ -3832,6 +3832,7 @@ projects:
 
   - name: mediawiki/extensions/ArticleGuidance
     template:
+      - name: in-wikimedia-production  # Will be in production - T415085
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
