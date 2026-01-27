@@ -102,10 +102,11 @@ class ZuulMwJobsRunner():
         self.requested_projects = args.projects
         self.projects_filter = args.projects_filter
         self.branch = args.branch
-        self.phpunit = args.phpunit
         self.requires_only = args.requires_only
         self.disable_recurse = args.disable_recurse
+        self.phpunit = args.phpunit
         self.selenium = args.selenium
+        self.job_name = args.job_name
 
     def prepare(self):
         set_parameters = self._load_function(self.params_file)
@@ -202,7 +203,11 @@ class ZuulMwJobsRunner():
                 if not re.search(self.projects_filter, p['name']):
                     continue
 
-            jobs = self._mapTemplatesToJobs(p['name'], p['template'])
+            if self.job_name is not None:
+                jobs = [self.job_name]
+            else:
+                jobs = self._mapTemplatesToJobs(p['name'], p['template'])
+
             if not jobs:
                 continue
 
@@ -391,6 +396,10 @@ def parse_args(args):
                         help='Number of Jenkins jobs to run in parallel '
                         ' (default: %s)' % jenkins_jobs_num)
     parser.add_argument('--debug', action='store_true')
+
+    parser.add_argument(
+        '--job-name', nargs='?', default=None,
+        help='Only do this particular job, if set')
     parser.add_argument('--phpunit', action=argparse.BooleanOptionalAction,
                         default=True,
                         help='Run PHPUnit test suite (enabled by default')
@@ -415,6 +424,7 @@ def parse_args(args):
         '--projects-filter', metavar='REGEX',
         help='Runs on project matching pattern. '
         'Example: ^mediawiki/extensions/Blue')
+
     parser.add_argument('--branch', default='master', metavar='ZUUL_BRANCH',
                         help='git branch to run jobs against (default: master)')
 
