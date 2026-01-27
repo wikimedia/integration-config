@@ -400,13 +400,21 @@ def parse_args(args):
     group.add_argument('--start', action='store_true',
                        help='Start the jobs on the Gearman server')
 
-    parser.add_argument('--jobs', default=12, type=int)
+    jenkins_jobs_num = 12
+    parser.add_argument('--jobs', default=jenkins_jobs_num, type=int,
+                        help='Number of Jenkins jobs to run in parallel '
+                        ' (default: %s)' % jenkins_jobs_num)
     parser.add_argument('--debug', action='store_true')
     parser.add_argument('--phpunit', action=argparse.BooleanOptionalAction,
-                        default=True)
-    parser.add_argument('--requires-only', action='store_true')
+                        default=True,
+                        help='Run PHPUnit test suite (enabled by default')
     parser.add_argument('--selenium', action=argparse.BooleanOptionalAction,
-                        default=True)
+                        default=True,
+                        help='Run Selenium tests (enabled by default')
+    parser.add_argument('--requires-only', action='store_true',
+                        help='Use requires field from extension.json '
+                             'and do not use zuul/dependencies.yaml '
+                             'to set dependencies)')
 
     projects = parser.add_mutually_exclusive_group()
     projects.add_argument(
