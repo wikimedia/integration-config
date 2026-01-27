@@ -1853,6 +1853,7 @@ NSFileRepo:
   dependencies:
     # no requirements in extension.json
     # extras
+    - BlueSpiceFoundation
     - EnhancedUpload
     - Lockdown
     - OOJSPlus
@@ -1947,12 +1948,13 @@ parsoid:
     - TimedMediaHandler
 
 PDFCreator:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
     # extras
     - skins/BlueSpiceDiscovery
+    - BlueSpiceFoundation
     - VisualEditor
     - VueJsPlus
     # extras transitive dependencies
