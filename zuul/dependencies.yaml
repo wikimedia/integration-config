@@ -1074,6 +1074,7 @@ BlueSpiceWikiFarm:
     - skins/BlueSpiceDiscovery
     # extras transitive dependencies
     - MenuEditor
+    - VisualEditor
 
 BounceHandler:
   recurse: false
