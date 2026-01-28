@@ -231,6 +231,8 @@ BlueSpiceBookshelf:
     - ContentDroplets
     - NotifyMe
     - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceCategoryCheck:
   recurse: false
@@ -258,6 +260,8 @@ BlueSpiceChecklist:
     # extras
     - BlueSpiceVisualEditorConnector
     - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceConfigManager:
   recurse: false
@@ -285,6 +289,8 @@ BlueSpiceCountThings:
     # extras
     - BlueSpiceVisualEditorConnector
     - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceCustomMenu:
   recurse: true
@@ -356,6 +362,7 @@ BlueSpiceExportTables:
     - BlueSpiceVisualEditorConnector
     - OOJSPlus
     - VisualEditor
+    - VisualEditorPlus
 
 BlueSpiceExtendedFilelist:
   recurse: false
@@ -375,6 +382,8 @@ BlueSpiceExtendedSearch:
     - BlueSpiceDistributionConnector
     - BlueSpiceVisualEditorConnector
     - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceExtendedStatistics:
   recurse: true
@@ -448,6 +457,7 @@ BlueSpiceInsertLink:
     # Transitive requirements:
     - OOJSPlus
     - VisualEditor
+    - VisualEditorPlus
 
 BlueSpiceInsertTemplate:
   recurse: false
@@ -531,6 +541,8 @@ BlueSpicePageAccess:
     # extras
     - BlueSpiceVisualEditorConnector
     - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpicePageAssignments:
   recurse: true
@@ -581,6 +593,8 @@ BlueSpicePagesVisited:
     - BlueSpiceDistributionConnector
     - BlueSpiceVisualEditorConnector
     - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpicePermissionManager:
   recurse: false
@@ -616,6 +630,8 @@ BlueSpiceProDistributionConnector:
     - BlueSpiceVisualEditorConnector
     - Math
     - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceQrCode:
   recurse: true
@@ -627,6 +643,8 @@ BlueSpiceQrCode:
     # extras
     - BlueSpiceVisualEditorConnector
     - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceRSSFeeder:
   recurse: false
@@ -697,6 +715,8 @@ BlueSpiceSignHere:
     # extras
     - BlueSpiceVisualEditorConnector
     - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceSmartList:
   recurse: true
@@ -707,6 +727,8 @@ BlueSpiceSmartList:
     # extras
     - BlueSpiceVisualEditorConnector
     - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceSocial:
   recurse: true
@@ -859,6 +881,8 @@ BlueSpiceTagCloud:
     # extras
     - BlueSpiceVisualEditorConnector
     - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceTranslationTransfer:
   recurse: true
@@ -870,6 +894,8 @@ BlueSpiceTranslationTransfer:
     - MergeArticles
     - OOJSPlus
     - VisualEditor
+    # transitive requirements
+    - VisualEditorPlus
 
 BlueSpiceUEModuleBookPDF:
   recurse: false
@@ -936,6 +962,8 @@ BlueSpiceUEModuleTable2Excel:
     - BlueSpiceVisualEditorConnector
     - OOJSPlus
     - VisualEditor
+    # Transitive requirements:
+    - VisualEditorPlus
     # extras
     - BlueSpiceUniversalExport
 
@@ -948,6 +976,8 @@ BlueSpiceUniversalExport:
     # extras
     - BlueSpiceVisualEditorConnector
     - VisualEditor
+    # extras requirements:
+    - VisualEditorPlus
 
 BlueSpiceUsageTracker:
   recurse: false
@@ -1010,6 +1040,8 @@ BlueSpiceWatchList:
     # extras
     - BlueSpiceVisualEditorConnector
     - VisualEditor
+    # extras requirements:
+    - VisualEditorPlus
 
 BlueSpiceWhoIsOnline:
   recurse: true
@@ -1020,6 +1052,8 @@ BlueSpiceWhoIsOnline:
     # extras
     - BlueSpiceVisualEditorConnector
     - VisualEditor
+    # extras requirements:
+    - VisualEditorPlus
 
 BlueSpiceWikiExplorer:
   recurse: false
