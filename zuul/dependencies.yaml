@@ -753,7 +753,7 @@ BlueSpiceSocial:
     - OOJSPlus
 
 BlueSpiceSocialArticleActions:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -763,7 +763,7 @@ BlueSpiceSocialArticleActions:
     - OOJSPlus
 
 BlueSpiceSocialBlog:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -773,7 +773,7 @@ BlueSpiceSocialBlog:
     - OOJSPlus
 
 BlueSpiceSocialComments:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -784,7 +784,7 @@ BlueSpiceSocialComments:
     - OOJSPlus
 
 BlueSpiceSocialMicroBlog:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -794,7 +794,7 @@ BlueSpiceSocialMicroBlog:
     - OOJSPlus
 
 BlueSpiceSocialProfile:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceAvatars
@@ -806,7 +806,7 @@ BlueSpiceSocialProfile:
     - UserProfile
 
 BlueSpiceSocialRating:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -817,7 +817,7 @@ BlueSpiceSocialRating:
     - OOJSPlus
 
 BlueSpiceSocialResolve:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -827,7 +827,7 @@ BlueSpiceSocialResolve:
     - OOJSPlus
 
 BlueSpiceSocialTags:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -837,7 +837,7 @@ BlueSpiceSocialTags:
     - OOJSPlus
 
 BlueSpiceSocialTimelineUpdate:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -847,7 +847,7 @@ BlueSpiceSocialTimelineUpdate:
     - OOJSPlus
 
 BlueSpiceSocialTopics:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceExtendedSearch
@@ -856,7 +856,7 @@ BlueSpiceSocialTopics:
     - OOJSPlus
 
 BlueSpiceSocialWatch:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -866,7 +866,7 @@ BlueSpiceSocialWatch:
     - OOJSPlus
 
 BlueSpiceSocialWikiPage:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
