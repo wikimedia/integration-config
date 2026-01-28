@@ -885,7 +885,7 @@ BlueSpiceSubPageTree:
     - OOJSPlus
 
 BlueSpiceTagCloud:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
