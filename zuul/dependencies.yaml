@@ -452,7 +452,7 @@ BlueSpiceInsertFile:
     - OOJSPlus
 
 BlueSpiceInsertLink:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
