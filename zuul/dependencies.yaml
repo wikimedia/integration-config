@@ -328,7 +328,7 @@ BlueSpiceDistributionConnector:
     - Workflows
 
 BlueSpiceEchoConnector:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
