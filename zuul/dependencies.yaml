@@ -973,7 +973,7 @@ BlueSpiceUserManager:
     - OOJSPlus
 
 BlueSpiceUserSidebar:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
