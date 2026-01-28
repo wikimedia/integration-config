@@ -405,7 +405,7 @@ BlueSpiceFilterableTables:
     - OOJSPlus
 
 BlueSpiceFlaggedRevsConnector:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
