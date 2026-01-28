@@ -5156,13 +5156,6 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
 
-  - name: mediawiki/extensions/WebAuthn
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-codehealth
-
   - name: mediawiki/extensions/Wikibase
     template:
       - name: in-wikimedia-production
@@ -11044,6 +11037,10 @@ projects:
   - name: mediawiki/extensions/OAuth2
     template:
       - name: archived
+
+  - name: mediawiki/extensions/WebAuthn
+    template:
+      - name: archived # T415832
 
   - name: mediawiki/extensions/Offline
     template:
