@@ -724,7 +724,7 @@ BlueSpiceSignHere:
     - VisualEditorPlus
 
 BlueSpiceSmartList:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
