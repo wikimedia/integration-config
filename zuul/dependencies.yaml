@@ -667,13 +667,15 @@ BlueSpiceRating:
     - OOJSPlus
 
 BlueSpiceReadConfirmation:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
     - BlueSpicePageAssignments
     # Transitive requirements:
     - OOJSPlus
+    - NotifyMe
+    - VisualEditor
 
 BlueSpiceReaders:
   recurse: false
