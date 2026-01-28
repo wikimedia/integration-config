@@ -744,7 +744,7 @@ BlueSpiceSmartList:
     - VisualEditorPlus
 
 BlueSpiceSocial:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceExtendedSearch
