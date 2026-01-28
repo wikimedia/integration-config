@@ -217,7 +217,7 @@ BlueSpiceAvatars:
     - MenuEditor
 
 BlueSpiceBookshelf:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
