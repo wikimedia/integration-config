@@ -711,7 +711,7 @@ BlueSpiceSaferEdit:
     - OOJSPlus
 
 BlueSpiceSignHere:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
