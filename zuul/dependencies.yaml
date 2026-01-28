@@ -1849,7 +1849,7 @@ MultimediaViewer:
     - BetaFeatures
 
 NSFileRepo:
-  recurse: true
+  recurse: false
   dependencies:
     # no requirements in extension.json
     # extras
