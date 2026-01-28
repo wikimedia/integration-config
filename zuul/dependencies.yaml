@@ -548,13 +548,15 @@ BlueSpicePageAccess:
     - VisualEditorPlus
 
 BlueSpicePageAssignments:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
     - OOJSPlus
     # extras
     - NotifyMe
+    # extras dependencies
+    - VisualEditor
 
 BlueSpicePageFormsConnector:
   recurse: false
