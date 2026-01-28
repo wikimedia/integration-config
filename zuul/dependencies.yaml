@@ -391,7 +391,7 @@ BlueSpiceExtendedSearch:
     - PDFCreator
 
 BlueSpiceExtendedStatistics:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
