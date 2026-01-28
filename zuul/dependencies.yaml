@@ -1063,7 +1063,7 @@ BlueSpiceWikiExplorer:
     - OOJSPlus
 
 BlueSpiceWikiFarm:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - OOJSPlus
