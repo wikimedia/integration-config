@@ -387,6 +387,8 @@ BlueSpiceExtendedSearch:
     - VisualEditor
     # extras requirements
     - VisualEditorPlus
+    # extras transitive dependencies
+    - PDFCreator
 
 BlueSpiceExtendedStatistics:
   recurse: true
@@ -577,6 +579,8 @@ BlueSpicePageTemplates:
     - BlueSpiceDistributionConnector
     - ContentDroplets
     - VisualEditor
+    # extras transitive dependencies
+    - PDFCreator
 
 BlueSpicePageVersion:
   recurse: false
@@ -600,6 +604,8 @@ BlueSpicePagesVisited:
     - VisualEditor
     # extras requirements
     - VisualEditorPlus
+    # extras transitive dependencies
+    - PDFCreator
 
 BlueSpicePermissionManager:
   recurse: false
