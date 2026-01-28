@@ -968,7 +968,7 @@ BlueSpiceUEModuleTable2Excel:
     - BlueSpiceUniversalExport
 
 BlueSpiceUniversalExport:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
