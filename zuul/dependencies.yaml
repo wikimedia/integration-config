@@ -1044,7 +1044,7 @@ BlueSpiceWatchList:
     - VisualEditorPlus
 
 BlueSpiceWhoIsOnline:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
