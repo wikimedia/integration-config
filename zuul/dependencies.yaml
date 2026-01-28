@@ -351,6 +351,9 @@ BlueSpiceExpiry:
     - BlueSpiceFoundation
     - BlueSpiceReminder
     - OOJSPlus
+    # Transitive requirements:
+    - Forms
+    - Workflows
 
 BlueSpiceExportTables:
   recurse: true
