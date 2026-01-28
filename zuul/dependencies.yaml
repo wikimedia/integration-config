@@ -898,7 +898,7 @@ BlueSpiceTagCloud:
     - VisualEditorPlus
 
 BlueSpiceTranslationTransfer:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
