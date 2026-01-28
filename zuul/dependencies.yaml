@@ -872,7 +872,7 @@ BlueSpiceTranslationTransfer:
     - VisualEditor
 
 BlueSpiceUEModuleBookPDF:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceBookshelf
@@ -885,7 +885,7 @@ BlueSpiceUEModuleBookPDF:
     - VueJsPlus
 
 BlueSpiceUEModuleDOCX:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -894,7 +894,7 @@ BlueSpiceUEModuleDOCX:
     - OOJSPlus
 
 BlueSpiceUEModuleHTML:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -903,7 +903,7 @@ BlueSpiceUEModuleHTML:
     - OOJSPlus
 
 BlueSpiceUEModulePDF:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -911,7 +911,7 @@ BlueSpiceUEModulePDF:
     - OOJSPlus
 
 BlueSpiceUEModulePDFRecursive:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -920,7 +920,7 @@ BlueSpiceUEModulePDFRecursive:
     - OOJSPlus
 
 BlueSpiceUEModulePDFSubpages:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -929,7 +929,7 @@ BlueSpiceUEModulePDFSubpages:
     - OOJSPlus
 
 BlueSpiceUEModuleTable2Excel:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
