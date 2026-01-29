@@ -5920,7 +5920,7 @@ projects:
 
   - name: mediawiki/extensions/CollabPads
     template:
-     - name: extension-quibble-bluespice
+     - name: extension-quibble
 
   - name: mediawiki/extensions/CollapsibleVector
     template:
@@ -6135,7 +6135,7 @@ projects:
 
   - name: mediawiki/extensions/DrawioEditor
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/DumpsOnDemand
     template:
@@ -6303,7 +6303,7 @@ projects:
 
   - name: mediawiki/extensions/Forms
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/FormatDates
     template:
@@ -6437,7 +6437,7 @@ projects:
 
   - name: mediawiki/extensions/HeaderFooter
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/HeaderTabs
     template:
@@ -6524,7 +6524,7 @@ projects:
 
   - name: mediawiki/extensions/ImageMapEdit
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/ImageRating
     template:
@@ -6576,7 +6576,7 @@ projects:
 
   - name: mediawiki/extensions/IssueTrackerLinks
     template:
-     - name: extension-quibble-bluespice
+     - name: extension-quibble
 
   - name: mediawiki/extensions/JavascriptSlideshow
     template:
@@ -6617,27 +6617,27 @@ projects:
 
   - name: mediawiki/extensions/LDAPAuthentication2
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/LDAPAuthorization
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/LDAPGroups
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/LDAPProvider
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/LDAPSyncAll
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/LDAPUserInfo
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/LegalLogin
     template:
@@ -6969,7 +6969,7 @@ projects:
 
   - name: mediawiki/extensions/NotifyMe
     template:
-     - name: extension-quibble-bluespice
+     - name: extension-quibble
 
   - name: mediawiki/extensions/NSFileRepo
     template:
@@ -6985,7 +6985,7 @@ projects:
 
   - name: mediawiki/extensions/NumberHeadings
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/NumberOfWikis
     template:
@@ -7021,7 +7021,7 @@ projects:
 
   - name: mediawiki/extensions/OOJSPlus
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/OOJsUIAjaxLogin
     template:
@@ -7233,7 +7233,7 @@ projects:
 
   - name: mediawiki/extensions/PreToClip
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/PreviewLinks
     template:
@@ -7458,7 +7458,7 @@ projects:
 
   - name: mediawiki/extensions/SectionAnchors
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/SectionDisqus
     template:
@@ -7567,7 +7567,7 @@ projects:
 
   - name: mediawiki/extensions/SimpleBlogPage
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/SimpleCalendar
     template:
@@ -7953,7 +7953,7 @@ projects:
 
   - name: mediawiki/extensions/VueJsPlus
     template:
-     - name: extension-quibble-bluespice
+     - name: extension-quibble
 
   - name: mediawiki/extensions/Wanda
     template:
@@ -9503,7 +9503,7 @@ projects:
 
   - name: mediawiki/extensions/VisualEditorPlus
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: wikidata/query/rdf
     # Blazegraph is not running on Java 11 and unlikely to ever be - T350587
