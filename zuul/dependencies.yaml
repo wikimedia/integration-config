@@ -581,6 +581,7 @@ BlueSpicePageTemplates:
     - VisualEditor
     # extras transitive dependencies
     - PDFCreator
+    - VueJsPlus
 
 BlueSpicePageVersion:
   recurse: false
