@@ -826,6 +826,7 @@ WikimediaCustomizations:
   - IPReputation
   - LoginNotify
   - OATHAuth
+  - PageViewInfo
   - WikimediaEvents
 
 WikimediaEvents:
