@@ -820,6 +820,13 @@ WikimediaBadges:
 WikimediaCampaignEvents:
   - CampaignEvents
 
+WikimediaCustomizations:
+  - EmailAuth
+  - IPReputation
+  - LoginNotify
+  - OATHAuth
+  - WikimediaEvents
+
 WikimediaEvents:
   - AbuseFilter
   - BetaFeatures
