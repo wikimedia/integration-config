@@ -2842,7 +2842,6 @@ WikimediaEvents:
     - GlobalBlocking
     - GlobalPreferences
     - IPReputation
-    - LoginNotify
     - OATHAuth
 
 WikimediaMaintenance:

@@ -857,7 +857,6 @@ WikimediaEvents:
   - GlobalPreferences
   - GrowthExperiments
   - IPReputation
-  - LoginNotify
   - MobileFrontend
   - OATHAuth
   - MetricsPlatform
