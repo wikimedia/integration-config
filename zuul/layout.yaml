@@ -5867,6 +5867,14 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/ChatBot
+    template:
+      - name: extension-quibble-bluespice
+
+  - name: mediawiki/extensions/ChatIntegration
+    template:
+      - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/Checklists
     template:
       - name: extension-quibble-bluespice
