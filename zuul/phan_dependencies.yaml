@@ -821,6 +821,7 @@ WikimediaCampaignEvents:
   - CampaignEvents
 
 WikimediaCustomizations:
+  - cldr
   - EmailAuth
   - IPReputation
   - LoginNotify
