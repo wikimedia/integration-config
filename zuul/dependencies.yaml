@@ -596,7 +596,7 @@ BlueSpicePageVersion:
     - OOJSPlus
 
 BlueSpicePagesVisited:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -611,6 +611,7 @@ BlueSpicePagesVisited:
     - VisualEditorPlus
     # extras transitive dependencies
     - PDFCreator
+    - VueJsPlus
 
 BlueSpicePermissionManager:
   recurse: false
