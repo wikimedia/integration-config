@@ -570,7 +570,7 @@ BlueSpicePageFormsConnector:
     - OOJSPlus
 
 BlueSpicePageTemplates:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
