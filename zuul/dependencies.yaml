@@ -311,7 +311,7 @@ BlueSpiceDashboards:
     - OOJSPlus
 
 BlueSpiceDistributionConnector:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -326,6 +326,9 @@ BlueSpiceDistributionConnector:
     - UserMerge
     - VisualEditor
     - Workflows
+    # extras transitive requirements
+    - VueJsPlus
+    - VisualEditorPlus
 
 BlueSpiceEchoConnector:
   recurse: false
