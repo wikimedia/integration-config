@@ -158,6 +158,7 @@ CheckUser:
   - GlobalPreferences
   - GrowthExperiments
   - IPInfo
+  - MobileFontend
   - TorBlock
   - UserMerge
 
