@@ -5657,7 +5657,7 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceSMWConnector
     template:
-      - name: extension-broken  # Semantic MediaWiki
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocial
     template:

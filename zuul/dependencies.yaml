@@ -708,11 +708,13 @@ BlueSpiceReminder:
     - Workflows
 
 BlueSpiceSMWConnector:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
     - OOJSPlus
+    - VisualEditor
+    - VisualEditorPlus
     # extras
     - BlueSpiceSmartList
 
