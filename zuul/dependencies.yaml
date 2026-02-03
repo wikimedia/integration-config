@@ -379,7 +379,7 @@ BlueSpiceExtendedFilelist:
     - OOJSPlus
 
 BlueSpiceExtendedSearch:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
@@ -390,6 +390,7 @@ BlueSpiceExtendedSearch:
     - VisualEditor
     # extras requirements
     - VisualEditorPlus
+    - VueJsPlus
     # extras transitive dependencies
     - PDFCreator
 
