@@ -496,6 +496,7 @@ Nuke:
   - EventLogging
 
 OATHAuth:
+  - CentralAuth
   - CheckUser
   - Echo
   - WebAuthn
