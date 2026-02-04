@@ -1963,6 +1963,7 @@ OATHAuth:
   dependencies:
     # no requirements in extension.json
     # extras
+    - CentralAuth
     - CheckUser
     - Echo
     - WebAuthn
