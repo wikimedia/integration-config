@@ -2807,6 +2807,7 @@ WikimediaCustomizations:
     - cldr
     - Echo
     - EmailAuth
+    - EventBus
     - EventLogging
     - IPReputation
     - LoginNotify
