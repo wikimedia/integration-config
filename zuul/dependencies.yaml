@@ -2805,7 +2805,9 @@ WikimediaCustomizations:
     # no requirements in extension.json
     # extras
     - cldr
+    - Echo
     - EmailAuth
+    - EventLogging
     - IPReputation
     - LoginNotify
     - OATHAuth
