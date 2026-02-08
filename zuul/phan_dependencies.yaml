@@ -385,6 +385,9 @@ GrowthExperiments:
 HAWelcome:
   - SocialProfile
 
+HotCat:
+  - BetaFeatures
+
 ImageRating:
   - SocialProfile
   - VoteNY
