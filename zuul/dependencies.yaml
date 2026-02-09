@@ -1613,7 +1613,7 @@ GlobalBlocking:
     - CentralAuth
 
 GrowthExperiments:
-  recurse: true
+  recurse: false
   dependencies:
     # From extension.json:
     - CommunityConfiguration
