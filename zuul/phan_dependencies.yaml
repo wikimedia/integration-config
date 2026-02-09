@@ -584,7 +584,6 @@ RandomGameUnit:
 
 ReadingLists:
   - BetaFeatures
-  - MetricsPlatform
   - SiteMatrix
   - TestKitchen
 

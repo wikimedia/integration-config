@@ -2171,7 +2171,6 @@ ReadingLists:
     - BetaFeatures
     - EventLogging
     - EventStreamConfig
-    - MetricsPlatform
     - TestKitchen
 
 RegexFun:
