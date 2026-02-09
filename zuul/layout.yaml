@@ -2392,8 +2392,7 @@ projects:
 
   - name: mediawiki/tools/codesniffer
     template:
-      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: mediawiki-php-library-php82-to-php84
+      - name: mediawiki-php-library-php82-to-php85
     test:
       - mw-tools-codesniffer-mwcore-testrun
 
@@ -2415,8 +2414,7 @@ projects:
 
   - name: mediawiki/tools/phpunit-patch-coverage
     template:
-      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: mediawiki-php-library-php82-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/tools/releng
     template:
@@ -8251,8 +8249,7 @@ projects:
 
   - name: mediawiki/services/jobrunner
     template:
-      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: mediawiki-php-library-php82-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/services/kafka-watcher
     template:
@@ -8821,8 +8818,7 @@ projects:
 
   - name: labs/countervandalism/stillalive
     template:
-      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: composer-test-php82-to-php84
+      - name: composer-test-php82-to-php85
 
   - name: labs/countervandalism/CVNBot
     test:
@@ -9179,8 +9175,7 @@ projects:
 
   - name: labs/tools/wikiinfo
     template:
-      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: composer-test-php82-to-php84
+      - name: composer-test-php82-to-php85
 
   - name: labs/tools/wikinity
     template:
@@ -9456,8 +9451,7 @@ projects:
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
     template:
-      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: composer-test-package-php82-to-php84
+      - name: composer-test-package-php82-to-php85
       - name: mediawiki-i18n-check
     test:
       - ooui-node24-plus-php83-runjenkins
@@ -9776,14 +9770,12 @@ projects:
   - name: wikimedia/textcat
     template:
       # FIXME: Use mediawiki-php-library?
-      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: composer-test-package-php82-to-php84
+      - name: composer-test-package-php82-to-php85
 
   - name: wikimedia/lucene-explain-parser
     template:
       # FIXME: Use mediawiki-php-library?
-      # (T410941) Not running in PHP 8.5 yet; waiting on Phan support
-      - name: composer-test-package-php82-to-php84
+      - name: composer-test-package-php82-to-php85
 
   - name: performance/slack-bot
     template:
