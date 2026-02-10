@@ -59,7 +59,7 @@ def set_parameters(item, job, params):
         set_mw_dependencies(item, job, params)
 
     # Special jobs for Wikibase - T188717
-    if job.name.startswith('wikibase-client'):
+    if job.name.startswith('quibble-with-WikibaseClient-extensions'):
         params['EXT_DEPENDENCIES'] = '\\n'.join([
             'mediawiki/extensions/Scribunto',
             'mediawiki/extensions/Capiunto',
@@ -69,7 +69,7 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/Wikibase',
         ])
 
-    if job.name.startswith('wikibase-repo'):
+    if job.name.startswith('quibble-with-WikibaseRepository-extensions'):
         params['EXT_DEPENDENCIES'] = '\\n'.join([
             'mediawiki/extensions/CirrusSearch',
             'mediawiki/extensions/Elastica',

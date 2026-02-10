@@ -4042,9 +4042,9 @@ projects:
       - name: extension-codehealth
       - name: extension-coverage
     test:
-      - wikibase-client-php83
+      - quibble-with-WikibaseClient-extensions-tests-php83
     gate-and-submit:
-      - wikibase-client-php83
+      - quibble-with-WikibaseClient-extensions-tests-php83
 
   - name: mediawiki/extensions/EventBus
     template:
@@ -5011,45 +5011,45 @@ projects:
       - name: extension-apitests
       - name: wikibase-selenium-gate
     test:
-      - wikibase-client-php83
-      - wikibase-repo-php83
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
     gate-and-submit: &mediawiki-extensions-wikibase-gate-and-submit
-      - wikibase-client-php83
-      - wikibase-repo-php83
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
     test-1_43:
-      - wikibase-client-php81
-      - wikibase-repo-php81
+      - quibble-with-WikibaseClient-extensions-tests-php81
+      - quibble-with-WikibaseRepository-extensions-tests-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php81
     gate-and-submit-1_43:
-      - wikibase-client-php81
-      - wikibase-repo-php81
+      - quibble-with-WikibaseClient-extensions-tests-php81
+      - quibble-with-WikibaseRepository-extensions-tests-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php81
     test-1_44:
-      - wikibase-client-php81
-      - wikibase-repo-php81
+      - quibble-with-WikibaseClient-extensions-tests-php81
+      - quibble-with-WikibaseRepository-extensions-tests-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php81
     gate-and-submit-1_44:
-      - wikibase-client-php81
-      - wikibase-repo-php81
+      - quibble-with-WikibaseClient-extensions-tests-php81
+      - quibble-with-WikibaseRepository-extensions-tests-php81
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php81
     test-1_45:
-      - wikibase-client-php83
-      - wikibase-repo-php83
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
     gate-and-submit-1_45:
-      - wikibase-client-php83
-      - wikibase-repo-php83
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
     gate-and-submit-wmf: *mediawiki-extensions-wikibase-gate-and-submit
     postmerge:
       - mwext-doxygen-publish
     experimental:
       - mwext-phpunit-coverage
       - quibble-vendor-postgres-php83
-      - wikibase-client-php83
-      - wikibase-repo-php83
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
 
   - name: mediawiki/extensions/WikibaseCirrusSearch
     template:

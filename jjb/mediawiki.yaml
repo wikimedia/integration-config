@@ -869,7 +869,7 @@
 
 - job-template:
     !!merge : *job_quibble
-    name: wikibase-{kind}-{phpflavour}
+    name: quibble-with-{sub_extension}-extensions-tests-{phpflavour}
 
 - job-template:
     !!merge : *job_quibble
@@ -890,14 +890,16 @@
                 --command 'npm --prefix extensions/Wikibase ci'
                 --command 'npm --prefix extensions/Wikibase run --if-present @selenium-test'
 
-        - wikibase-{kind}-{phpflavour}:
-            kind:
-                - client:
+        - quibble-with-{sub_extension}-extensions-tests-{phpflavour}:
+            sub_extension:
+                - WikibaseClient:
                     database: mysql
                     phpunit-params: '--group Wikibase,WikibaseClient,EntitySchemaClient'
-                - repo:
+                    wb-settings: 'client'
+                - WikibaseRepository:
                     database: sqlite
                     phpunit-params: '--group Wikibase,WikibaseAPI,Purtle'
+                    wb-settings: 'repo'
             packages-source: composer
             phpflavour:
                 - php81:
@@ -905,10 +907,10 @@
                 - php83:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.15.0-s1
             quibble_args: >
-                --commands 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r {kind}'
+                --commands 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r {wb-settings}'
                 'cp --verbose $WORKSPACE/src/LocalSettings.php $LOG_DIR'
                 'php maintenance/update.php --quick'
-                'composer run --timeout=0 phpunit:entrypoint -- --verbose --log-junit "$LOG_DIR/junit-wikibase-{kind}.xml" {phpunit-params}'
+                'composer run --timeout=0 phpunit:entrypoint -- --verbose --log-junit "$LOG_DIR/junit-{sub_extension}.xml" {phpunit-params}'
 
 # Testing for API testing framework repo. This re-uses the quibble job setup, so can't be in mediawiki-tools.yaml
 - job-template:
