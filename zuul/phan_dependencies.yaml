@@ -261,13 +261,14 @@ Discourse:
   - Scribunto
 
 DiscussionTools:
-  - VisualEditor
-  - Linter
+  - BetaFeatures
   - Echo
   - EventLogging
   - Gadgets
-  - BetaFeatures
+  - Linter
+  - MobileFrontend
   - Thanks
+  - VisualEditor
 
 DisplayTitle:
   - Scribunto
