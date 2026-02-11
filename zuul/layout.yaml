@@ -5957,7 +5957,7 @@ projects:
 
   - name: mediawiki/extensions/ContactManager
     template:
-      - name: extension-quibble
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/ContainerFilter
     template:
