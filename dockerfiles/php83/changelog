@@ -1,3 +1,9 @@
+php83 (8.3.30) wikimedia; urgency=high
+
+   Rebuild to use PHP 8.3.30 due to upstream packaging
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 12 Feb 2026 17:28:07 +0000
+
 php83 (8.3.26) wikimedia; urgency=high
 
    Bump version number to 8.3.26
