@@ -8745,8 +8745,12 @@ projects:
       - name: mediawiki-php-library-php82-to-php84
     test:
       - trigger-shellbox-pipeline-test
+      # Special direct Phan job, as the production image doesn't have the latest php-ast
+      - phan-php83
     gate-and-submit:
       - trigger-shellbox-pipeline-test
+      # Special direct Phan job, as the production image doesn't have the latest php-ast
+      - phan-php83
     postmerge:
       - trigger-shellbox-pipeline-publish
 
