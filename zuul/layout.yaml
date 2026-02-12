@@ -1956,20 +1956,6 @@ project-templates:
       - composer-package-php84
       - composer-package-php85
 
-  # Temporary template for repos that fail on PHP 8.5+
-  - name: composer-test-package-php82-to-php84
-    test:
-      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php82
-      - composer-package-php83
-      - composer-package-php84
-    gate-and-submit:
-      - composer-package-php82
-      - composer-package-php83
-      - composer-package-php84
-    experimental:
-      - composer-package-php85
-
   - name: php-compile-php82-to-php85
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
@@ -8588,7 +8574,7 @@ projects:
 
   - name: utfnormal
     template:
-      - name: mediawiki-php-library-php82-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: at-ease
     template:
@@ -8604,7 +8590,7 @@ projects:
 
   - name: php-session-serializer
     template:
-      - name: mediawiki-php-library-php82-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: AhoCorasick
     template:
@@ -8620,7 +8606,7 @@ projects:
 
   - name: wikipeg
     template:
-      - name: mediawiki-php-library-php82-to-php84
+      - name: mediawiki-php-library-php82-to-php85
     test:
       - wikipeg-special-node24-plus-php83-composer
     gate-and-submit:
@@ -8662,7 +8648,7 @@ projects:
 
   - name: mediawiki/libs/Dodo
     template:
-      - name: mediawiki-php-library-php82-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/Equivset
     template:
@@ -8768,7 +8754,7 @@ projects:
 
   - name: mediawiki/libs/UUID
     template:
-      - name: mediawiki-php-library-php82-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/WaitConditionLoop
     template:
@@ -9559,7 +9545,7 @@ projects:
 
   - name: testing-access-wrapper
     template:
-      - name: mediawiki-php-library-php82-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: research/ores/wheels
     test:
@@ -9638,7 +9624,7 @@ projects:
 
   - name: translatewiki
     template:
-      - name: composer-test-php82-to-php84
+      - name: composer-test-php82-to-php85
     test:
       - translatewiki-ruby2.7-rake
     gate-and-submit:
