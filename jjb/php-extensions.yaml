@@ -22,7 +22,7 @@
      - php82:
           image: docker-registry.wikimedia.org/releng/php82-compile:8.2.29
      - php83:
-          image: docker-registry.wikimedia.org/releng/php83-compile:8.3.26
+          image: docker-registry.wikimedia.org/releng/php83-compile:8.3.30
      - php84:
           image: docker-registry.wikimedia.org/releng/php84-compile:8.4.14
      - php85:
@@ -42,7 +42,7 @@
         entrypoint: /run-coverage.sh
         volumes:
             src:
-        image: docker-registry.wikimedia.org/releng/php83-compile:8.3.26
+        image: docker-registry.wikimedia.org/releng/php83-compile:8.3.30
      - cover-publish:
         src: 'src/coverage'
         dest: '$DOC_PROJECT'
