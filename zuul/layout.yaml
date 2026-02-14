@@ -7563,7 +7563,7 @@ projects:
 
   - name: mediawiki/extensions/SimpleBlogPage
     template:
-      - name: extension-quibble
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/SimpleCalendar
     template:
