@@ -5943,7 +5943,8 @@ projects:
 
   - name: mediawiki/extensions/ContactManager
     template:
-      - name: extension-quibble-composer
+      # T353137: extension-quibble-composer would be better, but needs ext-imap
+      - name: extension-quibble
 
   - name: mediawiki/extensions/ContainerFilter
     template:
