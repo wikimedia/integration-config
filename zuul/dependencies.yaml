@@ -2175,6 +2175,7 @@ ReadingLists:
     # no requirements in extension.json
     # extras
     - BetaFeatures
+    - EventBus
     - EventLogging
     - EventStreamConfig
     - TestKitchen
