@@ -584,6 +584,7 @@ RandomGameUnit:
   - PollNY
 
 ReaderExperiments:
+  - EventBus
   - EventLogging
   - EventStreamConfig
   - MobileFrontend
