@@ -583,6 +583,13 @@ QuizGame:
 RandomGameUnit:
   - PollNY
 
+ReaderExperiments:
+  - EventLogging
+  - EventStreamConfig
+  - MobileFrontend
+  - ParserMigration
+  - TestKitchen
+
 ReadingLists:
   - BetaFeatures
   - SiteMatrix

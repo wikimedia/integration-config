@@ -2161,6 +2161,11 @@ ReaderExperiments:
   dependencies:
     # no requirements in extension.json
     # extras
+    - MobileFrontend
+    - ParserMigration
+    - EventLogging
+    - EventStreamConfig
+    - TestKitchen
     - WikimediaMessages
 
 ReadingLists:
