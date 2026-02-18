@@ -2827,6 +2827,7 @@ WikimediaEvents:
     - EventBus
     - EventLogging
     # extras
+    - AbuseFilter
     - AntiSpoof
     - CentralAuth
     - CheckUser
