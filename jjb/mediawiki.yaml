@@ -535,6 +535,8 @@
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage'
     quibble_args: '--commands=mwext-phpunit-coverage'
+    triggers:
+        - zuul
 
 - job-template: &mwext_phpunit_coverage_publish
     !!merge : *job_quibble
