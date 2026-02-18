@@ -222,6 +222,11 @@
     quibble_args: '--skip selenium,npm-test,phpunit-standalone,api-testing'
     triggers:
         - zuul
+    parameters:
+        # Hint about the job requiring dependencies. They MUST be set by Zuul.
+        - string:
+            name: 'EXT_DEPENDENCIES'
+            description: 'Extensions to add, separated by "\n". Set by Zuul.'
     properties:
         - build-discarder:
             days-to-keep: 7
@@ -282,8 +287,6 @@
     name: quibble-{packages-source}-{database}-{php}-selenium
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
-    triggers:
-        - zuul
 
 # API-only Quibble testing.
 - job-template:
@@ -291,8 +294,6 @@
     name: quibble-apitests-only-{packages-source}-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run api-testing'
-    triggers:
-        - zuul
 
 - job-template:
     !!merge : *job_quibble
@@ -332,8 +333,6 @@
     name: quibble-{packages-source}-{database}-{php}-phpunit-standalone
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run phpunit-standalone'
-    triggers:
-        - zuul
 
 # Special jobs for gated extensions, only for the master and wmf/* branches
 - job-template:
@@ -341,16 +340,12 @@
     name: quibble-with-gated-extensions-vendor-mysql-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
-    triggers:
-        - zuul
 
 - job-template:
     !!merge : *job_quibble
     name: quibble-with-gated-extensions-selenium-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
-    triggers:
-        - zuul
 
 # Special jobs for MediaWiki core
 
@@ -360,8 +355,6 @@
     name: quibble-for-mediawiki-core-{packages-source}-{database}-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing'
-    triggers:
-        - zuul
 
 # Selenium-only Quibble testing, for MediaWiki core.
 - job-template:
@@ -369,8 +362,6 @@
     name: quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
-    triggers:
-        - zuul
 
 # Composer test-only Quibble testing, for MediaWiki core.
 - job-template:
@@ -416,38 +407,28 @@
         EXT_DEPENDENCIES: ''
         SKIN_DEPENDENCIES: ''
     quibble_args: '--resolve-requires --run phpunit-unit,phpunit,qunit'
-    triggers:
-        - zuul
 
 - job-template:
     !!merge : *job_quibble_requires_only
     name: 'quibble-requires-only-{packages-source}-non-voting'
-    triggers:
-        - zuul
 
 # Non voting version
 - job-template: &job_quibble_requires_only_selenium
     !!merge : *job_quibble_requires_only
     name: 'quibble-requires-only-{packages-source}-selenium'
     quibble_args: '--resolve-requires --run selenium'
-    triggers:
-        - zuul
 
 # Non voting version
 - job-template:
     !!merge : *job_quibble_requires_only_selenium
     name: 'quibble-requires-only-{packages-source}-selenium-non-voting'
     quibble_args: '--resolve-requires --run selenium'
-    triggers:
-        - zuul
 
 # Per-patch coverage for MediaWiki core.
 - job-template:
     !!merge : *job_quibble
     name: 'mwcore-phpunit-coverage-patch'
     quibble_args: '--run=phpunit'
-    triggers:
-        - zuul
     builders:
         - docker-castor-load
         - docker-log-dir
@@ -480,8 +461,6 @@
 - job:
     !!merge : *job_quibble
     name: 'mediawiki-fresnel-patch'
-    triggers:
-        - zuul
     builders:
         - docker-cache-dir
         - docker-log-dir
@@ -528,23 +507,17 @@
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage-patch'
     quibble_args: '--commands=mwext-phpunit-coverage-patch'
-    triggers:
-        - zuul
 
 - job-template:
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage'
     quibble_args: '--commands=mwext-phpunit-coverage'
-    triggers:
-        - zuul
 
 - job-template: &mwext_phpunit_coverage_publish
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage-publish'
     quibble_args: '--commands=mwext-phpunit-coverage'
     cover_dest: 'cover-extensions/$EXT_NAME'
-    triggers:
-        - zuul
     builders:
         - docker-castor-load
         - docker-log-dir
@@ -896,14 +869,7 @@
 
 - job-template:
     !!merge : *job_quibble
-    parameters:
-        # Hint about the job requiring dependencies. They MUST be set by Zuul.
-        - string:
-            name: 'EXT_DEPENDENCIES'
-            description: 'Extensions to add, separated by "\n". Set by Zuul.'
     name: wikibase-{kind}-{phpflavour}
-    triggers:
-        - zuul
 
 - project:
     name: wikibase
@@ -935,8 +901,6 @@
     name: 'api-testing-{database}-{php}'
     entrypoint: quibble-with-supervisord
     quibble_args: '-c mediawiki/tools/api-testing/ci.sh mediawiki/tools/api-testing'
-    triggers:
-        - zuul
 
 - project:
     name: mediawiki-api-testing
