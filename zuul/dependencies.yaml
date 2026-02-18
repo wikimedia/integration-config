@@ -2164,7 +2164,6 @@ ReaderExperiments:
     - EventBus
     - EventLogging
     - EventStreamConfig
-    - MobileFrontend
     - ParserMigration
     - TestKitchen
     - WikimediaMessages
