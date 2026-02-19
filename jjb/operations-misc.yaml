@@ -13,12 +13,6 @@
       # alerts-pipeline-publish
       - '{name}-pipeline-{pipeline}'
 
-- project:
-    name: cergen
-    jobs:
-        - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-java8:4.8.0-3-s3
-
 - job:
     name: 'operations-dns-lint'
     node: Docker
