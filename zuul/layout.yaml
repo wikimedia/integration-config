@@ -2943,14 +2943,6 @@ projects:
 
 #### Site Reliability Engineering ("Operations") tools #########
 
-  - name: cergen
-    template:
-      - name: debian-glue-non-voting
-    test:
-      - cergen-tox
-    gate-and-submit:
-      - cergen-tox
-
   - name: operations/calico-cni
     template:
       - name: debian-glue-non-voting
@@ -10090,6 +10082,10 @@ projects:
   - name: maps/tilerator/deploy
     template:
       - name: archived
+
+  - name: cergen
+    template:
+      - name: archived # T357750
 
   - name: marvin
     template:
