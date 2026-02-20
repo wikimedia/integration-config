@@ -1490,7 +1490,7 @@ project-templates:
   # Main CI template for extensions, using quibble
   #
   # As of 2026-01-13, our current CI testing targets are Node 20, plus:
-  # master : PHP 8.2–8.4 (supported & tested; PHP 8.4 only tested for MW core)
+  # master : PHP 8.2–8.4 (supported & tested)
   # REL1_43: PHP 8.1–8.3 (supported & tested)
   # REL1_44: PHP 8.1–8.3 (supported & tested)
   # REL1_45: PHP 8.2–8.3 (supported & tested)
@@ -1503,9 +1503,11 @@ project-templates:
       - mwext-phan-php83
     php:
       - quibble-vendor-mysql-php82
+      - quibble-vendor-mysql-php84
     gate-and-submit:
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
+      - quibble-vendor-mysql-php84
       - quibble-vendor-mysql-php83-selenium
       - mediawiki-node20
       - mwext-phan-php83
@@ -1568,7 +1570,6 @@ project-templates:
       - quibble-vendor-sqlite-php83
       - quibble-vendor-postgres-php83
       # Not-yet-supported language runtimes
-      - quibble-vendor-mysql-php84
       - quibble-vendor-mysql-php85
       - mediawiki-node22
       - mediawiki-node24
@@ -1586,10 +1587,12 @@ project-templates:
       # - mwext-phan-php83
     php:
       - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php84
     gate-and-submit:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php83-selenium
+      - quibble-composer-mysql-php84
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php83
@@ -1643,7 +1646,6 @@ project-templates:
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
       # Not-yet-supported language runtimes
-      - quibble-composer-mysql-php84
       - quibble-composer-mysql-php85
       - mediawiki-node22
       - mediawiki-node24
@@ -1687,6 +1689,7 @@ project-templates:
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       - mwext-bluespice-node22
       - mwext-bluespice-node24
 
@@ -1701,9 +1704,11 @@ project-templates:
       - mwext-phan-php83
     php:
       - quibble-vendor-mysql-php82
+      - quibble-vendor-mysql-php84
     gate-and-submit:
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
+      - quibble-vendor-mysql-php84
       - mediawiki-node20
       - mwext-phan-php83
 
@@ -1759,7 +1764,6 @@ project-templates:
       - quibble-vendor-mysql-php83-selenium
       - quibble-vendor-sqlite-php83
       - quibble-vendor-postgres-php83
-      - quibble-vendor-mysql-php84
       - quibble-vendor-mysql-php85
       - mediawiki-node22
       - mediawiki-node24
@@ -1773,9 +1777,11 @@ project-templates:
       # - mwext-phan-php83
     php:
       - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php84
     gate-and-submit:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php84
       - mediawiki-node20
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php83
@@ -1834,9 +1840,11 @@ project-templates:
       - quibble-vendor-mysql-php83-phpunit-standalone
     php:
       - quibble-vendor-mysql-php82-phpunit-standalone
+      - quibble-vendor-mysql-php84-phpunit-standalone
     gate-and-submit:
       - quibble-vendor-mysql-php82-phpunit-standalone
       - quibble-vendor-mysql-php83-phpunit-standalone
+      - quibble-vendor-mysql-php84-phpunit-standalone
     test-1_43:
       - quibble-composer-mysql-php81-phpunit-standalone
     gate-and-submit-1_43:
