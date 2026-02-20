@@ -8153,6 +8153,10 @@ projects:
 
 #### MediaWiki-related services used in Wikimedia production ###
 
+  - name: 3d2png
+    template:
+      - name: node20
+
     # apertium
   - name: mediawiki/services/apertium
     test:
