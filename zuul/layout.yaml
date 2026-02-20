@@ -4713,13 +4713,6 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
-  - name: mediawiki/extensions/SecurityApi
-    template:
-      # Not yet in production, but headed there. -- JDF 2021-12-08
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/ShortUrl
     template:
       - name: in-wikimedia-production
@@ -4861,12 +4854,6 @@ projects:
   - name: mediawiki/extensions/TocTree
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
-  # Not yet in production but maybe headed there -- JDF 2022-07-15
-  - name: mediawiki/extensions/Toolhub
-    template:
       - name: extension-quibble
       - name: extension-coverage
 
@@ -5203,6 +5190,18 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
+
+#### MediaWiki extensions possibly headed to Wikimedia production ##
+
+  - name: mediawiki/extensions/SecurityApi
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+
+  - name: mediawiki/extensions/Toolhub
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
 
 #### Other MediaWiki extensions ################################
 
