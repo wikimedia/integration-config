@@ -3738,7 +3738,6 @@ projects:
 
   - name: mediawiki/extensions/Chart
     template:
-      # Not yet in production but headed there -- JDF 2024-06-20
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
@@ -4257,7 +4256,6 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
 
-  # (T359922) Not yet in production but headed there -- JDF 2024-03-12
   - name: mediawiki/extensions/IPReputation
     template:
       - name: in-wikimedia-production
@@ -4551,7 +4549,6 @@ projects:
 
   - name: mediawiki/extensions/Phonos
     template:
-      # Extension not yet in production, but headed there - T314294
       - name: in-wikimedia-production
       - name: extension-coverage
       - name: extension-quibble
@@ -5191,7 +5188,6 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
-  # Not yet in production but maybe headed there -- JDF 2022-07-15
   - name: mediawiki/extensions/Wikistories
     template:
       - name: extension-quibble
