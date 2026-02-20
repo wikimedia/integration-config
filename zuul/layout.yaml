@@ -4387,10 +4387,6 @@ projects:
     postmerge:
       - mwext-doxygen-publish
 
-  - name: mediawiki/extensions/Monstranto
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/MultimediaViewer
     template:
       - name: in-wikimedia-production
@@ -6801,6 +6797,10 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/MP3MediaHandler
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/Monstranto
     template:
       - name: extension-quibble
 
