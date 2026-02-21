@@ -5886,7 +5886,7 @@ projects:
 
   - name: mediawiki/extensions/CollabPads
     template:
-     - name: extension-quibble
+     - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/CollapsibleVector
     template:
