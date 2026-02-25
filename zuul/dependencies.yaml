@@ -1292,6 +1292,7 @@ CommunityRequests:
   dependencies:
     # From extension.json:
     - VisualEditor
+    - TemplateData
     # extras
     - DiscussionTools
     - Linter

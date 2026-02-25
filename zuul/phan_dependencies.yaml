@@ -204,6 +204,7 @@ CommunityRequests:
   - DiscussionTools
   - Echo
   - Translate
+  - TemplateData
 
 CognitiveProcessDesigner:
   - PageForms
