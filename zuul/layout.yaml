@@ -1180,6 +1180,12 @@ jobs:
         - 'src/models/embeddings/.*'
         - 'python/.*\.py$'
 
+  - name: ^trigger-inference-services-pipeline-policy-violation
+    files:
+        - '.pipeline/policy_violation/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/policy_violation/.*'
+
   # End of meta jobs (the ones starting with ^)
 
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
@@ -2260,6 +2266,7 @@ projects:
       - trigger-inference-services-pipeline-edit-check-publish
       - trigger-inference-services-pipeline-revise-tone-task-generator-publish
       - trigger-inference-services-pipeline-embeddings-publish
+      - trigger-inference-services-pipeline-policy-violation-publish
 
   - name: integration/config
     test-prio:
