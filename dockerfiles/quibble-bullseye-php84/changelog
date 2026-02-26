@@ -1,3 +1,10 @@
+quibble-bullseye-php84 (1.15.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image php84:
+   Update PHP to 8.4.18
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 26 Feb 2026 14:14:37 -0500
+
 quibble-bullseye-php84 (1.15.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image sury-php:
