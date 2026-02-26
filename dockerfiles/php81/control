@@ -1,1 +1,1 @@
-Depends: ci-bullseye, php-scratch
+Depends: sury-php, php-scratch

@@ -1,3 +1,9 @@
+php81 (8.1.34) wikimedia; urgency=high
+
+   Re-platform back from WMF to Sury PHP 8.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 26 Feb 2026 14:03:02 -0500
+
 php81 (8.1.33-s1) wikimedia; urgency=high
 
    Refresh for update in parent image sury-php:

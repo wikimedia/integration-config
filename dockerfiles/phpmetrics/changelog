@@ -1,3 +1,10 @@
+phpmetrics (2.8.1-s26) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Re-platform back from WMF to Sury PHP 8.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 26 Feb 2026 14:03:02 -0500
+
 phpmetrics (2.8.1-s25) wikimedia; urgency=high
 
    Refresh for update in parent image sury-php:
