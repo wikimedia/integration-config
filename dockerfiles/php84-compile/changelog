@@ -1,3 +1,10 @@
+php84-compile (8.4.14-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image sury-php:
+   Update sury.org GPG key for 2026
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 26 Feb 2026 13:53:23 -0500
+
 php84-compile (8.4.14) wikimedia; urgency=high
 
    Refresh for update in parent image php84:
