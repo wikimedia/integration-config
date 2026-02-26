@@ -1,0 +1,2 @@
+deb http://apt.wikimedia.org/wikimedia bookworm-wikimedia thirdparty/opensearch1
+deb http://apt.wikimedia.org/wikimedia bookworm-wikimedia component/opensearch13

@@ -1,0 +1,1 @@
+Depends: composer-scratch, ci-bookworm, node24

@@ -1,0 +1,5 @@
+quibble-bookworm-php81 (1.18.1) wikimedia; urgency=medium
+
+  Re-platform to Debian Bookworm.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed,  3 Jun 2026 17:11:56 -0400
