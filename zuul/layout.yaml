@@ -1053,8 +1053,9 @@ jobs:
   - name: ^trigger-inference-services-pipeline-outlink
     files:
         - '.pipeline/outlink/blubber.yaml'
+        - '.pipeline/outlink_cache_adapter/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'src/models/outlink_topic_model/model_server/.*'
+        - 'src/models/outlink_topic_model/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-outlink-transformer
@@ -2267,6 +2268,7 @@ projects:
       - trigger-inference-services-pipeline-revise-tone-task-generator-publish
       - trigger-inference-services-pipeline-embeddings-publish
       - trigger-inference-services-pipeline-policy-violation-publish
+      - trigger-inference-services-pipeline-outlink-cache-adapter-publish
 
   - name: integration/config
     test-prio:
