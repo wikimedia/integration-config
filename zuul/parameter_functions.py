@@ -82,6 +82,7 @@ def set_parameters(item, job, params):
             'mediawiki/skins/MinervaNeue',
             'mediawiki/extensions/MobileFrontend',
             'mediawiki/extensions/UniversalLanguageSelector',
+            'mediawiki/extensions/Wikibase',
         ])
 
     # Enable parallel PHPUnit runs for MW ecosystem, except:
