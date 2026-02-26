@@ -1885,6 +1885,7 @@ MobileFrontend:
     - MobileApp
     - skins/MinervaNeue
     - VisualEditor
+    - ParserMigration
 
 MobileFrontendContentProvider:
   recurse: false
