@@ -4978,6 +4978,7 @@ projects:
       - name: extension-javascript-documentation
       - name: mwgate-npm
       - name: extension-apitests
+      - name: wikibase-selenium-gate
     test:
       - wikibase-client-php83
       - wikibase-repo-php83
