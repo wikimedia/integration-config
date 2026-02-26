@@ -20,13 +20,13 @@
     name: php-compile-jobs
     php:
      - php82:
-          image: docker-registry.wikimedia.org/releng/php82-compile:8.2.29
+          image: docker-registry.wikimedia.org/releng/php82-compile:8.2.30
      - php83:
           image: docker-registry.wikimedia.org/releng/php83-compile:8.3.30
      - php84:
-          image: docker-registry.wikimedia.org/releng/php84-compile:8.4.14
+          image: docker-registry.wikimedia.org/releng/php84-compile:8.4.18
      - php85:
-          image: docker-registry.wikimedia.org/releng/php85-compile:8.5.0
+          image: docker-registry.wikimedia.org/releng/php85-compile:8.5.3
     jobs:
       - 'php-compile-{php}'
 
