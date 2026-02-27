@@ -11,7 +11,7 @@ import random
 import subprocess
 import sys
 import time
-
+from datetime import datetime, timezone, timedelta
 import requests
 
 WIKILAMBDA_REF = os.getenv('WIKILAMBDA_REF')
@@ -24,6 +24,7 @@ ENV_NAME = os.getenv(
     )
 )
 ENV_URL = "{}.catalyst.wmcloud.org".format(ENV_NAME)
+EXPIRY_TIME_HOURS = int(os.getenv('EXPIRY_TIME_HOURS', 1))
 
 session = requests.Session()
 session.headers.update({
@@ -61,6 +62,7 @@ def setup_logger():
 
 
 def create_env():
+    expiry_time = datetime.now(timezone.utc) + timedelta(hours=EXPIRY_TIME_HOURS)
     try:
         return rest(ENV_API_PATH, 'post', json={
             'name': ENV_NAME,
@@ -73,7 +75,8 @@ def create_env():
                     'use': 'true',
                     'wikiRepos': '/mnt/k3s-data/wiki-repos',
                 },
-            }
+            },
+            'expiresAt': expiry_time.isoformat()
         }).json()
     except Exception as e:
         logger.error("Failed to create Wikifunctions environment: %s", e)

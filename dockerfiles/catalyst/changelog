@@ -1,3 +1,9 @@
+catalyst (1.3.1) wikimedia; urgency=medium
+
+   Allow setting expiry time for clean up of undeleted environments - T416391
+
+ -- Jeena Huneidi <jhuneidi@wikimedia.org>  Mon, 23 Feb 2026 11:53:16 -0800
+
 catalyst (1.3.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image node22:
