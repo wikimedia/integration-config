@@ -6155,7 +6155,7 @@ projects:
 
   - name: mediawiki/extensions/DrawioEditor
     template:
-      - name: extension-quibble
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/DumpsOnDemand
     template:
@@ -6323,7 +6323,7 @@ projects:
 
   - name: mediawiki/extensions/Forms
     template:
-      - name: extension-quibble
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/FormatDates
     template:
@@ -6596,7 +6596,7 @@ projects:
 
   - name: mediawiki/extensions/IssueTrackerLinks
     template:
-     - name: extension-quibble
+     - name: extension-quibble-composer
 
   - name: mediawiki/extensions/JavascriptSlideshow
     template:
@@ -6993,7 +6993,7 @@ projects:
 
   - name: mediawiki/extensions/NotifyMe
     template:
-     - name: extension-quibble
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/NSFileRepo
     template:
@@ -7045,7 +7045,7 @@ projects:
 
   - name: mediawiki/extensions/OOJSPlus
     template:
-      - name: extension-quibble
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/OOJsUIAjaxLogin
     template:
@@ -9531,7 +9531,7 @@ projects:
 
   - name: mediawiki/extensions/VisualEditorPlus
     template:
-      - name: extension-quibble
+      - name: extension-quibble-composer
 
   - name: wikidata/query/rdf
     # Blazegraph is not running on Java 11 and unlikely to ever be - T350587
