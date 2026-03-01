@@ -233,6 +233,7 @@ pipelines:
            - ^gerges\.shamoon\.dev@gmail\.com$ # Gerges
            - ^gianiskido@gmail\.com$ # IoannisKydonis, former GCI student
            - ^gifti@tools\.wmflabs\.org$
+           - ^git@srd\.dev$ # SomeRandomDeveloper
            - ^glaisher\.wiki@gmail\.com$
            - ^god\.vedmaka@gmail\.com$ # Vedmaka Wakalaka
            - ^gopavasanth1999@gmail\.com$ # Gopavasanth
@@ -464,7 +465,6 @@ pipelines:
            - ^terracodes@outlook\.com$ # TerraCodes
            - ^terracodes@tools\.wmflabs\.org$ # Secondary mail of user TerraCodes
            - ^thewonderfulworldofpotatoes@gmail\.com$ # msk
-           - ^thisisnotmyname275@gmail\.com$ # SomeRandomDeveloper
            - ^thomasmulhall410@yahoo\.com$ # Paladox T114528
            - ^thomaspt@hotmail\.fr$
            - ^three060@gmail\.com$ # Lindsay Wardell
