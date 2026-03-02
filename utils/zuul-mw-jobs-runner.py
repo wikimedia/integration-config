@@ -225,10 +225,7 @@ class ZuulMwJobsRunner():
         jobs = []
         # Gated extensions and vendor based extensions
         if (
-            # mediawiki/core
-            templates == {'extension-gate'}
-            # mediawiki/vendor
-            or templates == {'extension-gate', 'extension-apitests'}
+            'extension-gate' in templates
             or 'extension-quibble' in templates
         ):
             if self.requires_only:
@@ -240,7 +237,7 @@ class ZuulMwJobsRunner():
                 if self.phpunit:
                     jobs += ['quibble-vendor-mysql-php83']
                 if self.selenium:
-                    jobs += ['quibble-composer-mysql-php83-selenium']
+                    jobs += ['quibble-vendor-mysql-php83-selenium']
             return jobs
 
         # Extensions using composer
