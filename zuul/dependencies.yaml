@@ -1859,17 +1859,6 @@ MenuEditor:
     # extras transitive dependencies
     - BlueSpiceFoundation
 
-MetricsPlatform:
-  recurse: true
-  dependencies:
-    # From extension.json:
-    - EventLogging
-    - EventStreamConfig
-    # extras
-    - CommunityConfiguration
-    - GrowthExperiments
-    - VisualEditor
-
 MobileApp:
   recurse: false
   dependencies:

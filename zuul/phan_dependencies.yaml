@@ -465,11 +465,6 @@ MediaWikiChat:
   - CheckUser
   - SocialProfile
 
-MetricsPlatform:
-  - EventStreamConfig
-  - EventLogging
-  - GrowthExperiments
-
 MiniInvite:
   - BlogPage
 

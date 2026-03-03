@@ -4425,15 +4425,6 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
-  # To be replaced by TestKitchen
-  - name: mediawiki/extensions/MetricsPlatform
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-codehealth
-      - name: extension-javascript-documentation
-
   - name: mediawiki/extensions/MobileApp
     template:
       - name: in-wikimedia-production
@@ -4859,7 +4850,6 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
-  # To replace MetricsPlatform
   - name: mediawiki/extensions/TestKitchen
     template:
       - name: in-wikimedia-production
@@ -10767,6 +10757,10 @@ projects:
   - name: mediawiki/extensions/Memento
     template:
       - name: archived # T369991
+
+  - name: mediawiki/extensions/MetricsPlatform
+    template:
+      - name: archived # T416865
 
   - name: mediawiki/extensions/Minifier
     template:
