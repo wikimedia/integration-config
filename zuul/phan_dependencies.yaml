@@ -858,7 +858,6 @@ WikimediaEvents:
   - IPReputation
   - MobileFrontend
   - OATHAuth
-  - MetricsPlatform
   - TestKitchen
 
 WikimediaMaintenance:
