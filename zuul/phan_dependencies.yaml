@@ -380,7 +380,6 @@ GrowthExperiments:
   - CommunityConfiguration
   - ConfirmEdit
   - WikimediaMessages
-  - MetricsPlatform
   - TestKitchen
   - GuidedTour
 

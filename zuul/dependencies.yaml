@@ -1628,7 +1628,6 @@ GrowthExperiments:
     - EventStreamConfig
     - Flow
     - GuidedTour
-    - MetricsPlatform
     - MobileFrontend
     - PageImages
     - PageViewInfo
