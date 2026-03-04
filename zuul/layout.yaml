@@ -2733,10 +2733,6 @@ projects:
       - mediawiki-composer-php82
       - mediawiki-node20
 
-    experimental:
-      - quibble-for-mediawiki-core-vendor-mysql-php84
-      - quibble-for-mediawiki-core-vendor-mysql-php85
-
 #### MediaWiki skins ###########################################
 
 #### MediaWiki skins used in Wikimedia production ##############
