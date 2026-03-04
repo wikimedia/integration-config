@@ -1227,7 +1227,6 @@ class TestZuulScheduler(unittest.TestCase):
         expected_gate = {
             'mediawiki-core-phan-only-php83': True,
             'quibble-for-mediawiki-core-composer-mysql-php83': True,
-            'quibble-for-mediawiki-core-vendor-mysql-php82': True,
             'quibble-for-mediawiki-core-vendor-mysql-php83': True,
             'quibble-for-mediawiki-core-vendor-mysql-php84': True,
             'quibble-for-mediawiki-core-vendor-mysql-php85': True,
