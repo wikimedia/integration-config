@@ -25,7 +25,7 @@ import xml.etree.cElementTree as etree
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('suite', help='Path to phpunit.xml.dist')
+    parser.add_argument('suite', help='Path to the PHPUnit config')
 
     parser.add_argument('--cover-extension',
                         help='Extension path to set for coverage '

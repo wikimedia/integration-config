@@ -1,3 +1,9 @@
+quibble-coverage (1.15.0-s2) wikimedia; urgency=high
+
+   (T345481) Run generatePHPUnitConfig.php before running tests
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Wed,  4 Mar 2026 22:41:50 +0100
+
 quibble-coverage (1.15.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php83:

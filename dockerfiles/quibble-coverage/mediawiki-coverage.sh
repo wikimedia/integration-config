@@ -8,6 +8,8 @@ function relay_signals() {
     done
 }
 
+php tests/phpunit/generatePHPUnitConfig.php
+
 # We want to publish code coverage even in case there is a PHPUnit test
 # failure. Normal test failures are not fatal and PHPUnit will still
 # generate console output, clover reports and html reports.
@@ -19,7 +21,7 @@ if [[ ! -v CODEHEALTH ]]; then
             --coverage-clover "$LOG_DIR"/clover.xml \
             --coverage-html "$WORKSPACE/cover" &
 else
-    phpunit-suite-edit "$MW_INSTALL_PATH/phpunit.xml.dist"
+    phpunit-suite-edit "$MW_INSTALL_PATH/phpunit.xml"
     php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH" -d pcov.exclude='@(tests|vendor)@' \
         vendor/bin/phpunit \
             --exclude-group Broken \

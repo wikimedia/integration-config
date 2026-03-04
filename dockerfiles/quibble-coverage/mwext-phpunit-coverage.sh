@@ -21,8 +21,9 @@ set -eux -o pipefail
 # the Gerrit project name stripped from the `mediawiki/` prefix.
 EXT_DIR="$MW_INSTALL_PATH/${ZUUL_PROJECT#mediawiki/}"
 
+php tests/phpunit/generatePHPUnitConfig.php
 # Edit the PHPUnit configuration to use the proper coverage paths
-phpunit-suite-edit "$MW_INSTALL_PATH/phpunit.xml.dist" \
+phpunit-suite-edit "$MW_INSTALL_PATH/phpunit.xml" \
     --cover-extension "${ZUUL_PROJECT#mediawiki/}"
 
 mkdir -p "$WORKSPACE"/cover

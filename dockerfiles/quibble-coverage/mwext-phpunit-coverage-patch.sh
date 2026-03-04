@@ -30,8 +30,10 @@ if [ ! -d "$TEST_DIR" ]; then
     # This is for Wikibase, see T288396
     TEST_DIR="."
 fi
+
+php "$MW_INSTALL_PATH"/tests/phpunit/generatePHPUnitConfig.php
 # We need to pass the config file explicitly to PHPUnit to avoid T395470#11548714
-CONFIG_PATH="$MW_INSTALL_PATH/phpunit.xml.dist"
+CONFIG_PATH="$MW_INSTALL_PATH/phpunit.xml"
 
 # Edit the PHPUnit configuration to use the proper coverage paths
 phpunit-suite-edit "$CONFIG_PATH" \
