@@ -8,6 +8,7 @@ rake
 ruby
 ruby-dev
 ruby-ffi
+libffi-dev
 bundler
 rsync
 zlib1g-dev

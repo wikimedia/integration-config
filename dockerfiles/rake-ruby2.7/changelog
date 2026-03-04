@@ -1,3 +1,9 @@
+rake-ruby2.7 (0.2.2) wikimedia; urgency=high
+
+   (T418463) Add libffi-dev too
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed,  4 Mar 2026 10:27:57 -0500
+
 rake-ruby2.7 (0.2.1) wikimedia; urgency=high
 
    (T418463) Add ruby-ffi
