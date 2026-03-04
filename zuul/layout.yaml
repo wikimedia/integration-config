@@ -2588,6 +2588,7 @@ projects:
       # Alternate php versions
       - quibble-for-mediawiki-core-vendor-mysql-php82
       - quibble-for-mediawiki-core-vendor-mysql-php84
+      - quibble-for-mediawiki-core-vendor-mysql-php85
       # Standalone run for core-only changes
       - quibble-vendor-mysql-php83-phpunit-standalone
     gate-and-submit:
@@ -2595,6 +2596,7 @@ projects:
       - quibble-for-mediawiki-core-vendor-mysql-php82
       - quibble-for-mediawiki-core-vendor-mysql-php83
       - quibble-for-mediawiki-core-vendor-mysql-php84
+      - quibble-for-mediawiki-core-vendor-mysql-php85
       - quibble-for-mediawiki-core-composertest-only-php83
       - quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83
       - quibble-apitests-only-vendor-php83
@@ -2689,7 +2691,6 @@ projects:
       - mediawiki-core-javascript-publish
       - mediawiki-core-doxygen-publish
     experimental:
-      - quibble-for-mediawiki-core-vendor-mysql-php85
       - mediawiki-composer-php83
       - mediawiki-node22
       - mediawiki-node24
