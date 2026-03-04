@@ -1489,8 +1489,8 @@ project-templates:
 
   # Main CI template for extensions, using quibble
   #
-  # As of 2026-01-13, our current CI testing targets are Node 20, plus:
-  # master : PHP 8.2–8.4 (supported & tested)
+  # As of 2026-03-04, our current CI testing targets are Node 20, plus:
+  # master : PHP 8.2–8.5 (supported & tested; 8.5 only for MW core and vendor so far)
   # REL1_43: PHP 8.1–8.3 (supported & tested)
   # REL1_44: PHP 8.1–8.3 (supported & tested)
   # REL1_45: PHP 8.2–8.3 (supported & tested)
