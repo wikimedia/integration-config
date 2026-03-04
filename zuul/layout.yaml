@@ -2706,10 +2706,9 @@ projects:
       - mediawiki-composer-php82
       - quibble-for-mediawiki-core-vendor-mysql-php82
       - quibble-for-mediawiki-core-vendor-mysql-php84
+      - quibble-for-mediawiki-core-vendor-mysql-php85
       - mediawiki-composer-php84
       - mediawiki-composer-php85
-      # (T411814) Not yet working -- JDF, 2025-12-04
-      # - quibble-for-mediawiki-core-vendor-mysql-php85
     gate-and-submit:
       - mediawiki-composer-php82
       - mediawiki-composer-php83
@@ -2718,8 +2717,7 @@ projects:
       - quibble-for-mediawiki-core-vendor-mysql-php82
       - quibble-for-mediawiki-core-vendor-mysql-php83
       - quibble-for-mediawiki-core-vendor-mysql-php84
-      # (T411814) Not yet working -- JDF, 2025-12-04
-      # - quibble-for-mediawiki-core-vendor-mysql-php85
+      - quibble-for-mediawiki-core-vendor-mysql-php85
     gate-and-submit-wmf:
       - mediawiki-composer-php83
       - quibble-for-mediawiki-core-vendor-mysql-php83
