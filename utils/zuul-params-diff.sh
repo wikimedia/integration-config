@@ -25,7 +25,7 @@ elif [ -z "$(git -C "$repodir" show --name-only -m --first-parent --format=forma
     exit 0
 else
     # Compare with the previous change that affected zuul/layout.yaml
-    layout_prev_commit=$(git -C "$repodir" log --skip=1 -n1 --format='%H' "${FILES[@]}")
+    layout_prev_commit=$(git -C "$repodir" log --skip=1 --first-parent -n1 --format='%H' "${FILES[@]}")
     echo "Zuul config files previous commit: $layout_prev_commit"
 fi
 
