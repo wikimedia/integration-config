@@ -41,6 +41,7 @@ skins/MinervaNeue:
     - Cite
     - Echo
     - MobileFrontend
+    - TestKitchen
 
 skins/Refreshed:
   recurse: false

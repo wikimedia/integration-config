@@ -20,6 +20,7 @@ skins/Metrolook:
 skins/MinervaNeue:
   - Echo
   - MobileFrontend
+  - TestKitchen
 
 skins/Nimbus:
   - Echo
