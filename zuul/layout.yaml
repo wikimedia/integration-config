@@ -1901,7 +1901,7 @@ project-templates:
 
   - name: wikibase-selenium-gate
     test: &wikibase-selenium-gate_jobs
-      - wikibase-selenium
+      - quibble-with-Wikibase-extensions-browser-tests-only
     gate-and-submit: *wikibase-selenium-gate_jobs
     test-1_43: *wikibase-selenium-gate_jobs
     gate-and-submit-1_43: *wikibase-selenium-gate_jobs

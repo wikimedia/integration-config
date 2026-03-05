@@ -972,7 +972,7 @@ class TestZuulScheduler(unittest.TestCase):
     def test_gated_extensions_for_wikibase_selenium(self):
         self.longMessage = True
 
-        job = FakeJob('wikibase-selenium-xyz')
+        job = FakeJob('quibble-with-Wikibase-extensions-browser-tests-only')
         params = {
             'ZUUL_PROJECT': 'mediawiki/extensions/Wikibase',
             'ZUUL_BRANCH': 'master',
@@ -985,10 +985,11 @@ class TestZuulScheduler(unittest.TestCase):
         gated_in_zuul = set([
             ext_name
             # FIXME We could parse the Zuul layout looking up for
-            # wikibase-selenium job template.
+            # wikibase-selenium-gate job template.
             for (ext_name, pipelines) in self.getProjectsDefs().iteritems()
             if ext_name.startswith('mediawiki/')
-            and 'wikibase-selenium' in pipelines.get('test', {})
+            and 'quibble-with-Wikibase-extensions-browser-tests-only' \
+                in pipelines.get('test', {})
         ])
 
         # Cloned by Quibble regardless of injected dependencies
@@ -1170,7 +1171,7 @@ class TestZuulScheduler(unittest.TestCase):
             'quibble-for-mediawiki-core-composertest-only-php83': True,
             'quibble-apitests-only-vendor-php83': True,
             'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83': True,
-            'wikibase-selenium': True,
+            'quibble-with-Wikibase-extensions-browser-tests-only': True,
             'quibble-with-gated-extensions-vendor-mysql-php83': True,
             'quibble-with-gated-extensions-selenium-php83': True,
             'mediawiki-node20': True,
@@ -1188,7 +1189,7 @@ class TestZuulScheduler(unittest.TestCase):
             'quibble-for-mediawiki-core-vendor-sqlite-php83': True,
             'quibble-for-mediawiki-core-vendor-postgres-php83': True,
             'mediawiki-node20': True,
-            'wikibase-selenium': True,
+            'quibble-with-Wikibase-extensions-browser-tests-only': True,
             'quibble-vendor-mysql-php83-phpunit-standalone': True,
             'quibble-with-gated-extensions-vendor-mysql-php83': True,
             'quibble-with-gated-extensions-selenium-php83': True,

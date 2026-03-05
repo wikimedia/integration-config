@@ -873,13 +873,13 @@
 
 - job-template:
     !!merge : *job_quibble
-    name: wikibase-selenium
+    name: quibble-with-Wikibase-extensions-browser-tests-only
 
 - project:
     name: wikibase
     entrypoint: quibble-with-supervisord
     jobs:
-        - wikibase-selenium:
+        - quibble-with-Wikibase-extensions-browser-tests-only:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.15.0-s1
             database: mysql
             packages-source: vendor
