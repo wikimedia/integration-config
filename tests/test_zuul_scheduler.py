@@ -972,7 +972,7 @@ class TestZuulScheduler(unittest.TestCase):
     def test_gated_extensions_for_wikibase_selenium(self):
         self.longMessage = True
 
-        job = FakeJob('quibble-with-Wikibase-extensions-browser-tests-only')
+        job = FakeJob('quibble-with-Wikibase-extensions-browser-tests-only-x-y')
         params = {
             'ZUUL_PROJECT': 'mediawiki/extensions/Wikibase',
             'ZUUL_BRANCH': 'master',
@@ -988,7 +988,7 @@ class TestZuulScheduler(unittest.TestCase):
             # wikibase-selenium-gate job template.
             for (ext_name, pipelines) in self.getProjectsDefs().iteritems()
             if ext_name.startswith('mediawiki/')
-            and 'quibble-with-Wikibase-extensions-browser-tests-only' \
+            and 'quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83' \
                 in pipelines.get('test', {})
         ])
 
@@ -1171,7 +1171,7 @@ class TestZuulScheduler(unittest.TestCase):
             'quibble-for-mediawiki-core-composertest-only-php83': True,
             'quibble-apitests-only-vendor-php83': True,
             'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83': True,
-            'quibble-with-Wikibase-extensions-browser-tests-only': True,
+            'quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83': True,
             'quibble-with-gated-extensions-vendor-mysql-php83': True,
             'quibble-with-gated-extensions-selenium-php83': True,
             'mediawiki-node20': True,
@@ -1189,7 +1189,7 @@ class TestZuulScheduler(unittest.TestCase):
             'quibble-for-mediawiki-core-vendor-sqlite-php83': True,
             'quibble-for-mediawiki-core-vendor-postgres-php83': True,
             'mediawiki-node20': True,
-            'quibble-with-Wikibase-extensions-browser-tests-only': True,
+            'quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83': True,
             'quibble-vendor-mysql-php83-phpunit-standalone': True,
             'quibble-with-gated-extensions-vendor-mysql-php83': True,
             'quibble-with-gated-extensions-selenium-php83': True,

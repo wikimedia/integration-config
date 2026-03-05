@@ -873,16 +873,22 @@
 
 - job-template:
     !!merge : *job_quibble
-    name: quibble-with-Wikibase-extensions-browser-tests-only
+    name: quibble-with-Wikibase-extensions-browser-tests-only-{packages-source}-{phpflavor}
 
 - project:
     name: wikibase
     entrypoint: quibble-with-supervisord
-    jobs:
-        - quibble-with-Wikibase-extensions-browser-tests-only:
+    phpflavor:
+        - php81:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.15.0-s2
+        - php83:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.15.0-s1
+    jobs:
+        - quibble-with-Wikibase-extensions-browser-tests-only-{packages-source}-{phpflavor}:
             database: mysql
-            packages-source: vendor
+            packages-source:
+                - composer
+                - vendor
             quibble_args: >
                 --command 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r repo'
                 --command 'cp --verbose $WORKSPACE/src/LocalSettings.php $LOG_DIR'
@@ -901,11 +907,6 @@
                     phpunit-params: '--group Wikibase,WikibaseAPI,Purtle'
                     wb-settings: 'repo'
             packages-source: composer
-            phpflavor:
-                - php81:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.15.0-s2
-                - php83:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.15.0-s1
             quibble_args: >
                 --commands 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r {wb-settings}'
                 'cp --verbose $WORKSPACE/src/LocalSettings.php $LOG_DIR'

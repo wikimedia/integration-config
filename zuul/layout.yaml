@@ -1900,17 +1900,26 @@ project-templates:
       - mediawiki-i18n-check
 
   - name: wikibase-selenium-gate
-    test: &wikibase-selenium-gate_jobs
-      - quibble-with-Wikibase-extensions-browser-tests-only
-    gate-and-submit: *wikibase-selenium-gate_jobs
-    test-1_43: *wikibase-selenium-gate_jobs
-    gate-and-submit-1_43: *wikibase-selenium-gate_jobs
-    test-1_44: *wikibase-selenium-gate_jobs
-    gate-and-submit-1_44: *wikibase-selenium-gate_jobs
-    test-1_45: *wikibase-selenium-gate_jobs
-    gate-and-submit-1_45: *wikibase-selenium-gate_jobs
-    test-wmf: *wikibase-selenium-gate_jobs
-    gate-and-submit-wmf: *wikibase-selenium-gate_jobs
+    test:
+      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
+    gate-and-submit:
+      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
+    test-1_43:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php81
+    gate-and-submit-1_43:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php81
+    test-1_44:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php81
+    gate-and-submit-1_44:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php81
+    test-1_45:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php83
+    gate-and-submit-1_45:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php83
+    test-wmf:
+      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
+    gate-and-submit-wmf:
+      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
 
   - name: extension-coverage
     postmerge:
