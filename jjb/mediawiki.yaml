@@ -869,7 +869,7 @@
 
 - job-template:
     !!merge : *job_quibble
-    name: quibble-with-{sub_extension}-extensions-tests-{phpflavour}
+    name: quibble-with-{sub_extension}-extensions-tests-{phpflavor}
 
 - job-template:
     !!merge : *job_quibble
@@ -890,7 +890,7 @@
                 --command 'npm --prefix extensions/Wikibase ci'
                 --command 'npm --prefix extensions/Wikibase run --if-present @selenium-test'
 
-        - quibble-with-{sub_extension}-extensions-tests-{phpflavour}:
+        - quibble-with-{sub_extension}-extensions-tests-{phpflavor}:
             sub_extension:
                 - WikibaseClient:
                     database: mysql
@@ -901,7 +901,7 @@
                     phpunit-params: '--group Wikibase,WikibaseAPI,Purtle'
                     wb-settings: 'repo'
             packages-source: composer
-            phpflavour:
+            phpflavor:
                 - php81:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.15.0-s2
                 - php83:
