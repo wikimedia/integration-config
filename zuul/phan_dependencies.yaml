@@ -153,6 +153,7 @@ Chart:
 CheckUser:
   - AbuseFilter
   - CentralAuth
+  - DiscussionTools
   - EventBus
   - EventLogging
  # HACK: This is no longer needed in master, but in REL1_44 and before
