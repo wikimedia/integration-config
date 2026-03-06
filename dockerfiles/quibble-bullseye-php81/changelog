@@ -1,3 +1,9 @@
+quibble-bullseye-php81 (1.16.0) wikimedia; urgency=medium
+
+  * Update Quibble to 1.16.0
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 06 Mar 2026 17:31:29 +0100
+
 quibble-bullseye-php81 (1.15.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image php81:
