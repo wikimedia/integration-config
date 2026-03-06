@@ -8365,12 +8365,6 @@ projects:
     gate-and-submit:
       - trigger-typescript-service-pipeline-publish
 
-  - name: mediawiki/services/geoshapes
-    test:
-      - trigger-typescript-service-pipeline-test
-    gate-and-submit:
-      - trigger-typescript-service-pipeline-publish
-
   - name: mediawiki/services/rcstream
     template:
       - name: tox
@@ -11579,6 +11573,10 @@ projects:
   - name: mediawiki/services/function-schemata
     template:
       - name: archived
+
+  - name: mediawiki/services/geoshapes
+    template:
+      - name: archived # T418372
 
   - name: mediawiki/services/graphoid
     template:
