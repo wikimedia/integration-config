@@ -7321,10 +7321,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/QuickGV
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/QuickInstantCommons
     template:
       - name: extension-quibble
@@ -11024,6 +11020,10 @@ projects:
   - name: mediawiki/extensions/PushNotifications
     template:
       - name: archived
+
+  - name: mediawiki/extensions/QuickGV
+    template:
+      - name: archived # T413348
 
   - name: mediawiki/extensions/QuizTabulate
     template:
