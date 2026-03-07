@@ -7570,10 +7570,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/SidebarDonateBox
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/SignWritingMediaWikiPlugin
     template:
       - name: extension-quibble
@@ -11188,6 +11184,10 @@ projects:
   - name: mediawiki/extensions/ShortDescription
     template:
       - name: archived
+
+  - name: mediawiki/extensions/SidebarDonateBox
+    template:
+      - name: archived # T413587
 
   - name: mediawiki/extensions/SideBarMenu
     template:
