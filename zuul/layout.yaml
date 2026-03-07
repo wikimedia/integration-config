@@ -7530,10 +7530,6 @@ projects:
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
 
-  - name: mediawiki/extensions/SemanticSifter
-    template:
-      - name: extension-broken  # Semantic MediaWiki is on GitHub
-
   - name: mediawiki/extensions/SemanticWebBrowser
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
@@ -11160,6 +11156,10 @@ projects:
   - name: mediawiki/extensions/SemanticPageMaker
     template:
       - name: archived
+
+  - name: mediawiki/extensions/SemanticSifter
+    template:
+      - name: archived # T413586
 
   - name: mediawiki/extensions/SemanticTasks
     template:
