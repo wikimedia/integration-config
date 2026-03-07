@@ -6372,10 +6372,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/GoogleAdSense
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/googleAnalytics
     template:
       - name: extension-quibble
@@ -10608,6 +10604,10 @@ projects:
   - name: mediawiki/extensions/GlobalContribs
     template:
       - name: archived
+
+  - name: mediawiki/extensions/GoogleAdSense
+    template:
+      - name: archived # T413585
 
   - name: mediawiki/extensions/GoogleAnalyticsMetrics
     template:
