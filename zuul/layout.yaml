@@ -5254,11 +5254,6 @@ projects:
 
 #### MediaWiki extensions possibly headed to Wikimedia production ##
 
-  - name: mediawiki/extensions/SecurityApi
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/Toolhub
     template:
       - name: extension-quibble
@@ -11121,6 +11116,10 @@ projects:
   - name: mediawiki/extensions/SecureSessions
     template:
       - name: archived
+
+  - name: mediawiki/extensions/SecurityApi
+    template:
+      - name: archived # T418008
 
   - name: mediawiki/extensions/SemanticBundle
     template:
