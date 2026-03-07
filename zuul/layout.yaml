@@ -6795,10 +6795,6 @@ projects:
     template:
       - name: extension-quibble-composer
 
-  - name: mediawiki/extensions/Memento
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/MenuEditor
     template:
       - name: extension-quibble-bluespice
@@ -10764,6 +10760,10 @@ projects:
   - name: mediawiki/extensions/MediaWikiAuth
     template:
       - name: archived
+
+  - name: mediawiki/extensions/Memento
+    template:
+      - name: archived # T369991
 
   - name: mediawiki/extensions/Minifier
     template:
