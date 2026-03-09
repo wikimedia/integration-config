@@ -20,6 +20,9 @@ skins/Metrolook:
 skins/MinervaNeue:
   - Echo
   - MobileFrontend
+  - EventBus
+  - EventLogging
+  - EventStreamConfig
   - TestKitchen
 
 skins/Nimbus:

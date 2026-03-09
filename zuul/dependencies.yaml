@@ -41,6 +41,9 @@ skins/MinervaNeue:
     - Cite
     - Echo
     - MobileFrontend
+    - EventBus
+    - EventLogging
+    - EventStreamConfig
     - TestKitchen
 
 skins/Refreshed:
