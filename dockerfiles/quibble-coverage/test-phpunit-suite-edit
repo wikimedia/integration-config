@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+base_dir=$(dirname "$0")
+
+PHPUNIT_SUITE_EDIT="$base_dir"/phpunit-suite-edit.py
+ORIGINAL="$base_dir"/phpunit-example.xml
+TMP_XML=$(mktemp "$0-XXXXXX.xml")
+trap 'rm $TMP_XML' EXIT
+
+cp --verbose "$ORIGINAL" "$TMP_XML"
+printf "Running %s\n" "$PHPUNIT_SUITE_EDIT"
+$PHPUNIT_SUITE_EDIT --cover-extension=extensions/Foobar "$TMP_XML"
+printf "Diffing"
+set +e
+diff --color -u "$ORIGINAL" "$TMP_XML" || :
+set -e
+
+printf "Successfully completed\n"

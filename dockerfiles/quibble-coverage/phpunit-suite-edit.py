@@ -20,7 +20,17 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 import argparse
 import os
-import xml.etree.cElementTree as etree
+from xml.dom import minidom
+
+
+def add_php_directory(dom, include_element, path):
+    directory = dom.createElement('directory')
+    directory.setAttribute('suffix', '.php')
+    directory.appendChild(dom.createTextNode(path))
+
+    include_element.appendChild(dom.createTextNode('\n\t\t\t'))
+    include_element.appendChild(directory)
+    include_element.appendChild(dom.createTextNode('\n\t\t'))
 
 
 def main():
@@ -38,51 +48,53 @@ def main():
         'services/parsoid',
     ))
 
-    tree = etree.parse(args.suite)
-    root = tree.getroot()
-    for child in list(root):
-        # Switched to <coverage> in PHPUnit 9
-        if child.tag in ['filter', 'coverage']:
-            include = list(child)[0]
-            if include.tag == "include":
-                # Ensure that this property is true for CI.
-                child.set("includeUncoveredFiles", "true")
-            elif include.tag == "whitelist":
-                # Pre-PHPUnit 9
-                include.set('addUncoveredFilesFromWhitelist', 'true')
-            else:
-                raise ValueError(
-                    "Unexpected tag, looking for include, found {}".format(
-                        include.tag
-                    )
-                )
+    dom = minidom.parse(args.suite)
+    phpunit = dom.documentElement
 
-            if args.cover_extension:
-                # Remove the current directories that are there,
-                # we don't want to include any of them
-                for ichild in list(include):
-                    include.remove(ichild)
-                added_cover = False
-                # Add the three directories we care about
-                for folder in ['src', 'includes', 'maintenance']:
-                    path = os.path.join(args.cover_extension, folder)
-                    if os.path.exists(os.path.join(os.path.dirname(args.suite), path)):
-                        added_cover = True
-                        sub = etree.SubElement(include, 'directory')
-                        sub.text = path
-                        sub.set('suffix', '.php')
+    # The coverage filters used to be in a <filter> element, PHPUnit 9 switched
+    # to <coverage>.
+    coverage_element = (
+        phpunit.getElementsByTagName('filter')
+        or phpunit.getElementsByTagName('coverage')
+    )[0]
 
-                # If the none of the covers we added correspond to a folder,
-                # no coverage report is generated. Add the extension base path
-                # here instead. (T288396)
-                if not added_cover:
-                    sub = etree.SubElement(include, 'directory')
-                    sub.text = args.cover_extension
-                    sub.set('suffix', '.php')
+    include = coverage_element.getElementsByTagName('include')
+    if include:
+        include = include[0]
+        # Ensure that this property is true for CI.
+        coverage_element.setAttribute("includeUncoveredFiles", "true")
 
-    # This produces a dirty diff, strips comments, ignores newlines,
-    # and so on, but no human should ever read it, hopefully.
-    tree.write(args.suite)
+    whitelist = coverage_element.getElementsByTagName('whitelist')
+    if whitelist:
+        # Pre-PHPUnit 9
+        whitelist[0].setAttribute('addUncoveredFilesFromWhitelist', 'true')
+
+    if args.cover_extension:
+        # Remove the current directories that are inside <include>,
+        # we don't want to include any of them
+        while child := include.lastChild:
+            include.removeChild(child)
+
+        added_cover = False
+        # Add the three directories we care about
+        for folder in ['src', 'includes', 'maintenance']:
+            path = os.path.join(args.cover_extension, folder)
+            if os.path.exists(os.path.join(os.path.dirname(args.suite), path)):
+                added_cover = True
+                add_php_directory(dom, include, path)
+
+        # If the none of the covers we added correspond to a folder,
+        # no coverage report is generated. Add the extension base path
+        # here instead. (T288396)
+        if not added_cover:
+            add_php_directory(dom, include, args.cover_extension)
+
+    # This produces a dirty diff:
+    # - self closing elements lack a final space,
+    # - attributes are concatenated on a single line
+    # - there is no final new line,
+    # but no human should ever read it, hopefully.
+    dom.writexml(open(args.suite, 'w'))
 
 
 if __name__ == '__main__':
