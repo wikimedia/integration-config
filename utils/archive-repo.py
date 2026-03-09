@@ -1,21 +1,7 @@
-from __future__ import print_function
-
 import argparse
 import re
 import subprocess
-import sys
 import tempfile
-
-
-# From https://pypi.org/project/Levenshtein/
-try:
-    import Levenshtein
-except ModuleNotFoundError as e:  # noqa:F821
-    print(e, file=sys.stderr)
-    print("Install python Levenshtein module or alternatively try:",
-          file=sys.stderr)
-    print("./utils/archive-repo --help", file=sys.stderr)
-    sys.exit(1)
 
 
 def search_for(search, f, out, Print=True):
@@ -105,23 +91,10 @@ def grok_archive_section(f):
 
 
 def select_archive_section_insert_point(archives, repo_name):
-    """
-    The list of archived repos is semi-sorted, so use a heuristic to find
-    a similar entry to the to-be-archived repo.
-    """
-    best_index = None
-    best_distance = float("inf")
 
     for idx, r in enumerate(archives):
-        distance = Levenshtein.distance(r.name, repo_name)
-        if distance < best_distance:
-            best_index = idx
-            best_distance = distance
-
-    if repo_name > archives[best_index].name:
-        best_index += 1
-
-    return best_index
+        if r.name > repo_name:
+            return idx
 
 
 def process_archive_section(repo_name, f, out, comment):
