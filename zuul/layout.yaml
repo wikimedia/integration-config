@@ -9873,9 +9873,9 @@ projects:
     template:
       - name: archived
 
-  - name: eventlogging
+  - name: cergen
     template:
-      - name: archived # Infrastructure has been replaced
+      - name: archived # T357750
 
   - name: cloud/toolforge/buildpacks
     template:
@@ -9921,9 +9921,9 @@ projects:
     template:
       - name: archived # Moved to GitLab at https://gitlab.wikimedia.org/repos/data-engineering/eventgate-wikimedia
 
-  - name: IPSet
+  - name: eventlogging
     template:
-      - name: archived # T401155
+      - name: archived # Infrastructure has been replaced
 
   - name: integration/audit-resources
     template:
@@ -9960,6 +9960,10 @@ projects:
   - name: integration/utils-rs
     template:
       - name: archived
+
+  - name: IPSet
+    template:
+      - name: archived # T401155
 
   - name: labs/libraryupgrader
     template:
@@ -10104,10 +10108,6 @@ projects:
   - name: maps/tilerator/deploy
     template:
       - name: archived
-
-  - name: cergen
-    template:
-      - name: archived # T357750
 
   - name: marvin
     template:
@@ -10961,11 +10961,11 @@ projects:
     template:
       - name: archived # T389454
 
-  - name: mediawiki/extensions/PhpTagsWiki
+  - name: mediawiki/extensions/PhpTagsWidgets
     template:
       - name: archived # T389454
 
-  - name: mediawiki/extensions/PhpTagsWidgets
+  - name: mediawiki/extensions/PhpTagsWiki
     template:
       - name: archived # T389454
 
@@ -11325,11 +11325,11 @@ projects:
     template:
       - name: archived
 
-  - name: mediawiki/extensions/TwitterTag
+  - name: mediawiki/extensions/TwitterLogin
     template:
       - name: archived
 
-  - name: mediawiki/extensions/TwitterLogin
+  - name: mediawiki/extensions/TwitterTag
     template:
       - name: archived
 
@@ -11893,6 +11893,10 @@ projects:
     template:
       - name: archived
 
+  - name: operations/software/opensearch/plugins
+    template:
+      - name: archived # T399617
+
   - name: operations/software/prometheus-rdkafka-exporter
     template:
       - name: archived
@@ -11900,10 +11904,6 @@ projects:
   - name: operations/software/purged
     template:
       - name: archived
-
-  - name: operations/software/opensearch/plugins
-    template:
-      - name: archived # T399617
 
   - name: operations/software/schema-changes
     template:
@@ -12061,6 +12061,10 @@ projects:
     template:
       - name: archived
 
+  - name: wikimedia-ui-base
+    template:
+      - name: archived
+
   - name: wikimedia/bots/jouncebot
     template:
       - name: archived
@@ -12094,10 +12098,6 @@ projects:
       - name: archived
 
   - name: wikimedia/wikimania-scholarships
-    template:
-      - name: archived
-
-  - name: wikimedia-ui-base
     template:
       - name: archived
 
