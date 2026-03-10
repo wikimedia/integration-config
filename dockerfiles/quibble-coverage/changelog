@@ -1,6 +1,7 @@
 quibble-coverage (1.16.0-s1) wikimedia; urgency=medium
 
   * Keep comments when processing PHPUnit suite.xml - T419073
+  * Drop support for PHPUnit < 9
 
  -- Antoine Musso <hashar@free.fr>  Mon, 09 Mar 2026 19:19:30 +0100
 

@@ -51,23 +51,13 @@ def main():
     dom = minidom.parse(args.suite)
     phpunit = dom.documentElement
 
-    # The coverage filters used to be in a <filter> element, PHPUnit 9 switched
-    # to <coverage>.
-    coverage_element = (
-        phpunit.getElementsByTagName('filter')
-        or phpunit.getElementsByTagName('coverage')
-    )[0]
+    coverage_element = phpunit.getElementsByTagName('coverage')[0]
 
     include = coverage_element.getElementsByTagName('include')
     if include:
         include = include[0]
         # Ensure that this property is true for CI.
         coverage_element.setAttribute("includeUncoveredFiles", "true")
-
-    whitelist = coverage_element.getElementsByTagName('whitelist')
-    if whitelist:
-        # Pre-PHPUnit 9
-        whitelist[0].setAttribute('addUncoveredFilesFromWhitelist', 'true')
 
     if args.cover_extension:
         # Remove the current directories that are inside <include>,
