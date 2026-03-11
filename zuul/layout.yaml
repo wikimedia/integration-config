@@ -1202,11 +1202,17 @@ jobs:
         - 'src/models/embeddings/.*'
         - 'python/.*\.py$'
 
-  - name: ^trigger-inference-services-pipeline-policy-violation
+  - name: ^trigger-inference-services-pipeline-policy-violation-gpt-oss-safeguard
     files:
-        - '.pipeline/policy_violation/blubber.yaml'
+        - '.pipeline/policy_violation/blubber_gpt_oss_safeguard_20b.yaml'
         - '.pipeline/config.yaml'
-        - 'src/models/policy_violation/.*'
+        - 'src/models/policy_violation/gpt_oss_safeguard_20b/.*'
+
+  - name: ^trigger-inference-services-pipeline-policy-violation-cope-a-9b
+    files:
+        - '.pipeline/policy_violation/blubber_cope_a_9b.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/policy_violation/cope_a_9b/.*'
 
   # End of meta jobs (the ones starting with ^)
 
@@ -2300,7 +2306,8 @@ projects:
       - trigger-inference-services-pipeline-edit-check-publish
       - trigger-inference-services-pipeline-revise-tone-task-generator-publish
       - trigger-inference-services-pipeline-embeddings-publish
-      - trigger-inference-services-pipeline-policy-violation-publish
+      - trigger-inference-services-pipeline-policy-violation-gpt-oss-safeguard-publish
+      - trigger-inference-services-pipeline-policy-violation-cope-a-9b-publish
       - trigger-inference-services-pipeline-outlink-cache-adapter-publish
 
   - name: integration/config

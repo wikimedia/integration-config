@@ -456,7 +456,8 @@
         - revise-tone-task-generator
         - revise-tone-task-generator-publish
         - embeddings-publish
-        - policy-violation-publish
+        - policy-violation-gpt-oss-safeguard-publish
+        - policy-violation-cope-a-9b-publish
         - outlink-cache-adapter-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
@@ -482,7 +483,8 @@
         # trigger-inference-services-pipeline-revise-tone-task-generator
         # trigger-inference-services-pipeline-revise-tone-task-generator-publish
         # trigger-inference-services-pipeline-embeddings-publish
-        # trigger-inference-services-pipeline-policy-violation-publish
+        # trigger-inference-services-pipeline-policy-violation-gpt-oss-safeguard-publish
+        # trigger-inference-services-pipeline-policy-violation-cope-a-9b-publish
         # trigger-inference-services-pipeline-outlink-cache-adapter-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
@@ -508,7 +510,8 @@
         # inference-services-pipeline-revise-tone-task-generator
         # inference-services-pipeline-revise-tone-task-generator-publish
         # inference-services-pipeline-embeddings-publish
-        # inference-services-pipeline-policy-violation-publish
+        # inference-services-pipeline-policy-violation-gpt-oss-safeguard-publish
+        # inference-services-pipeline-policy-violation-cope-a-9b-publish
         # inference-services-pipeline-outlink-cache-adapter-publish
         - '{name}-pipeline-{pipeline}'
 
