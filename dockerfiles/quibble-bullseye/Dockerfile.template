@@ -129,9 +129,9 @@ COPY ./apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY ./apache/apache2.conf /etc/apache2/apache2.conf
 COPY ./apache/envvars /etc/apache2/envvars
 
-RUN install --directory -o nobody -g nogroup /tmp/php \
-    && touch /tmp/fpm-php.www.log /tmp/php/php-fpm.pid \
-    && chown nobody:nogroup /tmp/fpm-php.www.log /tmp/php/php-fpm.pid
+# Directory for php-fpm pid file and log file
+RUN install --directory --mode=777 /tmp/php
+
 COPY ./quibble-with-supervisord.sh /usr/local/bin/quibble-with-supervisord
 COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY ./php-fpm /php-fpm
