@@ -37,6 +37,10 @@ MEDIAWIKI_VERSIONS = {
         'branch': 'wmf/branch_cut_pretest',
         'pipeline-suffix': 'wmf',
     },
+    'WMF_next': {
+        'branch': 'wmf/next',
+        'pipeline-suffix': 'wmf',
+    },
     'Fundraising 1.43': {
         'branch': 'fundraising/REL1_43',
         'pipeline-suffix': 'fundraising',
