@@ -118,6 +118,12 @@ supervisor
 
 RUN {{ apache_deps | apt_install }}
 
+# supervisorctl ignores [include], the socket must thus be set in the global
+# configuration
+RUN sed -i -e \
+    's%/var/run/supervisor.sock%/tmp/supervisor.sock%' \
+    /etc/supervisor/supervisord.conf
+
 # Tell Apache how to process PHP files.
 RUN a2enmod proxy_fcgi \
     && a2enmod mpm_event \
@@ -133,7 +139,7 @@ COPY ./apache/envvars /etc/apache2/envvars
 RUN install --directory --mode=777 /tmp/php
 
 COPY ./quibble-with-supervisord.sh /usr/local/bin/quibble-with-supervisord
-COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY ./supervisord-quibble-services.conf /etc/supervisor/conf.d/quibble-services.conf
 COPY ./php-fpm /php-fpm
 COPY ./install-php-fpm-conf.sh /install-php-fpm-conf.sh
 
