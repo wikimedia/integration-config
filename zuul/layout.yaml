@@ -6487,6 +6487,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/HoneyPot
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/HostStats
     template:
       - name: extension-quibble
