@@ -11,15 +11,26 @@ DEP_FILE = os.path.relpath(os.path.join(
     os.path.dirname(__file__), '../zuul/dependencies.yaml'))
 
 
-def format_deps(deps):
-    return ', '.join(sorted(deps, key=str.casefold))
+def format_deps(deps, sep=', '):
+    return sep.join(sorted(deps, key=str.casefold))
 
 
 # Argument parsing
 parser = argparse.ArgumentParser()
-parser.add_argument('project', nargs='?')
-parser.add_argument('--reverse', action='store_true')
+parser.add_argument(
+    'project', nargs='?',
+    help='A project name from zuul/dependencies.yaml',
+)
+group = parser.add_mutually_exclusive_group()
+group.add_argument(
+    '--list', action='store_true',
+    help='Output dependency list as Gerrit project names',
+)
+group.add_argument('--reverse', action='store_true')
 args = parser.parse_args(sys.argv[1:])
+
+if args.list and args.project is None:
+    parser.error('--list option requires a project')
 
 # Load data
 deps = yaml.safe_load(open(DEP_FILE))
@@ -38,6 +49,16 @@ if args.project is not None:
         else:
             print("%s is not in %s" % (args.project, DEP_FILE))
         sys.exit()
+
+    if args.list:
+        repos = []
+        for dep in deps[args.project]['dependencies']:
+            if dep.startswith('skins'):
+                repos.append('mediawiki/%s' % dep)
+            else:
+                repos.append('mediawiki/extensions/%s' % dep)
+        print(format_deps(repos, sep='\n'))
+        sys.exit(0)
 
     print("Dependencies:\n", format_deps(deps[args.project]['dependencies']))
     rev_deps = reverse_deps.get(args.project, [])
