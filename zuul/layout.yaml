@@ -6609,6 +6609,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/JsonForms
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/JWTAuth
     # Auth-related project breaks core selenium tests
     template:
