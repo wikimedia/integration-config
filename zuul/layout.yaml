@@ -9366,6 +9366,8 @@ projects:
       - search-extra-maven-java17
     postmerge:
       - search-extra-maven-java17-site-publish
+    experimental:
+      - search-extra-maven-java25
 
   - name: search/extra-analysis
     test:
@@ -9376,6 +9378,8 @@ projects:
       - search-extra-analysis-maven-java17
     postmerge:
       - search-extra-analysis-maven-java17-site-publish
+    experimental:
+      - search-extra-analysis-maven-java25
 
   - name: search/glent
     test:
@@ -9396,6 +9400,8 @@ projects:
       - search-highlighter-maven-java17
     postmerge:
       - search-highlighter-maven-java17-site-publish
+    experimental:
+      - search-highlighter-maven-java25
 
   - name: wmf-jvm-utils
     test:
