@@ -76,6 +76,9 @@ ArticleFeedbackv5:
   - SpamBlacklist
   - SpamRegex
 
+ArticleGuidance:
+  - SpamBlacklist
+
 ArticlePlaceholder:
   - Scribunto
   - Wikibase
