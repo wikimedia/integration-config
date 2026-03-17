@@ -12,7 +12,9 @@
     jobs:
         - '{name}-{project}-maven-java8'
         - '{name}-{project}-maven-java11'
+        - '{name}-{project}-maven-java17'
         - '{name}-{project}-maven-java8-site-publish'
+        - '{name}-{project}-maven-java17-site-publish'
 
 - project:
     name: wmf-jvm-utils
