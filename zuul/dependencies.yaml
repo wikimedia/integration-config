@@ -621,7 +621,9 @@ BlueSpicePermissionManager:
   recurse: false
   dependencies:
     # From extension.json:
+    - BlueSpiceConfigManager
     - BlueSpiceFoundation
+    - BlueSpiceUserManager
     - OOJSPlus
 
 BlueSpicePlayer:
