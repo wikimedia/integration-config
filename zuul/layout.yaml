@@ -9355,23 +9355,23 @@ projects:
 
   - name: search/extra
     test:
-      - search-extra-maven-java8
       - search-extra-maven-java11
+      - search-extra-maven-java17
     gate-and-submit:
-      - search-extra-maven-java8
       - search-extra-maven-java11
+      - search-extra-maven-java17
     postmerge:
-      - search-extra-maven-java8-site-publish
+      - search-extra-maven-java17-site-publish
 
   - name: search/extra-analysis
     test:
-      - search-extra-analysis-maven-java8
       - search-extra-analysis-maven-java11
+      - search-extra-analysis-maven-java17
     gate-and-submit:
-      - search-extra-analysis-maven-java8
       - search-extra-analysis-maven-java11
+      - search-extra-analysis-maven-java17
     postmerge:
-      - search-extra-analysis-maven-java8-site-publish
+      - search-extra-analysis-maven-java17-site-publish
 
   - name: search/glent
     test:
@@ -9385,13 +9385,13 @@ projects:
 
   - name: search/highlighter
     test:
-      - search-highlighter-maven-java8
       - search-highlighter-maven-java11
+      - search-highlighter-maven-java17
     gate-and-submit:
-      - search-highlighter-maven-java8
       - search-highlighter-maven-java11
+      - search-highlighter-maven-java17
     postmerge:
-      - search-highlighter-maven-java8-site-publish
+      - search-highlighter-maven-java17-site-publish
 
   - name: wmf-jvm-utils
     test:
