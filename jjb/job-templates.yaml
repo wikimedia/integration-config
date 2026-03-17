@@ -178,6 +178,21 @@
     triggers:
      - zuul
 
+- job-template: &job_template_maven-java25
+    !!merge : *job_template_maven-java8
+    name: '{name}-maven-java25'
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java25:0.1
+    # Reinject Zuul parameters since JJB strip for some reason
+    triggers:
+     - zuul
+
+- job-template:
+    !!merge : *job_template_maven-java25
+    name: '{name}-{project}-maven-java25'
+    # Reinject Zuul parameters since JJB strip for some reason
+    triggers:
+     - zuul
+
 # Generate project documentation using docker and publish it
 - job-template: &job_template_docker-doc-publish
     name: '{name}-doc-publish'
@@ -342,6 +357,21 @@
 - job-template:
     !!merge : *job_template_maven-java11-site-publish
     name: '{name}-{project}-maven-java17-site-publish'
+    # Reinject Zuul parameters since JJB strip for some reason
+    triggers:
+     - zuul
+
+- job-template: &job_template_maven-java25-site-publish
+    !!merge : *job_template_maven-java8-site-publish
+    name: '{name}-maven-java25-site-publish'
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java25:0.1
+    # Reinject Zuul parameters since JJB strip for some reason
+    triggers:
+     - zuul
+
+- job-template:
+    !!merge : *job_template_maven-java25-site-publish
+    name: '{name}-{project}-maven-java25-site-publish'
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul

@@ -12,6 +12,8 @@
         - '{name}-{project}-maven-java11'
         - '{name}-{project}-maven-java17'
         - '{name}-{project}-maven-java17-site-publish'
+        - '{name}-{project}-maven-java25'
+        - '{name}-{project}-maven-java25-site-publish'
 
 # Note: As Glent runs differently from the above, we've split the builds
 - project:
