@@ -2,7 +2,6 @@
     name: search
     project:
         - extra
-        - glent
         - highlighter
         - extra-analysis
     release-branch: master
@@ -10,11 +9,21 @@
         - email-wikimedia-discovery
         - docker-cleanup
     jobs:
-        - '{name}-{project}-maven-java8'
         - '{name}-{project}-maven-java11'
         - '{name}-{project}-maven-java17'
-        - '{name}-{project}-maven-java8-site-publish'
         - '{name}-{project}-maven-java17-site-publish'
+
+# Note: As Glent runs differently from the above, we've split the builds
+- project:
+    name: search-glent
+    release-branch: master
+    publishers:
+        - email-wikimedia-discovery
+        - docker-cleanup
+    jobs:
+        - '{name}-maven-java8'
+        - '{name}-maven-java11'
+        - '{name}-maven-java8-site-publish'
 
 - project:
     name: wmf-jvm-utils
