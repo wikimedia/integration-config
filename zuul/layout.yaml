@@ -8841,6 +8841,11 @@ projects:
     publish:
       - trigger-striker-pipeline-publish
 
+  - name: labs/xtools
+    template:
+      - name: composer-test-php82-to-php84
+      - name: node20-browser
+
   - name: labs/tools/apt-browser
     template:
       - name: tox
