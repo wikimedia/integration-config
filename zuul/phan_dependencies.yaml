@@ -78,6 +78,7 @@ ArticleFeedbackv5:
 
 ArticleGuidance:
   - SpamBlacklist
+  - TestKitchen
 
 ArticlePlaceholder:
   - Scribunto
