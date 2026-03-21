@@ -8843,8 +8843,10 @@ projects:
 
   - name: labs/xtools
     template:
-      - name: composer-test-php82-to-php84
+      - name: composer-test-php82-to-php85
       - name: node20-browser
+    postmerge:
+      - phpunit-coverage-php85-publish
 
   - name: labs/tools/apt-browser
     template:
