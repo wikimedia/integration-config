@@ -8845,6 +8845,7 @@ projects:
     template:
       - name: composer-test-php82-to-php85
       - name: node20-browser
+      - name: mediawiki-i18n-check
     postmerge:
       - phpunit-coverage-php85-publish
 
