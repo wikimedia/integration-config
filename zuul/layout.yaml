@@ -83,7 +83,7 @@ pipelines:
            - ^andrew\.green\.df@gmail\.com$ # Andrew Green; Fundraising Technology Team
            - ^ayg@aryeh\.name$ # Aryeh Gregor (simetrical); Core Platform Team
            - ^chad@horohoe\.email$ # Chad Horohoe; Release Engineering Team
-           - ^corvus@inaugust\.com # James E. Blair; contractor, Zuul author
+           - ^corvus@inaugust\.com$ # James E. Blair; contractor, Zuul author
            - ^david@troi\.org$ # David Chan; Editing Team
            - ^ejegg@ejegg\.com$ # Elliott Eggleston; Fundraising Tech Team
            - ^git@samsmith\.io$ # Sam Smith; Reading Web Team
@@ -204,7 +204,7 @@ pipelines:
            - ^dereckson@espace-win\.org$
            - ^devunt@gmail\.com$
            - ^divad\.nnamtdeis@gmail\.com$ # Divadsn, former GCI student
-           - ^dragoniez\.jawp@gmail\.com
+           - ^dragoniez\.jawp@gmail\.com$
            - ^dreamrimmer\.wikimedian@gmail\.com$ # DreamRimmer
            - ^dreamyjazzwikipedia@gmail\.com$ # Dreamy_Jazz
            - ^drenfro@vistaprint\.com$ # AlephNull
@@ -364,7 +364,7 @@ pipelines:
            - ^nemoralis@duck\.com$ # Nemoralis
            - ^nguyen\.jeremyt@gmail\.com$ # JeremyNguyen, former GCI student
            - ^nicholasgregory@live\.co\.uk$ # NicholasG04, former GCI student
-           - ^nicolas\.d\.michel@icloud\.com # Nicolasmichel
+           - ^nicolas\.d\.michel@icloud\.com$ # Nicolasmichel
            - ^nikitarana360@gmail\.com$ # Nikitrain
            - ^nikitav30@gmail\.com$ # Phantom42, former GCI student
            - ^nic@nicj\.net$
@@ -389,7 +389,7 @@ pipelines:
            - ^perry@frasers\.org$ # Perryprog
            - ^philip-wm@shutdown\.network$ # Philipnelson99
            - ^pikne@online\.ee$ # Pikne
-           - ^piusosuji9@gmail\.com # Osuji Pius Nakachi - Outreachy
+           - ^piusosuji9@gmail\.com$ # Osuji Pius Nakachi - Outreachy
            - ^pixldevxp@gmail\.com$ # PixDeVl - Miraheze Tech Contributor
            - ^platonides@gmail\.com$
            - ^pleasestand@live\.com$
@@ -415,7 +415,7 @@ pipelines:
            - ^rj23@protonmail\.com$ # Filip / rlot, former GCI student
            - ^robinp\.1273@gmail\.com$
            - ^rubin\.happy@gmail\.com$ # Rubin
-           - ^rv1971@web\.de
+           - ^rv1971@web\.de$
            - ^rylatgl@gmail\.com$
            - ^s7eph4n@protonmail\.com$ # Foxtrott
            - ^safan25641@gmail\.com$ # Safan41, former GCI student
@@ -431,7 +431,7 @@ pipelines:
            - ^sanjaisiddharth2002@gmail\.com$
            - ^saper@saper\.info$
            - ^sarhan\.alaa@protonmail\.com$ # Alaa Sarhan
-           - ^sarthakunited2022@gmail.com$ # SARTHAK SINGH
+           - ^sarthakunited2022@gmail\.com$ # SARTHAK SINGH
            - ^schenonef@gmail\.com$  # Sophivorus
            - ^se4598@gmx\.de$
            - ^seb35@seb35\.fr$
