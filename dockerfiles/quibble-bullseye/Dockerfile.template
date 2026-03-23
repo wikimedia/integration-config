@@ -33,10 +33,10 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 USER root
 
 #########################################
-# node-gyp requires python2.7 / gcc ... #
+# not sure if we still need gcc / ...   #
 # composer expects unzip                #
 #########################################
-RUN {{ "build-essential unzip python" | apt_install }}
+RUN {{ "build-essential unzip" | apt_install }}
 
 ##########################
 # JSDuck is still needed #
