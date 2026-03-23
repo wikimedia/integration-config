@@ -628,6 +628,7 @@ Scribunto:
 
 SecurePoll:
   - CentralAuth
+  - CodeMirror
   - Flow
 
 SocialProfile:
