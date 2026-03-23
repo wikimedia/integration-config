@@ -1,3 +1,10 @@
+operations-puppet (0.9.10) wikimedia; urgency=medium
+
+  * Add libffi-dev dependency to allow building locale 2.1.5 which depends
+    on fiddle.
+
+ -- Jesse Hathaway <jhathaway@wikimedia.org>  Mon, 23 Mar 2026 11:43:51 -0500
+
 operations-puppet (0.9.9) wikimedia; urgency=medium
 
   * local-ci: mount local repo ontop of PUPPET_DIR rather than using tar to
