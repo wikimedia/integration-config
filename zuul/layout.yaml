@@ -8815,8 +8815,7 @@ projects:
 
   - name: labs/countervandalism/cvn-api
     template:
-      # TODO (T419075): Fix this test failure and enable on PHP 8.4 and 8.5
-      - name: composer-test-php82-to-php83
+      - name: composer-test-php82-to-php85
 
   - name: labs/countervandalism/cvn-clerkbot
     template:
