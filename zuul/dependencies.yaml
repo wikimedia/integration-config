@@ -85,7 +85,6 @@ AbuseFilter:
     - CentralAuth
     - CheckUser
     - CodeEditor
-    - CodeMirror
     - ConfirmEdit
     - Echo
     - EventLogging
