@@ -19,10 +19,11 @@
              - fasttest-py311
              - fasttest-py312
              - fasttest-py313
+             - fasttest-py314
              - fasttest-pypy
              - deeptest-py39:
                  build_timeout: 30 # minutes
-             - deeptest-py313:
+             - deeptest-py314:
                  build_timeout: 30 # minutes
              - typing
 
