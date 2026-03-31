@@ -625,6 +625,7 @@ Scribunto:
   - SyntaxHighlight_GeSHi
   - CodeEditor
   - CodeMirror
+  - Produnto
 
 SecurePoll:
   - CentralAuth
