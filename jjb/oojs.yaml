@@ -63,7 +63,6 @@
 - project:
     name: ooui
     jobs:
-        - '{name}-ruby2.7-rake'
         - '{name}-{node-plus-php}-runjenkins':
            node-plus-php:
                - node20-plus-php83:
