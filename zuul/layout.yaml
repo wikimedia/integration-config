@@ -9018,8 +9018,7 @@ projects:
 
   - name: labs/tools/fileprotectionsync
     template:
-      # TODO (T419081): Fix this test failure and enable on PHP 8.5
-      - name: composer-test-php82-to-php84
+      - name: composer-test-php82-to-php85
 
   - name: labs/tools/nagf
     # template:
