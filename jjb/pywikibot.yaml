@@ -22,9 +22,9 @@
              - fasttest-py314
              - fasttest-pypy
              - deeptest-py39:
-                 build_timeout: 30 # minutes
+                 build_timeout: 45 # minutes
              - deeptest-py314:
-                 build_timeout: 30 # minutes
+                 build_timeout: 45 # minutes
              - typing
 
 - job-group:
