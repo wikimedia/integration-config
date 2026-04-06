@@ -91,8 +91,8 @@ def stream_creation_logs(env):
             event_str = log_event.decode('utf-8')
             if event_str.startswith('data:'):
                 event_json = json.loads(event_str.removeprefix('data:'))
-                log = event_json['logs'][0]
-                logger.info("{}: {}".format(log['timestamp'], log['log']))
+                for log in event_json['logs']:
+                    logger.info("{}: {}".format(log['timestamp'], log['log']))
         return
     except Exception as e:
         if not isinstance(e, requests.HTTPError):
