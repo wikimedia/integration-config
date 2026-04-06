@@ -6,6 +6,25 @@ set -eu -o pipefail
 # - contint.wikimedia.org (service alias to the actual server)
 # - integration-cumin.integration.eqiad.wmflabs
 
+_SSH_CONTROL_PATH="$HOME/.ssh/fab-control-%C"
+
+_ssh() {
+    local host="$1"
+    shift
+
+    ssh \
+        -o ControlMaster=auto \
+        -o ControlPersist=10m \
+        -o ControlPath="$_SSH_CONTROL_PATH" \
+        "$host" "$@"
+}
+
+_ssh_close() {
+    local host="$1"
+
+    ssh -O exit -o ControlPath="$_SSH_CONTROL_PATH" "$host" >/dev/null 2>&1 || true
+}
+
 _ssh_command_sudo() {
     local host="$1"
     local sudoer="$2"
@@ -18,7 +37,7 @@ _ssh_command_sudo() {
         # shellcheck disable=SC2001
         echo "$cmds" | sed "s/^/\\[$host\\] /"
     fi
-    ssh "$host" sudo -H -u "$sudoer" "$cmds"
+    _ssh "$host" sudo -H -u "$sudoer" "$cmds"
 }
 
 _ssh_command_self() {
@@ -32,7 +51,7 @@ _ssh_command_self() {
 
     # shellcheck disable=SC2001
     echo "$cmds" | sed "s/^/\\[$host\\] /"
-    ssh "$host" sh -c "$esc_cmds"
+    _ssh "$host" sh -c "$esc_cmds"
 }
 
 _confirm() {
@@ -65,6 +84,7 @@ deploy_zuul() {
 
     _update_integration_config "$host" "$git_dir" "$diff_dir" "$log_msg"
     _ssh_command_sudo "$host" root "/usr/sbin/service zuul reload"
+    _ssh_close "$host"
 }
 
 # Update docker-pkg built images.
@@ -88,6 +108,7 @@ deploy_docker() {
     local docker_pkg_config='/etc/docker-pkg/integration.yaml'
     local dockerfiles='/etc/zuul/wikimedia/dockerfiles'
     _ssh_command_self "$host" "$docker_pkg -c $docker_pkg_config --info build $dockerfiles"
+    _ssh_close "$host"
 }
 
 # Pull a docker image onto the WMCS-hosted CI agents.
@@ -95,6 +116,7 @@ docker_pull_image() {
     local image_name="$1"
     local host='integration-cumin.integration.eqiad.wmflabs'
     _ssh_command_sudo "$host" root "cumin --force 'name:agent-docker' 'docker pull $image_name'"
+    _ssh_close "$host"
 }
 
 case "${1:-}" in
