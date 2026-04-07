@@ -6063,6 +6063,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/DataMaps
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/DataTable2
     template:
       - name: extension-quibble
