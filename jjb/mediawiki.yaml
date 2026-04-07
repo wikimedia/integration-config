@@ -246,7 +246,7 @@
                 --db "{database}"
                 --db-dir /workspace/db
                 --git-parallel=8
-                --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
+                --memcached-server="$CASTOR_HOST":11211
                 --success-cache-key-data="$JOB_NAME"
                 --success-cache-key-data="{docker_image}"
                 {quibble_args}

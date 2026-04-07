@@ -170,7 +170,7 @@
                         && /src/utils/ci-fullrun.sh
                         --color
                         --db-dir /workspace/db
-                        --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
+                        --memcached-server="$CASTOR_HOST":11211
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
                 - sqlite:
@@ -181,7 +181,7 @@
                         --db-dir /workspace/db
                         --db sqlite
                         --skip api-testing
-                        --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
+                        --memcached-server="$CASTOR_HOST":11211
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
                 - opensearch:
@@ -201,7 +201,7 @@
                         --color
                         --db-dir /workspace/db
                         --skip phpunit,selenium,npm-test,qunit,api-testing
-                        --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
+                        --memcached-server="$CASTOR_HOST":11211
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
                 - extensions-phpunit:
@@ -212,7 +212,7 @@
                         --db-dir /workspace/db
                         --run phpunit
                         --skip selenium,npm-test,qunit,api-testing
-                        --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
+                        --memcached-server="$CASTOR_HOST":11211
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
 
