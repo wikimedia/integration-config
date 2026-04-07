@@ -1927,6 +1927,13 @@ project-templates:
     gate-and-submit-wmf:
       - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
 
+  - name: growth-experiments-selenium-gate
+    test: &growth-experiments-selenium-gate_jobs
+      - quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-php83
+    gate-and-submit: *growth-experiments-selenium-gate_jobs
+    test-wmf: *growth-experiments-selenium-gate_jobs
+    gate-and-submit-wmf: *growth-experiments-selenium-gate_jobs
+
   - name: extension-coverage
     postmerge:
       - mwext-phpunit-coverage-publish
@@ -2579,6 +2586,7 @@ projects:
     template:
       - name: extension-gate
       - name: wikibase-selenium-gate
+      - name: growth-experiments-selenium-gate
     test:
       - quibble-for-mediawiki-core-vendor-mysql-php83
       - quibble-for-mediawiki-core-composertest-only-php83
@@ -2711,6 +2719,7 @@ projects:
       - name: extension-gate
       - name: extension-apitests
       - name: wikibase-selenium-gate
+      - name: growth-experiments-selenium-gate
     test:
       - mediawiki-composer-php83
       - quibble-for-mediawiki-core-vendor-mysql-php83
@@ -2762,6 +2771,7 @@ projects:
       - name: extension-quibble
       - name: extension-gate
       - name: wikibase-selenium-gate
+      - name: growth-experiments-selenium-gate
       - name: extension-javascript-documentation
       - name: extension-coverage
       - name: extension-codehealth
@@ -2808,6 +2818,7 @@ projects:
       - name: extension-quibble
       - name: extension-gate
       - name: wikibase-selenium-gate
+      - name: growth-experiments-selenium-gate
       - name: extension-coverage
       - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
@@ -3825,6 +3836,7 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-coverage
+      - name: growth-experiments-selenium-gate
     postmerge:
       - mwext-doxygen-publish
 
@@ -3916,6 +3928,7 @@ projects:
       - name: extension-codehealth
       - name: extension-quibble
       - name: extension-gate
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/CommunityRequests
     template:
@@ -4031,6 +4044,7 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-coverage
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/Elastica
     template:
@@ -4038,6 +4052,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/ElectronPdfService
     template:
@@ -4079,6 +4094,7 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-javascript-documentation
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/EventStreamConfig
     template:
@@ -4247,6 +4263,7 @@ projects:
       - name: extension-gate
       - name: extension-javascript-documentation
       - name: extension-apitests
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/GuidedTour
     template:
@@ -4256,6 +4273,7 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-javascript-documentation
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/ImageMap
     template:
@@ -4441,6 +4459,7 @@ projects:
       - name: extension-javascript-documentation
       - name: extension-coverage
       - name: wikibase-selenium-gate
+      - name: growth-experiments-selenium-gate
     postmerge:
       - mwext-doxygen-publish
 
@@ -4566,6 +4585,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/ParserFunctions
     template:
@@ -4874,6 +4894,7 @@ projects:
       - name: extension-coverage
       - name: extension-gate
       - name: extension-codehealth
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/TheWikipediaLibrary
     template:
@@ -4995,6 +5016,7 @@ projects:
       - name: commit-message-validator
       - name: extension-javascript-documentation
       - name: extension-apitests
+      - name: growth-experiments-selenium-gate
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
 
@@ -5221,6 +5243,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/Wikisource
     template:

@@ -1011,6 +1011,45 @@ class TestZuulScheduler(unittest.TestCase):
                 'In Zuul layout: apply the template wikibase-selenium-gate\n'
                 'In Zuul parameter function add the missing repo')
 
+    def test_gated_extensions_for_growth_experiments_selenium(self):
+        self.longMessage = True
+
+        job = FakeJob(
+            'quibble-with-GrowthExperiments-extensions-browser-tests-only-x-y')
+        params = {
+            'ZUUL_PROJECT': 'mediawiki/extensions/GrowthExperiments',
+            'ZUUL_BRANCH': 'master',
+        }
+        zuul_config.set_parameters(None, job, params)
+        injected_deps = set(params['EXT_DEPENDENCIES'].split('\\n'))
+        self.assertIn('mediawiki/extensions/CommunityConfiguration',
+                      injected_deps)
+
+        gated_in_zuul = set([
+            ext_name
+            # FIXME We could parse the Zuul layout looking up for
+            # growth-experiments-selenium-gate job template.
+            for (ext_name, pipelines) in self.getProjectsDefs().iteritems()
+            if ext_name.startswith('mediawiki/')
+            and 'quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-php83' \
+                in pipelines.get('test', {})
+        ])
+
+        # Cloned by Quibble regardless of injected dependencies
+        built_in_deps = (
+            'mediawiki/core',
+            'mediawiki/vendor',
+            'mediawiki/skins/Vector',
+        )
+
+        self.assertSetEqual(
+            gated_in_zuul, injected_deps.union(built_in_deps),
+            msg='Zuul projects triggering GrowthExperiments cypress jobs (first set) '
+                'and dependency list in zuul/parameter_functions.py (2nd set) '
+                'must be equal.\n'
+                'In Zuul layout: apply the template growth-experiments-selenium-gate\n'
+                'In Zuul parameter function add the missing repo')
+
     def test_pipelines_have_report_action_to_gerrit(self):
         not_reporting = ['post', 'publish', 'codehealth']
         required_actions = ['success', 'failure']
@@ -1176,6 +1215,7 @@ class TestZuulScheduler(unittest.TestCase):
             'quibble-apitests-only-vendor-php83': True,
             'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83': True,
             'quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83': True,
+            'quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-php83': True,
             'quibble-with-gated-extensions-vendor-mysql-php83': True,
             'quibble-with-gated-extensions-selenium-php83': True,
             'mediawiki-node20': True,
@@ -1194,6 +1234,7 @@ class TestZuulScheduler(unittest.TestCase):
             'quibble-for-mediawiki-core-vendor-postgres-php83': True,
             'mediawiki-node20': True,
             'quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83': True,
+            'quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-php83': True,
             'quibble-vendor-mysql-php83-phpunit-standalone': True,
             'quibble-with-gated-extensions-vendor-mysql-php83': True,
             'quibble-with-gated-extensions-selenium-php83': True,

@@ -85,6 +85,23 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/Wikibase',
         ])
 
+    if job.name.startswith('quibble-with-GrowthExperiments-extensions-browser-tests-only'):
+        params['EXT_DEPENDENCIES'] = '\\n'.join([
+            'mediawiki/extensions/CirrusSearch',
+            'mediawiki/extensions/CommunityConfiguration',
+            'mediawiki/extensions/Echo',
+            'mediawiki/extensions/Elastica',
+            'mediawiki/extensions/EventLogging',
+            'mediawiki/extensions/GrowthExperiments',
+            'mediawiki/extensions/GuidedTour',
+            'mediawiki/extensions/MobileFrontend',
+            'mediawiki/extensions/PageViewInfo',
+            'mediawiki/extensions/Thanks',
+            'mediawiki/extensions/VisualEditor',
+            'mediawiki/extensions/WikimediaMessages',
+            'mediawiki/skins/MinervaNeue',
+        ])
+
     # Enable parallel PHPUnit runs for MW ecosystem, except:
     if (
         # ... temporarily exclude extensions that have issues
