@@ -413,6 +413,8 @@ BlueSpiceFilterableTables:
     # From extension.json:
     - BlueSpiceFoundation
     - OOJSPlus
+    # extras
+    - Lingo
 
 BlueSpiceFlaggedRevsConnector:
   recurse: false
