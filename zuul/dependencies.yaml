@@ -2163,6 +2163,7 @@ ReaderExperiments:
     - EventStreamConfig
     - ParserMigration
     - TestKitchen
+    - WikimediaEvents
     - WikimediaMessages
 
 ReadingLists:
