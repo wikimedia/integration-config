@@ -913,6 +913,24 @@
                 'php maintenance/update.php --quick'
                 'composer run --timeout=0 phpunit:entrypoint -- --verbose --log-junit "$LOG_DIR/junit-{sub_extension}.xml" {phpunit-params}'
 
+- job-template:
+    !!merge : *job_quibble
+    name: quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-{phpflavor}
+
+- project:
+    name: growthexperiments
+    entrypoint: quibble-with-supervisord
+    phpflavor:
+        - php83:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.16.0-s1
+    jobs:
+        - quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-{phpflavor}:
+            database: mysql
+            packages-source: vendor
+            quibble_args: >
+                --command 'npm --prefix extensions/GrowthExperiments ci'
+                --command 'npm --prefix extensions/GrowthExperiments run @selenium-test'
+
 # Testing for API testing framework repo. This re-uses the quibble job setup, so can't be in mediawiki-tools.yaml
 - job-template:
     !!merge : *job_quibble
