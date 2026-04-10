@@ -844,6 +844,7 @@ WikimediaCampaignEvents:
 WikimediaCustomizations:
   - cldr
   - EmailAuth
+  - FlaggedRevs
   - IPReputation
   - LoginNotify
   - OATHAuth

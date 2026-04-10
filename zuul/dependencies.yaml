@@ -2810,6 +2810,7 @@ WikimediaCustomizations:
     - cldr
     - Echo
     - EmailAuth
+    - FlaggedRevs
     - EventBus
     - EventLogging
     - IPReputation
