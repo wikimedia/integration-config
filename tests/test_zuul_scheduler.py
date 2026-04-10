@@ -1218,7 +1218,7 @@ class TestZuulScheduler(unittest.TestCase):
             'quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-php83': True,
             'quibble-with-gated-extensions-vendor-mysql-php83': True,
             'quibble-with-gated-extensions-selenium-php83': True,
-            'mediawiki-node20': True,
+            'mediawiki-node24': True,
         }
         expected_gate = {
             'mediawiki-core-phan-only-php83': True,
@@ -1232,7 +1232,7 @@ class TestZuulScheduler(unittest.TestCase):
             'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83': True,
             'quibble-for-mediawiki-core-vendor-sqlite-php83': True,
             'quibble-for-mediawiki-core-vendor-postgres-php83': True,
-            'mediawiki-node20': True,
+            'mediawiki-node24': True,
             'quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83': True,
             'quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-php83': True,
             'quibble-vendor-mysql-php83-phpunit-standalone': True,
@@ -1301,7 +1301,7 @@ class TestZuulScheduler(unittest.TestCase):
             # A phan job (PHP static analysis)
             'mediawiki-core-phan-only-php',
             # A node job (JS linting)
-            'mediawiki-node20',
+            'mediawiki-node24',
         ]
 
         for (desc, config) in MEDIAWIKI_VERSIONS.iteritems():
