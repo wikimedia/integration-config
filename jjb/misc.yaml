@@ -69,7 +69,7 @@
         - '{name}-{node_version}':
             node_version:
                 - node24:
-                    image: docker-registry.wikimedia.org/releng/node24-test:24.7.0
+                    image: docker-registry.wikimedia.org/releng/node24-test:24.14.1
             name:
                - gerrit
 

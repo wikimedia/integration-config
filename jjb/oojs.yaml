@@ -7,7 +7,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.19.5-s3
+         image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.20.2
          # npm run-script jenkins runs 'npm test' and 'npm run doc'
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
@@ -66,11 +66,11 @@
         - '{name}-{node-plus-php}-runjenkins':
            node-plus-php:
                - node20-plus-php83:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.19.5-s3
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.20.2
                - node22-plus-php83:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.19.0-s3
+                   image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.22.2
                - node24-plus-php83:
-                   image: docker-registry.wikimedia.org/releng/node24-test-browser-php83-composer:24.7.0-s3
+                   image: docker-registry.wikimedia.org/releng/node24-test-browser-php83-composer:24.14.1
 
 - project:
     name: oojs-core
@@ -79,8 +79,8 @@
            script: 'jenkins'
            node_version:
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.19.5
+                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.20.2
                - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.19.0
+                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.22.2
                - node24:
-                   image: docker-registry.wikimedia.org/releng/node24-test-browser:24.7.0
+                   image: docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1

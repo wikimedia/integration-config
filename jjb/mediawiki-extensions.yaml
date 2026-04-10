@@ -163,25 +163,25 @@
     name: phan-jobs
     php:
         - php81:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.34
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s1
         - php82:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1-s1
         - php83:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.30
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s1
         - php84:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1-s1
         - php85:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.17.1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.17.1-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.17.1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.17.1-s1
     jobs:
         - 'mwext-phan-{php}'
 
@@ -238,7 +238,7 @@
           # The castor setup/teardown is how the Catalyst image gets a copy of the code to test
           - setup
           - docker-run-with-log-cache-src: &wikilambda-catalyst-docker-builder
-                image: docker-registry.wikimedia.org/releng/catalyst:1.3.2
+                image: docker-registry.wikimedia.org/releng/catalyst:1.3.2-s1
                 entrypoint: '/deploy_env.py'
                 environment:
                     WIKILAMBDA_REF: $BASE_LOG_PATH
