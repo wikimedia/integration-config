@@ -1394,7 +1394,7 @@ jobs:
   - name: 'integration-config-zuul-layout-validate'
     branch: (?!labs)
 
-  - name: 'mwext-node20-docs-publish'
+  - name: 'mwext-node24-docs-publish'
     branch: ^master$
 
   - name: 'mwext-doxygen-publish'
@@ -1669,10 +1669,10 @@ project-templates:
       - noop
 
     test-1_43:
-      - mwext-bluespice-node20
+      - mwext-bluespice-node24
       - quibble-composer-mysql-php81
     gate-and-submit-1_43:
-      - mwext-bluespice-node20
+      - mwext-bluespice-node24
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1966,14 +1966,11 @@ project-templates:
 
   - name: extension-javascript-documentation
     test:
-      - mwext-node20-rundoc
-    gate-and-submit:
-      - mwext-node20-rundoc
-    postmerge:
-      - mwext-node20-docs-publish
-    experimental:
-      - mwext-node22-rundoc
       - mwext-node24-rundoc
+    gate-and-submit:
+      - mwext-node24-rundoc
+    postmerge:
+      - mwext-node24-docs-publish
 
   - name: composer-test-php82-to-php85
     test:
@@ -5173,7 +5170,7 @@ projects:
       - mwext-doxygen-publish
       # NOTE: This is the 'wrong' publisher, but there's no JS extension
       # publish step yet. Let's go with this for now. 2022-02-25 JDF.
-      - generic-node20-browser-coverage-publish
+      - generic-node24-browser-coverage-publish
 
   - name: mediawiki/extensions/WikiLove
     template:
