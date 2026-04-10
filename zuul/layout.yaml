@@ -4683,6 +4683,11 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-apitests
+    postmerge:
+      # (T422976) Publish JS code coverage for ReadingLists, too
+      # NOTE: This is the 'wrong' publisher, but there's no JS extension
+      # publish step yet. Let's go with this for now. 2026-04-10 JDF.
+      - generic-node24-browser-coverage-publish
 
   - name: mediawiki/extensions/RealMe
     template:
