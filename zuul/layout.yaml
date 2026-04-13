@@ -3811,8 +3811,6 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
-    postmerge:
-      - mwext-doxygen-publish
 
   - name: mediawiki/extensions/CheckUser
     template:
