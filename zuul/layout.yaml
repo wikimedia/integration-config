@@ -2708,15 +2708,18 @@ projects:
       - mediawiki-node22
       - mediawiki-node24
 
+  # (T189560) There is explicitly no CI support for mediawiki/vendor.git on release branches.
+  # Additionally, selenium tests are skipped for wmf/ branches.
   - name: mediawiki/vendor
     template:
       - name: extension-gate
       - name: extension-apitests
-      - name: wikibase-selenium-gate
       - name: growth-experiments-selenium-gate
     test:
       - mediawiki-composer-php83
       - quibble-for-mediawiki-core-vendor-mysql-php83
+      # Can't use the wikibase-selenium-gate template as we don't have CI on release branches
+      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
     php:
       - mediawiki-composer-php82
       - quibble-for-mediawiki-core-vendor-mysql-php82
@@ -2733,13 +2736,12 @@ projects:
       - quibble-for-mediawiki-core-vendor-mysql-php83
       - quibble-for-mediawiki-core-vendor-mysql-php84
       - quibble-for-mediawiki-core-vendor-mysql-php85
+      # Can't use the wikibase-selenium-gate template as we don't have CI on release branches
+      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
     gate-and-submit-wmf:
       - mediawiki-composer-php83
       - quibble-for-mediawiki-core-vendor-mysql-php83
       - quibble-apitests-only-vendor-php83
-
-    # No CI support for mediawiki/vendor on release branches, folks should
-    # use composer install instead. T189560
 
     test-fundraising:
       - mediawiki-composer-php82
