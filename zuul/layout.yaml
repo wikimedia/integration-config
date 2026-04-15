@@ -1232,12 +1232,14 @@ jobs:
         - '.pipeline/policy_violation/blubber_gpt_oss_safeguard_20b.yaml'
         - '.pipeline/config.yaml'
         - 'src/models/policy_violation/gpt_oss_safeguard_20b/.*'
+        - 'src/models/policy_violation/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-policy-violation-cope-a-9b
     files:
         - '.pipeline/policy_violation/blubber_cope_a_9b.yaml'
         - '.pipeline/config.yaml'
         - 'src/models/policy_violation/cope_a_9b/.*'
+        - 'src/models/policy_violation/requirements.txt'
 
   # End of meta jobs (the ones starting with ^)
 
