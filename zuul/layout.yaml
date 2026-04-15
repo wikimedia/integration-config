@@ -719,6 +719,19 @@ pipelines:
         - !!merge : *test-event-plus-one
           branch: ^REL1_45$
 
+  - !!merge : *test_pipeline
+    name: test-1_46
+    description: >
+      Variation of the "test" pipeline reserved for MediaWiki 1.46
+    trigger:
+      gerrit:
+        - !!merge : *test-event-patchset-created
+          branch: ^REL1_46$
+        - !!merge : *test-event-comment-recheck
+          branch: ^REL1_46$
+        - !!merge : *test-event-plus-one
+          branch: ^REL1_46$
+
   # (T414621) A custom, high-priority pipeline just for puppet compiler
   - name: puppet-prio
     description: >
@@ -951,6 +964,15 @@ pipelines:
       gerrit:
         - !!merge : *gate-and-submit-comment-added
           branch: ^REL1_45
+
+  - !!merge : *gate_and_submit_pipeline
+    name: gate-and-submit-1_46
+    description: >
+      Variation of the "gate-and-submit" pipeline reserved for MediaWiki 1.46.
+    trigger:
+      gerrit:
+        - !!merge : *gate-and-submit-comment-added
+          branch: ^REL1_46
 
   # Separate gate for commits authored by l10n-bot, which run different tests.
   # It also has a lower priority, and improved concurrency (no DependentPipelineManager).
@@ -1483,6 +1505,13 @@ project-templates:
       - mediawiki-composer-php83
       - mediawiki-node24
 
+    test-1_46:
+      - mediawiki-composer-php83
+      - mediawiki-node24
+    gate-and-submit-1_46:
+      - mediawiki-composer-php83
+      - mediawiki-node24
+
     gate-and-submit-l10n:
       - mediawiki-i18n-check
     experimental:
@@ -1500,6 +1529,7 @@ project-templates:
   # REL1_43: PHP 8.1–8.3 (supported & tested)
   # REL1_44: PHP 8.1–8.3 (supported & tested)
   # REL1_45: PHP 8.2–8.3 (supported & tested)
+  # REL1_46: PHP 8.2–8.4 (supported & tested)
   # wmf/*:   PHP 8.3 (supported & tested)
   - name: extension-quibble
     test:
@@ -1556,6 +1586,18 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php82-selenium
       - quibble-composer-mysql-php83
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-phan-php83
+
+    test-1_46:
+      - mediawiki-node24
+      - quibble-composer-mysql-php83
+    gate-and-submit-1_46:
+      - mediawiki-node24
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php82-selenium
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php84
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php83
 
@@ -1644,6 +1686,18 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php83
 
+    test-1_46:
+      - mediawiki-node24
+      - quibble-composer-mysql-php83
+    gate-and-submit-1_46:
+      - mediawiki-node24
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php82-selenium
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php84
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-phan-php83
+
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
@@ -1686,6 +1740,11 @@ project-templates:
     test-1_45:
       - noop
     gate-and-submit-1_45:
+      - noop
+
+    test-1_46:
+      - noop
+    gate-and-submit-1_46:
       - noop
 
     gate-and-submit-l10n:
@@ -1750,6 +1809,17 @@ project-templates:
     gate-and-submit-1_45:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
+      - mediawiki-node24
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-phan-php83
+
+    test-1_46:
+      - quibble-composer-mysql-php83
+      - mediawiki-node24
+    gate-and-submit-1_46:
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php84
       - mediawiki-node24
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php83
@@ -1828,6 +1898,17 @@ project-templates:
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php83
 
+    test-1_46:
+      - quibble-composer-mysql-php83
+      - mediawiki-node24
+    gate-and-submit-1_46:
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php84
+      - mediawiki-node24
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-phan-php83
+
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
@@ -1862,6 +1943,10 @@ project-templates:
     test-1_45:
       - quibble-composer-mysql-php83-phpunit-standalone
     gate-and-submit-1_45:
+      - quibble-composer-mysql-php83-phpunit-standalone
+    test-1_46:
+      - quibble-composer-mysql-php83-phpunit-standalone
+    gate-and-submit-1_46:
       - quibble-composer-mysql-php83-phpunit-standalone
     experimental:
       - quibble-vendor-mysql-php84-phpunit-standalone
@@ -1922,6 +2007,10 @@ project-templates:
       - quibble-with-Wikibase-extensions-browser-tests-only-composer-php83
     gate-and-submit-1_45:
       - quibble-with-Wikibase-extensions-browser-tests-only-composer-php83
+    test-1_46:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php83
+    gate-and-submit-1_46:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php83
     test-wmf:
       - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
     gate-and-submit-wmf:
@@ -1962,6 +2051,10 @@ project-templates:
     test-1_45:
       - mediawiki-tox
     gate-and-submit-1_45:
+      - mediawiki-tox
+    test-1_46:
+      - mediawiki-tox
+    gate-and-submit-1_46:
       - mediawiki-tox
 
   - name: extension-javascript-documentation
@@ -2092,6 +2185,10 @@ project-templates:
       - generic-node20-browser
     gate-and-submit-1_45:
       - generic-node20-browser
+    test-1_46:
+      - generic-node20-browser
+    gate-and-submit-1_46:
+      - generic-node20-browser
     test-wmf:
       - generic-node20-browser
     gate-and-submit-wmf:
@@ -2126,6 +2223,10 @@ project-templates:
       - generic-node20-rundoc
     gate-and-submit-1_45:
       - generic-node20-rundoc
+    test-1_46:
+      - generic-node20-rundoc
+    gate-and-submit-1_46:
+      - generic-node20-rundoc
     test-wmf:
       - generic-node20-rundoc
     gate-and-submit-wmf:
@@ -2150,6 +2251,10 @@ project-templates:
     test-1_45:
       - mediawiki-node24
     gate-and-submit-1_45:
+      - mediawiki-node24
+    test-1_46:
+      - mediawiki-node24
+    gate-and-submit-1_46:
       - mediawiki-node24
 
   - name: tox
@@ -2662,6 +2767,23 @@ projects:
     gate-and-submit-1_45:
       - quibble-for-mediawiki-core-composer-mysql-php82
       - quibble-for-mediawiki-core-composer-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
+      - quibble-for-mediawiki-core-composer-sqlite-php83
+      - quibble-for-mediawiki-core-composer-postgres-php83
+      - mediawiki-core-phan-only-php83
+      - mediawiki-node24
+
+    test-1_46:
+      - quibble-for-mediawiki-core-composer-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
+      - mediawiki-core-phan-only-php83
+      - mediawiki-node24
+    gate-and-submit-1_46:
+      - quibble-for-mediawiki-core-composer-mysql-php82
+      - quibble-for-mediawiki-core-composer-mysql-php83
+      - quibble-for-mediawiki-core-composer-mysql-php84
       - quibble-for-mediawiki-core-composertest-only-php83
       - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
       - quibble-for-mediawiki-core-composer-sqlite-php83
@@ -5067,6 +5189,12 @@ projects:
       - quibble-with-WikibaseClient-extensions-tests-php83
       - quibble-with-WikibaseRepository-extensions-tests-php83
     gate-and-submit-1_45:
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
+    test-1_46:
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
+    gate-and-submit-1_46:
       - quibble-with-WikibaseClient-extensions-tests-php83
       - quibble-with-WikibaseRepository-extensions-tests-php83
     gate-and-submit-wmf: *mediawiki-extensions-wikibase-gate-and-submit
