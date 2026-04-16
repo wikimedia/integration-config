@@ -14,7 +14,6 @@
              - rstcheck
              - sphinx
              - doctest
-             - fasttest-py39
              - fasttest-py310
              - fasttest-py311
              - fasttest-py312

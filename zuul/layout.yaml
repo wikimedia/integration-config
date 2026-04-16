@@ -9388,7 +9388,6 @@ projects:
     test:
       - pywikibot-core-tox
       - pywikibot-core-tox-typing
-      - pywikibot-core-tox-fasttest-py39
       - pywikibot-core-tox-fasttest-py310
       - pywikibot-core-tox-fasttest-py311
       - pywikibot-core-tox-fasttest-py312
@@ -9400,7 +9399,6 @@ projects:
       - pywikibot-core-tox-sphinx
     gate-and-submit:
       - pywikibot-core-tox
-      - pywikibot-core-tox-fasttest-py39
       - pywikibot-core-tox-fasttest-py310
       - pywikibot-core-tox-fasttest-py311
       - pywikibot-core-tox-fasttest-py312
