@@ -19,7 +19,6 @@
              - fasttest-py312
              - fasttest-py313
              - fasttest-py314
-             - fasttest-pypy
              - deeptest-py39:
                  build_timeout: 45 # minutes
              - deeptest-py314:
