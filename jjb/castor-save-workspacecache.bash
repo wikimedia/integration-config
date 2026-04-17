@@ -25,10 +25,10 @@ if /usr/bin/ssh "${SSH_OPTS[@]}" jenkins-deploy@"${REMOTE_INSTANCE}" -- test -d 
 else
     if (( $? == 1 )); then
         echo "Remote cache directory does not exist (T282893#10165729)"
-        exit 1
+        exit 0
     else
         echo "Remote cache directory check failed"
-        exit 1
+        exit 0
     fi
 fi
 
