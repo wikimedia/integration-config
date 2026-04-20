@@ -1,3 +1,9 @@
+castor (0.4.1) wikimedia; urgency=high
+
+   Update from Wikimedia base to drop mirrors.wikimedia.org
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 20 Apr 2026 10:43:48 -0400
+
 castor (0.4.0) wikimedia; urgency=medium
 
   * Always restore cache to `/cache` T368550

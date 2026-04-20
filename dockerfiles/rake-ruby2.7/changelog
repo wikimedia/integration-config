@@ -1,3 +1,10 @@
+rake-ruby2.7 (0.2.2-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Update from Wikimedia base to drop mirrors.wikimedia.org
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 20 Apr 2026 10:43:48 -0400
+
 rake-ruby2.7 (0.2.2) wikimedia; urgency=high
 
    (T418463) Add libffi-dev too
