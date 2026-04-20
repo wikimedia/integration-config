@@ -11,7 +11,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/doxygen:1.10.0-s1
+         image: docker-registry.wikimedia.org/releng/doxygen:1.10.0-s2
      - doc-publish:
         docsrc: 'src/doc/html'
         docdest: '$DOC_PROJECT/$DOC_SUBPATH'
@@ -55,11 +55,11 @@
     name: phpunit-coverage-publish
     php:
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.30-s1
+            docker_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.30-s2
         - php84:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s1
+            docker_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s2
         - php85:
-            docker_image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3-s1
+            docker_image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3-s2
     jobs:
         - phpunit-coverage-{php}-publish
 
@@ -69,7 +69,7 @@
         - '{name}-{node_version}':
             node_version:
                 - node24:
-                    image: docker-registry.wikimedia.org/releng/node24-test:24.14.1
+                    image: docker-registry.wikimedia.org/releng/node24-test:24.14.1-s1
             name:
                - gerrit
 
@@ -122,7 +122,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/shellcheck:0.9.0-1
+         image: docker-registry.wikimedia.org/releng/shellcheck:0.9.0-1-s1
     publishers:
      - docker-cleanup
 
@@ -130,7 +130,7 @@
     name: 'wikimedia-cz-tracker'
     jobs:
         - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.3-s1
 
 - project:
     name: 'wikimedia-cz-tools'

@@ -45,7 +45,7 @@ set -x
 rsync \
     --archive \
     --rsh="/usr/bin/ssh ${SSH_OPTS[*]}" \
-    --rsync-path="docker run --rm -i --volume ${remote_cache_dir}:${cache_dir} --entrypoint=/usr/bin/rsync docker-registry.wikimedia.org/releng/castor:0.4.0" \
+    --rsync-path="docker run --rm -i --volume ${remote_cache_dir}:${cache_dir} --entrypoint=/usr/bin/rsync docker-registry.wikimedia.org/releng/castor:0.4.1" \
     --delete-delay \
     --delay-updates \
     jenkins-deploy@"${REMOTE_INSTANCE}:${cache_dir}/" "${DEST}"
