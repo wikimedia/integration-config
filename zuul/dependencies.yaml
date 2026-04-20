@@ -2808,6 +2808,7 @@ WikimediaCustomizations:
     # no requirements in extension.json
     # extras
     - cldr
+    - CentralAuth
     - Echo
     - EmailAuth
     - FlaggedRevs
