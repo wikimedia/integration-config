@@ -776,6 +776,7 @@ WikiEditor:
   - WikimediaEvents
 
 WikiLambda:
+  - CommunityConfiguration
   - EventLogging
   - SiteMatrix
   - TestKitchen
