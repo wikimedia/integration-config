@@ -383,6 +383,7 @@ GrowthExperiments:
   - Echo
   - CirrusSearch
   - CentralAuth
+  - CentralNotice
   - VisualEditor
   - EventBus
   - Thanks

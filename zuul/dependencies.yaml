@@ -1630,6 +1630,7 @@ GrowthExperiments:
     - CommunityConfiguration
     - VisualEditor
     # extras
+    - CentralNotice
     - CirrusSearch
     - Echo
     - Elastica
