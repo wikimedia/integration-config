@@ -775,6 +775,7 @@ WikiEditor:
 WikiLambda:
   - EventLogging
   - SiteMatrix
+  - TestKitchen
   - Wikibase
 
 WikiLove:
