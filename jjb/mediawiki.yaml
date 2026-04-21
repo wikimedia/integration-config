@@ -22,7 +22,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1'
+        image: 'docker-registry.wikimedia.org/releng/node20-test:20.20.2'
         args: 'doc'
      - doc-publish:
            docsrc: 'src/docs/js'
@@ -138,32 +138,34 @@
 # Used to decouple MediaWiki related projects from the rest of the projects in
 # gate-and-submit. See T107529.
 - project:
-    name: 'mwgate'
+    name: 'mediawiki'
     jobs:
         - '{name}-composer-{phpflavor}':
             phpflavor:
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php81:8.1.32-s1
+                    image: docker-registry.wikimedia.org/releng/composer-php81:8.1.34-s1
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php82:8.2.28-s1
+                    image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s1
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php83:8.3.21-s1
+                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.30-s1
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-test-php84:8.4.7-s1
+                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s1
+                - php85:
+                    image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3-s1
         - '{name}-{node_version}':
             node_version:
                - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1
+                   image: docker-registry.wikimedia.org/releng/node20-test:20.20.2
                - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test:22.15.0-s1
+                   image: docker-registry.wikimedia.org/releng/node22-test:22.22.2
                - node24:
-                   image: docker-registry.wikimedia.org/releng/node24-test:24.1.0
+                   image: docker-registry.wikimedia.org/releng/node24-test:24.14.1
         - '{name}-tox':
             build_timeout: 10
 
 # Phan! (T132636)
 - job-template:
-    name: 'mediawiki-core-{php}-phan'
+    name: 'mediawiki-core-phan-only-{php}'
     node: Docker
     properties:
      - build-discarder:
@@ -186,7 +188,7 @@
      - docker-run-with-log-cache-src:
         image: '{phan_image}'
         memory: 7G  # Instances have 24G of RAM and 3 executors
-        entrypoint: /run-core.sh
+        entrypoint: /run-phan-core.sh
         environment:
             PHAN_COLOR_SCHEME: light
         args: '--color'
@@ -198,20 +200,19 @@
           timeout: 30
           fail: true
       - timestamps
-      - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
 
 - project:
     name: mediawiki-core_phan_jobs
     php:
         - php81:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s1
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:8.1.32-s1
+            composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.34-s1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s2
+        - php83:
+            composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.30-s1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
 
     jobs:
-        - mediawiki-core-{php}-phan
+        - mediawiki-core-phan-only-{php}
 
 - job-template: &job_quibble
     name: quibble-{packages-source}-{database}-{php}
@@ -221,6 +222,11 @@
     quibble_args: '--skip selenium,npm-test,phpunit-standalone,api-testing'
     triggers:
         - zuul
+    parameters:
+        # Hint about the job requiring dependencies. They MUST be set by Zuul.
+        - string:
+            name: 'EXT_DEPENDENCIES'
+            description: 'Extensions to add, separated by "\n". Set by Zuul.'
     properties:
         - build-discarder:
             days-to-keep: 7
@@ -240,7 +246,7 @@
                 --db "{database}"
                 --db-dir /workspace/db
                 --git-parallel=8
-                --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
+                --memcached-server="$CASTOR_HOST":11211
                 --success-cache-key-data="$JOB_NAME"
                 --success-cache-key-data="{docker_image}"
                 {quibble_args}
@@ -272,9 +278,6 @@
         - timestamps
         - credentials-binding:
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
@@ -284,8 +287,13 @@
     name: quibble-{packages-source}-{database}-{php}-selenium
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
-    triggers:
-        - zuul
+
+# API-only Quibble testing.
+- job-template:
+    !!merge : *job_quibble
+    name: quibble-apitests-only-{packages-source}-{php}
+    entrypoint: quibble-with-supervisord
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run api-testing'
 
 - job-template:
     !!merge : *job_quibble
@@ -325,91 +333,39 @@
     name: quibble-{packages-source}-{database}-{php}-phpunit-standalone
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run phpunit-standalone'
-    triggers:
-        - zuul
 
-# For the master and wmf/* branches
-- job-template: &job_wmf_quibble
-    !!merge : *job_quibble
-    name: wmf-quibble-vendor-mysql-{php}
-    entrypoint: quibble-with-supervisord
-    # We do not run mediawiki/core tests with extensions installed
-    # https://phabricator.wikimedia.org/T197469#4293142
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,npm-test,phpunit-standalone,api-testing,phpbench'
-    triggers:
-        - zuul
-
-# HACK: Don't run composer test for mediawiki/core, it's
-# already run in a separate job
+# Special jobs for gated extensions, only for the master and wmf/* branches
 - job-template:
     !!merge : *job_quibble
-    name: wmf-quibble-core-vendor-mysql-{php}
+    name: quibble-with-gated-extensions-vendor-mysql-{php}
     entrypoint: quibble-with-supervisord
-    # We do not run mediawiki/core tests with extensions installed
-    # https://phabricator.wikimedia.org/T197469#4293142
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
-    triggers:
-        - zuul
 
 - job-template:
     !!merge : *job_quibble
-    name: wmf-quibble-selenium-{php}
+    name: quibble-with-gated-extensions-selenium-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
-    triggers:
-        - zuul
 
-# Main Quibble testing; excludes Selenium and API testing, done in own jobs.
+# Special jobs for MediaWiki core
+
+# Main Quibble testing; excludes Selenium and API testing, which are done in own jobs.
 - job-template:
     !!merge : *job_quibble
-    name: mediawiki-quibble-{packages-source}-{database}-{php}
+    name: quibble-for-mediawiki-core-{packages-source}-{database}-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing'
-    triggers:
-        - zuul
 
-
-# Selenium-only Quibble testing.
+# Selenium-only Quibble testing, for MediaWiki core.
 - job-template:
     !!merge : *job_quibble
-    name: mediawiki-quibble-selenium-{packages-source}-{database}-{php}
+    name: quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}
     entrypoint: quibble-with-supervisord
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
-    triggers:
-        - zuul
 
-# API-only Quibble testing.
+# Composer test-only Quibble testing, for MediaWiki core.
 - job-template:
-    !!merge : *job_quibble
-    name: mediawiki-quibble-apitests-{packages-source}-{php}
-    entrypoint: quibble-with-supervisord
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run api-testing'
-    triggers:
-        - zuul
-
-# Testing for API testing framework repo.
-- job-template:
-    !!merge : *job_quibble
-    name: 'api-testing-{database}-{php}'
-    entrypoint: quibble-with-supervisord
-    quibble_args: '-c mediawiki/tools/api-testing/ci.sh mediawiki/tools/api-testing'
-    triggers:
-        - zuul
-
-- project:
-    name: mediawiki-api-testing
-    jobs:
-        - api-testing-{database}-{php}:
-            php:
-                - php81:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s2
-            packages-source: vendor
-            database:
-                - mysql
-                - sqlite
-
-- job-template:
-    name: mediawiki-quibble-composertest-{php}
+    name: quibble-for-mediawiki-core-composertest-only-{php}
     node: Docker
     triggers:
         - zuul
@@ -437,19 +393,42 @@
         - timestamps
         - credentials-binding:
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
+
+- job-template: &job_quibble_requires_only
+    !!merge : *job_quibble
+    name: 'quibble-requires-only-{packages-source}'
+    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
+    entrypoint: quibble-with-supervisord
+    environment:
+        # Since we use --resolve-requires, unset dependencies that
+        # might have been set by Zuul
+        EXT_DEPENDENCIES: ''
+        SKIN_DEPENDENCIES: ''
+    quibble_args: '--resolve-requires --run phpunit-unit,phpunit,qunit'
+
+- job-template:
+    !!merge : *job_quibble_requires_only
+    name: 'quibble-requires-only-{packages-source}-non-voting'
+
+# Non voting version
+- job-template: &job_quibble_requires_only_selenium
+    !!merge : *job_quibble_requires_only
+    name: 'quibble-requires-only-{packages-source}-selenium'
+    quibble_args: '--resolve-requires --run selenium'
+
+# Non voting version
+- job-template:
+    !!merge : *job_quibble_requires_only_selenium
+    name: 'quibble-requires-only-{packages-source}-selenium-non-voting'
+    quibble_args: '--resolve-requires --run selenium'
 
 # Per-patch coverage for MediaWiki core.
 - job-template:
     !!merge : *job_quibble
     name: 'mwcore-phpunit-coverage-patch'
     quibble_args: '--run=phpunit'
-    triggers:
-        - zuul
     builders:
         - docker-castor-load
         - docker-log-dir
@@ -460,7 +439,7 @@
             entrypoint: '{entrypoint|}'
             volumes:
                 /srv/git: /srv/git:ro
-            args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --commands "phpunit-patch-coverage check --command \"php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=. tests/phpunit/phpunit.php\" --html /workspace/log/coverage.html"'
+            args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --commands "php tests/phpunit/generatePHPUnitConfig.php && phpunit-patch-coverage check --command \"php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=. vendor/bin/phpunit\" --html /workspace/log/coverage.html"'
             logdir: '/workspace/log'
             srcdir: '/workspace/src'
     publishers:
@@ -475,9 +454,6 @@
       - timestamps
       - credentials-binding:
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
@@ -485,14 +461,12 @@
 - job:
     !!merge : *job_quibble
     name: 'mediawiki-fresnel-patch'
-    triggers:
-        - zuul
     builders:
         - docker-cache-dir
         - docker-log-dir
         - docker-src-dir
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.14.1-s2
+            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.17.1-s2
             entrypoint: quibble-with-supervisord
             options: '--tmpfs /workspace/db:size=320M'
             volumes:
@@ -526,37 +500,24 @@
       - timestamps
       - credentials-binding:
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
-
-# Per-patch phpbench report for MediaWiki core, skins and extensions.
-- job-template:
-    !!merge : *job_quibble
-    name: 'mediawiki-phpbench-patch'
-    triggers:
-      - zuul
 
 - job-template:
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage-patch'
     quibble_args: '--commands=mwext-phpunit-coverage-patch'
-    triggers:
-        - zuul
 
 - job-template:
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage'
     quibble_args: '--commands=mwext-phpunit-coverage'
 
-- job-template:
+- job-template: &mwext_phpunit_coverage_publish
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage-publish'
     quibble_args: '--commands=mwext-phpunit-coverage'
-    triggers:
-        - zuul
+    cover_dest: 'cover-extensions/$EXT_NAME'
     builders:
         - docker-castor-load
         - docker-log-dir
@@ -581,10 +542,10 @@
               - build-on:
                   - SUCCESS
                 build-steps:
-                  - cover-extensions-publish:
-                      src: 'cover'
-                      # https://doc.wikimedia.org/cover-extensions/$EXT_NAME
-                      dest: '$EXT_NAME'
+                  - doc-publish:
+                      docsrc: 'cover'
+                      # https://doc.wikimedia.org/{cover_dest}
+                      docdest: '{cover_dest}'
         - postbuildscript:
             mark-unstable-if-failed: false
             builders:
@@ -597,59 +558,6 @@
                   - docker-wipe-dir:
                       dir: 'cover'
         - teardown
-
-- job-template:
-    !!merge : *job_quibble
-    name: 'mwskin-phpunit-coverage-publish'
-    quibble_args: '--commands=mwskin-phpunit-coverage'
-    triggers:
-        - zuul
-    builders:
-        - docker-castor-load
-        - docker-log-dir
-        - docker-src-dir
-        - docker-wipe-dir:
-            dir: 'cover'
-        - docker-run-with-log-cache-src:
-            image: '{docker_image}'
-            options: '--tmpfs /workspace/db:size=320M'
-            entrypoint: '{entrypoint|}'
-            volumes:
-                /srv/git: /srv/git:ro
-                cover: /workspace/cover
-            args: '--packages-source "{packages-source}" --db "{database}" --db-dir /workspace/db {quibble_args}'
-            logdir: '/workspace/log'
-            srcdir: '/workspace/src'
-    publishers:
-        - archive-log-allow-empty
-        - postbuildscript:
-            mark-unstable-if-failed: true
-            builders:
-              - build-on:
-                  - SUCCESS
-                build-steps:
-                  - cover-skins-publish:
-                      src: 'cover'
-                      dest: '$SKIN_NAME'
-        - postbuildscript:
-            mark-unstable-if-failed: false
-            builders:
-              - build-on:
-                  - SUCCESS
-                  - UNSTABLE
-                  - FAILURE
-                  - ABORTED
-                build-steps:
-                  - docker-wipe-dir:
-                      dir: 'cover'
-        - teardown
-
-- job-template:
-    !!merge : *job_quibble
-    name: 'mwskin-phpunit-coverage-patch'
-    quibble_args: '--commands=mwskin-phpunit-coverage-patch'
-    triggers:
-        - zuul
 
 - project:
     name: mwcore-codehealth
@@ -699,9 +607,6 @@
               credential-id: SONAR_API_KEY
               variable: SONAR_API_KEY
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
     builders:
@@ -711,7 +616,7 @@
         dir: 'cover'
     - docker-castor-load
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81-coverage:1.14.1-s4
+        image: docker-registry.wikimedia.org/releng/quibble-coverage:1.17.1-s2
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -723,7 +628,7 @@
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s10
+        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s14
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'
@@ -796,9 +701,6 @@
               credential-id: SONAR_API_KEY
               variable: SONAR_API_KEY
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
@@ -809,7 +711,7 @@
     - docker-wipe-dir:
         dir: 'cover'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81-coverage:1.14.1-s4
+        image: docker-registry.wikimedia.org/releng/quibble-coverage:1.17.1-s2
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -824,7 +726,7 @@
     # mediawiki/services/parsoid (T321837)
     #
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/node20-test:20.19.1-s1
+        image: docker-registry.wikimedia.org/releng/node20-test:20.20.2
         volumes:
             src/$THING_SUBNAME: /src
         logdir: '/workspace/log'
@@ -835,7 +737,7 @@
           sed -ie "s#/src/#/workspace/src/$THING_SUBNAME/#g" src/"$THING_SUBNAME"/coverage/lcov.info
         fi
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s10
+        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s14
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'
@@ -857,9 +759,6 @@
          fail: true
      - timestamps
      - credentials-binding:
-         - text:
-             credential-id: composer-github-oauthtoken
-             variable: COMPOSER_GITHUB_OAUTHTOKEN
          - text:
              credential-id: quibble-earlywarningbot-api-key
              variable: QUIBBLE_API_KEY
@@ -893,7 +792,7 @@
 
 - job-group:
     name: mediawiki-coverage-jobs
-    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81-coverage:1.14.1-s4
+    docker_image: docker-registry.wikimedia.org/releng/quibble-coverage:1.17.1-s2
     entrypoint: quibble-with-supervisord
     jobs:
         - mwcore-phpunit-coverage-patch:
@@ -911,12 +810,6 @@
         - mwext-phpunit-coverage-publish:
             packages-source:  composer
             database: mysql
-        - mwskin-phpunit-coverage-patch:
-            packages-source:  composer
-            database: mysql
-        - mwskin-phpunit-coverage-publish:
-            packages-source:  composer
-            database: mysql
 
 - project:
     name: quibble-jobs
@@ -929,31 +822,33 @@
         - sqlite
     php:
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s2
         - php82:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.14.1-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1-s2
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.1-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
         - php84:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.14.1-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1-s2
+        - php85:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.17.1-s2
     jobs:
         - quibble-{packages-source}-{database}-{php}
         - quibble-{packages-source}-{database}-{php}-selenium
         - quibble-{packages-source}-{database}-{php}-phpunit-standalone
         - mediawiki-coverage-jobs
-        - mediawiki-quibble-{packages-source}-{database}-{php}
-        - mediawiki-quibble-composertest-{php}
-        - mediawiki-quibble-selenium-{packages-source}-{database}-{php}
-        - mediawiki-quibble-apitests-{packages-source}-{php}:
-            database: 'mysql'
-        - mediawiki-phpbench-patch:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s2
-            entrypoint: quibble-with-supervisord
-            packages-source: vendor
+        - quibble-for-mediawiki-core-{packages-source}-{database}-{php}
+        - quibble-for-mediawiki-core-composertest-only-{php}
+        - quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}
+        - quibble-requires-only-{packages-source}:
             database: mysql
-            quibble_args: >
-                --run=phpbench
-                --phpbench-aggregate
+        - quibble-requires-only-{packages-source}-non-voting:
+            database: mysql
+        - quibble-requires-only-{packages-source}-selenium:
+            database: mysql
+        - quibble-requires-only-{packages-source}-selenium-non-voting:
+            database: mysql
+        - quibble-apitests-only-{packages-source}-{php}:
+            database: 'mysql'
 
 # MediaWiki jobs for deployment to the Wikimedia cluster
 - project:
@@ -963,70 +858,96 @@
     packages-source: vendor
     # We only use MariaDB/MySQL
     database: mysql
-    # And only php8.1
+    # And only php8.3
     php:
-        - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s2
+        - php83:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
             entrypoint: quibble-with-supervisord
     jobs:
-        - wmf-quibble-vendor-mysql-{php}
-        - wmf-quibble-core-vendor-mysql-{php}
-        - wmf-quibble-selenium-{php}
+        - quibble-with-gated-extensions-vendor-mysql-{php}
+        - quibble-with-gated-extensions-selenium-{php}
 
 - job-template:
     !!merge : *job_quibble
-    parameters:
-        # Hint about the job requiring dependencies. They MUST be set by Zuul.
-        - string:
-            name: 'EXT_DEPENDENCIES'
-            description: 'Extensions to add, separated by "\n". Set by Zuul.'
-    name: wikibase-{kind}-{phpflavour}
-    triggers:
-        - zuul
+    name: quibble-with-{sub_extension}-extensions-tests-{phpflavor}
+
+- job-template:
+    !!merge : *job_quibble
+    name: quibble-with-Wikibase-extensions-browser-tests-only-{packages-source}-{phpflavor}
 
 - project:
     name: wikibase
     entrypoint: quibble-with-supervisord
-    packages-source: composer
-    kind:
-        - client:
-            database: mysql
-            phpunit-params: '--group Wikibase,WikibaseClient,EntitySchemaClient'
-        - repo:
-            database: sqlite
-            phpunit-params: '--group Wikibase,WikibaseAPI,Purtle'
-    phpflavour:
+    phpflavor:
         - php81:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s2
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.1-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
     jobs:
-        - wikibase-{kind}-{phpflavour}:
+        - quibble-with-Wikibase-extensions-browser-tests-only-{packages-source}-{phpflavor}:
+            database: mysql
+            packages-source:
+                - composer
+                - vendor
             quibble_args: >
-                --commands 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r {kind}'
+                --command 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r repo'
+                --command 'cp --verbose $WORKSPACE/src/LocalSettings.php $LOG_DIR'
+                --command 'php maintenance/update.php --quick'
+                --command 'npm --prefix extensions/Wikibase ci'
+                --command 'npm --prefix extensions/Wikibase run --if-present @selenium-test'
+
+        - quibble-with-{sub_extension}-extensions-tests-{phpflavor}:
+            sub_extension:
+                - WikibaseClient:
+                    database: mysql
+                    phpunit-params: '--group Wikibase,WikibaseClient,EntitySchemaClient'
+                    wb-settings: 'client'
+                - WikibaseRepository:
+                    database: sqlite
+                    phpunit-params: '--group Wikibase,WikibaseAPI,Purtle'
+                    wb-settings: 'repo'
+            packages-source: composer
+            quibble_args: >
+                --commands 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r {wb-settings}'
                 'cp --verbose $WORKSPACE/src/LocalSettings.php $LOG_DIR'
                 'php maintenance/update.php --quick'
-                'composer phpunit:entrypoint -- --verbose --log-junit "$LOG_DIR/junit-wikibase-{kind}.xml" {phpunit-params}'
+                'composer run --timeout=0 phpunit:entrypoint -- --verbose --log-junit "$LOG_DIR/junit-{sub_extension}.xml" {phpunit-params}'
+
+- job-template:
+    !!merge : *job_quibble
+    name: quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-{phpflavor}
 
 - project:
-    name: mediawiki-wdio-selenium
-    project: MediaWiki
-    recipients: betacluster-alerts@lists.wikimedia.org cparle@wikimedia.org etonkovidova@wikimedia.org qa-alerts@lists.wikimedia.org zfilipin@wikimedia.org
-    repository: mediawiki/core
-    # Only alert on consecutive failures to reduce notification fatigue.
-    # See T270771#10829124 and T394551 for details.
-    failure: false
-    unstable: false
-    still_failing: true
-    still_unstable: true
+    name: growthexperiments
+    entrypoint: quibble-with-supervisord
+    phpflavor:
+        - php83:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
     jobs:
-        - 'selenium-daily-{sitename}-{project}':
-            sitename:
-                - beta:
-                    mw_server: 'https://en.wikipedia.beta.wmflabs.org'
-                    mw_user: 'Selenium user'
-                    mw_credential_id: 'selenium-user-beta'
-                - betacommons:
-                    mw_server: 'https://commons.wikimedia.beta.wmflabs.org'
-                    mw_user: 'Selenium user'
-                    mw_credential_id: 'selenium-user-beta'
+        - quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-{phpflavor}:
+            database: mysql
+            packages-source: vendor
+            quibble_args: >
+                --command 'npm --prefix extensions/GrowthExperiments ci'
+                --command 'npm --prefix extensions/GrowthExperiments run @selenium-test'
+
+# Testing for API testing framework repo. This re-uses the quibble job setup, so can't be in mediawiki-tools.yaml
+- job-template:
+    !!merge : *job_quibble
+    name: 'api-testing-{database}-{php}'
+    entrypoint: quibble-with-supervisord
+    quibble_args: '-c mediawiki/tools/api-testing/ci.sh mediawiki/tools/api-testing'
+
+- project:
+    name: mediawiki-api-testing
+    jobs:
+        - api-testing-{database}-{php}:
+            php:
+                - php81:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s2
+                - php83:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
+            packages-source: vendor
+            database:
+                - mysql
+                - sqlite

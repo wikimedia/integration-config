@@ -13,12 +13,6 @@
       # alerts-pipeline-publish
       - '{name}-pipeline-{pipeline}'
 
-- project:
-    name: cergen
-    jobs:
-        - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-java8:4.8.0-3-s3
-
 - job:
     name: 'operations-dns-lint'
     node: Docker
@@ -52,11 +46,13 @@
     name: 'operations-mw-config'
     phpflavor:
      - php81:
-         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s1
+         image: docker-registry.wikimedia.org/releng/composer-php81:8.1.34-s1
      - php83:
-         image: docker-registry.wikimedia.org/releng/composer-php83:8.3.21-s1
+         image: docker-registry.wikimedia.org/releng/composer-php83:8.3.30-s1
      - php84:
-         image: docker-registry.wikimedia.org/releng/composer-php84:8.4.7-s1
+         image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s1
+     - php85:
+         image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3-s1
     jobs:
      - '{name}-tox'
      - 'operations-mw-config-{phpflavor}-composer-{run-script}':
@@ -71,7 +67,7 @@
         - '{name}-tox':
             build_timeout: 20 # minutes
         - tox-publish-jobs:
-            docenv: 'py39-sphinx'
+            docenv: 'py311-sphinx'
             docsrc: 'doc/build/html'
             docdest: 'cumin/$DOC_SUBPATH'
 
@@ -92,7 +88,7 @@
     jobs:
         - '{name}-tox'
         - tox-publish-jobs:
-            docenv: 'py39-sphinx'
+            docenv: 'py311-sphinx'
             docsrc: 'doc/build/html'
             docdest: 'homer/$DOC_SUBPATH'
 
@@ -114,7 +110,7 @@
     name: 'spicerack'
     jobs:
         - tox-publish-jobs:
-            docenv: 'py39-sphinx'
+            docenv: 'py311-sphinx'
             docsrc: 'doc/build/html'
             docdest: 'spicerack/$DOC_SUBPATH'
 
@@ -122,7 +118,7 @@
     name: 'pywmflib'
     jobs:
         - tox-publish-jobs:
-            docenv: 'py39-sphinx'
+            docenv: 'py311-sphinx'
             docsrc: 'doc/build/html'
             docdest: 'wmflib/$DOC_SUBPATH'
 
@@ -135,7 +131,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/helm-linter:0.7.2
+         image: docker-registry.wikimedia.org/releng/helm-linter:0.7.8
     publishers:
      - docker-cleanup
 
@@ -157,7 +153,7 @@
         - docker-src-dir
         - docker-ci-src-setup-simple
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/ecs:0.1.0
+            image: docker-registry.wikimedia.org/releng/ecs:0.1.0-s1
     publishers:
      - docker-cleanup
 
@@ -171,7 +167,7 @@
         - docker-src-dir
         - docker-ci-src-setup-simple
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/ecs:0.1.0
+            image: docker-registry.wikimedia.org/releng/ecs:0.1.0-s1
         - doc-publish:
             docsrc: 'src/dist'
             docdest: 'ecs'

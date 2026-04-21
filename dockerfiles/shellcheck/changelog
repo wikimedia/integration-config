@@ -1,3 +1,9 @@
+shellcheck (0.9.0-1) wikimedia; urgency=high
+
+   Switch to bookworm / v0.9.0-1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed, 23 Jul 2025 15:28:56 -0400
+
 shellcheck (0.8.0-1-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:

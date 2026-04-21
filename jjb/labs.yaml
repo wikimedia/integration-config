@@ -10,7 +10,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/dotnet-mono612:0.1.0-s2
+         image: docker-registry.wikimedia.org/releng/dotnet-mono612:0.1.0-s3
          entrypoint: /usr/bin/msbuild
          args: src/CVNBot.sln /p:Configuration=Debug
     publishers:
@@ -46,7 +46,7 @@
     name: 'labs-tools-heritage'
     jobs:
         - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.1-s1
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.2
             build_timeout: 6  # T206913
 
 - project:
@@ -63,7 +63,7 @@
     name: 'labs-tools-map-of-monuments'
     jobs:
        - '{name}-tox':
-           docker_image_var: docker-registry.wikimedia.org/releng/tox-mysqld:4.8.0-3-s3
+           docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.3
 
 - project:
     name: 'labs-tools-massmailer'
@@ -94,5 +94,5 @@
     name: 'labs-tools-wikinity'
     jobs:
        - '{name}-tox':
-           docker_image_var: docker-registry.wikimedia.org/releng/tox-mysqld:4.8.0-3-s3
+           docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.3
 

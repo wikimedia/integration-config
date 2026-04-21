@@ -19,6 +19,8 @@ import zuul.model
 from zuul.connection import BaseConnection
 from zuul.connection.gerrit import GerritConnection
 
+from fakes import FakeJob
+
 parameter_functions_py = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
     '../zuul/parameter_functions.py')
@@ -35,17 +37,13 @@ MEDIAWIKI_VERSIONS = {
         'branch': 'wmf/branch_cut_pretest',
         'pipeline-suffix': 'wmf',
     },
+    'WMF_next': {
+        'branch': 'wmf/next',
+        'pipeline-suffix': 'wmf',
+    },
     'Fundraising 1.43': {
         'branch': 'fundraising/REL1_43',
         'pipeline-suffix': 'fundraising',
-    },
-    'Release 1.39': {
-        'branch': 'REL1_39',
-        'pipeline-suffix': '1_39',
-    },
-    'Release 1.42': {
-        'branch': 'REL1_42',
-        'pipeline-suffix': '1_42',
     },
     'Release 1.43': {
         'branch': 'REL1_43',
@@ -54,6 +52,14 @@ MEDIAWIKI_VERSIONS = {
     'Release 1.44': {
         'branch': 'REL1_44',
         'pipeline-suffix': '1_44',
+    },
+    'Release 1.45': {
+        'branch': 'REL1_45',
+        'pipeline-suffix': '1_45',
+    },
+    'Release 1.46': {
+        'branch': 'REL1_46',
+        'pipeline-suffix': '1_46',
     },
 }
 
@@ -193,15 +199,16 @@ class TestZuulScheduler(unittest.TestCase):
     def assertProjectHasComposerValidate(self, name, definition, pipeline):
         # composer-validate-package
         # composer-test-*
-        # mwgate-composer-*
+        # mediawiki-composer-*
         if pipeline in ['experimental', 'gate-and-submit-l10n']:
             return
         self.assertTrue(
             any([job for job in definition
                  if (
-                     job.startswith(('composer', 'mwgate-composer'))
+                     job.startswith(('composer', 'mediawiki-composer'))
+                    # BlueSpice extensions are allowed to just have 'noop'
+                     or job.startswith('noop')
                      or job.startswith('quibble-')
-                     or job.startswith('wmf-quibble-')
                  )]),
             'Project %s pipeline %s must have either '
             'composer-validate or a composer-* job, '
@@ -214,8 +221,9 @@ class TestZuulScheduler(unittest.TestCase):
         self.assertTrue(
             any([job for job in definition
                  if job.startswith('quibble-')
-                 or job.startswith('wmf-quibble')
-                 or job.startswith(('composer-', 'mwgate-composer'))]),
+                # BlueSpice extensions are allowed to just have 'noop'
+                 or job.startswith('noop')
+                 or job.startswith(('composer-', 'mediawiki-composer'))]),
             'Project %s pipeline %s must have either a composer-* job'
             % (name, pipeline))
 
@@ -239,13 +247,13 @@ class TestZuulScheduler(unittest.TestCase):
             % (name, pipeline)
         )
 
-    def assertProjectHasVotingPHP81(self, name, definition, pipeline):
+    def assertProjectHasVotingPHP83(self, name, definition, pipeline):
         if pipeline != 'gate-and-submit':
             return
         self.assertTrue(
             any([job for job in definition
-                 if 'quibble' in job and 'php81' in job]),
-            'Project %s pipeline %s must have quibble job for PHP 8.1'
+                 if 'quibble' in job and 'php83' in job]),
+            'Project %s pipeline %s must have quibble job for PHP 8.3'
             % (name, pipeline)
             )
 
@@ -273,7 +281,7 @@ class TestZuulScheduler(unittest.TestCase):
             r'mediawiki/core$': [
                 self.assertProjectHasComposerValidate,
                 self.assertProjectHasPhplint,
-                self.assertProjectHasVotingPHP81,
+                self.assertProjectHasVotingPHP83,
                 self.assertProjectHasI18nChecker,
             ],
             r'mediawiki/extensions/\w+$': [
@@ -352,6 +360,8 @@ class TestZuulScheduler(unittest.TestCase):
                 # Weird edge cases:
                 or project in [
                     'integration/zuul',
+                    # Temporary removal whilst Ruby tests are fixed
+                    'mediawiki/vagrant',
                     # Only touched by l10n-bot T321350
                     'phabricator/translations',
                     ]
@@ -949,13 +959,13 @@ class TestZuulScheduler(unittest.TestCase):
         allextensions = set(zuul_config.tarballextensions).union(
             set(zuul_config.gatedextensions))
 
-        # Grab projects having the gate job 'wmf-quibble-*'
+        # Grab projects having the gate job 'quibble-with-gated-extensions-*'
         gated_in_zuul = set([
             ext_name.split('/')[-1]  # extension basename
             for (ext_name, pipelines) in self.getProjectsDefs().iteritems()
             if (ext_name.startswith('mediawiki/extensions/')
                 or ext_name.startswith('mediawiki/services/'))
-            and 'wmf-quibble-vendor-mysql-php81'
+            and 'quibble-with-gated-extensions-vendor-mysql-php83'
                 in pipelines.get('test', {})
         ])
 
@@ -966,6 +976,83 @@ class TestZuulScheduler(unittest.TestCase):
             'must be equals.\n'
             'In Zuul: apply the template extension-gate\n'
             'In JJB: add extension to "gatedextensions"')
+
+    def test_gated_extensions_for_wikibase_selenium(self):
+        self.longMessage = True
+
+        job = FakeJob('quibble-with-Wikibase-extensions-browser-tests-only-x-y')
+        params = {
+            'ZUUL_PROJECT': 'mediawiki/extensions/Wikibase',
+            'ZUUL_BRANCH': 'master',
+        }
+        zuul_config.set_parameters(None, job, params)
+        injected_deps = set(params['EXT_DEPENDENCIES'].split('\\n'))
+        self.assertIn('mediawiki/extensions/UniversalLanguageSelector',
+                      injected_deps)
+
+        gated_in_zuul = set([
+            ext_name
+            # FIXME We could parse the Zuul layout looking up for
+            # wikibase-selenium-gate job template.
+            for (ext_name, pipelines) in self.getProjectsDefs().iteritems()
+            if ext_name.startswith('mediawiki/')
+            and 'quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83' \
+                in pipelines.get('test', {})
+        ])
+
+        # Cloned by Quibble regardless of injected dependencies
+        built_in_deps = (
+            'mediawiki/core',
+            'mediawiki/vendor',
+            'mediawiki/skins/Vector',
+        )
+
+        self.assertSetEqual(
+            gated_in_zuul, injected_deps.union(built_in_deps),
+            msg='Zuul projects triggering Wikibase Selenium jobs (first set) '
+                'and dependency list in zuul/parameter_functions.py (2nd set) '
+                'must be equals.\n'
+                'In Zuul layout: apply the template wikibase-selenium-gate\n'
+                'In Zuul parameter function add the missing repo')
+
+    def test_gated_extensions_for_growth_experiments_selenium(self):
+        self.longMessage = True
+
+        job = FakeJob(
+            'quibble-with-GrowthExperiments-extensions-browser-tests-only-x-y')
+        params = {
+            'ZUUL_PROJECT': 'mediawiki/extensions/GrowthExperiments',
+            'ZUUL_BRANCH': 'master',
+        }
+        zuul_config.set_parameters(None, job, params)
+        injected_deps = set(params['EXT_DEPENDENCIES'].split('\\n'))
+        self.assertIn('mediawiki/extensions/CommunityConfiguration',
+                      injected_deps)
+
+        gated_in_zuul = set([
+            ext_name
+            # FIXME We could parse the Zuul layout looking up for
+            # growth-experiments-selenium-gate job template.
+            for (ext_name, pipelines) in self.getProjectsDefs().iteritems()
+            if ext_name.startswith('mediawiki/')
+            and 'quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-php83' \
+                in pipelines.get('test', {})
+        ])
+
+        # Cloned by Quibble regardless of injected dependencies
+        built_in_deps = (
+            'mediawiki/core',
+            'mediawiki/vendor',
+            'mediawiki/skins/Vector',
+        )
+
+        self.assertSetEqual(
+            gated_in_zuul, injected_deps.union(built_in_deps),
+            msg='Zuul projects triggering GrowthExperiments cypress jobs (first set) '
+                'and dependency list in zuul/parameter_functions.py (2nd set) '
+                'must be equal.\n'
+                'In Zuul layout: apply the template growth-experiments-selenium-gate\n'
+                'In Zuul parameter function add the missing repo')
 
     def test_pipelines_have_report_action_to_gerrit(self):
         not_reporting = ['post', 'publish', 'codehealth']
@@ -1031,10 +1118,12 @@ class TestZuulScheduler(unittest.TestCase):
 
             # Map some other more specific pipelines
             if pipeline.name.startswith('test-'):
-                # eg 'test-prio', 'test-fundraising', 'test-1_39'
+                # eg 'test-prio', 'test-fundraising'
                 tag_suffix = 'test'
             elif pipeline.name.startswith('gate-and-submit-'):
                 tag_suffix = 'gate-and-submit'
+            elif pipeline.name.startswith('puppet-'):
+                tag_suffix = 'puppet'
 
             expected_tag = 'autogenerated:ci-%s' % tag_suffix
 
@@ -1103,10 +1192,6 @@ class TestZuulScheduler(unittest.TestCase):
         # https://review.openstack.org/#/c/361505/2
         mw_defined_jobs.discard('noop')
 
-        # The ruby2.5-rake job is temporarily being used by Wikibase;
-        # not worth having a special version just for a short while.
-        mw_defined_jobs.discard('ruby2.5-rake')
-
         errors = {}
         # Projects that are not supposed to be in the 'mediawiki' queue. Either
         # because they share a job with a mediawiki repository either directly
@@ -1128,32 +1213,35 @@ class TestZuulScheduler(unittest.TestCase):
 
     def test_mwcore_master_branch_has_expected_values(self):
         expected_test = {
-            'mediawiki-core-php81-phan': True,
-            'mediawiki-quibble-vendor-mysql-php81': True,
-            'mediawiki-quibble-composertest-php81': True,
-            'mediawiki-quibble-apitests-vendor-php81': True,
-            'mediawiki-quibble-selenium-vendor-mysql-php81': True,
-            'wmf-quibble-vendor-mysql-php81': False,
-            'wmf-quibble-core-vendor-mysql-php81': True,
-            'wmf-quibble-selenium-php81': True,
-            'mwgate-node20': True,
+            'mediawiki-core-phan-only-php83': True,
+            'quibble-for-mediawiki-core-vendor-mysql-php83': True,
+            'quibble-for-mediawiki-core-composertest-only-php83': True,
+            'quibble-apitests-only-vendor-php83': True,
+            'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83': True,
+            'quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83': True,
+            'quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-php83': True,
+            'quibble-with-gated-extensions-vendor-mysql-php83': True,
+            'quibble-with-gated-extensions-selenium-php83': True,
+            'mediawiki-node24': True,
         }
         expected_gate = {
-            'mediawiki-core-php81-phan': True,
-            'mediawiki-quibble-composer-mysql-php81': True,
-            'mediawiki-quibble-vendor-mysql-php81': True,
-            'mediawiki-quibble-vendor-mysql-php82': True,
-            'mediawiki-quibble-vendor-mysql-php83': True,
-            'mediawiki-quibble-composertest-php81': True,
-            'mediawiki-quibble-apitests-vendor-php81': True,
-            'mediawiki-quibble-selenium-vendor-mysql-php81': True,
-            'mediawiki-quibble-vendor-sqlite-php81': True,
-            'mediawiki-quibble-vendor-postgres-php81': True,
-            'wmf-quibble-vendor-mysql-php81': False,
-            'wmf-quibble-selenium-php81': True,
-            'wmf-quibble-core-vendor-mysql-php81': True,
-            'mwgate-node20': True,
-            'quibble-vendor-mysql-php81-phpunit-standalone': True,
+            'mediawiki-core-phan-only-php83': True,
+            'quibble-for-mediawiki-core-composer-mysql-php83': True,
+            'quibble-for-mediawiki-core-vendor-mysql-php82': True,
+            'quibble-for-mediawiki-core-vendor-mysql-php83': True,
+            'quibble-for-mediawiki-core-vendor-mysql-php84': True,
+            'quibble-for-mediawiki-core-vendor-mysql-php85': True,
+            'quibble-for-mediawiki-core-composertest-only-php83': True,
+            'quibble-apitests-only-vendor-php83': True,
+            'quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83': True,
+            'quibble-for-mediawiki-core-vendor-sqlite-php83': True,
+            'quibble-for-mediawiki-core-vendor-postgres-php83': True,
+            'mediawiki-node24': True,
+            'quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83': True,
+            'quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-php83': True,
+            'quibble-vendor-mysql-php83-phpunit-standalone': True,
+            'quibble-with-gated-extensions-vendor-mysql-php83': True,
+            'quibble-with-gated-extensions-selenium-php83': True,
         }
 
         change = zuul.model.Change('mediawiki/core')
@@ -1209,15 +1297,15 @@ class TestZuulScheduler(unittest.TestCase):
         # Note that these are checked for 'prefixes', not exact matches
         expected_job_prefices = [
             # A regular quibble job
-            'mediawiki-quibble-composer-mysql-php',
+            'quibble-for-mediawiki-core-composer-mysql-php',
             # A composer test job (PHP linting)
-            'mediawiki-quibble-composertest-php',
+            'quibble-for-mediawiki-core-composertest-only-php',
             # A 'mediawiki' selenium test (bundled extensions browser testing)
-            'mediawiki-quibble-selenium-composer-mysql-php',
+            'quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php',
             # A phan job (PHP static analysis)
-            'mediawiki-core-php81-phan',
+            'mediawiki-core-phan-only-php',
             # A node job (JS linting)
-            'mwgate-node20',
+            'mediawiki-node24',
         ]
 
         for (desc, config) in MEDIAWIKI_VERSIONS.iteritems():
@@ -1260,7 +1348,7 @@ class TestZuulScheduler(unittest.TestCase):
         repo = 'mediawiki/extensions/CirrusSearch'
         release_job = self.getJob(
             repo, 'test',
-            'wmf-quibble-vendor-mysql-php81')
+            'quibble-with-gated-extensions-vendor-mysql-php83')
 
         change = zuul.model.Change(repo)
 

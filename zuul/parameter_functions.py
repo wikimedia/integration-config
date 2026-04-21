@@ -50,37 +50,56 @@ def set_parameters(item, job, params):
 
     mw_deps_jobs_starting_with = (
         'mwext-',
-        'mwskin-',
-        'mediawiki-quibble',
         'quibble',
         )
-    if job.name.startswith(mw_deps_jobs_starting_with):
+    if (
+        job.name.startswith(mw_deps_jobs_starting_with)
+        and not job.name.startswith('quibble-requires-only')
+    ):
         set_mw_dependencies(item, job, params)
 
     # Special jobs for Wikibase - T188717
-    if job.name.startswith('wikibase-client'):
+    if job.name.startswith('quibble-with-WikibaseClient-extensions'):
         params['EXT_DEPENDENCIES'] = '\\n'.join([
             'mediawiki/extensions/Scribunto',
             'mediawiki/extensions/Capiunto',
             'mediawiki/extensions/cldr',
             'mediawiki/extensions/Echo',
+            'mediawiki/extensions/EntitySchema',
             'mediawiki/extensions/Wikibase',
         ])
 
-        # (T367156, T385175) Hack to only load EntitySchema on REL1_43+ jobs;
-        # remove once old branch support is dropped
-        if not (
-            params["ZUUL_BRANCH"].startswith("REL1_39")
-            or params["ZUUL_BRANCH"].startswith("REL1_42")
-        ):
-            params['EXT_DEPENDENCIES'] += '\\nmediawiki/extensions/EntitySchema'
-
-    if job.name.startswith('wikibase-repo'):
+    if job.name.startswith('quibble-with-WikibaseRepository-extensions'):
         params['EXT_DEPENDENCIES'] = '\\n'.join([
             'mediawiki/extensions/CirrusSearch',
             'mediawiki/extensions/Elastica',
             'mediawiki/extensions/GeoData',
             'mediawiki/extensions/cldr',
+        ])
+
+    if job.name.startswith('quibble-with-Wikibase-extensions-browser-tests-only'):
+        params['EXT_DEPENDENCIES'] = '\\n'.join([
+            'mediawiki/skins/MinervaNeue',
+            'mediawiki/extensions/MobileFrontend',
+            'mediawiki/extensions/UniversalLanguageSelector',
+            'mediawiki/extensions/Wikibase',
+        ])
+
+    if job.name.startswith('quibble-with-GrowthExperiments-extensions-browser-tests-only'):
+        params['EXT_DEPENDENCIES'] = '\\n'.join([
+            'mediawiki/extensions/CirrusSearch',
+            'mediawiki/extensions/CommunityConfiguration',
+            'mediawiki/extensions/Echo',
+            'mediawiki/extensions/Elastica',
+            'mediawiki/extensions/EventLogging',
+            'mediawiki/extensions/GrowthExperiments',
+            'mediawiki/extensions/GuidedTour',
+            'mediawiki/extensions/MobileFrontend',
+            'mediawiki/extensions/PageViewInfo',
+            'mediawiki/extensions/Thanks',
+            'mediawiki/extensions/VisualEditor',
+            'mediawiki/extensions/WikimediaMessages',
+            'mediawiki/skins/MinervaNeue',
         ])
 
     # Enable parallel PHPUnit runs for MW ecosystem, except:
@@ -92,13 +111,22 @@ def set_parameters(item, job, params):
             # branch is tested with mediawiki/core fundraising/REL1_43 branch
             # which does not have the parallel work.
             "mediawiki/extensions/DonationInterface",
+
+            # MediaWiki core PhpUnitXmlManager.php assumes test classes and
+            # file names match. MediaWikiFarm prefixes classes names while the
+            # files names use the shorthand.
+            #
+            # For example \MediaWikiFarmHooksTest is in HooksTest.php and it
+            # thus can't be found by the PHPUnit tests splitter: T398023.
+            #
+            # The extension classes should have the prefix dropped in favor of
+            # using PHP namespaces. Meanwhile disable parallel testing.
+            "mediawiki/extensions/MediaWikiFarm",
         ]
         # ... exclude on pre-1.44 REL_ branches (not yet tested/patched),
         and "ZUUL_BRANCH" in params
         and not (
             params["ZUUL_BRANCH"].startswith("REL1_43")
-            or params["ZUUL_BRANCH"].startswith("REL1_42")
-            or params["ZUUL_BRANCH"].startswith("REL1_39")
         )
         # Exclude fundraising branches and specific jobs
         and not params["ZUUL_BRANCH"].startswith("fundraising")
@@ -115,7 +143,7 @@ def set_parameters(item, job, params):
     if (
         params['ZUUL_PROJECT'] == 'mediawiki/extensions/Wikibase'
         and params['ZUUL_BRANCH'] == 'master'
-        and job.name.startswith('mediawiki-quibble-apitests')
+        and job.name.startswith('quibble-apitests-only')
     ):
         params['QUIBBLE_OPENSEARCH'] = 'true'
 
@@ -123,7 +151,7 @@ def set_parameters(item, job, params):
     if params['ZUUL_PROJECT'].startswith('mediawiki/vendor'):
         params['COMPOSER_PROCESS_TIMEOUT'] = 600
 
-    if job.name.startswith('wmf-quibble-'):
+    if job.name.startswith('quibble-with-gated-extensions-'):
         set_gated_extensions(item, job, params)
 
     if job.name.endswith('-publish') or 'codehealth' in job.name:
@@ -166,12 +194,6 @@ def set_parameters(item, job, params):
             # Nginx support for Encrypted Client Hello (ECH) also needs a
             # specific libssl version - T205378
             params['COMPONENT'] = 'component/nginx-ech'
-        elif (params['ZUUL_PROJECT'] == 'operations/debs/trafficserver'):
-            # Building ATS takes a while
-            params['BUILD_TIMEOUT'] = 60  # minutes
-            # Backports needed on stretch for libbrotli-dev and a recent
-            # debhelper version (>= 11)
-            params['BACKPORTS'] = 'yes'
         elif (params['ZUUL_PROJECT']
               == 'operations/debs/contenttranslation/giella-sme'):
             # Heavy build T143546
@@ -242,8 +264,9 @@ def set_mw_dependencies(item, job, params):
     if split[1] == 'skins':
         # Lookup key in 'dependencies'. Example: 'skins/Vector'
         dep_key = 'skins' + '/' + split[-1]
-        # 'Vector'
-        params['SKIN_NAME'] = split[-1]
+        # 'Vector' skin name is set as EXT_NAME (T402398)
+        params['EXT_NAME'] = split[-1]
+
     elif split[1] == 'services':
         # Lookup key in 'dependencies'. Example: 'parsoid'
         dep_key = split[-1]
@@ -259,38 +282,23 @@ def set_mw_dependencies(item, job, params):
     else:
         mapping = dependencies
         recurse = True
+        params['MW_ZUUL_RECURSE'] = dependencies.get(dep_key, {}).get('recurse')
 
+    if 'DISABLE_RECURSE' in params:
+        recurse = False
+        params['MW_ZUUL_RECURSE'] = False
     deps = get_dependencies(dep_key, mapping, recurse)
 
     # Split extensions and skins
     skin_deps = {d for d in deps if d.startswith('skins/')}
     ext_deps = deps - skin_deps
 
-    # T363639 - WebAuthn won't run on REL1_XX because of library issues
-    # T390754 - Just don't load WebAuthn at all if it's not master, or it's Parsoid
-    if (
-        'WebAuthn' in ext_deps and (
-            not (params['ZUUL_BRANCH'] == 'master' or params['ZUUL_BRANCH'].startswith('wmf/'))
-            or params['ZUUL_PROJECT'] == 'mediawiki/services/parsoid'
-        )
-    ):
-        ext_deps.remove('WebAuthn')
-
-    # T380434 - CommunityConfiguration and CommunityConfigurationExample,
-    # aren't in all old release branches, and falling back to the master
-    # version won't work, so just remove both in these branches...
-    if params['ZUUL_BRANCH'] in ['REL1_39', 'REL1_42']:
-        if 'CommunityConfiguration' in ext_deps:
-            # Not in REL1_39 (or REL1_41)
-            ext_deps.remove('CommunityConfiguration')
-
-        if 'CommunityConfigurationExample' in ext_deps:
-            # Not in REL1_39 or REL1_42 (or REL1_41)
-            ext_deps.remove('CommunityConfigurationExample')
-
-    # T390772 - IPReputation isn't in REL1_39, so remove it.
-    if params['ZUUL_BRANCH'] == 'REL1_39' and 'IPReputation' in ext_deps:
-        ext_deps.remove('IPReputation')
+    if params['ZUUL_BRANCH'] in ['REL1_43', 'REL1_44', 'REL1_45']:
+        # T414136 - TestKitchen doesn't exist as itself on REL1_43-REL1_45 branches,
+        # and is labelled as MetricsPlatform, therefore stop loading TestKitchen on
+        # REL1_XX until we stop adding MetricsPlatform as dependancy...
+        if 'TestKitchen' in ext_deps:
+            ext_deps.remove('TestKitchen')
 
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
@@ -307,20 +315,39 @@ def get_dependencies(key, mapping, recurse=True):
     """
     resolved = set()
 
-    def resolve_deps(ext):
+    def resolve_deps(ext, recurse=True):
         resolved.add(ext)
         deps = set()
 
         if ext in mapping:
-            for dep in mapping[ext]:
+            if 'recurse' in mapping[ext]:
+                # Format to have some extensions opt out recursive processing,
+                # example:
+                #
+                #   Foo:
+                #     recurse: False
+                #     dependencies:
+                #      - Bar
+                recurse = mapping[ext]['recurse']
+                mapping_deps = mapping[ext]['dependencies']
+            else:
+                # Legacy format, the mapping has the list of dependencies since
+                # for Phan we never processed them recursively.
+                #
+                #   Foo:
+                #    - Bar
+                #
+                mapping_deps = mapping[ext]
+
+            for dep in mapping_deps:
                 deps.add(dep)
 
                 if recurse and dep not in resolved:
-                    deps = deps.union(resolve_deps(dep))
+                    deps = deps.union(resolve_deps(dep, recurse))
 
         return deps
 
-    return resolve_deps(key)
+    return resolve_deps(key, recurse)
 
 
 tarballextensions = [
@@ -415,7 +442,6 @@ gatedextensions = [
     'GeoData',
     'GlobalCssJs',
     'GlobalPreferences',
-    'Graph',
     'GrowthExperiments',
     'GuidedTour',
     'IPInfo',
@@ -483,7 +509,8 @@ def set_gated_extensions(item, job, params):
     if len(split) == 3 and split[1] == 'services':
         params['SERVICE_NAME'] = split[-1]
     if len(split) == 3 and split[1] == 'skins':
-        params['SKIN_NAME'] = split[-1]
+        # 'Vector' skin name is set as EXT_NAME (T402398)
+        params['EXT_NAME'] = split[-1]
 
 
 # Map from ZUUL_PROJECT to DOC_PROJECT

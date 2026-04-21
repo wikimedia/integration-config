@@ -1,4 +1,4 @@
-FROM {{ "sury-php" | image_tag }} AS sury-php
+FROM {{ "php83" | image_tag }} as php83
 
 FROM {{ "quibble-bullseye" | image_tag }}
 
@@ -6,10 +6,16 @@ ENV PHP_VERSION=8.3
 
 USER root
 
+# Align with SRE provided packages. These include both PHP 8.3 packages and the
+# PCRE2 10.42 backport on which they depend (T398245).
+COPY wikimedia-php83.list /etc/apt/sources.list.d/wikimedia-php83.list
+
 #############################
 #  Debian packages we need  #
 #############################
+# (T386006) We're re-specifying pcre2 (libpcre2-8-0) to re-install the newer version than base
 {% set mediawiki_deps|replace('\n', ' ') -%}
+libpcre2-8-0
 php8.3-apcu
 php8.3-bcmath
 php8.3-cli
@@ -22,28 +28,31 @@ php8.3-ldap
 php8.3-mbstring
 php8.3-memcached
 php8.3-mysql
+php8.3-pcov
 php8.3-pgsql
 php8.3-sqlite3
 php8.3-tidy
 php8.3-uuid
+php8.3-xdebug
 php8.3-xml
 php8.3-zip
+php8.3-wikidiff2
 {%- endset -%}
 
-# We need to get a newer version of php-ast from sury.org (T174338)
-COPY --from=sury-php /etc/apt/trusted.gpg.d/php.gpg /etc/apt/trusted.gpg.d/php.gpg
-
-RUN {{ "apt-transport-https" | apt_install }} && \
-    echo "deb https://packages.sury.org/php/ bullseye main" > /etc/apt/sources.list.d/php.list
-
-# Pin sury's repo higher for the packages that exist in both bullseye and sury
-COPY sury.pin /etc/apt/preferences.d/sury
 RUN {{ mediawiki_deps | apt_install }} \
     && /install-php-fpm-conf.sh
 
+# Get a new, standard-across-Wikimedia-CI version of php-ast from our build, rather than using Debian's old one.
+# The careful work to custom-build this is already done in the php83 image, so just re-use.
+COPY --from=php83 /usr/lib/php/20230831/ast.so /usr/lib/php/20230831/ast.so
+COPY --from=php83 /etc/php/8.3/cli/conf.d/20-ast.ini /etc/php/8.3/cli/conf.d/20-ast.ini
+
 # Disable pcov by default, although the performance overhead should be minimal
-RUN {{ "php8.3-pcov" | apt_install }} \
-    && phpdismod pcov
+# Disable XDebug by default due to its performance impact
+RUN phpdismod pcov xdebug
+
+# Ensure the image use PHP 8.3, as that is not the default on bullseye
+RUN update-alternatives --set php /usr/bin/php8.3
 
 # Unprivileged
 RUN install --directory /workspace --owner=nobody --group=nogroup

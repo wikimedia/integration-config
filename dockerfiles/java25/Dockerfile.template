@@ -1,0 +1,8 @@
+FROM {{ "ci-trixie" | image_tag }}
+
+RUN mkdir -p /usr/share/man/man1
+RUN {{ "openjdk-25-jdk-headless" | apt_install }}
+
+USER nobody
+WORKDIR /src
+ENTRYPOINT ["java"]

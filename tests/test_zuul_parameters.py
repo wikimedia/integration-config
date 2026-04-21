@@ -37,8 +37,8 @@ class TestZuulSetParameters(unittest.TestCase):
             self.assertIn('BACKPORTS', params)
             self.assertEquals('yes', params['BACKPORTS'])
 
-    def test_wmf_quibble_jobs_are_gates(self):
-        job = FakeJob('wmf-quibble-anything')
+    def test_quibble_with_gated_extensions_jobs_are_gated(self):
+        job = FakeJob('quibble-with-gated-extensions-anything')
         params = {
             'ZUUL_PROJECT': 'mediawiki/core',
             'ZUUL_PIPELINE': 'test',

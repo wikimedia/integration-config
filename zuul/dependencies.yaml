@@ -2,1308 +2,2892 @@
 #
 # Values are assumed to be MediaWiki extensions, so 'Foo' maps to 'mediawiki/extensions/Foo'.
 # Skins have to be prefixed with 'skins/', so 'skins/Foo' maps to 'mediawiki/skins/Foo'.
-
+#
+# The `recurse` option is instructs to recursively process each of the dependencies.
+#
 # The data is used by set_mw_dependencies() in parameter_functions.py
-
+#
 # Note! This list is not used by Phan. See phan_dependencies.yaml that list.
 
 # Skins:
 skins/BlueSpiceDiscovery:
- - BlueSpiceFoundation
- - MenuEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
+    # extras
+    - BlueSpiceFoundation
+    - MenuEditor
 
 skins/Cosmos:
- - AdminLinks
- - CookieWarning
- - CreateRedirect
- - DismissableSiteNotice
- - Echo
- - SocialProfile
- - Video
- - VisualEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AdminLinks
+    - CookieWarning
+    - CreateRedirect
+    - DismissableSiteNotice
+    - Echo
+    - SocialProfile
+    - Video
+    - VisualEditor
 
 skins/MinervaNeue:
- - MobileFrontend
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Cite
+    - Echo
+    - MobileFrontend
+    - EventBus
+    - EventLogging
+    - EventStreamConfig
+    - TestKitchen
 
 skins/Refreshed:
- - SocialProfile
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - SocialProfile
 
 skins/TuleapSkin:
- - TuleapIntegration
- - TuleapWikiFarm
-
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - TuleapIntegration
+    # extras
+    - TuleapWikiFarm
 
 # Extensions:
 3D:
- - MultimediaViewer
-
-AbuseFilter:
- - AntiSpoof
- - CentralAuth
- - CodeEditor
- - CheckUser
- - ConfirmEdit
- - Echo
- - Renameuser
- - Scribunto
- - EventLogging
-
-AchievementBadges:
- - BetaFeatures
- - Echo
-
-AdvancedSearch:
- - Translate
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - MultimediaViewer
 
 AIEditingAssistant:
-  - VisualEditor
-  - VisualEditorPlus
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - VisualEditor
+    - VisualEditorPlus
+
+AbuseFilter:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AntiSpoof
+    - CentralAuth
+    - CheckUser
+    - CodeEditor
+    - ConfirmEdit
+    - Echo
+    - EventLogging
+    - Scribunto
+    - WikiEditor
+
+AchievementBadges:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BetaFeatures
+    - Echo
+
+AdhocTranslation:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BlueSpiceFoundation
+    - OOJSPlus
+    - skins/BlueSpiceDiscovery
+    # extras transitive dependencies
+    - MenuEditor
+
+AdvancedSearch:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Translate
+    - UniversalLanguageSelector
 
 ApiFeatureUsage:
- - Elastica
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Elastica
 
 Arrays:
- - Loops
- - ParserFunctions
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Loops
+    - ParserFunctions
 
 ArticlePlaceholder:
- - Wikibase
- - Scribunto
+  recurse: true
+  dependencies:
+    # From extension.json:
+    - Scribunto
+    # extras
+    - Wikibase
 
 AtMentions:
- - OOJSPlus
- - VisualEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
+    # extras
+    - VisualEditor
 
 AutoModerator:
- - ORES
- - CommunityConfiguration
- - DiscussionTools
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - DiscussionTools
+    # Transitive requirements:
+    - Linter
+    - VisualEditor
+    # extras
+    - CommunityConfiguration
+    - ORES
 
 Babel:
- - CommunityConfiguration
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - CommunityConfiguration
 
 BlogPage:
- - Comments
- - SocialProfile
- - VoteNY
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Comments
+    - SocialProfile
+    - VoteNY
 
 BlueSpiceAbout:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceArticleInfo:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceArticlePreviewCapture:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceAuthors:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceAvatars:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - UserProfile
+    # Transitive requirements:
+    - OOJSPlus
+    - skins/BlueSpiceDiscovery
+    - MenuEditor
 
 BlueSpiceBookshelf:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
- - ContentDroplets
- - MenuEditor
- - NotifyMe
- - VueJsPlus
- - BlueSpiceExtendedSearch
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - MenuEditor
+    - VueJsPlus
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - BlueSpiceExtendedSearch
+    - BlueSpiceVisualEditorConnector
+    - ContentDroplets
+    - NotifyMe
+    - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceCategoryCheck:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceCategoryManager:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceChecklist:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceConfigManager:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceContextMenu:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceCountThings:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceCustomMenu:
- - BlueSpiceFoundation
- - MenuEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - MenuEditor
 
 BlueSpiceDashboards:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceDistributionConnector:
- - BlueSpiceExtendedStatistics
- - BlueSpiceFoundation
- - BlueSpiceSMWConnector
- - ContentDroplets
- - Echo
- - OOJSPlus
- - UserMerge
- - Workflows
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    # extras
+    - BlueSpiceExtendedStatistics
+    - BlueSpiceSMWConnector
+    - ContentDroplets
+    - Echo
+    - Forms
+    - PDFCreator
+    - UserMerge
+    - VisualEditor
+    - Workflows
+    # extras transitive requirements
+    - VueJsPlus
+    - VisualEditorPlus
 
 BlueSpiceEchoConnector:
- - BlueSpiceFoundation
- - Echo
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - Echo
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceEmoticons:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceExpiry:
- - BlueSpiceFoundation
- - BlueSpiceReminder
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceReminder
+    - OOJSPlus
+    # Transitive requirements:
+    - Forms
+    - Workflows
 
 BlueSpiceExportTables:
- - BlueSpiceFoundation
- - BlueSpiceUEModuleTable2Excel
- - BlueSpiceVisualEditorConnector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceUEModuleTable2Excel
+    # Transitive requirements:
+    - BlueSpiceVisualEditorConnector
+    - OOJSPlus
+    - VisualEditor
+    - VisualEditorPlus
 
 BlueSpiceExtendedFilelist:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceExtendedSearch:
- - BlueSpiceDistributionConnector
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    # extras
+    - BlueSpiceDistributionConnector
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
+    - VueJsPlus
+    # extras transitive dependencies
+    - PDFCreator
 
 BlueSpiceExtendedStatistics:
- - BlueSpiceFoundation
- - BlueSpiceExtendedSearch
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    # extras
+    - BlueSpiceExtendedSearch
 
 BlueSpiceFilterableTables:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    # extras
+    - Lingo
 
 BlueSpiceFlaggedRevsConnector:
- - BlueSpiceFoundation
- - FlaggedRevs
-
-BlueSpiceGroupManager:
- - BlueSpiceFoundation
-
-BlueSpiceHideTitle:
- - BlueSpiceFoundation
-
-BlueSpiceInsertCategory:
- - BlueSpiceFoundation
-
-BlueSpiceInsertFile:
- - BlueSpiceFoundation
-
-BlueSpiceInsertLink:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - FlaggedRevs
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceFoundation:
- - OOJSPlus
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
+
+BlueSpiceGroupManager:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+
+BlueSpiceHideTitle:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+
+BlueSpiceInsertCategory:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+
+BlueSpiceInsertFile:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+
+BlueSpiceInsertLink:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
+    # Transitive requirements:
+    - OOJSPlus
+    - VisualEditor
+    - VisualEditorPlus
 
 BlueSpiceInsertTemplate:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceInstanceStatus:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceInterWikiLinks:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceInterwikiSearch:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BlueSpiceFoundation
+    - OOJSPlus
+
+BlueSpiceMatomoConnector:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceMultiUpload:
- - BlueSpiceFoundation
-
-BlueSpiceNamespaceCSS:
- - BlueSpiceFoundation
-
-BlueSpiceNamespaceManager:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceNSFileRepoConnector:
- - BlueSpiceFoundation
- - NSFileRepo
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - NSFileRepo
+    # Transitive requirements:
+    - OOJSPlus
+
+BlueSpiceNamespaceCSS:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+
+BlueSpiceNamespaceManager:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpicePageAccess:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpicePageAssignments:
- - BlueSpiceFoundation
- - NotifyMe
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    # extras
+    - NotifyMe
+    # extras dependencies
+    - VisualEditor
 
 BlueSpicePageFormsConnector:
- - BlueSpiceFoundation
- - PageForms
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - PageForms
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpicePageTemplates:
- - BlueSpiceFoundation
- - BlueSpiceDistributionConnector
- - ContentDroplets
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    # extras
+    - BlueSpiceDistributionConnector
+    - ContentDroplets
+    - VisualEditor
+    # extras transitive dependencies
+    - PDFCreator
+    - VueJsPlus
 
 BlueSpicePageVersion:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpicePagesVisited:
- - BlueSpiceDistributionConnector
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
- - BlueSpiceWhoIsOnline
-
-BlueSpicePlayer:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceWhoIsOnline
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - BlueSpiceDistributionConnector
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
+    # extras transitive dependencies
+    - PDFCreator
+    - VueJsPlus
 
 BlueSpicePermissionManager:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceConfigManager
+    - BlueSpiceFoundation
+    - BlueSpiceUserManager
+    - OOJSPlus
+
+BlueSpicePlayer:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpicePrivacy:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceProDistributionConnector:
- - BlueSpiceFoundation
- - BlueSpiceUEModulePDF
- - BlueSpiceUniversalExport
- - BlueSpiceVisualEditorConnector
- - Math
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - BlueSpiceUniversalExport
+    - BlueSpiceVisualEditorConnector
+    - Math
+    - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceQrCode:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
-
-BlueSpiceRating:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceRSSFeeder:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
-BlueSpiceReaders:
- - BlueSpiceFoundation
+BlueSpiceRating:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceReadConfirmation:
- - BlueSpiceFoundation
- - BlueSpicePageAssignments
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpicePageAssignments
+    # Transitive requirements:
+    - OOJSPlus
+    - NotifyMe
+    - VisualEditor
+
+BlueSpiceReaders:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceReminder:
- - BlueSpiceFoundation
- - Workflows
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    # extras
+    - Forms
+    - Workflows
 
 BlueSpiceSMWConnector:
- - BlueSpiceFoundation
- - BlueSpiceSmartList
-
-BlueSpiceSocial:
- - BlueSpiceFoundation
- - BlueSpiceExtendedSearch
-
-BlueSpiceSocialArticleActions:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
-
-BlueSpiceSocialBlog:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
-
-BlueSpiceSocialComments:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
-
-BlueSpiceSocialMicroBlog:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
-
-BlueSpiceSocialProfile:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
- - BlueSpiceAvatars
-
-BlueSpiceSocialRating:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
- - BlueSpiceRating
-
-BlueSpiceSocialResolve:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
-
-BlueSpiceSocialTags:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
-
-BlueSpiceSocialTimelineUpdate:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
-
-BlueSpiceSocialTopics:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
-
-BlueSpiceSocialWatch:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
-
-BlueSpiceSocialWikiPage:
- - BlueSpiceFoundation
- - BlueSpiceSocial
- - BlueSpiceExtendedSearch
- - BlueSpiceMultiUpload
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    - VisualEditor
+    - VisualEditorPlus
+    # extras
+    - BlueSpiceSmartList
 
 BlueSpiceSaferEdit:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceSignHere:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
 
 BlueSpiceSmartList:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    # extras
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
+
+BlueSpiceSocial:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceExtendedSearch
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+
+BlueSpiceSocialArticleActions:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    # Transitive requirements:
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
+
+BlueSpiceSocialBlog:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    # Transitive requirements:
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
+
+BlueSpiceSocialComments:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    - BlueSpiceSocialTopics
+    # Transitive requirements:
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
+
+BlueSpiceSocialMicroBlog:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    # Transitive requirements:
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
+
+BlueSpiceSocialProfile:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceAvatars
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    # Transitive requirements:
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
+    - UserProfile
+
+BlueSpiceSocialRating:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceRating
+    - BlueSpiceSocial
+    # Transitive requirements:
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
+
+BlueSpiceSocialResolve:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    # Transitive requirements:
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
+
+BlueSpiceSocialTags:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    # Transitive requirements:
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
+
+BlueSpiceSocialTimelineUpdate:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    # Transitive requirements:
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
+
+BlueSpiceSocialTopics:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceExtendedSearch
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    - OOJSPlus
+
+BlueSpiceSocialWatch:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceSocial
+    # Transitive requirements:
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
+
+BlueSpiceSocialWikiPage:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceMultiUpload
+    - BlueSpiceSocial
+    # Transitive requirements:
+    - BlueSpiceExtendedSearch
+    - OOJSPlus
 
 BlueSpiceSubPageTree:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceTagCloud:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
+    # extras requirements
+    - VisualEditorPlus
+
+BlueSpiceTranslationTransfer:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
+    - ContentTransfer
+    - MergeArticles
+    - OOJSPlus
+    - VisualEditor
+    # transitive requirements
+    - VisualEditorPlus
 
 BlueSpiceUEModuleBookPDF:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
- - BlueSpiceBookshelf
- - BlueSpiceUEModulePDF
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceBookshelf
+    - BlueSpiceFoundation
+    - BlueSpiceUEModulePDF
+    - BlueSpiceUniversalExport
+    # Transitive requirements:
+    - MenuEditor
+    - OOJSPlus
+    - VueJsPlus
 
 BlueSpiceUEModuleDOCX:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
-
-BlueSpiceUEModulePDF:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
-
-BlueSpiceUEModulePDFRecursive:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
-
-BlueSpiceUEModulePDFSubpages:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceUniversalExport
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceUEModuleHTML:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceUniversalExport
+    # Transitive requirements:
+    - OOJSPlus
+
+BlueSpiceUEModulePDF:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceUniversalExport
+    - OOJSPlus
+
+BlueSpiceUEModulePDFRecursive:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceUniversalExport
+    # Transitive requirements:
+    - OOJSPlus
+
+BlueSpiceUEModulePDFSubpages:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceUniversalExport
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceUEModuleTable2Excel:
- - BlueSpiceFoundation
- - BlueSpiceUniversalExport
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
+    - OOJSPlus
+    - VisualEditor
+    # Transitive requirements:
+    - VisualEditorPlus
+    # extras
+    - BlueSpiceUniversalExport
 
 BlueSpiceUniversalExport:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    # extras
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
+    # extras requirements:
+    - VisualEditorPlus
 
 BlueSpiceUsageTracker:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceUserInfo:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceUserManager:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
 
 BlueSpiceUserSidebar:
- - BlueSpiceFoundation
- - MenuEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - MenuEditor
 
 BlueSpiceVisualDiff:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 BlueSpiceVisualEditorConnector:
- - BlueSpiceFoundation
- - OOJSPlus
- - VisualEditor
- - VisualEditorPlus
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    - VisualEditor
+    # extras
+    - VisualEditorPlus
 
 BlueSpiceWatchList:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
-
-BlueSpiceWikiFarm:
- - OOJSPlus
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
+    # extras requirements:
+    - VisualEditorPlus
 
 BlueSpiceWhoIsOnline:
- - BlueSpiceFoundation
- - BlueSpiceVisualEditorConnector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+    # extras
+    - BlueSpiceVisualEditorConnector
+    - VisualEditor
+    # extras requirements:
+    - VisualEditorPlus
 
 BlueSpiceWikiExplorer:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    - OOJSPlus
+
+BlueSpiceWikiFarm:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
+    # extras
+    - BlueSpiceExtendedSearch
+    - BlueSpiceFoundation
+    - EnhancedUpload
+    - skins/BlueSpiceDiscovery
+    # extras transitive dependencies
+    - MenuEditor
+    - VisualEditor
 
 BounceHandler:
- - Echo
- - CentralAuth
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AntiSpoof
+    - CentralAuth
+    - Echo
 
 CampaignEvents:
- - Translate
- - WikimediaCampaignEvents
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - cldr
+    # extras
+    - AntiSpoof
+    - CentralAuth
+    - Translate
+    - UniversalLanguageSelector
+    - UserMerge
+    - WikimediaCampaignEvents
 
 Campaigns:
- - EventLogging
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - EventLogging
 
 Capiunto:
- - Scribunto
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Scribunto
 
 CategoryWatch:
- - Echo
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Echo
 
 CentralAuth:
- - AbuseFilter
- - AntiSpoof
- - CheckUser
- - GlobalBlocking
- - GlobalPreferences
- - MobileFrontend
- - SecurePoll
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - AntiSpoof
+    # extras
+    - AbuseFilter
+    - CheckUser
+    - GlobalBlocking
+    - GlobalPreferences
+    - MobileFrontend
+    - SecurePoll
 
 CentralNotice:
- - EventLogging
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - EventLogging
 
 Challenge:
- - SocialProfile
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - SocialProfile
 
 Chart:
- - JsonConfig
-
-Checklists:
- - VisualEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - JsonConfig
+    # extras
+    - VisualEditor
 
 CheckUser:
- - AbuseFilter
- - CentralAuth
- - FlaggedRevs
- - GlobalBlocking
- - GlobalPreferences
- - GrowthExperiments
- - GuidedTour
- - IPInfo
- - MobileFrontend
- - Renameuser
- - TorBlock
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AbuseFilter
+    - AntiSpoof
+    - CentralAuth
+    - CommunityConfiguration
+    - DiscussionTools
+    - EventBus
+    - EventLogging
+    - FlaggedRevs
+    - GlobalBlocking
+    - GlobalPreferences
+    - GrowthExperiments
+    - IPInfo
+    - MobileFrontend
+    - TorBlock
+    - VisualEditor
 
-Cite:
- - cldr
- - CommunityConfiguration
- - Gadgets
- - ParserFunctions
- - Popups
- - VisualEditor
- - WikiEditor
-
-Citoid:
- - Cite
- - VisualEditor
+Checklists:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VisualEditor
 
 CirrusSearch:
- - TimedMediaHandler
- - PdfHandler
- - Cite
- - Elastica
- - GeoData
- - BetaFeatures
- - SiteMatrix
- - EventBus
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Elastica
+    # extras
+    - BetaFeatures
+    - Cite
+    - EventBus
+    - EventStreamConfig
+    - GeoData
+    - PdfHandler
+    - SiteMatrix
+    - TimedMediaHandler
+
+Cite:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - cldr
+    - CommunityConfiguration
+    - Gadgets
+    - ParserFunctions
+    - Popups
+    - VisualEditor
+    - WikiEditor
+    # extras requirements
+    - PageImages
+    - TextExtracts
+
+Citoid:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Cite
+    - VisualEditor
 
 CodeEditor:
- - WikiEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - WikiEditor
 
 CodeMirror:
- - BetaFeatures
- - WikiEditor
- - VisualEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BetaFeatures
+    - Cite
+    - VisualEditor
+    - WikiEditor
 
 CognitiveProcessDesigner:
- - PageForms
- - BlueSpiceVisualEditorConnector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
+    # extras
+    - BlueSpiceFoundation
+    - BlueSpiceVisualEditorConnector
+    - PageForms
+    - VisualEditor
+    # extras transitive dependencies
+    - VisualEditorPlus
 
 CollabPads:
- - VisualEditor
- - OOJSPlus
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
+    - VisualEditor
 
 CommunityConfiguration:
- - CommunityConfigurationExample
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - CommunityConfigurationExample
 
 CommunityConfigurationExample:
- - CommunityConfiguration
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - CommunityConfiguration
 
 CommunityRequests:
- - DiscussionTools
- - VisualEditor
- - WikimediaMessages
- - Translate
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - VisualEditor
+    - TemplateData
+    # extras
+    - DiscussionTools
+    - Linter
+    - Translate
+    - UniversalLanguageSelector
+    - WikimediaMessages
 
 ConfigManager:
- - BlueSpiceFoundation
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - BlueSpiceFoundation
+    # Transitive requirements:
+    - OOJSPlus
 
 ConfirmEdit:
- - AbuseFilter
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AbuseFilter
+    - MobileFrontend
+    - VisualEditor
 
 ContactManager:
- - PageProperties
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - PageProperties
 
 ContainerFilter:
- - VisualEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VisualEditor
 
 ContentDroplets:
- - VisualEditor
- - OOJSPlus
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - OOJSPlus
+    - VisualEditor
+
+ContentProvisioning:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
 
 ContentStabilization:
- - BlueSpiceBookshelf
- - BlueSpiceFoundation
- - BlueSpicePageAssignments
- - BlueSpiceSMWConnector
- - OOJSPlus
- - Workflows
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
+    # extras
+    - BlueSpiceBookshelf
+    - BlueSpiceFoundation
+    - BlueSpicePageAssignments
+    - BlueSpiceSmartList
+    - BlueSpiceSMWConnector
+    - Forms
+    - MenuEditor
+    - PDFCreator
+    - VueJsPlus
+    - Workflows
 
 ContentTranslation:
- - AbuseFilter
- - Echo
- - EventLogging
- - UniversalLanguageSelector
- - VisualEditor
- - WikimediaMessages
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Cite
+    - UniversalLanguageSelector
+    - VisualEditor
+    - WikimediaMessages
+    # extras
+    - AbuseFilter
+    - Echo
+    - EventLogging
 
 CookieWarning:
- - MobileFrontend
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - MobileFrontend
 
 CreateAPage:
- - WikiEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - WikiEditor
 
 Dashiki:
- - JsonConfig
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - JsonConfig
 
 DateTimeTools:
- - VisualEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VisualEditor
 
 Disambiguator:
- - VisualEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VisualEditor
 
 DiscordRCFeed:
- - Flow
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Echo
+    - Flow
+    - VisualEditor
 
 DiscussionTools:
- - VisualEditor
- - Linter
- - Echo
- - Thanks
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Linter
+    - VisualEditor
+    # extras
+    - Echo
+    - Thanks
 
 DrawioEditor:
- - VisualEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Forms
+    - VisualEditor
+    - VisualEditorPlus
 
 Echo:
- - CentralAuth
- - EventLogging
- - MobileFrontend
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AntiSpoof
+    - CentralAuth
+    - EventLogging
+    - MobileFrontend
 
 EditNotify:
- - Echo
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Echo
 
 ElectronPdfService:
- - Collection
- - FlaggedRevs
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Collection
+    - FlaggedRevs
+
+EmailAuth:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - CentralAuth
+    # extras
+    - AntiSpoof
 
 EmailAuthorization:
- - PluggableAuth
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PluggableAuth
 
 EncryptedUploads:
- - UploadWizard
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - UploadWizard
+    # Transitive requirements:
+    - EventLogging
 
 EnhancedStandardUIs:
- - OOJSPlus
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
 
 EnhancedUpload:
- - OOJSPlus
- - VisualEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
+    # extras
+    - VisualEditor
 
 EntitySchema:
- - Wikibase
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Wikibase
 
 EventBus:
- - EventStreamConfig
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - EventStreamConfig
 
 EventLogging:
- - EventStreamConfig
- - EventBus
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - EventBus
+    - EventStreamConfig
 
 ExternalGuidance:
- - MobileFrontend
- - UniversalLanguageSelector
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - MobileFrontend
+    - UniversalLanguageSelector
 
 FacetedCategory:
- - CategoryTree
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - CategoryTree
 
 FanBoxes:
- - SocialProfile
-
-FileAnnotations:
- - EventLogging
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - SocialProfile
 
 FileImporter:
- - CentralAuth
- - WikiEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AntiSpoof
+    - CentralAuth
+    - WikiEditor
 
 FlaggedRevs:
- - Scribunto
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Scribunto
 
 FlexiSkin:
- - BlueSpiceFoundation
- - OOJSPlus
- - CodeEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BlueSpiceFoundation
+    - CodeEditor
+    - OOJSPlus
+    - WikiEditor
 
 Flow:
- - AbuseFilter
- - BetaFeatures
- - Echo
- - VisualEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Echo
+    # extras
+    - AbuseFilter
+    - BetaFeatures
+    - VisualEditor
 
 Forms:
- - OOJSPlus
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - OOJSPlus
 
 FundraiserLandingPage:
- - EventLogging
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - EventLogging
 
 FundraisingTranslateWorkflow:
- - Translate
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Translate
+    # Transitive requirements:
+    - UniversalLanguageSelector
 
 GeoData:
- - CirrusSearch
-
-GettingStarted:
- - CentralAuth
- - EventLogging
- - GuidedTour
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - CirrusSearch
+    - Elastica
 
 GlobalBlocking:
- - CentralAuth
-
-GlobalContribs:
- - Editcount
-
-Graph:
- - CodeEditor
- - JsonConfig
- - VisualEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AntiSpoof
+    - CentralAuth
 
 GrowthExperiments:
- - skins/MinervaNeue
- - PageViewInfo
- - PageImages
- - EventLogging
- - Flow
- - MobileFrontend
- - Echo
- - CirrusSearch
- - VisualEditor
- - Thanks
- - CommunityConfiguration
- - WikimediaMessages
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - CommunityConfiguration
+    - VisualEditor
+    # extras
+    - CirrusSearch
+    - Echo
+    - Elastica
+    - EventBus
+    - EventLogging
+    - EventStreamConfig
+    - Flow
+    - GuidedTour
+    - MobileFrontend
+    - PageImages
+    - PageViewInfo
+    - skins/MinervaNeue
+    - TestKitchen
+    - Thanks
+    - WikimediaMessages
 
 GuidedTour:
- - EventLogging
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - EventLogging
 
 HierarchyBuilder:
- - PageForms
-
-ImageRating:
- - VoteNY
-
-ImageSuggestions:
- - Echo
- - CirrusSearch
- - Elastica
-
-InputBox:
- - MediaSearch
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PageForms
+    - SemanticMediaWiki
 
 IPInfo:
- - BetaFeatures
- - MobileFrontend
- - CheckUser
- - GlobalPreferences
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AbuseFilter
+    - BetaFeatures
+    - CheckUser
+    - GlobalPreferences
+    - IPReputation
+    - MobileFrontend
 
 IPReputation:
- - AbuseFilter
- - ConfirmEdit
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AbuseFilter
+    - ConfirmEdit
 
-JsonConfig:
- - Scribunto
- - Kartographer
+ImageRating:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VoteNY
+
+ImageSuggestions:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - CirrusSearch
+    - Echo
+    # Transitive requirements:
+    - Elastica
+
+InputBox:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - MediaSearch
+
+IssueTrackerLinks:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - VisualEditor
+    - VisualEditorPlus
 
 JWTAuth:
- - PluggableAuth
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PluggableAuth
+
+JsonConfig:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Kartographer
+    - Scribunto
+    - VisualEditor
+    - WikimediaMessages
 
 Kartographer:
- - FlaggedRevs
- - JsonConfig
- - ParserFunctions
- - VisualEditor
- - WikimediaMessages
-
-LanguageTool:
- - VisualEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - JsonConfig
+    # extras
+    - FlaggedRevs
+    - ParserFunctions
+    - VisualEditor
+    - WikimediaMessages
 
 LDAPAuthentication2:
- - LDAPProvider
- - PluggableAuth
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - LDAPProvider
+    - PluggableAuth
 
 LDAPAuthorization:
- - LDAPProvider
- - PluggableAuth
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - LDAPProvider
+    - PluggableAuth
 
 LDAPGroups:
- - LDAPProvider
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - LDAPProvider
 
 LDAPSyncAll:
- - LDAPGroups
- - LDAPProvider
- - LDAPUserInfo
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - LDAPGroups
+    - LDAPProvider
+    - LDAPUserInfo
 
 LDAPUserInfo:
- - LDAPProvider
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - LDAPProvider
+
+LanguageTool:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VisualEditor
 
 Linter:
- - VisualEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VisualEditor
 
 LoginNotify:
- - CentralAuth
- - CheckUser
- - Echo
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Echo
+    # extras
+    - AntiSpoof
+    - CentralAuth
+    # Only required for release branches 1.45 and before
+    - CheckUser
 
 MagicLinkAuthentication:
- - PluggableAuth
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PluggableAuth
 
 MassMessage:
- - CentralAuth
- - Flow
- - LiquidThreads
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AntiSpoof
+    - CentralAuth
+    - Echo
+    - Flow
+    - LiquidThreads
+    - VisualEditor
 
 MassMessageEmail:
- - MassMessage
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - MassMessage
 
 Math:
- - VisualEditor
- - Wikibase
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VisualEditor
+    - Wikibase
 
 MathSearch:
- - Math
+  recurse: true
+  dependencies:
+    # From extension.json:
+    - Math
+    # extras
+    - VisualEditor
 
 MediaSearch:
- - CirrusSearch
- - WikibaseCirrusSearch
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - CirrusSearch
+    - Elastica
+    - WikibaseCirrusSearch
 
 MediaUploader:
- - AbuseFilter
- - SpamBlacklist
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AbuseFilter
+    - SpamBlacklist
 
 MenuEditor:
- - skins/BlueSpiceDiscovery
- - OOJSPlus
-
-MetricsPlatform:
- - EventStreamConfig
- - EventLogging
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - OOJSPlus
+    - skins/BlueSpiceDiscovery
+    # extras transitive dependencies
+    - BlueSpiceFoundation
 
 MobileApp:
- - Echo
- - MobileFrontend
- - VisualEditor
- - AbuseFilter
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AbuseFilter
+    - Echo
+    - MobileFrontend
+    - VisualEditor
 
 MobileFrontend:
- - Echo
- - VisualEditor
- - MobileApp
- - skins/MinervaNeue
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Echo
+    - MobileApp
+    - skins/MinervaNeue
+    - VisualEditor
 
 MobileFrontendContentProvider:
- - MobileFrontend
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - MobileFrontend
 
 Monstranto:
- - Scribunto
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Scribunto
 
 MultimediaViewer:
- - BetaFeatures
-
-NamespacePopups:
- - PagePopups
-
-NavigationTiming:
- - EventLogging
-
-NaylorAMS:
- - PluggableAuth
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BetaFeatures
 
 NSFileRepo:
- - EnhancedUpload
- - Lockdown
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BlueSpiceFoundation
+    - EnhancedUpload
+    - Lockdown
+    - OOJSPlus
+    - PDFCreator
+    - VisualEditor
+    - VueJsPlus
+
+NamespacePopups:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PagePopups
+
+NavigationTiming:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - EventLogging
+
+NaylorAMS:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PluggableAuth
 
 Newsletter:
- - Echo
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Echo
 
 NotifyMe:
- - OOJSPlus
- - VisualEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
+    # extras
+    - VisualEditor
 
 Nuke:
- - CheckUser
- - EventLogging
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - CheckUser
+    - EventLogging
 
 OATHAuth:
- - CheckUser
- - Echo
- - WebAuthn
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AntiSpoof
+    - Echo
+    - CentralAuth
+    - CheckUser
+    - WebAuthn
 
 OAuth:
- - AbuseFilter
- - Echo
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AbuseFilter
+    - Echo
 
 OAuthRateLimiter:
- - OAuth
-
-OpenIDConnect:
- - PluggableAuth
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OAuth
 
 ORES:
- - AbuseFilter
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AbuseFilter
 
-PageCheckout:
- - Workflows
-
-PageTriage:
- - WikiLove
- - ORES
- - Echo
- - PageViewInfo
-
-PageViewInfo:
- - Graph
-
-PageViewInfoGA:
- - PageViewInfo
-
-ParserFunctions:
- - Scribunto
+OpenIDConnect:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PluggableAuth
 
 parsoid:
- - TimedMediaHandler
- - ParserFunctions
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - ParserFunctions
+    - Scribunto
+    - TimedMediaHandler
 
 PDFCreator:
- - OOJSPlus
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
+    # extras
+    - skins/BlueSpiceDiscovery
+    - BlueSpiceFoundation
+    - VisualEditor
+    - VueJsPlus
+    # extras transitive dependencies
+    - MenuEditor
+
+PageCheckout:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Forms
+    - OOJSPlus
+    - Workflows
+
+PageTriage:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Echo
+    - ORES
+    - PageViewInfo
+    - WikiLove
+
+PageViewInfoGA:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PageViewInfo
+
+ParserFunctions:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Scribunto
+
+PersonalDashboard:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - CommunityConfiguration
+    # Transitive requirements
+    - Echo
+    # extras
+    - FlaggedRevs
+    - Thanks
+
+Petition:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - cldr
 
 Phonos:
- - TimedMediaHandler
-
-PhpTagsFunctions:
- - PhpTags
-
-PhpTagsSPARQL:
- - PhpTags
-
-PhpTagsSMW:
- - PhpTags
-
-PhpTagsStorage:
- - PhpTags
- - PhpTagsFunctions
- - PhpTagsWiki
- - PhpTagsWidgets
-
-PhpTagsWidgets:
- - PhpTags
- - PhpTagsFunctions
- - PhpTagsWiki
-
-PhpTagsWiki:
- - PhpTags
- - PhpTagsFunctions
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - TimedMediaHandler
 
 PictureGame:
- - SocialProfile
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - SocialProfile
 
 PollNY:
- - SocialProfile
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - SocialProfile
 
 Popups:
- - TextExtracts
- - PageImages
- - EventLogging
- - Cite
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Cite
+    - EventLogging
+    - PageImages
+    - TextExtracts
+
+PreviewLinks:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PageImages
 
 PronunciationRecording:
- - UploadWizard
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - UploadWizard
+    # Transitive requirements:
+    - EventLogging
 
 ProofreadPage:
- - LabeledSectionTransclusion
- - Scribunto
- - VisualEditor
- - BetaFeatures
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BetaFeatures
+    - LabeledSectionTransclusion
+    - ParserFunctions
+    - Scribunto
+    - VisualEditor
 
 PropertySuggester:
- - Wikibase
- - EventLogging
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - EventLogging
+    - Wikibase
 
 QuickSurveys:
- - EventLogging
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - EventLogging
 
 QuizGame:
- - Renameuser
- - SocialProfile
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - SocialProfile
 
 RandomGameUnit:
- - SocialProfile
- - PictureGame
- - PollNY
- - QuizGame
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - PictureGame
+    - PollNY
+    - QuizGame
+    - SocialProfile
+
+ReaderExperiments:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - EventBus
+    - EventLogging
+    - EventStreamConfig
+    - ParserMigration
+    - TestKitchen
+    - WikimediaEvents
+    - WikimediaMessages
+
+ReadingLists:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BetaFeatures
+    - EventBus
+    - EventLogging
+    - EventStreamConfig
+    - TestKitchen
 
 RegexFun:
- - ParserFunctions
- - Arrays
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Arrays
+    - ParserFunctions
 
 RelatedArticles:
- - BetaFeatures
- - MobileFrontend
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BetaFeatures
+    - MobileFrontend
 
 ReplaceText:
- - AdminLinks
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AdminLinks
 
 ReportIncident:
- - CommunityConfiguration
- - DiscussionTools
- - EventLogging
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - EventLogging
+    # extras
+    - CommunityConfiguration
+    - DiscussionTools
+    - Linter
+    - VisualEditor
 
 RevisionSlider:
- - MobileFrontend
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - MobileFrontend
 
 Sanctions:
- - Echo
- - Flow
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Echo
+    - Flow
+    # extras
+    - VisualEditor
 
 Score:
- - VisualEditor
- - TimedMediaHandler
- - Wikibase
-
-Scribunto:
- - SyntaxHighlight_GeSHi
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - TimedMediaHandler
+    - VisualEditor
+    - Wikibase
 
 SearchVue:
- - WikimediaMessages
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - WikimediaMessages
 
 Shibboleth:
- - PluggableAuth
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PluggableAuth
 
 SimilarEditors:
- - QuickSurveys
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - QuickSurveys
 
 SimpleBlogPage:
- - OOJSPlus
-
-SiteMetrics:
- - SocialProfile
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
 
 SimpleSAMLphp:
- - PluggableAuth
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PluggableAuth
 
 SimpleTasks:
- - Checklists
- - AtMentions
- - DateTimeTools
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - AtMentions
+    - Checklists
+    - DateTimeTools
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - VisualEditor
+
+SiteMetrics:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - SocialProfile
 
 SocialProfile:
- - WikiEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - WikiEditor
 
 Sofa:
- - Scribunto
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Scribunto
 
 SoftRedirector:
- - VisualEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VisualEditor
 
 SpamBlacklist:
- - AbuseFilter
- - CheckUser
- - EventLogging
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AbuseFilter
+    - CheckUser
+    - EventLogging
 
 SpamDiffTool:
- - SpamBlacklist
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - SpamBlacklist
+
+SpecialPageCaptcha:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - ConfirmEdit
 
 SpellingDictionary:
- - UniversalLanguageSelector
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - UniversalLanguageSelector
 
 SportsTeams:
- - SocialProfile
- - UserStatus
- - BlogPage
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BlogPage
+    - SocialProfile
+    - UserStatus
 
 StandardDialogs:
- - OOJSPlus
-
-StructuredNavigation:
- - CodeEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
 
 StopForumSpam:
- - AbuseFilter
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AbuseFilter
+
+StructuredNavigation:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - CodeEditor
+    - WikiEditor
 
 SyntaxHighlight_GeSHi:
- - VisualEditor
-
-TableTools:
- - VisualEditor
- - VueJsPlus
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VisualEditor
 
 TEI:
- - CodeMirror
- - Math
- - VisualEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - CodeMirror
+    - Math
+    - VisualEditor
+    # extras transitive requirements:
+    - Cite
+
+TableTools:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - VisualEditor
+    - VueJsPlus
 
 TemplateWizard:
- - TemplateData
- - WikiEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - TemplateData
+    - WikiEditor
 
-TitleBlacklist:
- - AntiSpoof
- - Scribunto
-
-TheWikipediaLibrary:
- - Echo
- - CentralAuth
- - GlobalPreferences
+TestKitchen:
+  recurse: true
+  dependencies:
+    # From extension.json:
+    - EventLogging
+    - EventStreamConfig
+    # extras
+    - CommunityConfiguration
+    - GrowthExperiments
+    - VisualEditor
 
 Thanks:
- - AbuseFilter
- - Echo
- - Flow
- - MobileFrontend
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Echo
+    # extras
+    - AbuseFilter
+    - Flow
+    - MobileFrontend
+    - VisualEditor
 
-Translate:
- - UniversalLanguageSelector
- - EventLogging
- - cldr
- - VisualEditor
- - Scribunto
+TheWikipediaLibrary:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - CentralAuth
+    - GlobalPreferences
+    # Transitive requirements:
+    - AntiSpoof
+    # extras
+    - Echo
 
-TranslateSvg:
- - Translate
-
-TranslationNotifications:
- - MassMessage
- - Translate
+TitleBlacklist:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AntiSpoof
+    - Scribunto
 
 Toolhub:
- - Scribunto
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Scribunto
 
 TopTenPages:
- - HitCounters
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - HitCounters
 
 TorBlock:
- - AbuseFilter
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AbuseFilter
+
+Translate:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - UniversalLanguageSelector
+    # extras
+    - cldr
+    - EventLogging
+    - Scribunto
+    - VisualEditor
+
+TranslationNotifications:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - MassMessage
+    - Translate
+    # Transitive requirements:
+    - UniversalLanguageSelector
 
 TuleapIntegration:
- - TuleapWikiFarm
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - TuleapWikiFarm
 
 TuleapWikiFarm:
- - TuleapIntegration
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - TuleapIntegration
 
 TwitterCards:
- - TextExtracts
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - TextExtracts
 
 TwnMainPage:
- - Translate
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Translate
+    # Transitive requirements:
+    - UniversalLanguageSelector
 
 TwoColConflict:
- - BetaFeatures
- - EventLogging
- - WikiEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BetaFeatures
+    - EventLogging
+    - WikiEditor
 
 UnifiedTaskOverview:
- - OOJSPlus
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OOJSPlus
 
 UniversalLanguageSelector:
- - EventLogging
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - EventLogging
 
 UnlinkedWikibase:
- - Scribunto
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Scribunto
 
 UploadWizard:
- - WikimediaMessages
- - EventLogging
- - AbuseFilter
- - SpamBlacklist
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AbuseFilter
+    - EventLogging
+    - SpamBlacklist
+    - WikimediaMessages
+
+UserProfile:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - OOJSPlus
+    - skins/BlueSpiceDiscovery
+    # extras transitive dependencies
+    - BlueSpiceFoundation
+    - MenuEditor
 
 UserStatus:
- - SocialProfile
- - SportsTeams
- - BlogPage
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BlogPage
+    - SocialProfile
+    - SportsTeams
 
 VECancelButton:
- - VisualEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - VisualEditor
 
 VEForAll:
- - VisualEditor
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - VisualEditor
 
 VikiSemanticTitle:
- - VIKI
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VIKI
 
 VikiTitleIcon:
- - VIKI
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VIKI
 
 VisualEditor:
- - Cite
- - TemplateData
- - FlaggedRevs
- - ConfirmEdit
- - DiscussionTools
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Cite
+    - ConfirmEdit
+    - DiscussionTools
+    - FlaggedRevs
+    - Linter
+    - TemplateData
 
 VisualEditorPlus:
- - VisualEditor
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VisualEditor
 
-WebAuthn:
- - OATHAuth
+WandaScore:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Wanda
 
-WebDAVClientIntegration:
- - WebDAV
-
-WebDAVMinorSave:
- - WebDAV
-
-WhoIsWatching:
- - Echo
-
-Wikibase:
- - ArticlePlaceholder
- - WikibaseCirrusSearch
- - cldr
- - Elastica
- - GeoData
- # temporarily dropped due to excessive slowness (T231198)
- # - Scribunto
- # - Capiunto
- - Echo
- - PropertySuggester
- - SpamBlacklist
- - WikibaseQualityConstraints
- - WikimediaBadges
- - WikibaseMediaInfo
- - WikibaseLexeme
- - skins/MinervaNeue
- - MobileFrontend
-
-WikibaseCirrusSearch:
- - Wikibase
- - CirrusSearch
-
-WikibaseLexeme:
- - Wikibase
- - WikibaseLexemeCirrusSearch
-
-WikibaseLexemeCirrusSearch:
- - Wikibase
- - WikibaseLexeme
- - CirrusSearch
- - WikibaseCirrusSearch
-
-WikibaseManifest:
- - Wikibase
- - OAuth
-
-WikibaseMediaInfo:
- - Wikibase
- - UniversalLanguageSelector
- - WikibaseCirrusSearch
-
-WikibaseQualityConstraints:
- - Wikibase
- - WikibaseLexeme
-
-Wikidata.org:
- - Wikibase
-
-WikidataPageBanner:
- - Wikibase
-
-WikiEditor:
- - EventLogging
- - WikimediaEvents
-
-WikiLambda:
- # Temporarily disabled for testing
- # - VisualEditor
- - UniversalLanguageSelector
- - WikimediaMessages
-
-WikimediaBadges:
- - Wikibase
-
-WikimediaCampaignEvents:
- - CampaignEvents
-
-WikimediaEvents:
- - CentralAuth
- - CheckUser
- - cldr
- - EmailAuth
- - EventLogging
- - FlaggedRevs
- - GlobalBlocking
- - GlobalPreferences
- - IPReputation
- - LoginNotify
- - OATHAuth
-
-WikimediaMaintenance:
- - CentralAuth
- - CheckUser
- - Echo
-
-WikimediaMessages:
- - cldr
-
-WikiSEO:
- - PageImages
- - Scribunto
-
-Wikisource:
- - Wikibase
- - ProofreadPage
-
-Wikistories:
- - BetaFeatures
- - EventLogging
- - MobileFrontend
- - skins/MinervaNeue
- - Echo
-
-WikiToLDAP:
- - LDAPAuthentication2
- - Renameuser
- - UserMerge
-
-wikihiero:
- - VisualEditor
-
-Workflows:
- - Forms
- - OOJSPlus
+WandaScribe:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Wanda
 
 WSOAuth:
- - PluggableAuth
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PluggableAuth
+
+WebAuthn:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - OATHAuth
+
+WhoIsWatching:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Echo
+
+WikiEditor:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - EventBus
+    - EventLogging
+    - EventStreamConfig
+    - WikimediaEvents
+
+WikiLambda:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - UniversalLanguageSelector
+    - WikimediaMessages
+
+WikiRAG:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # Transitive requirements:
+    - OOJSPlus
+    # extras
+    - BlueSpiceFoundation
+
+WikiSEO:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - PageImages
+    - Scribunto
+
+WikiToLDAP:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - LDAPAuthentication2
+    # Transitive requirements:
+    - LDAPProvider
+    - PluggableAuth
+    # extras
+    - UserMerge
+
+Wikibase:
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - ArticlePlaceholder
+    - CirrusSearch
+    - cldr
+    - Echo
+    - Elastica
+    - GeoData
+    - MobileFrontend
+    - PropertySuggester
+    - Scribunto
+    - skins/MinervaNeue
+    - SpamBlacklist
+    - UniversalLanguageSelector
+    - WikibaseCirrusSearch
+    - WikibaseLexeme
+    - WikibaseMediaInfo
+    - WikibaseQualityConstraints
+    - WikimediaBadges
+
+WikibaseCirrusSearch:
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - CirrusSearch
+    - cldr
+    - Elastica
+    - Wikibase
+
+WikibaseLexeme:
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - CirrusSearch
+    - cldr
+    - Elastica
+    - Wikibase
+    - WikibaseCirrusSearch
+    - WikibaseLexemeCirrusSearch
+
+WikibaseLexemeCirrusSearch:
+  recurse: true
+  dependencies:
+    # From extension.json:
+    - WikibaseCirrusSearch
+    - WikibaseLexeme
+    # extras
+    - CirrusSearch
+    - cldr
+    - Elastica
+    - Wikibase
+
+WikibaseManifest:
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - OAuth
+    - Wikibase
+
+WikibaseMediaInfo:
+  recurse: true
+  dependencies:
+    # From extension.json:
+    - UniversalLanguageSelector
+    - WikibaseCirrusSearch
+    # extras
+    - CirrusSearch
+    - cldr
+    - Elastica
+    - Wikibase
+
+WikibaseQualityConstraints:
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Wikibase
+    - WikibaseLexeme
+
+Wikidata.org:
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Wikibase
+
+WikidataPageBanner:
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Wikibase
+
+wikihiero:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - VisualEditor
+
+WikimediaBadges:
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Wikibase
+
+WikimediaCampaignEvents:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - CampaignEvents
+    - cldr
+
+WikimediaCustomizations:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - cldr
+    - Echo
+    - EmailAuth
+    - FlaggedRevs
+    - EventBus
+    - EventLogging
+    - IPReputation
+    - LoginNotify
+    - OATHAuth
+    - PageViewInfo
+    - WikimediaEvents
+
+WikimediaEvents:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - EventBus
+    - EventLogging
+    - TestKitchen
+    # extras
+    - AbuseFilter
+    - AntiSpoof
+    - CentralAuth
+    - CheckUser
+    - cldr
+    - ConfirmEdit
+    - Echo
+    - EmailAuth
+    - EventStreamConfig
+    - FlaggedRevs
+    - GlobalBlocking
+    - GlobalPreferences
+    - IPReputation
+    - OATHAuth
+
+WikimediaMaintenance:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - AntiSpoof
+    - CentralAuth
+    - CheckUser
+    - Echo
+
+WikimediaMessages:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - cldr
+
+Wikisource:
+  recurse: true
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - ProofreadPage
+    - ParserFunctions
+    - Wikibase
+
+Wikistories:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BetaFeatures
+    - Echo
+    - EventLogging
+    - MobileFrontend
+    - skins/MinervaNeue
+
+Workflows:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Forms
+    - OOJSPlus
+
+WP25EasterEggs:
+  recurse: true
+  dependencies:
+    - CommunityConfiguration
+    - Wikibase

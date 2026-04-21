@@ -1,6 +1,6 @@
 # Scratch container containing Maven
 
-FROM {{ "ci-buster" | image_tag }} AS build
+FROM {{ "ci-bookworm" | image_tag }} AS build
 
 # Install a more recent Maven version
 COPY KEYS /tmp/KEYS
@@ -24,4 +24,5 @@ COPY mvn /usr/local/bin/mvn
 COPY ssh_known_hosts_wikimedia /ssh_known_hosts_wikimedia
 
 COPY settings.xml /settings.xml
-COPY run.sh /run.sh
+
+ENTRYPOINT ["/usr/local/bin/mvn"]

@@ -11,7 +11,7 @@
             projects: >
                 wikimedia/fundraising/crm
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/civicrm:0.5
+            image: docker-registry.wikimedia.org/releng/civicrm:0.9-s2
             environment:
                 # $WORKSPACE is leaked from the host environment
                 WORKSPACE: "''"
@@ -24,11 +24,19 @@
         - teardown
 
 - project:
+    name: wikimedia-fundraising
+    jobs:
+        # Run `composer test` with the same env has the civicrm test env
+        - '{name}-composer-{phpflavor}':
+            phpflavor: civicrm
+            image: docker-registry.wikimedia.org/releng/civicrm:0.9-s2
+
+- project:
     name: donationinterface-fundraising-branches
     branch:
      - REL1_43:
          phpflavor: php82
-         docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.14.1-s2
+         docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1-s2
          entrypoint: quibble-with-supervisord
          donation_interface_branch: master
     jobs:
@@ -71,9 +79,6 @@
       - timestamps
       - credentials-binding:
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
@@ -87,7 +92,7 @@
     branch:
      - REL1_43:
          phpflavor: php82
-         docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.14.1-s2
+         docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1-s2
          entrypoint: quibble-with-supervisord
     jobs:
      - quibble-fundraising-{ext}-{branch}-{phpflavor}
@@ -127,9 +132,6 @@
       - timestamps
       - credentials-binding:
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
@@ -137,4 +139,4 @@
     name: fundraising-tools
     jobs:
         - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-mysqld:4.8.0-3-s3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.3

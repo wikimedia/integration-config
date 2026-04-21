@@ -11,13 +11,20 @@ import random
 import subprocess
 import sys
 import time
-
+from datetime import datetime, timezone, timedelta
 import requests
 
 WIKILAMBDA_REF = os.getenv('WIKILAMBDA_REF')
 ENV_API_PATH = os.getenv('ENV_API_PATH')
-ENV_NAME = "mw-ext-wl-ci-{}-{}".format(os.getenv('ZUUL_CHANGE'), random.randrange(10000, 99999))
+ENV_NAME = os.getenv(
+    'CATALYST_ENV_NAME',
+    "mw-ext-wl-ci-{}-{}".format(
+        os.getenv('ZUUL_CHANGE'),
+        random.randrange(10000, 99999)
+    )
+)
 ENV_URL = "{}.catalyst.wmcloud.org".format(ENV_NAME)
+EXPIRY_TIME_HOURS = int(os.getenv('EXPIRY_TIME_HOURS', 1))
 
 session = requests.Session()
 session.headers.update({
@@ -55,6 +62,7 @@ def setup_logger():
 
 
 def create_env():
+    expiry_time = datetime.now(timezone.utc) + timedelta(hours=EXPIRY_TIME_HOURS)
     try:
         return rest(ENV_API_PATH, 'post', json={
             'name': ENV_NAME,
@@ -67,7 +75,8 @@ def create_env():
                     'use': 'true',
                     'wikiRepos': '/mnt/k3s-data/wiki-repos',
                 },
-            }
+            },
+            'expiresAt': expiry_time.isoformat()
         }).json()
     except Exception as e:
         logger.error("Failed to create Wikifunctions environment: %s", e)
@@ -82,8 +91,8 @@ def stream_creation_logs(env):
             event_str = log_event.decode('utf-8')
             if event_str.startswith('data:'):
                 event_json = json.loads(event_str.removeprefix('data:'))
-                log = event_json['logs'][0]
-                logger.info("{}: {}".format(log['timestamp'], log['log']))
+                for log in event_json['logs']:
+                    logger.info("{}: {}".format(log['timestamp'], log['log']))
         return
     except Exception as e:
         if not isinstance(e, requests.HTTPError):

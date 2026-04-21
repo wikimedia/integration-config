@@ -52,7 +52,7 @@ pipelines:
       gerrit:
         - &test-event-patchset-created
           event: patchset-created
-          branch: (?!^refs/meta/config|^fundraising/REL|^wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|^REL)
+          branch: (?!^refs/meta/config|^fundraising/REL|^wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest|next)|^REL)
 
           # Patch was received with a CR+2 label set via push options, it means
           # the change will also enter the `gate-and-submit` pipeline and there
@@ -83,6 +83,7 @@ pipelines:
            - ^andrew\.green\.df@gmail\.com$ # Andrew Green; Fundraising Technology Team
            - ^ayg@aryeh\.name$ # Aryeh Gregor (simetrical); Core Platform Team
            - ^chad@horohoe\.email$ # Chad Horohoe; Release Engineering Team
+           - ^corvus@inaugust\.com$ # James E. Blair; contractor, Zuul author
            - ^david@troi\.org$ # David Chan; Editing Team
            - ^ejegg@ejegg\.com$ # Elliott Eggleston; Fundraising Tech Team
            - ^git@samsmith\.io$ # Sam Smith; Reading Web Team
@@ -99,6 +100,7 @@ pipelines:
            - ^roan\.kattouw@gmail\.com$ # Roan Kattouw; Growth Team
            - ^sam@samwilson\.id\.au$ # Sam Wilson; Community Tech Team
            - ^santhosh\.thottingal@gmail\.com$ # Santhosh Thottingal; Language Engineering Team
+           - ^sudhanshu9252@gmail\.com$ # GautamSudhanshu
            - ^srishakatux@gmail\.com$ # Srishti Sethi; Technical Engagement Team
            - ^thalia\.e\.chan@googlemail\.com$ # Thalia Chan; Anti-Harrassment Tools Team
 
@@ -119,7 +121,6 @@ pipelines:
            - ^1010delta1010@gmail\.com$ # Universal Omega
            - ^1994constant@gmail\.com$ # QEDK
            - ^2545473905@qq\.com$ # Bhsd
-           - ^4nn1l2\.wiki@gmail\.com$ # 4nn1l2
            - ^6020peaks@gmail\.com$ # Hackathon 2017
            - ^CharmindYT@gmail\.com$ # Flutterish, former GCI student
            - ^dringsim@qq\.com$ # Dringsim (沈澄心)
@@ -128,13 +129,14 @@ pipelines:
            - ^Megadev44s\.mail@gmail\.com$ # Zppix
            - ^Neriah\.wiki@gmail\.com$ # Neriah
            - ^Simon\.Legner@gmail\.com$
-           - ^[Tt]ulsibhagat50@gmail\.com$ # Tulsi Bhagat
            - ^[lL]adsgroup@gmail\.com$
            - ^aarcos\.wiki@gmail\.com$
            - ^aaronliu0130@gmail\.com$ # Aaron Liu
+           - ^aasimsyed02@outlook\.com$ # Aasim
            - ^abaris@null\.net$ # abaris / User:Doǵu
            - ^abhisandy47@gmail\.com$ # Sandeep Kumar Patel
            - ^adamr_carter@btinternet\.com$ # UltrasonicNXT
+           - ^adhominem259@gmail\.com$ # NguoiDungKhongDinhDanh
            - ^admin@glados\.cc$ # Unicodesnowman
            - ^[Aa]eywoo@proton\.me$ # Aeywoo
            - ^agboreugene@gmail\.com$
@@ -142,12 +144,15 @@ pipelines:
            - ^albertoleoncio@hotmail\.com$ # Albertoleoncio
            - ^alex@blueselene\.com$ # Alex - Miraheze Tech Volunteer
            - ^alex\.mashin@gmail\.com$ # Alex Mashin
+           - ^alex@wiki\.gg$
            - ^alk@astarios\.com$ # AKulbii
            - ^ali\.assaf\.mail@gmail\.com$
            - ^alistair31494322@gmail\.com$ # Alistair3149
            - ^alphisation@gmail\.com$ # Nardog
            - ^ammarpad@yahoo\.com$
+           - ^andre\.goujot@netc\.fr$ # Alien333
            - ^andre\.greiner-petter@t-online\.de$ # AndreG-P
+           - ^andre@molens\.org$ # Akoopal
            - ^anirudh24seven@gmail\.com$ # Anirudh S
            - ^anjali041kumari@gmail\.com$ # Anjali_Kumari_41
            - ^anomie\.wikipedia@gmail\.com$ # Brad Jorsh (anomie)
@@ -156,6 +161,7 @@ pipelines:
            - ^anull21@yahoo\.com$ # Seawolf35gerrit
            - ^any\.site\.n\.site@gmail\.com$ # Anysite
            - ^arcaynnnnnn@gmail\.com$ # arcayn/arcaynia, former GCI student
+           - ^arendpieter@proton\.me$ # Arendpieter
            - ^arthurpsmith@gmail\.com$
            - ^asthana\.sumit23@gmail\.com$ # Sumit
            - ^at\.light@live\.com\.au$ # This, that and the other
@@ -190,6 +196,7 @@ pipelines:
            - ^cw\.aanzx@gmail\.com$ # Anoop (~aanzx)
            - ^d_entous@yahoo\.com$
            - ^daimona\.wiki@gmail\.com$ # Daimona Eaytoy
+           - ^damian@damianzaremba\.co\.uk$ # DamianZaremba
            - ^daniel@nadir-seen-fire\.com$
            - ^daniel\.rey\.lopez@gmail\.com$
            - ^dannys712\.wiki@gmail\.com$
@@ -200,7 +207,7 @@ pipelines:
            - ^dereckson@espace-win\.org$
            - ^devunt@gmail\.com$
            - ^divad\.nnamtdeis@gmail\.com$ # Divadsn, former GCI student
-           - ^dragoniez\.jawp@gmail\.com
+           - ^dragoniez\.jawp@gmail\.com$
            - ^dreamrimmer\.wikimedian@gmail\.com$ # DreamRimmer
            - ^dreamyjazzwikipedia@gmail\.com$ # Dreamy_Jazz
            - ^drenfro@vistaprint\.com$ # AlephNull
@@ -210,6 +217,7 @@ pipelines:
            - ^ebrahim@gnu\.org$
            - ^edwardspec@gmail\.com$ # Edward Chernenko
            - ^eflyjason@gmail\.com$ # Yifei He, former GCI student
+           - ^eggroll97\.wikipedia@gmail\.com$ #EggRoll97
            - ^egil@wp\.pl$ # Nux
            - ^eloquence@gmail\.com$
            - ^ent3rm4n@gmail\.com$ # 0xDeadbeef
@@ -229,6 +237,7 @@ pipelines:
            - ^gerges\.shamoon\.dev@gmail\.com$ # Gerges
            - ^gianiskido@gmail\.com$ # IoannisKydonis, former GCI student
            - ^gifti@tools\.wmflabs\.org$
+           - ^git@srd\.dev$ # SomeRandomDeveloper
            - ^glaisher\.wiki@gmail\.com$
            - ^god\.vedmaka@gmail\.com$ # Vedmaka Wakalaka
            - ^gopavasanth1999@gmail\.com$ # Gopavasanth
@@ -240,6 +249,7 @@ pipelines:
            - ^hi@taavi\.wtf$ # Taavi Väänänen / Majavah
            - ^hopp\.ty\.c@gmail\.com$ # Ty Hopp
            - ^huangxuanyuxiplus@gmail\.com$ # A2093064
+           - ^hubaishan@outlook\.sa$ # Hubaishan
            - ^huji\.huji@gmail\.com$
            - ^hydriz@jorked\.com$ # Hydriz
            - ^i@ananayarora\.com$ # former GCI student
@@ -283,6 +293,8 @@ pipelines:
            - ^kaarticsivaraam91196@gmail\.com$
            - ^kapica@fel\.cvut\.cz$ # Want
            - ^karsten@hoffmeyer\.info$ # Kghbln
+           - ^kesharwaniadarsh24@gmail\.com$ # Adarsh2406
+           - ^khitron@gmail\.com$ # IKhitron
            - ^kleinmuci@gmail\.com$ # Klein Muçi
            - ^kohpirong@gmail\.com$ # Pipix, former GCI student
            - ^krenair@gmail\.com$
@@ -297,6 +309,7 @@ pipelines:
            - ^lewis@lewiscawte\.me$
            - ^lexnasser@icloud\.com$ # Lex Nasser
            - ^liangent@gmail\.com$
+           - ^lihaohong6@gmail\.com$ # Peter Li
            - ^lokal\.profil@gmail\.com$
            - ^lorentz0021@gmail\.com$
            - ^lorenzi\.arthur@gmail\.com$
@@ -305,6 +318,7 @@ pipelines:
            - ^luk\.bukkit@gmail\.com$ # LukBukkit, former GCI student
            - ^luke081515@web\.de$
            - ^luke@faraone\.cc$
+           - ^luke@telepedia\.net$ # Original Authority
            - ^mah@nichework\.com$
            - ^mail@wikinaut\.de$
            - ^majorjohn1@mail\.com$ # TheSandDoctor
@@ -331,6 +345,7 @@ pipelines:
            - ^mdaniels5757@gmail\.com$ # Mdaniels5757
            - ^mdsshakil@toolforge\.org$ # MdsShakil
            - ^mediawiki@kghoffmeyer\.de$ # Kghbln
+           - ^mediawiki@kocka\.tech$ # KockaAdmiralac
            - ^me@posix\.dev\.br$ # Daniel Souza
            - ^mhutti1@gmail\.com$ # former GCI student
            - ^michael\.reeves077@gmail\.com$ # MolecularPilot
@@ -350,17 +365,20 @@ pipelines:
            - ^mxn@1ec5\.org$ # Minh Nguyen T139345
            - ^na13072017@hotmail\.com$ # Bluehill395
            - ^nathanklumpenaar10@outlook\.com$ # former GCI student
-           - ^nerim4n@pm\.me$ # Nemoralis
+           - ^nemoralis@duck\.com$ # Nemoralis
            - ^nguyen\.jeremyt@gmail\.com$ # JeremyNguyen, former GCI student
            - ^nicholasgregory@live\.co\.uk$ # NicholasG04, former GCI student
+           - ^nicolas\.d\.michel@icloud\.com$ # Nicolasmichel
            - ^nikitarana360@gmail\.com$ # Nikitrain
            - ^nikitav30@gmail\.com$ # Phantom42, former GCI student
+           - ^nic@nicj\.net$
            - ^nik\.xyz\.in@gmail\.com$ # Nik.xyz.in
            - ^nilesh@nileshc\.com$
            - ^nils\.andre\.chang@gmail\.com$ #zD/Zd1LqRH, former GCI student
            - ^nk2indian@gmail\.com$ # TechieNK, MW extensions contributor
            - ^noam\.j\.rosenthal@gmail\.com$ # Noam Rosenthal
            - ^NovemLinguae@gmail\.com$ # NovemLinguae
+           - ^okerekechinweotito@gmail\.com$ # Okereke Chinweotito
            - ^ole\.yves@gmail\.com$
            - ^oliver\.buchtala@gmail\.com$ # Substance.io developer
            - ^operator873@gmail\.com$ # Operator873
@@ -376,6 +394,7 @@ pipelines:
            - ^perry@frasers\.org$ # Perryprog
            - ^philip-wm@shutdown\.network$ # Philipnelson99
            - ^pikne@online\.ee$ # Pikne
+           - ^piusosuji9@gmail\.com$ # Osuji Pius Nakachi - Outreachy
            - ^pixldevxp@gmail\.com$ # PixDeVl - Miraheze Tech Contributor
            - ^platonides@gmail\.com$
            - ^pleasestand@live\.com$
@@ -386,6 +405,7 @@ pipelines:
            - ^priyanshuvarshney6@gmail\.com$
            - ^proci\.wiki@gmail\.com$ # proc
            - ^prodigion@hotmail\.com$
+           - ^pskyechology@gmail\.com$ # Pskyechology / Skye
            - ^psnbaotg@protonmail\.com$ # Tranve
            - ^purodha@blissenbach\.org$
            - ^radman\.siddiki@gmail\.com$ # R4356th
@@ -400,11 +420,12 @@ pipelines:
            - ^rj23@protonmail\.com$ # Filip / rlot, former GCI student
            - ^robinp\.1273@gmail\.com$
            - ^rubin\.happy@gmail\.com$ # Rubin
-           - ^rv1971@web\.de
+           - ^rv1971@web\.de$
            - ^rylatgl@gmail\.com$
            - ^s7eph4n@protonmail\.com$ # Foxtrott
            - ^safan25641@gmail\.com$ # Safan41, former GCI student
            - ^sahilgrewalhere2001@outlook\.com$ # Sahilgrewalhere
+           - ^salujapushpit3@gmail\.com$
            - ^sam@theresnotime\.co\.uk$ # samtar
            - ^sam\.t\.nguyenn@gmail\.com$ # SamanthaNguyen
            - ^samanthanguyen1116@gmail\.com$ # SamanthaNguyen
@@ -412,8 +433,10 @@ pipelines:
            - ^samrhilson@gmail\.com$ # ValeryanM
            - ^samuelguebo@gmail\.com$ # awmd-stats maintainer
            - ^samwalton9@gmail\.com$
+           - ^sanjaisiddharth2002@gmail\.com$
            - ^saper@saper\.info$
            - ^sarhan\.alaa@protonmail\.com$ # Alaa Sarhan
+           - ^sarthakunited2022@gmail\.com$ # SARTHAK SINGH
            - ^schenonef@gmail\.com$  # Sophivorus
            - ^se4598@gmx\.de$
            - ^seb35@seb35\.fr$
@@ -422,6 +445,7 @@ pipelines:
            - ^shirayuking@gmail\.com$ # Shirayuki
            - ^siddharthvp@gmail\.com$ # SD0001
            - ^siebrand@kitano\.nl$
+           - ^sierra-quirk-suave@duck\.com$ # A smart kitten
            - ^signin\.2\.yt@gmail\.com$ # HitomiAkane, former GCI student
            - ^sjoerddebruin@me\.com$
            - ^skizzerz@skizzerz\.net$
@@ -439,12 +463,14 @@ pipelines:
            - ^tacsipacsi@jnet\.hu$
            - ^takidelfin@gmail\.com$ # takidelfin, former GCI student
            - ^tasneem\.lo\.31@gmail\.com$
+           - ^tblodt@icloud\.com$ # Tbodt
            - ^tdvit@mail\.com$ # Thomas-topway-it
+           - ^tejashyadavcr7@gmail\.com$
            - ^terppa05@gmail\.com$ # pjht, former GCI student
            - ^terasailrz@gmail\.com$ # Terasail
            - ^terracodes@outlook\.com$ # TerraCodes
            - ^terracodes@tools\.wmflabs\.org$ # Secondary mail of user TerraCodes
-           - ^thisisnotmyname275@gmail\.com$ # SomeRandomDeveloper
+           - ^thewonderfulworldofpotatoes@gmail\.com$ # msk
            - ^thomasmulhall410@yahoo\.com$ # Paladox T114528
            - ^thomaspt@hotmail\.fr$
            - ^three060@gmail\.com$ # Lindsay Wardell
@@ -462,6 +488,7 @@ pipelines:
            - ^utilizator\.receptie123@gmail\.com$
            - ^v\.a\.ghaisas@gmail\.com$ # polybuildr
            - ^valhallasw@arctus\.nl$ # Merlijn van Deen
+           - ^vanshikaa\.1105@gmail\.com$
            - ^varshneyyash60@gmail\.com$ # Yashvarshney02
            - ^vfileinput@gmail\.com$ # Unite together, extension-HotCat maintainer
            - ^victorbarbu08@gmail\.com$ # Victorbarbu, former GCI student
@@ -477,6 +504,7 @@ pipelines:
            - ^wbm1058-wikipedia@yahoo\.com$ # wbm1058
            - ^wctaiwan@gmail\.com$
            - ^webmelos@gmail\.com$ # Melos
+           - ^wiki@ituco\.dev$ # E75ti
            - ^wiki@physikerwelt\.de$
            - ^wiki@sportshead\.dev$ # Sportzpikachu
            - ^wikimedia@agamya\.dev$
@@ -502,6 +530,7 @@ pipelines:
            - ^yashagrawal9265@gmail\.com$ #Yash9265
            - ^yn\.jiyu@gmail\.com$ # Jiyu/Abstract09 - working with RhinosF1 on Quarry
            - ^yvdbogert@archixl\.nl$ # YOUR1
+           - ^ynanlohij@archixl\.nl$
            - ^yuriastrakhan@gmail\.com$
            - ^yuvipanda@gmail\.com$
            - ^zabe@avorwerk\.net$ # Zabe
@@ -513,23 +542,17 @@ pipelines:
 
            # Pywikibot related
            - ^CommodoreFabianus@gmx\.de$ # XZise, Pywikibot maintainer
-           - ^alexsh@mail2000\.com\.tw$  # Alex S.H. Lin
            - ^atagar1@gmail\.com$  # atagar
            - ^dalba\.wiki@gmail\.com$
-           - ^dr\.trigon@surfeu\.ch$  # DrTrigon
            - ^happy5214@gmail\.com$
            - ^info@gno\.de$ # Xqt, Pywikibot maintainer
-           - ^loic@dachary\.org$
            - ^maarten@mdammers\.nl$  # Multichill
            - ^mahveotm@gmail\.com$
-           - ^malafaya@clix\.pt$
            - ^meno25mail@gmail\.com$  # Meno25
            - ^mpaa\.wiki@gmail\.com$
            - ^nullzero\.free@gmail\.com$
-           - ^pyfisch@gmail\.com$
            - ^qdinar@gmail\.com$  # Dinar Qurbanov, Tatar LanguageConverter
            - ^ricordisamoa@disroot\.org$
-           - ^russblau@imapmail\.org$  # Russell Blau
            - ^whym@whym\.org$
            - ^wiki@strainu\.ro$  # Strainu
            - ^wikiposta@gmail\.com$  # Bináris
@@ -577,11 +600,14 @@ pipelines:
            - ^edlira\.dushku@gmail\.com$
            - ^nokibsarkar@gmail\.com$
 
+          # New developers
+           - ^camilojdiaz@gmail\.com$
+
         # Let allowed users the ability to reenqueue a change in the test
         # pipeline by simply commenting 'recheck' on a change.
         - &test-event-comment-recheck
           event: comment-added
-          branch: (?!^refs/meta/config|^fundraising/REL|^wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|^REL)
+          branch: (?!^refs/meta/config|^fundraising/REL|^wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest|next)|^REL)
           comment: (?im)^Patch Set \d+:( -?Code\-Review(\+|-)?(1|2)?)?(\n\n\(\d+ comment(s)?\))?\n\n\s*recheck\b
           email: *email_allowlist
 
@@ -589,7 +615,7 @@ pipelines:
         # (Verified 0 or 1)
         - &test-event-plus-one
           event: comment-added
-          branch: (?!^refs/meta/config|^fundraising/REL|wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|^REL)
+          branch: (?!^refs/meta/config|^fundraising/REL|^wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest|next)|^REL)
           reject-approval:
             # hasn't been tested yet
             - verified: [-1, 2]
@@ -602,7 +628,7 @@ pipelines:
         # Let LibUp run tests on the changes it doesn't +2
         - &test-event-libup
           event: comment-added
-          branch: (?!^refs/meta/config|^fundraising/REL|wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|^REL)
+          branch: (?!^refs/meta/config|^fundraising/REL|^wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest|next)|^REL)
           reject-approval:
             # hasn't been tested yet
             - verified: [-1, 2]
@@ -635,11 +661,11 @@ pipelines:
     trigger:
       gerrit:
         - !!merge : *test-event-patchset-created
-          branch: wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)
+          branch: wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest|next)
         - !!merge : *test-event-comment-recheck
-          branch: wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)
+          branch: wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest|next)
         - !!merge : *test-event-plus-one
-          branch: wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)
+          branch: wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest|next)
 
   - !!merge : *test_pipeline
     name: test-fundraising
@@ -653,32 +679,6 @@ pipelines:
           branch: ^fundraising/REL
         - !!merge : *test-event-plus-one
           branch: ^fundraising/REL
-
-  - !!merge : *test_pipeline
-    name: test-1_39
-    description: >
-      Variation of the "test" pipeline reserved for MediaWiki 1.39
-    trigger:
-      gerrit:
-        - !!merge : *test-event-patchset-created
-          branch: ^REL1_39$
-        - !!merge : *test-event-comment-recheck
-          branch: ^REL1_39$
-        - !!merge : *test-event-plus-one
-          branch: ^REL1_39$
-
-  - !!merge : *test_pipeline
-    name: test-1_42
-    description: >
-      Variation of the "test" pipeline reserved for MediaWiki 1.42
-    trigger:
-      gerrit:
-        - !!merge : *test-event-patchset-created
-          branch: ^REL1_42$
-        - !!merge : *test-event-comment-recheck
-          branch: ^REL1_42$
-        - !!merge : *test-event-plus-one
-          branch: ^REL1_42$
 
   - !!merge : *test_pipeline
     name: test-1_43
@@ -705,6 +705,53 @@ pipelines:
           branch: ^REL1_44$
         - !!merge : *test-event-plus-one
           branch: ^REL1_44$
+
+  - !!merge : *test_pipeline
+    name: test-1_45
+    description: >
+      Variation of the "test" pipeline reserved for MediaWiki 1.45
+    trigger:
+      gerrit:
+        - !!merge : *test-event-patchset-created
+          branch: ^REL1_45$
+        - !!merge : *test-event-comment-recheck
+          branch: ^REL1_45$
+        - !!merge : *test-event-plus-one
+          branch: ^REL1_45$
+
+  - !!merge : *test_pipeline
+    name: test-1_46
+    description: >
+      Variation of the "test" pipeline reserved for MediaWiki 1.46
+    trigger:
+      gerrit:
+        - !!merge : *test-event-patchset-created
+          branch: ^REL1_46$
+        - !!merge : *test-event-comment-recheck
+          branch: ^REL1_46$
+        - !!merge : *test-event-plus-one
+          branch: ^REL1_46$
+
+  # (T414621) A custom, high-priority pipeline just for puppet compiler
+  - name: puppet-prio
+    description: >
+      A custom, high-priority pipeline just for puppet compiler. These only run after submitting the comment "check puppet".
+    manager: IndependentPipelineManager
+    source: gerrit
+    precedence: high
+    trigger:
+      gerrit:
+        - event: comment-added
+          comment: (?im)^Patch Set \d+:\n\n\s*check puppet\.?\s*$
+          email: *email_allowlist
+    success-message: 'Puppet compiler build succeeded.'
+    success:
+      gerrit:
+        tag: autogenerated:ci-puppet
+    failure-message: 'Puppet compiler build failed.'
+    failure:
+      gerrit:
+        tag: autogenerated:ci-puppet
 
   # Dedicated pipeline for per-patch coverage report (non-voting)
   - name: coverage
@@ -844,7 +891,7 @@ pipelines:
         - &gate-and-submit-comment-added
           event: comment-added
           branch:
-           - (?!^(refs/meta/config|wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|fundraising/REL|REL))
+           - (?!^refs/meta/config|^fundraising/REL|^wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest|next)|^REL)
           email:
            - ^(?!l10n-bot@translatewiki\.net).*$
           approval:
@@ -874,7 +921,7 @@ pipelines:
     trigger:
       gerrit:
         - event: comment-added
-          branch: wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)
+          branch: wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest|next)
           email:
            - ^(?!l10n-bot@translatewiki\.net).*$
           approval:
@@ -890,24 +937,6 @@ pipelines:
       gerrit:
         - !!merge : *gate-and-submit-comment-added
           branch: ^fundraising/REL
-
-  - !!merge : *gate_and_submit_pipeline
-    name: gate-and-submit-1_39
-    description: >
-      Variation of the "gate-and-submit" pipeline reserved for MediaWiki 1.39.
-    trigger:
-      gerrit:
-        - !!merge : *gate-and-submit-comment-added
-          branch: ^REL1_39
-
-  - !!merge : *gate_and_submit_pipeline
-    name: gate-and-submit-1_42
-    description: >
-      Variation of the "gate-and-submit" pipeline reserved for MediaWiki 1.42.
-    trigger:
-      gerrit:
-        - !!merge : *gate-and-submit-comment-added
-          branch: ^REL1_42
 
   - !!merge : *gate_and_submit_pipeline
     name: gate-and-submit-1_43
@@ -926,6 +955,24 @@ pipelines:
       gerrit:
         - !!merge : *gate-and-submit-comment-added
           branch: ^REL1_44
+
+  - !!merge : *gate_and_submit_pipeline
+    name: gate-and-submit-1_45
+    description: >
+      Variation of the "gate-and-submit" pipeline reserved for MediaWiki 1.45.
+    trigger:
+      gerrit:
+        - !!merge : *gate-and-submit-comment-added
+          branch: ^REL1_45
+
+  - !!merge : *gate_and_submit_pipeline
+    name: gate-and-submit-1_46
+    description: >
+      Variation of the "gate-and-submit" pipeline reserved for MediaWiki 1.46.
+    trigger:
+      gerrit:
+        - !!merge : *gate-and-submit-comment-added
+          branch: ^REL1_46
 
   # Separate gate for commits authored by l10n-bot, which run different tests.
   # It also has a lower priority, and improved concurrency (no DependentPipelineManager).
@@ -1022,23 +1069,7 @@ jobs:
     success-pattern: 'https://integration.wikimedia.org/ci/job/{job.name}/{build.number}/'
     files: 'debian/.*'
 
-  - name: ^wmf-quibble-vendor
-    # Gated extensions are only for master and Wikimedia deployment. We do not
-    # run them on REL branches.
-    branch: (?!^REL)
-    skip-if:
-      - project: ^mediawiki/core$
-      - project: ^mediawiki/vendor$
-
-  - name: ^wmf-quibble-core-vendor
-    # Gated extensions are only for master and Wikimedia deployment. We do not
-    # run them on REL branches.
-    branch: (?!^REL)
-    skip-if:
-      - project: ^mediawiki/extensions/.*$
-      - project: ^mediawiki/skins/.*$
-
-  - name: ^wmf-quibble-selenium
+  - name: ^quibble-with-gated-extensions
     # Gated extensions are only for master and Wikimedia deployment. We do not
     # run them on REL branches.
     branch: (?!^REL)
@@ -1048,8 +1079,7 @@ jobs:
       - project: ^mediawiki/extensions/DonationInterface$
         branch: ^deployment$
 
-  # Only run patch coverage if a PHP file was
-  # changed on master.
+  # Only run patch coverage if a PHP file was changed on master.
   - name: ^.*-phpunit-coverage-patch
     branch: master
     files:
@@ -1066,8 +1096,9 @@ jobs:
   - name: ^trigger-inference-services-pipeline-outlink
     files:
         - '.pipeline/outlink/blubber.yaml'
+        - '.pipeline/outlink_cache_adapter/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'src/models/outlink_topic_model/model_server/.*'
+        - 'src/models/outlink_topic_model/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-outlink-transformer
@@ -1076,12 +1107,6 @@ jobs:
         - '.pipeline/config.yaml'
         - 'src/models/outlink_topic_model/transformer/.*'
         - 'python/.*\.py$'
-
-  - name: ^trigger-inference-services-pipeline-nsfw
-    files:
-        - '.pipeline/nsfw/blubber.yaml'
-        - '.pipeline/config.yaml'
-        - 'src/models/nsfw-model/model-server/.*'
 
   - name: ^trigger-inference-services-pipeline-revertrisk
     files:
@@ -1101,9 +1126,9 @@ jobs:
 
   - name: ^trigger-inference-services-pipeline-revertrisk-wikidata
     files:
-        - '.pipeline/revertrisk/wikidata.yaml'
+        - '.pipeline/revertrisk_wikidata/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'src/models/revert_risk_model/model_server/.*'
+        - 'src/models/revertrisk_wikidata/.*'
         - 'python/.*\.py$'
         - 'python/.*\.yaml$'
 
@@ -1186,29 +1211,59 @@ jobs:
     files:
         - '.*'
 
+  - name: ^trigger-inference-services-pipeline-revise-tone-task-generator
+    files:
+        - '.pipeline/revise_tone_task_generator/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/revise_tone_task_generator/.*'
+
+  - name: ^trigger-inference-services-pipeline-embeddings
+    files:
+        - '.pipeline/embeddings/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/embeddings/.*'
+        - 'python/.*\.py$'
+
+  - name: ^trigger-inference-services-pipeline-policy-violation-gpt-oss-safeguard
+    files:
+        - '.pipeline/policy_violation/blubber_gpt_oss_safeguard_20b.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/policy_violation/gpt_oss_safeguard_20b/.*'
+
+  - name: ^trigger-inference-services-pipeline-policy-violation-cope-a-9b
+    files:
+        - '.pipeline/policy_violation/blubber_cope_a_9b.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/policy_violation/cope_a_9b/.*'
+
   # End of meta jobs (the ones starting with ^)
 
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
   # queue-name can not be applied based on a regex, apply the name on most used
   # jobs.
-  - name: mediawiki-quibble-composer-mysql-php81
+  - name: quibble-for-mediawiki-core-composer-mysql-php83
     queue-name: mediawiki
-  - name: mediawiki-quibble-vendor-mysql-php81
+  - name: quibble-for-mediawiki-core-vendor-mysql-php83
     queue-name: mediawiki
-  - name: mwgate-node20
+  - name: mediawiki-node24
+    queue-name: mediawiki
+  - name: quibble-composer-mysql-php83
+    queue-name: mediawiki
+  - name: quibble-vendor-mysql-php83
     queue-name: mediawiki
 
   # Some rake jobs should trigger regardless of affected files:
-  - name: mediawiki-vagrant-ruby2.5-rake
+  - name: mediawiki-vagrant-ruby2.7-rake
+    voting: false
     files:
       - '.*'
 
-  - name: puppet-wmf-styleguide-ruby2.5-rake
+  - name: puppet-wmf-styleguide-ruby2.7-rake
     files:
       - '.*'
 
   # Ditto for translatewiki which has puppet modules under /puppet
-  - name: translatewiki-ruby2.5-rake
+  - name: translatewiki-ruby2.7-rake
     files:
       - '^\.puppet-lint\.rc$'
       - '^puppet/.*'
@@ -1219,7 +1274,8 @@ jobs:
     success-pattern: 'https://integration.wikimedia.org/ci/job/{job.name}/{build.number}/'
     branch: ^wmf/.*$
 
-  - name: gerrit-node20
+  # Only deploy branches need `npm run test`
+  - name: ^gerrit-node.*
     branch: ^deploy/wmf.*$
 
   - name: cumin-tox-publish
@@ -1277,9 +1333,6 @@ jobs:
   - name: mwext-phpunit-coverage-publish
     mutex: mwext-phpunit-coverage-publish
 
-  - name: mwskin-phpunit-coverage-publish
-    mutex: mwskin-phpunit-coverage-publish
-
   # Zuul does not know whether a Jenkins job is marked as non concurrent and
   # would thus trigger the associated Gearman function multiple times.
   # The Gearman plugin assign each build to a node and each of its executors
@@ -1306,8 +1359,8 @@ jobs:
     branch: (?!.*deployment.*|^contrib$)
 
   # Make 'standalone' jobs run consecutively not concurrently, as they can clobber each other
-  - name: quibble-vendor-mysql-php81-phpunit-standalone
-    mutex: quibble-vendor-mysql-php81-phpunit-standalone
+  - name: quibble-vendor-mysql-php83-phpunit-standalone
+    mutex: quibble-vendor-mysql-php83-phpunit-standalone
 
   # Still being tested
   #
@@ -1336,7 +1389,7 @@ jobs:
       - '^jjb/.*'
       - '^tox.ini$'
 
-  - name: operations-mw-config-php81-composer-diffConfig
+  - name: operations-mw-config-php83-composer-diffConfig
     voting: false
     # Note that the results are the other way around because we're using `git diff --exit-code`.
     success-message: 'FAILURE No change detected against the current configuration.'
@@ -1351,10 +1404,19 @@ jobs:
     success-message: 'SUCCESS No layout difference. Build'
     failure-message: 'SUCCESS Review the Zuul layout difference. Build'
 
+  - name: 'integration-config-zuul-params-diff'
+    voting: false
+    success-message: 'SUCCESS No dependencies difference. Build'
+    failure-message: 'SUCCESS Review the Zuul dependencies difference. Build'
+    files:
+      - '^zuul/.*'
+      - '^utils/zuul-params-diff.sh'
+      - '^utils/zuul-mw-jobs-runner.py'  # Used to dump dependencies
+
   - name: 'integration-config-zuul-layout-validate'
     branch: (?!labs)
 
-  - name: 'mwext-node20-docs-publish'
+  - name: 'mwext-node24-docs-publish'
     branch: ^master$
 
   - name: 'mwext-doxygen-publish'
@@ -1368,9 +1430,6 @@ jobs:
     skip-if:
       - branch: ^wmf/.*$
       - branch: ^fundraising/.*$
-
-  - name: mediawiki-phpbench-patch
-    voting: false
 
   # Job to ease reviews of MW-CS changes
   - name: mw-tools-codesniffer-mwcore-testrun
@@ -1395,14 +1454,10 @@ jobs:
     voting: false
     # Only fails if someone edits includes/Defines.php on a wmf branch that is NOT the most recent
     failure-message: 'FAILURE to generate new changelog for mediawiki.org (safe to ignore)'
-    # There is no need to generate train deploy notes for wmf/branch_cut_pretest
+    # There is no need to generate train deploy notes for wmf/branch_cut_pretest or wmf/next
     branch: wmf/\d\.\d{2}\.\d-wmf\.\d{1,2}$
     files:
       - '^includes/Defines\.php$'
-
-  # Temporarily make WikiLambda's use of Catalyst for end-to-end testing non-voting
-  - name: ^wikilambda-catalyst-end-to-end$
-    voting: false
 
 project-templates:
 
@@ -1423,45 +1478,44 @@ project-templates:
   #
   - name: extension-broken
     test:
-      - mwgate-composer-php81
-      - mwgate-node20
+      - mediawiki-composer-php83
+      - mediawiki-node24
     gate-and-submit:
-      - mwgate-composer-php81
-      - mwgate-node20
-
-    test-1_39:
-      - mwgate-composer-php81
-      - mwgate-node20
-    gate-and-submit-1_39:
-      - mwgate-composer-php81
-      - mwgate-node20
-
-    test-1_42:
-      - mwgate-composer-php81
-      - mwgate-node20
-    gate-and-submit-1_42:
-      - mwgate-composer-php81
-      - mwgate-node20
+      - mediawiki-composer-php83
+      - mediawiki-node24
 
     test-1_43:
-      - mwgate-composer-php81
-      - mwgate-node20
+      - mediawiki-composer-php81
+      - mediawiki-node24
     gate-and-submit-1_43:
-      - mwgate-composer-php81
-      - mwgate-node20
+      - mediawiki-composer-php81
+      - mediawiki-node24
 
     test-1_44:
-      - mwgate-composer-php81
-      - mwgate-node20
+      - mediawiki-composer-php81
+      - mediawiki-node24
     gate-and-submit-1_44:
-      - mwgate-composer-php81
-      - mwgate-node20
+      - mediawiki-composer-php81
+      - mediawiki-node24
+
+    test-1_45:
+      - mediawiki-composer-php83
+      - mediawiki-node24
+    gate-and-submit-1_45:
+      - mediawiki-composer-php83
+      - mediawiki-node24
+
+    test-1_46:
+      - mediawiki-composer-php83
+      - mediawiki-node24
+    gate-and-submit-1_46:
+      - mediawiki-composer-php83
+      - mediawiki-node24
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
     experimental:
-      - mwext-php81-phan
-      - quibble-composer-mysql-php81
+      - mwext-phan-php83
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
@@ -1470,106 +1524,103 @@ project-templates:
 
   # Main CI template for extensions, using quibble
   #
-  # As of 2025-05-19, our current CI testing targets are Node 20, plus:
-  # master : PHP 8.1–8.3 (supported & tested)
-  # REL1_39: PHP 7.4 & 8.1 (but only test 8.1)
-  # REL1_42: PHP 8.1–8.3 (supported & tested)
+  # As of 2026-03-04, our current CI testing targets are Node 20, plus:
+  # master : PHP 8.2–8.5 (supported & tested; 8.5 only for MW core and vendor so far)
   # REL1_43: PHP 8.1–8.3 (supported & tested)
+  # REL1_44: PHP 8.1–8.3 (supported & tested)
+  # REL1_45: PHP 8.2–8.3 (supported & tested)
+  # REL1_46: PHP 8.2–8.4 (supported & tested)
+  # wmf/*:   PHP 8.3 (supported & tested)
   - name: extension-quibble
     test:
-      - quibble-vendor-mysql-php81
-      - quibble-vendor-mysql-php81-selenium
-      - mwgate-node20
-      - mwext-php81-phan
+      - quibble-vendor-mysql-php83
+      - quibble-vendor-mysql-php83-selenium
+      - mediawiki-node24
+      - mwext-phan-php83
     php:
       - quibble-vendor-mysql-php82
-      - quibble-vendor-mysql-php83
+      - quibble-vendor-mysql-php84
     gate-and-submit:
-      - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
-      - quibble-vendor-mysql-php81-selenium
-      - mwgate-node20
-      - mwext-php81-phan
-
-    test-1_39:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
-    gate-and-submit-1_39:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
-
-    test-1_42:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
-    gate-and-submit-1_42:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      - quibble-vendor-mysql-php84
+      - quibble-vendor-mysql-php83-selenium
+      - mediawiki-node24
+      - mwext-phan-php83
 
     test-1_43:
-      - mwgate-node20
+      - mediawiki-node24
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_43:
-      - mwgate-node20
+      - mediawiki-node24
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_44:
-      - mwgate-node20
+      - mediawiki-node24
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_44:
-      - mwgate-node20
+      - mediawiki-node24
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
+
+    test-1_45:
+      - mediawiki-node24
+      - quibble-composer-mysql-php83
+    gate-and-submit-1_45:
+      - mediawiki-node24
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php82-selenium
+      - quibble-composer-mysql-php83
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-phan-php83
+
+    test-1_46:
+      - mediawiki-node24
+      - quibble-composer-mysql-php83
+    gate-and-submit-1_46:
+      - mediawiki-node24
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php82-selenium
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php84
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-phan-php83
 
     test-wmf:
-      - quibble-vendor-mysql-php81
-      - mwgate-node20
-      - mwext-php81-phan
+      - quibble-vendor-mysql-php83
+      - mediawiki-node24
+      - mwext-phan-php83
     gate-and-submit-wmf:
-      - quibble-vendor-mysql-php81
-      - mwgate-node20
-      - mwext-php81-phan
+      - quibble-vendor-mysql-php83
+      - mediawiki-node24
+      - mwext-phan-php83
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
     experimental:
       # Non-standard database types
-      - quibble-vendor-sqlite-php81
-      - quibble-vendor-postgres-php81
+      - quibble-vendor-sqlite-php83
+      - quibble-vendor-postgres-php83
       # Not-yet-supported language runtimes
-      - quibble-vendor-mysql-php84
-      - mwgate-node22
-      - mwgate-node24
+      - quibble-vendor-mysql-php85
+      - mediawiki-node22
+      - mediawiki-node24
 
   # Special job template that runs composer rather than than relying
   # on mediawiki/vendor for quibble.
@@ -1577,130 +1628,105 @@ project-templates:
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer
     test:
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      - mwgate-node20
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php83-selenium
+      - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php83
     php:
       - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php84
     gate-and-submit:
-      - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
-      - mwgate-node20
+      - quibble-composer-mysql-php83-selenium
+      - quibble-composer-mysql-php84
+      - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
-
-    test-1_39:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
-    gate-and-submit-1_39:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
-
-    test-1_42:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
-    gate-and-submit-1_42:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php83
 
     test-1_43:
-      - mwgate-node20
+      - mediawiki-node24
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_43:
-      - mwgate-node20
+      - mediawiki-node24
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_44:
-      - mwgate-node20
+      - mediawiki-node24
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_44:
-      - mwgate-node20
+      - mediawiki-node24
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php81-selenium
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
+
+    test-1_45:
+      - mediawiki-node24
+      - quibble-composer-mysql-php83
+    gate-and-submit-1_45:
+      - mediawiki-node24
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php82-selenium
+      - quibble-composer-mysql-php83
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-phan-php83
+
+    test-1_46:
+      - mediawiki-node24
+      - quibble-composer-mysql-php83
+    gate-and-submit-1_46:
+      - mediawiki-node24
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php82-selenium
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php84
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-phan-php83
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
     experimental:
       # Non-standard database types
-      - quibble-composer-sqlite-php81
-      - quibble-composer-postgres-php81
+      - quibble-composer-sqlite-php83
+      - quibble-composer-postgres-php83
       # Not-yet-supported language runtimes
-      - quibble-composer-mysql-php84
-      - mwgate-node22
-      - mwgate-node24
+      - quibble-composer-mysql-php85
+      - mediawiki-node22
+      - mediawiki-node24
 
-  # Special job template for BlueSpice extensions, that:
-  # - only runs for LTS and master branches,
-  # - uses composer rather than vendor,
-  # - doesn't run 'selenium' jobs, as BlueSpice has their own testing system,
-  # - runs bespoke 'bluespice-nodeXX' jobs instead of the mwgate mutex one, so
-  #   that they do not run in line with other extensions' gate jobs.
+  # Special job template for extensions maintained by the BlueSpice team.
+  # - Only runs for LTS branches (not master branch).
+  # - Uses composer rather than vendor.
+  # - Doesn't run 'selenium' jobs, as BlueSpice has their own testing system.
+  # - Runs bespoke 'bluespice-nodeXX' jobs instead of the mwgate mutex one,
+  #   so that they do not run in line with other extensions' gate jobs.
   - name: extension-quibble-bluespice
     test:
-      - mwext-bluespice-node20
-      - quibble-composer-mysql-php81
-    php:
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-    gate-and-submit:
-      - mwext-bluespice-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-
-    test-1_39:
-      - mwext-bluespice-node20
-      - quibble-composer-mysql-php81
-    gate-and-submit-1_39:
-      - mwext-bluespice-node20
-      - quibble-composer-mysql-php81
-
-    # Note: BlueSpice does not support non-LTS branches, so we set them as no-ops.
-    test-1_42:
       - noop
-    gate-and-submit-1_42:
+    gate-and-submit:
       - noop
 
     test-1_43:
-      - mwext-bluespice-node20
+      - mwext-bluespice-node24
       - quibble-composer-mysql-php81
     gate-and-submit-1_43:
-      - mwext-bluespice-node20
+      - mwext-bluespice-node24
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1711,13 +1737,24 @@ project-templates:
     gate-and-submit-1_44:
       - noop
 
+    test-1_45:
+      - noop
+    gate-and-submit-1_45:
+      - noop
+
+    test-1_46:
+      - noop
+    gate-and-submit-1_46:
+      - noop
+
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-composer-sqlite-php81
-      - quibble-composer-postgres-php81
+      - quibble-composer-sqlite-php83
+      - quibble-composer-postgres-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       - mwext-bluespice-node22
       - mwext-bluespice-node24
 
@@ -1727,187 +1764,174 @@ project-templates:
   # Should *not* be used for Wikimedia production without very good reason.
   - name: extension-quibble-noselenium
     test:
-      - quibble-vendor-mysql-php81
-      - mwgate-node20
-      - mwext-php81-phan
+      - quibble-vendor-mysql-php83
+      - mediawiki-node24
+      - mwext-phan-php83
     php:
       - quibble-vendor-mysql-php82
-      - quibble-vendor-mysql-php83
+      - quibble-vendor-mysql-php84
     gate-and-submit:
-      - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
-      - mwgate-node20
-      - mwext-php81-phan
-
-    test-1_39:
-      - quibble-composer-mysql-php81
-      - mwgate-node20
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
-    gate-and-submit-1_39:
-      - quibble-composer-mysql-php81
-      - mwgate-node20
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
-
-    test-1_42:
-      - quibble-composer-mysql-php81
-      - mwgate-node20
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
-    gate-and-submit-1_42:
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - mwgate-node20
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      - quibble-vendor-mysql-php84
+      - mediawiki-node24
+      - mwext-phan-php83
 
     test-1_43:
       - quibble-composer-mysql-php81
-      - mwgate-node20
+      - mediawiki-node24
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_43:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - mwgate-node20
+      - mediawiki-node24
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_44:
       - quibble-composer-mysql-php81
-      - mwgate-node20
+      - mediawiki-node24
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_44:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - mwgate-node20
+      - mediawiki-node24
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
+
+    test-1_45:
+      - quibble-composer-mysql-php83
+      - mediawiki-node24
+    gate-and-submit-1_45:
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
+      - mediawiki-node24
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-phan-php83
+
+    test-1_46:
+      - quibble-composer-mysql-php83
+      - mediawiki-node24
+    gate-and-submit-1_46:
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php84
+      - mediawiki-node24
+      # (T231966 / T226945) Disabled on release branches
+      # - mwext-phan-php83
 
     test-wmf:
-      - quibble-vendor-mysql-php81
-      - mwgate-node20
-      - mwext-php81-phan
+      - quibble-vendor-mysql-php83
+      - mediawiki-node24
+      - mwext-phan-php83
     gate-and-submit-wmf:
-      - quibble-vendor-mysql-php81
-      - mwgate-node20
-      - mwext-php81-phan
+      - quibble-vendor-mysql-php83
+      - mediawiki-node24
+      - mwext-phan-php83
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-vendor-mysql-php81-selenium
-      - quibble-vendor-sqlite-php81
-      - quibble-vendor-postgres-php81
-      - quibble-vendor-mysql-php84
-      - mwgate-node22
-      - mwgate-node24
+      - quibble-vendor-mysql-php83-selenium
+      - quibble-vendor-sqlite-php83
+      - quibble-vendor-postgres-php83
+      - quibble-vendor-mysql-php85
+      - mediawiki-node22
+      - mediawiki-node24
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
     test:
-      - quibble-composer-mysql-php81
-      - mwgate-node20
+      - quibble-composer-mysql-php83
+      - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php83
     php:
       - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php84
     gate-and-submit:
-      - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - mwgate-node20
+      - quibble-composer-mysql-php84
+      - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
-
-    test-1_39:
-      - quibble-composer-mysql-php81
-      - mwgate-node20
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
-    gate-and-submit-1_39:
-      - quibble-composer-mysql-php81
-      - mwgate-node20
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
-
-    test-1_42:
-      - quibble-composer-mysql-php81
-      - mwgate-node20
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
-    gate-and-submit-1_42:
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - mwgate-node20
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php83
 
     test-1_43:
       - quibble-composer-mysql-php81
-      - mwgate-node20
+      - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_43:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - mwgate-node20
+      - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
 
     test-1_44:
       - quibble-composer-mysql-php81
-      - mwgate-node20
+      - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_44:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - mwgate-node20
+      - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwext-php81-phan
+      # - mwext-phan-php81
+
+    test-1_45:
+      - quibble-composer-mysql-php83
+      - mediawiki-node24
+    gate-and-submit-1_45:
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
+      - mediawiki-node24
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-phan-php83
+
+    test-1_46:
+      - quibble-composer-mysql-php83
+      - mediawiki-node24
+    gate-and-submit-1_46:
+      - quibble-composer-mysql-php82
+      - quibble-composer-mysql-php83
+      - quibble-composer-mysql-php84
+      - mediawiki-node24
+      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
+      # - mwext-phan-php83
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
     experimental:
-      - quibble-composer-sqlite-php81
-      - quibble-composer-postgres-php81
+      - quibble-composer-sqlite-php83
+      - quibble-composer-postgres-php83
       - quibble-composer-mysql-php84
-      - mwext-php81-phan
-      - mwgate-node22
-      - mwgate-node24
+      - quibble-composer-mysql-php85
+      - mwext-phan-php83
+      - mediawiki-node22
+      - mediawiki-node24
 
   # Special job template that runs the "standalone" jobs - T225068
   - name: extension-quibble-only-standalone
     test:
-      - quibble-vendor-mysql-php81-phpunit-standalone
+      - quibble-vendor-mysql-php83-phpunit-standalone
     php:
       - quibble-vendor-mysql-php82-phpunit-standalone
-      - quibble-vendor-mysql-php83-phpunit-standalone
+      - quibble-vendor-mysql-php84-phpunit-standalone
     gate-and-submit:
-      - quibble-vendor-mysql-php81-phpunit-standalone
       - quibble-vendor-mysql-php82-phpunit-standalone
       - quibble-vendor-mysql-php83-phpunit-standalone
-    test-1_39:
-      - quibble-composer-mysql-php81-phpunit-standalone
-    gate-and-submit-1_39:
-      - quibble-composer-mysql-php81-phpunit-standalone
-    test-1_42:
-      - quibble-composer-mysql-php81-phpunit-standalone
-    gate-and-submit-1_42:
-      - quibble-composer-mysql-php81-phpunit-standalone
+      - quibble-vendor-mysql-php84-phpunit-standalone
     test-1_43:
       - quibble-composer-mysql-php81-phpunit-standalone
     gate-and-submit-1_43:
@@ -1916,19 +1940,27 @@ project-templates:
       - quibble-composer-mysql-php81-phpunit-standalone
     gate-and-submit-1_44:
       - quibble-composer-mysql-php81-phpunit-standalone
+    test-1_45:
+      - quibble-composer-mysql-php83-phpunit-standalone
+    gate-and-submit-1_45:
+      - quibble-composer-mysql-php83-phpunit-standalone
+    test-1_46:
+      - quibble-composer-mysql-php83-phpunit-standalone
+    gate-and-submit-1_46:
+      - quibble-composer-mysql-php83-phpunit-standalone
     experimental:
       - quibble-vendor-mysql-php84-phpunit-standalone
 
   # Special job template that runs the "apitests" job for test and gate
   - name: extension-apitests
     test:
-      - mediawiki-quibble-apitests-vendor-php81
+      - quibble-apitests-only-vendor-php83
     gate-and-submit:
-      - mediawiki-quibble-apitests-vendor-php81
+      - quibble-apitests-only-vendor-php83
     test-wmf:
-      - mediawiki-quibble-apitests-vendor-php81
+      - quibble-apitests-only-vendor-php83
     gate-and-submit-wmf:
-      - mediawiki-quibble-apitests-vendor-php81
+      - quibble-apitests-only-vendor-php83
 
   # Extensions tested together and intended for deployment to the Wikimedia Cluster
   # This job is expensive, so should only be run using the current flavour of PHP,
@@ -1936,41 +1968,66 @@ project-templates:
   - name: extension-gate
     # For master
     test:
-      - wmf-quibble-core-vendor-mysql-php81
-      - wmf-quibble-vendor-mysql-php81
-      - wmf-quibble-selenium-php81
-      - mwgate-node20
+      - mediawiki-node24
+      - quibble-with-gated-extensions-vendor-mysql-php83
+      - quibble-with-gated-extensions-selenium-php83
     gate-and-submit:
-      - mwgate-node20
-      # Only triggered on master; jobs to track Wikimedia production on PHP 8.1
-      - wmf-quibble-core-vendor-mysql-php81
-      - wmf-quibble-vendor-mysql-php81
-      - wmf-quibble-selenium-php81
+      - mediawiki-node24
+      # Only triggered on master; jobs to track Wikimedia production on PHP 8.3
+      - quibble-with-gated-extensions-vendor-mysql-php83
+      - quibble-with-gated-extensions-selenium-php83
 
     # For wmf branches
     test-wmf:
-      - mwgate-node20
-      - wmf-quibble-core-vendor-mysql-php81
-      - wmf-quibble-vendor-mysql-php81
+      - mediawiki-node24
+      - quibble-with-gated-extensions-vendor-mysql-php83
       # Not running the Selenium jobs, as they're slow and low-value
     gate-and-submit-wmf:
-      - mwgate-node20
-      - wmf-quibble-core-vendor-mysql-php81
-      - wmf-quibble-vendor-mysql-php81
+      - mediawiki-node24
+      - quibble-with-gated-extensions-vendor-mysql-php83
       # Not running the Selenium jobs, as they're slow and low-value
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
+
+  - name: wikibase-selenium-gate
+    test:
+      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
+    gate-and-submit:
+      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
+    test-1_43:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php81
+    gate-and-submit-1_43:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php81
+    test-1_44:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php81
+    gate-and-submit-1_44:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php81
+    test-1_45:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php83
+    gate-and-submit-1_45:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php83
+    test-1_46:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php83
+    gate-and-submit-1_46:
+      - quibble-with-Wikibase-extensions-browser-tests-only-composer-php83
+    test-wmf:
+      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
+    gate-and-submit-wmf:
+      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
+
+  - name: growth-experiments-selenium-gate
+    test: &growth-experiments-selenium-gate_jobs
+      - quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-php83
+    gate-and-submit: *growth-experiments-selenium-gate_jobs
+    test-wmf: *growth-experiments-selenium-gate_jobs
+    gate-and-submit-wmf: *growth-experiments-selenium-gate_jobs
 
   - name: extension-coverage
     postmerge:
       - mwext-phpunit-coverage-publish
     coverage:
       - mwext-phpunit-coverage-patch
-
-  - name: extension-phpbench
-    test:
-        - mediawiki-phpbench-patch
 
   - name: extension-codehealth
     postmerge:
@@ -1980,304 +2037,101 @@ project-templates:
 
   - name: extension-python-tox
     test:
-      - mwgate-tox
+      - mediawiki-tox
     gate-and-submit:
-      - mwgate-tox
-    test-1_39:
-      - mwgate-tox
-    gate-and-submit-1_39:
-      - mwgate-tox
-    test-1_42:
-      - mwgate-tox
-    gate-and-submit-1_42:
-      - mwgate-tox
+      - mediawiki-tox
     test-1_43:
-      - mwgate-tox
+      - mediawiki-tox
     gate-and-submit-1_43:
-      - mwgate-tox
+      - mediawiki-tox
     test-1_44:
-      - mwgate-tox
+      - mediawiki-tox
     gate-and-submit-1_44:
-      - mwgate-tox
-
-  # Runs quibble, and includes experimental jobs
-  # that are for skins.
-  - name: skin-quibble
-    test:
-      - quibble-vendor-mysql-php81
-      - quibble-vendor-mysql-php81-selenium
-      - mwgate-node20
-      - mwskin-php81-phan
-    php:
-      - quibble-vendor-mysql-php82
-      - quibble-vendor-mysql-php83
-    gate-and-submit:
-      - quibble-vendor-mysql-php81
-      - quibble-vendor-mysql-php82
-      - quibble-vendor-mysql-php83
-      - quibble-vendor-mysql-php81-selenium
-      - mwgate-node20
-      - mwskin-php81-phan
-
-    # We use composer on release branches
-    test-1_39:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled on release branches
-      # - mwskin-php81-phan
-    gate-and-submit-1_39:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled on release branches
-      # - mwskin-php81-phan
-
-    test-1_42:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-    gate-and-submit-1_42:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-
-    test-1_43:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-    gate-and-submit-1_43:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-
-    test-1_44:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-    gate-and-submit-1_44:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-
-    test-wmf:
-      - quibble-vendor-mysql-php81
-      - quibble-vendor-mysql-php81-selenium
-      - mwgate-node20
-      - mwskin-php81-phan
-    gate-and-submit-wmf:
-      - quibble-vendor-mysql-php81
-      - quibble-vendor-mysql-php81-selenium
-      - mwgate-node20
-      - mwskin-php81-phan
-
-    gate-and-submit-l10n:
-      - mediawiki-i18n-check
-
-    experimental:
-      - quibble-vendor-sqlite-php81
-      - quibble-vendor-postgres-php81
-      - quibble-vendor-mysql-php84
-      - mwgate-node22
-      - mwgate-node24
-
-  - name: skin-quibble-composer
-    test:
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      - mwgate-node20
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-    php:
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-    gate-and-submit:
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
-      - mwgate-node20
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-
-    test-1_39:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-    gate-and-submit-1_39:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-
-    test-1_42:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-    gate-and-submit-1_42:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-
-    test-1_43:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-    gate-and-submit-1_43:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-
-    test-1_44:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-    gate-and-submit-1_44:
-      - mwgate-node20
-      - quibble-composer-mysql-php81
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - quibble-composer-mysql-php81-selenium
-      # (T231966 / T226945) Disabled as it uses mediawiki/vendor
-      # - mwskin-php81-phan
-
-    gate-and-submit-l10n:
-      - mediawiki-i18n-check
-
-    experimental:
-      - quibble-composer-sqlite-php81
-      - quibble-composer-postgres-php81
-      - quibble-composer-mysql-php84
-      - mwgate-node22
-      - mwgate-node24
-
-  - name: skin-coverage
-    postmerge:
-      - mwskin-phpunit-coverage-publish
-    coverage:
-      - mwskin-phpunit-coverage-patch
+      - mediawiki-tox
+    test-1_45:
+      - mediawiki-tox
+    gate-and-submit-1_45:
+      - mediawiki-tox
+    test-1_46:
+      - mediawiki-tox
+    gate-and-submit-1_46:
+      - mediawiki-tox
 
   - name: extension-javascript-documentation
     test:
-      - mwext-node20-rundoc
-    gate-and-submit:
-      - mwext-node20-rundoc
-    postmerge:
-      - mwext-node20-docs-publish
-    experimental:
-      - mwext-node22-rundoc
       - mwext-node24-rundoc
+    gate-and-submit:
+      - mwext-node24-rundoc
+    postmerge:
+      - mwext-node24-docs-publish
 
-  - name: composer-test-php81-to-php84
+  - name: composer-test-php82-to-php85
     test:
-      - composer-php81
+      - composer-php83
     php:
       - composer-php82
-      - composer-php83
       - composer-php84
+      - composer-php85
     gate-and-submit:
-      - composer-php81
       - composer-php82
       - composer-php83
       - composer-php84
-
-  # Temporary template for repos that fail on PHP 8.2+
-  - name: composer-test-php81-only
-    test:
-      - composer-php81
-    gate-and-submit:
-      - composer-php81
-    experimental:
-      - composer-php82
-      - composer-php83
-      - composer-php84
+      - composer-php85
 
   # Temporary template for repos that fail on PHP 8.4+
-  - name: composer-test-php81-to-php83
+  - name: composer-test-php82-to-php83
     test:
-      - composer-php81
+      - composer-php83
     php:
       - composer-php82
-      - composer-php83
     gate-and-submit:
-      - composer-php81
       - composer-php82
       - composer-php83
     experimental:
       - composer-php84
+      - composer-php85
 
+  # Temporary template for repos that fail on PHP 8.5+
   - name: composer-test-php82-to-php84
     test:
-      - composer-php82
       - composer-php83
+    php:
+      - composer-php82
       - composer-php84
     gate-and-submit:
       - composer-php82
       - composer-php83
       - composer-php84
+    experimental:
+      - composer-php85
 
-  - name: composer-test-package-php81-to-php84
+  - name: composer-test-package-php82-to-php85
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php81
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
+      - composer-package-php85
     gate-and-submit:
-      - composer-package-php81
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
+      - composer-package-php85
 
-  - name: php-compile-php81-to-php84
+  - name: php-compile-php82-to-php85
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - php-compile-php81
       - php-compile-php82
       - php-compile-php83
       - php-compile-php84
+      - php-compile-php85
     gate-and-submit:
-      - php-compile-php81
       - php-compile-php82
       - php-compile-php83
       - php-compile-php84
+      - php-compile-php85
     postmerge:
-      - php81-compile-coverage-publish
+      - php83-compile-coverage-publish
 
   - name: node20
     test:
@@ -2319,14 +2173,6 @@ project-templates:
       - generic-node20-browser
     gate-and-submit:
       - generic-node20-browser
-    test-1_39:
-      - generic-node20-browser
-    gate-and-submit-1_39:
-      - generic-node20-browser
-    test-1_42:
-      - generic-node20-browser
-    gate-and-submit-1_42:
-      - generic-node20-browser
     test-1_43:
       - generic-node20-browser
     gate-and-submit-1_43:
@@ -2334,6 +2180,14 @@ project-templates:
     test-1_44:
       - generic-node20-browser
     gate-and-submit-1_44:
+      - generic-node20-browser
+    test-1_45:
+      - generic-node20-browser
+    gate-and-submit-1_45:
+      - generic-node20-browser
+    test-1_46:
+      - generic-node20-browser
+    gate-and-submit-1_46:
       - generic-node20-browser
     test-wmf:
       - generic-node20-browser
@@ -2357,14 +2211,6 @@ project-templates:
       - generic-node20-rundoc
     gate-and-submit:
       - generic-node20-rundoc
-    test-1_39:
-      - generic-node20-rundoc
-    gate-and-submit-1_39:
-      - generic-node20-rundoc
-    test-1_42:
-      - generic-node20-rundoc
-    gate-and-submit-1_42:
-      - generic-node20-rundoc
     test-1_43:
       - generic-node20-rundoc
     gate-and-submit-1_43:
@@ -2372,6 +2218,14 @@ project-templates:
     test-1_44:
       - generic-node20-rundoc
     gate-and-submit-1_44:
+      - generic-node20-rundoc
+    test-1_45:
+      - generic-node20-rundoc
+    gate-and-submit-1_45:
+      - generic-node20-rundoc
+    test-1_46:
+      - generic-node20-rundoc
+    gate-and-submit-1_46:
       - generic-node20-rundoc
     test-wmf:
       - generic-node20-rundoc
@@ -2383,28 +2237,25 @@ project-templates:
 
   - name: mwgate-npm
     test:
-      - mwgate-node20
+      - mediawiki-node24
     gate-and-submit:
-      - mwgate-node20
-    test-1_39:
-      - mwgate-node20
-    gate-and-submit-1_39:
-      - mwgate-node20
-    test-1_42:
-      - mwgate-node20
-    gate-and-submit-1_42:
-      - mwgate-node20
+      - mediawiki-node24
     test-1_43:
-      - mwgate-node20
+      - mediawiki-node24
     gate-and-submit-1_43:
-      - mwgate-node20
+      - mediawiki-node24
     test-1_44:
-      - mwgate-node20
+      - mediawiki-node24
     gate-and-submit-1_44:
-      - mwgate-node20
-    experimental:
-      - mwgate-node22
-      - mwgate-node24
+      - mediawiki-node24
+    test-1_45:
+      - mediawiki-node24
+    gate-and-submit-1_45:
+      - mediawiki-node24
+    test-1_46:
+      - mediawiki-node24
+    gate-and-submit-1_46:
+      - mediawiki-node24
 
   - name: tox
     test:
@@ -2428,11 +2279,11 @@ project-templates:
   # Track all extensions and skins in the MediaWiki tarball (not yet used)
   - name: in-mediawiki-tarball
     test:
-      - quibble-vendor-postgres-php81
-      - quibble-vendor-sqlite-php81
+      - quibble-vendor-postgres-php83
+      - quibble-vendor-sqlite-php83
     gate-and-submit:
-      - quibble-vendor-postgres-php81
-      - quibble-vendor-sqlite-php81
+      - quibble-vendor-postgres-php83
+      - quibble-vendor-sqlite-php83
 
   # Enforce each gerrit commit to follow a particular format (in testing only)
   - name: commit-message-validator
@@ -2448,21 +2299,33 @@ project-templates:
     gate-and-submit:
       - fail-archived-repositories
 
-  - name: mediawiki-php-library-php81-to-php84
+  - name: mediawiki-php-library-php82-to-php85
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php81
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
+      - composer-package-php85
     gate-and-submit:
-      - composer-package-php81
       - composer-package-php82
       - composer-package-php83
       - composer-package-php84
+      - composer-package-php85
     postmerge:
       - doxygen-publish
-      - phpunit-coverage-php81-publish
+      - phpunit-coverage-php83-publish
+
+  - name: mediawiki-php-library-php84-to-php85
+    test:
+      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
+      - composer-package-php84
+      - composer-package-php85
+    gate-and-submit:
+      - composer-package-php84
+      - composer-package-php85
+    postmerge:
+      - doxygen-publish
+      - phpunit-coverage-php85-publish
 
 # Register the Gerrit project name, apply them pipelines that in turn trigger
 # a set of jobs.
@@ -2520,48 +2383,18 @@ projects:
   - name: machinelearning/liftwing/inference-services
     test:
       - trigger-inference-services-pipeline-outlink
-      - trigger-inference-services-pipeline-outlink-transformer
-      - trigger-inference-services-pipeline-nsfw
       - trigger-inference-services-pipeline-revertrisk
-      - trigger-inference-services-pipeline-revertrisk-multilingual
-      - trigger-inference-services-pipeline-revertrisk-wikidata
-      - trigger-inference-services-pipeline-revscoring
-      - trigger-inference-services-pipeline-ores-legacy
-      - trigger-inference-services-pipeline-llm
-      - trigger-inference-services-pipeline-langid
-      - trigger-inference-services-pipeline-readability
-      - trigger-inference-services-pipeline-article-descriptions
-      - trigger-inference-services-pipeline-huggingface
-      - trigger-inference-services-pipeline-logo-detection
-      - trigger-inference-services-pipeline-articlequality
-      - trigger-inference-services-pipeline-reference-quality
-      - trigger-inference-services-pipeline-article-country
       - trigger-inference-services-pipeline-edit-check
       - trigger-inference-services-pipeline-pre-commit-check
+      - trigger-inference-services-pipeline-revise-tone-task-generator
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
-      - trigger-inference-services-pipeline-outlink-transformer
-      - trigger-inference-services-pipeline-nsfw
       - trigger-inference-services-pipeline-revertrisk
-      - trigger-inference-services-pipeline-revertrisk-multilingual
-      - trigger-inference-services-pipeline-revertrisk-wikidata
-      - trigger-inference-services-pipeline-revscoring
-      - trigger-inference-services-pipeline-ores-legacy
-      - trigger-inference-services-pipeline-llm
-      - trigger-inference-services-pipeline-langid
-      - trigger-inference-services-pipeline-readability
-      - trigger-inference-services-pipeline-article-descriptions
-      - trigger-inference-services-pipeline-huggingface
-      - trigger-inference-services-pipeline-logo-detection
-      - trigger-inference-services-pipeline-articlequality
-      - trigger-inference-services-pipeline-reference-quality
-      - trigger-inference-services-pipeline-article-country
       - trigger-inference-services-pipeline-edit-check
       - trigger-inference-services-pipeline-pre-commit-check
+      - trigger-inference-services-pipeline-revise-tone-task-generator
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
-      - trigger-inference-services-pipeline-outlink-transformer-publish
-      - trigger-inference-services-pipeline-nsfw-publish
       - trigger-inference-services-pipeline-revertrisk-publish
       - trigger-inference-services-pipeline-revertrisk-multilingual-publish
       - trigger-inference-services-pipeline-revertrisk-wikidata-publish
@@ -2577,6 +2410,11 @@ projects:
       - trigger-inference-services-pipeline-reference-quality-publish
       - trigger-inference-services-pipeline-article-country-publish
       - trigger-inference-services-pipeline-edit-check-publish
+      - trigger-inference-services-pipeline-revise-tone-task-generator-publish
+      - trigger-inference-services-pipeline-embeddings-publish
+      - trigger-inference-services-pipeline-policy-violation-gpt-oss-safeguard-publish
+      - trigger-inference-services-pipeline-policy-violation-cope-a-9b-publish
+      - trigger-inference-services-pipeline-outlink-cache-adapter-publish
 
   - name: integration/config
     test-prio:
@@ -2584,6 +2422,7 @@ projects:
       - integration-config-jjb-diff
       - integration-config-shellcheck
       - integration-config-zuul-layout-diff
+      - integration-config-zuul-params-diff
 
     gate-and-submit:
       - integration-config-tox
@@ -2598,8 +2437,7 @@ projects:
   - name: integration/docroot
     template:
       - name: node20
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      - name: composer-test-php82-to-php85
 
   - name: integration/gear
     test:
@@ -2630,18 +2468,18 @@ projects:
   - name: integration/quibble
     test:
       - integration-quibble-tox:
-        - integration-quibble-fullrun-defaults-php81
-        - integration-quibble-fullrun-opensearch-php81
-        - integration-quibble-fullrun-sqlite-php81
-        - integration-quibble-fullrun-extensions-php81
-        - integration-quibble-fullrun-extensions-phpunit-php81
+        - integration-quibble-fullrun-defaults-php83
+        - integration-quibble-fullrun-opensearch-php83
+        - integration-quibble-fullrun-sqlite-php83
+        - integration-quibble-fullrun-extensions-php83
+        - integration-quibble-fullrun-extensions-phpunit-php83
     gate-and-submit:
       - integration-quibble-tox:
-        - integration-quibble-fullrun-defaults-php81
-        - integration-quibble-fullrun-opensearch-php81
-        - integration-quibble-fullrun-sqlite-php81
-        - integration-quibble-fullrun-extensions-php81
-        - integration-quibble-fullrun-extensions-phpunit-php81
+        - integration-quibble-fullrun-defaults-php83
+        - integration-quibble-fullrun-opensearch-php83
+        - integration-quibble-fullrun-sqlite-php83
+        - integration-quibble-fullrun-extensions-php83
+        - integration-quibble-fullrun-extensions-phpunit-php83
     postmerge:
       - integration-quibble-tox-publish
 
@@ -2690,17 +2528,17 @@ projects:
     template:
       - name: node20-rundoc
     test:
-      - api-testing-mysql-php81
-      - api-testing-sqlite-php81
+      - api-testing-mysql-php83
+      - api-testing-sqlite-php83
     gate-and-submit:
-      - api-testing-mysql-php81
-      - api-testing-sqlite-php81
+      - api-testing-mysql-php83
+      - api-testing-sqlite-php83
     postmerge:
       - generic-node20-docs-publish
 
   - name: mediawiki/tools/code-utils
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php85
     test:
       - shellcheck
     gate-and-submit:
@@ -2708,7 +2546,7 @@ projects:
 
   - name: mediawiki/tools/codesniffer
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
     test:
       - mw-tools-codesniffer-mwcore-testrun
 
@@ -2726,11 +2564,11 @@ projects:
 
   - name: mediawiki/tools/minus-x
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/tools/phpunit-patch-coverage
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/tools/releng
     template:
@@ -2740,30 +2578,35 @@ projects:
 
   - name: mediawiki/tools/phan
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
     test:
       - mw-tools-phan-mwcore-testrun
 
   - name: mediawiki/tools/phan/SecurityCheckPlugin
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php82-to-php85
     postmerge:
       - mw-tools-phan-demos-publish
-      - phpunit-coverage-php81-publish
+      - phpunit-coverage-php83-publish
+
+  - name: mediawiki/tools/ParseWiki
+    template:
+      - name: composer-test-package-php82-to-php85
 
   - name: mediawiki/vagrant
     test:
-      - mediawiki-vagrant-ruby2.5-rake
-    gate-and-submit:
-      - mediawiki-vagrant-ruby2.5-rake
+      - mediawiki-vagrant-ruby2.7-rake
+    # T398469 disbled until the job is voting again
+    #gate-and-submit:
+    #  - mediawiki-vagrant-ruby2.7-rake
     postmerge:
       - mediawiki-vagrant-puppet-doc-publish
 
   - name: performance/arc-lamp
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php82-to-php85
 
   - name: performance/asoranking
     template:
@@ -2813,7 +2656,7 @@ projects:
 
   - name: performance/xhgui-vendor
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php85
 
   - name: releng/phatality
     template:
@@ -2833,138 +2676,139 @@ projects:
 
   - name: labs/tools/sonarqubebot
     template:
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      # TODO (T419074): Fix this test failure and enable on PHP 8.4 and 8.5
+      - name: composer-test-php82-to-php83
 
 #### MediaWiki itself ##########################################
 
   - name: mediawiki/core
     template:
       - name: extension-gate
+      - name: wikibase-selenium-gate
+      - name: growth-experiments-selenium-gate
     test:
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-vendor-mysql-php81
-      - mediawiki-quibble-apitests-vendor-php81
-      - mediawiki-core-php81-phan
+      - quibble-for-mediawiki-core-vendor-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83
+      - quibble-apitests-only-vendor-php83
+      - mediawiki-core-phan-only-php83
     php:
       # This is the diff between the optimised test-pipeline and the gate.
       #
       # The main quibble job that runs PHPUnit tests is:
-      #   mediawiki-quibble-vendor-mysql-php81
+      #   quibble-for-mediawiki-core-vendor-mysql-php83
       #
       # Alternate deps (composer instead of vendor)
-      - mediawiki-quibble-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-mysql-php83
       # Alternate db backends
-      - mediawiki-quibble-vendor-sqlite-php81
-      - mediawiki-quibble-vendor-postgres-php81
+      - quibble-for-mediawiki-core-vendor-sqlite-php83
+      - quibble-for-mediawiki-core-vendor-postgres-php83
       # Alternate php versions
-      - mediawiki-quibble-vendor-mysql-php82
-      - mediawiki-quibble-vendor-mysql-php83
+      - quibble-for-mediawiki-core-vendor-mysql-php82
+      - quibble-for-mediawiki-core-vendor-mysql-php84
+      - quibble-for-mediawiki-core-vendor-mysql-php85
       # Standalone run for core-only changes
-      - quibble-vendor-mysql-php81-phpunit-standalone
-      # Phan for future version of PHP in Wikimedia production
-      - mediawiki-core-php81-phan
+      - quibble-vendor-mysql-php83-phpunit-standalone
     gate-and-submit:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-vendor-mysql-php82
-      - mediawiki-quibble-vendor-mysql-php83
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-vendor-mysql-php81
-      - mediawiki-quibble-apitests-vendor-php81
-      - mediawiki-quibble-vendor-sqlite-php81
-      - mediawiki-quibble-vendor-postgres-php81
-      - mediawiki-core-php81-phan
+      - quibble-for-mediawiki-core-composer-mysql-php83
+      - quibble-for-mediawiki-core-vendor-mysql-php82
+      - quibble-for-mediawiki-core-vendor-mysql-php83
+      - quibble-for-mediawiki-core-vendor-mysql-php84
+      - quibble-for-mediawiki-core-vendor-mysql-php85
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-for-mediawiki-core-browser-tests-only-vendor-mysql-php83
+      - quibble-apitests-only-vendor-php83
+      - quibble-for-mediawiki-core-vendor-sqlite-php83
+      - quibble-for-mediawiki-core-vendor-postgres-php83
+      - mediawiki-core-phan-only-php83
       # Standalone run for core-only changes
-      - quibble-vendor-mysql-php81-phpunit-standalone
-
-    test-1_39:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
-      - mediawiki-core-php81-phan
-      - mwgate-node20
-    gate-and-submit-1_39:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composer-mysql-php82
-      - mediawiki-quibble-composer-mysql-php83
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
-      - mediawiki-quibble-composer-sqlite-php81
-      - mediawiki-quibble-composer-postgres-php81
-      - mediawiki-core-php81-phan
-      - mwgate-node20
-
-    test-1_42:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
-      - mediawiki-core-php81-phan
-      - mwgate-node20
-    gate-and-submit-1_42:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
-      - mediawiki-quibble-composer-sqlite-php81
-      - mediawiki-quibble-composer-postgres-php81
-      - mediawiki-quibble-composer-mysql-php82
-      - mediawiki-quibble-composer-mysql-php83
-      - mediawiki-core-php81-phan
-      - mwgate-node20
+      - quibble-vendor-mysql-php83-phpunit-standalone
 
     test-1_43:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
-      - mediawiki-core-php81-phan
-      - mwgate-node20
+      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
+      - mediawiki-core-phan-only-php81
+      - mediawiki-node24
     gate-and-submit-1_43:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
-      - mediawiki-quibble-composer-sqlite-php81
-      - mediawiki-quibble-composer-postgres-php81
-      - mediawiki-quibble-composer-mysql-php82
-      - mediawiki-quibble-composer-mysql-php83
-      - mediawiki-core-php81-phan
-      - mwgate-node20
+      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-sqlite-php81
+      - quibble-for-mediawiki-core-composer-postgres-php81
+      - quibble-for-mediawiki-core-composer-mysql-php82
+      - quibble-for-mediawiki-core-composer-mysql-php83
+      - mediawiki-core-phan-only-php81
+      - mediawiki-node24
 
     test-1_44:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
-      - mediawiki-core-php81-phan
-      - mwgate-node20
+      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
+      - mediawiki-core-phan-only-php81
+      - mediawiki-node24
     gate-and-submit-1_44:
-      - mediawiki-quibble-composer-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-selenium-composer-mysql-php81
-      - mediawiki-quibble-composer-sqlite-php81
-      - mediawiki-quibble-composer-postgres-php81
-      - mediawiki-quibble-composer-mysql-php82
-      - mediawiki-quibble-composer-mysql-php83
-      - mediawiki-core-php81-phan
-      - mwgate-node20
+      - quibble-for-mediawiki-core-composer-mysql-php81
+      - quibble-for-mediawiki-core-composertest-only-php81
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
+      - quibble-for-mediawiki-core-composer-sqlite-php81
+      - quibble-for-mediawiki-core-composer-postgres-php81
+      - quibble-for-mediawiki-core-composer-mysql-php82
+      - quibble-for-mediawiki-core-composer-mysql-php83
+      - mediawiki-core-phan-only-php81
+      - mediawiki-node24
+
+    test-1_45:
+      - quibble-for-mediawiki-core-composer-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
+      - mediawiki-core-phan-only-php83
+      - mediawiki-node24
+    gate-and-submit-1_45:
+      - quibble-for-mediawiki-core-composer-mysql-php82
+      - quibble-for-mediawiki-core-composer-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
+      - quibble-for-mediawiki-core-composer-sqlite-php83
+      - quibble-for-mediawiki-core-composer-postgres-php83
+      - mediawiki-core-phan-only-php83
+      - mediawiki-node24
+
+    test-1_46:
+      - quibble-for-mediawiki-core-composer-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
+      - mediawiki-core-phan-only-php83
+      - mediawiki-node24
+    gate-and-submit-1_46:
+      - quibble-for-mediawiki-core-composer-mysql-php82
+      - quibble-for-mediawiki-core-composer-mysql-php83
+      - quibble-for-mediawiki-core-composer-mysql-php84
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
+      - quibble-for-mediawiki-core-composer-sqlite-php83
+      - quibble-for-mediawiki-core-composer-postgres-php83
+      - mediawiki-core-phan-only-php83
+      - mediawiki-node24
 
     test-wmf:
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-apitests-vendor-php81
-      - mediawiki-core-php81-phan
+      - quibble-for-mediawiki-core-vendor-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-apitests-only-vendor-php83
+      - mediawiki-core-phan-only-php83
     gate-and-submit-wmf:
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-composertest-php81
-      - mediawiki-quibble-apitests-vendor-php81
-      - mediawiki-core-php81-phan
+      - quibble-for-mediawiki-core-vendor-mysql-php83
+      - quibble-for-mediawiki-core-composertest-only-php83
+      - quibble-apitests-only-vendor-php83
+      - mediawiki-core-phan-only-php83
 
     test-fundraising:
-      - mwgate-composer-php82
-      - mwgate-node20
+      - mediawiki-composer-php82
+      - mediawiki-node24
       - quibble-donationinterface-REL1_43-php82
     gate-and-submit-fundraising:
-      - mwgate-composer-php82
-      - mwgate-node20
+      - mediawiki-composer-php82
+      - mediawiki-node24
       - quibble-donationinterface-REL1_43-php82
 
     coverage:
@@ -2982,54 +2826,51 @@ projects:
       - mediawiki-core-javascript-publish
       - mediawiki-core-doxygen-publish
     experimental:
-      - mediawiki-quibble-vendor-mysql-php84
-      - mwgate-composer-php81
-      - mwgate-node22
-      - mwgate-node24
+      - mediawiki-composer-php83
+      - mediawiki-node22
+      - mediawiki-node24
 
+  # (T189560) There is explicitly no CI support for mediawiki/vendor.git on release branches.
+  # Additionally, selenium tests are skipped for wmf/ branches.
   - name: mediawiki/vendor
     template:
       - name: extension-gate
       - name: extension-apitests
+      - name: growth-experiments-selenium-gate
     test:
-      - mwgate-composer-php81
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-selenium-vendor-mysql-php81
+      - mediawiki-composer-php83
+      - quibble-for-mediawiki-core-vendor-mysql-php83
+      # Can't use the wikibase-selenium-gate template as we don't have CI on release branches
+      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
     php:
-      - mwgate-composer-php82
-      - mwgate-composer-php83
-      - mediawiki-quibble-vendor-mysql-php82
-      - mediawiki-quibble-vendor-mysql-php83
+      - mediawiki-composer-php82
+      - quibble-for-mediawiki-core-vendor-mysql-php82
+      - quibble-for-mediawiki-core-vendor-mysql-php84
+      - quibble-for-mediawiki-core-vendor-mysql-php85
+      - mediawiki-composer-php84
+      - mediawiki-composer-php85
     gate-and-submit:
-      - mwgate-composer-php81
-      - mwgate-composer-php82
-      - mwgate-composer-php83
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-vendor-mysql-php82
-      - mediawiki-quibble-vendor-mysql-php83
-      - mediawiki-quibble-selenium-vendor-mysql-php81
+      - mediawiki-composer-php82
+      - mediawiki-composer-php83
+      - mediawiki-composer-php84
+      - mediawiki-composer-php85
+      - quibble-for-mediawiki-core-vendor-mysql-php82
+      - quibble-for-mediawiki-core-vendor-mysql-php83
+      - quibble-for-mediawiki-core-vendor-mysql-php84
+      - quibble-for-mediawiki-core-vendor-mysql-php85
+      # Can't use the wikibase-selenium-gate template as we don't have CI on release branches
+      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
     gate-and-submit-wmf:
-      - mwgate-composer-php81
-      - mediawiki-quibble-vendor-mysql-php81
-      - mediawiki-quibble-selenium-vendor-mysql-php81
-      - mediawiki-quibble-apitests-vendor-php81
-
-    # No CI support for mediawiki/vendor on release branches, folks should
-    # use composer install instead. T189560
+      - mediawiki-composer-php83
+      - quibble-for-mediawiki-core-vendor-mysql-php83
+      - quibble-apitests-only-vendor-php83
 
     test-fundraising:
-      - mwgate-composer-php82
-      - mwgate-node20
+      - mediawiki-composer-php82
+      - mediawiki-node24
     gate-and-submit-fundraising:
-      - mwgate-composer-php82
-      - mwgate-node20
-
-    experimental:
-      - mwgate-composer-php84
-      - mediawiki-quibble-vendor-mysql-php84
-      # New job in testing T74952 -- JDF 2022-10-14
-      - composer-php81-assert-lock
-      - mwgate-composer-php84
+      - mediawiki-composer-php82
+      - mediawiki-node24
 
 #### MediaWiki skins ###########################################
 
@@ -3038,17 +2879,19 @@ projects:
   - name: mediawiki/skins/CologneBlue
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
-      - name: skin-coverage
+      - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
 
   - name: mediawiki/skins/MinervaNeue
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
+      - name: extension-quibble
       - name: extension-gate
+      - name: wikibase-selenium-gate
+      - name: growth-experiments-selenium-gate
       - name: extension-javascript-documentation
-      - name: skin-coverage
+      - name: extension-coverage
       - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
@@ -3058,15 +2901,15 @@ projects:
   - name: mediawiki/skins/Modern
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
-      - name: skin-coverage
+      - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
 
   - name: mediawiki/skins/MonoBook
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
-      - name: skin-coverage
+      - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
@@ -3074,15 +2917,15 @@ projects:
   - name: mediawiki/skins/Nostalgia
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
-      - name: skin-coverage
+      - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
 
   - name: mediawiki/skins/Timeless
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
-      - name: skin-coverage
+      - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
@@ -3090,189 +2933,195 @@ projects:
   - name: mediawiki/skins/Vector
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
+      - name: extension-quibble
       - name: extension-gate
-      - name: skin-coverage
+      - name: wikibase-selenium-gate
+      - name: growth-experiments-selenium-gate
+      - name: extension-coverage
       - name: extension-codehealth
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
     experimental:
-      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php83
     postmerge:
       - mwext-doxygen-publish
 
   - name: mediawiki/skins/WikimediaApiPortal
     template:
       - name: in-wikimedia-production
-      - name: skin-quibble
-      - name: skin-coverage
+      - name: extension-quibble
+      - name: extension-coverage
       - name: extension-codehealth
 
 #### Other MediaWiki skins #####################################
 
   - name: mediawiki/skins/2018
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Amethyst
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Anisa
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/apex
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/BlueSky
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/BlueSpiceDiscovery
     template:
-      - name: skin-quibble-composer
+      - name: extension-quibble-composer
 
   - name: mediawiki/skins/Bouquet
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Cavendish
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Cosmos
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/DeskMessMirrored
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Dusk
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/DuskToDawn
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Empty
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/erudite
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Example
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Foreground
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Freo
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Gamepress
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/GreyStuff
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/GuMaxDD
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/HasSomeColours
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Mask
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Material
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/mediawiki-strapping
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Metrolook
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Mirage
     template:
-      - name: skin-quibble
+      - name: extension-quibble
+
+  - name: mediawiki/skins/Monaco
+    template:
+      - name: extension-quibble
 
   - name: mediawiki/skins/Nimbus
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/p2wiki
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Pivot
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Poncho
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Refreshed
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/SimpleText
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Schulenburg
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Splash
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Tempo
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/Truglass
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/TuleapSkin
     template:
-      - name: skin-quibble-composer
+      - name: extension-quibble-composer
 
   - name: mediawiki/skins/webplatform
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/WoOgLeShades
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
   - name: mediawiki/skins/WMAU
     template:
-        - name: skin-quibble
+        - name: extension-quibble
 
   - name: mediawiki/skins/WPtouch
     template:
-      - name: skin-quibble
+      - name: extension-quibble
 
 #### OpenStack related repositories
 
@@ -3285,14 +3134,6 @@ projects:
 
 #### Site Reliability Engineering ("Operations") tools #########
 
-  - name: cergen
-    template:
-      - name: debian-glue-non-voting
-    test:
-      - cergen-tox
-    gate-and-submit:
-      - cergen-tox
-
   - name: operations/calico-cni
     template:
       - name: debian-glue-non-voting
@@ -3304,6 +3145,14 @@ projects:
       - trigger-miscweb-pipeline-test
     postmerge:
       - trigger-miscweb-pipeline-publish
+
+  - name: operations/container/codesearch
+    test:
+      - trigger-codesearch-sourcebot-pipeline-test
+    gate-and-submit:
+      - trigger-codesearch-sourcebot-pipeline-test
+    postmerge:
+      - trigger-codesearch-sourcebot-pipeline-publish
 
   - name: operations/cookbooks
     template:
@@ -3505,7 +3354,6 @@ projects:
   - { name: operations/debs/rt-authen-externalauth,           test: ['debian-glue-non-voting'] }
   - { name: operations/debs/ruby-dimensions,                  test: ['debian-glue-non-voting'] }
   - { name: operations/debs/ruby-execjs,                      test: ['debian-glue-non-voting'] }
-  - { name: operations/debs/ruby-jsduck,                      test: ['debian-glue-non-voting'] }
   - { name: operations/debs/ruby-parallel,                    test: ['debian-glue-non-voting'] }
   - { name: operations/debs/search-qa,                        test: ['debian-glue-non-voting'] }
   - { name: operations/debs/spark2,                           test: ['debian-glue-non-voting'] }
@@ -3521,11 +3369,9 @@ projects:
   - { name: operations/debs/utfnormal,                        test: ['debian-glue-non-voting'] }
   - { name: operations/debs/varnish,                          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/varnish4,                         test: ['debian-glue'] }
-  - { name: operations/debs/trafficserver,                    test: ['debian-glue'] }
   - { name: operations/debs/superior-cache-analyzer,          test: ['debian-glue-non-voting'] }
   - { name: operations/debs/varnish-modules,                  test: ['debian-glue'] }
   - { name: operations/software/atskafka,                     test: ['debian-glue-backports'] }
-  - { name: operations/software/prometheus-rdkafka-exporter,  test: ['debian-glue-backports'] }
   - { name: operations/debs/vips,                             test: ['debian-glue-non-voting'] }
   - { name: operations/debs/wikibugs,                         test: ['debian-glue-non-voting'] }
   - { name: operations/debs/wikimedia-base,                   test: ['debian-glue-non-voting'] }
@@ -3645,10 +3491,19 @@ projects:
 
   - name: operations/dumps/dcat
     template:
-      # (T353397) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
-      - name: composer-test-php81-only
+      # (T353397) This repo doesn't yet pass its tests on PHP 8.2+
+      # - name: composer-test-php82-to-php85
       - name: node20
       - name: mediawiki-i18n-check
+    test:
+      - composer-php81
+    gate-and-submit:
+      - composer-php81
+    experimental:
+      - composer-php82
+      - composer-php83
+      - composer-php84
+      - composer-php85
 
   - name: operations/dumps/import-tools
     template:
@@ -3670,37 +3525,39 @@ projects:
 
   - name: operations/mediawiki-config
     test-prio:
-      - operations-mw-config-php81-composer-lint
-      - operations-mw-config-php81-composer-test
-      - operations-mw-config-php81-composer-diffConfig
-      - operations-mw-config-tox
-    gate-and-submit:
-      - operations-mw-config-php81-composer-lint
-      - operations-mw-config-php81-composer-test
-      # Not allowed whilst non-voting:
-      # - operations-mw-config-php81-composer-diffConfig
-      - operations-mw-config-tox
-    experimental:
       - operations-mw-config-php83-composer-lint
       - operations-mw-config-php83-composer-test
       - operations-mw-config-php83-composer-diffConfig
+      - operations-mw-config-tox
+    gate-and-submit:
+      - operations-mw-config-php83-composer-lint
+      - operations-mw-config-php83-composer-test
+      # Not allowed whilst non-voting:
+      # - operations-mw-config-php83-composer-diffConfig
+      - operations-mw-config-tox
+    experimental:
       - operations-mw-config-php84-composer-lint
       - operations-mw-config-php84-composer-test
       - operations-mw-config-php84-composer-diffConfig
+      - operations-mw-config-php85-composer-lint
+      - operations-mw-config-php85-composer-test
+      - operations-mw-config-php85-composer-diffConfig
 
   - name: operations/puppet
     test-prio:
       - operations-puppet-tests-bullseye
       - operations-puppet-logstash-filter-verifier
+    # (T414621) A custom, high-priority pipeline just for puppet compiler
+    puppet-prio:
+      - operations-puppet-catalog-compiler-puppet7-test
     experimental:
-      - operations-puppet-catalog-compiler-test
       - operations-puppet-catalog-compiler-puppet7-test
 
   - name: operations/puppet-lint/wmf_styleguide-check
     test:
-      - puppet-wmf-styleguide-ruby2.5-rake
+      - puppet-wmf-styleguide-ruby2.7-rake
     gate-and-submit:
-      - puppet-wmf-styleguide-ruby2.5-rake
+      - puppet-wmf-styleguide-ruby2.7-rake
 
   # Repo of misc softwares
   # Voting V+2 so ops don't idle waiting for CI to report.
@@ -3780,10 +3637,6 @@ projects:
     template:
       - name: debian-glue-non-voting
 
-  - name: operations/software/opensearch/plugins
-    template:
-      - name: debian-glue-non-voting
-
   - name: operations/software/etcd-mirror
     template:
       - name: debian-glue-non-voting
@@ -3795,8 +3648,6 @@ projects:
       - gerrit-node24
     gate-and-submit:
       - gerrit
-      - gerrit-node20
-      - gerrit-node22
       - gerrit-node24
 
   - name: operations/software/homer
@@ -3985,18 +3836,19 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/ArticleGuidance
+    template:
+      - name: in-wikimedia-production  # Will be in production - T415085
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
   - name: mediawiki/extensions/ArticlePlaceholder
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
-
-  - name: mediawiki/extensions/ArticleSummaries
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
 
   - name: mediawiki/extensions/AutoModerator
     template:
@@ -4049,12 +3901,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/Capiunto
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/CategoryTree
     template:
       - name: in-wikimedia-production
@@ -4086,12 +3932,9 @@ projects:
 
   - name: mediawiki/extensions/Chart
     template:
-      # Not yet in production but headed there -- JDF 2024-06-20
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
-    postmerge:
-      - mwext-doxygen-publish
 
   - name: mediawiki/extensions/CheckUser
     template:
@@ -4109,6 +3952,7 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-coverage
+      - name: growth-experiments-selenium-gate
     postmerge:
       - mwext-doxygen-publish
 
@@ -4122,6 +3966,8 @@ projects:
       - name: extension-javascript-documentation
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
+    postmerge:
+      - mwext-doxygen-publish
 
   - name: mediawiki/extensions/CiteThisPage
     template:
@@ -4198,6 +4044,7 @@ projects:
       - name: extension-codehealth
       - name: extension-quibble
       - name: extension-gate
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/CommunityRequests
     template:
@@ -4279,27 +4126,26 @@ projects:
     test:
       # Note: Although DonationInterface is in both prod and FR-prod, we run tests
       # tailored for FR-prod as that's where the majority of the code is run.
-      - mwgate-composer-php82
-      - mwgate-node20
+      - mediawiki-composer-php82
+      - mediawiki-node24
       - quibble-donationinterface-REL1_43-php82
-      - mwgate-composer-php82
-      - mwext-php82-phan
+      - mediawiki-composer-php82
+      - mwext-phan-php82
     gate-and-submit:
-      - mwgate-composer-php82
-      - mwgate-node20
+      - mediawiki-composer-php82
+      - mediawiki-node24
       - quibble-donationinterface-REL1_43-php82
-      - mwext-php82-phan
+      - mwext-phan-php82
     experimental:
-      - mwgate-node22
-      - mwgate-node24
-      - mwgate-composer-php81
-      - mwext-php81-phan
+      - mediawiki-node22
+      - mediawiki-node24
+      - mediawiki-composer-php83
+      - mwext-phan-php83
       # These are the remaining parts of extension-quibble
-      - quibble-vendor-mysql-php81
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php84
-      - quibble-vendor-mysql-php81-selenium
+      - quibble-vendor-mysql-php83-selenium
 
   - name: mediawiki/extensions/DynamicSidebar
     template:
@@ -4314,6 +4160,7 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-coverage
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/Elastica
     template:
@@ -4321,6 +4168,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/ElectronPdfService
     template:
@@ -4341,9 +4189,9 @@ projects:
       - name: extension-codehealth
       - name: extension-coverage
     test:
-      - wikibase-client-php81
+      - quibble-with-WikibaseClient-extensions-tests-php83
     gate-and-submit:
-      - wikibase-client-php81
+      - quibble-with-WikibaseClient-extensions-tests-php83
 
   - name: mediawiki/extensions/EventBus
     template:
@@ -4362,6 +4210,7 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-javascript-documentation
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/EventStreamConfig
     template:
@@ -4429,22 +4278,13 @@ projects:
     template:
       - name: in-wikimedia-fundraising-production
       # Using the -composer (rather than vendor) version because of FR-only use of twig etc.
-      # Not using a quibble job because we're limited to PHP 8.2+ only
-      # - name: extension-quibble-composer
+      - name: extension-quibble-composer
       - name: extension-coverage
       - name: mediawiki-i18n-check
     test:
-      # Jobs that we would inherit from extension-quibble-composer, but PHP 8.2+ only
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - mwgate-node20
       # Special extra jobs because Fundraising uses this on PHP82/REL1_43
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_43-php82
     gate-and-submit:
-      # Jobs that we would inherit from extension-quibble-composer, but PHP 8.2+ only
-      - quibble-composer-mysql-php82
-      - quibble-composer-mysql-php83
-      - mwgate-node20
       # Special extra jobs because Fundraising uses this on PHP82/REL1_43
       - quibble-fundraising-FundraisingEmailUnsubscribe-REL1_43-php82
 
@@ -4530,14 +4370,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/Graph
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-codehealth
-      - name: extension-gate
-
   - name: mediawiki/extensions/GrowthExperiments
     template:
       - name: in-wikimedia-production
@@ -4546,8 +4378,8 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-javascript-documentation
-      - name: extension-phpbench
       - name: extension-apitests
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/GuidedTour
     template:
@@ -4557,6 +4389,7 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-javascript-documentation
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/ImageMap
     template:
@@ -4622,7 +4455,6 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
 
-  # (T359922) Not yet in production but headed there -- JDF 2024-03-12
   - name: mediawiki/extensions/IPReputation
     template:
       - name: in-wikimedia-production
@@ -4704,6 +4536,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-quibble-only-standalone
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-apitests
@@ -4726,14 +4559,6 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
-  - name: mediawiki/extensions/MetricsPlatform
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-codehealth
-      - name: extension-javascript-documentation
-
   - name: mediawiki/extensions/MobileApp
     template:
       - name: in-wikimedia-production
@@ -4749,12 +4574,10 @@ projects:
       - name: extension-codehealth
       - name: extension-javascript-documentation
       - name: extension-coverage
+      - name: wikibase-selenium-gate
+      - name: growth-experiments-selenium-gate
     postmerge:
       - mwext-doxygen-publish
-
-  - name: mediawiki/extensions/Monstranto
-    template:
-      - name: extension-quibble
 
   - name: mediawiki/extensions/MultimediaViewer
     template:
@@ -4765,6 +4588,12 @@ projects:
       - name: extension-javascript-documentation
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
+
+  - name: mediawiki/extensions/MultiTitle
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/NetworkSession
     template:
@@ -4872,6 +4701,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-gate
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/ParserFunctions
     template:
@@ -4883,7 +4713,6 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
 
-  # Not currently in production, but will be brought back for the Parsoid migration
   - name: mediawiki/extensions/ParserMigration
     template:
       - name: in-wikimedia-production
@@ -4900,15 +4729,15 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
 
-  - name: mediawiki/extensions/PerformanceInspector
+  - name: mediawiki/extensions/PersonalDashboard
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-codehealth
       - name: extension-coverage
 
   - name: mediawiki/extensions/Phonos
     template:
-      # Extension not yet in production, but headed there - T314294
       - name: in-wikimedia-production
       - name: extension-coverage
       - name: extension-quibble
@@ -4962,6 +4791,13 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
+  - name: mediawiki/extensions/ReaderExperiments
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
   - name: mediawiki/extensions/ReadingLists
     template:
       - name: in-wikimedia-production
@@ -4969,6 +4805,11 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-apitests
+    postmerge:
+      # (T422976) Publish JS code coverage for ReadingLists, too
+      # NOTE: This is the 'wrong' publisher, but there's no JS extension
+      # publish step yet. Let's go with this for now. 2026-04-10 JDF.
+      - generic-node24-browser-coverage-publish
 
   - name: mediawiki/extensions/RealMe
     template:
@@ -5070,13 +4911,6 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
-  - name: mediawiki/extensions/SecurityApi
-    template:
-      # Not yet in production, but headed there. -- JDF 2021-12-08
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/ShortUrl
     template:
       - name: in-wikimedia-production
@@ -5157,6 +4991,14 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
+  - name: mediawiki/extensions/TestKitchen
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+      - name: extension-javascript-documentation
+
   - name: mediawiki/extensions/TextExtracts
     template:
       - name: in-wikimedia-production
@@ -5173,6 +5015,7 @@ projects:
       - name: extension-coverage
       - name: extension-gate
       - name: extension-codehealth
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/TheWikipediaLibrary
     template:
@@ -5209,12 +5052,6 @@ projects:
   - name: mediawiki/extensions/TocTree
     template:
       - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
-  # Not yet in production but maybe headed there -- JDF 2022-07-15
-  - name: mediawiki/extensions/Toolhub
-    template:
       - name: extension-quibble
       - name: extension-coverage
 
@@ -5261,6 +5098,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
+      - name: wikibase-selenium-gate
 
   - name: mediawiki/extensions/UploadsLink
     template:
@@ -5289,12 +5127,6 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
-  - name: mediawiki/extensions/VipsScaler
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/VisualEditor
     template:
       - name: in-wikimedia-production
@@ -5305,18 +5137,9 @@ projects:
       - name: commit-message-validator
       - name: extension-javascript-documentation
       - name: extension-apitests
+      - name: growth-experiments-selenium-gate
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
-
-  - name: mediawiki/extensions/VueTest
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-codehealth
-      # There is no PHPUnit code coverage since that extension is JavaScript
-      # only. There is an exception for it in
-      # test_wikimedia_production_repos_have_requirements
-      # - name: extension-coverage
 
   - name: mediawiki/extensions/WebAuthn
     template:
@@ -5335,60 +5158,53 @@ projects:
       - name: extension-javascript-documentation
       - name: mwgate-npm
       - name: extension-apitests
+      - name: wikibase-selenium-gate
     test:
-      - wikibase-client-php81
-      - wikibase-repo-php81
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
     gate-and-submit: &mediawiki-extensions-wikibase-gate-and-submit
-      - wikibase-client-php81
-      - wikibase-repo-php81
-    test-1_39:
-      - wikibase-client-php81
-      - wikibase-repo-php81
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
-    gate-and-submit-1_39:
-      - wikibase-client-php81
-      - wikibase-repo-php81
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
-    test-1_42:
-      - wikibase-client-php81
-      - wikibase-repo-php81
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
-    gate-and-submit-1_42:
-      - wikibase-client-php81
-      - wikibase-repo-php81
-      # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
     test-1_43:
-      - wikibase-client-php81
-      - wikibase-repo-php81
+      - quibble-with-WikibaseClient-extensions-tests-php81
+      - quibble-with-WikibaseRepository-extensions-tests-php81
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_43:
-      - wikibase-client-php81
-      - wikibase-repo-php81
+      - quibble-with-WikibaseClient-extensions-tests-php81
+      - quibble-with-WikibaseRepository-extensions-tests-php81
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     test-1_44:
-      - wikibase-client-php81
-      - wikibase-repo-php81
+      - quibble-with-WikibaseClient-extensions-tests-php81
+      - quibble-with-WikibaseRepository-extensions-tests-php81
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
     gate-and-submit-1_44:
-      - wikibase-client-php81
-      - wikibase-repo-php81
+      - quibble-with-WikibaseClient-extensions-tests-php81
+      - quibble-with-WikibaseRepository-extensions-tests-php81
       # (T231966 / T226945) Disabled on release branches
-      # - mwext-php81-phan
+      # - mwext-phan-php81
+    test-1_45:
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
+    gate-and-submit-1_45:
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
+    test-1_46:
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
+    gate-and-submit-1_46:
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
     gate-and-submit-wmf: *mediawiki-extensions-wikibase-gate-and-submit
     postmerge:
       - mwext-doxygen-publish
     experimental:
       - mwext-phpunit-coverage
-      - quibble-vendor-postgres-php81
-      - wikibase-client-php83
-      - wikibase-repo-php83
+      - quibble-vendor-postgres-php83
+      - quibble-with-WikibaseClient-extensions-tests-php83
+      - quibble-with-WikibaseRepository-extensions-tests-php83
 
   - name: mediawiki/extensions/WikibaseCirrusSearch
     template:
@@ -5477,17 +5293,17 @@ projects:
       # Special Catalyst helm test runner for WikiLambda end-to-end system check
       - wikilambda-catalyst-end-to-end
       # Using the job directly, not via template, as it won't pass on REL branches -- JDF 2025-01-07
-      - quibble-vendor-mysql-php81-phpunit-standalone
+      - quibble-vendor-mysql-php83-phpunit-standalone
     gate-and-submit:
-      # Special Catalyst helm test runner for WikiLambda end-to-end system check; disabled whilst non-voting
-      # - wikilambda-catalyst-end-to-end
+      # Special Catalyst helm test runner for WikiLambda end-to-end system check
+      - wikilambda-catalyst-end-to-end
       # Using the job directly, not via template, as it won't pass on REL branches -- JDF 2025-01-07
-      - quibble-vendor-mysql-php81-phpunit-standalone
+      - quibble-vendor-mysql-php83-phpunit-standalone
     postmerge:
       - mwext-doxygen-publish
       # NOTE: This is the 'wrong' publisher, but there's no JS extension
       # publish step yet. Let's go with this for now. 2022-02-25 JDF.
-      - generic-node20-browser-coverage-publish
+      - generic-node24-browser-coverage-publish
 
   - name: mediawiki/extensions/WikiLove
     template:
@@ -5518,11 +5334,12 @@ projects:
       - name: commit-message-validator
       - name: extension-gate
 
-  - name: mediawiki/extensions/WikimediaEditorTasks
+  - name: mediawiki/extensions/WikimediaCustomizations
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: extension-apitests
 
   - name: mediawiki/extensions/WikimediaEvents
     template:
@@ -5553,6 +5370,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/Wikisource
     template:
@@ -5561,9 +5379,15 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
-  # Not yet in production but maybe headed there -- JDF 2022-07-15
   - name: mediawiki/extensions/Wikistories
     template:
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
+  - name: mediawiki/extensions/WP25EasterEggs
+    template:
+      - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
@@ -5574,6 +5398,13 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
+
+#### MediaWiki extensions possibly headed to Wikimedia production ##
+
+  - name: mediawiki/extensions/Toolhub
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
 
 #### Other MediaWiki extensions ################################
 
@@ -5621,6 +5452,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/AdhocTranslation
+    template:
+      - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/Adiutor
     template:
       - name: extension-quibble
@@ -5647,6 +5482,10 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/AkismetKlik
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/AllowlistHTMLTags
     template:
       - name: extension-quibble
 
@@ -5719,6 +5558,10 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/AutoCreateCategoryPages
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/AutoCreatePage
     template:
       - name: extension-quibble
 
@@ -5892,6 +5735,10 @@ projects:
     template:
       - name: extension-quibble-bluespice
 
+  - name: mediawiki/extensions/BlueSpiceMatomoConnector
+    template:
+      - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/BlueSpiceMultiUpload
     template:
       - name: extension-quibble-bluespice
@@ -5978,7 +5825,7 @@ projects:
 
   - name: mediawiki/extensions/BlueSpiceSMWConnector
     template:
-      - name: extension-broken  # Semantic MediaWiki
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceSocial
     template:
@@ -6037,6 +5884,10 @@ projects:
       - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/BlueSpiceTagCloud
+    template:
+      - name: extension-quibble-bluespice
+
+  - name: mediawiki/extensions/BlueSpiceTranslationTransfer
     template:
       - name: extension-quibble-bluespice
 
@@ -6138,6 +5989,11 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/Capiunto
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+
   - name: mediawiki/extensions/Cargo
     template:
       - name: extension-quibble
@@ -6178,6 +6034,14 @@ projects:
   - name: mediawiki/extensions/ChangeAuthor
     template:
       - name: extension-quibble
+
+  - name: mediawiki/extensions/ChatBot
+    template:
+      - name: extension-quibble-bluespice
+
+  - name: mediawiki/extensions/ChatIntegration
+    template:
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/Checklists
     template:
@@ -6240,7 +6104,7 @@ projects:
 
   - name: mediawiki/extensions/CommentStreams
     template:
-      - name: extension-quibble
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/CommonMessages
     template:
@@ -6265,6 +6129,7 @@ projects:
 
   - name: mediawiki/extensions/ContactManager
     template:
+      # T353137: extension-quibble-composer would be better, but needs ext-imap
       - name: extension-quibble
 
   - name: mediawiki/extensions/ContainerFilter
@@ -6274,6 +6139,10 @@ projects:
   - name: mediawiki/extensions/ContentDroplets
     template:
       - name: extension-quibble-bluespice
+
+  - name: mediawiki/extensions/ContentProvisioning
+    template:
+     - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/ContentStabilization
     template:
@@ -6301,7 +6170,7 @@ projects:
 
   - name: mediawiki/extensions/CookieConsent
     template:
-      - name: extension-quibble
+      - name: extension-quibble-noselenium
 
   - name: mediawiki/extensions/CookieWarning
     template:
@@ -6324,10 +6193,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/CreatePage
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/CreatePageUw
     template:
       - name: extension-quibble
@@ -6345,6 +6210,10 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/DarkMode
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/DataMaps
     template:
       - name: extension-quibble
 
@@ -6412,6 +6281,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/DisableSpecialPages
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/DisplayTitle
     template:
       - name: extension-quibble
@@ -6435,7 +6308,7 @@ projects:
 
   - name: mediawiki/extensions/DrawioEditor
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/DumpsOnDemand
     template:
@@ -6488,6 +6361,10 @@ projects:
   - name: mediawiki/extensions/EmailNotifications
     template:
       - name: extension-quibble-noselenium
+
+  - name: mediawiki/extensions/EmbedSpotify
+    template:
+      - name: extension-quibble
 
   - name: mediawiki/extensions/EncryptedUploads
     template:
@@ -6557,10 +6434,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/FileAnnotations
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/FileSystemImageServer
     template:
       - name: extension-quibble
@@ -6571,7 +6444,7 @@ projects:
 
   - name: mediawiki/extensions/FilterSpecialPages
     template:
-      - name: extension-quibble
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/FixedHeaderTable
     template:
@@ -6592,6 +6465,10 @@ projects:
   - name: mediawiki/extensions/ForcePreview
     template:
       - name: extension-quibble-noselenium
+
+  - name: mediawiki/extensions/ForceSkin
+    template:
+      - name: extension-quibble
 
   - name: mediawiki/extensions/Form
     template:
@@ -6646,15 +6523,7 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/GoogleAdSense
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/googleAnalytics
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/GoogleAnalyticsMetrics
     template:
       - name: extension-quibble
 
@@ -6709,10 +6578,6 @@ projects:
   - name: mediawiki/extensions/GPGMail
     template:
       - name: extension-quibble
-
-  - name: mediawiki/extensions/GraphQL
-    template:
-      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/Gravatar
     template:
@@ -6776,6 +6641,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/HoneyPot
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/HostStats
     template:
       - name: extension-quibble
@@ -6822,15 +6691,15 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/ImageMapEdit
-    template:
-      - name: extension-quibble-composer
-
-  - name: mediawiki/extensions/ImageRating
+  - name: mediawiki/extensions/ImageFilter
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/ImageTweaks
+  - name: mediawiki/extensions/ImageMapEdit
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/ImageRating
     template:
       - name: extension-quibble
 
@@ -6848,7 +6717,7 @@ projects:
 
   - name: mediawiki/extensions/ImportOfficeFiles
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/ImportUsers
     template:
@@ -6878,11 +6747,23 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/IssueTrackerLinks
+    template:
+     - name: extension-quibble-composer
+
+  - name: mediawiki/extensions/JavascriptSlideshow
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/JSBreadCrumbs
     template:
       - name: extension-quibble
 
   - name: mediawiki/extensions/JsonData
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/JsonForms
     template:
       - name: extension-quibble
 
@@ -6913,28 +6794,27 @@ projects:
 
   - name: mediawiki/extensions/LDAPAuthentication2
     template:
-      - name: extension-quibble-composer-noselenium
+      - name: extension-quibble
 
   - name: mediawiki/extensions/LDAPAuthorization
-    # Auth-related project breaks core selenium tests
     template:
-      - name: extension-quibble-noselenium
+      - name: extension-quibble
 
   - name: mediawiki/extensions/LDAPGroups
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble
 
   - name: mediawiki/extensions/LDAPProvider
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble
 
   - name: mediawiki/extensions/LDAPSyncAll
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble
 
   - name: mediawiki/extensions/LDAPUserInfo
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble
 
   - name: mediawiki/extensions/LegalLogin
     template:
@@ -7012,6 +6892,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/MachineTranslation
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/MagicLinkAuthentication
     template:
       - name: extension-quibble-noselenium
@@ -7070,10 +6954,6 @@ projects:
     template:
       - name: extension-quibble-composer
 
-  - name: mediawiki/extensions/Memento
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/MenuEditor
     template:
       - name: extension-quibble-bluespice
@@ -7118,15 +6998,15 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Model
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/MontserratFont
     template:
       - name: extension-quibble
 
   - name: mediawiki/extensions/MP3MediaHandler
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/Monstranto
     template:
       - name: extension-quibble
 
@@ -7208,19 +7088,11 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/NaturalLanguageList
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/NaylorAMS
     template:
       - name: extension-quibble-noselenium
 
   - name: mediawiki/extensions/NCBITaxonomyLookup
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/Negref
     template:
       - name: extension-quibble
 
@@ -7274,13 +7146,11 @@ projects:
 
   - name: mediawiki/extensions/NotifyMe
     template:
-     - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/NSFileRepo
     template:
-      - name: extension-quibble
-      - name: mwgate-npm
-      - name: extension-coverage
+     - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/NukeDPL
     template:
@@ -7292,7 +7162,7 @@ projects:
 
   - name: mediawiki/extensions/NumberHeadings
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/NumberOfWikis
     template:
@@ -7328,7 +7198,7 @@ projects:
 
   - name: mediawiki/extensions/OOJSPlus
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/OOJsUIAjaxLogin
     template:
@@ -7378,7 +7248,7 @@ projects:
 
   - name: mediawiki/extensions/PageEncryption
     template:
-      - name: extension-quibble
+      - name: extension-quibble-noselenium
 
   - name: mediawiki/extensions/PageExchange
     template:
@@ -7430,10 +7300,6 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/PageOwnership
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/PageTools
     template:
       - name: extension-quibble
 
@@ -7498,34 +7364,6 @@ projects:
     template:
       - name: extension-quibble-composer
 
-  - name: mediawiki/extensions/PhpTags
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/PhpTagsFunctions
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/PhpTagsSMW
-    template:
-      - name: extension-quibble-composer
-
-  - name: mediawiki/extensions/PhpTagsSPARQL
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/PhpTagsStorage
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/PhpTagsWidgets
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/PhpTagsWiki
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/PictureGame
     template:
       - name: extension-quibble
@@ -7572,7 +7410,11 @@ projects:
 
   - name: mediawiki/extensions/PreToClip
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/PreviewLinks
+    template:
+     - name: extension-quibble-bluespice
 
   - name: mediawiki/extensions/Prezi
     template:
@@ -7587,6 +7429,10 @@ projects:
       - name: extension-quibble-noselenium
 
   - name: mediawiki/extensions/PrivatePageProtection
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/Produnto
     template:
       - name: extension-quibble
 
@@ -7627,10 +7473,6 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/Quantcast
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/QuickGV
     template:
       - name: extension-quibble
 
@@ -7683,6 +7525,10 @@ projects:
     template:
       - name: extension-quibble-composer
 
+  - name: mediawiki/extensions/ReadMode
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/Realnames
     template:
       - name: extension-quibble
@@ -7727,11 +7573,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/Renameuser
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/ReplaceSet
     template:
       - name: extension-quibble
@@ -7745,10 +7586,6 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/S5SlideShow
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/SacredText
     template:
       - name: extension-quibble
 
@@ -7794,7 +7631,7 @@ projects:
 
   - name: mediawiki/extensions/SectionAnchors
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/SectionDisqus
     template:
@@ -7824,10 +7661,6 @@ projects:
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
 
-  - name: mediawiki/extensions/SemanticImageInput
-    template:
-      - name: extension-broken  # Semantic MediaWiki is on GitHub
-
   - name: mediawiki/extensions/SemanticInternalObjects
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
@@ -7841,10 +7674,6 @@ projects:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
 
   - name: mediawiki/extensions/SemanticRESTAPI
-    template:
-      - name: extension-broken  # Semantic MediaWiki is on GitHub
-
-  - name: mediawiki/extensions/SemanticSifter
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
 
@@ -7864,10 +7693,6 @@ projects:
       - name: extension-quibble-composer
       - name: extension-coverage
 
-  - name: mediawiki/extensions/Sentry
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/Share
     template:
       - name: extension-quibble
@@ -7875,10 +7700,6 @@ projects:
   - name: mediawiki/extensions/SharedHelpPages
     template:
       - name: extension-quibble
-
-  - name: mediawiki/extensions/Shibboleth
-    template:
-      - name: extension-quibble-noselenium
 
   - name: mediawiki/extensions/ShoutWikiAds
     template:
@@ -7896,10 +7717,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/SidebarDonateBox
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/SignWritingMediaWikiPlugin
     template:
       - name: extension-quibble
@@ -7911,7 +7728,7 @@ projects:
 
   - name: mediawiki/extensions/SimpleBlogPage
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/SimpleCalendar
     template:
@@ -7933,6 +7750,10 @@ projects:
     template:
       - name: extension-quibble-bluespice
 
+  - name: mediawiki/extensions/SimSigCompanion
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/SiteMetrics
     template:
       - name: extension-quibble
@@ -7946,10 +7767,6 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/SkinPerPage
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/SlimboxThumbs
     template:
       - name: extension-quibble
 
@@ -8001,6 +7818,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/SpecialPageCaptcha
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/SpellingApi
     template:
       - name: extension-quibble
@@ -8030,10 +7851,6 @@ projects:
       - name: extension-quibble
 
   - name: mediawiki/extensions/StaffPowers
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/StalkerLog
     template:
       - name: extension-quibble
 
@@ -8157,31 +7974,15 @@ projects:
     template:
       - name: extension-quibble-composer
 
-  - name: mediawiki/extensions/TweetANew
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/TwitterCards
     template:
       - name: extension-quibble
-
-  - name: mediawiki/extensions/TwitterTag
-    template:
-      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/TwnMainPage
     template:
       - name: extension-quibble
 
   - name: mediawiki/extensions/UIFeedback
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/UILangCode
-    template:
-      - name: extension-quibble
-
-  - name: mediawiki/extensions/UnblockMe
     template:
       - name: extension-quibble
 
@@ -8246,6 +8047,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/UserProfile
+    template:
+      - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/UserProtect
     template:
       - name: extension-quibble
@@ -8256,7 +8061,7 @@ projects:
 
   - name: mediawiki/extensions/UserVerification
     template:
-      - name: extension-quibble
+      - name: extension-quibble-noselenium
 
   - name: mediawiki/extensions/Variables
     template:
@@ -8294,6 +8099,11 @@ projects:
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
 
+  - name: mediawiki/extensions/VipsScaler
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+
   - name: mediawiki/extensions/VisualData
     template:
       - name: extension-quibble
@@ -8304,7 +8114,19 @@ projects:
 
   - name: mediawiki/extensions/VueJsPlus
     template:
-     - name: extension-quibble-bluespice
+     - name: extension-quibble
+
+  - name: mediawiki/extensions/Wanda
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/WandaScore
+    template:
+      - name: extension-quibble
+
+  - name: mediawiki/extensions/WandaScribe
+    template:
+      - name: extension-quibble
 
   - name: mediawiki/extensions/WantedPagesFromNS
     template:
@@ -8394,14 +8216,14 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/WikiRAG
+    template:
+     - name: extension-quibble-bluespice
+
   - name: mediawiki/extensions/WikiSEO
     template:
       - name: extension-quibble
       - name: extension-coverage
-
-  - name: mediawiki/extensions/WikiShare
-    template:
-      - name: extension-quibble
 
   - name: mediawiki/extensions/Wikispeech
     template:
@@ -8495,6 +8317,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/XSSProtector
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/YetAnotherKeywords
     template:
       - name: extension-quibble
@@ -8512,6 +8338,10 @@ projects:
       - name: extension-quibble
 
 #### MediaWiki-related services used in Wikimedia production ###
+
+  - name: 3d2png
+    template:
+      - name: node20
 
     # apertium
   - name: mediawiki/services/apertium
@@ -8581,15 +8411,9 @@ projects:
     publish:
       - trigger-machinetranslation-pipeline-publish
 
-  - name: eventlogging
-    test:
-      - eventlogging-tox
-    gate-and-submit:
-      - eventlogging-tox
-
   - name: mediawiki/services/jobrunner
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/services/kafka-watcher
     template:
@@ -8629,25 +8453,25 @@ projects:
       - name: extension-apitests
       - name: commit-message-validator
     test:
-      - parsoidsvc-composer-package-php81
-      - quibble-composer-mysql-php81
+      - parsoidsvc-composer-package-php83
+      - quibble-composer-mysql-php83
     gate-and-submit:
-      - parsoidsvc-composer-package-php81
-      - quibble-composer-mysql-php81
       - parsoidsvc-composer-package-php82
       - quibble-composer-mysql-php82
       - parsoidsvc-composer-package-php83
       - quibble-composer-mysql-php83
-    experimental:
-      # These are the jobs which would be added by the extension-gate template
-      - wmf-quibble-core-vendor-mysql-php81
-      - wmf-quibble-vendor-mysql-php81
-      - wmf-quibble-selenium-php81
       - parsoidsvc-composer-package-php84
       - quibble-composer-mysql-php84
+    experimental:
+      # These are the jobs which would be added by the extension-gate template
+      - quibble-with-gated-extensions-vendor-mysql-php83
+      - quibble-with-gated-extensions-selenium-php83
+      # Jobs for future versions of PHP
+      - parsoidsvc-composer-package-php85
+      - quibble-composer-mysql-php85
     postmerge:
       - parsoidsvc-doxygen-publish
-      - phpunit-coverage-php81-publish
+      - phpunit-coverage-php83-publish
 
   - name: mediawiki/services/parsoid/testreduce
     template:
@@ -8657,17 +8481,11 @@ projects:
     template:
       - name: debian-glue-non-voting
     test:
-      - poolcounter-tox
+      - trigger-poolcounter-pipeline-test
     gate-and-submit:
-      - poolcounter-tox
+      - trigger-poolcounter-pipeline-test
 
   - name: mediawiki/services/push-notifications
-    test:
-      - trigger-typescript-service-pipeline-test
-    gate-and-submit:
-      - trigger-typescript-service-pipeline-publish
-
-  - name: mediawiki/services/geoshapes
     test:
       - trigger-typescript-service-pipeline-test
     gate-and-submit:
@@ -8841,10 +8659,6 @@ projects:
     postmerge:
       - analytics-refinery-maven-java8-site-publish
 
-  - name: analytics/reportupdater
-    template:
-      - name: tox
-
   - name: analytics/udplog
     template:
       - name: debian-glue
@@ -8860,7 +8674,7 @@ projects:
 
   - name: analytics/wmde/scripts
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php85
 
   - name: analytics/wmde/toolkit-analyzer
     test:
@@ -8895,25 +8709,15 @@ projects:
     postmerge:
       - wikimedia-event-utilities-maven-java8-site-publish
 
-  - name: analytics/gobblin-wmf
-    test:
-      - analytics-gobblin-wmf-maven-java8
-      - analytics-gobblin-wmf-maven-java11
-    gate-and-submit:
-      - analytics-gobblin-wmf-maven-java8
-      - analytics-gobblin-wmf-maven-java11
-    postmerge:
-      - analytics-gobblin-wmf-maven-java8-site-publish
-
 #### PHP Extensions ###################################################
 
   - name: mediawiki/php/excimer
     template:
-      - name: php-compile-php81-to-php84
+      - name: php-compile-php82-to-php85
 
   - name: mediawiki/php/luasandbox
     template:
-      - name: php-compile-php81-to-php84
+      - name: php-compile-php82-to-php85
     postmerge:
       - doxygen-publish
     publish:
@@ -8921,148 +8725,140 @@ projects:
 
   - name: mediawiki/php/wikidiff2
     template:
-      - name: php-compile-php81-to-php84
+      - name: php-compile-php82-to-php85
 
   - name: mediawiki/php/wmerrors
     template:
-      - name: php-compile-php81-to-php84
+      - name: php-compile-php82-to-php85
 
   - name: mediawiki/oauthclient-php
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
 #### MediaWiki libraries #######################################
 
   - name: cdb
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: purtle
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: utfnormal
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: at-ease
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: base-convert
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: css-sanitizer
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: php-session-serializer
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: AhoCorasick
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: RunningStat
     template:
-      - name: mediawiki-php-library-php81-to-php84
-
-  - name: IPSet
-    template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: RelPath
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: wikipeg
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
     test:
-      - wikipeg-special-node24-plus-php81-composer
       - wikipeg-special-node24-plus-php83-composer
     gate-and-submit:
-      - wikipeg-special-node20-plus-php81-composer
       - wikipeg-special-node20-plus-php83-composer
-      - wikipeg-special-node22-plus-php81-composer
       - wikipeg-special-node22-plus-php83-composer
-      - wikipeg-special-node24-plus-php81-composer
       - wikipeg-special-node24-plus-php83-composer
 
   - name: WrappedString
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: CLDRPluralRuleParser
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: HtmlFormatter
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/alea
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/Assert
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/Bcp47Code
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/CloverDiff
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/CommonPasswords
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/Dodo
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/Equivset
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/IDLeDOM
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/IPAValidator
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/IPUtils
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/JsonCodec
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/LangConv
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
       - name: node20
 
   - name: mediawiki/libs/less.php
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/Message
     template:
-     - name: mediawiki-php-library-php81-to-php84
+     - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/Minify
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/node-cssjanus
     template:
@@ -9073,85 +8869,89 @@ projects:
 
   - name: mediawiki/libs/NormalizedException
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/ObjectFactory
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/ParamValidator
     template:
-        - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/php-cssjanus
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/RemexHtml
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/RequestTimeout
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/ScopedCallback
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/Shellbox
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
     test:
       - trigger-shellbox-pipeline-test
+      # Special direct Phan job, as the production image doesn't have the latest php-ast
+      - phan-php83
     gate-and-submit:
       - trigger-shellbox-pipeline-test
+      # Special direct Phan job, as the production image doesn't have the latest php-ast
+      - phan-php83
     postmerge:
       - trigger-shellbox-pipeline-publish
 
   - name: mediawiki/libs/Services
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/StringUtils
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/Timestamp
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/UpdateHistory
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/UUID
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/WaitConditionLoop
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/WebIDL
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/XMPReader
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: mediawiki/libs/Zest
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: performance/excimer-ui-client
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: performance/excimer-ui-server
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
 #### Tools deployed on Wikimedia Cloud Services (aka "Labs") ###
 
@@ -9167,8 +8967,7 @@ projects:
 
   - name: labs/countervandalism/cvn-api
     template:
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      - name: composer-test-php82-to-php85
 
   - name: labs/countervandalism/cvn-clerkbot
     template:
@@ -9176,8 +8975,7 @@ projects:
 
   - name: labs/countervandalism/stillalive
     template:
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      - name: composer-test-php82-to-php85
 
   - name: labs/countervandalism/CVNBot
     test:
@@ -9196,13 +8994,13 @@ projects:
     publish:
       - trigger-striker-pipeline-publish
 
-  - name: labs/toollabs
+  - name: labs/xtools
     template:
-      - name: tox
-    test:
-      - debian-glue
-    gate-and-submit:
-      - debian-glue
+      - name: composer-test-php82-to-php85
+      - name: node20-browser
+      - name: mediawiki-i18n-check
+    postmerge:
+      - phpunit-coverage-php85-publish
 
   - name: labs/tools/apt-browser
     template:
@@ -9214,16 +9012,8 @@ projects:
 
   - name: labs/tools/blankpages
     template:
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
-
-  - name: labs/tools/bodh
-    template:
-      - name: node20
-
-  - name: labs/tools/bodh-backend
-    template:
-      - name: tox
+      # TODO (T419076): Fix this test failure and enable on PHP 8.4 and 8.5
+      - name: composer-test-php82-to-php83
 
   - name: labs/tools/bookreader
     template:
@@ -9239,10 +9029,6 @@ projects:
     template:
       - name: tox
 
-  - name: labs/tools/ci
-    template:
-      - name: tox
-
   - name: labs/tools/commons-mass-description
     template:
       - name: mediawiki-i18n-check
@@ -9253,7 +9039,7 @@ projects:
 
   - name: labs/tools/coverme
     template:
-      - name: composer-test-php82-to-php84
+      - name: composer-test-php82-to-php85
 
   - name: labs/tools/dump-torrents
     template:
@@ -9265,7 +9051,7 @@ projects:
 
   - name: labs/tools/extjsonuploader
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php85
 
   - name: labs/tools/extreg-wos
     template:
@@ -9277,7 +9063,7 @@ projects:
 
   - name: labs/tools/force-rebase
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php85
 
   - name: labs/tools/forrestbot
     template:
@@ -9301,19 +9087,17 @@ projects:
     template:
       - name: node20
       - name: mediawiki-i18n-check
+      - name: composer-test-php82-to-php85
     test:
+      # TODO (T413995): Does this still need PHP 8.1 testing?
       - composer-php81
       - labs-tools-heritage-tox
     gate-and-submit:
+      # TODO (T413995): Does this still need PHP 8.1 testing?
       - composer-php81
       - labs-tools-heritage-tox
     postmerge:
-      - tox-py37-coverage-publish
-    experimental:
-      - composer-php81
-      - composer-php82
-      - composer-php83
-      - composer-php84
+      - tox-py39-coverage-publish
 
   - name: labs/tools/indic-wscontest
     template:
@@ -9321,23 +9105,33 @@ projects:
 
   - name: labs/tools/intuition
     template:
-      - name: composer-test-php81-to-php84
+      # TODO (T410935): Fix this test failure and enable on PHP 8.5
+      - name: composer-test-php82-to-php84
       - name: node20
       - name: mediawiki-i18n-check
     postmerge:
-      - phpunit-coverage-php81-publish
+      - phpunit-coverage-php83-publish
 
   - name: labs/tools/intuition-web
     template:
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      # TODO (T386108): Fix this test failure and enable on PHP 8.4+
+      - name: composer-test-php82-to-php83
       - name: node20-browser
       - name: mediawiki-i18n-check
 
   - name: labs/tools/ipchanges
-    template:
-      # (T353396) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
-      - name: composer-test-php81-only
+    # template:
+      # (T353396) This repo doesn't yet pass its tests on PHP 8.2+
+      # - name: composer-test-php82-to-php85
+    test:
+      - composer-php81
+    gate-and-submit:
+      - composer-php81
+    experimental:
+      - composer-php82
+      - composer-php83
+      - composer-php84
+      - composer-php85
 
   - name: labs/tools/ipwatcher
     template:
@@ -9349,14 +9143,14 @@ projects:
 
   - name: labs/tools/orphantalk
     template:
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      # TODO (T419077): Fix this test failure and enable on PHP 8.4 and 8.5
+      - name: composer-test-php82-to-php83
       - name: mediawiki-i18n-check
 
   - name: labs/tools/usage
     template:
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      # TODO (T419078): Fix this test failure and enable on PHP 8.4 and 8.5
+      - name: composer-test-php82-to-php83
       - name: mediawiki-i18n-check
 
   - name: labs/tools/urbanecmbot
@@ -9367,18 +9161,27 @@ projects:
 
   - name: labs/tools/guc
     template:
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      # TODO (T419080): Fix this test failure due to Phan and enable on PHP 8.5
+      - name: composer-test-php82-to-php84
       - name: mediawiki-i18n-check
 
   - name: labs/tools/fileprotectionsync
     template:
-      - name: composer-test-php82-to-php84
+      - name: composer-test-php82-to-php85
 
   - name: labs/tools/nagf
-    template:
-      # (T353395) This repo doesn't yet pass its tests on PHP 8.2 or 8.3
-      - name: composer-test-php81-only
+    # template:
+      # (T353395) This repo doesn't yet pass its tests on PHP 8.2+
+      # - name: composer-test-php82-to-php85
+    test:
+      - composer-php81
+    gate-and-submit:
+      - composer-php81
+    experimental:
+      - composer-php82
+      - composer-php83
+      - composer-php84
+      - composer-php85
 
   - name: labs/tools/Isa
     test:
@@ -9426,9 +9229,18 @@ projects:
 
   - name: labs/tools/meetingtimes
     template:
-      # (T353394) This repo does not yet pass on PHP 8.2 or 8.3
-      - name: composer-test-php81-only
+      # (T353394) This repo doesn't yet pass its tests on PHP 8.2+
+      # - name: composer-test-php82-to-php85
       - name: node20
+    test:
+      - composer-php81
+    gate-and-submit:
+      - composer-php81
+    experimental:
+      - composer-php82
+      - composer-php83
+      - composer-php84
+      - composer-php85
 
   - name: labs/tools/mwpackages
     template:
@@ -9468,7 +9280,7 @@ projects:
 
   - name: labs/tools/stewardbots
     template:
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php82-to-php85
       - name: tox
 
   - name: labs/tools/stewardbots-ui
@@ -9480,6 +9292,11 @@ projects:
       - noop
     gate-and-submit:
       - noop
+
+  - name: labs/tools/toolbase
+    template:
+      # TODO (T419082): Fix this test failure due to Phan and enable on PHP 8.5
+      - name: composer-test-php82-to-php84
 
   - name: labs/tools/qrcode-generator
     template:
@@ -9523,8 +9340,7 @@ projects:
 
   - name: labs/tools/wikiinfo
     template:
-      # TODO (T386108): Fix this test failure and enable on PHP 8.4
-      - name: composer-test-php81-to-php83
+      - name: composer-test-php82-to-php85
 
   - name: labs/tools/wikinity
     template:
@@ -9572,34 +9388,34 @@ projects:
     test:
       - pywikibot-core-tox
       - pywikibot-core-tox-typing
-      - pywikibot-core-tox-fasttest-py38
-      - pywikibot-core-tox-fasttest-py39
       - pywikibot-core-tox-fasttest-py310
       - pywikibot-core-tox-fasttest-py311
       - pywikibot-core-tox-fasttest-py312
+      - pywikibot-core-tox-fasttest-py313
+      - pywikibot-core-tox-fasttest-py314
       - pywikibot-core-tox-fasttest-pypy
       - pywikibot-core-tox-doctest
       - pywikibot-core-tox-rstcheck
       - pywikibot-core-tox-sphinx
     gate-and-submit:
       - pywikibot-core-tox
-      - pywikibot-core-tox-fasttest-py38
-      - pywikibot-core-tox-fasttest-py39
       - pywikibot-core-tox-fasttest-py310
       - pywikibot-core-tox-fasttest-py311
       - pywikibot-core-tox-fasttest-py312
+      - pywikibot-core-tox-fasttest-py313
+      - pywikibot-core-tox-fasttest-py314
       - pywikibot-core-tox-fasttest-pypy
       - pywikibot-core-tox-doctest
       - pywikibot-core-tox-rstcheck
       - pywikibot-core-tox-doc
-      - pywikibot-core-tox-deeptest-py38
-      - pywikibot-core-tox-deeptest-py312
+      - pywikibot-core-tox-deeptest-py39
+      - pywikibot-core-tox-deeptest-py314
     postmerge:
       - pywikibot-core-tox-publish
     experimental:
       - pywikibot-core-tox-doc
-      - pywikibot-core-tox-deeptest-py38
-      - pywikibot-core-tox-deeptest-py312
+      - pywikibot-core-tox-deeptest-py39
+      - pywikibot-core-tox-deeptest-py314
 
   - name: pywikibot/i18n
     template:
@@ -9622,9 +9438,9 @@ projects:
 
   - name: mediawiki/ruby/api
     test:
-      - ruby2.7-rake
+      - mediawiki-ruby-api-ruby2.7-rake
     gate-and-submit:
-      - ruby2.7-rake
+      - mediawiki-ruby-api-ruby2.7-rake
     postmerge:
       - mediawiki-ruby-api-ruby2.7-bundle-yard-publish
 
@@ -9658,7 +9474,7 @@ projects:
 
   - name: wikimedia/slimapp
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php84-to-php85
 
   - name: wikimedia/portals
     template:
@@ -9703,23 +9519,27 @@ projects:
 
   - name: search/extra
     test:
-      - search-extra-maven-java8
       - search-extra-maven-java11
+      - search-extra-maven-java17
     gate-and-submit:
-      - search-extra-maven-java8
       - search-extra-maven-java11
+      - search-extra-maven-java17
     postmerge:
-      - search-extra-maven-java8-site-publish
+      - search-extra-maven-java17-site-publish
+    experimental:
+      - search-extra-maven-java25
 
   - name: search/extra-analysis
     test:
-      - search-extra-analysis-maven-java8
       - search-extra-analysis-maven-java11
+      - search-extra-analysis-maven-java17
     gate-and-submit:
-      - search-extra-analysis-maven-java8
       - search-extra-analysis-maven-java11
+      - search-extra-analysis-maven-java17
     postmerge:
-      - search-extra-analysis-maven-java8-site-publish
+      - search-extra-analysis-maven-java17-site-publish
+    experimental:
+      - search-extra-analysis-maven-java25
 
   - name: search/glent
     test:
@@ -9733,13 +9553,15 @@ projects:
 
   - name: search/highlighter
     test:
-      - search-highlighter-maven-java8
       - search-highlighter-maven-java11
+      - search-highlighter-maven-java17
     gate-and-submit:
-      - search-highlighter-maven-java8
       - search-highlighter-maven-java11
+      - search-highlighter-maven-java17
     postmerge:
-      - search-highlighter-maven-java8-site-publish
+      - search-highlighter-maven-java17-site-publish
+    experimental:
+      - search-highlighter-maven-java25
 
   - name: wmf-jvm-utils
     test:
@@ -9768,7 +9590,7 @@ projects:
 
   - name: design/codex-php
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: design/landing-page
     template:
@@ -9800,20 +9622,14 @@ projects:
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
     template:
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php82-to-php85
       - name: mediawiki-i18n-check
     test:
-      - ooui-node24-plus-php81-runjenkins
       - ooui-node24-plus-php83-runjenkins
-      - ooui-ruby2.5-rake
     gate-and-submit:
-      - ooui-node20-plus-php81-runjenkins
       - ooui-node20-plus-php83-runjenkins
-      - ooui-node22-plus-php81-runjenkins
       - ooui-node22-plus-php83-runjenkins
-      - ooui-node24-plus-php81-runjenkins
       - ooui-node24-plus-php83-runjenkins
-      - ooui-ruby2.5-rake
     postmerge:
       - oojs-ui-doxygen-publish
       - oojs-ui-publish
@@ -9853,7 +9669,7 @@ projects:
 
   - name: mediawiki/extensions/VisualEditorPlus
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: wikidata/query/rdf
     # Blazegraph is not running on Java 11 and unlikely to ever be - T350587
@@ -9906,14 +9722,6 @@ projects:
     template:
       - name: tox
 
-  - name: wikibase/release-prototype
-    test:
-      - trigger-wikibase-release-prototype-pipeline-test
-    gate-and-submit:
-      - trigger-wikibase-release-prototype-pipeline-rehearse
-    postmerge:
-      - trigger-wikibase-release-prototype-pipeline-publish
-
   - name: data-values/value-view
     template:
       - name: node20-browser
@@ -9921,7 +9729,7 @@ projects:
 
   - name: testing-access-wrapper
     template:
-      - name: mediawiki-php-library-php81-to-php84
+      - name: mediawiki-php-library-php82-to-php85
 
   - name: research/ores/wheels
     test:
@@ -10000,11 +9808,11 @@ projects:
 
   - name: translatewiki
     template:
-      - name: composer-test-php82-to-php84
+      - name: composer-test-php82-to-php85
     test:
-      - translatewiki-ruby2.5-rake
+      - translatewiki-ruby2.7-rake
     gate-and-submit:
-      - translatewiki-ruby2.5-rake
+      - translatewiki-ruby2.7-rake
 
   - name: wikimedia-cz/tracker
     template:
@@ -10029,17 +9837,17 @@ projects:
 
   - name: wikimedia-cz/mediawiki-config
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php85
 
   - name: wikimedia-cz/web-theme
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php85
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
   - name: wikimedia-cz/web-plugin
     template:
-      - name: composer-test-php81-to-php84
+      - name: composer-test-php82-to-php85
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
@@ -10102,14 +9910,11 @@ projects:
 
   - name: wikimedia/fundraising/crm
     test:
-      - wikimedia-fundraising-civicrm-bookworm
-      - composer-php82
+      - wikimedia-fundraising-composer-civicrm:  # composer test
+        - wikimedia-fundraising-civicrm-bookworm
     gate-and-submit:
-      - wikimedia-fundraising-civicrm-bookworm
-      - composer-php82
-    experimental:
-      - composer-php83
-      - composer-php84
+      - wikimedia-fundraising-composer-civicrm:  # composer test
+        - wikimedia-fundraising-civicrm-bookworm
 
   - name: wikimedia/fundraising/crm/vendor
     test:
@@ -10129,16 +9934,17 @@ projects:
     experimental:
       - composer-php83
       - composer-php84
+      - composer-php85
 
   - name: wikimedia/textcat
     template:
       # FIXME: Use mediawiki-php-library?
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php82-to-php85
 
   - name: wikimedia/lucene-explain-parser
     template:
       # FIXME: Use mediawiki-php-library?
-      - name: composer-test-package-php81-to-php84
+      - name: composer-test-package-php82-to-php85
 
   - name: performance/slack-bot
     template:
@@ -10152,9 +9958,17 @@ projects:
     template:
       - name: archived # Migrated to GitLab #T341194
 
+  - name: analytics/gobblin-wmf
+    template:
+      - name: archived # Moved to GitLab - T392854
+
   - name: analytics/quarry/web
     template:
       - name: archived
+
+  - name: analytics/reportupdater
+    template:
+      - name: archived # T397922
 
   - name: analytics/wikistats
     template:
@@ -10228,6 +10042,10 @@ projects:
     template:
       - name: archived
 
+  - name: cergen
+    template:
+      - name: archived # T357750
+
   - name: cloud/toolforge/buildpacks
     template:
       - name: archived
@@ -10272,6 +10090,10 @@ projects:
     template:
       - name: archived # Moved to GitLab at https://gitlab.wikimedia.org/repos/data-engineering/eventgate-wikimedia
 
+  - name: eventlogging
+    template:
+      - name: archived # Infrastructure has been replaced
+
   - name: integration/audit-resources
     template:
       - name: archived
@@ -10308,6 +10130,10 @@ projects:
     template:
       - name: archived
 
+  - name: IPSet
+    template:
+      - name: archived # T401155
+
   - name: labs/libraryupgrader
     template:
       - name: archived # Moved to GitLab
@@ -10336,7 +10162,23 @@ projects:
     template:
       - name: archived
 
+  - name: labs/toollabs
+    template:
+      - name: archived
+
+  - name: labs/tools/bodh
+    template:
+      - name: archived
+
+  - name: labs/tools/bodh-backend
+    template:
+      - name: archived
+
   - name: labs/tools/bub
+    template:
+      - name: archived
+
+  - name: labs/tools/ci
     template:
       - name: archived
 
@@ -10509,6 +10351,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ArticleFeedback
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/ArticleSummaries
     template:
       - name: archived
 
@@ -10712,6 +10558,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/CreatePage
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/CreditTab
     template:
       - name: archived
@@ -10840,6 +10690,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/FileAnnotations
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/FirstSteps
     template:
       - name: archived
@@ -10896,6 +10750,14 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/GoogleAdSense
+    template:
+      - name: archived # T413585
+
+  - name: mediawiki/extensions/GoogleAnalyticsMetrics
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/GoogleAPIClient
     template:
       - name: archived
@@ -10913,6 +10775,14 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/GoToShell
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Graph
+    template:
+      - name: archived # T362317
+
+  - name: mediawiki/extensions/GraphQL
     template:
       - name: archived
 
@@ -10949,6 +10819,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ImageTagging
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/ImageTweaks
     template:
       - name: archived
 
@@ -11052,6 +10926,14 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/Memento
+    template:
+      - name: archived # T369991
+
+  - name: mediawiki/extensions/MetricsPlatform
+    template:
+      - name: archived # T416865
+
   - name: mediawiki/extensions/Minifier
     template:
       - name: archived
@@ -11059,6 +10941,10 @@ projects:
   - name: mediawiki/extensions/MixedNamespaceSearchSuggestions
     template:
       - name: archived
+
+  - name: mediawiki/extensions/Model
+    template:
+      - name: extension-quibble
 
   - name: mediawiki/extensions/MolHandler
     template:
@@ -11093,6 +10979,14 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/NamespaceHTML
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/NaturalLanguageList
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Negref
     template:
       - name: archived
 
@@ -11180,6 +11074,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/PageTools
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/ParserFun
     template:
       - name: archived
@@ -11196,6 +11094,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/PerformanceInspector
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/PerPageLicense
     template:
       - name: archived
@@ -11208,9 +11110,37 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/PhpTags
+    template:
+      - name: archived # T389454
+
+  - name: mediawiki/extensions/PhpTagsFunctions
+    template:
+      - name: archived # T389454
+
   - name: mediawiki/extensions/PhpTagsMaps
     template:
       - name: archived
+
+  - name: mediawiki/extensions/PhpTagsSMW
+    template:
+      - name: archived # T389454
+
+  - name: mediawiki/extensions/PhpTagsSPARQL
+    template:
+      - name: archived # T389454
+
+  - name: mediawiki/extensions/PhpTagsStorage
+    template:
+      - name: archived # T389454
+
+  - name: mediawiki/extensions/PhpTagsWidgets
+    template:
+      - name: archived # T389454
+
+  - name: mediawiki/extensions/PhpTagsWiki
+    template:
+      - name: archived # T389454
 
   - name: mediawiki/extensions/Pickle
     template:
@@ -11260,6 +11190,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/QuickGV
+    template:
+      - name: archived # T413348
+
   - name: mediawiki/extensions/QuizTabulate
     template:
       - name: archived
@@ -11300,6 +11234,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/Renameuser
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/RestBaseUpdateJobs
     template:
       - name: archived
@@ -11313,6 +11251,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/RT
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/SacredText
     template:
       - name: archived
 
@@ -11331,6 +11273,10 @@ projects:
   - name: mediawiki/extensions/SecureSessions
     template:
       - name: archived
+
+  - name: mediawiki/extensions/SecurityApi
+    template:
+      - name: archived # T418008
 
   - name: mediawiki/extensions/SemanticBundle
     template:
@@ -11360,6 +11306,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/SemanticImageInput
+    template:
+      - name: archived # T413588
+
   - name: mediawiki/extensions/SemanticLinks
     template:
       - name: archived
@@ -11371,6 +11321,10 @@ projects:
   - name: mediawiki/extensions/SemanticPageMaker
     template:
       - name: archived
+
+  - name: mediawiki/extensions/SemanticSifter
+    template:
+      - name: archived # T413586
 
   - name: mediawiki/extensions/SemanticTasks
     template:
@@ -11384,13 +11338,25 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/Sentry
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/SharedCssJs
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/Shibboleth
     template:
       - name: archived
 
   - name: mediawiki/extensions/ShortDescription
     template:
       - name: archived
+
+  - name: mediawiki/extensions/SidebarDonateBox
+    template:
+      - name: archived # T413587
 
   - name: mediawiki/extensions/SideBarMenu
     template:
@@ -11420,6 +11386,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/SlimboxThumbs
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/SmoothGallery
     template:
       - name: archived
@@ -11445,6 +11415,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/SSLClientAuthentication
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/StalkerLog
     template:
       - name: archived
 
@@ -11520,11 +11494,27 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/TweetANew
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/TwitterLogin
     template:
       - name: archived
 
+  - name: mediawiki/extensions/TwitterTag
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/TwoFactorAuthentication
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/UILangCode
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/UnblockMe
     template:
       - name: archived
 
@@ -11584,6 +11574,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/VueTest
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/WebCache
     template:
       - name: archived
@@ -11640,6 +11634,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/WikimediaEditorTasks
+    template:
+      - name: archived
+
   - name: mediawiki/extensions/WikimediaShopLink
     template:
       - name: archived
@@ -11655,6 +11653,10 @@ projects:
   - name: mediawiki/extensions/WikiPinger
     template:
       - name: archived
+
+  - name: mediawiki/extensions/WikiShare
+    template:
+      - name: archived # T413589
 
   - name: mediawiki/extensions/WikiTwidget
     template:
@@ -11743,6 +11745,10 @@ projects:
   - name: mediawiki/services/function-schemata
     template:
       - name: archived
+
+  - name: mediawiki/services/geoshapes
+    template:
+      - name: archived # T418372
 
   - name: mediawiki/services/graphoid
     template:
@@ -11952,7 +11958,15 @@ projects:
     template:
       - name: archived
 
+  - name: operations/debs/ruby-jsduck
+    template:
+      - name: archived
+
   - name: operations/debs/salt
+    template:
+      - name: archived
+
+  - name: operations/debs/trafficserver
     template:
       - name: archived
 
@@ -12049,6 +12063,14 @@ projects:
       - name: archived # T343707
 
   - name: operations/software/knead-wikidough
+    template:
+      - name: archived
+
+  - name: operations/software/opensearch/plugins
+    template:
+      - name: archived # T399617
+
+  - name: operations/software/prometheus-rdkafka-exporter
     template:
       - name: archived
 
@@ -12188,6 +12210,10 @@ projects:
     template:
       - name: archived
 
+  - name: wikibase/release-prototype
+    template:
+      - name: archived # T399279
+
   - name: wikibase/vuejs-components
     template:
       - name: archived
@@ -12205,6 +12231,10 @@ projects:
       - name: archived
 
   - name: wikidata/query/flink-swift-plugin
+    template:
+      - name: archived
+
+  - name: wikimedia-ui-base
     template:
       - name: archived
 
@@ -12241,10 +12271,6 @@ projects:
       - name: archived
 
   - name: wikimedia/wikimania-scholarships
-    template:
-      - name: archived
-
-  - name: wikimedia-ui-base
     template:
       - name: archived
 

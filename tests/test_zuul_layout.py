@@ -60,10 +60,7 @@ class TestZuulLayout(unittest.TestCase):
         one_of_templates = (
             'archived',
             'extension-broken',
-            'extension-unittests',
             'extension-quibble',
-            'skin-tests',
-            'skin-quibble',
             'extension-gate',
             'quibble-vendor',
             )
@@ -86,9 +83,8 @@ class TestZuulLayout(unittest.TestCase):
                     ])
                 self.assertTrue(
                     has_extension_unittests,
-                    'Project %s in Zuul lacks an extension-unittests* '
-                    'template' % project['name'])
-            except AssertionError, e:
+                    'Project %s in Zuul lacks an extension-quibble* template' % project['name'])
+            except AssertionError as e:
                 errors.append(str(e))
 
         self.maxDiff = None
@@ -106,9 +102,6 @@ class TestZuulLayout(unittest.TestCase):
                 if 'extension-gate' not in templates:
                     continue
 
-                # Extract singular 'extension' or 'skin'
-                kind = project['name'].split('/')[1][:-1]
-
                 if 'extension-quibble-only-selenium' in templates:
                     self.assertIn(
                         'extension-quibble-noselenium',
@@ -118,14 +111,14 @@ class TestZuulLayout(unittest.TestCase):
                     self.assertNotIn('extension-quibble', templates)
                 else:
                     self.assertIn(
-                        '%s-quibble' % kind,
+                        'extension-quibble',
                         templates,
-                        'Must have "%s-quibble": %s' % (
-                            kind, project['name']
+                        'Must have "extension-quibble": %s' % (
+                            project['name']
                         )
                     )
 
-            except AssertionError, e:
+            except AssertionError as e:
                 errors.append(str(e))
 
         self.maxDiff = None
@@ -146,12 +139,9 @@ class TestZuulLayout(unittest.TestCase):
                 if templates == ['archived']:
                     continue
 
-                # Extract singular 'extension' or 'skin'
-                kind = project['name'].split('/')[1][:-1]
-
                 required = [
-                    '%s-broken' % kind,
-                    'skin-quibble-composer',
+                    'extension-broken',
+                    'extension-quibble-composer',
                     'extension-quibble-bluespice',
                     ]
                 self.assertTrue(
@@ -162,7 +152,7 @@ class TestZuulLayout(unittest.TestCase):
                         ', '.join(templates),
                     )
                 )
-            except AssertionError, e:
+            except AssertionError as e:
                 errors.append(str(e))
 
         self.maxDiff = None
@@ -230,14 +220,14 @@ class TestZuulLayout(unittest.TestCase):
                     self.assertNotIn(
                         'extension-quibble',
                         templates,
-                        'Production %s %s shouldn\'t also have "%s-quibble"'
-                        % (kind, name, kind)
+                        'Production %s %s shouldn\'t also have "extension-quibble"'
+                        % (kind, name)
                     )
                     self.assertIn(
                         'extension-quibble-noselenium',
                         templates,
-                        'Production %s %s must have "%s-quibble-noselenium"'
-                        % (kind, name, kind)
+                        'Production %s %s must have "extension-quibble-noselenium"'
+                        % (kind, name)
                     )
                 else:
                     noQuibble = [
@@ -255,31 +245,29 @@ class TestZuulLayout(unittest.TestCase):
 
                     if project['name'] not in noQuibble:
                         self.assertIn(
-                            '%s-quibble' % kind,
+                            'extension-quibble',
                             templates,
-                            'Production %s %s must have "%s-quibble"'
-                            % (kind, name, kind)
+                            'Production %s %s must have "extension-quibble"'
+                            % (kind, name)
                         )
 
                 # (T287918) Coverage publish job
                 noCoverage = [
                     'mediawiki/extensions/DonationInterface',
-                    'mediawiki/extensions/OpenStackManager',
                     'mediawiki/extensions/SearchVue',  # JS only
-                    'mediawiki/extensions/VueTest',  # JS only
                     'mediawiki/extensions/Wikibase',
                     'mediawiki/extensions/WikimediaMaintenance'
                 ]
 
                 if project['name'] not in noCoverage:
                     self.assertIn(
-                        '%s-coverage' % kind,
+                        'extension-coverage',
                         templates,
-                        'Production %s %s must have "%s-coverage"'
-                        % (kind, name, kind)
+                        'Production %s %s must have "extension-coverage"'
+                        % (kind, name)
                     )
 
-            except AssertionError, e:
+            except AssertionError as e:
                 errors.append(str(e))
 
         self.maxDiff = None
@@ -320,7 +308,7 @@ class TestZuulLayout(unittest.TestCase):
                         % (kind, name)
                     )
 
-            except AssertionError, e:
+            except AssertionError as e:
                 errors.append(str(e))
 
         self.maxDiff = None
@@ -340,7 +328,7 @@ class TestZuulLayout(unittest.TestCase):
 
         templates = self.getProjectTemplates()
         for template_name in templates:
-            if not template_name.startswith(('extension-', 'skin-')):
+            if not template_name.startswith('extension-'):
                 continue
             # Exclude some from REL branches
             if template_name.endswith((
@@ -349,7 +337,6 @@ class TestZuulLayout(unittest.TestCase):
                     '-coverage',
                     '-gate',
                     '-javascript-documentation',
-                    '-phpbench',
                     )):
                 continue
 
@@ -365,7 +352,7 @@ class TestZuulLayout(unittest.TestCase):
                         )
                     )
                 )
-            except AssertionError, e:
+            except AssertionError as e:
                 errors.append(str(e))
 
         self.maxDiff = None

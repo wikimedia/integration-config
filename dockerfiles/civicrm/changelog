@@ -1,3 +1,49 @@
+civicrm (0.9-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer to 2.9.7
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 14 Apr 2026 16:28:35 -0400
+
+civicrm (0.9-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   (T410453) Upgrade composer to 2.9.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 18 Nov 2025 17:23:07 -0500
+
+civicrm (0.9) wikimedia; urgency=medium
+
+  * Add script from our `composer test` jobs - T401451
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 14 Aug 2025 10:29:45 +0200
+
+civicrm (0.8-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Remove copy of /srv/composer which only has a checksum file
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 14 Aug 2025 10:08:32 +0200
+
+civicrm (0.8) wikimedia; urgency=medium
+
+  * Remove php-mysqli which is an alias of php-mysql
+  * Add composer
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 14 Aug 2025 09:27:50 +0200
+
+civicrm (0.7) wikimedia; urgency=medium
+
+  * Add php-mysqli (T401451)
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 11 Aug 2025 11:29:32 +0200
+
+civicrm (0.6) wikimedia; urgency=high
+
+   Add patch program to civicrm image (T401451)
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Thu,  7 Aug 2025 15:47:14 -0700
+
 civicrm (0.5) wikimedia; urgency=medium
 
   * Upgrading base image to bookworm with php8.2

@@ -1,9 +1,9 @@
 FROM {{ "composer-scratch" | image_tag }} as composer
-FROM {{ "node20" | image_tag }} as node
+FROM {{ "node24" | image_tag }} as node
 
 FROM {{ "ci-bullseye" | image_tag }}
 
-ARG QUIBBLE_VERSION=1.14.1
+ARG QUIBBLE_VERSION=1.17.1
 
 ######################
 #  Install node/npm  #
@@ -28,20 +28,15 @@ ENV NPM_CONFIG_CACHE=/cache/npm
 #####################
 #  Inject composer  #
 #####################
-
-# Install composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
-
-# Grab our composer helper scripts
-COPY --from=composer /srv/composer /srv/composer
 
 USER root
 
 #########################################
-# node-gyp requires python2.7 / gcc ... #
+# not sure if we still need gcc / ...   #
 # composer expects unzip                #
 #########################################
-RUN {{ "build-essential unzip python" | apt_install }}
+RUN {{ "build-essential unzip" | apt_install }}
 
 ##########################
 # JSDuck is still needed #
@@ -161,6 +156,15 @@ USER nobody
 # and the nobody user doesn't have one. Other tools likely will need it in some
 # form as well, so setting it generally.
 ENV HOME=/tmp
+
+# Force Python stdout and stderr streams to be unbuffered
+ENV PYTHONUNBUFFERED=1
+
+# Add phan scripts
+COPY run-phan.sh /run-phan.sh
+COPY run-phan-core.sh /run-phan-core.sh
+COPY run-phan-libraries.sh /run-phan-libraries.sh
+COPY run-phan-generic.sh /run-phan-generic.sh
 
 WORKDIR /workspace
 ENTRYPOINT ["/usr/local/bin/quibble"]

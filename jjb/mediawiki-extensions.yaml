@@ -95,7 +95,7 @@
 
 # Phan! (T153039)
 - job-template:
-    name: '{thing}-{php}-phan'
+    name: 'mwext-phan-{php}'
     node: Docker
     properties:
      - build-discarder:
@@ -143,6 +143,7 @@
             PHAN_COLOR_SCHEME: light
         image: '{phan_image}'
         memory: 7G  # Instances have 24G of RAM and 3 executors
+        entrypoint: /run-phan.sh
         args: '--color'
         srcdir: '/mediawiki'
 
@@ -155,36 +156,34 @@
       - timestamps
       - credentials-binding:
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
 
 - project:
     name: phan-jobs
-    thing:
-        - mwext
-        - mwskin
     php:
         - php81:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s2
-            composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.32-s1
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php81:8.1.32-s1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s2
+            composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.34-s1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s2
         - php82:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.14.1-s2
-            composer_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.28-s1
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php82:8.2.28-s1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1-s2
+            composer_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1-s2
         - php83:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.14.1-s2
-            composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.21-s1
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php83:8.3.21-s1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
+            composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.30-s1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
         - php84:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.14.1-s2
-            composer_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.7-s1
-            phan_image: docker-registry.wikimedia.org/releng/mediawiki-phan-php84:8.4.7-s1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1-s2
+            composer_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1-s2
+        - php85:
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.17.1-s2
+            composer_image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3-s1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.17.1-s2
     jobs:
-        - '{thing}-{php}-phan'
+        - 'mwext-phan-{php}'
 
 - project:
     name: wdio-selenium-daily
@@ -205,16 +204,16 @@
             recipients: qa-alerts@lists.wikimedia.org wiki@physikerwelt.de # @Physikerwelt
             repository: mediawiki/extensions/Math
         - Minerva:
-            recipients: proticom-ctr@wikimedia.org qa-alerts@lists.wikimedia.org # @Edtadros
+            recipients: proticom-ctr@wikimedia.org qa-alerts@lists.wikimedia.org performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com # @Edtadros
             repository: mediawiki/skins/MinervaNeue
         - Newsletter:
             recipients: qa-alerts@lists.wikimedia.org 01tonythomas@gmail.com # @01tonythomas
             repository: mediawiki/extensions/Newsletter
         - Popups:
-            recipients: jrobson@wikimedia.org qa-alerts@lists.wikimedia.org samsmith@wikimedia.org # @Jdlrobson @phuedx
+            recipients: qa-alerts@lists.wikimedia.org performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com # @jdrewniak
             repository: mediawiki/extensions/Popups
         - RelatedArticles:
-            recipients: qa-alerts@lists.wikimedia.org samsmith@wikimedia.org discovery-alerts@lists.wikimedia.org # @phuedx
+            recipients: qa-alerts@lists.wikimedia.org performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com # @jdrewniak
             repository: mediawiki/extensions/RelatedArticles
         - TwoColConflict:
             recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @awight wmde-techwish
@@ -226,19 +225,20 @@
         - 'selenium-daily-{sitename}-{project}':
             sitename:
                 - beta:
-                    mw_server: 'https://en.wikipedia.beta.wmflabs.org'
+                    mw_server: 'https://en.wikipedia.beta.wmcloud.org'
                     mw_user: 'Selenium user'
                     mw_credential_id: 'selenium-user-beta'
 
-- job:
+- job: &wikilambda-catalyst-end-to-end
       name: wikilambda-catalyst-end-to-end
       node: Docker
       triggers:
           - zuul
       builders:
+          # The castor setup/teardown is how the Catalyst image gets a copy of the code to test
           - setup
-          - docker-run-with-log-cache-src:
-                image: 'docker-registry.wikimedia.org/releng/catalyst:1.2.0-s2'
+          - docker-run-with-log-cache-src: &wikilambda-catalyst-docker-builder
+                image: docker-registry.wikimedia.org/releng/catalyst:1.3.2-s1
                 entrypoint: '/deploy_env.py'
                 environment:
                     WIKILAMBDA_REF: $BASE_LOG_PATH
@@ -248,6 +248,7 @@
                     MEDIAWIKI_USER: 'Admin'
                     MEDIAWIKI_PASSWORD: 'dockerpass'
                     MW_SCRIPT_PATH: '/w'
+                    EXPIRY_TIME_HOURS: '1'
       wrappers:
           - timeout:
               timeout: 20
@@ -257,12 +258,13 @@
                     credential-id: wikilambda-catalyst-api-key
                     variable: CATALYST_API_TOKEN
       publishers:
+          - archive-log-allow-empty
           - postbuildscript:
               builders:
                 - build-on:
                     - SUCCESS
-                    - UNSTABLE
                     - FAILURE
+                    - UNSTABLE
                     - ABORTED
                   build-steps:
                     - shell: |
@@ -270,9 +272,51 @@
                         curl -X "DELETE" "https://api.catalyst.wmcloud.org/api/environments/${ENV_ID}" \
                           -H "Authorization: ApiToken ${CATALYST_API_TOKEN}"
           - teardown
-          # Temporarily, e-mail Vaughn on failures
+          # Temporarily, e-mail Vaughn and James on failures
           - email-ext:
-             recipients: vwalters@wikimedia.org
-             body: '${{SCRIPT, template="wikimedia.template"}}'
-             failure: true
-             unstable: true
+              recipients:   vwalters@wikimedia.org jforrester@wikimedia.org
+              content-type: text
+              subject:      Broken build $BUILD_TAG
+              body:         |
+                            The build $BUILD_NUMBER for $ZUUL_PROJECT has failed.
+                            See $BUILD_URL for details.
+              failure:      true
+              unstable:     true
+
+# Variant that is running on a daily basis
+- job:
+    !!merge : *wikilambda-catalyst-end-to-end
+    name: wikilambda-catalyst-end-to-end-daily
+    triggers:
+        - timed: '@daily'
+    builders:
+        - docker-cache-dir
+        - docker-log-dir
+        - docker-src-dir
+        - docker-ci-src-setup-simple
+        - docker-run-with-log-cache-src: *wikilambda-catalyst-docker-builder
+    parameters:
+        - string:
+            name: 'CATALYST_ENV_NAME'
+            default: 'mw-ext-wl-ci-daily-${BUILD_NUMBER}'
+        - string:
+            name: 'ZUUL_URL'
+            default: 'https://gerrit.wikimedia.org/r/p'
+        - string:
+            name: 'ZUUL_PROJECT'
+            default: 'mediawiki/extensions/WikiLambda'
+        - string:
+            name: 'ZUUL_REF'
+            default: 'master'
+        - string:
+            name: 'ZUUL_CHANGE'
+            default: ' '
+        - string:
+            name: 'BASE_LOG_PATH'
+            description: 'Used as the wikilambda ref as this is what is available from zuul'
+            default: ' '
+        - string:
+            name: 'EXPIRY_TIME_HOURS'
+            description: 'The number of hours after which the test environment will expire'
+            default: '1'
+

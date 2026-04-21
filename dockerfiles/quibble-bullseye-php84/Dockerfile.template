@@ -1,3 +1,5 @@
+FROM {{ "php84" | image_tag }} as php84
+
 FROM {{ "sury-php" | image_tag }} AS sury-php
 
 FROM {{ "quibble-bullseye" | image_tag }}
@@ -22,10 +24,12 @@ php8.4-ldap
 php8.4-mbstring
 php8.4-memcached
 php8.4-mysql
+php8.4-pcov
 php8.4-pgsql
 php8.4-sqlite3
 php8.4-tidy
 php8.4-uuid
+php8.4-xdebug
 php8.4-xml
 php8.4-zip
 {%- endset -%}
@@ -41,9 +45,14 @@ COPY sury.pin /etc/apt/preferences.d/sury
 RUN {{ mediawiki_deps | apt_install }} \
     && /install-php-fpm-conf.sh
 
+# Get a new, standard-across-Wikimedia-CI version of php-ast from our build, rather than using Debian's old one.
+# The careful work to custom-build this is already done in the php84 image, so just re-use.
+COPY --from=php84 /usr/lib/php/20240924/ast.so /usr/lib/php/20240924/ast.so
+COPY --from=php84 /etc/php/8.4/cli/conf.d/20-ast.ini /etc/php/8.4/cli/conf.d/20-ast.ini
+
 # Disable pcov by default, although the performance overhead should be minimal
-RUN {{ "php8.4-pcov" | apt_install }} \
-    && phpdismod pcov
+# Disable XDebug by default due to its performance impact
+RUN phpdismod pcov xdebug
 
 # Unprivileged
 RUN install --directory /workspace --owner=nobody --group=nogroup

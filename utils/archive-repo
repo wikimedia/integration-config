@@ -1,0 +1,2 @@
+#!/bin/sh
+exec tox -qq -e archive-repo -- "$@"

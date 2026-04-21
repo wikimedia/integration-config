@@ -2,35 +2,35 @@
     name: pywikibot-core
     jobs:
      - '{name}-tox':
-         docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.1-s1
+         docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.2
      - '{name}-tox-publish':
         docsrc: 'docs/_build/html'
         docdest: 'pywikibot/$DOC_SUBPATH'
      - '{name}-tox-{toxenv}':
-         docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.1-s1
+         docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.2
          toxenv:
              - doc:
                  build_timeout: 30 # minutes
              - rstcheck
              - sphinx
              - doctest
-             - fasttest-py38
-             - fasttest-py39
              - fasttest-py310
              - fasttest-py311
              - fasttest-py312
+             - fasttest-py313
+             - fasttest-py314
              - fasttest-pypy
-             - deeptest-py38:
-                 build_timeout: 30 # minutes
-             - deeptest-py312:
-                 build_timeout: 30 # minutes
+             - deeptest-py39:
+                 build_timeout: 45 # minutes
+             - deeptest-py314:
+                 build_timeout: 45 # minutes
              - typing
 
 - job-group:
     name: pywikibot-tox-jobs
     jobs:
         - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.1-s1
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.2
 
 - project:
     name: pywikibot-i18n

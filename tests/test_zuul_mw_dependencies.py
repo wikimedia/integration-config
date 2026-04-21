@@ -37,7 +37,7 @@ class TestMwDependencies(unittest.TestCase):
         params['ZUUL_BRANCH'] = branch
 
         job = FakeJob(job_name if job_name
-                      else 'mediawiki-quibble-composer-mysql-php81')
+                      else 'quibble-for-mediawiki-core-composer-mysql-php81')
         zuul_config.set_parameters(None, job, params)
         return params
 
@@ -52,8 +52,8 @@ class TestMwDependencies(unittest.TestCase):
         params = self.fetch_dependencies(
             project='mediawiki/skins/Vector')
 
-        self.assertIn('SKIN_NAME', params)
-        self.assertEqual(params['SKIN_NAME'], 'Vector')
+        self.assertIn('EXT_NAME', params)
+        self.assertEqual(params['EXT_NAME'], 'Vector')
 
     def test_cyclical_dependencies(self):
         """verifies that cyclical dependencies are possible"""
@@ -86,7 +86,7 @@ class TestMwDependencies(unittest.TestCase):
 
     def test_job_name(self):
         self.assertHasDependencies(self.fetch_dependencies(
-            job_name='mediawiki-quibble-composer-mysql-php81'))
+            job_name='quibble-for-mediawiki-core-composer-mysql-php81'))
 
         self.assertHasDependencies(self.fetch_dependencies(
             job_name='quibble-composer-mysql-php81'))
@@ -145,9 +145,73 @@ class TestMwDependencies(unittest.TestCase):
             set(['B'])
         )
 
+    def test_recursion_optout(self):
+        mapping = {
+            'A': {
+                'recurse': False,
+                'dependencies': ['B'],
+            },
+            'B': ['C'],
+        }
+        self.assertEqual(
+            zuul_config.get_dependencies('A', mapping),
+            set(['B']),
+            'Transitive dependency C is not added',
+        )
+
+    def test_recursion_optin(self):
+        mapping = {
+            'A': {
+                'recurse': True,
+                'dependencies': ['B'],
+            },
+            'B': ['C'],
+        }
+        self.assertEqual(
+            zuul_config.get_dependencies('A', mapping),
+            set(['B', 'C']),
+        )
+
+    def test_recursion_nested_optout(self):
+        mapping = {
+            'A': {
+                'recurse': True,
+                'dependencies': ['B'],
+            },
+            'B': {
+                'recurse': False,
+                'dependencies': ['C'],
+            },
+            'C': ['D'],
+        }
+        self.assertEqual(
+            zuul_config.get_dependencies('A', mapping),
+            set(['B', 'C']),
+        )
+
+    def test_mw_zuul_recurse(self):
+        params = {
+            'ZUUL_BRANCH': 'master',
+        }
+        job = FakeJob('quibble-vendor-mysql-php81')
+        zuul_config.dependencies = {
+            'Recursive': {'dependencies': [], 'recurse': True},
+            'NotRecursive': {'dependencies': [], 'recurse': False},
+        }
+
+        params['ZUUL_PROJECT'] = 'mediawiki/extensions/Recursive'
+        zuul_config.set_parameters(None, job, params)
+        self.assertIn('MW_ZUUL_RECURSE', params)
+        self.assertTrue(params['MW_ZUUL_RECURSE'])
+
+        params['ZUUL_PROJECT'] = 'mediawiki/extensions/NotRecursive'
+        zuul_config.set_parameters(None, job, params)
+        self.assertIn('MW_ZUUL_RECURSE', params)
+        self.assertFalse(params['MW_ZUUL_RECURSE'])
+
     def test_inject_skin_on_an_extension(self):
         deps = self.fetch_dependencies(
-            job_name='mediawiki-quibble-composer-mysql-php81',
+            job_name='quibble-for-mediawiki-core-composer-mysql-php81',
             project='mediawiki/extensions/MobileFrontend')
         self.assertDictContainsSubset(
             {

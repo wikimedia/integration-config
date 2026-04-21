@@ -1,3 +1,65 @@
+mediawiki-phan-testrun (8.3.30-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer to 2.9.7
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 14 Apr 2026 16:28:35 -0400
+
+mediawiki-phan-testrun (8.3.30) wikimedia; urgency=high
+
+   Refresh for update in parent image php83:
+   Rebuild to use PHP 8.3.30 due to upstream packaging
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 12 Feb 2026 17:28:07 +0000
+
+mediawiki-phan-testrun (8.3.26) wikimedia; urgency=medium
+
+  * Upgrade PHP from 8.1 to 8.3 - T414268
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 12 Jan 2026 08:25:34 +0100
+
+mediawiki-phan-testrun (8.1.33) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   (T410453) Upgrade composer to 2.9.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 18 Nov 2025 17:23:07 -0500
+
+mediawiki-phan-testrun (8.1.32-s6) wikimedia; urgency=high
+
+   Refresh for update in parent image php-scratch:
+   Update php-ast to 1.1.3
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Wed, 29 Oct 2025 01:51:14 +0100
+
+mediawiki-phan-testrun (8.1.32-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Remove copy of /srv/composer which only has a checksum file
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 14 Aug 2025 10:08:32 +0200
+
+mediawiki-phan-testrun (8.1.32-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   T383557: bullseye base image has been updated
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Wed, 23 Jul 2025 12:21:44 -0700
+
+mediawiki-phan-testrun (8.1.32-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Disable php-pcov by default T395743
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Fri, 20 Jun 2025 20:19:24 -0700
+
+mediawiki-phan-testrun (8.1.32-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Enable php-pcov by default T395743
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Fri, 20 Jun 2025 16:58:03 -0700
+
 mediawiki-phan-testrun (8.1.32-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php81:

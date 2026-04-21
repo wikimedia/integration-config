@@ -1,3 +1,0 @@
-Package: shellcheck
-Pin: release a=bullseye-backports
-Pin-Priority: 1001

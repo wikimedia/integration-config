@@ -32,9 +32,6 @@ FROM {{ "node24-test-browser" | image_tag }}
 # Install composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-# Grab our composer helper scripts
-COPY --from=composer /srv/composer /srv/composer
-
 USER root
 
 ## START: O, my kingdom for multiple inheritance!
@@ -85,9 +82,6 @@ ENV QT_QPA_PLATFORM=offscreen
 # HACK: We manually copy across composer, like all the other images that need it
 # Install composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
-
-# Grab our composer helper scripts
-COPY --from=composer /srv/composer /srv/composer
 
 ## END: O, my kingdom for multiple inheritance!
 

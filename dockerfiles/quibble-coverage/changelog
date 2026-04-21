@@ -1,0 +1,101 @@
+quibble-coverage (1.17.1-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer to 2.9.7
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 14 Apr 2026 16:28:35 -0400
+
+quibble-coverage (1.17.1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   Upgrade Node from 20.19.5 to 24.14.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 10 Apr 2026 17:50:07 -0400
+
+quibble-coverage (1.17.1) wikimedia; urgency=medium
+
+  * Update Quibble to 1.17.1
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 10 Apr 2026 11:51:45 +0200
+
+quibble-coverage (1.17.0) wikimedia; urgency=medium
+
+  * Update Quibble to 1.17.0
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 09 Apr 2026 16:24:14 +0200
+
+quibble-coverage (1.16.0-s3) wikimedia; urgency=high
+
+   T421689: Update mediawiki/phpunit-patch-coverage to 0.0.17
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Wed,  8 Apr 2026 14:58:48 -0700
+
+quibble-coverage (1.16.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   Drop Python 2 from image, node-gyp is long-vanquished
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 23 Mar 2026 10:29:43 -0400
+
+quibble-coverage (1.16.0-s1) wikimedia; urgency=medium
+
+  * Keep comments when processing PHPUnit suite.xml - T419073
+  * Drop support for PHPUnit < 9
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 09 Mar 2026 19:19:30 +0100
+
+quibble-coverage (1.16.0) wikimedia; urgency=medium
+
+  * Update Quibble to 1.16.0
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 06 Mar 2026 17:31:30 +0100
+
+quibble-coverage (1.15.0-s2) wikimedia; urgency=high
+
+   (T345481) Run generatePHPUnitConfig.php before running tests
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Wed,  4 Mar 2026 22:41:50 +0100
+
+quibble-coverage (1.15.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php83:
+   Rebuild to use PHP 8.3.30 due to upstream packaging
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 12 Feb 2026 17:28:07 +0000
+
+quibble-coverage (1.15.0) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   Update Quibble to 1.15.0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 26 Jan 2026 15:46:36 -0500
+
+quibble-coverage (1.14.2-s4) wikimedia; urgency=high
+
+   Pass config file explicitly to PHPUnit
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Mon, 26 Jan 2026 17:25:25 +0100
+
+quibble-coverage (1.14.2-s3) wikimedia; urgency=high
+
+   (T395470) Stop using legacy phpunit.php and suite.xml
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Wed, 21 Jan 2026 23:36:11 +0100
+
+quibble-coverage (1.14.2-s2) wikimedia; urgency=medium
+
+  * Allow coverage for `mediawiki/services/parsoid` - T413626.
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 05 Jan 2026 12:31:24 +0100
+
+quibble-coverage (1.14.2-s1) wikimedia; urgency=high
+
+   T358666: Update mediawiki/phpunit-patch-coverage to 0.0.16
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Mon,  1 Dec 2025 13:24:32 +0000
+
+quibble-coverage (1.14.2) wikimedia; urgency=medium
+
+   Initial release, forked from quibble-bullseye-php81-coverage.
+
+ -- Timo Tijhof <krinkle@fastmail.com>  Fri, 28 Nov 2025 12:00:00 -0000

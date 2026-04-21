@@ -5,9 +5,32 @@ if [ "$ZUUL_PIPELINE" != 'gate-and-submit' ] && [ "$ZUUL_PIPELINE" != 'postmerge
     exit 0
 fi
 
+SSH_OPTS=(
+    "-a" # Disable agent forwarding
+    "-T" # Disable pseudo-tty allocation
+    "-o" "ConnectTimeout=6"
+    "-o" "UserKnownHostsFile=/dev/null"
+    "-o" "StrictHostKeyChecking=no"
+)
+
 # shellcheck disable=SC2206
 ssh_config=($TRIGGERED_SSH_CONNECTION)
 REMOTE_INSTANCE="${ssh_config[2]}"
+
+cache_dir='/cache'
+remote_cache_dir="${TRIGGERED_WORKSPACE}${cache_dir}"
+
+if /usr/bin/ssh "${SSH_OPTS[@]}" jenkins-deploy@"${REMOTE_INSTANCE}" -- test -d "${remote_cache_dir}" &>/dev/null; then
+    echo "Remote cache '${REMOTE_INSTANCE}:${remote_cache_dir}' directory exists"
+else
+    if (( $? == 1 )); then
+        echo "Remote cache directory does not exist (T282893#10165729)"
+        exit 1
+    else
+        echo "Remote cache directory check failed"
+        exit 1
+    fi
+fi
 
 # Destination in the central cache
 DEST="/srv/castor/${CASTOR_NAMESPACE}"
@@ -15,16 +38,13 @@ DEST="/srv/castor/${CASTOR_NAMESPACE}"
 echo "Creating directory holding cache:"
 mkdir -v -p "${DEST}"
 
-remote_cache_dir="${TRIGGERED_WORKSPACE}/cache"
-cache_dir='/cache'
-
 echo -e "Syncing cache\nFrom.. ${REMOTE_INSTANCE}:${remote_cache_dir}\nTo.... ${DEST}"
 set -x
 # On the sender, run rsync in a container (--rsync-path) to have it run has
 # user 'nobody'.
 rsync \
     --archive \
-    --rsh="/usr/bin/ssh -a -T -o ConnectTimeout=6 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
+    --rsh="/usr/bin/ssh ${SSH_OPTS[*]}" \
     --rsync-path="docker run --rm -i --volume ${remote_cache_dir}:${cache_dir} --entrypoint=/usr/bin/rsync docker-registry.wikimedia.org/releng/castor:0.4.0" \
     --delete-delay \
     --delay-updates \

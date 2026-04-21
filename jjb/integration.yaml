@@ -15,7 +15,7 @@
             projects: >
                 integration/config
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s3
+            image: docker-registry.wikimedia.org/releng/tox-v4:0.4
             entrypoint: '/src/integration/config/{entrypoint}'
             workdir: /src/integration/config
     publishers:
@@ -26,9 +26,6 @@
           fail: true
       - timestamps
       - credentials-binding:
-          - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
           - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
@@ -59,7 +56,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s3
+         image: docker-registry.wikimedia.org/releng/tox-v4:0.4
          args: '-e qa -- --xunit-file=/log/junit-qa.xml'
     publishers:
      - archive-log-dir
@@ -86,12 +83,15 @@
              - zuul-layout-validate:
                  timeout: 3  # minutes
                  entrypoint: utils/zuul-layout-validate.sh
+             - zuul-params-diff:
+                 timeout: 3  # minutes
+                 entrypoint: utils/zuul-params-diff.sh
 
 - project:
     name: 'integration-pipelinelib'
     jobs:
      - '{name}-doc-publish':
-         image: docker-registry.wikimedia.org/releng/gradle:4.4.1-s2
+         image: docker-registry.wikimedia.org/releng/gradle:4.4.1-s3
          args: 'groovydoc'
          docsrc: 'src/build/docs/groovydoc'
          docdest: 'pipelinelib'
@@ -119,9 +119,6 @@
       - timestamps
       - credentials-binding:
           - text:
-              credential-id: composer-github-oauthtoken
-              variable: COMPOSER_GITHUB_OAUTHTOKEN
-          - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
     publishers:
@@ -138,18 +135,18 @@
     name: gearman-java
     jobs:
         - '{name}-maven-java17':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s2
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s4
             maven_path: '/run-with-gearmand.sh'
         - '{name}-maven-java17-site-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s2
-            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s2
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s4
+            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s4
             maven_path: '/run-with-gearmand.sh'
 
 - project:
     name: integration-tox-jenkins-override
     jobs:
         - '{name}-tox-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.4
             docsrc: 'doc/build/html'
             docdest: tox-jenkins-override
 
@@ -157,15 +154,15 @@
     name: 'integration-quibble'
     jobs:
         - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.4
         - '{name}-tox-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-buster:4.8.0-3-s3
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.4
             docsrc: 'doc/build/html'
             docdest: 'quibble'
         - 'integration-quibble-fullrun-{type}-{php}':
             php:
-                - php81:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s2
+                - php83:
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
             type:
                 - defaults:
                     quibble_args: >-
@@ -173,7 +170,7 @@
                         && /src/utils/ci-fullrun.sh
                         --color
                         --db-dir /workspace/db
-                        --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
+                        --memcached-server="$CASTOR_HOST":11211
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
                 - sqlite:
@@ -184,11 +181,10 @@
                         --db-dir /workspace/db
                         --db sqlite
                         --skip api-testing
-                        --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
+                        --memcached-server="$CASTOR_HOST":11211
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
                 - opensearch:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.14.1-s2
                     quibble_args: >-
                         -c '/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
                         && /src/utils/ci-opensearch.sh
@@ -205,7 +201,7 @@
                         --color
                         --db-dir /workspace/db
                         --skip phpunit,selenium,npm-test,qunit,api-testing
-                        --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
+                        --memcached-server="$CASTOR_HOST":11211
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
                 - extensions-phpunit:
@@ -216,7 +212,7 @@
                         --db-dir /workspace/db
                         --run phpunit
                         --skip selenium,npm-test,qunit,api-testing
-                        --memcached-server=integration-castor05.integration.eqiad1.wikimedia.cloud:11211
+                        --memcached-server="$CASTOR_HOST":11211
                         --success-cache-key-data="$JOB_NAME"
                         --web-backend=external --web-url=http://127.0.0.1:9413'
 

@@ -10,6 +10,14 @@ https://www.mediawiki.org/wiki/CI/JJB
 For more about the Jenkins Job Builder software and how to use it, refer to the upstream documentation:
 https://docs.openstack.org/infra/jenkins-job-builder/
 
+## Directories
+
+* dockerfiles - Definition of CI images using https://doc.wikimedia.org/docker-pkg/
+* jjb - JJB stands for Jenkins Job Builder. It is a python script to maintain and simplify configuration of Jenkins jobs. https://www.mediawiki.org/wiki/Continuous_integration/Jenkins_job_builder
+* tests - Hosts test suite for the CI configuration
+* utils - Miscellaneous scripts to support CI configuration
+* zuul - Configuration for Zuul, the workflow and scheduler https://www.mediawiki.org/wiki/Zuul
+
 ## Jenkins job local testing and deployment
 
 First create a jenkins_jobs.ini file e.g.
@@ -25,7 +33,7 @@ First create a jenkins_jobs.ini file e.g.
 
 Make sure you have tox and python 3 installed, you can then run Jenkins job builder using:
 
-    $ ./jenkin-jobs <arguments>
+    $ ./jenkins-jobs <arguments>
 
 Generate from the YAML an XML file for each Jenkins job, in the `output/` directory:
 
@@ -82,7 +90,7 @@ Once the change is merged, use the `./fab` helper to deploy your CI config chang
 
     $ ./fab deploy_zuul
 
-# Docker image buiding and publishing
+# Docker image building and publishing
 
 After making the relevant `Dockerfile.template` changes and adding the changelog entry, you can
 locally build and test the new version of the image by running:

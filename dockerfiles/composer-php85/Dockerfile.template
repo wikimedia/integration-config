@@ -1,0 +1,18 @@
+FROM {{ "composer-scratch" | image_tag }} as composer
+
+FROM {{ "php85" | image_tag }}
+
+# Install composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+USER root
+
+RUN {{ "jq" | apt_install }}
+
+COPY --from=composer /run-test /run-test
+COPY --from=composer /run-testpackage /run-testpackage
+
+USER nobody
+
+ENTRYPOINT ["/usr/bin/composer"]
+CMD ["help"]

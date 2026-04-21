@@ -1,0 +1,27 @@
+tox-v3-mysqld (0.3) wikimedia; urgency=high
+
+  * Upgrade pyenv from 2.6.3 to 2.6.26
+  * Add Python 3.14.3 - T421209
+  * Upgrade other Python versions:
+  ** 3.9.23  > 3.9.25
+  ** 3.10.18 > 3.10.20
+  ** 3.11.13 > 3.11.15
+  ** 3.12.11 > 3.12.13
+  ** 3.13.5  > 3.13.12
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 25 Mar 2026 09:53:45 +0100
+
+tox-v3-mysqld (0.2) wikimedia; urgency=medium
+
+  * Add pkg-config, required by labs/tools/wikinity to compile the mysqlclient
+    Python module.
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 11 Jul 2025 14:33:15 +0200
+
+tox-v3-mysqld (0.1) wikimedia; urgency=medium
+
+  * Initial release, replaces Buster based image tox-mysqld - T335765
+  * Disable `unix_socket` authentication so that jobs running as `nobody` can
+    easily connect as root.
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 11 Jul 2025 11:14:12 +0200
