@@ -2653,6 +2653,8 @@ WikiLambda:
     # From extension.json:
     - UniversalLanguageSelector
     - WikimediaMessages
+    # extras
+    - CommunityConfiguration
 
 WikiRAG:
   recurse: false
