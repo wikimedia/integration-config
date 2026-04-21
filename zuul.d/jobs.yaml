@@ -18,7 +18,7 @@
     post-run:
       - playbooks/base/post-logs.yaml
     roles:
-      - zuul: zuul/zuul-jobs
+      - zuul: integration/zuul-jobs
     timeout: 1800
     nodeset:
       nodes:
