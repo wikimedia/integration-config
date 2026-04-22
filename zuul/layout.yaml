@@ -9791,6 +9791,10 @@ projects:
     template:
       - name: node24-browser
 
+  - name: wikibase/new-lexeme-special-page
+    template:
+      - name: node20-browser
+
   - name: wikibase/termbox
     test:
       - trigger-termbox-pipeline-test
