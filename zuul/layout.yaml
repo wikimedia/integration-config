@@ -2178,51 +2178,11 @@ project-templates:
     gate-and-submit:
       - generic-node24-browser
 
-  - name: node20-browser-webdriver
-    test:
-      - generic-node20-browser-webdriver
-    gate-and-submit:
-      - generic-node20-browser-webdriver
-    experimental:
-      # Not-yet-supported language runtimes
-      - generic-node22-browser-webdriver
-      - generic-node24-browser-webdriver
-
   - name: node24-browser-webdriver
     test:
       - generic-node24-browser-webdriver
     gate-and-submit:
       - generic-node24-browser-webdriver
-
-  - name: node20-browser-for-MW-branches
-    test:
-      - generic-node20-browser
-    gate-and-submit:
-      - generic-node20-browser
-    test-1_43:
-      - generic-node20-browser
-    gate-and-submit-1_43:
-      - generic-node20-browser
-    test-1_44:
-      - generic-node20-browser
-    gate-and-submit-1_44:
-      - generic-node20-browser
-    test-1_45:
-      - generic-node20-browser
-    gate-and-submit-1_45:
-      - generic-node20-browser
-    test-1_46:
-      - generic-node20-browser
-    gate-and-submit-1_46:
-      - generic-node20-browser
-    test-wmf:
-      - generic-node20-browser
-    gate-and-submit-wmf:
-      - generic-node20-browser
-    experimental:
-      # Not-yet-supported language runtimes
-      - generic-node22-browser
-      - generic-node24-browser
 
   - name: node24-browser-for-MW-branches
     test:
@@ -2250,50 +2210,10 @@ project-templates:
     gate-and-submit-wmf:
       - generic-node24-browser
 
-  - name: node20-rundoc
-    test:
-      - generic-node20-rundoc
-    gate-and-submit:
-      - generic-node20-rundoc
-    experimental:
-      # Not-yet-supported language runtimes
-      - generic-node22-rundoc
-      - generic-node24-rundoc
-
   - name: node24-rundoc
     test:
       - generic-node24-rundoc
     gate-and-submit:
-      - generic-node24-rundoc
-
-  - name: node20-rundoc-for-MW-branches
-    test:
-      - generic-node20-rundoc
-    gate-and-submit:
-      - generic-node20-rundoc
-    test-1_43:
-      - generic-node20-rundoc
-    gate-and-submit-1_43:
-      - generic-node20-rundoc
-    test-1_44:
-      - generic-node20-rundoc
-    gate-and-submit-1_44:
-      - generic-node20-rundoc
-    test-1_45:
-      - generic-node20-rundoc
-    gate-and-submit-1_45:
-      - generic-node20-rundoc
-    test-1_46:
-      - generic-node20-rundoc
-    gate-and-submit-1_46:
-      - generic-node20-rundoc
-    test-wmf:
-      - generic-node20-rundoc
-    gate-and-submit-wmf:
-      - generic-node20-rundoc
-    experimental:
-      # Not-yet-supported language runtimes
-      - generic-node22-rundoc
       - generic-node24-rundoc
 
   - name: node24-rundoc-for-MW-branches
@@ -9753,11 +9673,11 @@ projects:
   - name: VisualEditor/VisualEditor
     template:
       - name: mediawiki-i18n-check
-      - name: node20-browser-for-MW-branches
-      - name: node20-rundoc-for-MW-branches
+      - name: node24-browser-for-MW-branches
+      - name: node24-rundoc-for-MW-branches
     postmerge:
-      - generic-node20-docs-publish
-      - generic-node20-browser-coverage-publish
+      - generic-node24-docs-publish
+      - generic-node24-browser-coverage-publish
 
   - name: mediawiki/extensions/VisualEditorPlus
     template:
