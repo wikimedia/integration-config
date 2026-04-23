@@ -720,8 +720,6 @@
     exclude:
         - key: wikidata-query-builder
           node_version: node22
-        - key: wikidata-query-builder
-          node_version: node24
     jobs:
         - 'branchdeploy-{key}-{node_version}-npm':
             node_version:
