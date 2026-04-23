@@ -9713,8 +9713,6 @@ projects:
     test:
       - ooui-node24-plus-php83-runjenkins
     gate-and-submit:
-      - ooui-node20-plus-php83-runjenkins
-      - ooui-node22-plus-php83-runjenkins
       - ooui-node24-plus-php83-runjenkins
     postmerge:
       - oojs-ui-doxygen-publish
