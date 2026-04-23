@@ -8728,7 +8728,7 @@ projects:
 
   - name: analytics/mediawiki-storage
     template:
-      - name: node20-browser
+      - name: node24-browser
 
   - name: analytics/multimedia
     template:
@@ -8749,7 +8749,7 @@ projects:
 
   - name: analytics/wikistats2
     template:
-      - name: node20-browser
+      - name: node24-browser
       - name: mediawiki-i18n-check
 
   - name: analytics/wikimetrics
