@@ -2811,6 +2811,7 @@ WikimediaCustomizations:
   dependencies:
     # no requirements in extension.json
     # extras
+    - AntiSpoof
     - cldr
     - CentralAuth
     - Echo

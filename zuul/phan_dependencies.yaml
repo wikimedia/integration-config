@@ -849,6 +849,8 @@ WikimediaCampaignEvents:
 
 WikimediaCustomizations:
   - cldr
+  - AntiSpoof
+  - CentralAuth
   - EmailAuth
   - FlaggedRevs
   - IPReputation
