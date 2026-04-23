@@ -9771,7 +9771,7 @@ projects:
 
   - name: wikidata/query/gui
     template:
-      - name: node20-browser-webdriver
+      - name: node24-browser-webdriver
       - name: mediawiki-i18n-check
     # TODO enable if we decide we want this on postmerge
     # postmerge:
@@ -9782,10 +9782,10 @@ projects:
 
   - name: wikidata/query-builder
     template:
-      - name: node20-browser
+      - name: node24-browser
       - name: mediawiki-i18n-check
     test:
-      - branchdeploy-wikidata-query-builder-node20-npm
+      - branchdeploy-wikidata-query-builder-node24-npm
 
   - name: wikibase/javascript-api
     template:
