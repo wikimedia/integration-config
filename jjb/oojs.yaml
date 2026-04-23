@@ -74,9 +74,5 @@
         - '{name}-{node_version}-run{script}':
            script: 'jenkins'
            node_version:
-               - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.20.2-s1
-               - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.22.2-s1
                - node24:
                    image: docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1-s1
