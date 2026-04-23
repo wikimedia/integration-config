@@ -8867,8 +8867,6 @@ projects:
     test:
       - wikipeg-special-node24-plus-php83-composer
     gate-and-submit:
-      - wikipeg-special-node20-plus-php83-composer
-      - wikipeg-special-node22-plus-php83-composer
       - wikipeg-special-node24-plus-php83-composer
 
   - name: WrappedString
