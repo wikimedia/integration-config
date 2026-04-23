@@ -2607,7 +2607,7 @@ projects:
 
   - name: mediawiki/tools/api-testing
     template:
-      - name: node20-rundoc
+      - name: node24-rundoc
     test:
       - api-testing-mysql-php83
       - api-testing-sqlite-php83
@@ -2615,7 +2615,7 @@ projects:
       - api-testing-mysql-php83
       - api-testing-sqlite-php83
     postmerge:
-      - generic-node20-docs-publish
+      - generic-node24-docs-publish
 
   - name: mediawiki/tools/code-utils
     template:
@@ -2641,7 +2641,7 @@ projects:
 
   - name: mediawiki/tools/karma-firefox-launcher
     template:
-      - name: node20-browser
+      - name: node24-browser
 
   - name: mediawiki/tools/minus-x
     template:
@@ -2719,9 +2719,9 @@ projects:
 
   - name: performance/fresnel
     template:
-      - name: node20-browser
+      - name: node24-browser
     postmerge:
-      - generic-node20-browser-coverage-publish
+      - generic-node24-browser-coverage-publish
 
   - name: performance/navtiming
     template:
