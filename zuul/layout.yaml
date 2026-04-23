@@ -2142,6 +2142,12 @@ project-templates:
       - generic-node22
       - generic-node24
 
+  - name: node24
+    test:
+      - generic-node24
+    gate-and-submit:
+      - generic-node24
+
   - name: node20-to-node24
     test:
       - generic-node24
@@ -2160,6 +2166,12 @@ project-templates:
       - generic-node22-browser
       - generic-node24-browser
 
+  - name: node24-browser
+    test:
+      - generic-node24-browser
+    gate-and-submit:
+      - generic-node24-browser
+
   - name: node20-browser-webdriver
     test:
       - generic-node20-browser-webdriver
@@ -2168,6 +2180,12 @@ project-templates:
     experimental:
       # Not-yet-supported language runtimes
       - generic-node22-browser-webdriver
+      - generic-node24-browser-webdriver
+
+  - name: node24-browser-webdriver
+    test:
+      - generic-node24-browser-webdriver
+    gate-and-submit:
       - generic-node24-browser-webdriver
 
   - name: node20-browser-for-MW-branches
@@ -2200,6 +2218,32 @@ project-templates:
       - generic-node22-browser
       - generic-node24-browser
 
+  - name: node24-browser-for-MW-branches
+    test:
+      - generic-node24-browser
+    gate-and-submit:
+      - generic-node24-browser
+    test-1_43:
+      - generic-node24-browser
+    gate-and-submit-1_43:
+      - generic-node24-browser
+    test-1_44:
+      - generic-node24-browser
+    gate-and-submit-1_44:
+      - generic-node24-browser
+    test-1_45:
+      - generic-node24-browser
+    gate-and-submit-1_45:
+      - generic-node24-browser
+    test-1_46:
+      - generic-node24-browser
+    gate-and-submit-1_46:
+      - generic-node24-browser
+    test-wmf:
+      - generic-node24-browser
+    gate-and-submit-wmf:
+      - generic-node24-browser
+
   - name: node20-rundoc
     test:
       - generic-node20-rundoc
@@ -2208,6 +2252,12 @@ project-templates:
     experimental:
       # Not-yet-supported language runtimes
       - generic-node22-rundoc
+      - generic-node24-rundoc
+
+  - name: node24-rundoc
+    test:
+      - generic-node24-rundoc
+    gate-and-submit:
       - generic-node24-rundoc
 
   - name: node20-rundoc-for-MW-branches
@@ -2238,6 +2288,32 @@ project-templates:
     experimental:
       # Not-yet-supported language runtimes
       - generic-node22-rundoc
+      - generic-node24-rundoc
+
+  - name: node24-rundoc-for-MW-branches
+    test:
+      - generic-node24-rundoc
+    gate-and-submit:
+      - generic-node24-rundoc
+    test-1_43:
+      - generic-node24-rundoc
+    gate-and-submit-1_43:
+      - generic-node24-rundoc
+    test-1_44:
+      - generic-node24-rundoc
+    gate-and-submit-1_44:
+      - generic-node24-rundoc
+    test-1_45:
+      - generic-node24-rundoc
+    gate-and-submit-1_45:
+      - generic-node24-rundoc
+    test-1_46:
+      - generic-node24-rundoc
+    gate-and-submit-1_46:
+      - generic-node24-rundoc
+    test-wmf:
+      - generic-node24-rundoc
+    gate-and-submit-wmf:
       - generic-node24-rundoc
 
   - name: mwgate-npm
