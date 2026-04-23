@@ -1974,6 +1974,8 @@ OAuth:
     # no requirements in extension.json
     # extras
     - AbuseFilter
+    - AntiSpoof
+    - CentralAuth
     - Echo
 
 OAuthRateLimiter:
