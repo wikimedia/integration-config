@@ -65,10 +65,6 @@
     jobs:
         - '{name}-{node-plus-php}-runjenkins':
            node-plus-php:
-               - node20-plus-php83:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser-php83-composer:20.20.2-s2
-               - node22-plus-php83:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser-php83-composer:22.22.2-s2
                - node24-plus-php83:
                    image: docker-registry.wikimedia.org/releng/node24-test-browser-php83-composer:24.14.1-s2
 
