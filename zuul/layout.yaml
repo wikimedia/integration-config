@@ -9728,13 +9728,13 @@ projects:
 
   - name: unicodejs
     template:
-      - name: node20-browser
-      - name: node20-rundoc
+      - name: node24-browser
+      - name: node24-rundoc
     postmerge:
-      - generic-node20-browser-coverage-publish
-      - generic-node20-docs-publish
+      - generic-node24-browser-coverage-publish
+      - generic-node24-docs-publish
     publish:
-      - generic-node20-docs-publish
+      - generic-node24-docs-publish
 
   - name: jquery-client
     template:
