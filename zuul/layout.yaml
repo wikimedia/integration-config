@@ -8944,10 +8944,10 @@ projects:
 
   - name: mediawiki/libs/node-cssjanus
     template:
-      - name: node20
+      - name: node24
     postmerge:
-      - generic-node20-docs-publish
-      - generic-node20-browser-direct-coverage-publish
+      - generic-node24-docs-publish
+      - generic-node24-browser-direct-coverage-publish
 
   - name: mediawiki/libs/NormalizedException
     template:
