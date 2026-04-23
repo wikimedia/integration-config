@@ -9571,8 +9571,6 @@ projects:
       - generic-node24-browser
     gate-and-submit:
       - trigger-wikimedia-portals-pipeline-test
-      - generic-node20-browser
-      - generic-node22-browser
       - generic-node24-browser
     postmerge:
       - trigger-wikimedia-portals-pipeline-publish
