@@ -1515,6 +1515,7 @@ project-templates:
     gate-and-submit-l10n:
       - mediawiki-i18n-check
     experimental:
+      # Jobs we want to have available for testing
       - mwext-phan-php83
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1524,12 +1525,12 @@ project-templates:
 
   # Main CI template for extensions, using quibble
   #
-  # As of 2026-03-04, our current CI testing targets are Node 20, plus:
-  # master : PHP 8.2–8.5 (supported & tested; 8.5 only for MW core and vendor so far)
+  # As of 2026-04-23, our current CI testing targets are Node 20, plus:
+  # master : PHP 8.2–8.5 (supported & tested)
   # REL1_43: PHP 8.1–8.3 (supported & tested)
   # REL1_44: PHP 8.1–8.3 (supported & tested)
   # REL1_45: PHP 8.2–8.3 (supported & tested)
-  # REL1_46: PHP 8.2–8.4 (supported & tested)
+  # REL1_46: PHP 8.2–8.5 (supported & tested)
   # wmf/*:   PHP 8.3 (supported & tested)
   - name: extension-quibble
     test:
@@ -1544,6 +1545,7 @@ project-templates:
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php84
+      - quibble-vendor-mysql-php85
       - quibble-vendor-mysql-php83-selenium
       - mediawiki-node24
       - mwext-phan-php83
@@ -1598,6 +1600,7 @@ project-templates:
       - quibble-composer-mysql-php82-selenium
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php83
 
@@ -1617,10 +1620,6 @@ project-templates:
       # Non-standard database types
       - quibble-vendor-sqlite-php83
       - quibble-vendor-postgres-php83
-      # Not-yet-supported language runtimes
-      - quibble-vendor-mysql-php85
-      - mediawiki-node22
-      - mediawiki-node24
 
   # Special job template that runs composer rather than than relying
   # on mediawiki/vendor for quibble.
@@ -1641,6 +1640,7 @@ project-templates:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php83-selenium
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php83
@@ -1695,6 +1695,7 @@ project-templates:
       - quibble-composer-mysql-php82-selenium
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php83
 
@@ -1705,10 +1706,6 @@ project-templates:
       # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
-      # Not-yet-supported language runtimes
-      - quibble-composer-mysql-php85
-      - mediawiki-node22
-      - mediawiki-node24
 
   # Special job template for extensions maintained by the BlueSpice team.
   # - Only runs for LTS branches (not master branch).
@@ -1751,12 +1748,12 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
+      # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
+      # Not-yet-supported language runtimes
       - quibble-composer-mysql-php84
       - quibble-composer-mysql-php85
-      - mwext-bluespice-node22
-      - mwext-bluespice-node24
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
@@ -1774,6 +1771,7 @@ project-templates:
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php84
+      - quibble-vendor-mysql-php85
       - mediawiki-node24
       - mwext-phan-php83
 
@@ -1820,6 +1818,7 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       - mediawiki-node24
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php83
@@ -1837,12 +1836,11 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
+      # Jobs we want to have available for testing
       - quibble-vendor-mysql-php83-selenium
+      # Non-standard database types
       - quibble-vendor-sqlite-php83
       - quibble-vendor-postgres-php83
-      - quibble-vendor-mysql-php85
-      - mediawiki-node22
-      - mediawiki-node24
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
@@ -1858,6 +1856,7 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php83
@@ -1905,6 +1904,7 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php83
@@ -1913,13 +1913,11 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
+      # Jobs we want to have available for testing
+      - mwext-phan-php83
+      # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
-      - quibble-composer-mysql-php84
-      - quibble-composer-mysql-php85
-      - mwext-phan-php83
-      - mediawiki-node22
-      - mediawiki-node24
 
   # Special job template that runs the "standalone" jobs - T225068
   - name: extension-quibble-only-standalone
@@ -1932,6 +1930,7 @@ project-templates:
       - quibble-vendor-mysql-php82-phpunit-standalone
       - quibble-vendor-mysql-php83-phpunit-standalone
       - quibble-vendor-mysql-php84-phpunit-standalone
+      - quibble-vendor-mysql-php85-phpunit-standalone
     test-1_43:
       - quibble-composer-mysql-php81-phpunit-standalone
     gate-and-submit-1_43:
@@ -1948,8 +1947,6 @@ project-templates:
       - quibble-composer-mysql-php83-phpunit-standalone
     gate-and-submit-1_46:
       - quibble-composer-mysql-php83-phpunit-standalone
-    experimental:
-      - quibble-vendor-mysql-php84-phpunit-standalone
 
   # Special job template that runs the "apitests" job for test and gate
   - name: extension-apitests
@@ -2088,6 +2085,7 @@ project-templates:
       - composer-php82
       - composer-php83
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php84
       - composer-php85
 
@@ -2103,6 +2101,7 @@ project-templates:
       - composer-php83
       - composer-php84
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php85
 
   - name: composer-test-package-php82-to-php85
@@ -2139,6 +2138,7 @@ project-templates:
     gate-and-submit:
       - generic-node20
     experimental:
+      # Not-yet-supported language runtimes
       - generic-node22
       - generic-node24
 
@@ -2156,6 +2156,7 @@ project-templates:
     gate-and-submit:
       - generic-node20-browser
     experimental:
+      # Not-yet-supported language runtimes
       - generic-node22-browser
       - generic-node24-browser
 
@@ -2165,6 +2166,7 @@ project-templates:
     gate-and-submit:
       - generic-node20-browser-webdriver
     experimental:
+      # Not-yet-supported language runtimes
       - generic-node22-browser-webdriver
       - generic-node24-browser-webdriver
 
@@ -2194,6 +2196,7 @@ project-templates:
     gate-and-submit-wmf:
       - generic-node20-browser
     experimental:
+      # Not-yet-supported language runtimes
       - generic-node22-browser
       - generic-node24-browser
 
@@ -2203,6 +2206,7 @@ project-templates:
     gate-and-submit:
       - generic-node20-rundoc
     experimental:
+      # Not-yet-supported language runtimes
       - generic-node22-rundoc
       - generic-node24-rundoc
 
@@ -2232,6 +2236,7 @@ project-templates:
     gate-and-submit-wmf:
       - generic-node20-rundoc
     experimental:
+      # Not-yet-supported language runtimes
       - generic-node22-rundoc
       - generic-node24-rundoc
 
@@ -2826,9 +2831,8 @@ projects:
       - mediawiki-core-javascript-publish
       - mediawiki-core-doxygen-publish
     experimental:
+      # Jobs we want to have available for testing
       - mediawiki-composer-php83
-      - mediawiki-node22
-      - mediawiki-node24
 
   # (T189560) There is explicitly no CI support for mediawiki/vendor.git on release branches.
   # Additionally, selenium tests are skipped for wmf/ branches.
@@ -2942,6 +2946,7 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
     experimental:
+      # Jobs we want to have available for testing
       - quibble-composer-mysql-php83
     postmerge:
       - mwext-doxygen-publish
@@ -3500,6 +3505,7 @@ projects:
     gate-and-submit:
       - composer-php81
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php82
       - composer-php83
       - composer-php84
@@ -3536,6 +3542,7 @@ projects:
       # - operations-mw-config-php83-composer-diffConfig
       - operations-mw-config-tox
     experimental:
+      # Jobs we want to have available for testing
       - operations-mw-config-php84-composer-lint
       - operations-mw-config-php84-composer-test
       - operations-mw-config-php84-composer-diffConfig
@@ -4138,8 +4145,7 @@ projects:
       - quibble-donationinterface-REL1_43-php82
       - mwext-phan-php82
     experimental:
-      - mediawiki-node22
-      - mediawiki-node24
+      # Jobs we want to have available for testing
       - mediawiki-composer-php83
       - mwext-phan-php83
       # These are the remaining parts of extension-quibble
@@ -5202,10 +5208,12 @@ projects:
     postmerge:
       - mwext-doxygen-publish
     experimental:
+      # Jobs we want to have available for testing
       - mwext-phpunit-coverage
-      - quibble-vendor-postgres-php83
       - quibble-with-WikibaseClient-extensions-tests-php83
       - quibble-with-WikibaseRepository-extensions-tests-php83
+      # Non-standard database types
+      - quibble-vendor-postgres-php83
 
   - name: mediawiki/extensions/WikibaseCirrusSearch
     template:
@@ -9128,6 +9136,7 @@ projects:
     gate-and-submit:
       - composer-php81
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php82
       - composer-php83
       - composer-php84
@@ -9178,6 +9187,7 @@ projects:
     gate-and-submit:
       - composer-php81
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php82
       - composer-php83
       - composer-php84
@@ -9237,6 +9247,7 @@ projects:
     gate-and-submit:
       - composer-php81
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php82
       - composer-php83
       - composer-php84
@@ -9411,7 +9422,9 @@ projects:
     postmerge:
       - pywikibot-core-tox-publish
     experimental:
+      # Jobs we want to have available for testing
       - pywikibot-core-tox-doc
+      # Not-yet-supported language runtimes
       - pywikibot-core-tox-deeptest-py39
       - pywikibot-core-tox-deeptest-py314
 
@@ -9525,6 +9538,7 @@ projects:
     postmerge:
       - search-extra-maven-java17-site-publish
     experimental:
+      # Not-yet-supported language runtimes
       - search-extra-maven-java25
 
   - name: search/extra-analysis
@@ -9537,6 +9551,7 @@ projects:
     postmerge:
       - search-extra-analysis-maven-java17-site-publish
     experimental:
+      # Not-yet-supported language runtimes
       - search-extra-analysis-maven-java25
 
   - name: search/glent
@@ -9559,6 +9574,7 @@ projects:
     postmerge:
       - search-highlighter-maven-java17-site-publish
     experimental:
+      # Not-yet-supported language runtimes
       - search-highlighter-maven-java25
 
   - name: wmf-jvm-utils
@@ -9930,6 +9946,7 @@ projects:
     gate-and-submit:
       - composer-php82
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php83
       - composer-php84
       - composer-php85
