@@ -1435,6 +1435,7 @@ DiscussionTools:
     - VisualEditor
     # extras
     - Echo
+    - MobileFrontend
     - Thanks
 
 DrawioEditor:
@@ -1629,6 +1630,7 @@ GrowthExperiments:
     - CommunityConfiguration
     - VisualEditor
     # extras
+    - CentralNotice
     - CirrusSearch
     - Echo
     - Elastica
@@ -1972,6 +1974,8 @@ OAuth:
     # no requirements in extension.json
     # extras
     - AbuseFilter
+    - AntiSpoof
+    - CentralAuth
     - Echo
 
 OAuthRateLimiter:
@@ -2653,6 +2657,8 @@ WikiLambda:
     # From extension.json:
     - UniversalLanguageSelector
     - WikimediaMessages
+    # extras
+    - CommunityConfiguration
 
 WikiRAG:
   recurse: false
@@ -2807,7 +2813,9 @@ WikimediaCustomizations:
   dependencies:
     # no requirements in extension.json
     # extras
+    - AntiSpoof
     - cldr
+    - CentralAuth
     - Echo
     - EmailAuth
     - FlaggedRevs

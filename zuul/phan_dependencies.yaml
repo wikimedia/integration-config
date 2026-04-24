@@ -383,6 +383,7 @@ GrowthExperiments:
   - Echo
   - CirrusSearch
   - CentralAuth
+  - CentralNotice
   - VisualEditor
   - EventBus
   - Thanks
@@ -759,6 +760,9 @@ WandaScore:
 WandaScribe:
   - Wanda
 
+WatchAnalytics:
+  - ApprovedRevs
+
 WebAuthn:
   - OATHAuth
 
@@ -773,8 +777,10 @@ WikiEditor:
   - WikimediaEvents
 
 WikiLambda:
+  - CommunityConfiguration
   - EventLogging
   - SiteMatrix
+  - TestKitchen
   - Wikibase
 
 WikiLove:
@@ -843,6 +849,8 @@ WikimediaCampaignEvents:
 
 WikimediaCustomizations:
   - cldr
+  - AntiSpoof
+  - CentralAuth
   - EmailAuth
   - FlaggedRevs
   - IPReputation

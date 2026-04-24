@@ -15,7 +15,7 @@
             projects: >
                 integration/config
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/tox-v4:0.4
+            image: docker-registry.wikimedia.org/releng/tox-v4:0.4-s1
             entrypoint: '/src/integration/config/{entrypoint}'
             workdir: /src/integration/config
     publishers:
@@ -56,7 +56,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/tox-v4:0.4
+         image: docker-registry.wikimedia.org/releng/tox-v4:0.4-s1
          args: '-e qa -- --xunit-file=/log/junit-qa.xml'
     publishers:
      - archive-log-dir
@@ -91,7 +91,7 @@
     name: 'integration-pipelinelib'
     jobs:
      - '{name}-doc-publish':
-         image: docker-registry.wikimedia.org/releng/gradle:4.4.1-s3
+         image: docker-registry.wikimedia.org/releng/gradle:4.4.1-s4
          args: 'groovydoc'
          docsrc: 'src/build/docs/groovydoc'
          docdest: 'pipelinelib'
@@ -135,18 +135,18 @@
     name: gearman-java
     jobs:
         - '{name}-maven-java17':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s4
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s5
             maven_path: '/run-with-gearmand.sh'
         - '{name}-maven-java17-site-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s4
-            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s4
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s5
+            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s5
             maven_path: '/run-with-gearmand.sh'
 
 - project:
     name: integration-tox-jenkins-override
     jobs:
         - '{name}-tox-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.4
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.4-s1
             docsrc: 'doc/build/html'
             docdest: tox-jenkins-override
 
@@ -154,15 +154,15 @@
     name: 'integration-quibble'
     jobs:
         - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.4
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.4-s1
         - '{name}-tox-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.4
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.4-s1
             docsrc: 'doc/build/html'
             docdest: 'quibble'
         - 'integration-quibble-fullrun-{type}-{php}':
             php:
                 - php83:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s3
             type:
                 - defaults:
                     quibble_args: >-

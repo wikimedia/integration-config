@@ -1,3 +1,9 @@
+ci-bookworm (1.4.1) wikimedia; urgency=high
+
+   Update from Wikimedia base to drop mirrors.wikimedia.org
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 20 Apr 2026 10:43:48 -0400
+
 ci-bookworm (1.4.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-common:

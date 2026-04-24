@@ -1,3 +1,10 @@
+java8 (2.0-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Update from Wikimedia base to drop mirrors.wikimedia.org
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 20 Apr 2026 10:43:48 -0400
+
 java8 (2.0-s4) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:

@@ -11,7 +11,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/doxygen:1.10.0-s1
+         image: docker-registry.wikimedia.org/releng/doxygen:1.10.0-s2
      - doc-publish:
         docsrc: 'src/docs/php'
         docdest: '$DOC_PROJECT/$DOC_SUBPATH/php'
@@ -48,7 +48,7 @@
          volumes:
              src:
              log:
-         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.7.0-s1
+         image: docker-registry.wikimedia.org/releng/ci-src-setup-simple:0.7.0-s2
          entrypoint: /bin/bash
          args: -c "set -euo pipefail; git show -m --first-parent --find-renames=100% FETCH_HEAD -U0 | grep '^+' | tee /log/additions.txt"
 
@@ -163,25 +163,25 @@
     name: phan-jobs
     php:
         - php81:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s2
-            composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.34-s1
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s2
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s3
+            composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.34-s2
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s3
         - php82:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1-s2
-            composer_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s1
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1-s2
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1-s3
+            composer_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s2
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1-s3
         - php83:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
-            composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.30-s1
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s2
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s3
+            composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.30-s2
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s3
         - php84:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1-s2
-            composer_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s1
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1-s2
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1-s3
+            composer_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s2
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1-s3
         - php85:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.17.1-s2
-            composer_image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3-s1
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.17.1-s2
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.17.1-s3
+            composer_image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3-s2
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.17.1-s3
     jobs:
         - 'mwext-phan-{php}'
 
@@ -238,7 +238,7 @@
           # The castor setup/teardown is how the Catalyst image gets a copy of the code to test
           - setup
           - docker-run-with-log-cache-src: &wikilambda-catalyst-docker-builder
-                image: docker-registry.wikimedia.org/releng/catalyst:1.3.2-s1
+                image: docker-registry.wikimedia.org/releng/catalyst:1.3.2-s2
                 entrypoint: '/deploy_env.py'
                 environment:
                     WIKILAMBDA_REF: $BASE_LOG_PATH

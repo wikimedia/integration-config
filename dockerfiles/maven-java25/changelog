@@ -1,3 +1,10 @@
+maven-java25 (0.1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent images ci-trixie and ci-bookworm:
+   Update from Wikimedia base to drop mirrors.wikimedia.org
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 20 Apr 2026 10:43:48 -0400
+
 maven-java25 (0.1) wikimedia; urgency=medium
 
   * Maven with OpenJDK 25 based on Debian Trixie

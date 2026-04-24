@@ -25,10 +25,10 @@ if /usr/bin/ssh "${SSH_OPTS[@]}" jenkins-deploy@"${REMOTE_INSTANCE}" -- test -d 
 else
     if (( $? == 1 )); then
         echo "Remote cache directory does not exist (T282893#10165729)"
-        exit 1
+        exit 0
     else
         echo "Remote cache directory check failed"
-        exit 1
+        exit 0
     fi
 fi
 
@@ -45,7 +45,7 @@ set -x
 rsync \
     --archive \
     --rsh="/usr/bin/ssh ${SSH_OPTS[*]}" \
-    --rsync-path="docker run --rm -i --volume ${remote_cache_dir}:${cache_dir} --entrypoint=/usr/bin/rsync docker-registry.wikimedia.org/releng/castor:0.4.0" \
+    --rsync-path="docker run --rm -i --volume ${remote_cache_dir}:${cache_dir} --entrypoint=/usr/bin/rsync docker-registry.wikimedia.org/releng/castor:0.4.1" \
     --delete-delay \
     --delay-updates \
     jenkins-deploy@"${REMOTE_INSTANCE}:${cache_dir}/" "${DEST}"

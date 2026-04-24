@@ -1515,6 +1515,7 @@ project-templates:
     gate-and-submit-l10n:
       - mediawiki-i18n-check
     experimental:
+      # Jobs we want to have available for testing
       - mwext-phan-php83
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1524,12 +1525,12 @@ project-templates:
 
   # Main CI template for extensions, using quibble
   #
-  # As of 2026-03-04, our current CI testing targets are Node 20, plus:
-  # master : PHP 8.2–8.5 (supported & tested; 8.5 only for MW core and vendor so far)
+  # As of 2026-04-23, our current CI testing targets are Node 20, plus:
+  # master : PHP 8.2–8.5 (supported & tested)
   # REL1_43: PHP 8.1–8.3 (supported & tested)
   # REL1_44: PHP 8.1–8.3 (supported & tested)
   # REL1_45: PHP 8.2–8.3 (supported & tested)
-  # REL1_46: PHP 8.2–8.4 (supported & tested)
+  # REL1_46: PHP 8.2–8.5 (supported & tested)
   # wmf/*:   PHP 8.3 (supported & tested)
   - name: extension-quibble
     test:
@@ -1544,6 +1545,7 @@ project-templates:
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php84
+      - quibble-vendor-mysql-php85
       - quibble-vendor-mysql-php83-selenium
       - mediawiki-node24
       - mwext-phan-php83
@@ -1598,6 +1600,7 @@ project-templates:
       - quibble-composer-mysql-php82-selenium
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php83
 
@@ -1617,10 +1620,6 @@ project-templates:
       # Non-standard database types
       - quibble-vendor-sqlite-php83
       - quibble-vendor-postgres-php83
-      # Not-yet-supported language runtimes
-      - quibble-vendor-mysql-php85
-      - mediawiki-node22
-      - mediawiki-node24
 
   # Special job template that runs composer rather than than relying
   # on mediawiki/vendor for quibble.
@@ -1641,6 +1640,7 @@ project-templates:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php83-selenium
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php83
@@ -1695,6 +1695,7 @@ project-templates:
       - quibble-composer-mysql-php82-selenium
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php83
 
@@ -1705,10 +1706,6 @@ project-templates:
       # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
-      # Not-yet-supported language runtimes
-      - quibble-composer-mysql-php85
-      - mediawiki-node22
-      - mediawiki-node24
 
   # Special job template for extensions maintained by the BlueSpice team.
   # - Only runs for LTS branches (not master branch).
@@ -1751,12 +1748,12 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
+      # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
+      # Not-yet-supported language runtimes
       - quibble-composer-mysql-php84
       - quibble-composer-mysql-php85
-      - mwext-bluespice-node22
-      - mwext-bluespice-node24
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
@@ -1774,6 +1771,7 @@ project-templates:
       - quibble-vendor-mysql-php82
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php84
+      - quibble-vendor-mysql-php85
       - mediawiki-node24
       - mwext-phan-php83
 
@@ -1820,6 +1818,7 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       - mediawiki-node24
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php83
@@ -1837,12 +1836,11 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
+      # Jobs we want to have available for testing
       - quibble-vendor-mysql-php83-selenium
+      # Non-standard database types
       - quibble-vendor-sqlite-php83
       - quibble-vendor-postgres-php83
-      - quibble-vendor-mysql-php85
-      - mediawiki-node22
-      - mediawiki-node24
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
@@ -1858,6 +1856,7 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php83
@@ -1905,6 +1904,7 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
       - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php83
@@ -1913,13 +1913,11 @@ project-templates:
       - mediawiki-i18n-check
 
     experimental:
+      # Jobs we want to have available for testing
+      - mwext-phan-php83
+      # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
-      - quibble-composer-mysql-php84
-      - quibble-composer-mysql-php85
-      - mwext-phan-php83
-      - mediawiki-node22
-      - mediawiki-node24
 
   # Special job template that runs the "standalone" jobs - T225068
   - name: extension-quibble-only-standalone
@@ -1932,6 +1930,7 @@ project-templates:
       - quibble-vendor-mysql-php82-phpunit-standalone
       - quibble-vendor-mysql-php83-phpunit-standalone
       - quibble-vendor-mysql-php84-phpunit-standalone
+      - quibble-vendor-mysql-php85-phpunit-standalone
     test-1_43:
       - quibble-composer-mysql-php81-phpunit-standalone
     gate-and-submit-1_43:
@@ -1948,8 +1947,6 @@ project-templates:
       - quibble-composer-mysql-php83-phpunit-standalone
     gate-and-submit-1_46:
       - quibble-composer-mysql-php83-phpunit-standalone
-    experimental:
-      - quibble-vendor-mysql-php84-phpunit-standalone
 
   # Special job template that runs the "apitests" job for test and gate
   - name: extension-apitests
@@ -2088,6 +2085,7 @@ project-templates:
       - composer-php82
       - composer-php83
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php84
       - composer-php85
 
@@ -2103,6 +2101,7 @@ project-templates:
       - composer-php83
       - composer-php84
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php85
 
   - name: composer-test-package-php82-to-php85
@@ -2139,7 +2138,14 @@ project-templates:
     gate-and-submit:
       - generic-node20
     experimental:
+      # Not-yet-supported language runtimes
       - generic-node22
+      - generic-node24
+
+  - name: node24
+    test:
+      - generic-node24
+    gate-and-submit:
       - generic-node24
 
   - name: node20-to-node24
@@ -2156,7 +2162,14 @@ project-templates:
     gate-and-submit:
       - generic-node20-browser
     experimental:
+      # Not-yet-supported language runtimes
       - generic-node22-browser
+      - generic-node24-browser
+
+  - name: node24-browser
+    test:
+      - generic-node24-browser
+    gate-and-submit:
       - generic-node24-browser
 
   - name: node20-browser-webdriver
@@ -2165,7 +2178,14 @@ project-templates:
     gate-and-submit:
       - generic-node20-browser-webdriver
     experimental:
+      # Not-yet-supported language runtimes
       - generic-node22-browser-webdriver
+      - generic-node24-browser-webdriver
+
+  - name: node24-browser-webdriver
+    test:
+      - generic-node24-browser-webdriver
+    gate-and-submit:
       - generic-node24-browser-webdriver
 
   - name: node20-browser-for-MW-branches
@@ -2194,7 +2214,34 @@ project-templates:
     gate-and-submit-wmf:
       - generic-node20-browser
     experimental:
+      # Not-yet-supported language runtimes
       - generic-node22-browser
+      - generic-node24-browser
+
+  - name: node24-browser-for-MW-branches
+    test:
+      - generic-node24-browser
+    gate-and-submit:
+      - generic-node24-browser
+    test-1_43:
+      - generic-node24-browser
+    gate-and-submit-1_43:
+      - generic-node24-browser
+    test-1_44:
+      - generic-node24-browser
+    gate-and-submit-1_44:
+      - generic-node24-browser
+    test-1_45:
+      - generic-node24-browser
+    gate-and-submit-1_45:
+      - generic-node24-browser
+    test-1_46:
+      - generic-node24-browser
+    gate-and-submit-1_46:
+      - generic-node24-browser
+    test-wmf:
+      - generic-node24-browser
+    gate-and-submit-wmf:
       - generic-node24-browser
 
   - name: node20-rundoc
@@ -2203,7 +2250,14 @@ project-templates:
     gate-and-submit:
       - generic-node20-rundoc
     experimental:
+      # Not-yet-supported language runtimes
       - generic-node22-rundoc
+      - generic-node24-rundoc
+
+  - name: node24-rundoc
+    test:
+      - generic-node24-rundoc
+    gate-and-submit:
       - generic-node24-rundoc
 
   - name: node20-rundoc-for-MW-branches
@@ -2232,7 +2286,34 @@ project-templates:
     gate-and-submit-wmf:
       - generic-node20-rundoc
     experimental:
+      # Not-yet-supported language runtimes
       - generic-node22-rundoc
+      - generic-node24-rundoc
+
+  - name: node24-rundoc-for-MW-branches
+    test:
+      - generic-node24-rundoc
+    gate-and-submit:
+      - generic-node24-rundoc
+    test-1_43:
+      - generic-node24-rundoc
+    gate-and-submit-1_43:
+      - generic-node24-rundoc
+    test-1_44:
+      - generic-node24-rundoc
+    gate-and-submit-1_44:
+      - generic-node24-rundoc
+    test-1_45:
+      - generic-node24-rundoc
+    gate-and-submit-1_45:
+      - generic-node24-rundoc
+    test-1_46:
+      - generic-node24-rundoc
+    gate-and-submit-1_46:
+      - generic-node24-rundoc
+    test-wmf:
+      - generic-node24-rundoc
+    gate-and-submit-wmf:
       - generic-node24-rundoc
 
   - name: mwgate-npm
@@ -2526,7 +2607,7 @@ projects:
 
   - name: mediawiki/tools/api-testing
     template:
-      - name: node20-rundoc
+      - name: node24-rundoc
     test:
       - api-testing-mysql-php83
       - api-testing-sqlite-php83
@@ -2534,7 +2615,7 @@ projects:
       - api-testing-mysql-php83
       - api-testing-sqlite-php83
     postmerge:
-      - generic-node20-docs-publish
+      - generic-node24-docs-publish
 
   - name: mediawiki/tools/code-utils
     template:
@@ -2560,7 +2641,7 @@ projects:
 
   - name: mediawiki/tools/karma-firefox-launcher
     template:
-      - name: node20-browser
+      - name: node24-browser
 
   - name: mediawiki/tools/minus-x
     template:
@@ -2638,9 +2719,9 @@ projects:
 
   - name: performance/fresnel
     template:
-      - name: node20-browser
+      - name: node24-browser
     postmerge:
-      - generic-node20-browser-coverage-publish
+      - generic-node24-browser-coverage-publish
 
   - name: performance/navtiming
     template:
@@ -2826,9 +2907,8 @@ projects:
       - mediawiki-core-javascript-publish
       - mediawiki-core-doxygen-publish
     experimental:
+      # Jobs we want to have available for testing
       - mediawiki-composer-php83
-      - mediawiki-node22
-      - mediawiki-node24
 
   # (T189560) There is explicitly no CI support for mediawiki/vendor.git on release branches.
   # Additionally, selenium tests are skipped for wmf/ branches.
@@ -2942,6 +3022,7 @@ projects:
       # Not yet enabled -- JDF 2022-05-23
       # - name: in-mediawiki-tarball
     experimental:
+      # Jobs we want to have available for testing
       - quibble-composer-mysql-php83
     postmerge:
       - mwext-doxygen-publish
@@ -3500,6 +3581,7 @@ projects:
     gate-and-submit:
       - composer-php81
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php82
       - composer-php83
       - composer-php84
@@ -3536,6 +3618,7 @@ projects:
       # - operations-mw-config-php83-composer-diffConfig
       - operations-mw-config-tox
     experimental:
+      # Jobs we want to have available for testing
       - operations-mw-config-php84-composer-lint
       - operations-mw-config-php84-composer-test
       - operations-mw-config-php84-composer-diffConfig
@@ -4103,6 +4186,7 @@ projects:
     template:
       - name: in-wikimedia-production
       - name: extension-quibble
+      - name: extension-quibble-only-standalone
       - name: extension-coverage
       - name: extension-codehealth
 
@@ -4137,8 +4221,7 @@ projects:
       - quibble-donationinterface-REL1_43-php82
       - mwext-phan-php82
     experimental:
-      - mediawiki-node22
-      - mediawiki-node24
+      # Jobs we want to have available for testing
       - mediawiki-composer-php83
       - mwext-phan-php83
       # These are the remaining parts of extension-quibble
@@ -5201,10 +5284,12 @@ projects:
     postmerge:
       - mwext-doxygen-publish
     experimental:
+      # Jobs we want to have available for testing
       - mwext-phpunit-coverage
-      - quibble-vendor-postgres-php83
       - quibble-with-WikibaseClient-extensions-tests-php83
       - quibble-with-WikibaseRepository-extensions-tests-php83
+      # Non-standard database types
+      - quibble-vendor-postgres-php83
 
   - name: mediawiki/extensions/WikibaseCirrusSearch
     template:
@@ -8462,13 +8547,12 @@ projects:
       - quibble-composer-mysql-php83
       - parsoidsvc-composer-package-php84
       - quibble-composer-mysql-php84
+      - parsoidsvc-composer-package-php85
+      - quibble-composer-mysql-php85
     experimental:
       # These are the jobs which would be added by the extension-gate template
       - quibble-with-gated-extensions-vendor-mysql-php83
       - quibble-with-gated-extensions-selenium-php83
-      # Jobs for future versions of PHP
-      - parsoidsvc-composer-package-php85
-      - quibble-composer-mysql-php85
     postmerge:
       - parsoidsvc-doxygen-publish
       - phpunit-coverage-php83-publish
@@ -8644,7 +8728,7 @@ projects:
 
   - name: analytics/mediawiki-storage
     template:
-      - name: node20-browser
+      - name: node24-browser
 
   - name: analytics/multimedia
     template:
@@ -8665,7 +8749,7 @@ projects:
 
   - name: analytics/wikistats2
     template:
-      - name: node20-browser
+      - name: node24-browser
       - name: mediawiki-i18n-check
 
   - name: analytics/wikimetrics
@@ -8783,8 +8867,6 @@ projects:
     test:
       - wikipeg-special-node24-plus-php83-composer
     gate-and-submit:
-      - wikipeg-special-node20-plus-php83-composer
-      - wikipeg-special-node22-plus-php83-composer
       - wikipeg-special-node24-plus-php83-composer
 
   - name: WrappedString
@@ -9128,6 +9210,7 @@ projects:
     gate-and-submit:
       - composer-php81
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php82
       - composer-php83
       - composer-php84
@@ -9178,6 +9261,7 @@ projects:
     gate-and-submit:
       - composer-php81
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php82
       - composer-php83
       - composer-php84
@@ -9237,6 +9321,7 @@ projects:
     gate-and-submit:
       - composer-php81
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php82
       - composer-php83
       - composer-php84
@@ -9393,7 +9478,6 @@ projects:
       - pywikibot-core-tox-fasttest-py312
       - pywikibot-core-tox-fasttest-py313
       - pywikibot-core-tox-fasttest-py314
-      - pywikibot-core-tox-fasttest-pypy
       - pywikibot-core-tox-doctest
       - pywikibot-core-tox-rstcheck
       - pywikibot-core-tox-sphinx
@@ -9404,7 +9488,6 @@ projects:
       - pywikibot-core-tox-fasttest-py312
       - pywikibot-core-tox-fasttest-py313
       - pywikibot-core-tox-fasttest-py314
-      - pywikibot-core-tox-fasttest-pypy
       - pywikibot-core-tox-doctest
       - pywikibot-core-tox-rstcheck
       - pywikibot-core-tox-doc
@@ -9413,7 +9496,9 @@ projects:
     postmerge:
       - pywikibot-core-tox-publish
     experimental:
+      # Jobs we want to have available for testing
       - pywikibot-core-tox-doc
+      # Not-yet-supported language runtimes
       - pywikibot-core-tox-deeptest-py39
       - pywikibot-core-tox-deeptest-py314
 
@@ -9484,8 +9569,6 @@ projects:
       - generic-node24-browser
     gate-and-submit:
       - trigger-wikimedia-portals-pipeline-test
-      - generic-node20-browser
-      - generic-node22-browser
       - generic-node24-browser
     postmerge:
       - trigger-wikimedia-portals-pipeline-publish
@@ -9527,6 +9610,7 @@ projects:
     postmerge:
       - search-extra-maven-java17-site-publish
     experimental:
+      # Not-yet-supported language runtimes
       - search-extra-maven-java25
 
   - name: search/extra-analysis
@@ -9539,6 +9623,7 @@ projects:
     postmerge:
       - search-extra-analysis-maven-java17-site-publish
     experimental:
+      # Not-yet-supported language runtimes
       - search-extra-analysis-maven-java25
 
   - name: search/glent
@@ -9561,6 +9646,7 @@ projects:
     postmerge:
       - search-highlighter-maven-java17-site-publish
     experimental:
+      # Not-yet-supported language runtimes
       - search-highlighter-maven-java25
 
   - name: wmf-jvm-utils
@@ -9610,14 +9696,12 @@ projects:
     test:
       - oojs-core-node24-runjenkins
     gate-and-submit:
-      - oojs-core-node20-runjenkins
-      - oojs-core-node22-runjenkins
       - oojs-core-node24-runjenkins
     postmerge:
-      - generic-node20-docs-publish
-      - generic-node20-browser-coverage-publish
+      - generic-node24-docs-publish
+      - generic-node24-browser-coverage-publish
     publish:
-      - generic-node20-docs-publish
+      - generic-node24-docs-publish
 
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
@@ -9627,8 +9711,6 @@ projects:
     test:
       - ooui-node24-plus-php83-runjenkins
     gate-and-submit:
-      - ooui-node20-plus-php83-runjenkins
-      - ooui-node22-plus-php83-runjenkins
       - ooui-node24-plus-php83-runjenkins
     postmerge:
       - oojs-ui-doxygen-publish
@@ -9640,23 +9722,23 @@ projects:
 
   - name: unicodejs
     template:
-      - name: node20-browser
-      - name: node20-rundoc
+      - name: node24-browser
+      - name: node24-rundoc
     postmerge:
-      - generic-node20-browser-coverage-publish
-      - generic-node20-docs-publish
+      - generic-node24-browser-coverage-publish
+      - generic-node24-docs-publish
     publish:
-      - generic-node20-docs-publish
+      - generic-node24-docs-publish
 
   - name: jquery-client
     template:
-      - name: node20-browser
-      - name: node20-rundoc
+      - name: node24-browser
+      - name: node24-rundoc
     postmerge:
-      - generic-node20-browser-coverage-publish
-      - generic-node20-docs-publish
+      - generic-node24-browser-coverage-publish
+      - generic-node24-docs-publish
     publish:
-      - generic-node20-docs-publish
+      - generic-node24-docs-publish
 
   - name: VisualEditor/VisualEditor
     template:
@@ -9689,7 +9771,7 @@ projects:
 
   - name: wikidata/query/gui
     template:
-      - name: node20-browser-webdriver
+      - name: node24-browser-webdriver
       - name: mediawiki-i18n-check
     # TODO enable if we decide we want this on postmerge
     # postmerge:
@@ -9700,12 +9782,16 @@ projects:
 
   - name: wikidata/query-builder
     template:
-      - name: node20-browser
+      - name: node24-browser
       - name: mediawiki-i18n-check
     test:
-      - branchdeploy-wikidata-query-builder-node20-npm
+      - branchdeploy-wikidata-query-builder-node24-npm
 
   - name: wikibase/javascript-api
+    template:
+      - name: node24-browser
+
+  - name: wikibase/new-lexeme-special-page
     template:
       - name: node20-browser
 
@@ -9716,7 +9802,7 @@ projects:
       - trigger-termbox-pipeline-rehearse
     postmerge:
       - trigger-termbox-pipeline-publish
-      - generic-node20-docs-publish
+      - generic-node24-docs-publish
 
   - name: wikibase/property-suggester-scripts
     template:
@@ -9724,7 +9810,7 @@ projects:
 
   - name: data-values/value-view
     template:
-      - name: node20-browser
+      - name: node24-browser
       - name: mediawiki-i18n-check
 
   - name: testing-access-wrapper
@@ -9932,6 +10018,7 @@ projects:
     gate-and-submit:
       - composer-php82
     experimental:
+      # Not-yet-supported language runtimes
       - composer-php83
       - composer-php84
       - composer-php85

@@ -1,3 +1,10 @@
+helm-linter (0.7.8-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Update from Wikimedia base to drop mirrors.wikimedia.org
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 20 Apr 2026 10:43:48 -0400
+
 helm-linter (0.7.8) wikimedia; urgency=medium
 
   * Bump to update envoy-future to 1.35.9 (T419637)
@@ -171,7 +178,7 @@ helm-linter (0.3.1) wikimedia; urgency=medium
 
 helm-linter (0.3.0) wikimedia; urgency=medium
 
-  * helm2 binary is removed from helm-linter image. helm3 is supported   
+  * helm2 binary is removed from helm-linter image. helm3 is supported
     only to reduce edge cases and version check from CI and integration
     tools.
 

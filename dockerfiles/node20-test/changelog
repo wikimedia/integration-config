@@ -1,3 +1,10 @@
+node20-test (20.20.2-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bookworm:
+   Update from Wikimedia base to drop mirrors.wikimedia.org
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 20 Apr 2026 10:43:48 -0400
+
 node20-test (20.20.2) wikimedia; urgency=high
 
    Refresh for update in parent image node20:

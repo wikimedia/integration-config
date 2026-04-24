@@ -1,3 +1,10 @@
+operations-puppet (0.9.10-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Update from Wikimedia base to drop mirrors.wikimedia.org
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 20 Apr 2026 10:43:48 -0400
+
 operations-puppet (0.9.10) wikimedia; urgency=medium
 
   * Add libffi-dev dependency to allow building locale 2.1.5 which depends

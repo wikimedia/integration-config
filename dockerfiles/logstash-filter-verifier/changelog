@@ -1,3 +1,10 @@
+logstash-filter-verifier (7.16.3-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bullseye:
+   Update from Wikimedia base to drop mirrors.wikimedia.org
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 20 Apr 2026 10:43:48 -0400
+
 logstash-filter-verifier (7.16.3-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:
