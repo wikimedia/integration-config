@@ -9186,7 +9186,7 @@ projects:
       - composer-php82
       - labs-tools-heritage-tox
     postmerge:
-      - tox-py39-coverage-publish
+      - tox-py311-coverage-publish
 
   - name: labs/tools/indic-wscontest
     template:
