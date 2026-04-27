@@ -1,4 +1,4 @@
-FROM {{ "ci-bullseye" | image_tag }} AS build
+FROM {{ "ci-trixie" | image_tag }} AS build
 
 USER root
 
