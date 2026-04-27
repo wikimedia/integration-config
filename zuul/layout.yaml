@@ -1325,9 +1325,13 @@ jobs:
 
   - name: mwext-codehealth-patch
     success-pattern: 'https://sonarcloud.io/dashboard?id=mediawiki-extensions-{build.parameters[EXT_NAME]}&branch={build.parameters[ZUUL_CHANGE]}-{build.parameters[ZUUL_PATCHSET]}&resolved=false'
+    # (T424573) Restrict to master only, as PHPUnit infrastructure changed with REL1_46
+    branch: master
 
   - name: mwcore-codehealth-patch
     success-pattern: 'https://sonarcloud.io/dashboard?id=mediawiki-core&branch={build.parameters[ZUUL_CHANGE]}-{build.parameters[ZUUL_PATCHSET]}&resolved=false'
+    # (T424573) Restrict to master only, as PHPUnit infrastructure changed with REL1_46
+    branch: master
 
   # For coverage report jobs, we only want one build at a time.
   #
