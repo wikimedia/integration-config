@@ -1,3 +1,9 @@
+doxygen (1.10-0.s3) wikimedia; urgency=high
+
+   Update to trixie for PHP 8.4.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Mon, 27 Apr 2026 16:26:45 +0100
+
 doxygen (1.10.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bookworm:
