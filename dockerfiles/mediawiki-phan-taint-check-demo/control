@@ -1,1 +1,1 @@
-Depends: ci-bookworm, composer-scratch
+Depends: ci-trixie, composer-scratch

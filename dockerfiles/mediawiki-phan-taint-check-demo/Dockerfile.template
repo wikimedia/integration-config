@@ -1,6 +1,6 @@
 FROM {{ "composer-scratch" | image_tag }} as composer
 
-FROM {{ "ci-bookworm" | image_tag }}
+FROM {{ "ci-trixie" | image_tag }}
 
 # Install composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
