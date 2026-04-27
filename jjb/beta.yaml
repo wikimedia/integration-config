@@ -34,6 +34,7 @@
 # Set TMPDIR to point to the tmpfs if it exists.
 - job:
     name: beta-update-databases-eqiad
+    disabled: true  # T256168
     defaults: beta
     node: BetaClusterBastion
 
@@ -61,6 +62,7 @@
 # Job updating MediaWiki core+extensions code
 - job:
     name: beta-code-update-eqiad
+    disabled: true  # T256168
     defaults: beta
     description: |
       This job updates deployment-deploy04 automatically every ten minutes. It
