@@ -233,18 +233,28 @@
       builders:
           # The castor setup/teardown is how the Catalyst image gets a copy of the code to test
           - setup
-          - docker-run-with-log-cache-src: &wikilambda-catalyst-docker-builder
-                image: docker-registry.wikimedia.org/releng/catalyst:1.3.2-s2
-                entrypoint: '/deploy_env.py'
+          - docker-run-with-log-cache-src: &wikilambda-catalyst-docker-deploy
+                image: docker-registry.wikimedia.org/repos/test-platform/catalyst/catalyst-ci-client:latest
+                entrypoint: '/srv/app/deploy_env.py'
                 environment:
+                    PROJECT_SLUG: 'mw-ext-wl'
                     WIKILAMBDA_REF: $BASE_LOG_PATH
-                    ZUUL_CHANGE: $ZUUL_CHANGE
+                    CI_JOB_ID: $ZUUL_CHANGE
+                    CHART_NAME: 'wikifunctions'
+                    JSON_VALUES: '{"reposCache": { "use": "true", "wikiRepos": "/mnt/k3s-data/wiki-repos" }}'
                     ENV_API_PATH: 'https://api.catalyst.wmcloud.org/api/environments'
-                    NPM_ARGS: 'selenium-test'
+                    EXPIRY_TIME_HOURS: '1'
+                    LOG_DIR: '/log'
+          - docker-run-with-log-cache-src: &wikilambda-catalyst-docker-test
+                image: docker-registry.wikimedia.org/releng/node22-test-browser:22.22.2-s1
+                environment:
                     MEDIAWIKI_USER: 'Admin'
                     MEDIAWIKI_PASSWORD: 'dockerpass'
                     MW_SCRIPT_PATH: '/w'
-                    EXPIRY_TIME_HOURS: '1'
+                    FORCE_COLOR: '1'
+                # MW_SERVER env var is saved in deploy.env file
+                entrypoint: "/bin/bash"
+                args: '-c "cp /log/deploy.env .env && /run-with-xvfb.sh selenium-test"'
       wrappers:
           - timeout:
               timeout: 20
@@ -264,7 +274,7 @@
                     - ABORTED
                   build-steps:
                     - shell: |
-                        eval "$(cat log/envid)"
+                        eval "$(cat log/deploy.env)"
                         curl -X "DELETE" "https://api.catalyst.wmcloud.org/api/environments/${ENV_ID}" \
                           -H "Authorization: ApiToken ${CATALYST_API_TOKEN}"
           - teardown
@@ -290,7 +300,8 @@
         - docker-log-dir
         - docker-src-dir
         - docker-ci-src-setup-simple
-        - docker-run-with-log-cache-src: *wikilambda-catalyst-docker-builder
+        - docker-run-with-log-cache-src: *wikilambda-catalyst-docker-deploy
+        - docker-run-with-log-cache-src: *wikilambda-catalyst-docker-test
     parameters:
         - string:
             name: 'CATALYST_ENV_NAME'
@@ -306,7 +317,7 @@
             default: 'master'
         - string:
             name: 'ZUUL_CHANGE'
-            default: ' '
+            default: 'daily'
         - string:
             name: 'BASE_LOG_PATH'
             description: 'Used as the wikilambda ref as this is what is available from zuul'
