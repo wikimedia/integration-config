@@ -613,6 +613,7 @@ ReportIncident:
   - CommunityConfiguration
   - DiscussionTools
   - EventLogging
+  - TestKitchen
 
 Sanctions:
   - Echo
