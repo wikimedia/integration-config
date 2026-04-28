@@ -2110,6 +2110,17 @@ project-templates:
       - composer-package-php84
       - composer-package-php85
 
+  - name: composer-test-package-php83-to-php85
+    test:
+      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
+      - composer-package-php83
+      - composer-package-php84
+      - composer-package-php85
+    gate-and-submit:
+      - composer-package-php83
+      - composer-package-php84
+      - composer-package-php85
+
   - name: php-compile-php82-to-php85
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
@@ -2659,7 +2670,7 @@ projects:
   - name: mediawiki/tools/phan/SecurityCheckPlugin
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php82-to-php85
+      - name: composer-test-package-php83-to-php85
     postmerge:
       - mw-tools-phan-demos-publish
       - phpunit-coverage-php83-publish
