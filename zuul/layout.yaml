@@ -8510,7 +8510,7 @@ projects:
 
   - name: mediawiki/services/jobrunner
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/services/kafka-watcher
     template:
