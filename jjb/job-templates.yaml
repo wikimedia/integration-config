@@ -611,38 +611,6 @@
 # - DOC_PROJECT: determined in parameter_functions.py (mw extension name)
 # - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
 - job:
-    name: mwext-node20-docs-publish
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node20-test:20.20.2-s1'
-        args: 'doc'
-     - doc-publish:
-        docsrc: 'src/docs'
-        docdest: '$DOC_PROJECT/$DOC_SUBPATH/js'
-    publishers:
-     - teardown
-
-- job:
-    name: mwext-node22-docs-publish
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node22-test:22.22.2-s1'
-        args: 'doc'
-     - doc-publish:
-        docsrc: 'src/docs'
-        docdest: '$DOC_PROJECT/$DOC_SUBPATH/js'
-    publishers:
-     - teardown
-
-- job:
     name: mwext-node24-docs-publish
     node: Docker
     triggers:
@@ -663,8 +631,6 @@
     node_version:
         - node20:
             image: docker-registry.wikimedia.org/releng/node20-test-browser:20.20.2-s1
-        - node22:
-            image: docker-registry.wikimedia.org/releng/node22-test-browser:22.22.2-s1
         - node24:
             image: docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1-s1
     jobs:
@@ -675,13 +641,11 @@
         - '{name}-{node_version}-run{script}':
            script: 'doc'
 
-       # The basic jobs images do not have web browsers:
+       # The basic jobs images do not have Web browsers:
         - '{name}-{node_version}':
             node_version: &node_without_browsers
                 - node20:
                     image: docker-registry.wikimedia.org/releng/node20-test:20.20.2-s1
-                - node22:
-                    image: docker-registry.wikimedia.org/releng/node22-test:22.22.2-s1
                 - node24:
                     image: docker-registry.wikimedia.org/releng/node24-test:24.14.1-s1
         - 'generic-{node_version}-docs-publish':
@@ -695,10 +659,6 @@
         - '{name}-{node_version}-run{script}':
            script: 'doc'
            node_version:
-               - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.20.2-s1
-               - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.22.2-s1
                - node24:
                    image: docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1-s1
 
@@ -708,10 +668,6 @@
     jobs:
         - '{name}-{node_version}':
            node_version:
-               - node20:
-                   image: docker-registry.wikimedia.org/releng/node20-test-browser:20.20.2-s1
-               - node22:
-                   image: docker-registry.wikimedia.org/releng/node22-test-browser:22.22.2-s1
                - node24:
                    image: docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1-s1
 
@@ -719,14 +675,12 @@
     name: branchdeploy
     exclude:
         - key: wikidata-query-builder
-          node_version: node22
+          node_version: node20
     jobs:
         - 'branchdeploy-{key}-{node_version}-npm':
             node_version:
                 - node20:
                     node_image: docker-registry.wikimedia.org/releng/node20-test:20.20.2-s1
-                - node22:
-                    node_image: docker-registry.wikimedia.org/releng/node22-test:22.22.2-s1
                 - node24:
                     node_image: docker-registry.wikimedia.org/releng/node24-test:24.14.1-s1
             key:
