@@ -939,8 +939,6 @@
     jobs:
         - api-testing-{database}-{php}:
             php:
-                - php81:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php81:1.17.1-s3
                 - php83:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s3
                 - php85:
