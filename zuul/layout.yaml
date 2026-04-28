@@ -2669,7 +2669,7 @@ projects:
 
   - name: mediawiki/tools/phpunit-patch-coverage
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/tools/releng
     template:
