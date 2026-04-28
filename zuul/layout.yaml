@@ -2553,6 +2553,9 @@ projects:
       - api-testing-sqlite-php83
     postmerge:
       - generic-node24-docs-publish
+    experimental:
+      - api-testing-mysql-php85
+      - api-testing-sqlite-php85
 
   - name: mediawiki/tools/code-utils
     template:
