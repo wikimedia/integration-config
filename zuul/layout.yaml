@@ -2400,6 +2400,20 @@ project-templates:
       - doxygen-publish
       - phpunit-coverage-php83-publish
 
+  - name: mediawiki-php-library-php83-to-php85
+    test:
+      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
+      - composer-package-php83
+      - composer-package-php84
+      - composer-package-php85
+    gate-and-submit:
+      - composer-package-php83
+      - composer-package-php84
+      - composer-package-php85
+    postmerge:
+      - doxygen-publish
+      - phpunit-coverage-php83-publish
+
   - name: mediawiki-php-library-php84-to-php85
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
@@ -2663,7 +2677,7 @@ projects:
 
   - name: mediawiki/tools/phan
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
     test:
       - mw-tools-phan-mwcore-testrun
 
