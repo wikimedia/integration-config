@@ -9700,7 +9700,7 @@ projects:
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
     template:
-      - name: composer-test-package-php82-to-php85
+      - name: composer-test-package-php83-to-php85
       - name: mediawiki-i18n-check
     test:
       - ooui-node24-plus-php83-runjenkins
