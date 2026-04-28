@@ -2145,7 +2145,6 @@ project-templates:
       - generic-node20
     experimental:
       # Not-yet-supported language runtimes
-      - generic-node22
       - generic-node24
 
   - name: node24
@@ -2159,7 +2158,6 @@ project-templates:
       - generic-node24
     gate-and-submit:
       - generic-node20
-      - generic-node22
       - generic-node24
 
   - name: node20-browser
@@ -2169,7 +2167,6 @@ project-templates:
       - generic-node20-browser
     experimental:
       # Not-yet-supported language runtimes
-      - generic-node22-browser
       - generic-node24-browser
 
   - name: node24-browser
@@ -8639,7 +8636,6 @@ projects:
   - name: analytics/dashiki
     experimental:
       - generic-node20
-      - generic-node22
       - generic-node24
 
   - name: analytics/geowiki
@@ -9603,6 +9599,9 @@ projects:
       - codex-node20-doc-tag-publish
       # … and also over-write the version at /latest/ for a stable link
       - codex-node20-doc-latest-publish
+    experimental:
+      # Not-yet-supported language runtimes
+      - branchdeploy-codex-node24-npm
 
   - name: design/codex-php
     template:
