@@ -2457,7 +2457,7 @@ projects:
 
   - name: integration/docroot
     template:
-      - name: node20
+      - name: node24
       - name: composer-test-php82-to-php85
 
   - name: integration/gear
