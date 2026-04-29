@@ -1434,6 +1434,7 @@ DiscussionTools:
     - Linter
     - VisualEditor
     # extras
+    - ConfirmEdit
     - Echo
     - MobileFrontend
     - Thanks

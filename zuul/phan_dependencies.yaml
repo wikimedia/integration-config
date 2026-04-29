@@ -272,6 +272,7 @@ Discourse:
 
 DiscussionTools:
   - BetaFeatures
+  - ConfirmEdit
   - Echo
   - EventLogging
   - Gadgets
