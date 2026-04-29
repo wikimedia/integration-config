@@ -2577,7 +2577,7 @@ projects:
 
   - name: mediawiki/tools/grunt-cssjanus
     template:
-      - name: node20
+      - name: node24
 
   - name: mediawiki/tools/karma-firefox-launcher
     template:
