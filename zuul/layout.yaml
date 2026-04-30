@@ -2551,11 +2551,10 @@ projects:
     gate-and-submit:
       - api-testing-mysql-php83
       - api-testing-sqlite-php83
-    postmerge:
-      - generic-node24-docs-publish
-    experimental:
       - api-testing-mysql-php85
       - api-testing-sqlite-php85
+    postmerge:
+      - generic-node24-docs-publish
 
   - name: mediawiki/tools/code-utils
     template:
