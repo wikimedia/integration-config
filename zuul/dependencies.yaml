@@ -2826,6 +2826,7 @@ WikimediaCustomizations:
     - LoginNotify
     - OATHAuth
     - PageViewInfo
+    - TestKitchen
     - WikimediaEvents
 
 WikimediaEvents:
