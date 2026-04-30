@@ -1,3 +1,13 @@
+quibble-bullseye-php81 (1.17.1-s4) wikimedia; urgency=medium
+
+  * Allow running the container as a different user than `nobody` by changing
+    `apache2` and `php-fpm` configuration to point to writable files:
+  * Stop shipping the image with /tmp/fpm-php.www.log /tmp/php/php-fpm.pid
+  * Rename `/tmp/fpm-php.www.log` to `/tmp/php/php-fpm.error_log`
+  * Improve supervisord configuration
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 12 Mar 2026 12:03:44 +0100
+
 quibble-bullseye-php81 (1.17.1-s3) wikimedia; urgency=high
 
    Refresh for update in parent images ci-bullseye and ci-bookworm:
