@@ -172,7 +172,7 @@ BlogPage:
   recurse: false
   dependencies:
     # no requirements in extension.json
-    # extras
+    # but required
     - Comments
     - SocialProfile
     - VoteNY
@@ -2346,6 +2346,9 @@ SportsTeams:
     - BlogPage
     - SocialProfile
     - UserStatus
+    # Required via BlogPage
+    - Comments
+    - VoteNY
 
 StandardDialogs:
   recurse: false
@@ -2566,6 +2569,9 @@ UserStatus:
     - BlogPage
     - SocialProfile
     - SportsTeams
+    # Required via BlogPage
+    - Comments
+    - VoteNY
 
 VECancelButton:
   recurse: false
