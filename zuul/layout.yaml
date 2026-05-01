@@ -9964,7 +9964,7 @@ projects:
   - name: wikimedia/textcat
     template:
       # FIXME: Use mediawiki-php-library?
-      - name: composer-test-package-php82-to-php85
+      - name: composer-test-package-php83-to-php85
 
   - name: wikimedia/lucene-explain-parser
     template:
