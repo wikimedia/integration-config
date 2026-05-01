@@ -9319,7 +9319,7 @@ projects:
 
   - name: labs/tools/stewardbots
     template:
-      - name: composer-test-package-php82-to-php85
+      - name: composer-test-package-php83-to-php85
       - name: tox
 
   - name: labs/tools/stewardbots-ui
