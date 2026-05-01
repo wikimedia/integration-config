@@ -8740,7 +8740,7 @@ projects:
 
   - name: analytics/wmde/scripts
     template:
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
 
   - name: analytics/wmde/toolkit-analyzer
     test:
