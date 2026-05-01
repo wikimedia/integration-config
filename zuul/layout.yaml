@@ -2147,19 +2147,6 @@ project-templates:
       # Not-yet-supported language runtimes
       - composer-php85
 
-  - name: composer-test-package-php82-to-php85
-    test:
-      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
-      - composer-package-php82
-      - composer-package-php83
-      - composer-package-php84
-      - composer-package-php85
-    gate-and-submit:
-      - composer-package-php82
-      - composer-package-php83
-      - composer-package-php84
-      - composer-package-php85
-
   - name: composer-test-package-php83-to-php85
     test:
       # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
