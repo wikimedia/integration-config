@@ -2624,7 +2624,7 @@ projects:
 
   - name: mediawiki/tools/ParseWiki
     template:
-      - name: composer-test-package-php82-to-php85
+      - name: composer-test-package-php83-to-php85
 
   - name: mediawiki/vagrant
     test:
