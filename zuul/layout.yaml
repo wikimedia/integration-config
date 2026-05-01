@@ -9614,7 +9614,7 @@ projects:
 
   - name: design/codex-php
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: design/landing-page
     template:
