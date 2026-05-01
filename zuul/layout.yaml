@@ -8738,53 +8738,53 @@ projects:
 
   - name: mediawiki/oauthclient-php
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
 #### MediaWiki libraries #######################################
 
   - name: cdb
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: purtle
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: utfnormal
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: at-ease
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: base-convert
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: css-sanitizer
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: php-session-serializer
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: AhoCorasick
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: RunningStat
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: RelPath
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: wikipeg
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
     test:
       - wikipeg-special-node24-plus-php83-composer
     gate-and-submit:
@@ -8792,76 +8792,76 @@ projects:
 
   - name: WrappedString
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: CLDRPluralRuleParser
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: HtmlFormatter
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/alea
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/Assert
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/Bcp47Code
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/CloverDiff
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/CommonPasswords
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/Dodo
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/Equivset
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/IDLeDOM
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/IPAValidator
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/IPUtils
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/JsonCodec
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/LangConv
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
       - name: node20
 
   - name: mediawiki/libs/less.php
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/Message
     template:
-     - name: mediawiki-php-library-php82-to-php85
+     - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/Minify
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/node-cssjanus
     template:
@@ -8872,35 +8872,35 @@ projects:
 
   - name: mediawiki/libs/NormalizedException
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/ObjectFactory
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/ParamValidator
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/php-cssjanus
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/RemexHtml
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/RequestTimeout
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/ScopedCallback
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/Shellbox
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
     test:
       - trigger-shellbox-pipeline-test
       # Special direct Phan job, as the production image doesn't have the latest php-ast
@@ -8914,7 +8914,7 @@ projects:
 
   - name: mediawiki/libs/Services
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/StringUtils
     template:
@@ -8922,39 +8922,39 @@ projects:
 
   - name: mediawiki/libs/Timestamp
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/UpdateHistory
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/UUID
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/WaitConditionLoop
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/WebIDL
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/XMPReader
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: mediawiki/libs/Zest
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: performance/excimer-ui-client
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: performance/excimer-ui-server
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
 #### Tools deployed on Wikimedia Cloud Services (aka "Labs") ###
 
@@ -9739,7 +9739,7 @@ projects:
 
   - name: testing-access-wrapper
     template:
-      - name: mediawiki-php-library-php82-to-php85
+      - name: mediawiki-php-library-php83-to-php85
 
   - name: research/ores/wheels
     test:
