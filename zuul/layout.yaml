@@ -2687,7 +2687,7 @@ projects:
 
   - name: performance/xhgui-vendor
     template:
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
 
   - name: releng/phatality
     template:
