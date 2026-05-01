@@ -3516,7 +3516,7 @@ projects:
   - name: operations/dumps/dcat
     template:
       # (T353397) This repo doesn't yet pass its tests on PHP 8.2+
-      # - name: composer-test-php82-to-php85
+      # - name: composer-test-php83-to-php85
       - name: node20
       - name: mediawiki-i18n-check
     test:
@@ -8981,7 +8981,7 @@ projects:
 
   - name: labs/countervandalism/cvn-api
     template:
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
 
   - name: labs/countervandalism/cvn-clerkbot
     template:
@@ -8989,7 +8989,7 @@ projects:
 
   - name: labs/countervandalism/stillalive
     template:
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
 
   - name: labs/countervandalism/CVNBot
     test:
@@ -9010,7 +9010,7 @@ projects:
 
   - name: labs/xtools
     template:
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
       - name: node20-browser
       - name: mediawiki-i18n-check
     postmerge:
@@ -9053,7 +9053,7 @@ projects:
 
   - name: labs/tools/coverme
     template:
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
 
   - name: labs/tools/dump-torrents
     template:
@@ -9065,7 +9065,7 @@ projects:
 
   - name: labs/tools/extjsonuploader
     template:
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
 
   - name: labs/tools/extreg-wos
     template:
@@ -9077,7 +9077,7 @@ projects:
 
   - name: labs/tools/force-rebase
     template:
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
 
   - name: labs/tools/forrestbot
     template:
@@ -9101,14 +9101,16 @@ projects:
     template:
       - name: node20
       - name: mediawiki-i18n-check
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
     test:
-      # TODO (T413995): Does this still need PHP 8.1 testing?
+      # TODO (T413995): Does this still need PHP 8.1 & 8.2 testing?
       - composer-php81
+      - composer-php82
       - labs-tools-heritage-tox
     gate-and-submit:
-      # TODO (T413995): Does this still need PHP 8.1 testing?
+      # TODO (T413995): Does this still need PHP 8.1 & 8.2 testing?
       - composer-php81
+      - composer-php82
       - labs-tools-heritage-tox
     postmerge:
       - tox-py39-coverage-publish
@@ -9136,7 +9138,7 @@ projects:
   - name: labs/tools/ipchanges
     # template:
       # (T353396) This repo doesn't yet pass its tests on PHP 8.2+
-      # - name: composer-test-php82-to-php85
+      # - name: composer-test-php83-to-php85
     test:
       - composer-php81
     gate-and-submit:
@@ -9182,12 +9184,12 @@ projects:
 
   - name: labs/tools/fileprotectionsync
     template:
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
 
   - name: labs/tools/nagf
     # template:
       # (T353395) This repo doesn't yet pass its tests on PHP 8.2+
-      # - name: composer-test-php82-to-php85
+      # - name: composer-test-php83-to-php85
     test:
       - composer-php81
     gate-and-submit:
@@ -9246,7 +9248,7 @@ projects:
   - name: labs/tools/meetingtimes
     template:
       # (T353394) This repo doesn't yet pass its tests on PHP 8.2+
-      # - name: composer-test-php82-to-php85
+      # - name: composer-test-php83-to-php85
       - name: node20
     test:
       - composer-php81
@@ -9357,7 +9359,7 @@ projects:
 
   - name: labs/tools/wikiinfo
     template:
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
 
   - name: labs/tools/wikinity
     template:
