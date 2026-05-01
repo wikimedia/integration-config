@@ -2118,19 +2118,6 @@ project-templates:
     postmerge:
       - mwext-node24-docs-publish
 
-  - name: composer-test-php82-to-php85
-    test:
-      - composer-php83
-    php:
-      - composer-php82
-      - composer-php84
-      - composer-php85
-    gate-and-submit:
-      - composer-php82
-      - composer-php83
-      - composer-php84
-      - composer-php85
-
   - name: composer-test-php83-to-php85
     test:
       - composer-php83
@@ -2509,7 +2496,7 @@ projects:
   - name: integration/docroot
     template:
       - name: node24
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
 
   - name: integration/gear
     test:
