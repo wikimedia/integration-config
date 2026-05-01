@@ -9831,7 +9831,7 @@ projects:
 
   - name: translatewiki
     template:
-      - name: composer-test-php82-to-php85
+      - name: composer-test-php83-to-php85
     test:
       - translatewiki-ruby2.7-rake
     gate-and-submit:
