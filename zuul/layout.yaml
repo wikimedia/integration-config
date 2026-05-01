@@ -2658,7 +2658,7 @@ projects:
   - name: performance/arc-lamp
     # FIXME: Use mediawiki-php-library?
     template:
-      - name: composer-test-package-php82-to-php85
+      - name: composer-test-package-php83-to-php85
 
   - name: performance/asoranking
     template:
