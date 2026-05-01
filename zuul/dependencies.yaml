@@ -2651,6 +2651,7 @@ WikiEditor:
     - EventLogging
     - EventStreamConfig
     - WikimediaEvents
+    - TestKitchen
 
 WikiLambda:
   recurse: false
