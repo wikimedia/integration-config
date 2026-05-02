@@ -8026,10 +8026,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/UIFeedback
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/UnCaptcha
     template:
       - name: extension-quibble-noselenium
@@ -11563,6 +11559,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/TwoFactorAuthentication
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/UIFeedback
     template:
       - name: archived
 
