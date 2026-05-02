@@ -6964,10 +6964,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/MarkAsHelpful
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/MassEditRegex
     template:
       - name: extension-quibble
@@ -10967,6 +10963,10 @@ projects:
       - name: archived # T353966
 
   - name: mediawiki/extensions/Mantle
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/MarkAsUseful
     template:
       - name: archived
 
