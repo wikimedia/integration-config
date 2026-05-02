@@ -346,7 +346,7 @@
 # Special jobs for MediaWiki core
 
 # Main Quibble testing; excludes Selenium and API testing, which are done in own jobs.
-- job-template:
+- job-template: &job_quibble_core_main
     !!merge : *job_quibble
     name: quibble-for-mediawiki-core-{packages-source}-{database}-{php}
     entrypoint: quibble-with-supervisord
@@ -419,6 +419,15 @@
     !!merge : *job_quibble_requires_only_selenium
     name: 'quibble-requires-only-{packages-source}-selenium-non-voting'
     quibble_args: '--resolve-requires --run selenium'
+
+# Non-voting versions of main Quibble jobs for checking release branches
+- job-template:
+    !!merge : *job_quibble_core_main
+    name: 'quibble-for-mediawiki-core-composer-mysql-{php}-non-voting'
+
+- job-template:
+    !!merge : *job_quibble
+    name: 'quibble-composer-mysql-{php}-non-voting'
 
 # Per-patch coverage for MediaWiki core.
 - job-template:
@@ -845,6 +854,21 @@
             database: mysql
         - quibble-apitests-only-{packages-source}-{php}:
             database: 'mysql'
+
+- project:
+    name: quibble-non-voting-jobs
+    packages-source:
+        - composer
+    database:
+        - mysql
+    php:
+        - php84:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1-s4
+        - php85:
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.17.1-s4
+    jobs:
+        - quibble-composer-mysql-{php}-non-voting
+        - quibble-for-mediawiki-core-composer-mysql-{php}-non-voting
 
 # MediaWiki jobs for deployment to the Wikimedia cluster
 - project:
