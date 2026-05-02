@@ -167,9 +167,9 @@
             composer_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s2
             phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php82:1.17.1-s4
         - php83:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s4
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
             composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.30-s2
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s4
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
         - php84:
             setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1-s4
             composer_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s2
