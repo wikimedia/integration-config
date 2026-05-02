@@ -163,7 +163,7 @@
 - view:
     name: Beta
     view-type: list
-    description: Jobs related to the beta cluster.
+    description: Jobs related to the beta cluster. Note that the jobs are purposefully disabled due to https://phabricator.wikimedia.org/T256168; see https://beta-update.wmcloud.org/ for logs
     filter-executors: true
     filter-queue: true
     job-name:
