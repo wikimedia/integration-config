@@ -424,10 +424,14 @@
 - job-template:
     !!merge : *job_quibble_core_main
     name: 'quibble-for-mediawiki-core-composer-mysql-{php}-non-voting'
+    packages-source: composer
+    database: mysql
 
 - job-template:
     !!merge : *job_quibble
     name: 'quibble-composer-mysql-{php}-non-voting'
+    packages-source: composer
+    database: mysql
 
 # Per-patch coverage for MediaWiki core.
 - job-template:
@@ -857,10 +861,6 @@
 
 - project:
     name: quibble-non-voting-jobs
-    packages-source:
-        - composer
-    database:
-        - mysql
     php:
         - php84:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php84:1.17.1-s4
