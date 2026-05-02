@@ -761,7 +761,7 @@
             days-to-keep: 30
     quibble_args: '--commands=mediawiki-coverage'
     triggers:
-     - timed: '0 3,15 * * *'
+     - timed: '0 3,9,15,21 * * *'
     wrappers:
      - timeout:
          timeout: 360
