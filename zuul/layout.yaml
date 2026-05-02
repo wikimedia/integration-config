@@ -1564,6 +1564,9 @@ project-templates:
       - quibble-composer-mysql-php83-selenium
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php81
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_43:
       - mediawiki-node24
       - quibble-composer-mysql-php81
@@ -1579,6 +1582,9 @@ project-templates:
       - quibble-composer-mysql-php83-selenium
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php81
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_44:
       - mediawiki-node24
       - quibble-composer-mysql-php81
@@ -1591,6 +1597,9 @@ project-templates:
     test-1_45:
       - mediawiki-node24
       - quibble-composer-mysql-php83
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_45:
       - mediawiki-node24
       - quibble-composer-mysql-php82
@@ -1656,6 +1665,9 @@ project-templates:
       - quibble-composer-mysql-php83-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php81
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_43:
       - mediawiki-node24
       - quibble-composer-mysql-php81
@@ -1671,6 +1683,9 @@ project-templates:
       - quibble-composer-mysql-php83-selenium
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php81
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_44:
       - mediawiki-node24
       - quibble-composer-mysql-php81
@@ -1683,6 +1698,9 @@ project-templates:
     test-1_45:
       - mediawiki-node24
       - quibble-composer-mysql-php83
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_45:
       - mediawiki-node24
       - quibble-composer-mysql-php82
@@ -1726,6 +1744,9 @@ project-templates:
     test-1_43:
       - mwext-bluespice-node24
       - quibble-composer-mysql-php81
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_43:
       - mwext-bluespice-node24
       - quibble-composer-mysql-php81
@@ -1755,9 +1776,6 @@ project-templates:
       # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
-      # Not-yet-supported language runtimes
-      - quibble-composer-mysql-php84
-      - quibble-composer-mysql-php85
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
@@ -1782,6 +1800,9 @@ project-templates:
       - mediawiki-node24
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php81
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_43:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
@@ -1795,6 +1816,9 @@ project-templates:
       - mediawiki-node24
       # (T231966 / T226945) Disabled on release branches
       # - mwext-phan-php81
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_44:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
@@ -1806,6 +1830,9 @@ project-templates:
     test-1_45:
       - quibble-composer-mysql-php83
       - mediawiki-node24
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_45:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1865,6 +1892,9 @@ project-templates:
       - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php81
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_43:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
@@ -1878,6 +1908,9 @@ project-templates:
       - mediawiki-node24
       # (T231966 / T226945) Disabled as it uses mediawiki/vendor
       # - mwext-phan-php81
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_44:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
@@ -1889,6 +1922,9 @@ project-templates:
     test-1_45:
       - quibble-composer-mysql-php83
       - mediawiki-node24
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_45:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -2744,6 +2780,9 @@ projects:
       - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
       - mediawiki-core-phan-only-php81
       - mediawiki-node24
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-for-mediawiki-core-composer-mysql-php84-non-voting
+      - quibble-for-mediawiki-core-composer-mysql-php85-non-voting
     gate-and-submit-1_43:
       - quibble-for-mediawiki-core-composer-mysql-php81
       - quibble-for-mediawiki-core-composertest-only-php81
@@ -2761,6 +2800,9 @@ projects:
       - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
       - mediawiki-core-phan-only-php81
       - mediawiki-node24
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-for-mediawiki-core-composer-mysql-php84-non-voting
+      - quibble-for-mediawiki-core-composer-mysql-php85-non-voting
     gate-and-submit-1_44:
       - quibble-for-mediawiki-core-composer-mysql-php81
       - quibble-for-mediawiki-core-composertest-only-php81
@@ -2778,6 +2820,9 @@ projects:
       - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
       - mediawiki-core-phan-only-php83
       - mediawiki-node24
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-for-mediawiki-core-composer-mysql-php84-non-voting
+      - quibble-for-mediawiki-core-composer-mysql-php85-non-voting
     gate-and-submit-1_45:
       - quibble-for-mediawiki-core-composer-mysql-php82
       - quibble-for-mediawiki-core-composer-mysql-php83
@@ -2797,6 +2842,7 @@ projects:
     gate-and-submit-1_46:
       - quibble-for-mediawiki-core-composer-mysql-php83
       - quibble-for-mediawiki-core-composer-mysql-php84
+      - quibble-for-mediawiki-core-composer-mysql-php85
       - quibble-for-mediawiki-core-composertest-only-php83
       - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
       - quibble-for-mediawiki-core-composer-sqlite-php83

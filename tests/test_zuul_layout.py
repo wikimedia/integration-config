@@ -181,6 +181,8 @@ class TestZuulLayout(unittest.TestCase):
                     gate_pipeline = 'gate-and-submit' + '-' + suffix
 
                 for test_job in templates[template_name][pipeline]:
+                    if test_job.endswith('-non-voting'):
+                        continue
                     try:
                         gate_jobs = templates[template_name][gate_pipeline]
                         self.assertIn(
