@@ -14,6 +14,7 @@ COPY wikimedia-php83.list /etc/apt/sources.list.d/wikimedia-php83.list
 #  Debian packages we need  #
 #############################
 # (T386006) We're re-specifying pcre2 (libpcre2-8-0) to re-install the newer version than base
+# Note that php8.3-luasandbox is provided by Wikimedia's apt, but not for other PHP versions.
 {% set mediawiki_deps|replace('\n', ' ') -%}
 libpcre2-8-0
 php8.3-apcu
@@ -25,7 +26,6 @@ php8.3-gd
 php8.3-gmp
 php8.3-intl
 php8.3-ldap
-php8.3-luasandbox
 php8.3-mbstring
 php8.3-memcached
 php8.3-mysql
@@ -38,6 +38,8 @@ php8.3-xdebug
 php8.3-xml
 php8.3-zip
 php8.3-wikidiff2
+
+php8.3-luasandbox
 {%- endset -%}
 
 RUN {{ mediawiki_deps | apt_install }} \
