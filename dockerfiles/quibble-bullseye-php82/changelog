@@ -1,3 +1,9 @@
+quibble-bullseye-php82 (1.17.1-s5) wikimedia; urgency=high
+
+  Add php-luasandbox
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Sat,  2 May 2026 09:41:48 +0200
+
 quibble-bullseye-php82 (1.17.1-s4) wikimedia; urgency=medium
 
   * Allow running the container as a different user than `nobody` by changing
