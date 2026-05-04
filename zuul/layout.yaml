@@ -1776,6 +1776,9 @@ project-templates:
       # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
+      # Special non-voting jobs to see if the branch is ready for newer PHP versions
+      - quibble-composer-mysql-php84-non-voting
+      - quibble-composer-mysql-php85-non-voting
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
