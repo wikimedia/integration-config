@@ -156,6 +156,8 @@
             node_version:
                - node24:
                    image: docker-registry.wikimedia.org/releng/node24-test:24.14.1-s1
+               - node26:
+                   image: docker-registry.wikimedia.org/releng/node26-test:26.0.0
         - '{name}-tox':
             build_timeout: 10
 

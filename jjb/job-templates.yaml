@@ -626,6 +626,22 @@
     publishers:
      - teardown
 
+- job:
+    name: mwext-node26-docs-publish
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - setup
+     - docker-run-with-log-cache-src:
+        image: 'docker-registry.wikimedia.org/releng/node26-test:26.0.0'
+        args: 'doc'
+     - doc-publish:
+        docsrc: 'src/docs'
+        docdest: '$DOC_PROJECT/$DOC_SUBPATH/js'
+    publishers:
+     - teardown
+
 - project:
     name: 'generic'
     node_version:
@@ -633,6 +649,8 @@
             image: docker-registry.wikimedia.org/releng/node20-test-browser:20.20.2-s1
         - node24:
             image: docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1-s1
+        - node26:
+            image: docker-registry.wikimedia.org/releng/node26-test-browser:26.0.0
     jobs:
         - 'generic-{node_version}-browser-coverage-publish'
         - 'generic-{node_version}-browser-direct-coverage-publish'
@@ -648,6 +666,8 @@
                     image: docker-registry.wikimedia.org/releng/node20-test:20.20.2-s1
                 - node24:
                     image: docker-registry.wikimedia.org/releng/node24-test:24.14.1-s1
+                - node26:
+                    image: docker-registry.wikimedia.org/releng/node26-test:26.0.0
         - 'generic-{node_version}-docs-publish':
             node_version: *node_without_browsers
 
@@ -661,6 +681,8 @@
            node_version:
                - node24:
                    image: docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1-s1
+               - node26:
+                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.0.0
 
 # Same as 'mwext', but solo so BlueSpice repos don't conflict
 - project:
@@ -670,6 +692,8 @@
            node_version:
                - node24:
                    image: docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1-s1
+               - node26:
+                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.0.0
 
 - project:
     name: branchdeploy
@@ -683,6 +707,8 @@
                     node_image: docker-registry.wikimedia.org/releng/node20-test:20.20.2-s1
                 - node24:
                     node_image: docker-registry.wikimedia.org/releng/node24-test:24.14.1-s1
+                - node26:
+                    node_image: docker-registry.wikimedia.org/releng/node26-test:26.0.0
             key:
                 - codex
                 - wikidata-query-builder
