@@ -321,7 +321,7 @@
         - string:
             name: 'BASE_LOG_PATH'
             description: 'Used as the wikilambda ref as this is what is available from zuul'
-            default: '""'
+            default: ' '
         - string:
             name: 'EXPIRY_TIME_HOURS'
             description: 'The number of hours after which the test environment will expire'
