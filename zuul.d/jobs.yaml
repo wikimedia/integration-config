@@ -1,6 +1,7 @@
 - job:
-    name: base
     parent: null
+    name: base
+    abstract: true
     description: |
       The recommended base job.
 
