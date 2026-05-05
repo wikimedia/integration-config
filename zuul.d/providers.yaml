@@ -1,12 +1,30 @@
+- flavor:
+    name: basic
+
+- image:
+    name: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
+    type: cloud
+
+- label:
+    flavor: basic
+    name: quibble-php83
+    image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
+
 - section:
     name: wmcs
-    description: >-
-      WMCS Kubernetes namespaces/pods for running untrusted code.
     connection: zuul.eqiad1.wikimedia.cloud
-    labels:
-      - name: namespace
-        kind: namespace
+    flavors:
+      - basic
 
 - provider:
     name: untrusted
     section: wmcs
+    images:
+      - docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
+    labels:
+      - kind: pod
+        name: quibble-php83
+        spec:
+          containers:
+            - name: quibble
+              image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
