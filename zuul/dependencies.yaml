@@ -2020,6 +2020,13 @@ PDFCreator:
     # extras transitive dependencies
     - MenuEditor
 
+PageAssessments:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Scribunto
+
 PageCheckout:
   recurse: false
   dependencies:
