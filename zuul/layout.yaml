@@ -1253,6 +1253,8 @@ jobs:
     queue-name: mediawiki
   - name: mediawiki-node24
     queue-name: mediawiki
+  - name: mediawiki-node26
+    queue-name: mediawiki
   - name: quibble-composer-mysql-php83
     queue-name: mediawiki
   - name: quibble-vendor-mysql-php83
@@ -1429,6 +1431,9 @@ jobs:
   - name: 'mwext-node24-docs-publish'
     branch: ^master$
 
+  - name: 'mwext-node26-docs-publish'
+    branch: ^master$
+
   - name: 'mwext-doxygen-publish'
     branch: ^(REL.*|master)$
 
@@ -1530,6 +1535,8 @@ project-templates:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
+      # Not-yet-supported language runtimes
+      - mediawiki-node26
 
     # No wmf/ jobs, as this should never be used for WMF production code
 
@@ -1636,6 +1643,8 @@ project-templates:
       # Non-standard database types
       - quibble-vendor-sqlite-php83
       - quibble-vendor-postgres-php83
+      # Not-yet-supported language runtimes
+      - mediawiki-node26
 
   # Special job template that runs composer rather than than relying
   # on mediawiki/vendor for quibble.
@@ -1728,6 +1737,8 @@ project-templates:
       # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
+      # Not-yet-supported language runtimes
+      - mediawiki-node26
 
   # Special job template for extensions maintained by the BlueSpice team.
   # - Only runs for LTS branches (not master branch).
@@ -1776,9 +1787,10 @@ project-templates:
       # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
-      # Special non-voting jobs to see if the branch is ready for newer PHP versions
-      - quibble-composer-mysql-php84-non-voting
-      - quibble-composer-mysql-php85-non-voting
+      # Not-yet-supported language runtimes
+      - mediawiki-node26
+      - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
 
   # Special job template that runs the quibble jobs but skips the
   # selenium tests - T196960
@@ -1872,6 +1884,8 @@ project-templates:
       # Non-standard database types
       - quibble-vendor-sqlite-php83
       - quibble-vendor-postgres-php83
+      # Not-yet-supported language runtimes
+      - mediawiki-node26
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
@@ -1955,6 +1969,8 @@ project-templates:
       # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
+      # Not-yet-supported language runtimes
+      - mediawiki-node26
 
   # Special job template that runs the "standalone" jobs - T225068
   - name: extension-quibble-only-standalone
@@ -2184,12 +2200,16 @@ project-templates:
     experimental:
       # Not-yet-supported language runtimes
       - generic-node24
+      - generic-node26
 
   - name: node24
     test:
       - generic-node24
     gate-and-submit:
       - generic-node24
+    experimental:
+      # Not-yet-supported language runtimes
+      - generic-node26
 
   - name: node20-to-node24
     test:
@@ -2197,6 +2217,9 @@ project-templates:
     gate-and-submit:
       - generic-node20
       - generic-node24
+    experimental:
+      # Not-yet-supported language runtimes
+      - generic-node26
 
   - name: node20-browser
     test:
@@ -2206,18 +2229,25 @@ project-templates:
     experimental:
       # Not-yet-supported language runtimes
       - generic-node24-browser
+      - generic-node26-browser
 
   - name: node24-browser
     test:
       - generic-node24-browser
     gate-and-submit:
       - generic-node24-browser
+    experimental:
+      # Not-yet-supported language runtimes
+      - generic-node26-browser
 
   - name: node24-browser-webdriver
     test:
       - generic-node24-browser-webdriver
     gate-and-submit:
       - generic-node24-browser-webdriver
+    experimental:
+      # Not-yet-supported language runtimes
+      - generic-node26-browser-webdriver
 
   - name: node24-browser-for-MW-branches
     test:
@@ -2244,12 +2274,18 @@ project-templates:
       - generic-node24-browser
     gate-and-submit-wmf:
       - generic-node24-browser
+    experimental:
+      # Not-yet-supported language runtimes
+      - generic-node26-browser
 
   - name: node24-rundoc
     test:
       - generic-node24-rundoc
     gate-and-submit:
       - generic-node24-rundoc
+    experimental:
+      # Not-yet-supported language runtimes
+      - generic-node26-rundoc
 
   - name: node24-rundoc-for-MW-branches
     test:
@@ -2276,6 +2312,9 @@ project-templates:
       - generic-node24-rundoc
     gate-and-submit-wmf:
       - generic-node24-rundoc
+    experimental:
+      # Not-yet-supported language runtimes
+      - generic-node26-rundoc
 
   - name: mwgate-npm
     test:
@@ -2298,6 +2337,9 @@ project-templates:
       - mediawiki-node24
     gate-and-submit-1_46:
       - mediawiki-node24
+    experimental:
+      # Not-yet-supported language runtimes
+      - mediawiki-node26
 
   - name: tox
     test:
@@ -2874,6 +2916,8 @@ projects:
     experimental:
       # Jobs we want to have available for testing
       - mediawiki-composer-php83
+      # Not-yet-supported language runtimes
+      - mediawiki-node26
 
   # (T189560) There is explicitly no CI support for mediawiki/vendor.git on release branches.
   # Additionally, selenium tests are skipped for wmf/ branches.
@@ -2912,6 +2956,9 @@ projects:
     gate-and-submit-fundraising:
       - mediawiki-composer-php82
       - mediawiki-node24
+    experimental:
+      # Not-yet-supported language runtimes
+      - mediawiki-node26
 
 #### MediaWiki skins ###########################################
 
@@ -4189,6 +4236,8 @@ projects:
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php84
       - quibble-vendor-mysql-php83-selenium
+      # Not-yet-supported language runtimes
+      - mediawiki-node26
 
   - name: mediawiki/extensions/DynamicSidebar
     template:
@@ -8653,6 +8702,7 @@ projects:
     experimental:
       - generic-node20
       - generic-node24
+      - generic-node26
 
   - name: analytics/geowiki
     template:
@@ -8810,6 +8860,9 @@ projects:
       - wikipeg-special-node24-plus-php83-composer
     gate-and-submit:
       - wikipeg-special-node24-plus-php83-composer
+    experimental:
+      # Not-yet-supported language runtimes
+      - wikipeg-special-node26-plus-php83-composer
 
   - name: WrappedString
     template:
@@ -9518,6 +9571,9 @@ projects:
       - trigger-wikimedia-portals-pipeline-publish
     publish:
       - trigger-wikimedia-portals-pipeline-publish
+    experimental:
+      # Not-yet-supported language runtimes
+      - generic-node26-browser
 
   - name: wikimedia/portals/deploy
     test:
@@ -9620,6 +9676,7 @@ projects:
     experimental:
       # Not-yet-supported language runtimes
       - branchdeploy-codex-node24-npm
+      - branchdeploy-codex-node26-npm
 
   - name: design/codex-php
     template:
@@ -9649,6 +9706,9 @@ projects:
       - generic-node24-browser-coverage-publish
     publish:
       - generic-node24-docs-publish
+    experimental:
+      # Not-yet-supported language runtimes
+      - oojs-core-node26-runjenkins
 
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
@@ -9662,6 +9722,9 @@ projects:
     postmerge:
       - oojs-ui-doxygen-publish
       - oojs-ui-publish
+    experimental:
+      # Not-yet-supported language runtimes
+      - ooui-node26-plus-php83-runjenkins
 
   - name: jsdoc/wmf-theme
     template:
@@ -9733,6 +9796,9 @@ projects:
       - name: mediawiki-i18n-check
     test:
       - branchdeploy-wikidata-query-builder-node24-npm
+    experimental:
+      # Not-yet-supported language runtimes
+      - branchdeploy-wikidata-query-builder-node26-npm
 
   - name: wikibase/javascript-api
     template:
