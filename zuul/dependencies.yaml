@@ -1180,6 +1180,15 @@ Chart:
     # extras
     - VisualEditor
 
+ChatBot:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PDFCreator
+    - WikiRAG
+    # Transitive requirements:
+    - OOJSPlus
+
 CheckUser:
   recurse: true
   dependencies:
