@@ -30,5 +30,6 @@
 
       Used for very basic testing of pipeline and project configurations.
     nodeset: trixie
+    run: playbooks/echo/run.yaml
     vars:
       message: "hello world"
