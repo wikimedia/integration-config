@@ -1,0 +1,11 @@
+- nodeset:
+    name: trixie
+    nodes:
+      - name: trixie
+        label: trixie
+
+- nodeset:
+    name: quibble-php83
+    nodes:
+      - name: quibble
+        label: quibble-php83

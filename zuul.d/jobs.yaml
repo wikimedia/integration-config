@@ -2,7 +2,7 @@
     parent: null
     name: base
     abstract: true
-    description: |
+    description: |-
       The recommended base job.
 
       All jobs ultimately inherit from this.  It runs a pre-playbook
@@ -21,3 +21,14 @@
     roles:
       - zuul: integration/zuul-jobs
     timeout: 1800
+
+- job:
+    parent: base
+    name: echo
+    description: |-
+      Echo a message.
+
+      Used for very basic testing of pipeline and project configurations.
+    nodeset: trixie
+    vars:
+      message: "hello world"

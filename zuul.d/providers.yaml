@@ -2,29 +2,45 @@
     name: basic
 
 - image:
-    name: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
     type: cloud
+    name: &trixie docker-registry.wikimedia.org/trixie:20260503
+
+- image:
+    type: cloud
+    name: &quibble-php83 docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
+
+- label:
+    flavor: basic
+    name: trixie
+    image: *trixie
 
 - label:
     flavor: basic
     name: quibble-php83
-    image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
+    image: *quibble-php83
 
 - section:
     name: wmcs
     connection: zuul.eqiad1.wikimedia.cloud
     flavors:
       - basic
+    images:
+      - *trixie
+      - *quibble-php83
 
 - provider:
     name: untrusted
     section: wmcs
-    images:
-      - docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
     labels:
+      - kind: pod
+        name: trixie
+        spec:
+          containers:
+            - name: trixie
+              image: *trixie
       - kind: pod
         name: quibble-php83
         spec:
           containers:
             - name: quibble
-              image: docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
+              image: *quibble-php83

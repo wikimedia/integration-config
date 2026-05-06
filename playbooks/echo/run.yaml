@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+    - name: Echo a message
+      command:
+        cmd: >-
+          echo {{ message | quote }}
+
