@@ -1187,7 +1187,9 @@ ChatBot:
     - PDFCreator
     - WikiRAG
     # Transitive requirements:
+    - BlueSpiceFoundation
     - OOJSPlus
+    - VisualEditor
     - VueJsPlus
 
 ChatIntegration:
