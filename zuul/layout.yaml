@@ -6879,11 +6879,11 @@ projects:
 
   - name: mediawiki/extensions/LDAPAuthentication2
     template:
-      - name: extension-quibble
+      - name: extension-quibble-noselenium
 
   - name: mediawiki/extensions/LDAPAuthorization
     template:
-      - name: extension-quibble
+      - name: extension-quibble-noselenium
 
   - name: mediawiki/extensions/LDAPGroups
     template:
