@@ -1189,6 +1189,15 @@ ChatBot:
     # Transitive requirements:
     - OOJSPlus
 
+ChatIntegration:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - NotifyMe
+    - UserProfile
+    # Transitive requirements:
+    - OOJSPlus
+
 CheckUser:
   recurse: true
   dependencies:
