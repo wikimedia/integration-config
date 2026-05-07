@@ -2036,11 +2036,11 @@ PDFCreator:
   dependencies:
     # From extension.json:
     - OOJSPlus
+    - VueJsPlus
     # extras
     - skins/BlueSpiceDiscovery
     - BlueSpiceFoundation
     - VisualEditor
-    - VueJsPlus
     # extras transitive dependencies
     - MenuEditor
 
