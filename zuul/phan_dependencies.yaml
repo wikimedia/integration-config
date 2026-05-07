@@ -356,7 +356,6 @@ FileImporter:
 FlaggedRevs:
   - Scribunto
   - Echo
-  - GoogleNewsSitemap
   - MobileFrontend
   - UserMerge
   - skins/Vector
