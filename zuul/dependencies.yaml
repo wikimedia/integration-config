@@ -1496,6 +1496,7 @@ EmailAuth:
   dependencies:
     # From extension.json:
     - CentralAuth
+    - OATHAuth
     # extras
     - AntiSpoof
 

@@ -302,6 +302,7 @@ ElectronPdfService:
 
 EmailAuth:
   - CentralAuth
+  - OATHAuth
 
 EntitySchema:
   - Wikibase
