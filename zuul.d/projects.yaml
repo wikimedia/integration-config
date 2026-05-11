@@ -9,5 +9,4 @@
     name: test/gerrit-ping
     check:
       jobs:
-        - echo
         - namespace-test
