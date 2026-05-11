@@ -36,13 +36,12 @@
 
 - job:
     parent: base
-    name: namespace-test
+    name: directory-listing
     description: |-
-      List the contents of the working directory in the local executor
-      context.
+      List the contents of the working directory.
 
-      Used for very basic testing of namespace nodsets.
+      Used for very basic testing.
     nodeset: namespace
-    run: playbooks/run-on-executor/run.yaml
+    run: playbooks/run/run.yaml
     vars:
       command: "ls -lR ."

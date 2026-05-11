@@ -1,5 +1,0 @@
-- hosts: localhost
-  tasks:
-    - name: Run a command on the executor
-      command:
-        cmd: "{{ command }}"

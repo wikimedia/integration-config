@@ -44,18 +44,21 @@
     labels:
       - kind: namespace
         name: namespace
-        spec: {}
+        spec:
+          containers:
+            - name: zuul
+              image: *trixie
 
       - kind: pod
         name: trixie
         spec:
           containers:
-            - name: trixie
+            - name: zuul
               image: *trixie
 
       - kind: pod
         name: quibble-php83
         spec:
           containers:
-            - name: quibble
+            - name: zuul
               image: *quibble-php83
