@@ -1,4 +1,10 @@
 - nodeset:
+    name: namespace
+    nodes:
+      - name: namespace
+        label: namespace
+
+- nodeset:
     name: trixie
     nodes:
       - name: trixie

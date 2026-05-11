@@ -2,21 +2,30 @@
     name: basic
 
 - image:
+    name: nada
     type: cloud
-    name: &trixie docker-registry.wikimedia.org/trixie:20260503
 
 - image:
+    name: &trixie docker-registry.wikimedia.org/trixie:20260503
     type: cloud
+
+- image:
     name: &quibble-php83 docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
+    type: cloud
 
 - label:
+    name: namespace
     flavor: basic
+    image: nada
+
+- label:
     name: trixie
+    flavor: basic
     image: *trixie
 
 - label:
-    flavor: basic
     name: quibble-php83
+    flavor: basic
     image: *quibble-php83
 
 - section:
@@ -25,6 +34,7 @@
     flavors:
       - basic
     images:
+      - nada
       - *trixie
       - *quibble-php83
 
@@ -32,12 +42,17 @@
     name: untrusted
     section: wmcs
     labels:
+      - kind: namespace
+        name: namespace
+        spec: {}
+
       - kind: pod
         name: trixie
         spec:
           containers:
             - name: trixie
               image: *trixie
+
       - kind: pod
         name: quibble-php83
         spec:

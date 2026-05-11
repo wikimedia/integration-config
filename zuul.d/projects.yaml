@@ -10,3 +10,4 @@
     check:
       jobs:
         - echo
+        - namespace-test

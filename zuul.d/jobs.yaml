@@ -33,3 +33,16 @@
     run: playbooks/echo/run.yaml
     vars:
       message: "hello world"
+
+- job:
+    parent: base
+    name: namespace-test
+    description: |-
+      List the contents of the working directory in the local executor
+      context.
+
+      Used for very basic testing of namespace nodsets.
+    nodeset: namespace
+    run: playbooks/run-on-executor/run.yaml
+    vars:
+      command: "ls -lR ."
