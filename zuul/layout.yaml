@@ -2191,6 +2191,19 @@ project-templates:
     postmerge:
       - php83-compile-coverage-publish
 
+  - name: php-pie-build-php82-to-php85
+    test:
+      # NOTE: Unlike other templates, we test everything in gate-and-submit, not just the main one.
+      - php-pie-build-php82
+      - php-pie-build-php83
+      - php-pie-build-php84
+      - php-pie-build-php85
+    gate-and-submit:
+      - php-pie-build-php82
+      - php-pie-build-php83
+      - php-pie-build-php84
+      - php-pie-build-php85
+
   - name: node20
     test:
       - generic-node20
@@ -8800,6 +8813,11 @@ projects:
   - name: mediawiki/php/wikidiff2
     template:
       - name: php-compile-php82-to-php85
+    experimental:
+      - php-pie-build-php82
+      - php-pie-build-php83
+      - php-pie-build-php84
+      - php-pie-build-php85
 
   - name: mediawiki/php/wmerrors
     template:
