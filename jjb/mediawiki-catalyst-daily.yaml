@@ -1,6 +1,16 @@
 - job:
     name: catalyst-daily-VisualEditor
     node: Docker
+    parameters:
+        - string:
+            name: 'ZUUL_URL'
+            default: 'https://gerrit.wikimedia.org/r/p'
+        - string:
+            name: 'ZUUL_PROJECT'
+            default: 'mediawiki/extensions/VisualEditor'
+        - string:
+            name: 'ZUUL_REF'
+            default: 'master'
     builders:
         - setup
         - docker-run-with-log-cache-src:
