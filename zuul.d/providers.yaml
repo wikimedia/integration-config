@@ -46,19 +46,21 @@
         name: namespace
         spec:
           containers:
-            - name: zuul
+            - &spec-default
+              name: zuul
               image: *trixie
+              command: ["/bin/sh", "-c"]
+              args: ["sleep infinity"]
 
       - kind: pod
         name: trixie
         spec:
           containers:
-            - name: zuul
-              image: *trixie
+            - *spec-default
 
       - kind: pod
         name: quibble-php83
         spec:
           containers:
-            - name: zuul
+            - <<: *spec-default
               image: *quibble-php83
