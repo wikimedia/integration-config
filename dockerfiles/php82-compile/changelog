@@ -1,3 +1,9 @@
+php82-compile (8.2.30-s2) wikimedia; urgency=high
+
+   Install PIE and add PIE build test
+
+ -- Sammy Fox <theresnotime@wikimedia.org>  Mon, 11 May 2026 16:23:00 +0100
+
 php82-compile (8.2.30-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bookworm:

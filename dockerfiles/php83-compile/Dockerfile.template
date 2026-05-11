@@ -12,12 +12,24 @@ pkg-config
 libthai-dev
 liblua5.1-dev
 lcov
+curl
 {%- endset -%}
 
 RUN {{ packages | apt_install }}
+
+# Install PIE
+# SHA256 from release attestation: https://github.com/php/pie/attestations/25462151/download
+RUN curl -fsSL https://github.com/php/pie/releases/download/1.4.2/pie.phar \
+    -o /usr/local/bin/pie \
+    && echo "2333b79a39c31b66b832e938b4a73a5682dace5d98d3745053debbe05d39439f  /usr/local/bin/pie" | sha256sum -c - \
+    && chmod +x /usr/local/bin/pie
+
+# Tidy packages
+RUN {{ "curl" | apt_remove }}
 
 USER nobody
 
 COPY run.sh /run.sh
 COPY run-coverage.sh /run-coverage.sh
+COPY run-pie.sh /run-pie.sh
 ENTRYPOINT ["/run.sh"]
