@@ -246,7 +246,7 @@
                     EXPIRY_TIME_HOURS: '1'
                     LOG_DIR: '/log'
           - docker-run-with-log-cache-src: &wikilambda-catalyst-docker-test
-                image: docker-registry.wikimedia.org/releng/node22-test-browser:22.22.2-s1
+                image: docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1-s1
                 environment:
                     MEDIAWIKI_USER: 'Admin'
                     MEDIAWIKI_PASSWORD: 'dockerpass'
