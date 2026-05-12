@@ -656,6 +656,9 @@ SportsTeams:
   - UserStatus
   - BlogPage
 
+Springboard:
+  - AdminLinks
+
 StructuredNavigation:
   - CodeEditor
 
