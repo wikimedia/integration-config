@@ -1,3 +1,4 @@
+# Jobs for compiling PHP extensions
 - job-template:
     name: 'php-compile-{php}'
     node: Docker
@@ -51,3 +52,34 @@
           artifacts: 'src/tests/*.log'
           allow-empty: true
       - docker-cleanup
+
+# Jobs for building PHP extensions for PIE
+- job-template:
+    name: 'php-pie-build-{php}'
+    node: Docker
+    triggers:
+     - zuul
+    builders:
+     - docker-src-dir
+     - docker-ci-src-setup-simple
+     - docker-run:
+        entrypoint: /run-pie.sh
+        volumes:
+            src:
+        image: '{image}'
+    publishers:
+      - docker-cleanup
+
+- project:
+    name: pie-build-jobs
+    php:
+     - php82:
+          image: docker-registry.wikimedia.org/releng/php82-compile:8.2.30-s2
+     - php83:
+          image: docker-registry.wikimedia.org/releng/php83-compile:8.3.30-s2
+     - php84:
+          image: docker-registry.wikimedia.org/releng/php84-compile:8.4.18-s2
+     - php85:
+          image: docker-registry.wikimedia.org/releng/php85-compile:8.5.3-s2
+    jobs:
+      - 'php-pie-build-{php}'
