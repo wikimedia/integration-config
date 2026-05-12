@@ -781,9 +781,11 @@ WikiEditor:
   - WikimediaEvents
 
 WikiLambda:
+  - AbuseFilter
   - CommunityConfiguration
   - EventLogging
   - SiteMatrix
+  - SpamBlacklist
   - TestKitchen
   - Wikibase
 

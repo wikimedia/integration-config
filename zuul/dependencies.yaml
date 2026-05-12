@@ -2693,7 +2693,9 @@ WikiLambda:
     - UniversalLanguageSelector
     - WikimediaMessages
     # extras
+    - AbuseFilter
     - CommunityConfiguration
+    - SpamBlacklist
 
 WikiRAG:
   recurse: false
