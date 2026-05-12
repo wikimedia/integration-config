@@ -8801,6 +8801,12 @@ projects:
   - name: mediawiki/php/excimer
     template:
       - name: php-compile-php82-to-php85
+    experimental:
+      # (T423562, T425943) Waiting for implementation of PIE support
+      - php-pie-build-php82
+      - php-pie-build-php83
+      - php-pie-build-php84
+      - php-pie-build-php85
 
   - name: mediawiki/php/luasandbox
     template:
@@ -8809,11 +8815,18 @@ projects:
       - doxygen-publish
     publish:
       - doxygen-publish
+    experimental:
+      # (T423562, T425943) Waiting for implementation of PIE support
+      - php-pie-build-php82
+      - php-pie-build-php83
+      - php-pie-build-php84
+      - php-pie-build-php85
 
   - name: mediawiki/php/wikidiff2
     template:
       - name: php-compile-php82-to-php85
     experimental:
+      # (T423562, T425943) Waiting for implementation of PIE support
       - php-pie-build-php82
       - php-pie-build-php83
       - php-pie-build-php84
@@ -8822,6 +8835,12 @@ projects:
   - name: mediawiki/php/wmerrors
     template:
       - name: php-compile-php82-to-php85
+    experimental:
+      # (T423562, T425943) Waiting for implementation of PIE support
+      - php-pie-build-php82
+      - php-pie-build-php83
+      - php-pie-build-php84
+      - php-pie-build-php85
 
   - name: mediawiki/oauthclient-php
     template:
