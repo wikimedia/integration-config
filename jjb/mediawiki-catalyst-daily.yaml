@@ -1,6 +1,8 @@
 - job:
     name: catalyst-daily-VisualEditor
     node: Docker
+    triggers:
+        - timed: '0 8 * * *'
     parameters:
         - string:
             name: 'ZUUL_URL'
@@ -11,6 +13,9 @@
         - string:
             name: 'ZUUL_REF'
             default: 'master'
+        - string:
+            name: 'ZUUL_PIPELINE'
+            default: 'daily'
     builders:
         - setup
         - docker-run-with-log-cache-src:
