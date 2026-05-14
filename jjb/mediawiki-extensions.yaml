@@ -319,6 +319,9 @@
             name: 'ZUUL_CHANGE'
             default: 'daily'
         - string:
+            name: 'ZUUL_PIPELINE'
+            default: 'daily'
+        - string:
             name: 'BASE_LOG_PATH'
             description: 'Used as the wikilambda ref as this is what is available from zuul'
             default: ' '
