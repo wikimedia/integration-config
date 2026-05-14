@@ -667,6 +667,9 @@ StructuredNavigation:
 StopForumSpam:
   - AbuseFilter
 
+Survey:
+  - AdminLinks
+
 TEI:
   - Math
 
