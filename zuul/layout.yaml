@@ -9280,6 +9280,12 @@ projects:
     gate-and-submit:
       - labs-tools-WdTmCollab-tox
 
+  - name: labs/tools/wdaudiolex-fe
+    test:
+      - generic-node24
+    gate-and-submit:
+      - generic-node24
+
   - name: labs/tools/ldap
     test:
       - labs-tools-ldap-tox
