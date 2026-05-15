@@ -936,3 +936,6 @@ Wikisource:
 WP25EasterEggs:
   - CommunityConfiguration
   - Wikibase
+
+WSOAuth:
+  - PluggableAuth
