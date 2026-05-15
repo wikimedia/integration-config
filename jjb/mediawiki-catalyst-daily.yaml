@@ -72,3 +72,78 @@
                           See $BUILD_URL for details.
             failure:      true
             unstable:     true
+
+- job:
+    name: catalyst-daily-CampaignEvents
+    node: Docker
+    triggers:
+        - timed: '5 8 * * *'
+    parameters:
+        - string:
+            name: 'ZUUL_URL'
+            default: 'https://gerrit.wikimedia.org/r/p'
+        - string:
+            name: 'ZUUL_PROJECT'
+            default: 'mediawiki/extensions/CampaignEvents'
+        - string:
+            name: 'ZUUL_REF'
+            default: 'master'
+        - string:
+            name: 'ZUUL_PIPELINE'
+            default: 'daily'
+    builders:
+        - setup
+        - docker-run-with-log-cache-src:
+              image: docker-registry.wikimedia.org/repos/test-platform/catalyst/catalyst-ci-client:latest
+              entrypoint: '/srv/app/deploy_env.py'
+              environment:
+                  PROJECT_SLUG: 'mw-ext-ce'
+                  CI_JOB_ID: 'daily'
+                  CHART_NAME: 'mediawiki'
+                  # Setting an ingress without the env id to match deploy_env.py
+                  JSON_VALUES: '{ "mediawikiCore": { "ingress": "mw-ext-ce-ci-daily.catalyst.wmcloud.org" }, "extensions": [ { "name": "CampaignEvents", "enable": true, "branch": "master" }, { "name": "cldr", "enable": true, "branch": "master" } ], "skins": [ { "name": "Vector", "enable": true, "branch": "master" } ] }'
+                  ENV_API_PATH: 'https://api.catalyst.wmcloud.org/api/environments'
+                  EXPIRY_TIME_HOURS: '1'
+                  LOG_DIR: '/log'
+        - docker-run-with-log-cache-src:
+              image: docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1-s1
+              environment:
+                  MEDIAWIKI_USER: 'Admin'
+                  MEDIAWIKI_PASSWORD: 'dockerpass'
+                  MW_SCRIPT_PATH: '/w'
+                  FORCE_COLOR: '1'
+              entrypoint: '/bin/bash'
+              args: '-c "cp /log/deploy.env .env && /run-with-xvfb.sh selenium-test"'
+    wrappers:
+        - timeout:
+            timeout: 30
+            fail: true
+        - credentials-binding:
+            - text:
+                credential-id: mwext-catalyst-daily-api-key
+                variable: CATALYST_API_TOKEN
+    publishers:
+        - archive-log-allow-empty
+        - postbuildscript:
+            builders:
+                - build-on:
+                    - SUCCESS
+                    - FAILURE
+                    - UNSTABLE
+                    - ABORTED
+                  build-steps:
+                    - shell: |
+                        eval "$(cat log/deploy.env)"
+                        curl -X "DELETE" "https://api.catalyst.wmcloud.org/api/environments/${ENV_ID}" \
+                          -H "Authorization: ApiToken ${CATALYST_API_TOKEN}"
+        - teardown
+        # Temporarily, e-mail Vaughn on failures
+        - email-ext:
+            recipients:   vwalters@wikimedia.org
+            content-type: text
+            subject:      Broken build $BUILD_TAG
+            body:         |
+                          The build $BUILD_NUMBER for catalyst-daily-CampaignEvents has failed.
+                          See $BUILD_URL for details.
+            failure:      true
+            unstable:     true
