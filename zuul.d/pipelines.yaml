@@ -17,29 +17,29 @@
         - event: patchset-created
         - event: change-restored
         - event: comment-added
-          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*recheck
-        - event: comment-added
-          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*retest
+          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*v14-(recheck|retest)
 
-- pipeline:
-    name: gate
-    description: |
-      Changes that have been approved are enqueued in order in this
-      pipeline, and if they pass tests, will be merged.
-    manager: dependent
-    post-review: True
-    require:
-      gerrit.wikimedia.org:
-        open: True
-        current-patchset: True
-    trigger:
-      gerrit.wikimedia.org:
-        - event: comment-added
-          branch:
-            - regex: ^(?:refs/meta/config|wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|fundraising/REL|REL)
-              negate: true
-          email:
-            - regex: ^(?:l10n-bot@translatewiki\.net).*$
-              negate: true
-          approval:
-            - Code-Review: 2
+# TODO Enable once we're ready to test the Zuul v14 trusted build node and
+# gating logic
+#- pipeline:
+#    name: gate
+#    description: |
+#      Changes that have been approved are enqueued in order in this
+#      pipeline, and if they pass tests, will be merged.
+#    manager: dependent
+#    post-review: True
+#    require:
+#      gerrit.wikimedia.org:
+#        open: True
+#        current-patchset: True
+#    trigger:
+#      gerrit.wikimedia.org:
+#        - event: comment-added
+#          branch:
+#            - regex: ^(?:refs/meta/config|wmf/(\d\.\d{2}\.\d-wmf\.\d{1,2}|branch_cut_pretest)|fundraising/REL|REL)
+#              negate: true
+#          email:
+#            - regex: ^(?:l10n-bot@translatewiki\.net).*$
+#              negate: true
+#          approval:
+#            - Code-Review: 2
