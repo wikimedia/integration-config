@@ -1,4 +1,4 @@
-FROM {{ "node20" | image_tag }}
+FROM {{ "node24" | image_tag }}
 
 USER root
 RUN npm install -g ajv-cli
