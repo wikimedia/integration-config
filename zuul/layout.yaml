@@ -10007,14 +10007,8 @@ projects:
       - name: tox
 
   - name: wikimedia/fundraising/dash
-    test:
-      - generic-node20-browser
-    gate-and-submit:
-      - generic-node20-browser
-    experimental:
-      # Not-yet-supported language runtimes
-      - generic-node24-browser
-      - generic-node26-browser
+    template:
+      - name: node24-browser
 
   - name: wikimedia/fundraising/tools/DjangoBannerStats
     template:
