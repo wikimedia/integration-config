@@ -2229,16 +2229,6 @@ project-templates:
       # Not-yet-supported language runtimes
       - generic-node26
 
-  - name: node20-to-node24
-    test:
-      - generic-node24
-    gate-and-submit:
-      - generic-node20
-      - generic-node24
-    experimental:
-      # Not-yet-supported language runtimes
-      - generic-node26
-
   - name: node20-browser
     test:
       - generic-node20-browser
@@ -2611,7 +2601,7 @@ projects:
 
   - name: integration/visualdiff
     template:
-      - name: node20
+      - name: node24
 
   - name: integration/zuul
     experimental:
@@ -2718,7 +2708,7 @@ projects:
 
   - name: performance/bttostatsv
     template:
-      - name: node20
+      - name: node24
 
   - name: performance/statsv
     template:
@@ -2726,11 +2716,11 @@ projects:
 
   - name: performance/synthetic-monitoring-tests
     template:
-      - name: node20
+      - name: node24
 
   - name: performance/mobile-synthetic-monitoring-tests
     template:
-      - name: node20
+      - name: node24
 
   - name: performance/coal
     template:
@@ -2738,7 +2728,7 @@ projects:
 
   - name: performance/docroot
     template:
-      - name: node20
+      - name: node24
 
   - name: performance/fresnel
     template:
@@ -2752,11 +2742,11 @@ projects:
 
   - name: performance/perfromance
     template:
-      - name: node20
+      - name: node24
 
   - name: performance/WikimediaDebug
     template:
-      - name: node20
+      - name: node24
 
   - name: performance/xhgui-vendor
     template:
@@ -2764,7 +2754,7 @@ projects:
 
   - name: releng/phatality
     template:
-      - name: node20
+      - name: node24
 
   - name: releng/local-charts
     experimental:
@@ -8441,7 +8431,7 @@ projects:
 
   - name: 3d2png
     template:
-      - name: node20
+      - name: node24
 
     # apertium
   - name: mediawiki/services/apertium
@@ -8456,7 +8446,7 @@ projects:
 
   - name: mapdata
     template:
-      - name: node20
+      - name: node24
 
   - name: mediawiki/services/change-propagation
     test:
@@ -8531,7 +8521,7 @@ projects:
 
   - name: mediawiki/services/texvcjs
     template:
-      - name: node20-to-node24
+      - name: node24
 
   - name: mediawiki/services/mobileapps
     template:
@@ -8572,7 +8562,7 @@ projects:
 
   - name: mediawiki/services/parsoid/testreduce
     template:
-     - name: node20-to-node24
+     - name: node24
 
   - name: mediawiki/services/poolcounter
     template:
@@ -8713,7 +8703,7 @@ projects:
 
   - name: analytics/aqs
     template:
-      - name: node20
+      - name: node24
 
   - name: analytics/blog
     template:
@@ -8721,7 +8711,6 @@ projects:
 
   - name: analytics/dashiki
     experimental:
-      - generic-node20
       - generic-node24
       - generic-node26
 
@@ -8968,7 +8957,7 @@ projects:
   - name: mediawiki/libs/LangConv
     template:
       - name: mediawiki-php-library-php83-to-php85
-      - name: node20
+      - name: node24
 
   - name: mediawiki/libs/less.php
     template:
@@ -9728,7 +9717,7 @@ projects:
 
   - name: design/landing-page
     template:
-      - name: node20
+      - name: node24
 
   - name: research/landing-page
     test:
@@ -9738,7 +9727,7 @@ projects:
 
   - name: wikimedia/security/landing-page
     template:
-      - name: node20
+      - name: node24
 
   - name: oojs/core
     test:
@@ -9772,7 +9761,7 @@ projects:
 
   - name: jsdoc/wmf-theme
     template:
-      - name: node20
+      - name: node24
 
   - name: unicodejs
     template:
@@ -9850,7 +9839,7 @@ projects:
 
   - name: wikibase/new-lexeme-special-page
     template:
-      - name: node20-browser
+      - name: node24-browser
 
   - name: wikibase/termbox
     test:
