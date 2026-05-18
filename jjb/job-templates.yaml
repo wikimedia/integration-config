@@ -711,7 +711,7 @@
 - job-template:
     name: 'selenium-daily-{sitename}-{project}'
     node: Docker
-    docker_image_var: 'docker-registry.wikimedia.org/releng/node20-test-browser:20.20.2-s1'
+    docker_image_var: 'docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1-s1'
     failure: true
     unstable: true
     still_failing: false
