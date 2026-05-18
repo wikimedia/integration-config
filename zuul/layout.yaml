@@ -3718,6 +3718,8 @@ projects:
     gate-and-submit:
       - gerrit
       - gerrit-node24
+    experimental:
+      - gerrit-node26
 
   - name: operations/software/homer
     test:
