@@ -9718,6 +9718,9 @@ projects:
       - codex-node24-doc-tag-publish
       # … and also over-write the version at /latest/ for a stable link
       - codex-node24-doc-latest-publish
+    experimental:
+      # Not-yet-supported language runtimes
+      - branchdeploy-codex-node26-npm
 
   - name: design/codex-php
     template:
