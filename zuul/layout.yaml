@@ -2229,16 +2229,6 @@ project-templates:
       # Not-yet-supported language runtimes
       - generic-node26
 
-  - name: node20-browser
-    test:
-      - generic-node20-browser
-    gate-and-submit:
-      - generic-node20-browser
-    experimental:
-      # Not-yet-supported language runtimes
-      - generic-node24-browser
-      - generic-node26-browser
-
   - name: node24-browser
     test:
       - generic-node24-browser
@@ -10017,8 +10007,14 @@ projects:
       - name: tox
 
   - name: wikimedia/fundraising/dash
-    template:
-      - name: node20-browser
+    test:
+      - generic-node20-browser
+    gate-and-submit:
+      - generic-node20-browser
+    experimental:
+      # Not-yet-supported language runtimes
+      - generic-node24-browser
+      - generic-node26-browser
 
   - name: wikimedia/fundraising/tools/DjangoBannerStats
     template:
