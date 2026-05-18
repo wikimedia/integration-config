@@ -645,8 +645,6 @@
 - project:
     name: 'generic'
     node_version:
-        - node20:
-            image: docker-registry.wikimedia.org/releng/node20-test-browser:20.20.2-s1
         - node24:
             image: docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1-s1
         - node26:
@@ -662,8 +660,6 @@
        # The basic jobs images do not have Web browsers:
         - '{name}-{node_version}':
             node_version: &node_without_browsers
-                - node20:
-                    image: docker-registry.wikimedia.org/releng/node20-test:20.20.2-s1
                 - node24:
                     image: docker-registry.wikimedia.org/releng/node24-test:24.14.1-s1
                 - node26:
