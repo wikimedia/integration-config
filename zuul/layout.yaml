@@ -2210,16 +2210,6 @@ project-templates:
       - php-pie-build-php84
       - php-pie-build-php85
 
-  - name: node20
-    test:
-      - generic-node20
-    gate-and-submit:
-      - generic-node20
-    experimental:
-      # Not-yet-supported language runtimes
-      - generic-node24
-      - generic-node26
-
   - name: node24
     test:
       - generic-node24
