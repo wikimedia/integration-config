@@ -9706,22 +9706,18 @@ projects:
 
   - name: design/codex
     template:
-      - name: node20-browser
+      - name: node24-browser
     test:
-      - branchdeploy-codex-node20-npm
+      - branchdeploy-codex-node24-npm
     postmerge:
-      - codex-node20-doc-publish
+      - codex-node24-doc-publish
       # We want to use the special `npm run coverage` job for Codex
-      - generic-node20-browser-direct-coverage-publish
+      - generic-node24-browser-direct-coverage-publish
     publish:
       # Use `npm run doc-release` when publishing docs for a release tag
-      - codex-node20-doc-tag-publish
+      - codex-node24-doc-tag-publish
       # … and also over-write the version at /latest/ for a stable link
-      - codex-node20-doc-latest-publish
-    experimental:
-      # Not-yet-supported language runtimes
-      - branchdeploy-codex-node24-npm
-      - branchdeploy-codex-node26-npm
+      - codex-node24-doc-latest-publish
 
   - name: design/codex-php
     template:
