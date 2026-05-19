@@ -248,6 +248,20 @@
                     ENV_API_PATH: 'https://api.catalyst.wmcloud.org/api/environments'
                     EXPIRY_TIME_HOURS: '1'
                     LOG_DIR: '/log'
+          - docker-run-with-log-cache-src: &wikilambda-catalyst-docker-api-tests
+                image: docker-registry.wikimedia.org/repos/abstract-wiki/ci-images/curl-jq:latest
+                # The src checkout is mounted at /src; curl-jq's default WORKDIR is
+                # /srv/app, so pin the workdir or the relative run.sh test never matches.
+                workdir: /src
+                # MW_SERVER is read from /log/deploy.env (written by the deploy step).
+                # The runner gracefully skips when tests/catalyst/run.sh is absent, so
+                # this builder is a no-op until the WikiLambda side of T343378 lands.
+                entrypoint: '/bin/bash'
+                args: >-
+                  -c 'source /log/deploy.env;
+                  if [ -f tests/catalyst/run.sh ]; then
+                  bash tests/catalyst/run.sh "$MW_SERVER";
+                  else echo "No tests/catalyst/run.sh in this checkout; skipping (suites are opt-in)."; fi'
           - docker-run-with-log-cache-src: &wikilambda-catalyst-docker-test
                 image: docker-registry.wikimedia.org/releng/node24-test-browser:24.14.1-s1
                 environment:
@@ -295,6 +309,7 @@
         - docker-ci-src-setup-simple
         - docker-pull-and-report-image: *wikilambda-catalyst-docker-pull
         - docker-run-with-log-cache-src: *wikilambda-catalyst-docker-deploy
+        - docker-run-with-log-cache-src: *wikilambda-catalyst-docker-api-tests
         - docker-run-with-log-cache-src: *wikilambda-catalyst-docker-test
     publishers:
         - archive-log-allow-empty
