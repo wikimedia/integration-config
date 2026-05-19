@@ -16,37 +16,6 @@
      - archive-log-allow-empty
      - docker-cleanup
 
-- job-template:
-    name: 'wikipeg-special-{node-plus-php}-composer'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-         image: '{docker_image}'
-         entrypoint: composer
-         workdir: /src
-         args: 'install'
-     - docker-run-with-log-cache-src:
-         image: '{docker_image}'
-         entrypoint: npm
-         workdir: /src
-         args: 'cit'
-    publishers:
-     - archive-log-allow-empty
-     - teardown
-
-- project:
-    name: wikipeg
-    jobs:
-        - wikipeg-special-{node-plus-php}-composer:
-            node-plus-php:
-                - node24-plus-php83:
-                    docker_image: docker-registry.wikimedia.org/releng/node24-test-browser-php83-composer:24.14.1-s2
-                - node26-plus-php83:
-                    docker_image: docker-registry.wikimedia.org/releng/node26-test-browser-php83-composer:26.0.0
-
 - project:
     name: parsoidsvc
     jobs:
