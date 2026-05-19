@@ -704,7 +704,6 @@ TemplateStyles:
   - Scribunto
 
 TestKitchen:
-  - EventStreamConfig
   - EventLogging
   - EventBus
   - GrowthExperiments
