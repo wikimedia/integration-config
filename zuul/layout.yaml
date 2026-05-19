@@ -8859,13 +8859,7 @@ projects:
   - name: wikipeg
     template:
       - name: mediawiki-php-library-php83-to-php85
-    test:
-      - wikipeg-special-node24-plus-php83-composer
-    gate-and-submit:
-      - wikipeg-special-node24-plus-php83-composer
-    experimental:
-      # Not-yet-supported language runtimes
-      - wikipeg-special-node26-plus-php83-composer
+      - name: node24
 
   - name: WrappedString
     template:
