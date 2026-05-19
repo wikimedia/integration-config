@@ -9025,6 +9025,11 @@ projects:
     template:
       - name: mediawiki-php-library-php83-to-php85
 
+  - name: mediawiki/libs/ZestJQ
+    template:
+      - name: mediawiki-php-library-php83-to-php85
+      - name: node24
+
   - name: performance/excimer-ui-client
     template:
       - name: mediawiki-php-library-php83-to-php85
