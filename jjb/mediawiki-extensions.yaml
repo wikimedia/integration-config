@@ -208,9 +208,6 @@
         - Popups:
             recipients: qa-alerts@lists.wikimedia.org performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com # @jdrewniak
             repository: mediawiki/extensions/Popups
-        - RelatedArticles:
-            recipients: qa-alerts@lists.wikimedia.org performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com # @jdrewniak
-            repository: mediawiki/extensions/RelatedArticles
         - TwoColConflict:
             recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @awight wmde-techwish
             repository: mediawiki/extensions/TwoColConflict
