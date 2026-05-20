@@ -2735,6 +2735,7 @@ Wikibase:
     - ArticlePlaceholder
     - CirrusSearch
     - cldr
+    - ConfirmEdit
     - Echo
     - Elastica
     - GeoData
