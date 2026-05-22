@@ -2862,6 +2862,7 @@ WikimediaCustomizations:
     - EventBus
     - EventLogging
     - EventStreamConfig
+    - GlobalPreferences
     - IPReputation
     - LoginNotify
     - OATHAuth

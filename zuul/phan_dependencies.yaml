@@ -868,6 +868,7 @@ WikimediaCustomizations:
   - CentralAuth
   - EmailAuth
   - FlaggedRevs
+  - GlobalPreferences
   - IPReputation
   - LoginNotify
   - OATHAuth
