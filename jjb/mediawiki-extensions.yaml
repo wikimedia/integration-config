@@ -95,7 +95,7 @@
 
 # Phan! (T153039)
 - job-template:
-    name: 'mwext-phan-{php}'
+    name: mwext-phan-{packages-source}-{php}
     node: Docker
     properties:
      - build-discarder:
@@ -115,8 +115,8 @@
              --tmpfs /workspace/db:size=320M
          volumes:
              /srv/git: /srv/git:ro
-         # Use vendor and skip-deps
-         # We do not want to bring in MediaWiki core dev dependencies (T223397)
+         # Use skip-deps: we do not want to bring in MediaWiki core dev
+         # dependencies (T223397)
          #
          # MediaWiki installation is skipped, we do not need it. Additionally
          # we only inject the extension dependencies required by Phan, notably
@@ -125,7 +125,7 @@
          # requirement. (T232413)
          args: >
              --git-parallel=8
-             --packages-source=vendor
+             --packages-source={packages-source}
              --db=mysql --db-dir=/workspace/db
              --skip-deps
              --skip-install
@@ -178,8 +178,11 @@
             setup_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.18.0
             composer_image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3-s2
             phan_image: docker-registry.wikimedia.org/releng/quibble-bullseye-php85:1.18.0
+    packages-source:
+        - composer
+        - vendor
     jobs:
-        - 'mwext-phan-{php}'
+        - 'mwext-phan-{packages-source}-{php}'
 
 - project:
     name: wdio-selenium-daily
