@@ -1,3 +1,11 @@
+quibble-bullseye-php83 (1.18.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bullseye:
+   Stop spawning Memcached from Supervisord now that Quibble has learned to
+   start it (T397810).
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 26 May 2026 15:35:45 +0200
+
 quibble-bullseye-php83 (1.18.0) wikimedia; urgency=medium
 
   * Update Quibble to 1.18.0
