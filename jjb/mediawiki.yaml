@@ -452,7 +452,7 @@
             volumes:
                 /srv/git: /srv/git:ro
             # yamllint disable-line rule:line-length
-            args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --commands "php tests/phpunit/generatePHPUnitConfig.php && phpunit-patch-coverage check --command \"php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=. vendor/bin/phpunit\" --html /workspace/log/coverage.html"'
+            args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --command "php tests/phpunit/generatePHPUnitConfig.php && phpunit-patch-coverage check --command \"php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=. vendor/bin/phpunit\" --html /workspace/log/coverage.html"'
             logdir: '/workspace/log'
             srcdir: '/workspace/src'
     publishers:
@@ -484,7 +484,7 @@
             options: '--tmpfs /workspace/db:size=320M'
             volumes:
                 /srv/git: /srv/git:ro
-            args: '--packages-source vendor --db mysql --db-dir /workspace/db --skip-deps --commands "mediawiki-fresnel-patch"'
+            args: '--packages-source vendor --db mysql --db-dir /workspace/db --skip-deps --command "mediawiki-fresnel-patch"'
             logdir: '/workspace/log'
             srcdir: '/workspace/src'
     publishers:
@@ -519,17 +519,17 @@
 - job-template:
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage-patch'
-    quibble_args: '--skip-npm-install --commands=mwext-phpunit-coverage-patch'
+    quibble_args: '--skip-npm-install --command=mwext-phpunit-coverage-patch'
 
 - job-template:
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage'
-    quibble_args: '--skip-npm-install --commands=mwext-phpunit-coverage'
+    quibble_args: '--skip-npm-install --command=mwext-phpunit-coverage'
 
 - job-template: &mwext_phpunit_coverage_publish
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage-publish'
-    quibble_args: '--skip-npm-install --commands=mwext-phpunit-coverage'
+    quibble_args: '--skip-npm-install --command=mwext-phpunit-coverage'
     cover_dest: 'cover-extensions/$EXT_NAME'
     builders:
         - docker-castor-load
@@ -575,7 +575,7 @@
 - project:
     name: mwcore-codehealth
     packages-source: composer
-    quibble_args: '--commands=mediawiki-coverage'
+    quibble_args: --command=mediawiki-coverage
     database: mysql
     jobs:
       - mwcore-codehealth-{name}:
@@ -742,7 +742,7 @@
             --packages-source "{packages-source}"
             --git-parallel=8
             --skip-npm-install
-            --commands=mwext-phpunit-coverage
+            --command=mwext-phpunit-coverage
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
     #
@@ -775,7 +775,7 @@
     properties:
         - build-discarder:
             days-to-keep: 30
-    quibble_args: '--commands=mediawiki-coverage'
+    quibble_args: --command=mediawiki-coverage
     triggers:
      - timed: '0 3,9,15,21 * * *'
     wrappers:
@@ -944,10 +944,10 @@
                     wb-settings: 'repo'
             packages-source: composer
             quibble_args: >
-                --commands 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r {wb-settings}'
-                'cp --verbose $WORKSPACE/src/LocalSettings.php $LOG_DIR'
-                'php maintenance/update.php --quick'
-                'composer run --timeout=0 phpunit:entrypoint -- --verbose --log-junit "$LOG_DIR/junit-{sub_extension}.xml" {phpunit-params}'
+                --command 'extensions/Wikibase/build/jenkins/mw-apply-wb-settings.sh -r {wb-settings}'
+                --command 'cp --verbose $WORKSPACE/src/LocalSettings.php $LOG_DIR'
+                --command 'php maintenance/update.php --quick'
+                --command 'composer run --timeout=0 phpunit:entrypoint -- --verbose --log-junit "$LOG_DIR/junit-{sub_extension}.xml" {phpunit-params}'
 
 - job-template:
     !!merge : *job_quibble

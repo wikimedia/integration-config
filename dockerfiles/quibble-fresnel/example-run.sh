@@ -16,4 +16,4 @@ docker run \
     --volume /"$PWD"/log:/workspace/log \
     --rm \
     docker-registry.wikimedia.org/releng/quibble-fresnel:latest \
-    --packages-source vendor --db mysql --db-dir /workspace/db --skip-deps --commands mediawiki-fresnel-patch
+    --packages-source vendor --db mysql --db-dir /workspace/db --skip-deps --command mediawiki-fresnel-patch
