@@ -1562,6 +1562,7 @@ project-templates:
       - mwext-phan-vendor-php83
     php:
       - quibble-vendor-mysql-php84
+      - quibble-vendor-mysql-php85
     gate-and-submit:
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php84
@@ -1664,6 +1665,7 @@ project-templates:
       # - mwext-phan-composer-php83
     php:
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
     gate-and-submit:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php83-selenium
@@ -1810,6 +1812,7 @@ project-templates:
       - mwext-phan-vendor-php83
     php:
       - quibble-vendor-mysql-php84
+      - quibble-vendor-mysql-php85
     gate-and-submit:
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php84
@@ -1903,6 +1906,7 @@ project-templates:
       # - mwext-phan-composer-php83
     php:
       - quibble-composer-mysql-php84
+      - quibble-composer-mysql-php85
     gate-and-submit:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
