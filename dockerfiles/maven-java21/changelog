@@ -1,0 +1,5 @@
+maven-java21 (0.1) wikimedia; urgency=medium
+
+  * Maven with OpenJDK 21 based on Debian Trixie
+
+ -- Javier Monton <jmonton@wikimedia.org>  Tue, 26 May 2026 17:45:07 +0200
