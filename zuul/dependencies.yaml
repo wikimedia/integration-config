@@ -1325,6 +1325,7 @@ CommunityRequests:
     - VisualEditor
     - TemplateData
     # extras
+    - ConfirmEdit
     - DiscussionTools
     - Linter
     - Translate
