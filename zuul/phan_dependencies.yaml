@@ -762,7 +762,6 @@ VisualData:
 
 VisualEditor:
   - BetaFeatures
-  - GlobalBlocking
 
 VisualEditorPlus:
   - VisualEditor

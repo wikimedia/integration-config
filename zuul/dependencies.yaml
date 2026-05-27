@@ -2637,7 +2637,6 @@ VisualEditor:
     # extras
     - Cite
     - ConfirmEdit
-    - GlobalBlocking
     - DiscussionTools
     - FlaggedRevs
     - Linter
