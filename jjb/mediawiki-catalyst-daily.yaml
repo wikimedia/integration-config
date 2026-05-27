@@ -86,5 +86,10 @@
             repo: 'mediawiki/extensions/CampaignEvents'
             project-slug: 'mw-ext-ce'
             json-values: '{{ "mediawikiCore": {{ "ingress": "mw-ext-ce-ci-daily.catalyst.wmcloud.org" }}, "extensions": [ {{ "name": "CampaignEvents", "enable": true, "branch": "master" }}, {{ "name": "cldr", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - TwoColConflict:
+            trigger-time: '10 8 * * *'
+            repo: 'mediawiki/extensions/TwoColConflict'
+            project-slug: 'mw-ext-tcc'
+            json-values: '{{ "mediawikiCore": {{ "ingress": "mw-ext-tcc-ci-daily.catalyst.wmcloud.org" }}, "extensions": [ {{ "name": "TwoColConflict", "enable": true, "branch": "master" }}, {{ "name": "BetaFeatures", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
