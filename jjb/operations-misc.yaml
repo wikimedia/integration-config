@@ -125,6 +125,11 @@
     node: Docker
     triggers:
      - zuul
+    wrappers:
+     - timeout:
+         timeout: 60 # minutes
+         fail: true
+     - timestamps
     builders:
      - docker-src-dir
      - docker-ci-src-setup-simple
