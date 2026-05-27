@@ -1,3 +1,9 @@
+helm-linter (0.8.0) wikimedia; urgency=medium
+
+   Add dependencies for api-gateway tests: make, lua5.3, lua-busted, python-yaml
+
+ -- Daniel Kinzler <dkinzler@wikimedia.org>  Wed, 27 May 2026 10:04:00 +0200
+
 helm-linter (0.7.8-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:

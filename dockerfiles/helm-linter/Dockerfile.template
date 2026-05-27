@@ -15,7 +15,26 @@ COPY --from=build /go/bin/semver-cli /usr/bin/
 # envoy-future is a bullseye component but it will run on buster as well
 ADD envoy-future.list /etc/apt/sources.list.d/envoy-future.list
 
-RUN {{ "helm311 helm317 rake envoyproxy helmfile helm-diff ruby-git istioctl python3-minimal python3-yaml kubeconform python3-pip wmf-certificates" | apt_install }} && \
+{% set apt_packages -%}
+helm311
+helm317
+helmfile
+helm-diff
+rake
+make
+kubeconform
+envoyproxy
+istioctl
+ruby-git
+python3-minimal
+python3-pip
+python3-yaml
+lua5.3
+lua-busted
+wmf-certificates
+{%- endset -%}
+
+RUN {{ apt_packages | apt_install }} && \
     mkdir -p /etc/envoy/ssl $HELM_HOME $HELM_CONFIG_HOME $HELM_DATA_HOME $HELM_CACHE_HOME && \
     chmod -R 777 /etc/envoy /var/log/envoy && \
     helm3 repo list | tail -n +2 | awk '{print $1}' | xargs --no-run-if-empty helm3 repo remove && \
