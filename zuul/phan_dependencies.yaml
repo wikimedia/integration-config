@@ -584,6 +584,9 @@ ProofreadPage:
   - BetaFeatures
   - CodeMirror
 
+Produnto:
+  - SyntaxHighlight_GeSHi
+
 PropertySuggester:
   - Wikibase
   - EventLogging
