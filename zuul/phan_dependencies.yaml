@@ -754,6 +754,7 @@ UserStatus:
   - BlogPage
 
 UploadWizard:
+  - ConfirmEdit
   - EventLogging
   - CodeEditor
   - CodeMirror

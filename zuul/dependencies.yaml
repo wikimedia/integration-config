@@ -2578,6 +2578,7 @@ UploadWizard:
     # no requirements in extension.json
     # extras
     - AbuseFilter
+    - ConfirmEdit
     - EventLogging
     - SpamBlacklist
     - WikimediaMessages
