@@ -10,3 +10,19 @@
      - archive:
         artifacts: 'log/'
         allow-empty: true
+
+- publisher:
+    name: notify-releng-irc
+    publishers:
+      - ircbot:
+          strategy: failure-and-fixed
+          notify-start: false
+          notify-committers: false
+          notify-culprits: false
+          notify-upstream: false
+          notify-fixers: false
+          message-type: summary
+          matrix-notifier: only-parent
+          channels:
+              - name: '#wikimedia-releng'
+                notify-only: true

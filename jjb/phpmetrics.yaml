@@ -79,7 +79,7 @@
                 docdest: '{basename}/master/phpmetrics'
       publishers:
           - archive-log-allow-empty
-          - beta-irc # Spam #wikimedia-releng on failure
+          - notify-releng-irc
           - email-ext:
                 recipients: '{emailRecipients}'
                 content-type: html

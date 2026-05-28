@@ -43,7 +43,7 @@
           /usr/local/bin/wmf-beta-update-databases.py
 
     publishers:
-      - beta-irc
+      - notify-releng-irc
 
     wrappers:
       - timestamps
@@ -86,7 +86,7 @@
       - shell: /usr/bin/scap prep auto
 
     publishers:
-      - beta-irc
+      - notify-releng-irc
       - email-ext:
           recipients: qa-alerts@lists.wikimedia.org betacluster-alerts@lists.wikimedia.org
           attach-build-log: false
@@ -134,7 +134,7 @@
           timeout: 60
 
     publishers:
-      - beta-irc
+      - notify-releng-irc
       - email-ext:
           recipients: qa-alerts@lists.wikimedia.org betacluster-alerts@lists.wikimedia.org
           content-type: 'html'
@@ -142,23 +142,6 @@
           aborted: true
           failure: true
           fixed: true
-
-# Also used in mediawiki-core-code-coverage
-- publisher:
-    name: beta-irc
-    publishers:
-      - ircbot:
-          strategy: failure-and-fixed
-          notify-start: false
-          notify-committers: false
-          notify-culprits: false
-          notify-upstream: false
-          notify-fixers: false
-          message-type: summary
-          matrix-notifier: only-parent
-          channels:
-              - name: '#wikimedia-releng'
-                notify-only: true
 
 - view:
     name: Beta

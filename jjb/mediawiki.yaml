@@ -125,7 +125,7 @@
         - archive:
             artifacts: 'console.txt,errors.txt'
             allow-empty: true
-        - beta-irc  # Spam #wikimedia-releng on failure
+        - notify-releng-irc
         - docker-cleanup
 
 - builder:
@@ -812,7 +812,7 @@
         - archive-log-allow-empty
         - cloverphp:
             xml-location: 'log/clover.xml'
-        - beta-irc  # Spam #wikimedia-releng on failure
+        - notify-releng-irc
         - docker-cleanup
 
 - job-group:
