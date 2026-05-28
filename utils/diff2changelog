@@ -10,12 +10,12 @@
 #  $ diff --recursive --brief ./output-parent ./output-proposed \
 #    | ./utils/diff2changelog
 #  Affected jobs:
-#   - beta-scap-sync-world
+#   - mediawiki-core-phan-only-php83
 #  Deleted jobs:
-#   - beta-code-update-eqiad
-#   - beta-update-databases-eqiad
+#   - mwext-phan-php83
 #  New jobs:
-#   - beta-code-update
+#   - mwext-phan-composer-php83
+#   - mwext-phan-vendor-php83
 #  $
 #
 

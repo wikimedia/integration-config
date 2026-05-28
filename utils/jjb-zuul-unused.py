@@ -75,8 +75,7 @@ def get_jjb_jobs():
     run independently of Zuul and don't need a zuul/layout.yaml reference.
     Jobs triggered by other Jenkins jobs are also excluded, as they don't need
     a direct Zuul reference (e.g. alerts-pipeline-test triggered by
-    trigger-alerts-pipeline-test, or beta-scap-sync-world triggered by
-    beta-code-update-eqiad).
+    trigger-alerts-pipeline-test).
     """
     with tempfile.TemporaryDirectory() as tmpdir:
         try:
