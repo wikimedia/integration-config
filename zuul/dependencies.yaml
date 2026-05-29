@@ -1220,6 +1220,7 @@ CheckUser:
     - GrowthExperiments
     - IPInfo
     - MobileFrontend
+    - TestKitchen
     - TorBlock
     - VisualEditor
 
