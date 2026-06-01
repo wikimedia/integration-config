@@ -1,3 +1,9 @@
+python-all (0.5) wikimedia; urgency=medium
+
+  * add support for Pypy Python 3.11 - T423607
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 01 Jun 2026 12:12:19 +0200
+
 python-all (0.4-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bookworm:

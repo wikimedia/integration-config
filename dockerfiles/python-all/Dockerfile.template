@@ -13,6 +13,7 @@ RUN ln -s /opt/pyenv/pyenv-$TARGET_PYENV_VERSION/bin/pyenv /usr/local/bin/pyenv
 # See prerequisites at
 # https://github.com/pyenv/pyenv/wiki#suggested-build-environment
 {% set python_build_deps -%}
+bzip2
 curl
 gcc
 libbz2-dev
@@ -43,10 +44,9 @@ RUN curl --silent --fail --location \
 
 # The first minor version is the default for the major series
 # Eg 3.9 3.7  would have python3 set to 3.9
-RUN pyenv install   2.7 3.9 3.7 3.8 3.10 3.11 3.12 3.13 3.14 \
-    && pyenv global 2.7 3.9 3.7 3.8 3.10 3.11 3.12 3.13 3.14 \
+RUN pyenv install   2.7 3.9 3.7 3.8 3.10 3.11 3.12 3.13 3.14 pypy3.11-7.3.20 \
+    && pyenv global 2.7 3.9 3.7 3.8 3.10 3.11 3.12 3.13 3.14 pypy3.11-7.3.20 \
     && pyenv versions
-# NOTE: pypy is installed from the Debian package
 
 #####################
 # Run image         #
@@ -70,7 +70,6 @@ libxmlsec1
 zlib1g
 {% endset %}
 {% set misc_deps -%}
-pypy3
 gcc
 g++
 libc-dev

@@ -1,3 +1,10 @@
+tox-v4 (0.5) wikimedia; urgency=high
+
+   Refresh for update in parent image python-all:
+   Add support for Pypy Python 3.11 - T423607
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  2 Jun 2026 16:22:17 +0200
+
 tox-v4 (0.4-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bookworm:
