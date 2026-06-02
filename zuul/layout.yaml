@@ -2101,8 +2101,6 @@ project-templates:
     test: &growth-experiments-selenium-gate_jobs
       - quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-php83
     gate-and-submit: *growth-experiments-selenium-gate_jobs
-    test-wmf: *growth-experiments-selenium-gate_jobs
-    gate-and-submit-wmf: *growth-experiments-selenium-gate_jobs
 
   - name: extension-coverage
     postmerge:
