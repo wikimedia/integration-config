@@ -460,6 +460,8 @@
         - policy-violation-cope-a-9b-publish
         - qwen36
         - qwen36-publish
+        - editing-suggestions
+        - editing-suggestions-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -488,6 +490,8 @@
         # trigger-inference-services-pipeline-policy-violation-cope-a-9b-publish
         # trigger-inference-services-pipeline-qwen36
         # trigger-inference-services-pipeline-qwen36-publish
+        # trigger-inference-services-pipeline-editing-suggestions
+        # trigger-inference-services-pipeline-editing-suggestions-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -516,6 +520,8 @@
         # inference-services-pipeline-policy-violation-cope-a-9b-publish
         # inference-services-pipeline-qwen36
         # inference-services-pipeline-qwen36-publish
+        # inference-services-pipeline-editing-suggestions
+        # inference-services-pipeline-editing-suggestions-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:

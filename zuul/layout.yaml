@@ -1249,6 +1249,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'src/models/qwen36/.*'
 
+  - name: ^trigger-inference-services-pipeline-editing-suggestions
+    files:
+        - '.pipeline/editing_suggestions/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/editing_suggestions/.*'
+
   # End of meta jobs (the ones starting with ^)
 
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
@@ -2454,6 +2460,7 @@ projects:
       - trigger-inference-services-pipeline-pre-commit-check
       - trigger-inference-services-pipeline-revise-tone-task-generator
       - trigger-inference-services-pipeline-qwen36
+      - trigger-inference-services-pipeline-editing-suggestions
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-revertrisk
@@ -2461,6 +2468,7 @@ projects:
       - trigger-inference-services-pipeline-pre-commit-check
       - trigger-inference-services-pipeline-revise-tone-task-generator
       - trigger-inference-services-pipeline-qwen36
+      - trigger-inference-services-pipeline-editing-suggestions
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-revertrisk-publish
@@ -2483,6 +2491,7 @@ projects:
       - trigger-inference-services-pipeline-policy-violation-gpt-oss-safeguard-publish
       - trigger-inference-services-pipeline-policy-violation-cope-a-9b-publish
       - trigger-inference-services-pipeline-qwen36-publish
+      - trigger-inference-services-pipeline-editing-suggestions-publish
 
   - name: integration/config
     test-prio:
