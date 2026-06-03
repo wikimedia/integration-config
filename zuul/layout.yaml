@@ -1261,6 +1261,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'src/models/editing_suggestions/.*'
 
+  - name: ^trigger-inference-services-pipeline-liftwing-openapi-server
+    files:
+        - '.pipeline/liftwing_openapi_server/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/liftwing_openapi_server/.*'
+
   # End of meta jobs (the ones starting with ^)
 
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
@@ -2467,6 +2473,7 @@ projects:
       - trigger-inference-services-pipeline-revise-tone-task-generator
       - trigger-inference-services-pipeline-qwen36
       - trigger-inference-services-pipeline-editing-suggestions
+      - trigger-inference-services-pipeline-liftwing-openapi-server
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-revertrisk
@@ -2475,6 +2482,7 @@ projects:
       - trigger-inference-services-pipeline-revise-tone-task-generator
       - trigger-inference-services-pipeline-qwen36
       - trigger-inference-services-pipeline-editing-suggestions
+      - trigger-inference-services-pipeline-liftwing-openapi-server
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-revertrisk-publish
@@ -2499,6 +2507,7 @@ projects:
       - trigger-inference-services-pipeline-policy-violation-cope-b-a4b-publish
       - trigger-inference-services-pipeline-qwen36-publish
       - trigger-inference-services-pipeline-editing-suggestions-publish
+      - trigger-inference-services-pipeline-liftwing-openapi-server-publish
 
   - name: integration/config
     test-prio:
