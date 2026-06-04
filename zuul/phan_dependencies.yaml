@@ -319,6 +319,7 @@ EntitySchema:
 EventBus:
   - CentralNotice
   - EventStreamConfig
+  - Wikibase
 
 EventLogging:
   - SyntaxHighlight_GeSHi
