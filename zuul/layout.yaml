@@ -1268,6 +1268,7 @@ jobs:
         - '.pipeline/liftwing_openapi_server/blubber.yaml'
         - '.pipeline/config.yaml'
         - 'src/models/liftwing_openapi_server/.*'
+        - 'docs/.*'
 
   # End of meta jobs (the ones starting with ^)
 
