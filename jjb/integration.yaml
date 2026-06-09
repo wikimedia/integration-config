@@ -159,6 +159,10 @@
             docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.5
             docsrc: 'doc/build/html'
             docdest: 'quibble'
+        - '{name}-tox-coverage-publish':
+            coverenv: 'cover'
+            coversrc: 'htmlcov'
+            coverdest: 'quibble'
         - 'integration-quibble-fullrun-{type}-{php}':
             php:
                 - php83:

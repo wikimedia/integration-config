@@ -2575,6 +2575,7 @@ projects:
         - integration-quibble-fullrun-extensions-php83
         - integration-quibble-fullrun-extensions-phpunit-php83
     postmerge:
+      - integration-quibble-tox-coverage-publish
       - integration-quibble-tox-publish
 
   - name: integration/reporting
