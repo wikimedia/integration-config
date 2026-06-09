@@ -67,6 +67,27 @@
      - archive-log-dir
      - teardown
 
+- job-template:
+    name: '{name}-tox-coverage-publish'
+    node: Docker
+    concurrent: false
+    docker_image_var: docker-registry.wikimedia.org/releng/tox-v3:0.5
+    triggers:
+      - zuul
+    builders:
+      - docker-castor-load
+      - docker-log-dir
+      - docker-src-dir
+      - docker-run-with-log-cache-src:
+          image: '{obj:docker_image_var}'
+          args: '-e "{obj:coverenv|cover}"'
+      - cover-publish:
+          src: 'src/{obj:coversrc|htmlcov}'
+          dest: '{coverdest}'
+    publishers:
+      - archive-log-dir
+      - teardown
+
 # Same but for ref-update, eg in 'publish'
 - job-template:
     name: '{name}-tox-tag-publish'
