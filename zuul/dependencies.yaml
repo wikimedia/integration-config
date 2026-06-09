@@ -647,6 +647,7 @@ BlueSpiceProDistributionConnector:
   recurse: false
   dependencies:
     # From extension.json:
+    - BlueSpiceDistributionConnector
     - BlueSpiceFoundation
     # Transitive requirements:
     - OOJSPlus
