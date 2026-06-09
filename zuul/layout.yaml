@@ -6333,7 +6333,7 @@ projects:
 
   - name: mediawiki/extensions/DateTimeTools
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble
 
   - name: mediawiki/extensions/DebugTemplates
     template:
