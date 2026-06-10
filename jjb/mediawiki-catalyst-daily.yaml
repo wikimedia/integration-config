@@ -96,5 +96,10 @@
             repo: 'mediawiki/extensions/Echo'
             project-slug: 'mw-ext-echo'
             json-values: '{{ "mediawikiCore": {{ "ingress": "mw-ext-echo-ci-daily.catalyst.wmcloud.org" }}, "extensions": [ {{ "name": "Echo", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - AdvancedSearch:
+            trigger-time: '20 8 * * *'
+            repo: 'mediawiki/extensions/AdvancedSearch'
+            project-slug: 'mw-ext-as'
+            json-values: '{{ "mediawikiCore": {{ "ingress": "mw-ext-as-ci-daily.catalyst.wmcloud.org" }}, "extensions": [ {{ "name": "AdvancedSearch", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
