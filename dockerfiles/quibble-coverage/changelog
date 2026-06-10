@@ -1,3 +1,9 @@
+quibble-coverage (1.18.1-s1) wikimedia; urgency=high
+
+   Re-platform to Debian Bookworm.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed, 10 Jun 2026 12:47:10 -0400
+
 quibble-coverage (1.18.1) wikimedia; urgency=medium
 
   * Update Quibble to 1.18.1
