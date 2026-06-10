@@ -2215,6 +2215,7 @@ ReadingLists:
     - EventBus
     - EventLogging
     - EventStreamConfig
+    - SiteMatrix
     - TestKitchen
 
 RegexFun:
