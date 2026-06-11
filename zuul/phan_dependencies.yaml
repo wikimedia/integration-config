@@ -298,6 +298,7 @@ Echo:
   - CentralAuth
   - MobileFrontend
   - UserMerge
+  - TestKitchen
 
 ElectronPdfService:
   - FlaggedRevs
