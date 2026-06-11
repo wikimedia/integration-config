@@ -9803,7 +9803,7 @@ projects:
 
   - name: mediawiki/extensions/VisualEditorPlus
     template:
-      - name: extension-quibble-composer
+      - name: extension-quibble-composer-noselenium
 
   - name: wikidata/query/rdf
     # Blazegraph is not running on Java 11 and unlikely to ever be - T350587
