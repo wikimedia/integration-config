@@ -101,5 +101,10 @@
             repo: 'mediawiki/extensions/AdvancedSearch'
             project-slug: 'mw-ext-as'
             json-values: '{{ "mediawikiCore": {{ "ingress": "mw-ext-as-ci-daily.catalyst.wmcloud.org" }}, "extensions": [ {{ "name": "AdvancedSearch", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - Popups:
+            trigger-time: '25 8 * * *'
+            repo: 'mediawiki/extensions/Popups'
+            project-slug: 'mw-ext-popups'
+            json-values: '{{ "mediawikiCore": {{ "ingress": "mw-ext-popups-ci-daily.catalyst.wmcloud.org" }}, "extensions": [ {{ "name": "Popups", "enable": true, "branch": "master" }}, {{ "name": "TextExtracts", "enable": true, "branch": "master" }}, {{ "name": "PageImages", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
