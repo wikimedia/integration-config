@@ -240,6 +240,7 @@
                     PROJECT_SLUG: 'mw-ext-wl'
                     WIKILAMBDA_REF: $BASE_LOG_PATH
                     CI_JOB_ID: $ZUUL_CHANGE
+                    SECONDARY_ID: $ZUUL_PATCHSET
                     CHART_NAME: 'wikifunctions'
                     JSON_VALUES: '{"reposCache": { "use": "true", "wikiRepos": "/mnt/k3s-data/wiki-repos" }}'
                     ENV_API_PATH: 'https://api.catalyst.wmcloud.org/api/environments'
