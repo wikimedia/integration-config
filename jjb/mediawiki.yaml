@@ -520,17 +520,17 @@
 - job-template:
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage-patch'
-    quibble_args: '--commands=mwext-phpunit-coverage-patch'
+    quibble_args: '--skip-npm-install --commands=mwext-phpunit-coverage-patch'
 
 - job-template:
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage'
-    quibble_args: '--commands=mwext-phpunit-coverage'
+    quibble_args: '--skip-npm-install --commands=mwext-phpunit-coverage'
 
 - job-template: &mwext_phpunit_coverage_publish
     !!merge : *job_quibble
     name: 'mwext-phpunit-coverage-publish'
-    quibble_args: '--commands=mwext-phpunit-coverage'
+    quibble_args: '--skip-npm-install --commands=mwext-phpunit-coverage'
     cover_dest: 'cover-extensions/$EXT_NAME'
     builders:
         - docker-castor-load
