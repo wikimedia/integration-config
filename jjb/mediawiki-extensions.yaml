@@ -341,6 +341,9 @@
             name: 'ZUUL_CHANGE'
             default: 'daily'
         - string:
+            name: 'ZUUL_PATCHSET'
+            default: 'daily'
+        - string:
             name: 'ZUUL_PIPELINE'
             default: 'daily'
         - string:
