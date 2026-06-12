@@ -233,6 +233,8 @@
       builders:
           # The castor setup/teardown is how the Catalyst image gets a copy of the code to test
           - setup
+          - docker-pull-and-report-image: &wikilambda-catalyst-docker-pull
+                image: docker-registry.wikimedia.org/repos/test-platform/catalyst/catalyst-ci-client:latest
           - docker-run-with-log-cache-src: &wikilambda-catalyst-docker-deploy
                 image: docker-registry.wikimedia.org/repos/test-platform/catalyst/catalyst-ci-client:latest
                 entrypoint: '/srv/app/deploy_env.py'
@@ -291,6 +293,7 @@
         - docker-log-dir
         - docker-src-dir
         - docker-ci-src-setup-simple
+        - docker-pull-and-report-image: *wikilambda-catalyst-docker-pull
         - docker-run-with-log-cache-src: *wikilambda-catalyst-docker-deploy
         - docker-run-with-log-cache-src: *wikilambda-catalyst-docker-test
     publishers:

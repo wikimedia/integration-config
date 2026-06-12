@@ -110,6 +110,22 @@
         args: >-
           "/workspace/{dir}" -mindepth 1 -delete
 
+# Pull a Docker image and report the version (digest, creation date) the tag
+# resolved to. Use before running a mutable tag such as ':latest' so the build
+# log records exactly which image build was used, and to ensure a stale
+# locally-cached copy is never run.
+#
+# Parameter:
+#
+# image: the Docker image to pull and report on.
+- builder:
+    name: docker-pull-and-report-image
+    builders:
+        - shell: |
+            set -e +x
+            docker pull '{image}'
+            docker image inspect --format 'Using image: {{{{index .RepoDigests 0}}}} (created {{{{.Created}}}})' '{image}'
+
 # Run a Docker container using `docker run`. This builder should be used
 # wherever possible to ensure the proper common arguments that allow for
 # correct signal passing and cleanup are passed.
