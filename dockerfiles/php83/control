@@ -1,1 +1,1 @@
-Depends: ci-bullseye, php-scratch
+Depends: ci-bookworm, php-scratch

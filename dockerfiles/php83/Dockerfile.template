@@ -1,5 +1,5 @@
 # Align with SRE-provided PHP 8.3 packages (T398245).
-FROM {{ "ci-bullseye" | image_tag }} as wmfphp
+FROM {{ "ci-bookworm" | image_tag }} as wmfphp
 
 COPY wikimedia-php83.list /etc/apt/sources.list.d/wikimedia-php83.list
 
