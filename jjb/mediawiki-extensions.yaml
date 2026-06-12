@@ -168,7 +168,7 @@
             phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.18.1
         - php83:
             setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.1
-            composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.30-s2
+            composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.31
             phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.1
         - php84:
             setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.18.1
