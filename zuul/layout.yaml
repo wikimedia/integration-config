@@ -6852,7 +6852,7 @@ projects:
 
   - name: mediawiki/extensions/IssueTrackerLinks
     template:
-     - name: extension-quibble-composer
+     - name: extension-quibble-composer-noselenium
 
   - name: mediawiki/extensions/JavascriptSlideshow
     template:
