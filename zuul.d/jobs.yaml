@@ -23,7 +23,7 @@
     timeout: 1800
 
 - job:
-    parent: base
+    parent: null
     name: echo
     description: |-
       Echo a message.
