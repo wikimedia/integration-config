@@ -2447,7 +2447,6 @@ TestKitchen:
   dependencies:
     # From extension.json:
     - EventBus
-    - EventStreamConfig
     # extras
     - CommunityConfiguration
     - GrowthExperiments
