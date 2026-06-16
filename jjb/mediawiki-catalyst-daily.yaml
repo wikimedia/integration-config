@@ -18,6 +18,8 @@
             default: 'daily'
     builders:
         - setup
+        - docker-pull-and-report-image:
+              image: docker-registry.wikimedia.org/repos/test-platform/catalyst/catalyst-ci-client:latest
         - docker-run-with-log-cache-src:
               image: docker-registry.wikimedia.org/repos/test-platform/catalyst/catalyst-ci-client:latest
               entrypoint: '/srv/app/deploy_env.py'
