@@ -6484,7 +6484,7 @@ projects:
 
   - name: mediawiki/extensions/EnhancedUpload
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/ErrorHandler
     template:
