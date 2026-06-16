@@ -658,6 +658,9 @@ BlueSpiceProDistributionConnector:
     - VisualEditor
     # extras requirements
     - VisualEditorPlus
+    # extras transitive dependencies
+    - PDFCreator
+    - VueJSPlus
 
 BlueSpiceQrCode:
   recurse: false
