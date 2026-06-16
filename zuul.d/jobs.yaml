@@ -35,7 +35,7 @@
       message: "hello world"
 
 - job:
-    parent: base
+    parent: null
     name: directory-listing
     description: |-
       List the contents of the working directory.
