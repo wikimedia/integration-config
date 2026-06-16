@@ -2446,7 +2446,7 @@ TestKitchen:
   recurse: true
   dependencies:
     # From extension.json:
-    - EventLogging
+    - EventBus
     - EventStreamConfig
     # extras
     - CommunityConfiguration
