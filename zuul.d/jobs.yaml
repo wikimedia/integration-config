@@ -56,5 +56,6 @@
     nodeset: namespace
     run: playbooks/run-container/run.yaml
     vars:
-      image: docker-registry.wikimedia.org/wmfdebug:0.0.7-20260614
-      command: "echo hello world"
+      container:
+        image: docker-registry.wikimedia.org/wmfdebug:0.0.7-20260614
+        command: "echo hello world"

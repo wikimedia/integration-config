@@ -5,9 +5,9 @@
         cmd: >-
           kubectl run {{ name | default('task', true) }}
           --attach --rm --restart=Never
-          --image={{ image | default('docker-registry.wikimedia.org/wmfdebug:0.0.7-20260614', true) }}
+          --image={{ container.image | default('docker-registry.wikimedia.org/wmfdebug:0.0.7-20260614', true) }}
           --command --
-          {{ command }}
+          {{ container.command }}
       when: ansible_env.KUBECONFIG is defined
 
     - name: Run a container (via docker run)
@@ -15,7 +15,7 @@
         cmd: >-
           docker run --name {{ name | default('task', true) }}
           --rm --init
-          {{ image | default('docker-registry.wikimedia.org/wmfdebug:0.0.7-20260614', true) }}
+          {{ container.image | default('docker-registry.wikimedia.org/wmfdebug:0.0.7-20260614', true) }}
           --
-          {{ command }}
+          {{ container.command }}
       when: ansible_env.KUBECONFIG is not defined
