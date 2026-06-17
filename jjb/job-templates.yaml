@@ -98,7 +98,7 @@
             # minimal example:
             #   <properties>
             #     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-            #     <sonar.login>${env.SONAR_API_KEY}</sonar.login>
+            #     <sonar.token>${env.SONAR_API_KEY}</sonar.token>
             #     <sonar.organization>wmftest</sonar.organization>
             #   </properties>
             #   <build>
@@ -139,6 +139,13 @@
                 # https://integration.wikimedia.org/ci/credentials/
                 credential-id: SONAR_API_KEY
                 variable: SONAR_API_KEY
+                # Also bind the same secret to SONAR_TOKEN. The Sonar scanner reads
+                # the SONAR_TOKEN environment variable natively (sonar.token),
+                # which is the supported replacement for the deprecated sonar.login
+                # property configured in wmf-jvm-parent-pom.
+          - text:
+                credential-id: SONAR_API_KEY
+                variable: SONAR_TOKEN
 
 # Convenience alias with name/project variables
 - job-template:
@@ -306,6 +313,13 @@
           - text:
               credential-id: SONAR_API_KEY
               variable: SONAR_API_KEY
+          # Also bind the same secret to SONAR_TOKEN. The Sonar scanner reads
+          # the SONAR_TOKEN environment variable natively (i.e. sonar.token),
+          # which is the supported replacement for the deprecated sonar.login
+          # property configured in wmf-jvm-parent-pom.
+          - text:
+              credential-id: SONAR_API_KEY
+              variable: SONAR_TOKEN
     publishers:
         - postbuildscript:
               builders:
