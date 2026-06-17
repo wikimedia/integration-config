@@ -9,4 +9,4 @@
     name: test/gerrit-ping
     check:
       jobs:
-        - directory-listing
+        - hello-world-container
