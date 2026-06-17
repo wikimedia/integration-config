@@ -1,5 +1,9 @@
 - hosts: localhost
   tasks:
+    - set_fact:
+        container: "{{ unsafe_vars.container }}"
+      when: unsafe_vars.container is defined
+
     - name: Run a container (via kubectl)
       command:
         cmd: >-
