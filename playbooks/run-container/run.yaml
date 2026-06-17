@@ -1,0 +1,22 @@
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Run a container (via kubectl)
+      command:
+        cmd: >-
+          kubectl run {{ name | default('task', true) }}
+          --attach --rm --restart=Never
+          --image={{ image | default('docker-registry.wikimedia.org/wmfdebug:0.0.7-20260614', true) }}
+          --command --
+          {{ command }}
+      when: ansible_env.KUBECONFIG is defined
+
+    - name: Run a container (via docker run)
+      command:
+        cmd: >-
+          docker run --name {{ name | default('task', true) }}
+          --rm --init
+          {{ image | default('docker-registry.wikimedia.org/wmfdebug:0.0.7-20260614', true) }}
+          --
+          {{ command }}
+      when: ansible_env.KUBECONFIG is not defined

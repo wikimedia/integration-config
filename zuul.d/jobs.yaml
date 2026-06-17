@@ -45,3 +45,16 @@
     run: playbooks/run/run.yaml
     vars:
       command: "ls -lR ."
+
+- job:
+    parent: null
+    name: hello-world-container
+    description: |-
+      Runs a hello world container as a test.
+
+      Used for very basic testing.
+    nodeset: namespace
+    run: playbooks/run-container/run.yaml
+    vars:
+      image: docker-registry.wikimedia.org/wmfdebug:0.0.7-20260614
+      command: "echo hello world"
