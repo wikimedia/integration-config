@@ -1249,6 +1249,16 @@ CirrusSearch:
     - PdfHandler
     - SiteMatrix
     - TimedMediaHandler
+    # Test WikibaseLexemeCirrusSearch (T428975)
+    - WikibaseLexemeCirrusSearch
+    - WikibaseCirrusSearch
+    - WikibaseLexeme
+    - Wikibase
+    # ... and Wikibase dependencies :-\
+    - MobileFrontend
+    - UniversalLanguageSelector
+    - skins/MinervaNeue
+    - Echo # For MinervaNeue - T429501
 
 Cite:
   recurse: false
