@@ -7,8 +7,8 @@ DOCKERFILE_FILES=(dockerfiles/quibble-*/Dockerfile.template)
 QUIBBLE_VERSION_LINE='^\(ARG QUIBBLE_VERSION=\).*'
 DCH_IGNORE="New package version is Debian native whilst previous version was not"
 
-bold=$(tput bold)
-reset=$(tput sgr0)
+bold=$(tput bold 2>/dev/null) || bold=
+reset=$(tput sgr0 2>/dev/null) || reset=
 
 echo_bold() {
     printf "%s%s%s\n" "$bold" "${*}" "$reset"
