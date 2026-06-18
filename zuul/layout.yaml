@@ -7514,7 +7514,7 @@ projects:
 
   - name: mediawiki/extensions/PreviewLinks
     template:
-     - name: extension-quibble-bluespice
+     - name: extension-quibble-composer
 
   - name: mediawiki/extensions/Prezi
     template:
