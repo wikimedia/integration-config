@@ -7956,7 +7956,7 @@ projects:
 
   - name: mediawiki/extensions/StandardDialogs
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/StandardWikitext
     template:
