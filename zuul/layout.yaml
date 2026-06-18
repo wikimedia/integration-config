@@ -7340,7 +7340,7 @@ projects:
 
   - name: mediawiki/extensions/PageCheckout
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/PageDisqus
     template:
