@@ -1364,6 +1364,7 @@ jobs:
     failure-pattern: 'https://integration.wikimedia.org/ci/job/{job.name}/{build.number}/consoleFull'
 
   - name: mwext-codehealth-patch
+    # yamllint disable-line rule:line-length
     success-pattern: 'https://sonarcloud.io/dashboard?id=mediawiki-extensions-{build.parameters[EXT_NAME]}&branch={build.parameters[ZUUL_CHANGE]}-{build.parameters[ZUUL_PATCHSET]}&resolved=false'
     # (T424573) Restrict to master only, as PHPUnit infrastructure changed with REL1_46
     branch: master
@@ -1495,6 +1496,7 @@ jobs:
 
   - name: fail-archived-repositories
     queue-name: archived-repos
+    # yamllint disable-line rule:line-length
     failure-message: 'This repository has been archived and new patches are not being accepted. If you want to maintain it follow https://www.mediawiki.org/wiki/Gerrit/Privilege_policy#Requesting_Gerrit_privileges and then change which jobs get run.'
 
   - name: pywikibot-core-tox-typing

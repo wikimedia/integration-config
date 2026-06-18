@@ -337,6 +337,7 @@
     !!merge : *job_quibble
     name: quibble-with-gated-extensions-vendor-mysql-{php}
     entrypoint: quibble-with-supervisord
+    # yamllint disable-line rule:line-length
     quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
 
 - job-template:
@@ -450,6 +451,7 @@
             entrypoint: '{entrypoint|}'
             volumes:
                 /srv/git: /srv/git:ro
+            # yamllint disable-line rule:line-length
             args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --commands "php tests/phpunit/generatePHPUnitConfig.php && phpunit-patch-coverage check --command \"php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=. vendor/bin/phpunit\" --html /workspace/log/coverage.html"'
             logdir: '/workspace/log'
             srcdir: '/workspace/src'
@@ -686,7 +688,7 @@
                        - FAILURE
                        - ABORTED
                      build-steps:
-                       -   docker-wipe-dir:
+                       - docker-wipe-dir:
                                dir: 'cover'
              - teardown
 

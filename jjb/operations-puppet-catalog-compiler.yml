@@ -44,8 +44,10 @@
             description: "If set to anything, will stop the compilation when the first failure is found and abort."
 
     builders:
+        # yamllint disable rule:line-length
         - shell: |
             CHANGE_PRIVATE="${GERRIT_PRIVATE_CHANGE_NUMBER}" FAIL_FAST="${FAIL_FAST}" NUM_THREADS="${NUM_THREADS}" CHANGE="${GERRIT_CHANGE_NUMBER}" NODES="${LIST_OF_NODES}" puppet-compiler
+        # yamllint enable rule:line-length
     wrappers:
     - timeout:
         timeout: 180

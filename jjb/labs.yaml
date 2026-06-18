@@ -95,4 +95,3 @@
     jobs:
        - '{name}-tox':
            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.4
-

@@ -95,46 +95,55 @@
             trigger-time: '0 8 * * *'
             repo: 'mediawiki/core'
             project-slug: 'mw-core'
+            # yamllint disable-line rule:line-length
             json-values: '{{ "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - VisualEditor:
             trigger-time: '5 8 * * *'
             repo: 'mediawiki/extensions/VisualEditor'
             project-slug: 'mw-ext-ve'
+            # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "VisualEditor", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ], "otherModules": [ {{ "name": "parsoid", "enable": true, "branch": "master" }} ] }}'
         - CampaignEvents:
             trigger-time: '10 8 * * *'
             repo: 'mediawiki/extensions/CampaignEvents'
             project-slug: 'mw-ext-ce'
+            # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "CampaignEvents", "enable": true, "branch": "master" }}, {{ "name": "cldr", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - TwoColConflict:
             trigger-time: '15 8 * * *'
             repo: 'mediawiki/extensions/TwoColConflict'
             project-slug: 'mw-ext-tcc'
+            # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "TwoColConflict", "enable": true, "branch": "master" }}, {{ "name": "BetaFeatures", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - Echo:
             trigger-time: '20 8 * * *'
             repo: 'mediawiki/extensions/Echo'
             project-slug: 'mw-ext-echo'
+            # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Echo", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - AdvancedSearch:
             trigger-time: '25 8 * * *'
             repo: 'mediawiki/extensions/AdvancedSearch'
             project-slug: 'mw-ext-as'
+            # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "AdvancedSearch", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - Popups:
             trigger-time: '30 8 * * *'
             repo: 'mediawiki/extensions/Popups'
             project-slug: 'mw-ext-popups'
+            # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Popups", "enable": true, "branch": "master" }}, {{ "name": "TextExtracts", "enable": true, "branch": "master" }}, {{ "name": "PageImages", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - Math:
             trigger-time: '35 8 * * *'
             repo: 'mediawiki/extensions/Math'
             project-slug: 'mw-ext-math'
+            # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Math", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - Newsletter:
             trigger-time: '40 8 * * *'
             repo: 'mediawiki/extensions/Newsletter'
             project-slug: 'mw-ext-newsletter'
+            # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Newsletter", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'

@@ -59,6 +59,7 @@
      # - can be fed the patterns from a file which makes it easier to maintain.
      #   See operations/puppet.git `typos` file and `grep -f PATTERN_FILE`
      # - supports pcre, same as `grep -P`
+     # yamllint disable rule:line-length
      - shell: |
         #!/bin/bash
         set -euxo pipefail
@@ -89,6 +90,7 @@
         fi
 
         exit 0
+   # yamllint enable rule:line-length
     publishers:
      - archive-log-allow-empty
      - docker-cleanup
@@ -203,6 +205,7 @@
             recipients: qa-alerts@lists.wikimedia.org wiki@physikerwelt.de # @Physikerwelt
             repository: mediawiki/extensions/Math
         - Minerva:
+            # yamllint disable-line rule:line-length
             recipients: proticom-ctr@wikimedia.org qa-alerts@lists.wikimedia.org performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com # @Edtadros
             repository: mediawiki/skins/MinervaNeue
         - Newsletter:
@@ -354,4 +357,3 @@
             name: 'EXPIRY_TIME_HOURS'
             description: 'The number of hours after which the test environment will expire'
             default: '1'
-

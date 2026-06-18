@@ -430,8 +430,8 @@
         # Credentials for Archiva
         - config-file-provider:
             files:
-                -   file-id: 'org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig.ArchivaCredentialsSettings'
-                    target:  archiva-credentials.xml
+                - file-id: 'org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig.ArchivaCredentialsSettings'
+                  target: archiva-credentials.xml
         - timeout:
             timeout: '{timeout|45}'  # minutes
             fail:    true

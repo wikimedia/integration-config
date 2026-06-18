@@ -1,1 +1,22 @@
-extends: relaxed
+extends: default
+
+rules:
+    # Our JJB & Zuul YAML routinely runs long due to long strings etc.; allow
+    # double the 1980s-era 80 char length default, and inline-disable the rest
+    line-length:
+        max: 160
+    # Flow mappings are written with inner padding: "{ name: foo }".
+    braces:
+        min-spaces-inside: 0
+        max-spaces-inside: 1
+    # Values are column-aligned, so extra spaces after commas and around colons
+    # are intentional, not stray whitespace.
+    commas:
+        max-spaces-after: -1
+    colons:
+        max-spaces-before: -1
+        max-spaces-after: -1
+    # Mappings indent by 2, but block sequences by 4; yamllint uses a single
+    # "spaces" value for both, so this mixed house style cannot be expressed
+    # without reformatting every file. Disable, at least for now.
+    indentation: disable
