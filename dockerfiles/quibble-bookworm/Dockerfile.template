@@ -3,7 +3,7 @@ FROM {{ "node24" | image_tag }} as node
 
 FROM {{ "ci-bookworm" | image_tag }}
 
-ARG QUIBBLE_VERSION=1.18.1
+ARG QUIBBLE_VERSION=1.18.2
 
 ######################
 #  Install node/npm  #

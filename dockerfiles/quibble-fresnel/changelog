@@ -1,3 +1,9 @@
+quibble-fresnel (1.18.2) wikimedia; urgency=medium
+
+  * Update Quibble to 1.18.2
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Thu, 18 Jun 2026 12:21:00 -0700
+
 quibble-fresnel (1.18.1-s1) wikimedia; urgency=high
 
    Re-platform to Debian Bookworm.

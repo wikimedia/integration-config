@@ -1,3 +1,9 @@
+quibble-bookworm-php83 (1.18.2) wikimedia; urgency=medium
+
+  * Update Quibble to 1.18.2
+
+ -- Ahmon Dancy <adancy@wikimedia.org>  Thu, 18 Jun 2026 12:20:59 -0700
+
 quibble-bookworm-php83 (1.18.1) wikimedia; urgency=medium
 
   Re-platform to Debian Bookworm.
