@@ -7,6 +7,11 @@ DOCKERFILE_FILES=(dockerfiles/quibble-*/Dockerfile.template)
 QUIBBLE_VERSION_LINE='^\(ARG QUIBBLE_VERSION=\).*'
 DCH_IGNORE="New package version is Debian native whilst previous version was not"
 
+# Make dch happy.
+DEBEMAIL=${DEBEMAIL:-$(git config user.email)}
+DEBFULLNAME=${DEBFULLNAME:-$(git config user.name)}
+export DEBEMAIL DEBFULLNAME
+
 bold=$(tput bold 2>/dev/null) || bold=
 reset=$(tput sgr0 2>/dev/null) || reset=
 
