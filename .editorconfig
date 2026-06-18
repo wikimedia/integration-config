@@ -36,5 +36,6 @@ indent_size = unset
 
 [*.gpg]
 # They are binary files
+indent_style = unset
 indent_size = unset
 insert_final_newline = false
