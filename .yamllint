@@ -1,3 +1,4 @@
+---
 extends: default
 
 rules:
@@ -20,3 +21,10 @@ rules:
     # "spaces" value for both, so this mixed house style cannot be expressed
     # without reformatting every file. Disable, at least for now.
     indentation: disable
+    # Inline comments sit one space from our column-aligned values; the two-space
+    # default fights that alignment. require-starting-space stays on (inherited).
+    comments:
+        min-spaces-from-content: 1
+    # Comments annotate the item they precede, not the enclosing block, so with
+    # the mixed 2/4 indent (see indentation, above) they cannot satisfy this.
+    comments-indentation: disable
