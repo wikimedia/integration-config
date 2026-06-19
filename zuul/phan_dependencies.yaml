@@ -910,6 +910,7 @@ WikimediaMaintenance:
   - Cognate
   - Echo
   - MassMessage
+  - ReadingLists
   - Wikibase
 
 WikimediaMessages:
