@@ -5020,12 +5020,6 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
 
-  - name: mediawiki/extensions/ShortUrl
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/SiteMatrix
     template:
       - name: in-wikimedia-production
@@ -11505,6 +11499,10 @@ projects:
       - name: archived
 
   - name: mediawiki/extensions/ShortDescription
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/ShortUrl
     template:
       - name: archived
 
