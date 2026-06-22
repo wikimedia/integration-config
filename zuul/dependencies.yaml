@@ -1404,11 +1404,17 @@ ContentStabilization:
     - BlueSpicePageAssignments
     - BlueSpiceSmartList
     - BlueSpiceSMWConnector
+    - NotifyMe
+    - PDFCreator
+    - Workflows
+    # extras transitive dependencies
+    - BlueSpiceVisualEditorConnector
+    - ContentDroplets
     - Forms
     - MenuEditor
-    - PDFCreator
+    - VisualEditor
+    - VisualEditorPlus
     - VueJsPlus
-    - Workflows
 
 ContentTranslation:
   recurse: false
