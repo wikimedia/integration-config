@@ -107,5 +107,10 @@
             repo: 'mediawiki/extensions/Popups'
             project-slug: 'mw-ext-popups'
             json-values: '{{ "extensions": [ {{ "name": "Popups", "enable": true, "branch": "master" }}, {{ "name": "TextExtracts", "enable": true, "branch": "master" }}, {{ "name": "PageImages", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - core:
+            trigger-time: '30 8 * * *'
+            repo: 'mediawiki/core'
+            project-slug: 'mw-core'
+            json-values: '{{ "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
