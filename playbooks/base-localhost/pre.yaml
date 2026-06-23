@@ -1,0 +1,5 @@
+- name: Create inventory log
+  hosts: localhost
+  roles:
+    # Copies Ansible inventory to zuul-info/
+    - log-inventory

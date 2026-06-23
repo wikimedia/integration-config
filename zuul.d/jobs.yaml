@@ -24,6 +24,24 @@
 
 - job:
     parent: null
+    name: base-localhost
+    abstract: true
+    description: |-
+      A base job to be used with localhost-only jobs.
+
+    secrets:
+      - name: wmcs_cloud_config
+        secret: wmcs_cloud_config
+
+    pre-run: playbooks/base-localhost/pre.yaml
+    post-run:
+      - playbooks/base-localhost/post-logs.yaml
+    roles:
+      - zuul: integration/zuul-jobs
+    timeout: 1800
+
+- job:
+    parent: null
     name: echo
     description: |-
       Echo a message.
@@ -47,7 +65,7 @@
       command: "ls -lR ."
 
 - job:
-    parent: base
+    parent: base-localhost
     name: hello-world-container
     description: |-
       Runs a hello world container as a test.
