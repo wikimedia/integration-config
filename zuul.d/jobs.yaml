@@ -47,7 +47,7 @@
       command: "ls -lR ."
 
 - job:
-    parent: null
+    parent: base
     name: hello-world-container
     description: |-
       Runs a hello world container as a test.
