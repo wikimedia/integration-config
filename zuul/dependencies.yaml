@@ -1372,6 +1372,13 @@ ContactManager:
     # extras
     - PageProperties
 
+ContactPage:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - ConfirmEdit
+
 ContainerFilter:
   recurse: false
   dependencies:
