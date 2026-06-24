@@ -5628,7 +5628,7 @@ projects:
 
   - name: mediawiki/extensions/AtMentions
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/Auth_remoteuser
     template:
