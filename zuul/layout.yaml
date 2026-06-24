@@ -3049,13 +3049,6 @@ projects:
     postmerge:
       - mwext-doxygen-publish
 
-  - name: mediawiki/skins/WikimediaApiPortal
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-codehealth
-
 #### Other MediaWiki skins #####################################
 
   - name: mediawiki/skins/2018
@@ -5410,12 +5403,6 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-
-  - name: mediawiki/extensions/WikimediaApiPortalOAuth
-    template:
-      - name: in-wikimedia-production
-      - name: extension-quibble
-      - name: extension-coverage
 
   - name: mediawiki/extensions/WikimediaBadges
     template:
@@ -11150,6 +11137,10 @@ projects:
     template:
       - name: archived
 
+  - name: mediawiki/extensions/WikimediaApiPortalOAuth
+    template:
+      - name: archived # T429374
+
   - name: mediawiki/extensions/normal
     template:
       - name: archived
@@ -12009,6 +12000,10 @@ projects:
   - name: mediawiki/skins/VectorV2
     template:
       - name: archived
+
+  - name: mediawiki/skins/WikimediaApiPortal
+    template:
+      - name: archived # T429373
 
   - name: mediawiki/tools/cli
     template:
