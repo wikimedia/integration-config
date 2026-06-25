@@ -1,3 +1,10 @@
+node26-test-browser-php83-composer (26.4.0) wikimedia; urgency=high
+
+   Refresh for update in parent image node26:
+   Update Node from 26.0.0 to 26.4.0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 25 Jun 2026 10:45:13 +0100
+
 node26-test-browser-php83-composer (26.0.0) wikimedia; urgency=high
 
    Initial image, with Node 26.0.0 and npm 11.3.0.

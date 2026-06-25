@@ -1,3 +1,10 @@
+quibble-bookworm (1.18.2-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image node24:
+   Update Node from 24.14.1 to 24.18.0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 25 Jun 2026 10:45:13 +0100
+
 quibble-bookworm (1.18.2) wikimedia; urgency=medium
 
   * Update Quibble to 1.18.2
