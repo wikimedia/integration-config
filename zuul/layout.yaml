@@ -7054,7 +7054,7 @@ projects:
 
   - name: mediawiki/extensions/MergeArticles
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/MessageCommons
     template:
