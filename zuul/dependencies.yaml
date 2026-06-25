@@ -2887,6 +2887,7 @@ WikimediaCustomizations:
     - AntiSpoof
     - cldr
     - CentralAuth
+    - CheckUser
     - Echo
     - EmailAuth
     - FlaggedRevs

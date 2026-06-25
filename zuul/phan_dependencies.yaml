@@ -874,6 +874,7 @@ WikimediaCustomizations:
   - cldr
   - AntiSpoof
   - CentralAuth
+  - CheckUser
   - EmailAuth
   - FlaggedRevs
   - GlobalPreferences
