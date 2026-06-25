@@ -5311,6 +5311,7 @@ projects:
       - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
+      - name: extension-apitests
     postmerge:
       - mwext-doxygen-publish
 
