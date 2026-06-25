@@ -6815,7 +6815,7 @@ projects:
 
   - name: mediawiki/extensions/ImportOfficeFiles
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/ImportUsers
     template:
