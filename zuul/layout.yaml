@@ -6542,7 +6542,7 @@ projects:
 
   - name: mediawiki/extensions/FilterSpecialPages
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/FixedHeaderTable
     template:
