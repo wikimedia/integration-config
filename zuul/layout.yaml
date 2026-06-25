@@ -6219,7 +6219,7 @@ projects:
 
   - name: mediawiki/extensions/ContainerFilter
     template:
-      - name: extension-quibble-bluespice
+      - name: extension-quibble-composer
 
   - name: mediawiki/extensions/ContentDroplets
     template:
