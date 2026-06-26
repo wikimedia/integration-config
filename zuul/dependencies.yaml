@@ -1957,6 +1957,7 @@ MultimediaViewer:
     # no requirements in extension.json
     # extras
     - BetaFeatures
+    - PageImages
 
 NSFileRepo:
   recurse: false

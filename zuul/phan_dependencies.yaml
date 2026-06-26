@@ -501,6 +501,7 @@ Monstranto:
 MultimediaViewer:
   - BetaFeatures
   - MobileFrontend
+  - PageImages
 
 Newsletter:
   - Echo
