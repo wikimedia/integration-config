@@ -8196,6 +8196,7 @@ projects:
   - name: mediawiki/extensions/Wanda
     template:
       - name: extension-quibble
+      - name: extension-coverage
 
   - name: mediawiki/extensions/WandaScore
     template:
