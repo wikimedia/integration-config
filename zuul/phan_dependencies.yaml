@@ -153,6 +153,7 @@ Challenge:
 
 Chart:
   - JsonConfig
+  - Scribunto
 
 CheckUser:
   - AbuseFilter

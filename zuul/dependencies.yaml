@@ -1182,6 +1182,7 @@ Chart:
     # From extension.json:
     - JsonConfig
     # extras
+    - Scribunto
     - VisualEditor
 
 ChatBot:
