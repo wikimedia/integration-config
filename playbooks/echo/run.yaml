@@ -1,7 +1,7 @@
-- hosts: all
+- hosts: localhost
   gather_facts: false
   tasks:
-    - name: Echo a message
+    - name: Echo a message on the executor
       command:
         cmd: >-
           echo {{ message | quote }}
