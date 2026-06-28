@@ -9,4 +9,5 @@
     name: test/gerrit-ping
     check:
       jobs:
+        - echo
         - hello-world-container

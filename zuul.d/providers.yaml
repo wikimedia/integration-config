@@ -10,6 +10,10 @@
     type: cloud
 
 - image:
+    name: &python-all docker-registry.wikimedia.org/releng/python-all:0.5
+    type: cloud
+
+- image:
     name: &quibble-php83 docker-registry.wikimedia.org/releng/quibble-bullseye-php83:1.17.1-s5
     type: cloud
 
@@ -24,6 +28,11 @@
     image: *trixie
 
 - label:
+    name: python-all
+    flavor: basic
+    image: *python-all
+
+- label:
     name: quibble-php83
     flavor: basic
     image: *quibble-php83
@@ -36,6 +45,7 @@
     images:
       - nada
       - *trixie
+      - *python-all
       - *quibble-php83
 
 - provider:
@@ -57,6 +67,13 @@
         spec:
           containers:
             - *spec-default
+
+      - kind: pod
+        name: python-all
+        spec:
+          containers:
+            - <<: *spec-default
+              image: *python-all
 
       - kind: pod
         name: quibble-php83

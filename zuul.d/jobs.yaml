@@ -41,13 +41,13 @@
     timeout: 1800
 
 - job:
-    parent: null
     name: echo
+    parent: base
     description: |-
       Echo a message.
 
       Used for very basic testing of pipeline and project configurations.
-    nodeset: trixie
+    nodeset: python-all
     run: playbooks/echo/run.yaml
     vars:
       message: "hello world"

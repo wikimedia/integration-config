@@ -11,6 +11,12 @@
         label: trixie
 
 - nodeset:
+    name: python-all
+    nodes:
+      - name: python-all
+        label: python-all
+
+- nodeset:
     name: quibble-php83
     nodes:
       - name: quibble
