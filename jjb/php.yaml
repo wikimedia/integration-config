@@ -44,25 +44,25 @@
         - 'composer-{phpflavor}':
             phpflavor:
                 - php81:
-                    image: docker-registry.wikimedia.org/releng/composer-php81:8.1.34-s2
+                    image: docker-registry.wikimedia.org/releng/composer-php81:8.1.34-s3
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s2
+                    image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s3
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.31
+                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.31-s1
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s2
+                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s3
                 - php85:
-                    image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3-s2
+                    image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3-s3
         - 'composer-package-{phpflavor}':
             phpflavor:
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s2
+                    image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s3
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.31
+                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.31-s1
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s2
+                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s3
                 - php85:
-                    image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3-s2
+                    image: docker-registry.wikimedia.org/releng/composer-php85:8.5.3-s3
 
 # Generic jobs for Phan
 - job-template:
@@ -90,7 +90,7 @@
     name: generic-phan-jobs
     php:
      - php83:
-         composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.31
-         phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s1
+         composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.31-s1
+         phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s2
     jobs:
       - 'phan-{php}'
