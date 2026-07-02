@@ -13,7 +13,7 @@
 
     secrets:
       - name: wmcs_cloud_config
-        secret: wmcs_cloud_config
+        secret: hashar-zuul-object_storage
 
     pre-run: playbooks/base/pre.yaml
     post-run:
@@ -31,7 +31,7 @@
 
     secrets:
       - name: wmcs_cloud_config
-        secret: wmcs_cloud_config
+        secret: hashar-zuul-object_storage
 
     pre-run: playbooks/base-localhost/pre.yaml
     post-run:
