@@ -317,6 +317,7 @@ EntitySchema:
   - WikibaseCirrusSearch
 
 EventBus:
+  - CentralAuth
   - CentralNotice
   - EventStreamConfig
   - Wikibase
