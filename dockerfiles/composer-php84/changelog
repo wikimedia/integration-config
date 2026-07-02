@@ -1,3 +1,10 @@
+composer-php84 (8.4.18-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer to v2.10.2
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  2 Jul 2026 14:14:34 +0100
+
 composer-php84 (8.4.18-s2) wikimedia; urgency=high
 
    Refresh for update in parent images ci-bullseye and ci-bookworm:

@@ -1,3 +1,10 @@
+quibble-coverage (1.18.2-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Upgrade composer to v2.10.2
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu,  2 Jul 2026 14:14:34 +0100
+
 quibble-coverage (1.18.2-s1) wikimedia; urgency=high
 
    Refresh for update in parent image node24:
