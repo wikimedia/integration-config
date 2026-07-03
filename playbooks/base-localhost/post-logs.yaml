@@ -14,4 +14,4 @@
       zuul_log_container: artifacts
       # Swift object expiration, passed to `X-Delete-After` header
       # https://docs.openstack.org/swift/latest/overview_expiring_objects.html
-      zuul_log_delete_after: 300 # seconds = 5 minutes
+      zuul_log_delete_after: 172800 # seconds = 2 days
