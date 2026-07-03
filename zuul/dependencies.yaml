@@ -2731,6 +2731,7 @@ WikiLambda:
     # extras
     - CirrusSearch
     - CommunityConfiguration
+    - Elastica # Dependency of CirrusSearch
 
 WikiRAG:
   recurse: false
