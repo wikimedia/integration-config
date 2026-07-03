@@ -2364,12 +2364,9 @@ project-templates:
   # Track all extensions and skins in Wikimedia Fundraising production
   - name: in-wikimedia-fundraising-production
 
-  # Track all extensions and skins in the MediaWiki tarball (not yet used)
+  # Track all extensions and skins in the MediaWiki tarball (not yet enforcing DB compatibility)
   - name: in-mediawiki-tarball
-    test:
-      - quibble-vendor-postgres-php83
-      - quibble-vendor-sqlite-php83
-    gate-and-submit:
+    experimental:
       - quibble-vendor-postgres-php83
       - quibble-vendor-sqlite-php83
 
@@ -2995,8 +2992,7 @@ projects:
       - name: extension-javascript-documentation
       - name: extension-coverage
       - name: extension-codehealth
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
     postmerge:
       - mwext-doxygen-publish
 
@@ -3013,8 +3009,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/skins/Nostalgia
     template:
@@ -3029,8 +3024,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/skins/Vector
     template:
@@ -3041,8 +3035,7 @@ projects:
       - name: growth-experiments-selenium-gate
       - name: extension-coverage
       - name: extension-codehealth
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
     experimental:
       # Jobs we want to have available for testing
       - quibble-composer-mysql-php83
@@ -3907,8 +3900,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/AdvancedSearch
     template:
@@ -4008,8 +4000,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/CentralAuth
     template:
@@ -4044,6 +4035,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/CirrusSearch
     template:
@@ -4065,8 +4057,7 @@ projects:
       - name: extension-coverage
       - name: extension-gate
       - name: extension-javascript-documentation
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
     postmerge:
       - mwext-doxygen-publish
 
@@ -4077,8 +4068,7 @@ projects:
       - name: extension-codehealth
       - name: extension-coverage
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/Citoid
     template:
@@ -4108,8 +4098,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/CodeMirror
     template:
@@ -4162,8 +4151,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/ContactPage
     template:
@@ -4207,6 +4195,7 @@ projects:
       - name: extension-quibble-only-standalone
       - name: extension-coverage
       - name: extension-codehealth
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/DismissableSiteNotice
     template:
@@ -4263,6 +4252,7 @@ projects:
       - name: extension-gate
       - name: extension-coverage
       - name: growth-experiments-selenium-gate
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/Elastica
     template:
@@ -4403,8 +4393,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/GeoCrumbs
     template:
@@ -4500,8 +4489,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/ImageSuggestions
     template:
@@ -4517,8 +4505,7 @@ projects:
       - name: extension-codehealth
       - name: extension-coverage
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/Insider
     template:
@@ -4540,8 +4527,6 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/InterwikiSorting
     template:
@@ -4607,6 +4592,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/LiquidThreads
     template:
@@ -4620,6 +4606,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/MapSources
     template:
@@ -4643,8 +4630,7 @@ projects:
       - name: extension-codehealth
       - name: extension-apitests
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/MediaModeration
     template:
@@ -4688,8 +4674,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-javascript-documentation
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/MultiTitle
     template:
@@ -4729,8 +4714,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/OATHAuth
     template:
@@ -4738,8 +4722,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/OAuth
     template:
@@ -4780,8 +4763,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/PageNotice
     template:
@@ -4812,8 +4794,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/ParserMigration
     template:
@@ -4828,8 +4809,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/PersonalDashboard
     template:
@@ -4851,8 +4831,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/Popups
     template:
@@ -4932,8 +4911,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/ReportIncident
     template:
@@ -4978,8 +4956,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/SearchVue
     template:
@@ -5003,8 +4980,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/SecurePoll
     template:
@@ -5027,8 +5003,7 @@ projects:
       - name: extension-codehealth
       - name: extension-coverage
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/StopForumSpam
     template:
@@ -5054,8 +5029,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/TemplateData
     template:
@@ -5065,8 +5039,7 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-javascript-documentation
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/TemplateSandbox
     template:
@@ -5079,6 +5052,7 @@ projects:
       - name: in-wikimedia-production
       - name: extension-quibble
       - name: extension-coverage
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/TemplateWizard
     template:
@@ -5101,8 +5075,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/Thanks
     template:
@@ -5112,6 +5085,7 @@ projects:
       - name: extension-gate
       - name: extension-codehealth
       - name: growth-experiments-selenium-gate
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/TheWikipediaLibrary
     template:
@@ -5142,8 +5116,7 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
       - name: extension-codehealth
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/TocTree
     template:
@@ -5234,8 +5207,7 @@ projects:
       - name: extension-javascript-documentation
       - name: extension-apitests
       - name: growth-experiments-selenium-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/Wikibase
     template:
@@ -5365,8 +5337,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
-      # Not yet enabled -- JDF 2022-05-23
-      # - name: in-mediawiki-tarball
+      - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/wikihiero
     template:
