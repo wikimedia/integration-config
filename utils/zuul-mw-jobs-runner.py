@@ -99,6 +99,7 @@ class ZuulMwJobsRunner():
         self.params_file = args.params_file
         self.num_jobs = args.jobs
         self.in_production = args.in_production
+        self.in_tarball = args.in_tarball
         self.requested_projects = args.projects
         self.projects_filter = args.projects_filter
         self.branch = args.branch
@@ -163,6 +164,14 @@ class ZuulMwJobsRunner():
     def _templates_names(self, templates):
         return {t['name'] for t in templates}
 
+    def _template_filter_skips(self, flag, template, project):
+        # Backs the --in-production / --in-tarball BooleanOptionalAction
+        # filters: None disables filtering; True keeps only projects carrying
+        # the template; False (--no-*) keeps only those without it.
+        if flag is None:
+            return False
+        return flag != (template in self._templates_names(project['template']))
+
     def _read_projects(self, zuul_layout):
         log.info('Reading projects from %s', zuul_layout)
         with open(zuul_layout) as f:
@@ -186,17 +195,14 @@ class ZuulMwJobsRunner():
             ):
                 continue
 
-            # To only process extensions that are marked as being in Production
-            #
-            # --in-production default to None which prevents skipping in the
-            # following XOR block.
-            if (
-                    self.in_production is True
-                    and 'in-wikimedia-production' not in self._templates_names(p['template'])
-                ) or (  # noqa
-                    self.in_production is False
-                    and 'in-wikimedia-production' in self._templates_names(p['template'])
-            ):
+            # Optionally restrict to (or, with --no-*, exclude) projects
+            # carrying a given placeholder template in the Zuul layout.
+            # Both filters default to None, which disables them.
+            if self._template_filter_skips(
+                    self.in_production, 'in-wikimedia-production', p):
+                continue
+            if self._template_filter_skips(
+                    self.in_tarball, 'in-mediawiki-tarball', p):
                 continue
 
             if self.projects_filter is not None:
@@ -440,6 +446,11 @@ def parse_args(args):
     parser.add_argument(
         '--in-production', action=argparse.BooleanOptionalAction, default=None,
         help='Only act/do not act on projects having "in-wikimedia-production template" '
+             'in Zuul layout')
+
+    parser.add_argument(
+        '--in-tarball', action=argparse.BooleanOptionalAction, default=None,
+        help='Only act/do not act on projects having "in-mediawiki-tarball" template '
              'in Zuul layout')
 
     return parser.parse_args(args)
