@@ -1,3 +1,9 @@
+quibble-coverage (1.18.2-s3) wikimedia; urgency=high
+
+   Update mediawiki/phpunit-patch-coverage to 0.0.18
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri,  3 Jul 2026 10:31:05 +0100
+
 quibble-coverage (1.18.2-s2) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
