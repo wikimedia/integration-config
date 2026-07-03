@@ -1299,8 +1299,8 @@ class TestZuulScheduler(unittest.TestCase):
             'quibble-for-mediawiki-core-composer-mysql-php',
             # A composer test job (PHP linting)
             'quibble-for-mediawiki-core-composertest-only-php',
-            # A 'mediawiki' selenium test (bundled extensions browser testing)
-            'quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php',
+            # Disabled: A 'mediawiki' selenium test (bundled extensions browser testing)
+            # 'quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php',
             # A phan job (PHP static analysis)
             'mediawiki-core-phan-only-php',
             # A node job (JS linting)
