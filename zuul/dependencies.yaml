@@ -2729,6 +2729,7 @@ WikiLambda:
     - UniversalLanguageSelector
     - WikimediaMessages
     # extras
+    - CirrusSearch
     - CommunityConfiguration
 
 WikiRAG:

@@ -801,6 +801,7 @@ WikiEditor:
 
 WikiLambda:
   - AbuseFilter
+  - CirrusSearch
   - CommunityConfiguration
   - EventLogging
   - SiteMatrix
