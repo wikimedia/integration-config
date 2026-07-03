@@ -216,11 +216,23 @@ class ZuulMwJobsRunner():
         log.info('Found %s projects' % len(projects))
         return projects
 
+    def _isReleaseBranch(self):
+        # MediaWiki numbered release branches (REL1_XX) have no maintained
+        # mediawiki/vendor.git, so extensions that normally use vendor jobs
+        # run composer jobs instead (mirrors zuul/layout.yaml per-branch job
+        # lists). wmf/* production branches keep vendor and are excluded.
+        return bool(re.match(r'REL1_\d+', self.branch))
+
     def _mapTemplatesToJobs(self, project_name, templates):
         templates = self._templates_names(templates)
 
         if templates.issubset({'archived', 'extension-broken'}):
             return []
+
+        # On release branches the vendor-based templates run composer jobs
+        # (see _isReleaseBranch); the already-composer templates below are
+        # unaffected as they use composer on every branch.
+        source = 'composer' if self._isReleaseBranch() else 'vendor'
 
         jobs = []
         # Gated extensions and vendor based extensions
@@ -230,14 +242,14 @@ class ZuulMwJobsRunner():
         ):
             if self.requires_only:
                 if self.phpunit:
-                    jobs += ['quibble-requires-only-vendor-non-voting']
+                    jobs += [f'quibble-requires-only-{source}-non-voting']
                 if self.selenium:
-                    jobs += ['quibble-requires-only-vendor-selenium']
+                    jobs += [f'quibble-requires-only-{source}-selenium']
             else:
                 if self.phpunit:
-                    jobs += ['quibble-vendor-mysql-php83']
+                    jobs += [f'quibble-{source}-mysql-php83']
                 if self.selenium:
-                    jobs += ['quibble-vendor-mysql-php83-selenium']
+                    jobs += [f'quibble-{source}-mysql-php83-selenium']
             return jobs
 
         # Extensions using composer
@@ -261,11 +273,11 @@ class ZuulMwJobsRunner():
         if 'extension-quibble-noselenium' in templates:
             if self.requires_only:
                 if self.phpunit:
-                    jobs += ['quibble-requires-only-vendor-non-voting']
+                    jobs += [f'quibble-requires-only-{source}-non-voting']
                 if self.selenium:
-                    jobs += ['quibble-requires-only-vendor-selenium']
+                    jobs += [f'quibble-requires-only-{source}-selenium']
             elif self.phpunit:
-                jobs += ['quibble-vendor-mysql-php83']
+                jobs += [f'quibble-{source}-mysql-php83']
             return jobs
         if 'extension-quibble-composer-noselenium' in templates:
             if self.requires_only:
