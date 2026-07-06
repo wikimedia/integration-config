@@ -5376,6 +5376,14 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
 
+  - name: mediawiki/extensions/WikimediaAntiAbuse
+    template:
+      # Will be deployed soon per T431023
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
   - name: mediawiki/extensions/WikimediaBadges
     template:
       - name: in-wikimedia-production
