@@ -465,6 +465,8 @@
         - editing-suggestions-publish
         - liftwing-openapi-server
         - liftwing-openapi-server-publish
+        - tts
+        - tts-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -498,6 +500,8 @@
         # trigger-inference-services-pipeline-editing-suggestions-publish
         # trigger-inference-services-pipeline-liftwing-openapi-server
         # trigger-inference-services-pipeline-liftwing-openapi-server-publish
+        # trigger-inference-services-pipeline-tts
+        # trigger-inference-services-pipeline-tts-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -531,6 +535,8 @@
         # inference-services-pipeline-editing-suggestions-publish
         # inference-services-pipeline-liftwing-openapi-server
         # inference-services-pipeline-liftwing-openapi-server-publish
+        # inference-services-pipeline-tts
+        # inference-services-pipeline-tts-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:
