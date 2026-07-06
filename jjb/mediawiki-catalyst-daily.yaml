@@ -126,5 +126,10 @@
             repo: 'mediawiki/core'
             project-slug: 'mw-core'
             json-values: '{{ "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - Math:
+            trigger-time: '35 8 * * *'
+            repo: 'mediawiki/extensions/Math'
+            project-slug: 'mw-ext-math'
+            json-values: '{{ "extensions": [ {{ "name": "Math", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
