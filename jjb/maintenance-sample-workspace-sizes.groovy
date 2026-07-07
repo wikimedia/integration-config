@@ -90,7 +90,7 @@ def checkAgents = {
 
 timestamps {
     timeout(time: executionTimeout, unit: 'SECONDS') {
-        node('contint1002') {
+        node('contint1003') {
             stage('Check agents') {
                 checkAgents()
             }

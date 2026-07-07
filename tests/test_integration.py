@@ -16,7 +16,7 @@ import zuul.cmd.server
 JENKINS_ACCEPTABLE_LABELS = [
     'BetaClusterBastion',  # deployment-prep
     'castor',  # Central cache
-    'contint1002',  # Publishing
+    'contint1003',  # Publishing
     'puppet',
     'puppet7-compiler-node',
     'train',
