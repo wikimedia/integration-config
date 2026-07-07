@@ -131,5 +131,10 @@
             repo: 'mediawiki/extensions/Math'
             project-slug: 'mw-ext-math'
             json-values: '{{ "extensions": [ {{ "name": "Math", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - Newsletter:
+            trigger-time: '40 8 * * *'
+            repo: 'mediawiki/extensions/Newsletter'
+            project-slug: 'mw-ext-newsletter'
+            json-values: '{{ "extensions": [ {{ "name": "Newsletter", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
