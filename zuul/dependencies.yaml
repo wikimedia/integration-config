@@ -1428,6 +1428,13 @@ ContentStabilization:
     - VisualEditorPlus
     - VueJsPlus
 
+ContentTransfer:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - OOJSPlus
+
 ContentTranslation:
   recurse: false
   dependencies:
