@@ -529,6 +529,10 @@ BlueSpiceNSFileRepoConnector:
     - NSFileRepo
     # Transitive requirements:
     - OOJSPlus
+    # extras
+    - PDFCreator
+    # extras requirements
+    - VueJsPlus
 
 BlueSpiceNamespaceCSS:
   recurse: false
