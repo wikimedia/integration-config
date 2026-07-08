@@ -529,6 +529,7 @@ BlueSpiceNSFileRepoConnector:
     - NSFileRepo
     # Transitive requirements:
     - OOJSPlus
+    - VisualEditor
     # extras
     - EnhancedUpload
     - PDFCreator
