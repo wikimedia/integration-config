@@ -530,6 +530,7 @@ BlueSpiceNSFileRepoConnector:
     # Transitive requirements:
     - OOJSPlus
     # extras
+    - EnhancedUpload
     - PDFCreator
     # extras requirements
     - VueJsPlus
