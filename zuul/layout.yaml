@@ -894,7 +894,7 @@ pipelines:
     window: 5  # initial value
     window-floor: 2  # minimum
     require:
-      open: True
+      open: true
     trigger:
       gerrit:
         - &gate-and-submit-comment-added
@@ -1027,7 +1027,7 @@ pipelines:
       gerrit:
        - event: ref-updated
          ref: ^refs/heads/.*$
-         ignore-deletes: True
+         ignore-deletes: true
 
   # Pipeline for tags (either a new one or a removal)
   - name: publish

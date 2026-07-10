@@ -14,7 +14,7 @@
               - trigger-builds:
                   - project: castor-save-workspace-cache
                     # Pass ZUUL and others
-                    current-parameters: True
+                    current-parameters: true
                     # Pass:
                     # - job name to namespace the central cache
                     # - ssh connection which holds the slave IP to which castor

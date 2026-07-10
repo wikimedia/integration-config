@@ -6,8 +6,8 @@
     manager: independent
     require:
       gerrit.wikimedia.org:
-        open: True
-        current-patchset: True
+        open: true
+        current-patchset: true
     success:
       gerrit.wikimedia.org: {}
     failure:

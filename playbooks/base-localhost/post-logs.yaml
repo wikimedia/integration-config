@@ -1,5 +1,5 @@
 - hosts: localhost
-  gather_facts: False
+  gather_facts: false
   roles:
     - role: generate-zuul-manifest
       # Tell the zuul web ui that it needs to add index.html to the
