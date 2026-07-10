@@ -1,3 +1,4 @@
+---
 # Stop and/or kill any containers still running for the build.
 - publisher:
     name: docker-reap-containers

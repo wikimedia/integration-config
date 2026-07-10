@@ -1,3 +1,4 @@
+---
 # The operations/alerts repo uses the pipeline to run its tests.
 - project:
     name: alerts

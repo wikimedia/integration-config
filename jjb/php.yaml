@@ -1,3 +1,4 @@
+---
 # The base composer job
 - job-template: &composer-phpflavor
     name: 'composer-{phpflavor}'

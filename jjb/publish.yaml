@@ -1,3 +1,4 @@
+---
 # Sync files from a Jenkins agent in Cloud Services on the contint1003 agent which is
 # also the CI master. Then rsync to doc.discovery.wmnet, which hosts
 # https://doc.wikimedia.org/ .

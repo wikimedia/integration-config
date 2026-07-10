@@ -1,3 +1,4 @@
+---
 - job-template:
     name: mediawiki-vagrant-puppet-doc-publish
     node: Docker

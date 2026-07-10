@@ -1,3 +1,4 @@
+---
 - project:
     name: 'mw-tools-releng'
     jobs:

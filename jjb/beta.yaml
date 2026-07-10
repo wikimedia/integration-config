@@ -1,3 +1,4 @@
+---
 # Contains any jobs related to the beta cluster.
 #
 # Beta is a cluster meant to reproduce the production environnement out of virtual instances in the

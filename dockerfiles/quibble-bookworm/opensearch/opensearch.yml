@@ -1,3 +1,4 @@
+---
 path.logs: /workspace/log
 path.data: /workspace/opensearch
 discovery.type: single-node

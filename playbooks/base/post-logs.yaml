@@ -1,3 +1,4 @@
+---
 - hosts: all
   roles:
     # Collect artifacts, logs and docs from the nodes `zuul_output_dir`

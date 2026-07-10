@@ -1,3 +1,4 @@
+---
 # Publish Codex documentation to doc.wikimedia.org
 - project:
     name: 'codex-node24'

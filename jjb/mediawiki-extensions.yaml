@@ -1,3 +1,4 @@
+---
 # Publishing workspace/docs to doc.wikimedia.org/:DOC_PROJECT/:DOC_SUBPATH/php/
 # - DOC_PROJECT: determined in parameter_functions.py (mw extension name)
 # - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)

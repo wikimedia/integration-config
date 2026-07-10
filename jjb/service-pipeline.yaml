@@ -1,3 +1,4 @@
+---
 # Templates for projects using pipelinelib's PipelineBuilder
 # (.pipeline/config.yaml)
 - job-template:

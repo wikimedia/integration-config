@@ -1,3 +1,4 @@
+---
 # This file is used to control injected dependencies for MediaWiki jobs.
 #
 # Values are assumed to be MediaWiki extensions, so 'Foo' maps to 'mediawiki/extensions/Foo'.

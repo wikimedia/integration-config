@@ -1,3 +1,4 @@
+---
 pipelines:
     - name: test
       manager: IndependentPipelineManager

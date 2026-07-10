@@ -1,3 +1,4 @@
+---
 # Publish Doxygen-generated docs to doc.wikimedia.org
 # NOTE: Only use this generic job if the desired public directory name
 # matches the Git repository name.

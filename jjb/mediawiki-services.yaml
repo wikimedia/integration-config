@@ -1,3 +1,4 @@
+---
 - job-template:
     name: 'mobileapps-periodic-test'
     node: Docker
