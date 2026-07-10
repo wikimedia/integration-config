@@ -1,3 +1,9 @@
+commit-message-validator (2.3.0) wikimedia; urgency=high
+
+   Update commit-message-validaator to 2.3.0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 10 Jul 2026 09:49:33 +0100
+
 commit-message-validator (2.1.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:
