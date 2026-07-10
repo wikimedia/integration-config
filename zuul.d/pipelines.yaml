@@ -21,7 +21,7 @@
 
 # TODO Enable once we're ready to test the Zuul v14 trusted build node and
 # gating logic
-#- pipeline:
+# - pipeline:
 #    name: gate
 #    description: |
 #      Changes that have been approved are enqueued in order in this

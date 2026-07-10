@@ -221,7 +221,7 @@
         # Piuparts does NOT run in cowbuilder which is source of false
         # positives, specially when the tar.gz is severly outdated
         # T141454 T148664
-        #- debian-glue-piuparts
+        # - debian-glue-piuparts
         - shell: |
             set -o pipefail
             jdg-debc | tee debc.txt

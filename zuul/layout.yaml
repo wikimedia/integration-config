@@ -219,7 +219,7 @@ pipelines:
            - ^ebrahim@gnu\.org$
            - ^edwardspec@gmail\.com$ # Edward Chernenko
            - ^eflyjason@gmail\.com$ # Yifei He, former GCI student
-           - ^eggroll97\.wikipedia@gmail\.com$ #EggRoll97
+           - ^eggroll97\.wikipedia@gmail\.com$ # EggRoll97
            - ^egil@wp\.pl$ # Nux
            - ^eloquence@gmail\.com$
            - ^ent3rm4n@gmail\.com$ # 0xDeadbeef
@@ -261,7 +261,7 @@ pipelines:
            - ^igorkim78@gmail\.com$ # Igor Kim
            - ^initechq@gmail\.com$ # Iniquity
            - ^inductiveload@gmail\.com$ # inductiveload
-           - ^irajveer\.bishnoi2310@gmail\.com$ #Rajveer42
+           - ^irajveer\.bishnoi2310@gmail\.com$ # Rajveer42
            - ^j@mywikis\.com$ # Jeffrey Wang
            - ^jackmcbarn@gmail\.com$ # Jackmcbarn
            - ^jayden@weirdgloop\.org$
@@ -380,7 +380,7 @@ pipelines:
            - ^nic@nicj\.net$
            - ^nik\.xyz\.in@gmail\.com$ # Nik.xyz.in
            - ^nilesh@nileshc\.com$
-           - ^nils\.andre\.chang@gmail\.com$ #zD/Zd1LqRH, former GCI student
+           - ^nils\.andre\.chang@gmail\.com$ # zD/Zd1LqRH, former GCI student
            - ^nk2indian@gmail\.com$ # TechieNK, MW extensions contributor
            - ^noam\.j\.rosenthal@gmail\.com$ # Noam Rosenthal
            - ^NovemLinguae@gmail\.com$ # NovemLinguae
@@ -536,14 +536,14 @@ pipelines:
            - ^yagizhan49@protonmail\.com$ # Evrifaessa
            - ^yaron57@gmail\.com$
            - ^yash\.girdhar@gmail\.com$ # yash / yashasvi
-           - ^yashagrawal9265@gmail\.com$ #Yash9265
+           - ^yashagrawal9265@gmail\.com$ # Yash9265
            - ^yn\.jiyu@gmail\.com$ # Jiyu/Abstract09 - working with RhinosF1 on Quarry
            - ^yvdbogert@archixl\.nl$ # YOUR1
            - ^ynanlohij@archixl\.nl$
            - ^yuriastrakhan@gmail\.com$
            - ^yuvipanda@gmail\.com$
            - ^zabe@avorwerk\.net$ # Zabe
-           - ^zhaofjx@gmail\.com$ #ZhaoFJx
+           - ^zhaofjx@gmail\.com$ # ZhaoFJx
            - ^zhorishna@gmail\.com$ # Isarra
            - ^zhuyifei1999@gmail\.com$
            - ^zivkovica006@gmail\.com$ # Aca
@@ -2383,7 +2383,7 @@ project-templates:
     test:
       - commit-message-validator
     # non-voting / under test
-    #gate-and-submit:
+    # gate-and-submit:
     # - commit-message-validator
 
   - name: archived
@@ -2704,7 +2704,7 @@ projects:
     test:
       - mediawiki-vagrant-ruby2.7-rake
     # T398469 disbled until the job is voting again
-    #gate-and-submit:
+    # gate-and-submit:
     #  - mediawiki-vagrant-ruby2.7-rake
     postmerge:
       - mediawiki-vagrant-puppet-doc-publish
