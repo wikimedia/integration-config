@@ -613,6 +613,7 @@ ReaderExperiments:
   - EventStreamConfig
   - ParserMigration
   - TestKitchen
+  - skins/MinervaNeue
 
 ReadingLists:
   - BetaFeatures
