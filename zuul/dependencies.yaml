@@ -332,6 +332,7 @@ BlueSpiceDistributionConnector:
     - VisualEditor
     - Workflows
     # extras transitive requirements
+    - BlueSpiceSmartList
     - VueJsPlus
     - VisualEditorPlus
 
