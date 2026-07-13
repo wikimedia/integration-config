@@ -77,7 +77,7 @@
                         eval "$(cat log/deploy.env)"
                         curl -X "DELETE" "https://api.catalyst.wmcloud.org/api/environments/${{ENV_ID}}" \
                           -H "Authorization: ApiToken ${{CATALYST_API_TOKEN}}"
-        - teardown
+        - docker-cleanup
         # Temporarily, e-mail Vaughn on failures
         - email-ext:
             recipients:   vwalters@wikimedia.org
