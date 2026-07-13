@@ -1,3 +1,10 @@
+commit-message-validator (3.0.0) wikimedia; urgency=high
+
+   * T431799: Update base image to trixie.
+   * Use commit-message-validator==3.0.0.
+
+ -- Bryan Davis <bd808@wikimedia.org>  Mon, 13 Jul 2026 11:36:37 -0600
+
 commit-message-validator (2.3.0) wikimedia; urgency=high
 
    Update commit-message-validaator to 2.3.0

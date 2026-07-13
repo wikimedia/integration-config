@@ -1,20 +1,20 @@
-FROM {{ "ci-bullseye" | image_tag }}
+FROM {{ "ci-trixie" | image_tag }}
 
 USER root
 RUN {{ "python3 python3-pip" | apt_install }} \
     && install --owner=nobody --group=nogroup \
         --directory /opt/commit-message-validator \
     && ln -s \
-        /opt/commit-message-validator/bin/commit-message-validator \
+        /opt/commit-message-validator/local/bin/commit-message-validator \
         /usr/local/bin/commit-message-validator
 
 # The version of the commit-message-validator python package to install
-ARG PACKAGE_VERSION=2.3.0
+ARG PACKAGE_VERSION=3.0.0
 
 USER nobody
-RUN pip3 install --no-cache-dir --system --prefix /opt/commit-message-validator commit-message-validator==${PACKAGE_VERSION}
+RUN pip3 install --no-cache-dir --prefix /opt/commit-message-validator commit-message-validator==${PACKAGE_VERSION}
 
 USER nobody
 WORKDIR /src
-ENV PYTHONPATH=/opt/commit-message-validator/lib/python3.9/site-packages
-ENTRYPOINT ["/opt/commit-message-validator/bin/commit-message-validator", "validate"]
+ENV PYTHONPATH=/opt/commit-message-validator/local/lib/python3.13/dist-packages
+ENTRYPOINT ["/opt/commit-message-validator/local/bin/commit-message-validator", "validate"]
