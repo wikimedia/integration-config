@@ -148,7 +148,7 @@
                 - php82:
                     image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s3
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.31-s1
+                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.32
                 - php84:
                     image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s3
                 - php85:
@@ -207,8 +207,8 @@
             composer_image: docker-registry.wikimedia.org/releng/composer-php81:8.1.34-s3
             phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php81:1.18.2-s2
         - php83:
-            composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.31-s1
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s2
+            composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.32
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s3
 
     jobs:
         - mediawiki-core-phan-only-{php}
@@ -399,7 +399,7 @@
 - job-template: &job_quibble_requires_only
     !!merge : *job_quibble
     name: 'quibble-requires-only-{packages-source}'
-    docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s2
+    docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s3
     entrypoint: quibble-with-supervisord
     environment:
         # Since we use --resolve-requires, unset dependencies that
@@ -480,7 +480,7 @@
         - docker-log-dir
         - docker-src-dir
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.18.2-s2
+            image: docker-registry.wikimedia.org/releng/quibble-fresnel:1.18.2-s3
             entrypoint: quibble-with-supervisord
             options: '--tmpfs /workspace/db:size=320M'
             volumes:
@@ -630,7 +630,7 @@
         dir: 'cover'
     - docker-castor-load
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-coverage:1.18.2-s3
+        image: docker-registry.wikimedia.org/releng/quibble-coverage:1.18.2-s4
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -725,7 +725,7 @@
     - docker-wipe-dir:
         dir: 'cover'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-coverage:1.18.2-s3
+        image: docker-registry.wikimedia.org/releng/quibble-coverage:1.18.2-s4
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -806,7 +806,7 @@
 
 - job-group:
     name: mediawiki-coverage-jobs
-    docker_image: docker-registry.wikimedia.org/releng/quibble-coverage:1.18.2-s3
+    docker_image: docker-registry.wikimedia.org/releng/quibble-coverage:1.18.2-s4
     entrypoint: quibble-with-supervisord
     jobs:
         - mwcore-phpunit-coverage-patch:
@@ -840,7 +840,7 @@
         - php82:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.18.2-s2
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s3
         - php84:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.18.2-s2
         - php85:
@@ -886,7 +886,7 @@
     # And only php8.3
     php:
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s3
             entrypoint: quibble-with-supervisord
     jobs:
         - quibble-with-gated-extensions-vendor-mysql-{php}
@@ -907,7 +907,7 @@
         - php81:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php81:1.18.2-s2
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s3
     jobs:
         - quibble-with-Wikibase-extensions-browser-tests-only-{packages-source}-{phpflavor}:
             database: mysql
@@ -947,7 +947,7 @@
     entrypoint: quibble-with-supervisord
     phpflavor:
         - php83:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s2
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s3
     jobs:
         - quibble-with-GrowthExperiments-extensions-browser-tests-only-vendor-{phpflavor}:
             database: mysql
@@ -969,7 +969,7 @@
         - api-testing-{database}-{php}:
             php:
                 - php83:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s2
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.18.2-s3
                 - php85:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.18.2-s2
             packages-source: vendor
