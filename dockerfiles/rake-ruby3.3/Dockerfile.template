@@ -1,0 +1,22 @@
+FROM {{ "ci-trixie" | image_tag }}
+
+# rsync and zlib1g-dev are for mediawiki/vagrant T398469
+{% set ruby_deps -%}
+build-essential
+rubygems-integration
+rake
+ruby
+ruby-dev
+ruby-ffi
+libffi-dev
+bundler
+rsync
+zlib1g-dev
+{%- endset -%}
+
+RUN {{ ruby_deps | apt_install }}
+
+COPY run.sh /run.sh
+USER nobody
+WORKDIR /src
+ENTRYPOINT ["/run.sh"]

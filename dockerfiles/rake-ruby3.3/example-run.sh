@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -euxo pipefail
+
+install --mode 2777 --directory cache
+install --mode 2777 --directory log
+docker run \
+    --rm --tty \
+    --env JENKINS_URL=1 \
+    --env ZUUL_URL=https://gerrit.wikimedia.org/r \
+    --env ZUUL_PROJECT=translatewiki \
+    --env ZUUL_COMMIT=master \
+    --env ZUUL_REF=master \
+    --volume /"$PWD"/cache://cache \
+    --volume /"$PWD"/log://log \
+    docker-registry.wikimedia.org/releng/rake-ruby3.3:latest
