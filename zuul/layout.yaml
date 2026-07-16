@@ -1278,6 +1278,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'src/models/tts/.*'
 
+  - name: ^trigger-inference-services-pipeline-tts-section-generator
+    files:
+        - '.pipeline/tts_section_generator/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/tts_section_generator/.*'
+
   # End of meta jobs (the ones starting with ^)
 
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
@@ -2487,6 +2493,7 @@ projects:
       - trigger-inference-services-pipeline-editing-suggestions
       - trigger-inference-services-pipeline-liftwing-openapi-server
       - trigger-inference-services-pipeline-tts
+      - trigger-inference-services-pipeline-tts-section-generator
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-revertrisk
@@ -2497,6 +2504,7 @@ projects:
       - trigger-inference-services-pipeline-editing-suggestions
       - trigger-inference-services-pipeline-liftwing-openapi-server
       - trigger-inference-services-pipeline-tts
+      - trigger-inference-services-pipeline-tts-section-generator
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-revertrisk-publish
@@ -2523,6 +2531,7 @@ projects:
       - trigger-inference-services-pipeline-editing-suggestions-publish
       - trigger-inference-services-pipeline-liftwing-openapi-server-publish
       - trigger-inference-services-pipeline-tts-publish
+      - trigger-inference-services-pipeline-tts-section-generator-publish
 
   - name: integration/config
     test-prio:

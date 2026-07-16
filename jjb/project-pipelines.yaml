@@ -468,6 +468,8 @@
         - liftwing-openapi-server-publish
         - tts
         - tts-publish
+        - tts-section-generator
+        - tts-section-generator-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -503,6 +505,8 @@
         # trigger-inference-services-pipeline-liftwing-openapi-server-publish
         # trigger-inference-services-pipeline-tts
         # trigger-inference-services-pipeline-tts-publish
+        # trigger-inference-services-pipeline-tts-section-generator
+        # trigger-inference-services-pipeline-tts-section-generator-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -538,6 +542,8 @@
         # inference-services-pipeline-liftwing-openapi-server-publish
         # inference-services-pipeline-tts
         # inference-services-pipeline-tts-publish
+        # inference-services-pipeline-tts-section-generator
+        # inference-services-pipeline-tts-section-generator-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:
