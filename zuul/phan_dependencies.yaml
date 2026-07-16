@@ -380,6 +380,9 @@ GlobalBlocking:
   - CentralAuth
   - UserMerge
 
+GlobalContributions:
+  - CentralAuth
+
 GlobalPreferences:
   - BetaFeatures
   - skins/Vector
