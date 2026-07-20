@@ -19,6 +19,26 @@
         - archive-log-allow-empty
         - teardown
 
+- job-template:
+    name: '{name}-ruby3.3-rake'
+    node: Docker
+    docker_image_var: docker-registry.wikimedia.org/releng/rake-ruby3.3:0.1.0
+    triggers:
+        - zuul
+    builders:
+        - docker-castor-load
+        - docker-log-dir
+        - docker-src-dir
+        - docker-run-with-log-cache-src:
+            image: '{obj:docker_image_var}'
+    wrappers:
+      - timeout:
+          timeout: '{obj:build_timeout|3}'  # minutes
+      - timestamps
+    publishers:
+        - archive-log-allow-empty
+        - teardown
+
 # Call bundle 'yard' to generate documentation in labs and publish to
 # doc.wikimedia.org using an intermediate rsync repository in labs.
 - job-template:
