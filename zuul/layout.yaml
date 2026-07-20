@@ -1320,6 +1320,11 @@ jobs:
       - '^\.puppet-lint\.rc$'
       - '^puppet/.*'
       - '(^Rakefile$|^Gemfile$)'
+  - name: translatewiki-ruby3.3-rake
+    files:
+      - '^\.puppet-lint\.rc$'
+      - '^puppet/.*'
+      - '(^Rakefile$|^Gemfile$)'
 
   - name: gerrit
     # Point directly to artifacts
@@ -9955,6 +9960,8 @@ projects:
       - translatewiki-ruby2.7-rake
     gate-and-submit:
       - translatewiki-ruby2.7-rake
+    experimental:
+      - translatewiki-ruby3.3-rake
 
   - name: wikimedia-cz/tracker
     template:
