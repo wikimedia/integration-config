@@ -79,7 +79,6 @@
 - project:
     name: 'translatewiki'
     jobs:
-     - '{name}-ruby2.7-rake'
      - '{name}-ruby3.3-rake'
 
 - job:
