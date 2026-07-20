@@ -141,8 +141,6 @@
       # mobileapps-pipeline-test
       # mobileapps-pipeline-publish
       - '{name}-pipeline-{pipeline}'
-      # (see mediawiki-services.yaml)
-      - 'mobileapps-periodic-test'
 
 - project:
     name: kartotherian
