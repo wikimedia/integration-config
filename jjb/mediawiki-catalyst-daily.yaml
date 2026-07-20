@@ -53,7 +53,7 @@
                   && set -a
                   && source /log/deploy.env
                   && set +a
-                  && /run-with-xvfb.sh selenium-test
+                  && /run-with-xvfb.sh {selenium-command}
                   "
     wrappers:
         - timeout:
@@ -91,6 +91,8 @@
 
 - project:
     name: catalyst-daily
+    # Default selenium command, overridable per entry.
+    selenium-command: 'selenium-test'
     extension:
         - core:
             trigger-time: '0 8 * * *'
@@ -146,6 +148,13 @@
             project-slug: 'mw-ext-newsletter'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Newsletter", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - CentralNotice:
+            trigger-time: '45 8 * * *'
+            repo: 'mediawiki/extensions/CentralNotice'
+            project-slug: 'mw-ext-cn'
+            selenium-command: 'selenium-daily'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "seedTestData": true, "extensions": [ {{ "name": "CentralNotice", "enable": true, "branch": "master" }}, {{ "name": "EventLogging", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - AbuseFilter:
             trigger-time: '50 8 * * *'
             repo: 'mediawiki/extensions/AbuseFilter'
