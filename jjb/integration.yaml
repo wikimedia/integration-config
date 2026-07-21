@@ -256,9 +256,9 @@
 - project:
     name: 'integration-zuul-deploy'
     # Images are set to latest and maintained by SRE
+    # Temporary: Don't use the latest tag.  It has problems (T432636)
     distribution:
         - bullseye
-        - buster
     jobs:
         - 'integration-zuul-deploy-python2-{distribution}':
-            image: 'docker-registry.wikimedia.org/python2-build-{distribution}:latest'
+            image: 'docker-registry.wikimedia.org/python2-build-{distribution}:0.3.0-20251026'
