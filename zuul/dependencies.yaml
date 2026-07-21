@@ -16,6 +16,7 @@ skins/BlueSpiceDiscovery:
   dependencies:
     # From extension.json:
     - OOJSPlus
+    - StandardDialogs
     # extras
     - BlueSpiceFoundation
     - MenuEditor
