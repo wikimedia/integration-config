@@ -1,3 +1,10 @@
+sonar-scanner (4.6.0.2311-s18) wikimedia; urgency=high
+
+   Upgrade from Java 17 to Java 21, since SonarQube no longer
+   supports running the analysis with Java 17
+
+ -- pwangai <pwangai@wikimedia.org>  Wed, 22 Jul 2026 11:18:35 -0500
+
 sonar-scanner (4.6.0.2311-s17) wikimedia; urgency=high
 
    Refresh for update in parent image node24:

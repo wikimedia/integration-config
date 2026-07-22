@@ -1,1 +1,1 @@
-Depends: maven-java17, node24
+Depends: maven-java21, node24
