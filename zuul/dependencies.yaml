@@ -2884,6 +2884,13 @@ wikihiero:
     # extras
     - VisualEditor
 
+WikimediaAntiAbuse:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - Echo
+
 WikimediaBadges:
   recurse: true
   dependencies:

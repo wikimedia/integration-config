@@ -871,6 +871,9 @@ WikidataPageBanner:
   - PageImages
   - Wikibase
 
+WikimediaAntiAbuse:
+  - Echo
+
 WikimediaBadges:
   - Wikibase
 
