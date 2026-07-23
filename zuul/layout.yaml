@@ -4781,6 +4781,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-apitests
+      - name: extension-gate
     postmerge:
       # (T422976) Publish JS code coverage for ReadingLists, too
       # NOTE: This is the 'wrong' publisher, but there's no JS extension

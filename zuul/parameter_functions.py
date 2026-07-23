@@ -449,6 +449,7 @@ gatedextensions = [
     'PageTriage',
     'PageViewInfo',
     'ProofreadPage',
+    'ReadingLists',
     'SandboxLink',
     'Scribunto',
     'SiteMatrix',
