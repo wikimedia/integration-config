@@ -146,5 +146,11 @@
             project-slug: 'mw-ext-newsletter'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Newsletter", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - AbuseFilter:
+            trigger-time: '50 8 * * *'
+            repo: 'mediawiki/extensions/AbuseFilter'
+            project-slug: 'mw-ext-af'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "AbuseFilter", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
