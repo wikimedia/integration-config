@@ -889,6 +889,7 @@ WikimediaCustomizations:
   - LoginNotify
   - OATHAuth
   - PageViewInfo
+  - ParserMigration
   - TestKitchen
   - WikimediaEvents
 
