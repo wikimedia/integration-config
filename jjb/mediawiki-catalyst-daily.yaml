@@ -152,5 +152,11 @@
             project-slug: 'mw-ext-af'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "AbuseFilter", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - AchievementBadges:
+            trigger-time: '55 8 * * *'
+            repo: 'mediawiki/extensions/AchievementBadges'
+            project-slug: 'mw-ext-ab'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "AchievementBadges", "enable": true, "branch": "master" }}, {{ "name": "BetaFeatures", "enable": true, "branch": "master" }}, {{ "name": "Echo", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
