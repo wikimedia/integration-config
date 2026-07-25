@@ -158,5 +158,11 @@
             project-slug: 'mw-ext-ab'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "AchievementBadges", "enable": true, "branch": "master" }}, {{ "name": "BetaFeatures", "enable": true, "branch": "master" }}, {{ "name": "Echo", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - MinervaNeue:
+            trigger-time: '0 9 * * *'
+            repo: 'mediawiki/skins/MinervaNeue'
+            project-slug: 'mw-skin-minerva'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "MobileFrontend", "enable": true, "branch": "master" }}, {{ "name": "Cite", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "MinervaNeue", "enable": true, "branch": "master" }}, {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
