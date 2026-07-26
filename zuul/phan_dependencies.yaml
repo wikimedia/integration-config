@@ -452,6 +452,9 @@ Kartographer:
   - GeoData
   - JsonConfig
 
+LDAPProvider:
+  - WebDAV
+
 LinkFilter:
   - Comments
   - ConfirmEdit
