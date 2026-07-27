@@ -1831,6 +1831,13 @@ LDAPGroups:
     # From extension.json:
     - LDAPProvider
 
+LDAPProvider:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+  - WebDAV
+
 LDAPSyncAll:
   recurse: false
   dependencies:
