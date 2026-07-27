@@ -1235,6 +1235,13 @@ jobs:
         - 'src/models/embeddings/.*'
         - 'python/.*\.py$'
 
+  - name: ^trigger-inference-services-pipeline-embeddings-transformers
+    files:
+        - '.pipeline/embeddings/blubber_transformers.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/embeddings/.*'
+        - 'python/.*\.py$'
+
   - name: ^trigger-inference-services-pipeline-policy-violation-gpt-oss-safeguard
     files:
         - '.pipeline/policy_violation/blubber_gpt_oss_safeguard_20b.yaml'

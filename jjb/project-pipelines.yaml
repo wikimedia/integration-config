@@ -455,6 +455,7 @@
         - revise-tone-task-generator
         - revise-tone-task-generator-publish
         - embeddings-publish
+        - embeddings-transformers
         - policy-violation-gpt-oss-safeguard-publish
         - policy-violation-cope-a-9b-publish
         - policy-violation-cope-b-a4b-publish
@@ -492,6 +493,7 @@
         # trigger-inference-services-pipeline-revise-tone-task-generator
         # trigger-inference-services-pipeline-revise-tone-task-generator-publish
         # trigger-inference-services-pipeline-embeddings-publish
+        # trigger-inference-services-pipeline-embeddings-transformers
         # trigger-inference-services-pipeline-policy-violation-gpt-oss-safeguard-publish
         # trigger-inference-services-pipeline-policy-violation-cope-a-9b-publish
         # trigger-inference-services-pipeline-policy-violation-cope-b-a4b-publish
@@ -529,6 +531,7 @@
         # inference-services-pipeline-revise-tone-task-generator
         # inference-services-pipeline-revise-tone-task-generator-publish
         # inference-services-pipeline-embeddings-publish
+        # inference-services-pipeline-embeddings-transformers
         # inference-services-pipeline-policy-violation-gpt-oss-safeguard-publish
         # inference-services-pipeline-policy-violation-cope-a-9b-publish
         # inference-services-pipeline-policy-violation-cope-b-a4b-publish
