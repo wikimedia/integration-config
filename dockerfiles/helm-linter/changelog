@@ -1,3 +1,10 @@
+helm-linter (0.8.3) wikimedia; urgency=medium
+
+  * Update helm package to helm319 (T427403)
+  * Update helm apt alternative to helm 3.17
+
+ -- Jelto Wodstrcil <jwodstrcil@wikimedia.org>  Tue, 28 Jul 2026 12:08:04 +0200
+
 helm-linter (0.8.2) wikimedia; urgency=medium
 
   * Update istioctl package to 1.29.4-2 (T427401)
