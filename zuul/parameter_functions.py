@@ -123,7 +123,7 @@ def set_parameters(item, job, params):
             # using PHP namespaces. Meanwhile disable parallel testing.
             "mediawiki/extensions/MediaWikiFarm",
         ]
-        # ... exclude on pre-1.44 REL_ branches (not yet tested/patched),
+        # ... exclude on the REL1_43 branch (not yet tested/patched),
         and "ZUUL_BRANCH" in params
         and not (
             params["ZUUL_BRANCH"].startswith("REL1_43")

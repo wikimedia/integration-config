@@ -162,7 +162,7 @@ CheckUser:
   - DiscussionTools
   - EventBus
   - EventLogging
- # HACK: This is no longer needed in master, but in REL1_44 and before
+ # HACK: This is no longer needed in master, now only in REL1_43
   - GuidedTour
   - FlaggedRevs
   - GlobalBlocking
