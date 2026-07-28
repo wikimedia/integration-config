@@ -255,9 +255,8 @@
 
 - project:
     name: 'integration-zuul-deploy'
-    # Images are maintained by SRE
     distribution:
         - bullseye
     jobs:
         - 'integration-zuul-deploy-python2-{distribution}':
-            image: 'docker-registry.wikimedia.org/python2-build-{distribution}:0.3.1'
+            image: 'docker-registry.wikimedia.org/releng/python2-build-{distribution}:0.3.2'
