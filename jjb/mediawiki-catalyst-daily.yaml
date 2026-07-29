@@ -164,5 +164,11 @@
             project-slug: 'mw-skin-minerva'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "MobileFrontend", "enable": true, "branch": "master" }}, {{ "name": "Cite", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "MinervaNeue", "enable": true, "branch": "master" }}, {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - PageTriage:
+            trigger-time: '5 9 * * *'
+            repo: 'mediawiki/extensions/PageTriage'
+            project-slug: 'mw-ext-pt'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "PageTriage", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
