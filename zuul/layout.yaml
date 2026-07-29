@@ -313,6 +313,7 @@ pipelines:
            - ^ladsgroup\+gerritbot@gmail\.com$ # Gerrit maintenance bot, see T253439
            - ^lakesarchive@outlook\.com$ # Lakejason0
            - ^lautgesetz@gmail\.com$ # David Kamholz
+           - ^lbcdxdev@proton\.me$ # Les4353 - T432791
            - ^lewis@lewiscawte\.me$
            - ^lexnasser@icloud\.com$ # Lex Nasser
            - ^liangent@gmail\.com$
