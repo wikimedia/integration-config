@@ -6813,6 +6813,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/ImpactModule
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/ImportArticles
     template:
       - name: extension-quibble
