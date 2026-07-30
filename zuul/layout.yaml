@@ -11072,9 +11072,9 @@ projects:
     template:
       - name: archived
 
-  - name: mediawiki/extensions/MarkAsUseful
+  - name: mediawiki/extensions/MarkAsHelpful
     template:
-      - name: archived
+      - name: archived # T425234
 
   - name: mediawiki/extensions/MassAction
     template:
