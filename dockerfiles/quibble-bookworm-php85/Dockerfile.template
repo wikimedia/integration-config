@@ -1,12 +1,13 @@
 FROM {{ "php85" | image_tag }} as php85
 
-FROM {{ "sury-php" | image_tag }} AS sury-php
-
 FROM {{ "quibble-bookworm" | image_tag }}
 
 ENV PHP_VERSION=8.5
 
 USER root
+
+# Align with SRE-provided PHP 8.5 packages (T433254).
+COPY wikimedia-php85.list /etc/apt/sources.list.d/wikimedia-php85.list
 
 #############################
 #  Debian packages we need  #
@@ -34,14 +35,6 @@ php8.5-xml
 php8.5-zip
 {%- endset -%}
 
-# We need to get a newer version of php-ast from sury.org (T174338)
-COPY --from=sury-php /etc/apt/trusted.gpg.d/php.gpg /etc/apt/trusted.gpg.d/php.gpg
-
-RUN {{ "apt-transport-https" | apt_install }} && \
-    echo "deb https://packages.sury.org/php/ bookworm main" > /etc/apt/sources.list.d/php.list
-
-# Pin sury's repo higher for the packages that exist in both bookworm and sury
-COPY sury.pin /etc/apt/preferences.d/sury
 RUN {{ mediawiki_deps | apt_install }} \
     && /install-php-fpm-conf.sh
 
@@ -55,6 +48,9 @@ RUN phpdismod pcov xdebug
 
 # Disable XDebug by default due to its performance impact
 RUN phpdismod xdebug
+
+# Ensure the image use PHP 8.5, as that is not the default on bookworm
+RUN update-alternatives --set php /usr/bin/php8.5
 
 # Unprivileged
 RUN install --directory /workspace --owner=nobody --group=nogroup

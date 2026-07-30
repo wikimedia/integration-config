@@ -1,3 +1,8 @@
+# Align with SRE-provided PHP 8.5 packages (T433254).
+FROM {{ "ci-bookworm" | image_tag }} as wmfphp
+
+COPY wikimedia-php85.list /etc/apt/sources.list.d/wikimedia-php85.list
+
 FROM {{ "php-scratch" | image_tag }} as php-scratch
 
 # Set a standard, new version of php-ast rather than using Debian's older one.
@@ -5,7 +10,7 @@ FROM {{ "php-scratch" | image_tag }} as php-scratch
 # We create a stage with php-dev to compile the ast extension from source. This
 # is done as a multistage build to ensure it is compiled with the same version
 # of PHP than the one that will be in the final image (T396312).
-FROM {{ "sury-php" | image_tag }} as ast-builder
+FROM wmfphp as ast-builder
 
 USER root
 RUN {{ "php8.5-dev build-essential" | apt_install }}
@@ -18,7 +23,7 @@ RUN cd /srv && /build-extension-ast
 # Outputs: /srv/artifacts/ast.so /srv/artifacts/ast.ini
 
 # Now build the final image
-FROM {{ "sury-php" | image_tag }}
+FROM wmfphp
 
 USER root
 

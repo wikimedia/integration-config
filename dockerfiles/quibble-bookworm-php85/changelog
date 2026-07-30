@@ -1,3 +1,10 @@
+quibble-bookworm-php85 (1.19.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php85:
+   (T433254) Migrate to Wikimedia-provided PHP binary
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 30 Jul 2026 13:49:28 +0100
+
 quibble-bookworm-php85 (1.19.0) wikimedia; urgency=medium
 
   * Update Quibble to 1.19.0
