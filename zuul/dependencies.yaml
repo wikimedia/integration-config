@@ -2218,6 +2218,7 @@ ProofreadPage:
     # no requirements in extension.json
     # extras
     - BetaFeatures
+    - Cite
     - LabeledSectionTransclusion
     - ParserFunctions
     - Scribunto
