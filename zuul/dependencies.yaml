@@ -664,12 +664,15 @@ BlueSpiceProDistributionConnector:
     # extras
     - BlueSpiceUniversalExport
     - BlueSpiceVisualEditorConnector
+    - ContentDroplets
     - Math
+    - PDFCreator
     - VisualEditor
     # extras requirements
     - VisualEditorPlus
     # extras transitive dependencies
-    - PDFCreator
+    - MenuEditor
+    - skins/BlueSpiceDiscovery
     - VueJsPlus
 
 BlueSpiceQrCode:
