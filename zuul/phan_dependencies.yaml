@@ -505,6 +505,9 @@ MobileFrontend:
 MobileFrontendContentProvider:
   - MobileFrontend
 
+ModeratorToolkit:
+  - PersonalDashboard
+
 Monstranto:
   - Scribunto
 

@@ -5513,6 +5513,12 @@ projects:
       - name: extension-quibble
       - name: extension-coverage
 
+  - name: mediawiki/extensions/ModeratorToolkit
+    template:
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
 #### Other MediaWiki extensions ################################
 
   - name: mediawiki/extensions/AbsenteeLandlord
