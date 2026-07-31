@@ -359,3 +359,29 @@ class TestZuulLayout(unittest.TestCase):
 
         self.maxDiff = None
         self.assertListEqual([], sorted(errors))
+
+    def test_email_allowlist_entries_are_escaped_properly(self):
+        email_regexes = []
+        # Collect email regexes from all pipelines
+        for pipeline in self.layout['pipelines']:
+            for trigger in pipeline.get('trigger', {}).get('gerrit', []):
+                email_regexes.extend(trigger.get('email', []))
+
+        # Deduplicate entries so we don't check the same regex twice
+        email_regexes = list(set(email_regexes))
+        for email_regex in email_regexes:
+            # If the regex starts with ".*", it doesn't need to be anchored.
+            if not email_regex.startswith('.*'):
+                self.assertTrue(
+                    email_regex.startswith('^'),
+                    'Email regex should be anchored at the start'
+                )
+            self.assertTrue(
+                email_regex.endswith('$'),
+                'Email regex should be anchored at the end'
+            )
+            self.assertNotRegexpMatches(
+                email_regex,
+                r'(?<!\\)\.(?!\*)',
+                'Literal "." characters should be escaped in email regexes'
+            )
