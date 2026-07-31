@@ -1970,6 +1970,14 @@ MobileFrontendContentProvider:
     # From extension.json:
     - MobileFrontend
 
+ModeratorToolkit:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - PersonalDashboard
+    # Transitive requirements:
+    - CommunityConfiguration
+
 Monstranto:
   recurse: false
   dependencies:
