@@ -260,6 +260,7 @@ pipelines:
            - ^hydriz@jorked\.com$ # Hydriz
            - ^i@ananayarora\.com$ # former GCI student
            - ^i\.leturia@elhuyar\.eus$
+           - ^ignacio\.rodriguez\.mo@gmail\.com$ # Ignacio_Rodríguez
            - ^igorkim78@gmail\.com$ # Igor Kim
            - ^initechq@gmail\.com$ # Iniquity
            - ^inductiveload@gmail\.com$ # inductiveload
@@ -552,7 +553,6 @@ pipelines:
            - ^zhuyifei1999@gmail\.com$
            - ^zivkovica006@gmail\.com$ # Aca
            - ^zorandori4444@gmail\.com$ # Zoranzoki21
-           - ^ignacio\.rodriguez\.mo@gmail\.com # Ignacio_Rodríguez
 
            # Pywikibot related
            - ^CommodoreFabianus@gmx\.de$ # XZise, Pywikibot maintainer
