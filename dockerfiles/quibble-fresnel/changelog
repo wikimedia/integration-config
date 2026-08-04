@@ -1,3 +1,10 @@
+quibble-fresnel (1.18.2-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image php83:
+   Upgrade PHP to 8.3.33
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue,  4 Aug 2026 12:26:59 -0400
+
 quibble-fresnel (1.18.2-s3) wikimedia; urgency=high
 
    Refresh for update in parent image php83:
