@@ -74,16 +74,31 @@ mkdir -v -p "${DEST}"
 echo "$(( ${central_gen:-0} + 1 ))" > "${DEST}/${GEN_FILE}"
 
 echo -e "Syncing cache\nFrom.. ${REMOTE_INSTANCE}:${remote_cache_dir}\nTo.... ${DEST}"
+echo ">>> Start: castor-save rsync"
+start=$(date +%s%3N)
+outcome='Finish'
+rc=0
 set -x
 # On the sender, run rsync in a container (--rsync-path) to have it run has
 # user 'nobody'.
 rsync \
     --archive \
+    --stats \
     --rsh="/usr/bin/ssh ${SSH_OPTS[*]}" \
     --rsync-path="docker run --rm -i --volume ${remote_cache_dir}:${cache_dir} --entrypoint=/usr/bin/rsync docker-registry.wikimedia.org/releng/castor:0.4.1" \
     --delete-delay \
     --delay-updates \
     --exclude="/${GEN_FILE}" \
-    jenkins-deploy@"${REMOTE_INSTANCE}:${cache_dir}/" "${DEST}"
+    jenkins-deploy@"${REMOTE_INSTANCE}:${cache_dir}/" "${DEST}" \
+    || rc=$?
+set +x
 
-echo -e "\nDone"
+if [ "$rc" -ne 0 ]; then
+    echo "castor-save rsync failed (exit code $rc)"
+    outcome='Failed'
+fi
+
+ms=$(( $(date +%s%3N) - start ))
+printf '<<< %s: castor-save rsync, in %d.%03d s\n' "$outcome" "$(( ms / 1000 ))" "$(( ms % 1000 ))"
+
+exit "$rc"
