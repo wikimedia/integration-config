@@ -28,7 +28,7 @@
      - php84:
           image: docker-registry.wikimedia.org/releng/php84-compile:8.4.18-s2
      - php85:
-          image: docker-registry.wikimedia.org/releng/php85-compile:8.5.3-s2
+          image: docker-registry.wikimedia.org/releng/php85-compile:8.5.9
     jobs:
       - 'php-compile-{php}'
 
@@ -81,6 +81,6 @@
      - php84:
           image: docker-registry.wikimedia.org/releng/php84-compile:8.4.18-s2
      - php85:
-          image: docker-registry.wikimedia.org/releng/php85-compile:8.5.3-s2
+          image: docker-registry.wikimedia.org/releng/php85-compile:8.5.9
     jobs:
       - 'php-pie-build-{php}'
