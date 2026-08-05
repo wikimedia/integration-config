@@ -1,3 +1,9 @@
+php83 (8.3.33-s1) wikimedia; urgency=high
+
+   Stop re-specifying libpcre2-8-0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Fri, 14 Aug 2026 13:13:15 -0400
+
 php83 (8.3.33) wikimedia; urgency=high
 
    Upgrade PHP to 8.3.33

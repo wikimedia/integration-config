@@ -27,9 +27,7 @@ FROM wmfphp
 
 # zip is needed for composer to install things from dist
 # others are libraries/MediaWiki related
-# (T386006) We're re-specifying pcre2 (libpcre2-8-0) to re-install the newer version than base
 {% set packages|replace('\n', ' ') -%}
-libpcre2-8-0
 php8.3-cli
 php8.3-zip
 php8.3-bcmath
