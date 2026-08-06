@@ -2917,6 +2917,8 @@ WikimediaAntiAbuse:
     # no requirements in extension.json
     # extras
     - Echo
+    - EventBus
+    - EventLogging
 
 WikimediaBadges:
   recurse: true

@@ -883,6 +883,8 @@ WikidataPageBanner:
 
 WikimediaAntiAbuse:
   - Echo
+  - EventBus
+  - EventLogging
 
 WikimediaBadges:
   - Wikibase
