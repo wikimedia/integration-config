@@ -1737,6 +1737,13 @@ HierarchyBuilder:
     - PageForms
     - SemanticMediaWiki
 
+HotCat:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - BetaFeatures
+
 IPInfo:
   recurse: false
   dependencies:
