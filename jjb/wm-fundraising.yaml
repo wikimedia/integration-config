@@ -37,7 +37,7 @@
     branch:
      - REL1_43:
          phpflavor: php82
-         docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.18.2-s2
+         docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.19.0
          entrypoint: quibble-with-supervisord
          donation_interface_branch: master
     jobs:
@@ -93,7 +93,7 @@
     branch:
      - REL1_43:
          phpflavor: php82
-         docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.18.2-s2
+         docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.19.0
          entrypoint: quibble-with-supervisord
     jobs:
      - quibble-fundraising-{ext}-{branch}-{phpflavor}
