@@ -70,9 +70,9 @@
         - '{name}-{node_version}':
             node_version:
                 - node24:
-                    image: docker-registry.wikimedia.org/releng/node24-test:24.18.0
+                    image: docker-registry.wikimedia.org/releng/node24-test:24.18.0-s1
                 - node26:
-                    image: docker-registry.wikimedia.org/releng/node26-test:26.4.0
+                    image: docker-registry.wikimedia.org/releng/node26-test:26.4.0-s1
             name:
                - gerrit
 

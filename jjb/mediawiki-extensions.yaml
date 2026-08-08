@@ -267,7 +267,7 @@
                   bash tests/catalyst/run.sh "$MW_SERVER";
                   else echo "No tests/catalyst/run.sh in this checkout; skipping (suites are opt-in)."; fi'
           - docker-run-with-log-cache-src: &wikilambda-catalyst-docker-test
-                image: docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0
+                image: docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0-s1
                 environment:
                     MEDIAWIKI_USER: 'Admin'
                     MEDIAWIKI_PASSWORD: 'dockerpass'

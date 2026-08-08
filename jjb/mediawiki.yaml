@@ -23,7 +23,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node24-test:24.18.0'
+        image: 'docker-registry.wikimedia.org/releng/node24-test:24.18.0-s1'
         args: 'doc'
      - doc-publish:
            docsrc: 'src/docs/js'
@@ -156,9 +156,9 @@
         - '{name}-{node_version}':
             node_version:
                - node24:
-                   image: docker-registry.wikimedia.org/releng/node24-test:24.18.0
+                   image: docker-registry.wikimedia.org/releng/node24-test:24.18.0-s1
                - node26:
-                   image: docker-registry.wikimedia.org/releng/node26-test:26.4.0
+                   image: docker-registry.wikimedia.org/releng/node26-test:26.4.0-s1
         - '{name}-tox':
             build_timeout: 10
 
@@ -642,7 +642,7 @@
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s18
+        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s19
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'
@@ -740,7 +740,7 @@
     # mediawiki/services/parsoid (T321837)
     #
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/node24-test:24.18.0
+        image: docker-registry.wikimedia.org/releng/node24-test:24.18.0-s1
         volumes:
             src/$THING_SUBNAME: /src
         logdir: '/workspace/log'
@@ -751,7 +751,7 @@
           sed -ie "s#/src/#/workspace/src/$THING_SUBNAME/#g" src/"$THING_SUBNAME"/coverage/lcov.info
         fi
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s18
+        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s19
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'

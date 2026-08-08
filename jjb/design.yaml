@@ -4,7 +4,7 @@
     name: 'codex-node24'
     jobs:
      - '{name}-doc-publish':
-         image: 'docker-registry.wikimedia.org/releng/node24-test:24.18.0'
+         image: 'docker-registry.wikimedia.org/releng/node24-test:24.18.0-s1'
          args: 'doc'
          environment:
              CODEX_DOC_ROOT: '/$DOC_PROJECT/$DOC_SUBPATH/'
@@ -12,7 +12,7 @@
          docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
          docdest: '$DOC_PROJECT/$DOC_SUBPATH'
      - '{name}-doc-tag-publish':
-         image: 'docker-registry.wikimedia.org/releng/node24-test:24.18.0'
+         image: 'docker-registry.wikimedia.org/releng/node24-test:24.18.0-s1'
          args: 'doc-release'
          environment:
              CODEX_DOC_ROOT: '/$DOC_PROJECT/$DOC_SUBPATH/'
@@ -20,7 +20,7 @@
          docsrc: 'src/packages/codex-docs/docs/.vitepress/dist'
          docdest: '$DOC_PROJECT/$DOC_SUBPATH'
      - '{name}-doc-latest-publish':
-         image: 'docker-registry.wikimedia.org/releng/node24-test:24.18.0'
+         image: 'docker-registry.wikimedia.org/releng/node24-test:24.18.0-s1'
          args: 'doc-release'
          environment:
              CODEX_DOC_ROOT: '/$DOC_PROJECT/latest/'
