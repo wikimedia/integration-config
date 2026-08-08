@@ -1,3 +1,10 @@
+sonar-scanner (4.6.0.2311-s19) wikimedia; urgency=high
+
+   Refresh for update in parent image node24:
+   Add python-is-python3 package - T434357
+
+ -- Antoine Musso <hashar@free.fr>  Sat,  8 Aug 2026 22:18:29 +0200
+
 sonar-scanner (4.6.0.2311-s18) wikimedia; urgency=high
 
    Upgrade from Java 17 to Java 21, since SonarQube no longer

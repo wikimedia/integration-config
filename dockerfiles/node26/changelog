@@ -1,3 +1,9 @@
+node26 (26.4.0-s1) wikimedia; urgency=high
+
+   Add python-is-python3 package - T434357
+
+ -- Antoine Musso <hashar@free.fr>  Sat,  8 Aug 2026 22:19:39 +0200
+
 node26 (26.4.0) wikimedia; urgency=high
 
    Update Node from 26.0.0 to 26.4.0

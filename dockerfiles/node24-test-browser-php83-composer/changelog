@@ -1,3 +1,10 @@
+node24-test-browser-php83-composer (24.18.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image node24:
+   Add python-is-python3 package - T434357
+
+ -- Antoine Musso <hashar@free.fr>  Sat,  8 Aug 2026 22:18:29 +0200
+
 node24-test-browser-php83-composer (24.18.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
