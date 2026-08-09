@@ -361,6 +361,7 @@ Flow:
   - Elastica
   - GuidedTour
   - LiquidThreads
+  - Nuke
   - SpamBlacklist
   - VisualEditor
 
