@@ -1,4 +1,13 @@
 ---
+
+- project:
+    name: 3d2png
+    pipeline:
+      - test
+    jobs:
+      - 'trigger-{name}-pipeline-{pipeline}'
+      - '{name}-pipeline-{pipeline}'
+
 - project:
     name: pipelinelib
     pipeline:

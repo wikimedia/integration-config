@@ -8295,8 +8295,10 @@ projects:
 #### MediaWiki-related services used in Wikimedia production ###
 
   - name: 3d2png
-    template:
-      - name: node24
+    test:
+      - trigger-3d2png-pipeline-test
+    gate-and-submit:
+      - trigger-3d2png-pipeline-test
 
     # apertium
   - name: mediawiki/services/apertium
