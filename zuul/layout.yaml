@@ -1752,13 +1752,12 @@ project-templates:
 
     test-1_43:
       - mwext-bluespice-node24
-      - quibble-composer-mysql-php81
+      - quibble-composer-mysql-php82
       # Special non-voting jobs to see if the branch is ready for newer PHP versions
       - quibble-composer-mysql-php84-non-voting
       - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_43:
       - mwext-bluespice-node24
-      - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
 
