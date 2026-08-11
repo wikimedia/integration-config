@@ -732,7 +732,18 @@
         volumes:
             cover: /workspace/cover
             /srv/git: /srv/git:ro
-        args: '--packages-source "{packages-source}" --git-parallel=8 --commands=mwext-phpunit-coverage'
+        # Quibble npm install is skipped
+        #
+        # It is not needed for the PHPUnit coverage. Npm installation is later
+        # run under releng/node24-test which has a different npm cache config,
+        # which would lead to a duplicate cache being saved (T427922)
+        #
+        # The npm packages are later installed by releng/nodeXX-test image
+        args: >
+            --packages-source "{packages-source}"
+            --git-parallel=8
+            --skip-npm-install
+            --commands=mwext-phpunit-coverage
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
     #
@@ -745,6 +756,7 @@
             src/$THING_SUBNAME: /src
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
+        # Note, the entrypoint script runs `npm ci`
         args: '--if-present coverage'
     - shell: |
         if [ -f src/"$THING_SUBNAME"/coverage/lcov.info ]; then
