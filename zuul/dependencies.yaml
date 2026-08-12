@@ -1717,6 +1717,7 @@ GrowthExperiments:
     - MobileFrontend
     - PageImages
     - PageViewInfo
+    - PersonalDashboard
     - skins/MinervaNeue
     - TestKitchen
     - Thanks

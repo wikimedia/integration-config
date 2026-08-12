@@ -406,6 +406,7 @@ GrowthExperiments:
   - WikimediaMessages
   - TestKitchen
   - GuidedTour
+  - PersonalDashboard
 
 HAWelcome:
   - SocialProfile
