@@ -1,3 +1,9 @@
+helm-linter (0.8.4) wikimedia; urgency=medium
+
+  * Update envoy-future package to 3.19.0 (T421418)
+
+ -- Blake Jensen <blake@wikimedia.org>  Wed, 12 Aug 2026 13:00:00 +0100
+
 helm-linter (0.8.3) wikimedia; urgency=medium
 
   * Update helm package to helm319 (T427403)
