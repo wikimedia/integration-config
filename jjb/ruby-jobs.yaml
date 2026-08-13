@@ -1,4 +1,3 @@
----
 - job-template:
     name: '{name}-ruby2.7-rake'
     node: Docker

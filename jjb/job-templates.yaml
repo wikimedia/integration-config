@@ -1,4 +1,3 @@
----
 # CI for gerrit
 - job:
     name: 'gerrit'

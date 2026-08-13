@@ -1,4 +1,3 @@
----
 # Manually triggered flavor
 - job:
     name: operations-puppet-catalog-compiler

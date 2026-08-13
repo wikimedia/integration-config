@@ -1,4 +1,3 @@
----
 - job-template:
     name: catalyst-daily-{extension}
     node: Docker

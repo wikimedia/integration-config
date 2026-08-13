@@ -1,4 +1,3 @@
----
 - job:
     name: 'oojs-ui-publish'
     node: Docker

@@ -1,4 +1,3 @@
----
 - publisher:
     name: archive-tox-logs
     publishers:

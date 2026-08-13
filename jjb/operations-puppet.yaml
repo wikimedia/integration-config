@@ -1,4 +1,3 @@
----
 - publisher:
     name: email-qa-alerts
     publishers:

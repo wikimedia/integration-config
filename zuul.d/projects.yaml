@@ -1,4 +1,3 @@
----
 - project:
     # This adds any repo to the check pipeline so that Zuul control plane can
     # report back when there is an invalid configuration

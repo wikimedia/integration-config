@@ -1,4 +1,3 @@
----
 - job:
     name: 'wikimedia-portals-build'
     node: Docker

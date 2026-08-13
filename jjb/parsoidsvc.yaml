@@ -1,4 +1,3 @@
----
 - job:
     name: 'parsoidsvc-doxygen-publish'
     node: Docker

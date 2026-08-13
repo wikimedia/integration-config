@@ -1,4 +1,3 @@
----
 - job:
     parent: null
     name: base

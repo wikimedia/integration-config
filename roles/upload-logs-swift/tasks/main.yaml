@@ -1,4 +1,3 @@
----
 - name: Set zuul-log-path fact
   include_role:
     name: set-zuul-log-path-fact

@@ -1,4 +1,3 @@
----
 # Jobs related to maintenance of the ci cluster
 - job:
     defaults: pipeline-job

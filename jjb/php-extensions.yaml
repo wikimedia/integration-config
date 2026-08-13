@@ -1,4 +1,3 @@
----
 # Jobs for compiling PHP extensions
 - job-template:
     name: 'php-compile-{php}'

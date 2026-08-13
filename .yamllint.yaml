@@ -1,7 +1,8 @@
----
 extends: default
 
 rules:
+    # Ignore document delimiters, we have no need for it
+    document-start: false
     # Our JJB & Zuul YAML routinely runs long due to long strings etc.; allow
     # double the 1980s-era 80 char length default, and inline-disable the rest
     line-length:
