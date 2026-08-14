@@ -577,6 +577,7 @@ ParserMigration:
 PersonalDashboard:
   - CommunityConfiguration
   - FlaggedRevs
+  - TestKitchen
   - Thanks
 
 Petition:

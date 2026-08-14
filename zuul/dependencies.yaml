@@ -2164,6 +2164,7 @@ PersonalDashboard:
     - Echo
     # extras
     - FlaggedRevs
+    - TestKitchen
     - Thanks
 
 Petition:
