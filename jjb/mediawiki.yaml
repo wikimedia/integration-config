@@ -151,7 +151,7 @@
                 - php84:
                     image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s3
                 - php85:
-                    image: docker-registry.wikimedia.org/releng/composer-php85:8.5.9
+                    image: docker-registry.wikimedia.org/releng/composer-php85:8.5.9-s1
         - '{name}-{node_version}':
             node_version:
                - node24:
@@ -855,7 +855,7 @@
         - php84:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.19.0
         - php85:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.19.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.19.0-s1
     jobs:
         - quibble-{packages-source}-{database}-{php}
         - quibble-{packages-source}-{database}-{php}-selenium
@@ -881,7 +881,7 @@
         - php84:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.19.0
         - php85:
-            docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.19.0
+            docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.19.0-s1
     jobs:
         - quibble-composer-mysql-{php}-non-voting
         - quibble-for-mediawiki-core-composer-mysql-{php}-non-voting
@@ -982,7 +982,7 @@
                 - php83:
                     docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.19.0
                 - php85:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.19.0
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.19.0-s1
             packages-source: vendor
             database:
                 - mysql
