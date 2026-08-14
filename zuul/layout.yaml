@@ -6665,6 +6665,7 @@ projects:
 
   - name: mediawiki/extensions/ImpactModule
     template:
+      - name: extension-coverage
       - name: extension-quibble
 
   - name: mediawiki/extensions/ImportArticles
