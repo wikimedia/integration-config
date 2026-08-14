@@ -2163,6 +2163,7 @@ PersonalDashboard:
     # Transitive requirements
     - Echo
     # extras
+    - EventBus
     - FlaggedRevs
     - TestKitchen
     - Thanks
