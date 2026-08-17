@@ -1092,13 +1092,6 @@ jobs:
         - 'src/models/outlink_topic_model/.*'
         - 'python/.*\.py$'
 
-  - name: ^trigger-inference-services-pipeline-outlink-transformer
-    files:
-        - '.pipeline/outlink/transformer.yaml'
-        - '.pipeline/config.yaml'
-        - 'src/models/outlink_topic_model/transformer/.*'
-        - 'python/.*\.py$'
-
   - name: ^trigger-inference-services-pipeline-revertrisk
     files:
         - '.pipeline/revertrisk/revertrisk.yaml'
@@ -1140,7 +1133,6 @@ jobs:
     files:
         - '.pipeline/llm/blubber.yaml'
         - '.pipeline/config.yaml'
-        - 'llm/.*'
         - 'src/models/llm/.*'
 
   - name: ^trigger-inference-services-pipeline-langid
@@ -1181,7 +1173,7 @@ jobs:
 
   - name: ^trigger-inference-services-pipeline-reference-quality
     files:
-        - '.pipeline/reference-quality/blubber.yaml'
+        - '.pipeline/reference_quality/blubber.yaml'
         - '.pipeline/config.yaml'
         - 'src/models/reference_quality/.*'
 
