@@ -1119,6 +1119,7 @@ BlueSpiceWikiFarm:
     - skins/BlueSpiceDiscovery
     # extras transitive dependencies
     - MenuEditor
+    - StandardDialogs
     - VisualEditor
 
 BounceHandler:
