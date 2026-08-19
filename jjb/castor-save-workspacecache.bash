@@ -85,7 +85,7 @@ rsync \
     --archive \
     --stats \
     --rsh="/usr/bin/ssh ${SSH_OPTS[*]}" \
-    --rsync-path="docker run --rm -i --volume ${remote_cache_dir}:${cache_dir} --entrypoint=/usr/bin/rsync docker-registry.wikimedia.org/releng/castor:0.4.1" \
+    --rsync-path="docker run --rm -i --volume ${remote_cache_dir}:${cache_dir} --entrypoint=/usr/bin/rsync docker-registry.wikimedia.org/releng/castor:0.4.2" \
     --delete-delay \
     --delay-updates \
     --exclude="/${GEN_FILE}" \
