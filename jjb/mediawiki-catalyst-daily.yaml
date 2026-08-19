@@ -77,9 +77,8 @@
                         curl -X "DELETE" "https://api.catalyst.wmcloud.org/api/environments/${{ENV_ID}}" \
                           -H "Authorization: ApiToken ${{CATALYST_API_TOKEN}}"
         - docker-cleanup
-        # Temporarily, e-mail Vaughn on failures
         - email-ext:
-            recipients:   vwalters@wikimedia.org
+            recipients:   'vwalters@wikimedia.org qa-alerts@lists.wikimedia.org {extra-recipients}'
             content-type: text
             subject:      Broken build $BUILD_TAG
             body:         |
@@ -92,6 +91,7 @@
     name: catalyst-daily
     # Default selenium command, overridable per entry.
     selenium-command: 'selenium-test'
+    extra-recipients: ''
     extension:
         - core:
             trigger-time: '0 8 * * *'
@@ -103,6 +103,7 @@
             trigger-time: '5 8 * * *'
             repo: 'mediawiki/extensions/VisualEditor'
             project-slug: 'mw-ext-ve'
+            extra-recipients: 'eakinloose@wikimedia.org' # @EAkinloose
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "VisualEditor", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ], "otherModules": [ {{ "name": "parsoid", "enable": true, "branch": "master" }} ] }}'
         - CampaignEvents:
@@ -115,36 +116,42 @@
             trigger-time: '15 8 * * *'
             repo: 'mediawiki/extensions/TwoColConflict'
             project-slug: 'mw-ext-tcc'
+            extra-recipients: 'techwish-devs@wikimedia.de' # @awight wmde-techwish
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "TwoColConflict", "enable": true, "branch": "master" }}, {{ "name": "BetaFeatures", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - Echo:
             trigger-time: '20 8 * * *'
             repo: 'mediawiki/extensions/Echo'
             project-slug: 'mw-ext-echo'
+            extra-recipients: 'etonkovidova@wikimedia.org' # @Etonkovidova
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Echo", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - AdvancedSearch:
             trigger-time: '25 8 * * *'
             repo: 'mediawiki/extensions/AdvancedSearch'
             project-slug: 'mw-ext-as'
+            extra-recipients: 'techwish-devs@wikimedia.de' # @WMDE-Fisch
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "AdvancedSearch", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - Popups:
             trigger-time: '30 8 * * *'
             repo: 'mediawiki/extensions/Popups'
             project-slug: 'mw-ext-popups'
+            extra-recipients: 'performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com' # @jdrewniak
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Popups", "enable": true, "branch": "master" }}, {{ "name": "TextExtracts", "enable": true, "branch": "master" }}, {{ "name": "PageImages", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - Math:
             trigger-time: '35 8 * * *'
             repo: 'mediawiki/extensions/Math'
             project-slug: 'mw-ext-math'
+            extra-recipients: 'wiki@physikerwelt.de' # @Physikerwelt
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Math", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - Newsletter:
             trigger-time: '40 8 * * *'
             repo: 'mediawiki/extensions/Newsletter'
             project-slug: 'mw-ext-newsletter'
+            extra-recipients: '01tonythomas@gmail.com' # @01tonythomas
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Newsletter", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - CentralNotice:
@@ -152,6 +159,7 @@
             repo: 'mediawiki/extensions/CentralNotice'
             project-slug: 'mw-ext-cn'
             selenium-command: 'selenium-daily'
+            extra-recipients: 'fr-tech@wikimedia.org' # fundraising-backlog
             # yamllint disable-line rule:line-length
             json-values: '{{ "seedTestData": true, "extensions": [ {{ "name": "CentralNotice", "enable": true, "branch": "master" }}, {{ "name": "EventLogging", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - AbuseFilter:
@@ -170,6 +178,7 @@
             trigger-time: '0 9 * * *'
             repo: 'mediawiki/skins/MinervaNeue'
             project-slug: 'mw-skin-minerva'
+            extra-recipients: 'performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "MobileFrontend", "enable": true, "branch": "master" }}, {{ "name": "Cite", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "MinervaNeue", "enable": true, "branch": "master" }}, {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - PageTriage:
