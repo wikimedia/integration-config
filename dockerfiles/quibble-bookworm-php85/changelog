@@ -1,3 +1,10 @@
+quibble-bookworm-php85 (1.19.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bookworm:
+   Switch quibble to venv for easier installs
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Wed, 19 Aug 2026 09:39:34 -0400
+
 quibble-bookworm-php85 (1.19.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php85:

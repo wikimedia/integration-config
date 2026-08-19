@@ -5,6 +5,11 @@ FROM {{ "ci-bookworm" | image_tag }}
 
 ARG QUIBBLE_VERSION=1.19.0
 
+# Quibble lives in its own virtualenv so its dependency closure does not
+# overlay the Debian-managed system Python (PEP 668). Child images install
+# over it; /usr/local/bin/quibble stays the entry point.
+ENV QUIBBLE_VENV=/opt/quibble-venv
+
 ######################
 #  Install node/npm  #
 ######################
@@ -91,7 +96,10 @@ xauth
 
 {% set alldeps = quibble_deps + " " + zuul_deps + " " + mediawiki_deps + " " + browsers_deps -%}
 RUN {{ alldeps | apt_install }} \
-    && pip3 install git+https://gerrit.wikimedia.org/r/p/integration/quibble.git@${QUIBBLE_VERSION}#egg=quibble --break-system-packages \
+    && python3 -m venv "$QUIBBLE_VENV" \
+    && "$QUIBBLE_VENV"/bin/pip install --no-cache-dir \
+    git+https://gerrit.wikimedia.org/r/p/integration/quibble.git@${QUIBBLE_VERSION}#egg=quibble \
+    && ln -s "$QUIBBLE_VENV"/bin/quibble /usr/local/bin/quibble \
     && rm -fR "$XDG_CACHE_HOME"/pip \
     && rm -fR /var/lib/mysql
 
