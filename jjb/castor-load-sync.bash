@@ -12,7 +12,7 @@ CASTOR_HOST="${CASTOR_HOST:-integration-castor05.integration.eqiad.wmflabs}"
 
 echo ">>> Start: castor-load rsync"
 start=$(date +%s%3N)
-section='castor-load rsync'
+outcome='Finish'
 rsync \
     --archive \
     ${rsync_delete:-} \
@@ -20,6 +20,6 @@ rsync \
     --contimeout 3 \
     --stats \
     rsync://"$CASTOR_HOST":/caches/"$CASTOR_NAMESPACE"/ "$DEST" \
-    || { echo "castor-load rsync failed (exit code $?); cache is cold"; section='castor-load rsync failed'; }
+    || { echo "castor-load rsync failed (exit code $?); cache is cold"; outcome='Failed'; }
 ms=$(( $(date +%s%3N) - start ))
-printf '<<< Finish: %s, in %d.%03d s\n' "$section" "$(( ms / 1000 ))" "$(( ms % 1000 ))"
+printf '<<< Finish: %s: castor-load rsync, in %d.%03d s\n' "$outcome" "$(( ms / 1000 ))" "$(( ms % 1000 ))"

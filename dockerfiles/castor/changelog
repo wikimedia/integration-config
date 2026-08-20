@@ -1,3 +1,9 @@
+castor (0.4.3) wikimedia; urgency=medium
+
+  * Report a failed cache load as a Failed section
+
+ -- Peter Hedenskog <phedenskog@wikimedia.org>  Thu, 20 Aug 2026 13:46:06 +0200
+
 castor (0.4.2) wikimedia; urgency=medium
 
   * Measure the cache load rsync and log its failures (T432685)

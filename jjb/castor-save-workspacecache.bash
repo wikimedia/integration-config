@@ -99,6 +99,6 @@ if [ "$rc" -ne 0 ]; then
 fi
 
 ms=$(( $(date +%s%3N) - start ))
-printf '<<< %s: castor-save rsync, in %d.%03d s\n' "$outcome" "$(( ms / 1000 ))" "$(( ms % 1000 ))"
+printf '<<< Finish: %s: castor-save rsync, in %d.%03d s\n' "$outcome" "$(( ms / 1000 ))" "$(( ms % 1000 ))"
 
 exit "$rc"
