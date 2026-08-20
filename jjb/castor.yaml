@@ -11,26 +11,36 @@
            - build-on:
               - SUCCESS
              build-steps:
-              - trigger-builds:
-                  - project: castor-save-workspace-cache
-                    # Pass ZUUL and others
-                    current-parameters: true
-                    # Pass:
-                    # - job name to namespace the central cache
-                    # - ssh connection which holds the slave IP to which castor
-                    #   will rsync from
-                    predefined-parameters: |
-                        TRIGGERED_JOB_NAME=$JOB_NAME
-                        TRIGGERED_SSH_CONNECTION=$SSH_CONNECTION
-                        TRIGGERED_WORKSPACE=$WORKSPACE
-                    # Must be blocking or the next publisher will kick in and
-                    # delete the cache while it is being saved.
-                    block: true
-                    # Ignore any error
-                    block-thresholds:
-                        build-step-failure-threshold: 'never'
-                        unstable-threshold: 'never'
-                        failure-threshold: 'never'
+              # Only gate-and-submit and postmerge actually save the cache,
+              # the save script exits early for any other pipeline. Check the
+              # pipeline here as well so other pipelines do not even enqueue a
+              # no-op save build, they used to be half of the queue (T434749).
+              - conditional-step:
+                  condition-kind: regex-match
+                  regex: ^(gate-and-submit.*|postmerge)$
+                  label: '$ZUUL_PIPELINE'
+                  on-evaluation-failure: dont-run
+                  steps:
+                   - trigger-builds:
+                       - project: castor-save-workspace-cache
+                         # Pass ZUUL and others
+                         current-parameters: true
+                         # Pass:
+                         # - job name to namespace the central cache
+                         # - ssh connection which holds the slave IP to which castor
+                         #   will rsync from
+                         predefined-parameters: |
+                             TRIGGERED_JOB_NAME=$JOB_NAME
+                             TRIGGERED_SSH_CONNECTION=$SSH_CONNECTION
+                             TRIGGERED_WORKSPACE=$WORKSPACE
+                         # Must be blocking or the next publisher will kick in and
+                         # delete the cache while it is being saved.
+                         block: true
+                         # Ignore any error
+                         block-thresholds:
+                             build-step-failure-threshold: 'never'
+                             unstable-threshold: 'never'
+                             failure-threshold: 'never'
      # Delete /cache material that just have been saved. Do that inside a
      # container since files are owned by 'nobody'
      - postbuildscript:
