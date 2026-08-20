@@ -722,10 +722,6 @@
     name: 'selenium-daily-{sitename}-{project}'
     node: Docker
     docker_image_var: 'docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0-s1'
-    failure: true
-    unstable: true
-    still_failing: false
-    still_unstable: false
     triggers:
      - timed: '@daily'
     parameters:
@@ -776,12 +772,5 @@
          results: 'log/junit*.xml,log/WDIO.xunit*.xml'
          # We do not have any JUnit files when all tests pass
          allow-empty-results: true
-     - email-ext:
-        recipients: '{recipients}'
-        body: '${{SCRIPT, template="wikimedia.template"}}'
-        failure: '{failure}'
-        unstable: '{unstable}'
-        still-failing: '{still_failing}'
-        still-unstable: '{still_unstable}'
      - send-metrics-to-prometheus
      - teardown

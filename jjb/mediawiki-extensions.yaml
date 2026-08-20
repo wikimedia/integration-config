@@ -190,35 +190,24 @@
     name: wdio-selenium-daily
     project:
         - AdvancedSearch:
-            recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @WMDE-Fisch
             repository: mediawiki/extensions/AdvancedSearch
         - CampaignEvents:
-            recipients: vwalters@wikimedia.org qa-alerts@lists.wikimedia.org # @vaughnwalters
             repository: mediawiki/extensions/CampaignEvents
         - CentralNotice:
-            recipients: fr-tech@wikimedia.org qa-alerts@lists.wikimedia.org # fundraising-backlog
             repository: mediawiki/extensions/CentralNotice
         - Echo:
-            recipients: etonkovidova@wikimedia.org qa-alerts@lists.wikimedia.org # @Etonkovidova
             repository: mediawiki/extensions/Echo
         - Math:
-            recipients: qa-alerts@lists.wikimedia.org wiki@physikerwelt.de # @Physikerwelt
             repository: mediawiki/extensions/Math
         - Minerva:
-            # yamllint disable-line rule:line-length
-            recipients: proticom-ctr@wikimedia.org qa-alerts@lists.wikimedia.org performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com # @Edtadros
             repository: mediawiki/skins/MinervaNeue
         - Newsletter:
-            recipients: qa-alerts@lists.wikimedia.org 01tonythomas@gmail.com # @01tonythomas
             repository: mediawiki/extensions/Newsletter
         - Popups:
-            recipients: qa-alerts@lists.wikimedia.org performance-alerts-aaaareueeqdvdwpw35lhbbhfca@wikimedia.org.slack.com # @jdrewniak
             repository: mediawiki/extensions/Popups
         - TwoColConflict:
-            recipients: qa-alerts@lists.wikimedia.org techwish-devs@wikimedia.de # @awight wmde-techwish
             repository: mediawiki/extensions/TwoColConflict
         - VisualEditor:
-            recipients: eakinloose@wikimedia.org qa-alerts@lists.wikimedia.org # @EAkinloose
             repository: mediawiki/extensions/VisualEditor
     jobs:
         - 'selenium-daily-{sitename}-{project}':
