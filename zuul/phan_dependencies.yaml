@@ -576,6 +576,7 @@ ParserFunctions:
   - Scribunto
 
 ParserMigration:
+  - ConfirmEdit
   - MobileFrontend
 
 PersonalDashboard:
