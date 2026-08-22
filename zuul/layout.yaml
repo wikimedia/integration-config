@@ -7482,6 +7482,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/RecentPageStats
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/Recoin
     template:
       - name: extension-quibble
