@@ -165,21 +165,21 @@
     name: phan-jobs
     php:
         - php82:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.19.0-s1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.19.0
             composer_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s3
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.19.0-s1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.19.0
         - php83:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.19.0-s2
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.19.0-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.33-s1
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.19.0-s2
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.19.0-s1
         - php84:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.19.0-s1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.19.0
             composer_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s3
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.19.0-s1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.19.0
         - php85:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.19.0-s2
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.19.0-s1
             composer_image: docker-registry.wikimedia.org/releng/composer-php85:8.5.9-s1
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.19.0-s2
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.19.0-s1
     packages-source:
         - composer
         - vendor
