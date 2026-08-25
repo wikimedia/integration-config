@@ -3922,6 +3922,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-gate
+      - name: extension-javascript-documentation
       - name: in-mediawiki-tarball
 
   - name: mediawiki/extensions/CirrusSearch
