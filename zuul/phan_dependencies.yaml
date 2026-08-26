@@ -833,6 +833,7 @@ WikiLove:
 
 WikiForum:
   - ConfirmEdit
+  - Echo
   - SocialProfile
 
 Wikibase:
