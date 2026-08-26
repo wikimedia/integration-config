@@ -91,6 +91,7 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/CommunityConfiguration',
             'mediawiki/extensions/Echo',
             'mediawiki/extensions/Elastica',
+            'mediawiki/extensions/EventBus',
             'mediawiki/extensions/EventLogging',
             'mediawiki/extensions/GrowthExperiments',
             'mediawiki/extensions/GuidedTour',

@@ -4181,6 +4181,7 @@ projects:
       - name: extension-codehealth
       - name: extension-gate
       - name: extension-apitests
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/EventLogging
     template:
