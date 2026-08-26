@@ -76,7 +76,7 @@ echo "$(( ${central_gen:-0} + 1 ))" > "${DEST}/${GEN_FILE}"
 echo -e "Syncing cache\nFrom.. ${REMOTE_INSTANCE}:${remote_cache_dir}\nTo.... ${DEST}"
 echo ">>> Start: castor-save rsync"
 start=$(date +%s%3N)
-outcome='Finish'
+outcome='Success'
 rc=0
 set -x
 # On the sender, run rsync in a container (--rsync-path) to have it run has

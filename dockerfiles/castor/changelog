@@ -1,3 +1,13 @@
+castor (0.4.5) wikimedia; urgency=medium
+
+  * Add "Finish" in the castor-load-sync marker to ensure it is collapsed by
+    Jenkins Collapsible section plugin.
+  * In castor-save-workspacecache, indicate "Success" outcome instead of
+    "Finish" we led to a repetition in the marker:
+    `<<< Finish: Finish:`
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 26 Aug 2026 14:33:46 +0200
+
 castor (0.4.4) wikimedia; urgency=medium
 
   * Fix the duplicated outcome in the castor-load finish marker
