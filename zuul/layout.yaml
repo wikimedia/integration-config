@@ -4959,6 +4959,7 @@ projects:
       - name: extension-coverage
       - name: extension-codehealth
       - name: extension-javascript-documentation
+      - name: growth-experiments-selenium-gate
 
   - name: mediawiki/extensions/TextExtracts
     template:
