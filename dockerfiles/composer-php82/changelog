@@ -1,3 +1,11 @@
+composer-php82 (8.2.33) wikimedia; urgency=medium
+
+   Refresh for update in parent image ci-bookworm:
+   Rebuild to align image tag with the actual PHP version being included
+   (8.2.30 > 8.2.33).
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 28 Aug 2026 10:07:42 +0200
+
 composer-php82 (8.2.30-s3) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
