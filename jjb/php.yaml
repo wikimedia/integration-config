@@ -46,21 +46,21 @@
                 - php81:
                     image: docker-registry.wikimedia.org/releng/composer-php81:8.1.34-s3
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s3
+                    image: docker-registry.wikimedia.org/releng/composer-php82:8.2.33
                 - php83:
                     image: docker-registry.wikimedia.org/releng/composer-php83:8.3.33-s1
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s3
+                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.24
                 - php85:
                     image: docker-registry.wikimedia.org/releng/composer-php85:8.5.9-s1
         - 'composer-package-{phpflavor}':
             phpflavor:
                 - php82:
-                    image: docker-registry.wikimedia.org/releng/composer-php82:8.2.30-s3
+                    image: docker-registry.wikimedia.org/releng/composer-php82:8.2.33
                 - php83:
                     image: docker-registry.wikimedia.org/releng/composer-php83:8.3.33-s1
                 - php84:
-                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.18-s3
+                    image: docker-registry.wikimedia.org/releng/composer-php84:8.4.24
                 - php85:
                     image: docker-registry.wikimedia.org/releng/composer-php85:8.5.9-s1
 
