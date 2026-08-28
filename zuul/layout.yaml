@@ -210,7 +210,6 @@ pipelines:
            - ^devunt@gmail\.com$
            - ^divad\.nnamtdeis@gmail\.com$ # Divadsn, former GCI student
            - ^dragoniez\.jawp@gmail\.com$
-           - ^dreamrimmer\.wikimedian@gmail\.com$ # DreamRimmer
            - ^dreamyjazzwikipedia@gmail\.com$ # Dreamy_Jazz
            - ^drenfro@vistaprint\.com$ # AlephNull
            - ^dvorapa@seznam\.cz$
@@ -328,6 +327,7 @@ pipelines:
            - ^luke081515@web\.de$
            - ^luke@faraone\.cc$
            - ^luke@telepedia\.net$ # Original Authority
+           - ^madmax\.wp@proton\.me$ # MadMax
            - ^mah@nichework\.com$
            - ^mail@wikinaut\.de$
            - ^majorjohn1@mail\.com$ # TheSandDoctor
