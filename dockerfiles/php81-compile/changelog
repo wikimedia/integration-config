@@ -1,3 +1,9 @@
+php81-compile (8.1.34-s2) wikimedia; urgency=medium
+
+   Add liblua5.4-dev for Scribunto. T178146
+
+ -- Arendpieter <arendpieter@proton.me>  Thu, 27 Aug 2026 21:02:54 +0200
+
 php81-compile (8.1.34-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bookworm:

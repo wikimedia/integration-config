@@ -1,5 +1,7 @@
 php84-compile (8.4.24) wikimedia; urgency=medium
 
+   Add liblua5.4-dev for Scribunto. T178146
+
    Refresh for update in parent image ci-bookworm:
    Rebuild to align image tag with the actual PHP version being included
    (8.4.20 > 8.4.24).
