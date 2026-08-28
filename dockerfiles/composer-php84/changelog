@@ -1,3 +1,11 @@
+composer-php84 (8.4.20) wikimedia; urgency=medium
+
+   Refresh for update in parent image ci-bookworm:
+   Rebuild to align image tag with the actual PHP version being included
+   (8.4.18 > 8.4.20).
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 28 Aug 2026 09:25:07 +0200
+
 composer-php84 (8.4.18-s3) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
