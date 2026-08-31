@@ -8934,10 +8934,8 @@ projects:
       - name: composer-test-php83-to-php85
 
   - name: labs/countervandalism/CVNBot
-    test:
-      - cvnbot-dotnet-test
-    gate-and-submit:
-      - cvnbot-dotnet-test
+    template:
+      - name: tox
 
   - name: labs/striker
     test:
