@@ -1,21 +1,5 @@
 # Holds various projects under 'labs/'
 
-- job:
-    name: 'cvnbot-dotnet-test'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - docker-log-dir
-     - docker-src-dir
-     - docker-ci-src-setup-simple
-     - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/dotnet-mono612:0.1.0-s4
-         entrypoint: /usr/bin/msbuild
-         args: src/CVNBot.sln /p:Configuration=Debug
-    publishers:
-     - docker-cleanup
-
 # This is the standard tox job for WMCS tools, unless they need something special.
 - project:
     name: 'labs'
