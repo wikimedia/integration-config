@@ -755,6 +755,13 @@
             src/$THING_SUBNAME: /src
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
+        # The job never starts a browser, but `npm ci` runs the extensions'
+        # postinstall hooks, which download and unpack browser binaries into
+        # the shared castor namespace. Accumulated Cypress versions were 59%
+        # of the namespace inodes and 4.6GB of its size. Skip the downloads.
+        environment:
+            CYPRESS_INSTALL_BINARY: 0
+            PUPPETEER_SKIP_DOWNLOAD: 1
         # Note, the entrypoint script runs `npm ci`
         args: '--if-present coverage'
     - shell: |
