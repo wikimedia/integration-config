@@ -7,7 +7,7 @@
 - job-template: &job_tox
     name: 'tox'
     node: Docker
-    docker_image_var: docker-registry.wikimedia.org/releng/tox-v3:0.5
+    docker_image_var: docker-registry.wikimedia.org/releng/tox-v3:0.6
     triggers:
         - zuul
     builders:
@@ -50,7 +50,7 @@
     name: '{name}-tox-publish'
     node: Docker
     concurrent: false
-    docker_image_var: docker-registry.wikimedia.org/releng/tox-v3:0.5
+    docker_image_var: docker-registry.wikimedia.org/releng/tox-v3:0.6
     triggers:
      - zuul
     builders:
@@ -71,7 +71,7 @@
     name: '{name}-tox-coverage-publish'
     node: Docker
     concurrent: false
-    docker_image_var: docker-registry.wikimedia.org/releng/tox-v3:0.5
+    docker_image_var: docker-registry.wikimedia.org/releng/tox-v3:0.6
     triggers:
       - zuul
     builders:
@@ -93,7 +93,7 @@
     name: '{name}-tox-tag-publish'
     node: Docker
     concurrent: false
-    docker_image_var: docker-registry.wikimedia.org/releng/tox-v3:0.5
+    docker_image_var: docker-registry.wikimedia.org/releng/tox-v3:0.6
     triggers:
      - zuul-post
     builders:
@@ -128,7 +128,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/tox-v3:0.5
+         image: docker-registry.wikimedia.org/releng/tox-v3:0.6
          args: '-e coverage'
      - cover-publish:
         src: 'src/coverage'
