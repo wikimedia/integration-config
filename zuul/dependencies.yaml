@@ -2739,6 +2739,12 @@ WandaScribe:
     # From extension.json:
     - Wanda
 
+WandaVoice:
+  recurse: false
+  dependencies:
+    # From extension.json:
+    - Wanda
+
 WSOAuth:
   recurse: false
   dependencies:

@@ -800,6 +800,9 @@ WandaScore:
 WandaScribe:
   - Wanda
 
+WandaVoice:
+  - Wanda
+
 WatchAnalytics:
   - ApprovedRevs
 
