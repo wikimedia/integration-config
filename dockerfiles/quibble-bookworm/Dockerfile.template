@@ -3,7 +3,7 @@ FROM {{ "node24" | image_tag }} as node
 
 FROM {{ "ci-bookworm" | image_tag }}
 
-ARG QUIBBLE_VERSION=1.19.0
+ARG QUIBBLE_VERSION=1.20.0
 
 # Quibble lives in its own virtualenv so its dependency closure does not
 # overlay the Debian-managed system Python (PEP 668). Child images install
