@@ -8938,6 +8938,8 @@ projects:
   - name: labs/countervandalism/CVNBot
     template:
       - name: tox
+    postmerge:
+      - integration-quibble-tox-coverage-publish
 
   - name: labs/striker
     test:
