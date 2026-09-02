@@ -165,21 +165,21 @@
     name: phan-jobs
     php:
         - php82:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.19.0
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.20.0
             composer_image: docker-registry.wikimedia.org/releng/composer-php82:8.2.33
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.19.0
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.20.0
         - php83:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.19.0-s1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.20.0
             composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.33-s1
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.19.0-s1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.20.0
         - php84:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.19.0
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.20.0
             composer_image: docker-registry.wikimedia.org/releng/composer-php84:8.4.24
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.19.0
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.20.0
         - php85:
-            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.19.0-s1
+            setup_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.20.0
             composer_image: docker-registry.wikimedia.org/releng/composer-php85:8.5.9-s1
-            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.19.0-s1
+            phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.20.0
     packages-source:
         - composer
         - vendor
