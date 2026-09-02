@@ -43,9 +43,9 @@ RUN curl --silent --fail --location \
     && rm /tmp/pyenv.zip
 
 # The first minor version is the default for the major series
-# Eg 3.9 3.7  would have python3 set to 3.9
-RUN pyenv install   2.7 3.9 3.7 3.8 3.10 3.11 3.12 3.13 3.14 pypy3.11-7.3.20 \
-    && pyenv global 2.7 3.9 3.7 3.8 3.10 3.11 3.12 3.13 3.14 pypy3.11-7.3.20 \
+# Eg 3.11 3.7  would have python3 set to 3.11
+RUN pyenv install   2.7 3.11 3.7 3.8 3.9 3.10 3.12 3.13 3.14 pypy3.11-7.3.20 \
+    && pyenv global 2.7 3.11 3.7 3.8 3.9 3.10 3.12 3.13 3.14 pypy3.11-7.3.20 \
     && pyenv versions
 
 #####################

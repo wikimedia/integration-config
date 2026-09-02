@@ -1,3 +1,10 @@
+tox-v4 (0.6) wikimedia; urgency=high
+
+   Refresh for update in parent image python-all:
+   Change default python from 3.9 to 3.11 - T436857
+
+ -- Antoine Musso <hashar@free.fr>  Wed,  2 Sep 2026 21:27:12 +0200
+
 tox-v4 (0.5) wikimedia; urgency=high
 
    Refresh for update in parent image python-all:
