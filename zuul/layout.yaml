@@ -8467,16 +8467,6 @@ projects:
     publish:
       - trigger-recommendation-api-pipeline-publish
 
-  - name: mediawiki/services/similar-users
-    test:
-      - trigger-similar-users-pipeline-test
-    gate-and-submit:
-      - trigger-similar-users-pipeline-test
-    postmerge:
-      - trigger-similar-users-pipeline-publish
-    publish:
-      - trigger-similar-users-pipeline-publish
-
   - name: mediawiki/services/wikifeeds
     test:
       - trigger-wikifeeds-pipeline-test
@@ -11807,6 +11797,10 @@ projects:
       - name: archived
 
   - name: mediawiki/services/servicelib-node
+    template:
+      - name: archived
+
+  - name: mediawiki/services/similar-users
     template:
       - name: archived
 
