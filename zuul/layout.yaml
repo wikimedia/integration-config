@@ -9486,26 +9486,22 @@ projects:
 
   - name: search/extra
     test:
-      - search-extra-maven-java11
-      - search-extra-maven-java17
+      - search-extra-maven-java21
     gate-and-submit:
-      - search-extra-maven-java11
-      - search-extra-maven-java17
+      - search-extra-maven-java21
     postmerge:
-      - search-extra-maven-java17-site-publish
+      - search-extra-maven-java21-site-publish
     experimental:
       # Not-yet-supported language runtimes
       - search-extra-maven-java25
 
   - name: search/extra-analysis
     test:
-      - search-extra-analysis-maven-java11
-      - search-extra-analysis-maven-java17
+      - search-extra-analysis-maven-java21
     gate-and-submit:
-      - search-extra-analysis-maven-java11
-      - search-extra-analysis-maven-java17
+      - search-extra-analysis-maven-java21
     postmerge:
-      - search-extra-analysis-maven-java17-site-publish
+      - search-extra-analysis-maven-java21-site-publish
     experimental:
       # Not-yet-supported language runtimes
       - search-extra-analysis-maven-java25
@@ -9522,13 +9518,11 @@ projects:
 
   - name: search/highlighter
     test:
-      - search-highlighter-maven-java11
-      - search-highlighter-maven-java17
+      - search-highlighter-maven-java21
     gate-and-submit:
-      - search-highlighter-maven-java11
-      - search-highlighter-maven-java17
+      - search-highlighter-maven-java21
     postmerge:
-      - search-highlighter-maven-java17-site-publish
+      - search-highlighter-maven-java21-site-publish
     experimental:
       # Not-yet-supported language runtimes
       - search-highlighter-maven-java25
