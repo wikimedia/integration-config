@@ -410,6 +410,7 @@ GrowthExperiments:
   - TestKitchen
   - GuidedTour
   - PersonalDashboard
+  - Wikibase
 
 HAWelcome:
   - SocialProfile
