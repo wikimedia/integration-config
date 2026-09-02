@@ -62,7 +62,7 @@
     builders:
     - shell: |
         PATCH=$(curl "https://gerrit.wikimedia.org/r/changes/${ZUUL_CHANGE}/revisions/current/patch");
-        NODES=$(echo $PATCH | base64 -d | sed -En 's/Hosts: ([^#]+)(\s+#.*)?/\1/p' | paste -s -d ',');
+        NODES=$(echo $PATCH | base64 -d | git interpret-trailers --parse | sed -En 's/^Hosts: ([^#]+)(\s+#.*)?/\1/p' | paste -s -d ',');
         echo $NODES;
         NUM_THREADS=4 CHANGE="${ZUUL_CHANGE}" NODES="${NODES}" puppet-compiler
     properties:
