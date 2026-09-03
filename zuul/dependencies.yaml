@@ -2278,6 +2278,7 @@ ReaderExperiments:
     - TestKitchen
     - WikimediaEvents
     - WikimediaMessages
+    - skins/MinervaNeue
 
 ReadingLists:
   recurse: false
