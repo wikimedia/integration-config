@@ -65,7 +65,7 @@
             entrypoint: '{maven_path}'
             workdir: '{workdir}'
             image: '{obj:docker_image_var}'
-            args: '-gs /settings.xml --batch-mode --file {pom} {maven_args}'
+            args: '-gs /settings.xml --batch-mode -Dstyle.color=always --file {pom} {maven_args}'
 
         # The branch holding the patch is named $ZUUL_BRANCH
         #
@@ -119,7 +119,7 @@
             workdir: '{workdir}'
             image: docker-registry.wikimedia.org/releng/maven-java21:0.1-s1
             args: >
-                -gs /settings.xml --batch-mode --file {pom} -X
+                -gs /settings.xml --batch-mode -Dstyle.color=always --file {pom} -X
                 sonar:sonar
                 -Dsonar.analysis.allowCommentOnMaster="1"
                 -Dsonar.analysis.gerritProjectName="$ZUUL_PROJECT"
@@ -298,14 +298,14 @@
             image: '{obj:docker_image_var}'
             entrypoint: '{maven_path}'
             workdir: '{workdir}'
-            args: '-gs /settings.xml --batch-mode --file {pom} {maven_args}'
+            args: '-gs /settings.xml --batch-mode -Dstyle.color=always --file {pom} {maven_args}'
         # Sonar analysis (see '{name}-maven-java8' for details)
         - docker-run-with-log-cache-src:
             image: '{obj:sonar_image_var}'
             entrypoint: '{maven_path}'
             workdir: '{workdir}'
             args: >
-                -gs /settings.xml --batch-mode --file {pom}
+                -gs /settings.xml --batch-mode -Dstyle.color=always --file {pom}
                 sonar:sonar
                 -Dsonar.analysis.allowCommentOnMaster="1"
                 -Dsonar.analysis.gerritProjectName="$ZUUL_PROJECT"
@@ -316,7 +316,7 @@
             image: '{obj:docker_image_var}'
             entrypoint: '{maven_path}'
             workdir: '{workdir}'
-            args: '-gs /settings.xml --batch-mode --file {pom} site site:stage'
+            args: '-gs /settings.xml --batch-mode -Dstyle.color=always --file {pom} site site:stage'
     wrappers:
       - timeout:
           timeout: '{timeout|30}'
