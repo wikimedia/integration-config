@@ -2362,12 +2362,6 @@ Shibboleth:
     # From extension.json:
     - PluggableAuth
 
-SimilarEditors:
-  recurse: false
-  dependencies:
-    # From extension.json:
-    - QuickSurveys
-
 SimpleBlogPage:
   recurse: false
   dependencies:

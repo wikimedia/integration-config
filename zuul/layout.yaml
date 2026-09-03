@@ -7675,11 +7675,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/SimilarEditors
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-
   - name: mediawiki/extensions/SimpleBlogPage
     template:
       - name: extension-quibble-composer
@@ -11352,6 +11347,10 @@ projects:
       - name: archived # T413587
 
   - name: mediawiki/extensions/SideBarMenu
+    template:
+      - name: archived
+
+  - name: mediawiki/extensions/SimilarEditors
     template:
       - name: archived
 
