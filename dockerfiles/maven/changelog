@@ -1,3 +1,9 @@
+maven (3.5.2-2-s2) wikimedia; urgency=high
+
+   When running on CI, force color output with -Dstyle.color=always - T436915
+
+ -- Antoine Musso <hashar@free.fr>  Thu,  3 Sep 2026 11:54:26 +0200
+
 maven (3.5.2-2-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bookworm:

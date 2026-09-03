@@ -1,3 +1,10 @@
+maven-java25 (0.1-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image maven:
+   When running on CI, force color output with -Dstyle.color=always - T436915
+
+ -- Antoine Musso <hashar@free.fr>  Thu,  3 Sep 2026 11:54:26 +0200
+
 maven-java25 (0.1-s1) wikimedia; urgency=high
 
    Refresh for update in parent images ci-trixie and ci-bookworm:
