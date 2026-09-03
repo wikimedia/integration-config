@@ -8939,7 +8939,7 @@ projects:
     template:
       - name: tox
     postmerge:
-      - integration-quibble-tox-coverage-publish
+      - CVNBot-tox-coverage-publish
 
   - name: labs/striker
     test:

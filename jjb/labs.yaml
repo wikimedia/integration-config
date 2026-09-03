@@ -7,6 +7,14 @@
      - '{name}-tox'
 
 - project:
+    name: CVNBot
+    jobs:
+     - '{name}-tox-coverage-publish':
+         coverenv: 'cover'
+         coversrc: 'htmlcov'
+         coverdest: 'CVNBot'
+
+- project:
     name: 'labs-tools-Isa'
     jobs:
         - '{name}-tox'
