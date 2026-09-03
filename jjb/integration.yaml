@@ -135,11 +135,11 @@
     name: gearman-java
     jobs:
         - '{name}-maven-java17':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s5
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s6
             maven_path: '/run-with-gearmand.sh'
         - '{name}-maven-java17-site-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s5
-            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s5
+            docker_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s6
+            sonar_image_var: docker-registry.wikimedia.org/releng/gearman-java17:1.0.0-s6
             maven_path: '/run-with-gearmand.sh'
 
 - project:
