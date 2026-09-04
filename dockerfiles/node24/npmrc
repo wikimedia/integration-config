@@ -1,0 +1,7 @@
+; disable audit & fund to save some time
+audit = false
+fund = false
+
+; Suppress the notification when using an older version of npm than the latest.
+; It also warns about lack of $HOME/.config - T213014
+update-notifier = false

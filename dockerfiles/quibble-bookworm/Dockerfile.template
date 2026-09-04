@@ -18,7 +18,9 @@ USER root
 
 # Keep in sync with node Dockerfile.template
 COPY --from=node /usr/bin/node /usr/bin/node
+COPY --from=node /usr/etc/npmrc
 RUN ln -s /usr/bin/node /usr/bin/nodejs
+RUN ln -s /usr/etc/npmrc /etc/npmrc
 COPY --from=node /usr/share/nodejs /usr/share/nodejs
 COPY --from=node /usr/include/node /usr/include/node
 COPY --from=node /usr/lib/node_modules /usr/lib/node_modules

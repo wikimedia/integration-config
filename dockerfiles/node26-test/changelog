@@ -1,3 +1,10 @@
+node26-test (26.4.0-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image node26:
+   Disable npm audit & fund via npmrc - T435975 T437008
+
+ -- Antoine Musso <hashar@free.fr>  Fri,  4 Sep 2026 16:57:24 +0200
+
 node26-test (26.4.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image node26:

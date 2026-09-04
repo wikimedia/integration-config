@@ -1,3 +1,10 @@
+sonar-scanner (4.6.0.2311-s21) wikimedia; urgency=high
+
+   Refresh for update in parent image node24:
+   Disable npm audit & fund via npmrc - T435975 T437008
+
+ -- Antoine Musso <hashar@free.fr>  Fri,  4 Sep 2026 16:56:56 +0200
+
 sonar-scanner (4.6.0.2311-s20) wikimedia; urgency=high
 
    Refresh for update in parent image maven:

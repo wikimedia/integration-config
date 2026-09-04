@@ -10,6 +10,7 @@ ENV NODE_DIRNAME=node-${NODE_VERSION}-linux-x64
 
 RUN {{ "curl" | apt_install }}
 
+COPY npmrc /usr/etc/npmrc
 COPY SHASUMS256.txt /tmp/nodeinstall/SHASUMS256.txt
 RUN cd /tmp/nodeinstall \
     # Download, verify, and expand the version of Node we want
@@ -18,6 +19,7 @@ RUN cd /tmp/nodeinstall \
     && tar -xzf ${NODE_FILENAME} \
     && mv ${NODE_DIRNAME}/bin/node /usr/bin/node \
     && ln -s /usr/bin/node /usr/bin/nodejs \
+    && ln -s /usr/etc/npmrc /etc/npmrc \
     && mv ${NODE_DIRNAME}/share/ /usr/share/nodejs \
     && mv ${NODE_DIRNAME}/include/node /usr/include/node \
     && mv ${NODE_DIRNAME}/lib/node_modules /usr/lib/node_modules \
