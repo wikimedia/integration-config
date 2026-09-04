@@ -13,7 +13,7 @@ RUN {{ "gnupg wget unzip curl jq" | apt_install }}
 
 # Keep in sync with node Dockerfile.template
 COPY --from=node /usr/bin/node /usr/bin/node
-COPY --from=node /usr/etc/npmrc
+COPY --from=node /usr/etc/npmrc /usr/etc/npmrc
 RUN ln -s /usr/bin/node /usr/bin/nodejs
 RUN ln -s /usr/etc/npmrc /etc/npmrc
 COPY --from=node /usr/share/nodejs /usr/share/nodejs
