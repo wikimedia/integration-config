@@ -17,7 +17,7 @@
               # no-op save build, they used to be half of the queue (T434749).
               - conditional-step:
                   condition-kind: regex-match
-                  regex: ^(gate-and-submit.*|postmerge)$
+                  regex: ^(gate-and-submit|postmerge)$
                   label: '$ZUUL_PIPELINE'
                   on-evaluation-failure: dont-run
                   steps:
