@@ -868,7 +868,14 @@
         - quibble-{packages-source}-{database}-{php}-selenium
         - quibble-{packages-source}-{database}-{php}-phpunit-standalone
         - mediawiki-coverage-jobs
-        - quibble-for-mediawiki-core-{packages-source}-{database}-{php}
+        - quibble-for-mediawiki-core-{packages-source}-{database}-{php}:
+            database: mysql
+        # The tests that do not need a database already run in the MySQL job.
+        - quibble-for-mediawiki-core-{packages-source}-{database}-{php}:
+            database:
+                - postgres
+                - sqlite
+            quibble_args: '--run phpunit-database'
         - quibble-for-mediawiki-core-composertest-only-{php}
         - quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}
         - quibble-requires-only-{packages-source}:
