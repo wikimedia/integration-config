@@ -344,7 +344,7 @@
     !!merge : *job_quibble
     name: quibble-with-gated-extensions-selenium-{php}
     entrypoint: quibble-with-supervisord
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
+    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium --npm-install-ahead'
 
 # Special jobs for MediaWiki core
 
