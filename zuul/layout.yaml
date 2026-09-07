@@ -4578,6 +4578,13 @@ projects:
     postmerge:
       - mwext-doxygen-publish
 
+  - name: mediawiki/extensions/ModeratorToolkit
+    template:
+      - name: in-wikimedia-production
+      - name: extension-quibble
+      - name: extension-coverage
+      - name: extension-codehealth
+
   - name: mediawiki/extensions/MultimediaViewer
     template:
       - name: in-wikimedia-production
@@ -5368,12 +5375,6 @@ projects:
     template:
       - name: extension-quibble
       - name: extension-coverage
-
-  - name: mediawiki/extensions/ModeratorToolkit
-    template:
-      - name: extension-quibble
-      - name: extension-coverage
-      - name: extension-codehealth
 
 #### Other MediaWiki extensions ################################
 
