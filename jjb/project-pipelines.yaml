@@ -465,6 +465,8 @@
         - tts-publish
         - tts-section-generator
         - tts-section-generator-publish
+        - tool-server
+        - tool-server-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -503,6 +505,8 @@
         # trigger-inference-services-pipeline-tts-publish
         # trigger-inference-services-pipeline-tts-section-generator
         # trigger-inference-services-pipeline-tts-section-generator-publish
+        # trigger-inference-services-pipeline-tool-server
+        # trigger-inference-services-pipeline-tool-server-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -541,6 +545,8 @@
         # inference-services-pipeline-tts-publish
         # inference-services-pipeline-tts-section-generator
         # inference-services-pipeline-tts-section-generator-publish
+        # inference-services-pipeline-tool-server
+        # inference-services-pipeline-tool-server-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:
