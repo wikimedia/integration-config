@@ -284,14 +284,14 @@
     !!merge : *job_quibble
     name: quibble-{packages-source}-{database}-{php}-selenium
     entrypoint: quibble-with-supervisord
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
+    quibble_args: '--run selenium'
 
 # API-only Quibble testing.
 - job-template:
     !!merge : *job_quibble
     name: quibble-apitests-only-{packages-source}-{php}
     entrypoint: quibble-with-supervisord
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run api-testing'
+    quibble_args: '--run api-testing'
 
 - job-template:
     !!merge : *job_quibble
@@ -330,7 +330,7 @@
     !!merge : *job_quibble
     name: quibble-{packages-source}-{database}-{php}-phpunit-standalone
     entrypoint: quibble-with-supervisord
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run phpunit-standalone'
+    quibble_args: '--run phpunit-standalone'
 
 # Special jobs for gated extensions, only for the master and wmf/* branches
 - job-template:
@@ -338,13 +338,13 @@
     name: quibble-with-gated-extensions-vendor-mysql-{php}
     entrypoint: quibble-with-supervisord
     # yamllint disable-line rule:line-length
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
+    quibble_args: '--phpunit-testsuite=extensions --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing,phpbench'
 
 - job-template:
     !!merge : *job_quibble
     name: quibble-with-gated-extensions-selenium-{php}
     entrypoint: quibble-with-supervisord
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium --npm-install-ahead'
+    quibble_args: '--run selenium --npm-install-ahead'
 
 # Special jobs for MediaWiki core
 
@@ -353,14 +353,14 @@
     !!merge : *job_quibble
     name: quibble-for-mediawiki-core-{packages-source}-{database}-{php}
     entrypoint: quibble-with-supervisord
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --skip selenium,composer-test,npm-test,phpunit-standalone,api-testing'
+    quibble_args: '--skip selenium,composer-test,npm-test,phpunit-standalone,api-testing'
 
 # Selenium-only Quibble testing, for MediaWiki core.
 - job-template:
     !!merge : *job_quibble
     name: quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}
     entrypoint: quibble-with-supervisord
-    quibble_args: '--reporting-url="https://earlywarningbot.toolforge.org" --run selenium'
+    quibble_args: '--run selenium'
 
 # Composer test-only Quibble testing, for MediaWiki core.
 - job-template:
