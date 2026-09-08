@@ -1,3 +1,9 @@
+quibble-bookworm-php85 (1.21.0) wikimedia; urgency=medium
+
+  * Update Quibble to 1.21.0
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 08 Sep 2026 17:08:06 +0200
+
 quibble-bookworm-php85 (1.20.0-s1) wikimedia; urgency=high
 
    Refresh for update in parent image node24:
