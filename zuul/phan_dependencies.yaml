@@ -540,6 +540,7 @@ OATHAuth:
 
 OAuth:
   - AbuseFilter
+  - CheckUser
   - Echo
 
 OAuthRateLimiter:

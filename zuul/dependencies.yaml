@@ -2075,6 +2075,7 @@ OAuth:
     - AbuseFilter
     - AntiSpoof
     - CentralAuth
+    - CheckUser
     - Echo
 
 OAuthRateLimiter:
