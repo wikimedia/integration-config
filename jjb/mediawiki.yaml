@@ -259,6 +259,18 @@
         # We save to castor via teardown macro when the build is a success and
         # got triggered from gate-and-submit or postmerge. In such a case,
         # invoke "npm cache verify" to shrink the cache before saving T340092.
+        #
+        # Run it at most once a day per cache. npm records the time of its last
+        # run in <cache>/_cacache/_lastverified (epoch milliseconds) and castor
+        # syncs that file with the rest of the cache, so builds within a day of
+        # a verified save skip the step. Verifying on every build rewrote the
+        # whole npm index each time, which made every save copy the index and
+        # prevented saves from being skipped as unchanged T437377.
+        #
+        # The age check uses the file's mtime, which relies on the castor rsync
+        # keeping --archive (it preserves times on save and load). If that ever
+        # stops holding, the file's content is the same time as epoch
+        # milliseconds and can be compared instead.
         - postbuildscript:
             builders:
                 - build-on:
@@ -267,7 +279,15 @@
                     - docker-run-with-log-cache-src:
                         image: '{docker_image}'
                         entrypoint: 'bash'
-                        args: -c '([[ "$ZUUL_PIPELINE" =~ ^(gate-and-submit|postmerge) ]] && npm cache verify) || :'
+                        args: >-
+                            -c '[[ "$ZUUL_PIPELINE" =~ ^(gate-and-submit|postmerge) ]] || exit 0;
+                            f="$(npm config get cache)/_cacache/_lastverified";
+                            if [[ -n "$(find "$f" -mmin -1440 2>/dev/null)" ]]; then
+                            echo "npm cache verified less than a day ago, skipping npm cache verify";
+                            else
+                            echo "npm cache not verified in the last day, running npm cache verify";
+                            npm cache verify;
+                            fi || :'
         - teardown
     wrappers:
         - timeout:
