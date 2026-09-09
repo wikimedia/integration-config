@@ -658,6 +658,7 @@ BlueSpiceProDistributionConnector:
     # From extension.json:
     - BlueSpiceDistributionConnector
     - BlueSpiceFoundation
+    - OAuth
     # Transitive requirements:
     - OOJSPlus
     # extras
