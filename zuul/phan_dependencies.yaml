@@ -586,8 +586,10 @@ ParserMigration:
 PersonalDashboard:
   - CommunityConfiguration
   - FlaggedRevs
+  - ORES
   - TestKitchen
   - Thanks
+  - Wikibase
 
 Petition:
   - CheckUser
