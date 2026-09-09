@@ -1,3 +1,10 @@
+quibble-bookworm-php81 (1.21.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image node24:
+   Keep npm debug logs out of the castor cache via npmrc logs-dir - T437376
+
+ -- Monte Hurd <mhurd@wikimedia.org>  Tue,  8 Sep 2026 22:05:26 -0700
+
 quibble-bookworm-php81 (1.21.0) wikimedia; urgency=medium
 
   * Update Quibble to 1.21.0

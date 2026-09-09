@@ -1,3 +1,9 @@
+node24 (24.18.0-s3) wikimedia; urgency=high
+
+   Keep npm debug logs out of the castor cache via npmrc logs-dir - T437376
+
+ -- Monte Hurd <mhurd@wikimedia.org>  Tue,  8 Sep 2026 22:05:26 -0700
+
 node24 (24.18.0-s2) wikimedia; urgency=high
 
    Disable npm audit & fund via npmrc - T435975 T437008

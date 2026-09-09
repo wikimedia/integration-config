@@ -5,3 +5,7 @@ fund = false
 ; Suppress the notification when using an older version of npm than the latest.
 ; It also warns about lack of $HOME/.config - T213014
 update-notifier = false
+
+; Write npm debug logs outside the npm cache. The default is <cache>/_logs, which
+; puts ~10 new uniquely named files in the castor cache on every build - T437376
+logs-dir = /tmp/npm-logs

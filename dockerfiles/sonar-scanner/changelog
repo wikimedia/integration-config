@@ -1,3 +1,10 @@
+sonar-scanner (4.6.0.2311-s22) wikimedia; urgency=high
+
+   Refresh for update in parent image node24:
+   Keep npm debug logs out of the castor cache via npmrc logs-dir - T437376
+
+ -- Monte Hurd <mhurd@wikimedia.org>  Tue,  8 Sep 2026 22:05:26 -0700
+
 sonar-scanner (4.6.0.2311-s21) wikimedia; urgency=high
 
    Refresh for update in parent image node24:
