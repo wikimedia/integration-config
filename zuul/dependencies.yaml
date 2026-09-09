@@ -110,6 +110,7 @@ AdhocTranslation:
     - skins/BlueSpiceDiscovery
     # extras transitive dependencies
     - MenuEditor
+    - StandardDialogs
 
 AdvancedSearch:
   recurse: false
@@ -220,6 +221,7 @@ BlueSpiceAvatars:
     - OOJSPlus
     - skins/BlueSpiceDiscovery
     - MenuEditor
+    - StandardDialogs
 
 BlueSpiceBookshelf:
   recurse: false
@@ -673,6 +675,7 @@ BlueSpiceProDistributionConnector:
     # extras transitive dependencies
     - MenuEditor
     - skins/BlueSpiceDiscovery
+    - StandardDialogs
     - VueJsPlus
 
 BlueSpiceQrCode:
@@ -1955,6 +1958,7 @@ MenuEditor:
     - skins/BlueSpiceDiscovery
     # extras transitive dependencies
     - BlueSpiceFoundation
+    - StandardDialogs
 
 MobileApp:
   recurse: false
@@ -2119,6 +2123,7 @@ PDFCreator:
     - VisualEditor
     # extras transitive dependencies
     - MenuEditor
+    - StandardDialogs
 
 PageAssessments:
   recurse: false
@@ -2667,6 +2672,7 @@ UserProfile:
     # extras transitive dependencies
     - BlueSpiceFoundation
     - MenuEditor
+    - StandardDialogs
 
 UserStatus:
   recurse: false
