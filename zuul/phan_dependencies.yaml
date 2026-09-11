@@ -499,6 +499,7 @@ MiniInvite:
 
 MobileApp:
   - AbuseFilter
+  - VisualEditor
 
 MobileFrontend:
   - AbuseFilter
