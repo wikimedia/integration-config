@@ -557,6 +557,9 @@ PageAssessments:
   - CirrusSearch
   - Scribunto
 
+PageCheckout:
+  - Workflows
+
 PageForms:
   - AdminLinks
   - Cargo
