@@ -566,6 +566,9 @@ PageImages:
   - MobileFrontend
   - Scribunto
 
+PageProperties:
+  - WikiSEO
+
 PageTriage:
   - Echo
   - ORES
