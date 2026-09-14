@@ -467,6 +467,8 @@
         - tts-section-generator-publish
         - tool-server
         - tool-server-publish
+        - semantic-highlighting
+        - semantic-highlighting-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -507,6 +509,8 @@
         # trigger-inference-services-pipeline-tts-section-generator-publish
         # trigger-inference-services-pipeline-tool-server
         # trigger-inference-services-pipeline-tool-server-publish
+        # trigger-inference-services-pipeline-semantic-highlighting
+        # trigger-inference-services-pipeline-semantic-highlighting-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -547,6 +551,8 @@
         # inference-services-pipeline-tts-section-generator-publish
         # inference-services-pipeline-tool-server
         # inference-services-pipeline-tool-server-publish
+        # inference-services-pipeline-semantic-highlighting
+        # inference-services-pipeline-semantic-highlighting-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:

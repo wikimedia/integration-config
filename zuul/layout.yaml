@@ -1275,6 +1275,12 @@ jobs:
         - '.pipeline/config.yaml'
         - 'src/models/tool_server/.*'
 
+  - name: ^trigger-inference-services-pipeline-semantic-highlighting
+    files:
+        - '.pipeline/semantic_highlighting/blubber.yaml'
+        - '.pipeline/config.yaml'
+        - 'src/models/semantic_highlighting/.*'
+
   # End of meta jobs (the ones starting with ^)
 
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
@@ -2380,6 +2386,7 @@ projects:
       - trigger-inference-services-pipeline-tts
       - trigger-inference-services-pipeline-tts-section-generator
       - trigger-inference-services-pipeline-tool-server
+      - trigger-inference-services-pipeline-semantic-highlighting
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-revertrisk
@@ -2392,6 +2399,7 @@ projects:
       - trigger-inference-services-pipeline-tts
       - trigger-inference-services-pipeline-tts-section-generator
       - trigger-inference-services-pipeline-tool-server
+      - trigger-inference-services-pipeline-semantic-highlighting
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-revertrisk-publish
@@ -2421,6 +2429,7 @@ projects:
       - trigger-inference-services-pipeline-tts-publish
       - trigger-inference-services-pipeline-tts-section-generator-publish
       - trigger-inference-services-pipeline-tool-server-publish
+      - trigger-inference-services-pipeline-semantic-highlighting-publish
 
   - name: integration/config
     test-prio:
