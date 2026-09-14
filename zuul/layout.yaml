@@ -1092,14 +1092,12 @@ jobs:
   - name: ^trigger-inference-services-pipeline-outlink
     files:
         - '.pipeline/outlink/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/outlink_topic_model/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-revertrisk
     files:
         - '.pipeline/revertrisk/revertrisk.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/revert_risk_model/model_server/.*'
         - 'python/.*\.py$'
         - 'python/.*\.yaml$'
@@ -1107,7 +1105,6 @@ jobs:
   - name: ^trigger-inference-services-pipeline-revertrisk-multilingual
     files:
         - '.pipeline/revertrisk/multilingual.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/revert_risk_model/model_server/.*'
         - 'python/.*\.py$'
         - 'python/.*\.yaml$'
@@ -1115,7 +1112,6 @@ jobs:
   - name: ^trigger-inference-services-pipeline-revertrisk-wikidata
     files:
         - '.pipeline/revertrisk_wikidata/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/revertrisk_wikidata/.*'
         - 'python/.*\.py$'
         - 'python/.*\.yaml$'
@@ -1123,75 +1119,63 @@ jobs:
   - name: ^trigger-inference-services-pipeline-revscoring
     files:
         - '.pipeline/revscoring/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'revscoring_model/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-ores-legacy
     files:
         - '.pipeline/ores-legacy/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'ores-legacy/.*'
 
   - name: ^trigger-inference-services-pipeline-llm
     files:
         - '.pipeline/llm/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/llm/.*'
 
   - name: ^trigger-inference-services-pipeline-langid
     files:
         - '.pipeline/langid/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/langid/.*'
 
   - name: ^trigger-inference-services-pipeline-readability
     files:
         - '.pipeline/readability/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/readability_model/.*'
 
   - name: ^trigger-inference-services-pipeline-article-descriptions
     files:
         - '.pipeline/article_descriptions/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/article_descriptions/.*'
 
   - name: ^trigger-inference-services-pipeline-huggingface
     files:
         - '.pipeline/huggingface/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/huggingface_modelserver/.*'
 
   - name: ^trigger-inference-services-pipeline-logo-detection
     files:
         - '.pipeline/logo_detection/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/logo_detection/.*'
 
   - name: ^trigger-inference-services-pipeline-articlequality
     files:
         - '.pipeline/articlequality/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/articlequality/.*'
 
   - name: ^trigger-inference-services-pipeline-reference-quality
     files:
         - '.pipeline/reference_quality/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/reference_quality/.*'
 
   - name: ^trigger-inference-services-pipeline-article-country
     files:
         - '.pipeline/article_country/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/article_country/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-edit-check
     files:
         - '.pipeline/edit_check/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/edit_check/.*'
 
   - name: ^trigger-inference-services-pipeline-pre-commit-check
@@ -1201,84 +1185,71 @@ jobs:
   - name: ^trigger-inference-services-pipeline-revise-tone-task-generator
     files:
         - '.pipeline/revise_tone_task_generator/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/revise_tone_task_generator/.*'
 
   - name: ^trigger-inference-services-pipeline-embeddings
     files:
         - '.pipeline/embeddings/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/embeddings/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-embeddings-transformers
     files:
         - '.pipeline/embeddings/blubber_transformers.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/embeddings/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-policy-violation-gpt-oss-safeguard
     files:
         - '.pipeline/policy_violation/blubber_gpt_oss_safeguard_20b.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/policy_violation/gpt_oss_safeguard_20b/.*'
         - 'src/models/policy_violation/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-policy-violation-cope-a-9b
     files:
         - '.pipeline/policy_violation/blubber_cope_a_9b.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/policy_violation/cope_a_9b/.*'
         - 'src/models/policy_violation/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-policy-violation-cope-b-a4b-publish
     files:
         - '.pipeline/policy_violation/blubber_cope_b_a4b.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/policy_violation/cope_b_a4b/.*'
 
   - name: ^trigger-inference-services-pipeline-qwen36
     files:
         - '.pipeline/qwen36/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/qwen36/.*'
 
   - name: ^trigger-inference-services-pipeline-editing-suggestions
     files:
         - '.pipeline/editing_suggestions/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/editing_suggestions/.*'
 
   - name: ^trigger-inference-services-pipeline-liftwing-openapi-server
     files:
         - '.pipeline/liftwing_openapi_server/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/liftwing_openapi_server/.*'
         - 'docs/.*'
 
   - name: ^trigger-inference-services-pipeline-tts
     files:
         - '.pipeline/tts/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/tts/.*'
 
   - name: ^trigger-inference-services-pipeline-tts-section-generator
     files:
         - '.pipeline/tts_section_generator/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/tts_section_generator/.*'
 
   - name: ^trigger-inference-services-pipeline-tool-server
     files:
         - '.pipeline/tool_server/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/tool_server/.*'
 
   - name: ^trigger-inference-services-pipeline-semantic-highlighting
     files:
         - '.pipeline/semantic_highlighting/blubber.yaml'
-        - '.pipeline/config.yaml'
         - 'src/models/semantic_highlighting/.*'
 
   # End of meta jobs (the ones starting with ^)
