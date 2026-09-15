@@ -877,15 +877,23 @@
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php81:1.21.0-s1
         - php82:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.21.0-s1
-        - php83:
+        - &quibble_php83
+          php83:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.21.0-s1
         - php84:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php84:1.21.0-s1
-        - php85:
+        - &quibble_php85
+          php85:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.21.0-s1
     jobs:
         - quibble-{packages-source}-{database}-{php}
-        - quibble-{packages-source}-{database}-{php}-selenium
+        # Selenium runs only on the production database and PHP versions.
+        # Production uses PHP 8.3 today. It moves to PHP 8.5 soon.
+        - quibble-{packages-source}-{database}-{php}-selenium:
+            database: mysql
+            php:
+                - *quibble_php83
+                - *quibble_php85
         - quibble-{packages-source}-{database}-{php}-phpunit-standalone
         - mediawiki-coverage-jobs
         - quibble-for-mediawiki-core-{packages-source}-{database}-{php}:
