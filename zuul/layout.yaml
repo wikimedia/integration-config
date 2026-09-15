@@ -3097,14 +3097,6 @@ projects:
     template:
       - name: debian-glue-non-voting
 
-  - name: operations/container/miscweb
-    test:
-      - trigger-miscweb-pipeline-test
-    gate-and-submit:
-      - trigger-miscweb-pipeline-test
-    postmerge:
-      - trigger-miscweb-pipeline-publish
-
   - name: operations/container/codesearch
     test:
       - trigger-codesearch-sourcebot-pipeline-test
@@ -11832,6 +11824,10 @@ projects:
   - name: oojs/router
     template:
       - name: archived
+
+  - name: operations/container/miscweb
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/repos/sre/miscweb/bugzilla
 
   - name: operations/debs/bdsync
     template:

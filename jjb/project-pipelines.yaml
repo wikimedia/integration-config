@@ -333,15 +333,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: miscweb
-    pipeline:
-      - test
-      - publish
-    jobs:
-      - 'trigger-{name}-pipeline-{pipeline}'
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: codesearch
     pipeline:
       - test
