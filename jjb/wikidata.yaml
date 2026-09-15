@@ -41,19 +41,6 @@
          timeout: 240  # minutes
 
 - project:
-      name: wikidata-query-flink-swift-plugin
-      release-project: wikidata/query/flink-swift-plugin
-      release-branch: master
-      publishers:
-          - email-wikimedia-discovery
-          - teardown
-
-      jobs:
-          - '{name}-maven-java8'
-          - '{name}-maven-java8-site-publish'
-          - '{name}-maven-release'
-
-- project:
     name: wikidata-quibble-daily-notgated
     # Wikidata extensions that are not part of gate
     project:
