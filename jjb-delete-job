@@ -1,0 +1,14 @@
+#!/bin/sh
+# Delete Jenkins jobs by name.
+#
+# Use this script when jjb/ no longer defines the jobs. The 'jjb-delete'
+# script expands the names against jjb/. It finds no definition after you
+# remove it, so it deletes no job.
+#
+# Deploy the removal of the definitions first. Then delete the jobs.
+base_dir=$(dirname "$0")
+exec "$base_dir/jenkins-jobs" \
+    --conf "$base_dir/jenkins_jobs.ini" \
+    delete \
+    --jobs-only \
+    "${@}"

@@ -67,11 +67,19 @@ Update in production CI all Jenkins jobs matching a filter:
 
     Note: push JJB updates to CI and verify them *before* merging the patch.
 
-Delete from production CI a single Jenkins job:
+Delete from production CI a single Jenkins job that `jjb/` still defines:
 
-    $ ./jenkins-jobs --conf jenkins_jobs.ini delete ./jjb/ 'obsolete-job'
+    $ ./jenkins-jobs --conf jenkins_jobs.ini delete --path ./jjb/ 'obsolete-job'
     (or)
     $ ./jjb-delete 'obsolete-job'
+
+Delete from production CI jobs that `jjb/` no longer defines. `jjb-delete`
+expands the names it is given against `jjb/`, so it deletes nothing once the
+definitions have gone. Deploy the removal first, then pass the names:
+
+    $ ./jenkins-jobs --conf jenkins_jobs.ini delete --jobs-only 'obsolete-job'
+    (or)
+    $ ./jjb-delete-job 'obsolete-job' 'another-obsolete-job'
 
 # Zuul configuration
 
