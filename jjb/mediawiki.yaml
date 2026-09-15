@@ -873,7 +873,8 @@
         - postgres
         - sqlite
     php:
-        - php81:
+        - &quibble_php81
+          php81:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php81:1.21.0-s1
         - php82:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.21.0-s1
@@ -911,10 +912,17 @@
         - quibble-for-mediawiki-core-{packages-source}-{database}-{php}:
             database: mysql
         # The tests that do not need a database already run in the MySQL job.
+        # PostgreSQL and SQLite run only on the PHP versions that the gates
+        # use. PHP 8.1 gates REL1_43. PHP 8.3 is the production version
+        # today, and production moves to PHP 8.5 soon.
         - quibble-for-mediawiki-core-{packages-source}-{database}-{php}:
             database:
                 - postgres
                 - sqlite
+            php:
+                - *quibble_php81
+                - *quibble_php83
+                - *quibble_php85
             quibble_args: '--run phpunit-database'
         - quibble-for-mediawiki-core-composertest-only-{php}
         # The browser tests run only on the production database.
