@@ -9042,12 +9042,6 @@ projects:
     gate-and-submit:
       - generic-node24
 
-  - name: labs/tools/ldap
-    test:
-      - labs-tools-ldap-tox
-    gate-and-submit:
-      - labs-tools-ldap-tox
-
   - name: labs/tools/majavah-bot
     template:
       - name: tox
@@ -10052,6 +10046,10 @@ projects:
   - name: labs/tools/grrrit
     template:
       - name: archived
+
+  - name: labs/tools/ldap
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/toolforge-repos/ldap
 
   - name: labs/tools/logo-test
     template:
