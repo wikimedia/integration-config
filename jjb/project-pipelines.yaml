@@ -193,17 +193,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: recommendation-api
-    pipeline:
-      - test
-      - publish
-    jobs:
-      # trigger-recommendation-api-pipeline-test
-      - 'trigger-{name}-pipeline-{pipeline}'
-      # recommendation-api-pipeline-test
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: recommendation-api-ng
     pipeline:
       - test

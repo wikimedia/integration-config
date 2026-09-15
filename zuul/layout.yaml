@@ -8392,16 +8392,6 @@ projects:
     publish:
       - trigger-restbase-pipeline-publish
 
-  - name: mediawiki/services/recommendation-api
-    test:
-      - trigger-recommendation-api-pipeline-test
-    gate-and-submit:
-      - trigger-recommendation-api-pipeline-test
-    postmerge:
-      - trigger-recommendation-api-pipeline-publish
-    publish:
-      - trigger-recommendation-api-pipeline-publish
-
   - name: mediawiki/services/wikifeeds
     test:
       - trigger-wikifeeds-pipeline-test
@@ -11696,6 +11686,10 @@ projects:
       - name: archived
 
   - name: mediawiki/services/parsoid/deploy
+    template:
+      - name: archived
+
+  - name: mediawiki/services/recommendation-api
     template:
       - name: archived
 
