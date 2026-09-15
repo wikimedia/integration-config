@@ -2137,15 +2137,6 @@ project-templates:
       # Not-yet-supported language runtimes
       - generic-node26-browser
 
-  - name: node24-browser-webdriver
-    test:
-      - generic-node24-browser-webdriver
-    gate-and-submit:
-      - generic-node24-browser-webdriver
-    experimental:
-      # Not-yet-supported language runtimes
-      - generic-node26-browser-webdriver
-
   - name: node24-browser-for-MW-branches
     test:
       - generic-node24-browser
@@ -9595,26 +9586,8 @@ projects:
     gate-and-submit:
       - wikidata-query-blazegraph-maven-java8
 
-  - name: wikidata/query/gui
-    template:
-      - name: node24-browser-webdriver
-      - name: mediawiki-i18n-check
-    # TODO enable if we decide we want this on postmerge
-    # postmerge:
-    #   - wikidata-query-gui-build
-
   # - name: wikidata/query/gui-deploy
   # No current CI.
-
-  - name: wikidata/query-builder
-    template:
-      - name: node24-browser
-      - name: mediawiki-i18n-check
-    test:
-      - branchdeploy-wikidata-query-builder-node24-npm
-    experimental:
-      # Not-yet-supported language runtimes
-      - branchdeploy-wikidata-query-builder-node26-npm
 
   - name: wikibase/javascript-api
     template:
@@ -12198,6 +12171,10 @@ projects:
     template:
       - name: archived
 
+  - name: wikidata/query-builder
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/repos/wmde/wikidata-query-builder
+
   - name: wikidata/query/flink-rdf-streaming-updater
     template:
       - name: archived
@@ -12205,6 +12182,10 @@ projects:
   - name: wikidata/query/flink-swift-plugin
     template:
       - name: archived
+
+  - name: wikidata/query/gui
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/repos/wmde/wikidata-query-gui
 
   - name: wikimedia-ui-base
     template:

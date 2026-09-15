@@ -573,24 +573,6 @@
      - archive-log-allow-empty
      - teardown
 
-# Node job for 'npm install-test' (with browsers installed) and webdriver running
-- job-template:
-    name: '{name}-{node_version}-browser-webdriver'
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: '{image}'
-        entrypoint: /run-with-xvfb.sh
-        options: >-
-            --shm-size 1g
-            --env LOG_DIR=/log
-    publishers:
-     - archive-log-allow-empty
-     - teardown
-
 # Node job for 'npm cit' (with browser installed)
 # and publishing /coverage from workspace
 # to doc.wikimedia.org/cover/:DOC_PROJECT
@@ -697,7 +679,6 @@
         - 'generic-{node_version}-browser-coverage-publish'
         - 'generic-{node_version}-browser-direct-coverage-publish'
         - '{name}-{node_version}-browser'
-        - '{name}-{node_version}-browser-webdriver'
         - '{name}-{node_version}-run{script}':
            script: 'doc'
 
@@ -746,4 +727,3 @@
                     node_image: docker-registry.wikimedia.org/releng/node26-test:26.4.0-s3
             key:
                 - codex
-                - wikidata-query-builder
