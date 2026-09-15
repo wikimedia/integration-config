@@ -186,37 +186,6 @@
     jobs:
         - 'mwext-phan-{packages-source}-{php}'
 
-- project:
-    name: wdio-selenium-daily
-    project:
-        - AdvancedSearch:
-            repository: mediawiki/extensions/AdvancedSearch
-        - CampaignEvents:
-            repository: mediawiki/extensions/CampaignEvents
-        - CentralNotice:
-            repository: mediawiki/extensions/CentralNotice
-        - Echo:
-            repository: mediawiki/extensions/Echo
-        - Math:
-            repository: mediawiki/extensions/Math
-        - Minerva:
-            repository: mediawiki/skins/MinervaNeue
-        - Newsletter:
-            repository: mediawiki/extensions/Newsletter
-        - Popups:
-            repository: mediawiki/extensions/Popups
-        - TwoColConflict:
-            repository: mediawiki/extensions/TwoColConflict
-        - VisualEditor:
-            repository: mediawiki/extensions/VisualEditor
-    jobs:
-        - 'selenium-daily-{sitename}-{project}':
-            sitename:
-                - beta:
-                    mw_server: 'https://en.wikipedia.beta.wmcloud.org'
-                    mw_user: 'Selenium user'
-                    mw_credential_id: 'selenium-user-beta'
-
 - job: &wikilambda-catalyst-end-to-end
       name: wikilambda-catalyst-end-to-end
       node: Docker
