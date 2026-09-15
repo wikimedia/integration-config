@@ -7839,6 +7839,10 @@ projects:
     template:
       - name: extension-quibble
 
+  - name: mediawiki/extensions/ThemeToggle
+    template:
+      - name: extension-quibble
+
   - name: mediawiki/extensions/ThrottleOverride
     template:
       - name: extension-quibble
