@@ -1,3 +1,10 @@
+quibble-bookworm-php82 (1.21.0-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bookworm:
+   Update Node from 24.18.0 to 26.8.2
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 15 Sep 2026 17:36:23 -0400
+
 quibble-bookworm-php82 (1.21.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image quibble-bookworm:
