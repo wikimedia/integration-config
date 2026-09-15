@@ -917,7 +917,9 @@
                 - sqlite
             quibble_args: '--run phpunit-database'
         - quibble-for-mediawiki-core-composertest-only-{php}
-        - quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}
+        # The browser tests run only on the production database.
+        - quibble-for-mediawiki-core-browser-tests-only-{packages-source}-{database}-{php}:
+            database: mysql
         - quibble-requires-only-{packages-source}:
             database: mysql
         - quibble-requires-only-{packages-source}-non-voting:
