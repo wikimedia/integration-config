@@ -660,7 +660,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node26-test:26.4.0-s4'
+        image: 'docker-registry.wikimedia.org/releng/node26-test:26.8.2'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -674,7 +674,7 @@
         - node24:
             image: docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0-s4
         - node26:
-            image: docker-registry.wikimedia.org/releng/node26-test-browser:26.4.0-s4
+            image: docker-registry.wikimedia.org/releng/node26-test-browser:26.8.2
     jobs:
         - 'generic-{node_version}-browser-coverage-publish'
         - 'generic-{node_version}-browser-direct-coverage-publish'
@@ -688,7 +688,7 @@
                 - node24:
                     image: docker-registry.wikimedia.org/releng/node24-test:24.18.0-s4
                 - node26:
-                    image: docker-registry.wikimedia.org/releng/node26-test:26.4.0-s4
+                    image: docker-registry.wikimedia.org/releng/node26-test:26.8.2
         - 'generic-{node_version}-docs-publish':
             node_version: *node_without_browsers
 
@@ -703,7 +703,7 @@
                - node24:
                    image: docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0-s4
                - node26:
-                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.4.0-s4
+                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.8.2
 
 # Same as 'mwext', but solo so BlueSpice repos don't conflict
 - project:
@@ -714,7 +714,7 @@
                - node24:
                    image: docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0-s4
                - node26:
-                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.4.0-s4
+                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.8.2
 
 - project:
     name: branchdeploy
@@ -724,6 +724,6 @@
                 - node24:
                     node_image: docker-registry.wikimedia.org/releng/node24-test:24.18.0-s4
                 - node26:
-                    node_image: docker-registry.wikimedia.org/releng/node26-test:26.4.0-s4
+                    node_image: docker-registry.wikimedia.org/releng/node26-test:26.8.2
             key:
                 - codex

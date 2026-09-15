@@ -68,7 +68,7 @@
                - node24-plus-php83:
                    image: docker-registry.wikimedia.org/releng/node24-test-browser-php83-composer:24.18.0-s5
                - node26-plus-php83:
-                   image: docker-registry.wikimedia.org/releng/node26-test-browser-php83-composer:26.4.0-s5
+                   image: docker-registry.wikimedia.org/releng/node26-test-browser-php83-composer:26.8.2
 
 - project:
     name: oojs-core
@@ -79,4 +79,4 @@
                - node24:
                    image: docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0-s4
                - node26:
-                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.4.0-s4
+                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.8.2
