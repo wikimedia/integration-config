@@ -8544,18 +8544,6 @@ projects:
     gate-and-submit:
       - noop
 
-  - name: node-rdkafka-statsd
-    test:
-      - trigger-node-rdkafka-statsd-pipeline-test
-    gate-and-submit:
-      - trigger-node-rdkafka-statsd-pipeline-test
-
-  - name: node-rdkafka-factory
-    test:
-      - trigger-node-rdkafka-factory-pipeline-test
-    gate-and-submit:
-      - trigger-node-rdkafka-factory-pipeline-test
-
   - name: wikimedia-event-utilities
     test:
       - wikimedia-event-utilities-maven-java11
@@ -11818,6 +11806,14 @@ projects:
       - name: archived
 
   - name: mediawiki/tools/wikilambda-cli
+    template:
+      - name: archived
+
+  - name: node-rdkafka-factory
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/repos/data-engineering/node-rdkafka-factory
+
+  - name: node-rdkafka-statsd
     template:
       - name: archived
 
