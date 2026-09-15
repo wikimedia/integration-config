@@ -2404,12 +2404,6 @@ projects:
       - name: node24
       - name: composer-test-php83-to-php85
 
-  - name: integration/gear
-    test:
-      - integration-gear-tox
-    gate-and-submit:
-      - integration-gear-tox
-
   - name: integration/gearman-java
     test:
       - gearman-java-maven-java17
@@ -9954,6 +9948,10 @@ projects:
   - name: integration/composer
     template:
       - name: archived # T249949
+
+  - name: integration/gear
+    template:
+      - name: archived
 
   - name: integration/jenkins
     template:

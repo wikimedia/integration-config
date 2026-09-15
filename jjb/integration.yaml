@@ -127,11 +127,6 @@
       - teardown
 
 - project:
-    name: 'integration-gear'
-    jobs:
-        - '{name}-tox'
-
-- project:
     name: gearman-java
     jobs:
         - '{name}-maven-java17':
