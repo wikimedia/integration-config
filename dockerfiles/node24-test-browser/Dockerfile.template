@@ -1,4 +1,4 @@
-# Docker image with nodejs, jsduck, and browsers installed.
+# Docker image with nodejs and browsers installed.
 # Executes 'npm run {cmd:test}' in /src.
 
 FROM {{ "node24-test" | image_tag }}

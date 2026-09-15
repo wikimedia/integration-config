@@ -1,4 +1,4 @@
-# Docker image with nodejs, jsduck, and browsers installed, plus composer.
+# Docker image with nodejs and browsers installed, plus composer.
 
 FROM {{ "composer-scratch" | image_tag }} as composer
 

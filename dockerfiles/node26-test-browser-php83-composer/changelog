@@ -1,3 +1,10 @@
+node26-test-browser-php83-composer (26.4.0-s5) wikimedia; urgency=high
+
+   Refresh for update in parent image node26-test:
+   Drop jsduck and its Ruby dependencies
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 15 Sep 2026 16:29:26 -0400
+
 node26-test-browser-php83-composer (26.4.0-s4) wikimedia; urgency=high
 
    Refresh for update in parent image node26:

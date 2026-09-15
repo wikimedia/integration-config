@@ -1,4 +1,4 @@
-# Docker image with nodejs and jsduck installed.
+# Docker image with nodejs installed.
 # Executes 'npm run {cmd:test}' in /src.
 
 FROM {{ "node24" | image_tag }}
@@ -9,7 +9,6 @@ USER root
 # * build-essential: for compilation.
 # * python: for node-gyp.
 # * python3-pkgconfig: for the Wikimedia Portals job
-# * ruby: for jsduck.
 # * curl: for use by repo-local bash scripts and npm-run commands (T239246).
 # * libpng, libfreetype6, and libfreetype6: for the Wikimedia Portals job
 # * openssh-client for git push (T328543)
@@ -18,9 +17,6 @@ build-essential
 python3
 python3-pkgconfig
 python-is-python3
-ruby
-ruby-dev
-rubygems-integration
 curl
 libpng-dev
 libfreetype6-dev
@@ -28,8 +24,7 @@ libfontconfig
 openssh-client
 {%- endset -%}
 
-RUN {{ packages | apt_install }} \
-    && gem install --no-document jsduck
+RUN {{ packages | apt_install }}
 
 USER nobody
 
