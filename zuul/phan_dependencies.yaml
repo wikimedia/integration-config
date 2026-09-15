@@ -636,6 +636,7 @@ RandomGameUnit:
   - PollNY
 
 ReaderExperiments:
+  - CirrusSearch
   - EventBus
   - EventLogging
   - EventStreamConfig
