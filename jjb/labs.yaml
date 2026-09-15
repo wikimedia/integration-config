@@ -1,11 +1,5 @@
 # Holds various projects under 'labs/'
 
-# This is the standard tox job for WMCS tools, unless they need something special.
-- project:
-    name: 'labs'
-    jobs:
-     - '{name}-tox'
-
 - project:
     name: CVNBot
     jobs:

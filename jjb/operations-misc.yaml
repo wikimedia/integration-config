@@ -93,7 +93,6 @@
 - project:
     name: 'homer-public'
     jobs:
-        - '{name}-tox'
         - tox-publish-jobs:
             docenv: 'py3-docs'
             docsrc: 'doc/build'
