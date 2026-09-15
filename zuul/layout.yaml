@@ -8190,54 +8190,6 @@ projects:
     template:
       - name: extension-quibble-composer-noselenium
 
-  - name: mediawiki/services/wikispeech/mary-tts
-    test:
-      - trigger-wikispeech-mary-tts-pipeline-test
-    gate-and-submit:
-      - trigger-wikispeech-mary-tts-pipeline-test
-    postmerge:
-      - trigger-wikispeech-mary-tts-pipeline-publish
-
-  - name: mediawiki/services/wikispeech/ahotts
-    test:
-      - trigger-wikispeech-ahotts-pipeline-test
-    gate-and-submit:
-      - trigger-wikispeech-ahotts-pipeline-test
-    postmerge:
-      - trigger-wikispeech-ahotts-pipeline-publish
-
-  - name: mediawiki/services/wikispeech/mishkal
-    test:
-      - trigger-wikispeech-mishkal-pipeline-test
-    gate-and-submit:
-      - trigger-wikispeech-mishkal-pipeline-test
-    postmerge:
-      - trigger-wikispeech-mishkal-pipeline-publish
-
-  - name: mediawiki/services/wikispeech/pronlex
-    test:
-      - trigger-wikispeech-pronlex-pipeline-test
-    gate-and-submit:
-      - trigger-wikispeech-pronlex-pipeline-test
-    postmerge:
-      - trigger-wikispeech-pronlex-pipeline-publish
-
-  - name: mediawiki/services/wikispeech/symbolset
-    test:
-      - trigger-wikispeech-symbolset-pipeline-test
-    gate-and-submit:
-      - trigger-wikispeech-symbolset-pipeline-test
-    postmerge:
-      - trigger-wikispeech-symbolset-pipeline-publish
-
-  - name: mediawiki/services/wikispeech/wikispeech-server
-    test:
-      - trigger-wikispeech-server-pipeline-test
-    gate-and-submit:
-      - trigger-wikispeech-server-pipeline-test
-    postmerge:
-      - trigger-wikispeech-server-pipeline-publish
-
   - name: mediawiki/extensions/WikispeechSpeechDataCollector
     template:
       - name: extension-quibble
@@ -11805,6 +11757,30 @@ projects:
   - name: mediawiki/services/trending-edits/deploy
     template:
       - name: archived
+
+  - name: mediawiki/services/wikispeech/ahotts
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/repos/mediawiki/services/speechoid
+
+  - name: mediawiki/services/wikispeech/mary-tts
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/repos/mediawiki/services/speechoid
+
+  - name: mediawiki/services/wikispeech/mishkal
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/repos/mediawiki/services/speechoid
+
+  - name: mediawiki/services/wikispeech/pronlex
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/repos/mediawiki/services/speechoid
+
+  - name: mediawiki/services/wikispeech/symbolset
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/repos/mediawiki/services/speechoid
+
+  - name: mediawiki/services/wikispeech/wikispeech-server
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/repos/mediawiki/services/speechoid
 
   - name: mediawiki/services/zotero
     template:
