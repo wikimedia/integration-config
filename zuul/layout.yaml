@@ -1261,8 +1261,6 @@ jobs:
     queue-name: mediawiki
   - name: quibble-for-mediawiki-core-vendor-mysql-php83
     queue-name: mediawiki
-  - name: mediawiki-node24
-    queue-name: mediawiki
   - name: mediawiki-node26
     queue-name: mediawiki
   - name: quibble-composer-mysql-php83
@@ -1439,9 +1437,6 @@ jobs:
   - name: 'integration-config-zuul-layout-validate'
     branch: (?!labs)
 
-  - name: 'mwext-node24-docs-publish'
-    branch: ^master$
-
   - name: 'mwext-node26-docs-publish'
     branch: ^master$
 
@@ -1506,31 +1501,31 @@ project-templates:
   - name: extension-broken
     test:
       - mediawiki-composer-php83
-      - mediawiki-node24
+      - mediawiki-node26
     gate-and-submit:
       - mediawiki-composer-php83
-      - mediawiki-node24
+      - mediawiki-node26
 
     test-1_43:
       - mediawiki-composer-php81
-      - mediawiki-node24
+      - mediawiki-node26
     gate-and-submit-1_43:
       - mediawiki-composer-php81
-      - mediawiki-node24
+      - mediawiki-node26
 
     test-1_45:
       - mediawiki-composer-php83
-      - mediawiki-node24
+      - mediawiki-node26
     gate-and-submit-1_45:
       - mediawiki-composer-php83
-      - mediawiki-node24
+      - mediawiki-node26
 
     test-1_46:
       - mediawiki-composer-php83
-      - mediawiki-node24
+      - mediawiki-node26
     gate-and-submit-1_46:
       - mediawiki-composer-php83
-      - mediawiki-node24
+      - mediawiki-node26
 
     gate-and-submit-l10n:
       - mediawiki-i18n-check
@@ -1547,7 +1542,7 @@ project-templates:
 
   # Main CI template for extensions, using quibble
   #
-  # As of 2026-07-28, our current CI testing targets are Node 24, plus:
+  # As of 2026-09-15, our current CI testing targets are Node 26, plus:
   # master : PHP 8.3–8.5 (supported & tested), including browser tests
   # REL1_43: PHP 8.1–8.3 (supported & tested); not browser tests
   # REL1_45: PHP 8.2–8.3 (supported & tested); not browser tests
@@ -1557,7 +1552,7 @@ project-templates:
     test:
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php83-selenium
-      - mediawiki-node24
+      - mediawiki-node26
       - mwext-phan-vendor-php83
     php:
       - quibble-vendor-mysql-php84
@@ -1567,11 +1562,11 @@ project-templates:
       - quibble-vendor-mysql-php84
       - quibble-vendor-mysql-php85
       - quibble-vendor-mysql-php83-selenium
-      - mediawiki-node24
+      - mediawiki-node26
       - mwext-phan-vendor-php83
 
     test-1_43:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-composer-mysql-php81
       # (T226945) Disabled on release branches
       # - mwext-phan-composer-php81
@@ -1579,7 +1574,7 @@ project-templates:
       - quibble-composer-mysql-php84-non-voting
       - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_43:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1589,13 +1584,13 @@ project-templates:
       # - mwext-phan-composer-php81
 
     test-1_45:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-composer-mysql-php83
       # Special non-voting jobs to see if the branch is ready for newer PHP versions
       - quibble-composer-mysql-php84-non-voting
       - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_45:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       # (T430415) Disabled on release branches
@@ -1604,10 +1599,10 @@ project-templates:
       # - mwext-phan-composer-php83
 
     test-1_46:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-composer-mysql-php83
     gate-and-submit-1_46:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
       - quibble-composer-mysql-php85
@@ -1618,11 +1613,11 @@ project-templates:
 
     test-wmf:
       - quibble-vendor-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
       - mwext-phan-vendor-php83
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
       - mwext-phan-vendor-php83
 
     gate-and-submit-l10n:
@@ -1643,7 +1638,7 @@ project-templates:
     test:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php83-selenium
-      - mediawiki-node24
+      - mediawiki-node26
       # (T231966 / T226945) Disabled until verified to work with composer
       # - mwext-phan-composer-php83
     php:
@@ -1654,12 +1649,12 @@ project-templates:
       - quibble-composer-mysql-php83-selenium
       - quibble-composer-mysql-php84
       - quibble-composer-mysql-php85
-      - mediawiki-node24
+      - mediawiki-node26
       # (T231966 / T226945) Disabled until verified to work with composer
       # - mwext-phan-composer-php83
 
     test-1_43:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-composer-mysql-php81
       # (T231966 / T226945) Disabled until verified to work with composer
       # - mwext-phan-composer-php83
@@ -1667,7 +1662,7 @@ project-templates:
       - quibble-composer-mysql-php84-non-voting
       - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_43:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
@@ -1677,13 +1672,13 @@ project-templates:
       # - mwext-phan-composer-php83
 
     test-1_45:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-composer-mysql-php83
       # Special non-voting jobs to see if the branch is ready for newer PHP versions
       - quibble-composer-mysql-php84-non-voting
       - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_45:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       # (T430415) Disabled on release branches
@@ -1692,10 +1687,10 @@ project-templates:
       # - mwext-phan-composer-php83
 
     test-1_46:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-composer-mysql-php83
     gate-and-submit-1_46:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
       - quibble-composer-mysql-php85
@@ -1769,7 +1764,7 @@ project-templates:
   - name: extension-quibble-noselenium
     test:
       - quibble-vendor-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
       - mwext-phan-vendor-php83
     php:
       - quibble-vendor-mysql-php84
@@ -1778,12 +1773,12 @@ project-templates:
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php84
       - quibble-vendor-mysql-php85
-      - mediawiki-node24
+      - mediawiki-node26
       - mwext-phan-vendor-php83
 
     test-1_43:
       - quibble-composer-mysql-php81
-      - mediawiki-node24
+      - mediawiki-node26
       # (T226945) Disabled on release branches
       # - mwext-phan-composer-php81
       # Special non-voting jobs to see if the branch is ready for newer PHP versions
@@ -1793,41 +1788,41 @@ project-templates:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
       # (T226945) Disabled on release branches
       # - mwext-phan-composer-php81
 
     test-1_45:
       - quibble-composer-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
       # Special non-voting jobs to see if the branch is ready for newer PHP versions
       - quibble-composer-mysql-php84-non-voting
       - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_45:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
       # (T226945) Disabled on release branches
       # - mwext-phan-composer-php83
 
     test-1_46:
       - quibble-composer-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
     gate-and-submit-1_46:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
       - quibble-composer-mysql-php85
-      - mediawiki-node24
+      - mediawiki-node26
       # (T226945) Disabled on release branches
       # - mwext-phan-composer-php83
 
     test-wmf:
       - quibble-vendor-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
       - mwext-phan-vendor-php83
     gate-and-submit-wmf:
       - quibble-vendor-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
       - mwext-phan-vendor-php83
 
     gate-and-submit-l10n:
@@ -1846,7 +1841,7 @@ project-templates:
   - name: extension-quibble-composer-noselenium
     test:
       - quibble-composer-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
       # (T226945) Disabled until verified to work with composer
       # - mwext-phan-composer-php83
     php:
@@ -1856,13 +1851,13 @@ project-templates:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
       - quibble-composer-mysql-php85
-      - mediawiki-node24
+      - mediawiki-node26
       # (T226945) Disabled until verified to work with composer
       # - mwext-phan-composer-php83
 
     test-1_43:
       - quibble-composer-mysql-php81
-      - mediawiki-node24
+      - mediawiki-node26
       # (T226945) Disabled until verified to work with composer
       # - mwext-phan-composer-php81
       # Special non-voting jobs to see if the branch is ready for newer PHP versions
@@ -1872,31 +1867,31 @@ project-templates:
       - quibble-composer-mysql-php81
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
       # (T226945) Disabled until verified to work with composer
       # - mwext-phan-composer-php81
 
     test-1_45:
       - quibble-composer-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
       # Special non-voting jobs to see if the branch is ready for newer PHP versions
       - quibble-composer-mysql-php84-non-voting
       - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_45:
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
       # (T226945) Disabled until verified to work with composer
       # - mwext-phan-composer-php83
 
     test-1_46:
       - quibble-composer-mysql-php83
-      - mediawiki-node24
+      - mediawiki-node26
     gate-and-submit-1_46:
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
       - quibble-composer-mysql-php85
-      - mediawiki-node24
+      - mediawiki-node26
       # (T226945) Disabled until verified to work with composer
       # - mwext-phan-composer-php83
 
@@ -1953,22 +1948,22 @@ project-templates:
   - name: extension-gate
     # For master
     test:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-with-gated-extensions-vendor-mysql-php83
       - quibble-with-gated-extensions-selenium-php83
     gate-and-submit:
-      - mediawiki-node24
+      - mediawiki-node26
       # Only triggered on master; jobs to track Wikimedia production on PHP 8.3
       - quibble-with-gated-extensions-vendor-mysql-php83
       - quibble-with-gated-extensions-selenium-php83
 
     # For wmf branches
     test-wmf:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-with-gated-extensions-vendor-mysql-php83
       # Not running the Selenium jobs, as they're slow and low-value
     gate-and-submit-wmf:
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-with-gated-extensions-vendor-mysql-php83
       # Not running the Selenium jobs, as they're slow and low-value
 
@@ -2034,11 +2029,11 @@ project-templates:
 
   - name: extension-javascript-documentation
     test:
-      - mwext-node24-rundoc
+      - mwext-node26-rundoc
     gate-and-submit:
-      - mwext-node24-rundoc
+      - mwext-node26-rundoc
     postmerge:
-      - mwext-node24-docs-publish
+      - mwext-node26-docs-publish
 
   - name: composer-test-php83-to-php85
     test:
@@ -2198,21 +2193,21 @@ project-templates:
 
   - name: mwgate-npm
     test:
-      - mediawiki-node24
+      - mediawiki-node26
     gate-and-submit:
-      - mediawiki-node24
+      - mediawiki-node26
     test-1_43:
-      - mediawiki-node24
+      - mediawiki-node26
     gate-and-submit-1_43:
-      - mediawiki-node24
+      - mediawiki-node26
     test-1_45:
-      - mediawiki-node24
+      - mediawiki-node26
     gate-and-submit-1_45:
-      - mediawiki-node24
+      - mediawiki-node26
     test-1_46:
-      - mediawiki-node24
+      - mediawiki-node26
     gate-and-submit-1_46:
-      - mediawiki-node24
+      - mediawiki-node26
     experimental:
       # Not-yet-supported language runtimes
       - mediawiki-node26
@@ -2688,10 +2683,10 @@ projects:
       # (T430415) Disabled on release branches
       # - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
       - mediawiki-core-phan-only-php81
-      - mediawiki-node24
+      - mediawiki-node26
     gate-and-submit-1_43:
       - mediawiki-core-phan-only-php81
-      - mediawiki-node24
+      - mediawiki-node26
       # (T430415) Disabled on release branches
       # - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php81
       - quibble-for-mediawiki-core-composer-mysql-php81
@@ -2705,14 +2700,14 @@ projects:
 
     test-1_45:
       - mediawiki-core-phan-only-php83
-      - mediawiki-node24
+      - mediawiki-node26
       # (T430415) Disabled on release branches
       # - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
       - quibble-for-mediawiki-core-composer-mysql-php83
       - quibble-for-mediawiki-core-composertest-only-php83
     gate-and-submit-1_45:
       - mediawiki-core-phan-only-php83
-      - mediawiki-node24
+      - mediawiki-node26
       # (T430415) Disabled on release branches
       # - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
       - quibble-for-mediawiki-core-composer-mysql-php82
@@ -2725,14 +2720,14 @@ projects:
 
     test-1_46:
       - mediawiki-core-phan-only-php83
-      - mediawiki-node24
+      - mediawiki-node26
       # (T430415) Disabled on release branches
       # - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
       - quibble-for-mediawiki-core-composer-mysql-php83
       - quibble-for-mediawiki-core-composertest-only-php83
     gate-and-submit-1_46:
       - mediawiki-core-phan-only-php83
-      - mediawiki-node24
+      - mediawiki-node26
       # (T430415) Disabled on release branches
       # - quibble-for-mediawiki-core-browser-tests-only-composer-mysql-php83
       - quibble-for-mediawiki-core-composer-mysql-php83
@@ -2755,11 +2750,11 @@ projects:
 
     test-fundraising:
       - mediawiki-composer-php82
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-donationinterface-REL1_43-php82
     gate-and-submit-fundraising:
       - mediawiki-composer-php82
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-donationinterface-REL1_43-php82
 
     coverage:
@@ -2815,10 +2810,10 @@ projects:
 
     test-fundraising:
       - mediawiki-composer-php82
-      - mediawiki-node24
+      - mediawiki-node26
     gate-and-submit-fundraising:
       - mediawiki-composer-php82
-      - mediawiki-node24
+      - mediawiki-node26
     experimental:
       # Not-yet-supported language runtimes
       - mediawiki-node26
@@ -4064,13 +4059,13 @@ projects:
       # Note: Although DonationInterface is in both prod and FR-prod, we run tests
       # tailored for FR-prod as that's where the majority of the code is run.
       - mediawiki-composer-php82
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-donationinterface-REL1_43-php82
       - mediawiki-composer-php82
       - mwext-phan-vendor-php82
     gate-and-submit:
       - mediawiki-composer-php82
-      - mediawiki-node24
+      - mediawiki-node26
       - quibble-donationinterface-REL1_43-php82
       - mwext-phan-vendor-php82
     experimental:
