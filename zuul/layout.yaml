@@ -9451,12 +9451,6 @@ projects:
     template:
       - name: node24
 
-  - name: research/landing-page
-    test:
-      - trigger-research-landing-page-pipeline-test
-    gate-and-submit:
-      - trigger-research-landing-page-pipeline-test
-
   - name: wikimedia/security/landing-page
     template:
       - name: node24
@@ -12100,6 +12094,10 @@ projects:
   - name: pywikibot/wikibase
     template:
       - name: archived
+
+  - name: research/landing-page
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/repos/sre/miscweb/research-landing-page
 
   - name: schemas/event/primary
     template:
