@@ -7110,7 +7110,6 @@ projects:
   - name: mediawiki/extensions/OOJsUIAjaxLogin
     template:
       - name: extension-quibble
-      - name: extension-javascript-documentation
 
   - name: mediawiki/extensions/OpenBadges
     template:
