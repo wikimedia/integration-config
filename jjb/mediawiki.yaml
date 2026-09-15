@@ -928,8 +928,12 @@
             database: mysql
         - quibble-requires-only-{packages-source}-selenium-non-voting:
             database: mysql
+        # The API tests run only on the production PHP versions.
         - quibble-apitests-only-{packages-source}-{php}:
             database: 'mysql'
+            php:
+                - *quibble_php83
+                - *quibble_php85
 
 - project:
     name: quibble-non-voting-jobs
