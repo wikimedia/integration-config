@@ -2316,18 +2316,6 @@ projects:
     template:
       - name: tox
 
-  - name: cloud/toolforge/delete-crashing-pods
-    test:
-      - trigger-toolforge-delete-crashing-pods-pipeline-test
-    gate-and-submit:
-      - trigger-toolforge-delete-crashing-pods-pipeline-test
-
-  - name: cloud/toolforge/kube-container-updater
-    test:
-      - trigger-toolforge-kube-container-updater-pipeline-test
-    gate-and-submit:
-      - trigger-toolforge-kube-container-updater-pipeline-test
-
   - name: cloud/wmcs-cookbooks
     template:
       - name: tox
@@ -9909,6 +9897,10 @@ projects:
     template:
       - name: archived
 
+  - name: cloud/toolforge/delete-crashing-pods
+    template:
+      - name: archived
+
   - name: cloud/toolforge/disable-tool
     template:
       - name: archived
@@ -9932,6 +9924,10 @@ projects:
   - name: cloud/toolforge/jobs-framework-emailer
     template:
       - name: archived
+
+  - name: cloud/toolforge/kube-container-updater
+    template:
+      - name: archived # Now at https://gitlab.wikimedia.org/taavi/kube-container-updater
 
   - name: cloud/toolforge/toolforge-cli
     template:

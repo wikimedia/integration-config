@@ -248,22 +248,6 @@
       - '{name}-pipeline-{pipeline}'
 
 - project:
-    name: toolforge-delete-crashing-pods
-    pipeline:
-      - test
-    jobs:
-      - 'trigger-{name}-pipeline-{pipeline}'
-      - '{name}-pipeline-{pipeline}'
-
-- project:
-    name: toolforge-kube-container-updater
-    pipeline:
-      - test
-    jobs:
-      - 'trigger-{name}-pipeline-{pipeline}'
-      - '{name}-pipeline-{pipeline}'
-
-- project:
     name: typescript-service
     pipeline:
       - test
