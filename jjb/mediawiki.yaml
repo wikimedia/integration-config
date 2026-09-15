@@ -904,7 +904,9 @@
             php:
                 - *quibble_php83
                 - *quibble_php85
-        - quibble-{packages-source}-{database}-{php}-phpunit-standalone
+        # The standalone PHPUnit jobs run only on the production database.
+        - quibble-{packages-source}-{database}-{php}-phpunit-standalone:
+            database: mysql
         - mediawiki-coverage-jobs
         - quibble-for-mediawiki-core-{packages-source}-{database}-{php}:
             database: mysql
