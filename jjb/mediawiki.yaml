@@ -886,7 +886,17 @@
           php85:
             docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php85:1.21.0-s1
     jobs:
-        - quibble-{packages-source}-{database}-{php}
+        # MySQL is the production database, so it runs on every PHP version.
+        - quibble-{packages-source}-{database}-{php}:
+            database: mysql
+        # PostgreSQL and SQLite run only on the production PHP versions.
+        - quibble-{packages-source}-{database}-{php}:
+            database:
+                - postgres
+                - sqlite
+            php:
+                - *quibble_php83
+                - *quibble_php85
         # Selenium runs only on the production database and PHP versions.
         # Production uses PHP 8.3 today. It moves to PHP 8.5 soon.
         - quibble-{packages-source}-{database}-{php}-selenium:
