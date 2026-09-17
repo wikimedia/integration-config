@@ -2930,6 +2930,7 @@ WikimediaAntiAbuse:
   dependencies:
     # no requirements in extension.json
     # extras
+    - CheckUser
     - Echo
     - EventBus
     - EventLogging
