@@ -1976,10 +1976,6 @@ project-templates:
       - quibble-with-Wikibase-extensions-browser-tests-only-composer-php83
     gate-and-submit-1_46:
       - quibble-with-Wikibase-extensions-browser-tests-only-composer-php83
-    test-wmf:
-      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
-    gate-and-submit-wmf:
-      - quibble-with-Wikibase-extensions-browser-tests-only-vendor-php83
 
   - name: growth-experiments-selenium-gate
     test: &growth-experiments-selenium-gate_jobs
