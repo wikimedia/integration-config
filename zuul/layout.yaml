@@ -9060,9 +9060,9 @@ projects:
     template:
       - name: mediawiki-i18n-check
     test:
-      - labs-tools-map-of-monuments-tox
+      - tox-mysqld
     gate-and-submit:
-      - labs-tools-map-of-monuments-tox
+      - tox-mysqld
 
   - name: labs/tools/massmailer
     template:
@@ -9192,9 +9192,9 @@ projects:
     template:
       - name: mediawiki-i18n-check
     test:
-      - labs-tools-wikinity-tox
+      - tox-mysqld
     gate-and-submit:
-      - labs-tools-wikinity-tox
+      - tox-mysqld
 
   - name: labs/tools/wiki-importer
     template:
@@ -9653,9 +9653,9 @@ projects:
       - name: node24-browser
       - name: mediawiki-i18n-check
     test:
-      - wikimedia-cz-tracker-tox
+      - tox-mysqld
     gate-and-submit:
-      - wikimedia-cz-tracker-tox
+      - tox-mysqld
 
   - name: wikimedia-cz/tools
     test:
@@ -9738,9 +9738,9 @@ projects:
 
   - name: wikimedia/fundraising/tools
     test:
-      - fundraising-tools-tox
+      - tox-mysqld
     gate-and-submit:
-      - fundraising-tools-tox
+      - tox-mysqld
 
   - name: wikimedia/fundraising/crm
     test:
