@@ -109,11 +109,6 @@
     builders:
      - shell: "exit 1"
 
-- project:
-    name: wmf-utils
-    jobs:
-        - '{name}-tox'
-
 - job:
     name: 'shellcheck'
     node: Docker
@@ -133,13 +128,3 @@
     jobs:
         - '{name}-tox':
             docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.5
-
-- project:
-    name: 'wikimedia-cz-tools'
-    jobs:
-        - '{name}-tox'
-
-- project:
-    name: 'wikimedia-cz-events'
-    jobs:
-        - '{name}-tox'

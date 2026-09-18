@@ -85,7 +85,6 @@
 - project:
     name: 'homer'
     jobs:
-        - '{name}-tox'
         - tox-publish-jobs:
             docenv: 'py311-sphinx'
             docsrc: 'doc/build/html'
@@ -98,11 +97,6 @@
             docenv: 'py3-docs'
             docsrc: 'doc/build'
             docdest: 'homer-public/$DOC_SUBPATH'
-
-- project:
-    name: netbox-reports
-    jobs:
-        - '{name}-tox'
 
 - project:
     name: 'spicerack'

@@ -9,26 +9,6 @@
          coverdest: 'CVNBot'
 
 - project:
-    name: 'labs-tools-Isa'
-    jobs:
-        - '{name}-tox'
-
-- project:
-    name: 'labs-tools-WdTmCollab'
-    jobs:
-        - '{name}-tox'
-
-- project:
-    name: 'labs-tools-commons-mass-description'
-    jobs:
-        - '{name}-tox'
-
-- project:
-    name: 'labs-tools-harvesting-data-refinery'
-    jobs:
-        - '{name}-tox'
-
-- project:
     name: 'labs-tools-heritage'
     jobs:
         - '{name}-tox':
@@ -36,40 +16,10 @@
             build_timeout: 6  # T206913
 
 - project:
-    name: 'labs-tools-ipwatcher'
-    jobs:
-        - '{name}-tox'
-
-- project:
     name: 'labs-tools-map-of-monuments'
     jobs:
        - '{name}-tox':
            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.5
-
-- project:
-    name: 'labs-tools-massmailer'
-    jobs:
-        - '{name}-tox'
-
-- project:
-    name: 'labs-tools-urbanecmbot'
-    jobs:
-        - '{name}-tox'
-
-- project:
-    name: 'labs-tools-watch-translations'
-    jobs:
-        - '{name}-tox'
-
-- project:
-    name: 'labs-tools-weapon-of-mass-description'
-    jobs:
-        - '{name}-tox'
-
-- project:
-    name: 'labs-tools-wiki2email'
-    jobs:
-        - '{name}-tox'
 
 - project:
     name: 'labs-tools-wikinity'
