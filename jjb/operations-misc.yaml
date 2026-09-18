@@ -52,6 +52,7 @@
      - php85:
          image: docker-registry.wikimedia.org/releng/composer-php85:8.5.9-s1
     jobs:
+     # Bespoke job as we want this to merge switftly and not go in the main queue
      - '{name}-tox'
      - 'operations-mw-config-{phpflavor}-composer-{run-script}':
          run-script:

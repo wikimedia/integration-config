@@ -3587,9 +3587,9 @@ projects:
 
   - name: operations/software/homer
     test:
-      - homer-tox
+      - tox
     gate-and-submit:
-      - homer-tox
+      - tox
     postmerge:
       - homer-tox-publish
     publish:
@@ -3635,9 +3635,9 @@ projects:
   - name: operations/software/netbox-reports
     test:
       - debian-glue-backports-non-voting
-      - netbox-reports-tox
+      - tox
     gate-and-submit:
-      - netbox-reports-tox
+      - tox
 
   - name: operations/software/nginx
     template:
@@ -8868,9 +8868,9 @@ projects:
     template:
       - name: mediawiki-i18n-check
     test:
-      - labs-tools-commons-mass-description-tox
+      - tox
     gate-and-submit:
-      - labs-tools-commons-mass-description-tox
+      - tox
 
   - name: labs/tools/coverme
     template:
@@ -8914,9 +8914,9 @@ projects:
 
   - name: labs/tools/harvesting-data-refinery
     test:
-      - labs-tools-harvesting-data-refinery-tox
+      - tox
     gate-and-submit:
-      - labs-tools-harvesting-data-refinery-tox
+      - tox
 
   - name: labs/tools/heritage
     template:
@@ -8975,9 +8975,9 @@ projects:
     template:
       - name: mediawiki-i18n-check
     test:
-      - labs-tools-ipwatcher-tox
+      - tox
     gate-and-submit:
-      - labs-tools-ipwatcher-tox
+      - tox
 
   - name: labs/tools/orphantalk
     template:
@@ -8993,9 +8993,9 @@ projects:
 
   - name: labs/tools/urbanecmbot
     test:
-      - labs-tools-urbanecmbot-tox
+      - tox
     gate-and-submit:
-      - labs-tools-urbanecmbot-tox
+      - tox
 
   - name: labs/tools/guc
     template:
@@ -9024,17 +9024,17 @@ projects:
 
   - name: labs/tools/Isa
     test:
-      - labs-tools-Isa-tox
+      - tox
     gate-and-submit:
-      - labs-tools-Isa-tox
+      - tox
     gate-and-submit-l10n:
       - mediawiki-i18n-check
 
   - name: labs/tools/WdTmCollab
     test:
-      - labs-tools-WdTmCollab-tox
+      - tox
     gate-and-submit:
-      - labs-tools-WdTmCollab-tox
+      - tox
 
   - name: labs/tools/wdaudiolex-be
     test:
@@ -9068,9 +9068,9 @@ projects:
     template:
       - name: mediawiki-i18n-check
     test:
-      - labs-tools-massmailer-tox
+      - tox
     gate-and-submit:
-      - labs-tools-massmailer-tox
+      - tox
 
   - name: labs/tools/meetingtimes
     template:
@@ -9159,25 +9159,25 @@ projects:
     template:
       - name: mediawiki-i18n-check
     test:
-      - labs-tools-watch-translations-tox
+      - tox
     gate-and-submit:
-      - labs-tools-watch-translations-tox
+      - tox
 
   - name: labs/tools/weapon-of-mass-description
     template:
       - name: mediawiki-i18n-check
     test:
-      - labs-tools-weapon-of-mass-description-tox
+      - tox
     gate-and-submit:
-      - labs-tools-weapon-of-mass-description-tox
+      - tox
 
   - name: labs/tools/wiki2email
     template:
       - name: mediawiki-i18n-check
     test:
-      - labs-tools-wiki2email-tox
+      - tox
     gate-and-submit:
-      - labs-tools-wiki2email-tox
+      - tox
 
   - name: labs/tools/wikidata-slicer
     template:
@@ -9591,9 +9591,9 @@ projects:
 
   - name: wmf-utils
     test:
-      - wmf-utils-tox
+      - tox
     gate-and-submit:
-      - wmf-utils-tox
+      - tox
 
   - name: mediawiki/gadgets/CVNSimpleOverlay
     template:
@@ -9659,15 +9659,15 @@ projects:
 
   - name: wikimedia-cz/tools
     test:
-      - wikimedia-cz-tools-tox
+      - tox
     gate-and-submit:
-      - wikimedia-cz-tools-tox
+      - tox
 
   - name: wikimedia-cz/events
     test:
-      - wikimedia-cz-events-tox
+      - tox
     gate-and-submit:
-      - wikimedia-cz-events-tox
+      - tox
 
   - name: wikimedia-cz/mediawiki-config
     template:

@@ -1,4 +1,4 @@
-# Holds various projects under 'labs/'
+# Holds various projects under 'labs/' where the generic jobs aren't sufficient
 
 - project:
     name: CVNBot
