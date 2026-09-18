@@ -134,9 +134,3 @@
           - text:
               credential-id: quibble-earlywarningbot-api-key
               variable: QUIBBLE_API_KEY
-
-- project:
-    name: fundraising-tools
-    jobs:
-        - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.5

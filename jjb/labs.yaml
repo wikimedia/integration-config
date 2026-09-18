@@ -14,15 +14,3 @@
         - '{name}-tox':
             docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-pywikibot:1.4
             build_timeout: 6  # T206913
-
-- project:
-    name: 'labs-tools-map-of-monuments'
-    jobs:
-       - '{name}-tox':
-           docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.5
-
-- project:
-    name: 'labs-tools-wikinity'
-    jobs:
-       - '{name}-tox':
-           docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.5
