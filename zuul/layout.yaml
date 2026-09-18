@@ -8997,6 +8997,12 @@ projects:
     gate-and-submit:
       - labs-tools-WdTmCollab-tox
 
+  - name: labs/tools/wdaudiolex-be
+    test:
+      - tox
+    gate-and-submit:
+      - tox
+
   - name: labs/tools/wdaudiolex-fe
     test:
       - generic-node26
