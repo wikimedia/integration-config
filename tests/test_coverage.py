@@ -109,7 +109,7 @@ def test_repo_in_zuul():
         test.assertIn.__func__.description = (
             'MediaWiki repo is in Zuul: %s' % repo)
         yield test.assertIn, repo, ZUUL_PROJECTS
-    del(test.assertIn.__func__.description)
+    del test.assertIn.__func__.description
 
 
 @attr('qa')
@@ -119,7 +119,7 @@ def test_zuul_projects_are_in_gerrit():
         test.assertIn.__func__.description = (
             "Zuul project is in Gerrit: %s" % zuul_project)
         yield test.assertIn, zuul_project, GERRIT_REPOS
-    del(test.assertIn.__func__.description)
+    del test.assertIn.__func__.description
 
 
 @attr('qa')
@@ -134,7 +134,7 @@ def test_gerrit_active_projects_are_in_zuul():
         test.assertIn.__func__.description = (
             "Gerrit project is in Zuul: %s" % gerrit_project)
         yield test.assertIn, gerrit_project, ZUUL_PROJECTS
-    del(test.assertIn.__func__.description)
+    del test.assertIn.__func__.description
 
 
 @attr('qa')

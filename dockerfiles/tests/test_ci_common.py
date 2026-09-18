@@ -86,7 +86,7 @@ class Test(unittest.TestCase):
         print("TEST DEBUG> done running %s" % os.path.basename(SCRIPT))
 
     def assertGitOutput(self, expected, command, msg=None):
-        if type(command) == str:
+        if isinstance(command, str):
             command = [command]
 
         git_cmd = ['git']

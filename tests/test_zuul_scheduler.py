@@ -202,7 +202,7 @@ class TestZuulScheduler(unittest.TestCase):
             any([job for job in definition
                  if (
                      job.startswith(('composer', 'mediawiki-composer'))
-                    # BlueSpice extensions are allowed to just have 'noop'
+                     # BlueSpice extensions are allowed to just have 'noop'
                      or job.startswith('noop')
                      or job.startswith('quibble-')
                  )]),

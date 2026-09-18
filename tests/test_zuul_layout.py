@@ -51,7 +51,7 @@ class TestZuulLayout(unittest.TestCase):
             # Delete the template name to only retain pipelines, it is done on
             # a copy to prevent alteration to the original self.layout
             pipes = deepcopy(project_template)
-            del(pipes['name'])
+            del pipes['name']
 
             templates[name] = project_template
         return templates
