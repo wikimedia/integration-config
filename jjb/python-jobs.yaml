@@ -24,6 +24,14 @@
     triggers:
         - zuul
 
+# Variant that also runs a MySQL server, for tests that need a database.
+- job-template:
+    !!merge : *job_tox
+    name: 'tox-mysqld'
+    docker_image_var: docker-registry.wikimedia.org/releng/tox-v3-mysqld:0.5
+    triggers:
+        - zuul
+
 - job-template:
     !!merge : *job_tox
     name: '{name}-tox-{toxenv}'
@@ -135,6 +143,7 @@
     name: common-tox-jobs
     jobs:
      - tox
+     - tox-mysqld
 
 - job:
     name: 'commit-message-validator'
