@@ -358,6 +358,7 @@ pipelines:
            - ^mdsshakil@toolforge\.org$ # MdsShakil
            - ^mediawiki@kghoffmeyer\.de$ # Kghbln
            - ^mediawiki@kocka\.tech$ # KockaAdmiralac
+           - ^me@owuh\.dev$ # Ow0cast
            - ^me@posix\.dev\.br$ # Daniel Souza
            - ^mhutti1@gmail\.com$ # former GCI student
            - ^michael\.reeves077@gmail\.com$ # MolecularPilot
