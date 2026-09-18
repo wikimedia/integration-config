@@ -204,5 +204,11 @@
             project-slug: 'mw-ext-cargo'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Cargo", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - CommunityRequests:
+            trigger-time: '20 9 * * *'
+            repo: 'mediawiki/extensions/CommunityRequests'
+            project-slug: 'mw-ext-cr'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "CommunityRequests", "enable": true, "branch": "master" }}, {{ "name": "VisualEditor", "enable": true, "branch": "master" }}, {{ "name": "TemplateData", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ], "otherModules": [ {{ "name": "parsoid", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
