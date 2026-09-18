@@ -22,7 +22,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node24-test:24.22.1'
+        image: 'docker-registry.wikimedia.org/releng/node26-test:26.12.1'
         args: 'doc'
      - doc-publish:
            docsrc: 'src/docs/js'
@@ -756,7 +756,7 @@
         # Quibble npm install is skipped
         #
         # It is not needed for the PHPUnit coverage. Npm installation is later
-        # run under releng/node24-test which has a different npm cache config,
+        # run under releng/node26-test which has a different npm cache config,
         # which would lead to a duplicate cache being saved (T427922)
         #
         # The npm packages are later installed by releng/nodeXX-test image
@@ -772,7 +772,7 @@
     # mediawiki/services/parsoid (T321837)
     #
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/node24-test:24.22.1
+        image: docker-registry.wikimedia.org/releng/node26-test:26.12.1
         volumes:
             src/$THING_SUBNAME: /src
         logdir: '/workspace/log'
