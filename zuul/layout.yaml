@@ -1532,11 +1532,9 @@ project-templates:
     experimental:
       # Jobs we want to have available for testing
       - mwext-phan-vendor-php83
-      - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
       - quibble-composer-mysql-php84
-      # Not-yet-supported language runtimes
-      - mediawiki-node26
+      - quibble-composer-mysql-php85
 
     # No wmf/ jobs, as this should never be used for WMF production code
 
@@ -1627,8 +1625,6 @@ project-templates:
       # Non-standard database types
       - quibble-vendor-sqlite-php83
       - quibble-vendor-postgres-php83
-      # Not-yet-supported language runtimes
-      - mediawiki-node26
 
   # Special job template that runs composer rather than than relying
   # on mediawiki/vendor for quibble.
@@ -1706,8 +1702,6 @@ project-templates:
       # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
-      # Not-yet-supported language runtimes
-      - mediawiki-node26
       # We used vendor, that is the experimental composer one T231966
       - mwext-phan-composer-php83
 
@@ -1724,13 +1718,13 @@ project-templates:
       - noop
 
     test-1_43:
-      - mwext-bluespice-node24
+      - mwext-bluespice-node26
       - quibble-composer-mysql-php82
       # Special non-voting jobs to see if the branch is ready for newer PHP versions
       - quibble-composer-mysql-php84-non-voting
       - quibble-composer-mysql-php85-non-voting
     gate-and-submit-1_43:
-      - mwext-bluespice-node24
+      - mwext-bluespice-node26
       - quibble-composer-mysql-php82
       - quibble-composer-mysql-php83
 
@@ -1753,7 +1747,6 @@ project-templates:
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
       # Not-yet-supported language runtimes
-      - mediawiki-node26
       - quibble-composer-mysql-php84
       - quibble-composer-mysql-php85
 
@@ -1834,8 +1827,6 @@ project-templates:
       # Non-standard database types
       - quibble-vendor-sqlite-php83
       - quibble-vendor-postgres-php83
-      # Not-yet-supported language runtimes
-      - mediawiki-node26
 
   # Should *not* be used for Wikimedia production.
   - name: extension-quibble-composer-noselenium
@@ -1905,8 +1896,6 @@ project-templates:
       # Non-standard database types
       - quibble-composer-sqlite-php83
       - quibble-composer-postgres-php83
-      # Not-yet-supported language runtimes
-      - mediawiki-node26
 
   # Special job template that runs the "standalone" jobs - T225068
   - name: extension-quibble-only-standalone
@@ -2114,81 +2103,66 @@ project-templates:
       - php-pie-build-php84
       - php-pie-build-php85
 
-  - name: node24
+  - name: node26
     test:
-      - generic-node24
+      - generic-node26
     gate-and-submit:
-      - generic-node24
-    experimental:
-      # Not-yet-supported language runtimes
       - generic-node26
 
-  - name: node24-browser
+  - name: node26-browser
     test:
-      - generic-node24-browser
+      - generic-node26-browser
     gate-and-submit:
-      - generic-node24-browser
-    experimental:
-      # Not-yet-supported language runtimes
       - generic-node26-browser
 
-  - name: node24-browser-for-MW-branches
+  - name: node26-browser-for-MW-branches
     test:
-      - generic-node24-browser
+      - generic-node26-browser
     gate-and-submit:
-      - generic-node24-browser
+      - generic-node26-browser
     test-1_43:
-      - generic-node24-browser
+      - generic-node26-browser
     gate-and-submit-1_43:
-      - generic-node24-browser
+      - generic-node26-browser
     test-1_45:
-      - generic-node24-browser
+      - generic-node26-browser
     gate-and-submit-1_45:
-      - generic-node24-browser
+      - generic-node26-browser
     test-1_46:
-      - generic-node24-browser
+      - generic-node26-browser
     gate-and-submit-1_46:
-      - generic-node24-browser
+      - generic-node26-browser
     test-wmf:
-      - generic-node24-browser
+      - generic-node26-browser
     gate-and-submit-wmf:
-      - generic-node24-browser
-    experimental:
-      # Not-yet-supported language runtimes
       - generic-node26-browser
 
-  - name: node24-rundoc
+  - name: node26-rundoc
     test:
-      - generic-node24-rundoc
+      - generic-node26-rundoc
     gate-and-submit:
-      - generic-node24-rundoc
-    experimental:
-      # Not-yet-supported language runtimes
       - generic-node26-rundoc
 
-  - name: node24-rundoc-for-MW-branches
+  - name: node26-rundoc-for-MW-branches
     test:
-      - generic-node24-rundoc
+      - generic-node26-rundoc
     gate-and-submit:
-      - generic-node24-rundoc
+      - generic-node26-rundoc
     test-1_43:
-      - generic-node24-rundoc
+      - generic-node26-rundoc
     gate-and-submit-1_43:
-      - generic-node24-rundoc
+      - generic-node26-rundoc
     test-1_45:
-      - generic-node24-rundoc
+      - generic-node26-rundoc
     gate-and-submit-1_45:
-      - generic-node24-rundoc
+      - generic-node26-rundoc
     test-1_46:
-      - generic-node24-rundoc
+      - generic-node26-rundoc
     gate-and-submit-1_46:
-      - generic-node24-rundoc
+      - generic-node26-rundoc
     test-wmf:
-      - generic-node24-rundoc
+      - generic-node26-rundoc
     gate-and-submit-wmf:
-      - generic-node24-rundoc
-    experimental:
-      # Not-yet-supported language runtimes
       - generic-node26-rundoc
 
   - name: mwgate-npm
@@ -2207,9 +2181,6 @@ project-templates:
     test-1_46:
       - mediawiki-node26
     gate-and-submit-1_46:
-      - mediawiki-node26
-    experimental:
-      # Not-yet-supported language runtimes
       - mediawiki-node26
 
   - name: tox
@@ -2396,7 +2367,7 @@ projects:
 
   - name: integration/docroot
     template:
-      - name: node24
+      - name: node26
       - name: composer-test-php83-to-php85
 
   - name: integration/gearman-java
@@ -2464,7 +2435,7 @@ projects:
 
   - name: integration/visualdiff
     template:
-      - name: node24
+      - name: node26
 
   - name: integration/zuul
     experimental:
@@ -2479,7 +2450,7 @@ projects:
 
   - name: mediawiki/tools/api-testing
     template:
-      - name: node24-rundoc
+      - name: node26-rundoc
     test:
       - api-testing-mysql-php83
       - api-testing-sqlite-php83
@@ -2489,7 +2460,7 @@ projects:
       - api-testing-mysql-php85
       - api-testing-sqlite-php85
     postmerge:
-      - generic-node24-docs-publish
+      - generic-node26-docs-publish
 
   - name: mediawiki/tools/code-utils
     template:
@@ -2511,11 +2482,11 @@ projects:
 
   - name: mediawiki/tools/grunt-cssjanus
     template:
-      - name: node24
+      - name: node26
 
   - name: mediawiki/tools/karma-firefox-launcher
     template:
-      - name: node24-browser
+      - name: node26-browser
 
   - name: mediawiki/tools/minus-x
     template:
@@ -2569,7 +2540,7 @@ projects:
 
   - name: performance/bttostatsv
     template:
-      - name: node24
+      - name: node26
 
   - name: performance/statsv
     template:
@@ -2577,11 +2548,11 @@ projects:
 
   - name: performance/synthetic-monitoring-tests
     template:
-      - name: node24
+      - name: node26
 
   - name: performance/mobile-synthetic-monitoring-tests
     template:
-      - name: node24
+      - name: node26
 
   - name: performance/coal
     template:
@@ -2589,13 +2560,13 @@ projects:
 
   - name: performance/docroot
     template:
-      - name: node24
+      - name: node26
 
   - name: performance/fresnel
     template:
-      - name: node24-browser
+      - name: node26-browser
     postmerge:
-      - generic-node24-browser-coverage-publish
+      - generic-node26-browser-coverage-publish
 
   - name: performance/navtiming
     template:
@@ -2603,11 +2574,11 @@ projects:
 
   - name: performance/perfromance
     template:
-      - name: node24
+      - name: node26
 
   - name: performance/WikimediaDebug
     template:
-      - name: node24
+      - name: node26
 
   - name: performance/xhgui-vendor
     template:
@@ -2615,7 +2586,7 @@ projects:
 
   - name: releng/phatality
     template:
-      - name: node24
+      - name: node26
 
   - name: releng/local-charts
     experimental:
@@ -2774,8 +2745,6 @@ projects:
     experimental:
       # Jobs we want to have available for testing
       - mediawiki-composer-php83
-      # Not-yet-supported language runtimes
-      - mediawiki-node26
 
   # (T189560) There is explicitly no CI support for mediawiki/vendor.git on release branches.
   # Additionally, selenium tests are skipped for wmf/ and release branches.
@@ -2813,9 +2782,6 @@ projects:
       - mediawiki-node26
     gate-and-submit-fundraising:
       - mediawiki-composer-php82
-      - mediawiki-node26
-    experimental:
-      # Not-yet-supported language runtimes
       - mediawiki-node26
 
 #### MediaWiki skins ###########################################
@@ -3422,7 +3388,7 @@ projects:
     template:
       # (T353397) This repo doesn't yet pass its tests on PHP 8.2+
       # - name: composer-test-php83-to-php85
-      - name: node24
+      - name: node26
       - name: mediawiki-i18n-check
     test:
       - composer-php81
@@ -3576,10 +3542,10 @@ projects:
   - name: operations/software/gerrit
     test:
       - gerrit
-      - gerrit-node24
+      - gerrit-node26
     gate-and-submit:
       - gerrit
-      - gerrit-node24
+      - gerrit-node26
     experimental:
       - gerrit-node26
 
@@ -4076,8 +4042,6 @@ projects:
       - quibble-vendor-mysql-php83
       - quibble-vendor-mysql-php84
       - quibble-vendor-mysql-php83-selenium
-      # Not-yet-supported language runtimes
-      - mediawiki-node26
 
   - name: mediawiki/extensions/DynamicSidebar
     template:
@@ -4742,7 +4706,7 @@ projects:
       # (T422976) Publish JS code coverage for ReadingLists, too
       # NOTE: This is the 'wrong' publisher, but there's no JS extension
       # publish step yet. Let's go with this for now. 2026-04-10 JDF.
-      - generic-node24-browser-coverage-publish
+      - generic-node26-browser-coverage-publish
 
   - name: mediawiki/extensions/RealMe
     template:
@@ -5209,7 +5173,7 @@ projects:
       - mwext-doxygen-publish
       # NOTE: This is the 'wrong' publisher, but there's no JS extension
       # publish step yet. Let's go with this for now. 2022-02-25 JDF.
-      - generic-node24-browser-coverage-publish
+      - generic-node26-browser-coverage-publish
 
   - name: mediawiki/extensions/WikiLove
     template:
@@ -8216,7 +8180,7 @@ projects:
 
   - name: mapdata
     template:
-      - name: node24
+      - name: node26
 
   - name: mediawiki/services/change-propagation
     test:
@@ -8291,7 +8255,7 @@ projects:
 
   - name: mediawiki/services/texvcjs
     template:
-      - name: node24
+      - name: node26
 
   - name: mediawiki/services/mobileapps
     template:
@@ -8332,7 +8296,7 @@ projects:
 
   - name: mediawiki/services/parsoid/testreduce
     template:
-     - name: node24
+     - name: node26
 
   - name: mediawiki/services/poolcounter
     template:
@@ -8453,7 +8417,7 @@ projects:
 
   - name: analytics/aqs
     template:
-      - name: node24
+      - name: node26
 
   - name: analytics/blog
     template:
@@ -8461,7 +8425,6 @@ projects:
 
   - name: analytics/dashiki
     experimental:
-      - generic-node24
       - generic-node26
 
   - name: analytics/geowiki
@@ -8480,7 +8443,7 @@ projects:
 
   - name: analytics/mediawiki-storage
     template:
-      - name: node24-browser
+      - name: node26-browser
 
   - name: analytics/multimedia
     template:
@@ -8501,7 +8464,7 @@ projects:
 
   - name: analytics/wikistats2
     template:
-      - name: node24-browser
+      - name: node26-browser
       - name: mediawiki-i18n-check
 
   - name: analytics/wikimetrics
@@ -8613,7 +8576,7 @@ projects:
   - name: wikipeg
     template:
       - name: mediawiki-php-library-php83-to-php85
-      - name: node24
+      - name: node26
 
   - name: WrappedString
     template:
@@ -8674,7 +8637,7 @@ projects:
   - name: mediawiki/libs/LangConv
     template:
       - name: mediawiki-php-library-php83-to-php85
-      - name: node24
+      - name: node26
 
   - name: mediawiki/libs/less.php
     template:
@@ -8690,10 +8653,10 @@ projects:
 
   - name: mediawiki/libs/node-cssjanus
     template:
-      - name: node24
+      - name: node26
     postmerge:
-      - generic-node24-docs-publish
-      - generic-node24-browser-direct-coverage-publish
+      - generic-node26-docs-publish
+      - generic-node26-browser-direct-coverage-publish
 
   - name: mediawiki/libs/NormalizedException
     template:
@@ -8776,7 +8739,7 @@ projects:
   - name: mediawiki/libs/ZestJQ
     template:
       - name: mediawiki-php-library-php83-to-php85
-      - name: node24
+      - name: node26
 
   - name: performance/excimer-ui-client
     template:
@@ -8830,7 +8793,7 @@ projects:
   - name: labs/xtools
     template:
       - name: composer-test-php83-to-php85
-      - name: node24-browser
+      - name: node26-browser
       - name: mediawiki-i18n-check
     postmerge:
       - phpunit-coverage-php85-publish
@@ -8918,7 +8881,7 @@ projects:
 
   - name: labs/tools/heritage
     template:
-      - name: node24
+      - name: node26
       - name: mediawiki-i18n-check
       - name: composer-test-php83-to-php85
     test:
@@ -8942,7 +8905,7 @@ projects:
     template:
       # TODO (T410935): Fix this test failure and enable on PHP 8.5
       - name: composer-test-php82-to-php84
-      - name: node24
+      - name: node26
       - name: mediawiki-i18n-check
     postmerge:
       - phpunit-coverage-php83-publish
@@ -8951,7 +8914,7 @@ projects:
     template:
       # TODO (T386108): Fix this test failure and enable on PHP 8.4+
       - name: composer-test-php82-to-php83
-      - name: node24-browser
+      - name: node26-browser
       - name: mediawiki-i18n-check
 
   - name: labs/tools/ipchanges
@@ -9036,9 +8999,9 @@ projects:
 
   - name: labs/tools/wdaudiolex-fe
     test:
-      - generic-node24
+      - generic-node26
     gate-and-submit:
-      - generic-node24
+      - generic-node26
 
   - name: labs/tools/majavah-bot
     template:
@@ -9068,7 +9031,7 @@ projects:
     template:
       # (T353394) This repo doesn't yet pass its tests on PHP 8.2+
       # - name: composer-test-php83-to-php85
-      - name: node24
+      - name: node26
     test:
       - composer-php81
     gate-and-submit:
@@ -9144,7 +9107,7 @@ projects:
 
   - name: labs/tools/VideoCutTool
     template:
-      - name: node24-browser
+      - name: node26-browser
       - name: mediawiki-i18n-check
 
   - name: labs/tools/watch-translations
@@ -9173,7 +9136,7 @@ projects:
 
   - name: labs/tools/wikidata-slicer
     template:
-      - name: node24
+      - name: node26
       - name: tox
 
   - name: labs/tools/wikiinfo
@@ -9206,7 +9169,7 @@ projects:
 
   - name: labs/tools/graphql
     template:
-      - name: node24
+      - name: node26
 
   - name: wikimedia/meet-accountmanager
     template:
@@ -9259,7 +9222,7 @@ projects:
 
   - name: pywikibot/i18n
     template:
-      - name: node24
+      - name: node26
       - name: mediawiki-i18n-check
     test:
       - pywikibot-i18n-tox
@@ -9321,17 +9284,14 @@ projects:
       - name: mediawiki-i18n-check
     test:
       - trigger-wikimedia-portals-pipeline-test
-      - generic-node24-browser
+      - generic-node26-browser
     gate-and-submit:
       - trigger-wikimedia-portals-pipeline-test
-      - generic-node24-browser
+      - generic-node26-browser
     postmerge:
       - trigger-wikimedia-portals-pipeline-publish
     publish:
       - trigger-wikimedia-portals-pipeline-publish
-    experimental:
-      # Not-yet-supported language runtimes
-      - generic-node26-browser
 
   - name: wikimedia/portals/deploy
     test:
@@ -9413,21 +9373,18 @@ projects:
 
   - name: design/codex
     template:
-      - name: node24-browser
+      - name: node26-browser
     test:
-      - branchdeploy-codex-node24-npm
+      - branchdeploy-codex-node26-npm
     postmerge:
-      - codex-node24-doc-publish
+      - codex-node26-doc-publish
       # We want to use the special `npm run coverage` job for Codex
-      - generic-node24-browser-direct-coverage-publish
+      - generic-node26-browser-direct-coverage-publish
     publish:
       # Use `npm run doc-release` when publishing docs for a release tag
-      - codex-node24-doc-tag-publish
+      - codex-node26-doc-tag-publish
       # … and also over-write the version at /latest/ for a stable link
-      - codex-node24-doc-latest-publish
-    experimental:
-      # Not-yet-supported language runtimes
-      - branchdeploy-codex-node26-npm
+      - codex-node26-doc-latest-publish
 
   - name: design/codex-php
     template:
@@ -9435,25 +9392,22 @@ projects:
 
   - name: design/landing-page
     template:
-      - name: node24
+      - name: node26
 
   - name: wikimedia/security/landing-page
     template:
-      - name: node24
+      - name: node26
 
   - name: oojs/core
     test:
-      - oojs-core-node24-runjenkins
-    gate-and-submit:
-      - oojs-core-node24-runjenkins
-    postmerge:
-      - generic-node24-docs-publish
-      - generic-node24-browser-coverage-publish
-    publish:
-      - generic-node24-docs-publish
-    experimental:
-      # Not-yet-supported language runtimes
       - oojs-core-node26-runjenkins
+    gate-and-submit:
+      - oojs-core-node26-runjenkins
+    postmerge:
+      - generic-node26-docs-publish
+      - generic-node26-browser-coverage-publish
+    publish:
+      - generic-node26-docs-publish
 
   - name: oojs/ui
     # composer is run by npm-run-jenkins T155483
@@ -9461,48 +9415,45 @@ projects:
       - name: composer-test-package-php83-to-php85
       - name: mediawiki-i18n-check
     test:
-      - ooui-node24-plus-php83-runjenkins
+      - ooui-node26-plus-php83-runjenkins
     gate-and-submit:
-      - ooui-node24-plus-php83-runjenkins
+      - ooui-node26-plus-php83-runjenkins
     postmerge:
       - oojs-ui-doxygen-publish
       - oojs-ui-publish
-    experimental:
-      # Not-yet-supported language runtimes
-      - ooui-node26-plus-php83-runjenkins
 
   - name: jsdoc/wmf-theme
     template:
-      - name: node24
+      - name: node26
 
   - name: unicodejs
     template:
-      - name: node24-browser
-      - name: node24-rundoc
+      - name: node26-browser
+      - name: node26-rundoc
     postmerge:
-      - generic-node24-browser-coverage-publish
-      - generic-node24-docs-publish
+      - generic-node26-browser-coverage-publish
+      - generic-node26-docs-publish
     publish:
-      - generic-node24-docs-publish
+      - generic-node26-docs-publish
 
   - name: jquery-client
     template:
-      - name: node24-browser
-      - name: node24-rundoc
+      - name: node26-browser
+      - name: node26-rundoc
     postmerge:
-      - generic-node24-browser-coverage-publish
-      - generic-node24-docs-publish
+      - generic-node26-browser-coverage-publish
+      - generic-node26-docs-publish
     publish:
-      - generic-node24-docs-publish
+      - generic-node26-docs-publish
 
   - name: VisualEditor/VisualEditor
     template:
       - name: mediawiki-i18n-check
-      - name: node24-browser-for-MW-branches
-      - name: node24-rundoc-for-MW-branches
+      - name: node26-browser-for-MW-branches
+      - name: node26-rundoc-for-MW-branches
     postmerge:
-      - generic-node24-docs-publish
-      - generic-node24-browser-coverage-publish
+      - generic-node26-docs-publish
+      - generic-node26-browser-coverage-publish
 
   - name: mediawiki/extensions/VisualEditorPlus
     template:
@@ -9529,11 +9480,11 @@ projects:
 
   - name: wikibase/javascript-api
     template:
-      - name: node24-browser
+      - name: node26-browser
 
   - name: wikibase/new-lexeme-special-page
     template:
-      - name: node24-browser
+      - name: node26-browser
 
   - name: wikibase/termbox
     test:
@@ -9542,7 +9493,7 @@ projects:
       - trigger-termbox-pipeline-rehearse
     postmerge:
       - trigger-termbox-pipeline-publish
-      - generic-node24-docs-publish
+      - generic-node26-docs-publish
 
   - name: wikibase/property-suggester-scripts
     template:
@@ -9550,7 +9501,7 @@ projects:
 
   - name: data-values/value-view
     template:
-      - name: node24-browser
+      - name: node26-browser
       - name: mediawiki-i18n-check
 
   - name: testing-access-wrapper
@@ -9589,7 +9540,7 @@ projects:
 
   - name: mediawiki/gadgets/CVNSimpleOverlay
     template:
-      - name: node24
+      - name: node26
 
   - name: mediawiki/gadgets/MiniEdit
     template:
@@ -9599,26 +9550,26 @@ projects:
 
   - name: mediawiki/gadgets/ProveIt
     template:
-      - name: node24
+      - name: node26
       - name: mediawiki-i18n-check
     gate-and-submit:
       - noop
 
   - name: mediawiki/gadgets/RTRC
     template:
-      - name: node24
+      - name: node26
 
   - name: mediawiki/gadgets/WhatLeavesHere
     template:
-      - name: node24
+      - name: node26
 
   - name: react.i18n
     template:
-      - name: node24
+      - name: node26
 
   - name: react.ooui
     template:
-      - name: node24
+      - name: node26
 
   - name: research/recommendation-api
     template:
@@ -9642,7 +9593,7 @@ projects:
 
   - name: wikimedia-cz/tracker
     template:
-      - name: node24-browser
+      - name: node26-browser
       - name: mediawiki-i18n-check
     test:
       - wikimedia-cz-tracker-tox
@@ -9712,7 +9663,7 @@ projects:
 
   - name: wikimedia/fundraising/dash
     template:
-      - name: node24-browser
+      - name: node26-browser
 
   - name: wikimedia/fundraising/tools/DjangoBannerStats
     template:
