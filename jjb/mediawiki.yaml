@@ -154,8 +154,6 @@
                     image: docker-registry.wikimedia.org/releng/composer-php85:8.5.12
         - '{name}-{node_version}':
             node_version:
-               - node24:
-                   image: docker-registry.wikimedia.org/releng/node24-test:24.22.1-s1
                - node26:
                    image: docker-registry.wikimedia.org/releng/node26-test:26.12.1-s1
         - '{name}-tox':

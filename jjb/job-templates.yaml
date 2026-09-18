@@ -232,22 +232,6 @@
 # - DOC_PROJECT: determined in parameter_functions.py (mw extension name)
 # - DOC_SUBPATH: determined in parameter_functions.py (branch or tag)
 - job:
-    name: mwext-node24-docs-publish
-    node: Docker
-    triggers:
-     - zuul
-    builders:
-     - setup
-     - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node24-test:24.22.1-s1'
-        args: 'doc'
-     - doc-publish:
-        docsrc: 'src/docs'
-        docdest: '$DOC_PROJECT/$DOC_SUBPATH/js'
-    publishers:
-     - teardown
-
-- job:
     name: mwext-node26-docs-publish
     node: Docker
     triggers:
@@ -266,8 +250,6 @@
 - project:
     name: 'generic'
     node_version:
-        - node24:
-            image: docker-registry.wikimedia.org/releng/node24-test-browser:24.22.1-s1
         - node26:
             image: docker-registry.wikimedia.org/releng/node26-test-browser:26.12.1-s1
     jobs:
@@ -280,8 +262,6 @@
        # The basic jobs images do not have Web browsers:
         - '{name}-{node_version}':
             node_version: &node_without_browsers
-                - node24:
-                    image: docker-registry.wikimedia.org/releng/node24-test:24.22.1-s1
                 - node26:
                     image: docker-registry.wikimedia.org/releng/node26-test:26.12.1-s1
         - 'generic-{node_version}-docs-publish':
@@ -295,8 +275,6 @@
         - '{name}-{node_version}-run{script}':
            script: 'doc'
            node_version:
-               - node24:
-                   image: docker-registry.wikimedia.org/releng/node24-test-browser:24.22.1-s1
                - node26:
                    image: docker-registry.wikimedia.org/releng/node26-test-browser:26.12.1-s1
 
@@ -306,8 +284,6 @@
     jobs:
         - '{name}-{node_version}':
            node_version:
-               - node24:
-                   image: docker-registry.wikimedia.org/releng/node24-test-browser:24.22.1-s1
                - node26:
                    image: docker-registry.wikimedia.org/releng/node26-test-browser:26.12.1-s1
 
@@ -316,8 +292,6 @@
     jobs:
         - 'branchdeploy-{key}-{node_version}-npm':
             node_version:
-                - node24:
-                    node_image: docker-registry.wikimedia.org/releng/node24-test:24.22.1-s1
                 - node26:
                     node_image: docker-registry.wikimedia.org/releng/node26-test:26.12.1-s1
             key:
