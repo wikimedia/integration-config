@@ -301,6 +301,9 @@ DonationInterface:
   - SyntaxHighlight_GeSHi
   - WikiEditor
 
+DynamicPageListEngine:
+  - Scribunto
+
 Echo:
   - CentralAuth
   - MobileFrontend
