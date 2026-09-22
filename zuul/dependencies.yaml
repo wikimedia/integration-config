@@ -2046,6 +2046,13 @@ Newsletter:
     # extras
     - Echo
 
+NewUserMessage:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - CheckUser
+
 NotifyMe:
   recurse: false
   dependencies:

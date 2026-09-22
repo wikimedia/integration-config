@@ -531,6 +531,9 @@ MultimediaViewer:
 Newsletter:
   - Echo
 
+NewUserMessage:
+  - CheckUser
+
 NewSignupPage:
   - SocialProfile
 
