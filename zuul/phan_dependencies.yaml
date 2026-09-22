@@ -120,6 +120,7 @@ CampaignEvents:
 Campaigns:
   - EventLogging
   - MobileFrontend
+  - CentralAuth
 
 Capiunto:
   - Scribunto
