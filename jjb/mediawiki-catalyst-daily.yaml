@@ -222,5 +222,11 @@
             project-slug: 'mw-ext-gw'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "GlobalWatchlist", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - ContactPage:
+            trigger-time: '35 9 * * *'
+            repo: 'mediawiki/extensions/ContactPage'
+            project-slug: 'mw-ext-cp'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "ContactPage", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
