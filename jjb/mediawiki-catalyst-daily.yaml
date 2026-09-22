@@ -228,5 +228,11 @@
             project-slug: 'mw-ext-cp'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "ContactPage", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - ElectronPdfService:
+            trigger-time: '40 9 * * *'
+            repo: 'mediawiki/extensions/ElectronPdfService'
+            project-slug: 'mw-ext-epdf'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "ElectronPdfService", "enable": true, "branch": "master" }}, {{ "name": "Collection", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
