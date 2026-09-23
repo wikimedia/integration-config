@@ -2286,6 +2286,7 @@ ReaderExperiments:
   dependencies:
     # no requirements in extension.json
     # extras
+    - CirrusSearch
     - EventBus
     - EventLogging
     - EventStreamConfig
@@ -2295,6 +2296,8 @@ ReaderExperiments:
     - WikimediaEvents
     - WikimediaMessages
     - skins/MinervaNeue
+    # extras requirements
+    - Elastica
 
 ReadingLists:
   recurse: false
