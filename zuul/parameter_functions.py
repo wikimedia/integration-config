@@ -135,6 +135,18 @@ def set_parameters(item, job, params):
         and not job.name.startswith("quibble-fundraising")
     ):
         params['QUIBBLE_PHPUNIT_PARALLEL'] = '1'
+
+        # PHPUnit result cache configuration
+        #
+        # The service is on toolforge:
+        # https://toolhub.wikimedia.org/tools/toolforge-phpunit-results-cache
+        #
+        # The client side is in mediawiki/core
+        # includes/Composer/PhpUnitSplitter/PhpUnitXmlManager.php
+        #
+        # Source code:
+        # https://gitlab.wikimedia.org/toolforge-repos/phpunit-results-cache
+        #
         params['MW_RESULTS_CACHE_SERVER_BASE_URL'] = \
             'https://phpunit-results-cache.toolforge.org/results'
 
