@@ -240,5 +240,11 @@
             project-slug: 'mw-ext-pm'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "ParserMigration", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - ReportIncident:
+            trigger-time: '50 9 * * *'
+            repo: 'mediawiki/extensions/ReportIncident'
+            project-slug: 'mw-ext-ri'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "ReportIncident", "enable": true, "branch": "master" }}, {{ "name": "EventLogging", "enable": true, "branch": "master" }}, {{ "name": "CommunityConfiguration", "enable": true, "branch": "master" }}, {{ "name": "DiscussionTools", "enable": true, "branch": "master" }}, {{ "name": "Linter", "enable": true, "branch": "master" }}, {{ "name": "VisualEditor", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ], "otherModules": [ {{ "name": "parsoid", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
