@@ -6,7 +6,7 @@ FROM {{ "node26-test" | image_tag }}
 USER root
 
 # Not phantomjs as that's not available any more
-RUN {{ "chromium chromium-driver firefox-esr xvfb ffmpeg" | apt_install }}
+RUN {{ "chromium chromium-driver firefox-esr xvfb xauth ffmpeg" | apt_install }}
 
 USER nobody
 
