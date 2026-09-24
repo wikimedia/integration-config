@@ -1,3 +1,13 @@
+shellcheck (0.9.0-1-s2) UNRELEASED; urgency=medium
+
+  * Enhance entrypoint command:
+  ** change from grep to git grep
+  ** fix regex to only match shebang at start of line.
+  ** support /usr/bin/env <env options> /bin/bash
+  ** change xargs to pass all files as multiple arguments
+
+ -- Antoine Musso <hashar@free.fr>  Thu, 24 Sep 2026 19:24:15 +0200
+
 shellcheck (0.9.0-1-s1) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bookworm:
