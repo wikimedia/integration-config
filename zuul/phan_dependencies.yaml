@@ -636,6 +636,7 @@ Produnto:
 PropertySuggester:
   - Wikibase
   - EventLogging
+  - MobileFrontend
 
 QuizGame:
   - SocialProfile
