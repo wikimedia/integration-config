@@ -109,7 +109,7 @@
     builders:
      - shell: "exit 1"
 
-- job:
+- job: &job_shellcheck
     name: 'shellcheck'
     node: Docker
     triggers:
@@ -122,3 +122,10 @@
          image: docker-registry.wikimedia.org/releng/shellcheck:0.10.0-1
     publishers:
      - docker-cleanup
+
+- job:
+    !!merge : *job_shellcheck
+    name: 'shellcheck-non-voting'
+    # Reinject Zuul parameters since JJB strip for some reason
+    triggers:
+     - zuul
