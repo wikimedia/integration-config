@@ -9364,10 +9364,11 @@ projects:
 
   - name: fresh
     test:
-      - fresh-test
-      - shellcheck-non-voting
+      - shellcheck:
+        - fresh-test
     gate-and-submit:
-      - fresh-test
+      - shellcheck:
+        - fresh-test
 
   - name: search/extra
     test:
