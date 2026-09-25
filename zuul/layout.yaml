@@ -9363,6 +9363,7 @@ projects:
   - name: fresh
     test:
       - fresh-test
+      - shellcheck-non-voting
     gate-and-submit:
       - fresh-test
 
