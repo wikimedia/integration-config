@@ -8999,8 +8999,7 @@ projects:
 
   - name: labs/tools/guc
     template:
-      # TODO (T419080): Fix this test failure due to Phan and enable on PHP 8.5
-      - name: composer-test-php82-to-php84
+      - name: composer-test-php83-to-php85
       - name: mediawiki-i18n-check
 
   - name: labs/tools/fileprotectionsync
