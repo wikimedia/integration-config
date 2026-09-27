@@ -495,8 +495,11 @@ MediaSearch:
   - WikibaseCirrusSearch
 
 MediaWikiChat:
+  - AbuseFilter
   - CheckUser
   - SocialProfile
+  - SpamBlacklist
+  - SpamRegex
 
 MiniInvite:
   - BlogPage
