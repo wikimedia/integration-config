@@ -252,5 +252,11 @@
             project-slug: 'mw-ext-tw'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "TemplateWizard", "enable": true, "branch": "master" }}, {{ "name": "TemplateData", "enable": true, "branch": "master" }}, {{ "name": "WikiEditor", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - Sanctions:
+            trigger-time: '0 10 * * *'
+            repo: 'mediawiki/extensions/Sanctions'
+            project-slug: 'mw-ext-sanctions'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "Sanctions", "enable": true, "branch": "master" }}, {{ "name": "Echo", "enable": true, "branch": "master" }}, {{ "name": "Flow", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
