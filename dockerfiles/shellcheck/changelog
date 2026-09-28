@@ -1,3 +1,9 @@
+shellcheck (0.10.0-2) wikimedia; urgency=medium
+
+  * Always enable color when CI environment variable is set.
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 28 Sep 2026 14:01:28 +0200
+
 shellcheck (0.10.0-1) wikimedia; urgency=medium
 
   * Change base Debian from Bookworm to Trixie
