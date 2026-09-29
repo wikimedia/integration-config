@@ -260,5 +260,11 @@
             project-slug: 'mw-ext-sanctions'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Sanctions", "enable": true, "branch": "master" }}, {{ "name": "Echo", "enable": true, "branch": "master" }}, {{ "name": "Flow", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - RevisionSlider:
+            trigger-time: '5 10 * * *'
+            repo: 'mediawiki/extensions/RevisionSlider'
+            project-slug: 'mw-ext-rs'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "RevisionSlider", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
