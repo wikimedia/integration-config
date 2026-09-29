@@ -48,12 +48,14 @@
               # MediaWiki runs `node tests/selenium/docs/Stack/webdriverio.js`
               # which does not load `.env`. We thus need to source the
               # variables and have them exported using `set -a`.
+              #
+              # The `--maxInstances=1` option makes wdio run one spec file at a time.
               args: >-
                   -c "cp /log/deploy.env .env
                   && set -a
                   && source /log/deploy.env
                   && set +a
-                  && /run-with-xvfb.sh {selenium-command}
+                  && /run-with-xvfb.sh {selenium-command} -- --maxInstances=1
                   "
     wrappers:
         - timeout:
@@ -163,7 +165,7 @@
             trigger-time: '45 8 * * *'
             repo: 'mediawiki/extensions/CentralNotice'
             project-slug: 'mw-ext-cn'
-            selenium-command: 'selenium-daily'
+            selenium-command: '@selenium-test'
             extra-recipients: 'fr-tech@wikimedia.org' # fundraising-backlog
             # yamllint disable-line rule:line-length
             json-values: '{{ "seedTestData": true, "extensions": [ {{ "name": "CentralNotice", "enable": true, "branch": "master" }}, {{ "name": "EventLogging", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
