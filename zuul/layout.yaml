@@ -8983,8 +8983,7 @@ projects:
 
   - name: labs/tools/orphantalk
     template:
-      # TODO (T419077): Fix this test failure and enable on PHP 8.4 and 8.5
-      - name: composer-test-php82-to-php83
+      - name: composer-test-php83-to-php85
       - name: mediawiki-i18n-check
 
   - name: labs/tools/usage
