@@ -1119,12 +1119,16 @@ jobs:
     files:
         - '.pipeline/outlink/blubber.yaml'
         - 'src/models/outlink_topic_model/.*'
+        - 'test/unit/outlink_topic_model/.*'
+        - 'test/unit/python/.*'
         - 'python/.*\.py$'
 
   - name: ^trigger-inference-services-pipeline-revertrisk
     files:
         - '.pipeline/revertrisk/revertrisk.yaml'
         - 'src/models/revert_risk_model/model_server/.*'
+        - 'test/unit/revertrisk/.*'
+        - 'test/unit/python/.*'
         - 'python/.*\.py$'
         - 'python/.*\.yaml$'
 
@@ -1139,6 +1143,7 @@ jobs:
     files:
         - '.pipeline/revertrisk_wikidata/blubber.yaml'
         - 'src/models/revertrisk_wikidata/.*'
+        - 'test/unit/revertrisk_wikidata/.*'
         - 'python/.*\.py$'
         - 'python/.*\.yaml$'
 
@@ -1192,6 +1197,7 @@ jobs:
     files:
         - '.pipeline/reference_quality/blubber.yaml'
         - 'src/models/reference_quality/.*'
+        - 'test/unit/reference_quality/.*'
 
   - name: ^trigger-inference-services-pipeline-article-country
     files:
@@ -1203,6 +1209,7 @@ jobs:
     files:
         - '.pipeline/edit_check/blubber.yaml'
         - 'src/models/edit_check/.*'
+        - 'test/unit/edit_check/.*'
 
   - name: ^trigger-inference-services-pipeline-pre-commit-check
     files:
@@ -1212,6 +1219,7 @@ jobs:
     files:
         - '.pipeline/revise_tone_task_generator/blubber.yaml'
         - 'src/models/revise_tone_task_generator/.*'
+        - 'test/unit/revise_tone_task_generator/.*'
 
   - name: ^trigger-inference-services-pipeline-embeddings
     files:
@@ -1246,11 +1254,14 @@ jobs:
     files:
         - '.pipeline/qwen36/blubber.yaml'
         - 'src/models/qwen36/.*'
+        - 'test/unit/qwen36/.*'
 
   - name: ^trigger-inference-services-pipeline-editing-suggestions
     files:
         - '.pipeline/editing_suggestions/blubber.yaml'
         - 'src/models/editing_suggestions/.*'
+        - 'test/unit/editing_suggestions/.*'
+        - 'test/unit/python/.*'
 
   - name: ^trigger-inference-services-pipeline-liftwing-openapi-server
     files:
@@ -1262,21 +1273,25 @@ jobs:
     files:
         - '.pipeline/tts/blubber.yaml'
         - 'src/models/tts/.*'
+        - 'test/unit/tts/.*'
 
   - name: ^trigger-inference-services-pipeline-tts-section-generator
     files:
         - '.pipeline/tts_section_generator/blubber.yaml'
         - 'src/models/tts_section_generator/.*'
+        - 'test/unit/tts_section_generator/.*'
 
   - name: ^trigger-inference-services-pipeline-tool-server
     files:
         - '.pipeline/tool_server/blubber.yaml'
         - 'src/models/tool_server/.*'
+        - 'test/unit/tool_server/.*'
 
   - name: ^trigger-inference-services-pipeline-semantic-highlighting
     files:
         - '.pipeline/semantic_highlighting/blubber.yaml'
         - 'src/models/semantic_highlighting/.*'
+        - 'test/unit/semantic_highlighting/.*'
 
   - name: ^trigger-inference-services-pipeline-decision-models-clef
     files:
