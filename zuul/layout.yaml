@@ -2326,6 +2326,7 @@ projects:
     test:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-revertrisk
+      - trigger-inference-services-pipeline-reference-quality
       - trigger-inference-services-pipeline-edit-check
       - trigger-inference-services-pipeline-pre-commit-check
       - trigger-inference-services-pipeline-revise-tone-task-generator
@@ -2339,6 +2340,7 @@ projects:
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-revertrisk
+      - trigger-inference-services-pipeline-reference-quality
       - trigger-inference-services-pipeline-edit-check
       - trigger-inference-services-pipeline-pre-commit-check
       - trigger-inference-services-pipeline-revise-tone-task-generator

@@ -333,6 +333,7 @@
         - huggingface-publish
         - logo-detection-publish
         - articlequality-publish
+        - reference-quality
         - reference-quality-publish
         - article-country-publish
         - edit-check
@@ -375,6 +376,7 @@
         # trigger-inference-services-pipeline-huggingface-publish
         # trigger-inference-services-pipeline-logo-detection-publish
         # trigger-inference-services-pipeline-articlequality-publish
+        # trigger-inference-services-pipeline-reference-quality
         # trigger-inference-services-pipeline-reference-quality-publish
         # trigger-inference-services-pipeline-article-country-publish
         # trigger-inference-services-pipeline-edit-check
