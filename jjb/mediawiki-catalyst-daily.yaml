@@ -55,7 +55,7 @@
                   && set -a
                   && source /log/deploy.env
                   && set +a
-                  && /run-with-xvfb.sh {selenium-command} -- --maxInstances=1
+                  && /run-with-xvfb.sh {selenium-command} -- --maxInstances=1 {selenium-args}
                   "
     wrappers:
         - timeout:
@@ -98,6 +98,8 @@
     name: catalyst-daily
     # Default selenium command, overridable per entry.
     selenium-command: 'selenium-test'
+    # Extra wdio arguments, set per entry.
+    selenium-args: ''
     extra-recipients: ''
     extension:
         - core:
@@ -272,5 +274,21 @@
             project-slug: 'mw-ext-cm'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "CodeMirror", "enable": true, "branch": "master" }}, {{ "name": "WikiEditor", "enable": true, "branch": "master" }}, {{ "name": "VisualEditor", "enable": true, "branch": "master" }}, {{ "name": "BetaFeatures", "enable": true, "branch": "master" }}, {{ "name": "Cite", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ], "otherModules": [ {{ "name": "parsoid", "enable": true, "branch": "master" }} ] }}'
+        - Wikibase:
+            trigger-time: '15 10 * * *'
+            repo: 'mediawiki/extensions/Wikibase'
+            project-slug: 'mw-ext-wb'
+            selenium-command: 'selenium-test:repo'
+            selenium-args: '--spec repo/tests/selenium/specs/*.js client/tests/selenium/specs/*.js'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "Wikibase", "enable": true, "branch": "master" }}, {{ "name": "MobileFrontend", "enable": true, "branch": "master" }}, {{ "name": "UniversalLanguageSelector", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }}, {{ "name": "MinervaNeue", "enable": true, "branch": "master" }} ] }}'
+        - termbox:
+            trigger-time: '20 10 * * *'
+            repo: 'mediawiki/extensions/Wikibase'
+            project-slug: 'mw-ext-tb'
+            selenium-command: 'selenium-test:repo'
+            selenium-args: '--spec view/lib/wikibase-termbox/tests/selenium/specs/*.js'
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "Wikibase", "enable": true, "branch": "master" }}, {{ "name": "MobileFrontend", "enable": true, "branch": "master" }}, {{ "name": "UniversalLanguageSelector", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }}, {{ "name": "MinervaNeue", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
