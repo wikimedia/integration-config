@@ -73,7 +73,7 @@ git submodule --quiet update --init --recursive
 scp "${SCP_OPTS[@]}" test_command.sh $VM_TARGET:/tmp/test_command.sh 2>log/scp_err
 
 # Run test command
-ssh "${SSH_OPTS[@]}" "$VM_TARGET" 'bash /tmp/test_command.sh'
+ssh "${SSH_OPTS[@]}" "$VM_TARGET" '/usr/bin/env FORCE_COLOR=1 TERM=xterm bash /tmp/test_command.sh'
 VM_CMD_EXIT="$?"
 
 # End
