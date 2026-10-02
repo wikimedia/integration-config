@@ -12,6 +12,8 @@
                 wikimedia/fundraising/crm
         - docker-run-with-log-cache-src:
             image: docker-registry.wikimedia.org/releng/civicrm:0.9-s4
+            # Keep the MySQL data in memory T434024
+            options: '--tmpfs /tmp/mysqld:size=1G'
             environment:
                 # $WORKSPACE is leaked from the host environment
                 WORKSPACE: "''"
