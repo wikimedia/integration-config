@@ -2669,7 +2669,6 @@ UploadWizard:
     # extras
     - AbuseFilter
     - ConfirmEdit
-    - EventLogging
     - SpamBlacklist
     - WikimediaMessages
 
