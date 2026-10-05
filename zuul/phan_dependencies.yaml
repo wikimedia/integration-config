@@ -861,9 +861,12 @@ WikiLove:
   - UserMerge
 
 WikiForum:
+  - AbuseFilter
   - ConfirmEdit
   - Echo
   - SocialProfile
+  - SpamBlacklist
+  - SpamRegex
 
 Wikibase:
   - Babel
