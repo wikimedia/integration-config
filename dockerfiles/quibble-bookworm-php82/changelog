@@ -1,3 +1,10 @@
+quibble-bookworm-php82 (1.22.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image quibble-bookworm:
+   Revert NodeJS back to 24.18.0
+
+ -- Antoine Musso <hashar@free.fr>  Mon,  5 Oct 2026 12:24:22 +0200
+
 quibble-bookworm-php82 (1.22.0) wikimedia; urgency=medium
 
   * Update Quibble to 1.22.0
