@@ -420,6 +420,7 @@ GrowthExperiments:
 
 HAWelcome:
   - SocialProfile
+  - GlobalUserrights
 
 HotCat:
   - BetaFeatures

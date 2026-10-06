@@ -1735,6 +1735,14 @@ GuidedTour:
     # extras
     - EventLogging
 
+HAWelcome:
+  recurse: false
+  dependencies:
+    # no requirements in extension.json
+    # extras
+    - SocialProfile
+    - GlobalUserrights
+
 HierarchyBuilder:
   recurse: false
   dependencies:
