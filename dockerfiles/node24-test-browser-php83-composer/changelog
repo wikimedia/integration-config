@@ -1,3 +1,10 @@
+node24-test-browser-php83-composer (24.18.0-s7) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Update composer to v2.10.3 - T440296
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  6 Oct 2026 14:16:31 +0200
+
 node24-test-browser-php83-composer (24.18.0-s6) wikimedia; urgency=medium
 
    Refresh for update in parent image node24-test:

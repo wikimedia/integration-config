@@ -1,3 +1,10 @@
+composer-php84 (8.4.24-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Update composer to v2.10.3 - T440296
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  6 Oct 2026 14:16:31 +0200
+
 composer-php84 (8.4.24) wikimedia; urgency=medium
 
    Refresh for update in parent image ci-bookworm:

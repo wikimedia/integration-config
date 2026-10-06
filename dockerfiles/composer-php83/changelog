@@ -1,3 +1,10 @@
+composer-php83 (8.3.33-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Update composer to v2.10.3 - T440296
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  6 Oct 2026 14:16:31 +0200
+
 composer-php83 (8.3.33-s1) wikimedia; urgency=high
 
    Refresh for update in parent image php83:

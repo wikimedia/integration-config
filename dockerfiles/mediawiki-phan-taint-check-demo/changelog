@@ -1,3 +1,10 @@
+mediawiki-phan-taint-check-demo (0.4.1-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   Update composer to v2.10.3 - T440296
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  6 Oct 2026 14:16:31 +0200
+
 mediawiki-phan-taint-check-demo (0.4.1-s1) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

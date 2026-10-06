@@ -1,3 +1,9 @@
+composer-scratch (2.10.3) wikimedia; urgency=medium
+
+  * Upgrade composer to v2.10.3 - T440297
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 06 Oct 2026 14:14:39 +0200
+
 composer-scratch (2.10.2) wikimedia; urgency=high
 
    Upgrade composer to v2.10.2
