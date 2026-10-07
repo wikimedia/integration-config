@@ -13,6 +13,7 @@ _ssh() {
     shift
 
     ssh \
+        -t \
         -o ControlMaster=auto \
         -o ControlPersist=10m \
         -o ControlPath="$_SSH_CONTROL_PATH" \
