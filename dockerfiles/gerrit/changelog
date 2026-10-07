@@ -1,6 +1,7 @@
 gerrit (1.6.1) wikimedia; urgency=medium
 
   * Switch from Java 17 to Java 21 (only used by Maven builds)
+  * Remove python3-distutils, no more available in Trixie.
 
  -- Antoine Musso <hashar@free.fr>  Wed, 07 Oct 2026 12:23:32 +0200
 
