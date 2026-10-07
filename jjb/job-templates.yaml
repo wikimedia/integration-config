@@ -18,7 +18,7 @@
           # script.
           submodules: false
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.5.0-s6
+          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1
           entrypoint: /src/wmf-build.py
           environment:
               LOG_DIR: /log
