@@ -241,9 +241,9 @@
     name: 'generic'
     node_version:
         - node24:
-            image: docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0-s4
+            image: docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0-s5
         - node26:
-            image: docker-registry.wikimedia.org/releng/node26-test-browser:26.8.2
+            image: docker-registry.wikimedia.org/releng/node26-test-browser:26.8.2-s1
     jobs:
         - 'generic-{node_version}-browser-coverage-publish'
         - 'generic-{node_version}-browser-direct-coverage-publish'
@@ -270,9 +270,9 @@
            script: 'doc'
            node_version:
                - node24:
-                   image: docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0-s4
+                   image: docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0-s5
                - node26:
-                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.8.2
+                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.8.2-s1
 
 # Same as 'mwext', but solo so BlueSpice repos don't conflict
 - project:
@@ -281,9 +281,9 @@
         - '{name}-{node_version}':
            node_version:
                - node24:
-                   image: docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0-s4
+                   image: docker-registry.wikimedia.org/releng/node24-test-browser:24.18.0-s5
                - node26:
-                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.8.2
+                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.8.2-s1
 
 - project:
     name: branchdeploy
