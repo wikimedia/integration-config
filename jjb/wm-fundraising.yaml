@@ -11,7 +11,7 @@
             projects: >
                 wikimedia/fundraising/crm
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/civicrm:0.9-s4
+            image: docker-registry.wikimedia.org/releng/civicrm:0.9-s5
             # Keep the MySQL data in memory T434024
             options: '--tmpfs /tmp/mysqld:size=1G'
             environment:
@@ -31,14 +31,14 @@
         # Run `composer test` with the same env has the civicrm test env
         - '{name}-composer-{phpflavor}':
             phpflavor: civicrm
-            image: docker-registry.wikimedia.org/releng/civicrm:0.9-s4
+            image: docker-registry.wikimedia.org/releng/civicrm:0.9-s5
 
 - project:
     name: donationinterface-fundraising-branches
     branch:
      - REL1_43:
          phpflavor: php82
-         docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.22.0-s1
+         docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.22.0-s2
          entrypoint: quibble-with-supervisord
          donation_interface_branch: master
     jobs:
@@ -94,7 +94,7 @@
     branch:
      - REL1_43:
          phpflavor: php82
-         docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.22.0-s1
+         docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php82:1.22.0-s2
          entrypoint: quibble-with-supervisord
     jobs:
      - quibble-fundraising-{ext}-{branch}-{phpflavor}
