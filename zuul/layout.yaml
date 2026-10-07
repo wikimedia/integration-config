@@ -1255,6 +1255,12 @@ jobs:
         - '.pipeline/semantic_highlighting/blubber.yaml'
         - 'src/models/semantic_highlighting/.*'
 
+  - name: ^trigger-inference-services-pipeline-decision-models-clef
+    files:
+        - '.pipeline/decision_models/blubber_clef.yaml'
+        - 'src/models/decision_models/clef/.*'
+        - 'test/unit/decision_models/.*'
+
   # End of meta jobs (the ones starting with ^)
 
   # Ensure MediaWiki repositories in a dependent pipeline have a queue name.
@@ -2338,6 +2344,7 @@ projects:
       - trigger-inference-services-pipeline-tts-section-generator
       - trigger-inference-services-pipeline-tool-server
       - trigger-inference-services-pipeline-semantic-highlighting
+      - trigger-inference-services-pipeline-decision-models-clef
     gate-and-submit:
       - trigger-inference-services-pipeline-outlink
       - trigger-inference-services-pipeline-revertrisk
@@ -2353,6 +2360,7 @@ projects:
       - trigger-inference-services-pipeline-tts-section-generator
       - trigger-inference-services-pipeline-tool-server
       - trigger-inference-services-pipeline-semantic-highlighting
+      - trigger-inference-services-pipeline-decision-models-clef
     postmerge:
       - trigger-inference-services-pipeline-outlink-publish
       - trigger-inference-services-pipeline-revertrisk-publish
@@ -2383,6 +2391,7 @@ projects:
       - trigger-inference-services-pipeline-tts-section-generator-publish
       - trigger-inference-services-pipeline-tool-server-publish
       - trigger-inference-services-pipeline-semantic-highlighting-publish
+      - trigger-inference-services-pipeline-decision-models-clef-publish
 
   - name: integration/config
     test-prio:

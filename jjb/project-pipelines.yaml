@@ -361,6 +361,8 @@
         - tool-server-publish
         - semantic-highlighting
         - semantic-highlighting-publish
+        - decision-models-clef
+        - decision-models-clef-publish
     jobs:
         # trigger-inference-services-pipeline-outlink
         # trigger-inference-services-pipeline-outlink-publish
@@ -405,6 +407,8 @@
         # trigger-inference-services-pipeline-tool-server-publish
         # trigger-inference-services-pipeline-semantic-highlighting
         # trigger-inference-services-pipeline-semantic-highlighting-publish
+        # trigger-inference-services-pipeline-decision-models-clef
+        # trigger-inference-services-pipeline-decision-models-clef-publish
         - 'trigger-{name}-pipeline-{pipeline}'
         # inference-services-pipeline-outlink
         # inference-services-pipeline-outlink-publish
@@ -448,6 +452,8 @@
         # inference-services-pipeline-tool-server-publish
         # inference-services-pipeline-semantic-highlighting
         # inference-services-pipeline-semantic-highlighting-publish
+        # inference-services-pipeline-decision-models-clef
+        # inference-services-pipeline-decision-models-clef-publish
         - '{name}-pipeline-{pipeline}'
 
 - project:
