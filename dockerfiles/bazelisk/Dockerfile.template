@@ -1,5 +1,4 @@
-FROM {{ "bazel" | image_tag }} AS bazel
-FROM {{ "ci-bullseye" | image_tag }} AS build
+FROM {{ "ci-trixie" | image_tag }} AS build
 
 USER root
 RUN {{ "golang-go gcc libc6-dev" | apt_install }} \
@@ -8,19 +7,19 @@ RUN {{ "golang-go gcc libc6-dev" | apt_install }} \
 USER nobody
 ENV GOPATH=/build/gopath
 RUN cd /build \
-    && go mod init bazelisk \
-    && go get github.com/bazelbuild/bazelisk@v1.6.1
+    && go install github.com/bazelbuild/bazelisk@v1.29.0
 
-
-FROM {{ "ci-bullseye" | image_tag }}
+FROM {{ "ci-trixie" | image_tag }}
 USER root
 RUN install --owner=nobody --group=nogroup --directory /var/local/bazel
-COPY --from=bazel /var/local/bazel/bazelrc /var/local/bazel/bazelrc
+COPY bazelrc /var/local/bazel/bazelrc
 COPY --from=build /build/gopath/bin/bazelisk /usr/local/bin/bazelisk-real
 COPY bazelisk /usr/local/bin/bazelisk
 
 USER nobody
-# Get it to download Bazel and bootstrap it
+# In addition to showing the actual Bazel version at build time, that also
+# triggers extraction of the Bazel installation under outputUserRoot. That
+# saves time on future invocations.
 RUN /usr/local/bin/bazelisk version
 WORKDIR /src
 ENTRYPOINT ["/usr/local/bin/bazelisk"]
