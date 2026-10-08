@@ -921,6 +921,7 @@ WikidataPageBanner:
 
 WikimediaAntiAbuse:
   - AbuseFilter
+  - CheckUser
   - Echo
   - EventBus
   - EventLogging
