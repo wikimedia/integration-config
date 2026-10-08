@@ -2947,6 +2947,7 @@ WikimediaAntiAbuse:
   dependencies:
     # no requirements in extension.json
     # extras
+    - AbuseFilter
     - CheckUser
     - Echo
     - EventBus

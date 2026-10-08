@@ -920,6 +920,7 @@ WikidataPageBanner:
   - Wikibase
 
 WikimediaAntiAbuse:
+  - AbuseFilter
   - Echo
   - EventBus
   - EventLogging
