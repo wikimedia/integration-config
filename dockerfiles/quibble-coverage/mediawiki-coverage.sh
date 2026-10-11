@@ -15,14 +15,14 @@ php tests/phpunit/generatePHPUnitConfig.php
 # generate console output, clover reports and html reports.
 set +e
 if [[ ! -v CODEHEALTH ]]; then
-    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH" -d pcov.exclude='@(tests|vendor)@' \
+    php -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH" -d pcov.exclude='@(tests|vendor)@' \
         vendor/bin/phpunit \
             --exclude-group Broken \
             --coverage-clover "$LOG_DIR"/clover.xml \
             --coverage-html "$WORKSPACE/cover" &
 else
     phpunit-suite-edit "$MW_INSTALL_PATH/phpunit.xml"
-    php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH" -d pcov.exclude='@(tests|vendor)@' \
+    php -d pcov.enabled=1 -d pcov.directory="$MW_INSTALL_PATH" -d pcov.exclude='@(tests|vendor)@' \
         vendor/bin/phpunit \
             --exclude-group Broken \
             --coverage-clover "$LOG_DIR"/clover.xml \

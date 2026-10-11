@@ -40,6 +40,6 @@ phpunit-suite-edit "$CONFIG_PATH" \
     --cover-extension "${ZUUL_PROJECT#mediawiki/}"
 
 exec phpunit-patch-coverage check \
-    --command "php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=$PWD -d pcov.exclude='@(tests|vendor)@' -d pcov.initial.files=3000 \"\$MW_INSTALL_PATH\"/vendor/bin/phpunit -c $CONFIG_PATH" \
+    --command "php -d pcov.enabled=1 -d pcov.directory=$PWD -d pcov.exclude='@(tests|vendor)@' -d pcov.initial.files=3000 \"\$MW_INSTALL_PATH\"/vendor/bin/phpunit -c $CONFIG_PATH" \
     --html "$LOG_DIR"/coverage.html \
     --test-dir "$TEST_DIR"

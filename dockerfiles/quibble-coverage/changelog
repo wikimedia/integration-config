@@ -1,3 +1,9 @@
+quibble-coverage (1.22.0-s3) wikimedia; urgency=high
+
+   Enable pcov by default
+
+ -- Daimona Eaytoy <daimona.wiki@gmail.com>  Sun, 11 Oct 2026 20:30:25 +0200
+
 quibble-coverage (1.22.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

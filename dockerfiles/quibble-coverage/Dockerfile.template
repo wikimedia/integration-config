@@ -21,4 +21,7 @@ COPY mediawiki-coverage.sh /usr/local/bin/mediawiki-coverage
 COPY mwext-phpunit-coverage.sh /usr/local/bin/mwext-phpunit-coverage
 COPY mwext-phpunit-coverage-patch.sh /usr/local/bin/mwext-phpunit-coverage-patch
 
+# Enable pcov by default to work around https://github.com/sebastianbergmann/phpunit/issues/7053
+RUN phpenmod pcov
+
 USER nobody
