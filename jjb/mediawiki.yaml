@@ -465,6 +465,12 @@
         - docker-castor-load
         - docker-log-dir
         - docker-src-dir
+        # Enable pcov by default to work around https://github.com/sebastianbergmann/phpunit/issues/7053
+        - docker-run:
+            image: '{docker_image}'
+            options: '--user root'
+            entrypoint: /usr/sbin/phpenmod
+            args: pcov
         - docker-run-with-log-cache-src:
             image: '{docker_image}'
             options: '--tmpfs /workspace/db:size=320M'
@@ -472,7 +478,7 @@
             volumes:
                 /srv/git: /srv/git:ro
             # yamllint disable-line rule:line-length
-            args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --command "php tests/phpunit/generatePHPUnitConfig.php && phpunit-patch-coverage check --command \"php -d extension=pcov.so -d pcov.enabled=1 -d pcov.directory=. vendor/bin/phpunit\" --html /workspace/log/coverage.html"'
+            args: '--packages-source {packages-source} --db {database} --db-dir /workspace/db --command "php tests/phpunit/generatePHPUnitConfig.php && phpunit-patch-coverage check --command \"php -d pcov.enabled=1 -d pcov.directory=. vendor/bin/phpunit\" --html /workspace/log/coverage.html"'
             logdir: '/workspace/log'
             srcdir: '/workspace/src'
     publishers:
@@ -649,7 +655,7 @@
         dir: 'cover'
     - docker-castor-load
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-coverage:1.22.0-s2
+        image: docker-registry.wikimedia.org/releng/quibble-coverage:1.22.0-s3
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -744,7 +750,7 @@
     - docker-wipe-dir:
         dir: 'cover'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/quibble-coverage:1.22.0-s2
+        image: docker-registry.wikimedia.org/releng/quibble-coverage:1.22.0-s3
         entrypoint: quibble-with-supervisord
         environment:
             CODEHEALTH: 1
@@ -844,7 +850,7 @@
 
 - job-group:
     name: mediawiki-coverage-jobs
-    docker_image: docker-registry.wikimedia.org/releng/quibble-coverage:1.22.0-s2
+    docker_image: docker-registry.wikimedia.org/releng/quibble-coverage:1.22.0-s3
     entrypoint: quibble-with-supervisord
     jobs:
         - mwcore-phpunit-coverage-patch:
