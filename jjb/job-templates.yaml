@@ -17,6 +17,14 @@
           # gerrit repository to fetch them which is handled by the repo build
           # script.
           submodules: false
+
+      # fetch all branches/tags so that release.war get an appropriate version
+      # (tools/workspace_status.py uses git describe)
+      - docker-run-with-log-cache-src:
+          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1
+          entrypoint: git
+          args: fetch --quiet --unshallow origin --tags +refs/heads/*:refs/remotes/origin/*
+
       - docker-run-with-log-cache-src:
           image: docker-registry.wikimedia.org/releng/gerrit:1.6.1
           entrypoint: /src/wmf-build.py
@@ -24,6 +32,13 @@
               LOG_DIR: /log
           volumes:
               /srv/git: /srv/git:ro
+
+      # Dump bazel labels used for versions
+      - docker-run-with-log-cache-src:
+          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1
+          entrypoint: python
+          args: tools/workspace_status.py
+
       # Zip all plugins in a single plugins.zip that is captured by Jenkins.
       # Makes it easier to retrieve just the plugins.
       - docker-run-with-log-cache-src:
