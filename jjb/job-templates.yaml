@@ -31,7 +31,9 @@
           # Use shell for wildcard, zip list argument does not support wildcards
           entrypoint: bash
           workdir: /log
-          args: '-c "/usr/bin/zip all_plugins.zip *.js *.jar"'
+          # its-base.jar is excluded, we need it to build its-phabricator but
+          # at run time it is provided by release.war.
+          args: '-c "/usr/bin/zip all_plugins.zip *.js *.jar -x its-base.jar"'
 
     publishers:
       - archive:
