@@ -24,9 +24,18 @@
               LOG_DIR: /log
           volumes:
               /srv/git: /srv/git:ro
+      # Zip all plugins in a single plugins.zip that is captured by Jenkins.
+      # Makes it easier to retrieve just the plugins.
+      - docker-run-with-log-cache-src:
+          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1
+          # Use shell for wildcard, zip list argument does not support wildcards
+          entrypoint: bash
+          workdir: /log
+          args: '-c "/usr/bin/zip all_plugins.zip *.js *.jar"'
+
     publishers:
       - archive:
-         artifacts: 'log/*.war, log/*.jar, log/*.js'
+         artifacts: 'log/*.war, log/*.jar, log/*.js, log/all_plugins.zip'
       - teardown
 
 # Generate project documentation using docker and publish it
