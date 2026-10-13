@@ -2952,6 +2952,7 @@ WikimediaAntiAbuse:
     - Echo
     - EventBus
     - EventLogging
+    - GlobalPreferences
 
 WikimediaBadges:
   recurse: true

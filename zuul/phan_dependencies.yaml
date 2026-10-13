@@ -925,6 +925,7 @@ WikimediaAntiAbuse:
   - Echo
   - EventBus
   - EventLogging
+  - GlobalPreferences
 
 WikimediaBadges:
   - Wikibase
