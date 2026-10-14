@@ -77,12 +77,6 @@
             toxenv: update_version
 
 - project:
-    name: dockerpkg
-    jobs:
-        - '{name}-tox-publish':
-            docsrc: 'doc/build'
-            docdest: 'docker-pkg'
-- project:
     name: 'homer'
     jobs:
         - tox-publish-jobs:

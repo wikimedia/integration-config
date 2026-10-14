@@ -1346,9 +1346,6 @@ jobs:
   - name: cumin-tox-publish
     branch: ^master$
 
-  - name: dockerpkg-tox-publish
-    branch: ^master$
-
   - name: ecs-publish
     branch: ^master$
 
@@ -3711,12 +3708,6 @@ projects:
   - name: operations/software/external-monitoring
     template:
       - name: tox
-
-  - name: operations/docker-images/docker-pkg
-    template:
-      - name: tox
-    postmerge:
-      - dockerpkg-tox-publish
 
   - name: operations/docker-images/docker-report
     template:
@@ -12064,6 +12055,10 @@ projects:
   - name: operations/debs/wikimedia-job-runner
     template:
       - name: archived
+
+  - name: operations/docker-images/docker-pkg
+    template:
+      - name: archived # T441088
 
   - name: operations/puppet/cdh
     template:
