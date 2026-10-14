@@ -4832,6 +4832,7 @@ projects:
       - name: extension-quibble
       - name: extension-codehealth
       - name: extension-coverage
+      - name: growth-experiments-selenium-gate
     postmerge:
       - mwext-doxygen-publish
 

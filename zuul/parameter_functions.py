@@ -97,6 +97,7 @@ def set_parameters(item, job, params):
             'mediawiki/extensions/GuidedTour',
             'mediawiki/extensions/MobileFrontend',
             'mediawiki/extensions/PageViewInfo',
+            'mediawiki/extensions/PersonalDashboard',
             'mediawiki/extensions/TestKitchen',
             'mediawiki/extensions/Thanks',
             'mediawiki/extensions/VisualEditor',
