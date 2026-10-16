@@ -2292,6 +2292,7 @@ RandomGameUnit:
 ReaderExperiments:
   recurse: false
   dependencies:
+    - TestKitchen
     # no requirements in extension.json
     # extras
     - CirrusSearch
@@ -2300,7 +2301,6 @@ ReaderExperiments:
     - EventStreamConfig
     - MobileFrontend
     - ParserMigration
-    - TestKitchen
     - WikimediaEvents
     - WikimediaMessages
     - skins/MinervaNeue
