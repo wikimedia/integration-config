@@ -35,17 +35,12 @@
          # prefer-dist to get cacheable content
          args: 'install --ansi --no-progress --prefer-dist'
      # phpunit coverage
-     # Enable pcov by default to work around https://github.com/sebastianbergmann/phpunit/issues/7053
-     - docker-run:
-         image: '{docker_image}'
-         options: '--user root'
-         entrypoint: /usr/sbin/phpenmod
-         args: pcov
      - docker-run-with-log-cache-src:
          image: '{docker_image}'
          entrypoint: php
          workdir: /src
          args: |
+             -d extension=pcov.so \
              -d pcov.enable=1 \
              ./vendor/bin/phpunit \
                  --coverage-clover /log/coverage/clover.xml \
