@@ -661,6 +661,7 @@ ReadingLists:
   - BetaFeatures
   - SiteMatrix
   - TestKitchen
+  - CentralAuth
 
 RelatedArticles:
   - Disambiguator
