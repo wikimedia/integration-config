@@ -1245,6 +1245,7 @@ CheckUser:
     - TestKitchen
     - TorBlock
     - VisualEditor
+    - WikimediaAntiAbuse
 
 Checklists:
   recurse: false

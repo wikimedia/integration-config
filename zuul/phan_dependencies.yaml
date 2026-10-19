@@ -176,6 +176,7 @@ CheckUser:
   - MobileFrontend
   - TorBlock
   - UserMerge
+  - WikimediaAntiAbuse
 
 CirrusSearch:
   - BetaFeatures
