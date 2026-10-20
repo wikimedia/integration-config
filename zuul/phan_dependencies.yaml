@@ -817,7 +817,9 @@ VisualData:
   - Scribunto
 
 VisualEditor:
+  - AbuseFilter
   - BetaFeatures
+  - SpamBlacklist
 
 VisualEditorPlus:
   - VisualEditor
