@@ -45,6 +45,7 @@
       triggers:
           - pollscm:
                 cron: '@daily'
+      disabled: true
       scm:
           - git:
                 url: 'https://gerrit.wikimedia.org/r/p/{repo}.git'

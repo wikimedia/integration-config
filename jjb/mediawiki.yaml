@@ -69,6 +69,7 @@
     triggers:
         - pollscm:
             cron: '@hourly'
+    disabled: true
     scm:
         - git:
             url: 'https://gerrit.wikimedia.org/r/p/mediawiki/core.git'

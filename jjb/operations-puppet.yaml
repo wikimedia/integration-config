@@ -17,6 +17,7 @@
     triggers:
      - pollscm:
          cron: '@hourly'
+    disabled: true
     # Solely used for polling
     scm:
      - git:
