@@ -1,3 +1,9 @@
+php82 (8.2.35) wikimedia; urgency=high
+
+   Update PHP to 8.2.35
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 21 Oct 2026 15:17:02 +0200
+
 php82 (8.2.33) wikimedia; urgency=medium
 
    Rebuild to align image tag with the actual PHP version being included
