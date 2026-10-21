@@ -3,7 +3,6 @@
     node: Docker
     triggers:
         - timed: '{trigger-time}'
-    disabled: true  # T442664
     parameters:
         - string:
             name: 'ZUUL_URL'
