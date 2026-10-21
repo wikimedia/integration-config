@@ -36,6 +36,7 @@
     concurrent: false
     triggers:
      - timed: '0 3 * * *'
+    disabled: true
     scm:
      - git:
          url: 'https://gerrit.wikimedia.org/r/p/integration/config.git'
