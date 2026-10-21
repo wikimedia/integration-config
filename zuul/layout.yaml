@@ -9085,14 +9085,8 @@ projects:
       - name: mediawiki-i18n-check
       - name: composer-test-php83-to-php85
     test:
-      # TODO (T413995): Does this still need PHP 8.1 & 8.2 testing?
-      - composer-php81
-      - composer-php82
       - labs-tools-heritage-tox
     gate-and-submit:
-      # TODO (T413995): Does this still need PHP 8.1 & 8.2 testing?
-      - composer-php81
-      - composer-php82
       - labs-tools-heritage-tox
     postmerge:
       - tox-py311-coverage-publish
