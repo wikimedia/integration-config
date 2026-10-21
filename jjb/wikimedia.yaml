@@ -5,7 +5,6 @@
     triggers:
      # Run every monday at 7am.
      - timed: 'H 9 * * 1'
-    disabled: true
     parameters:
         # Zuul parameters for Castor
         - string:

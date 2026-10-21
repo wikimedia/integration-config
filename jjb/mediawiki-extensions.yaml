@@ -263,7 +263,7 @@
     name: wikilambda-catalyst-end-to-end-daily
     triggers:
         - timed: '@daily'
-    disabled: true
+    disabled: true  # T442664
     builders:
         - docker-cache-dir
         - docker-log-dir
