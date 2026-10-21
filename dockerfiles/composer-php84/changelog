@@ -1,3 +1,10 @@
+composer-php84 (8.4.27) wikimedia; urgency=high
+
+   Refresh for update in parent image php84:
+   Update PHP to 8.4.27
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 21 Oct 2026 15:22:51 +0200
+
 composer-php84 (8.4.24-s1) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

@@ -1,3 +1,9 @@
+php84 (8.4.27) wikimedia; urgency=high
+
+   Update PHP to 8.4.27
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 21 Oct 2026 15:22:51 +0200
+
 php84 (8.4.24) wikimedia; urgency=medium
 
    Rebuild to align image tag with the actual PHP version being included
