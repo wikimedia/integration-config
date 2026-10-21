@@ -1,3 +1,10 @@
+phpmetrics (2.8.1-s31) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Update PHP - T441915
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 21 Oct 2026 15:16:15 +0200
+
 phpmetrics (2.8.1-s30) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
