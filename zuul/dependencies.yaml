@@ -1917,7 +1917,6 @@ MassMessage:
     - CentralAuth
     - Echo
     - Flow
-    - LiquidThreads
     - VisualEditor
 
 MassMessageEmail:
