@@ -1,3 +1,9 @@
+php85 (8.5.12) wikimedia; urgency=high
+
+   Update PHP from 8.5.9 to 8.5.12
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 22 Oct 2026 10:08:14 -0400
+
 php85 (8.5.9-s1) wikimedia; urgency=high
 
    (T433254) Migrate to Wikimedia-provided PHP binary
