@@ -111,6 +111,7 @@ CampaignEvents:
   - CentralAuth
   - cldr
   - CommunityConfiguration
+  - ContentTranslation
   - Echo
   - Translate
   - UserMerge
