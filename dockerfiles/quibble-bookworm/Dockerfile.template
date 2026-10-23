@@ -1,5 +1,5 @@
 FROM {{ "composer-scratch" | image_tag }} as composer
-FROM {{ "node24" | image_tag }} as node
+FROM {{ "node26" | image_tag }} as node
 
 FROM {{ "ci-bookworm" | image_tag }}
 
