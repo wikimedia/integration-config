@@ -5,6 +5,13 @@ if [ "$ZUUL_PIPELINE" != 'gate-and-submit' ] && [ "$ZUUL_PIPELINE" != 'postmerge
     exit 0
 fi
 
+# The build never loaded the cache, so saving it would delete everything the
+# namespace holds for the other projects sharing it.  T439116
+if [ "${CASTOR_DISABLED:-}" = 1 ]; then
+    echo "CASTOR_DISABLED=1, not saving the cache"
+    exit 0
+fi
+
 SSH_OPTS=(
     "-a" # Disable agent forwarding
     "-T" # Disable pseudo-tty allocation
