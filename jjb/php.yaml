@@ -91,6 +91,6 @@
     php:
      - php83:
          composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.34
-         phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.22.0-s3
+         phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.22.0-s4
     jobs:
       - 'phan-{php}'
