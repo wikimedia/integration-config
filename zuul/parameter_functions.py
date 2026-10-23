@@ -178,8 +178,9 @@ def set_parameters(item, job, params):
         params['PUPPETEER_SKIP_CHROMIUM_DOWNLOAD'] = 'true'
 
     # Trial of integration-cache-proxy as UploadWizard's npm registry, in the
-    # test pipeline only so gating is unaffected. The empty npm cache keeps
-    # the one loaded from Castor from serving every tarball.  T439116
+    # test pipeline only so gating is unaffected. The empty npm cache makes
+    # the proxy serve every tarball, so the Castor load is skipped as unused.
+    # T439116
     if (
         job.name == 'mediawiki-node26'
         and params['ZUUL_PROJECT'] == 'mediawiki/extensions/UploadWizard'
@@ -189,6 +190,7 @@ def set_parameters(item, job, params):
             'http://integration-cache-proxy.integration.eqiad1.wikimedia.cloud'
             ':8080/npm/')
         params['npm_config_cache'] = '/tmp/npm-cache'
+        params['CASTOR_DISABLED'] = '1'
 
     if 'debian-glue' in job.name:
 

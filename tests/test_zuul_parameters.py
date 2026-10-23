@@ -61,3 +61,20 @@ class TestZuulSetParameters(unittest.TestCase):
 
         self.assertIn('QUIBBLE_PHPUNIT_PARALLEL', params)
         self.assertIn('MW_RESULTS_CACHE_SERVER_BASE_URL', params)
+
+    def test_cache_proxy_trial_disables_castor_in_test_pipeline_only(self):
+        job = FakeJob('mediawiki-node26')
+        for pipeline, disabled in (('test', True), ('gate-and-submit', False)):
+            params = {
+                'ZUUL_PROJECT': 'mediawiki/extensions/UploadWizard',
+                'ZUUL_PIPELINE': pipeline,
+                'ZUUL_BRANCH': 'master',
+                }
+            zuul_config.set_parameters(None, job, params)
+
+            if disabled:
+                self.assertEqual('1', params['CASTOR_DISABLED'])
+                self.assertIn('npm_config_registry', params)
+            else:
+                self.assertNotIn('CASTOR_DISABLED', params)
+                self.assertNotIn('npm_config_registry', params)
