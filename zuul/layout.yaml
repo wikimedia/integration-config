@@ -9123,21 +9123,6 @@ projects:
     template:
       - name: composer-test-php83-to-php85
 
-  - name: labs/tools/nagf
-    # template:
-      # (T353395) This repo doesn't yet pass its tests on PHP 8.2+
-      # - name: composer-test-php83-to-php85
-    test:
-      - composer-php81
-    gate-and-submit:
-      - composer-php81
-    experimental:
-      # Not-yet-supported language runtimes
-      - composer-php82
-      - composer-php83
-      - composer-php84
-      - composer-php85
-
   - name: labs/tools/Isa
     test:
       - tox
@@ -10167,6 +10152,10 @@ projects:
       - name: archived # Now at https://gitlab.wikimedia.org/toolforge-repos/logo-test
 
   - name: labs/tools/Luke081515IRCBot
+    template:
+      - name: archived
+
+  - name: labs/tools/nagf
     template:
       - name: archived
 
