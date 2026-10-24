@@ -181,7 +181,7 @@ def set_parameters(item, job, params):
     # test pipeline only so gating is unaffected. The empty npm cache keeps
     # the one loaded from Castor from serving every tarball.  T439116
     if (
-        job.name == 'mediawiki-node24'
+        job.name == 'mediawiki-node26'
         and params['ZUUL_PROJECT'] == 'mediawiki/extensions/UploadWizard'
         and params['ZUUL_PIPELINE'] == 'test'
     ):
