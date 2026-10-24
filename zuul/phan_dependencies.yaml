@@ -678,6 +678,7 @@ ReportIncident:
   - TestKitchen
 
 Sanctions:
+  - DiscussionTools
   - Echo
   - Flow
 
