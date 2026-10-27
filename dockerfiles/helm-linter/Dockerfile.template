@@ -1,7 +1,7 @@
 FROM docker-registry.wikimedia.org/golang1.19 as build
 RUN CGO_ENABLED=0 go install github.com/davidrjonas/semver-cli@1.1.1
 
-FROM {{ "ci-bullseye" | image_tag }}
+FROM {{ "ci-bookworm" | image_tag }}
 
 ENV HELM_HOME=/tmp/helm \
     HELM_CONFIG_HOME=/tmp/helm3/config \
@@ -12,7 +12,6 @@ USER root
 
 COPY --from=build /go/bin/semver-cli /usr/bin/
 
-# envoy-future is a bullseye component but it will run on buster as well
 ADD envoy-future.list /etc/apt/sources.list.d/envoy-future.list
 
 {% set apt_packages -%}
@@ -26,8 +25,8 @@ kubeconform
 envoyproxy
 istioctl
 ruby-git
+pipx
 python3-minimal
-python3-pip
 python3-yaml
 lua5.3
 lua-busted
@@ -41,7 +40,7 @@ RUN {{ apt_packages | apt_install }} && \
     chown -R nobody $HELM_HOME /tmp/helm3 && \
     chmod -R 777 /tmp/helm3 $HELM_HOME && \
     ln -s /usr/bin/true /usr/local/bin/helmfile_log_sal && \
-    /usr/bin/pip3 install sextant && \
+    PIPX_BIN_DIR=/usr/local/bin pipx install sextant && \
     /usr/bin/update-kubeconform-json-schema && \
     update-alternatives --set helm /usr/bin/helm3.17
 
