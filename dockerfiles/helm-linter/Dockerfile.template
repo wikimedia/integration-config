@@ -39,8 +39,8 @@ RUN {{ apt_packages | apt_install }} && \
     helm3 repo list | tail -n +2 | awk '{print $1}' | xargs --no-run-if-empty helm3 repo remove && \
     chown -R nobody $HELM_HOME /tmp/helm3 && \
     chmod -R 777 /tmp/helm3 $HELM_HOME && \
+    PIPX_HOME=/pipx PIPX_BIN_DIR=/usr/local/bin pipx install sextant && \
     ln -s /usr/bin/true /usr/local/bin/helmfile_log_sal && \
-    PIPX_BIN_DIR=/usr/local/bin pipx install sextant && \
     /usr/bin/update-kubeconform-json-schema && \
     update-alternatives --set helm /usr/bin/helm3.17
 
