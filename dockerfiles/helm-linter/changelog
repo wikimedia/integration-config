@@ -1,3 +1,9 @@
+helm-linter (0.8.5) wikimedia; urgency=medium
+
+  * Update envoy-future to 1.40.1 
+
+ -- Reuven Lazarus <rlazarus@wikimedia.org>  Tue, 27 Oct 2026 11:10:37 -0700
+
 helm-linter (0.8.4) wikimedia; urgency=medium
 
   * Update envoy-future package to 3.19.0 (T421418)
