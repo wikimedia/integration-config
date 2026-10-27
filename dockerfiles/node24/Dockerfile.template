@@ -8,7 +8,7 @@ ENV NODE_VERSION=v24.22.1
 ENV NODE_FILENAME=node-${NODE_VERSION}-linux-x64.tar.gz
 ENV NODE_DIRNAME=node-${NODE_VERSION}-linux-x64
 
-RUN {{ "curl" | apt_install }}
+RUN {{ "curl zip unzip" | apt_install }}
 
 COPY npmrc /usr/etc/npmrc
 COPY SHASUMS256.txt /tmp/nodeinstall/SHASUMS256.txt

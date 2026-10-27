@@ -1,3 +1,10 @@
+ajv (0.4.1-s7) wikimedia; urgency=high
+
+   Refresh for update in parent image node26:
+   (T361520) Add zip/unzip to maybe help Cypress
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue, 27 Oct 2026 07:27:17 -0400
+
 ajv (0.4.1-s6) wikimedia; urgency=high
 
    Refresh for update in parent image node26:

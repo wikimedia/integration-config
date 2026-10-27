@@ -9,7 +9,7 @@ ENV NODE_FILENAME=node-${NODE_VERSION}-linux-x64.tar.gz
 ENV NODE_DIRNAME=node-${NODE_VERSION}-linux-x64
 
 # libatomic1 is needed ny nodejs and not otherwise supplied, somehow
-RUN {{ "curl libatomic1" | apt_install }}
+RUN {{ "curl zip unzip libatomic1" | apt_install }}
 
 COPY npmrc /usr/etc/npmrc
 COPY SHASUMS256.txt /tmp/nodeinstall/SHASUMS256.txt
