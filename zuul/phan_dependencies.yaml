@@ -80,6 +80,7 @@ ArticleGuidance:
   - CommunityConfiguration
   - SpamBlacklist
   - TestKitchen
+  - VisualEditor
 
 ArticlePlaceholder:
   - Scribunto
