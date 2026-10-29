@@ -48,7 +48,7 @@
                 - php82:
                     image: docker-registry.wikimedia.org/releng/composer-php82:8.2.35
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.34
+                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.36
                 - php84:
                     image: docker-registry.wikimedia.org/releng/composer-php84:8.4.27
                 - php85:
@@ -58,7 +58,7 @@
                 - php82:
                     image: docker-registry.wikimedia.org/releng/composer-php82:8.2.35
                 - php83:
-                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.34
+                    image: docker-registry.wikimedia.org/releng/composer-php83:8.3.36
                 - php84:
                     image: docker-registry.wikimedia.org/releng/composer-php84:8.4.27
                 - php85:
@@ -90,7 +90,7 @@
     name: generic-phan-jobs
     php:
      - php83:
-         composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.34
-         phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.22.0-s6
+         composer_image: docker-registry.wikimedia.org/releng/composer-php83:8.3.36
+         phan_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.22.0-s7
     jobs:
       - 'phan-{php}'
