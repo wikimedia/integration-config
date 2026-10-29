@@ -1,3 +1,10 @@
+quibble-coverage (1.22.0-s8) wikimedia; urgency=high
+
+   Refresh for update in parent image php83:
+   Update PHP from 8.3.36 to 8.3.36-1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 29 Oct 2026 10:15:30 -0400
+
 quibble-coverage (1.22.0-s7) wikimedia; urgency=high
 
    Refresh for update in parent image node26:

@@ -1,3 +1,9 @@
+php83 (8.3.36) wikimedia; urgency=high
+
+   Update PHP from 8.3.36 to 8.3.36-1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 29 Oct 2026 10:15:30 -0400
+
 php83 (8.3.34) wikimedia; urgency=high
 
    Update PHP to 8.3.34
