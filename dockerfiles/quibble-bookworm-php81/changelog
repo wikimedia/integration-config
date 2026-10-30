@@ -1,3 +1,10 @@
+quibble-bookworm-php81 (1.22.0-s7) wikimedia; urgency=high
+
+   Refresh for update in parent image composer-scratch:
+   (T442976) Upgrade composer to v2.11.0
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 29 Oct 2026 21:07:31 -0400
+
 quibble-bookworm-php81 (1.22.0-s6) wikimedia; urgency=high
 
    Refresh for update in parent image node26:
