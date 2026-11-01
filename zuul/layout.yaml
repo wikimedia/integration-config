@@ -9358,7 +9358,7 @@ projects:
       - pywikibot-core-tox-doctest
       - pywikibot-core-tox-rstcheck
       - pywikibot-core-tox-doc
-      - pywikibot-core-tox-deeptest-py39
+      - pywikibot-core-tox-deeptest-py310
       - pywikibot-core-tox-deeptest-py314
     postmerge:
       - pywikibot-core-tox-publish
@@ -9366,7 +9366,7 @@ projects:
       # Jobs we want to have available for testing
       - pywikibot-core-tox-doc
       # Not-yet-supported language runtimes
-      - pywikibot-core-tox-deeptest-py39
+      - pywikibot-core-tox-deeptest-py310
       - pywikibot-core-tox-deeptest-py314
 
   - name: pywikibot/i18n
