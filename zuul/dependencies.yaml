@@ -2369,6 +2369,8 @@ Sanctions:
     # extras
     - DiscussionTools
     - VisualEditor
+    # extras transitive dependencies
+    - Linter
 
 Score:
   recurse: true
