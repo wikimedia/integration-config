@@ -339,7 +339,7 @@
         volumes:
             src:
             /srv/git: /srv/git:ro
-        image: docker-registry.wikimedia.org/releng/zuul-cloner:0.3.0-s8
+        image: docker-registry.wikimedia.org/releng/zuul-cloner:0.4.0
         args: >-
           --color --verbose
           --map /zuul-clonemap.yaml
