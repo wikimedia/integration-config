@@ -177,12 +177,6 @@
             project-slug: 'mw-ext-af'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "AbuseFilter", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
-        - AchievementBadges:
-            trigger-time: '55 8 * * *'
-            repo: 'mediawiki/extensions/AchievementBadges'
-            project-slug: 'mw-ext-ab'
-            # yamllint disable-line rule:line-length
-            json-values: '{{ "extensions": [ {{ "name": "AchievementBadges", "enable": true, "branch": "master" }}, {{ "name": "BetaFeatures", "enable": true, "branch": "master" }}, {{ "name": "Echo", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - PageTriage:
             trigger-time: '5 9 * * *'
             repo: 'mediawiki/extensions/PageTriage'
@@ -195,12 +189,6 @@
             project-slug: 'mw-ext-td'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "TemplateData", "enable": true, "branch": "master" }}, {{ "name": "VisualEditor", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ], "otherModules": [ {{ "name": "parsoid", "enable": true, "branch": "master" }} ] }}'
-        - Cargo:
-            trigger-time: '15 9 * * *'
-            repo: 'mediawiki/extensions/Cargo'
-            project-slug: 'mw-ext-cargo'
-            # yamllint disable-line rule:line-length
-            json-values: '{{ "extensions": [ {{ "name": "Cargo", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - CommunityRequests:
             trigger-time: '20 9 * * *'
             repo: 'mediawiki/extensions/CommunityRequests'
@@ -249,12 +237,6 @@
             project-slug: 'mw-ext-tw'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "TemplateWizard", "enable": true, "branch": "master" }}, {{ "name": "TemplateData", "enable": true, "branch": "master" }}, {{ "name": "WikiEditor", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
-        - Sanctions:
-            trigger-time: '0 10 * * *'
-            repo: 'mediawiki/extensions/Sanctions'
-            project-slug: 'mw-ext-sanctions'
-            # yamllint disable-line rule:line-length
-            json-values: '{{ "extensions": [ {{ "name": "Sanctions", "enable": true, "branch": "master" }}, {{ "name": "Echo", "enable": true, "branch": "master" }}, {{ "name": "Flow", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - RevisionSlider:
             trigger-time: '5 10 * * *'
             repo: 'mediawiki/extensions/RevisionSlider'
