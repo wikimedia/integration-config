@@ -1,2 +1,0 @@
-deb http://apt.wikimedia.org/wikimedia buster-wikimedia thirdparty/pyall
-deb http://apt.wikimedia.org/wikimedia buster-wikimedia component/python39

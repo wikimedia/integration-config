@@ -5,7 +5,7 @@ FROM docker-registry.wikimedia.org/bookworm:latest
 COPY --from=ci-common /utils /utils
 COPY --from=ci-common /utils/gitconfig /etc/gitconfig
 
-# Keep the following in sync with ci-buster
+# Keep the following in sync with ci-bullseye
 ARG DEBIAN_FRONTEND=noninteractive
 
 # We run tests in CI as 'nobody' (with unwritable /nonexistent as HOME)

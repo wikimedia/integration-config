@@ -1,3 +1,0 @@
-Package: shellcheck
-Pin: release a=component/shellcheck
-Pin-Priority: 1001
