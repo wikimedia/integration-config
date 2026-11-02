@@ -1,4 +1,3 @@
 Package: zuul-cloner
 Description: Zuul-cloner
-Maintainer: Addshore <addshorewiki@gmail.com>
-Depends: ci-buster, tox-buster
+Depends: python-all

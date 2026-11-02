@@ -1,3 +1,10 @@
+zuul-cloner (0.4.0) wikimedia; urgency=medium
+
+  * Reparent on python-all which provides python2.7 and let us get rid of
+    Debian Buster - T335765
+
+ -- Antoine Musso <hashar@free.fr>  Mon, 02 Nov 2026 14:58:35 +0100
+
 zuul-cloner (0.3.0-s8) wikimedia; urgency=high
 
    Refresh for update in parent image ci-buster:
