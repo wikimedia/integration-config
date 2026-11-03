@@ -21,7 +21,7 @@
 - job-template:
     name: '{name}-ruby3.3-rake'
     node: Docker
-    docker_image_var: docker-registry.wikimedia.org/releng/rake-ruby3.3:0.1.0
+    docker_image_var: docker-registry.wikimedia.org/releng/rake-ruby3.3:0.1.0-s1
     triggers:
         - zuul
     builders:

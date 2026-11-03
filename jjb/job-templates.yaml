@@ -21,12 +21,12 @@
       # fetch all branches/tags so that release.war get an appropriate version
       # (tools/workspace_status.py uses git describe)
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1
+          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1-s1
           entrypoint: git
           args: fetch --quiet --unshallow origin --tags +refs/heads/*:refs/remotes/origin/*
 
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1
+          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1-s1
           entrypoint: /src/wmf-build.py
           environment:
               LOG_DIR: /log
@@ -35,14 +35,14 @@
 
       # Dump bazel labels used for versions
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1
+          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1-s1
           entrypoint: python
           args: tools/workspace_status.py
 
       # Zip all plugins in a single plugins.zip that is captured by Jenkins.
       # Makes it easier to retrieve just the plugins.
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1
+          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1-s1
           # Use shell for wildcard, zip list argument does not support wildcards
           entrypoint: bash
           workdir: /log

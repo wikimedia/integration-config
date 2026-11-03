@@ -45,7 +45,7 @@
         - shell: |
             echo -e '<?php\n$wgServer = "http://127.0.0.1";\n' > src/LocalSettings.php
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/doxygen:1.10-0.s3
+            image: docker-registry.wikimedia.org/releng/doxygen:1.10-0-s4
             entrypoint: /usr/bin/php
             workdir: /src
             args: |
@@ -99,7 +99,7 @@
         - shell: |
             echo -e '<?php\n$wgServer = "http://127.0.0.1";\n' > src/LocalSettings.php
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/doxygen:1.10-0.s3
+            image: docker-registry.wikimedia.org/releng/doxygen:1.10-0-s4
             entrypoint: /usr/bin/php
             workdir: /src
             args: |
@@ -659,7 +659,7 @@
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s25
+        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s26
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'
@@ -787,7 +787,7 @@
           sed -ie "s#/src/#/workspace/src/$THING_SUBNAME/#g" src/"$THING_SUBNAME"/coverage/lcov.info
         fi
     - docker-run-with-log-cache-src:
-        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s25
+        image: docker-registry.wikimedia.org/releng/sonar-scanner:4.6.0.2311-s26
         logdir: '/workspace/log'
         srcdir: '/workspace/src'
         args: '{sonar_args}'
