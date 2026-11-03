@@ -1,3 +1,9 @@
+castor (0.5.0) wikimedia; urgency=medium
+
+  * Reparent from Bullseye to Trixie (T443253, T383337)
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 03 Nov 2026 14:16:46 +0100
+
 castor (0.4.5) wikimedia; urgency=medium
 
   * Add "Finish" in the castor-load-sync marker to ensure it is collapsed by

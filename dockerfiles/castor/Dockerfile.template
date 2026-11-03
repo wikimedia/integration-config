@@ -1,4 +1,4 @@
-FROM docker-registry.wikimedia.org/bullseye
+FROM docker-registry.wikimedia.org/trixie
 
 RUN {{ "rsync" | apt_install }} \
     && mkdir -p /castor
