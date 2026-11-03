@@ -8658,10 +8658,10 @@ projects:
 
   - name: wikimedia-event-utilities
     test:
-      - wikimedia-event-utilities-maven-java11
+      - wikimedia-event-utilities-maven-java17
     gate-and-submit:
       - wikimedia-event-utilities-maven-java8
-      - wikimedia-event-utilities-maven-java11
+      - wikimedia-event-utilities-maven-java17
     postmerge:
       - wikimedia-event-utilities-maven-java8-site-publish
 
@@ -9495,10 +9495,10 @@ projects:
   - name: search/glent
     test:
         - search-glent-maven-java8
-        - search-glent-maven-java11
+        - search-glent-maven-java17
     gate-and-submit:
         - search-glent-maven-java8
-        - search-glent-maven-java11
+        - search-glent-maven-java17
     postmerge:
         - search-glent-maven-java8-site-publish
 
@@ -9516,10 +9516,10 @@ projects:
   - name: wmf-jvm-utils
     test:
       - wmf-jvm-utils-maven-java8
-      - wmf-jvm-utils-maven-java11
+      - wmf-jvm-utils-maven-java17
     gate-and-submit:
       - wmf-jvm-utils-maven-java8
-      - wmf-jvm-utils-maven-java11
+      - wmf-jvm-utils-maven-java17
     postmerge:
       - wmf-jvm-utils-maven-java8-site-publish
 
@@ -9795,19 +9795,19 @@ projects:
 
   - name: wikimedia/discovery/discovery-parent-pom
     test:
-      - discovery-parent-pom-maven-java11
+      - discovery-parent-pom-maven-java17
     gate-and-submit:
-      - discovery-parent-pom-maven-java11
+      - discovery-parent-pom-maven-java17
     postmerge:
-      - discovery-parent-pom-maven-java11-site-publish
+      - discovery-parent-pom-maven-java17-site-publish
 
   - name: wikimedia/discovery/discovery-maven-tool-configs
     test:
-      - discovery-maven-tool-configs-maven-java11
+      - discovery-maven-tool-configs-maven-java17
     gate-and-submit:
-      - discovery-maven-tool-configs-maven-java11
+      - discovery-maven-tool-configs-maven-java17
     postmerge:
-      - discovery-maven-tool-configs-maven-java11-site-publish
+      - discovery-maven-tool-configs-maven-java17-site-publish
 
   - name: wikimedia/discovery/relevanceForge
     template:

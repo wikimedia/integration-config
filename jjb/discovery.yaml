@@ -10,5 +10,5 @@
         - email-wikimedia-discovery
         - docker-cleanup
     jobs:
-        - '{name}-{project}-maven-java11'
-        - '{name}-{project}-maven-java11-site-publish'
+        - '{name}-{project}-maven-java17'
+        - '{name}-{project}-maven-java17-site-publish'
