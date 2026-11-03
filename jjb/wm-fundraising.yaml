@@ -1,31 +1,4 @@
 - job:
-    name: wikimedia-fundraising-civicrm-bookworm
-    node: Docker
-    triggers:
-        - zuul
-    builders:
-        - docker-castor-load
-        - docker-log-dir
-        - docker-src-dir
-        - docker-zuul-cloner:
-            projects: >
-                wikimedia/fundraising/crm
-        - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/civicrm:0.9-s7
-            # Keep the MySQL data in memory T434024
-            options: '--tmpfs /tmp/mysqld:size=1G'
-            environment:
-                # $WORKSPACE is leaked from the host environment
-                WORKSPACE: "''"
-    publishers:
-        - xunit:
-           types:
-            - phpunit:
-               pattern: 'log/junit-phpunit.xml'
-        - archive-log-allow-empty
-        - teardown
-
-- job:
     name: wikimedia-fundraising-civicrm-trixie
     node: Docker
     triggers:
@@ -56,9 +29,6 @@
     name: wikimedia-fundraising
     jobs:
         # Run `composer test` with the same env has the civicrm test env
-        - '{name}-composer-{phpflavor}':
-            phpflavor: civicrm
-            image: docker-registry.wikimedia.org/releng/civicrm:0.9-s7
         - '{name}-composer-{phpflavor}':
             phpflavor: civicrm-trixie
             image: docker-registry.wikimedia.org/releng/civicrm-trixie:0.1.0
