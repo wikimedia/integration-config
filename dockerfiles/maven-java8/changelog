@@ -1,3 +1,11 @@
+maven-java8 (1.2.0) wikimedia; urgency=high
+
+   Refresh for update in parent image java8:
+   Reparent from Bullseye (EOL) to Bookworm - T383337
+   Apply OpenJDK security update for CA removal - T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 03 Nov 2026 22:07:55 +0100
+
 maven-java8 (1.1.0-s10) wikimedia; urgency=high
 
    Refresh for update in parent image maven:
