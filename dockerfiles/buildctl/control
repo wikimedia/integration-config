@@ -1,3 +1,0 @@
-Package: buildctl
-Description: Basic buildctl image for bootstrapping GitLab helper images
-Maintainer: Dan Duvall <dduvall@wikimedia.org>
