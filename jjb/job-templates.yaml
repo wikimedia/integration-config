@@ -21,12 +21,12 @@
       # fetch all branches/tags so that release.war get an appropriate version
       # (tools/workspace_status.py uses git describe)
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1-s1
+          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1-s2
           entrypoint: git
           args: fetch --quiet --unshallow origin --tags +refs/heads/*:refs/remotes/origin/*
 
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1-s1
+          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1-s2
           entrypoint: /src/wmf-build.py
           environment:
               LOG_DIR: /log
@@ -35,14 +35,14 @@
 
       # Dump bazel labels used for versions
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1-s1
+          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1-s2
           entrypoint: python
           args: tools/workspace_status.py
 
       # Zip all plugins in a single plugins.zip that is captured by Jenkins.
       # Makes it easier to retrieve just the plugins.
       - docker-run-with-log-cache-src:
-          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1-s1
+          image: docker-registry.wikimedia.org/releng/gerrit:1.6.1-s2
           # Use shell for wildcard, zip list argument does not support wildcards
           entrypoint: bash
           workdir: /log
@@ -239,7 +239,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-        image: 'docker-registry.wikimedia.org/releng/node26-test:26.12.1-s1'
+        image: 'docker-registry.wikimedia.org/releng/node26-test:26.12.1-s2'
         args: 'doc'
      - doc-publish:
         docsrc: 'src/docs'
@@ -251,7 +251,7 @@
     name: 'generic'
     node_version:
         - node26:
-            image: docker-registry.wikimedia.org/releng/node26-test-browser:26.12.1-s1
+            image: docker-registry.wikimedia.org/releng/node26-test-browser:26.12.1-s2
     jobs:
         - 'generic-{node_version}-browser-coverage-publish'
         - 'generic-{node_version}-browser-direct-coverage-publish'
@@ -263,7 +263,7 @@
         - '{name}-{node_version}':
             node_version: &node_without_browsers
                 - node26:
-                    image: docker-registry.wikimedia.org/releng/node26-test:26.12.1-s1
+                    image: docker-registry.wikimedia.org/releng/node26-test:26.12.1-s2
         - 'generic-{node_version}-docs-publish':
             node_version: *node_without_browsers
 
@@ -276,7 +276,7 @@
            script: 'doc'
            node_version:
                - node26:
-                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.12.1-s1
+                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.12.1-s2
 
 # Same as 'mwext', but solo so BlueSpice repos don't conflict
 - project:
@@ -285,7 +285,7 @@
         - '{name}-{node_version}':
            node_version:
                - node26:
-                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.12.1-s1
+                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.12.1-s2
 
 - project:
     name: branchdeploy
@@ -293,6 +293,6 @@
         - 'branchdeploy-{key}-{node_version}-npm':
             node_version:
                 - node26:
-                    node_image: docker-registry.wikimedia.org/releng/node26-test:26.12.1-s1
+                    node_image: docker-registry.wikimedia.org/releng/node26-test:26.12.1-s2
             key:
                 - codex

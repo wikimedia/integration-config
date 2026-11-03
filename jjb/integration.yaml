@@ -15,7 +15,7 @@
             projects: >
                 integration/config
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/tox-v4:0.6
+            image: docker-registry.wikimedia.org/releng/tox-v4:0.6-s1
             entrypoint: '/src/integration/config/{entrypoint}'
             workdir: /src/integration/config
     publishers:
@@ -56,7 +56,7 @@
      - docker-log-dir
      - docker-src-dir
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/tox-v4:0.6
+         image: docker-registry.wikimedia.org/releng/tox-v4:0.6-s1
          args: '-e qa -- --xunit-file=/log/junit-qa.xml'
     publishers:
      - archive-log-dir
@@ -141,7 +141,7 @@
     name: integration-tox-jenkins-override
     jobs:
         - '{name}-tox-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.6
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.6-s1
             docsrc: 'doc/build/html'
             docdest: tox-jenkins-override
 
@@ -149,9 +149,9 @@
     name: 'integration-quibble'
     jobs:
         - '{name}-tox':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.6
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.6-s1
         - '{name}-tox-publish':
-            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.6
+            docker_image_var: docker-registry.wikimedia.org/releng/tox-v4:0.6-s1
             docsrc: 'doc/build/html'
             docdest: 'quibble'
         - '{name}-tox-coverage-publish':
@@ -161,7 +161,7 @@
         - 'integration-quibble-fullrun-{type}-{php}':
             php:
                 - php83:
-                    docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.22.0-s8
+                    docker_image: docker-registry.wikimedia.org/releng/quibble-bookworm-php83:1.22.0-s9
             type:
                 - defaults:
                     quibble_args: >-

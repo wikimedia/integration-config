@@ -21,13 +21,13 @@
     name: php-compile-jobs
     php:
      - php82:
-          image: docker-registry.wikimedia.org/releng/php82-compile:8.2.35
+          image: docker-registry.wikimedia.org/releng/php82-compile:8.2.35-s1
      - php83:
-          image: docker-registry.wikimedia.org/releng/php83-compile:8.3.36
+          image: docker-registry.wikimedia.org/releng/php83-compile:8.3.36-s1
      - php84:
-          image: docker-registry.wikimedia.org/releng/php84-compile:8.4.27
+          image: docker-registry.wikimedia.org/releng/php84-compile:8.4.27-s1
      - php85:
-          image: docker-registry.wikimedia.org/releng/php85-compile:8.5.12
+          image: docker-registry.wikimedia.org/releng/php85-compile:8.5.12-s1
     jobs:
       - 'php-compile-{php}'
 
@@ -43,7 +43,7 @@
         entrypoint: /run-coverage.sh
         volumes:
             src:
-        image: docker-registry.wikimedia.org/releng/php83-compile:8.3.36
+        image: docker-registry.wikimedia.org/releng/php83-compile:8.3.36-s1
      - cover-publish:
         src: 'src/coverage'
         dest: '$DOC_PROJECT'
@@ -74,12 +74,12 @@
     name: pie-build-jobs
     php:
      - php82:
-          image: docker-registry.wikimedia.org/releng/php82-compile:8.2.35
+          image: docker-registry.wikimedia.org/releng/php82-compile:8.2.35-s1
      - php83:
-          image: docker-registry.wikimedia.org/releng/php83-compile:8.3.36
+          image: docker-registry.wikimedia.org/releng/php83-compile:8.3.36-s1
      - php84:
-          image: docker-registry.wikimedia.org/releng/php84-compile:8.4.27
+          image: docker-registry.wikimedia.org/releng/php84-compile:8.4.27-s1
      - php85:
-          image: docker-registry.wikimedia.org/releng/php85-compile:8.5.12
+          image: docker-registry.wikimedia.org/releng/php85-compile:8.5.12-s1
     jobs:
       - 'php-pie-build-{php}'
