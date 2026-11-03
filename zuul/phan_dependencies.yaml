@@ -420,6 +420,7 @@ GrowthExperiments:
   - GuidedTour
   - PersonalDashboard
   - Wikibase
+  - BetaFeatures
 
 HAWelcome:
   - SocialProfile

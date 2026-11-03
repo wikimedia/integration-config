@@ -1710,6 +1710,7 @@ GrowthExperiments:
     - CommunityConfiguration
     - VisualEditor
     # extras
+    - BetaFeatures
     - CentralNotice
     - CirrusSearch
     - Echo
