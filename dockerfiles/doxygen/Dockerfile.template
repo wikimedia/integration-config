@@ -12,13 +12,13 @@ RUN {{ "graphviz php-cli php-intl php-mbstring php-xml curl" | apt_install }}
 # Install more recent Doxygen because Trixie would provide Doxygen 1.9.8
 # https://packages.debian.org/trixie/doxygen
 # https://doxygen.nl/download.html#srcbin
-ENV DOXYGEN_RELEASE_NAME=doxygen-1.10.0
-ENV DOXYGEN_RELEASE_SIG=95ca2068fb0d2fcbb2de8556511662a7
+ENV DOXYGEN_RELEASE_NAME=doxygen-1.18.0
+ENV DOXYGEN_RELEASE_SIG=14fa81bdc34171edb5f1f02b1d60e74802f0439b77fa44e592565d517d72df90
 
 RUN mkdir /tmp/doxyinstall \
     && cd /tmp/doxyinstall \
     && curl -Lo doxygen.tar.gz https://www.doxygen.nl/files/${DOXYGEN_RELEASE_NAME}.linux.bin.tar.gz \
-    && echo "${DOXYGEN_RELEASE_SIG}  doxygen.tar.gz" | md5sum -c \
+    && echo "${DOXYGEN_RELEASE_SIG}  doxygen.tar.gz" | sha256sum -c \
     && tar -xzf doxygen.tar.gz \
     && mv ${DOXYGEN_RELEASE_NAME}/bin/doxygen /usr/bin/doxygen \
     && rm -rf /tmp/doxyinstall
