@@ -1,3 +1,10 @@
+java17 (0.1-s6) wikimedia; urgency=high
+
+   Reparent from Bullseye (EOL) to Bookworm - T383337
+   Apply OpenJDK security update for CA removal - T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  3 Nov 2026 22:01:24 +0100
+
 java17 (0.1-s5) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:

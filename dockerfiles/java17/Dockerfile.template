@@ -1,4 +1,4 @@
-FROM {{ "ci-bullseye" | image_tag }}
+FROM {{ "ci-bookworm" | image_tag }}
 
 RUN mkdir -p /usr/share/man/man1
 RUN {{ "openjdk-17-jdk-headless" | apt_install }}
