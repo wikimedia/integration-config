@@ -1,3 +1,10 @@
+helm-linter (0.8.5-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bookworm:
+   Rebuild to catch up with security updates T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  3 Nov 2026 16:45:35 +0100
+
 helm-linter (0.8.5-s1) wikimedia; urgency=medium
 
   * Install sextant in /pipx instead of the root home directory.

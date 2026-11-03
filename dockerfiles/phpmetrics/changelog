@@ -1,3 +1,10 @@
+phpmetrics (2.8.1-s33) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bookworm:
+   Rebuild to catch up with security updates T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  3 Nov 2026 16:45:35 +0100
+
 phpmetrics (2.8.1-s32) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

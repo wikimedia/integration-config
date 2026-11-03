@@ -1,3 +1,10 @@
+sonar-scanner (4.6.0.2311-s27) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bookworm:
+   Rebuild to catch up with security updates T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  3 Nov 2026 16:45:35 +0100
+
 sonar-scanner (4.6.0.2311-s26) wikimedia; urgency=high
 
    Refresh for update in parent image ci-trixie:

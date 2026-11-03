@@ -1,3 +1,10 @@
+composer-php83 (8.3.36-s2) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bookworm:
+   Rebuild to catch up with security updates T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  3 Nov 2026 16:45:35 +0100
+
 composer-php83 (8.3.36-s1) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:

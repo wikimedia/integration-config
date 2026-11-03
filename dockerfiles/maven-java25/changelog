@@ -1,3 +1,10 @@
+maven-java25 (0.1-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-bookworm:
+   Rebuild to catch up with security updates T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  3 Nov 2026 16:45:35 +0100
+
 maven-java25 (0.1-s3) wikimedia; urgency=high
 
    Refresh for update in parent image ci-trixie:
