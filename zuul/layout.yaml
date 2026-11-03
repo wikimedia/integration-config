@@ -1426,6 +1426,8 @@ jobs:
 
   - name: wikimedia-fundraising-civicrm-bookworm
     branch: (?!.*deployment.*|^contrib$)
+  - name: wikimedia-fundraising-civicrm-trixie
+    branch: (?!.*deployment.*|^contrib$)
 
   # Make 'standalone' jobs run consecutively not concurrently, as they can clobber each other
   - name: quibble-vendor-mysql-php83-phpunit-standalone
@@ -9844,12 +9846,17 @@ projects:
     gate-and-submit:
       - wikimedia-fundraising-composer-civicrm:  # composer test
         - wikimedia-fundraising-civicrm-bookworm
+    experimental:
+      - wikimedia-fundraising-composer-civicrm-trixie:  # composer test
+        - wikimedia-fundraising-civicrm-trixie
 
   - name: wikimedia/fundraising/crm/vendor
     test:
       - wikimedia-fundraising-civicrm-bookworm
     gate-and-submit:
       - wikimedia-fundraising-civicrm-bookworm
+    experimental:
+      - wikimedia-fundraising-civicrm-trixie
 
   - name: wikimedia/fundraising/slander
     template:
