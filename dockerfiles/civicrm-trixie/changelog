@@ -1,0 +1,5 @@
+civicrm-trixie (0.1.0) wikimedia; urgency=medium
+
+  (T439483) Re-build onto Trixie.
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Tue,  3 Nov 2026 18:18:33 -0500
