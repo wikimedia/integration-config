@@ -1,3 +1,10 @@
+commit-message-validator (3.0.0-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-trixie:
+   Rebuild to catch up with security updates T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  3 Nov 2026 15:25:31 +0100
+
 commit-message-validator (3.0.0) wikimedia; urgency=high
 
    * T431799: Update base image to trixie.

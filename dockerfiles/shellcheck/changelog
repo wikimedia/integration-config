@@ -1,3 +1,10 @@
+shellcheck (0.10.0-2-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-trixie:
+   Rebuild to catch up with security updates T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  3 Nov 2026 15:25:47 +0100
+
 shellcheck (0.10.0-2) wikimedia; urgency=medium
 
   * Always enable color when CI environment variable is set.

@@ -1,3 +1,10 @@
+gerrit (1.6.1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-trixie:
+   Rebuild to catch up with security updates T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  3 Nov 2026 15:25:31 +0100
+
 gerrit (1.6.1) wikimedia; urgency=medium
 
   * Switch from Java 17 to Java 21 (only used by Maven builds)

@@ -1,3 +1,10 @@
+java21 (0.1-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-trixie:
+   Rebuild to catch up with security updates T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  3 Nov 2026 15:25:31 +0100
+
 java21 (0.1) wikimedia; urgency=medium
 
   * OpenJDK 21 based on Debian Trixie

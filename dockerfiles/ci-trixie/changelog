@@ -1,3 +1,9 @@
+ci-trixie (0.9.0) wikimedia; urgency=high
+
+   Rebuild to catch up with security updates T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  3 Nov 2026 15:25:31 +0100
+
 ci-trixie (0.8.1) wikimedia; urgency=high
 
    Update from Wikimedia base to drop mirrors.wikimedia.org

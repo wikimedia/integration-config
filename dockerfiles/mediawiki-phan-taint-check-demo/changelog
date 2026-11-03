@@ -1,3 +1,10 @@
+mediawiki-phan-taint-check-demo (0.4.1-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image ci-trixie:
+   Rebuild to catch up with security updates T443253
+
+ -- Antoine Musso <hashar@free.fr>  Tue,  3 Nov 2026 15:25:31 +0100
+
 mediawiki-phan-taint-check-demo (0.4.1-s3) wikimedia; urgency=high
 
    Refresh for update in parent image composer-scratch:
