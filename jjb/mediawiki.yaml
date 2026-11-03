@@ -342,6 +342,10 @@
         - string:
             name: 'ZUUL_REF'
             default: 'master'
+        # In order to have the cache saved
+        - string:
+            name: 'ZUUL_PIPELINE'
+            default: 'postmerge'
 
 # Special job that runs the "standalone" phpunit tests for a repo T225068
 - job-template:
