@@ -180,79 +180,79 @@
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "AbuseFilter", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - PageTriage:
-            trigger-time: '5 9 * * *'
+            trigger-time: '55 8 * * *'
             repo: 'mediawiki/extensions/PageTriage'
             project-slug: 'mw-ext-pt'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "PageTriage", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - TemplateData:
-            trigger-time: '10 9 * * *'
+            trigger-time: '0 9 * * *'
             repo: 'mediawiki/extensions/TemplateData'
             project-slug: 'mw-ext-td'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "TemplateData", "enable": true, "branch": "master" }}, {{ "name": "VisualEditor", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ], "otherModules": [ {{ "name": "parsoid", "enable": true, "branch": "master" }} ] }}'
         - CommunityRequests:
-            trigger-time: '20 9 * * *'
+            trigger-time: '5 9 * * *'
             repo: 'mediawiki/extensions/CommunityRequests'
             project-slug: 'mw-ext-cr'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "CommunityRequests", "enable": true, "branch": "master" }}, {{ "name": "VisualEditor", "enable": true, "branch": "master" }}, {{ "name": "TemplateData", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ], "otherModules": [ {{ "name": "parsoid", "enable": true, "branch": "master" }} ] }}'
         - examples:
-            trigger-time: '25 9 * * *'
+            trigger-time: '10 9 * * *'
             repo: 'mediawiki/extensions/examples'
             project-slug: 'mw-ext-examples'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "examples", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - GlobalWatchlist:
-            trigger-time: '30 9 * * *'
+            trigger-time: '15 9 * * *'
             repo: 'mediawiki/extensions/GlobalWatchlist'
             project-slug: 'mw-ext-gw'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "GlobalWatchlist", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - ContactPage:
-            trigger-time: '35 9 * * *'
+            trigger-time: '20 9 * * *'
             repo: 'mediawiki/extensions/ContactPage'
             project-slug: 'mw-ext-cp'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "ContactPage", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - ElectronPdfService:
-            trigger-time: '40 9 * * *'
+            trigger-time: '25 9 * * *'
             repo: 'mediawiki/extensions/ElectronPdfService'
             project-slug: 'mw-ext-epdf'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "ElectronPdfService", "enable": true, "branch": "master" }}, {{ "name": "Collection", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - ParserMigration:
-            trigger-time: '45 9 * * *'
+            trigger-time: '30 9 * * *'
             repo: 'mediawiki/extensions/ParserMigration'
             project-slug: 'mw-ext-pm'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "ParserMigration", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - ReportIncident:
-            trigger-time: '50 9 * * *'
+            trigger-time: '35 9 * * *'
             repo: 'mediawiki/extensions/ReportIncident'
             project-slug: 'mw-ext-ri'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "ReportIncident", "enable": true, "branch": "master" }}, {{ "name": "EventLogging", "enable": true, "branch": "master" }}, {{ "name": "CommunityConfiguration", "enable": true, "branch": "master" }}, {{ "name": "DiscussionTools", "enable": true, "branch": "master" }}, {{ "name": "Linter", "enable": true, "branch": "master" }}, {{ "name": "VisualEditor", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ], "otherModules": [ {{ "name": "parsoid", "enable": true, "branch": "master" }} ] }}'
         - TemplateWizard:
-            trigger-time: '55 9 * * *'
+            trigger-time: '40 9 * * *'
             repo: 'mediawiki/extensions/TemplateWizard'
             project-slug: 'mw-ext-tw'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "TemplateWizard", "enable": true, "branch": "master" }}, {{ "name": "TemplateData", "enable": true, "branch": "master" }}, {{ "name": "WikiEditor", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - RevisionSlider:
-            trigger-time: '5 10 * * *'
+            trigger-time: '45 9 * * *'
             repo: 'mediawiki/extensions/RevisionSlider'
             project-slug: 'mw-ext-rs'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "RevisionSlider", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
         - CodeMirror:
-            trigger-time: '10 10 * * *'
+            trigger-time: '50 9 * * *'
             repo: 'mediawiki/extensions/CodeMirror'
             project-slug: 'mw-ext-cm'
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "CodeMirror", "enable": true, "branch": "master" }}, {{ "name": "WikiEditor", "enable": true, "branch": "master" }}, {{ "name": "VisualEditor", "enable": true, "branch": "master" }}, {{ "name": "BetaFeatures", "enable": true, "branch": "master" }}, {{ "name": "Cite", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ], "otherModules": [ {{ "name": "parsoid", "enable": true, "branch": "master" }} ] }}'
         - Wikibase:
-            trigger-time: '15 10 * * *'
+            trigger-time: '55 9 * * *'
             repo: 'mediawiki/extensions/Wikibase'
             project-slug: 'mw-ext-wb'
             selenium-command: 'selenium-test:repo'
@@ -260,7 +260,7 @@
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Wikibase", "enable": true, "branch": "master" }}, {{ "name": "MobileFrontend", "enable": true, "branch": "master" }}, {{ "name": "UniversalLanguageSelector", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }}, {{ "name": "MinervaNeue", "enable": true, "branch": "master" }} ] }}'
         - termbox:
-            trigger-time: '20 10 * * *'
+            trigger-time: '0 10 * * *'
             repo: 'mediawiki/extensions/Wikibase'
             project-slug: 'mw-ext-tb'
             selenium-command: 'selenium-test:repo'
@@ -268,7 +268,7 @@
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Wikibase", "enable": true, "branch": "master" }}, {{ "name": "MobileFrontend", "enable": true, "branch": "master" }}, {{ "name": "UniversalLanguageSelector", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }}, {{ "name": "MinervaNeue", "enable": true, "branch": "master" }} ] }}'
         - ProofreadPage:
-            trigger-time: '25 10 * * *'
+            trigger-time: '5 10 * * *'
             repo: 'mediawiki/extensions/ProofreadPage'
             project-slug: 'mw-ext-prp'
             # yamllint disable-line rule:line-length
