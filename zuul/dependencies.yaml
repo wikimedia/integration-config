@@ -667,7 +667,6 @@ BlueSpiceProDistributionConnector:
     - BlueSpiceUniversalExport
     - BlueSpiceVisualEditorConnector
     - ContentDroplets
-    - Math
     - PDFCreator
     - VisualEditor
     # extras requirements
