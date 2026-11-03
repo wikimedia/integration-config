@@ -1424,8 +1424,6 @@ jobs:
   - name: mediawiki-core-doxygen-publish
     mutex: mediawiki-core-doxygen-publish
 
-  - name: wikimedia-fundraising-civicrm-bookworm
-    branch: (?!.*deployment.*|^contrib$)
   - name: wikimedia-fundraising-civicrm-trixie
     branch: (?!.*deployment.*|^contrib$)
 
@@ -9841,21 +9839,16 @@ projects:
 
   - name: wikimedia/fundraising/crm
     test:
-      - wikimedia-fundraising-composer-civicrm:  # composer test
-        - wikimedia-fundraising-civicrm-bookworm
+      - wikimedia-fundraising-composer-civicrm-trixie:  # composer test
+        - wikimedia-fundraising-civicrm-trixie
     gate-and-submit:
-      - wikimedia-fundraising-composer-civicrm:  # composer test
-        - wikimedia-fundraising-civicrm-bookworm
-    experimental:
       - wikimedia-fundraising-composer-civicrm-trixie:  # composer test
         - wikimedia-fundraising-civicrm-trixie
 
   - name: wikimedia/fundraising/crm/vendor
     test:
-      - wikimedia-fundraising-civicrm-bookworm
+      - wikimedia-fundraising-civicrm-trixie
     gate-and-submit:
-      - wikimedia-fundraising-civicrm-bookworm
-    experimental:
       - wikimedia-fundraising-civicrm-trixie
 
   - name: wikimedia/fundraising/slander
