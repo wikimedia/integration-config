@@ -1,3 +1,10 @@
+gradle (4.4.1-s5) wikimedia; urgency=medium
+
+  * Reparent from Bullseye (EOL) to Trixie - T383337
+  * gradle version remains the same: 4.4.1!
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 04 Nov 2026 15:04:02 +0100
+
 gradle (4.4.1-s4) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:
