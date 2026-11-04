@@ -1,3 +1,9 @@
+ecs (0.2.0) wikimedia; urgency=medium
+
+  * Reparent from Bullseye (EOL) to Trixie - T383337
+
+ -- Antoine Musso <hashar@free.fr>  Wed, 04 Nov 2026 14:46:13 +0100
+
 ecs (0.1.0-s2) wikimedia; urgency=high
 
    Refresh for update in parent image ci-bullseye:
