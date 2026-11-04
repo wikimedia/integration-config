@@ -281,5 +281,13 @@
             wdio-args: ''
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "GuidedTour", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - CommunityConfiguration:
+            trigger-time: '15 10 * * *'
+            repo: 'mediawiki/extensions/CommunityConfiguration'
+            project-slug: 'mw-ext-cc'
+            selenium-command: 'selenium-test'
+            wdio-args: ''
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "CommunityConfiguration", "enable": true, "branch": "master" }}, {{ "name": "CommunityConfigurationExample", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
