@@ -132,7 +132,7 @@ def archive(repo_name, comment):
 
         subprocess.run(["diff", "-U10", "--color",
                         "zuul/layout.yaml", out.name])
-        ans = input("Does the diff OK? ")
+        ans = input("Does the diff look OK? ")
         if ans != 'y':
             raise SystemExit("Cancelled")
 
