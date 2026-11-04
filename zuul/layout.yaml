@@ -8259,12 +8259,6 @@ projects:
     template:
       - name: extension-quibble-composer-noselenium
 
-  - name: mediawiki/extensions/WikispeechSpeechDataCollector
-    template:
-      - name: extension-quibble
-      - name: extension-codehealth
-      - name: extension-coverage
-
   - name: mediawiki/extensions/WikiTextLoggedInOut
     template:
       - name: extension-quibble
@@ -10941,6 +10935,10 @@ projects:
   - name: mediawiki/extensions/WikimediaApiPortalOAuth
     template:
       - name: archived # T429374
+
+  - name: mediawiki/extensions/WikispeechSpeechDataCollector
+    template:
+      - name: archived # T432801
 
   - name: mediawiki/extensions/normal
     template:
