@@ -1,14 +1,3 @@
-- publisher:
-    name: email-qa-alerts
-    publishers:
-     - email-ext:
-         recipients: qa-alerts@lists.wikimedia.org
-         attach-build-log: false
-         first-failure: true
-         aborted: true
-         failure: false
-         fixed: true
-
 # Documentation for our puppet repository
 - job-template:
     name: 'operations-puppet-doc'
@@ -48,7 +37,14 @@
             docsrc: 'src/doc'
             docdest: 'puppet'
     publishers:
-     - email-qa-alerts
+     - notify-releng-irc
+     - email-ext:
+         recipients: releng@lists.wikimedia.org
+         attach-build-log: false
+         first-failure: true
+         aborted: true
+         failure: false
+         fixed: true
      - docker-cleanup
 
 - job-template: &job_operations_puppet_tests
