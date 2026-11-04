@@ -91,7 +91,7 @@
     name: 'integration-pipelinelib'
     jobs:
      - '{name}-doc-publish':
-         image: docker-registry.wikimedia.org/releng/gradle:4.4.1-s4
+         image: docker-registry.wikimedia.org/releng/gradle:4.4.1-s5
          args: 'groovydoc'
          docsrc: 'src/build/docs/groovydoc'
          docdest: 'pipelinelib'
