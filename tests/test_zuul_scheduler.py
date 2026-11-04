@@ -360,8 +360,6 @@ class TestZuulScheduler(unittest.TestCase):
                 # Weird edge cases:
                 or project in [
                     'integration/zuul',
-                    # Temporary removal whilst Ruby tests are fixed
-                    'mediawiki/vagrant',
                     # Only touched by l10n-bot T321350
                     'phabricator/translations',
                     ]

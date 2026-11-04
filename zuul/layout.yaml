@@ -1319,12 +1319,6 @@ jobs:
   - name: quibble-vendor-mysql-php83
     queue-name: mediawiki
 
-  # Some rake jobs should trigger regardless of affected files:
-  - name: mediawiki-vagrant-ruby2.7-rake
-    voting: false
-    files:
-      - '.*'
-
   - name: puppet-wmf-styleguide-ruby2.7-rake
     files:
       - '.*'
@@ -1446,9 +1440,6 @@ jobs:
     files:
       - '^tox.ini$'
       - '^update_version/.*'
-
-  - name: mediawiki-vagrant-puppet-doc-publish
-    branch: ^master$
 
   - name: 'integration-config-jjb-diff'
     success-message: 'SUCCESS Review the XML difference.'
@@ -2665,15 +2656,6 @@ projects:
   - name: mediawiki/tools/ParseWiki
     template:
       - name: composer-test-package-php83-to-php85
-
-  - name: mediawiki/vagrant
-    test:
-      - mediawiki-vagrant-ruby2.7-rake
-    # T398469 disbled until the job is voting again
-    # gate-and-submit:
-    #  - mediawiki-vagrant-ruby2.7-rake
-    postmerge:
-      - mediawiki-vagrant-puppet-doc-publish
 
   - name: performance/arc-lamp
     # FIXME: Use mediawiki-php-library?
