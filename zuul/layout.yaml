@@ -1319,10 +1319,6 @@ jobs:
   - name: quibble-vendor-mysql-php83
     queue-name: mediawiki
 
-  - name: puppet-wmf-styleguide-ruby2.7-rake
-    files:
-      - '.*'
-
   # Ditto for translatewiki which has puppet modules under /puppet
   - name: translatewiki-ruby3.3-rake
     files:
@@ -3600,9 +3596,9 @@ projects:
 
   - name: operations/puppet-lint/wmf_styleguide-check
     test:
-      - puppet-wmf-styleguide-ruby2.7-rake
+      - puppet-wmf-styleguide-ruby3.3-rake
     gate-and-submit:
-      - puppet-wmf-styleguide-ruby2.7-rake
+      - puppet-wmf-styleguide-ruby3.3-rake
 
   # Repo of misc softwares
   # Voting V+2 so ops don't idle waiting for CI to report.
