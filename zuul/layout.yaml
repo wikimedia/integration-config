@@ -7680,10 +7680,6 @@ projects:
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
 
-  - name: mediawiki/extensions/SemanticPageSeries
-    template:
-      - name: extension-broken  # Semantic MediaWiki is on GitHub
-
   - name: mediawiki/extensions/SemanticRating
     template:
       - name: extension-broken  # Semantic MediaWiki is on GitHub
@@ -10937,6 +10933,10 @@ projects:
   - name: mediawiki/extensions/Nonlinear
     template:
       - name: archived
+
+  - name: mediawiki/extensions/SemanticPageSeries
+    template:
+      - name: archived # T437245
 
   - name: mediawiki/extensions/WikimediaApiPortalOAuth
     template:
