@@ -1,3 +1,0 @@
-Package: rake-ruby2.7
-Description: ruby on a bullseye image
-Depends: ci-bullseye
