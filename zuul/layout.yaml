@@ -9373,11 +9373,11 @@ projects:
 
   - name: mediawiki/ruby/api
     test:
-      - mediawiki-ruby-api-ruby2.7-rake
+      - mediawiki-ruby-api-ruby3.3-rake
     gate-and-submit:
-      - mediawiki-ruby-api-ruby2.7-rake
+      - mediawiki-ruby-api-ruby3.3-rake
     postmerge:
-      - mediawiki-ruby-api-ruby2.7-bundle-yard-publish
+      - mediawiki-ruby-api-ruby3.3-bundle-yard-publish
 
   - name: wikimedia/security/deployer-audit
     template:
