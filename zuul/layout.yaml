@@ -5572,10 +5572,6 @@ projects:
     template:
       - name: extension-quibble
 
-  - name: mediawiki/extensions/AutoCreatePage
-    template:
-      - name: extension-quibble
-
   - name: mediawiki/extensions/AutoGallery
     template:
       - name: extension-quibble
@@ -10283,6 +10279,10 @@ projects:
   - name: mediawiki/extensions/AuthenticatedKeyValueStore
     template:
       - name: archived
+
+  - name: mediawiki/extensions/AutoCreatePage
+    template:
+      - name: archived # T440822
 
   - name: mediawiki/extensions/AutomaticBoardWelcome
     template:
