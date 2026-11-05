@@ -157,7 +157,6 @@ pipelines:
            - ^anirudh24seven@gmail\.com$ # Anirudh S
            - ^anjali041kumari@gmail\.com$ # Anjali_Kumari_41
            - ^anomie\.wikipedia@gmail\.com$ # Brad Jorsh (anomie)
-           - ^anticompositenumber\+wmcs@gmail\.com$ # AntiCompositeNumber
            - ^antonin@delpeuch\.eu$ # Pintoch
            - ^anull21@yahoo\.com$ # Seawolf35gerrit
            - ^any\.site\.n\.site@gmail\.com$ # Anysite
@@ -239,6 +238,7 @@ pipelines:
            - ^gerges\.shamoon\.dev@gmail\.com$ # Gerges
            - ^gianiskido@gmail\.com$ # IoannisKydonis, former GCI student
            - ^gifti@tools\.wmflabs\.org$
+           - ^git@anticomposite\.net$ # AntiCompositeNumber
            - ^git@srd\.dev$ # SomeRandomDeveloper
            - ^gkmwin563@gmail\.com$ # Gautam Kumar Maurya
            - ^glaisher\.wiki@gmail\.com$
