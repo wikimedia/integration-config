@@ -594,9 +594,6 @@ PageTriage:
   - Echo
   - ORES
 
-PageViewInfo:
-  - Scribunto
-
 PageViewInfoGA:
   - PageViewInfo
 
