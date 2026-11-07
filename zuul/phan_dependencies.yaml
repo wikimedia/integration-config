@@ -272,6 +272,9 @@ DataTransfer:
 Dashiki:
   - JsonConfig
 
+DeleteBatch:
+  - AdminLinks
+
 Disambiguator:
   - Scribunto
   - VisualEditor
