@@ -3016,6 +3016,7 @@ WikimediaEvents:
     - GlobalPreferences
     - IPReputation
     - OATHAuth
+    - Thanks
 
 WikimediaMaintenance:
   recurse: false
