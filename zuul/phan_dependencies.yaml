@@ -974,6 +974,7 @@ WikimediaEvents:
   - MobileFrontend
   - OATHAuth
   - TestKitchen
+  - Thanks
 
 WikimediaMaintenance:
   - AbuseFilter
