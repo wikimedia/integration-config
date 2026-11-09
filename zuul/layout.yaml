@@ -1350,6 +1350,9 @@ jobs:
   - name: homer-tox-publish
     branch: ^master$
 
+  - name: pywikibot-core-tox-publish
+    branch: ^(master|stable)$  # T444044
+
   # Tox is for the patch branches, for the debian packaging branch the tests
   # are run by dh_virtualenv.
   - name: integration-zuul-tox
