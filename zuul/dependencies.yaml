@@ -2951,10 +2951,13 @@ WikimediaAntiAbuse:
     # no requirements in extension.json
     # extras
     - AbuseFilter
+    - AntiSpoof
+    - CentralAuth
     - CheckUser
     - Echo
     - EventBus
     - EventLogging
+    - GlobalBlocking
     - GlobalPreferences
 
 WikimediaBadges:

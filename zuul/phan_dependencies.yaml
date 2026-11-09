@@ -928,10 +928,12 @@ WikidataPageBanner:
 
 WikimediaAntiAbuse:
   - AbuseFilter
+  - CentralAuth
   - CheckUser
   - Echo
   - EventBus
   - EventLogging
+  - GlobalBlocking
   - GlobalPreferences
 
 WikimediaBadges:
