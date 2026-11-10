@@ -55,7 +55,7 @@
                   && set -a
                   && source /log/deploy.env
                   && set +a
-                  && /run-with-xvfb.sh {selenium-command} {wdio-args} {selenium-args}
+                  && {runner} {selenium-command} {wdio-args} {selenium-args}
                   "
     wrappers:
         - timeout:
@@ -96,6 +96,8 @@
 
 - project:
     name: catalyst-daily
+    # Runs the npm script. An entry can put environment variables before it.
+    runner: '/run-with-xvfb.sh'
     # Default selenium command, overridable per entry.
     selenium-command: 'selenium-test'
     # Run one wdio spec file at a time. Cypress entries set this to ''.
@@ -297,5 +299,15 @@
             wdio-args: ''
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Wikibase", "enable": true, "branch": "master" }}, {{ "name": "WikibaseQualityConstraints", "enable": true, "branch": "master" }}, {{ "name": "MobileFrontend", "enable": true, "branch": "master" }}, {{ "name": "UniversalLanguageSelector", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }}, {{ "name": "MinervaNeue", "enable": true, "branch": "master" }} ] }}'
+        - Wikibase-cypress:
+            trigger-time: '25 10 * * *'
+            repo: 'mediawiki/extensions/Wikibase'
+            project-slug: 'mw-ext-wbcy'
+            # npm ci puts the Cypress binary where cypress:run looks for it.
+            runner: 'CYPRESS_CACHE_FOLDER=/src/cypress/.cache /run-with-xvfb.sh'
+            selenium-command: 'cypress:run'
+            wdio-args: ''
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "Wikibase", "enable": true, "branch": "master" }}, {{ "name": "MobileFrontend", "enable": true, "branch": "master" }}, {{ "name": "UniversalLanguageSelector", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }}, {{ "name": "MinervaNeue", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
