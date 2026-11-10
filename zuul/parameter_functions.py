@@ -323,6 +323,11 @@ def set_mw_dependencies(item, job, params):
     skin_deps = {d for d in deps if d.startswith('skins/')}
     ext_deps = deps - skin_deps
 
+    if params['ZUUL_BRANCH'] in ['REL1_43', 'REL1_45', 'REL1_46']:
+        # T444374 - WikimediaAntiAbuse doesn't exist on REL1_43-REL1_46 branches
+        if 'WikimediaAntiAbuse' in ext_deps:
+            ext_deps.remove('WikimediaAntiAbuse')
+
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
 
