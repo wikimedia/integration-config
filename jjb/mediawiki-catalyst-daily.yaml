@@ -289,5 +289,13 @@
             wdio-args: ''
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "CommunityConfiguration", "enable": true, "branch": "master" }}, {{ "name": "CommunityConfigurationExample", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }} ] }}'
+        - WikibaseQualityConstraints:
+            trigger-time: '20 10 * * *'
+            repo: 'mediawiki/extensions/WikibaseQualityConstraints'
+            project-slug: 'mw-ext-wbqc'
+            selenium-command: 'selenium-test'
+            wdio-args: ''
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "Wikibase", "enable": true, "branch": "master" }}, {{ "name": "WikibaseQualityConstraints", "enable": true, "branch": "master" }}, {{ "name": "MobileFrontend", "enable": true, "branch": "master" }}, {{ "name": "UniversalLanguageSelector", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }}, {{ "name": "MinervaNeue", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
