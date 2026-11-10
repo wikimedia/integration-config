@@ -1,3 +1,10 @@
+java17 (0.1-s7) wikimedia; urgency=high
+
+   Rebuild for update in base image:
+   Rebuild base images to catch up with security updates - T444391
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 10 Nov 2026 22:57:00 +0100
+
 java17 (0.1-s6) wikimedia; urgency=high
 
    Reparent from Bullseye (EOL) to Bookworm - T383337

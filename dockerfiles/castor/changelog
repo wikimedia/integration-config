@@ -1,3 +1,9 @@
+castor (0.5.0-s1) wikimedia; urgency=high
+
+   Rebuild base images to catch up with security updates - T444391
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 10 Nov 2026 22:57:16 +0100
+
 castor (0.5.0) wikimedia; urgency=medium
 
   * Reparent from Bullseye to Trixie (T443253, T383337)

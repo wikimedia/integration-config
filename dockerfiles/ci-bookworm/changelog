@@ -1,3 +1,9 @@
+ci-bookworm (1.4.1-s2) wikimedia; urgency=high
+
+   Rebuild base images to catch up with security updates - T444391
+
+ -- Antoine Musso <hashar@free.fr>  Tue, 10 Nov 2026 22:57:00 +0100
+
 ci-bookworm (1.4.1-s1) wikimedia; urgency=high
 
    Rebuild to catch up with security updates T443253
