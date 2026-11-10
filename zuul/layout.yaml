@@ -1126,6 +1126,7 @@ jobs:
         - 'test/unit/outlink_topic_model/.*'
         - 'test/unit/python/.*'
         - 'python/.*\.py$'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-revertrisk
     files:
@@ -1135,6 +1136,7 @@ jobs:
         - 'test/unit/python/.*'
         - 'python/.*\.py$'
         - 'python/.*\.yaml$'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-revertrisk-multilingual
     files:
@@ -1142,6 +1144,7 @@ jobs:
         - 'src/models/revert_risk_model/model_server/.*'
         - 'python/.*\.py$'
         - 'python/.*\.yaml$'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-revertrisk-wikidata
     files:
@@ -1150,6 +1153,7 @@ jobs:
         - 'test/unit/revertrisk_wikidata/.*'
         - 'python/.*\.py$'
         - 'python/.*\.yaml$'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-revscoring
     files:
@@ -1166,21 +1170,25 @@ jobs:
     files:
         - '.pipeline/llm/blubber.yaml'
         - 'src/models/llm/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-langid
     files:
         - '.pipeline/langid/blubber.yaml'
         - 'src/models/langid/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-readability
     files:
         - '.pipeline/readability/blubber.yaml'
         - 'src/models/readability_model/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-article-descriptions
     files:
         - '.pipeline/article_descriptions/blubber.yaml'
         - 'src/models/article_descriptions/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-huggingface
     files:
@@ -1191,29 +1199,34 @@ jobs:
     files:
         - '.pipeline/logo_detection/blubber.yaml'
         - 'src/models/logo_detection/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-articlequality
     files:
         - '.pipeline/articlequality/blubber.yaml'
         - 'src/models/articlequality/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-reference-quality
     files:
         - '.pipeline/reference_quality/blubber.yaml'
         - 'src/models/reference_quality/.*'
         - 'test/unit/reference_quality/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-article-country
     files:
         - '.pipeline/article_country/blubber.yaml'
         - 'src/models/article_country/.*'
         - 'python/.*\.py$'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-edit-check
     files:
         - '.pipeline/edit_check/blubber.yaml'
         - 'src/models/edit_check/.*'
         - 'test/unit/edit_check/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-pre-commit-check
     files:
@@ -1224,41 +1237,48 @@ jobs:
         - '.pipeline/revise_tone_task_generator/blubber.yaml'
         - 'src/models/revise_tone_task_generator/.*'
         - 'test/unit/revise_tone_task_generator/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-embeddings
     files:
         - '.pipeline/embeddings/blubber.yaml'
         - 'src/models/embeddings/.*'
         - 'python/.*\.py$'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-embeddings-transformers
     files:
         - '.pipeline/embeddings/blubber_transformers.yaml'
         - 'src/models/embeddings/.*'
         - 'python/.*\.py$'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-policy-violation-gpt-oss-safeguard
     files:
         - '.pipeline/policy_violation/blubber_gpt_oss_safeguard_20b.yaml'
         - 'src/models/policy_violation/gpt_oss_safeguard_20b/.*'
         - 'src/models/policy_violation/requirements.txt'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-policy-violation-cope-a-9b
     files:
         - '.pipeline/policy_violation/blubber_cope_a_9b.yaml'
         - 'src/models/policy_violation/cope_a_9b/.*'
         - 'src/models/policy_violation/requirements.txt'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-policy-violation-cope-b-a4b-publish
     files:
         - '.pipeline/policy_violation/blubber_cope_b_a4b.yaml'
         - 'src/models/policy_violation/cope_b_a4b/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-qwen36
     files:
         - '.pipeline/qwen36/blubber.yaml'
         - 'src/models/qwen36/.*'
         - 'test/unit/qwen36/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-editing-suggestions
     files:
@@ -1266,6 +1286,7 @@ jobs:
         - 'src/models/editing_suggestions/.*'
         - 'test/unit/editing_suggestions/.*'
         - 'test/unit/python/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-liftwing-openapi-server
     files:
@@ -1278,6 +1299,7 @@ jobs:
         - '.pipeline/tts/blubber.yaml'
         - 'src/models/tts/.*'
         - 'test/unit/tts/.*'
+        - 'python/requirements.txt'
 
   - name: ^trigger-inference-services-pipeline-tts-section-generator
     files:
@@ -1302,6 +1324,7 @@ jobs:
         - '.pipeline/decision_models/blubber_clef.yaml'
         - 'src/models/decision_models/clef/.*'
         - 'test/unit/decision_models/.*'
+        - 'python/requirements.txt'
 
   # End of meta jobs (the ones starting with ^)
 
