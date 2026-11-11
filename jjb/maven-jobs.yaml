@@ -4,7 +4,7 @@
     # Projects are by default built on Java 8. To build on Java 17, use the
     # {name}-maven-java17 job template, which will replace this docker
     # image with the java 17 version.
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.2.0
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.2.0-s1
     triggers:
         - zuul
     # The project is expected to provide a maven wrapper at the root of the
@@ -86,7 +86,7 @@
             # built on Java 8 & 11.
             entrypoint: /src/mvnw
             workdir: '{workdir}'
-            image: docker-registry.wikimedia.org/releng/maven-java21:0.1-s3
+            image: docker-registry.wikimedia.org/releng/maven-java21:0.1-s4
             args: >
                 -gs /settings.xml --batch-mode -Dstyle.color=always --file {pom} -X
                 sonar:sonar
@@ -127,7 +127,7 @@
 - job-template: &job_template_maven-java17
     !!merge : *job_template_maven-java8
     name: '{name}-maven-java17'
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java17:1.0.1-s7
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java17:1.0.1-s8
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
@@ -142,7 +142,7 @@
 - job-template: &job_template_maven-java21
     !!merge : *job_template_maven-java8
     name: '{name}-maven-java21'
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java21:0.1-s3
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java21:0.1-s4
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
@@ -157,7 +157,7 @@
 - job-template: &job_template_maven-java25
     !!merge : *job_template_maven-java8
     name: '{name}-maven-java25'
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java25:0.1-s4
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java25:0.1-s5
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
@@ -181,9 +181,9 @@
     # Projects are by default built on Java 8. To build on Java 17, use the
     # {name}-maven-java17-site-publish job template, which will replace
     # this docker image with the java 17 version.
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.2.0
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java8:1.2.0-s1
     # The Sonar analysis runs under Java 21 though
-    sonar_image_var: docker-registry.wikimedia.org/releng/maven-java21:0.1-s3
+    sonar_image_var: docker-registry.wikimedia.org/releng/maven-java21:0.1-s4
 
     # The project is expected to provide a maven wrapper at the root of the
     # project. If another entry point is required for a project (for example
@@ -283,7 +283,7 @@
 - job-template: &job_template_maven-java17-site-publish
     !!merge : *job_template_maven-java8-site-publish
     name: '{name}-maven-java17-site-publish'
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java17:1.0.1-s7
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java17:1.0.1-s8
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
@@ -298,7 +298,7 @@
 - job-template: &job_template_maven-java21-site-publish
     !!merge : *job_template_maven-java8-site-publish
     name: '{name}-maven-java21-site-publish'
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java21:0.1-s3
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java21:0.1-s4
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
@@ -313,7 +313,7 @@
 - job-template: &job_template_maven-java25-site-publish
     !!merge : *job_template_maven-java8-site-publish
     name: '{name}-maven-java25-site-publish'
-    docker_image_var: docker-registry.wikimedia.org/releng/maven-java25:0.1-s4
+    docker_image_var: docker-registry.wikimedia.org/releng/maven-java25:0.1-s5
     # Reinject Zuul parameters since JJB strip for some reason
     triggers:
      - zuul
@@ -387,7 +387,7 @@
             options: >-
                      -v "$NETRC_FILE":/nonexistent/.netrc:ro
                      -v "$WORKSPACE/archiva-credentials.xml":/archiva-credentials.xml
-            image:   docker-registry.wikimedia.org/releng/maven-java8:1.2.0
+            image:   docker-registry.wikimedia.org/releng/maven-java8:1.2.0-s1
             args:    >-
                      -Dresume=false
                      -Djdk.net.URLClassPath.disableClassPathURLCheck=true

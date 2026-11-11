@@ -54,7 +54,7 @@
              build-steps:
                  - shell: 'echo "Clearing $WORKSPACE/cache"'
                  - docker-run:
-                    image: docker-registry.wikimedia.org/releng/castor:0.5.0
+                    image: docker-registry.wikimedia.org/releng/castor:0.5.0-s1
                     args: 'clear || :'
                     volumes:
                         cache:
@@ -82,7 +82,7 @@
             on-evaluation-failure: dont-run
             steps:
                 - docker-run:
-                    image: docker-registry.wikimedia.org/releng/castor:0.5.0
+                    image: docker-registry.wikimedia.org/releng/castor:0.5.0-s1
                     args: 'load'
                     volumes:
                         cache:

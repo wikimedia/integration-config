@@ -20,7 +20,7 @@
         - zuul
     builders:
         - docker-run:
-            image: docker-registry.wikimedia.org/releng/operations-dnslint:0.1.0-s2
+            image: docker-registry.wikimedia.org/releng/operations-dnslint:0.1.0-s3
     publishers:
         - docker-cleanup
 
@@ -46,11 +46,11 @@
     name: 'operations-mw-config'
     phpflavor:
      - php83:
-         image: docker-registry.wikimedia.org/releng/composer-php83:8.3.36-s2
+         image: docker-registry.wikimedia.org/releng/composer-php83:8.3.36-s3
      - php84:
-         image: docker-registry.wikimedia.org/releng/composer-php84:8.4.27-s2
+         image: docker-registry.wikimedia.org/releng/composer-php84:8.4.27-s3
      - php85:
-         image: docker-registry.wikimedia.org/releng/composer-php85:8.5.12-s2
+         image: docker-registry.wikimedia.org/releng/composer-php85:8.5.12-s3
     jobs:
      # Bespoke job as we want this to merge switftly and not go in the main queue
      - '{name}-tox'
@@ -122,7 +122,7 @@
      - docker-src-dir
      - docker-ci-src-setup-simple
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/helm-linter:0.8.5-s2
+         image: docker-registry.wikimedia.org/releng/helm-linter:0.8.5-s3
     publishers:
      - docker-cleanup
 
@@ -144,7 +144,7 @@
         - docker-src-dir
         - docker-ci-src-setup-simple
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/ecs:0.2.0
+            image: docker-registry.wikimedia.org/releng/ecs:0.2.0-s1
     publishers:
      - docker-cleanup
 
@@ -158,7 +158,7 @@
         - docker-src-dir
         - docker-ci-src-setup-simple
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/ecs:0.2.0
+            image: docker-registry.wikimedia.org/releng/ecs:0.2.0-s1
         - doc-publish:
             docsrc: 'src/dist'
             docdest: 'ecs'
