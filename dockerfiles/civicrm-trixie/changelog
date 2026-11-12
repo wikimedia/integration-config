@@ -1,3 +1,10 @@
+civicrm-trixie (0.1.1) wikimedia; urgency=medium
+
+  (T442953) Run the tests with crm's bin/ci-run-tests.sh when the checkout
+  has it, else with phpunit as before.
+
+ -- pwangai <pwangai@wikimedia.org>  Thu, 12 Nov 2026 10:04:19 -0600
+
 civicrm-trixie (0.1.0-s1) wikimedia; urgency=high
 
    Rebuild for update in base image:
