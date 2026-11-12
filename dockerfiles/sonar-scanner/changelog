@@ -1,3 +1,10 @@
+sonar-scanner (4.6.0.2311-s29) wikimedia; urgency=high
+
+   Refresh for update in parent image node26:
+   (T443742) Update Node to 26.13.1
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 12 Nov 2026 09:17:46 +0100
+
 sonar-scanner (4.6.0.2311-s28) wikimedia; urgency=high
 
    Rebuild for update in base image:
