@@ -309,5 +309,13 @@
             wdio-args: ''
             # yamllint disable-line rule:line-length
             json-values: '{{ "extensions": [ {{ "name": "Wikibase", "enable": true, "branch": "master" }}, {{ "name": "MobileFrontend", "enable": true, "branch": "master" }}, {{ "name": "UniversalLanguageSelector", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }}, {{ "name": "MinervaNeue", "enable": true, "branch": "master" }} ] }}'
+        - EntitySchema:
+            trigger-time: '30 10 * * *'
+            repo: 'mediawiki/extensions/EntitySchema'
+            project-slug: 'mw-ext-es'
+            selenium-command: 'selenium-test'
+            wdio-args: ''
+            # yamllint disable-line rule:line-length
+            json-values: '{{ "extensions": [ {{ "name": "EntitySchema", "enable": true, "branch": "master" }}, {{ "name": "Wikibase", "enable": true, "branch": "master" }}, {{ "name": "MobileFrontend", "enable": true, "branch": "master" }}, {{ "name": "UniversalLanguageSelector", "enable": true, "branch": "master" }} ], "skins": [ {{ "name": "Vector", "enable": true, "branch": "master" }}, {{ "name": "MinervaNeue", "enable": true, "branch": "master" }} ] }}'
     jobs:
         - 'catalyst-daily-{extension}'
