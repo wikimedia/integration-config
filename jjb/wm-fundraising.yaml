@@ -11,9 +11,10 @@
             projects: >
                 wikimedia/fundraising/crm
         - docker-run-with-log-cache-src:
-            image: docker-registry.wikimedia.org/releng/civicrm-trixie:0.1.0-s1
-            # Keep the MySQL data in memory T434024
-            options: '--tmpfs /tmp/mysqld:size=1G'
+            image: docker-registry.wikimedia.org/releng/civicrm-trixie:0.1.1
+            # Keep the MySQL data in memory T434024. The parallel tests use one
+            # copy of the databases per worker, about 1G with six - T442953
+            options: '--tmpfs /tmp/mysqld:size=2G'
             environment:
                 # $WORKSPACE is leaked from the host environment
                 WORKSPACE: "''"
@@ -31,7 +32,7 @@
         # Run `composer test` with the same env has the civicrm test env
         - '{name}-composer-{phpflavor}':
             phpflavor: civicrm-trixie
-            image: docker-registry.wikimedia.org/releng/civicrm-trixie:0.1.0-s1
+            image: docker-registry.wikimedia.org/releng/civicrm-trixie:0.1.1
 
 - project:
     name: donationinterface-fundraising-branches
