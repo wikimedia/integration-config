@@ -407,6 +407,7 @@ BlueSpiceExtendedStatistics:
   dependencies:
     # From extension.json:
     - BlueSpiceFoundation
+    - HitCounters
     - OOJSPlus
     # extras
     - BlueSpiceExtendedSearch
