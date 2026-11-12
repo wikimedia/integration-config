@@ -7,7 +7,7 @@
     builders:
      - setup
      - docker-run-with-log-cache-src:
-         image: docker-registry.wikimedia.org/releng/node26-test-browser-php83-composer:26.12.1-s4
+         image: docker-registry.wikimedia.org/releng/node26-test-browser-php83-composer:26.13.1
          # npm run-script jenkins runs 'npm test' and 'npm run doc'
          entrypoint: /run-with-xvfb.sh
          args: 'jenkins'
@@ -66,7 +66,7 @@
         - '{name}-{node-plus-php}-runjenkins':
            node-plus-php:
                - node26-plus-php83:
-                   image: docker-registry.wikimedia.org/releng/node26-test-browser-php83-composer:26.12.1-s4
+                   image: docker-registry.wikimedia.org/releng/node26-test-browser-php83-composer:26.13.1
 
 - project:
     name: oojs-core
@@ -75,4 +75,4 @@
            script: 'jenkins'
            node_version:
                - node26:
-                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.12.1-s3
+                   image: docker-registry.wikimedia.org/releng/node26-test-browser:26.13.1
