@@ -257,6 +257,7 @@
             trigger-time: '55 9 * * *'
             repo: 'mediawiki/extensions/Wikibase'
             project-slug: 'mw-ext-wb'
+            extra-recipients: 'wikidata-ci-status@wikimedia.de'
             selenium-command: 'selenium-test:repo'
             selenium-args: '--spec repo/tests/selenium/specs/*.js client/tests/selenium/specs/*.js'
             # yamllint disable-line rule:line-length
@@ -295,6 +296,7 @@
             trigger-time: '20 10 * * *'
             repo: 'mediawiki/extensions/WikibaseQualityConstraints'
             project-slug: 'mw-ext-wbqc'
+            extra-recipients: 'wikidata-ci-status@wikimedia.de'
             selenium-command: 'selenium-test'
             wdio-args: ''
             # yamllint disable-line rule:line-length
@@ -303,6 +305,7 @@
             trigger-time: '25 10 * * *'
             repo: 'mediawiki/extensions/Wikibase'
             project-slug: 'mw-ext-wbcy'
+            extra-recipients: 'wikidata-ci-status@wikimedia.de'
             # npm ci puts the Cypress binary where cypress:run looks for it.
             runner: 'CYPRESS_CACHE_FOLDER=/src/cypress/.cache /run-with-xvfb.sh'
             selenium-command: 'cypress:run'
