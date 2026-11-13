@@ -1,3 +1,10 @@
+composer-php84 (8.4.27-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image php84:
+   Load pcov extension but disable it - T420009
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 13 Nov 2026 14:28:22 +0100
+
 composer-php84 (8.4.27-s3) wikimedia; urgency=high
 
    Rebuild for update in base image:

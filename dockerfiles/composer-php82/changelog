@@ -1,3 +1,10 @@
+composer-php82 (8.2.35-s4) wikimedia; urgency=high
+
+   Refresh for update in parent image php82:
+   Load pcov extension but disable it - T420009
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 13 Nov 2026 14:28:17 +0100
+
 composer-php82 (8.2.35-s3) wikimedia; urgency=high
 
    Rebuild for update in base image:

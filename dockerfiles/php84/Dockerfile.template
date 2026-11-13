@@ -56,7 +56,7 @@ RUN php /test-ast-tokens.php
 
 # Disable pcov (re-enabled in phpunit-coverage-*-publish job)
 # Overhead is low, but incompat with profilers/debuggers makes debugging harder
-RUN phpdismod pcov
+RUN echo 'pcov.enabled=0' >> /etc/php/8.4/mods-available/pcov.ini
 
 USER nobody
 

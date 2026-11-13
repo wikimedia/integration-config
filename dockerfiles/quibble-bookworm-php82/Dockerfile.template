@@ -52,7 +52,8 @@ COPY --from=php-82 /etc/php/8.2/cli/conf.d/20-ast.ini /etc/php/8.2/cli/conf.d/20
 
 # Disable pcov by default, although the performance overhead should be minimal
 # Disable XDebug by default due to its performance impact
-RUN phpdismod pcov xdebug
+RUN echo 'pcov.enabled=0' >> /etc/php/8.2/mods-available/pcov.ini \
+    && phpdismod xdebug
 
 # Unprivileged
 RUN install --directory /workspace --owner=nobody --group=nogroup

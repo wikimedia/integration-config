@@ -1,3 +1,10 @@
+php85-compile (8.5.12-s3) wikimedia; urgency=high
+
+   Refresh for update in parent image php85:
+   Load pcov extension but disable it - T420009
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 13 Nov 2026 14:28:24 +0100
+
 php85-compile (8.5.12-s2) wikimedia; urgency=high
 
    Rebuild for update in base image:

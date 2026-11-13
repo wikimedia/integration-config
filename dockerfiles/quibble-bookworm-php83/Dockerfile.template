@@ -49,7 +49,8 @@ COPY --from=php83 /etc/php/8.3/cli/conf.d/20-ast.ini /etc/php/8.3/cli/conf.d/20-
 
 # Disable pcov by default, although the performance overhead should be minimal
 # Disable XDebug by default due to its performance impact
-RUN phpdismod pcov xdebug
+RUN echo 'pcov.enabled=0' >> /etc/php/8.3/mods-available/pcov.ini \
+    && phpdismod xdebug
 
 # Ensure the image use PHP 8.3, as that is not the default on bookworm
 RUN update-alternatives --set php /usr/bin/php8.3

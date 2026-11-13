@@ -1,3 +1,10 @@
+quibble-fresnel (1.22.0-s13) wikimedia; urgency=high
+
+   Refresh for update in parent image php83:
+   Load pcov extension but disable it - T420009
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 13 Nov 2026 14:28:20 +0100
+
 quibble-fresnel (1.22.0-s12) wikimedia; urgency=high
 
    Refresh for update in parent image node26:

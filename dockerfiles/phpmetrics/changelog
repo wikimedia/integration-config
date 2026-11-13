@@ -1,3 +1,10 @@
+phpmetrics (2.8.1-s35) wikimedia; urgency=high
+
+   Refresh for update in parent image php81:
+   Load pcov extension but disable it - T420009
+
+ -- Antoine Musso <hashar@free.fr>  Fri, 13 Nov 2026 14:28:15 +0100
+
 phpmetrics (2.8.1-s34) wikimedia; urgency=high
 
    Rebuild for update in base image:

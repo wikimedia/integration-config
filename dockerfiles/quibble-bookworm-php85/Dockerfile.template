@@ -44,7 +44,8 @@ COPY --from=php85 /usr/lib/php/20250925/ast.so /usr/lib/php/20250925/ast.so
 COPY --from=php85 /etc/php/8.5/cli/conf.d/20-ast.ini /etc/php/8.5/cli/conf.d/20-ast.ini
 
 # Disable pcov by default, although the performance overhead should be minimal
-RUN phpdismod pcov xdebug
+RUN echo 'pcov.enabled=0' >> /etc/php/8.4/mods-available/pcov.ini \
+    && phpdismod xdebug
 
 # Disable XDebug by default due to its performance impact
 RUN phpdismod xdebug
