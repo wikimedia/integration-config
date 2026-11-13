@@ -1,5 +1,6 @@
-FROM docker-registry.wikimedia.org/trixie
+FROM {{ "ci-trixie" | image_tag }}
 
+# rsync is already in ci-trixie, this make the requirement explicit
 RUN {{ "rsync" | apt_install }} \
     && mkdir -p /castor
 

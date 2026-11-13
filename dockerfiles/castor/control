@@ -1,1 +1,2 @@
 Description: Central cache storage helper
+Depends: ci-trixie
