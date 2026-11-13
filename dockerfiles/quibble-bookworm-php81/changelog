@@ -1,3 +1,10 @@
+quibble-bookworm-php81 (1.22.0-s11) wikimedia; urgency=high
+
+   Refresh for update in parent image node26:
+   Keep the global npmrc in use under npm --prefix - T437376 T435975
+
+ -- Monte Hurd <mhurd@wikimedia.org>  Fri, 13 Nov 2026 01:51:43 +0000
+
 quibble-bookworm-php81 (1.22.0-s10) wikimedia; urgency=high
 
    Refresh for update in parent image node26:

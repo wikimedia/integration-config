@@ -12,6 +12,8 @@ ENV NODE_DIRNAME=node-${NODE_VERSION}-linux-x64
 RUN {{ "curl zip unzip libatomic1" | apt_install }}
 
 COPY npmrc /usr/etc/npmrc
+# npm --prefix otherwise looks for this file under the prefix - T437376
+ENV NPM_CONFIG_GLOBALCONFIG=/usr/etc/npmrc
 COPY SHASUMS256.txt /tmp/nodeinstall/SHASUMS256.txt
 RUN cd /tmp/nodeinstall \
     # Download, verify, and expand the version of Node we want

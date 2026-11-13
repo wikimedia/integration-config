@@ -1,3 +1,9 @@
+node24 (24.22.3-s1) wikimedia; urgency=high
+
+   Keep the global npmrc in use under npm --prefix - T437376 T435975
+
+ -- Monte Hurd <mhurd@wikimedia.org>  Fri, 13 Nov 2026 01:51:25 +0000
+
 node24 (24.22.3) wikimedia; urgency=high
 
    (T443742) Update Node to 24.22.3
