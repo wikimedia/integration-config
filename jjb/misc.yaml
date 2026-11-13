@@ -69,7 +69,7 @@
         - '{name}-{node_version}':
             node_version:
                 - node26:
-                    image: docker-registry.wikimedia.org/releng/node26-test:26.13.1
+                    image: docker-registry.wikimedia.org/releng/node26-test:26.13.1-s1
             name:
                - gerrit
 
