@@ -2367,6 +2367,7 @@ Sanctions:
     - Echo
     - Flow
     # extras
+    - CommunityConfiguration
     - DiscussionTools
     - VisualEditor
     # extras transitive dependencies
