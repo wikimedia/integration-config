@@ -444,6 +444,7 @@ InlineComments:
   - Echo
 
 IPInfo:
+  - AbuseFilter
   - EventLogging
   - GlobalPreferences
   - IPReputation
