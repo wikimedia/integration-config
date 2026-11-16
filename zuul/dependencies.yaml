@@ -2604,6 +2604,7 @@ Translate:
     - UniversalLanguageSelector
     # extras
     - cldr
+    - ConfirmEdit
     - EventLogging
     - Scribunto
     - VisualEditor

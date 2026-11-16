@@ -776,6 +776,7 @@ Translate:
   - AbuseFilter
   - AdminLinks
   - cldr
+  - ConfirmEdit
   - Elastica
   - Echo
   - Scribunto
