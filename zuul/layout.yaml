@@ -9031,8 +9031,7 @@ projects:
 
   - name: labs/tools/intuition
     template:
-      # TODO (T410935): Fix this test failure and enable on PHP 8.5
-      - name: composer-test-php82-to-php84
+      - name: composer-test-php83-to-php85
       - name: node26
       - name: mediawiki-i18n-check
     postmerge:
