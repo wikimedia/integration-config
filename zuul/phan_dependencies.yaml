@@ -680,6 +680,7 @@ ReportIncident:
   - TestKitchen
 
 Sanctions:
+  - CommunityConfiguration
   - DiscussionTools
   - Echo
   - Flow
