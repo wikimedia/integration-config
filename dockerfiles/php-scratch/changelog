@@ -1,3 +1,9 @@
+php-scratch (1.2) wikimedia; urgency=high
+
+   Update php-ast to v1.1.4
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 19 Nov 2026 15:35:19 -0500
+
 php-scratch (1.1) wikimedia; urgency=high
 
    Update php-ast to 1.1.3

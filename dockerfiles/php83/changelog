@@ -1,3 +1,10 @@
+php83 (8.3.37-s1) wikimedia; urgency=high
+
+   Refresh for update in parent image php-scratch:
+   Update php-ast to v1.1.4
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 19 Nov 2026 15:35:19 -0500
+
 php83 (8.3.37) wikimedia; urgency=high
 
    Update PHP to 8.3.37

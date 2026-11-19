@@ -1,3 +1,10 @@
+quibble-fresnel (1.22.0-s15) wikimedia; urgency=high
+
+   Refresh for update in parent image php-scratch:
+   Update php-ast to v1.1.4
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 19 Nov 2026 15:35:19 -0500
+
 quibble-fresnel (1.22.0-s14) wikimedia; urgency=high
 
    Refresh for update in parent image php83:
