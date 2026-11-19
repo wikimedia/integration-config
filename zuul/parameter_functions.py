@@ -328,6 +328,11 @@ def set_mw_dependencies(item, job, params):
         if 'WikimediaAntiAbuse' in ext_deps:
             ext_deps.remove('WikimediaAntiAbuse')
 
+    if params['ZUUL_BRANCH'] in ['REL1_43', 'REL1_45']:
+        # PersonalDashboard doesn't exist on REL1_43-REL1_45 branches
+        if 'PersonalDashboard' in ext_deps:
+            ext_deps.remove('PersonalDashboard')
+
     params['SKIN_DEPENDENCIES'] = glue_deps('mediawiki/', skin_deps)
     params['EXT_DEPENDENCIES'] = glue_deps('mediawiki/extensions/', ext_deps)
 
