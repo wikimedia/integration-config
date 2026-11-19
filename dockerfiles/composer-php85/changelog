@@ -1,3 +1,10 @@
+composer-php85 (8.5.13) wikimedia; urgency=high
+
+   Refresh for update in parent image php85:
+   Update PHP to 8.5.13
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 19 Nov 2026 10:04:01 -0500
+
 composer-php85 (8.5.12-s4) wikimedia; urgency=high
 
    Refresh for update in parent image php85:

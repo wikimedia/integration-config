@@ -1,3 +1,9 @@
+php85 (8.5.13) wikimedia; urgency=high
+
+   Update PHP to 8.5.13
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 19 Nov 2026 10:04:01 -0500
+
 php85 (8.5.12-s3) wikimedia; urgency=high
 
    Load pcov extension but disable it - T420009

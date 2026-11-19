@@ -1,3 +1,10 @@
+quibble-bookworm-php85 (1.22.0-s13) wikimedia; urgency=high
+
+   Refresh for update in parent image php85:
+   Update PHP to 8.5.13
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 19 Nov 2026 10:04:01 -0500
+
 quibble-bookworm-php85 (1.22.0-s12) wikimedia; urgency=high
 
    Refresh for update in parent image php85:

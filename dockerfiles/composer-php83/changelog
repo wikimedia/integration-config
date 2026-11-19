@@ -1,3 +1,10 @@
+composer-php83 (8.3.37) wikimedia; urgency=high
+
+   Refresh for update in parent image php83:
+   Update PHP to 8.3.37
+
+ -- James D. Forrester <jforrester@wikimedia.org>  Thu, 19 Nov 2026 10:04:01 -0500
+
 composer-php83 (8.3.36-s4) wikimedia; urgency=high
 
    Refresh for update in parent image php83:
