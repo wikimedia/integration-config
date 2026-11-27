@@ -327,6 +327,7 @@ EmailAuth:
 
 EntitySchema:
   - Wikibase
+  - ConfirmEdit
   - Elastica
   - CirrusSearch
   - SyntaxHighlight_GeSHi
@@ -354,6 +355,7 @@ FanBoxes:
   - SpamRegex
 
 FileImporter:
+  - ConfirmEdit
   - GlobalBlocking
   - VisualEditor
 
