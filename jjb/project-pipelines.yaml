@@ -329,7 +329,6 @@
         - ores-legacy-publish
         - langid-publish
         - readability-publish
-        - article-descriptions-publish
         - huggingface-publish
         - logo-detection-publish
         - articlequality-publish
@@ -371,7 +370,6 @@
         # trigger-inference-services-pipeline-ores-legacy-publish
         # trigger-inference-services-pipeline-langid-publish
         # trigger-inference-services-pipeline-readability-publish
-        # trigger-inference-services-pipeline-article-descriptions-publish
         # trigger-inference-services-pipeline-huggingface-publish
         # trigger-inference-services-pipeline-logo-detection-publish
         # trigger-inference-services-pipeline-articlequality-publish
@@ -413,7 +411,6 @@
         # inference-services-pipeline-ores-legacy-publish
         # inference-services-pipeline-langid-publish
         # inference-services-pipeline-readability-publish
-        # inference-services-pipeline-article-descriptions-publish
         # inference-services-pipeline-huggingface-publish
         # inference-services-pipeline-logo-detection-publish
         # inference-services-pipeline-articlequality-publish

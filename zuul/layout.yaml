@@ -1180,12 +1180,6 @@ jobs:
         - 'src/models/readability_model/.*'
         - 'python/requirements.txt'
 
-  - name: ^trigger-inference-services-pipeline-article-descriptions
-    files:
-        - '.pipeline/article_descriptions/blubber.yaml'
-        - 'src/models/article_descriptions/.*'
-        - 'python/requirements.txt'
-
   - name: ^trigger-inference-services-pipeline-huggingface
     files:
         - '.pipeline/huggingface/blubber.yaml'
@@ -2463,7 +2457,6 @@ projects:
       - trigger-inference-services-pipeline-ores-legacy-publish
       - trigger-inference-services-pipeline-langid-publish
       - trigger-inference-services-pipeline-readability-publish
-      - trigger-inference-services-pipeline-article-descriptions-publish
       - trigger-inference-services-pipeline-huggingface-publish
       - trigger-inference-services-pipeline-logo-detection-publish
       - trigger-inference-services-pipeline-articlequality-publish
